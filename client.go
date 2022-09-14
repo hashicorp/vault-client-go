@@ -99,6 +99,16 @@ func NewClient(configuration Configuration) (*Client, error) {
 			Backoff:      configuration.Retry.Backoff,
 			ErrorHandler: configuration.Retry.ErrorHandler,
 		},
+
+		requestModifiers: requestModifiers{
+			headers: requestHeaders{
+				token:         configuration.InitialToken,
+				namespace:     configuration.InitialNamespace,
+				customHeaders: nil,
+			},
+			validationError: nil,
+		},
+		requestModifiersLock: sync.RWMutex{},
 	}
 
 	a, err := url.Parse(configuration.BaseAddress)
@@ -181,6 +191,12 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 	}
 
 	return clone
+}
+
+// Configuration returns a copy of the configuration object used to initialize
+// this client
+func (c *Client) Configuration() Configuration {
+	return c.configuration
 }
 
 // SetToken sets the token to be used with all subsequent requests.

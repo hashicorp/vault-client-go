@@ -1,6 +1,4 @@
-# \Auth
-
-All URIs are relative to *http://localhost*
+# Auth
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -290,22 +288,32 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role as it should appear in Vault.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAlicloudRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | The name of the role as it should appear in Vault.
+	
+	resp, err := client.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -314,33 +322,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAlicloudRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -356,22 +350,32 @@ Read/write/delete a single app-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the app-id mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapAppIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the app-id mapping
+	
+	resp, err := client.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -380,33 +384,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the app-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAppIdMapAppIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -422,22 +412,32 @@ Read/write/delete a single user-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the user-id mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapUserIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the user-id mapping
+	
+	resp, err := client.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -446,33 +446,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the user-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAppIdMapUserIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -488,22 +474,32 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -512,33 +508,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -554,22 +536,32 @@ Impose secret_id to be presented during login using this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -578,33 +570,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameBindSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -620,22 +598,32 @@ Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -644,33 +632,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameBoundCidrListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -686,22 +660,32 @@ Updates the value of 'period' on the role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePeriod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -710,33 +694,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNamePeriodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -752,22 +722,32 @@ Policies of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -776,33 +756,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -818,22 +784,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -842,33 +818,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -884,22 +846,32 @@ Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses wh
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -908,33 +880,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -950,22 +908,32 @@ Invalidate an issued secret_id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -974,33 +942,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1016,22 +970,32 @@ Use limit of the SecretID generated against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1040,33 +1004,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1082,22 +1032,32 @@ Duration in seconds, representing the lifetime of the SecretIDs that are generat
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1106,33 +1066,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1148,22 +1094,32 @@ Comma separated string or list of CIDR blocks. If set, specifies the blocks of I
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1172,33 +1128,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1214,22 +1156,32 @@ Duration in seconds, the maximum lifetime of the tokens issued by using the Secr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1238,33 +1190,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1280,22 +1218,32 @@ Number of times issued tokens can be used
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1304,33 +1252,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1346,22 +1280,32 @@ Duration in seconds, the lifetime of the token issued by using the SecretID that
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1370,33 +1314,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1412,22 +1342,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certName := "certName_example" // string | Name of the certificate.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigCertificateCertName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	certName :=  // string | Name of the certificate.
+	
+	resp, err := client.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1436,33 +1376,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigCertificateCertNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1478,48 +1404,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigClient(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthAwsConfigClient(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigClientRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1535,22 +1458,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigStsAccountId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	
+	resp, err := client.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1559,33 +1492,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigStsAccountIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1601,48 +1520,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyIdentityAccesslistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1658,48 +1574,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyIdentityWhitelistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1715,48 +1628,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyRoletagBlacklistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1772,48 +1682,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyRoletagDenylistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1829,22 +1736,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
+	resp, err := client.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1853,33 +1770,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsIdentityAccesslistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1895,22 +1798,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
+	resp, err := client.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1919,33 +1832,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsIdentityWhitelistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1961,22 +1860,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthAwsRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1985,33 +1894,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2027,22 +1922,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
+	resp, err := client.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2051,33 +1956,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsRoletagBlacklistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2093,22 +1984,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagDenylistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
+	resp, err := client.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2117,33 +2018,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsRoletagDenylistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2159,48 +2046,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAzureConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthAzureConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAzureConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2216,22 +2100,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAzureRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthAzureRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2240,33 +2134,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAzureRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2282,22 +2162,32 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCertCertsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCertsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the certificate
+	
+	resp, err := client.Auth.DeleteAuthCertCertsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2306,33 +2196,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthCertCertsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2348,22 +2224,32 @@ Manage Certificate Revocation Lists checked during authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCertCrlsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCrlsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the certificate
+	
+	resp, err := client.Auth.DeleteAuthCertCrlsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2372,33 +2258,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthCertCrlsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2414,48 +2286,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCfConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthCfConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthCfConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2471,22 +2340,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCfRolesRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | The name of the role.
+	
+	resp, err := client.Auth.DeleteAuthCfRolesRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2495,33 +2374,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthCfRolesRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2537,22 +2402,32 @@ Create a GCP role with associated policies and required attributes.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthGcpRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGcpRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthGcpRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2561,33 +2436,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthGcpRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2603,22 +2464,32 @@ Read/write/delete a single teams mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the teams mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapTeamsKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the teams mapping
+	
+	resp, err := client.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2627,33 +2498,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthGithubMapTeamsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2669,22 +2526,32 @@ Read/write/delete a single users mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the users mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapUsersKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the users mapping
+	
+	resp, err := client.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2693,33 +2560,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthGithubMapUsersKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2735,22 +2588,32 @@ Delete an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthJwtRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthJwtRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthJwtRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2759,33 +2622,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthJwtRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2801,22 +2650,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthKerberosGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKerberosGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP group.
+	
+	resp, err := client.Auth.DeleteAuthKerberosGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2825,33 +2684,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthKerberosGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2867,22 +2712,32 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthKubernetesRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKubernetesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthKubernetesRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2891,33 +2746,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthKubernetesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2933,22 +2774,32 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthLdapGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP group.
+	
+	resp, err := client.Auth.DeleteAuthLdapGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2957,33 +2808,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthLdapGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2999,22 +2836,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthLdapUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP user.
+	
+	resp, err := client.Auth.DeleteAuthLdapUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3023,33 +2870,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthLdapUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3065,48 +2898,45 @@ Manages the configuration for the Vault Auth Plugin.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOciConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.DeleteAuthOciConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthOciConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3122,22 +2952,32 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOciRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthOciRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3146,33 +2986,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOciRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3188,22 +3014,32 @@ Delete an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.DeleteAuthOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3212,33 +3048,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3254,22 +3076,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the Okta group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOktaGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the Okta group.
+	
+	resp, err := client.Auth.DeleteAuthOktaGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3278,33 +3110,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOktaGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3320,22 +3138,32 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOktaUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the user.
+	
+	resp, err := client.Auth.DeleteAuthOktaUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3344,33 +3172,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOktaUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3386,22 +3200,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the RADIUS user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthRadiusUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthRadiusUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the RADIUS user.
+	
+	resp, err := client.Auth.DeleteAuthRadiusUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3410,33 +3234,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthRadiusUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3452,22 +3262,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthTokenRolesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role
+	
+	resp, err := client.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3476,33 +3296,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthTokenRolesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3518,22 +3324,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthUserpassUsersUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | Username for this user.
+	
+	resp, err := client.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3542,33 +3358,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthUserpassUsersUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3584,22 +3386,33 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAlicloudRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAlicloudRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3609,28 +3422,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAlicloudRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3646,22 +3445,32 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role as it should appear in Vault.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAlicloudRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | The name of the role as it should appear in Vault.
+	
+	resp, err := client.Auth.GetAuthAlicloudRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3670,33 +3479,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAlicloudRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3712,22 +3507,33 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAlicloudRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAlicloudRoles(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3737,28 +3543,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAlicloudRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3774,22 +3566,33 @@ Read mappings for app-id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapAppId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAppIdMapAppId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3799,28 +3602,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapAppIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3836,22 +3625,32 @@ Read/write/delete a single app-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the app-id mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the app-id mapping
+	
+	resp, err := client.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3860,33 +3659,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the app-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapAppIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3902,22 +3687,33 @@ Read mappings for user-id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapUserId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAppIdMapUserId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3927,28 +3723,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapUserIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3964,22 +3746,32 @@ Read/write/delete a single user-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the user-id mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the user-id mapping
+	
+	resp, err := client.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3988,33 +3780,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the user-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapUserIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4030,22 +3808,33 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthApproleRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4055,28 +3844,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4092,22 +3867,32 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4116,33 +3901,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4158,22 +3929,32 @@ Impose secret_id to be presented during login using this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4182,33 +3963,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameBindSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4224,22 +3991,32 @@ Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4248,33 +4025,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameBoundCidrListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4290,22 +4053,32 @@ Enables cluster local secret IDs
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameLocalSecretIds``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4314,33 +4087,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameLocalSecretIdsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4356,22 +4115,32 @@ Updates the value of 'period' on the role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePeriod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4380,33 +4149,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNamePeriodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4422,22 +4177,32 @@ Policies of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4446,33 +4211,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4488,22 +4239,32 @@ Returns the 'role_id' of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameRoleId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4512,33 +4273,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameRoleIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4554,23 +4301,34 @@ Generate a SecretID against this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4579,12 +4337,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4592,21 +4348,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4622,22 +4366,32 @@ Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses wh
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4646,33 +4400,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4688,22 +4428,32 @@ Use limit of the SecretID generated against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4712,33 +4462,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4754,22 +4490,32 @@ Duration in seconds, representing the lifetime of the SecretIDs that are generat
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4778,33 +4524,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4820,22 +4552,32 @@ Comma separated string or list of CIDR blocks. If set, specifies the blocks of I
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4844,33 +4586,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4886,22 +4614,32 @@ Duration in seconds, the maximum lifetime of the tokens issued by using the Secr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4910,33 +4648,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenMaxTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4952,22 +4676,32 @@ Number of times issued tokens can be used
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4976,33 +4710,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5018,22 +4738,32 @@ Duration in seconds, the lifetime of the token issued by using the SecretID that
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5042,33 +4772,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5084,22 +4800,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certName := "certName_example" // string | Name of the certificate.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificateCertName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	certName :=  // string | Name of the certificate.
+	
+	resp, err := client.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5108,33 +4834,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigCertificateCertNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5150,22 +4862,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigCertificates(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificates``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsConfigCertificates(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5175,28 +4898,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigCertificatesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5212,48 +4921,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigClient(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthAwsConfigClient(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigClientRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5269,48 +4975,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigIdentity(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigIdentity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthAwsConfigIdentity(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigIdentityRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5326,22 +5029,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigSts(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigSts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsConfigSts(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5351,28 +5065,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigStsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5388,22 +5088,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigStsAccountId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	
+	resp, err := client.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5412,33 +5122,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigStsAccountIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5454,48 +5150,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyIdentityAccesslistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5511,48 +5204,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyIdentityWhitelistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5568,48 +5258,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyRoletagBlacklistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5625,48 +5312,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyRoletagDenylistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5682,22 +5366,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityAccesslist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsIdentityAccesslist(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5707,28 +5402,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityAccesslistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5744,22 +5425,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
+	resp, err := client.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5768,33 +5459,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityAccesslistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5810,22 +5487,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityWhitelist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsIdentityWhitelist(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5835,28 +5523,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityWhitelistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5872,22 +5546,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
+	resp, err := client.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5896,33 +5580,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityWhitelistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5938,22 +5608,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5963,28 +5644,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6000,22 +5667,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthAwsRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6024,33 +5701,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6066,22 +5729,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRoles(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6091,28 +5765,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6128,22 +5788,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagBlacklist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRoletagBlacklist(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6153,28 +5824,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagBlacklistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6190,22 +5847,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
+	resp, err := client.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6214,33 +5881,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagBlacklistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6256,22 +5909,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagDenylist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRoletagDenylist(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6281,28 +5945,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagDenylistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6318,22 +5968,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
+	resp, err := client.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6342,33 +6002,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagDenylistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6384,48 +6030,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAzureConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthAzureConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAzureConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6441,22 +6084,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAzureRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAzureRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6466,28 +6120,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAzureRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6503,22 +6143,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAzureRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthAzureRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6527,33 +6177,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAzureRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6569,48 +6205,45 @@ This path allows you to configure the centrify auth provider to interact with th
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCentrifyConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCentrifyConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthCentrifyConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCentrifyConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6626,22 +6259,33 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCertCerts(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCerts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthCertCerts(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6651,28 +6295,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCertCertsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6688,22 +6318,32 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCertCertsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCertsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the certificate
+	
+	resp, err := client.Auth.GetAuthCertCertsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6712,33 +6352,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthCertCertsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6754,22 +6380,32 @@ Manage Certificate Revocation Lists checked during authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCertCrlsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCrlsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the certificate
+	
+	resp, err := client.Auth.GetAuthCertCrlsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6778,33 +6414,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthCertCrlsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6820,48 +6442,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCfConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthCfConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCfConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6877,22 +6496,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCfRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthCfRoles(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6902,28 +6532,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCfRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6939,22 +6555,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCfRolesRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | The name of the role.
+	
+	resp, err := client.Auth.GetAuthCfRolesRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6963,33 +6589,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthCfRolesRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7005,48 +6617,45 @@ Configure credentials used to query the GCP IAM API to verify authenticating ser
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthGcpConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGcpConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7062,22 +6671,33 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGcpRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7087,28 +6707,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGcpRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7124,22 +6730,32 @@ Create a GCP role with associated policies and required attributes.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthGcpRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7148,33 +6764,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGcpRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7190,22 +6792,33 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGcpRoles(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7215,28 +6828,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGcpRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7252,48 +6851,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthGithubConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGithubConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7309,22 +6905,33 @@ Read mappings for teams
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapTeams(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeams``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGithubMapTeams(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7334,28 +6941,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGithubMapTeamsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7371,22 +6964,32 @@ Read/write/delete a single teams mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the teams mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapTeamsKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeamsKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the teams mapping
+	
+	resp, err := client.Auth.GetAuthGithubMapTeamsKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7395,33 +6998,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGithubMapTeamsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7437,22 +7026,33 @@ Read mappings for users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGithubMapUsers(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7462,28 +7062,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGithubMapUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7499,22 +7085,32 @@ Read/write/delete a single users mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the users mapping
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapUsersKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsersKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the users mapping
+	
+	resp, err := client.Auth.GetAuthGithubMapUsersKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7523,33 +7119,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGithubMapUsersKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7565,48 +7147,45 @@ Read the current JWT authentication backend configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthJwtConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthJwtConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7622,48 +7201,45 @@ Callback endpoint to complete an OIDC login.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtOidcCallback(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthJwtOidcCallback(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthJwtOidcCallbackRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7681,22 +7257,33 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthJwtRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7706,28 +7293,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthJwtRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7743,22 +7316,32 @@ Read an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthJwtRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7767,33 +7350,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthJwtRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7809,48 +7378,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthKerberosConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7866,48 +7432,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosConfigLdap(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfigLdap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthKerberosConfigLdap(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosConfigLdapRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7923,22 +7486,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosGroups(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthKerberosGroups(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7948,28 +7522,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosGroupsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7985,22 +7545,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP group.
+	
+	resp, err := client.Auth.GetAuthKerberosGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8009,33 +7579,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthKerberosGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8051,48 +7607,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosLogin(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthKerberosLogin(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosLoginRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8108,48 +7661,45 @@ Configures the JWT Public Key and Kubernetes API information.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKubernetesConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthKubernetesConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKubernetesConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8165,22 +7715,33 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKubernetesRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthKubernetesRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8190,28 +7751,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKubernetesRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8227,22 +7774,32 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKubernetesRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthKubernetesRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8251,33 +7808,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthKubernetesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8293,48 +7836,45 @@ Configure the LDAP server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthLdapConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthLdapConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8350,22 +7890,33 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapGroups(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthLdapGroups(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8375,28 +7926,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthLdapGroupsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8412,22 +7949,32 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP group.
+	
+	resp, err := client.Auth.GetAuthLdapGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8436,33 +7983,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthLdapGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8478,22 +8011,33 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthLdapUsers(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8503,28 +8047,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthLdapUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8540,22 +8070,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP user.
+	
+	resp, err := client.Auth.GetAuthLdapUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8564,33 +8104,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthLdapUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8606,48 +8132,45 @@ Manages the configuration for the Vault Auth Plugin.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOciConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthOciConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOciConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8663,22 +8186,33 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOciRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOciRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8688,28 +8222,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOciRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8725,22 +8245,32 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOciRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthOciRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8749,33 +8279,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOciRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8791,48 +8307,45 @@ Read the current JWT authentication backend configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthOidcConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOidcConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8848,48 +8361,45 @@ Callback endpoint to complete an OIDC login.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcOidcCallback(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthOidcOidcCallback(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOidcOidcCallbackRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8907,22 +8417,33 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOidcRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8932,28 +8453,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOidcRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8969,22 +8476,32 @@ Read an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	resp, err := client.Auth.GetAuthOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8993,33 +8510,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9035,48 +8538,45 @@ This endpoint allows you to configure the Okta and its configuration options.  T
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthOktaConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOktaConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9092,22 +8592,33 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaGroups(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOktaGroups(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9117,28 +8628,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOktaGroupsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9154,22 +8651,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the Okta group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the Okta group.
+	
+	resp, err := client.Auth.GetAuthOktaGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9178,33 +8685,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9220,22 +8713,33 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOktaUsers(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9245,28 +8749,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOktaUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9282,22 +8772,32 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the user.
+	
+	resp, err := client.Auth.GetAuthOktaUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9306,33 +8806,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9348,22 +8834,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaVerifyNonce``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	nonce :=  // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
+	
+	resp, err := client.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9372,33 +8868,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **nonce** | **string** | Nonce provided during a login request to retrieve the number verification challenge for the matching request. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaVerifyNonceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9414,48 +8896,45 @@ Configure the RADIUS server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthRadiusConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthRadiusConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthRadiusConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9471,22 +8950,33 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthRadiusUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthRadiusUsers(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9496,28 +8986,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthRadiusUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9533,22 +9009,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the RADIUS user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthRadiusUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the RADIUS user.
+	
+	resp, err := client.Auth.GetAuthRadiusUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9557,33 +9043,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthRadiusUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9599,22 +9071,33 @@ List token accessors, which can then be be used to iterate and discover their pr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenAccessors(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenAccessors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthTokenAccessors(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9624,28 +9107,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenAccessorsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9661,48 +9130,45 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenLookup(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthTokenLookup(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenLookupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9718,48 +9184,45 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenLookupSelf(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookupSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.GetAuthTokenLookupSelf(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenLookupSelfRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9775,22 +9238,33 @@ This endpoint lists configured roles.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthTokenRoles(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9800,28 +9274,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9837,22 +9297,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRolesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role
+	
+	resp, err := client.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9861,33 +9331,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthTokenRolesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9903,22 +9359,33 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthUserpassUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthUserpassUsers(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9928,28 +9395,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthUserpassUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9965,22 +9418,32 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthUserpassUsersUsername(context.Background(), username).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsersUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | Username for this user.
+	
+	resp, err := client.Auth.GetAuthUserpassUsersUsername(context.Background(), username)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9989,33 +9452,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthUserpassUsersUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10031,22 +9480,33 @@ Authenticates an RAM entity with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    alicloudLoginRequest := *openapiclient.NewAlicloudLoginRequest() // AlicloudLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	alicloudLoginRequest := NewAlicloudLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAlicloudLogin(context.Background(), alicloudLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10056,28 +9516,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAlicloudLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alicloudLoginRequest** | [**AlicloudLoginRequest**](AlicloudLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10093,23 +9539,34 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role as it should appear in Vault.
-    alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | The name of the role as it should appear in Vault.
+	
+	alicloudRoleRequest := NewAlicloudRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAlicloudRoleRole(context.Background(), role, alicloudRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10118,12 +9575,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAlicloudRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10131,21 +9586,9 @@ Name | Type | Description  | Notes
 
  **alicloudRoleRequest** | [**AlicloudRoleRequest**](AlicloudRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10161,22 +9604,33 @@ Log in with an App ID and User ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdLogin(context.Background(), appIdLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10186,28 +9640,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAppIdLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appIdLoginRequest** | [**AppIdLoginRequest**](AppIdLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10223,23 +9663,34 @@ Log in with an App ID and User ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    appId := "appId_example" // string | The unique app ID
-    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLoginAppId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	appId :=  // string | The unique app ID
+	
+	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdLoginAppId(context.Background(), appId, appIdLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10248,12 +9699,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **appId** | **string** | The unique app ID | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAppIdLoginAppIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10261,21 +9710,9 @@ Name | Type | Description  | Notes
 
  **appIdLoginRequest** | [**AppIdLoginRequest**](AppIdLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10291,23 +9728,34 @@ Read/write/delete a single app-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the app-id mapping
-    appIdMapAppIdRequest := *openapiclient.NewAppIdMapAppIdRequest() // AppIdMapAppIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapAppIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the app-id mapping
+	
+	appIdMapAppIdRequest := NewAppIdMapAppIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key, appIdMapAppIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10316,12 +9764,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the app-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAppIdMapAppIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10329,21 +9775,9 @@ Name | Type | Description  | Notes
 
  **appIdMapAppIdRequest** | [**AppIdMapAppIdRequest**](AppIdMapAppIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10359,23 +9793,34 @@ Read/write/delete a single user-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the user-id mapping
-    appIdMapUserIdRequest := *openapiclient.NewAppIdMapUserIdRequest() // AppIdMapUserIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapUserIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the user-id mapping
+	
+	appIdMapUserIdRequest := NewAppIdMapUserIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key, appIdMapUserIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10384,12 +9829,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the user-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAppIdMapUserIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10397,21 +9840,9 @@ Name | Type | Description  | Notes
 
  **appIdMapUserIdRequest** | [**AppIdMapUserIdRequest**](AppIdMapUserIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10427,22 +9858,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    approleLoginRequest := *openapiclient.NewApproleLoginRequest() // ApproleLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	approleLoginRequest := NewApproleLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleLogin(context.Background(), approleLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10452,28 +9894,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthApproleLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **approleLoginRequest** | [**ApproleLoginRequest**](ApproleLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10489,23 +9917,34 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleRequest := *openapiclient.NewApproleRoleRequest() // ApproleRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleRequest := NewApproleRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName, approleRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10514,12 +9953,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10527,21 +9964,9 @@ Name | Type | Description  | Notes
 
  **approleRoleRequest** | [**ApproleRoleRequest**](ApproleRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10557,23 +9982,34 @@ Impose secret_id to be presented during login using this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleBindSecretIdRequest := *openapiclient.NewApproleRoleBindSecretIdRequest() // ApproleRoleBindSecretIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleBindSecretIdRequest := NewApproleRoleBindSecretIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName, approleRoleBindSecretIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10582,12 +10018,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameBindSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10595,21 +10029,9 @@ Name | Type | Description  | Notes
 
  **approleRoleBindSecretIdRequest** | [**ApproleRoleBindSecretIdRequest**](ApproleRoleBindSecretIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10625,23 +10047,34 @@ Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleBoundCidrListRequest := *openapiclient.NewApproleRoleBoundCidrListRequest() // ApproleRoleBoundCidrListRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleBoundCidrListRequest := NewApproleRoleBoundCidrListRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName, approleRoleBoundCidrListRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10650,12 +10083,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameBoundCidrListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10663,21 +10094,9 @@ Name | Type | Description  | Notes
 
  **approleRoleBoundCidrListRequest** | [**ApproleRoleBoundCidrListRequest**](ApproleRoleBoundCidrListRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10693,23 +10112,34 @@ Assign a SecretID of choice against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleCustomSecretIdRequest := *openapiclient.NewApproleRoleCustomSecretIdRequest() // ApproleRoleCustomSecretIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameCustomSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleCustomSecretIdRequest := NewApproleRoleCustomSecretIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName, approleRoleCustomSecretIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10718,12 +10148,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameCustomSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10731,21 +10159,9 @@ Name | Type | Description  | Notes
 
  **approleRoleCustomSecretIdRequest** | [**ApproleRoleCustomSecretIdRequest**](ApproleRoleCustomSecretIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10761,23 +10177,34 @@ Updates the value of 'period' on the role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRolePeriodRequest := *openapiclient.NewApproleRolePeriodRequest() // ApproleRolePeriodRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePeriod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRolePeriodRequest := NewApproleRolePeriodRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName, approleRolePeriodRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10786,12 +10213,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNamePeriodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10799,21 +10224,9 @@ Name | Type | Description  | Notes
 
  **approleRolePeriodRequest** | [**ApproleRolePeriodRequest**](ApproleRolePeriodRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10829,23 +10242,34 @@ Policies of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRolePoliciesRequest := *openapiclient.NewApproleRolePoliciesRequest() // ApproleRolePoliciesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRolePoliciesRequest := NewApproleRolePoliciesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName, approleRolePoliciesRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10854,12 +10278,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10867,21 +10289,9 @@ Name | Type | Description  | Notes
 
  **approleRolePoliciesRequest** | [**ApproleRolePoliciesRequest**](ApproleRolePoliciesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10897,23 +10307,34 @@ Returns the 'role_id' of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleRoleIdRequest := *openapiclient.NewApproleRoleRoleIdRequest() // ApproleRoleRoleIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameRoleId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleRoleIdRequest := NewApproleRoleRoleIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName, approleRoleRoleIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10922,12 +10343,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameRoleIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10935,21 +10354,9 @@ Name | Type | Description  | Notes
 
  **approleRoleRoleIdRequest** | [**ApproleRoleRoleIdRequest**](ApproleRoleRoleIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10965,23 +10372,34 @@ Generate a SecretID against this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdRequest := *openapiclient.NewApproleRoleSecretIdRequest() // ApproleRoleSecretIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdRequest := NewApproleRoleSecretIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName, approleRoleSecretIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10990,12 +10408,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11003,21 +10419,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdRequest** | [**ApproleRoleSecretIdRequest**](ApproleRoleSecretIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11033,23 +10437,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdAccessorDestroyRequest := *openapiclient.NewApproleRoleSecretIdAccessorDestroyRequest() // ApproleRoleSecretIdAccessorDestroyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdAccessorDestroyRequest := NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName, approleRoleSecretIdAccessorDestroyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11058,12 +10473,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11071,21 +10484,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdAccessorDestroyRequest** | [**ApproleRoleSecretIdAccessorDestroyRequest**](ApproleRoleSecretIdAccessorDestroyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11101,23 +10502,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdAccessorLookupRequest := *openapiclient.NewApproleRoleSecretIdAccessorLookupRequest() // ApproleRoleSecretIdAccessorLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdAccessorLookupRequest := NewApproleRoleSecretIdAccessorLookupRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName, approleRoleSecretIdAccessorLookupRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11126,12 +10538,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11139,21 +10549,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdAccessorLookupRequest** | [**ApproleRoleSecretIdAccessorLookupRequest**](ApproleRoleSecretIdAccessorLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11169,23 +10567,34 @@ Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses wh
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdBoundCidrsRequest := *openapiclient.NewApproleRoleSecretIdBoundCidrsRequest() // ApproleRoleSecretIdBoundCidrsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdBoundCidrsRequest := NewApproleRoleSecretIdBoundCidrsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName, approleRoleSecretIdBoundCidrsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11194,12 +10603,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11207,21 +10614,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdBoundCidrsRequest** | [**ApproleRoleSecretIdBoundCidrsRequest**](ApproleRoleSecretIdBoundCidrsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11237,23 +10632,34 @@ Invalidate an issued secret_id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdDestroyRequest := *openapiclient.NewApproleRoleSecretIdDestroyRequest() // ApproleRoleSecretIdDestroyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdDestroyRequest := NewApproleRoleSecretIdDestroyRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName, approleRoleSecretIdDestroyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11262,12 +10668,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11275,21 +10679,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdDestroyRequest** | [**ApproleRoleSecretIdDestroyRequest**](ApproleRoleSecretIdDestroyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11305,23 +10697,34 @@ Read the properties of an issued secret_id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdLookupRequest := *openapiclient.NewApproleRoleSecretIdLookupRequest() // ApproleRoleSecretIdLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdLookupRequest := NewApproleRoleSecretIdLookupRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName, approleRoleSecretIdLookupRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11330,12 +10733,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11343,21 +10744,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdLookupRequest** | [**ApproleRoleSecretIdLookupRequest**](ApproleRoleSecretIdLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11373,23 +10762,34 @@ Use limit of the SecretID generated against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdNumUsesRequest := *openapiclient.NewApproleRoleSecretIdNumUsesRequest() // ApproleRoleSecretIdNumUsesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdNumUsesRequest := NewApproleRoleSecretIdNumUsesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName, approleRoleSecretIdNumUsesRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11398,12 +10798,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11411,21 +10809,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdNumUsesRequest** | [**ApproleRoleSecretIdNumUsesRequest**](ApproleRoleSecretIdNumUsesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11441,23 +10827,34 @@ Duration in seconds, representing the lifetime of the SecretIDs that are generat
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdTtlRequest := *openapiclient.NewApproleRoleSecretIdTtlRequest() // ApproleRoleSecretIdTtlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdTtlRequest := NewApproleRoleSecretIdTtlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName, approleRoleSecretIdTtlRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11466,12 +10863,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11479,21 +10874,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdTtlRequest** | [**ApproleRoleSecretIdTtlRequest**](ApproleRoleSecretIdTtlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11509,23 +10892,34 @@ Comma separated string or list of CIDR blocks. If set, specifies the blocks of I
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenBoundCidrsRequest := *openapiclient.NewApproleRoleTokenBoundCidrsRequest() // ApproleRoleTokenBoundCidrsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenBoundCidrsRequest := NewApproleRoleTokenBoundCidrsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName, approleRoleTokenBoundCidrsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11534,12 +10928,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11547,21 +10939,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenBoundCidrsRequest** | [**ApproleRoleTokenBoundCidrsRequest**](ApproleRoleTokenBoundCidrsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11577,23 +10957,34 @@ Duration in seconds, the maximum lifetime of the tokens issued by using the Secr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenMaxTtlRequest := *openapiclient.NewApproleRoleTokenMaxTtlRequest() // ApproleRoleTokenMaxTtlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenMaxTtlRequest := NewApproleRoleTokenMaxTtlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName, approleRoleTokenMaxTtlRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11602,12 +10993,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenMaxTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11615,21 +11004,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenMaxTtlRequest** | [**ApproleRoleTokenMaxTtlRequest**](ApproleRoleTokenMaxTtlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11645,23 +11022,34 @@ Number of times issued tokens can be used
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenNumUsesRequest := *openapiclient.NewApproleRoleTokenNumUsesRequest() // ApproleRoleTokenNumUsesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenNumUsesRequest := NewApproleRoleTokenNumUsesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName, approleRoleTokenNumUsesRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11670,12 +11058,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11683,21 +11069,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenNumUsesRequest** | [**ApproleRoleTokenNumUsesRequest**](ApproleRoleTokenNumUsesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11713,23 +11087,34 @@ Duration in seconds, the lifetime of the token issued by using the SecretID that
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenTtlRequest := *openapiclient.NewApproleRoleTokenTtlRequest() // ApproleRoleTokenTtlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenTtlRequest := NewApproleRoleTokenTtlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName, approleRoleTokenTtlRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11738,12 +11123,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11751,21 +11134,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenTtlRequest** | [**ApproleRoleTokenTtlRequest**](ApproleRoleTokenTtlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11781,48 +11152,45 @@ Trigger the clean-up of expired SecretID entries.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleTidySecretId(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleTidySecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.PostAuthApproleTidySecretId(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthApproleTidySecretIdRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11838,23 +11206,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certName := "certName_example" // string | Name of the certificate.
-    awsConfigCertificateRequest := *openapiclient.NewAwsConfigCertificateRequest() // AwsConfigCertificateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigCertificateCertName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	certName :=  // string | Name of the certificate.
+	
+	awsConfigCertificateRequest := NewAwsConfigCertificateRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName, awsConfigCertificateRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11863,12 +11242,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigCertificateCertNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11876,21 +11253,9 @@ Name | Type | Description  | Notes
 
  **awsConfigCertificateRequest** | [**AwsConfigCertificateRequest**](AwsConfigCertificateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11906,22 +11271,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigClientRequest := *openapiclient.NewAwsConfigClientRequest() // AwsConfigClientRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsConfigClientRequest := NewAwsConfigClientRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigClient(context.Background(), awsConfigClientRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11931,28 +11307,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigClientRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigClientRequest** | [**AwsConfigClientRequest**](AwsConfigClientRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11968,22 +11330,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigIdentityRequest := *openapiclient.NewAwsConfigIdentityRequest() // AwsConfigIdentityRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigIdentity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsConfigIdentityRequest := NewAwsConfigIdentityRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigIdentity(context.Background(), awsConfigIdentityRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11993,28 +11366,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigIdentityRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigIdentityRequest** | [**AwsConfigIdentityRequest**](AwsConfigIdentityRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12030,48 +11389,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.PostAuthAwsConfigRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigRotateRootRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12087,23 +11443,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-    awsConfigStsRequest := *openapiclient.NewAwsConfigStsRequest() // AwsConfigStsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigStsAccountId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	
+	awsConfigStsRequest := NewAwsConfigStsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId, awsConfigStsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12112,12 +11479,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigStsAccountIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -12125,21 +11490,9 @@ Name | Type | Description  | Notes
 
  **awsConfigStsRequest** | [**AwsConfigStsRequest**](AwsConfigStsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12155,22 +11508,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyIdentityAccesslistRequest := *openapiclient.NewAwsConfigTidyIdentityAccesslistRequest() // AwsConfigTidyIdentityAccesslistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsConfigTidyIdentityAccesslistRequest := NewAwsConfigTidyIdentityAccesslistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background(), awsConfigTidyIdentityAccesslistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12180,28 +11544,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyIdentityAccesslistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyIdentityAccesslistRequest** | [**AwsConfigTidyIdentityAccesslistRequest**](AwsConfigTidyIdentityAccesslistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12217,22 +11567,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyIdentityWhitelistRequest := *openapiclient.NewAwsConfigTidyIdentityWhitelistRequest() // AwsConfigTidyIdentityWhitelistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsConfigTidyIdentityWhitelistRequest := NewAwsConfigTidyIdentityWhitelistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background(), awsConfigTidyIdentityWhitelistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12242,28 +11603,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyIdentityWhitelistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyIdentityWhitelistRequest** | [**AwsConfigTidyIdentityWhitelistRequest**](AwsConfigTidyIdentityWhitelistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12279,22 +11626,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyRoletagBlacklistRequest := *openapiclient.NewAwsConfigTidyRoletagBlacklistRequest() // AwsConfigTidyRoletagBlacklistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsConfigTidyRoletagBlacklistRequest := NewAwsConfigTidyRoletagBlacklistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background(), awsConfigTidyRoletagBlacklistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12304,28 +11662,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyRoletagBlacklistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyRoletagBlacklistRequest** | [**AwsConfigTidyRoletagBlacklistRequest**](AwsConfigTidyRoletagBlacklistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12341,22 +11685,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyRoletagDenylistRequest := *openapiclient.NewAwsConfigTidyRoletagDenylistRequest() // AwsConfigTidyRoletagDenylistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsConfigTidyRoletagDenylistRequest := NewAwsConfigTidyRoletagDenylistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background(), awsConfigTidyRoletagDenylistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12366,28 +11721,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyRoletagDenylistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyRoletagDenylistRequest** | [**AwsConfigTidyRoletagDenylistRequest**](AwsConfigTidyRoletagDenylistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12403,22 +11744,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsLoginRequest := *openapiclient.NewAwsLoginRequest() // AwsLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsLoginRequest := NewAwsLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsLogin(context.Background(), awsLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12428,28 +11780,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsLoginRequest** | [**AwsLoginRequest**](AwsLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12465,23 +11803,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    awsRoleRequest := *openapiclient.NewAwsRoleRequest() // AwsRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	awsRoleRequest := NewAwsRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsRoleRole(context.Background(), role, awsRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12490,12 +11839,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -12503,21 +11850,9 @@ Name | Type | Description  | Notes
 
  **awsRoleRequest** | [**AwsRoleRequest**](AwsRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12533,23 +11868,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    awsRoleTagRequest := *openapiclient.NewAwsRoleTagRequest() // AwsRoleTagRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	awsRoleTagRequest := NewAwsRoleTagRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsRoleRoleTag(context.Background(), role, awsRoleTagRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12558,12 +11904,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoleRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -12571,21 +11915,9 @@ Name | Type | Description  | Notes
 
  **awsRoleTagRequest** | [**AwsRoleTagRequest**](AwsRoleTagRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12601,22 +11933,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
+	resp, err := client.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12625,33 +11967,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoletagBlacklistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12667,22 +11995,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagDenylistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
+	resp, err := client.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12691,33 +12029,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoletagDenylistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12733,22 +12057,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyIdentityAccesslistRequest := *openapiclient.NewAwsTidyIdentityAccesslistRequest() // AwsTidyIdentityAccesslistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsTidyIdentityAccesslistRequest := NewAwsTidyIdentityAccesslistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background(), awsTidyIdentityAccesslistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12758,28 +12093,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyIdentityAccesslistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyIdentityAccesslistRequest** | [**AwsTidyIdentityAccesslistRequest**](AwsTidyIdentityAccesslistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12795,22 +12116,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyIdentityWhitelistRequest := *openapiclient.NewAwsTidyIdentityWhitelistRequest() // AwsTidyIdentityWhitelistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsTidyIdentityWhitelistRequest := NewAwsTidyIdentityWhitelistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background(), awsTidyIdentityWhitelistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12820,28 +12152,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyIdentityWhitelistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyIdentityWhitelistRequest** | [**AwsTidyIdentityWhitelistRequest**](AwsTidyIdentityWhitelistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12857,22 +12175,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyRoletagBlacklistRequest := *openapiclient.NewAwsTidyRoletagBlacklistRequest() // AwsTidyRoletagBlacklistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsTidyRoletagBlacklistRequest := NewAwsTidyRoletagBlacklistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background(), awsTidyRoletagBlacklistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12882,28 +12211,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyRoletagBlacklistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyRoletagBlacklistRequest** | [**AwsTidyRoletagBlacklistRequest**](AwsTidyRoletagBlacklistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12919,22 +12234,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyRoletagDenylistRequest := *openapiclient.NewAwsTidyRoletagDenylistRequest() // AwsTidyRoletagDenylistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	awsTidyRoletagDenylistRequest := NewAwsTidyRoletagDenylistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(context.Background(), awsTidyRoletagDenylistRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12944,28 +12270,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyRoletagDenylistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyRoletagDenylistRequest** | [**AwsTidyRoletagDenylistRequest**](AwsTidyRoletagDenylistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12981,22 +12293,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	azureConfigRequest := NewAzureConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAzureConfig(context.Background(), azureConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13006,28 +12329,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAzureConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **azureConfigRequest** | [**AzureConfigRequest**](AzureConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13043,22 +12352,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    azureLoginRequest := *openapiclient.NewAzureLoginRequest() // AzureLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	azureLoginRequest := NewAzureLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAzureLogin(context.Background(), azureLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13068,28 +12388,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAzureLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **azureLoginRequest** | [**AzureLoginRequest**](AzureLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13105,23 +12411,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    azureRoleRequest := *openapiclient.NewAzureRoleRequest() // AzureRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	azureRoleRequest := NewAzureRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAzureRoleName(context.Background(), name, azureRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13130,12 +12447,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAzureRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13143,21 +12458,9 @@ Name | Type | Description  | Notes
 
  **azureRoleRequest** | [**AzureRoleRequest**](AzureRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13173,22 +12476,33 @@ This path allows you to configure the centrify auth provider to interact with th
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    centrifyConfigRequest := *openapiclient.NewCentrifyConfigRequest() // CentrifyConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	centrifyConfigRequest := NewCentrifyConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCentrifyConfig(context.Background(), centrifyConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13198,28 +12512,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCentrifyConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **centrifyConfigRequest** | [**CentrifyConfigRequest**](CentrifyConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13235,22 +12535,33 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    centrifyLoginRequest := *openapiclient.NewCentrifyLoginRequest() // CentrifyLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	centrifyLoginRequest := NewCentrifyLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCentrifyLogin(context.Background(), centrifyLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13260,28 +12571,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCentrifyLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **centrifyLoginRequest** | [**CentrifyLoginRequest**](CentrifyLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13297,23 +12594,34 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
-    certCertsRequest := *openapiclient.NewCertCertsRequest() // CertCertsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCertsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the certificate
+	
+	certCertsRequest := NewCertCertsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertCertsName(context.Background(), name, certCertsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13322,12 +12630,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthCertCertsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13335,21 +12641,9 @@ Name | Type | Description  | Notes
 
  **certCertsRequest** | [**CertCertsRequest**](CertCertsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13365,22 +12659,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certConfigRequest := *openapiclient.NewCertConfigRequest() // CertConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	certConfigRequest := NewCertConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertConfig(context.Background(), certConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13390,28 +12695,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCertConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **certConfigRequest** | [**CertConfigRequest**](CertConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13427,23 +12718,34 @@ Manage Certificate Revocation Lists checked during authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
-    certCrlsRequest := *openapiclient.NewCertCrlsRequest() // CertCrlsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCrlsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the certificate
+	
+	certCrlsRequest := NewCertCrlsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertCrlsName(context.Background(), name, certCrlsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13452,12 +12754,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthCertCrlsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13465,21 +12765,9 @@ Name | Type | Description  | Notes
 
  **certCrlsRequest** | [**CertCrlsRequest**](CertCrlsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13495,22 +12783,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certLoginRequest := *openapiclient.NewCertLoginRequest() // CertLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	certLoginRequest := NewCertLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertLogin(context.Background(), certLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13520,28 +12819,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCertLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **certLoginRequest** | [**CertLoginRequest**](CertLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13557,22 +12842,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    cfConfigRequest := *openapiclient.NewCfConfigRequest() // CfConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	cfConfigRequest := NewCfConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCfConfig(context.Background(), cfConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13582,28 +12878,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCfConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cfConfigRequest** | [**CfConfigRequest**](CfConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13619,22 +12901,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    cfLoginRequest := *openapiclient.NewCfLoginRequest("CfInstanceCert_example", "Role_example", "Signature_example", "SigningTime_example") // CfLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	cfLoginRequest := NewCfLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCfLogin(context.Background(), cfLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13644,28 +12937,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCfLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cfLoginRequest** | [**CfLoginRequest**](CfLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13681,23 +12960,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role.
-    cfRolesRequest := *openapiclient.NewCfRolesRequest() // CfRolesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | The name of the role.
+	
+	cfRolesRequest := NewCfRolesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCfRolesRole(context.Background(), role, cfRolesRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13706,12 +12996,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthCfRolesRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13719,21 +13007,9 @@ Name | Type | Description  | Notes
 
  **cfRolesRequest** | [**CfRolesRequest**](CfRolesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13749,22 +13025,33 @@ Configure credentials used to query the GCP IAM API to verify authenticating ser
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	gcpConfigRequest := NewGcpConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpConfig(context.Background(), gcpConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13774,28 +13061,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGcpConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gcpConfigRequest** | [**GcpConfigRequest**](GcpConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13811,22 +13084,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    gcpLoginRequest := *openapiclient.NewGcpLoginRequest() // GcpLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	gcpLoginRequest := NewGcpLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpLogin(context.Background(), gcpLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13836,28 +13120,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGcpLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gcpLoginRequest** | [**GcpLoginRequest**](GcpLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13873,23 +13143,34 @@ Create a GCP role with associated policies and required attributes.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    gcpRoleRequest := *openapiclient.NewGcpRoleRequest() // GcpRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	gcpRoleRequest := NewGcpRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpRoleName(context.Background(), name, gcpRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13898,12 +13179,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGcpRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13911,21 +13190,9 @@ Name | Type | Description  | Notes
 
  **gcpRoleRequest** | [**GcpRoleRequest**](GcpRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13941,23 +13208,34 @@ Add or remove labels for an existing 'gce' role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    gcpRoleLabelsRequest := *openapiclient.NewGcpRoleLabelsRequest() // GcpRoleLabelsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameLabels``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	gcpRoleLabelsRequest := NewGcpRoleLabelsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpRoleNameLabels(context.Background(), name, gcpRoleLabelsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13966,12 +13244,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGcpRoleNameLabelsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13979,21 +13255,9 @@ Name | Type | Description  | Notes
 
  **gcpRoleLabelsRequest** | [**GcpRoleLabelsRequest**](GcpRoleLabelsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14009,23 +13273,34 @@ Add or remove service accounts for an existing `iam` role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    gcpRoleServiceAccountsRequest := *openapiclient.NewGcpRoleServiceAccountsRequest() // GcpRoleServiceAccountsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameServiceAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	gcpRoleServiceAccountsRequest := NewGcpRoleServiceAccountsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name, gcpRoleServiceAccountsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14034,12 +13309,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGcpRoleNameServiceAccountsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14047,21 +13320,9 @@ Name | Type | Description  | Notes
 
  **gcpRoleServiceAccountsRequest** | [**GcpRoleServiceAccountsRequest**](GcpRoleServiceAccountsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14077,22 +13338,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    githubConfigRequest := *openapiclient.NewGithubConfigRequest("Organization_example") // GithubConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	githubConfigRequest := NewGithubConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubConfig(context.Background(), githubConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14102,28 +13374,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGithubConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **githubConfigRequest** | [**GithubConfigRequest**](GithubConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14139,22 +13397,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    githubLoginRequest := *openapiclient.NewGithubLoginRequest() // GithubLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	githubLoginRequest := NewGithubLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubLogin(context.Background(), githubLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14164,28 +13433,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGithubLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **githubLoginRequest** | [**GithubLoginRequest**](GithubLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14201,23 +13456,34 @@ Read/write/delete a single teams mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the teams mapping
-    githubMapTeamsRequest := *openapiclient.NewGithubMapTeamsRequest() // GithubMapTeamsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapTeamsKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the teams mapping
+	
+	githubMapTeamsRequest := NewGithubMapTeamsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubMapTeamsKey(context.Background(), key, githubMapTeamsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14226,12 +13492,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGithubMapTeamsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14239,21 +13503,9 @@ Name | Type | Description  | Notes
 
  **githubMapTeamsRequest** | [**GithubMapTeamsRequest**](GithubMapTeamsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14269,23 +13521,34 @@ Read/write/delete a single users mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the users mapping
-    githubMapUsersRequest := *openapiclient.NewGithubMapUsersRequest() // GithubMapUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapUsersKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	key :=  // string | Key for the users mapping
+	
+	githubMapUsersRequest := NewGithubMapUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubMapUsersKey(context.Background(), key, githubMapUsersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14294,12 +13557,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGithubMapUsersKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14307,21 +13568,9 @@ Name | Type | Description  | Notes
 
  **githubMapUsersRequest** | [**GithubMapUsersRequest**](GithubMapUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14339,22 +13588,33 @@ Configure the JWT authentication backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtConfigRequest := *openapiclient.NewJwtConfigRequest() // JwtConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	jwtConfigRequest := NewJwtConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtConfig(context.Background(), jwtConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14364,28 +13624,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtConfigRequest** | [**JwtConfigRequest**](JwtConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14401,22 +13647,33 @@ Authenticates to Vault using a JWT (or OIDC) token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtLoginRequest := *openapiclient.NewJwtLoginRequest() // JwtLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	jwtLoginRequest := NewJwtLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtLogin(context.Background(), jwtLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14426,28 +13683,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtLoginRequest** | [**JwtLoginRequest**](JwtLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14463,22 +13706,33 @@ Request an authorization URL to start an OIDC login flow.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtOidcAuthUrlRequest := *openapiclient.NewJwtOidcAuthUrlRequest() // JwtOidcAuthUrlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcAuthUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	jwtOidcAuthUrlRequest := NewJwtOidcAuthUrlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtOidcAuthUrl(context.Background(), jwtOidcAuthUrlRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14488,28 +13742,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtOidcAuthUrlRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtOidcAuthUrlRequest** | [**JwtOidcAuthUrlRequest**](JwtOidcAuthUrlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14525,22 +13765,33 @@ Callback endpoint to handle form_posts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtOidcCallbackRequest := *openapiclient.NewJwtOidcCallbackRequest() // JwtOidcCallbackRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	jwtOidcCallbackRequest := NewJwtOidcCallbackRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtOidcCallback(context.Background(), jwtOidcCallbackRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14550,28 +13801,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtOidcCallbackRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtOidcCallbackRequest** | [**JwtOidcCallbackRequest**](JwtOidcCallbackRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14589,23 +13826,34 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    jwtRoleRequest := *openapiclient.NewJwtRoleRequest() // JwtRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	jwtRoleRequest := NewJwtRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtRoleName(context.Background(), name, jwtRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14614,12 +13862,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthJwtRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14627,21 +13873,9 @@ Name | Type | Description  | Notes
 
  **jwtRoleRequest** | [**JwtRoleRequest**](JwtRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14657,22 +13891,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kerberosConfigRequest := *openapiclient.NewKerberosConfigRequest() // KerberosConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	kerberosConfigRequest := NewKerberosConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosConfig(context.Background(), kerberosConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14682,28 +13927,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKerberosConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kerberosConfigRequest** | [**KerberosConfigRequest**](KerberosConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14719,22 +13950,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kerberosConfigLdapRequest := *openapiclient.NewKerberosConfigLdapRequest() // KerberosConfigLdapRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfigLdap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	kerberosConfigLdapRequest := NewKerberosConfigLdapRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosConfigLdap(context.Background(), kerberosConfigLdapRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14744,28 +13986,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKerberosConfigLdapRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kerberosConfigLdapRequest** | [**KerberosConfigLdapRequest**](KerberosConfigLdapRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14781,23 +14009,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
-    kerberosGroupsRequest := *openapiclient.NewKerberosGroupsRequest() // KerberosGroupsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP group.
+	
+	kerberosGroupsRequest := NewKerberosGroupsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosGroupsName(context.Background(), name, kerberosGroupsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14806,12 +14045,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthKerberosGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14819,21 +14056,9 @@ Name | Type | Description  | Notes
 
  **kerberosGroupsRequest** | [**KerberosGroupsRequest**](KerberosGroupsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14849,22 +14074,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kerberosLoginRequest := *openapiclient.NewKerberosLoginRequest() // KerberosLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	kerberosLoginRequest := NewKerberosLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosLogin(context.Background(), kerberosLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14874,28 +14110,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKerberosLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kerberosLoginRequest** | [**KerberosLoginRequest**](KerberosLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14911,22 +14133,33 @@ Configures the JWT Public Key and Kubernetes API information.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	kubernetesConfigRequest := NewKubernetesConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKubernetesConfig(context.Background(), kubernetesConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14936,28 +14169,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKubernetesConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kubernetesConfigRequest** | [**KubernetesConfigRequest**](KubernetesConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14973,22 +14192,33 @@ Authenticates Kubernetes service accounts with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kubernetesLoginRequest := *openapiclient.NewKubernetesLoginRequest() // KubernetesLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	kubernetesLoginRequest := NewKubernetesLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKubernetesLogin(context.Background(), kubernetesLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14998,28 +14228,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKubernetesLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kubernetesLoginRequest** | [**KubernetesLoginRequest**](KubernetesLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15035,23 +14251,34 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    kubernetesRoleRequest := *openapiclient.NewKubernetesRoleRequest() // KubernetesRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	kubernetesRoleRequest := NewKubernetesRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKubernetesRoleName(context.Background(), name, kubernetesRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15060,12 +14287,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthKubernetesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15073,21 +14298,9 @@ Name | Type | Description  | Notes
 
  **kubernetesRoleRequest** | [**KubernetesRoleRequest**](KubernetesRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15103,22 +14316,33 @@ Configure the LDAP server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    ldapConfigRequest := *openapiclient.NewLdapConfigRequest() // LdapConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	ldapConfigRequest := NewLdapConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapConfig(context.Background(), ldapConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15128,28 +14352,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthLdapConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ldapConfigRequest** | [**LdapConfigRequest**](LdapConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15165,23 +14375,34 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
-    ldapGroupsRequest := *openapiclient.NewLdapGroupsRequest() // LdapGroupsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP group.
+	
+	ldapGroupsRequest := NewLdapGroupsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapGroupsName(context.Background(), name, ldapGroupsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15190,12 +14411,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15203,21 +14422,9 @@ Name | Type | Description  | Notes
 
  **ldapGroupsRequest** | [**LdapGroupsRequest**](LdapGroupsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15233,23 +14440,34 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | DN (distinguished name) to be used for login.
-    ldapLoginRequest := *openapiclient.NewLdapLoginRequest() // LdapLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapLoginUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | DN (distinguished name) to be used for login.
+	
+	ldapLoginRequest := NewLdapLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapLoginUsername(context.Background(), username, ldapLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15258,12 +14476,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | DN (distinguished name) to be used for login. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapLoginUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15271,21 +14487,9 @@ Name | Type | Description  | Notes
 
  **ldapLoginRequest** | [**LdapLoginRequest**](LdapLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15301,23 +14505,34 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP user.
-    ldapUsersRequest := *openapiclient.NewLdapUsersRequest() // LdapUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the LDAP user.
+	
+	ldapUsersRequest := NewLdapUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapUsersName(context.Background(), name, ldapUsersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15326,12 +14541,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15339,21 +14552,9 @@ Name | Type | Description  | Notes
 
  **ldapUsersRequest** | [**LdapUsersRequest**](LdapUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15369,22 +14570,33 @@ Manages the configuration for the Vault Auth Plugin.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    ociConfigRequest := *openapiclient.NewOciConfigRequest() // OciConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	ociConfigRequest := NewOciConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOciConfig(context.Background(), ociConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15394,28 +14606,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOciConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ociConfigRequest** | [**OciConfigRequest**](OciConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15431,23 +14629,34 @@ Authenticates to Vault using OCI credentials
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    ociLoginRequest := *openapiclient.NewOciLoginRequest() // OciLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciLoginRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	ociLoginRequest := NewOciLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOciLoginRole(context.Background(), role, ociLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15456,12 +14665,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOciLoginRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15469,21 +14676,9 @@ Name | Type | Description  | Notes
 
  **ociLoginRequest** | [**OciLoginRequest**](OciLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15499,23 +14694,34 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    ociRoleRequest := *openapiclient.NewOciRoleRequest() // OciRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	role :=  // string | Name of the role.
+	
+	ociRoleRequest := NewOciRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOciRoleRole(context.Background(), role, ociRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15524,12 +14730,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOciRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15537,21 +14741,9 @@ Name | Type | Description  | Notes
 
  **ociRoleRequest** | [**OciRoleRequest**](OciRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15569,22 +14761,33 @@ Configure the JWT authentication backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcConfigRequest := *openapiclient.NewOidcConfigRequest() // OidcConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	oidcConfigRequest := NewOidcConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcConfig(context.Background(), oidcConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15594,28 +14797,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcConfigRequest** | [**OidcConfigRequest**](OidcConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15631,22 +14820,33 @@ Authenticates to Vault using a JWT (or OIDC) token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcLoginRequest := *openapiclient.NewOidcLoginRequest() // OidcLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	oidcLoginRequest := NewOidcLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcLogin(context.Background(), oidcLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15656,28 +14856,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcLoginRequest** | [**OidcLoginRequest**](OidcLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15693,22 +14879,33 @@ Request an authorization URL to start an OIDC login flow.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcOidcAuthUrlRequest := *openapiclient.NewOidcOidcAuthUrlRequest() // OidcOidcAuthUrlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcAuthUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	oidcOidcAuthUrlRequest := NewOidcOidcAuthUrlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcOidcAuthUrl(context.Background(), oidcOidcAuthUrlRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15718,28 +14915,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcOidcAuthUrlRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcOidcAuthUrlRequest** | [**OidcOidcAuthUrlRequest**](OidcOidcAuthUrlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15755,22 +14938,33 @@ Callback endpoint to handle form_posts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcOidcCallbackRequest := *openapiclient.NewOidcOidcCallbackRequest() // OidcOidcCallbackRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	oidcOidcCallbackRequest := NewOidcOidcCallbackRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcOidcCallback(context.Background(), oidcOidcCallbackRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15780,28 +14974,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcOidcCallbackRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcOidcCallbackRequest** | [**OidcOidcCallbackRequest**](OidcOidcCallbackRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15819,23 +14999,34 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    oidcRoleRequest := *openapiclient.NewOidcRoleRequest() // OidcRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role.
+	
+	oidcRoleRequest := NewOidcRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcRoleName(context.Background(), name, oidcRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15844,12 +15035,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15857,21 +15046,9 @@ Name | Type | Description  | Notes
 
  **oidcRoleRequest** | [**OidcRoleRequest**](OidcRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15887,22 +15064,33 @@ This endpoint allows you to configure the Okta and its configuration options.  T
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oktaConfigRequest := *openapiclient.NewOktaConfigRequest() // OktaConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	oktaConfigRequest := NewOktaConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaConfig(context.Background(), oktaConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15912,28 +15100,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOktaConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oktaConfigRequest** | [**OktaConfigRequest**](OktaConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15949,23 +15123,34 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the Okta group.
-    oktaGroupsRequest := *openapiclient.NewOktaGroupsRequest() // OktaGroupsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the Okta group.
+	
+	oktaGroupsRequest := NewOktaGroupsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaGroupsName(context.Background(), name, oktaGroupsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15974,12 +15159,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15987,21 +15170,9 @@ Name | Type | Description  | Notes
 
  **oktaGroupsRequest** | [**OktaGroupsRequest**](OktaGroupsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16017,23 +15188,34 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username to be used for login.
-    oktaLoginRequest := *openapiclient.NewOktaLoginRequest() // OktaLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaLoginUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | Username to be used for login.
+	
+	oktaLoginRequest := NewOktaLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaLoginUsername(context.Background(), username, oktaLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16042,12 +15224,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username to be used for login. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaLoginUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16055,21 +15235,9 @@ Name | Type | Description  | Notes
 
  **oktaLoginRequest** | [**OktaLoginRequest**](OktaLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16085,23 +15253,34 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the user.
-    oktaUsersRequest := *openapiclient.NewOktaUsersRequest() // OktaUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the user.
+	
+	oktaUsersRequest := NewOktaUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaUsersName(context.Background(), name, oktaUsersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16110,12 +15289,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16123,21 +15300,9 @@ Name | Type | Description  | Notes
 
  **oktaUsersRequest** | [**OktaUsersRequest**](OktaUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16153,22 +15318,33 @@ Configure the RADIUS server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    radiusConfigRequest := *openapiclient.NewRadiusConfigRequest() // RadiusConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	radiusConfigRequest := NewRadiusConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusConfig(context.Background(), radiusConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16178,28 +15354,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthRadiusConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **radiusConfigRequest** | [**RadiusConfigRequest**](RadiusConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16215,22 +15377,33 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusLogin(context.Background(), radiusLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16240,28 +15413,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthRadiusLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **radiusLoginRequest** | [**RadiusLoginRequest**](RadiusLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16277,23 +15436,34 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLoginUrlusername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	urlusername :=  // string | Username to be used for login. (URL parameter)
+	
+	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername, radiusLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16302,12 +15472,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlusername** | **string** | Username to be used for login. (URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthRadiusLoginUrlusernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16315,21 +15483,9 @@ Name | Type | Description  | Notes
 
  **radiusLoginRequest** | [**RadiusLoginRequest**](RadiusLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16345,23 +15501,34 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the RADIUS user.
-    radiusUsersRequest := *openapiclient.NewRadiusUsersRequest() // RadiusUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the RADIUS user.
+	
+	radiusUsersRequest := NewRadiusUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusUsersName(context.Background(), name, radiusUsersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16370,12 +15537,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthRadiusUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16383,21 +15548,9 @@ Name | Type | Description  | Notes
 
  **radiusUsersRequest** | [**RadiusUsersRequest**](RadiusUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16413,48 +15566,45 @@ The token create path is used to create new tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenCreate(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.PostAuthTokenCreate(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenCreateRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16470,48 +15620,45 @@ The token create path is used to create new orphan tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenCreateOrphan(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateOrphan``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.PostAuthTokenCreateOrphan(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenCreateOrphanRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16527,22 +15674,32 @@ This token create path is used to create new tokens adhering to the given role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role
+	
+	resp, err := client.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16551,33 +15708,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthTokenCreateRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16593,22 +15736,33 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenLookupRequest := *openapiclient.NewTokenLookupRequest() // TokenLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenLookupRequest := NewTokenLookupRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenLookup(context.Background(), tokenLookupRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16618,28 +15772,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenLookupRequest** | [**TokenLookupRequest**](TokenLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16655,22 +15795,33 @@ This endpoint will lookup a token associated with the given accessor and its pro
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenLookupAccessorRequest := *openapiclient.NewTokenLookupAccessorRequest() // TokenLookupAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupAccessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenLookupAccessorRequest := NewTokenLookupAccessorRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenLookupAccessor(context.Background(), tokenLookupAccessorRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16680,28 +15831,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenLookupAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenLookupAccessorRequest** | [**TokenLookupAccessorRequest**](TokenLookupAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16717,22 +15854,33 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenLookupSelfRequest := *openapiclient.NewTokenLookupSelfRequest() // TokenLookupSelfRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenLookupSelfRequest := NewTokenLookupSelfRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenLookupSelf(context.Background(), tokenLookupSelfRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16742,28 +15890,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenLookupSelfRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenLookupSelfRequest** | [**TokenLookupSelfRequest**](TokenLookupSelfRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16779,22 +15913,33 @@ This endpoint will renew the given token and prevent expiration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRenewRequest := *openapiclient.NewTokenRenewRequest() // TokenRenewRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenew``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenRenewRequest := NewTokenRenewRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRenew(context.Background(), tokenRenewRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16804,28 +15949,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRenewRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRenewRequest** | [**TokenRenewRequest**](TokenRenewRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16841,22 +15972,33 @@ This endpoint will renew a token associated with the given accessor and its prop
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRenewAccessorRequest := *openapiclient.NewTokenRenewAccessorRequest() // TokenRenewAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewAccessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenRenewAccessorRequest := NewTokenRenewAccessorRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRenewAccessor(context.Background(), tokenRenewAccessorRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16866,28 +16008,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRenewAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRenewAccessorRequest** | [**TokenRenewAccessorRequest**](TokenRenewAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16903,22 +16031,33 @@ This endpoint will renew the token used to call it and prevent expiration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRenewSelfRequest := *openapiclient.NewTokenRenewSelfRequest() // TokenRenewSelfRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenRenewSelfRequest := NewTokenRenewSelfRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRenewSelf(context.Background(), tokenRenewSelfRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16928,28 +16067,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRenewSelfRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRenewSelfRequest** | [**TokenRenewSelfRequest**](TokenRenewSelfRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16965,22 +16090,33 @@ This endpoint will delete the given token and all of its child tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRevokeRequest := *openapiclient.NewTokenRevokeRequest() // TokenRevokeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevoke``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenRevokeRequest := NewTokenRevokeRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRevoke(context.Background(), tokenRevokeRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16990,28 +16126,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRevokeRequest** | [**TokenRevokeRequest**](TokenRevokeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17027,22 +16149,33 @@ This endpoint will delete the token associated with the accessor and all of its 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRevokeAccessorRequest := *openapiclient.NewTokenRevokeAccessorRequest() // TokenRevokeAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeAccessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenRevokeAccessorRequest := NewTokenRevokeAccessorRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRevokeAccessor(context.Background(), tokenRevokeAccessorRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17052,28 +16185,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRevokeAccessorRequest** | [**TokenRevokeAccessorRequest**](TokenRevokeAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17089,22 +16208,33 @@ This endpoint will delete the token and orphan its child tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRevokeOrphanRequest := *openapiclient.NewTokenRevokeOrphanRequest() // TokenRevokeOrphanRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeOrphan``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	tokenRevokeOrphanRequest := NewTokenRevokeOrphanRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRevokeOrphan(context.Background(), tokenRevokeOrphanRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17114,28 +16244,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeOrphanRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRevokeOrphanRequest** | [**TokenRevokeOrphanRequest**](TokenRevokeOrphanRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17151,48 +16267,45 @@ This endpoint will delete the token used to call it and all of its child tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevokeSelf(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.PostAuthTokenRevokeSelf(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeSelfRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17208,23 +16321,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role
-    tokenRolesRequest := *openapiclient.NewTokenRolesRequest() // TokenRolesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRolesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	roleName :=  // string | Name of the role
+	
+	tokenRolesRequest := NewTokenRolesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName, tokenRolesRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17233,12 +16357,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthTokenRolesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17246,21 +16368,9 @@ Name | Type | Description  | Notes
 
  **tokenRolesRequest** | [**TokenRolesRequest**](TokenRolesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17276,48 +16386,45 @@ This endpoint performs cleanup tasks that can be run if certain error conditions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenTidy(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenTidy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Auth.PostAuthTokenTidy(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenTidyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17333,23 +16440,34 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username of the user.
-    userpassLoginRequest := *openapiclient.NewUserpassLoginRequest() // UserpassLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassLoginUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | Username of the user.
+	
+	userpassLoginRequest := NewUserpassLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassLoginUsername(context.Background(), username, userpassLoginRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17358,12 +16476,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassLoginUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17371,21 +16487,9 @@ Name | Type | Description  | Notes
 
  **userpassLoginRequest** | [**UserpassLoginRequest**](UserpassLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17401,23 +16505,34 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
-    userpassUsersRequest := *openapiclient.NewUserpassUsersRequest() // UserpassUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | Username for this user.
+	
+	userpassUsersRequest := NewUserpassUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassUsersUsername(context.Background(), username, userpassUsersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17426,12 +16541,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassUsersUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17439,21 +16552,9 @@ Name | Type | Description  | Notes
 
  **userpassUsersRequest** | [**UserpassUsersRequest**](UserpassUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17469,23 +16570,34 @@ Reset user's password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
-    userpassUsersPasswordRequest := *openapiclient.NewUserpassUsersPasswordRequest() // UserpassUsersPasswordRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePassword``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | Username for this user.
+	
+	userpassUsersPasswordRequest := NewUserpassUsersPasswordRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username, userpassUsersPasswordRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17494,12 +16606,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassUsersUsernamePasswordRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17507,21 +16617,9 @@ Name | Type | Description  | Notes
 
  **userpassUsersPasswordRequest** | [**UserpassUsersPasswordRequest**](UserpassUsersPasswordRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17537,23 +16635,34 @@ Update the policies associated with the username.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
-    userpassUsersPoliciesRequest := *openapiclient.NewUserpassUsersPoliciesRequest() // UserpassUsersPoliciesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	username :=  // string | Username for this user.
+	
+	userpassUsersPoliciesRequest := NewUserpassUsersPoliciesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username, userpassUsersPoliciesRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17562,12 +16671,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassUsersUsernamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17575,20 +16682,8 @@ Name | Type | Description  | Notes
 
  **userpassUsersPoliciesRequest** | [**UserpassUsersPoliciesRequest**](UserpassUsersPoliciesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 

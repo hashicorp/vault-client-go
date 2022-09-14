@@ -211,24 +211,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysAuditPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -278,24 +273,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysAuthPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -345,24 +335,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysConfigAuditingRequestHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -408,19 +393,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysConfigCorsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -470,24 +451,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** | The name of the header. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysConfigUiHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -533,19 +509,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysGenerateRootRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -591,19 +563,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysGenerateRootAttemptRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -653,24 +621,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -720,24 +683,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPluginsCatalogNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -788,13 +746,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPluginsCatalogTypeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -802,12 +758,9 @@ Name | Type | Description  | Notes
 
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -857,24 +810,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPoliciesAclNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -924,24 +872,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPoliciesPasswordNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -991,24 +934,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPolicyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1058,24 +996,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the quota rule. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysQuotasRateLimitNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1121,19 +1054,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRawRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1183,24 +1112,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysRawPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1246,19 +1170,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1306,19 +1226,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyInitRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1364,19 +1280,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyRecoveryKeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1424,19 +1336,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyVerifyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1482,19 +1390,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysAuditRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1540,19 +1444,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysAuthRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1602,24 +1502,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysAuthPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1671,24 +1566,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | Tune the configuration parameters for an auth path. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysAuthPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1734,19 +1624,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigAuditingRequestHeadersRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1796,24 +1682,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysConfigAuditingRequestHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1859,19 +1740,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigCorsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1919,19 +1796,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigStateSanitizedRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1983,19 +1856,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigUiHeadersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2045,24 +1913,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** | The name of the header. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysConfigUiHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2108,19 +1971,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysGenerateRootRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2166,19 +2025,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysGenerateRootAttemptRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2224,19 +2079,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysHaStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2282,19 +2133,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysHealthRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2342,19 +2189,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysHostInfoRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2402,19 +2245,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInFlightReqRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2460,19 +2299,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInitRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2518,19 +2353,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersActivityRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2576,19 +2407,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersActivityExportRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2634,19 +2461,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersActivityMonthlyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2692,19 +2515,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2750,19 +2569,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersEntitiesRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2808,19 +2623,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersRequestsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2866,19 +2677,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersTokensRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2924,19 +2731,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalSpecsOpenapiRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2982,19 +2785,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiFeatureFlagsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3040,19 +2839,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiMountsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3102,24 +2897,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path of the mount. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysInternalUiMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3165,19 +2955,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiNamespacesRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3223,19 +3009,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiResultantAclRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3281,19 +3063,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysKeyStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3339,19 +3117,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeaderRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3397,19 +3171,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeasesRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3455,19 +3225,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeasesCountRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3519,19 +3285,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeasesLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3583,12 +3344,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to list leases under. Example: \&quot;aws/creds/deploy\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysLeasesLookupPrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3596,12 +3355,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3653,19 +3409,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysMetricsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3719,20 +3470,15 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysMonitorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
  **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3778,19 +3524,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysMountsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3840,24 +3582,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3907,24 +3644,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysMountsPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3970,19 +3702,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4032,24 +3760,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4101,12 +3824,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogTypeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4114,12 +3835,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4170,13 +3888,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogTypeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4184,12 +3900,9 @@ Name | Type | Description  | Notes
 
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4241,19 +3954,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPoliciesAclRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4303,24 +4011,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPoliciesAclNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4372,19 +4075,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPoliciesPasswordRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4434,24 +4132,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPoliciesPasswordNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4501,24 +4194,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPoliciesPasswordNameGenerateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4570,19 +4258,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPolicyRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4632,24 +4315,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPolicyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4697,19 +4375,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4757,19 +4431,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofAllocsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4817,19 +4487,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofBlockRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4877,19 +4543,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofCmdlineRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4937,19 +4599,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofGoroutineRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4997,19 +4655,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofHeapRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5057,19 +4711,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofMutexRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5117,19 +4767,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofProfileRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5177,19 +4823,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofSymbolRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5237,19 +4879,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofThreadcreateRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5297,19 +4935,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofTraceRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5355,19 +4989,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysQuotasConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5419,19 +5049,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysQuotasRateLimitRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5481,24 +5106,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the quota rule. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysQuotasRateLimitNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5550,19 +5170,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRawRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5614,12 +5229,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysRawPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5627,12 +5240,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5678,19 +5288,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5736,19 +5342,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyInitRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5794,19 +5396,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyRecoveryKeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5852,19 +5450,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyVerifyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5914,24 +5508,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **migrationId** | **string** | The ID of the migration operation | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysRemountStatusMigrationIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5977,19 +5566,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysReplicationStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6035,19 +5620,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRotateConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6093,19 +5674,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysSealStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6157,19 +5734,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysVersionHistoryRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6215,19 +5787,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysWrappingLookupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6279,12 +5847,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuditHashPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6292,12 +5858,9 @@ Name | Type | Description  | Notes
 
  **systemAuditHashRequest** | [**SystemAuditHashRequest**](SystemAuditHashRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6349,12 +5912,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuditPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6362,12 +5923,9 @@ Name | Type | Description  | Notes
 
  **systemAuditRequest** | [**SystemAuditRequest**](SystemAuditRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6421,12 +5979,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuthPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6434,12 +5990,9 @@ Name | Type | Description  | Notes
 
  **systemAuthRequest** | [**SystemAuthRequest**](SystemAuthRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6493,12 +6046,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | Tune the configuration parameters for an auth path. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuthPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6506,12 +6057,9 @@ Name | Type | Description  | Notes
 
  **systemAuthTuneRequest** | [**SystemAuthTuneRequest**](SystemAuthTuneRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6563,19 +6111,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysCapabilitiesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemCapabilitiesRequest** | [**SystemCapabilitiesRequest**](SystemCapabilitiesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6627,19 +6170,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysCapabilitiesAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemCapabilitiesAccessorRequest** | [**SystemCapabilitiesAccessorRequest**](SystemCapabilitiesAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6691,19 +6229,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysCapabilitiesSelfRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemCapabilitiesSelfRequest** | [**SystemCapabilitiesSelfRequest**](SystemCapabilitiesSelfRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6755,12 +6288,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysConfigAuditingRequestHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6768,12 +6299,9 @@ Name | Type | Description  | Notes
 
  **systemConfigAuditingRequestHeadersRequest** | [**SystemConfigAuditingRequestHeadersRequest**](SystemConfigAuditingRequestHeadersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6825,19 +6353,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysConfigCorsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemConfigCorsRequest** | [**SystemConfigCorsRequest**](SystemConfigCorsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6887,24 +6410,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **subsystem** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysConfigReloadSubsystemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6956,12 +6474,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** | The name of the header. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysConfigUiHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6969,12 +6485,9 @@ Name | Type | Description  | Notes
 
  **systemConfigUiHeadersRequest** | [**SystemConfigUiHeadersRequest**](SystemConfigUiHeadersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7028,19 +6541,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysGenerateRootRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemGenerateRootRequest** | [**SystemGenerateRootRequest**](SystemGenerateRootRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7094,19 +6602,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysGenerateRootAttemptRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemGenerateRootAttemptRequest** | [**SystemGenerateRootAttemptRequest**](SystemGenerateRootAttemptRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7160,19 +6663,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysGenerateRootUpdateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemGenerateRootUpdateRequest** | [**SystemGenerateRootUpdateRequest**](SystemGenerateRootUpdateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7226,19 +6724,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysInitRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemInitRequest** | [**SystemInitRequest**](SystemInitRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7290,19 +6783,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysInternalCountersConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemInternalCountersConfigRequest** | [**SystemInternalCountersConfigRequest**](SystemInternalCountersConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7354,19 +6842,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemLeasesLookupRequest** | [**SystemLeasesLookupRequest**](SystemLeasesLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7418,19 +6901,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesRenewRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemLeasesRenewRequest** | [**SystemLeasesRenewRequest**](SystemLeasesRenewRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7482,12 +6960,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRenewUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7495,12 +6971,9 @@ Name | Type | Description  | Notes
 
  **systemLeasesRenewLeaseRequest** | [**SystemLeasesRenewLeaseRequest**](SystemLeasesRenewLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7552,19 +7025,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemLeasesRevokeRequest** | [**SystemLeasesRevokeRequest**](SystemLeasesRevokeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7616,24 +7084,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokeForcePrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7685,12 +7148,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokePrefixPrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7698,12 +7159,9 @@ Name | Type | Description  | Notes
 
  **systemLeasesRevokePrefixRequest** | [**SystemLeasesRevokePrefixRequest**](SystemLeasesRevokePrefixRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7755,12 +7213,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokeUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7768,12 +7224,9 @@ Name | Type | Description  | Notes
 
  **systemLeasesRevokeLeaseRequest** | [**SystemLeasesRevokeLeaseRequest**](SystemLeasesRevokeLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7819,19 +7272,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesTidyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7883,19 +7332,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysMfaValidateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemMfaValidateRequest** | [**SystemMfaValidateRequest**](SystemMfaValidateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7947,12 +7391,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7960,12 +7402,9 @@ Name | Type | Description  | Notes
 
  **systemMountsRequest** | [**SystemMountsRequest**](SystemMountsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8017,12 +7456,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysMountsPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8030,12 +7467,9 @@ Name | Type | Description  | Notes
 
  **systemMountsTuneRequest** | [**SystemMountsTuneRequest**](SystemMountsTuneRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8087,12 +7521,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPluginsCatalogNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8100,12 +7532,9 @@ Name | Type | Description  | Notes
 
  **systemPluginsCatalogRequest** | [**SystemPluginsCatalogRequest**](SystemPluginsCatalogRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8158,13 +7587,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPluginsCatalogTypeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8173,12 +7600,9 @@ Name | Type | Description  | Notes
 
  **systemPluginsCatalogRequest** | [**SystemPluginsCatalogRequest**](SystemPluginsCatalogRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8232,19 +7656,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysPluginsReloadBackendRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemPluginsReloadBackendRequest** | [**SystemPluginsReloadBackendRequest**](SystemPluginsReloadBackendRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8296,12 +7715,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPoliciesAclNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8309,12 +7726,9 @@ Name | Type | Description  | Notes
 
  **systemPoliciesAclRequest** | [**SystemPoliciesAclRequest**](SystemPoliciesAclRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8366,12 +7780,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPoliciesPasswordNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8379,12 +7791,9 @@ Name | Type | Description  | Notes
 
  **systemPoliciesPasswordRequest** | [**SystemPoliciesPasswordRequest**](SystemPoliciesPasswordRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8436,12 +7845,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPolicyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8449,12 +7856,9 @@ Name | Type | Description  | Notes
 
  **systemPolicyRequest** | [**SystemPolicyRequest**](SystemPolicyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8506,19 +7910,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysQuotasConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemQuotasConfigRequest** | [**SystemQuotasConfigRequest**](SystemQuotasConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8570,12 +7969,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the quota rule. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysQuotasRateLimitNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8583,12 +7980,9 @@ Name | Type | Description  | Notes
 
  **systemQuotasRateLimitRequest** | [**SystemQuotasRateLimitRequest**](SystemQuotasRateLimitRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8640,19 +8034,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRawRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRawRequest** | [**SystemRawRequest**](SystemRawRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8704,12 +8093,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRawPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8717,12 +8104,9 @@ Name | Type | Description  | Notes
 
  **systemRawRequest** | [**SystemRawRequest**](SystemRawRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8776,19 +8160,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRekeyInitRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRekeyInitRequest** | [**SystemRekeyInitRequest**](SystemRekeyInitRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8840,19 +8219,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRekeyUpdateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRekeyUpdateRequest** | [**SystemRekeyUpdateRequest**](SystemRekeyUpdateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8904,19 +8278,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRekeyVerifyRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRekeyVerifyRequest** | [**SystemRekeyVerifyRequest**](SystemRekeyVerifyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8968,19 +8337,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRemountRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRemountRequest** | [**SystemRemountRequest**](SystemRemountRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9032,19 +8396,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRenewRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRenewRequest** | [**SystemRenewRequest**](SystemRenewRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9096,12 +8455,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRenewUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9109,12 +8466,9 @@ Name | Type | Description  | Notes
 
  **systemRenewLeaseRequest** | [**SystemRenewLeaseRequest**](SystemRenewLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9166,19 +8520,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRevokeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRevokeRequest** | [**SystemRevokeRequest**](SystemRevokeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9230,24 +8579,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRevokeForcePrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9299,12 +8643,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRevokePrefixPrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9312,12 +8654,9 @@ Name | Type | Description  | Notes
 
  **systemRevokePrefixRequest** | [**SystemRevokePrefixRequest**](SystemRevokePrefixRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9369,12 +8708,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRevokeUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9382,12 +8719,9 @@ Name | Type | Description  | Notes
 
  **systemRevokeLeaseRequest** | [**SystemRevokeLeaseRequest**](SystemRevokeLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9433,19 +8767,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRotateRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9497,19 +8827,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRotateConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRotateConfigRequest** | [**SystemRotateConfigRequest**](SystemRotateConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9555,19 +8880,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysSealRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9615,19 +8936,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysStepDownRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9679,19 +8996,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysToolsHashRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemToolsHashRequest** | [**SystemToolsHashRequest**](SystemToolsHashRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9743,12 +9055,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlalgorithm** | **string** | Algorithm to use (POST URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsHashUrlalgorithmRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9756,12 +9066,9 @@ Name | Type | Description  | Notes
 
  **systemToolsHashRequest** | [**SystemToolsHashRequest**](SystemToolsHashRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9813,19 +9120,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysToolsRandomRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9877,12 +9179,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsRandomSourceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9890,12 +9190,9 @@ Name | Type | Description  | Notes
 
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9948,13 +9245,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
 **urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsRandomSourceUrlbytesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9963,12 +9258,9 @@ Name | Type | Description  | Notes
 
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10020,12 +9312,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsRandomUrlbytesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10033,12 +9323,9 @@ Name | Type | Description  | Notes
 
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10090,19 +9377,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysUnsealRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemUnsealRequest** | [**SystemUnsealRequest**](SystemUnsealRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10154,19 +9436,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemWrappingLookupRequest** | [**SystemWrappingLookupRequest**](SystemWrappingLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10218,19 +9495,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingRewrapRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemWrappingRewrapRequest** | [**SystemWrappingRewrapRequest**](SystemWrappingRewrapRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10282,19 +9554,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingUnwrapRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemWrappingUnwrapRequest** | [**SystemWrappingUnwrapRequest**](SystemWrappingUnwrapRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10340,18 +9607,14 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingWrapRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 

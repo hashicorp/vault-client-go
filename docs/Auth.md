@@ -322,24 +322,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAlicloudRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -389,24 +384,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the app-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAppIdMapAppIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -456,24 +446,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the user-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAppIdMapUserIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -523,24 +508,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -590,24 +570,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameBindSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -657,24 +632,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameBoundCidrListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -724,24 +694,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNamePeriodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -791,24 +756,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -858,24 +818,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -925,24 +880,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -992,24 +942,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1059,24 +1004,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1126,24 +1066,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1193,24 +1128,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1260,24 +1190,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1327,24 +1252,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1394,24 +1314,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthApproleRoleRoleNameTokenTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1461,24 +1376,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigCertificateCertNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1524,19 +1434,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigClientRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1586,24 +1492,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigStsAccountIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1649,19 +1550,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyIdentityAccesslistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1707,19 +1604,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyIdentityWhitelistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1765,19 +1658,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyRoletagBlacklistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1823,19 +1712,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyRoletagDenylistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1885,24 +1770,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsIdentityAccesslistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1952,24 +1832,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsIdentityWhitelistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2019,24 +1894,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2086,24 +1956,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsRoletagBlacklistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2153,24 +2018,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAwsRoletagDenylistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2216,19 +2076,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthAzureConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2278,24 +2134,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthAzureRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2345,24 +2196,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthCertCertsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2412,24 +2258,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthCertCrlsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2475,19 +2316,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthCfConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2537,24 +2374,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthCfRolesRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2604,24 +2436,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthGcpRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2671,24 +2498,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthGithubMapTeamsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2738,24 +2560,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthGithubMapUsersKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2805,24 +2622,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthJwtRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2872,24 +2684,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthKerberosGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2939,24 +2746,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthKubernetesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3006,24 +2808,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthLdapGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3073,24 +2870,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthLdapUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3136,19 +2928,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAuthOciConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3198,24 +2986,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOciRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3265,24 +3048,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3332,24 +3110,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOktaGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3399,24 +3172,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthOktaUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3466,24 +3234,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthRadiusUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3533,24 +3296,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthTokenRolesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3600,24 +3358,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAuthUserpassUsersUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3669,19 +3422,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAlicloudRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3731,24 +3479,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAlicloudRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3800,19 +3543,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAlicloudRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3864,19 +3602,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapAppIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3926,24 +3659,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the app-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapAppIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3995,19 +3723,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapUserIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4057,24 +3780,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the user-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAppIdMapUserIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4126,19 +3844,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4188,24 +3901,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4255,24 +3963,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameBindSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4322,24 +4025,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameBoundCidrListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4389,24 +4087,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameLocalSecretIdsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4456,24 +4149,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNamePeriodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4523,24 +4211,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4590,24 +4273,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameRoleIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4659,12 +4337,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4672,12 +4348,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4727,24 +4400,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4794,24 +4462,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4861,24 +4524,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameSecretIdTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4928,24 +4586,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4995,24 +4648,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenMaxTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5062,24 +4710,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5129,24 +4772,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthApproleRoleRoleNameTokenTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5196,24 +4834,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigCertificateCertNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5265,19 +4898,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigCertificatesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5323,19 +4951,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigClientRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5381,19 +5005,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigIdentityRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5445,19 +5065,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigStsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5507,24 +5122,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigStsAccountIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5570,19 +5180,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyIdentityAccesslistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5628,19 +5234,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyIdentityWhitelistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5686,19 +5288,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyRoletagBlacklistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5744,19 +5342,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyRoletagDenylistRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5808,19 +5402,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityAccesslistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5870,24 +5459,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityAccesslistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5939,19 +5523,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityWhitelistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6001,24 +5580,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsIdentityWhitelistInstanceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6070,19 +5644,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6132,24 +5701,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6201,19 +5765,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6265,19 +5824,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagBlacklistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6327,24 +5881,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagBlacklistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6396,19 +5945,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagDenylistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6458,24 +6002,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAwsRoletagDenylistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6521,19 +6060,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAzureConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6585,19 +6120,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthAzureRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6647,24 +6177,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthAzureRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6710,19 +6235,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCentrifyConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6774,19 +6295,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCertCertsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6836,24 +6352,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthCertCertsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6903,24 +6414,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthCertCrlsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6966,19 +6472,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCfConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7030,19 +6532,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthCfRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7092,24 +6589,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthCfRolesRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7155,19 +6647,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGcpConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7219,19 +6707,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGcpRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7281,24 +6764,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGcpRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7350,19 +6828,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGcpRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7408,19 +6881,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGithubConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7472,19 +6941,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGithubMapTeamsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7534,24 +6998,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGithubMapTeamsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7603,19 +7062,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthGithubMapUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7665,24 +7119,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGithubMapUsersKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7728,19 +7177,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthJwtConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7786,19 +7231,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthJwtOidcCallbackRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7852,19 +7293,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthJwtRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7914,24 +7350,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthJwtRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7977,19 +7408,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8035,19 +7462,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosConfigLdapRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8099,19 +7522,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosGroupsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8161,24 +7579,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthKerberosGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8224,19 +7637,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKerberosLoginRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8282,19 +7691,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKubernetesConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8346,19 +7751,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthKubernetesRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8408,24 +7808,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthKubernetesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8471,19 +7866,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthLdapConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8535,19 +7926,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthLdapGroupsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8597,24 +7983,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthLdapGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8666,19 +8047,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthLdapUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8728,24 +8104,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthLdapUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8791,19 +8162,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOciConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8855,19 +8222,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOciRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8917,24 +8279,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOciRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8980,19 +8337,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOidcConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9038,19 +8391,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOidcOidcCallbackRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9104,19 +8453,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOidcRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9166,24 +8510,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9229,19 +8568,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOktaConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9293,19 +8628,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOktaGroupsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9355,24 +8685,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9424,19 +8749,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthOktaUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9486,24 +8806,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9553,24 +8868,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **nonce** | **string** | Nonce provided during a login request to retrieve the number verification challenge for the matching request. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaVerifyNonceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9616,19 +8926,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthRadiusConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9680,19 +8986,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthRadiusUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9742,24 +9043,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthRadiusUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9811,19 +9107,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenAccessorsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9869,19 +9160,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenLookupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9927,19 +9214,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenLookupSelfRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9991,19 +9274,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthTokenRolesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10053,24 +9331,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthTokenRolesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10122,19 +9395,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuthUserpassUsersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10184,24 +9452,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthUserpassUsersUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10253,19 +9516,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAlicloudLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alicloudLoginRequest** | [**AlicloudLoginRequest**](AlicloudLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10317,12 +9575,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAlicloudRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10330,12 +9586,9 @@ Name | Type | Description  | Notes
 
  **alicloudRoleRequest** | [**AlicloudRoleRequest**](AlicloudRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10387,19 +9640,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAppIdLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appIdLoginRequest** | [**AppIdLoginRequest**](AppIdLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10451,12 +9699,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **appId** | **string** | The unique app ID | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAppIdLoginAppIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10464,12 +9710,9 @@ Name | Type | Description  | Notes
 
  **appIdLoginRequest** | [**AppIdLoginRequest**](AppIdLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10521,12 +9764,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the app-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAppIdMapAppIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10534,12 +9775,9 @@ Name | Type | Description  | Notes
 
  **appIdMapAppIdRequest** | [**AppIdMapAppIdRequest**](AppIdMapAppIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10591,12 +9829,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the user-id mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAppIdMapUserIdKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10604,12 +9840,9 @@ Name | Type | Description  | Notes
 
  **appIdMapUserIdRequest** | [**AppIdMapUserIdRequest**](AppIdMapUserIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10661,19 +9894,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthApproleLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **approleLoginRequest** | [**ApproleLoginRequest**](ApproleLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10725,12 +9953,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10738,12 +9964,9 @@ Name | Type | Description  | Notes
 
  **approleRoleRequest** | [**ApproleRoleRequest**](ApproleRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10795,12 +10018,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameBindSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10808,12 +10029,9 @@ Name | Type | Description  | Notes
 
  **approleRoleBindSecretIdRequest** | [**ApproleRoleBindSecretIdRequest**](ApproleRoleBindSecretIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10865,12 +10083,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameBoundCidrListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10878,12 +10094,9 @@ Name | Type | Description  | Notes
 
  **approleRoleBoundCidrListRequest** | [**ApproleRoleBoundCidrListRequest**](ApproleRoleBoundCidrListRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10935,12 +10148,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameCustomSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10948,12 +10159,9 @@ Name | Type | Description  | Notes
 
  **approleRoleCustomSecretIdRequest** | [**ApproleRoleCustomSecretIdRequest**](ApproleRoleCustomSecretIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11005,12 +10213,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNamePeriodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11018,12 +10224,9 @@ Name | Type | Description  | Notes
 
  **approleRolePeriodRequest** | [**ApproleRolePeriodRequest**](ApproleRolePeriodRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11075,12 +10278,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11088,12 +10289,9 @@ Name | Type | Description  | Notes
 
  **approleRolePoliciesRequest** | [**ApproleRolePoliciesRequest**](ApproleRolePoliciesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11145,12 +10343,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameRoleIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11158,12 +10354,9 @@ Name | Type | Description  | Notes
 
  **approleRoleRoleIdRequest** | [**ApproleRoleRoleIdRequest**](ApproleRoleRoleIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11215,12 +10408,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11228,12 +10419,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdRequest** | [**ApproleRoleSecretIdRequest**](ApproleRoleSecretIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11285,12 +10473,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11298,12 +10484,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdAccessorDestroyRequest** | [**ApproleRoleSecretIdAccessorDestroyRequest**](ApproleRoleSecretIdAccessorDestroyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11355,12 +10538,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11368,12 +10549,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdAccessorLookupRequest** | [**ApproleRoleSecretIdAccessorLookupRequest**](ApproleRoleSecretIdAccessorLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11425,12 +10603,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11438,12 +10614,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdBoundCidrsRequest** | [**ApproleRoleSecretIdBoundCidrsRequest**](ApproleRoleSecretIdBoundCidrsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11495,12 +10668,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdDestroyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11508,12 +10679,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdDestroyRequest** | [**ApproleRoleSecretIdDestroyRequest**](ApproleRoleSecretIdDestroyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11565,12 +10733,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11578,12 +10744,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdLookupRequest** | [**ApproleRoleSecretIdLookupRequest**](ApproleRoleSecretIdLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11635,12 +10798,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11648,12 +10809,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdNumUsesRequest** | [**ApproleRoleSecretIdNumUsesRequest**](ApproleRoleSecretIdNumUsesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11705,12 +10863,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameSecretIdTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11718,12 +10874,9 @@ Name | Type | Description  | Notes
 
  **approleRoleSecretIdTtlRequest** | [**ApproleRoleSecretIdTtlRequest**](ApproleRoleSecretIdTtlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11775,12 +10928,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11788,12 +10939,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenBoundCidrsRequest** | [**ApproleRoleTokenBoundCidrsRequest**](ApproleRoleTokenBoundCidrsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11845,12 +10993,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenMaxTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11858,12 +11004,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenMaxTtlRequest** | [**ApproleRoleTokenMaxTtlRequest**](ApproleRoleTokenMaxTtlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11915,12 +11058,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenNumUsesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11928,12 +11069,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenNumUsesRequest** | [**ApproleRoleTokenNumUsesRequest**](ApproleRoleTokenNumUsesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -11985,12 +11123,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthApproleRoleRoleNameTokenTtlRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -11998,12 +11134,9 @@ Name | Type | Description  | Notes
 
  **approleRoleTokenTtlRequest** | [**ApproleRoleTokenTtlRequest**](ApproleRoleTokenTtlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12049,19 +11182,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthApproleTidySecretIdRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12113,12 +11242,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigCertificateCertNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -12126,12 +11253,9 @@ Name | Type | Description  | Notes
 
  **awsConfigCertificateRequest** | [**AwsConfigCertificateRequest**](AwsConfigCertificateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12183,19 +11307,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigClientRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigClientRequest** | [**AwsConfigClientRequest**](AwsConfigClientRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12247,19 +11366,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigIdentityRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigIdentityRequest** | [**AwsConfigIdentityRequest**](AwsConfigIdentityRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12305,19 +11419,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigRotateRootRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12369,12 +11479,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigStsAccountIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -12382,12 +11490,9 @@ Name | Type | Description  | Notes
 
  **awsConfigStsRequest** | [**AwsConfigStsRequest**](AwsConfigStsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12439,19 +11544,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyIdentityAccesslistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyIdentityAccesslistRequest** | [**AwsConfigTidyIdentityAccesslistRequest**](AwsConfigTidyIdentityAccesslistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12503,19 +11603,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyIdentityWhitelistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyIdentityWhitelistRequest** | [**AwsConfigTidyIdentityWhitelistRequest**](AwsConfigTidyIdentityWhitelistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12567,19 +11662,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyRoletagBlacklistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyRoletagBlacklistRequest** | [**AwsConfigTidyRoletagBlacklistRequest**](AwsConfigTidyRoletagBlacklistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12631,19 +11721,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsConfigTidyRoletagDenylistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsConfigTidyRoletagDenylistRequest** | [**AwsConfigTidyRoletagDenylistRequest**](AwsConfigTidyRoletagDenylistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12695,19 +11780,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsLoginRequest** | [**AwsLoginRequest**](AwsLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12759,12 +11839,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -12772,12 +11850,9 @@ Name | Type | Description  | Notes
 
  **awsRoleRequest** | [**AwsRoleRequest**](AwsRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12829,12 +11904,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoleRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -12842,12 +11915,9 @@ Name | Type | Description  | Notes
 
  **awsRoleTagRequest** | [**AwsRoleTagRequest**](AwsRoleTagRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12897,24 +11967,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoletagBlacklistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -12964,24 +12029,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAwsRoletagDenylistRoleTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13033,19 +12093,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyIdentityAccesslistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyIdentityAccesslistRequest** | [**AwsTidyIdentityAccesslistRequest**](AwsTidyIdentityAccesslistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13097,19 +12152,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyIdentityWhitelistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyIdentityWhitelistRequest** | [**AwsTidyIdentityWhitelistRequest**](AwsTidyIdentityWhitelistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13161,19 +12211,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyRoletagBlacklistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyRoletagBlacklistRequest** | [**AwsTidyRoletagBlacklistRequest**](AwsTidyRoletagBlacklistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13225,19 +12270,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAwsTidyRoletagDenylistRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **awsTidyRoletagDenylistRequest** | [**AwsTidyRoletagDenylistRequest**](AwsTidyRoletagDenylistRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13289,19 +12329,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAzureConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **azureConfigRequest** | [**AzureConfigRequest**](AzureConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13353,19 +12388,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthAzureLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **azureLoginRequest** | [**AzureLoginRequest**](AzureLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13417,12 +12447,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthAzureRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13430,12 +12458,9 @@ Name | Type | Description  | Notes
 
  **azureRoleRequest** | [**AzureRoleRequest**](AzureRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13487,19 +12512,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCentrifyConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **centrifyConfigRequest** | [**CentrifyConfigRequest**](CentrifyConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13551,19 +12571,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCentrifyLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **centrifyLoginRequest** | [**CentrifyLoginRequest**](CentrifyLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13615,12 +12630,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthCertCertsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13628,12 +12641,9 @@ Name | Type | Description  | Notes
 
  **certCertsRequest** | [**CertCertsRequest**](CertCertsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13685,19 +12695,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCertConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **certConfigRequest** | [**CertConfigRequest**](CertConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13749,12 +12754,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthCertCrlsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -13762,12 +12765,9 @@ Name | Type | Description  | Notes
 
  **certCrlsRequest** | [**CertCrlsRequest**](CertCrlsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13819,19 +12819,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCertLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **certLoginRequest** | [**CertLoginRequest**](CertLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13883,19 +12878,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCfConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cfConfigRequest** | [**CfConfigRequest**](CfConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -13947,19 +12937,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthCfLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cfLoginRequest** | [**CfLoginRequest**](CfLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14011,12 +12996,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthCfRolesRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14024,12 +13007,9 @@ Name | Type | Description  | Notes
 
  **cfRolesRequest** | [**CfRolesRequest**](CfRolesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14081,19 +13061,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGcpConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gcpConfigRequest** | [**GcpConfigRequest**](GcpConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14145,19 +13120,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGcpLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gcpLoginRequest** | [**GcpLoginRequest**](GcpLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14209,12 +13179,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGcpRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14222,12 +13190,9 @@ Name | Type | Description  | Notes
 
  **gcpRoleRequest** | [**GcpRoleRequest**](GcpRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14279,12 +13244,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGcpRoleNameLabelsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14292,12 +13255,9 @@ Name | Type | Description  | Notes
 
  **gcpRoleLabelsRequest** | [**GcpRoleLabelsRequest**](GcpRoleLabelsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14349,12 +13309,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGcpRoleNameServiceAccountsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14362,12 +13320,9 @@ Name | Type | Description  | Notes
 
  **gcpRoleServiceAccountsRequest** | [**GcpRoleServiceAccountsRequest**](GcpRoleServiceAccountsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14419,19 +13374,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGithubConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **githubConfigRequest** | [**GithubConfigRequest**](GithubConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14483,19 +13433,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthGithubLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **githubLoginRequest** | [**GithubLoginRequest**](GithubLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14547,12 +13492,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGithubMapTeamsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14560,12 +13503,9 @@ Name | Type | Description  | Notes
 
  **githubMapTeamsRequest** | [**GithubMapTeamsRequest**](GithubMapTeamsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14617,12 +13557,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGithubMapUsersKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14630,12 +13568,9 @@ Name | Type | Description  | Notes
 
  **githubMapUsersRequest** | [**GithubMapUsersRequest**](GithubMapUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14689,19 +13624,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtConfigRequest** | [**JwtConfigRequest**](JwtConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14753,19 +13683,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtLoginRequest** | [**JwtLoginRequest**](JwtLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14817,19 +13742,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtOidcAuthUrlRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtOidcAuthUrlRequest** | [**JwtOidcAuthUrlRequest**](JwtOidcAuthUrlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14881,19 +13801,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthJwtOidcCallbackRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwtOidcCallbackRequest** | [**JwtOidcCallbackRequest**](JwtOidcCallbackRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -14947,12 +13862,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthJwtRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -14960,12 +13873,9 @@ Name | Type | Description  | Notes
 
  **jwtRoleRequest** | [**JwtRoleRequest**](JwtRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15017,19 +13927,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKerberosConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kerberosConfigRequest** | [**KerberosConfigRequest**](KerberosConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15081,19 +13986,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKerberosConfigLdapRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kerberosConfigLdapRequest** | [**KerberosConfigLdapRequest**](KerberosConfigLdapRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15145,12 +14045,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthKerberosGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15158,12 +14056,9 @@ Name | Type | Description  | Notes
 
  **kerberosGroupsRequest** | [**KerberosGroupsRequest**](KerberosGroupsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15215,19 +14110,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKerberosLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kerberosLoginRequest** | [**KerberosLoginRequest**](KerberosLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15279,19 +14169,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKubernetesConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kubernetesConfigRequest** | [**KubernetesConfigRequest**](KubernetesConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15343,19 +14228,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthKubernetesLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **kubernetesLoginRequest** | [**KubernetesLoginRequest**](KubernetesLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15407,12 +14287,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthKubernetesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15420,12 +14298,9 @@ Name | Type | Description  | Notes
 
  **kubernetesRoleRequest** | [**KubernetesRoleRequest**](KubernetesRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15477,19 +14352,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthLdapConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ldapConfigRequest** | [**LdapConfigRequest**](LdapConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15541,12 +14411,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15554,12 +14422,9 @@ Name | Type | Description  | Notes
 
  **ldapGroupsRequest** | [**LdapGroupsRequest**](LdapGroupsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15611,12 +14476,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | DN (distinguished name) to be used for login. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapLoginUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15624,12 +14487,9 @@ Name | Type | Description  | Notes
 
  **ldapLoginRequest** | [**LdapLoginRequest**](LdapLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15681,12 +14541,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15694,12 +14552,9 @@ Name | Type | Description  | Notes
 
  **ldapUsersRequest** | [**LdapUsersRequest**](LdapUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15751,19 +14606,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOciConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ociConfigRequest** | [**OciConfigRequest**](OciConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15815,12 +14665,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOciLoginRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15828,12 +14676,9 @@ Name | Type | Description  | Notes
 
  **ociLoginRequest** | [**OciLoginRequest**](OciLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15885,12 +14730,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOciRoleRoleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -15898,12 +14741,9 @@ Name | Type | Description  | Notes
 
  **ociRoleRequest** | [**OciRoleRequest**](OciRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -15957,19 +14797,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcConfigRequest** | [**OidcConfigRequest**](OidcConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16021,19 +14856,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcLoginRequest** | [**OidcLoginRequest**](OidcLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16085,19 +14915,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcOidcAuthUrlRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcOidcAuthUrlRequest** | [**OidcOidcAuthUrlRequest**](OidcOidcAuthUrlRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16149,19 +14974,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOidcOidcCallbackRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oidcOidcCallbackRequest** | [**OidcOidcCallbackRequest**](OidcOidcCallbackRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16215,12 +15035,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16228,12 +15046,9 @@ Name | Type | Description  | Notes
 
  **oidcRoleRequest** | [**OidcRoleRequest**](OidcRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16285,19 +15100,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthOktaConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **oktaConfigRequest** | [**OktaConfigRequest**](OktaConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16349,12 +15159,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaGroupsNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16362,12 +15170,9 @@ Name | Type | Description  | Notes
 
  **oktaGroupsRequest** | [**OktaGroupsRequest**](OktaGroupsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16419,12 +15224,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username to be used for login. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaLoginUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16432,12 +15235,9 @@ Name | Type | Description  | Notes
 
  **oktaLoginRequest** | [**OktaLoginRequest**](OktaLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16489,12 +15289,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16502,12 +15300,9 @@ Name | Type | Description  | Notes
 
  **oktaUsersRequest** | [**OktaUsersRequest**](OktaUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16559,19 +15354,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthRadiusConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **radiusConfigRequest** | [**RadiusConfigRequest**](RadiusConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16623,19 +15413,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthRadiusLoginRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **radiusLoginRequest** | [**RadiusLoginRequest**](RadiusLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16687,12 +15472,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlusername** | **string** | Username to be used for login. (URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthRadiusLoginUrlusernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16700,12 +15483,9 @@ Name | Type | Description  | Notes
 
  **radiusLoginRequest** | [**RadiusLoginRequest**](RadiusLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16757,12 +15537,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthRadiusUsersNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -16770,12 +15548,9 @@ Name | Type | Description  | Notes
 
  **radiusUsersRequest** | [**RadiusUsersRequest**](RadiusUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16821,19 +15596,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenCreateRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16879,19 +15650,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenCreateOrphanRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -16941,24 +15708,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthTokenCreateRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17010,19 +15772,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenLookupRequest** | [**TokenLookupRequest**](TokenLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17074,19 +15831,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenLookupAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenLookupAccessorRequest** | [**TokenLookupAccessorRequest**](TokenLookupAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17138,19 +15890,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenLookupSelfRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenLookupSelfRequest** | [**TokenLookupSelfRequest**](TokenLookupSelfRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17202,19 +15949,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRenewRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRenewRequest** | [**TokenRenewRequest**](TokenRenewRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17266,19 +16008,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRenewAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRenewAccessorRequest** | [**TokenRenewAccessorRequest**](TokenRenewAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17330,19 +16067,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRenewSelfRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRenewSelfRequest** | [**TokenRenewSelfRequest**](TokenRenewSelfRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17394,19 +16126,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRevokeRequest** | [**TokenRevokeRequest**](TokenRevokeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17458,19 +16185,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRevokeAccessorRequest** | [**TokenRevokeAccessorRequest**](TokenRevokeAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17522,19 +16244,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeOrphanRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenRevokeOrphanRequest** | [**TokenRevokeOrphanRequest**](TokenRevokeOrphanRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17580,19 +16297,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenRevokeSelfRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17644,12 +16357,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthTokenRolesRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17657,12 +16368,9 @@ Name | Type | Description  | Notes
 
  **tokenRolesRequest** | [**TokenRolesRequest**](TokenRolesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17708,19 +16416,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostAuthTokenTidyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17772,12 +16476,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username of the user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassLoginUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17785,12 +16487,9 @@ Name | Type | Description  | Notes
 
  **userpassLoginRequest** | [**UserpassLoginRequest**](UserpassLoginRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17842,12 +16541,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassUsersUsernameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17855,12 +16552,9 @@ Name | Type | Description  | Notes
 
  **userpassUsersRequest** | [**UserpassUsersRequest**](UserpassUsersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17912,12 +16606,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassUsersUsernamePasswordRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17925,12 +16617,9 @@ Name | Type | Description  | Notes
 
  **userpassUsersPasswordRequest** | [**UserpassUsersPasswordRequest**](UserpassUsersPasswordRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -17982,12 +16671,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassUsersUsernamePoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -17995,11 +16682,8 @@ Name | Type | Description  | Notes
 
  **userpassUsersPoliciesRequest** | [**UserpassUsersPoliciesRequest**](UserpassUsersPoliciesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 

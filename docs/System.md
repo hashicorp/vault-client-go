@@ -1,6 +1,4 @@
-# \System
-
-All URIs are relative to *http://localhost*
+# System
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -179,22 +177,32 @@ Disable the audit device at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysAuditPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysAuditPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+	
+	resp, err := client.System.DeleteSysAuditPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -203,33 +211,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysAuditPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -245,22 +239,32 @@ Disable the auth method at the given auth path
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysAuthPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysAuthPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Cannot be delimited. Example: \"user\"
+	
+	resp, err := client.System.DeleteSysAuthPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -269,33 +273,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysAuthPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -311,22 +301,32 @@ Disable auditing of the given request header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | 
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysConfigAuditingRequestHeadersHeader(context.Background(), header).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysConfigAuditingRequestHeadersHeader``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	header :=  // string | 
+	
+	resp, err := client.System.DeleteSysConfigAuditingRequestHeadersHeader(context.Background(), header)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -335,33 +335,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysConfigAuditingRequestHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -377,48 +363,45 @@ Remove any CORS settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysConfigCors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysConfigCors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysConfigCors(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysConfigCorsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -434,22 +417,32 @@ Remove a UI header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | The name of the header.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysConfigUiHeadersHeader(context.Background(), header).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysConfigUiHeadersHeader``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	header :=  // string | The name of the header.
+	
+	resp, err := client.System.DeleteSysConfigUiHeadersHeader(context.Background(), header)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -458,33 +451,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** | The name of the header. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysConfigUiHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -500,48 +479,45 @@ Cancels any in-progress root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysGenerateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysGenerateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysGenerateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysGenerateRootRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -557,48 +533,45 @@ Cancels any in-progress root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysGenerateRootAttempt(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysGenerateRootAttempt``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysGenerateRootAttempt(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysGenerateRootAttemptRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -614,22 +587,32 @@ Disable the mount point specified at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysMountsPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysMountsPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Example: \"aws/east\"
+	
+	resp, err := client.System.DeleteSysMountsPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -638,33 +621,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -680,22 +649,32 @@ Remove the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the plugin
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPluginsCatalogName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPluginsCatalogName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the plugin
+	
+	resp, err := client.System.DeleteSysPluginsCatalogName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -704,33 +683,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPluginsCatalogNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -746,23 +711,33 @@ Remove the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the plugin
-    type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPluginsCatalogTypeName(context.Background(), name, type_).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPluginsCatalogTypeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the plugin
+	type_ :=  // string | The type of the plugin, may be auth, secret, or database
+	
+	resp, err := client.System.DeleteSysPluginsCatalogTypeName(context.Background(), name, type_)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -771,13 +746,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPluginsCatalogTypeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -785,21 +758,9 @@ Name | Type | Description  | Notes
 
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -815,22 +776,32 @@ Delete the ACL policy with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPoliciesAclName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPoliciesAclName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the policy. Example: \"ops\"
+	
+	resp, err := client.System.DeleteSysPoliciesAclName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -839,33 +810,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPoliciesAclNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -881,22 +838,32 @@ Delete a password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the password policy.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPoliciesPasswordName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPoliciesPasswordName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the password policy.
+	
+	resp, err := client.System.DeleteSysPoliciesPasswordName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -905,33 +872,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPoliciesPasswordNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -947,22 +900,32 @@ Delete the policy with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPolicyName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPolicyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the policy. Example: \"ops\"
+	
+	resp, err := client.System.DeleteSysPolicyName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -971,33 +934,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysPolicyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1013,22 +962,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the quota rule.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysQuotasRateLimitName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysQuotasRateLimitName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the quota rule.
+	
+	resp, err := client.System.DeleteSysQuotasRateLimitName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1037,33 +996,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the quota rule. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysQuotasRateLimitNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1079,48 +1024,45 @@ Delete the key with given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRaw(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRaw``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysRaw(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRawRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1136,22 +1078,32 @@ Delete the key with given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | 
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRawPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRawPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | 
+	
+	resp, err := client.System.DeleteSysRawPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1160,33 +1112,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSysRawPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1202,48 +1140,45 @@ Delete the backup copy of PGP-encrypted unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyBackup(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyBackup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysRekeyBackup(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1261,48 +1196,45 @@ Cancels any in-progress rekey.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyInit(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyInit``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysRekeyInit(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyInitRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1318,48 +1250,45 @@ Allows fetching or deleting the backup of the rotated unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyRecoveryKeyBackup(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyRecoveryKeyBackup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysRekeyRecoveryKeyBackup(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyRecoveryKeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1377,48 +1306,45 @@ Cancel any in-progress rekey verification operation.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyVerify(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyVerify``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.DeleteSysRekeyVerify(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteSysRekeyVerifyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1434,48 +1360,45 @@ List the enabled audit devices.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAudit(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAudit``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysAudit(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysAuditRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1491,48 +1414,45 @@ List the currently enabled credential backends.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAuth(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAuth``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysAuth(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysAuthRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1548,22 +1468,32 @@ Read the configuration of the auth engine at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAuthPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAuthPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Cannot be delimited. Example: \"user\"
+	
+	resp, err := client.System.GetSysAuthPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1572,33 +1502,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysAuthPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1616,22 +1532,32 @@ Reads the given auth path's configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | Tune the configuration parameters for an auth path.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAuthPathTune(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAuthPathTune``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | Tune the configuration parameters for an auth path.
+	
+	resp, err := client.System.GetSysAuthPathTune(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1640,33 +1566,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | Tune the configuration parameters for an auth path. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysAuthPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1682,48 +1594,45 @@ List the request headers that are configured to be audited.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigAuditingRequestHeaders(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigAuditingRequestHeaders``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysConfigAuditingRequestHeaders(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigAuditingRequestHeadersRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1739,22 +1648,32 @@ List the information for the given request header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | 
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigAuditingRequestHeadersHeader(context.Background(), header).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigAuditingRequestHeadersHeader``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	header :=  // string | 
+	
+	resp, err := client.System.GetSysConfigAuditingRequestHeadersHeader(context.Background(), header)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1763,33 +1682,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysConfigAuditingRequestHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1805,48 +1710,45 @@ Return the current CORS settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigCors(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigCors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysConfigCors(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigCorsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1864,48 +1766,45 @@ Return a sanitized version of the Vault server configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigStateSanitized(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigStateSanitized``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysConfigStateSanitized(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigStateSanitizedRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1921,22 +1820,33 @@ Return a list of configured UI headers.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigUiHeaders(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigUiHeaders``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysConfigUiHeaders(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1946,28 +1856,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysConfigUiHeadersRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1983,22 +1879,32 @@ Return the given UI header's configuration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | The name of the header.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigUiHeadersHeader(context.Background(), header).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigUiHeadersHeader``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	header :=  // string | The name of the header.
+	
+	resp, err := client.System.GetSysConfigUiHeadersHeader(context.Background(), header)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2007,33 +1913,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** | The name of the header. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysConfigUiHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2049,48 +1941,45 @@ Read the configuration and progress of the current root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysGenerateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysGenerateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysGenerateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysGenerateRootRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2106,48 +1995,45 @@ Read the configuration and progress of the current root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysGenerateRootAttempt(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysGenerateRootAttempt``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysGenerateRootAttempt(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysGenerateRootAttemptRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2163,48 +2049,45 @@ Check the HA status of a Vault cluster
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysHaStatus(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysHaStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysHaStatus(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysHaStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2220,48 +2103,45 @@ Returns the health status of Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysHealth(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysHealth``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysHealth(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysHealthRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2279,48 +2159,45 @@ Information about the host instance that this Vault server is running on.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysHostInfo(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysHostInfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysHostInfo(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysHostInfoRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2338,48 +2215,45 @@ reports in-flight requests
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInFlightReq(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInFlightReq``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInFlightReq(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInFlightReqRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2395,48 +2269,45 @@ Returns the initialization status of Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInit(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInit``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInit(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInitRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2452,48 +2323,45 @@ Report the client count metrics, for this namespace and all child namespaces.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersActivity(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersActivity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalCountersActivity(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersActivityRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2509,48 +2377,45 @@ Report the client count metrics, for this namespace and all child namespaces.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersActivityExport(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersActivityExport``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalCountersActivityExport(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersActivityExportRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2566,48 +2431,45 @@ Report the number of clients for this month, for this namespace and all child na
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersActivityMonthly(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersActivityMonthly``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalCountersActivityMonthly(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersActivityMonthlyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2623,48 +2485,45 @@ Read the client count tracking configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalCountersConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2680,48 +2539,45 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersEntities(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersEntities``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalCountersEntities(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersEntitiesRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2737,48 +2593,45 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersRequests(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersRequests``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalCountersRequests(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersRequestsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2794,48 +2647,45 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersTokens(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersTokens``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalCountersTokens(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalCountersTokensRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2851,48 +2701,45 @@ Generate an OpenAPI 3 document of all mounted paths.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalSpecsOpenapi(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalSpecsOpenapi``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalSpecsOpenapi(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalSpecsOpenapiRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2908,48 +2755,45 @@ Lists enabled feature flags.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiFeatureFlags(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiFeatureFlags``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalUiFeatureFlags(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiFeatureFlagsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2965,48 +2809,45 @@ Lists all enabled and visible auth and secrets mounts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiMounts(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiMounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalUiMounts(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiMountsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3022,22 +2863,32 @@ Return information about the given mount.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path of the mount.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiMountsPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiMountsPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path of the mount.
+	
+	resp, err := client.System.GetSysInternalUiMountsPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3046,33 +2897,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path of the mount. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysInternalUiMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3088,48 +2925,45 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiNamespaces(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiNamespaces``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalUiNamespaces(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiNamespacesRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3145,48 +2979,45 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiResultantAcl(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiResultantAcl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysInternalUiResultantAcl(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysInternalUiResultantAclRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3202,48 +3033,45 @@ Provides information about the backend encryption key.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysKeyStatus(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysKeyStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysKeyStatus(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysKeyStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3259,48 +3087,45 @@ Returns the high availability status and current leader instance of Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeader(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeader``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysLeader(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeaderRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3316,48 +3141,45 @@ List leases associated with this Vault cluster
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeases(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeases``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysLeases(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeasesRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3373,48 +3195,45 @@ Count of leases associated with this Vault cluster
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeasesCount(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeasesCount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysLeasesCount(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeasesCountRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3430,22 +3249,33 @@ Returns a list of lease ids.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeasesLookup(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeasesLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysLeasesLookup(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3455,28 +3285,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysLeasesLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3492,23 +3308,34 @@ Returns a list of lease ids.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeasesLookupPrefix(context.Background(), prefix).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeasesLookupPrefix``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	prefix :=  // string | The path to list leases under. Example: \"aws/creds/deploy\"
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysLeasesLookupPrefix(context.Background(), prefix, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3517,12 +3344,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to list leases under. Example: \&quot;aws/creds/deploy\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysLeasesLookupPrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3530,21 +3355,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3560,22 +3373,33 @@ Export the metrics aggregated for telemetry purpose.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\". (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMetrics(context.Background()).Format(format).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMetrics``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	format := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysMetrics(context.Background(), format)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3585,28 +3409,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysMetricsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3622,23 +3432,35 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (optional) (default to "standard")
-    logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\". (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMonitor(context.Background()).LogFormat(logFormat).LogLevel(logLevel).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMonitor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	logFormat := NewstringWithDefaults()
+	
+	logLevel := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysMonitor(context.Background(), logFormat, logLevel)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3648,29 +3470,15 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysMonitorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
  **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3686,48 +3494,45 @@ List the currently mounted backends.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMounts(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysMounts(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysMountsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3743,22 +3548,32 @@ Read the configuration of the secret engine at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMountsPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMountsPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Example: \"aws/east\"
+	
+	resp, err := client.System.GetSysMountsPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3767,33 +3582,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3809,22 +3610,32 @@ Tune backend configuration parameters for this mount.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMountsPathTune(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMountsPathTune``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Example: \"aws/east\"
+	
+	resp, err := client.System.GetSysMountsPathTune(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3833,33 +3644,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysMountsPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3875,48 +3672,45 @@ Lists all the plugins known to Vault
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalog(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalog``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPluginsCatalog(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3932,22 +3726,32 @@ Return the configuration data for the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the plugin
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalogName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalogName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the plugin
+	
+	resp, err := client.System.GetSysPluginsCatalogName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3956,33 +3760,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3998,23 +3788,34 @@ List the plugins in the catalog.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalogType(context.Background(), type_).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalogType``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	type_ :=  // string | The type of the plugin, may be auth, secret, or database
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysPluginsCatalogType(context.Background(), type_, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4023,12 +3824,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogTypeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4036,21 +3835,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4066,23 +3853,33 @@ Return the configuration data for the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the plugin
-    type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalogTypeName(context.Background(), name, type_).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalogTypeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the plugin
+	type_ :=  // string | The type of the plugin, may be auth, secret, or database
+	
+	resp, err := client.System.GetSysPluginsCatalogTypeName(context.Background(), name, type_)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4091,13 +3888,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPluginsCatalogTypeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4105,21 +3900,9 @@ Name | Type | Description  | Notes
 
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4135,22 +3918,33 @@ List the configured access control policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesAcl(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesAcl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysPoliciesAcl(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4160,28 +3954,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPoliciesAclRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4197,22 +3977,32 @@ Retrieve information about the named ACL policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesAclName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesAclName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the policy. Example: \"ops\"
+	
+	resp, err := client.System.GetSysPoliciesAclName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4221,33 +4011,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPoliciesAclNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4263,22 +4039,33 @@ List the existing password policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesPassword(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesPassword``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysPoliciesPassword(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4288,28 +4075,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPoliciesPasswordRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4325,22 +4098,32 @@ Retrieve an existing password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the password policy.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesPasswordName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesPasswordName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the password policy.
+	
+	resp, err := client.System.GetSysPoliciesPasswordName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4349,33 +4132,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPoliciesPasswordNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4391,22 +4160,32 @@ Generate a password from an existing password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the password policy.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesPasswordNameGenerate(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesPasswordNameGenerate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the password policy.
+	
+	resp, err := client.System.GetSysPoliciesPasswordNameGenerate(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4415,33 +4194,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPoliciesPasswordNameGenerateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4457,22 +4222,33 @@ List the configured access control policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPolicy(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPolicy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysPolicy(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4482,28 +4258,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPolicyRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4519,22 +4281,32 @@ Retrieve the policy body for the named policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPolicyName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPolicyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the policy. Example: \"ops\"
+	
+	resp, err := client.System.GetSysPolicyName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4543,33 +4315,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysPolicyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4587,48 +4345,45 @@ Returns an HTML page listing the available profiles.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprof(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprof``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprof(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4646,48 +4401,45 @@ Returns a sampling of all past memory allocations.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofAllocs(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofAllocs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofAllocs(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofAllocsRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4705,48 +4457,45 @@ Returns stack traces that led to blocking on synchronization primitives
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofBlock(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofBlock``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofBlock(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofBlockRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4764,48 +4513,45 @@ Returns the running program's command line.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofCmdline(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofCmdline``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofCmdline(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofCmdlineRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4823,48 +4569,45 @@ Returns stack traces of all current goroutines.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofGoroutine(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofGoroutine``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofGoroutine(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofGoroutineRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4882,48 +4625,45 @@ Returns a sampling of memory allocations of live object.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofHeap(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofHeap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofHeap(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofHeapRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4941,48 +4681,45 @@ Returns stack traces of holders of contended mutexes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofMutex(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofMutex``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofMutex(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofMutexRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5000,48 +4737,45 @@ Returns a pprof-formatted cpu profile payload.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofProfile(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofProfile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofProfile(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofProfileRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5059,48 +4793,45 @@ Returns the program counters listed in the request.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofSymbol(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofSymbol``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofSymbol(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofSymbolRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5118,48 +4849,45 @@ Returns stack traces that led to the creation of new OS threads
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofThreadcreate(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofThreadcreate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofThreadcreate(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofThreadcreateRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5177,48 +4905,45 @@ Returns the execution trace in binary form.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofTrace(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofTrace``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysPprofTrace(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysPprofTraceRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5234,48 +4959,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysQuotasConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysQuotasConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysQuotasConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysQuotasConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5291,22 +5013,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysQuotasRateLimit(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysQuotasRateLimit``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysQuotasRateLimit(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5316,28 +5049,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysQuotasRateLimitRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5353,22 +5072,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the quota rule.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysQuotasRateLimitName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysQuotasRateLimitName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the quota rule.
+	
+	resp, err := client.System.GetSysQuotasRateLimitName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5377,33 +5106,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the quota rule. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysQuotasRateLimitNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5419,22 +5134,33 @@ Read the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRaw(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRaw``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysRaw(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5444,28 +5170,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRawRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5481,23 +5193,34 @@ Read the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | 
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRawPath(context.Background(), path).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRawPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | 
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysRawPath(context.Background(), path, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5506,12 +5229,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysRawPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5519,21 +5240,9 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5549,48 +5258,45 @@ Return the backup copy of PGP-encrypted unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyBackup(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyBackup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysRekeyBackup(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5606,48 +5312,45 @@ Reads the configuration and progress of the current rekey attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyInit(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyInit``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysRekeyInit(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyInitRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5663,48 +5366,45 @@ Allows fetching or deleting the backup of the rotated unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyRecoveryKeyBackup(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyRecoveryKeyBackup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysRekeyRecoveryKeyBackup(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyRecoveryKeyBackupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5720,48 +5420,45 @@ Read the configuration and progress of the current rekey verification attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyVerify(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyVerify``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysRekeyVerify(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRekeyVerifyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5777,22 +5474,32 @@ Check status of a mount migration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    migrationId := "migrationId_example" // string | The ID of the migration operation
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRemountStatusMigrationId(context.Background(), migrationId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRemountStatusMigrationId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	migrationId :=  // string | The ID of the migration operation
+	
+	resp, err := client.System.GetSysRemountStatusMigrationId(context.Background(), migrationId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5801,33 +5508,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **migrationId** | **string** | The ID of the migration operation | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSysRemountStatusMigrationIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5843,48 +5536,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysReplicationStatus(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysReplicationStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysReplicationStatus(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysReplicationStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5900,48 +5590,45 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRotateConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRotateConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysRotateConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysRotateConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5957,48 +5644,45 @@ Check the seal status of a Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysSealStatus(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysSealStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysSealStatus(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysSealStatusRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6014,22 +5698,33 @@ Returns map of historical version change entries
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysVersionHistory(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysVersionHistory``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.System.GetSysVersionHistory(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6039,28 +5734,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysVersionHistoryRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6076,48 +5757,45 @@ Look up wrapping properties for the requester's token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysWrappingLookup(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysWrappingLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.GetSysWrappingLookup(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSysWrappingLookupRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6133,23 +5811,34 @@ The hash of the given string via the given audit backend
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-    systemAuditHashRequest := *openapiclient.NewSystemAuditHashRequest() // SystemAuditHashRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuditHashPath(context.Background(), path).SystemAuditHashRequest(systemAuditHashRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuditHashPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+	
+	systemAuditHashRequest := NewSystemAuditHashRequestWithDefaults()
+	
+	resp, err := client.System.PostSysAuditHashPath(context.Background(), path, systemAuditHashRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6158,12 +5847,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuditHashPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6171,21 +5858,9 @@ Name | Type | Description  | Notes
 
  **systemAuditHashRequest** | [**SystemAuditHashRequest**](SystemAuditHashRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6201,23 +5876,34 @@ Enable a new audit device at the supplied path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-    systemAuditRequest := *openapiclient.NewSystemAuditRequest() // SystemAuditRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuditPath(context.Background(), path).SystemAuditRequest(systemAuditRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuditPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+	
+	systemAuditRequest := NewSystemAuditRequestWithDefaults()
+	
+	resp, err := client.System.PostSysAuditPath(context.Background(), path, systemAuditRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6226,12 +5912,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuditPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6239,21 +5923,9 @@ Name | Type | Description  | Notes
 
  **systemAuditRequest** | [**SystemAuditRequest**](SystemAuditRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6271,23 +5943,34 @@ Enables a new auth method.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-    systemAuthRequest := *openapiclient.NewSystemAuthRequest() // SystemAuthRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuthPath(context.Background(), path).SystemAuthRequest(systemAuthRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuthPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Cannot be delimited. Example: \"user\"
+	
+	systemAuthRequest := NewSystemAuthRequestWithDefaults()
+	
+	resp, err := client.System.PostSysAuthPath(context.Background(), path, systemAuthRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6296,12 +5979,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuthPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6309,21 +5990,9 @@ Name | Type | Description  | Notes
 
  **systemAuthRequest** | [**SystemAuthRequest**](SystemAuthRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6341,23 +6010,34 @@ Tune configuration parameters for a given auth path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | Tune the configuration parameters for an auth path.
-    systemAuthTuneRequest := *openapiclient.NewSystemAuthTuneRequest() // SystemAuthTuneRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuthPathTune(context.Background(), path).SystemAuthTuneRequest(systemAuthTuneRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuthPathTune``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | Tune the configuration parameters for an auth path.
+	
+	systemAuthTuneRequest := NewSystemAuthTuneRequestWithDefaults()
+	
+	resp, err := client.System.PostSysAuthPathTune(context.Background(), path, systemAuthTuneRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6366,12 +6046,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | Tune the configuration parameters for an auth path. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysAuthPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6379,21 +6057,9 @@ Name | Type | Description  | Notes
 
  **systemAuthTuneRequest** | [**SystemAuthTuneRequest**](SystemAuthTuneRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6409,22 +6075,33 @@ Fetches the capabilities of the given token on the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemCapabilitiesRequest := *openapiclient.NewSystemCapabilitiesRequest() // SystemCapabilitiesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysCapabilities(context.Background()).SystemCapabilitiesRequest(systemCapabilitiesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysCapabilities``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemCapabilitiesRequest := NewSystemCapabilitiesRequestWithDefaults()
+	
+	resp, err := client.System.PostSysCapabilities(context.Background(), systemCapabilitiesRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6434,28 +6111,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysCapabilitiesRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemCapabilitiesRequest** | [**SystemCapabilitiesRequest**](SystemCapabilitiesRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6471,22 +6134,33 @@ Fetches the capabilities of the token associated with the given token, on the gi
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemCapabilitiesAccessorRequest := *openapiclient.NewSystemCapabilitiesAccessorRequest() // SystemCapabilitiesAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysCapabilitiesAccessor(context.Background()).SystemCapabilitiesAccessorRequest(systemCapabilitiesAccessorRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysCapabilitiesAccessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemCapabilitiesAccessorRequest := NewSystemCapabilitiesAccessorRequestWithDefaults()
+	
+	resp, err := client.System.PostSysCapabilitiesAccessor(context.Background(), systemCapabilitiesAccessorRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6496,28 +6170,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysCapabilitiesAccessorRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemCapabilitiesAccessorRequest** | [**SystemCapabilitiesAccessorRequest**](SystemCapabilitiesAccessorRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6533,22 +6193,33 @@ Fetches the capabilities of the given token on the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemCapabilitiesSelfRequest := *openapiclient.NewSystemCapabilitiesSelfRequest() // SystemCapabilitiesSelfRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysCapabilitiesSelf(context.Background()).SystemCapabilitiesSelfRequest(systemCapabilitiesSelfRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysCapabilitiesSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemCapabilitiesSelfRequest := NewSystemCapabilitiesSelfRequestWithDefaults()
+	
+	resp, err := client.System.PostSysCapabilitiesSelf(context.Background(), systemCapabilitiesSelfRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6558,28 +6229,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysCapabilitiesSelfRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemCapabilitiesSelfRequest** | [**SystemCapabilitiesSelfRequest**](SystemCapabilitiesSelfRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6595,23 +6252,34 @@ Enable auditing of a header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | 
-    systemConfigAuditingRequestHeadersRequest := *openapiclient.NewSystemConfigAuditingRequestHeadersRequest() // SystemConfigAuditingRequestHeadersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigAuditingRequestHeadersHeader(context.Background(), header).SystemConfigAuditingRequestHeadersRequest(systemConfigAuditingRequestHeadersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigAuditingRequestHeadersHeader``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	header :=  // string | 
+	
+	systemConfigAuditingRequestHeadersRequest := NewSystemConfigAuditingRequestHeadersRequestWithDefaults()
+	
+	resp, err := client.System.PostSysConfigAuditingRequestHeadersHeader(context.Background(), header, systemConfigAuditingRequestHeadersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6620,12 +6288,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysConfigAuditingRequestHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6633,21 +6299,9 @@ Name | Type | Description  | Notes
 
  **systemConfigAuditingRequestHeadersRequest** | [**SystemConfigAuditingRequestHeadersRequest**](SystemConfigAuditingRequestHeadersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6663,22 +6317,33 @@ Configure the CORS settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemConfigCorsRequest := *openapiclient.NewSystemConfigCorsRequest() // SystemConfigCorsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigCors(context.Background()).SystemConfigCorsRequest(systemConfigCorsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigCors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemConfigCorsRequest := NewSystemConfigCorsRequestWithDefaults()
+	
+	resp, err := client.System.PostSysConfigCors(context.Background(), systemConfigCorsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6688,28 +6353,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysConfigCorsRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemConfigCorsRequest** | [**SystemConfigCorsRequest**](SystemConfigCorsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6725,22 +6376,32 @@ Reload the given subsystem
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    subsystem := "subsystem_example" // string | 
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigReloadSubsystem(context.Background(), subsystem).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigReloadSubsystem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	subsystem :=  // string | 
+	
+	resp, err := client.System.PostSysConfigReloadSubsystem(context.Background(), subsystem)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6749,33 +6410,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **subsystem** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysConfigReloadSubsystemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6791,23 +6438,34 @@ Configure the values to be returned for the UI header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | The name of the header.
-    systemConfigUiHeadersRequest := *openapiclient.NewSystemConfigUiHeadersRequest() // SystemConfigUiHeadersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigUiHeadersHeader(context.Background(), header).SystemConfigUiHeadersRequest(systemConfigUiHeadersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigUiHeadersHeader``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	header :=  // string | The name of the header.
+	
+	systemConfigUiHeadersRequest := NewSystemConfigUiHeadersRequestWithDefaults()
+	
+	resp, err := client.System.PostSysConfigUiHeadersHeader(context.Background(), header, systemConfigUiHeadersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6816,12 +6474,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **header** | **string** | The name of the header. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysConfigUiHeadersHeaderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6829,21 +6485,9 @@ Name | Type | Description  | Notes
 
  **systemConfigUiHeadersRequest** | [**SystemConfigUiHeadersRequest**](SystemConfigUiHeadersRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6861,22 +6505,33 @@ Initializes a new root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemGenerateRootRequest := *openapiclient.NewSystemGenerateRootRequest() // SystemGenerateRootRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysGenerateRoot(context.Background()).SystemGenerateRootRequest(systemGenerateRootRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysGenerateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemGenerateRootRequest := NewSystemGenerateRootRequestWithDefaults()
+	
+	resp, err := client.System.PostSysGenerateRoot(context.Background(), systemGenerateRootRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6886,28 +6541,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysGenerateRootRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemGenerateRootRequest** | [**SystemGenerateRootRequest**](SystemGenerateRootRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6925,22 +6566,33 @@ Initializes a new root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemGenerateRootAttemptRequest := *openapiclient.NewSystemGenerateRootAttemptRequest() // SystemGenerateRootAttemptRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysGenerateRootAttempt(context.Background()).SystemGenerateRootAttemptRequest(systemGenerateRootAttemptRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysGenerateRootAttempt``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemGenerateRootAttemptRequest := NewSystemGenerateRootAttemptRequestWithDefaults()
+	
+	resp, err := client.System.PostSysGenerateRootAttempt(context.Background(), systemGenerateRootAttemptRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6950,28 +6602,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysGenerateRootAttemptRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemGenerateRootAttemptRequest** | [**SystemGenerateRootAttemptRequest**](SystemGenerateRootAttemptRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6989,22 +6627,33 @@ Enter a single unseal key share to progress the root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemGenerateRootUpdateRequest := *openapiclient.NewSystemGenerateRootUpdateRequest() // SystemGenerateRootUpdateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysGenerateRootUpdate(context.Background()).SystemGenerateRootUpdateRequest(systemGenerateRootUpdateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysGenerateRootUpdate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemGenerateRootUpdateRequest := NewSystemGenerateRootUpdateRequestWithDefaults()
+	
+	resp, err := client.System.PostSysGenerateRootUpdate(context.Background(), systemGenerateRootUpdateRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7014,28 +6663,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysGenerateRootUpdateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemGenerateRootUpdateRequest** | [**SystemGenerateRootUpdateRequest**](SystemGenerateRootUpdateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7053,22 +6688,33 @@ Initialize a new Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemInitRequest := *openapiclient.NewSystemInitRequest() // SystemInitRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysInit(context.Background()).SystemInitRequest(systemInitRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysInit``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemInitRequest := NewSystemInitRequestWithDefaults()
+	
+	resp, err := client.System.PostSysInit(context.Background(), systemInitRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7078,28 +6724,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysInitRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemInitRequest** | [**SystemInitRequest**](SystemInitRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7115,22 +6747,33 @@ Enable or disable collection of client count, set retention period, or set defau
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemInternalCountersConfigRequest := *openapiclient.NewSystemInternalCountersConfigRequest() // SystemInternalCountersConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysInternalCountersConfig(context.Background()).SystemInternalCountersConfigRequest(systemInternalCountersConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysInternalCountersConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemInternalCountersConfigRequest := NewSystemInternalCountersConfigRequestWithDefaults()
+	
+	resp, err := client.System.PostSysInternalCountersConfig(context.Background(), systemInternalCountersConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7140,28 +6783,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysInternalCountersConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemInternalCountersConfigRequest** | [**SystemInternalCountersConfigRequest**](SystemInternalCountersConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7177,22 +6806,33 @@ Retrieve lease metadata.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemLeasesLookupRequest := *openapiclient.NewSystemLeasesLookupRequest() // SystemLeasesLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesLookup(context.Background()).SystemLeasesLookupRequest(systemLeasesLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemLeasesLookupRequest := NewSystemLeasesLookupRequestWithDefaults()
+	
+	resp, err := client.System.PostSysLeasesLookup(context.Background(), systemLeasesLookupRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7202,28 +6842,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemLeasesLookupRequest** | [**SystemLeasesLookupRequest**](SystemLeasesLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7239,22 +6865,33 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemLeasesRenewRequest := *openapiclient.NewSystemLeasesRenewRequest() // SystemLeasesRenewRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRenew(context.Background()).SystemLeasesRenewRequest(systemLeasesRenewRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRenew``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemLeasesRenewRequest := NewSystemLeasesRenewRequestWithDefaults()
+	
+	resp, err := client.System.PostSysLeasesRenew(context.Background(), systemLeasesRenewRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7264,28 +6901,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesRenewRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemLeasesRenewRequest** | [**SystemLeasesRenewRequest**](SystemLeasesRenewRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7301,23 +6924,34 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemLeasesRenewLeaseRequest := *openapiclient.NewSystemLeasesRenewLeaseRequest() // SystemLeasesRenewLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRenewUrlLeaseId(context.Background(), urlLeaseId).SystemLeasesRenewLeaseRequest(systemLeasesRenewLeaseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRenewUrlLeaseId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
+	
+	systemLeasesRenewLeaseRequest := NewSystemLeasesRenewLeaseRequestWithDefaults()
+	
+	resp, err := client.System.PostSysLeasesRenewUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRenewLeaseRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7326,12 +6960,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRenewUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7339,21 +6971,9 @@ Name | Type | Description  | Notes
 
  **systemLeasesRenewLeaseRequest** | [**SystemLeasesRenewLeaseRequest**](SystemLeasesRenewLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7369,22 +6989,33 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemLeasesRevokeRequest := *openapiclient.NewSystemLeasesRevokeRequest() // SystemLeasesRevokeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevoke(context.Background()).SystemLeasesRevokeRequest(systemLeasesRevokeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevoke``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemLeasesRevokeRequest := NewSystemLeasesRevokeRequestWithDefaults()
+	
+	resp, err := client.System.PostSysLeasesRevoke(context.Background(), systemLeasesRevokeRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7394,28 +7025,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemLeasesRevokeRequest** | [**SystemLeasesRevokeRequest**](SystemLeasesRevokeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7433,22 +7050,32 @@ Revokes all secrets or tokens generated under a given prefix immediately
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevokeForcePrefix(context.Background(), prefix).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevokeForcePrefix``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	
+	resp, err := client.System.PostSysLeasesRevokeForcePrefix(context.Background(), prefix)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7457,33 +7084,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokeForcePrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7499,23 +7112,34 @@ Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path prop
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-    systemLeasesRevokePrefixRequest := *openapiclient.NewSystemLeasesRevokePrefixRequest() // SystemLeasesRevokePrefixRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevokePrefixPrefix(context.Background(), prefix).SystemLeasesRevokePrefixRequest(systemLeasesRevokePrefixRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevokePrefixPrefix``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	
+	systemLeasesRevokePrefixRequest := NewSystemLeasesRevokePrefixRequestWithDefaults()
+	
+	resp, err := client.System.PostSysLeasesRevokePrefixPrefix(context.Background(), prefix, systemLeasesRevokePrefixRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7524,12 +7148,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokePrefixPrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7537,21 +7159,9 @@ Name | Type | Description  | Notes
 
  **systemLeasesRevokePrefixRequest** | [**SystemLeasesRevokePrefixRequest**](SystemLeasesRevokePrefixRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7567,23 +7177,34 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemLeasesRevokeLeaseRequest := *openapiclient.NewSystemLeasesRevokeLeaseRequest() // SystemLeasesRevokeLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId).SystemLeasesRevokeLeaseRequest(systemLeasesRevokeLeaseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevokeUrlLeaseId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
+	
+	systemLeasesRevokeLeaseRequest := NewSystemLeasesRevokeLeaseRequestWithDefaults()
+	
+	resp, err := client.System.PostSysLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRevokeLeaseRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7592,12 +7213,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysLeasesRevokeUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7605,21 +7224,9 @@ Name | Type | Description  | Notes
 
  **systemLeasesRevokeLeaseRequest** | [**SystemLeasesRevokeLeaseRequest**](SystemLeasesRevokeLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7635,48 +7242,45 @@ This endpoint performs cleanup tasks that can be run if certain error conditions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesTidy(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesTidy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.PostSysLeasesTidy(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysLeasesTidyRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7692,22 +7296,33 @@ Validates the login for the given MFA methods. Upon successful validation, it re
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemMfaValidateRequest := *openapiclient.NewSystemMfaValidateRequest(map[string]interface{}(123), "MfaRequestId_example") // SystemMfaValidateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysMfaValidate(context.Background()).SystemMfaValidateRequest(systemMfaValidateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysMfaValidate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemMfaValidateRequest := NewSystemMfaValidateRequestWithDefaults()
+	
+	resp, err := client.System.PostSysMfaValidate(context.Background(), systemMfaValidateRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7717,28 +7332,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysMfaValidateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemMfaValidateRequest** | [**SystemMfaValidateRequest**](SystemMfaValidateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7754,23 +7355,34 @@ Enable a new secrets engine at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-    systemMountsRequest := *openapiclient.NewSystemMountsRequest() // SystemMountsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysMountsPath(context.Background(), path).SystemMountsRequest(systemMountsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysMountsPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Example: \"aws/east\"
+	
+	systemMountsRequest := NewSystemMountsRequestWithDefaults()
+	
+	resp, err := client.System.PostSysMountsPath(context.Background(), path, systemMountsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7779,12 +7391,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysMountsPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7792,21 +7402,9 @@ Name | Type | Description  | Notes
 
  **systemMountsRequest** | [**SystemMountsRequest**](SystemMountsRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7822,23 +7420,34 @@ Tune backend configuration parameters for this mount.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-    systemMountsTuneRequest := *openapiclient.NewSystemMountsTuneRequest() // SystemMountsTuneRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysMountsPathTune(context.Background(), path).SystemMountsTuneRequest(systemMountsTuneRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysMountsPathTune``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | The path to mount to. Example: \"aws/east\"
+	
+	systemMountsTuneRequest := NewSystemMountsTuneRequestWithDefaults()
+	
+	resp, err := client.System.PostSysMountsPathTune(context.Background(), path, systemMountsTuneRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7847,12 +7456,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysMountsPathTuneRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7860,21 +7467,9 @@ Name | Type | Description  | Notes
 
  **systemMountsTuneRequest** | [**SystemMountsTuneRequest**](SystemMountsTuneRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7890,23 +7485,34 @@ Register a new plugin, or updates an existing one with the supplied name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the plugin
-    systemPluginsCatalogRequest := *openapiclient.NewSystemPluginsCatalogRequest() // SystemPluginsCatalogRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPluginsCatalogName(context.Background(), name).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPluginsCatalogName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the plugin
+	
+	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
+	
+	resp, err := client.System.PostSysPluginsCatalogName(context.Background(), name, systemPluginsCatalogRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7915,12 +7521,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPluginsCatalogNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7928,21 +7532,9 @@ Name | Type | Description  | Notes
 
  **systemPluginsCatalogRequest** | [**SystemPluginsCatalogRequest**](SystemPluginsCatalogRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -7958,24 +7550,35 @@ Register a new plugin, or updates an existing one with the supplied name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the plugin
-    type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-    systemPluginsCatalogRequest := *openapiclient.NewSystemPluginsCatalogRequest() // SystemPluginsCatalogRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPluginsCatalogTypeName(context.Background(), name, type_).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPluginsCatalogTypeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the plugin
+	type_ :=  // string | The type of the plugin, may be auth, secret, or database
+	
+	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
+	
+	resp, err := client.System.PostSysPluginsCatalogTypeName(context.Background(), name, type_, systemPluginsCatalogRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7984,13 +7587,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the plugin | 
 **type_** | **string** | The type of the plugin, may be auth, secret, or database | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPluginsCatalogTypeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7999,21 +7600,9 @@ Name | Type | Description  | Notes
 
  **systemPluginsCatalogRequest** | [**SystemPluginsCatalogRequest**](SystemPluginsCatalogRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8031,22 +7620,33 @@ Reload mounted plugin backends.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemPluginsReloadBackendRequest := *openapiclient.NewSystemPluginsReloadBackendRequest() // SystemPluginsReloadBackendRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPluginsReloadBackend(context.Background()).SystemPluginsReloadBackendRequest(systemPluginsReloadBackendRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPluginsReloadBackend``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemPluginsReloadBackendRequest := NewSystemPluginsReloadBackendRequestWithDefaults()
+	
+	resp, err := client.System.PostSysPluginsReloadBackend(context.Background(), systemPluginsReloadBackendRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8056,28 +7656,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysPluginsReloadBackendRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemPluginsReloadBackendRequest** | [**SystemPluginsReloadBackendRequest**](SystemPluginsReloadBackendRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8093,23 +7679,34 @@ Add a new or update an existing ACL policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
-    systemPoliciesAclRequest := *openapiclient.NewSystemPoliciesAclRequest() // SystemPoliciesAclRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPoliciesAclName(context.Background(), name).SystemPoliciesAclRequest(systemPoliciesAclRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPoliciesAclName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the policy. Example: \"ops\"
+	
+	systemPoliciesAclRequest := NewSystemPoliciesAclRequestWithDefaults()
+	
+	resp, err := client.System.PostSysPoliciesAclName(context.Background(), name, systemPoliciesAclRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8118,12 +7715,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPoliciesAclNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8131,21 +7726,9 @@ Name | Type | Description  | Notes
 
  **systemPoliciesAclRequest** | [**SystemPoliciesAclRequest**](SystemPoliciesAclRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8161,23 +7744,34 @@ Add a new or update an existing password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the password policy.
-    systemPoliciesPasswordRequest := *openapiclient.NewSystemPoliciesPasswordRequest() // SystemPoliciesPasswordRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPoliciesPasswordName(context.Background(), name).SystemPoliciesPasswordRequest(systemPoliciesPasswordRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPoliciesPasswordName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the password policy.
+	
+	systemPoliciesPasswordRequest := NewSystemPoliciesPasswordRequestWithDefaults()
+	
+	resp, err := client.System.PostSysPoliciesPasswordName(context.Background(), name, systemPoliciesPasswordRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8186,12 +7780,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the password policy. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPoliciesPasswordNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8199,21 +7791,9 @@ Name | Type | Description  | Notes
 
  **systemPoliciesPasswordRequest** | [**SystemPoliciesPasswordRequest**](SystemPoliciesPasswordRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8229,23 +7809,34 @@ Add a new or update an existing policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
-    systemPolicyRequest := *openapiclient.NewSystemPolicyRequest() // SystemPolicyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPolicyName(context.Background(), name).SystemPolicyRequest(systemPolicyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPolicyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | The name of the policy. Example: \"ops\"
+	
+	systemPolicyRequest := NewSystemPolicyRequestWithDefaults()
+	
+	resp, err := client.System.PostSysPolicyName(context.Background(), name, systemPolicyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8254,12 +7845,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | The name of the policy. Example: \&quot;ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysPolicyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8267,21 +7856,9 @@ Name | Type | Description  | Notes
 
  **systemPolicyRequest** | [**SystemPolicyRequest**](SystemPolicyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8297,22 +7874,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemQuotasConfigRequest := *openapiclient.NewSystemQuotasConfigRequest() // SystemQuotasConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysQuotasConfig(context.Background()).SystemQuotasConfigRequest(systemQuotasConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysQuotasConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemQuotasConfigRequest := NewSystemQuotasConfigRequestWithDefaults()
+	
+	resp, err := client.System.PostSysQuotasConfig(context.Background(), systemQuotasConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8322,28 +7910,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysQuotasConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemQuotasConfigRequest** | [**SystemQuotasConfigRequest**](SystemQuotasConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8359,23 +7933,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the quota rule.
-    systemQuotasRateLimitRequest := *openapiclient.NewSystemQuotasRateLimitRequest() // SystemQuotasRateLimitRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysQuotasRateLimitName(context.Background(), name).SystemQuotasRateLimitRequest(systemQuotasRateLimitRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysQuotasRateLimitName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the quota rule.
+	
+	systemQuotasRateLimitRequest := NewSystemQuotasRateLimitRequestWithDefaults()
+	
+	resp, err := client.System.PostSysQuotasRateLimitName(context.Background(), name, systemQuotasRateLimitRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8384,12 +7969,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the quota rule. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysQuotasRateLimitNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8397,21 +7980,9 @@ Name | Type | Description  | Notes
 
  **systemQuotasRateLimitRequest** | [**SystemQuotasRateLimitRequest**](SystemQuotasRateLimitRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8427,22 +7998,33 @@ Update the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRawRequest := *openapiclient.NewSystemRawRequest() // SystemRawRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRaw(context.Background()).SystemRawRequest(systemRawRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRaw``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRawRequest := NewSystemRawRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRaw(context.Background(), systemRawRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8452,28 +8034,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRawRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRawRequest** | [**SystemRawRequest**](SystemRawRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8489,23 +8057,34 @@ Update the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | 
-    systemRawRequest := *openapiclient.NewSystemRawRequest() // SystemRawRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRawPath(context.Background(), path).SystemRawRequest(systemRawRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRawPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	path :=  // string | 
+	
+	systemRawRequest := NewSystemRawRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRawPath(context.Background(), path, systemRawRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8514,12 +8093,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **path** | **string** |  | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRawPathRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8527,21 +8104,9 @@ Name | Type | Description  | Notes
 
  **systemRawRequest** | [**SystemRawRequest**](SystemRawRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8559,22 +8124,33 @@ Initializes a new rekey attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRekeyInitRequest := *openapiclient.NewSystemRekeyInitRequest() // SystemRekeyInitRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRekeyInit(context.Background()).SystemRekeyInitRequest(systemRekeyInitRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRekeyInit``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRekeyInitRequest := NewSystemRekeyInitRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRekeyInit(context.Background(), systemRekeyInitRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8584,28 +8160,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRekeyInitRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRekeyInitRequest** | [**SystemRekeyInitRequest**](SystemRekeyInitRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8621,22 +8183,33 @@ Enter a single unseal key share to progress the rekey of the Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRekeyUpdateRequest := *openapiclient.NewSystemRekeyUpdateRequest() // SystemRekeyUpdateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRekeyUpdate(context.Background()).SystemRekeyUpdateRequest(systemRekeyUpdateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRekeyUpdate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRekeyUpdateRequest := NewSystemRekeyUpdateRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRekeyUpdate(context.Background(), systemRekeyUpdateRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8646,28 +8219,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRekeyUpdateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRekeyUpdateRequest** | [**SystemRekeyUpdateRequest**](SystemRekeyUpdateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8683,22 +8242,33 @@ Enter a single new key share to progress the rekey verification operation.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRekeyVerifyRequest := *openapiclient.NewSystemRekeyVerifyRequest() // SystemRekeyVerifyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRekeyVerify(context.Background()).SystemRekeyVerifyRequest(systemRekeyVerifyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRekeyVerify``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRekeyVerifyRequest := NewSystemRekeyVerifyRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRekeyVerify(context.Background(), systemRekeyVerifyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8708,28 +8278,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRekeyVerifyRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRekeyVerifyRequest** | [**SystemRekeyVerifyRequest**](SystemRekeyVerifyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8745,22 +8301,33 @@ Initiate a mount migration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRemountRequest := *openapiclient.NewSystemRemountRequest() // SystemRemountRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRemount(context.Background()).SystemRemountRequest(systemRemountRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRemount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRemountRequest := NewSystemRemountRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRemount(context.Background(), systemRemountRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8770,28 +8337,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRemountRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRemountRequest** | [**SystemRemountRequest**](SystemRemountRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8807,22 +8360,33 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRenewRequest := *openapiclient.NewSystemRenewRequest() // SystemRenewRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRenew(context.Background()).SystemRenewRequest(systemRenewRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRenew``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRenewRequest := NewSystemRenewRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRenew(context.Background(), systemRenewRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8832,28 +8396,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRenewRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRenewRequest** | [**SystemRenewRequest**](SystemRenewRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8869,23 +8419,34 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemRenewLeaseRequest := *openapiclient.NewSystemRenewLeaseRequest() // SystemRenewLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRenewUrlLeaseId(context.Background(), urlLeaseId).SystemRenewLeaseRequest(systemRenewLeaseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRenewUrlLeaseId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
+	
+	systemRenewLeaseRequest := NewSystemRenewLeaseRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRenewUrlLeaseId(context.Background(), urlLeaseId, systemRenewLeaseRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8894,12 +8455,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRenewUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8907,21 +8466,9 @@ Name | Type | Description  | Notes
 
  **systemRenewLeaseRequest** | [**SystemRenewLeaseRequest**](SystemRenewLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -8937,22 +8484,33 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRevokeRequest := *openapiclient.NewSystemRevokeRequest() // SystemRevokeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevoke(context.Background()).SystemRevokeRequest(systemRevokeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevoke``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRevokeRequest := NewSystemRevokeRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRevoke(context.Background(), systemRevokeRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8962,28 +8520,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRevokeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRevokeRequest** | [**SystemRevokeRequest**](SystemRevokeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9001,22 +8545,32 @@ Revokes all secrets or tokens generated under a given prefix immediately
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevokeForcePrefix(context.Background(), prefix).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevokeForcePrefix``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	
+	resp, err := client.System.PostSysRevokeForcePrefix(context.Background(), prefix)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9025,33 +8579,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRevokeForcePrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9067,23 +8607,34 @@ Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path prop
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-    systemRevokePrefixRequest := *openapiclient.NewSystemRevokePrefixRequest() // SystemRevokePrefixRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevokePrefixPrefix(context.Background(), prefix).SystemRevokePrefixRequest(systemRevokePrefixRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevokePrefixPrefix``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	
+	systemRevokePrefixRequest := NewSystemRevokePrefixRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRevokePrefixPrefix(context.Background(), prefix, systemRevokePrefixRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9092,12 +8643,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **prefix** | **string** | The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot; | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRevokePrefixPrefixRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9105,21 +8654,9 @@ Name | Type | Description  | Notes
 
  **systemRevokePrefixRequest** | [**SystemRevokePrefixRequest**](SystemRevokePrefixRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9135,23 +8672,34 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemRevokeLeaseRequest := *openapiclient.NewSystemRevokeLeaseRequest() // SystemRevokeLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevokeUrlLeaseId(context.Background(), urlLeaseId).SystemRevokeLeaseRequest(systemRevokeLeaseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevokeUrlLeaseId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
+	
+	systemRevokeLeaseRequest := NewSystemRevokeLeaseRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRevokeUrlLeaseId(context.Background(), urlLeaseId, systemRevokeLeaseRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9160,12 +8708,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlLeaseId** | **string** | The lease identifier to renew. This is included with a lease. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysRevokeUrlLeaseIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9173,21 +8719,9 @@ Name | Type | Description  | Notes
 
  **systemRevokeLeaseRequest** | [**SystemRevokeLeaseRequest**](SystemRevokeLeaseRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9203,48 +8737,45 @@ Rotates the backend encryption key used to persist data.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRotate(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRotate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.PostSysRotate(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRotateRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9260,22 +8791,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRotateConfigRequest := *openapiclient.NewSystemRotateConfigRequest() // SystemRotateConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRotateConfig(context.Background()).SystemRotateConfigRequest(systemRotateConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRotateConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemRotateConfigRequest := NewSystemRotateConfigRequestWithDefaults()
+	
+	resp, err := client.System.PostSysRotateConfig(context.Background(), systemRotateConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9285,28 +8827,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysRotateConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemRotateConfigRequest** | [**SystemRotateConfigRequest**](SystemRotateConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9322,48 +8850,45 @@ Seal the Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysSeal(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysSeal``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.PostSysSeal(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysSealRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9381,48 +8906,45 @@ Cause the node to give up active status.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysStepDown(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysStepDown``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.PostSysStepDown(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysStepDownRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9438,22 +8960,33 @@ Generate a hash sum for input data
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemToolsHashRequest := *openapiclient.NewSystemToolsHashRequest() // SystemToolsHashRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsHash(context.Background()).SystemToolsHashRequest(systemToolsHashRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsHash``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
+	
+	resp, err := client.System.PostSysToolsHash(context.Background(), systemToolsHashRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9463,28 +8996,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysToolsHashRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemToolsHashRequest** | [**SystemToolsHashRequest**](SystemToolsHashRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9500,23 +9019,34 @@ Generate a hash sum for input data
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-    systemToolsHashRequest := *openapiclient.NewSystemToolsHashRequest() // SystemToolsHashRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsHashUrlalgorithm(context.Background(), urlalgorithm).SystemToolsHashRequest(systemToolsHashRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsHashUrlalgorithm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	urlalgorithm :=  // string | Algorithm to use (POST URL parameter)
+	
+	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
+	
+	resp, err := client.System.PostSysToolsHashUrlalgorithm(context.Background(), urlalgorithm, systemToolsHashRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9525,12 +9055,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlalgorithm** | **string** | Algorithm to use (POST URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsHashUrlalgorithmRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9538,21 +9066,9 @@ Name | Type | Description  | Notes
 
  **systemToolsHashRequest** | [**SystemToolsHashRequest**](SystemToolsHashRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9568,22 +9084,33 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandom(context.Background()).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandom``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
+	
+	resp, err := client.System.PostSysToolsRandom(context.Background(), systemToolsRandomRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9593,28 +9120,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysToolsRandomRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9630,23 +9143,34 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandomSource(context.Background(), source).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandomSource``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	source :=  // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	
+	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
+	
+	resp, err := client.System.PostSysToolsRandomSource(context.Background(), source, systemToolsRandomRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9655,12 +9179,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsRandomSourceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9668,21 +9190,9 @@ Name | Type | Description  | Notes
 
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9698,24 +9208,35 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
-    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandomSourceUrlbytes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	source :=  // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	urlbytes :=  // string | The number of bytes to generate (POST URL parameter)
+	
+	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
+	
+	resp, err := client.System.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes, systemToolsRandomRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9724,13 +9245,11 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
 **urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsRandomSourceUrlbytesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9739,21 +9258,9 @@ Name | Type | Description  | Notes
 
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9769,23 +9276,34 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandomUrlbytes(context.Background(), urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandomUrlbytes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	urlbytes :=  // string | The number of bytes to generate (POST URL parameter)
+	
+	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
+	
+	resp, err := client.System.PostSysToolsRandomUrlbytes(context.Background(), urlbytes, systemToolsRandomRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9794,12 +9312,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostSysToolsRandomUrlbytesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9807,21 +9323,9 @@ Name | Type | Description  | Notes
 
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9837,22 +9341,33 @@ Unseal the Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemUnsealRequest := *openapiclient.NewSystemUnsealRequest() // SystemUnsealRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysUnseal(context.Background()).SystemUnsealRequest(systemUnsealRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysUnseal``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemUnsealRequest := NewSystemUnsealRequestWithDefaults()
+	
+	resp, err := client.System.PostSysUnseal(context.Background(), systemUnsealRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9862,28 +9377,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysUnsealRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemUnsealRequest** | [**SystemUnsealRequest**](SystemUnsealRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9899,22 +9400,33 @@ Look up wrapping properties for the given token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemWrappingLookupRequest := *openapiclient.NewSystemWrappingLookupRequest() // SystemWrappingLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingLookup(context.Background()).SystemWrappingLookupRequest(systemWrappingLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemWrappingLookupRequest := NewSystemWrappingLookupRequestWithDefaults()
+	
+	resp, err := client.System.PostSysWrappingLookup(context.Background(), systemWrappingLookupRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9924,28 +9436,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingLookupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemWrappingLookupRequest** | [**SystemWrappingLookupRequest**](SystemWrappingLookupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -9961,22 +9459,33 @@ Rotates a response-wrapped token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemWrappingRewrapRequest := *openapiclient.NewSystemWrappingRewrapRequest() // SystemWrappingRewrapRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingRewrap(context.Background()).SystemWrappingRewrapRequest(systemWrappingRewrapRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingRewrap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemWrappingRewrapRequest := NewSystemWrappingRewrapRequestWithDefaults()
+	
+	resp, err := client.System.PostSysWrappingRewrap(context.Background(), systemWrappingRewrapRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9986,28 +9495,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingRewrapRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemWrappingRewrapRequest** | [**SystemWrappingRewrapRequest**](SystemWrappingRewrapRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10023,22 +9518,33 @@ Unwraps a response-wrapped token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemWrappingUnwrapRequest := *openapiclient.NewSystemWrappingUnwrapRequest() // SystemWrappingUnwrapRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingUnwrap(context.Background()).SystemWrappingUnwrapRequest(systemWrappingUnwrapRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingUnwrap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	systemWrappingUnwrapRequest := NewSystemWrappingUnwrapRequestWithDefaults()
+	
+	resp, err := client.System.PostSysWrappingUnwrap(context.Background(), systemWrappingUnwrapRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10048,28 +9554,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingUnwrapRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **systemWrappingUnwrapRequest** | [**SystemWrappingUnwrapRequest**](SystemWrappingUnwrapRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -10085,47 +9577,44 @@ Response-wraps an arbitrary JSON object.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingWrap(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingWrap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.System.PostSysWrappingWrap(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostSysWrappingWrapRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 

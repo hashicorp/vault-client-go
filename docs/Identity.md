@@ -1,6 +1,4 @@
-# \Identity
-
-All URIs are relative to *http://localhost*
+# Identity
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -124,22 +122,32 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the alias
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the alias
+	
+	resp, err := client.Identity.DeleteIdentityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -148,33 +156,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the alias | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -190,22 +184,32 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the alias
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityEntityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the alias
+	
+	resp, err := client.Identity.DeleteIdentityEntityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -214,33 +218,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the alias | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityEntityAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -256,22 +246,32 @@ Update, read or delete an entity using entity ID
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityEntityIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the entity. If set, updates the corresponding existing entity.
+	
+	resp, err := client.Identity.DeleteIdentityEntityIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -280,33 +280,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the entity. If set, updates the corresponding existing entity. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityEntityIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -322,22 +308,32 @@ Update, read or delete an entity using entity name
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the entity
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityEntityNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the entity
+	
+	resp, err := client.Identity.DeleteIdentityEntityNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -346,33 +342,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the entity | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityEntityNameNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -388,22 +370,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the group alias.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityGroupAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the group alias.
+	
+	resp, err := client.Identity.DeleteIdentityGroupAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -412,33 +404,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the group alias. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityGroupAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -454,22 +432,32 @@ Update or delete an existing group using its ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityGroupIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the group. If set, updates the corresponding existing group.
+	
+	resp, err := client.Identity.DeleteIdentityGroupIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -478,33 +466,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the group. If set, updates the corresponding existing group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityGroupIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -520,22 +494,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityGroupNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the group.
+	
+	resp, err := client.Identity.DeleteIdentityGroupNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -544,33 +528,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityGroupNameNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -586,22 +556,32 @@ Delete a login enforcement
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name for this login enforcement configuration
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaLoginEnforcementName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name for this login enforcement configuration
+	
+	resp, err := client.Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -610,33 +590,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name for this login enforcement configuration | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityMfaLoginEnforcementNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -652,22 +618,32 @@ Delete a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodDuoMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -676,33 +652,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityMfaMethodDuoMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -718,22 +680,32 @@ Delete a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodOktaMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -742,33 +714,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityMfaMethodOktaMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -784,22 +742,32 @@ Delete a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodPingidMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -808,33 +776,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityMfaMethodPingidMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -850,22 +804,32 @@ Delete a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodTotpMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -874,33 +838,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityMfaMethodTotpMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -916,22 +866,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the assignment
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityOidcAssignmentName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcAssignmentName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the assignment
+	
+	resp, err := client.Identity.DeleteIdentityOidcAssignmentName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -940,33 +900,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the assignment | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityOidcAssignmentNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -982,22 +928,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the client.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityOidcClientName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcClientName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the client.
+	
+	resp, err := client.Identity.DeleteIdentityOidcClientName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1006,33 +962,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the client. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityOidcClientNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1048,22 +990,32 @@ CRUD operations for OIDC keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the key
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityOidcKeyName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the key
+	
+	resp, err := client.Identity.DeleteIdentityOidcKeyName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1072,33 +1024,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityOidcKeyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1114,22 +1052,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityOidcProviderName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcProviderName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	resp, err := client.Identity.DeleteIdentityOidcProviderName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1138,33 +1086,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityOidcProviderNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1180,22 +1114,32 @@ CRUD operations on OIDC Roles
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role
+	
+	resp, err := client.Identity.DeleteIdentityOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1204,33 +1148,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1246,22 +1176,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the scope
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityOidcScopeName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcScopeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the scope
+	
+	resp, err := client.Identity.DeleteIdentityOidcScopeName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1270,33 +1210,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the scope | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityOidcScopeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1312,22 +1238,32 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the persona
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.DeleteIdentityPersonaIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityPersonaIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the persona
+	
+	resp, err := client.Identity.DeleteIdentityPersonaIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1336,33 +1272,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the persona | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteIdentityPersonaIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1378,22 +1300,33 @@ List all the alias IDs.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityAliasId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityAliasId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityAliasId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1403,28 +1336,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityAliasIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1440,22 +1359,32 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the alias
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the alias
+	
+	resp, err := client.Identity.GetIdentityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1464,33 +1393,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the alias | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1506,22 +1421,33 @@ List all the alias IDs.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityEntityAliasId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityAliasId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityEntityAliasId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1531,28 +1457,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityEntityAliasIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1568,22 +1480,32 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the alias
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityEntityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the alias
+	
+	resp, err := client.Identity.GetIdentityEntityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1592,33 +1514,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the alias | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityEntityAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1634,22 +1542,33 @@ List all the entity IDs
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityEntityId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityEntityId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1659,28 +1578,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityEntityIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1696,22 +1601,32 @@ Update, read or delete an entity using entity ID
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityEntityIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the entity. If set, updates the corresponding existing entity.
+	
+	resp, err := client.Identity.GetIdentityEntityIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1720,33 +1635,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the entity. If set, updates the corresponding existing entity. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityEntityIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1762,22 +1663,33 @@ List all the entity names
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityEntityName(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityEntityName(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1787,28 +1699,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityEntityNameRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1824,22 +1722,32 @@ Update, read or delete an entity using entity name
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the entity
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityEntityNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the entity
+	
+	resp, err := client.Identity.GetIdentityEntityNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1848,33 +1756,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the entity | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityEntityNameNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1890,22 +1784,33 @@ List all the group alias IDs.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityGroupAliasId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupAliasId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityGroupAliasId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1915,28 +1820,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityGroupAliasIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -1952,22 +1843,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the group alias.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityGroupAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the group alias.
+	
+	resp, err := client.Identity.GetIdentityGroupAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1976,33 +1877,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the group alias. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityGroupAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2018,22 +1905,33 @@ List all the group IDs.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityGroupId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityGroupId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2043,28 +1941,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityGroupIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2080,22 +1964,32 @@ Update or delete an existing group using its ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityGroupIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the group. If set, updates the corresponding existing group.
+	
+	resp, err := client.Identity.GetIdentityGroupIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2104,33 +1998,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the group. If set, updates the corresponding existing group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityGroupIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2146,22 +2026,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityGroupName(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityGroupName(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2171,28 +2062,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityGroupNameRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2208,22 +2085,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the group.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityGroupNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the group.
+	
+	resp, err := client.Identity.GetIdentityGroupNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2232,33 +2119,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityGroupNameNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2274,22 +2147,33 @@ List login enforcements
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaLoginEnforcement(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaLoginEnforcement``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaLoginEnforcement(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2299,28 +2183,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityMfaLoginEnforcementRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2336,22 +2206,32 @@ Read the current login enforcement
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name for this login enforcement configuration
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaLoginEnforcementName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name for this login enforcement configuration
+	
+	resp, err := client.Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2360,33 +2240,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name for this login enforcement configuration | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityMfaLoginEnforcementNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2402,22 +2268,33 @@ List MFA method configurations for all MFA methods
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethod(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethod(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2427,28 +2304,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2464,22 +2327,33 @@ List MFA method configurations for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodDuo(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodDuo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodDuo(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2489,28 +2363,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodDuoRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2526,22 +2386,32 @@ Read the current configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodDuoMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2550,33 +2420,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodDuoMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2592,22 +2448,32 @@ Read the current configuration for the given ID regardless of the MFA method typ
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2616,33 +2482,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2658,22 +2510,33 @@ List MFA method configurations for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodOkta(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodOkta``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodOkta(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2683,28 +2546,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodOktaRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2720,22 +2569,32 @@ Read the current configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodOktaMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2744,33 +2603,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodOktaMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2786,22 +2631,33 @@ List MFA method configurations for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodPingid(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodPingid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodPingid(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2811,28 +2667,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodPingidRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2848,22 +2690,32 @@ Read the current configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodPingidMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2872,33 +2724,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodPingidMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2914,22 +2752,33 @@ List MFA method configurations for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodTotp(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodTotp``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodTotp(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2939,28 +2788,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodTotpRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -2976,22 +2811,32 @@ Read the current configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodTotpMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	resp, err := client.Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3000,33 +2845,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityMfaMethodTotpMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3042,22 +2873,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcAssignment(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcAssignment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcAssignment(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3067,28 +2909,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcAssignmentRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3104,22 +2932,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the assignment
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcAssignmentName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcAssignmentName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the assignment
+	
+	resp, err := client.Identity.GetIdentityOidcAssignmentName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3128,33 +2966,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the assignment | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcAssignmentNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3170,22 +2994,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcClient(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcClient(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3195,28 +3030,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcClientRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3232,22 +3053,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the client.
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcClientName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcClientName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the client.
+	
+	resp, err := client.Identity.GetIdentityOidcClientName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3256,33 +3087,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the client. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcClientNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3298,48 +3115,45 @@ OIDC configuration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Identity.GetIdentityOidcConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcConfigRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3355,22 +3169,33 @@ List OIDC keys
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcKey(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcKey(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3380,28 +3205,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcKeyRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3417,22 +3228,32 @@ CRUD operations for OIDC keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the key
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcKeyName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the key
+	
+	resp, err := client.Identity.GetIdentityOidcKeyName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3441,33 +3262,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcKeyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3483,22 +3290,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcProvider(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProvider``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcProvider(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3508,28 +3326,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcProviderRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3545,22 +3349,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcProviderName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	resp, err := client.Identity.GetIdentityOidcProviderName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3569,33 +3383,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcProviderNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3611,22 +3411,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameAuthorize``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	resp, err := client.Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3635,33 +3445,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcProviderNameAuthorizeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3677,22 +3473,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameUserinfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	resp, err := client.Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3701,33 +3507,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcProviderNameUserinfoRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3743,22 +3535,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameWellKnownKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3767,33 +3569,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcProviderNameWellKnownKeysRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3809,22 +3597,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3833,33 +3631,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3875,22 +3659,33 @@ List configured OIDC roles
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3900,28 +3695,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcRoleRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -3937,22 +3718,32 @@ CRUD operations on OIDC Roles
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role
+	
+	resp, err := client.Identity.GetIdentityOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3961,33 +3752,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4003,22 +3780,33 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcScope(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcScope(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4028,28 +3816,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcScopeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4065,22 +3839,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the scope
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcScopeName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcScopeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the scope
+	
+	resp, err := client.Identity.GetIdentityOidcScopeName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4089,33 +3873,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the scope | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcScopeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4131,22 +3901,32 @@ Generate an OIDC token
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcTokenName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcTokenName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role
+	
+	resp, err := client.Identity.GetIdentityOidcTokenName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4155,33 +3935,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityOidcTokenNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4197,48 +3963,45 @@ Retrieve public keys
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcWellKnownKeys(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcWellKnownKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Identity.GetIdentityOidcWellKnownKeys(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcWellKnownKeysRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4254,48 +4017,45 @@ Query OIDC configurations
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcWellKnownOpenidConfiguration``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	resp, err := client.Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityOidcWellKnownOpenidConfigurationRequest struct via the builder pattern
 
-
-### Return type
 
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4311,22 +4071,33 @@ List all the alias IDs.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Must be set to `true`
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityPersonaId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityPersonaId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityPersonaId(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4336,28 +4107,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIdentityPersonaIdRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4373,22 +4130,32 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the persona
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.GetIdentityPersonaIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityPersonaIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the persona
+	
+	resp, err := client.Identity.GetIdentityPersonaIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4397,33 +4164,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the persona | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIdentityPersonaIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4439,22 +4192,33 @@ Create a new alias.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityAliasRequest := *openapiclient.NewIdentityAliasRequest() // IdentityAliasRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityAlias(context.Background()).IdentityAliasRequest(identityAliasRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityAlias``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityAliasRequest := NewIdentityAliasRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityAlias(context.Background(), identityAliasRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4464,28 +4228,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityAliasRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityAliasRequest** | [**IdentityAliasRequest**](IdentityAliasRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4501,23 +4251,34 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the alias
-    identityAliasIdRequest := *openapiclient.NewIdentityAliasIdRequest() // IdentityAliasIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityAliasIdId(context.Background(), id).IdentityAliasIdRequest(identityAliasIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the alias
+	
+	identityAliasIdRequest := NewIdentityAliasIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityAliasIdId(context.Background(), id, identityAliasIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4526,12 +4287,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the alias | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4539,21 +4298,9 @@ Name | Type | Description  | Notes
 
  **identityAliasIdRequest** | [**IdentityAliasIdRequest**](IdentityAliasIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4569,22 +4316,33 @@ Create a new entity
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityEntityRequest := *openapiclient.NewIdentityEntityRequest() // IdentityEntityRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityEntity(context.Background()).IdentityEntityRequest(identityEntityRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityEntityRequest := NewIdentityEntityRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntity(context.Background(), identityEntityRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4594,28 +4352,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityEntityRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityEntityRequest** | [**IdentityEntityRequest**](IdentityEntityRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4631,22 +4375,33 @@ Create a new alias.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityEntityAliasRequest := *openapiclient.NewIdentityEntityAliasRequest() // IdentityEntityAliasRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityEntityAlias(context.Background()).IdentityEntityAliasRequest(identityEntityAliasRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityAlias``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityEntityAliasRequest := NewIdentityEntityAliasRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityAlias(context.Background(), identityEntityAliasRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4656,28 +4411,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityEntityAliasRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityEntityAliasRequest** | [**IdentityEntityAliasRequest**](IdentityEntityAliasRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4693,23 +4434,34 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the alias
-    identityEntityAliasIdRequest := *openapiclient.NewIdentityEntityAliasIdRequest() // IdentityEntityAliasIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityEntityAliasIdId(context.Background(), id).IdentityEntityAliasIdRequest(identityEntityAliasIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the alias
+	
+	identityEntityAliasIdRequest := NewIdentityEntityAliasIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityAliasIdId(context.Background(), id, identityEntityAliasIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4718,12 +4470,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the alias | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityEntityAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4731,21 +4481,9 @@ Name | Type | Description  | Notes
 
  **identityEntityAliasIdRequest** | [**IdentityEntityAliasIdRequest**](IdentityEntityAliasIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4761,22 +4499,33 @@ Delete all of the entities provided
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityEntityBatchDeleteRequest := *openapiclient.NewIdentityEntityBatchDeleteRequest() // IdentityEntityBatchDeleteRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityEntityBatchDelete(context.Background()).IdentityEntityBatchDeleteRequest(identityEntityBatchDeleteRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityBatchDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityEntityBatchDeleteRequest := NewIdentityEntityBatchDeleteRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityBatchDelete(context.Background(), identityEntityBatchDeleteRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4786,28 +4535,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityEntityBatchDeleteRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityEntityBatchDeleteRequest** | [**IdentityEntityBatchDeleteRequest**](IdentityEntityBatchDeleteRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4823,23 +4558,34 @@ Update, read or delete an entity using entity ID
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-    identityEntityIdRequest := *openapiclient.NewIdentityEntityIdRequest() // IdentityEntityIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityEntityIdId(context.Background(), id).IdentityEntityIdRequest(identityEntityIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the entity. If set, updates the corresponding existing entity.
+	
+	identityEntityIdRequest := NewIdentityEntityIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityIdId(context.Background(), id, identityEntityIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4848,12 +4594,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the entity. If set, updates the corresponding existing entity. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityEntityIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4861,21 +4605,9 @@ Name | Type | Description  | Notes
 
  **identityEntityIdRequest** | [**IdentityEntityIdRequest**](IdentityEntityIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4891,22 +4623,33 @@ Merge two or more entities together
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityEntityMergeRequest := *openapiclient.NewIdentityEntityMergeRequest() // IdentityEntityMergeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityEntityMerge(context.Background()).IdentityEntityMergeRequest(identityEntityMergeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityMerge``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityEntityMergeRequest := NewIdentityEntityMergeRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityMerge(context.Background(), identityEntityMergeRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4916,28 +4659,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityEntityMergeRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityEntityMergeRequest** | [**IdentityEntityMergeRequest**](IdentityEntityMergeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -4953,23 +4682,34 @@ Update, read or delete an entity using entity name
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the entity
-    identityEntityNameRequest := *openapiclient.NewIdentityEntityNameRequest() // IdentityEntityNameRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityEntityNameName(context.Background(), name).IdentityEntityNameRequest(identityEntityNameRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the entity
+	
+	identityEntityNameRequest := NewIdentityEntityNameRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityNameName(context.Background(), name, identityEntityNameRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4978,12 +4718,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the entity | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityEntityNameNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4991,21 +4729,9 @@ Name | Type | Description  | Notes
 
  **identityEntityNameRequest** | [**IdentityEntityNameRequest**](IdentityEntityNameRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5021,22 +4747,33 @@ Create a new group.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityGroupRequest := *openapiclient.NewIdentityGroupRequest() // IdentityGroupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityGroup(context.Background()).IdentityGroupRequest(identityGroupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityGroupRequest := NewIdentityGroupRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroup(context.Background(), identityGroupRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5046,28 +4783,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityGroupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityGroupRequest** | [**IdentityGroupRequest**](IdentityGroupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5083,22 +4806,33 @@ Creates a new group alias, or updates an existing one.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityGroupAliasRequest := *openapiclient.NewIdentityGroupAliasRequest() // IdentityGroupAliasRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityGroupAlias(context.Background()).IdentityGroupAliasRequest(identityGroupAliasRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupAlias``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityGroupAliasRequest := NewIdentityGroupAliasRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupAlias(context.Background(), identityGroupAliasRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5108,28 +4842,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityGroupAliasRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityGroupAliasRequest** | [**IdentityGroupAliasRequest**](IdentityGroupAliasRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5145,23 +4865,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the group alias.
-    identityGroupAliasIdRequest := *openapiclient.NewIdentityGroupAliasIdRequest() // IdentityGroupAliasIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityGroupAliasIdId(context.Background(), id).IdentityGroupAliasIdRequest(identityGroupAliasIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the group alias.
+	
+	identityGroupAliasIdRequest := NewIdentityGroupAliasIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupAliasIdId(context.Background(), id, identityGroupAliasIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5170,12 +4901,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the group alias. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityGroupAliasIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5183,21 +4912,9 @@ Name | Type | Description  | Notes
 
  **identityGroupAliasIdRequest** | [**IdentityGroupAliasIdRequest**](IdentityGroupAliasIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5213,23 +4930,34 @@ Update or delete an existing group using its ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-    identityGroupIdRequest := *openapiclient.NewIdentityGroupIdRequest() // IdentityGroupIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityGroupIdId(context.Background(), id).IdentityGroupIdRequest(identityGroupIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the group. If set, updates the corresponding existing group.
+	
+	identityGroupIdRequest := NewIdentityGroupIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupIdId(context.Background(), id, identityGroupIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5238,12 +4966,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the group. If set, updates the corresponding existing group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityGroupIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5251,21 +4977,9 @@ Name | Type | Description  | Notes
 
  **identityGroupIdRequest** | [**IdentityGroupIdRequest**](IdentityGroupIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5281,23 +4995,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the group.
-    identityGroupNameRequest := *openapiclient.NewIdentityGroupNameRequest() // IdentityGroupNameRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityGroupNameName(context.Background(), name).IdentityGroupNameRequest(identityGroupNameRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the group.
+	
+	identityGroupNameRequest := NewIdentityGroupNameRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupNameName(context.Background(), name, identityGroupNameRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5306,12 +5031,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the group. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityGroupNameNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5319,21 +5042,9 @@ Name | Type | Description  | Notes
 
  **identityGroupNameRequest** | [**IdentityGroupNameRequest**](IdentityGroupNameRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5349,22 +5060,33 @@ Query entities based on various properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityLookupEntityRequest := *openapiclient.NewIdentityLookupEntityRequest() // IdentityLookupEntityRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityLookupEntity(context.Background()).IdentityLookupEntityRequest(identityLookupEntityRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityLookupEntity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityLookupEntityRequest := NewIdentityLookupEntityRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityLookupEntity(context.Background(), identityLookupEntityRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5374,28 +5096,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityLookupEntityRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityLookupEntityRequest** | [**IdentityLookupEntityRequest**](IdentityLookupEntityRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5411,22 +5119,33 @@ Query groups based on various properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityLookupGroupRequest := *openapiclient.NewIdentityLookupGroupRequest() // IdentityLookupGroupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityLookupGroup(context.Background()).IdentityLookupGroupRequest(identityLookupGroupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityLookupGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityLookupGroupRequest := NewIdentityLookupGroupRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityLookupGroup(context.Background(), identityLookupGroupRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5436,28 +5155,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityLookupGroupRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityLookupGroupRequest** | [**IdentityLookupGroupRequest**](IdentityLookupGroupRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5473,23 +5178,34 @@ Create or update a login enforcement
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name for this login enforcement configuration
-    identityMfaLoginEnforcementRequest := *openapiclient.NewIdentityMfaLoginEnforcementRequest([]string{"MfaMethodIds_example"}) // IdentityMfaLoginEnforcementRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name).IdentityMfaLoginEnforcementRequest(identityMfaLoginEnforcementRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaLoginEnforcementName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name for this login enforcement configuration
+	
+	identityMfaLoginEnforcementRequest := NewIdentityMfaLoginEnforcementRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name, identityMfaLoginEnforcementRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5498,12 +5214,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name for this login enforcement configuration | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityMfaLoginEnforcementNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5511,21 +5225,9 @@ Name | Type | Description  | Notes
 
  **identityMfaLoginEnforcementRequest** | [**IdentityMfaLoginEnforcementRequest**](IdentityMfaLoginEnforcementRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5541,23 +5243,34 @@ Update or create a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodDuoRequest := *openapiclient.NewIdentityMfaMethodDuoRequest() // IdentityMfaMethodDuoRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId).IdentityMfaMethodDuoRequest(identityMfaMethodDuoRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodDuoMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodDuoRequest := NewIdentityMfaMethodDuoRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId, identityMfaMethodDuoRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5566,12 +5279,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityMfaMethodDuoMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5579,21 +5290,9 @@ Name | Type | Description  | Notes
 
  **identityMfaMethodDuoRequest** | [**IdentityMfaMethodDuoRequest**](IdentityMfaMethodDuoRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5609,23 +5308,34 @@ Update or create a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodOktaRequest := *openapiclient.NewIdentityMfaMethodOktaRequest() // IdentityMfaMethodOktaRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId).IdentityMfaMethodOktaRequest(identityMfaMethodOktaRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodOktaMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodOktaRequest := NewIdentityMfaMethodOktaRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId, identityMfaMethodOktaRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5634,12 +5344,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityMfaMethodOktaMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5647,21 +5355,9 @@ Name | Type | Description  | Notes
 
  **identityMfaMethodOktaRequest** | [**IdentityMfaMethodOktaRequest**](IdentityMfaMethodOktaRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5677,23 +5373,34 @@ Update or create a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodPingidRequest := *openapiclient.NewIdentityMfaMethodPingidRequest() // IdentityMfaMethodPingidRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId).IdentityMfaMethodPingidRequest(identityMfaMethodPingidRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodPingidMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodPingidRequest := NewIdentityMfaMethodPingidRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId, identityMfaMethodPingidRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5702,12 +5409,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityMfaMethodPingidMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5715,21 +5420,9 @@ Name | Type | Description  | Notes
 
  **identityMfaMethodPingidRequest** | [**IdentityMfaMethodPingidRequest**](IdentityMfaMethodPingidRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5745,22 +5438,33 @@ Destroys a TOTP secret for the given MFA method ID on the given entity
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityMfaMethodTotpAdminDestroyRequest := *openapiclient.NewIdentityMfaMethodTotpAdminDestroyRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminDestroyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background()).IdentityMfaMethodTotpAdminDestroyRequest(identityMfaMethodTotpAdminDestroyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpAdminDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityMfaMethodTotpAdminDestroyRequest := NewIdentityMfaMethodTotpAdminDestroyRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background(), identityMfaMethodTotpAdminDestroyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5770,28 +5474,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityMfaMethodTotpAdminDestroyRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityMfaMethodTotpAdminDestroyRequest** | [**IdentityMfaMethodTotpAdminDestroyRequest**](IdentityMfaMethodTotpAdminDestroyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5807,22 +5497,33 @@ Update or create TOTP secret for the given method ID on the given entity.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityMfaMethodTotpAdminGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpAdminGenerateRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminGenerateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background()).IdentityMfaMethodTotpAdminGenerateRequest(identityMfaMethodTotpAdminGenerateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpAdminGenerate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityMfaMethodTotpAdminGenerateRequest := NewIdentityMfaMethodTotpAdminGenerateRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background(), identityMfaMethodTotpAdminGenerateRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5832,28 +5533,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityMfaMethodTotpAdminGenerateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityMfaMethodTotpAdminGenerateRequest** | [**IdentityMfaMethodTotpAdminGenerateRequest**](IdentityMfaMethodTotpAdminGenerateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5869,22 +5556,33 @@ Update or create TOTP secret for the given method ID on the given entity.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityMfaMethodTotpGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpGenerateRequest("MethodId_example") // IdentityMfaMethodTotpGenerateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpGenerate(context.Background()).IdentityMfaMethodTotpGenerateRequest(identityMfaMethodTotpGenerateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpGenerate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityMfaMethodTotpGenerateRequest := NewIdentityMfaMethodTotpGenerateRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpGenerate(context.Background(), identityMfaMethodTotpGenerateRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5894,28 +5592,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityMfaMethodTotpGenerateRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityMfaMethodTotpGenerateRequest** | [**IdentityMfaMethodTotpGenerateRequest**](IdentityMfaMethodTotpGenerateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5931,23 +5615,34 @@ Update or create a configuration for the given MFA method
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodTotpRequest := *openapiclient.NewIdentityMfaMethodTotpRequest() // IdentityMfaMethodTotpRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId).IdentityMfaMethodTotpRequest(identityMfaMethodTotpRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodTotpRequest := NewIdentityMfaMethodTotpRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId, identityMfaMethodTotpRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5956,12 +5651,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **methodId** | **string** | The unique identifier for this MFA method. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityMfaMethodTotpMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5969,21 +5662,9 @@ Name | Type | Description  | Notes
 
  **identityMfaMethodTotpRequest** | [**IdentityMfaMethodTotpRequest**](IdentityMfaMethodTotpRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -5999,23 +5680,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the assignment
-    identityOidcAssignmentRequest := *openapiclient.NewIdentityOidcAssignmentRequest() // IdentityOidcAssignmentRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcAssignmentName(context.Background(), name).IdentityOidcAssignmentRequest(identityOidcAssignmentRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcAssignmentName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the assignment
+	
+	identityOidcAssignmentRequest := NewIdentityOidcAssignmentRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcAssignmentName(context.Background(), name, identityOidcAssignmentRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6024,12 +5716,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the assignment | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcAssignmentNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6037,21 +5727,9 @@ Name | Type | Description  | Notes
 
  **identityOidcAssignmentRequest** | [**IdentityOidcAssignmentRequest**](IdentityOidcAssignmentRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6067,23 +5745,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the client.
-    identityOidcClientRequest := *openapiclient.NewIdentityOidcClientRequest() // IdentityOidcClientRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcClientName(context.Background(), name).IdentityOidcClientRequest(identityOidcClientRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcClientName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the client.
+	
+	identityOidcClientRequest := NewIdentityOidcClientRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcClientName(context.Background(), name, identityOidcClientRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6092,12 +5781,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the client. | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcClientNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6105,21 +5792,9 @@ Name | Type | Description  | Notes
 
  **identityOidcClientRequest** | [**IdentityOidcClientRequest**](IdentityOidcClientRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6135,22 +5810,33 @@ OIDC configuration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityOidcConfigRequest := *openapiclient.NewIdentityOidcConfigRequest() // IdentityOidcConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcConfig(context.Background()).IdentityOidcConfigRequest(identityOidcConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityOidcConfigRequest := NewIdentityOidcConfigRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcConfig(context.Background(), identityOidcConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6160,28 +5846,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityOidcConfigRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityOidcConfigRequest** | [**IdentityOidcConfigRequest**](IdentityOidcConfigRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6197,22 +5869,33 @@ Verify the authenticity of an OIDC token
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityOidcIntrospectRequest := *openapiclient.NewIdentityOidcIntrospectRequest() // IdentityOidcIntrospectRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcIntrospect(context.Background()).IdentityOidcIntrospectRequest(identityOidcIntrospectRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcIntrospect``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityOidcIntrospectRequest := NewIdentityOidcIntrospectRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcIntrospect(context.Background(), identityOidcIntrospectRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6222,28 +5905,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityOidcIntrospectRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityOidcIntrospectRequest** | [**IdentityOidcIntrospectRequest**](IdentityOidcIntrospectRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6259,23 +5928,34 @@ CRUD operations for OIDC keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the key
-    identityOidcKeyRequest := *openapiclient.NewIdentityOidcKeyRequest() // IdentityOidcKeyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcKeyName(context.Background(), name).IdentityOidcKeyRequest(identityOidcKeyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the key
+	
+	identityOidcKeyRequest := NewIdentityOidcKeyRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcKeyName(context.Background(), name, identityOidcKeyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6284,12 +5964,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcKeyNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6297,21 +5975,9 @@ Name | Type | Description  | Notes
 
  **identityOidcKeyRequest** | [**IdentityOidcKeyRequest**](IdentityOidcKeyRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6327,23 +5993,34 @@ Rotate a named OIDC key.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the key
-    identityOidcKeyRotateRequest := *openapiclient.NewIdentityOidcKeyRotateRequest() // IdentityOidcKeyRotateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name).IdentityOidcKeyRotateRequest(identityOidcKeyRotateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcKeyNameRotate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the key
+	
+	identityOidcKeyRotateRequest := NewIdentityOidcKeyRotateRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name, identityOidcKeyRotateRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6352,12 +6029,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcKeyNameRotateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6365,21 +6040,9 @@ Name | Type | Description  | Notes
 
  **identityOidcKeyRotateRequest** | [**IdentityOidcKeyRotateRequest**](IdentityOidcKeyRotateRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6395,23 +6058,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
-    identityOidcProviderRequest := *openapiclient.NewIdentityOidcProviderRequest() // IdentityOidcProviderRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcProviderName(context.Background(), name).IdentityOidcProviderRequest(identityOidcProviderRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	identityOidcProviderRequest := NewIdentityOidcProviderRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcProviderName(context.Background(), name, identityOidcProviderRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6420,12 +6094,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcProviderNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6433,21 +6105,9 @@ Name | Type | Description  | Notes
 
  **identityOidcProviderRequest** | [**IdentityOidcProviderRequest**](IdentityOidcProviderRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6463,23 +6123,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
-    identityOidcProviderAuthorizeRequest := *openapiclient.NewIdentityOidcProviderAuthorizeRequest("ClientId_example", "RedirectUri_example", "ResponseType_example", "Scope_example", "State_example") // IdentityOidcProviderAuthorizeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name).IdentityOidcProviderAuthorizeRequest(identityOidcProviderAuthorizeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameAuthorize``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	identityOidcProviderAuthorizeRequest := NewIdentityOidcProviderAuthorizeRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name, identityOidcProviderAuthorizeRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6488,12 +6159,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcProviderNameAuthorizeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6501,21 +6170,9 @@ Name | Type | Description  | Notes
 
  **identityOidcProviderAuthorizeRequest** | [**IdentityOidcProviderAuthorizeRequest**](IdentityOidcProviderAuthorizeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6531,23 +6188,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
-    identityOidcProviderTokenRequest := *openapiclient.NewIdentityOidcProviderTokenRequest("Code_example", "GrantType_example", "RedirectUri_example") // IdentityOidcProviderTokenRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcProviderNameToken(context.Background(), name).IdentityOidcProviderTokenRequest(identityOidcProviderTokenRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	identityOidcProviderTokenRequest := NewIdentityOidcProviderTokenRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcProviderNameToken(context.Background(), name, identityOidcProviderTokenRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6556,12 +6224,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcProviderNameTokenRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6569,21 +6235,9 @@ Name | Type | Description  | Notes
 
  **identityOidcProviderTokenRequest** | [**IdentityOidcProviderTokenRequest**](IdentityOidcProviderTokenRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6599,22 +6253,32 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the provider
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameUserinfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the provider
+	
+	resp, err := client.Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6623,33 +6287,19 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the provider | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcProviderNameUserinfoRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6665,23 +6315,34 @@ CRUD operations on OIDC Roles
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role
-    identityOidcRoleRequest := *openapiclient.NewIdentityOidcRoleRequest("Key_example") // IdentityOidcRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcRoleName(context.Background(), name).IdentityOidcRoleRequest(identityOidcRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the role
+	
+	identityOidcRoleRequest := NewIdentityOidcRoleRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcRoleName(context.Background(), name, identityOidcRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6690,12 +6351,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcRoleNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6703,21 +6362,9 @@ Name | Type | Description  | Notes
 
  **identityOidcRoleRequest** | [**IdentityOidcRoleRequest**](IdentityOidcRoleRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6733,23 +6380,34 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the scope
-    identityOidcScopeRequest := *openapiclient.NewIdentityOidcScopeRequest() // IdentityOidcScopeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityOidcScopeName(context.Background(), name).IdentityOidcScopeRequest(identityOidcScopeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcScopeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	name :=  // string | Name of the scope
+	
+	identityOidcScopeRequest := NewIdentityOidcScopeRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcScopeName(context.Background(), name, identityOidcScopeRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6758,12 +6416,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the scope | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityOidcScopeNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6771,21 +6427,9 @@ Name | Type | Description  | Notes
 
  **identityOidcScopeRequest** | [**IdentityOidcScopeRequest**](IdentityOidcScopeRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6801,22 +6445,33 @@ Create a new alias.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    identityPersonaRequest := *openapiclient.NewIdentityPersonaRequest() // IdentityPersonaRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityPersona(context.Background()).IdentityPersonaRequest(identityPersonaRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityPersona``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	
+	identityPersonaRequest := NewIdentityPersonaRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityPersona(context.Background(), identityPersonaRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6826,28 +6481,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostIdentityPersonaRequest struct via the builder pattern
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identityPersonaRequest** | [**IdentityPersonaRequest**](IdentityPersonaRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 
 
@@ -6863,23 +6504,34 @@ Update, read or delete an alias ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    id := "id_example" // string | ID of the persona
-    identityPersonaIdRequest := *openapiclient.NewIdentityPersonaIdRequest() // IdentityPersonaIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	client.SetToken("my-token")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Identity.PostIdentityPersonaIdId(context.Background(), id).IdentityPersonaIdRequest(identityPersonaIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityPersonaIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	id :=  // string | ID of the persona
+	
+	identityPersonaIdRequest := NewIdentityPersonaIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityPersonaIdId(context.Background(), id, identityPersonaIdRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6888,12 +6540,10 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for request cancellation 
 **id** | **string** | ID of the persona | 
 
 ### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostIdentityPersonaIdIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6901,20 +6551,8 @@ Name | Type | Description  | Notes
 
  **identityPersonaIdRequest** | [**IdentityPersonaIdRequest**](IdentityPersonaIdRequest.md) |  | 
 
-### Return type
-
  (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to top]](#)
 [[Back to README]](../README.md)
 

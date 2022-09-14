@@ -97,6 +97,16 @@ func NewClient(configuration Configuration) (*Client, error) {
 			Backoff:      configuration.Retry.Backoff,
 			ErrorHandler: configuration.Retry.ErrorHandler,
 		},
+
+		requestModifiers: requestModifiers{
+			headers: requestHeaders{
+				token:         configuration.InitialToken,
+				namespace:     configuration.InitialNamespace,
+				customHeaders: nil,
+			},
+			validationError: nil,
+		},
+		requestModifiersLock: sync.RWMutex{},
 	}
 
 	a, err := url.Parse(configuration.BaseAddress)

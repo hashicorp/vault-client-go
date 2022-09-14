@@ -29,23 +29,23 @@ type {{classname}} struct {
 {{/description}}
 {{/allParams}}
 func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
-	localVarPath := "/v1{{{path}}}"{{#pathParams}}
-	localVarPath = strings.Replace(localVarPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/pathParams}}
+	requestPath := "/v1{{{path}}}"{{#pathParams}}
+	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/pathParams}}
 
 {{#bodyParams}}
-	req, err := a.client.NewStructuredRequest(http.Method{{httpMethod}}, localVarPath, {{paramName}})
+	req, err := a.client.newStructuredRequest(ctx, http.Method{{httpMethod}}, requestPath, {{paramName}})
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
 {{/bodyParams}}
 {{^bodyParams}}
-	req, err := a.client.NewRequest(http.Method{{httpMethod}}, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.Method{{httpMethod}}, requestPath, nil)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
 {{/bodyParams}}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
 	}

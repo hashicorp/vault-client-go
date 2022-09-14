@@ -326,7 +326,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -380,7 +380,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -442,7 +442,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -504,7 +504,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -558,7 +558,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -620,7 +620,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -682,7 +682,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -736,7 +736,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -798,7 +798,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -860,7 +860,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -922,7 +922,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -984,7 +984,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1046,7 +1046,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1100,7 +1100,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1162,7 +1162,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1224,7 +1224,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1286,7 +1286,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1340,7 +1340,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1402,7 +1402,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1464,7 +1464,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1526,7 +1526,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1580,7 +1580,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1634,7 +1634,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1696,7 +1696,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1750,7 +1750,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1812,7 +1812,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1874,7 +1874,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1936,7 +1936,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1990,7 +1990,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2052,7 +2052,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2114,7 +2114,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2168,7 +2168,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2230,7 +2230,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2292,7 +2292,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2354,7 +2354,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2408,7 +2408,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2462,7 +2462,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2524,7 +2524,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2586,7 +2586,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2640,7 +2640,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2702,7 +2702,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2764,7 +2764,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2826,7 +2826,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2880,7 +2880,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2942,7 +2942,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3001,7 +3001,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3063,7 +3063,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3125,7 +3125,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3184,7 +3184,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3246,7 +3246,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3300,7 +3300,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3354,7 +3354,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3416,7 +3416,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3475,7 +3475,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3537,7 +3537,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3591,7 +3591,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3645,7 +3645,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3699,7 +3699,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3758,7 +3758,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3820,7 +3820,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3882,7 +3882,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3936,7 +3936,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3998,7 +3998,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4057,7 +4057,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4119,7 +4119,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4173,7 +4173,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4235,7 +4235,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4294,7 +4294,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4356,7 +4356,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4421,7 +4421,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4475,7 +4475,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4537,7 +4537,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4599,7 +4599,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4661,7 +4661,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4723,7 +4723,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4782,7 +4782,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4844,7 +4844,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4906,7 +4906,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4968,7 +4968,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5027,7 +5027,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5089,7 +5089,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5143,7 +5143,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5202,7 +5202,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5264,7 +5264,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5326,7 +5326,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5388,7 +5388,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5442,7 +5442,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5501,7 +5501,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5563,7 +5563,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5628,7 +5628,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5682,7 +5682,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5744,7 +5744,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5803,7 +5803,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5865,7 +5865,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5919,7 +5919,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5973,7 +5973,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6035,7 +6035,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6094,7 +6094,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6156,7 +6156,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6210,7 +6210,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6272,7 +6272,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6331,7 +6331,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6393,7 +6393,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6455,7 +6455,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6514,7 +6514,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6576,7 +6576,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6630,7 +6630,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6684,7 +6684,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6738,7 +6738,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6792,7 +6792,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6846,7 +6846,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6908,7 +6908,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6970,7 +6970,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7032,7 +7032,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7091,7 +7091,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7145,7 +7145,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7199,7 +7199,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7253,7 +7253,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7307,7 +7307,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7361,7 +7361,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7415,7 +7415,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7469,7 +7469,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7523,7 +7523,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7585,7 +7585,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7647,7 +7647,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7706,7 +7706,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7760,7 +7760,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7822,7 +7822,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7881,7 +7881,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7940,7 +7940,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8002,7 +8002,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8056,7 +8056,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8110,7 +8110,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8172,7 +8172,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8231,7 +8231,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8293,7 +8293,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8347,7 +8347,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8409,7 +8409,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8474,7 +8474,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8536,7 +8536,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8590,7 +8590,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8644,7 +8644,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8698,7 +8698,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8757,7 +8757,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8819,7 +8819,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8873,7 +8873,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8935,7 +8935,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8994,7 +8994,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9056,7 +9056,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9118,7 +9118,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9177,7 +9177,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9239,7 +9239,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9301,7 +9301,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9355,7 +9355,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9420,7 +9420,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9488,7 +9488,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9547,7 +9547,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9609,7 +9609,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9663,7 +9663,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9722,7 +9722,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9787,7 +9787,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9852,7 +9852,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9917,7 +9917,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9982,7 +9982,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10047,7 +10047,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10109,7 +10109,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10163,7 +10163,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10222,7 +10222,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10287,7 +10287,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10346,7 +10346,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10405,7 +10405,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10459,7 +10459,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10518,7 +10518,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10583,7 +10583,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10648,7 +10648,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10707,7 +10707,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10772,7 +10772,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10826,7 +10826,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10885,7 +10885,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10950,7 +10950,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11012,7 +11012,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11071,7 +11071,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11125,7 +11125,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11190,7 +11190,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11255,7 +11255,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11317,7 +11317,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11379,7 +11379,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11444,7 +11444,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11506,7 +11506,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11571,7 +11571,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11636,7 +11636,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11698,7 +11698,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11760,7 +11760,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11822,7 +11822,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11881,7 +11881,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11946,7 +11946,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12011,7 +12011,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12076,7 +12076,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12138,7 +12138,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12203,7 +12203,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12268,7 +12268,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12330,7 +12330,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12392,7 +12392,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12457,7 +12457,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12522,7 +12522,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12587,7 +12587,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12646,7 +12646,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12711,7 +12711,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12776,7 +12776,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12838,7 +12838,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12897,7 +12897,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12959,7 +12959,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13024,7 +13024,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13083,7 +13083,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13142,7 +13142,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13207,7 +13207,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13266,7 +13266,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13331,7 +13331,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13393,7 +13393,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13447,7 +13447,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13512,7 +13512,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13571,7 +13571,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13630,7 +13630,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13689,7 +13689,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13748,7 +13748,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13807,7 +13807,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13866,7 +13866,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13925,7 +13925,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13984,7 +13984,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14049,7 +14049,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14108,7 +14108,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14167,7 +14167,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14232,7 +14232,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14300,7 +14300,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14365,7 +14365,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14433,7 +14433,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14498,7 +14498,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14563,7 +14563,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14631,7 +14631,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14696,7 +14696,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14761,7 +14761,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14826,7 +14826,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14885,7 +14885,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14950,7 +14950,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15009,7 +15009,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15068,7 +15068,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15127,7 +15127,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15192,7 +15192,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15257,7 +15257,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15316,7 +15316,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15381,7 +15381,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15440,7 +15440,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15499,7 +15499,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15564,7 +15564,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15623,7 +15623,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15688,7 +15688,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15747,7 +15747,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15806,7 +15806,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15865,7 +15865,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15930,7 +15930,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15989,7 +15989,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16054,7 +16054,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16119,7 +16119,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16184,7 +16184,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16249,7 +16249,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16314,7 +16314,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16373,7 +16373,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16432,7 +16432,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16497,7 +16497,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16562,7 +16562,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16621,7 +16621,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16686,7 +16686,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16751,7 +16751,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16810,7 +16810,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16869,7 +16869,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16931,7 +16931,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16996,7 +16996,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17058,7 +17058,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17123,7 +17123,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17188,7 +17188,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17247,7 +17247,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17315,7 +17315,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17380,7 +17380,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17445,7 +17445,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17504,7 +17504,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17569,7 +17569,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17634,7 +17634,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17702,7 +17702,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17767,7 +17767,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17832,7 +17832,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17897,7 +17897,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17962,7 +17962,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18024,7 +18024,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18089,7 +18089,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18148,7 +18148,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18213,7 +18213,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18281,7 +18281,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18346,7 +18346,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18405,7 +18405,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18470,7 +18470,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18535,7 +18535,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18600,7 +18600,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18668,7 +18668,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18733,7 +18733,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-client-go"
+	vault "github.com/hashicorp/vault-client-go"
 )
 
 func main() {

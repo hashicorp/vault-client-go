@@ -98,12 +98,15 @@ func NewClient(configuration Configuration) (*Client, error) {
 			ErrorHandler: configuration.Retry.ErrorHandler,
 		},
 
-		requestHeaders: requestHeaders{
-			token:         configuration.InitialToken,
-			namespace:     configuration.InitialNamespace,
-			customHeaders: nil,
+		requestModifiers: requestModifiers{
+			headers: requestHeaders{
+				token:         configuration.InitialToken,
+				namespace:     configuration.InitialNamespace,
+				customHeaders: nil,
+			},
+			validationError: nil,
 		},
-		requestHeadersLock: sync.RWMutex{},
+		requestModifiersLock: sync.RWMutex{},
 	}
 
 	a, err := url.Parse(configuration.BaseAddress)

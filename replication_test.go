@@ -66,9 +66,7 @@ func TestMergeReplicationStates(t *testing.T) {
 		var decoded []string
 		for _, s := range strings {
 			d, err := base64.StdEncoding.DecodeString(s)
-			if err != nil {
-				t.Fatal(err)
-			}
+			assert.NoError(t, err)
 			decoded = append(decoded, string(d))
 		}
 		return decoded

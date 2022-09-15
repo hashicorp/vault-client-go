@@ -73,9 +73,11 @@ type requestModifiers struct {
 
 // requestHeaders contains headers that will be added to each request
 type requestHeaders struct {
-	token         string // request header 'X-Vault-Token'
-	namespace     string // request header 'X-Vault-Namespace'
-	customHeaders http.Header
+	token                          string // request header 'X-Vault-Token'
+	namespace                      string // request header 'X-Vault-Namespace'
+	replicationForwardInconsistent bool   // request header 'X-Vault-Inconsistent'
+	replicationForwardAlways       bool   // request header 'X-Vault-Forward'
+	customHeaders                  http.Header
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration
@@ -103,9 +105,11 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 		requestModifiers: requestModifiers{
 			headers: requestHeaders{
-				token:         configuration.InitialToken,
-				namespace:     configuration.InitialNamespace,
-				customHeaders: nil,
+				token:                          configuration.InitialToken,
+				namespace:                      configuration.InitialNamespace,
+				replicationForwardAlways:       false,
+				replicationForwardInconsistent: false,
+				customHeaders:                  nil,
 			},
 			validationError: nil,
 		},

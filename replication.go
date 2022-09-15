@@ -15,14 +15,92 @@ import (
 )
 
 const (
-	HeaderIndex   = "X-Vault-Index"
-	HeaderForward = "X-Vault-Forward"
+	HeaderIndex        = "X-Vault-Index"
+	HeaderForward      = "X-Vault-Forward"
+	HeaderInconsistent = "X-Vault-Inconsistent"
 )
+
+// SetReplicationForwardAlways will add 'X-Vault-Forward' header to all
+// subsequent requests, telling any performance standbys handling the request
+// to forward it to the active node.
+//
+// Note: this feature must be enabled in Vault's configuration.
+//
+// See https://www.vaultproject.io/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
+func (c *Client) SetReplicationForwardAlways() {
+	/* */ c.requestModifiersLock.Lock()
+	defer c.requestModifiersLock.Unlock()
+
+	c.requestModifiers.headers.replicationForwardAlways = true
+}
+
+// ClearReplicationForwardAlways clears the 'X-Vault-Forward' header from all
+// subsequent requests.
+//
+// See https://www.vaultproject.io/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
+func (c *Client) ClearReplicationForwardAlways() {
+	/* */ c.requestModifiersLock.Lock()
+	defer c.requestModifiersLock.Unlock()
+
+	c.requestModifiers.headers.replicationForwardAlways = false
+}
+
+// WithReplicationForwardAlways returns a shallow copy of the client with
+// 'X-Vault-Forward' header set to the given value for subsequent requests.
+// If true, any performance standbys handling the request will forward it to
+// the active node.
+//
+// https://www.vaultproject.io/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
+func (c *Client) WithReplicationForwardAlways(value bool) *Client {
+	clone := c.Clone()
+	clone.requestModifiers.headers.replicationForwardAlways = value
+
+	return clone
+}
+
+// SetReplicationForwardInconsistent will add 'X-Vault-Inconsistent' header to
+// all subsequent requests, which says: if the state required isn't present on
+// the node receiving this request, forward it to the active node. This should
+// be used in conjunction with RequireReplicationState(...).
+//
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+func (c *Client) SetReplicationForwardInconsistent() {
+	/* */ c.requestModifiersLock.Lock()
+	defer c.requestModifiersLock.Unlock()
+
+	c.requestModifiers.headers.replicationForwardInconsistent = true
+}
+
+// ClearReplicationForwardInconsistent clears the 'X-Vault-Inconsistent' header
+// from all subsequent requests.
+//
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+func (c *Client) ClearReplicationForwardInconsistent() {
+	/* */ c.requestModifiersLock.Lock()
+	defer c.requestModifiersLock.Unlock()
+
+	c.requestModifiers.headers.replicationForwardInconsistent = false
+}
+
+// WithReplicationForwardInconsistent returns a shallow copy of the client with
+// 'X-Vault-Inconsistent' header set to the given value for subsequent requests.
+// If true, any performance standbys handling the request will conditionally
+// forward it to the active node if the state required isn't present on the
+// node receiving this request. This should be used in conjunction with
+// RequireReplicationState(...).
+//
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+func (c *Client) WithReplicationForwardInconsistent(value bool) *Client {
+	clone := c.Clone()
+	clone.requestModifiers.headers.replicationForwardInconsistent = value
+
+	return clone
+}
 
 // RecordReplicationState returns a response callback that will record the
 // replication state returned by Vault in a response header.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func RecordReplicationState(state *string) ResponseCallback {
 	return func(req *http.Request, resp *http.Response) {
 		*state = resp.Header.Get(HeaderIndex)
@@ -34,7 +112,7 @@ func RecordReplicationState(state *string) ResponseCallback {
 // were obtained from the previously-seen response headers captured with
 // RecordReplicationState(...).
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func RequireReplicationStates(states ...string) RequestCallback {
 	return func(req *http.Request) {
 		for _, state := range states {
@@ -133,7 +211,7 @@ func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error)
 // older, and 0 if neither s1 nor s2 is strictly greater. An error is returned
 // if s1 or s2 are invalid or from different clusters.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func compareReplicationStates(s1, s2 string) (int, error) {
 	r1, err := ParseReplicationState(s1, nil)
 	if err != nil {
@@ -172,7 +250,7 @@ type replicationStateCache struct {
 // recordReplicationState merges the state from the given response into the
 // existing cached replication states.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
 	/* */ c.statesLock.Lock()
 	defer c.statesLock.Unlock()
@@ -186,7 +264,7 @@ func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
 // require of Vault. These states were obtained from the previously-seen
 // response headers captured with replicationStateCache.recordReplicationState.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func (c *replicationStateCache) requireReplicationStates(req *http.Request) {
 	/* */ c.statesLock.RLock()
 	defer c.statesLock.RUnlock()

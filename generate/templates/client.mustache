@@ -29,12 +29,12 @@ type Client struct {
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
 
-	// replication state cache used to ensure read-after-write semantics
-	replicationStates replicationStateCache
-
 	// headers, callbacks, etc. that will be added to each request
 	requestModifiers     requestModifiers
 	requestModifiersLock sync.RWMutex
+
+	// replication state cache used to ensure read-after-write semantics
+	replicationStates replicationStateCache
 
 	// API wrappers
 {{#apiInfo}}

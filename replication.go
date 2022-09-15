@@ -14,18 +14,13 @@ import (
 	"github.com/hashicorp/go-secure-stdlib/strutil"
 )
 
-const (
-	HeaderIndex   = "X-Vault-Index"
-	HeaderForward = "X-Vault-Forward"
-)
-
 // RecordReplicationState returns a response callback that will record the
 // replication state returned by Vault in a response header.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func RecordReplicationState(state *string) ResponseCallback {
 	return func(req *http.Request, resp *http.Response) {
-		*state = resp.Header.Get(HeaderIndex)
+		*state = resp.Header.Get("X-Vault-Index")
 	}
 }
 
@@ -34,11 +29,11 @@ func RecordReplicationState(state *string) ResponseCallback {
 // were obtained from the previously-seen response headers captured with
 // RecordReplicationState(...).
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func RequireReplicationStates(states ...string) RequestCallback {
 	return func(req *http.Request) {
 		for _, state := range states {
-			req.Header.Add(HeaderIndex, state)
+			req.Header.Add("X-Vault-Index", state)
 		}
 	}
 }
@@ -133,7 +128,7 @@ func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error)
 // older, and 0 if neither s1 nor s2 is strictly greater. An error is returned
 // if s1 or s2 are invalid or from different clusters.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func compareReplicationStates(s1, s2 string) (int, error) {
 	r1, err := ParseReplicationState(s1, nil)
 	if err != nil {
@@ -172,12 +167,12 @@ type replicationStateCache struct {
 // recordReplicationState merges the state from the given response into the
 // existing cached replication states.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
 	/* */ c.statesLock.Lock()
 	defer c.statesLock.Unlock()
 
-	if new := resp.Header.Get(HeaderIndex); new != "" {
+	if new := resp.Header.Get("X-Vault-Index"); new != "" {
 		c.states = MergeReplicationStates(c.states, new)
 	}
 }
@@ -186,13 +181,13 @@ func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
 // require of Vault. These states were obtained from the previously-seen
 // response headers captured with replicationStateCache.recordReplicationState.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func (c *replicationStateCache) requireReplicationStates(req *http.Request) {
 	/* */ c.statesLock.RLock()
 	defer c.statesLock.RUnlock()
 
 	for _, state := range c.states {
-		req.Header.Add(HeaderIndex, state)
+		req.Header.Add("X-Vault-Index", state)
 	}
 }
 

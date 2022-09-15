@@ -40,13 +40,10 @@ func main() {
 		log.Fatal(err)
 	}
 	client.SetToken("my-token")
-
-	{{#pathParams}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}
-	{{/pathParams}}
-	{{#allParams}}{{^isPathParam}}
-	{{paramName}} := New{{{dataType}}}WithDefaults()
-	{{/isPathParam}}{{/allParams}}
+{{#allParams}}{{#isPathParam}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/isPathParam}}{{/allParams}}
+{{#allParams}}{{^isPathParam}}
+	{{paramName}} := New{{{dataType}}}WithDefaults(){{/isPathParam}}{{/allParams}}
 	resp, err := client.{{classname}}.{{operationId}}(context.Background(){{#pathParams}}, {{paramName}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}}{{/isPathParam}}{{/allParams}})
 	if err != nil {
 		log.Fatal(err)

@@ -305,8 +305,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | The name of the role as it should appear in Vault.
-	
+	role := "role_example" // string | The name of the role as it should appear in Vault.
+
 	resp, err := client.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -367,8 +367,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the app-id mapping
-	
+	key := "key_example" // string | Key for the app-id mapping
+
 	resp, err := client.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -429,8 +429,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the user-id mapping
-	
+	key := "key_example" // string | Key for the user-id mapping
+
 	resp, err := client.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -491,8 +491,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -553,8 +553,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -615,8 +615,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -677,8 +677,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -739,8 +739,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -801,8 +801,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -863,8 +863,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -925,8 +925,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -987,8 +987,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -1049,8 +1049,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -1111,8 +1111,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -1173,8 +1173,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -1235,8 +1235,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -1297,8 +1297,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -1359,8 +1359,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	certName :=  // string | Name of the certificate.
-	
+	certName := "certName_example" // string | Name of the certificate.
+
 	resp, err := client.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName)
 	if err != nil {
 		log.Fatal(err)
@@ -1421,7 +1421,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthAwsConfigClient(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1475,8 +1475,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	
+	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+
 	resp, err := client.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId)
 	if err != nil {
 		log.Fatal(err)
@@ -1537,7 +1537,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1591,7 +1591,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1645,7 +1645,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1699,7 +1699,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1753,8 +1753,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+
 	resp, err := client.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
@@ -1815,8 +1815,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+
 	resp, err := client.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
@@ -1877,8 +1877,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthAwsRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -1939,8 +1939,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+
 	resp, err := client.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
@@ -2001,8 +2001,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+
 	resp, err := client.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
@@ -2063,7 +2063,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthAzureConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2117,8 +2117,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthAzureRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2179,8 +2179,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the certificate
-	
+	name := "name_example" // string | The name of the certificate
+
 	resp, err := client.Auth.DeleteAuthCertCertsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2241,8 +2241,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the certificate
-	
+	name := "name_example" // string | The name of the certificate
+
 	resp, err := client.Auth.DeleteAuthCertCrlsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2303,7 +2303,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthCfConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2357,8 +2357,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | The name of the role.
-	
+	role := "role_example" // string | The name of the role.
+
 	resp, err := client.Auth.DeleteAuthCfRolesRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -2419,8 +2419,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthGcpRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2481,8 +2481,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the teams mapping
-	
+	key := "key_example" // string | Key for the teams mapping
+
 	resp, err := client.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -2543,8 +2543,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the users mapping
-	
+	key := "key_example" // string | Key for the users mapping
+
 	resp, err := client.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -2605,8 +2605,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthJwtRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2667,8 +2667,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP group.
-	
+	name := "name_example" // string | Name of the LDAP group.
+
 	resp, err := client.Auth.DeleteAuthKerberosGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2729,8 +2729,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthKubernetesRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2791,8 +2791,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP group.
-	
+	name := "name_example" // string | Name of the LDAP group.
+
 	resp, err := client.Auth.DeleteAuthLdapGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2853,8 +2853,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP user.
-	
+	name := "name_example" // string | Name of the LDAP user.
+
 	resp, err := client.Auth.DeleteAuthLdapUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -2915,7 +2915,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.DeleteAuthOciConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2969,8 +2969,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthOciRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -3031,8 +3031,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.DeleteAuthOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -3093,8 +3093,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the Okta group.
-	
+	name := "name_example" // string | Name of the Okta group.
+
 	resp, err := client.Auth.DeleteAuthOktaGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -3155,8 +3155,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the user.
-	
+	name := "name_example" // string | Name of the user.
+
 	resp, err := client.Auth.DeleteAuthOktaUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -3217,8 +3217,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the RADIUS user.
-	
+	name := "name_example" // string | Name of the RADIUS user.
+
 	resp, err := client.Auth.DeleteAuthRadiusUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -3279,8 +3279,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role
-	
+	roleName := "roleName_example" // string | Name of the role
+
 	resp, err := client.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -3341,8 +3341,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | Username for this user.
-	
+	username := "username_example" // string | Username for this user.
+
 	resp, err := client.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username)
 	if err != nil {
 		log.Fatal(err)
@@ -3403,9 +3403,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAlicloudRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -3462,8 +3461,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | The name of the role as it should appear in Vault.
-	
+	role := "role_example" // string | The name of the role as it should appear in Vault.
+
 	resp, err := client.Auth.GetAuthAlicloudRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -3524,9 +3523,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAlicloudRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -3583,9 +3581,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAppIdMapAppId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -3642,8 +3639,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the app-id mapping
-	
+	key := "key_example" // string | Key for the app-id mapping
+
 	resp, err := client.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -3704,9 +3701,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAppIdMapUserId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -3763,8 +3759,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the user-id mapping
-	
+	key := "key_example" // string | Key for the user-id mapping
+
 	resp, err := client.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -3825,9 +3821,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthApproleRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -3884,8 +3879,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -3946,8 +3941,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4008,8 +4003,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4070,8 +4065,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4132,8 +4127,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4194,8 +4189,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4256,8 +4251,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4318,10 +4313,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName, list)
 	if err != nil {
 		log.Fatal(err)
@@ -4383,8 +4377,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4445,8 +4439,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4507,8 +4501,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4569,8 +4563,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4631,8 +4625,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4693,8 +4687,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4755,8 +4749,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -4817,8 +4811,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	certName :=  // string | Name of the certificate.
-	
+	certName := "certName_example" // string | Name of the certificate.
+
 	resp, err := client.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName)
 	if err != nil {
 		log.Fatal(err)
@@ -4879,9 +4873,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsConfigCertificates(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -4938,7 +4931,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthAwsConfigClient(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4992,7 +4985,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthAwsConfigIdentity(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5046,9 +5039,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsConfigSts(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5105,8 +5097,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	
+	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+
 	resp, err := client.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId)
 	if err != nil {
 		log.Fatal(err)
@@ -5167,7 +5159,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5221,7 +5213,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5275,7 +5267,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5329,7 +5321,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5383,9 +5375,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsIdentityAccesslist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5442,8 +5433,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+
 	resp, err := client.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
@@ -5504,9 +5495,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsIdentityWhitelist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5563,8 +5553,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+
 	resp, err := client.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
@@ -5625,9 +5615,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5684,8 +5673,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthAwsRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -5746,9 +5735,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5805,9 +5793,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsRoletagBlacklist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5864,8 +5851,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+
 	resp, err := client.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
@@ -5926,9 +5913,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAwsRoletagDenylist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5985,8 +5971,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+
 	resp, err := client.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
@@ -6047,7 +6033,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthAzureConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -6101,9 +6087,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthAzureRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -6160,8 +6145,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthAzureRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -6222,7 +6207,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthCentrifyConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -6276,9 +6261,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthCertCerts(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -6335,8 +6319,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the certificate
-	
+	name := "name_example" // string | The name of the certificate
+
 	resp, err := client.Auth.GetAuthCertCertsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -6397,8 +6381,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the certificate
-	
+	name := "name_example" // string | The name of the certificate
+
 	resp, err := client.Auth.GetAuthCertCrlsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -6459,7 +6443,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthCfConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -6513,9 +6497,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthCfRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -6572,8 +6555,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | The name of the role.
-	
+	role := "role_example" // string | The name of the role.
+
 	resp, err := client.Auth.GetAuthCfRolesRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -6634,7 +6617,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthGcpConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -6688,9 +6671,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthGcpRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -6747,8 +6729,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthGcpRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -6809,9 +6791,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthGcpRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -6868,7 +6849,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthGithubConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -6922,9 +6903,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthGithubMapTeams(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -6981,8 +6961,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the teams mapping
-	
+	key := "key_example" // string | Key for the teams mapping
+
 	resp, err := client.Auth.GetAuthGithubMapTeamsKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -7043,9 +7023,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthGithubMapUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -7102,8 +7081,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the users mapping
-	
+	key := "key_example" // string | Key for the users mapping
+
 	resp, err := client.Auth.GetAuthGithubMapUsersKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
@@ -7164,7 +7143,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthJwtConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7218,7 +7197,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthJwtOidcCallback(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7274,9 +7253,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthJwtRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -7333,8 +7311,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthJwtRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -7395,7 +7373,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthKerberosConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7449,7 +7427,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthKerberosConfigLdap(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7503,9 +7481,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthKerberosGroups(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -7562,8 +7539,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP group.
-	
+	name := "name_example" // string | Name of the LDAP group.
+
 	resp, err := client.Auth.GetAuthKerberosGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -7624,7 +7601,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthKerberosLogin(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7678,7 +7655,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthKubernetesConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7732,9 +7709,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthKubernetesRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -7791,8 +7767,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthKubernetesRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -7853,7 +7829,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthLdapConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7907,9 +7883,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthLdapGroups(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -7966,8 +7941,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP group.
-	
+	name := "name_example" // string | Name of the LDAP group.
+
 	resp, err := client.Auth.GetAuthLdapGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -8028,9 +8003,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthLdapUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -8087,8 +8061,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP user.
-	
+	name := "name_example" // string | Name of the LDAP user.
+
 	resp, err := client.Auth.GetAuthLdapUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -8149,7 +8123,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthOciConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8203,9 +8177,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthOciRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -8262,8 +8235,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthOciRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
@@ -8324,7 +8297,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthOidcConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8378,7 +8351,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthOidcOidcCallback(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8434,9 +8407,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthOidcRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -8493,8 +8465,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	resp, err := client.Auth.GetAuthOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -8555,7 +8527,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthOktaConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8609,9 +8581,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthOktaGroups(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -8668,8 +8639,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the Okta group.
-	
+	name := "name_example" // string | Name of the Okta group.
+
 	resp, err := client.Auth.GetAuthOktaGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -8730,9 +8701,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthOktaUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -8789,8 +8759,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the user.
-	
+	name := "name_example" // string | Name of the user.
+
 	resp, err := client.Auth.GetAuthOktaUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -8851,8 +8821,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	nonce :=  // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-	
+	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
+
 	resp, err := client.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce)
 	if err != nil {
 		log.Fatal(err)
@@ -8913,7 +8883,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthRadiusConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8967,9 +8937,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthRadiusUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -9026,8 +8995,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the RADIUS user.
-	
+	name := "name_example" // string | Name of the RADIUS user.
+
 	resp, err := client.Auth.GetAuthRadiusUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -9088,9 +9057,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthTokenAccessors(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -9147,7 +9115,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthTokenLookup(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -9201,7 +9169,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.GetAuthTokenLookupSelf(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -9255,9 +9223,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthTokenRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -9314,8 +9281,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role
-	
+	roleName := "roleName_example" // string | Name of the role
+
 	resp, err := client.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -9376,9 +9343,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.Auth.GetAuthUserpassUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -9435,8 +9401,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | Username for this user.
-	
+	username := "username_example" // string | Username for this user.
+
 	resp, err := client.Auth.GetAuthUserpassUsersUsername(context.Background(), username)
 	if err != nil {
 		log.Fatal(err)
@@ -9497,9 +9463,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	alicloudLoginRequest := NewAlicloudLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAlicloudLogin(context.Background(), alicloudLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9556,10 +9521,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | The name of the role as it should appear in Vault.
-	
+	role := "role_example" // string | The name of the role as it should appear in Vault.
+
 	alicloudRoleRequest := NewAlicloudRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAlicloudRoleRole(context.Background(), role, alicloudRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9621,9 +9585,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAppIdLogin(context.Background(), appIdLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9680,10 +9643,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	appId :=  // string | The unique app ID
-	
+	appId := "appId_example" // string | The unique app ID
+
 	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAppIdLoginAppId(context.Background(), appId, appIdLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9745,10 +9707,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the app-id mapping
-	
+	key := "key_example" // string | Key for the app-id mapping
+
 	appIdMapAppIdRequest := NewAppIdMapAppIdRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key, appIdMapAppIdRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9810,10 +9771,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the user-id mapping
-	
+	key := "key_example" // string | Key for the user-id mapping
+
 	appIdMapUserIdRequest := NewAppIdMapUserIdRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key, appIdMapUserIdRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9875,9 +9835,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	approleLoginRequest := NewApproleLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleLogin(context.Background(), approleLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9934,10 +9893,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleRequest := NewApproleRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName, approleRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9999,10 +9957,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleBindSecretIdRequest := NewApproleRoleBindSecretIdRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName, approleRoleBindSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10064,10 +10021,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleBoundCidrListRequest := NewApproleRoleBoundCidrListRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName, approleRoleBoundCidrListRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10129,10 +10085,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleCustomSecretIdRequest := NewApproleRoleCustomSecretIdRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName, approleRoleCustomSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10194,10 +10149,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRolePeriodRequest := NewApproleRolePeriodRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName, approleRolePeriodRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10259,10 +10213,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRolePoliciesRequest := NewApproleRolePoliciesRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName, approleRolePoliciesRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10324,10 +10277,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleRoleIdRequest := NewApproleRoleRoleIdRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName, approleRoleRoleIdRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10389,10 +10341,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdRequest := NewApproleRoleSecretIdRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName, approleRoleSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10454,10 +10405,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdAccessorDestroyRequest := NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName, approleRoleSecretIdAccessorDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10519,10 +10469,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdAccessorLookupRequest := NewApproleRoleSecretIdAccessorLookupRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName, approleRoleSecretIdAccessorLookupRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10584,10 +10533,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdBoundCidrsRequest := NewApproleRoleSecretIdBoundCidrsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName, approleRoleSecretIdBoundCidrsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10649,10 +10597,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdDestroyRequest := NewApproleRoleSecretIdDestroyRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName, approleRoleSecretIdDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10714,10 +10661,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdLookupRequest := NewApproleRoleSecretIdLookupRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName, approleRoleSecretIdLookupRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10779,10 +10725,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdNumUsesRequest := NewApproleRoleSecretIdNumUsesRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName, approleRoleSecretIdNumUsesRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10844,10 +10789,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleSecretIdTtlRequest := NewApproleRoleSecretIdTtlRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName, approleRoleSecretIdTtlRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10909,10 +10853,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleTokenBoundCidrsRequest := NewApproleRoleTokenBoundCidrsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName, approleRoleTokenBoundCidrsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -10974,10 +10917,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleTokenMaxTtlRequest := NewApproleRoleTokenMaxTtlRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName, approleRoleTokenMaxTtlRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11039,10 +10981,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleTokenNumUsesRequest := NewApproleRoleTokenNumUsesRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName, approleRoleTokenNumUsesRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11104,10 +11045,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role.
-	
+	roleName := "roleName_example" // string | Name of the role.
+
 	approleRoleTokenTtlRequest := NewApproleRoleTokenTtlRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName, approleRoleTokenTtlRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11169,7 +11109,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.PostAuthApproleTidySecretId(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -11223,10 +11163,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	certName :=  // string | Name of the certificate.
-	
+	certName := "certName_example" // string | Name of the certificate.
+
 	awsConfigCertificateRequest := NewAwsConfigCertificateRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName, awsConfigCertificateRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11288,9 +11227,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsConfigClientRequest := NewAwsConfigClientRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigClient(context.Background(), awsConfigClientRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11347,9 +11285,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsConfigIdentityRequest := NewAwsConfigIdentityRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigIdentity(context.Background(), awsConfigIdentityRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11406,7 +11343,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.PostAuthAwsConfigRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -11460,10 +11397,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	
+	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+
 	awsConfigStsRequest := NewAwsConfigStsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId, awsConfigStsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11525,9 +11461,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsConfigTidyIdentityAccesslistRequest := NewAwsConfigTidyIdentityAccesslistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background(), awsConfigTidyIdentityAccesslistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11584,9 +11519,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsConfigTidyIdentityWhitelistRequest := NewAwsConfigTidyIdentityWhitelistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background(), awsConfigTidyIdentityWhitelistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11643,9 +11577,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsConfigTidyRoletagBlacklistRequest := NewAwsConfigTidyRoletagBlacklistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background(), awsConfigTidyRoletagBlacklistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11702,9 +11635,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsConfigTidyRoletagDenylistRequest := NewAwsConfigTidyRoletagDenylistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background(), awsConfigTidyRoletagDenylistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11761,9 +11693,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsLoginRequest := NewAwsLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsLogin(context.Background(), awsLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11820,10 +11751,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	awsRoleRequest := NewAwsRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsRoleRole(context.Background(), role, awsRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11885,10 +11815,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	awsRoleTagRequest := NewAwsRoleTagRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsRoleRoleTag(context.Background(), role, awsRoleTagRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -11950,8 +11879,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+
 	resp, err := client.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
@@ -12012,8 +11941,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+
 	resp, err := client.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
@@ -12074,9 +12003,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsTidyIdentityAccesslistRequest := NewAwsTidyIdentityAccesslistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background(), awsTidyIdentityAccesslistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12133,9 +12061,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsTidyIdentityWhitelistRequest := NewAwsTidyIdentityWhitelistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background(), awsTidyIdentityWhitelistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12192,9 +12119,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsTidyRoletagBlacklistRequest := NewAwsTidyRoletagBlacklistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background(), awsTidyRoletagBlacklistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12251,9 +12177,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	awsTidyRoletagDenylistRequest := NewAwsTidyRoletagDenylistRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(context.Background(), awsTidyRoletagDenylistRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12310,9 +12235,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	azureConfigRequest := NewAzureConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAzureConfig(context.Background(), azureConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12369,9 +12293,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	azureLoginRequest := NewAzureLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAzureLogin(context.Background(), azureLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12428,10 +12351,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	azureRoleRequest := NewAzureRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthAzureRoleName(context.Background(), name, azureRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12493,9 +12415,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	centrifyConfigRequest := NewCentrifyConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCentrifyConfig(context.Background(), centrifyConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12552,9 +12473,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	centrifyLoginRequest := NewCentrifyLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCentrifyLogin(context.Background(), centrifyLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12611,10 +12531,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the certificate
-	
+	name := "name_example" // string | The name of the certificate
+
 	certCertsRequest := NewCertCertsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCertCertsName(context.Background(), name, certCertsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12676,9 +12595,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	certConfigRequest := NewCertConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCertConfig(context.Background(), certConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12735,10 +12653,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the certificate
-	
+	name := "name_example" // string | The name of the certificate
+
 	certCrlsRequest := NewCertCrlsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCertCrlsName(context.Background(), name, certCrlsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12800,9 +12717,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	certLoginRequest := NewCertLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCertLogin(context.Background(), certLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12859,9 +12775,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	cfConfigRequest := NewCfConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCfConfig(context.Background(), cfConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12918,9 +12833,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	cfLoginRequest := NewCfLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCfLogin(context.Background(), cfLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -12977,10 +12891,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | The name of the role.
-	
+	role := "role_example" // string | The name of the role.
+
 	cfRolesRequest := NewCfRolesRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthCfRolesRole(context.Background(), role, cfRolesRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13042,9 +12955,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	gcpConfigRequest := NewGcpConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGcpConfig(context.Background(), gcpConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13101,9 +13013,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	gcpLoginRequest := NewGcpLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGcpLogin(context.Background(), gcpLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13160,10 +13071,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	gcpRoleRequest := NewGcpRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGcpRoleName(context.Background(), name, gcpRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13225,10 +13135,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	gcpRoleLabelsRequest := NewGcpRoleLabelsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGcpRoleNameLabels(context.Background(), name, gcpRoleLabelsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13290,10 +13199,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	gcpRoleServiceAccountsRequest := NewGcpRoleServiceAccountsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name, gcpRoleServiceAccountsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13355,9 +13263,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	githubConfigRequest := NewGithubConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGithubConfig(context.Background(), githubConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13414,9 +13321,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	githubLoginRequest := NewGithubLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGithubLogin(context.Background(), githubLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13473,10 +13379,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the teams mapping
-	
+	key := "key_example" // string | Key for the teams mapping
+
 	githubMapTeamsRequest := NewGithubMapTeamsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGithubMapTeamsKey(context.Background(), key, githubMapTeamsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13538,10 +13443,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	key :=  // string | Key for the users mapping
-	
+	key := "key_example" // string | Key for the users mapping
+
 	githubMapUsersRequest := NewGithubMapUsersRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthGithubMapUsersKey(context.Background(), key, githubMapUsersRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13605,9 +13509,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	jwtConfigRequest := NewJwtConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthJwtConfig(context.Background(), jwtConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13664,9 +13567,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	jwtLoginRequest := NewJwtLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthJwtLogin(context.Background(), jwtLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13723,9 +13625,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	jwtOidcAuthUrlRequest := NewJwtOidcAuthUrlRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthJwtOidcAuthUrl(context.Background(), jwtOidcAuthUrlRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13782,9 +13683,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	jwtOidcCallbackRequest := NewJwtOidcCallbackRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthJwtOidcCallback(context.Background(), jwtOidcCallbackRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13843,10 +13743,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	jwtRoleRequest := NewJwtRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthJwtRoleName(context.Background(), name, jwtRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13908,9 +13807,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	kerberosConfigRequest := NewKerberosConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthKerberosConfig(context.Background(), kerberosConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -13967,9 +13865,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	kerberosConfigLdapRequest := NewKerberosConfigLdapRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthKerberosConfigLdap(context.Background(), kerberosConfigLdapRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14026,10 +13923,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP group.
-	
+	name := "name_example" // string | Name of the LDAP group.
+
 	kerberosGroupsRequest := NewKerberosGroupsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthKerberosGroupsName(context.Background(), name, kerberosGroupsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14091,9 +13987,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	kerberosLoginRequest := NewKerberosLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthKerberosLogin(context.Background(), kerberosLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14150,9 +14045,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	kubernetesConfigRequest := NewKubernetesConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthKubernetesConfig(context.Background(), kubernetesConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14209,9 +14103,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	kubernetesLoginRequest := NewKubernetesLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthKubernetesLogin(context.Background(), kubernetesLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14268,10 +14161,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	kubernetesRoleRequest := NewKubernetesRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthKubernetesRoleName(context.Background(), name, kubernetesRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14333,9 +14225,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	ldapConfigRequest := NewLdapConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthLdapConfig(context.Background(), ldapConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14392,10 +14283,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP group.
-	
+	name := "name_example" // string | Name of the LDAP group.
+
 	ldapGroupsRequest := NewLdapGroupsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthLdapGroupsName(context.Background(), name, ldapGroupsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14457,10 +14347,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | DN (distinguished name) to be used for login.
-	
+	username := "username_example" // string | DN (distinguished name) to be used for login.
+
 	ldapLoginRequest := NewLdapLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthLdapLoginUsername(context.Background(), username, ldapLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14522,10 +14411,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the LDAP user.
-	
+	name := "name_example" // string | Name of the LDAP user.
+
 	ldapUsersRequest := NewLdapUsersRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthLdapUsersName(context.Background(), name, ldapUsersRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14587,9 +14475,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	ociConfigRequest := NewOciConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOciConfig(context.Background(), ociConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14646,10 +14533,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	ociLoginRequest := NewOciLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOciLoginRole(context.Background(), role, ociLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14711,10 +14597,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	role :=  // string | Name of the role.
-	
+	role := "role_example" // string | Name of the role.
+
 	ociRoleRequest := NewOciRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOciRoleRole(context.Background(), role, ociRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14778,9 +14663,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	oidcConfigRequest := NewOidcConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOidcConfig(context.Background(), oidcConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14837,9 +14721,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	oidcLoginRequest := NewOidcLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOidcLogin(context.Background(), oidcLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14896,9 +14779,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	oidcOidcAuthUrlRequest := NewOidcOidcAuthUrlRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOidcOidcAuthUrl(context.Background(), oidcOidcAuthUrlRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -14955,9 +14837,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	oidcOidcCallbackRequest := NewOidcOidcCallbackRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOidcOidcCallback(context.Background(), oidcOidcCallbackRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15016,10 +14897,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the role.
-	
+	name := "name_example" // string | Name of the role.
+
 	oidcRoleRequest := NewOidcRoleRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOidcRoleName(context.Background(), name, oidcRoleRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15081,9 +14961,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	oktaConfigRequest := NewOktaConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOktaConfig(context.Background(), oktaConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15140,10 +15019,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the Okta group.
-	
+	name := "name_example" // string | Name of the Okta group.
+
 	oktaGroupsRequest := NewOktaGroupsRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOktaGroupsName(context.Background(), name, oktaGroupsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15205,10 +15083,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | Username to be used for login.
-	
+	username := "username_example" // string | Username to be used for login.
+
 	oktaLoginRequest := NewOktaLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOktaLoginUsername(context.Background(), username, oktaLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15270,10 +15147,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the user.
-	
+	name := "name_example" // string | Name of the user.
+
 	oktaUsersRequest := NewOktaUsersRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthOktaUsersName(context.Background(), name, oktaUsersRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15335,9 +15211,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	radiusConfigRequest := NewRadiusConfigRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthRadiusConfig(context.Background(), radiusConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15394,9 +15269,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthRadiusLogin(context.Background(), radiusLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15453,10 +15327,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	urlusername :=  // string | Username to be used for login. (URL parameter)
-	
+	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
+
 	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername, radiusLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15518,10 +15391,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the RADIUS user.
-	
+	name := "name_example" // string | Name of the RADIUS user.
+
 	radiusUsersRequest := NewRadiusUsersRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthRadiusUsersName(context.Background(), name, radiusUsersRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15583,7 +15455,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.PostAuthTokenCreate(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -15637,7 +15509,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.PostAuthTokenCreateOrphan(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -15691,8 +15563,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role
-	
+	roleName := "roleName_example" // string | Name of the role
+
 	resp, err := client.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
@@ -15753,9 +15625,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenLookupRequest := NewTokenLookupRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenLookup(context.Background(), tokenLookupRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15812,9 +15683,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenLookupAccessorRequest := NewTokenLookupAccessorRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenLookupAccessor(context.Background(), tokenLookupAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15871,9 +15741,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenLookupSelfRequest := NewTokenLookupSelfRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenLookupSelf(context.Background(), tokenLookupSelfRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15930,9 +15799,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenRenewRequest := NewTokenRenewRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenRenew(context.Background(), tokenRenewRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -15989,9 +15857,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenRenewAccessorRequest := NewTokenRenewAccessorRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenRenewAccessor(context.Background(), tokenRenewAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16048,9 +15915,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenRenewSelfRequest := NewTokenRenewSelfRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenRenewSelf(context.Background(), tokenRenewSelfRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16107,9 +15973,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenRevokeRequest := NewTokenRevokeRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenRevoke(context.Background(), tokenRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16166,9 +16031,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenRevokeAccessorRequest := NewTokenRevokeAccessorRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenRevokeAccessor(context.Background(), tokenRevokeAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16225,9 +16089,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	tokenRevokeOrphanRequest := NewTokenRevokeOrphanRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenRevokeOrphan(context.Background(), tokenRevokeOrphanRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16284,7 +16147,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.PostAuthTokenRevokeSelf(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -16338,10 +16201,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	roleName :=  // string | Name of the role
-	
+	roleName := "roleName_example" // string | Name of the role
+
 	tokenRolesRequest := NewTokenRolesRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName, tokenRolesRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16403,7 +16265,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.Auth.PostAuthTokenTidy(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -16457,10 +16319,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | Username of the user.
-	
+	username := "username_example" // string | Username of the user.
+
 	userpassLoginRequest := NewUserpassLoginRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthUserpassLoginUsername(context.Background(), username, userpassLoginRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16522,10 +16383,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | Username for this user.
-	
+	username := "username_example" // string | Username for this user.
+
 	userpassUsersRequest := NewUserpassUsersRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthUserpassUsersUsername(context.Background(), username, userpassUsersRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16587,10 +16447,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | Username for this user.
-	
+	username := "username_example" // string | Username for this user.
+
 	userpassUsersPasswordRequest := NewUserpassUsersPasswordRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username, userpassUsersPasswordRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -16652,10 +16511,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	username :=  // string | Username for this user.
-	
+	username := "username_example" // string | Username for this user.
+
 	userpassUsersPoliciesRequest := NewUserpassUsersPoliciesRequestWithDefaults()
-	
 	resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username, userpassUsersPoliciesRequest)
 	if err != nil {
 		log.Fatal(err)

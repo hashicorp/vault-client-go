@@ -14,10 +14,6 @@ import (
 	"github.com/hashicorp/go-secure-stdlib/strutil"
 )
 
-const (
-	HeaderIndex = "X-Vault-Index"
-)
-
 // SetReplicationForwardAlways will add 'X-Vault-Forward' header to all
 // subsequent requests, telling any performance standbys handling the request
 // to forward it to the active node.
@@ -101,7 +97,7 @@ func (c *Client) WithReplicationForwardInconsistent(value bool) *Client {
 // https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func RecordReplicationState(state *string) ResponseCallback {
 	return func(req *http.Request, resp *http.Response) {
-		*state = resp.Header.Get(HeaderIndex)
+		*state = resp.Header.Get("X-Vault-Index")
 	}
 }
 
@@ -114,7 +110,7 @@ func RecordReplicationState(state *string) ResponseCallback {
 func RequireReplicationStates(states ...string) RequestCallback {
 	return func(req *http.Request) {
 		for _, state := range states {
-			req.Header.Add(HeaderIndex, state)
+			req.Header.Add("X-Vault-Index", state)
 		}
 	}
 }
@@ -253,7 +249,7 @@ func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
 	/* */ c.statesLock.Lock()
 	defer c.statesLock.Unlock()
 
-	if new := resp.Header.Get(HeaderIndex); new != "" {
+	if new := resp.Header.Get("X-Vault-Index"); new != "" {
 		c.states = MergeReplicationStates(c.states, new)
 	}
 }
@@ -268,7 +264,7 @@ func (c *replicationStateCache) requireReplicationStates(req *http.Request) {
 	defer c.statesLock.RUnlock()
 
 	for _, state := range c.states {
-		req.Header.Add(HeaderIndex, state)
+		req.Header.Add("X-Vault-Index", state)
 	}
 }
 

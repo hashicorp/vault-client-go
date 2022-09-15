@@ -14,25 +14,25 @@ import (
 	"github.com/hashicorp/go-secure-stdlib/strutil"
 )
 
-// SetReplicationForwardAlways will add 'X-Vault-Forward' header to all
+// EnableReplicationForwardAlways will add 'X-Vault-Forward' header to all
 // subsequent requests, telling any performance standbys handling the request
 // to forward it to the active node.
 //
 // Note: this feature must be enabled in Vault's configuration.
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
-func (c *Client) SetReplicationForwardAlways() {
+func (c *Client) EnableReplicationForwardAlways() {
 	/* */ c.requestModifiersLock.Lock()
 	defer c.requestModifiersLock.Unlock()
 
 	c.requestModifiers.headers.replicationForwardAlways = true
 }
 
-// ClearReplicationForwardAlways clears the 'X-Vault-Forward' header from all
+// DisableReplicationForwardAlways clears the 'X-Vault-Forward' header from all
 // subsequent requests.
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
-func (c *Client) ClearReplicationForwardAlways() {
+func (c *Client) DisableReplicationForwardAlways() {
 	/* */ c.requestModifiersLock.Lock()
 	defer c.requestModifiersLock.Unlock()
 
@@ -45,31 +45,31 @@ func (c *Client) ClearReplicationForwardAlways() {
 // the active node.
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
-func (c *Client) WithReplicationForwardAlways(value bool) *Client {
+func (c *Client) WithReplicationForwardAlways(enabled bool) *Client {
 	clone := c.Clone()
-	clone.requestModifiers.headers.replicationForwardAlways = value
+	clone.requestModifiers.headers.replicationForwardAlways = enabled
 
 	return clone
 }
 
-// SetReplicationForwardInconsistent will add 'X-Vault-Inconsistent' header to
+// EnableReplicationForwardInconsistent will add 'X-Vault-Inconsistent' header to
 // all subsequent requests, which says: if the state required isn't present on
 // the node receiving this request, forward it to the active node. This should
 // be used in conjunction with RequireReplicationState(...).
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
-func (c *Client) SetReplicationForwardInconsistent() {
+func (c *Client) EnableReplicationForwardInconsistent() {
 	/* */ c.requestModifiersLock.Lock()
 	defer c.requestModifiersLock.Unlock()
 
 	c.requestModifiers.headers.replicationForwardInconsistent = true
 }
 
-// ClearReplicationForwardInconsistent clears the 'X-Vault-Inconsistent' header
+// DisableReplicationForwardInconsistent clears the 'X-Vault-Inconsistent' header
 // from all subsequent requests.
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
-func (c *Client) ClearReplicationForwardInconsistent() {
+func (c *Client) DisableReplicationForwardInconsistent() {
 	/* */ c.requestModifiersLock.Lock()
 	defer c.requestModifiersLock.Unlock()
 
@@ -84,9 +84,9 @@ func (c *Client) ClearReplicationForwardInconsistent() {
 // RequireReplicationState(...).
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
-func (c *Client) WithReplicationForwardInconsistent(value bool) *Client {
+func (c *Client) WithReplicationForwardInconsistent(enabled bool) *Client {
 	clone := c.Clone()
-	clone.requestModifiers.headers.replicationForwardInconsistent = value
+	clone.requestModifiers.headers.replicationForwardInconsistent = enabled
 
 	return clone
 }

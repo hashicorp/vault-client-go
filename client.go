@@ -75,8 +75,8 @@ type requestModifiers struct {
 type requestHeaders struct {
 	token                          string // request header 'X-Vault-Token'
 	namespace                      string // request header 'X-Vault-Namespace'
-	replicationForwardInconsistent bool   // request header 'X-Vault-Inconsistent'
 	replicationForwardAlways       bool   // request header 'X-Vault-Forward'
+	replicationForwardInconsistent bool   // request header 'X-Vault-Inconsistent'
 	customHeaders                  http.Header
 }
 
@@ -192,9 +192,11 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 	copy(clone.responseCallbacks, c.requestModifiers.responseCallbacks)
 
 	clone.headers = requestHeaders{
-		token:         c.requestModifiers.headers.token,
-		namespace:     c.requestModifiers.headers.namespace,
-		customHeaders: c.requestModifiers.headers.customHeaders.Clone(),
+		token:                          c.requestModifiers.headers.token,
+		namespace:                      c.requestModifiers.headers.namespace,
+		customHeaders:                  c.requestModifiers.headers.customHeaders.Clone(),
+		replicationForwardAlways:       c.requestModifiers.headers.replicationForwardAlways,
+		replicationForwardInconsistent: c.requestModifiers.headers.replicationForwardInconsistent,
 	}
 
 	return clone
@@ -409,6 +411,14 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 
 	if m.headers.namespace != "" {
 		req.Header.Set("X-Vault-Namespace", m.headers.namespace)
+	}
+
+	if m.headers.replicationForwardAlways {
+		req.Header.Set("X-Vault-Forward", "active-node")
+	}
+
+	if m.headers.replicationForwardInconsistent {
+		req.Header.Set("X-Vault-Inconsistent", "forward-active-node")
 	}
 
 	return req, nil

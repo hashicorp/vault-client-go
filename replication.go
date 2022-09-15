@@ -75,6 +75,11 @@ type ReplicationState struct {
 	ReplicatedIndex uint64
 }
 
+// ParseReplicationState will parse the raw base64-encoded replication state
+// into its individual components. If an optional hmacKey is provided, it will
+// used to verify the replication state contents. The format of the string
+// (after decoding) is expected to be:
+//    v1:cluster-id-string:local-index:replicated-index:hmac
 func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error) {
 	d, err := base64.StdEncoding.DecodeString(raw)
 	if err != nil {
@@ -84,7 +89,7 @@ func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error)
 
 	lastIndex := strings.LastIndexByte(decoded, ':')
 	if lastIndex == -1 {
-		return ReplicationState{}, fmt.Errorf("invalid replication state header full format")
+		return ReplicationState{}, fmt.Errorf("invalid replication state header format")
 	}
 
 	state := decoded[:lastIndex]

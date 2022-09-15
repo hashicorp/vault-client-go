@@ -213,7 +213,7 @@ go run main.go
 
 ### Logging requests & responses with request/response callbacks
 
-```
+```go
 client.SetRequestCallbacks(func(req *http.Request) {
 	// log req
 })

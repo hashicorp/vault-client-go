@@ -194,8 +194,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-	
+	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+
 	resp, err := client.System.DeleteSysAuditPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -256,8 +256,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Cannot be delimited. Example: \"user\"
-	
+	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+
 	resp, err := client.System.DeleteSysAuthPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -318,8 +318,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	header :=  // string | 
-	
+	header := "header_example" // string | 
+
 	resp, err := client.System.DeleteSysConfigAuditingRequestHeadersHeader(context.Background(), header)
 	if err != nil {
 		log.Fatal(err)
@@ -380,7 +380,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysConfigCors(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -434,8 +434,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	header :=  // string | The name of the header.
-	
+	header := "header_example" // string | The name of the header.
+
 	resp, err := client.System.DeleteSysConfigUiHeadersHeader(context.Background(), header)
 	if err != nil {
 		log.Fatal(err)
@@ -496,7 +496,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysGenerateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -550,7 +550,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysGenerateRootAttempt(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -604,8 +604,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Example: \"aws/east\"
-	
+	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 	resp, err := client.System.DeleteSysMountsPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -666,8 +666,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the plugin
-	
+	name := "name_example" // string | The name of the plugin
+
 	resp, err := client.System.DeleteSysPluginsCatalogName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -728,9 +728,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the plugin
-	type_ :=  // string | The type of the plugin, may be auth, secret, or database
-	
+	name := "name_example" // string | The name of the plugin
+	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+
 	resp, err := client.System.DeleteSysPluginsCatalogTypeName(context.Background(), name, type_)
 	if err != nil {
 		log.Fatal(err)
@@ -793,8 +793,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the policy. Example: \"ops\"
-	
+	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	resp, err := client.System.DeleteSysPoliciesAclName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -855,8 +855,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the password policy.
-	
+	name := "name_example" // string | The name of the password policy.
+
 	resp, err := client.System.DeleteSysPoliciesPasswordName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -917,8 +917,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the policy. Example: \"ops\"
-	
+	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	resp, err := client.System.DeleteSysPolicyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -979,8 +979,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the quota rule.
-	
+	name := "name_example" // string | Name of the quota rule.
+
 	resp, err := client.System.DeleteSysQuotasRateLimitName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -1041,7 +1041,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysRaw(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1095,8 +1095,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | 
-	
+	path := "path_example" // string | 
+
 	resp, err := client.System.DeleteSysRawPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -1157,7 +1157,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysRekeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1213,7 +1213,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysRekeyInit(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1267,7 +1267,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysRekeyRecoveryKeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1323,7 +1323,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.DeleteSysRekeyVerify(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1377,7 +1377,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysAudit(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1431,7 +1431,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysAuth(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1485,8 +1485,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Cannot be delimited. Example: \"user\"
-	
+	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+
 	resp, err := client.System.GetSysAuthPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -1549,8 +1549,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | Tune the configuration parameters for an auth path.
-	
+	path := "path_example" // string | Tune the configuration parameters for an auth path.
+
 	resp, err := client.System.GetSysAuthPathTune(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -1611,7 +1611,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysConfigAuditingRequestHeaders(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1665,8 +1665,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	header :=  // string | 
-	
+	header := "header_example" // string | 
+
 	resp, err := client.System.GetSysConfigAuditingRequestHeadersHeader(context.Background(), header)
 	if err != nil {
 		log.Fatal(err)
@@ -1727,7 +1727,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysConfigCors(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1783,7 +1783,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysConfigStateSanitized(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -1837,9 +1837,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysConfigUiHeaders(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -1896,8 +1895,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	header :=  // string | The name of the header.
-	
+	header := "header_example" // string | The name of the header.
+
 	resp, err := client.System.GetSysConfigUiHeadersHeader(context.Background(), header)
 	if err != nil {
 		log.Fatal(err)
@@ -1958,7 +1957,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysGenerateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2012,7 +2011,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysGenerateRootAttempt(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2066,7 +2065,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysHaStatus(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2120,7 +2119,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysHealth(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2176,7 +2175,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysHostInfo(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2232,7 +2231,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInFlightReq(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2286,7 +2285,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInit(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2340,7 +2339,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalCountersActivity(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2394,7 +2393,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalCountersActivityExport(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2448,7 +2447,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalCountersActivityMonthly(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2502,7 +2501,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalCountersConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2556,7 +2555,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalCountersEntities(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2610,7 +2609,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalCountersRequests(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2664,7 +2663,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalCountersTokens(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2718,7 +2717,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalSpecsOpenapi(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2772,7 +2771,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalUiFeatureFlags(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2826,7 +2825,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalUiMounts(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2880,8 +2879,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path of the mount.
-	
+	path := "path_example" // string | The path of the mount.
+
 	resp, err := client.System.GetSysInternalUiMountsPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -2942,7 +2941,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalUiNamespaces(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -2996,7 +2995,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysInternalUiResultantAcl(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -3050,7 +3049,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysKeyStatus(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -3104,7 +3103,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysLeader(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -3158,7 +3157,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysLeases(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -3212,7 +3211,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysLeasesCount(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -3266,9 +3265,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysLeasesLookup(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -3325,10 +3323,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	prefix :=  // string | The path to list leases under. Example: \"aws/creds/deploy\"
-	
+	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysLeasesLookupPrefix(context.Background(), prefix, list)
 	if err != nil {
 		log.Fatal(err)
@@ -3390,9 +3387,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	format := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysMetrics(context.Background(), format)
 	if err != nil {
 		log.Fatal(err)
@@ -3449,11 +3445,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	logFormat := NewstringWithDefaults()
-	
 	logLevel := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysMonitor(context.Background(), logFormat, logLevel)
 	if err != nil {
 		log.Fatal(err)
@@ -3511,7 +3505,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysMounts(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -3565,8 +3559,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Example: \"aws/east\"
-	
+	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 	resp, err := client.System.GetSysMountsPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -3627,8 +3621,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Example: \"aws/east\"
-	
+	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 	resp, err := client.System.GetSysMountsPathTune(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
@@ -3689,7 +3683,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPluginsCatalog(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -3743,8 +3737,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the plugin
-	
+	name := "name_example" // string | The name of the plugin
+
 	resp, err := client.System.GetSysPluginsCatalogName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -3805,10 +3799,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	type_ :=  // string | The type of the plugin, may be auth, secret, or database
-	
+	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysPluginsCatalogType(context.Background(), type_, list)
 	if err != nil {
 		log.Fatal(err)
@@ -3870,9 +3863,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the plugin
-	type_ :=  // string | The type of the plugin, may be auth, secret, or database
-	
+	name := "name_example" // string | The name of the plugin
+	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+
 	resp, err := client.System.GetSysPluginsCatalogTypeName(context.Background(), name, type_)
 	if err != nil {
 		log.Fatal(err)
@@ -3935,9 +3928,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysPoliciesAcl(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -3994,8 +3986,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the policy. Example: \"ops\"
-	
+	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	resp, err := client.System.GetSysPoliciesAclName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -4056,9 +4048,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysPoliciesPassword(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -4115,8 +4106,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the password policy.
-	
+	name := "name_example" // string | The name of the password policy.
+
 	resp, err := client.System.GetSysPoliciesPasswordName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -4177,8 +4168,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the password policy.
-	
+	name := "name_example" // string | The name of the password policy.
+
 	resp, err := client.System.GetSysPoliciesPasswordNameGenerate(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -4239,9 +4230,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysPolicy(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -4298,8 +4288,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the policy. Example: \"ops\"
-	
+	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	resp, err := client.System.GetSysPolicyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -4362,7 +4352,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprof(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4418,7 +4408,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofAllocs(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4474,7 +4464,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofBlock(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4530,7 +4520,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofCmdline(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4586,7 +4576,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofGoroutine(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4642,7 +4632,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofHeap(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4698,7 +4688,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofMutex(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4754,7 +4744,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofProfile(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4810,7 +4800,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofSymbol(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4866,7 +4856,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofThreadcreate(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4922,7 +4912,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysPprofTrace(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -4976,7 +4966,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysQuotasConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5030,9 +5020,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysQuotasRateLimit(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5089,8 +5078,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the quota rule.
-	
+	name := "name_example" // string | Name of the quota rule.
+
 	resp, err := client.System.GetSysQuotasRateLimitName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
@@ -5151,9 +5140,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysRaw(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5210,10 +5198,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | 
-	
+	path := "path_example" // string | 
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysRawPath(context.Background(), path, list)
 	if err != nil {
 		log.Fatal(err)
@@ -5275,7 +5262,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysRekeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5329,7 +5316,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysRekeyInit(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5383,7 +5370,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysRekeyRecoveryKeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5437,7 +5424,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysRekeyVerify(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5491,8 +5478,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	migrationId :=  // string | The ID of the migration operation
-	
+	migrationId := "migrationId_example" // string | The ID of the migration operation
+
 	resp, err := client.System.GetSysRemountStatusMigrationId(context.Background(), migrationId)
 	if err != nil {
 		log.Fatal(err)
@@ -5553,7 +5540,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysReplicationStatus(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5607,7 +5594,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysRotateConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5661,7 +5648,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysSealStatus(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5715,9 +5702,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	list := NewstringWithDefaults()
-	
 	resp, err := client.System.GetSysVersionHistory(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
@@ -5774,7 +5760,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.GetSysWrappingLookup(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -5828,10 +5814,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-	
+	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+
 	systemAuditHashRequest := NewSystemAuditHashRequestWithDefaults()
-	
 	resp, err := client.System.PostSysAuditHashPath(context.Background(), path, systemAuditHashRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -5893,10 +5878,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-	
+	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+
 	systemAuditRequest := NewSystemAuditRequestWithDefaults()
-	
 	resp, err := client.System.PostSysAuditPath(context.Background(), path, systemAuditRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -5960,10 +5944,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Cannot be delimited. Example: \"user\"
-	
+	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+
 	systemAuthRequest := NewSystemAuthRequestWithDefaults()
-	
 	resp, err := client.System.PostSysAuthPath(context.Background(), path, systemAuthRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6027,10 +6010,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | Tune the configuration parameters for an auth path.
-	
+	path := "path_example" // string | Tune the configuration parameters for an auth path.
+
 	systemAuthTuneRequest := NewSystemAuthTuneRequestWithDefaults()
-	
 	resp, err := client.System.PostSysAuthPathTune(context.Background(), path, systemAuthTuneRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6092,9 +6074,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemCapabilitiesRequest := NewSystemCapabilitiesRequestWithDefaults()
-	
 	resp, err := client.System.PostSysCapabilities(context.Background(), systemCapabilitiesRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6151,9 +6132,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemCapabilitiesAccessorRequest := NewSystemCapabilitiesAccessorRequestWithDefaults()
-	
 	resp, err := client.System.PostSysCapabilitiesAccessor(context.Background(), systemCapabilitiesAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6210,9 +6190,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemCapabilitiesSelfRequest := NewSystemCapabilitiesSelfRequestWithDefaults()
-	
 	resp, err := client.System.PostSysCapabilitiesSelf(context.Background(), systemCapabilitiesSelfRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6269,10 +6248,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	header :=  // string | 
-	
+	header := "header_example" // string | 
+
 	systemConfigAuditingRequestHeadersRequest := NewSystemConfigAuditingRequestHeadersRequestWithDefaults()
-	
 	resp, err := client.System.PostSysConfigAuditingRequestHeadersHeader(context.Background(), header, systemConfigAuditingRequestHeadersRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6334,9 +6312,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemConfigCorsRequest := NewSystemConfigCorsRequestWithDefaults()
-	
 	resp, err := client.System.PostSysConfigCors(context.Background(), systemConfigCorsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6393,8 +6370,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	subsystem :=  // string | 
-	
+	subsystem := "subsystem_example" // string | 
+
 	resp, err := client.System.PostSysConfigReloadSubsystem(context.Background(), subsystem)
 	if err != nil {
 		log.Fatal(err)
@@ -6455,10 +6432,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	header :=  // string | The name of the header.
-	
+	header := "header_example" // string | The name of the header.
+
 	systemConfigUiHeadersRequest := NewSystemConfigUiHeadersRequestWithDefaults()
-	
 	resp, err := client.System.PostSysConfigUiHeadersHeader(context.Background(), header, systemConfigUiHeadersRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6522,9 +6498,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemGenerateRootRequest := NewSystemGenerateRootRequestWithDefaults()
-	
 	resp, err := client.System.PostSysGenerateRoot(context.Background(), systemGenerateRootRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6583,9 +6558,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemGenerateRootAttemptRequest := NewSystemGenerateRootAttemptRequestWithDefaults()
-	
 	resp, err := client.System.PostSysGenerateRootAttempt(context.Background(), systemGenerateRootAttemptRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6644,9 +6618,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemGenerateRootUpdateRequest := NewSystemGenerateRootUpdateRequestWithDefaults()
-	
 	resp, err := client.System.PostSysGenerateRootUpdate(context.Background(), systemGenerateRootUpdateRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6705,9 +6678,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemInitRequest := NewSystemInitRequestWithDefaults()
-	
 	resp, err := client.System.PostSysInit(context.Background(), systemInitRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6764,9 +6736,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemInternalCountersConfigRequest := NewSystemInternalCountersConfigRequestWithDefaults()
-	
 	resp, err := client.System.PostSysInternalCountersConfig(context.Background(), systemInternalCountersConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6823,9 +6794,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemLeasesLookupRequest := NewSystemLeasesLookupRequestWithDefaults()
-	
 	resp, err := client.System.PostSysLeasesLookup(context.Background(), systemLeasesLookupRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6882,9 +6852,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemLeasesRenewRequest := NewSystemLeasesRenewRequestWithDefaults()
-	
 	resp, err := client.System.PostSysLeasesRenew(context.Background(), systemLeasesRenewRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -6941,10 +6910,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
-	
+	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	systemLeasesRenewLeaseRequest := NewSystemLeasesRenewLeaseRequestWithDefaults()
-	
 	resp, err := client.System.PostSysLeasesRenewUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRenewLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7006,9 +6974,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemLeasesRevokeRequest := NewSystemLeasesRevokeRequestWithDefaults()
-	
 	resp, err := client.System.PostSysLeasesRevoke(context.Background(), systemLeasesRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7067,8 +7034,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-	
+	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 	resp, err := client.System.PostSysLeasesRevokeForcePrefix(context.Background(), prefix)
 	if err != nil {
 		log.Fatal(err)
@@ -7129,10 +7096,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-	
+	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 	systemLeasesRevokePrefixRequest := NewSystemLeasesRevokePrefixRequestWithDefaults()
-	
 	resp, err := client.System.PostSysLeasesRevokePrefixPrefix(context.Background(), prefix, systemLeasesRevokePrefixRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7194,10 +7160,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
-	
+	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	systemLeasesRevokeLeaseRequest := NewSystemLeasesRevokeLeaseRequestWithDefaults()
-	
 	resp, err := client.System.PostSysLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRevokeLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7259,7 +7224,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.PostSysLeasesTidy(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -7313,9 +7278,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemMfaValidateRequest := NewSystemMfaValidateRequestWithDefaults()
-	
 	resp, err := client.System.PostSysMfaValidate(context.Background(), systemMfaValidateRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7372,10 +7336,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Example: \"aws/east\"
-	
+	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 	systemMountsRequest := NewSystemMountsRequestWithDefaults()
-	
 	resp, err := client.System.PostSysMountsPath(context.Background(), path, systemMountsRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7437,10 +7400,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | The path to mount to. Example: \"aws/east\"
-	
+	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 	systemMountsTuneRequest := NewSystemMountsTuneRequestWithDefaults()
-	
 	resp, err := client.System.PostSysMountsPathTune(context.Background(), path, systemMountsTuneRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7502,10 +7464,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the plugin
-	
+	name := "name_example" // string | The name of the plugin
+
 	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
-	
 	resp, err := client.System.PostSysPluginsCatalogName(context.Background(), name, systemPluginsCatalogRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7567,11 +7528,10 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the plugin
-	type_ :=  // string | The type of the plugin, may be auth, secret, or database
-	
+	name := "name_example" // string | The name of the plugin
+	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+
 	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
-	
 	resp, err := client.System.PostSysPluginsCatalogTypeName(context.Background(), name, type_, systemPluginsCatalogRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7637,9 +7597,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemPluginsReloadBackendRequest := NewSystemPluginsReloadBackendRequestWithDefaults()
-	
 	resp, err := client.System.PostSysPluginsReloadBackend(context.Background(), systemPluginsReloadBackendRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7696,10 +7655,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the policy. Example: \"ops\"
-	
+	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	systemPoliciesAclRequest := NewSystemPoliciesAclRequestWithDefaults()
-	
 	resp, err := client.System.PostSysPoliciesAclName(context.Background(), name, systemPoliciesAclRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7761,10 +7719,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the password policy.
-	
+	name := "name_example" // string | The name of the password policy.
+
 	systemPoliciesPasswordRequest := NewSystemPoliciesPasswordRequestWithDefaults()
-	
 	resp, err := client.System.PostSysPoliciesPasswordName(context.Background(), name, systemPoliciesPasswordRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7826,10 +7783,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | The name of the policy. Example: \"ops\"
-	
+	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	systemPolicyRequest := NewSystemPolicyRequestWithDefaults()
-	
 	resp, err := client.System.PostSysPolicyName(context.Background(), name, systemPolicyRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7891,9 +7847,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemQuotasConfigRequest := NewSystemQuotasConfigRequestWithDefaults()
-	
 	resp, err := client.System.PostSysQuotasConfig(context.Background(), systemQuotasConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -7950,10 +7905,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	name :=  // string | Name of the quota rule.
-	
+	name := "name_example" // string | Name of the quota rule.
+
 	systemQuotasRateLimitRequest := NewSystemQuotasRateLimitRequestWithDefaults()
-	
 	resp, err := client.System.PostSysQuotasRateLimitName(context.Background(), name, systemQuotasRateLimitRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8015,9 +7969,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRawRequest := NewSystemRawRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRaw(context.Background(), systemRawRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8074,10 +8027,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	path :=  // string | 
-	
+	path := "path_example" // string | 
+
 	systemRawRequest := NewSystemRawRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRawPath(context.Background(), path, systemRawRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8141,9 +8093,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRekeyInitRequest := NewSystemRekeyInitRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRekeyInit(context.Background(), systemRekeyInitRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8200,9 +8151,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRekeyUpdateRequest := NewSystemRekeyUpdateRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRekeyUpdate(context.Background(), systemRekeyUpdateRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8259,9 +8209,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRekeyVerifyRequest := NewSystemRekeyVerifyRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRekeyVerify(context.Background(), systemRekeyVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8318,9 +8267,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRemountRequest := NewSystemRemountRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRemount(context.Background(), systemRemountRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8377,9 +8325,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRenewRequest := NewSystemRenewRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRenew(context.Background(), systemRenewRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8436,10 +8383,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
-	
+	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	systemRenewLeaseRequest := NewSystemRenewLeaseRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRenewUrlLeaseId(context.Background(), urlLeaseId, systemRenewLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8501,9 +8447,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRevokeRequest := NewSystemRevokeRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRevoke(context.Background(), systemRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8562,8 +8507,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-	
+	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 	resp, err := client.System.PostSysRevokeForcePrefix(context.Background(), prefix)
 	if err != nil {
 		log.Fatal(err)
@@ -8624,10 +8569,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	prefix :=  // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-	
+	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 	systemRevokePrefixRequest := NewSystemRevokePrefixRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRevokePrefixPrefix(context.Background(), prefix, systemRevokePrefixRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8689,10 +8633,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	urlLeaseId :=  // string | The lease identifier to renew. This is included with a lease.
-	
+	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	systemRevokeLeaseRequest := NewSystemRevokeLeaseRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRevokeUrlLeaseId(context.Background(), urlLeaseId, systemRevokeLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8754,7 +8697,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.PostSysRotate(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8808,9 +8751,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemRotateConfigRequest := NewSystemRotateConfigRequestWithDefaults()
-	
 	resp, err := client.System.PostSysRotateConfig(context.Background(), systemRotateConfigRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -8867,7 +8809,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.PostSysSeal(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8923,7 +8865,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.PostSysStepDown(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -8977,9 +8919,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
-	
 	resp, err := client.System.PostSysToolsHash(context.Background(), systemToolsHashRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9036,10 +8977,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	urlalgorithm :=  // string | Algorithm to use (POST URL parameter)
-	
+	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+
 	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
-	
 	resp, err := client.System.PostSysToolsHashUrlalgorithm(context.Background(), urlalgorithm, systemToolsHashRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9101,9 +9041,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	
 	resp, err := client.System.PostSysToolsRandom(context.Background(), systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9160,10 +9099,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	source :=  // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
-	
+	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	
 	resp, err := client.System.PostSysToolsRandomSource(context.Background(), source, systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9225,11 +9163,10 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	source :=  // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
-	urlbytes :=  // string | The number of bytes to generate (POST URL parameter)
-	
+	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	
 	resp, err := client.System.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes, systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9293,10 +9230,9 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	urlbytes :=  // string | The number of bytes to generate (POST URL parameter)
-	
+	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	
 	resp, err := client.System.PostSysToolsRandomUrlbytes(context.Background(), urlbytes, systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9358,9 +9294,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemUnsealRequest := NewSystemUnsealRequestWithDefaults()
-	
 	resp, err := client.System.PostSysUnseal(context.Background(), systemUnsealRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9417,9 +9352,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemWrappingLookupRequest := NewSystemWrappingLookupRequestWithDefaults()
-	
 	resp, err := client.System.PostSysWrappingLookup(context.Background(), systemWrappingLookupRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9476,9 +9410,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemWrappingRewrapRequest := NewSystemWrappingRewrapRequestWithDefaults()
-	
 	resp, err := client.System.PostSysWrappingRewrap(context.Background(), systemWrappingRewrapRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9535,9 +9468,8 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	systemWrappingUnwrapRequest := NewSystemWrappingUnwrapRequestWithDefaults()
-	
 	resp, err := client.System.PostSysWrappingUnwrap(context.Background(), systemWrappingUnwrapRequest)
 	if err != nil {
 		log.Fatal(err)
@@ -9594,7 +9526,7 @@ func main() {
 	}
 	client.SetToken("my-token")
 
-	
+
 	resp, err := client.System.PostSysWrappingWrap(context.Background())
 	if err != nil {
 		log.Fatal(err)

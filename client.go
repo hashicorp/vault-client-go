@@ -42,6 +42,9 @@ type Client struct {
 	requestModifiers     requestModifiers
 	requestModifiersLock sync.RWMutex
 
+	// replication state cache used to ensure read-after-write semantics
+	replicationStates replicationStateCache
+
 	// API wrappers
 	Auth     Auth
 	Identity Identity
@@ -61,8 +64,6 @@ type requestModifiers struct {
 
 	requestCallbacks  []RequestCallback
 	responseCallbacks []ResponseCallback
-
-	replicationStates *replicationStateCache
 
 	// This error is set in client.WithX methods and checked in client.newRequest.
 	// Since client.WithX methods are used for method chaining, they cannot
@@ -153,6 +154,10 @@ func (c *Client) Clone() *Client {
 		clientWithRetries: c.clientWithRetries,
 	}
 
+	if c.configuration.EnforceReadYourWritesConsistency {
+		clone.replicationStates = c.replicationStates.clone()
+	}
+
 	clone.requestModifiers = c.cloneRequestModifiers()
 
 	clone.Auth = Auth{
@@ -181,8 +186,6 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 
 	copy(clone.requestCallbacks, c.requestModifiers.requestCallbacks)
 	copy(clone.responseCallbacks, c.requestModifiers.responseCallbacks)
-
-	clone.replicationStates = c.requestModifiers.replicationStates
 
 	clone.headers = requestHeaders{
 		token:         c.requestModifiers.headers.token,
@@ -415,9 +418,7 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	}
 
 	if c.configuration.EnforceReadYourWritesConsistency {
-		c.requestModifiersLock.RLock()
-		c.requestModifiers.replicationStates.requireReplicationStates(req)
-		c.requestModifiersLock.RUnlock()
+		c.replicationStates.requireReplicationStates(req)
 	}
 
 	// clone request modifiers behind a lock
@@ -457,9 +458,7 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	}
 
 	if c.configuration.EnforceReadYourWritesConsistency && resp != nil {
-		c.requestModifiersLock.Lock()
-		c.requestModifiers.replicationStates.recordReplicationState(resp)
-		c.requestModifiersLock.Unlock()
+		c.replicationStates.recordReplicationState(resp)
 	}
 
 	return resp, nil

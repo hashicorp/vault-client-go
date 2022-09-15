@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"sync"
 
 	"github.com/hashicorp/go-secure-stdlib/strutil"
 )
@@ -163,16 +164,21 @@ func compareReplicationStates(s1, s2 string) (int, error) {
 // replicationStateCache is used to track cluster replication states in order
 // to ensure proper read-after-write semantics for the client. This will have
 // at most two states due to how MergeReplicationStates works.
-type replicationStateCache []string
+type replicationStateCache struct {
+	states     []string
+	statesLock sync.RWMutex
+}
 
 // recordReplicationState merges the state from the given response into the
 // existing cached replication states.
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
-func (states replicationStateCache) recordReplicationState(resp *http.Response) {
-	new := resp.Header.Get(HeaderIndex)
-	if new != "" {
-		states = MergeReplicationStates(states, new)
+func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
+	/* */ c.statesLock.Lock()
+	defer c.statesLock.Unlock()
+
+	if new := resp.Header.Get(HeaderIndex); new != "" {
+		c.states = MergeReplicationStates(c.states, new)
 	}
 }
 
@@ -181,8 +187,25 @@ func (states replicationStateCache) recordReplicationState(resp *http.Response) 
 // response headers captured with replicationStateCache.recordReplicationState.
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
-func (states replicationStateCache) requireReplicationStates(req *http.Request) {
-	for _, state := range states {
+func (c *replicationStateCache) requireReplicationStates(req *http.Request) {
+	/* */ c.statesLock.RLock()
+	defer c.statesLock.RUnlock()
+
+	for _, state := range c.states {
 		req.Header.Add(HeaderIndex, state)
+	}
+}
+
+// clone returns a deep copy of the replication state cache
+func (c *replicationStateCache) clone() replicationStateCache {
+	/* */ c.statesLock.RLock()
+	defer c.statesLock.RUnlock()
+
+	var cloned []string
+	copy(cloned, c.states)
+
+	return replicationStateCache{
+		statesLock: sync.RWMutex{},
+		states:     cloned,
 	}
 }

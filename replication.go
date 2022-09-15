@@ -15,9 +15,7 @@ import (
 )
 
 const (
-	HeaderIndex        = "X-Vault-Index"
-	HeaderForward      = "X-Vault-Forward"
-	HeaderInconsistent = "X-Vault-Inconsistent"
+	HeaderIndex = "X-Vault-Index"
 )
 
 // SetReplicationForwardAlways will add 'X-Vault-Forward' header to all

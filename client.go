@@ -42,6 +42,9 @@ type Client struct {
 	requestModifiers     requestModifiers
 	requestModifiersLock sync.RWMutex
 
+	// replication state cache used to ensure read-after-write semantics
+	replicationStates replicationStateCache
+
 	// API wrappers
 	Auth     Auth
 	Identity Identity
@@ -151,6 +154,10 @@ func (c *Client) Clone() *Client {
 		clientWithRetries: c.clientWithRetries,
 	}
 
+	if c.configuration.EnforceReadYourWritesConsistency {
+		clone.replicationStates = c.replicationStates.clone()
+	}
+
 	clone.requestModifiers = c.cloneRequestModifiers()
 
 	clone.Auth = Auth{
@@ -169,7 +176,8 @@ func (c *Client) Clone() *Client {
 	return &clone
 }
 
-// cloneRequestModifiers returns a copy of the request modifiers behind a mutex
+// cloneRequestModifiers returns a copy of the request modifiers behind a mutex;
+// the replication states will point to the same cache
 func (c *Client) cloneRequestModifiers() requestModifiers {
 	/* */ c.requestModifiersLock.RLock()
 	defer c.requestModifiersLock.RUnlock()
@@ -409,6 +417,11 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 		c.configuration.RateLimiter.Wait(ctx)
 	}
 
+	if c.configuration.EnforceReadYourWritesConsistency {
+		c.replicationStates.requireReplicationStates(req)
+	}
+
+	// clone request modifiers behind a lock
 	m := c.cloneRequestModifiers()
 
 	// invoke request callbacks
@@ -442,6 +455,10 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	// invoke response callbacks
 	for _, callback := range m.responseCallbacks {
 		callback(req, resp)
+	}
+
+	if c.configuration.EnforceReadYourWritesConsistency && resp != nil {
+		c.replicationStates.recordReplicationState(resp)
 	}
 
 	return resp, nil

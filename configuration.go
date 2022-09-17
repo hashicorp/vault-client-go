@@ -57,6 +57,23 @@ type Configuration struct {
 	// Default: nil
 	RateLimiter *rate.Limiter `env:"VAULT_RATE_LIMIT"`
 
+	// EnforceReadYourWritesConsistency ensures isolated read-after-write
+	// semantics by providing discovered cluster replication states in each
+	// request.
+	//
+	// Background: when running in a cluster, Vault has an eventual consistency
+	// model. Only one node (the leader) can write to Vault's storage. Users
+	// generally expect read-after-write consistency: in other words, after
+	// writing foo=1, a subsequent read of foo should return 1.
+	//
+	// Setting this to true will enable "Conditional Forwarding" as described in
+	// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+	//
+	// Note: careful consideration should be made prior to enabling this setting
+	// since there will be a performance penalty paid upon each request.
+	// This feature requires enterprise server-side.
+	EnforceReadYourWritesConsistency bool
+
 	// InitialToken will be used as the token in client requests unless
 	// overwritten with client.SetToken or client.WithToken
 	InitialToken string `env:"VAULT_TOKEN"`

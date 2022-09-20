@@ -70,6 +70,7 @@ type requestModifiers struct {
 type requestHeaders struct {
 	token                     string                    // 'X-Vault-Token'
 	namespace                 string                    // 'X-Vault-Namespace'
+	mfaCredentials            []string                  // 'X-Vault-MFA'
 	replicationForwardingMode ReplicationForwardingMode // 'X-Vault-Forward' or 'X-Vault-Inconsistent'
 	customHeaders             http.Header
 }
@@ -202,6 +203,7 @@ func (c *Client) Configuration() Configuration {
 }
 
 // SetToken sets the token to be used with all subsequent requests.
+//
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) SetToken(token string) error {
@@ -217,6 +219,7 @@ func (c *Client) SetToken(token string) error {
 }
 
 // ClearToken clears the token for all subsequent requests.
+//
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) ClearToken() {
@@ -227,6 +230,7 @@ func (c *Client) ClearToken() {
 
 // WithToken returns a shallow copy of the client with the token set to the
 // given value.
+//
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) WithToken(token string) *Client {
@@ -243,6 +247,7 @@ func (c *Client) WithToken(token string) *Client {
 
 // SetNamespace sets the namespace to be used with all subsequent requests,
 // set to "" to clear the namespace.
+//
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) SetNamespace(namespace string) error {
@@ -258,6 +263,7 @@ func (c *Client) SetNamespace(namespace string) error {
 }
 
 // ClearNamespace clears the namespace from all subsequent requests.
+//
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) ClearNamespace() {
@@ -268,6 +274,7 @@ func (c *Client) ClearNamespace() {
 
 // WithNamespace returns a shallow copy of the client with the namespace set to
 // the given value, use "" to clear the namespace.
+//
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) WithNamespace(namespace string) *Client {
@@ -278,6 +285,43 @@ func (c *Client) WithNamespace(namespace string) *Client {
 	} else {
 		clone.requestModifiers.headers.namespace = namespace
 	}
+
+	return clone
+}
+
+// SetMFACredentials sets multi-factor authentication credentials to be used
+// with all subsequent requests.
+//
+// See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
+// for more information on multi-factor authentication.
+func (c *Client) SetMFACredentials(credentials ...string) error {
+	c.requestModifiersLock.Lock()
+	c.requestModifiers.headers.mfaCredentials = credentials
+	c.requestModifiersLock.Unlock()
+
+	return nil
+}
+
+// ClearMFACredentials clears multi-factor authentication credentials from all
+// subsequent requests.
+//
+// See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
+// for more information on multi-factor authentication.
+func (c *Client) ClearMFACredentials() {
+	c.requestModifiersLock.Lock()
+	c.requestModifiers.headers.mfaCredentials = nil
+	c.requestModifiersLock.Unlock()
+}
+
+// WithMFACredentials returns a shallow copy of the client with multi-factor
+// authentication credentials set to the given value(s); passing no parameters
+// is equivalent to clearing the list.
+//
+// See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
+// for more information on multi-factor authentication.
+func (c *Client) WithMFACredentials(credentials ...string) *Client {
+	clone := c.Clone()
+	clone.requestModifiers.headers.mfaCredentials = credentials
 
 	return clone
 }
@@ -406,10 +450,13 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		req.Header.Set("X-Vault-Namespace", m.headers.namespace)
 	}
 
+	for _, credentials := range m.headers.mfaCredentials {
+		req.Header.Set("X-Vault-MFA", credentials)
+	}
+
 	switch m.headers.replicationForwardingMode {
 	case ReplicationForwardAlways:
 		req.Header.Set("X-Vault-Forward", "active-node")
-
 	case ReplicationForwardInconsistent:
 		req.Header.Set("X-Vault-Inconsistent", "forward-active-node")
 	}

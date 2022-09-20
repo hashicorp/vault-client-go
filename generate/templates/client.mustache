@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"net"
 	"net/http"
 	"net/url"
 	"strings"
@@ -106,15 +107,23 @@ func NewClient(configuration Configuration) (*Client, error) {
 		requestModifiersLock: sync.RWMutex{},
 	}
 
-	a, err := url.Parse(configuration.BaseAddress)
+	address, err := parseAddress(configuration.BaseAddress)
 	if err != nil {
 		return nil, err
 	}
-	c.parsedBaseAddress = *a
+	c.parsedBaseAddress = *address
 
 	transport, ok := c.client.Transport.(*http.Transport);
 	if !ok {
 		return nil, fmt.Errorf("the configured base client's transport (%T) is not of type *http.Transport", c.client.Transport)
+	}
+
+	// Adjust the dial contex for unix domain socket addresses
+	if strings.HasPrefix(configuration.BaseAddress, "unix://") {
+		transport.DialContext = func(context.Context, string, string) (net.Conn, error) {
+			socket := strings.TrimPrefix(configuration.BaseAddress, "unix://")
+			return net.Dial("unix", socket)
+		}
 	}
 
 	if err := configuration.TLS.applyTo(transport.TLSClientConfig); err != nil {
@@ -509,6 +518,26 @@ func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) 
 	}
 
 	return true, nil
+}
+
+// parseAddress parses the given address string with special handling for unix
+// domain sockets
+func parseAddress(address string) (*url.URL, error) {
+	parsed, err := url.Parse(address)
+	if err != nil {
+		return nil, err
+	}
+
+	if strings.HasPrefix(address, "unix://") {
+		// The address in the client is expected to be pointing to the protocol
+		// used in the application layer and not to the transport layer. Hence,
+		// setting the fields accordingly.
+		parsed.Scheme = "http"
+		parsed.Host = strings.TrimPrefix(address, "unix://") // socket
+		parsed.Path = ""
+	}
+
+	return parsed, nil
 }
 
 func validateToken(token string) error {

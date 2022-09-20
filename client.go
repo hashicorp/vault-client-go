@@ -74,9 +74,10 @@ type requestModifiers struct {
 
 // requestHeaders contains headers that will be added to each request
 type requestHeaders struct {
-	token         string // request header 'X-Vault-Token'
-	namespace     string // request header 'X-Vault-Namespace'
-	customHeaders http.Header
+	token                     string                    // 'X-Vault-Token'
+	namespace                 string                    // 'X-Vault-Namespace'
+	replicationForwardingMode ReplicationForwardingMode // 'X-Vault-Forward' or 'X-Vault-Inconsistent'
+	customHeaders             http.Header
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration
@@ -104,9 +105,9 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 		requestModifiers: requestModifiers{
 			headers: requestHeaders{
-				token:         configuration.InitialToken,
-				namespace:     configuration.InitialNamespace,
-				customHeaders: nil,
+				token:                     configuration.InitialToken,
+				namespace:                 configuration.InitialNamespace,
+				replicationForwardingMode: ReplicationForwardNone,
 			},
 			validationError: nil,
 		},
@@ -197,9 +198,10 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 	copy(clone.responseCallbacks, c.requestModifiers.responseCallbacks)
 
 	clone.headers = requestHeaders{
-		token:         c.requestModifiers.headers.token,
-		namespace:     c.requestModifiers.headers.namespace,
-		customHeaders: c.requestModifiers.headers.customHeaders.Clone(),
+		token:                     c.requestModifiers.headers.token,
+		namespace:                 c.requestModifiers.headers.namespace,
+		customHeaders:             c.requestModifiers.headers.customHeaders.Clone(),
+		replicationForwardingMode: c.requestModifiers.headers.replicationForwardingMode,
 	}
 
 	return clone
@@ -414,6 +416,14 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 
 	if m.headers.namespace != "" {
 		req.Header.Set("X-Vault-Namespace", m.headers.namespace)
+	}
+
+	switch m.headers.replicationForwardingMode {
+	case ReplicationForwardAlways:
+		req.Header.Set("X-Vault-Forward", "active-node")
+
+	case ReplicationForwardInconsistent:
+		req.Header.Set("X-Vault-Inconsistent", "forward-active-node")
 	}
 
 	return req, nil

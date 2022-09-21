@@ -463,7 +463,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 	}
 
 	for _, credentials := range m.headers.mfaCredentials {
-		req.Header.Set("X-Vault-MFA", credentials)
+		req.Header.Add("X-Vault-MFA", credentials)
 	}
 
 	switch m.headers.replicationForwardingMode {

@@ -39,9 +39,10 @@ const (
 
 // SetReplicationForwardingMode will add a forwarding header to all subsequent
 // requests:
-//   ReplicationForwardNone         - no forwarding headers
-//   ReplicationForwardAlways       - 'X-Vault-Forward'
-//   ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
+//
+//	ReplicationForwardNone         - no forwarding headers
+//	ReplicationForwardAlways       - 'X-Vault-Forward'
+//	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
 //
 // Note: this feature must be enabled in Vault's configuration.
 //
@@ -66,9 +67,10 @@ func (c *Client) ClearReplicationForwardingMode() {
 
 // WithReplicationForwardingMode returns a shallow copy of the client with
 // a replication header set to the given value for subsequent requests:
-//   ReplicationForwardNone         - no forwarding headers
-//   ReplicationForwardAlways       - 'X-Vault-Forward'
-//   ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
+//
+//	ReplicationForwardNone         - no forwarding headers
+//	ReplicationForwardAlways       - 'X-Vault-Forward'
+//	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func (c *Client) WithReplicationForwardingMode(mode ReplicationForwardingMode) *Client {
@@ -143,7 +145,8 @@ type ReplicationState struct {
 // into its individual components. If an optional hmacKey is provided, it will
 // used to verify the replication state contents. The format of the string
 // (after decoding) is expected to be:
-//    v1:cluster-id-string:local-index:replicated-index:hmac
+//
+//	v1:cluster-id-string:local-index:replicated-index:hmac
 func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error) {
 	d, err := base64.StdEncoding.DecodeString(raw)
 	if err != nil {

@@ -147,6 +147,26 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
+// parseAddress parses the given address string with special handling for unix
+// domain sockets
+func parseAddress(address string) (*url.URL, error) {
+	parsed, err := url.Parse(address)
+	if err != nil {
+		return nil, err
+	}
+
+	if strings.HasPrefix(address, "unix://") {
+		// The address in the client is expected to be pointing to the protocol
+		// used in the application layer and not to the transport layer. Hence,
+		// setting the fields accordingly.
+		parsed.Scheme = "http"
+		parsed.Host = strings.TrimPrefix(address, "unix://") // socket
+		parsed.Path = ""
+	}
+
+	return parsed, nil
+}
+
 // Clone creates a new Vault client with the same configuration as the original
 // client. Note that the cloned Vault client will point to the same base
 // http.Client and retryablehttp.Client objects.
@@ -205,24 +225,4 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 // this client
 func (c *Client) Configuration() Configuration {
 	return c.configuration
-}
-
-// parseAddress parses the given address string with special handling for unix
-// domain sockets
-func parseAddress(address string) (*url.URL, error) {
-	parsed, err := url.Parse(address)
-	if err != nil {
-		return nil, err
-	}
-
-	if strings.HasPrefix(address, "unix://") {
-		// The address in the client is expected to be pointing to the protocol
-		// used in the application layer and not to the transport layer. Hence,
-		// setting the fields accordingly.
-		parsed.Scheme = "http"
-		parsed.Host = strings.TrimPrefix(address, "unix://") // socket
-		parsed.Path = ""
-	}
-
-	return parsed, nil
 }

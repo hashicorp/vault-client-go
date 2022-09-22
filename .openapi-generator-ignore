@@ -1,0 +1,9 @@
+# Use this file to prevent files from being overwritten by the generator.
+# The patterns follow closely to .gitignore or .dockerignore.
+
+configuration.go
+git_push.sh
+go.mod
+go.sum
+.openapi-generator
+.travis.yml

@@ -402,7 +402,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 	// if SRV records exist (see https://tools.ietf.org/html/draft-andrews-http-srv-02), lookup the SRV
 	// record and take the highest match; this is not designed for high-availability, just discovery
 	// Internet Draft specifies that the SRV record is ignored if a port is given
-	if url.Port() == "" && c.configuration.SRVLookup {
+	if url.Port() == "" && c.configuration.EnableSRVLookup {
 		_, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
 		// don't return the error to the user, address might not have a srv record
 		if err == nil && len(addrs) > 0 {
@@ -509,9 +509,10 @@ func (c *Client) doWithRetries(req *http.Request, retry bool) (*http.Response, e
 }
 
 // handleRedirect checks the given response for a redirect status
-//  returns:
-//    true & modifies the request accordingly if the redirect is needed
-//    false otherwise
+//
+//	returns:
+//	  true & modifies the request accordingly if the redirect is needed
+//	  false otherwise
 func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, error) {
 	// allow at most one redirect
 	if *redirectCount != 0 {

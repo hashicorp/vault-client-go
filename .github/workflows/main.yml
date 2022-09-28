@@ -25,5 +25,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: check if docker is installed
-        run: command -v docker
+      - name: check regenerated files
+        run: |
+          make regen
+          if [[ "$(git diff --stat)" != "" ]]; then
+            echo "found diffs after running 'make regen'"
+            echo "please run & commit the changed files"
+            exit 1
+          fi

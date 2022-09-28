@@ -17,6 +17,7 @@ generate:
 	docker run \
 		--rm \
 		--volume "${PWD}:/local" \
+		--user=nobody \
 			openapitools/openapi-generator-cli:$(OPENAPI_GENERATOR_VERSION) generate \
 				--generator-name   go \
 				--input-spec       /local/$(OPENAPI_SPEC_PATH) \

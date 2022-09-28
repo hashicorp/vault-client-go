@@ -1,3 +1,6 @@
 additionalProperties:
   packageName: vault
   packageVersion: 0.0.1
+files:
+  client.mustache:
+    destinationFilename: client_gen.go

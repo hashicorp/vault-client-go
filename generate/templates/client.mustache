@@ -431,6 +431,19 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
 	}
 
+
+  // if SRV records exist (see https://tools.ietf.org/html/draft-andrews-http-srv-02), lookup the SRV
+  // record and take the highest match; this is not designed for high-availability, just discovery
+  // Internet Draft specifies that the SRV record is ignored if a port is given
+  if url.Port() == "" && c.configuration.EnableSRVLookup {
+    _, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
+    // don't return the error to the user, address might not have a srv record
+    if err == nil && len(addrs) > 0 {
+      url.Host = fmt.Sprintf("%s:%d", addrs[0].Target, addrs[0].Port)
+    }
+  }
+
+
 	req, err := http.NewRequestWithContext(ctx, method, url.String(), body)
 	if err != nil {
 		return nil, fmt.Errorf("could not create '%s %s' request: %w", method, url.String(), err)

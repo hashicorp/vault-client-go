@@ -46,7 +46,4 @@ tidy:
 	go mod tidy
 
 clean:
-	rm -rf git_push.sh \
-	      .openapi-generator \
-	      .openapi-generator-ignore \
-	      .travis.yml
+	rm -rf .openapi-generator

@@ -25,6 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: install rename utility
+        run: sudo apt-get -y install rename
+
       - name: Set up go
         uses: actions/setup-go@v3
         with:

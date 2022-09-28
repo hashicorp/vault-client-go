@@ -71,6 +71,13 @@ type Configuration struct {
 	// InitialNamespace will be used as the namespace in client requests unless
 	// overwritten with client.SetNamespace or client.WithNamespace
 	InitialNamespace string `env:"VAULT_NAMESPACE"`
+
+	// EnableSRVLookup enables the client to look up the Vault server host
+	// through DNS SRV lookup. The lookup will happen on each request.
+	//
+	// Note: enabling this could be useful when running a load balancer in
+	// front of your vault instance(s).
+	EnableSRVLookup bool `env:"VAULT_SRV_LOOKUP"`
 }
 
 // TLSConfiguration is a collection of TLS settings used to configure the internal

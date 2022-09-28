@@ -20,3 +20,10 @@ jobs:
       
       - name: Test
         run: go test -v ./...
+  check-regen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: check if docker is installed
+        run: command -v docker

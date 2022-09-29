@@ -36,8 +36,10 @@ jobs:
       - name: check regenerated files
         run: |
           make regen
-          if [[ "$(git diff --stat)" != "" ]]; then
+          readonly changed_files="$(git diff --stat)"
+          if [[ "$changed_files" != "" ]]; then
             echo "found diffs after running 'make regen'"
-            echo "please run & commit the changed files"
+            echo "please run & commit the changed files:"
+            echo "$changed_files"
             exit 1
           fi

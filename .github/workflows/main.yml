@@ -39,7 +39,7 @@ jobs:
           readonly changed_files="$(git diff --stat)"
           if [[ "$changed_files" != "" ]]; then
             echo "found diffs after running 'make regen'"
-            echo "please run & commit the changed files:"
+            echo "please run 'make regen' & commit the changed files:"
             echo "$changed_files"
             exit 1
           fi

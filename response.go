@@ -2,10 +2,9 @@ package vault
 
 import (
 	"bytes"
+	"encoding/json"
 	"io"
 	"time"
-
-	"github.com/hashicorp/vault/sdk/helper/jsonutil"
 )
 
 // Secret is the structure returned for every secret within Vault.
@@ -81,7 +80,7 @@ type MFAMethodID struct {
 }
 
 func parseResponse[T any](r io.Reader) (*Response[T], error) {
-	// First read the data into a buffer. Not super efficient but we want to
+	// First, read the data into a buffer. Not super efficient but we want to
 	// know if we actually have a body or not.
 	var buf bytes.Buffer
 
@@ -94,10 +93,13 @@ func parseResponse[T any](r io.Reader) (*Response[T], error) {
 		return nil, nil
 	}
 
-	// First decode the JSON into a map[string]interface{}
+	// decode
+	decoder := json.NewDecoder(r)
+	decoder.UseNumber() // interpret integers `json.Number` instead of `float64`.
+
 	var response Response[T]
 
-	if err := jsonutil.DecodeJSONFromReader(&buf, &response); err != nil {
+	if err := decoder.Decode(&response); err != nil {
 		return nil, err
 	}
 

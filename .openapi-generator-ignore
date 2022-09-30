@@ -1,9 +1,13 @@
 # Use this file to prevent files from being overwritten by the generator.
 
 configuration.go
+response.go
+
 git_push.sh
+
 go.mod
 go.sum
+
 .gitignore
 .openapi-generator
 .travis.yml

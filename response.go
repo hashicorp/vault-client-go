@@ -36,7 +36,7 @@ type Response[T any] struct {
 	WrapInfo *ResponseWrapInfo `json:"wrap_info,omitempty"`
 }
 
-// SecretAuth is the structure containing auth information if we have it.
+// ResponseAuth contains authentication information if we have it.
 type ResponseAuth struct {
 	ClientToken      string            `json:"client_token"`
 	Accessor         string            `json:"accessor"`
@@ -50,7 +50,7 @@ type ResponseAuth struct {
 	LeaseDuration int  `json:"lease_duration"`
 	Renewable     bool `json:"renewable"`
 
-	MFARequirement *MFARequirement `json:"mfa_requirement,omitempty"`
+	MFARequirement *MFARequirement `json:"mfa_requirement"`
 }
 
 // ResponseWrapInfo contains wrapping information if we have it. If what is
@@ -66,35 +66,38 @@ type ResponseWrapInfo struct {
 }
 
 type MFARequirement struct {
-	MFARequestID   string                      `json:"mfa_request_id,omitempty"`
-	MFAConstraints map[string]MFAConstraintAny `json:"mfa_constraints,omitempty"`
+	MFARequestID   string                      `json:"mfa_request_id"`
+	MFAConstraints map[string]MFAConstraintAny `json:"mfa_constraints"`
 }
 
 type MFAConstraintAny struct {
-	Any []MFAMethodID `json:"any,omitempty"`
+	Any []MFAMethodID `json:"any"`
 }
 
 type MFAMethodID struct {
-	Type         string `json:"type,omitempty"`
-	ID           string `json:"id,omitempty"`
-	UsesPasscode bool   `json:"uses_passcode,omitempty"`
+	Type         string `json:"type"`
+	ID           string `json:"id"`
+	UsesPasscode bool   `json:"uses_passcode"`
 }
 
-func ParseResponse[T any](r io.Reader) (*Response[T], error) {
+func parseResponse[T any](r io.Reader) (*Response[T], error) {
 	// First read the data into a buffer. Not super efficient but we want to
 	// know if we actually have a body or not.
 	var buf bytes.Buffer
+
 	_, err := buf.ReadFrom(r)
 	if err != nil {
 		return nil, err
 	}
+
 	if buf.Len() == 0 {
 		return nil, nil
 	}
 
 	// First decode the JSON into a map[string]interface{}
 	var response Response[T]
-	if err := jsonutil.DecodeJSONFromReader(&buf, &secret); err != nil {
+
+	if err := jsonutil.DecodeJSONFromReader(&buf, &response); err != nil {
 		return nil, err
 	}
 

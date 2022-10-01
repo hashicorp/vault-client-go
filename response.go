@@ -95,7 +95,7 @@ func parseResponse[T any](r io.Reader) (*Response[T], error) {
 
 	// decode
 	decoder := json.NewDecoder(r)
-	decoder.UseNumber() // interpret integers `json.Number` instead of `float64`.
+	decoder.UseNumber() // interpret integers as `json.Number` instead of `float64`.
 
 	var response Response[T]
 

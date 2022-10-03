@@ -38,7 +38,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 	// specifies that the SRV record is ignored if a port is given.
 	if c.configuration.EnableSRVLookup && url.Port() == "" {
 		_, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
-		// don't return the error to the user, address might not have a srv record
+		// don't return the error to the user, address might not have an SRV record
 		if err == nil && len(addrs) > 0 {
 			url.Host = fmt.Sprintf("%s:%d", addrs[0].Target, addrs[0].Port)
 		}

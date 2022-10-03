@@ -28,7 +28,7 @@ type {{classname}} struct {
 // {{paramName}}: {{.}}
 {{/description}}
 {{/allParams}}
-func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
+func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*Response[map[string]interface{}], error) {
 	requestPath := "/v1{{{path}}}"{{#pathParams}}
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/pathParams}}
 
@@ -47,10 +47,11 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 
 	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
+		return nil, err
 	}
+	defer resp.Body.Close()
 
-	{{#returnType}}
+{{#returnType}}
 	localVarBody, err := ioutil.ReadAll(resp.Body)
 	resp.Body.Close()
 	resp.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -62,9 +63,11 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
 	}
+{{/returnType}}
+{{^returnType}}
 
-	{{/returnType}}
-	return {{#returnType}}localVarReturnValue, {{/returnType}}resp, nil
+	return parseResponse[map[string]interface{}](resp.Body)
+{{/returnType}}
 }
 {{/operation}}
 {{/operations}}

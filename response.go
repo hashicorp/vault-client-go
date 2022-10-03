@@ -49,7 +49,7 @@ type ResponseAuth struct {
 	LeaseDuration int  `json:"lease_duration"`
 	Renewable     bool `json:"renewable"`
 
-	MFARequirement *MFARequirement `json:"mfa_requirement"`
+	MFARequirement *MFARequirement `json:"mfa_requirement,omitempty"`
 }
 
 // ResponseWrapInfo contains wrapping information if we have it. If what is
@@ -79,6 +79,8 @@ type MFAMethodID struct {
 	UsesPasscode bool   `json:"uses_passcode"`
 }
 
+// parseResponse reads from the given io.Reader until EOF without closing the
+// reader and parses the data into a generic response structure
 func parseResponse[T any](r io.Reader) (*Response[T], error) {
 	// First, read the data into a buffer. This is not super efficient but we
 	// want to know if we actually have a body or not.

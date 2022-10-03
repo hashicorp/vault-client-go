@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// Secret is the structure returned for every secret within Vault.
+// Response is the structure returned by the majority of the requests to Vault
 type Response[T any] struct {
 	// The request ID that generated this response
 	RequestID string `json:"request_id"`
@@ -16,8 +16,8 @@ type Response[T any] struct {
 	LeaseDuration int    `json:"lease_duration"`
 	Renewable     bool   `json:"renewable"`
 
-	// Data is the actual contents of the secret. The format of the data
-	// is arbitrary and up to the secret backend.
+	// Data is the actual contents of the response. The format of the data
+	// is arbitrary and is up to the secret backend.
 	Data T `json:"data"`
 
 	// Warnings contains any warnings related to the operation. These
@@ -80,8 +80,8 @@ type MFAMethodID struct {
 }
 
 func parseResponse[T any](r io.Reader) (*Response[T], error) {
-	// First, read the data into a buffer. Not super efficient but we want to
-	// know if we actually have a body or not.
+	// First, read the data into a buffer. This is not super efficient but we
+	// want to know if we actually have a body or not.
 	var buf bytes.Buffer
 
 	_, err := buf.ReadFrom(r)
@@ -94,8 +94,10 @@ func parseResponse[T any](r io.Reader) (*Response[T], error) {
 	}
 
 	// decode
-	decoder := json.NewDecoder(r)
-	decoder.UseNumber() // interpret integers as `json.Number` instead of `float64`.
+	decoder := json.NewDecoder(&buf)
+
+	// interpret integers as `json.Number` instead of `float64`
+	decoder.UseNumber()
 
 	var response Response[T]
 

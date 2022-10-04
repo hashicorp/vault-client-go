@@ -8,24 +8,44 @@ import (
 	"io"
 	"net"
 	"net/http"
+	"net/url"
 
 	"github.com/hashicorp/go-retryablehttp"
+
 	"golang.org/x/exp/slices"
 )
 
-// newStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
-func (c *Client) newStructuredRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+// sendStructuredRequestParseResponse is a helper function to construct a
+// json.Marshaler encoded request, send it to Vault and parse the response
+func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body json.Marshaler, parameters url.Values) (*Response[ResponseT], error) {
 	var buf bytes.Buffer
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return c.newRequest(ctx, method, path, &buf)
+	return sendRequestParseResponse[ResponseT](ctx, client, method, path, &buf, parameters)
+}
+
+// sendRequestParseResponse is a helper function to construct a request, send
+// it to Vault and parse the response
+func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values) (*Response[ResponseT], error) {
+	req, err := client.newRequest(ctx, http.MethodDelete, path, body, parameters)
+	if err != nil {
+		return nil, err
+	}
+
+	resp, err := client.do(ctx, req, true)
+	if err != nil || resp == nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	return parseResponse[ResponseT](resp.Body)
 }
 
 // newRequest returns a new request with vault-specific headers
-func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
+func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader, parameters url.Values) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
@@ -42,6 +62,11 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		if err == nil && len(addrs) > 0 {
 			url.Host = fmt.Sprintf("%s:%d", addrs[0].Target, addrs[0].Port)
 		}
+	}
+
+	// add query parameters (if any)
+	if len(parameters) != 0 {
+		url.RawQuery = parameters.Encode()
 	}
 
 	req, err := http.NewRequestWithContext(ctx, method, url.String(), body)
@@ -68,8 +93,11 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 	}
 
 	switch m.headers.replicationForwardingMode {
+	// unconditionally forwarding (see 'ReplicationForwardAlways' docs)
 	case ReplicationForwardAlways:
 		req.Header.Set("X-Vault-Forward", "active-node")
+
+	// conditional formwarding (see 'ReplicationForwardInconsistent' docs)
 	case ReplicationForwardInconsistent:
 		req.Header.Set("X-Vault-Inconsistent", "forward-active-node")
 	}

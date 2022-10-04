@@ -28,18 +28,14 @@ func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*Re
 	requestPath := "/v1/auth/alicloud/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
@@ -48,18 +44,14 @@ func (a *Auth) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*Res
 	requestPath := "/v1/auth/app-id/map/app-id/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
@@ -68,18 +60,14 @@ func (a *Auth) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*Re
 	requestPath := "/v1/auth/app-id/map/user-id/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleName Register an role with the backend.
@@ -88,18 +76,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName strin
 	requestPath := "/v1/auth/approle/role/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
@@ -108,18 +92,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, ro
 	requestPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
@@ -128,18 +108,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, r
 	requestPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
@@ -148,18 +124,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName
 	requestPath := "/v1/auth/approle/role/{role_name}/period"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
@@ -168,18 +140,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleNa
 	requestPath := "/v1/auth/approle/role/{role_name}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy
@@ -188,18 +156,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-accessor/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
@@ -208,18 +172,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Conte
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
@@ -228,18 +188,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context,
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
@@ -248,18 +204,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context,
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
@@ -268,18 +220,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, rol
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
@@ -288,18 +236,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context,
 	requestPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
@@ -308,18 +252,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, rol
 	requestPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
@@ -328,18 +268,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, ro
 	requestPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
@@ -348,18 +284,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleNa
 	requestPath := "/v1/auth/approle/role/{role_name}/token-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsConfigCertificateCertName
@@ -368,36 +300,28 @@ func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certN
 	requestPath := "/v1/auth/aws/config/certificate/{cert_name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsConfigClient
 func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/client"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsConfigStsAccountId
@@ -406,90 +330,70 @@ func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId st
 	requestPath := "/v1/auth/aws/config/sts/{account_id}"
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsConfigTidyIdentityAccesslist
 func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/identity-accesslist"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsConfigTidyIdentityWhitelist
 func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/identity-whitelist"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsConfigTidyRoletagBlacklist
 func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/roletag-blacklist"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsConfigTidyRoletagDenylist
 func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/roletag-denylist"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsIdentityAccesslistInstanceId
@@ -498,18 +402,14 @@ func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, in
 	requestPath := "/v1/auth/aws/identity-accesslist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsIdentityWhitelistInstanceId
@@ -518,18 +418,14 @@ func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, ins
 	requestPath := "/v1/auth/aws/identity-whitelist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsRoleRole
@@ -538,18 +434,14 @@ func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*Respons
 	requestPath := "/v1/auth/aws/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsRoletagBlacklistRoleTag
@@ -558,18 +450,14 @@ func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag
 	requestPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAwsRoletagDenylistRoleTag
@@ -578,36 +466,28 @@ func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag 
 	requestPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAzureConfig
 func (a *Auth) DeleteAuthAzureConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/azure/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthAzureRoleName
@@ -616,18 +496,14 @@ func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/auth/azure/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthCertCertsName Manage trusted certificates used for authentication.
@@ -636,18 +512,14 @@ func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/auth/cert/certs/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
@@ -656,36 +528,28 @@ func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string) (*Respon
 	requestPath := "/v1/auth/cert/crls/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthCfConfig
 func (a *Auth) DeleteAuthCfConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cf/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthCfRolesRole
@@ -694,18 +558,14 @@ func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string) (*Respons
 	requestPath := "/v1/auth/cf/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthGcpRoleName Create a GCP role with associated policies and required attributes.
@@ -714,18 +574,14 @@ func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/auth/gcp/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
@@ -734,18 +590,14 @@ func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*Re
 	requestPath := "/v1/auth/github/map/teams/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
@@ -754,18 +606,14 @@ func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*Re
 	requestPath := "/v1/auth/github/map/users/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthJwtRoleName Delete an existing role.
@@ -774,18 +622,14 @@ func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/auth/jwt/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthKerberosGroupsName
@@ -794,18 +638,14 @@ func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*
 	requestPath := "/v1/auth/kerberos/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthKubernetesRoleName Register an role with the backend.
@@ -814,18 +654,14 @@ func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*
 	requestPath := "/v1/auth/kubernetes/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
@@ -834,18 +670,14 @@ func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*Resp
 	requestPath := "/v1/auth/ldap/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthLdapUsersName Manage users allowed to authenticate.
@@ -854,36 +686,28 @@ func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/auth/ldap/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *Auth) DeleteAuthOciConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oci/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthOciRoleRole Create a role and associate policies to it.
@@ -892,18 +716,14 @@ func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string) (*Respons
 	requestPath := "/v1/auth/oci/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthOidcRoleName Delete an existing role.
@@ -912,18 +732,14 @@ func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string) (*Respon
 	requestPath := "/v1/auth/oidc/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthOktaGroupsName Manage users allowed to authenticate.
@@ -932,18 +748,14 @@ func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*Resp
 	requestPath := "/v1/auth/okta/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthOktaUsersName Manage additional groups for users allowed to authenticate.
@@ -952,18 +764,14 @@ func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/auth/okta/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthRadiusUsersName Manage users allowed to authenticate.
@@ -972,18 +780,14 @@ func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*Res
 	requestPath := "/v1/auth/radius/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthTokenRolesRoleName
@@ -992,18 +796,14 @@ func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string
 	requestPath := "/v1/auth/token/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
@@ -1012,18 +812,14 @@ func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username str
 	requestPath := "/v1/auth/userpass/users/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAlicloudRole Lists all the roles that are registered with Vault.
@@ -1031,18 +827,14 @@ func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username str
 func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/alicloud/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAlicloudRoleRole Create a role and associate policies to it.
@@ -1051,18 +843,14 @@ func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*Respo
 	requestPath := "/v1/auth/alicloud/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
@@ -1070,18 +858,14 @@ func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*Respo
 func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/alicloud/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAppIdMapAppId Read mappings for app-id
@@ -1089,18 +873,14 @@ func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string) (*Response
 func (a *Auth) GetAuthAppIdMapAppId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/app-id/map/app-id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
@@ -1109,18 +889,14 @@ func (a *Auth) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*Respon
 	requestPath := "/v1/auth/app-id/map/app-id/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAppIdMapUserId Read mappings for user-id
@@ -1128,18 +904,14 @@ func (a *Auth) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*Respon
 func (a *Auth) GetAuthAppIdMapUserId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/app-id/map/user-id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
@@ -1148,18 +920,14 @@ func (a *Auth) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*Respo
 	requestPath := "/v1/auth/app-id/map/user-id/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRole Lists all the roles registered with the backend.
@@ -1167,18 +935,14 @@ func (a *Auth) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*Respo
 func (a *Auth) GetAuthApproleRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/approle/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleName Register an role with the backend.
@@ -1187,18 +951,14 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) 
 	requestPath := "/v1/auth/approle/role/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
@@ -1207,18 +967,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleN
 	requestPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
@@ -1227,18 +983,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, role
 	requestPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
@@ -1247,18 +999,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, rol
 	requestPath := "/v1/auth/approle/role/{role_name}/local-secret-ids"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
@@ -1267,18 +1015,14 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName st
 	requestPath := "/v1/auth/approle/role/{role_name}/period"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNamePolicies Policies of the role.
@@ -1287,18 +1031,14 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName 
 	requestPath := "/v1/auth/approle/role/{role_name}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
@@ -1307,18 +1047,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 	requestPath := "/v1/auth/approle/role/{role_name}/role-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
@@ -1328,18 +1064,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName 
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
@@ -1348,18 +1080,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
@@ -1368,18 +1096,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ro
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
@@ -1388,18 +1112,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleNa
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
@@ -1408,18 +1128,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ro
 	requestPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
@@ -1428,18 +1144,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleNa
 	requestPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
@@ -1448,18 +1160,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleN
 	requestPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
@@ -1468,18 +1176,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName 
 	requestPath := "/v1/auth/approle/role/{role_name}/token-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigCertificateCertName
@@ -1488,18 +1192,14 @@ func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName
 	requestPath := "/v1/auth/aws/config/certificate/{cert_name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigCertificates
@@ -1507,54 +1207,42 @@ func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName
 func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/certificates"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigClient
 func (a *Auth) GetAuthAwsConfigClient(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/client"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigIdentity
 func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/identity"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigSts
@@ -1562,18 +1250,14 @@ func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context) (*Response[map[stri
 func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/sts"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigStsAccountId
@@ -1582,90 +1266,70 @@ func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId strin
 	requestPath := "/v1/auth/aws/config/sts/{account_id}"
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigTidyIdentityAccesslist
 func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/identity-accesslist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigTidyIdentityWhitelist
 func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/identity-whitelist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigTidyRoletagBlacklist
 func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/roletag-blacklist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsConfigTidyRoletagDenylist
 func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/roletag-denylist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsIdentityAccesslist
@@ -1673,18 +1337,14 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*Respon
 func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/identity-accesslist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsIdentityAccesslistInstanceId
@@ -1693,18 +1353,14 @@ func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, insta
 	requestPath := "/v1/auth/aws/identity-accesslist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsIdentityWhitelist
@@ -1712,18 +1368,14 @@ func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, insta
 func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/identity-whitelist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsIdentityWhitelistInstanceId
@@ -1732,18 +1384,14 @@ func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instan
 	requestPath := "/v1/auth/aws/identity-whitelist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsRole
@@ -1751,18 +1399,14 @@ func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instan
 func (a *Auth) GetAuthAwsRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsRoleRole
@@ -1771,18 +1415,14 @@ func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string) (*Response[m
 	requestPath := "/v1/auth/aws/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsRoles
@@ -1790,18 +1430,14 @@ func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string) (*Response[m
 func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsRoletagBlacklist
@@ -1809,18 +1445,14 @@ func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string) (*Response[map[
 func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/roletag-blacklist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsRoletagBlacklistRoleTag
@@ -1829,18 +1461,14 @@ func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag st
 	requestPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsRoletagDenylist
@@ -1848,18 +1476,14 @@ func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag st
 func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/roletag-denylist"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAwsRoletagDenylistRoleTag
@@ -1868,36 +1492,28 @@ func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag str
 	requestPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAzureConfig
 func (a *Auth) GetAuthAzureConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/azure/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAzureRole
@@ -1905,18 +1521,14 @@ func (a *Auth) GetAuthAzureConfig(ctx context.Context) (*Response[map[string]int
 func (a *Auth) GetAuthAzureRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/azure/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthAzureRoleName
@@ -1925,36 +1537,28 @@ func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/auth/azure/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 func (a *Auth) GetAuthCentrifyConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/centrify/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthCertCerts Manage trusted certificates used for authentication.
@@ -1962,18 +1566,14 @@ func (a *Auth) GetAuthCentrifyConfig(ctx context.Context) (*Response[map[string]
 func (a *Auth) GetAuthCertCerts(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cert/certs"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthCertCertsName Manage trusted certificates used for authentication.
@@ -1982,18 +1582,14 @@ func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/auth/cert/certs/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
@@ -2002,36 +1598,28 @@ func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string) (*Response[
 	requestPath := "/v1/auth/cert/crls/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthCfConfig
 func (a *Auth) GetAuthCfConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cf/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthCfRoles
@@ -2039,18 +1627,14 @@ func (a *Auth) GetAuthCfConfig(ctx context.Context) (*Response[map[string]interf
 func (a *Auth) GetAuthCfRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cf/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthCfRolesRole
@@ -2059,36 +1643,28 @@ func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string) (*Response[m
 	requestPath := "/v1/auth/cf/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 func (a *Auth) GetAuthGcpConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/gcp/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGcpRole Lists all the roles that are registered with Vault.
@@ -2096,18 +1672,14 @@ func (a *Auth) GetAuthGcpConfig(ctx context.Context) (*Response[map[string]inter
 func (a *Auth) GetAuthGcpRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/gcp/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGcpRoleName Create a GCP role with associated policies and required attributes.
@@ -2116,18 +1688,14 @@ func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string) (*Response[m
 	requestPath := "/v1/auth/gcp/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGcpRoles Lists all the roles that are registered with Vault.
@@ -2135,36 +1703,28 @@ func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string) (*Response[m
 func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/gcp/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGithubConfig
 func (a *Auth) GetAuthGithubConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/github/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGithubMapTeams Read mappings for teams
@@ -2172,18 +1732,14 @@ func (a *Auth) GetAuthGithubConfig(ctx context.Context) (*Response[map[string]in
 func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/github/map/teams"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
@@ -2192,18 +1748,14 @@ func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*Respo
 	requestPath := "/v1/auth/github/map/teams/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGithubMapUsers Read mappings for users
@@ -2211,18 +1763,14 @@ func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*Respo
 func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/github/map/users"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthGithubMapUsersKey Read/write/delete a single users mapping
@@ -2231,54 +1779,42 @@ func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*Respo
 	requestPath := "/v1/auth/github/map/users/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthJwtConfig Read the current JWT authentication backend configuration.
 func (a *Auth) GetAuthJwtConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/jwt/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
 func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/jwt/oidc/callback"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthJwtRole Lists all the roles registered with the backend.
@@ -2287,18 +1823,14 @@ func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context) (*Response[map[string
 func (a *Auth) GetAuthJwtRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/jwt/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthJwtRoleName Read an existing role.
@@ -2307,54 +1839,42 @@ func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string) (*Response[m
 	requestPath := "/v1/auth/jwt/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKerberosConfig
 func (a *Auth) GetAuthKerberosConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kerberos/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKerberosConfigLdap
 func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kerberos/config/ldap"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKerberosGroups
@@ -2362,18 +1882,14 @@ func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context) (*Response[map[str
 func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kerberos/groups"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKerberosGroupsName
@@ -2382,54 +1898,42 @@ func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string) (*Res
 	requestPath := "/v1/auth/kerberos/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKerberosLogin
 func (a *Auth) GetAuthKerberosLogin(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kerberos/login"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 func (a *Auth) GetAuthKubernetesConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kubernetes/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKubernetesRole Lists all the roles registered with the backend.
@@ -2437,18 +1941,14 @@ func (a *Auth) GetAuthKubernetesConfig(ctx context.Context) (*Response[map[strin
 func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kubernetes/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthKubernetesRoleName Register an role with the backend.
@@ -2457,36 +1957,28 @@ func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string) (*Res
 	requestPath := "/v1/auth/kubernetes/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 func (a *Auth) GetAuthLdapConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/ldap/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
@@ -2494,18 +1986,14 @@ func (a *Auth) GetAuthLdapConfig(ctx context.Context) (*Response[map[string]inte
 func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/ldap/groups"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
@@ -2514,18 +2002,14 @@ func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/auth/ldap/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthLdapUsers Manage users allowed to authenticate.
@@ -2533,18 +2017,14 @@ func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string) (*Respons
 func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/ldap/users"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthLdapUsersName Manage users allowed to authenticate.
@@ -2553,36 +2033,28 @@ func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/auth/ldap/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *Auth) GetAuthOciConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oci/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOciRole Lists all the roles that are registered with Vault.
@@ -2590,18 +2062,14 @@ func (a *Auth) GetAuthOciConfig(ctx context.Context) (*Response[map[string]inter
 func (a *Auth) GetAuthOciRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oci/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOciRoleRole Create a role and associate policies to it.
@@ -2610,54 +2078,42 @@ func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string) (*Response[m
 	requestPath := "/v1/auth/oci/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOidcConfig Read the current JWT authentication backend configuration.
 func (a *Auth) GetAuthOidcConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oidc/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
 func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oidc/oidc/callback"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOidcRole Lists all the roles registered with the backend.
@@ -2666,18 +2122,14 @@ func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context) (*Response[map[strin
 func (a *Auth) GetAuthOidcRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oidc/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOidcRoleName Read an existing role.
@@ -2686,36 +2138,28 @@ func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string) (*Response[
 	requestPath := "/v1/auth/oidc/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 func (a *Auth) GetAuthOktaConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/okta/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOktaGroups Manage users allowed to authenticate.
@@ -2723,18 +2167,14 @@ func (a *Auth) GetAuthOktaConfig(ctx context.Context) (*Response[map[string]inte
 func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/okta/groups"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOktaGroupsName Manage users allowed to authenticate.
@@ -2743,18 +2183,14 @@ func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/auth/okta/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
@@ -2762,18 +2198,14 @@ func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string) (*Respons
 func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/okta/users"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
@@ -2782,18 +2214,14 @@ func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/auth/okta/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthOktaVerifyNonce
@@ -2802,36 +2230,28 @@ func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*Respo
 	requestPath := "/v1/auth/okta/verify/{nonce}"
 	requestPath = strings.Replace(requestPath, "{"+"nonce"+"}", url.PathEscape(nonce), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 func (a *Auth) GetAuthRadiusConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/radius/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthRadiusUsers Manage users allowed to authenticate.
@@ -2839,18 +2259,14 @@ func (a *Auth) GetAuthRadiusConfig(ctx context.Context) (*Response[map[string]in
 func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/radius/users"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthRadiusUsersName Manage users allowed to authenticate.
@@ -2859,18 +2275,14 @@ func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string) (*Respon
 	requestPath := "/v1/auth/radius/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthTokenAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
@@ -2878,54 +2290,42 @@ func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string) (*Respon
 func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/accessors/"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *Auth) GetAuthTokenLookup(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/lookup"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/lookup-self"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthTokenRoles This endpoint lists configured roles.
@@ -2933,18 +2333,14 @@ func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context) (*Response[map[string
 func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthTokenRolesRoleName
@@ -2953,18 +2349,14 @@ func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (
 	requestPath := "/v1/auth/token/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthUserpassUsers Manage users allowed to authenticate.
@@ -2972,18 +2364,14 @@ func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (
 func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/userpass/users"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAuthUserpassUsersUsername Manage users allowed to authenticate.
@@ -2992,36 +2380,28 @@ func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string
 	requestPath := "/v1/auth/userpass/users/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
 func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/alicloud/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, alicloudLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		alicloudLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAlicloudRoleRole Create a role and associate policies to it.
@@ -3030,36 +2410,28 @@ func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, role string, aliclo
 	requestPath := "/v1/auth/alicloud/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, alicloudRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		alicloudRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAppIdLogin Log in with an App ID and User ID.
 func (a *Auth) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest AppIdLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/app-id/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, appIdLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		appIdLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAppIdLoginAppId Log in with an App ID and User ID.
@@ -3068,18 +2440,14 @@ func (a *Auth) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdL
 	requestPath := "/v1/auth/app-id/login/{app_id}"
 	requestPath = strings.Replace(requestPath, "{"+"app_id"+"}", url.PathEscape(appId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, appIdLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		appIdLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
@@ -3088,18 +2456,14 @@ func (a *Auth) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMa
 	requestPath := "/v1/auth/app-id/map/app-id/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, appIdMapAppIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		appIdMapAppIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
@@ -3108,36 +2472,28 @@ func (a *Auth) PostAuthAppIdMapUserIdKey(ctx context.Context, key string, appIdM
 	requestPath := "/v1/auth/app-id/map/user-id/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, appIdMapUserIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		appIdMapUserIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleLogin
 func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest ApproleLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/approle/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleName Register an role with the backend.
@@ -3146,18 +2502,14 @@ func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string,
 	requestPath := "/v1/auth/approle/role/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
@@ -3166,18 +2518,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, role
 	requestPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleBindSecretIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleBindSecretIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
@@ -3186,18 +2534,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, rol
 	requestPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleBoundCidrListRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleBoundCidrListRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against the role.
@@ -3206,18 +2550,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, ro
 	requestPath := "/v1/auth/approle/role/{role_name}/custom-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleCustomSecretIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleCustomSecretIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
@@ -3226,18 +2566,14 @@ func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName s
 	requestPath := "/v1/auth/approle/role/{role_name}/period"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRolePeriodRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRolePeriodRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNamePolicies Policies of the role.
@@ -3246,18 +2582,14 @@ func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName
 	requestPath := "/v1/auth/approle/role/{role_name}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRolePoliciesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRolePoliciesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
@@ -3266,18 +2598,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName s
 	requestPath := "/v1/auth/approle/role/{role_name}/role-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleRoleIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleRoleIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
@@ -3286,18 +2614,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretIdAccessorDestroy
@@ -3306,18 +2630,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Co
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-accessor/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdAccessorDestroyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdAccessorDestroyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretIdAccessorLookup
@@ -3326,18 +2646,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Con
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-accessor/lookup"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdAccessorLookupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdAccessorLookupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
@@ -3346,18 +2662,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdBoundCidrsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdBoundCidrsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
@@ -3366,18 +2678,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, r
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdDestroyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdDestroyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secret_id
@@ -3386,18 +2694,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, ro
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id/lookup"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdLookupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdLookupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
@@ -3406,18 +2710,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, r
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdNumUsesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdNumUsesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
@@ -3426,18 +2726,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleN
 	requestPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleSecretIdTtlRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleSecretIdTtlRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
@@ -3446,18 +2742,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, r
 	requestPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleTokenBoundCidrsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleTokenBoundCidrsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
@@ -3466,18 +2758,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleN
 	requestPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleTokenMaxTtlRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleTokenMaxTtlRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
@@ -3486,18 +2774,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, role
 	requestPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleTokenNumUsesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleTokenNumUsesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
@@ -3506,36 +2790,28 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName
 	requestPath := "/v1/auth/approle/role/{role_name}/token-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, approleRoleTokenTtlRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		approleRoleTokenTtlRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
 func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/approle/tidy/secret-id"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigCertificateCertName
@@ -3544,72 +2820,56 @@ func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, certNam
 	requestPath := "/v1/auth/aws/config/certificate/{cert_name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigCertificateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigCertificateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigClient
 func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/client"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigClientRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigClientRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigIdentity
 func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/identity"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigIdentityRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigIdentityRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigRotateRoot
 func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/rotate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigStsAccountId
@@ -3618,108 +2878,84 @@ func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId stri
 	requestPath := "/v1/auth/aws/config/sts/{account_id}"
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigStsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigStsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigTidyIdentityAccesslist
 func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/identity-accesslist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigTidyIdentityAccesslistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigTidyIdentityAccesslistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigTidyIdentityWhitelist
 func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/identity-whitelist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigTidyIdentityWhitelistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigTidyIdentityWhitelistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigTidyRoletagBlacklist
 func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/roletag-blacklist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigTidyRoletagBlacklistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigTidyRoletagBlacklistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsConfigTidyRoletagDenylist
 func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/config/tidy/roletag-denylist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigTidyRoletagDenylistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigTidyRoletagDenylistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsLogin
 func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsRoleRole
@@ -3728,18 +2964,14 @@ func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequ
 	requestPath := "/v1/auth/aws/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsRoleRoleTag
@@ -3748,18 +2980,14 @@ func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleT
 	requestPath := "/v1/auth/aws/role/{role}/tag"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsRoleTagRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsRoleTagRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsRoletagBlacklistRoleTag
@@ -3768,18 +2996,14 @@ func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag s
 	requestPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsRoletagDenylistRoleTag
@@ -3788,126 +3012,98 @@ func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag st
 	requestPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsTidyIdentityAccesslist
 func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/tidy/identity-accesslist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsTidyIdentityAccesslistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsTidyIdentityAccesslistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsTidyIdentityWhitelist
 func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/tidy/identity-whitelist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsTidyIdentityWhitelistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsTidyIdentityWhitelistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsTidyRoletagBlacklist
 func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/tidy/roletag-blacklist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsTidyRoletagBlacklistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsTidyRoletagBlacklistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAwsTidyRoletagDenylist
 func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/aws/tidy/roletag-denylist"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsTidyRoletagDenylistRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsTidyRoletagDenylistRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAzureConfig
 func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/azure/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, azureConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		azureConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAzureLogin
 func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/azure/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, azureLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		azureLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthAzureRoleName
@@ -3916,54 +3112,42 @@ func (a *Auth) PostAuthAzureRoleName(ctx context.Context, name string, azureRole
 	requestPath := "/v1/auth/azure/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, azureRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		azureRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/centrify/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, centrifyConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		centrifyConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCentrifyLogin Log in with a username and password.
 func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/centrify/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, centrifyLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		centrifyLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCertCertsName Manage trusted certificates used for authentication.
@@ -3972,36 +3156,28 @@ func (a *Auth) PostAuthCertCertsName(ctx context.Context, name string, certCerts
 	requestPath := "/v1/auth/cert/certs/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, certCertsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		certCertsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCertConfig
 func (a *Auth) PostAuthCertConfig(ctx context.Context, certConfigRequest CertConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cert/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, certConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		certConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
@@ -4010,72 +3186,56 @@ func (a *Auth) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRe
 	requestPath := "/v1/auth/cert/crls/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, certCrlsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		certCrlsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCertLogin
 func (a *Auth) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cert/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, certLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		certLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCfConfig
 func (a *Auth) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cf/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, cfConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		cfConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCfLogin
 func (a *Auth) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/cf/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, cfLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		cfLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthCfRolesRole
@@ -4084,54 +3244,42 @@ func (a *Auth) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequ
 	requestPath := "/v1/auth/cf/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, cfRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		cfRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/gcp/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGcpLogin
 func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/gcp/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGcpRoleName Create a GCP role with associated policies and required attributes.
@@ -4140,18 +3288,14 @@ func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequ
 	requestPath := "/v1/auth/gcp/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
@@ -4160,18 +3304,14 @@ func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRo
 	requestPath := "/v1/auth/gcp/role/{name}/labels"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpRoleLabelsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpRoleLabelsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existing `iam` role
@@ -4180,54 +3320,42 @@ func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name stri
 	requestPath := "/v1/auth/gcp/role/{name}/service-accounts"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpRoleServiceAccountsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpRoleServiceAccountsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGithubConfig
 func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubConfigRequest GithubConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/github/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, githubConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		githubConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGithubLogin
 func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubLoginRequest GithubLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/github/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, githubLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		githubLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
@@ -4236,18 +3364,14 @@ func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, github
 	requestPath := "/v1/auth/github/map/teams/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, githubMapTeamsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		githubMapTeamsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthGithubMapUsersKey Read/write/delete a single users mapping
@@ -4256,18 +3380,14 @@ func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, github
 	requestPath := "/v1/auth/github/map/users/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, githubMapUsersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		githubMapUsersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthJwtConfig Configure the JWT authentication backend.
@@ -4275,72 +3395,56 @@ func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, github
 func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/jwt/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, jwtConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		jwtConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/jwt/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, jwtLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		jwtLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/jwt/oidc/auth_url"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, jwtOidcAuthUrlRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		jwtOidcAuthUrlRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
 func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/jwt/oidc/callback"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, jwtOidcCallbackRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		jwtOidcCallbackRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthJwtRoleName Register an role with the backend.
@@ -4350,54 +3454,42 @@ func (a *Auth) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequ
 	requestPath := "/v1/auth/jwt/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, jwtRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		jwtRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthKerberosConfig
 func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest KerberosConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kerberos/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kerberosConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kerberosConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthKerberosConfigLdap
 func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kerberos/config/ldap"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kerberosConfigLdapRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kerberosConfigLdapRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthKerberosGroupsName
@@ -4406,72 +3498,56 @@ func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, name string, kerb
 	requestPath := "/v1/auth/kerberos/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kerberosGroupsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kerberosGroupsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthKerberosLogin
 func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kerberos/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kerberosLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kerberosLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kubernetes/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kubernetesConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kubernetesConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
 func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/kubernetes/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kubernetesLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kubernetesLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthKubernetesRoleName Register an role with the backend.
@@ -4480,36 +3556,28 @@ func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, name string, kube
 	requestPath := "/v1/auth/kubernetes/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kubernetesRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kubernetesRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/ldap/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, ldapConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		ldapConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
@@ -4518,18 +3586,14 @@ func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGrou
 	requestPath := "/v1/auth/ldap/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, ldapGroupsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		ldapGroupsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthLdapLoginUsername Log in with a username and password.
@@ -4538,18 +3602,14 @@ func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, l
 	requestPath := "/v1/auth/ldap/login/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, ldapLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		ldapLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthLdapUsersName Manage users allowed to authenticate.
@@ -4558,36 +3618,28 @@ func (a *Auth) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsers
 	requestPath := "/v1/auth/ldap/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, ldapUsersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		ldapUsersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *Auth) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oci/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, ociConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		ociConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOciLoginRole Authenticates to Vault using OCI credentials
@@ -4596,18 +3648,14 @@ func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRe
 	requestPath := "/v1/auth/oci/login/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, ociLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		ociLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOciRoleRole Create a role and associate policies to it.
@@ -4616,18 +3664,14 @@ func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequ
 	requestPath := "/v1/auth/oci/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, ociRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		ociRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOidcConfig Configure the JWT authentication backend.
@@ -4635,72 +3679,56 @@ func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequ
 func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oidc/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oidcConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oidcConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oidc/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oidcLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oidcLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oidc/oidc/auth_url"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oidcOidcAuthUrlRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oidcOidcAuthUrlRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
 func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/oidc/oidc/callback"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oidcOidcCallbackRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oidcOidcCallbackRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOidcRoleName Register an role with the backend.
@@ -4710,36 +3738,28 @@ func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRe
 	requestPath := "/v1/auth/oidc/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oidcRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oidcRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/okta/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oktaConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oktaConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOktaGroupsName Manage users allowed to authenticate.
@@ -4748,18 +3768,14 @@ func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGrou
 	requestPath := "/v1/auth/okta/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oktaGroupsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oktaGroupsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOktaLoginUsername Log in with a username and password.
@@ -4768,18 +3784,14 @@ func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, o
 	requestPath := "/v1/auth/okta/login/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oktaLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oktaLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthOktaUsersName Manage additional groups for users allowed to authenticate.
@@ -4788,54 +3800,42 @@ func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsers
 	requestPath := "/v1/auth/okta/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, oktaUsersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oktaUsersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest RadiusConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/radius/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, radiusConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		radiusConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthRadiusLogin Log in with a username and password.
 func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/radius/login"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, radiusLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		radiusLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthRadiusLoginUrlusername Log in with a username and password.
@@ -4844,18 +3844,14 @@ func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername s
 	requestPath := "/v1/auth/radius/login/{urlusername}"
 	requestPath = strings.Replace(requestPath, "{"+"urlusername"+"}", url.PathEscape(urlusername), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, radiusLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		radiusLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthRadiusUsersName Manage users allowed to authenticate.
@@ -4864,54 +3860,42 @@ func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusU
 	requestPath := "/v1/auth/radius/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, radiusUsersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		radiusUsersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenCreate The token create path is used to create new tokens.
 func (a *Auth) PostAuthTokenCreate(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/create"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenCreateOrphan The token create path is used to create new orphan tokens.
 func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/create-orphan"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenCreateRoleName This token create path is used to create new tokens adhering to the given role.
@@ -4920,198 +3904,154 @@ func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string)
 	requestPath := "/v1/auth/token/create/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest TokenLookupRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/lookup"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenLookupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenLookupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenLookupAccessor This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
 func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/lookup-accessor"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenLookupAccessorRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenLookupAccessorRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/lookup-self"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenLookupSelfRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenLookupSelfRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRenew This endpoint will renew the given token and prevent expiration.
 func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/renew"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenRenewRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenRenewRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRenewAccessor This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
 func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/renew-accessor"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenRenewAccessorRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenRenewAccessorRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRenewSelf This endpoint will renew the token used to call it and prevent expiration.
 func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/renew-self"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenRenewSelfRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenRenewSelfRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRevoke This endpoint will delete the given token and all of its child tokens.
 func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/revoke"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenRevokeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenRevokeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRevokeAccessor This endpoint will delete the token associated with the accessor and all of its child tokens.
 func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/revoke-accessor"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenRevokeAccessorRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenRevokeAccessorRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its child tokens.
 func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/revoke-orphan"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenRevokeOrphanRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenRevokeOrphanRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and all of its child tokens.
 func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/revoke-self"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenRolesRoleName
@@ -5120,36 +4060,28 @@ func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, 
 	requestPath := "/v1/auth/token/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, tokenRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		tokenRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 func (a *Auth) PostAuthTokenTidy(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/token/tidy"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAuthUserpassLoginUsername Log in with a username and password.
@@ -5158,18 +4090,14 @@ func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username strin
 	requestPath := "/v1/auth/userpass/login/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, userpassLoginRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		userpassLoginRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthUserpassUsersUsername Manage users allowed to authenticate.
@@ -5178,18 +4106,14 @@ func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username strin
 	requestPath := "/v1/auth/userpass/users/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, userpassUsersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		userpassUsersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthUserpassUsersUsernamePassword Reset user's password.
@@ -5198,18 +4122,14 @@ func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, userna
 	requestPath := "/v1/auth/userpass/users/{username}/password"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, userpassUsersPasswordRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		userpassUsersPasswordRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAuthUserpassUsersUsernamePolicies Update the policies associated with the username.
@@ -5218,16 +4138,12 @@ func (a *Auth) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, userna
 	requestPath := "/v1/auth/userpass/users/{username}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, userpassUsersPoliciesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		userpassUsersPoliciesRequest,
+		nil, // request query parameters
+	)
 }

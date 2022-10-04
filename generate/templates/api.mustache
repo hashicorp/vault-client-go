@@ -33,41 +33,25 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/pathParams}}
 
 {{#bodyParams}}
-	req, err := a.client.newStructuredRequest(ctx, http.Method{{httpMethod}}, requestPath, {{paramName}})
-	if err != nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
-	}
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.Method{{httpMethod}},
+		requestPath,
+	 	{{paramName}},
+		nil, // request query parameters
+	)
 {{/bodyParams}}
 {{^bodyParams}}
-	req, err := a.client.newRequest(ctx, http.Method{{httpMethod}}, requestPath, nil)
-	if err != nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
-	}
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.Method{{httpMethod}},
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 {{/bodyParams}}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-{{#returnType}}
-	localVarBody, err := ioutil.ReadAll(resp.Body)
-	resp.Body.Close()
-	resp.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, resp.Header.Get("Content-Type"))
-	if err != nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
-	}
-{{/returnType}}
-{{^returnType}}
-
-	return parseResponse[map[string]interface{}](resp.Body)
-{{/returnType}}
 }
 {{/operation}}
 {{/operations}}

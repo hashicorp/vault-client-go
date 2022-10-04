@@ -108,6 +108,12 @@ func NewClient(configuration Configuration) (*Client, error) {
 	}
 	c.parsedBaseAddress = *address
 
+	// Internet draft https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
+	// specifies that the port must be empty
+	if configuration.EnableSRVLookup && address.Port() != "" {
+		return nil, fmt.Errorf("cannot enable service record (SRV) lookup since the base address port (%q) is not empty", address.Port())
+	}
+
 	transport, ok := c.client.Transport.(*http.Transport);
 	if !ok {
 		return nil, fmt.Errorf("the configured base client's transport (%T) is not of type *http.Transport", c.client.Transport)

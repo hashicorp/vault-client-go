@@ -28,18 +28,14 @@ func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string) (*Res
 	requestPath := "/v1/identity/alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
@@ -48,18 +44,14 @@ func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string)
 	requestPath := "/v1/identity/entity-alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
@@ -68,18 +60,14 @@ func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string) (*Re
 	requestPath := "/v1/identity/entity/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityEntityNameName Update, read or delete an entity using entity name
@@ -88,18 +76,14 @@ func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string
 	requestPath := "/v1/identity/entity/name/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityGroupAliasIdId
@@ -108,18 +92,14 @@ func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) 
 	requestPath := "/v1/identity/group-alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityGroupIdId Update or delete an existing group using its ID.
@@ -128,18 +108,14 @@ func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string) (*Res
 	requestPath := "/v1/identity/group/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityGroupNameName
@@ -148,18 +124,14 @@ func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string)
 	requestPath := "/v1/identity/group/name/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
@@ -168,18 +140,14 @@ func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, na
 	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA method
@@ -188,18 +156,14 @@ func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, metho
 	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA method
@@ -208,18 +172,14 @@ func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, meth
 	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA method
@@ -228,18 +188,14 @@ func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, me
 	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA method
@@ -248,18 +204,14 @@ func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, meth
 	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityOidcAssignmentName
@@ -268,18 +220,14 @@ func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name st
 	requestPath := "/v1/identity/oidc/assignment/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityOidcClientName
@@ -288,18 +236,14 @@ func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string
 	requestPath := "/v1/identity/oidc/client/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
@@ -308,18 +252,14 @@ func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string) (
 	requestPath := "/v1/identity/oidc/key/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityOidcProviderName
@@ -328,18 +268,14 @@ func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name stri
 	requestPath := "/v1/identity/oidc/provider/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
@@ -348,18 +284,14 @@ func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string) 
 	requestPath := "/v1/identity/oidc/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityOidcScopeName
@@ -368,18 +300,14 @@ func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string)
 	requestPath := "/v1/identity/oidc/scope/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteIdentityPersonaIdId Update, read or delete an alias ID.
@@ -388,18 +316,14 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*R
 	requestPath := "/v1/identity/persona/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityAliasId List all the alias IDs.
@@ -407,18 +331,14 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*R
 func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/alias/id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityAliasIdId Update, read or delete an alias ID.
@@ -427,18 +347,14 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*Respon
 	requestPath := "/v1/identity/alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityEntityAliasId List all the alias IDs.
@@ -446,18 +362,14 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*Respon
 func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/entity-alias/id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityEntityAliasIdId Update, read or delete an alias ID.
@@ -466,18 +378,14 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 	requestPath := "/v1/identity/entity-alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityEntityId List all the entity IDs
@@ -485,18 +393,14 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/entity/id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityEntityIdId Update, read or delete an entity using entity ID
@@ -505,18 +409,14 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*Respo
 	requestPath := "/v1/identity/entity/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityEntityName List all the entity names
@@ -524,18 +424,14 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*Respo
 func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/entity/name"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityEntityNameName Update, read or delete an entity using entity name
@@ -544,18 +440,14 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 	requestPath := "/v1/identity/entity/name/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityGroupAliasId List all the group alias IDs.
@@ -563,18 +455,14 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/group-alias/id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityGroupAliasIdId
@@ -583,18 +471,14 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*R
 	requestPath := "/v1/identity/group-alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityGroupId List all the group IDs.
@@ -602,18 +486,14 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*R
 func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/group/id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityGroupIdId Update or delete an existing group using its ID.
@@ -622,18 +502,14 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*Respon
 	requestPath := "/v1/identity/group/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityGroupName
@@ -641,18 +517,14 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*Respon
 func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/group/name"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityGroupNameName
@@ -661,18 +533,14 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 	requestPath := "/v1/identity/group/name/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaLoginEnforcement List login enforcements
@@ -680,18 +548,14 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/login-enforcement"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaLoginEnforcementName Read the current login enforcement
@@ -700,18 +564,14 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethod List MFA method configurations for all MFA methods
@@ -719,18 +579,14 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
@@ -738,18 +594,14 @@ func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*Resp
 func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method/duo"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA method
@@ -758,18 +610,14 @@ func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId
 	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodMethodId Read the current configuration for the given ID regardless of the MFA method type
@@ -778,18 +626,14 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 	requestPath := "/v1/identity/mfa/method/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
@@ -797,18 +641,14 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method/okta"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MFA method
@@ -817,18 +657,14 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodPingid List MFA method configurations for the given MFA method
@@ -836,18 +672,14 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method/pingid"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodPingidMethodId Read the current configuration for the given MFA method
@@ -856,18 +688,14 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
@@ -875,18 +703,14 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method/totp"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MFA method
@@ -895,18 +719,14 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcAssignment
@@ -914,18 +734,14 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/assignment"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcAssignmentName
@@ -934,18 +750,14 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 	requestPath := "/v1/identity/oidc/assignment/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcClient
@@ -953,18 +765,14 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/client"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcClientName
@@ -973,36 +781,28 @@ func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (
 	requestPath := "/v1/identity/oidc/client/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcConfig OIDC configuration
 func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcKey List OIDC keys
@@ -1010,18 +810,14 @@ func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*Response[map[str
 func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/key"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcKeyName CRUD operations for OIDC keys.
@@ -1030,18 +826,14 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*Re
 	requestPath := "/v1/identity/oidc/key/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcProvider
@@ -1049,18 +841,14 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*Re
 func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/provider"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcProviderName
@@ -1069,18 +857,14 @@ func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string)
 	requestPath := "/v1/identity/oidc/provider/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcProviderNameAuthorize
@@ -1089,18 +873,14 @@ func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, nam
 	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcProviderNameUserinfo
@@ -1109,18 +889,14 @@ func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name
 	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcProviderNameWellKnownKeys
@@ -1129,18 +905,14 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context,
 	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcProviderNameWellKnownOpenidConfiguration
@@ -1149,18 +921,14 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcRole List configured OIDC roles
@@ -1168,18 +936,14 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcRoleName CRUD operations on OIDC Roles
@@ -1188,18 +952,14 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*R
 	requestPath := "/v1/identity/oidc/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcScope
@@ -1207,18 +967,14 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*R
 func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/scope"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcScopeName
@@ -1227,18 +983,14 @@ func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string) (*
 	requestPath := "/v1/identity/oidc/scope/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcTokenName Generate an OIDC token
@@ -1247,54 +999,42 @@ func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*
 	requestPath := "/v1/identity/oidc/token/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcWellKnownKeys Retrieve public keys
 func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/.well-known/keys"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
 func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/.well-known/openid-configuration"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityPersonaId List all the alias IDs.
@@ -1302,18 +1042,14 @@ func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Conte
 func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/persona/id"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetIdentityPersonaIdId Update, read or delete an alias ID.
@@ -1322,36 +1058,28 @@ func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*Resp
 	requestPath := "/v1/identity/persona/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityAlias Create a new alias.
 func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest IdentityAliasRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/alias"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityAliasRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityAliasRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityAliasIdId Update, read or delete an alias ID.
@@ -1360,54 +1088,42 @@ func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identit
 	requestPath := "/v1/identity/alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityAliasIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityAliasIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityEntity Create a new entity
 func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest IdentityEntityRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/entity"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityEntityRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityEntityAlias Create a new alias.
 func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/entity-alias"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityAliasRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityEntityAliasRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityEntityAliasIdId Update, read or delete an alias ID.
@@ -1416,36 +1132,28 @@ func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, i
 	requestPath := "/v1/identity/entity-alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityAliasIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityEntityAliasIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityEntityBatchDelete Delete all of the entities provided
 func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/entity/batch-delete"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityBatchDeleteRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityEntityBatchDeleteRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityEntityIdId Update, read or delete an entity using entity ID
@@ -1454,36 +1162,28 @@ func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identi
 	requestPath := "/v1/identity/entity/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityEntityIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityEntityMerge Merge two or more entities together
 func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/entity/merge"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityMergeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityEntityMergeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityEntityNameName Update, read or delete an entity using entity name
@@ -1492,54 +1192,42 @@ func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, 
 	requestPath := "/v1/identity/entity/name/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityNameRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityEntityNameRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityGroup Create a new group.
 func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest IdentityGroupRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/group"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityGroupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
 func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/group-alias"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupAliasRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityGroupAliasRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityGroupAliasIdId
@@ -1548,18 +1236,14 @@ func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, id
 	requestPath := "/v1/identity/group-alias/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupAliasIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityGroupAliasIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityGroupIdId Update or delete an existing group using its ID.
@@ -1568,18 +1252,14 @@ func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identit
 	requestPath := "/v1/identity/group/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityGroupIdRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityGroupNameName
@@ -1588,54 +1268,42 @@ func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, i
 	requestPath := "/v1/identity/group/name/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupNameRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityGroupNameRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityLookupEntity Query entities based on various properties.
 func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/lookup/entity"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityLookupEntityRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityLookupEntityRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityLookupGroup Query groups based on various properties.
 func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/lookup/group"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityLookupGroupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityLookupGroupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaLoginEnforcementName Create or update a login enforcement
@@ -1644,18 +1312,14 @@ func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name
 	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaLoginEnforcementRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaLoginEnforcementRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given MFA method
@@ -1664,18 +1328,14 @@ func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodI
 	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodDuoRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaMethodDuoRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given MFA method
@@ -1684,18 +1344,14 @@ func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, method
 	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodOktaRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaMethodOktaRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaMethodPingidMethodId Update or create a configuration for the given MFA method
@@ -1704,72 +1360,56 @@ func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, meth
 	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodPingidRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaMethodPingidRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA method ID on the given entity
 func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method/totp/admin-destroy"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpAdminDestroyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaMethodTotpAdminDestroyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method/totp/admin-generate"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpAdminGenerateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaMethodTotpAdminGenerateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/mfa/method/totp/generate"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpGenerateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaMethodTotpGenerateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given MFA method
@@ -1778,18 +1418,14 @@ func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, method
 	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
 	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityMfaMethodTotpRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcAssignmentName
@@ -1798,18 +1434,14 @@ func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name stri
 	requestPath := "/v1/identity/oidc/assignment/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcAssignmentRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcAssignmentRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcClientName
@@ -1818,54 +1450,42 @@ func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, 
 	requestPath := "/v1/identity/oidc/client/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcClientRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcClientRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcConfig OIDC configuration
 func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
 func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/introspect"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcIntrospectRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcIntrospectRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcKeyName CRUD operations for OIDC keys.
@@ -1874,18 +1494,14 @@ func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, ide
 	requestPath := "/v1/identity/oidc/key/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcKeyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcKeyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
@@ -1894,18 +1510,14 @@ func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name strin
 	requestPath := "/v1/identity/oidc/key/{name}/rotate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcKeyRotateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcKeyRotateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcProviderName
@@ -1914,18 +1526,14 @@ func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string
 	requestPath := "/v1/identity/oidc/provider/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcProviderRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcProviderRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcProviderNameAuthorize
@@ -1934,18 +1542,14 @@ func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, na
 	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcProviderAuthorizeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcProviderAuthorizeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcProviderNameToken
@@ -1954,18 +1558,14 @@ func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name s
 	requestPath := "/v1/identity/oidc/provider/{name}/token"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcProviderTokenRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcProviderTokenRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcProviderNameUserinfo
@@ -1974,18 +1574,14 @@ func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, nam
 	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcRoleName CRUD operations on OIDC Roles
@@ -1994,18 +1590,14 @@ func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, id
 	requestPath := "/v1/identity/oidc/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityOidcScopeName
@@ -2014,36 +1606,28 @@ func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, i
 	requestPath := "/v1/identity/oidc/scope/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcScopeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityOidcScopeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityPersona Create a new alias.
 func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaRequest IdentityPersonaRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/persona"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityPersonaRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityPersonaRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostIdentityPersonaIdId Update, read or delete an alias ID.
@@ -2052,16 +1636,12 @@ func (a *Identity) PostIdentityPersonaIdId(ctx context.Context, id string, ident
 	requestPath := "/v1/identity/persona/id/{id}"
 	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityPersonaIdRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		identityPersonaIdRequest,
+		nil, // request query parameters
+	)
 }

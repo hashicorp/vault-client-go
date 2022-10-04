@@ -26,18 +26,14 @@ type Secrets struct {
 func (a *Secrets) DeleteAdConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAdLibraryName Delete a library set.
@@ -46,18 +42,14 @@ func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string) (*Respon
 	requestPath := "/v1/ad/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
@@ -66,36 +58,28 @@ func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/ad/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
 func (a *Secrets) DeleteAlicloudConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -104,18 +88,14 @@ func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string) (*Res
 	requestPath := "/v1/alicloud/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAwsRolesName Read, write and reference IAM policies that access keys can be made for.
@@ -124,36 +104,28 @@ func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/aws/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAzureConfig
 func (a *Secrets) DeleteAzureConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
@@ -162,18 +134,14 @@ func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/azure/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteConsulRolesName
@@ -182,18 +150,14 @@ func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string) (*Resp
 	requestPath := "/v1/consul/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteCubbyholePath Deletes the secret at the specified location.
@@ -202,18 +166,14 @@ func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string) (*Respon
 	requestPath := "/v1/cubbyhole/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteGcpRolesetName
@@ -222,18 +182,14 @@ func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/gcp/roleset/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteGcpStaticAccountName
@@ -242,36 +198,28 @@ func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string) (
 	requestPath := "/v1/gcp/static-account/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
@@ -280,18 +228,14 @@ func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string)
 	requestPath := "/v1/gcpkms/keys/deregister/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
@@ -300,18 +244,14 @@ func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*Respons
 	requestPath := "/v1/gcpkms/keys/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
@@ -320,36 +260,28 @@ func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*Res
 	requestPath := "/v1/gcpkms/keys/trim/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteKubernetesConfig
 func (a *Secrets) DeleteKubernetesConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteKubernetesRolesName
@@ -358,18 +290,14 @@ func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string) (*
 	requestPath := "/v1/kubernetes/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
@@ -378,18 +306,14 @@ func (a *Secrets) DeleteKvPath(ctx context.Context, path string) (*Response[map[
 	requestPath := "/v1/kv/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -398,54 +322,42 @@ func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string) 
 	requestPath := "/v1/mongodbatlas/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteNomadConfigAccess
 func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/access"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteNomadConfigLease Configure the lease parameters for generated tokens
 func (a *Secrets) DeleteNomadConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/lease"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteNomadRoleName
@@ -454,36 +366,28 @@ func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string) (*Respon
 	requestPath := "/v1/nomad/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteOpenldapConfig
 func (a *Secrets) DeleteOpenldapConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteOpenldapRoleName
@@ -492,18 +396,14 @@ func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string) (*Res
 	requestPath := "/v1/openldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteOpenldapStaticRoleName
@@ -512,18 +412,14 @@ func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string)
 	requestPath := "/v1/openldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeletePkiIssuerRefDerPem
@@ -532,36 +428,28 @@ func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string
 	requestPath := "/v1/pki/{issuer_ref}/der|/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeletePkiJson
 func (a *Secrets) DeletePkiJson(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//json"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeletePkiKeyKeyRef
@@ -570,18 +458,14 @@ func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) (*Respo
 	requestPath := "/v1/pki/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeletePkiRolesName
@@ -590,36 +474,28 @@ func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/pki/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeletePkiRoot
 func (a *Secrets) DeletePkiRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
@@ -628,18 +504,14 @@ func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string) (*Re
 	requestPath := "/v1/rabbitmq/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
@@ -648,18 +520,14 @@ func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string) (*Respo
 	requestPath := "/v1/secret/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSecretMetadataPath Configures settings for the KV store
@@ -668,54 +536,42 @@ func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string) (*R
 	requestPath := "/v1/secret/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSshConfigCa Set the SSH private key used for signing certificates.
 func (a *Secrets) DeleteSshConfigCa(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/ca"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
 func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/zeroaddress"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSshKeysKeyName Register a shared private key with Vault.
@@ -724,18 +580,14 @@ func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string) (*Re
 	requestPath := "/v1/ssh/keys/{key_name}"
 	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
@@ -744,36 +596,28 @@ func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string) (*Respons
 	requestPath := "/v1/ssh/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteTerraformConfig
 func (a *Secrets) DeleteTerraformConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteTerraformRoleName
@@ -782,18 +626,14 @@ func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string) (*Re
 	requestPath := "/v1/terraform/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteTotpKeysName Manage the keys that can be created with this backend.
@@ -802,18 +642,14 @@ func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/totp/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteTransitKeysName Managed named encryption keys
@@ -822,36 +658,28 @@ func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string) (*Resp
 	requestPath := "/v1/transit/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdConfig Configure the AD server to connect to, along with password options.
 func (a *Secrets) GetAdConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdCredsName
@@ -860,18 +688,14 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*Response[ma
 	requestPath := "/v1/ad/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdLibrary
@@ -879,18 +703,14 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*Response[ma
 func (a *Secrets) GetAdLibrary(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdLibraryName Read a library set.
@@ -899,18 +719,14 @@ func (a *Secrets) GetAdLibraryName(ctx context.Context, name string) (*Response[
 	requestPath := "/v1/ad/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdLibraryNameStatus Check the status of the service accounts in a library set.
@@ -919,18 +735,14 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*Res
 	requestPath := "/v1/ad/library/{name}/status"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdRoles List the name of each role currently stored.
@@ -938,18 +750,14 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*Res
 func (a *Secrets) GetAdRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
@@ -958,54 +766,42 @@ func (a *Secrets) GetAdRolesName(ctx context.Context, name string) (*Response[ma
 	requestPath := "/v1/ad/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAdRotateRoot
 func (a *Secrets) GetAdRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/rotate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
 func (a *Secrets) GetAlicloudConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAlicloudCredsName Generate an API key or STS credential using the given role's configuration.'
@@ -1014,18 +810,14 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/alicloud/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAlicloudRole List the existing roles in this backend.
@@ -1033,18 +825,14 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*Respo
 func (a *Secrets) GetAlicloudRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -1053,72 +841,56 @@ func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string) (*Respon
 	requestPath := "/v1/alicloud/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAwsConfigLease Configure the default lease information for generated credentials.
 func (a *Secrets) GetAwsConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/lease"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
 func (a *Secrets) GetAwsConfigRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/root"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAwsCreds Generate AWS credentials from a specific Vault role.
 func (a *Secrets) GetAwsCreds(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/creds"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAwsRoles List the existing roles in this backend
@@ -1126,18 +898,14 @@ func (a *Secrets) GetAwsCreds(ctx context.Context) (*Response[map[string]interfa
 func (a *Secrets) GetAwsRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAwsRolesName Read, write and reference IAM policies that access keys can be made for.
@@ -1146,18 +914,14 @@ func (a *Secrets) GetAwsRolesName(ctx context.Context, name string) (*Response[m
 	requestPath := "/v1/aws/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAwsStsName Generate AWS credentials from a specific Vault role.
@@ -1166,36 +930,28 @@ func (a *Secrets) GetAwsStsName(ctx context.Context, name string) (*Response[map
 	requestPath := "/v1/aws/sts/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAzureConfig
 func (a *Secrets) GetAzureConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAzureCredsRole
@@ -1204,18 +960,14 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*Response
 	requestPath := "/v1/azure/creds/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAzureRoles List existing roles.
@@ -1223,18 +975,14 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*Response
 func (a *Secrets) GetAzureRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
@@ -1243,36 +991,28 @@ func (a *Secrets) GetAzureRolesName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/azure/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetConsulConfigAccess
 func (a *Secrets) GetConsulConfigAccess(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/config/access"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetConsulCredsRole
@@ -1281,18 +1021,14 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*Respons
 	requestPath := "/v1/consul/creds/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetConsulRoles
@@ -1300,18 +1036,14 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*Respons
 func (a *Secrets) GetConsulRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetConsulRolesName
@@ -1320,18 +1052,14 @@ func (a *Secrets) GetConsulRolesName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/consul/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetCubbyholePath Retrieve the secret at the specified location.
@@ -1341,36 +1069,28 @@ func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string
 	requestPath := "/v1/cubbyhole/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpConfig
 func (a *Secrets) GetGcpConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpKeyRoleset
@@ -1379,18 +1099,14 @@ func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string) (*Respon
 	requestPath := "/v1/gcp/key/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpRolesetName
@@ -1399,18 +1115,14 @@ func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/gcp/roleset/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpRolesetRolesetKey
@@ -1419,18 +1131,14 @@ func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) (
 	requestPath := "/v1/gcp/roleset/{roleset}/key"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpRolesetRolesetToken
@@ -1439,18 +1147,14 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string)
 	requestPath := "/v1/gcp/roleset/{roleset}/token"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpRolesets
@@ -1458,18 +1162,14 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string)
 func (a *Secrets) GetGcpRolesets(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/rolesets"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpStaticAccountName
@@ -1478,18 +1178,14 @@ func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string) (*Re
 	requestPath := "/v1/gcp/static-account/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpStaticAccountNameKey
@@ -1498,18 +1194,14 @@ func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string) (
 	requestPath := "/v1/gcp/static-account/{name}/key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpStaticAccountNameToken
@@ -1518,18 +1210,14 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string)
 	requestPath := "/v1/gcp/static-account/{name}/token"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpStaticAccounts
@@ -1537,18 +1225,14 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string)
 func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-accounts"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpTokenRoleset
@@ -1557,36 +1241,28 @@ func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string) (*Resp
 	requestPath := "/v1/gcp/token/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpkmsKeys List named keys
@@ -1594,18 +1270,14 @@ func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*Response[map[string]int
 func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpkmsKeysConfigKey Configure the key in Vault
@@ -1614,18 +1286,14 @@ func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string) (*Resp
 	requestPath := "/v1/gcpkms/keys/config/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
@@ -1634,18 +1302,14 @@ func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string) (*Response[m
 	requestPath := "/v1/gcpkms/keys/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
@@ -1654,36 +1318,28 @@ func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*Response
 	requestPath := "/v1/gcpkms/pubkey/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetKubernetesConfig
 func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetKubernetesRoles
@@ -1691,18 +1347,14 @@ func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*Response[map[string
 func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetKubernetesRolesName
@@ -1711,18 +1363,14 @@ func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string) (*Res
 	requestPath := "/v1/kubernetes/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
@@ -1732,36 +1380,28 @@ func (a *Secrets) GetKvPath(ctx context.Context, path string, list string) (*Res
 	requestPath := "/v1/kv/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
 func (a *Secrets) GetMongodbatlasConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
@@ -1770,18 +1410,14 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*R
 	requestPath := "/v1/mongodbatlas/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetMongodbatlasRoles List the existing roles in this backend
@@ -1789,18 +1425,14 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*R
 func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -1809,54 +1441,42 @@ func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string) (*R
 	requestPath := "/v1/mongodbatlas/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetNomadConfigAccess
 func (a *Secrets) GetNomadConfigAccess(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/access"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetNomadConfigLease Configure the lease parameters for generated tokens
 func (a *Secrets) GetNomadConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/lease"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetNomadCredsName
@@ -1865,18 +1485,14 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*Response
 	requestPath := "/v1/nomad/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetNomadRole
@@ -1884,18 +1500,14 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*Response
 func (a *Secrets) GetNomadRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetNomadRoleName
@@ -1904,36 +1516,28 @@ func (a *Secrets) GetNomadRoleName(ctx context.Context, name string) (*Response[
 	requestPath := "/v1/nomad/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetOpenldapConfig
 func (a *Secrets) GetOpenldapConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetOpenldapCredsName
@@ -1942,18 +1546,14 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/openldap/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetOpenldapRole
@@ -1961,18 +1561,14 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*Respo
 func (a *Secrets) GetOpenldapRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetOpenldapRoleName
@@ -1981,18 +1577,14 @@ func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string) (*Respon
 	requestPath := "/v1/openldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetOpenldapStaticCredName
@@ -2001,18 +1593,14 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*
 	requestPath := "/v1/openldap/static-cred/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetOpenldapStaticRole
@@ -2020,18 +1608,14 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*
 func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/static-role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetOpenldapStaticRoleName
@@ -2040,108 +1624,84 @@ func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string) (*
 	requestPath := "/v1/openldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCa
 func (a *Secrets) GetPkiCa(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ca"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCaChain
 func (a *Secrets) GetPkiCaChain(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ca_chain"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCaPem
 func (a *Secrets) GetPkiCaPem(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ca/pem"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCertCaChain
 func (a *Secrets) GetPkiCertCaChain(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert/ca_chain"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCertCrl
 func (a *Secrets) GetPkiCertCrl(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert/crl"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCertSerial
@@ -2150,18 +1710,14 @@ func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string) (*Respons
 	requestPath := "/v1/pki/cert/{serial}"
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCertSerialRaw
@@ -2170,18 +1726,14 @@ func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string) (*Resp
 	requestPath := "/v1/pki/cert/{serial}/raw"
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCertSerialRawPem
@@ -2190,18 +1742,14 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*R
 	requestPath := "/v1/pki/cert/{serial}/raw/pem"
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCerts
@@ -2209,162 +1757,126 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*R
 func (a *Secrets) GetPkiCerts(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/certs"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiConfigCrl
 func (a *Secrets) GetPkiConfigCrl(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/crl"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiConfigIssuers
 func (a *Secrets) GetPkiConfigIssuers(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/issuers"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiConfigKeys
 func (a *Secrets) GetPkiConfigKeys(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/keys"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiConfigUrls
 func (a *Secrets) GetPkiConfigUrls(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/urls"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCrl
 func (a *Secrets) GetPkiCrl(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/crl"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCrlPem
 func (a *Secrets) GetPkiCrlPem(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/crl/pem"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiCrlRotate
 func (a *Secrets) GetPkiCrlRotate(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/crl/rotate"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiDer
 func (a *Secrets) GetPkiDer(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//der"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiIssuerRefCrlPem
@@ -2373,18 +1885,14 @@ func (a *Secrets) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef string) (
 	requestPath := "/v1/pki/{issuer_ref}/crl/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiIssuerRefDerPem
@@ -2393,18 +1901,14 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (
 	requestPath := "/v1/pki/{issuer_ref}/der|/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiIssuers
@@ -2412,36 +1916,28 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (
 func (a *Secrets) GetPkiIssuers(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuers"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiJson
 func (a *Secrets) GetPkiJson(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//json"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiKeyKeyRef
@@ -2450,18 +1946,14 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*Response
 	requestPath := "/v1/pki/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiKeys
@@ -2469,18 +1961,14 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*Response
 func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/keys"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiRoles
@@ -2488,18 +1976,14 @@ func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*Response[map[st
 func (a *Secrets) GetPkiRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiRolesName
@@ -2508,54 +1992,42 @@ func (a *Secrets) GetPkiRolesName(ctx context.Context, name string) (*Response[m
 	requestPath := "/v1/pki/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetPkiTidyStatus
 func (a *Secrets) GetPkiTidyStatus(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/tidy-status"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetRabbitmqConfigLease Configure the lease parameters for generated credentials
 func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/config/lease"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
@@ -2564,18 +2036,14 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/rabbitmq/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetRabbitmqRoles Manage the roles that can be created with this backend.
@@ -2583,18 +2051,14 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*Respo
 func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetRabbitmqRolesName Manage the roles that can be created with this backend.
@@ -2603,36 +2067,28 @@ func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/rabbitmq/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSecretConfig Read the backend level settings.
 func (a *Secrets) GetSecretConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
@@ -2641,18 +2097,14 @@ func (a *Secrets) GetSecretDataPath(ctx context.Context, path string) (*Response
 	requestPath := "/v1/secret/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSecretMetadataPath Configures settings for the KV store
@@ -2662,18 +2114,14 @@ func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list s
 	requestPath := "/v1/secret/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value store with the values removed.
@@ -2682,72 +2130,56 @@ func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string) (*Respo
 	requestPath := "/v1/secret/subkeys/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSshConfigCa Set the SSH private key used for signing certificates.
 func (a *Secrets) GetSshConfigCa(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/ca"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
 func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/zeroaddress"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSshPublicKey Retrieve the public key.
 func (a *Secrets) GetSshPublicKey(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/public_key"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSshRoles Manage the 'roles' that can be created with this backend.
@@ -2755,18 +2187,14 @@ func (a *Secrets) GetSshPublicKey(ctx context.Context) (*Response[map[string]int
 func (a *Secrets) GetSshRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/roles"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSshRolesRole Manage the 'roles' that can be created with this backend.
@@ -2775,36 +2203,28 @@ func (a *Secrets) GetSshRolesRole(ctx context.Context, role string) (*Response[m
 	requestPath := "/v1/ssh/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTerraformConfig
 func (a *Secrets) GetTerraformConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
@@ -2813,18 +2233,14 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*Resp
 	requestPath := "/v1/terraform/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTerraformRole
@@ -2832,18 +2248,14 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*Resp
 func (a *Secrets) GetTerraformRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/role"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTerraformRoleName
@@ -2852,18 +2264,14 @@ func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/terraform/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTotpCodeName Request time-based one-time use password or validate a password for a certain key .
@@ -2872,18 +2280,14 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*Response[m
 	requestPath := "/v1/totp/code/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTotpKeys Manage the keys that can be created with this backend.
@@ -2891,18 +2295,14 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*Response[m
 func (a *Secrets) GetTotpKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/totp/keys"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTotpKeysName Manage the keys that can be created with this backend.
@@ -2911,18 +2311,14 @@ func (a *Secrets) GetTotpKeysName(ctx context.Context, name string) (*Response[m
 	requestPath := "/v1/totp/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTransitBackupName Backup the named key
@@ -2931,36 +2327,28 @@ func (a *Secrets) GetTransitBackupName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/transit/backup/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTransitCacheConfig Returns the size of the active cache
 func (a *Secrets) GetTransitCacheConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/cache-config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTransitExportTypeName Export named encryption or signing key
@@ -2971,18 +2359,14 @@ func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, typ
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTransitExportTypeNameVersion Export named encryption or signing key
@@ -2995,18 +2379,14 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 	requestPath = strings.Replace(requestPath, "{"+"version"+"}", url.PathEscape(version), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTransitKeys Managed named encryption keys
@@ -3014,18 +2394,14 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 func (a *Secrets) GetTransitKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTransitKeysName Managed named encryption keys
@@ -3034,54 +2410,42 @@ func (a *Secrets) GetTransitKeysName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/transit/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetTransitWrappingKey Returns the public key to use for wrapping imported keys
 func (a *Secrets) GetTransitWrappingKey(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/wrapping_key"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAdConfig Configure the AD server to connect to, along with password options.
 func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, adConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		adConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAdLibraryManageNameCheckIn Check service accounts in to the library.
@@ -3090,18 +2454,14 @@ func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name strin
 	requestPath := "/v1/ad/library/manage/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, adLibraryManageCheckInRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		adLibraryManageCheckInRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAdLibraryName Update a library set.
@@ -3110,18 +2470,14 @@ func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryR
 	requestPath := "/v1/ad/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, adLibraryRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		adLibraryRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAdLibraryNameCheckIn Check service accounts in to the library.
@@ -3130,18 +2486,14 @@ func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adL
 	requestPath := "/v1/ad/library/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, adLibraryCheckInRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		adLibraryCheckInRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAdLibraryNameCheckOut Check a service account out from the library.
@@ -3150,18 +2502,14 @@ func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, ad
 	requestPath := "/v1/ad/library/{name}/check-out"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, adLibraryCheckOutRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		adLibraryCheckOutRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
@@ -3170,18 +2518,14 @@ func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesReque
 	requestPath := "/v1/ad/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, adRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		adRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAdRotateRoleName
@@ -3190,54 +2534,42 @@ func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/ad/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAdRotateRoot
 func (a *Secrets) PostAdRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/rotate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
 func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, alicloudConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		alicloudConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -3246,90 +2578,70 @@ func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, aliclou
 	requestPath := "/v1/alicloud/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, alicloudRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		alicloudRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAwsConfigLease Configure the default lease information for generated credentials.
 func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/lease"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigLeaseRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigLeaseRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
 func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/root"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsConfigRootRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsConfigRootRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAwsConfigRotateRoot
 func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/rotate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostAwsCreds Generate AWS credentials from a specific Vault role.
 func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/creds"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsCredsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsCredsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAwsRolesName Read, write and reference IAM policies that access keys can be made for.
@@ -3338,18 +2650,14 @@ func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesReq
 	requestPath := "/v1/aws/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAwsStsName Generate AWS credentials from a specific Vault role.
@@ -3358,36 +2666,28 @@ func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest
 	requestPath := "/v1/aws/sts/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, awsStsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		awsStsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAzureConfig
 func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, azureConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		azureConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
@@ -3396,54 +2696,42 @@ func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRole
 	requestPath := "/v1/azure/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, azureRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		azureRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostAzureRotateRoot
 func (a *Secrets) PostAzureRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/rotate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostConsulConfigAccess
 func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/config/access"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, consulConfigAccessRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		consulConfigAccessRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostConsulRolesName
@@ -3452,18 +2740,14 @@ func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRo
 	requestPath := "/v1/consul/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, consulRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		consulRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostCubbyholePath Store a secret at the specified location.
@@ -3472,54 +2756,42 @@ func (a *Secrets) PostCubbyholePath(ctx context.Context, path string) (*Response
 	requestPath := "/v1/cubbyhole/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpConfig
 func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpConfigRotateRoot
 func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/config/rotate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpKeyRoleset
@@ -3528,18 +2800,14 @@ func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyR
 	requestPath := "/v1/gcp/key/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpKeyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpKeyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpRolesetName
@@ -3548,18 +2816,14 @@ func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolese
 	requestPath := "/v1/gcp/roleset/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpRolesetRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpRolesetRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpRolesetNameRotate
@@ -3568,18 +2832,14 @@ func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string) (*R
 	requestPath := "/v1/gcp/roleset/{name}/rotate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpRolesetNameRotateKey
@@ -3588,18 +2848,14 @@ func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string) 
 	requestPath := "/v1/gcp/roleset/{name}/rotate-key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpRolesetRolesetKey
@@ -3608,18 +2864,14 @@ func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, 
 	requestPath := "/v1/gcp/roleset/{roleset}/key"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpRolesetKeyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpRolesetKeyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpRolesetRolesetToken
@@ -3628,18 +2880,14 @@ func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string
 	requestPath := "/v1/gcp/roleset/{roleset}/token"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpStaticAccountName
@@ -3648,18 +2896,14 @@ func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcp
 	requestPath := "/v1/gcp/static-account/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpStaticAccountRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpStaticAccountRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpStaticAccountNameKey
@@ -3668,18 +2912,14 @@ func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, 
 	requestPath := "/v1/gcp/static-account/{name}/key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpStaticAccountKeyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpStaticAccountKeyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpStaticAccountNameRotateKey
@@ -3688,18 +2928,14 @@ func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name st
 	requestPath := "/v1/gcp/static-account/{name}/rotate-key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpStaticAccountNameToken
@@ -3708,18 +2944,14 @@ func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string
 	requestPath := "/v1/gcp/static-account/{name}/token"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpTokenRoleset
@@ -3728,36 +2960,28 @@ func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string) (*Res
 	requestPath := "/v1/gcp/token/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
@@ -3766,18 +2990,14 @@ func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDe
 	requestPath := "/v1/gcpkms/decrypt/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsDecryptRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsDecryptRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
@@ -3786,18 +3006,14 @@ func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEn
 	requestPath := "/v1/gcpkms/encrypt/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsEncryptRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsEncryptRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsKeysConfigKey Configure the key in Vault
@@ -3806,18 +3022,14 @@ func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkm
 	requestPath := "/v1/gcpkms/keys/config/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsKeysConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsKeysConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
@@ -3826,18 +3038,14 @@ func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) (
 	requestPath := "/v1/gcpkms/keys/deregister/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
@@ -3846,18 +3054,14 @@ func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysR
 	requestPath := "/v1/gcpkms/keys/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsKeysRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsKeysRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
@@ -3866,18 +3070,14 @@ func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcp
 	requestPath := "/v1/gcpkms/keys/register/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsKeysRegisterRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsKeysRegisterRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
@@ -3886,18 +3086,14 @@ func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string) (*Res
 	requestPath := "/v1/gcpkms/keys/rotate/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
@@ -3906,18 +3102,14 @@ func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string) (*Respo
 	requestPath := "/v1/gcpkms/keys/trim/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
@@ -3926,18 +3118,14 @@ func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkms
 	requestPath := "/v1/gcpkms/reencrypt/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsReencryptRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsReencryptRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsSignKey Signs a message or digest using a named key
@@ -3946,18 +3134,14 @@ func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignR
 	requestPath := "/v1/gcpkms/sign/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsSignRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsSignRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostGcpkmsVerifyKey Verify a signature using a named key
@@ -3966,36 +3150,28 @@ func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVer
 	requestPath := "/v1/gcpkms/verify/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, gcpkmsVerifyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		gcpkmsVerifyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostKubernetesConfig
 func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kubernetesConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kubernetesConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostKubernetesCredsName
@@ -4004,18 +3180,14 @@ func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kube
 	requestPath := "/v1/kubernetes/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kubernetesCredsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kubernetesCredsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostKubernetesRolesName
@@ -4024,18 +3196,14 @@ func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kube
 	requestPath := "/v1/kubernetes/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kubernetesRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kubernetesRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
@@ -4044,36 +3212,28 @@ func (a *Secrets) PostKvPath(ctx context.Context, path string) (*Response[map[st
 	requestPath := "/v1/kv/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
 func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, mongodbatlasConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		mongodbatlasConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
@@ -4082,18 +3242,14 @@ func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string) (*
 	requestPath := "/v1/mongodbatlas/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -4102,54 +3258,42 @@ func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mo
 	requestPath := "/v1/mongodbatlas/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, mongodbatlasRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		mongodbatlasRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostNomadConfigAccess
 func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/access"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, nomadConfigAccessRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nomadConfigAccessRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostNomadConfigLease Configure the lease parameters for generated tokens
 func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/lease"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, nomadConfigLeaseRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nomadConfigLeaseRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostNomadRoleName
@@ -4158,36 +3302,28 @@ func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleR
 	requestPath := "/v1/nomad/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, nomadRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nomadRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostOpenldapConfig
 func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, openldapConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		openldapConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostOpenldapRoleName
@@ -4196,18 +3332,14 @@ func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openlda
 	requestPath := "/v1/openldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, openldapRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		openldapRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostOpenldapRotateRoleName
@@ -4216,36 +3348,28 @@ func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string) (
 	requestPath := "/v1/openldap/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostOpenldapRotateRoot
 func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/rotate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostOpenldapStaticRoleName
@@ -4254,162 +3378,126 @@ func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, o
 	requestPath := "/v1/openldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, openldapStaticRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		openldapStaticRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiBundle
 func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/bundle"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiBundleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiBundleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiCert
 func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiCertRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiCertRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiConfigCa
 func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/ca"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiConfigCaRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiConfigCaRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiConfigCrl
 func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/crl"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiConfigCrlRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiConfigCrlRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiConfigIssuers
 func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/issuers"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiConfigIssuersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiConfigIssuersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiConfigKeys
 func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/keys"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiConfigKeysRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiConfigKeysRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiConfigUrls
 func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/urls"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiConfigUrlsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiConfigUrlsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIntermediateCrossSign
 func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/intermediate/cross-sign"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIntermediateCrossSignRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIntermediateCrossSignRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIntermediateGenerateExported
@@ -4418,54 +3506,42 @@ func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, expor
 	requestPath := "/v1/pki/intermediate/generate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIntermediateGenerateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIntermediateGenerateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIntermediateSetSigned
 func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/intermediate/set-signed"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIntermediateSetSignedRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIntermediateSetSignedRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiInternalExported
 func (a *Secrets) PostPkiInternalExported(ctx context.Context, pkiInternalExportedRequest PkiInternalExportedRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/internal|exported"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiInternalExportedRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiInternalExportedRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssueRole
@@ -4474,18 +3550,14 @@ func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueReq
 	requestPath := "/v1/pki/issue/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssueRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssueRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuerIssuerRefIssueRole
@@ -4496,18 +3568,14 @@ func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuerIssueRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerIssueRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuerIssuerRefSignIntermediate
@@ -4516,18 +3584,14 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, is
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-intermediate"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuerSignIntermediateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerSignIntermediateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuerIssuerRefSignRole
@@ -4538,18 +3602,14 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef 
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuerSignRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerSignRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuerIssuerRefSignSelfIssued
@@ -4558,18 +3618,14 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issu
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-self-issued"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuerSignSelfIssuedRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerSignSelfIssuedRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuerIssuerRefSignVerbatim
@@ -4578,18 +3634,14 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuer
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-verbatim"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuerSignVerbatimRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerSignVerbatimRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuerIssuerRefSignVerbatimRole
@@ -4600,18 +3652,14 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, is
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuerSignVerbatimRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerSignVerbatimRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuerRefDerPem
@@ -4620,18 +3668,14 @@ func (a *Secrets) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, 
 	requestPath := "/v1/pki/{issuer_ref}/der|/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiDerPemRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiDerPemRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuersGenerateIntermediateExported
@@ -4640,18 +3684,14 @@ func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context
 	requestPath := "/v1/pki/issuers/generate/intermediate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuersGenerateIntermediateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuersGenerateIntermediateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiIssuersGenerateRootExported
@@ -4660,36 +3700,28 @@ func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, export
 	requestPath := "/v1/pki/issuers/generate/root/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiIssuersGenerateRootRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuersGenerateRootRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiJson
 func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//json"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiJsonRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiJsonRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiKeyKeyRef
@@ -4698,72 +3730,56 @@ func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyReq
 	requestPath := "/v1/pki/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiKeyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiKeyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiKeysImport
 func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/keys/import"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiKeysImportRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiKeysImportRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiKms
 func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/kms"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiKmsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiKmsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiRevoke
 func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/revoke"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiRevokeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiRevokeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiRolesName
@@ -4772,18 +3788,14 @@ func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesReq
 	requestPath := "/v1/pki/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiRootGenerateExported
@@ -4792,36 +3804,28 @@ func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported stri
 	requestPath := "/v1/pki/root/generate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiRootGenerateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiRootGenerateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiRootReplace
 func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/replace"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiRootReplaceRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiRootReplaceRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiRootRotateExported
@@ -4830,54 +3834,42 @@ func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string
 	requestPath := "/v1/pki/root/rotate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiRootRotateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiRootRotateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiRootSignIntermediate
 func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/sign-intermediate"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiRootSignIntermediateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiRootSignIntermediateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiRootSignSelfIssued
 func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/sign-self-issued"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiRootSignSelfIssuedRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiRootSignSelfIssuedRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiSignRole
@@ -4886,36 +3878,28 @@ func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignReque
 	requestPath := "/v1/pki/sign/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiSignRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiSignRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiSignVerbatim
 func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/sign-verbatim"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiSignVerbatimRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiSignVerbatimRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiSignVerbatimRole
@@ -4924,72 +3908,56 @@ func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiS
 	requestPath := "/v1/pki/sign-verbatim/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiSignVerbatimRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiSignVerbatimRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostPkiTidy
 func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/tidy"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, pkiTidyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiTidyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostRabbitmqConfigConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/config/connection"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, rabbitmqConfigConnectionRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		rabbitmqConfigConnectionRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostRabbitmqConfigLease Configure the lease parameters for generated credentials
 func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/config/lease"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, rabbitmqConfigLeaseRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		rabbitmqConfigLeaseRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostRabbitmqRolesName Manage the roles that can be created with this backend.
@@ -4998,36 +3966,28 @@ func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbit
 	requestPath := "/v1/rabbitmq/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, rabbitmqRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		rabbitmqRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSecretConfig Configure backend level settings that are applied to every key in the key-value store.
 func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kvConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kvConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
@@ -5036,18 +3996,14 @@ func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataReq
 	requestPath := "/v1/secret/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kvDataRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kvDataRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSecretDeletePath Marks one or more versions as deleted in the KV store.
@@ -5056,18 +4012,14 @@ func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDelet
 	requestPath := "/v1/secret/delete/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kvDeleteRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kvDeleteRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSecretDestroyPath Permanently removes one or more versions in the KV store
@@ -5076,18 +4028,14 @@ func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDest
 	requestPath := "/v1/secret/destroy/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kvDestroyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kvDestroyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSecretMetadataPath Configures settings for the KV store
@@ -5096,18 +4044,14 @@ func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMet
 	requestPath := "/v1/secret/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kvMetadataRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kvMetadataRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSecretUndeletePath Undeletes one or more versions from the KV store.
@@ -5116,54 +4060,42 @@ func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUnd
 	requestPath := "/v1/secret/undelete/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, kvUndeleteRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kvUndeleteRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshConfigCa Set the SSH private key used for signing certificates.
 func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/ca"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshConfigCaRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshConfigCaRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
 func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/zeroaddress"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshConfigZeroaddressRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshConfigZeroaddressRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshCredsRole Creates a credential for establishing SSH connection with the remote host.
@@ -5172,18 +4104,14 @@ func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsReq
 	requestPath := "/v1/ssh/creds/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshCredsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshCredsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshKeysKeyName Register a shared private key with Vault.
@@ -5192,36 +4120,28 @@ func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKey
 	requestPath := "/v1/ssh/keys/{key_name}"
 	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshKeysRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshKeysRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshLookup List all the roles associated with the given IP address.
 func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/lookup"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshLookupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshLookupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshRolesRole Manage the 'roles' that can be created with this backend.
@@ -5230,18 +4150,14 @@ func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesReq
 	requestPath := "/v1/ssh/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshRolesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshRolesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshSignRole Request signing an SSH key using a certain role with the provided details.
@@ -5250,54 +4166,42 @@ func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignReque
 	requestPath := "/v1/ssh/sign/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshSignRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshSignRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSshVerify Validate the OTP provided by Vault SSH Agent.
 func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/verify"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, sshVerifyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		sshVerifyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTerraformConfig
 func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, terraformConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		terraformConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
@@ -5306,18 +4210,14 @@ func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string) (*Res
 	requestPath := "/v1/terraform/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostTerraformRoleName
@@ -5326,18 +4226,14 @@ func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraf
 	requestPath := "/v1/terraform/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, terraformRoleRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		terraformRoleRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTerraformRotateRoleName
@@ -5346,18 +4242,14 @@ func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string) 
 	requestPath := "/v1/terraform/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostTotpCodeName Request time-based one-time use password or validate a password for a certain key .
@@ -5366,18 +4258,14 @@ func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeReq
 	requestPath := "/v1/totp/code/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, totpCodeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		totpCodeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTotpKeysName Manage the keys that can be created with this backend.
@@ -5386,36 +4274,28 @@ func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysReq
 	requestPath := "/v1/totp/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, totpKeysRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		totpKeysRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitCacheConfig Configures a new cache of the specified size
 func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/cache-config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitCacheConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitCacheConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitDatakeyPlaintextName Generate a data key
@@ -5426,18 +4306,14 @@ func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name stri
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"plaintext"+"}", url.PathEscape(plaintext), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitDatakeyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitDatakeyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitDecryptName Decrypt a ciphertext value using a named key
@@ -5446,18 +4322,14 @@ func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, trans
 	requestPath := "/v1/transit/decrypt/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitDecryptRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitDecryptRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks using a named key
@@ -5466,36 +4338,28 @@ func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, trans
 	requestPath := "/v1/transit/encrypt/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitEncryptRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitEncryptRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitHash Generate a hash sum for input data
 func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/hash"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitHashRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitHashRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitHashUrlalgorithm Generate a hash sum for input data
@@ -5504,18 +4368,14 @@ func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm 
 	requestPath := "/v1/transit/hash/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitHashRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitHashRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitHmacName Generate an HMAC for input data using the named key
@@ -5524,18 +4384,14 @@ func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitH
 	requestPath := "/v1/transit/hmac/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitHmacRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitHmacRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named key
@@ -5546,18 +4402,14 @@ func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name stri
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitHmacRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitHmacRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitKeysName Managed named encryption keys
@@ -5566,18 +4418,14 @@ func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitK
 	requestPath := "/v1/transit/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitKeysRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitKeysRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitKeysNameConfig Configure a named encryption key
@@ -5586,18 +4434,14 @@ func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, tr
 	requestPath := "/v1/transit/keys/{name}/config"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitKeysConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitKeysConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitKeysNameImport Imports an externally-generated key into a new transit key
@@ -5606,18 +4450,14 @@ func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, tr
 	requestPath := "/v1/transit/keys/{name}/import"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitKeysImportRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitKeysImportRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitKeysNameImportVersion Imports an externally-generated key into an existing imported key
@@ -5626,18 +4466,14 @@ func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name str
 	requestPath := "/v1/transit/keys/{name}/import_version"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitKeysImportVersionRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitKeysImportVersionRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitKeysNameRotate Rotate named encryption key
@@ -5646,18 +4482,14 @@ func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string) (*
 	requestPath := "/v1/transit/keys/{name}/rotate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostTransitKeysNameTrim Trim key versions of a named key
@@ -5666,36 +4498,28 @@ func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, tran
 	requestPath := "/v1/transit/keys/{name}/trim"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitKeysTrimRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitKeysTrimRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitRandom Generate random bytes
 func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/random"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitRandomSource Generate random bytes
@@ -5704,18 +4528,14 @@ func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, tr
 	requestPath := "/v1/transit/random/{source}"
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitRandomSourceUrlbytes Generate random bytes
@@ -5726,18 +4546,14 @@ func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source st
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitRandomUrlbytes Generate random bytes
@@ -5746,36 +4562,28 @@ func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string
 	requestPath := "/v1/transit/random/{urlbytes}"
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitRestore Restore the named key
 func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/restore"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitRestoreRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitRestoreRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitRestoreName Restore the named key
@@ -5784,18 +4592,14 @@ func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, trans
 	requestPath := "/v1/transit/restore/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitRestoreRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitRestoreRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitRewrapName Rewrap ciphertext
@@ -5804,18 +4608,14 @@ func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transi
 	requestPath := "/v1/transit/rewrap/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitRewrapRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitRewrapRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitSignName Generate a signature for input data using the named key
@@ -5824,18 +4624,14 @@ func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitS
 	requestPath := "/v1/transit/sign/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitSignRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitSignRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitSignNameUrlalgorithm Generate a signature for input data using the named key
@@ -5846,18 +4642,14 @@ func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name stri
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitSignRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitSignRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitVerifyName Verify a signature or HMAC for input data created using the named key
@@ -5866,18 +4658,14 @@ func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transi
 	requestPath := "/v1/transit/verify/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitVerifyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitVerifyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data created using the named key
@@ -5888,16 +4676,12 @@ func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name st
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, transitVerifyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitVerifyRequest,
+		nil, // request query parameters
+	)
 }

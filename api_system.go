@@ -28,18 +28,14 @@ func (a *System) DeleteSysAuditPath(ctx context.Context, path string) (*Response
 	requestPath := "/v1/sys/audit/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysAuthPath Disable the auth method at the given auth path
@@ -48,18 +44,14 @@ func (a *System) DeleteSysAuthPath(ctx context.Context, path string) (*Response[
 	requestPath := "/v1/sys/auth/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
@@ -67,36 +59,28 @@ func (a *System) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context
 	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysConfigCors Remove any CORS settings.
 func (a *System) DeleteSysConfigCors(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/config/cors"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysConfigUiHeadersHeader Remove a UI header.
@@ -105,54 +89,42 @@ func (a *System) DeleteSysConfigUiHeadersHeader(ctx context.Context, header stri
 	requestPath := "/v1/sys/config/ui/headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
 func (a *System) DeleteSysGenerateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/generate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
 func (a *System) DeleteSysGenerateRootAttempt(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/generate-root/attempt"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysMountsPath Disable the mount point specified at the given path.
@@ -161,18 +133,14 @@ func (a *System) DeleteSysMountsPath(ctx context.Context, path string) (*Respons
 	requestPath := "/v1/sys/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysPluginsCatalogName Remove the plugin with the given name.
@@ -181,18 +149,14 @@ func (a *System) DeleteSysPluginsCatalogName(ctx context.Context, name string) (
 	requestPath := "/v1/sys/plugins/catalog/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
@@ -203,18 +167,14 @@ func (a *System) DeleteSysPluginsCatalogTypeName(ctx context.Context, name strin
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysPoliciesAclName Delete the ACL policy with the given name.
@@ -223,18 +183,14 @@ func (a *System) DeleteSysPoliciesAclName(ctx context.Context, name string) (*Re
 	requestPath := "/v1/sys/policies/acl/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysPoliciesPasswordName Delete a password policy.
@@ -243,18 +199,14 @@ func (a *System) DeleteSysPoliciesPasswordName(ctx context.Context, name string)
 	requestPath := "/v1/sys/policies/password/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysPolicyName Delete the policy with the given name.
@@ -263,18 +215,14 @@ func (a *System) DeleteSysPolicyName(ctx context.Context, name string) (*Respons
 	requestPath := "/v1/sys/policy/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysQuotasRateLimitName
@@ -283,36 +231,28 @@ func (a *System) DeleteSysQuotasRateLimitName(ctx context.Context, name string) 
 	requestPath := "/v1/sys/quotas/rate-limit/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysRaw Delete the key with given path.
 func (a *System) DeleteSysRaw(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/raw"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysRawPath Delete the key with given path.
@@ -320,36 +260,28 @@ func (a *System) DeleteSysRawPath(ctx context.Context, path string) (*Response[m
 	requestPath := "/v1/sys/raw/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
 func (a *System) DeleteSysRekeyBackup(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/backup"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysRekeyInit Cancels any in-progress rekey.
@@ -357,36 +289,28 @@ func (a *System) DeleteSysRekeyBackup(ctx context.Context) (*Response[map[string
 func (a *System) DeleteSysRekeyInit(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/init"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 func (a *System) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/recovery-key-backup"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
@@ -394,54 +318,42 @@ func (a *System) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*Response
 func (a *System) DeleteSysRekeyVerify(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/verify"
 
-	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysAudit List the enabled audit devices.
 func (a *System) GetSysAudit(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/audit"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysAuth List the currently enabled credential backends.
 func (a *System) GetSysAuth(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/auth"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysAuthPath Read the configuration of the auth engine at the given path.
@@ -450,18 +362,14 @@ func (a *System) GetSysAuthPath(ctx context.Context, path string) (*Response[map
 	requestPath := "/v1/sys/auth/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysAuthPathTune Reads the given auth path's configuration.
@@ -471,36 +379,28 @@ func (a *System) GetSysAuthPathTune(ctx context.Context, path string) (*Response
 	requestPath := "/v1/sys/auth/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
 func (a *System) GetSysConfigAuditingRequestHeaders(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/config/auditing/request-headers"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
@@ -508,36 +408,28 @@ func (a *System) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, h
 	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysConfigCors Return the current CORS settings.
 func (a *System) GetSysConfigCors(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/config/cors"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
@@ -545,18 +437,14 @@ func (a *System) GetSysConfigCors(ctx context.Context) (*Response[map[string]int
 func (a *System) GetSysConfigStateSanitized(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/config/state/sanitized"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysConfigUiHeaders Return a list of configured UI headers.
@@ -564,18 +452,14 @@ func (a *System) GetSysConfigStateSanitized(ctx context.Context) (*Response[map[
 func (a *System) GetSysConfigUiHeaders(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/config/ui/headers/"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysConfigUiHeadersHeader Return the given UI header's configuration
@@ -584,90 +468,70 @@ func (a *System) GetSysConfigUiHeadersHeader(ctx context.Context, header string)
 	requestPath := "/v1/sys/config/ui/headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
 func (a *System) GetSysGenerateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/generate-root"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
 func (a *System) GetSysGenerateRootAttempt(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/generate-root/attempt"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysHaStatus Check the HA status of a Vault cluster
 func (a *System) GetSysHaStatus(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/ha-status"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysHealth Returns the health status of Vault.
 func (a *System) GetSysHealth(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/health"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysHostInfo Information about the host instance that this Vault server is running on.
@@ -675,18 +539,14 @@ func (a *System) GetSysHealth(ctx context.Context) (*Response[map[string]interfa
 func (a *System) GetSysHostInfo(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/host-info"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInFlightReq reports in-flight requests
@@ -694,216 +554,168 @@ func (a *System) GetSysHostInfo(ctx context.Context) (*Response[map[string]inter
 func (a *System) GetSysInFlightReq(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/in-flight-req"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInit Returns the initialization status of Vault.
 func (a *System) GetSysInit(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/init"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
 func (a *System) GetSysInternalCountersActivity(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/activity"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
 func (a *System) GetSysInternalCountersActivityExport(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/activity/export"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
 func (a *System) GetSysInternalCountersActivityMonthly(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/activity/monthly"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalCountersConfig Read the client count tracking configuration.
 func (a *System) GetSysInternalCountersConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalCountersEntities(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/entities"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalCountersRequests(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/requests"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalCountersTokens(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/tokens"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
 func (a *System) GetSysInternalSpecsOpenapi(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/specs/openapi"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalUiFeatureFlags Lists enabled feature flags.
 func (a *System) GetSysInternalUiFeatureFlags(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/ui/feature-flags"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
 func (a *System) GetSysInternalUiMounts(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/ui/mounts"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalUiMountsPath Return information about the given mount.
@@ -912,126 +724,98 @@ func (a *System) GetSysInternalUiMountsPath(ctx context.Context, path string) (*
 	requestPath := "/v1/sys/internal/ui/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalUiNamespaces(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/ui/namespaces"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalUiResultantAcl(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/ui/resultant-acl"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysKeyStatus Provides information about the backend encryption key.
 func (a *System) GetSysKeyStatus(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/key-status"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysLeader Returns the high availability status and current leader instance of Vault.
 func (a *System) GetSysLeader(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leader"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysLeases List leases associated with this Vault cluster
 func (a *System) GetSysLeases(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leases"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysLeasesCount Count of leases associated with this Vault cluster
 func (a *System) GetSysLeasesCount(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leases/count"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysLeasesLookup Returns a list of lease ids.
@@ -1039,18 +823,14 @@ func (a *System) GetSysLeasesCount(ctx context.Context) (*Response[map[string]in
 func (a *System) GetSysLeasesLookup(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leases/lookup/"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysLeasesLookupPrefix Returns a list of lease ids.
@@ -1060,18 +840,14 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 	requestPath := "/v1/sys/leases/lookup/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysMetrics Export the metrics aggregated for telemetry purpose.
@@ -1079,18 +855,14 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 func (a *System) GetSysMetrics(ctx context.Context, format string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/metrics"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysMonitor
@@ -1099,36 +871,28 @@ func (a *System) GetSysMetrics(ctx context.Context, format string) (*Response[ma
 func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/monitor"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysMounts List the currently mounted backends.
 func (a *System) GetSysMounts(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/mounts"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysMountsPath Read the configuration of the secret engine at the given path.
@@ -1137,18 +901,14 @@ func (a *System) GetSysMountsPath(ctx context.Context, path string) (*Response[m
 	requestPath := "/v1/sys/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysMountsPathTune Tune backend configuration parameters for this mount.
@@ -1157,36 +917,28 @@ func (a *System) GetSysMountsPathTune(ctx context.Context, path string) (*Respon
 	requestPath := "/v1/sys/mounts/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPluginsCatalog Lists all the plugins known to Vault
 func (a *System) GetSysPluginsCatalog(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/plugins/catalog"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
@@ -1195,18 +947,14 @@ func (a *System) GetSysPluginsCatalogName(ctx context.Context, name string) (*Re
 	requestPath := "/v1/sys/plugins/catalog/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPluginsCatalogType List the plugins in the catalog.
@@ -1216,18 +964,14 @@ func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, lis
 	requestPath := "/v1/sys/plugins/catalog/{type}"
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPluginsCatalogTypeName Return the configuration data for the plugin with the given name.
@@ -1238,18 +982,14 @@ func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, 
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPoliciesAcl List the configured access control policies.
@@ -1257,18 +997,14 @@ func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, 
 func (a *System) GetSysPoliciesAcl(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/policies/acl"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPoliciesAclName Retrieve information about the named ACL policy.
@@ -1277,18 +1013,14 @@ func (a *System) GetSysPoliciesAclName(ctx context.Context, name string) (*Respo
 	requestPath := "/v1/sys/policies/acl/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPoliciesPassword List the existing password policies.
@@ -1296,18 +1028,14 @@ func (a *System) GetSysPoliciesAclName(ctx context.Context, name string) (*Respo
 func (a *System) GetSysPoliciesPassword(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/policies/password"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPoliciesPasswordName Retrieve an existing password policy.
@@ -1316,18 +1044,14 @@ func (a *System) GetSysPoliciesPasswordName(ctx context.Context, name string) (*
 	requestPath := "/v1/sys/policies/password/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
@@ -1336,18 +1060,14 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 	requestPath := "/v1/sys/policies/password/{name}/generate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPolicy List the configured access control policies.
@@ -1355,18 +1075,14 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 func (a *System) GetSysPolicy(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/policy"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPolicyName Retrieve the policy body for the named policy.
@@ -1375,18 +1091,14 @@ func (a *System) GetSysPolicyName(ctx context.Context, name string) (*Response[m
 	requestPath := "/v1/sys/policy/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprof Returns an HTML page listing the available profiles.
@@ -1394,18 +1106,14 @@ func (a *System) GetSysPolicyName(ctx context.Context, name string) (*Response[m
 func (a *System) GetSysPprof(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofAllocs Returns a sampling of all past memory allocations.
@@ -1413,18 +1121,14 @@ func (a *System) GetSysPprof(ctx context.Context) (*Response[map[string]interfac
 func (a *System) GetSysPprofAllocs(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/allocs"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
@@ -1432,18 +1136,14 @@ func (a *System) GetSysPprofAllocs(ctx context.Context) (*Response[map[string]in
 func (a *System) GetSysPprofBlock(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/block"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofCmdline Returns the running program's command line.
@@ -1451,18 +1151,14 @@ func (a *System) GetSysPprofBlock(ctx context.Context) (*Response[map[string]int
 func (a *System) GetSysPprofCmdline(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/cmdline"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofGoroutine Returns stack traces of all current goroutines.
@@ -1470,18 +1166,14 @@ func (a *System) GetSysPprofCmdline(ctx context.Context) (*Response[map[string]i
 func (a *System) GetSysPprofGoroutine(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/goroutine"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofHeap Returns a sampling of memory allocations of live object.
@@ -1489,18 +1181,14 @@ func (a *System) GetSysPprofGoroutine(ctx context.Context) (*Response[map[string
 func (a *System) GetSysPprofHeap(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/heap"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofMutex Returns stack traces of holders of contended mutexes
@@ -1508,18 +1196,14 @@ func (a *System) GetSysPprofHeap(ctx context.Context) (*Response[map[string]inte
 func (a *System) GetSysPprofMutex(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/mutex"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
@@ -1527,18 +1211,14 @@ func (a *System) GetSysPprofMutex(ctx context.Context) (*Response[map[string]int
 func (a *System) GetSysPprofProfile(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/profile"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofSymbol Returns the program counters listed in the request.
@@ -1546,18 +1226,14 @@ func (a *System) GetSysPprofProfile(ctx context.Context) (*Response[map[string]i
 func (a *System) GetSysPprofSymbol(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/symbol"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
@@ -1565,18 +1241,14 @@ func (a *System) GetSysPprofSymbol(ctx context.Context) (*Response[map[string]in
 func (a *System) GetSysPprofThreadcreate(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/threadcreate"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysPprofTrace Returns the execution trace in binary form.
@@ -1584,36 +1256,28 @@ func (a *System) GetSysPprofThreadcreate(ctx context.Context) (*Response[map[str
 func (a *System) GetSysPprofTrace(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/pprof/trace"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysQuotasConfig
 func (a *System) GetSysQuotasConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/quotas/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysQuotasRateLimit
@@ -1621,18 +1285,14 @@ func (a *System) GetSysQuotasConfig(ctx context.Context) (*Response[map[string]i
 func (a *System) GetSysQuotasRateLimit(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/quotas/rate-limit"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysQuotasRateLimitName
@@ -1641,18 +1301,14 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string) (*R
 	requestPath := "/v1/sys/quotas/rate-limit/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRaw Read the value of the key at the given path.
@@ -1660,18 +1316,14 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string) (*R
 func (a *System) GetSysRaw(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/raw"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRawPath Read the value of the key at the given path.
@@ -1680,90 +1332,70 @@ func (a *System) GetSysRawPath(ctx context.Context, path string, list string) (*
 	requestPath := "/v1/sys/raw/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
 func (a *System) GetSysRekeyBackup(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/backup"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
 func (a *System) GetSysRekeyInit(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/init"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 func (a *System) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/recovery-key-backup"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
 func (a *System) GetSysRekeyVerify(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/verify"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRemountStatusMigrationId Check status of a mount migration
@@ -1772,72 +1404,56 @@ func (a *System) GetSysRemountStatusMigrationId(ctx context.Context, migrationId
 	requestPath := "/v1/sys/remount/status/{migration_id}"
 	requestPath = strings.Replace(requestPath, "{"+"migration_id"+"}", url.PathEscape(migrationId), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysReplicationStatus
 func (a *System) GetSysReplicationStatus(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/replication/status"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysRotateConfig
 func (a *System) GetSysRotateConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rotate/config"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysSealStatus Check the seal status of a Vault.
 func (a *System) GetSysSealStatus(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/seal-status"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysVersionHistory Returns map of historical version change entries
@@ -1845,36 +1461,28 @@ func (a *System) GetSysSealStatus(ctx context.Context) (*Response[map[string]int
 func (a *System) GetSysVersionHistory(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/version-history/"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // GetSysWrappingLookup Look up wrapping properties for the requester's token.
 func (a *System) GetSysWrappingLookup(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/wrapping/lookup"
 
-	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysAuditHashPath The hash of the given string via the given audit backend
@@ -1883,18 +1491,14 @@ func (a *System) PostSysAuditHashPath(ctx context.Context, path string, systemAu
 	requestPath := "/v1/sys/audit-hash/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemAuditHashRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemAuditHashRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysAuditPath Enable a new audit device at the supplied path.
@@ -1903,18 +1507,14 @@ func (a *System) PostSysAuditPath(ctx context.Context, path string, systemAuditR
 	requestPath := "/v1/sys/audit/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemAuditRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemAuditRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysAuthPath Enables a new auth method.
@@ -1924,18 +1524,14 @@ func (a *System) PostSysAuthPath(ctx context.Context, path string, systemAuthReq
 	requestPath := "/v1/sys/auth/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemAuthRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemAuthRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysAuthPathTune Tune configuration parameters for a given auth path.
@@ -1945,72 +1541,56 @@ func (a *System) PostSysAuthPathTune(ctx context.Context, path string, systemAut
 	requestPath := "/v1/sys/auth/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemAuthTuneRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemAuthTuneRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysCapabilities Fetches the capabilities of the given token on the given path.
 func (a *System) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/capabilities"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemCapabilitiesRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemCapabilitiesRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
 func (a *System) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/capabilities-accessor"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemCapabilitiesAccessorRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemCapabilitiesAccessorRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
 func (a *System) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/capabilities-self"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemCapabilitiesSelfRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemCapabilitiesSelfRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
@@ -2018,36 +1598,28 @@ func (a *System) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, 
 	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemConfigAuditingRequestHeadersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemConfigAuditingRequestHeadersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysConfigCors Configure the CORS settings.
 func (a *System) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/config/cors"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemConfigCorsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemConfigCorsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysConfigReloadSubsystem Reload the given subsystem
@@ -2055,18 +1627,14 @@ func (a *System) PostSysConfigReloadSubsystem(ctx context.Context, subsystem str
 	requestPath := "/v1/sys/config/reload/{subsystem}"
 	requestPath = strings.Replace(requestPath, "{"+"subsystem"+"}", url.PathEscape(subsystem), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
@@ -2075,18 +1643,14 @@ func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string
 	requestPath := "/v1/sys/config/ui/headers/{header}"
 	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemConfigUiHeadersRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemConfigUiHeadersRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysGenerateRoot Initializes a new root generation attempt.
@@ -2094,18 +1658,14 @@ func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string
 func (a *System) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/generate-root"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemGenerateRootRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemGenerateRootRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysGenerateRootAttempt Initializes a new root generation attempt.
@@ -2113,18 +1673,14 @@ func (a *System) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequ
 func (a *System) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/generate-root/attempt"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemGenerateRootAttemptRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemGenerateRootAttemptRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
@@ -2132,18 +1688,14 @@ func (a *System) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateR
 func (a *System) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/generate-root/update"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemGenerateRootUpdateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemGenerateRootUpdateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysInit Initialize a new Vault.
@@ -2151,72 +1703,56 @@ func (a *System) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRo
 func (a *System) PostSysInit(ctx context.Context, systemInitRequest SystemInitRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/init"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemInitRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemInitRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
 func (a *System) PostSysInternalCountersConfig(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/counters/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemInternalCountersConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemInternalCountersConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesLookup Retrieve lease metadata.
 func (a *System) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leases/lookup"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemLeasesLookupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemLeasesLookupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesRenew Renews a lease, requesting to extend the lease.
 func (a *System) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leases/renew"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemLeasesRenewRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemLeasesRenewRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
@@ -2225,36 +1761,28 @@ func (a *System) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId st
 	requestPath := "/v1/sys/leases/renew/{url_lease_id}"
 	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemLeasesRenewLeaseRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemLeasesRenewLeaseRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesRevoke Revokes a lease immediately.
 func (a *System) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leases/revoke"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemLeasesRevokeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemLeasesRevokeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
@@ -2264,18 +1792,14 @@ func (a *System) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix stri
 	requestPath := "/v1/sys/leases/revoke-force/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
@@ -2284,18 +1808,14 @@ func (a *System) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix str
 	requestPath := "/v1/sys/leases/revoke-prefix/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemLeasesRevokePrefixRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemLeasesRevokePrefixRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
@@ -2304,54 +1824,42 @@ func (a *System) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId s
 	requestPath := "/v1/sys/leases/revoke/{url_lease_id}"
 	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemLeasesRevokeLeaseRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemLeasesRevokeLeaseRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 func (a *System) PostSysLeasesTidy(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/leases/tidy"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
 func (a *System) PostSysMfaValidate(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/mfa/validate"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemMfaValidateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemMfaValidateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysMountsPath Enable a new secrets engine at the given path.
@@ -2360,18 +1868,14 @@ func (a *System) PostSysMountsPath(ctx context.Context, path string, systemMount
 	requestPath := "/v1/sys/mounts/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemMountsRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemMountsRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysMountsPathTune Tune backend configuration parameters for this mount.
@@ -2380,18 +1884,14 @@ func (a *System) PostSysMountsPathTune(ctx context.Context, path string, systemM
 	requestPath := "/v1/sys/mounts/{path}/tune"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemMountsTuneRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemMountsTuneRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
@@ -2400,18 +1900,14 @@ func (a *System) PostSysPluginsCatalogName(ctx context.Context, name string, sys
 	requestPath := "/v1/sys/plugins/catalog/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemPluginsCatalogRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemPluginsCatalogRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one with the supplied name.
@@ -2422,18 +1918,14 @@ func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string,
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemPluginsCatalogRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemPluginsCatalogRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysPluginsReloadBackend Reload mounted plugin backends.
@@ -2441,18 +1933,14 @@ func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string,
 func (a *System) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/plugins/reload/backend"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemPluginsReloadBackendRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemPluginsReloadBackendRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysPoliciesAclName Add a new or update an existing ACL policy.
@@ -2461,18 +1949,14 @@ func (a *System) PostSysPoliciesAclName(ctx context.Context, name string, system
 	requestPath := "/v1/sys/policies/acl/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemPoliciesAclRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemPoliciesAclRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysPoliciesPasswordName Add a new or update an existing password policy.
@@ -2481,18 +1965,14 @@ func (a *System) PostSysPoliciesPasswordName(ctx context.Context, name string, s
 	requestPath := "/v1/sys/policies/password/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemPoliciesPasswordRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemPoliciesPasswordRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysPolicyName Add a new or update an existing policy.
@@ -2501,36 +1981,28 @@ func (a *System) PostSysPolicyName(ctx context.Context, name string, systemPolic
 	requestPath := "/v1/sys/policy/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemPolicyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemPolicyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysQuotasConfig
 func (a *System) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/quotas/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemQuotasConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemQuotasConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysQuotasRateLimitName
@@ -2539,36 +2011,28 @@ func (a *System) PostSysQuotasRateLimitName(ctx context.Context, name string, sy
 	requestPath := "/v1/sys/quotas/rate-limit/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemQuotasRateLimitRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemQuotasRateLimitRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRaw Update the value of the key at the given path.
 func (a *System) PostSysRaw(ctx context.Context, systemRawRequest SystemRawRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/raw"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRawRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRawRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRawPath Update the value of the key at the given path.
@@ -2576,18 +2040,14 @@ func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawReque
 	requestPath := "/v1/sys/raw/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRawRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRawRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRekeyInit Initializes a new rekey attempt.
@@ -2595,90 +2055,70 @@ func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawReque
 func (a *System) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/init"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRekeyInitRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRekeyInitRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
 func (a *System) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/update"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRekeyUpdateRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRekeyUpdateRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
 func (a *System) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rekey/verify"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRekeyVerifyRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRekeyVerifyRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRemount Initiate a mount migration
 func (a *System) PostSysRemount(ctx context.Context, systemRemountRequest SystemRemountRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/remount"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRemountRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRemountRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRenew Renews a lease, requesting to extend the lease.
 func (a *System) PostSysRenew(ctx context.Context, systemRenewRequest SystemRenewRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/renew"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRenewRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRenewRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
@@ -2687,36 +2127,28 @@ func (a *System) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, 
 	requestPath := "/v1/sys/renew/{url_lease_id}"
 	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRenewLeaseRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRenewLeaseRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRevoke Revokes a lease immediately.
 func (a *System) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRevokeRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/revoke"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRevokeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRevokeRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
@@ -2726,18 +2158,14 @@ func (a *System) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*
 	requestPath := "/v1/sys/revoke-force/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
@@ -2746,18 +2174,14 @@ func (a *System) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, s
 	requestPath := "/v1/sys/revoke-prefix/{prefix}"
 	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRevokePrefixRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRevokePrefixRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRevokeUrlLeaseId Revokes a lease immediately.
@@ -2766,72 +2190,56 @@ func (a *System) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string,
 	requestPath := "/v1/sys/revoke/{url_lease_id}"
 	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRevokeLeaseRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRevokeLeaseRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysRotate Rotates the backend encryption key used to persist data.
 func (a *System) PostSysRotate(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rotate"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysRotateConfig
 func (a *System) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/rotate/config"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemRotateConfigRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemRotateConfigRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysSeal Seal the Vault.
 func (a *System) PostSysSeal(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/seal"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysStepDown Cause the node to give up active status.
@@ -2839,36 +2247,28 @@ func (a *System) PostSysSeal(ctx context.Context) (*Response[map[string]interfac
 func (a *System) PostSysStepDown(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/step-down"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }
 
 // PostSysToolsHash Generate a hash sum for input data
 func (a *System) PostSysToolsHash(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/tools/hash"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemToolsHashRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemToolsHashRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysToolsHashUrlalgorithm Generate a hash sum for input data
@@ -2877,36 +2277,28 @@ func (a *System) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm 
 	requestPath := "/v1/sys/tools/hash/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemToolsHashRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemToolsHashRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysToolsRandom Generate random bytes
 func (a *System) PostSysToolsRandom(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/tools/random"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemToolsRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemToolsRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysToolsRandomSource Generate random bytes
@@ -2915,18 +2307,14 @@ func (a *System) PostSysToolsRandomSource(ctx context.Context, source string, sy
 	requestPath := "/v1/sys/tools/random/{source}"
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemToolsRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemToolsRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysToolsRandomSourceUrlbytes Generate random bytes
@@ -2937,18 +2325,14 @@ func (a *System) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source st
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemToolsRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemToolsRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysToolsRandomUrlbytes Generate random bytes
@@ -2957,106 +2341,82 @@ func (a *System) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string
 	requestPath := "/v1/sys/tools/random/{urlbytes}"
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemToolsRandomRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemToolsRandomRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysUnseal Unseal the Vault.
 func (a *System) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUnsealRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/unseal"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemUnsealRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemUnsealRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysWrappingLookup Look up wrapping properties for the given token.
 func (a *System) PostSysWrappingLookup(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/wrapping/lookup"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemWrappingLookupRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemWrappingLookupRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysWrappingRewrap Rotates a response-wrapped token.
 func (a *System) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/wrapping/rewrap"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemWrappingRewrapRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemWrappingRewrapRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysWrappingUnwrap Unwraps a response-wrapped token.
 func (a *System) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/wrapping/unwrap"
 
-	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, systemWrappingUnwrapRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		systemWrappingUnwrapRequest,
+		nil, // request query parameters
+	)
 }
 
 // PostSysWrappingWrap Response-wraps an arbitrary JSON object.
 func (a *System) PostSysWrappingWrap(ctx context.Context) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/wrapping/wrap"
 
-	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := a.client.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		nil, // request query parameters
+	)
 }

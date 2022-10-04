@@ -30,7 +30,7 @@ func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, clie
 // sendRequestParseResponse is a helper function to construct a request, send
 // it to Vault and parse the response
 func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values) (*Response[ResponseT], error) {
-	req, err := client.newRequest(ctx, http.MethodDelete, path, body, parameters)
+	req, err := client.newRequest(ctx, method, path, body, parameters)
 	if err != nil {
 		return nil, err
 	}

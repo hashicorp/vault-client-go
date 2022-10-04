@@ -30,6 +30,31 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 	)
 }
 
+func (c *Client) Write(ctx context.Context, path string, body map[string]interface{}) (*Response[map[string]interface{}], error) {
+	var buf bytes.Buffer
+
+	if err := json.NewEncoder(&buf).Encode(body); err != nil {
+		return nil, fmt.Errorf("could not encode request body: %w", err)
+	}
+
+	return c.WriteFromReader(ctx, path, &buf)
+}
+
+func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte) (*Response[map[string]interface{}], error) {
+	return c.WriteFromReader(ctx, path, bytes.NewReader(body))
+}
+
+func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reader) (*Response[map[string]interface{}], error) {
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		c,
+		http.MethodPost,
+		fmt.Sprintf("/v1/%s", path),
+		body, // request body
+		nil,  // request query parameters
+	)
+}
+
 func (c *Client) List(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -53,31 +78,6 @@ func (c *Client) DeleteWithParameters(ctx context.Context, path string, paramete
 		fmt.Sprintf("/v1/%s", path),
 		nil,        // request body
 		parameters, // request query parameters
-	)
-}
-
-func (c *Client) Write(ctx context.Context, path string, body map[string]interface{}) (*Response[map[string]interface{}], error) {
-	var buf bytes.Buffer
-
-	if err := json.NewEncoder(&buf).Encode(body); err != nil {
-		return nil, fmt.Errorf("could not encode request body: %w", err)
-	}
-
-	return c.WriteFromReader(ctx, path, &buf)
-}
-
-func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte) (*Response[map[string]interface{}], error) {
-	return c.WriteFromReader(ctx, path, bytes.NewReader(body))
-}
-
-func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reader) (*Response[map[string]interface{}], error) {
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		c,
-		http.MethodPost,
-		fmt.Sprintf("/v1/%s", path),
-		body, // request body
-		nil,  // request query parameters
 	)
 }
 

@@ -73,10 +73,14 @@ type Configuration struct {
 	InitialNamespace string `env:"VAULT_NAMESPACE"`
 
 	// EnableSRVLookup enables the client to look up the Vault server host
-	// through DNS SRV lookup. The lookup will happen on each request.
+	// through DNS SRV lookup. The lookup will happen on each request. The base
+	// address' port must be empty for this setting to be respected.
 	//
-	// Note: enabling this could be useful when running a load balancer in
-	// front of your vault instance(s).
+	// Note: this feature is not designed for high availability, just
+	// discovery.
+	//
+	// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
+	// for more information
 	EnableSRVLookup bool `env:"VAULT_SRV_LOOKUP"`
 }
 

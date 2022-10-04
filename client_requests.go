@@ -16,7 +16,7 @@ import (
 )
 
 func (c *Client) Read(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
-	return c.ReadWithParameters(context.Background(), path, nil)
+	return c.ReadWithParameters(ctx, path, nil)
 }
 
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values) (*Response[map[string]interface{}], error) {

@@ -20,20 +20,14 @@ func (c *Client) Read(ctx context.Context, path string) (*Response[map[string]in
 }
 
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values) (*Response[map[string]interface{}], error) {
-	requestPath := fmt.Sprintf("/v1/%s", path)
-
-	req, err := c.newRequest(ctx, http.MethodGet, requestPath, nil, parameters)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := c.do(ctx, req, true)
-	if err != nil || resp == nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	return parseResponse[map[string]interface{}](resp.Body)
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		c,
+		http.MethodGet,
+		fmt.Sprintf("/v1/%s", path),
+		nil,        // request body
+		parameters, // request query parameters
+	)
 }
 
 func (c *Client) List(ctx context.Context, path string) (*Response[map[string]interface{}], error) {

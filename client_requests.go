@@ -15,6 +15,78 @@ import (
 	"golang.org/x/exp/slices"
 )
 
+func (c *Client) Read(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+	return c.ReadWithParameters(context.Background(), path, nil)
+}
+
+func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values) (*Response[map[string]interface{}], error) {
+	requestPath := fmt.Sprintf("/v1/%s", path)
+
+	req, err := c.newRequest(ctx, http.MethodGet, requestPath, nil, parameters)
+	if err != nil {
+		return nil, err
+	}
+
+	resp, err := c.do(ctx, req, true)
+	if err != nil || resp == nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	return parseResponse[map[string]interface{}](resp.Body)
+}
+
+func (c *Client) List(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		c,
+		http.MethodGet,
+		fmt.Sprintf("/v1/%s", path),
+		nil,                                   // request body
+		map[string][]string{"list": {"true"}}, // request query parameters
+	)
+}
+
+func (c *Client) Delete(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+	return c.DeleteWithParameters(ctx, path, nil)
+}
+
+func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values) (*Response[map[string]interface{}], error) {
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		c,
+		http.MethodDelete,
+		fmt.Sprintf("/v1/%s", path),
+		nil,        // request body
+		parameters, // request query parameters
+	)
+}
+
+func (c *Client) Write(ctx context.Context, path string, body map[string]interface{}) (*Response[map[string]interface{}], error) {
+	var buf bytes.Buffer
+
+	if err := json.NewEncoder(&buf).Encode(body); err != nil {
+		return nil, fmt.Errorf("could not encode request body: %w", err)
+	}
+
+	return c.WriteFromReader(ctx, path, &buf)
+}
+
+func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte) (*Response[map[string]interface{}], error) {
+	return c.WriteFromReader(ctx, path, bytes.NewReader(body))
+}
+
+func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reader) (*Response[map[string]interface{}], error) {
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		c,
+		http.MethodPost,
+		fmt.Sprintf("/v1/%s", path),
+		body, // request body
+		nil,  // request query parameters
+	)
+}
+
 // sendStructuredRequestParseResponse is a helper function to construct a
 // json.Marshaler encoded request, send it to Vault and parse the response
 func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body json.Marshaler, parameters url.Values) (*Response[ResponseT], error) {

@@ -89,7 +89,7 @@ func main() {
 _**Note**_: we are using the simple `Read` and `Write` methods to demonstrate
 the most generic way of accessing any data in Vault. A more specialized
 approach for reading and writing `KVv2` secrets is to use the generated
-`client.Secrets.GetSecretDataPath` / `client.Secrets.GetSecretDataPath`
+`client.Secrets.GetSecretDataPath` / `client.Secrets.PostSecretDataPath`
 endpoints.
 
 ## Accessing a Generated Endpoint
@@ -293,16 +293,13 @@ client, err := vault.NewClient(configuration)
 
 The vast majority of the code, including the client's endpoints, requests and
 responses is generated from the `OpenAPI` [specification file][openapi-spec]
-1.12.0 using [`openapi-generator`][openapi-generator]. Currently, the
-re-generation is done manually after making changes to `generate/templates/*`
-files by running the following:
+v1.13.0 using [`openapi-generator`][openapi-generator]. If you make any changes
+to the underlying templates (`generate/templates/*`), make sure to regenerate
+the files by running the following:
 
 ```shell-session
 make regen && go build
 ```
-
-In the future, we plan to automate (or enforce) the code generation process
-within CI pipelines.
 
 ## Under Development
 

@@ -293,7 +293,7 @@ client, err := vault.NewClient(configuration)
 
 The vast majority of the code, including the client's endpoints, requests and
 responses is generated from the `OpenAPI` [specification file][openapi-spec]
-v1.13.0 using [`openapi-generator`][openapi-generator]. If you make any changes
+v1.12.0 using [`openapi-generator`][openapi-generator]. If you make any changes
 to the underlying templates (`generate/templates/*`), make sure to regenerate
 the files by running the following:
 

@@ -45,6 +45,7 @@ The following features are coming soon:
 ## Installation
 
 ```shell-session
+export GOPRIVATE=github.com/hashicorp/vault-client-go
 go get github.com/hashicorp/vault-client-go
 ```
 

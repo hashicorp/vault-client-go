@@ -1,10 +1,13 @@
 # Go Client for HashiCorp Vault
 
+A simple client library [generated][openapi-generator] from `OpenAPI`
+[specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
+[Vault][vault].
+
 ## :warning: _Stability Warning: Under Development!_ :warning:
 
 ## Contents
 
-1. [Overview](#overview)
 1. [Installation](#installation)
 1. [Examples](#examples)
    - [Getting Started](#getting-started)
@@ -16,31 +19,8 @@
    - [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
    - [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
 1. [Building the Library](#building-the-library)
+1. [Under Development](#under-development)
 1. [Documentation for API Endpoints](#documentation-for-api-endpoints)
-
-## Overview
-
-A simple client library [generated][openapi-generator] from `OpenAPI`
-[specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
-[Vault][vault]. The library currently supports the following features:
-
-- TLS
-- Read/Write/Delete/List base accessors
-- Automatic retries on errors (using [go-retryablehttp][go-retryablehttp])
-- Custom redirect logic
-- Client-side rate limiting
-- Vault-specific headers (`X-Vault-Token`, `X-Vault-Namespace`, etc.) and custom headers
-- Request/Response callbacks
-- Environment variables for configuration
-- Read-your-writes semantics
-
-The following features are coming soon:
-
-- Structured responses (as part of the [specification file][openapi-spec])
-- Testing framework
-- CI/CD pipelines
-- Authentication wrappers
-- Other helpers & wrappers (KV, SSH, Monitor, Plugins, LifetimeWatcher, etc.)
 
 ## Installation
 
@@ -324,12 +304,36 @@ make regen && go build
 In the future, we plan to automate (or enforce) the code generation process
 within CI pipelines.
 
+## Under Development
+
+This library is currently under active development. Below is a list of
+high-level features that have been implemented:
+
+- TLS
+- Read/Write/Delete/List base accessors
+- Automatic retries on errors (using [go-retryablehttp][go-retryablehttp])
+- Custom redirect logic
+- Client-side rate limiting
+- Vault-specific headers (`X-Vault-Token`, `X-Vault-Namespace`, etc.) and custom headers
+- Request/Response callbacks
+- Environment variables for configuration
+- Read-your-writes semantics
+- Thread-safe cloning and client modifications
+
+The following features are coming soon:
+
+- Structured responses (as part of the [specification file][openapi-spec])
+- Testing framework
+- CI/CD pipelines
+- Authentication wrappers
+- Other helpers & wrappers (KV, SSH, Monitor, Plugins, LifetimeWatcher, etc.)
+
 ## Documentation for API Endpoints
 
-   - [Auth](docs/Auth.md)
-   - [Identity](docs/Identity.md)
-   - [Secrets](docs/Secrets.md)
-   - [System](docs/System.md)
+- [Auth](docs/Auth.md)
+- [Identity](docs/Identity.md)
+- [Secrets](docs/Secrets.md)
+- [System](docs/System.md)
 
 [hashicorp]:             https://www.hashicorp.com/
 [vault]:                 https://www.vaultproject.io/

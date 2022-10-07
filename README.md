@@ -29,7 +29,7 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 - Automatic retries on errors (using [go-retryablehttp][go-retryablehttp])
 - Custom redirect logic
 - Client-side rate limiting
-- Vault-specific headers (`X-Vault-Token`, `X-Vault-Header`, etc.)
+- Vault-specific headers (`X-Vault-Token`, `X-Vault-Namespace`, etc.) and custom headers
 - Request/Response callbacks
 - Environment variables for configuration
 - Read-your-writes semantics

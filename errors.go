@@ -1,9 +1,9 @@
 package vault
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"strings"
 )
@@ -48,11 +48,9 @@ func isErrorResponse(req *http.Request, resp *http.Response) *ErrorResponse {
 		RequestURL:    req.URL.String(),
 	}
 
-	// read the response into a buffer first so that we can return it as a raw
-	// error in case in cannot be parsed
-	var buf bytes.Buffer
-
-	_, err := buf.ReadFrom(resp.Body)
+	// read the entire response first so that we can return it as a raw error
+	// in case in cannot be parsed
+	responseBody, err := io.ReadAll(resp.Body)
 	if err != nil {
 		errorResponse.Errors = []string{
 			fmt.Sprintf("received an error response from vault but could not read its body: %s", err.Error()),
@@ -61,17 +59,17 @@ func isErrorResponse(req *http.Request, resp *http.Response) *ErrorResponse {
 	}
 
 	// decode
-	var responseBody struct {
+	var jsonResponseBody struct {
 		Errors []string `json:"errors"`
 	}
-	if err := json.NewDecoder(bytes.NewReader(buf.Bytes())).Decode(&responseBody); err != nil {
+	if err := json.Unmarshal(responseBody, &jsonResponseBody); err != nil {
 		errorResponse.Errors = []string{
-			buf.String(),
+			string(responseBody),
 		}
 		return errorResponse
 	}
 
-	errorResponse.Errors = responseBody.Errors
+	errorResponse.Errors = jsonResponseBody.Errors
 
 	return errorResponse
 }

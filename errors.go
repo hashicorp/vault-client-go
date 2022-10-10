@@ -64,7 +64,7 @@ func isErrorResponse(req *http.Request, resp *http.Response) *ErrorResponse {
 	var responseBody struct {
 		Errors []string `json:"errors"`
 	}
-	if err := json.NewDecoder(&buf).Decode(&responseBody); err != nil {
+	if err := json.NewDecoder(bytes.NewReader(buf.Bytes())).Decode(&responseBody); err != nil {
 		errorResponse.Errors = []string{
 			buf.String(),
 		}

@@ -79,14 +79,14 @@ type MFAMethodID struct {
 	UsesPasscode bool   `json:"uses_passcode"`
 }
 
-// parseResponse reads from the given io.Reader until EOF without closing the
-// reader and parses the data into a generic response structure
-func parseResponse[T any](r io.Reader) (*Response[T], error) {
+// parseResponse fully consumes the given response body without closing it and
+// parses the data into a generic response structure
+func parseResponse[T any](responseBody io.Reader) (*Response[T], error) {
 	// First, read the data into a buffer. This is not super efficient but we
 	// want to know if we actually have a body or not.
 	var buf bytes.Buffer
 
-	_, err := buf.ReadFrom(r)
+	_, err := buf.ReadFrom(responseBody)
 	if err != nil {
 		return nil, err
 	}

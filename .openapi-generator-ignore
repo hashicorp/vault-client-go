@@ -4,6 +4,7 @@ README.md
 
 configuration.go
 response.go
+utils.go
 
 git_push.sh
 

@@ -18,6 +18,7 @@ import (
 	"net/url"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
 )
@@ -70,6 +71,7 @@ type requestHeaders struct {
 	token                     string                    // 'X-Vault-Token'
 	namespace                 string                    // 'X-Vault-Namespace'
 	mfaCredentials            []string                  // 'X-Vault-MFA'
+	responseWrappingTTL		  time.Duration				// 'X-Vault-Wrap-TTL'
 	replicationForwardingMode ReplicationForwardingMode // 'X-Vault-Forward' or 'X-Vault-Inconsistent'
 	customHeaders             http.Header
 }

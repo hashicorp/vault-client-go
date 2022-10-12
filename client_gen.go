@@ -222,9 +222,12 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 	clone.headers = requestHeaders{
 		token:                     c.requestModifiers.headers.token,
 		namespace:                 c.requestModifiers.headers.namespace,
-		customHeaders:             c.requestModifiers.headers.customHeaders.Clone(),
+		responseWrappingTTL:       c.requestModifiers.headers.responseWrappingTTL,
 		replicationForwardingMode: c.requestModifiers.headers.replicationForwardingMode,
+		customHeaders:             c.requestModifiers.headers.customHeaders.Clone(),
 	}
+
+	copy(clone.headers.mfaCredentials, c.requestModifiers.headers.mfaCredentials)
 
 	return clone
 }

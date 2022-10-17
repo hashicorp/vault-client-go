@@ -322,7 +322,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -336,16 +335,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteAdConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteAdConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -376,7 +373,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -390,17 +386,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the set.
 
-	resp, err := client.Secrets.DeleteAdLibraryName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteAdLibraryName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -438,7 +432,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -452,17 +445,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.DeleteAdRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteAdRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -500,7 +491,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -514,16 +504,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteAlicloudConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteAlicloudConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -554,7 +542,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -568,17 +555,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The name of the role.
 
-	resp, err := client.Secrets.DeleteAlicloudRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteAlicloudRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -616,7 +601,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -630,17 +614,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the policy
 
-	resp, err := client.Secrets.DeleteAwsRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteAwsRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -678,7 +660,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -692,16 +673,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteAzureConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteAzureConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -732,7 +711,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -746,17 +724,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.DeleteAzureRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteAzureRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -794,7 +770,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -808,17 +783,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.DeleteConsulRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteConsulRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -856,7 +829,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -870,17 +842,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Specifies the path of the secret.
 
-	resp, err := client.Secrets.DeleteCubbyholePath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.DeleteCubbyholePath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -918,7 +888,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -932,17 +901,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name of the role.
 
-	resp, err := client.Secrets.DeleteGcpRolesetName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpRolesetName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -980,7 +947,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -994,17 +960,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 
-	resp, err := client.Secrets.DeleteGcpStaticAccountName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpStaticAccountName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1042,7 +1006,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1056,16 +1019,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteGcpkmsConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1096,7 +1057,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1110,17 +1070,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 
-	resp, err := client.Secrets.DeleteGcpkmsKeysDeregisterKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysDeregisterKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1158,7 +1116,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1172,17 +1129,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault.
 
-	resp, err := client.Secrets.DeleteGcpkmsKeysKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1220,7 +1175,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1234,17 +1188,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault.
 
-	resp, err := client.Secrets.DeleteGcpkmsKeysTrimKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysTrimKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1282,7 +1234,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1296,16 +1247,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteKubernetesConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteKubernetesConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1336,7 +1285,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1350,17 +1298,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.DeleteKubernetesRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteKubernetesRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1398,7 +1344,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1412,17 +1357,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.DeleteKvPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.DeleteKvPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1460,7 +1403,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1474,17 +1416,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the Roles
 
-	resp, err := client.Secrets.DeleteMongodbatlasRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteMongodbatlasRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1522,7 +1462,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1536,16 +1475,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteNomadConfigAccess(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteNomadConfigAccess(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1576,7 +1513,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1590,16 +1526,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteNomadConfigLease(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteNomadConfigLease(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1630,7 +1564,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1644,17 +1577,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.DeleteNomadRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteNomadRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1692,7 +1623,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1706,16 +1636,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteOpenldapConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1746,7 +1674,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1760,17 +1687,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role (lowercase)
 
-	resp, err := client.Secrets.DeleteOpenldapRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1808,7 +1733,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1822,17 +1746,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.DeleteOpenldapStaticRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapStaticRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1870,7 +1792,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1884,17 +1805,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
-	resp, err := client.Secrets.DeletePkiIssuerRefDerPem(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiIssuerRefDerPem(context.Background(), issuerRef)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1932,7 +1851,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1946,16 +1864,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeletePkiJson(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiJson(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1986,7 +1902,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2000,17 +1915,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 
-	resp, err := client.Secrets.DeletePkiKeyKeyRef(context.Background(), keyRef)
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiKeyKeyRef(context.Background(), keyRef)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2048,7 +1961,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2062,17 +1974,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.DeletePkiRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2110,7 +2020,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2124,16 +2033,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeletePkiRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2164,7 +2071,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2178,17 +2084,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.DeleteRabbitmqRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteRabbitmqRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2226,7 +2130,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2240,17 +2143,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.DeleteSecretDataPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSecretDataPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2288,7 +2189,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2302,17 +2202,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.DeleteSecretMetadataPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSecretMetadataPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2350,7 +2248,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2364,16 +2261,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteSshConfigCa(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteSshConfigCa(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2404,7 +2299,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2418,16 +2312,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteSshConfigZeroaddress(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteSshConfigZeroaddress(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2458,7 +2350,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2472,17 +2363,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	keyName := "keyName_example" // string | [Required] Name of the key
 
-	resp, err := client.Secrets.DeleteSshKeysKeyName(context.Background(), keyName)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSshKeysKeyName(context.Background(), keyName)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2520,7 +2409,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2534,17 +2422,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 
-	resp, err := client.Secrets.DeleteSshRolesRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSshRolesRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2582,7 +2468,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2596,16 +2481,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.DeleteTerraformConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteTerraformConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2636,7 +2519,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2650,17 +2532,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.DeleteTerraformRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteTerraformRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2698,7 +2578,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2712,17 +2591,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key.
 
-	resp, err := client.Secrets.DeleteTotpKeysName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteTotpKeysName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2760,7 +2637,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2774,17 +2650,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
-	resp, err := client.Secrets.DeleteTransitKeysName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteTransitKeysName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2822,7 +2696,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2836,16 +2709,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetAdConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetAdConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2876,7 +2747,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2890,17 +2760,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetAdCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAdCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2938,7 +2806,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2952,17 +2819,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetAdLibrary(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetAdLibrary(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2996,7 +2861,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3010,17 +2874,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the set.
 
-	resp, err := client.Secrets.GetAdLibraryName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAdLibraryName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3058,7 +2920,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3072,17 +2933,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the set.
 
-	resp, err := client.Secrets.GetAdLibraryNameStatus(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAdLibraryNameStatus(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3120,7 +2979,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3134,17 +2992,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetAdRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetAdRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3178,7 +3034,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3192,17 +3047,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetAdRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAdRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3240,7 +3093,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3254,16 +3106,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetAdRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetAdRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3294,7 +3144,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3308,16 +3157,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetAlicloudConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetAlicloudConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3348,7 +3195,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3362,17 +3208,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The name of the role.
 
-	resp, err := client.Secrets.GetAlicloudCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAlicloudCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3410,7 +3254,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3424,17 +3267,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetAlicloudRole(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetAlicloudRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3468,7 +3309,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3482,17 +3322,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The name of the role.
 
-	resp, err := client.Secrets.GetAlicloudRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAlicloudRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3530,7 +3368,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3544,16 +3381,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetAwsConfigLease(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetAwsConfigLease(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3584,7 +3419,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3598,16 +3432,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetAwsConfigRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetAwsConfigRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3638,7 +3470,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3652,16 +3483,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetAwsCreds(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetAwsCreds(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3692,7 +3521,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3706,17 +3534,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetAwsRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetAwsRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3750,7 +3576,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3764,17 +3589,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the policy
 
-	resp, err := client.Secrets.GetAwsRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAwsRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3812,7 +3635,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3826,17 +3648,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetAwsStsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAwsStsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3874,7 +3694,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3888,16 +3707,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetAzureConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetAzureConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3928,7 +3745,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3942,17 +3758,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | Name of the Vault role
 
-	resp, err := client.Secrets.GetAzureCredsRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Secrets.GetAzureCredsRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3990,7 +3804,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4004,17 +3817,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetAzureRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetAzureRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4048,7 +3859,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4062,17 +3872,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.GetAzureRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetAzureRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4110,7 +3918,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4124,16 +3931,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetConsulConfigAccess(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetConsulConfigAccess(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4164,7 +3969,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4178,17 +3982,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | Name of the role.
 
-	resp, err := client.Secrets.GetConsulCredsRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Secrets.GetConsulCredsRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4226,7 +4028,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4240,17 +4041,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetConsulRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetConsulRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4284,7 +4083,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4298,17 +4096,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.GetConsulRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetConsulRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4346,7 +4142,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4360,18 +4155,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Specifies the path of the secret.
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetCubbyholePath(context.Background(), path, list)
+	resp, err := client.WithToken("my-token").Secrets.GetCubbyholePath(context.Background(), path, list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4410,7 +4203,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4424,16 +4216,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetGcpConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetGcpConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4464,7 +4254,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4478,17 +4267,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
-	resp, err := client.Secrets.GetGcpKeyRoleset(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpKeyRoleset(context.Background(), roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4526,7 +4313,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4540,17 +4326,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name of the role.
 
-	resp, err := client.Secrets.GetGcpRolesetName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesetName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4588,7 +4372,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4602,17 +4385,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
-	resp, err := client.Secrets.GetGcpRolesetRolesetKey(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesetRolesetKey(context.Background(), roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4650,7 +4431,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4664,17 +4444,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
-	resp, err := client.Secrets.GetGcpRolesetRolesetToken(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesetRolesetToken(context.Background(), roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4712,7 +4490,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4726,17 +4503,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetGcpRolesets(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesets(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4770,7 +4545,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4784,17 +4558,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 
-	resp, err := client.Secrets.GetGcpStaticAccountName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccountName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4832,7 +4604,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4846,17 +4617,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name of the static account.
 
-	resp, err := client.Secrets.GetGcpStaticAccountNameKey(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccountNameKey(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4894,7 +4663,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4908,17 +4676,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name of the static account.
 
-	resp, err := client.Secrets.GetGcpStaticAccountNameToken(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccountNameToken(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4956,7 +4722,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4970,17 +4735,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetGcpStaticAccounts(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccounts(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5014,7 +4777,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5028,17 +4790,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
-	resp, err := client.Secrets.GetGcpTokenRoleset(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpTokenRoleset(context.Background(), roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5076,7 +4836,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5090,16 +4849,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetGcpkmsConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5130,7 +4887,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5144,17 +4900,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetGcpkmsKeys(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsKeys(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5188,7 +4942,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5202,17 +4955,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault.
 
-	resp, err := client.Secrets.GetGcpkmsKeysConfigKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsKeysConfigKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5250,7 +5001,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5264,17 +5014,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault.
 
-	resp, err := client.Secrets.GetGcpkmsKeysKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsKeysKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5312,7 +5060,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5326,17 +5073,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
 
-	resp, err := client.Secrets.GetGcpkmsPubkeyKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsPubkeyKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5374,7 +5119,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5388,16 +5132,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetKubernetesConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetKubernetesConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5428,7 +5170,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5442,17 +5183,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetKubernetesRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetKubernetesRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5486,7 +5225,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5500,17 +5238,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetKubernetesRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetKubernetesRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5548,7 +5284,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5562,18 +5297,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetKvPath(context.Background(), path, list)
+	resp, err := client.WithToken("my-token").Secrets.GetKvPath(context.Background(), path, list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5612,7 +5345,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5626,16 +5358,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetMongodbatlasConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5666,7 +5396,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5680,17 +5409,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetMongodbatlasCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5728,7 +5455,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5742,17 +5468,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetMongodbatlasRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5786,7 +5510,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5800,17 +5523,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the Roles
 
-	resp, err := client.Secrets.GetMongodbatlasRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5848,7 +5569,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5862,16 +5582,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetNomadConfigAccess(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetNomadConfigAccess(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5902,7 +5620,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5916,16 +5633,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetNomadConfigLease(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetNomadConfigLease(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5956,7 +5671,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5970,17 +5684,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetNomadCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetNomadCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6018,7 +5730,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6032,17 +5743,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetNomadRole(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetNomadRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6076,7 +5785,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6090,17 +5798,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetNomadRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetNomadRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6138,7 +5844,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6152,16 +5857,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetOpenldapConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6192,7 +5895,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6206,17 +5908,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the dynamic role.
 
-	resp, err := client.Secrets.GetOpenldapCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6254,7 +5954,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6268,17 +5967,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetOpenldapRole(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6312,7 +6009,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6326,17 +6022,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role (lowercase)
 
-	resp, err := client.Secrets.GetOpenldapRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6374,7 +6068,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6388,17 +6081,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the static role.
 
-	resp, err := client.Secrets.GetOpenldapStaticCredName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapStaticCredName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6436,7 +6127,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6450,17 +6140,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetOpenldapStaticRole(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapStaticRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6494,7 +6182,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6508,17 +6195,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetOpenldapStaticRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapStaticRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6556,7 +6241,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6570,16 +6254,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCa(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCa(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6610,7 +6292,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6624,16 +6305,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCaChain(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCaChain(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6664,7 +6343,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6678,16 +6356,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCaPem(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCaPem(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6718,7 +6394,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6732,16 +6407,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCertCaChain(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCertCaChain(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6772,7 +6445,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6786,16 +6458,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCertCrl(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCertCrl(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6826,7 +6496,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6840,17 +6509,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 
-	resp, err := client.Secrets.GetPkiCertSerial(context.Background(), serial)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCertSerial(context.Background(), serial)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6888,7 +6555,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6902,17 +6568,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 
-	resp, err := client.Secrets.GetPkiCertSerialRaw(context.Background(), serial)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCertSerialRaw(context.Background(), serial)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6950,7 +6614,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6964,17 +6627,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 
-	resp, err := client.Secrets.GetPkiCertSerialRawPem(context.Background(), serial)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCertSerialRawPem(context.Background(), serial)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7012,7 +6673,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7026,17 +6686,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetPkiCerts(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCerts(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7070,7 +6728,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7084,16 +6741,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiConfigCrl(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigCrl(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7124,7 +6779,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7138,16 +6792,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiConfigIssuers(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigIssuers(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7178,7 +6830,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7192,16 +6843,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiConfigKeys(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigKeys(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7232,7 +6881,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7246,16 +6894,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiConfigUrls(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigUrls(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7286,7 +6932,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7300,16 +6945,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCrl(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCrl(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7340,7 +6983,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7354,16 +6996,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCrlPem(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCrlPem(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7394,7 +7034,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7408,16 +7047,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiCrlRotate(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCrlRotate(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7448,7 +7085,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7462,16 +7098,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiDer(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiDer(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7502,7 +7136,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7516,17 +7149,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
-	resp, err := client.Secrets.GetPkiIssuerRefCrlPem(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuerRefCrlPem(context.Background(), issuerRef)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7564,7 +7195,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7578,17 +7208,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
-	resp, err := client.Secrets.GetPkiIssuerRefDerPem(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuerRefDerPem(context.Background(), issuerRef)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7626,7 +7254,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7640,17 +7267,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetPkiIssuers(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7684,7 +7309,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7698,16 +7322,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiJson(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiJson(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7738,7 +7360,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7752,17 +7373,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 
-	resp, err := client.Secrets.GetPkiKeyKeyRef(context.Background(), keyRef)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiKeyKeyRef(context.Background(), keyRef)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7800,7 +7419,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7814,17 +7432,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetPkiKeys(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiKeys(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7858,7 +7474,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7872,17 +7487,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetPkiRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7916,7 +7529,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7930,17 +7542,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetPkiRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -7978,7 +7588,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -7992,16 +7601,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetPkiTidyStatus(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetPkiTidyStatus(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8032,7 +7639,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8046,16 +7652,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetRabbitmqConfigLease(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqConfigLease(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8086,7 +7690,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8100,17 +7703,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.GetRabbitmqCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8148,7 +7749,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8162,17 +7762,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetRabbitmqRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8206,7 +7804,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8220,17 +7817,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.GetRabbitmqRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqRolesName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8268,7 +7863,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8282,16 +7876,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetSecretConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetSecretConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8322,7 +7914,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8336,17 +7927,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.GetSecretDataPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.GetSecretDataPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8384,7 +7973,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8398,18 +7986,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetSecretMetadataPath(context.Background(), path, list)
+	resp, err := client.WithToken("my-token").Secrets.GetSecretMetadataPath(context.Background(), path, list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8448,7 +8034,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8462,17 +8047,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.GetSecretSubkeysPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.GetSecretSubkeysPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8510,7 +8093,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8524,16 +8106,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetSshConfigCa(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetSshConfigCa(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8564,7 +8144,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8578,16 +8157,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetSshConfigZeroaddress(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetSshConfigZeroaddress(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8618,7 +8195,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8632,16 +8208,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetSshPublicKey(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetSshPublicKey(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8672,7 +8246,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8686,17 +8259,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetSshRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetSshRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8730,7 +8301,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8744,17 +8314,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 
-	resp, err := client.Secrets.GetSshRolesRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Secrets.GetSshRolesRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8792,7 +8360,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8806,16 +8373,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetTerraformConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetTerraformConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8846,7 +8411,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8860,17 +8424,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetTerraformCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetTerraformCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8908,7 +8470,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8922,17 +8483,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetTerraformRole(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetTerraformRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -8966,7 +8525,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -8980,17 +8538,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.GetTerraformRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetTerraformRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9028,7 +8584,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9042,17 +8597,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key.
 
-	resp, err := client.Secrets.GetTotpCodeName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetTotpCodeName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9090,7 +8643,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9104,17 +8656,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetTotpKeys(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetTotpKeys(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9148,7 +8698,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9162,17 +8711,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key.
 
-	resp, err := client.Secrets.GetTotpKeysName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetTotpKeysName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9210,7 +8757,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9224,17 +8770,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
-	resp, err := client.Secrets.GetTransitBackupName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetTransitBackupName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9272,7 +8816,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9286,16 +8829,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetTransitCacheConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetTransitCacheConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9326,7 +8867,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9340,18 +8880,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 
-	resp, err := client.Secrets.GetTransitExportTypeName(context.Background(), name, type_)
+	resp, err := client.WithToken("my-token").Secrets.GetTransitExportTypeName(context.Background(), name, type_)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9391,7 +8929,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9405,19 +8942,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 	version := "version_example" // string | Version of the key
 
-	resp, err := client.Secrets.GetTransitExportTypeNameVersion(context.Background(), name, type_, version)
+	resp, err := client.WithToken("my-token").Secrets.GetTransitExportTypeNameVersion(context.Background(), name, type_, version)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9459,7 +8994,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9473,17 +9007,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.GetTransitKeys(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.GetTransitKeys(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9517,7 +9049,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9531,17 +9062,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
-	resp, err := client.Secrets.GetTransitKeysName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.GetTransitKeysName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9579,7 +9108,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9593,16 +9121,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.GetTransitWrappingKey(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.GetTransitWrappingKey(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9633,7 +9159,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9647,17 +9172,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	adConfigRequest := NewAdConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostAdConfig(context.Background(), adConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAdConfig(context.Background(), adConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9691,7 +9214,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9705,18 +9227,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the set.
 
 	adLibraryManageCheckInRequest := NewAdLibraryManageCheckInRequestWithDefaults()
-	resp, err := client.Secrets.PostAdLibraryManageNameCheckIn(context.Background(), name, adLibraryManageCheckInRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryManageNameCheckIn(context.Background(), name, adLibraryManageCheckInRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9755,7 +9275,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9769,18 +9288,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the set.
 
 	adLibraryRequest := NewAdLibraryRequestWithDefaults()
-	resp, err := client.Secrets.PostAdLibraryName(context.Background(), name, adLibraryRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryName(context.Background(), name, adLibraryRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9819,7 +9336,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9833,18 +9349,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the set.
 
 	adLibraryCheckInRequest := NewAdLibraryCheckInRequestWithDefaults()
-	resp, err := client.Secrets.PostAdLibraryNameCheckIn(context.Background(), name, adLibraryCheckInRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryNameCheckIn(context.Background(), name, adLibraryCheckInRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9883,7 +9397,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9897,18 +9410,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the set
 
 	adLibraryCheckOutRequest := NewAdLibraryCheckOutRequestWithDefaults()
-	resp, err := client.Secrets.PostAdLibraryNameCheckOut(context.Background(), name, adLibraryCheckOutRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryNameCheckOut(context.Background(), name, adLibraryCheckOutRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -9947,7 +9458,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -9961,18 +9471,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	adRolesRequest := NewAdRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostAdRolesName(context.Background(), name, adRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAdRolesName(context.Background(), name, adRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10011,7 +9519,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10025,17 +9532,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the static role
 
-	resp, err := client.Secrets.PostAdRotateRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostAdRotateRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10073,7 +9578,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10087,16 +9591,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.PostAdRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.PostAdRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10127,7 +9629,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10141,17 +9642,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	alicloudConfigRequest := NewAlicloudConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostAlicloudConfig(context.Background(), alicloudConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAlicloudConfig(context.Background(), alicloudConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10185,7 +9684,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10199,18 +9697,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The name of the role.
 
 	alicloudRoleRequest := NewAlicloudRoleRequestWithDefaults()
-	resp, err := client.Secrets.PostAlicloudRoleName(context.Background(), name, alicloudRoleRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAlicloudRoleName(context.Background(), name, alicloudRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10249,7 +9745,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10263,17 +9758,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	awsConfigLeaseRequest := NewAwsConfigLeaseRequestWithDefaults()
-	resp, err := client.Secrets.PostAwsConfigLease(context.Background(), awsConfigLeaseRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAwsConfigLease(context.Background(), awsConfigLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10307,7 +9800,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10321,17 +9813,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	awsConfigRootRequest := NewAwsConfigRootRequestWithDefaults()
-	resp, err := client.Secrets.PostAwsConfigRoot(context.Background(), awsConfigRootRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAwsConfigRoot(context.Background(), awsConfigRootRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10365,7 +9855,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10379,16 +9868,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.PostAwsConfigRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.PostAwsConfigRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10419,7 +9906,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10433,17 +9919,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	awsCredsRequest := NewAwsCredsRequestWithDefaults()
-	resp, err := client.Secrets.PostAwsCreds(context.Background(), awsCredsRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAwsCreds(context.Background(), awsCredsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10477,7 +9961,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10491,18 +9974,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the policy
 
 	awsRolesRequest := NewAwsRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostAwsRolesName(context.Background(), name, awsRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAwsRolesName(context.Background(), name, awsRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10541,7 +10022,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10555,18 +10035,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	awsStsRequest := NewAwsStsRequestWithDefaults()
-	resp, err := client.Secrets.PostAwsStsName(context.Background(), name, awsStsRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAwsStsName(context.Background(), name, awsStsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10605,7 +10083,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10619,17 +10096,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	azureConfigRequest := NewAzureConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostAzureConfig(context.Background(), azureConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAzureConfig(context.Background(), azureConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10663,7 +10138,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10677,18 +10151,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
 	azureRolesRequest := NewAzureRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostAzureRolesName(context.Background(), name, azureRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostAzureRolesName(context.Background(), name, azureRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10727,7 +10199,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10741,16 +10212,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.PostAzureRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.PostAzureRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10781,7 +10250,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10795,17 +10263,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	consulConfigAccessRequest := NewConsulConfigAccessRequestWithDefaults()
-	resp, err := client.Secrets.PostConsulConfigAccess(context.Background(), consulConfigAccessRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostConsulConfigAccess(context.Background(), consulConfigAccessRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10839,7 +10305,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10853,18 +10318,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
 	consulRolesRequest := NewConsulRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostConsulRolesName(context.Background(), name, consulRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostConsulRolesName(context.Background(), name, consulRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10903,7 +10366,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10917,17 +10379,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Specifies the path of the secret.
 
-	resp, err := client.Secrets.PostCubbyholePath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.PostCubbyholePath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -10965,7 +10425,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -10979,17 +10438,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	gcpConfigRequest := NewGcpConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpConfig(context.Background(), gcpConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpConfig(context.Background(), gcpConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11023,7 +10480,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11037,16 +10493,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.PostGcpConfigRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.PostGcpConfigRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11077,7 +10531,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11091,18 +10544,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
 	gcpKeyRequest := NewGcpKeyRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpKeyRoleset(context.Background(), roleset, gcpKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpKeyRoleset(context.Background(), roleset, gcpKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11141,7 +10592,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11155,18 +10605,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name of the role.
 
 	gcpRolesetRequest := NewGcpRolesetRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpRolesetName(context.Background(), name, gcpRolesetRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetName(context.Background(), name, gcpRolesetRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11205,7 +10653,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11219,17 +10666,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.PostGcpRolesetNameRotate(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetNameRotate(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11267,7 +10712,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11281,17 +10725,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
-	resp, err := client.Secrets.PostGcpRolesetNameRotateKey(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetNameRotateKey(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11329,7 +10771,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11343,18 +10784,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
 	gcpRolesetKeyRequest := NewGcpRolesetKeyRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpRolesetRolesetKey(context.Background(), roleset, gcpRolesetKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetRolesetKey(context.Background(), roleset, gcpRolesetKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11393,7 +10832,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11407,17 +10845,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
-	resp, err := client.Secrets.PostGcpRolesetRolesetToken(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetRolesetToken(context.Background(), roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11455,7 +10891,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11469,18 +10904,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 
 	gcpStaticAccountRequest := NewGcpStaticAccountRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpStaticAccountName(context.Background(), name, gcpStaticAccountRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountName(context.Background(), name, gcpStaticAccountRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11519,7 +10952,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11533,18 +10965,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name of the static account.
 
 	gcpStaticAccountKeyRequest := NewGcpStaticAccountKeyRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpStaticAccountNameKey(context.Background(), name, gcpStaticAccountKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountNameKey(context.Background(), name, gcpStaticAccountKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11583,7 +11013,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11597,17 +11026,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the account.
 
-	resp, err := client.Secrets.PostGcpStaticAccountNameRotateKey(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountNameRotateKey(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11645,7 +11072,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11659,17 +11085,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Required. Name of the static account.
 
-	resp, err := client.Secrets.PostGcpStaticAccountNameToken(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountNameToken(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11707,7 +11131,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11721,17 +11144,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 
-	resp, err := client.Secrets.PostGcpTokenRoleset(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpTokenRoleset(context.Background(), roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11769,7 +11190,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11783,17 +11203,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	gcpkmsConfigRequest := NewGcpkmsConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsConfig(context.Background(), gcpkmsConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsConfig(context.Background(), gcpkmsConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11827,7 +11245,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11841,18 +11258,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 
 	gcpkmsDecryptRequest := NewGcpkmsDecryptRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsDecryptKey(context.Background(), key, gcpkmsDecryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsDecryptKey(context.Background(), key, gcpkmsDecryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11891,7 +11306,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11905,18 +11319,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 
 	gcpkmsEncryptRequest := NewGcpkmsEncryptRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsEncryptKey(context.Background(), key, gcpkmsEncryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsEncryptKey(context.Background(), key, gcpkmsEncryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -11955,7 +11367,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -11969,18 +11380,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault.
 
 	gcpkmsKeysConfigRequest := NewGcpkmsKeysConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsKeysConfigKey(context.Background(), key, gcpkmsKeysConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysConfigKey(context.Background(), key, gcpkmsKeysConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12019,7 +11428,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12033,17 +11441,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 
-	resp, err := client.Secrets.PostGcpkmsKeysDeregisterKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysDeregisterKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12081,7 +11487,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12095,18 +11500,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault.
 
 	gcpkmsKeysRequest := NewGcpkmsKeysRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsKeysKey(context.Background(), key, gcpkmsKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysKey(context.Background(), key, gcpkmsKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12145,7 +11548,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12159,18 +11561,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
 
 	gcpkmsKeysRegisterRequest := NewGcpkmsKeysRegisterRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsKeysRegisterKey(context.Background(), key, gcpkmsKeysRegisterRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysRegisterKey(context.Background(), key, gcpkmsKeysRegisterRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12209,7 +11609,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12223,17 +11622,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
 
-	resp, err := client.Secrets.PostGcpkmsKeysRotateKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysRotateKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12271,7 +11668,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12285,17 +11681,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault.
 
-	resp, err := client.Secrets.PostGcpkmsKeysTrimKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysTrimKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12333,7 +11727,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12347,18 +11740,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
 
 	gcpkmsReencryptRequest := NewGcpkmsReencryptRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsReencryptKey(context.Background(), key, gcpkmsReencryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsReencryptKey(context.Background(), key, gcpkmsReencryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12397,7 +11788,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12411,18 +11801,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 
 	gcpkmsSignRequest := NewGcpkmsSignRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsSignKey(context.Background(), key, gcpkmsSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsSignKey(context.Background(), key, gcpkmsSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12461,7 +11849,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12475,18 +11862,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 
 	gcpkmsVerifyRequest := NewGcpkmsVerifyRequestWithDefaults()
-	resp, err := client.Secrets.PostGcpkmsVerifyKey(context.Background(), key, gcpkmsVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsVerifyKey(context.Background(), key, gcpkmsVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12525,7 +11910,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12539,17 +11923,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	kubernetesConfigRequest := NewKubernetesConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostKubernetesConfig(context.Background(), kubernetesConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostKubernetesConfig(context.Background(), kubernetesConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12583,7 +11965,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12597,18 +11978,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the Vault role
 
 	kubernetesCredsRequest := NewKubernetesCredsRequestWithDefaults()
-	resp, err := client.Secrets.PostKubernetesCredsName(context.Background(), name, kubernetesCredsRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostKubernetesCredsName(context.Background(), name, kubernetesCredsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12647,7 +12026,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12661,18 +12039,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	kubernetesRolesRequest := NewKubernetesRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostKubernetesRolesName(context.Background(), name, kubernetesRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostKubernetesRolesName(context.Background(), name, kubernetesRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12711,7 +12087,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12725,17 +12100,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.PostKvPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.PostKvPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12773,7 +12146,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12787,17 +12159,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	mongodbatlasConfigRequest := NewMongodbatlasConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostMongodbatlasConfig(context.Background(), mongodbatlasConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostMongodbatlasConfig(context.Background(), mongodbatlasConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12831,7 +12201,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12845,17 +12214,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.PostMongodbatlasCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostMongodbatlasCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12893,7 +12260,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12907,18 +12273,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the Roles
 
 	mongodbatlasRolesRequest := NewMongodbatlasRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostMongodbatlasRolesName(context.Background(), name, mongodbatlasRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostMongodbatlasRolesName(context.Background(), name, mongodbatlasRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -12957,7 +12321,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -12971,17 +12334,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	nomadConfigAccessRequest := NewNomadConfigAccessRequestWithDefaults()
-	resp, err := client.Secrets.PostNomadConfigAccess(context.Background(), nomadConfigAccessRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostNomadConfigAccess(context.Background(), nomadConfigAccessRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13015,7 +12376,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13029,17 +12389,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	nomadConfigLeaseRequest := NewNomadConfigLeaseRequestWithDefaults()
-	resp, err := client.Secrets.PostNomadConfigLease(context.Background(), nomadConfigLeaseRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostNomadConfigLease(context.Background(), nomadConfigLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13073,7 +12431,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13087,18 +12444,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	nomadRoleRequest := NewNomadRoleRequestWithDefaults()
-	resp, err := client.Secrets.PostNomadRoleName(context.Background(), name, nomadRoleRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostNomadRoleName(context.Background(), name, nomadRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13137,7 +12492,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13151,17 +12505,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	openldapConfigRequest := NewOpenldapConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostOpenldapConfig(context.Background(), openldapConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapConfig(context.Background(), openldapConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13195,7 +12547,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13209,18 +12560,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role (lowercase)
 
 	openldapRoleRequest := NewOpenldapRoleRequestWithDefaults()
-	resp, err := client.Secrets.PostOpenldapRoleName(context.Background(), name, openldapRoleRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapRoleName(context.Background(), name, openldapRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13259,7 +12608,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13273,17 +12621,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the static role
 
-	resp, err := client.Secrets.PostOpenldapRotateRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapRotateRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13321,7 +12667,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13335,16 +12680,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Secrets.PostOpenldapRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13375,7 +12718,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13389,18 +12731,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	openldapStaticRoleRequest := NewOpenldapStaticRoleRequestWithDefaults()
-	resp, err := client.Secrets.PostOpenldapStaticRoleName(context.Background(), name, openldapStaticRoleRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapStaticRoleName(context.Background(), name, openldapStaticRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13439,7 +12779,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13453,17 +12792,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiBundleRequest := NewPkiBundleRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiBundle(context.Background(), pkiBundleRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiBundle(context.Background(), pkiBundleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13497,7 +12834,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13511,17 +12847,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiCertRequest := NewPkiCertRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiCert(context.Background(), pkiCertRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiCert(context.Background(), pkiCertRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13555,7 +12889,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13569,17 +12902,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiConfigCaRequest := NewPkiConfigCaRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiConfigCa(context.Background(), pkiConfigCaRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigCa(context.Background(), pkiConfigCaRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13613,7 +12944,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13627,17 +12957,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiConfigCrlRequest := NewPkiConfigCrlRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiConfigCrl(context.Background(), pkiConfigCrlRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigCrl(context.Background(), pkiConfigCrlRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13671,7 +12999,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13685,17 +13012,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiConfigIssuersRequest := NewPkiConfigIssuersRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiConfigIssuers(context.Background(), pkiConfigIssuersRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigIssuers(context.Background(), pkiConfigIssuersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13729,7 +13054,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13743,17 +13067,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiConfigKeysRequest := NewPkiConfigKeysRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiConfigKeys(context.Background(), pkiConfigKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigKeys(context.Background(), pkiConfigKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13787,7 +13109,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13801,17 +13122,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiConfigUrlsRequest := NewPkiConfigUrlsRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiConfigUrls(context.Background(), pkiConfigUrlsRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigUrls(context.Background(), pkiConfigUrlsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13845,7 +13164,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13859,17 +13177,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiIntermediateCrossSignRequest := NewPkiIntermediateCrossSignRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIntermediateCrossSign(context.Background(), pkiIntermediateCrossSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIntermediateCrossSign(context.Background(), pkiIntermediateCrossSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13903,7 +13219,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13917,18 +13232,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 
 	pkiIntermediateGenerateRequest := NewPkiIntermediateGenerateRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIntermediateGenerateExported(context.Background(), exported, pkiIntermediateGenerateRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIntermediateGenerateExported(context.Background(), exported, pkiIntermediateGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -13967,7 +13280,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -13981,17 +13293,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiIntermediateSetSignedRequest := NewPkiIntermediateSetSignedRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIntermediateSetSigned(context.Background(), pkiIntermediateSetSignedRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIntermediateSetSigned(context.Background(), pkiIntermediateSetSignedRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14025,7 +13335,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14039,17 +13348,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiInternalExportedRequest := NewPkiInternalExportedRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiInternalExported(context.Background(), pkiInternalExportedRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiInternalExported(context.Background(), pkiInternalExportedRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14083,7 +13390,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14097,18 +13403,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | The desired role with configuration for this request
 
 	pkiIssueRequest := NewPkiIssueRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssueRole(context.Background(), role, pkiIssueRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssueRole(context.Background(), role, pkiIssueRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14147,7 +13451,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14161,19 +13464,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 
 	pkiIssuerIssueRequest := NewPkiIssuerIssueRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuerIssuerRefIssueRole(context.Background(), issuerRef, role, pkiIssuerIssueRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefIssueRole(context.Background(), issuerRef, role, pkiIssuerIssueRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14214,7 +13515,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14228,18 +13528,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
 	pkiIssuerSignIntermediateRequest := NewPkiIssuerSignIntermediateRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignIntermediate(context.Background(), issuerRef, pkiIssuerSignIntermediateRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignIntermediate(context.Background(), issuerRef, pkiIssuerSignIntermediateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14278,7 +13576,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14292,19 +13589,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 
 	pkiIssuerSignRequest := NewPkiIssuerSignRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignRole(context.Background(), issuerRef, role, pkiIssuerSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignRole(context.Background(), issuerRef, role, pkiIssuerSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14345,7 +13640,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14359,18 +13653,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
 	pkiIssuerSignSelfIssuedRequest := NewPkiIssuerSignSelfIssuedRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignSelfIssued(context.Background(), issuerRef, pkiIssuerSignSelfIssuedRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignSelfIssued(context.Background(), issuerRef, pkiIssuerSignSelfIssuedRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14409,7 +13701,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14423,18 +13714,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
 	pkiIssuerSignVerbatimRequest := NewPkiIssuerSignVerbatimRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignVerbatim(context.Background(), issuerRef, pkiIssuerSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignVerbatim(context.Background(), issuerRef, pkiIssuerSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14473,7 +13762,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14487,19 +13775,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 
 	pkiIssuerSignVerbatimRequest := NewPkiIssuerSignVerbatimRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignVerbatimRole(context.Background(), issuerRef, role, pkiIssuerSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignVerbatimRole(context.Background(), issuerRef, role, pkiIssuerSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14540,7 +13826,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14554,18 +13839,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
 	pkiDerPemRequest := NewPkiDerPemRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuerRefDerPem(context.Background(), issuerRef, pkiDerPemRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerRefDerPem(context.Background(), issuerRef, pkiDerPemRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14604,7 +13887,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14618,18 +13900,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 
 	pkiIssuersGenerateIntermediateRequest := NewPkiIssuersGenerateIntermediateRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuersGenerateIntermediateExported(context.Background(), exported, pkiIssuersGenerateIntermediateRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuersGenerateIntermediateExported(context.Background(), exported, pkiIssuersGenerateIntermediateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14668,7 +13948,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14682,18 +13961,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 
 	pkiIssuersGenerateRootRequest := NewPkiIssuersGenerateRootRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiIssuersGenerateRootExported(context.Background(), exported, pkiIssuersGenerateRootRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuersGenerateRootExported(context.Background(), exported, pkiIssuersGenerateRootRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14732,7 +14009,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14746,17 +14022,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiJsonRequest := NewPkiJsonRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiJson(context.Background(), pkiJsonRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiJson(context.Background(), pkiJsonRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14790,7 +14064,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14804,18 +14077,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 
 	pkiKeyRequest := NewPkiKeyRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiKeyKeyRef(context.Background(), keyRef, pkiKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiKeyKeyRef(context.Background(), keyRef, pkiKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14854,7 +14125,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14868,17 +14138,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiKeysImportRequest := NewPkiKeysImportRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiKeysImport(context.Background(), pkiKeysImportRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiKeysImport(context.Background(), pkiKeysImportRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14912,7 +14180,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14926,17 +14193,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiKmsRequest := NewPkiKmsRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiKms(context.Background(), pkiKmsRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiKms(context.Background(), pkiKmsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -14970,7 +14235,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -14984,17 +14248,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiRevokeRequest := NewPkiRevokeRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiRevoke(context.Background(), pkiRevokeRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRevoke(context.Background(), pkiRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15028,7 +14290,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15042,18 +14303,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	pkiRolesRequest := NewPkiRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiRolesName(context.Background(), name, pkiRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRolesName(context.Background(), name, pkiRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15092,7 +14351,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15106,18 +14364,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 
 	pkiRootGenerateRequest := NewPkiRootGenerateRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiRootGenerateExported(context.Background(), exported, pkiRootGenerateRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRootGenerateExported(context.Background(), exported, pkiRootGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15156,7 +14412,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15170,17 +14425,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiRootReplaceRequest := NewPkiRootReplaceRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiRootReplace(context.Background(), pkiRootReplaceRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRootReplace(context.Background(), pkiRootReplaceRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15214,7 +14467,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15228,18 +14480,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 
 	pkiRootRotateRequest := NewPkiRootRotateRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiRootRotateExported(context.Background(), exported, pkiRootRotateRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRootRotateExported(context.Background(), exported, pkiRootRotateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15278,7 +14528,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15292,17 +14541,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiRootSignIntermediateRequest := NewPkiRootSignIntermediateRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiRootSignIntermediate(context.Background(), pkiRootSignIntermediateRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRootSignIntermediate(context.Background(), pkiRootSignIntermediateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15336,7 +14583,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15350,17 +14596,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiRootSignSelfIssuedRequest := NewPkiRootSignSelfIssuedRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiRootSignSelfIssued(context.Background(), pkiRootSignSelfIssuedRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRootSignSelfIssued(context.Background(), pkiRootSignSelfIssuedRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15394,7 +14638,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15408,18 +14651,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | The desired role with configuration for this request
 
 	pkiSignRequest := NewPkiSignRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiSignRole(context.Background(), role, pkiSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiSignRole(context.Background(), role, pkiSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15458,7 +14699,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15472,17 +14712,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiSignVerbatimRequest := NewPkiSignVerbatimRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiSignVerbatim(context.Background(), pkiSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiSignVerbatim(context.Background(), pkiSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15516,7 +14754,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15530,18 +14767,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | The desired role with configuration for this request
 
 	pkiSignVerbatimRequest := NewPkiSignVerbatimRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiSignVerbatimRole(context.Background(), role, pkiSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiSignVerbatimRole(context.Background(), role, pkiSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15580,7 +14815,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15594,17 +14828,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	pkiTidyRequest := NewPkiTidyRequestWithDefaults()
-	resp, err := client.Secrets.PostPkiTidy(context.Background(), pkiTidyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostPkiTidy(context.Background(), pkiTidyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15638,7 +14870,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15652,17 +14883,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	rabbitmqConfigConnectionRequest := NewRabbitmqConfigConnectionRequestWithDefaults()
-	resp, err := client.Secrets.PostRabbitmqConfigConnection(context.Background(), rabbitmqConfigConnectionRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostRabbitmqConfigConnection(context.Background(), rabbitmqConfigConnectionRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15696,7 +14925,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15710,17 +14938,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	rabbitmqConfigLeaseRequest := NewRabbitmqConfigLeaseRequestWithDefaults()
-	resp, err := client.Secrets.PostRabbitmqConfigLease(context.Background(), rabbitmqConfigLeaseRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostRabbitmqConfigLease(context.Background(), rabbitmqConfigLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15754,7 +14980,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15768,18 +14993,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role.
 
 	rabbitmqRolesRequest := NewRabbitmqRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostRabbitmqRolesName(context.Background(), name, rabbitmqRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostRabbitmqRolesName(context.Background(), name, rabbitmqRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15818,7 +15041,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15832,17 +15054,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	kvConfigRequest := NewKvConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostSecretConfig(context.Background(), kvConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSecretConfig(context.Background(), kvConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15876,7 +15096,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15890,18 +15109,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
 	kvDataRequest := NewKvDataRequestWithDefaults()
-	resp, err := client.Secrets.PostSecretDataPath(context.Background(), path, kvDataRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSecretDataPath(context.Background(), path, kvDataRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -15940,7 +15157,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -15954,18 +15170,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
 	kvDeleteRequest := NewKvDeleteRequestWithDefaults()
-	resp, err := client.Secrets.PostSecretDeletePath(context.Background(), path, kvDeleteRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSecretDeletePath(context.Background(), path, kvDeleteRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16004,7 +15218,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16018,18 +15231,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
 	kvDestroyRequest := NewKvDestroyRequestWithDefaults()
-	resp, err := client.Secrets.PostSecretDestroyPath(context.Background(), path, kvDestroyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSecretDestroyPath(context.Background(), path, kvDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16068,7 +15279,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16082,18 +15292,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
 	kvMetadataRequest := NewKvMetadataRequestWithDefaults()
-	resp, err := client.Secrets.PostSecretMetadataPath(context.Background(), path, kvMetadataRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSecretMetadataPath(context.Background(), path, kvMetadataRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16132,7 +15340,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16146,18 +15353,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	path := "path_example" // string | Location of the secret.
 
 	kvUndeleteRequest := NewKvUndeleteRequestWithDefaults()
-	resp, err := client.Secrets.PostSecretUndeletePath(context.Background(), path, kvUndeleteRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSecretUndeletePath(context.Background(), path, kvUndeleteRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16196,7 +15401,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16210,17 +15414,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	sshConfigCaRequest := NewSshConfigCaRequestWithDefaults()
-	resp, err := client.Secrets.PostSshConfigCa(context.Background(), sshConfigCaRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshConfigCa(context.Background(), sshConfigCaRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16254,7 +15456,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16268,17 +15469,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	sshConfigZeroaddressRequest := NewSshConfigZeroaddressRequestWithDefaults()
-	resp, err := client.Secrets.PostSshConfigZeroaddress(context.Background(), sshConfigZeroaddressRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshConfigZeroaddress(context.Background(), sshConfigZeroaddressRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16312,7 +15511,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16326,18 +15524,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | [Required] Name of the role
 
 	sshCredsRequest := NewSshCredsRequestWithDefaults()
-	resp, err := client.Secrets.PostSshCredsRole(context.Background(), role, sshCredsRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshCredsRole(context.Background(), role, sshCredsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16376,7 +15572,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16390,18 +15585,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	keyName := "keyName_example" // string | [Required] Name of the key
 
 	sshKeysRequest := NewSshKeysRequestWithDefaults()
-	resp, err := client.Secrets.PostSshKeysKeyName(context.Background(), keyName, sshKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshKeysKeyName(context.Background(), keyName, sshKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16440,7 +15633,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16454,17 +15646,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	sshLookupRequest := NewSshLookupRequestWithDefaults()
-	resp, err := client.Secrets.PostSshLookup(context.Background(), sshLookupRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshLookup(context.Background(), sshLookupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16498,7 +15688,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16512,18 +15701,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 
 	sshRolesRequest := NewSshRolesRequestWithDefaults()
-	resp, err := client.Secrets.PostSshRolesRole(context.Background(), role, sshRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshRolesRole(context.Background(), role, sshRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16562,7 +15749,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16576,18 +15762,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	role := "role_example" // string | The desired role with configuration for this request.
 
 	sshSignRequest := NewSshSignRequestWithDefaults()
-	resp, err := client.Secrets.PostSshSignRole(context.Background(), role, sshSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshSignRole(context.Background(), role, sshSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16626,7 +15810,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16640,17 +15823,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	sshVerifyRequest := NewSshVerifyRequestWithDefaults()
-	resp, err := client.Secrets.PostSshVerify(context.Background(), sshVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostSshVerify(context.Background(), sshVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16684,7 +15865,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16698,17 +15878,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	terraformConfigRequest := NewTerraformConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostTerraformConfig(context.Background(), terraformConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTerraformConfig(context.Background(), terraformConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16742,7 +15920,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16756,17 +15933,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Secrets.PostTerraformCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostTerraformCredsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16804,7 +15979,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16818,18 +15992,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	terraformRoleRequest := NewTerraformRoleRequestWithDefaults()
-	resp, err := client.Secrets.PostTerraformRoleName(context.Background(), name, terraformRoleRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTerraformRoleName(context.Background(), name, terraformRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16868,7 +16040,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16882,17 +16053,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the team or organization role
 
-	resp, err := client.Secrets.PostTerraformRotateRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostTerraformRotateRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16930,7 +16099,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -16944,18 +16112,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key.
 
 	totpCodeRequest := NewTotpCodeRequestWithDefaults()
-	resp, err := client.Secrets.PostTotpCodeName(context.Background(), name, totpCodeRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTotpCodeName(context.Background(), name, totpCodeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -16994,7 +16160,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17008,18 +16173,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key.
 
 	totpKeysRequest := NewTotpKeysRequestWithDefaults()
-	resp, err := client.Secrets.PostTotpKeysName(context.Background(), name, totpKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTotpKeysName(context.Background(), name, totpKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17058,7 +16221,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17072,17 +16234,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	transitCacheConfigRequest := NewTransitCacheConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitCacheConfig(context.Background(), transitCacheConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitCacheConfig(context.Background(), transitCacheConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17116,7 +16276,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17130,19 +16289,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
 
 	transitDatakeyRequest := NewTransitDatakeyRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitDatakeyPlaintextName(context.Background(), name, plaintext, transitDatakeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitDatakeyPlaintextName(context.Background(), name, plaintext, transitDatakeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17183,7 +16340,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17197,18 +16353,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the policy
 
 	transitDecryptRequest := NewTransitDecryptRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitDecryptName(context.Background(), name, transitDecryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitDecryptName(context.Background(), name, transitDecryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17247,7 +16401,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17261,18 +16414,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the policy
 
 	transitEncryptRequest := NewTransitEncryptRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitEncryptName(context.Background(), name, transitEncryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitEncryptName(context.Background(), name, transitEncryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17311,7 +16462,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17325,17 +16475,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	transitHashRequest := NewTransitHashRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitHash(context.Background(), transitHashRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitHash(context.Background(), transitHashRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17369,7 +16517,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17383,18 +16530,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 
 	transitHashRequest := NewTransitHashRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitHashUrlalgorithm(context.Background(), urlalgorithm, transitHashRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitHashUrlalgorithm(context.Background(), urlalgorithm, transitHashRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17433,7 +16578,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17447,18 +16591,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The key to use for the HMAC function
 
 	transitHmacRequest := NewTransitHmacRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitHmacName(context.Background(), name, transitHmacRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitHmacName(context.Background(), name, transitHmacRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17497,7 +16639,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17511,19 +16652,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 
 	transitHmacRequest := NewTransitHmacRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitHmacNameUrlalgorithm(context.Background(), name, urlalgorithm, transitHmacRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitHmacNameUrlalgorithm(context.Background(), name, urlalgorithm, transitHmacRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17564,7 +16703,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17578,18 +16716,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
 	transitKeysRequest := NewTransitKeysRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitKeysName(context.Background(), name, transitKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysName(context.Background(), name, transitKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17628,7 +16764,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17642,18 +16777,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
 	transitKeysConfigRequest := NewTransitKeysConfigRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitKeysNameConfig(context.Background(), name, transitKeysConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameConfig(context.Background(), name, transitKeysConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17692,7 +16825,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17706,18 +16838,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The name of the key
 
 	transitKeysImportRequest := NewTransitKeysImportRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitKeysNameImport(context.Background(), name, transitKeysImportRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameImport(context.Background(), name, transitKeysImportRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17756,7 +16886,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17770,18 +16899,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The name of the key
 
 	transitKeysImportVersionRequest := NewTransitKeysImportVersionRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitKeysNameImportVersion(context.Background(), name, transitKeysImportVersionRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameImportVersion(context.Background(), name, transitKeysImportVersionRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17820,7 +16947,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17834,17 +16960,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
-	resp, err := client.Secrets.PostTransitKeysNameRotate(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameRotate(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17882,7 +17006,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17896,18 +17019,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
 	transitKeysTrimRequest := NewTransitKeysTrimRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitKeysNameTrim(context.Background(), name, transitKeysTrimRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameTrim(context.Background(), name, transitKeysTrimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -17946,7 +17067,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -17960,17 +17080,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitRandom(context.Background(), transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitRandom(context.Background(), transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18004,7 +17122,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18018,18 +17135,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitRandomSource(context.Background(), source, transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitRandomSource(context.Background(), source, transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18068,7 +17183,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18082,19 +17196,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitRandomSourceUrlbytes(context.Background(), source, urlbytes, transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitRandomSourceUrlbytes(context.Background(), source, urlbytes, transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18135,7 +17247,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18149,18 +17260,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitRandomUrlbytes(context.Background(), urlbytes, transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitRandomUrlbytes(context.Background(), urlbytes, transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18199,7 +17308,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18213,17 +17321,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	transitRestoreRequest := NewTransitRestoreRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitRestore(context.Background(), transitRestoreRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitRestore(context.Background(), transitRestoreRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18257,7 +17363,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18271,18 +17376,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
 
 	transitRestoreRequest := NewTransitRestoreRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitRestoreName(context.Background(), name, transitRestoreRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitRestoreName(context.Background(), name, transitRestoreRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18321,7 +17424,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18335,18 +17437,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
 	transitRewrapRequest := NewTransitRewrapRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitRewrapName(context.Background(), name, transitRewrapRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitRewrapName(context.Background(), name, transitRewrapRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18385,7 +17485,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18399,18 +17498,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The key to use
 
 	transitSignRequest := NewTransitSignRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitSignName(context.Background(), name, transitSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitSignName(context.Background(), name, transitSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18449,7 +17546,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18463,19 +17559,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
 
 	transitSignRequest := NewTransitSignRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitSignNameUrlalgorithm(context.Background(), name, urlalgorithm, transitSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitSignNameUrlalgorithm(context.Background(), name, urlalgorithm, transitSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18516,7 +17610,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18530,18 +17623,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The key to use
 
 	transitVerifyRequest := NewTransitVerifyRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitVerifyName(context.Background(), name, transitVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitVerifyName(context.Background(), name, transitVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -18580,7 +17671,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -18594,19 +17684,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
 
 	transitVerifyRequest := NewTransitVerifyRequestWithDefaults()
-	resp, err := client.Secrets.PostTransitVerifyNameUrlalgorithm(context.Background(), name, urlalgorithm, transitVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.PostTransitVerifyNameUrlalgorithm(context.Background(), name, urlalgorithm, transitVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 

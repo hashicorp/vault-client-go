@@ -107,6 +107,10 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 	}
 	defer resp.Body.Close()
 
+	if err := isErrorResponse(req, resp); err != nil {
+		return nil, err
+	}
+
 	return parseResponse[ResponseT](resp.Body)
 }
 
@@ -237,9 +241,10 @@ func (c *Client) doWithRetries(req *http.Request, retry bool) (*http.Response, e
 }
 
 // handleRedirect checks the given response for a redirect status
-//  returns:
-//    true & modifies the request accordingly if the redirect is needed
-//    false otherwise
+//
+//	returns:
+//	  true & modifies the request accordingly if the redirect is needed
+//	  false otherwise
 func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, error) {
 	// allow at most one redirect
 	if *redirectCount != 0 {

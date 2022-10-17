@@ -123,7 +123,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -137,17 +136,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the alias
 
-	resp, err := client.Identity.DeleteIdentityAliasIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -185,7 +182,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -199,17 +195,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the alias
 
-	resp, err := client.Identity.DeleteIdentityEntityAliasIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityEntityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -247,7 +241,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -261,17 +254,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 
-	resp, err := client.Identity.DeleteIdentityEntityIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityEntityIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -309,7 +300,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -323,17 +313,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the entity
 
-	resp, err := client.Identity.DeleteIdentityEntityNameName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityEntityNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -371,7 +359,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -385,17 +372,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the group alias.
 
-	resp, err := client.Identity.DeleteIdentityGroupAliasIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityGroupAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -433,7 +418,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -447,17 +431,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 
-	resp, err := client.Identity.DeleteIdentityGroupIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityGroupIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -495,7 +477,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -509,17 +490,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the group.
 
-	resp, err := client.Identity.DeleteIdentityGroupNameName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityGroupNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -557,7 +536,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -571,17 +549,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name for this login enforcement configuration
 
-	resp, err := client.Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -619,7 +595,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -633,17 +608,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -681,7 +654,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -695,17 +667,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -743,7 +713,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -757,17 +726,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -805,7 +772,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -819,17 +785,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -867,7 +831,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -881,17 +844,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the assignment
 
-	resp, err := client.Identity.DeleteIdentityOidcAssignmentName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityOidcAssignmentName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -929,7 +890,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -943,17 +903,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the client.
 
-	resp, err := client.Identity.DeleteIdentityOidcClientName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityOidcClientName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -991,7 +949,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1005,17 +962,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
-	resp, err := client.Identity.DeleteIdentityOidcKeyName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityOidcKeyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1053,7 +1008,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1067,17 +1021,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.DeleteIdentityOidcProviderName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityOidcProviderName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1115,7 +1067,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1129,17 +1080,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Identity.DeleteIdentityOidcRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1177,7 +1126,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1191,17 +1139,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the scope
 
-	resp, err := client.Identity.DeleteIdentityOidcScopeName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityOidcScopeName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1239,7 +1185,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1253,17 +1198,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the persona
 
-	resp, err := client.Identity.DeleteIdentityPersonaIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.DeleteIdentityPersonaIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1301,7 +1244,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1315,17 +1257,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityAliasId(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityAliasId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1359,7 +1299,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1373,17 +1312,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the alias
 
-	resp, err := client.Identity.GetIdentityAliasIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1421,7 +1358,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1435,17 +1371,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityEntityAliasId(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityEntityAliasId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1479,7 +1413,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1493,17 +1426,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the alias
 
-	resp, err := client.Identity.GetIdentityEntityAliasIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityEntityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1541,7 +1472,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1555,17 +1485,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityEntityId(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityEntityId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1599,7 +1527,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1613,17 +1540,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 
-	resp, err := client.Identity.GetIdentityEntityIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityEntityIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1661,7 +1586,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1675,17 +1599,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityEntityName(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityEntityName(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1719,7 +1641,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1733,17 +1654,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the entity
 
-	resp, err := client.Identity.GetIdentityEntityNameName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityEntityNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1781,7 +1700,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1795,17 +1713,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityGroupAliasId(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityGroupAliasId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1839,7 +1755,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1853,17 +1768,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the group alias.
 
-	resp, err := client.Identity.GetIdentityGroupAliasIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityGroupAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1901,7 +1814,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1915,17 +1827,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityGroupId(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityGroupId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -1959,7 +1869,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -1973,17 +1882,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 
-	resp, err := client.Identity.GetIdentityGroupIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityGroupIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2021,7 +1928,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2035,17 +1941,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityGroupName(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityGroupName(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2079,7 +1983,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2093,17 +1996,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the group.
 
-	resp, err := client.Identity.GetIdentityGroupNameName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityGroupNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2141,7 +2042,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2155,17 +2055,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaLoginEnforcement(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaLoginEnforcement(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2199,7 +2097,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2213,17 +2110,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name for this login enforcement configuration
 
-	resp, err := client.Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2261,7 +2156,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2275,17 +2169,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethod(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethod(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2319,7 +2211,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2333,17 +2224,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodDuo(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodDuo(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2377,7 +2266,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2391,17 +2279,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2439,7 +2325,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2453,17 +2338,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2501,7 +2384,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2515,17 +2397,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodOkta(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodOkta(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2559,7 +2439,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2573,17 +2452,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2621,7 +2498,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2635,17 +2511,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodPingid(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodPingid(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2679,7 +2553,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2693,17 +2566,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2741,7 +2612,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2755,17 +2625,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodTotp(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodTotp(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2799,7 +2667,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2813,17 +2680,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2861,7 +2726,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2875,17 +2739,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcAssignment(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcAssignment(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2919,7 +2781,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2933,17 +2794,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the assignment
 
-	resp, err := client.Identity.GetIdentityOidcAssignmentName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcAssignmentName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -2981,7 +2840,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -2995,17 +2853,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcClient(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcClient(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3039,7 +2895,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3053,17 +2908,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the client.
 
-	resp, err := client.Identity.GetIdentityOidcClientName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcClientName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3101,7 +2954,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3115,16 +2967,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Identity.GetIdentityOidcConfig(context.Background())
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3155,7 +3005,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3169,17 +3018,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcKey(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcKey(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3213,7 +3060,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3227,17 +3073,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
-	resp, err := client.Identity.GetIdentityOidcKeyName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcKeyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3275,7 +3119,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3289,17 +3132,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcProvider(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProvider(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3333,7 +3174,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3347,17 +3187,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.GetIdentityOidcProviderName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProviderName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3395,7 +3233,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3409,17 +3246,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3457,7 +3292,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3471,17 +3305,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3519,7 +3351,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3533,17 +3364,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3581,7 +3410,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3595,17 +3423,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3643,7 +3469,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3657,17 +3482,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcRole(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3701,7 +3524,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3715,17 +3537,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Identity.GetIdentityOidcRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3763,7 +3583,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3777,17 +3596,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcScope(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcScope(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3821,7 +3638,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3835,17 +3651,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the scope
 
-	resp, err := client.Identity.GetIdentityOidcScopeName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcScopeName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3883,7 +3697,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3897,17 +3710,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Identity.GetIdentityOidcTokenName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcTokenName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3945,7 +3756,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -3959,16 +3769,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Identity.GetIdentityOidcWellKnownKeys(context.Background())
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcWellKnownKeys(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -3999,7 +3807,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4013,16 +3820,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
-	resp, err := client.Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background())
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4053,7 +3858,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4067,17 +3871,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityPersonaId(context.Background(), list)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityPersonaId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4111,7 +3913,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4125,17 +3926,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the persona
 
-	resp, err := client.Identity.GetIdentityPersonaIdId(context.Background(), id)
+	resp, err := client.WithToken("my-token").Identity.GetIdentityPersonaIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4173,7 +3972,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4187,17 +3985,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityAliasRequest := NewIdentityAliasRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityAlias(context.Background(), identityAliasRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityAlias(context.Background(), identityAliasRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4231,7 +4027,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4245,18 +4040,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the alias
 
 	identityAliasIdRequest := NewIdentityAliasIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityAliasIdId(context.Background(), id, identityAliasIdRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityAliasIdId(context.Background(), id, identityAliasIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4295,7 +4088,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4309,17 +4101,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityEntityRequest := NewIdentityEntityRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntity(context.Background(), identityEntityRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityEntity(context.Background(), identityEntityRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4353,7 +4143,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4367,17 +4156,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityEntityAliasRequest := NewIdentityEntityAliasRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityAlias(context.Background(), identityEntityAliasRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityEntityAlias(context.Background(), identityEntityAliasRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4411,7 +4198,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4425,18 +4211,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the alias
 
 	identityEntityAliasIdRequest := NewIdentityEntityAliasIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityAliasIdId(context.Background(), id, identityEntityAliasIdRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityEntityAliasIdId(context.Background(), id, identityEntityAliasIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4475,7 +4259,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4489,17 +4272,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityEntityBatchDeleteRequest := NewIdentityEntityBatchDeleteRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityBatchDelete(context.Background(), identityEntityBatchDeleteRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityEntityBatchDelete(context.Background(), identityEntityBatchDeleteRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4533,7 +4314,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4547,18 +4327,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 
 	identityEntityIdRequest := NewIdentityEntityIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityIdId(context.Background(), id, identityEntityIdRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityEntityIdId(context.Background(), id, identityEntityIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4597,7 +4375,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4611,17 +4388,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityEntityMergeRequest := NewIdentityEntityMergeRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityMerge(context.Background(), identityEntityMergeRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityEntityMerge(context.Background(), identityEntityMergeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4655,7 +4430,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4669,18 +4443,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the entity
 
 	identityEntityNameRequest := NewIdentityEntityNameRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityNameName(context.Background(), name, identityEntityNameRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityEntityNameName(context.Background(), name, identityEntityNameRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4719,7 +4491,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4733,17 +4504,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityGroupRequest := NewIdentityGroupRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroup(context.Background(), identityGroupRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityGroup(context.Background(), identityGroupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4777,7 +4546,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4791,17 +4559,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityGroupAliasRequest := NewIdentityGroupAliasRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupAlias(context.Background(), identityGroupAliasRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityGroupAlias(context.Background(), identityGroupAliasRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4835,7 +4601,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4849,18 +4614,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the group alias.
 
 	identityGroupAliasIdRequest := NewIdentityGroupAliasIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupAliasIdId(context.Background(), id, identityGroupAliasIdRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityGroupAliasIdId(context.Background(), id, identityGroupAliasIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4899,7 +4662,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4913,18 +4675,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 
 	identityGroupIdRequest := NewIdentityGroupIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupIdId(context.Background(), id, identityGroupIdRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityGroupIdId(context.Background(), id, identityGroupIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -4963,7 +4723,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -4977,18 +4736,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the group.
 
 	identityGroupNameRequest := NewIdentityGroupNameRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupNameName(context.Background(), name, identityGroupNameRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityGroupNameName(context.Background(), name, identityGroupNameRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5027,7 +4784,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5041,17 +4797,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityLookupEntityRequest := NewIdentityLookupEntityRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityLookupEntity(context.Background(), identityLookupEntityRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityLookupEntity(context.Background(), identityLookupEntityRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5085,7 +4839,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5099,17 +4852,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityLookupGroupRequest := NewIdentityLookupGroupRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityLookupGroup(context.Background(), identityLookupGroupRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityLookupGroup(context.Background(), identityLookupGroupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5143,7 +4894,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5157,18 +4907,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name for this login enforcement configuration
 
 	identityMfaLoginEnforcementRequest := NewIdentityMfaLoginEnforcementRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name, identityMfaLoginEnforcementRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name, identityMfaLoginEnforcementRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5207,7 +4955,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5221,18 +4968,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
 	identityMfaMethodDuoRequest := NewIdentityMfaMethodDuoRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId, identityMfaMethodDuoRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId, identityMfaMethodDuoRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5271,7 +5016,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5285,18 +5029,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
 	identityMfaMethodOktaRequest := NewIdentityMfaMethodOktaRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId, identityMfaMethodOktaRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId, identityMfaMethodOktaRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5335,7 +5077,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5349,18 +5090,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
 	identityMfaMethodPingidRequest := NewIdentityMfaMethodPingidRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId, identityMfaMethodPingidRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId, identityMfaMethodPingidRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5399,7 +5138,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5413,17 +5151,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityMfaMethodTotpAdminDestroyRequest := NewIdentityMfaMethodTotpAdminDestroyRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background(), identityMfaMethodTotpAdminDestroyRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background(), identityMfaMethodTotpAdminDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5457,7 +5193,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5471,17 +5206,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityMfaMethodTotpAdminGenerateRequest := NewIdentityMfaMethodTotpAdminGenerateRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background(), identityMfaMethodTotpAdminGenerateRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background(), identityMfaMethodTotpAdminGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5515,7 +5248,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5529,17 +5261,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityMfaMethodTotpGenerateRequest := NewIdentityMfaMethodTotpGenerateRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpGenerate(context.Background(), identityMfaMethodTotpGenerateRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaMethodTotpGenerate(context.Background(), identityMfaMethodTotpGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5573,7 +5303,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5587,18 +5316,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
 	identityMfaMethodTotpRequest := NewIdentityMfaMethodTotpRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId, identityMfaMethodTotpRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId, identityMfaMethodTotpRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5637,7 +5364,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5651,18 +5377,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the assignment
 
 	identityOidcAssignmentRequest := NewIdentityOidcAssignmentRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcAssignmentName(context.Background(), name, identityOidcAssignmentRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcAssignmentName(context.Background(), name, identityOidcAssignmentRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5701,7 +5425,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5715,18 +5438,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the client.
 
 	identityOidcClientRequest := NewIdentityOidcClientRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcClientName(context.Background(), name, identityOidcClientRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcClientName(context.Background(), name, identityOidcClientRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5765,7 +5486,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5779,17 +5499,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityOidcConfigRequest := NewIdentityOidcConfigRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcConfig(context.Background(), identityOidcConfigRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcConfig(context.Background(), identityOidcConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5823,7 +5541,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5837,17 +5554,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityOidcIntrospectRequest := NewIdentityOidcIntrospectRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcIntrospect(context.Background(), identityOidcIntrospectRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcIntrospect(context.Background(), identityOidcIntrospectRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5881,7 +5596,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5895,18 +5609,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
 	identityOidcKeyRequest := NewIdentityOidcKeyRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcKeyName(context.Background(), name, identityOidcKeyRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcKeyName(context.Background(), name, identityOidcKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -5945,7 +5657,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -5959,18 +5670,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the key
 
 	identityOidcKeyRotateRequest := NewIdentityOidcKeyRotateRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name, identityOidcKeyRotateRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcKeyNameRotate(context.Background(), name, identityOidcKeyRotateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6009,7 +5718,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6023,18 +5731,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
 	identityOidcProviderRequest := NewIdentityOidcProviderRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcProviderName(context.Background(), name, identityOidcProviderRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcProviderName(context.Background(), name, identityOidcProviderRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6073,7 +5779,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6087,18 +5792,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
 	identityOidcProviderAuthorizeRequest := NewIdentityOidcProviderAuthorizeRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name, identityOidcProviderAuthorizeRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name, identityOidcProviderAuthorizeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6137,7 +5840,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6151,18 +5853,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
 	identityOidcProviderTokenRequest := NewIdentityOidcProviderTokenRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcProviderNameToken(context.Background(), name, identityOidcProviderTokenRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcProviderNameToken(context.Background(), name, identityOidcProviderTokenRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6201,7 +5901,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6215,17 +5914,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6263,7 +5960,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6277,18 +5973,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the role
 
 	identityOidcRoleRequest := NewIdentityOidcRoleRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcRoleName(context.Background(), name, identityOidcRoleRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcRoleName(context.Background(), name, identityOidcRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6327,7 +6021,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6341,18 +6034,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	name := "name_example" // string | Name of the scope
 
 	identityOidcScopeRequest := NewIdentityOidcScopeRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcScopeName(context.Background(), name, identityOidcScopeRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityOidcScopeName(context.Background(), name, identityOidcScopeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6391,7 +6082,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6405,17 +6095,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 
 	identityPersonaRequest := NewIdentityPersonaRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityPersona(context.Background(), identityPersonaRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityPersona(context.Background(), identityPersonaRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 
@@ -6449,7 +6137,6 @@ package main
 
 import (
 	"context"
-	"io"
 	"log"
 	"os"
 
@@ -6463,18 +6150,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	client.SetToken("my-token")
 
 	id := "id_example" // string | ID of the persona
 
 	identityPersonaIdRequest := NewIdentityPersonaIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityPersonaIdId(context.Background(), id, identityPersonaIdRequest)
+	resp, err := client.WithToken("my-token").Identity.PostIdentityPersonaIdId(context.Background(), id, identityPersonaIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
-	io.Copy(os.Stdout, resp.Body)
+	log.Println(resp.Data)
 }
 ```
 

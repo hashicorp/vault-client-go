@@ -1,7 +1,10 @@
 # Use this file to prevent files from being overwritten by the generator.
 
+README.md
+
 configuration.go
 response.go
+utils.go
 
 git_push.sh
 

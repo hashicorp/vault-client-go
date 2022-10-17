@@ -3,13 +3,15 @@ package vault
 import (
 	"context"
 	"fmt"
+	"testing"
 
+	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"
 )
 
 type VaultContainer struct {
-	container testcontainers.Container
-	address   string
+	testcontainers.Container
+	address string
 }
 
 func setupVaultContainer(ctx context.Context, rootToken string) (*VaultContainer, error) {
@@ -41,9 +43,46 @@ func setupVaultContainer(ctx context.Context, rootToken string) (*VaultContainer
 	}
 
 	vaultContainer := VaultContainer{
-		container: container,
+		Container: container,
 		address:   fmt.Sprintf("http://%s:%s", ip, mappedPort.Port()),
 	}
 
 	return &vaultContainer, nil
+}
+
+func TestClient_SimpleReadWrite(t *testing.T) {
+	if testing.Short() {
+		t.Skip("skipping integration tests")
+	}
+
+	const rootToken = "read&write"
+	ctx := context.Background()
+
+	vault, err := setupVaultContainer(ctx, rootToken)
+	require.NoError(t, err)
+	defer vault.Terminate(ctx)
+
+	client, err := NewClient(Configuration{
+		BaseAddress: vault.address,
+	})
+	require.NoError(t, err)
+
+	require.NoError(t, client.SetToken(rootToken))
+
+	const secretPath = "/secret/data/my-secret"
+	expected := map[string]interface{}{
+		"password1": "abc123",
+		"password2": "trustno1",
+	}
+
+	_, err = client.Write(ctx, secretPath, map[string]interface{}{
+		"data": expected, // TODO: is this key always `data`?
+	})
+	require.NoError(t, err)
+
+	resp, err := client.Read(ctx, secretPath)
+	require.NoError(t, err)
+
+	// TODO: can we assert other things about the response here?
+	require.Equal(t, expected, resp.Data["data"])
 }

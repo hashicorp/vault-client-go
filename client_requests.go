@@ -141,6 +141,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		return nil, fmt.Errorf("could not create '%s %s' request: %w", method, url.String(), err)
 	}
 
+	// populate request headers
 	m := c.cloneRequestModifiers()
 
 	if m.validationError != nil {
@@ -159,8 +160,12 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		req.Header.Add("X-Vault-MFA", credentials)
 	}
 
+	if m.headers.responseWrappingTTL != 0 {
+		req.Header.Set("X-Vault-Wrap-TTL", m.headers.responseWrappingTTL.String())
+	}
+
 	switch m.headers.replicationForwardingMode {
-	// unconditionally forwarding (see 'ReplicationForwardAlways' docs)
+	// unconditional forwarding (see 'ReplicationForwardAlways' docs)
 	case ReplicationForwardAlways:
 		req.Header.Set("X-Vault-Forward", "active-node")
 

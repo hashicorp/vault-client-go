@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 	"unicode"
 
 	"github.com/hashicorp/go-multierror"
@@ -136,6 +137,45 @@ func (c *Client) ClearMFACredentials() {
 func (c *Client) WithMFACredentials(credentials ...string) *Client {
 	clone := c.Clone()
 	clone.requestModifiers.headers.mfaCredentials = credentials
+
+	return clone
+}
+
+// SetResponseWrapping sets the response-wrapping TTL to the given duration for
+// all subsequent requests, telling Vault to wrap responses and return
+// response-wrapping tokens instead.
+//
+// See https://www.vaultproject.io/docs/concepts/response-wrapping for more
+// information on response wrapping.
+func (c *Client) SetResponseWrapping(ttl time.Duration) error {
+	c.requestModifiersLock.Lock()
+	c.requestModifiers.headers.responseWrappingTTL = ttl
+	c.requestModifiersLock.Unlock()
+
+	return nil
+}
+
+// ClearResponseWrapping clears the response-wrapping header from all
+// subsequent requests.
+//
+// See https://www.vaultproject.io/docs/concepts/response-wrapping for more
+// information on response wrapping.
+func (c *Client) ClearResponseWrapping() {
+	c.requestModifiersLock.Lock()
+	c.requestModifiers.headers.responseWrappingTTL = 0
+	c.requestModifiersLock.Unlock()
+}
+
+// WithResponseWrapping returns a shallow copy of the client with the
+// response-wrapping TTL set to the given duration. A non-zero duration will
+// tell Vault to wrap the response and return a response-wrapping token
+// instead. Set `ttl` to zero to clear the response-wrapping header.
+//
+// See https://www.vaultproject.io/docs/concepts/response-wrapping for more
+// information on response wrapping.
+func (c *Client) WithResponseWrapping(ttl time.Duration) *Client {
+	clone := c.Clone()
+	clone.requestModifiers.headers.responseWrappingTTL = ttl
 
 	return clone
 }

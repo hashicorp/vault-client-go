@@ -18,6 +18,7 @@ import (
 	"net/url"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
 )
@@ -70,6 +71,7 @@ type requestHeaders struct {
 	token                     string                    // 'X-Vault-Token'
 	namespace                 string                    // 'X-Vault-Namespace'
 	mfaCredentials            []string                  // 'X-Vault-MFA'
+	responseWrappingTTL       time.Duration             // 'X-Vault-Wrap-TTL'
 	replicationForwardingMode ReplicationForwardingMode // 'X-Vault-Forward' or 'X-Vault-Inconsistent'
 	customHeaders             http.Header
 }
@@ -220,9 +222,12 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 	clone.headers = requestHeaders{
 		token:                     c.requestModifiers.headers.token,
 		namespace:                 c.requestModifiers.headers.namespace,
-		customHeaders:             c.requestModifiers.headers.customHeaders.Clone(),
+		responseWrappingTTL:       c.requestModifiers.headers.responseWrappingTTL,
 		replicationForwardingMode: c.requestModifiers.headers.replicationForwardingMode,
+		customHeaders:             c.requestModifiers.headers.customHeaders.Clone(),
 	}
+
+	copy(clone.headers.mfaCredentials, c.requestModifiers.headers.mfaCredentials)
 
 	return clone
 }

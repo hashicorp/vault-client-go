@@ -2,9 +2,14 @@ package vault
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
+	"fmt"
 	"io"
+	"net/http"
 	"time"
+
+	"github.com/hashicorp/go-multierror"
 )
 
 // Response is the structure returned by the majority of the requests to Vault
@@ -77,6 +82,74 @@ type MFAMethodID struct {
 	Type         string `json:"type"`
 	ID           string `json:"id"`
 	UsesPasscode bool   `json:"uses_passcode"`
+}
+
+func (r *Response[T]) Unwrap(ctx context.Context, client *Client) (*Response[T], error) {
+	if r.WrapInfo == nil {
+		return nil, fmt.Errorf("cannot unwrap response: missing wrap info")
+	}
+
+	if len(r.WrapInfo.Token) == 0 {
+		return nil, fmt.Errorf("cannot unwrap response: missing wrapping token")
+	}
+
+	r, err := UnwrapToken[T](ctx, client, r.WrapInfo.Token)
+	if err != nil {
+		return nil, fmt.Errorf("cannot unwrap response: %w", err)
+	}
+
+	return r, nil
+}
+
+func UnwrapToken[T any](ctx context.Context, client *Client, wrappingToken string) (*Response[T], error) {
+	// this does not modify the original client
+	clientWithWrappingToken := client.WithToken(wrappingToken)
+
+	resp1, err1 := sendRequestParseResponse[T](
+		ctx,
+		clientWithWrappingToken,
+		http.MethodPut,
+		"/v1/sys/wrapping/unwrap",
+		nil, // request body
+		nil, // request query parameters
+	)
+	if err1 == nil {
+		return resp1, nil // early return
+	}
+
+	// otherwise, this might be an old-style wrapping token
+	resp2, err2 := sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		clientWithWrappingToken,
+		http.MethodGet,
+		"/v1/cubbyhole/response",
+		nil, // request body
+		nil, // request query parameters
+	)
+	if err2 != nil {
+		return nil, multierror.Append(err1, err2)
+	}
+
+	if resp2.Data == nil {
+		return nil, multierror.Append(err1, fmt.Errorf("data not found in old-style wrapping response"))
+	}
+
+	payload, ok := resp2.Data["response"]
+	if !ok {
+		return nil, multierror.Append(err1, fmt.Errorf("/data/response element not found in old-style wrapping response"))
+	}
+
+	payloadStr, ok := payload.(string)
+	if !ok {
+		return nil, multierror.Append(err1, fmt.Errorf("/data/response element is not a string in old-style wrapping response"))
+	}
+
+	r, err3 := parseResponse[T](bytes.NewBufferString(payloadStr))
+	if err3 != nil {
+		return nil, multierror.Append(err1, fmt.Errorf("could not parse old-style wrapping response: %w", err3))
+	}
+
+	return r, nil
 }
 
 // parseResponse fully consumes the given response body without closing it and

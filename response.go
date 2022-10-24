@@ -84,6 +84,11 @@ type MFAMethodID struct {
 	UsesPasscode bool   `json:"uses_passcode"`
 }
 
+// Unwrap attempts to unwrap the given wrapped response using the wrapping
+// token contained in `response.WrapInfo.Token`
+//
+// See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
+// for more information on response wrapping
 func (r *Response[T]) Unwrap(ctx context.Context, client *Client) (*Response[T], error) {
 	if r.WrapInfo == nil {
 		return nil, fmt.Errorf("cannot unwrap response: missing wrap info")
@@ -101,6 +106,12 @@ func (r *Response[T]) Unwrap(ctx context.Context, client *Client) (*Response[T],
 	return r, nil
 }
 
+// UnwrapToken sends a request with the given wrapping token and returns the
+// original response. If the request fails, the function will attempt to fall
+// back to the old-style response unwrapping method.
+//
+// See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
+// for more information on response wrapping
 func UnwrapToken[T any](ctx context.Context, client *Client, wrappingToken string) (*Response[T], error) {
 	// this does not modify the original client
 	clientWithWrappingToken := client.WithToken(wrappingToken)

@@ -82,6 +82,14 @@ type Configuration struct {
 	// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
 	// for more information
 	EnableSRVLookup bool `env:"VAULT_SRV_LOOKUP"`
+
+	// DisableRedirects prevents the client from automatically following
+	// redirects. Any redirect responses will result in `RedirectError` instead.
+	//
+	// Background: by default, the client follows a single redirect; disabling
+	// redirects could cause issues with certain requests, e.g. raft-related
+	// calls will fail to redirect to the primary node.
+	DisableRedirects bool `env:"VAULT_DISABLE_REDIRECTS"`
 }
 
 // TLSConfiguration is a collection of TLS settings used to configure the internal

@@ -8,6 +8,21 @@ import (
 	"strings"
 )
 
+type RedirectError struct {
+	StatusCode int
+
+	Message string
+
+	RedirectURL string
+
+	RequestMethod string
+	RequestURL    string
+}
+
+func (e *RedirectError) Error() string {
+	return fmt.Sprintf("status: %d; redirect error: %s", e.StatusCode, e.Message)
+}
+
 // ErrorResponse is the error returned when Vault responds with a status code
 // outside of the 200 - 399 range. If a request to Vault fails because of a
 // network error a different error message will be returned.

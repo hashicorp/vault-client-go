@@ -266,7 +266,7 @@ func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirect
 		}
 		return &RedirectError{
 			StatusCode:    resp.StatusCode,
-			Message:       fmt.Sprintf(message, args),
+			Message:       fmt.Sprintf(message, args...),
 			RedirectURL:   redirectURL,
 			RequestMethod: req.Method,
 			RequestURL:    req.URL.String(),
@@ -289,14 +289,14 @@ func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirect
 	*redirectCount--
 
 	if req.URL.Scheme == "https" && redirectTo.Scheme != "https" {
-		return false, redirectError(redirectTo, "redirect would cause a protocol downgrade")
+		return false, redirectError(redirectTo, "the redirect would cause a protocol downgrade")
 	}
 
 	// restore the original request body (if any) since it had been consumed by client.Do
 	if req.GetBody != nil {
 		b, err := req.GetBody()
 		if err != nil {
-			return false, redirectError(redirectTo, "could not restore request body for redirect: %s", err.Error())
+			return false, redirectError(redirectTo, "could not restore the request body: %s", err.Error())
 		}
 		req.Body = b
 	}

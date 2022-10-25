@@ -259,14 +259,14 @@ func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirect
 	}
 
 	// a helper function to form a redirect error
-	redirectError := func(message string, redirectTo *url.URL) *RedirectError {
+	redirectError := func(redirectTo *url.URL, message string, args ...any) *RedirectError {
 		var redirectURL string
 		if redirectTo != nil {
 			redirectURL = redirectTo.String()
 		}
 		return &RedirectError{
 			StatusCode:    resp.StatusCode,
-			Message:       message,
+			Message:       fmt.Sprintf(message, args),
 			RedirectURL:   redirectURL,
 			RequestMethod: req.Method,
 			RequestURL:    req.URL.String(),
@@ -275,28 +275,28 @@ func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirect
 
 	redirectTo, err := resp.Location()
 	if err != nil {
-		return false, redirectError(fmt.Sprintf("could not read the redirect location: %s", err), nil)
+		return false, redirectError(nil, "could not read the redirect location: %s", err.Error())
 	}
 
 	if c.configuration.DisableRedirects {
-		return false, redirectError(fmt.Sprintf("the redirects are disabled"), redirectTo)
+		return false, redirectError(redirectTo, "the redirects are disabled")
 	}
 
 	if *redirectCount <= 0 {
-		return false, redirectError(fmt.Sprintf("at most one redirect is allowed"), redirectTo)
+		return false, redirectError(redirectTo, "at most one redirect is allowed")
 	}
 
 	*redirectCount--
 
 	if req.URL.Scheme == "https" && redirectTo.Scheme != "https" {
-		return false, redirectError(fmt.Sprintf("redirect would cause a protocol downgrade"), redirectTo)
+		return false, redirectError(redirectTo, "redirect would cause a protocol downgrade")
 	}
 
 	// restore the original request body (if any) since it had been consumed by client.Do
 	if req.GetBody != nil {
 		b, err := req.GetBody()
 		if err != nil {
-			return false, redirectError(fmt.Sprintf("could not restore request body for redirect: %s", err), redirectTo)
+			return false, redirectError(redirectTo, "could not restore request body for redirect: %s", err.Error())
 		}
 		req.Body = b
 	}

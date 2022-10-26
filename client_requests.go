@@ -9,6 +9,7 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"strings"
 
 	"github.com/hashicorp/go-retryablehttp"
 
@@ -24,7 +25,7 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 		ctx,
 		c,
 		http.MethodGet,
-		fmt.Sprintf("/v1/%s", path),
+		v1Path(path),
 		nil,        // request body
 		parameters, // request query parameters
 	)
@@ -49,7 +50,7 @@ func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reade
 		ctx,
 		c,
 		http.MethodPost,
-		fmt.Sprintf("/v1/%s", path),
+		v1Path(path),
 		body, // request body
 		nil,  // request query parameters
 	)
@@ -60,7 +61,7 @@ func (c *Client) List(ctx context.Context, path string) (*Response[map[string]in
 		ctx,
 		c,
 		http.MethodGet,
-		fmt.Sprintf("/v1/%s", path),
+		v1Path(path),
 		nil,                                   // request body
 		map[string][]string{"list": {"true"}}, // request query parameters
 	)
@@ -75,7 +76,7 @@ func (c *Client) DeleteWithParameters(ctx context.Context, path string, paramete
 		ctx,
 		c,
 		http.MethodDelete,
-		fmt.Sprintf("/v1/%s", path),
+		v1Path(path),
 		nil,        // request body
 		parameters, // request query parameters
 	)
@@ -289,4 +290,18 @@ func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) 
 	}
 
 	return true, nil
+}
+
+// v1Path returns the path string prefixed with /v1/ if needed
+func v1Path(path string) string {
+	switch {
+	case strings.HasPrefix(path, "/v1/"):
+		return path
+	case strings.HasPrefix(path, "v1/"):
+		return "/" + path
+	case strings.HasPrefix(path, "/"):
+		return "/v1" + path
+	default:
+		return "/v1/" + path
+	}
 }

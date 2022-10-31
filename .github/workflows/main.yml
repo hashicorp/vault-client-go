@@ -14,12 +14,15 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: 1.18
-      
+
       - name: Build
         run: go build -v ./...
-      
+
       - name: Test
         run: go test -v ./...
+
+      - name: FuzzTest
+        run: go test -fuzz=./... -fuzztime=3s
   check-regen:
     runs-on: ubuntu-latest
     steps:

@@ -10,7 +10,7 @@ import (
 
 // RedirectError is the error returned when the client receives a redirect
 // response and either
-//  1. redirects are disabled
+//  1. the redirects are disabled in configuration
 //  2. more than one redirect was encountered
 //  3. the redirect response could not be properly parsed
 type RedirectError struct {

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientId** | Pointer to **string** | The ID of the requesting client. | [optional] 
+**ClientSecret** | Pointer to **string** | The secret of the requesting client. | [optional] 
 **Code** | **string** | The authorization code received from the provider&#39;s authorization endpoint. | 
 **CodeVerifier** | Pointer to **string** | The code verifier associated with the authorization code. | [optional] 
 **GrantType** | **string** | The authorization grant type. The following grant types are supported: &#39;authorization_code&#39;. | 
@@ -53,6 +54,31 @@ SetClientId sets ClientId field to given value.
 `func (o *IdentityOidcProviderTokenRequest) HasClientId() bool`
 
 HasClientId returns a boolean if a field has been set.
+
+### GetClientSecret
+
+`func (o *IdentityOidcProviderTokenRequest) GetClientSecret() string`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *IdentityOidcProviderTokenRequest) GetClientSecretOk() (*string, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *IdentityOidcProviderTokenRequest) SetClientSecret(v string)`
+
+SetClientSecret sets ClientSecret field to given value.
+
+### HasClientSecret
+
+`func (o *IdentityOidcProviderTokenRequest) HasClientSecret() bool`
+
+HasClientSecret returns a boolean if a field has been set.
 
 ### GetCode
 

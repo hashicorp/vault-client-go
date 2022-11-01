@@ -3,8 +3,6 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteAuthAlicloudRoleRole**](Auth.md#DeleteAuthAlicloudRoleRole) | **Delete** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**DeleteAuthAppIdMapAppIdKey**](Auth.md#DeleteAuthAppIdMapAppIdKey) | **Delete** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
-[**DeleteAuthAppIdMapUserIdKey**](Auth.md#DeleteAuthAppIdMapUserIdKey) | **Delete** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
 [**DeleteAuthApproleRoleRoleName**](Auth.md#DeleteAuthApproleRoleRoleName) | **Delete** /auth/approle/role/{role_name} | Register an role with the backend.
 [**DeleteAuthApproleRoleRoleNameBindSecretId**](Auth.md#DeleteAuthApproleRoleRoleNameBindSecretId) | **Delete** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
 [**DeleteAuthApproleRoleRoleNameBoundCidrList**](Auth.md#DeleteAuthApproleRoleRoleNameBoundCidrList) | **Delete** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
@@ -14,7 +12,7 @@ Method | HTTP request | Description
 [**DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Delete** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 [**DeleteAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdDestroy) | **Delete** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
 [**DeleteAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdNumUses) | **Delete** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**DeleteAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
+[**DeleteAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
 [**DeleteAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameTokenBoundCidrs) | **Delete** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 [**DeleteAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenMaxTtl) | **Delete** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 [**DeleteAuthApproleRoleRoleNameTokenNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameTokenNumUses) | **Delete** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
@@ -56,10 +54,6 @@ Method | HTTP request | Description
 [**GetAuthAlicloudRole**](Auth.md#GetAuthAlicloudRole) | **Get** /auth/alicloud/role | Lists all the roles that are registered with Vault.
 [**GetAuthAlicloudRoleRole**](Auth.md#GetAuthAlicloudRoleRole) | **Get** /auth/alicloud/role/{role} | Create a role and associate policies to it.
 [**GetAuthAlicloudRoles**](Auth.md#GetAuthAlicloudRoles) | **Get** /auth/alicloud/roles | Lists all the roles that are registered with Vault.
-[**GetAuthAppIdMapAppId**](Auth.md#GetAuthAppIdMapAppId) | **Get** /auth/app-id/map/app-id | Read mappings for app-id
-[**GetAuthAppIdMapAppIdKey**](Auth.md#GetAuthAppIdMapAppIdKey) | **Get** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
-[**GetAuthAppIdMapUserId**](Auth.md#GetAuthAppIdMapUserId) | **Get** /auth/app-id/map/user-id | Read mappings for user-id
-[**GetAuthAppIdMapUserIdKey**](Auth.md#GetAuthAppIdMapUserIdKey) | **Get** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
 [**GetAuthApproleRole**](Auth.md#GetAuthApproleRole) | **Get** /auth/approle/role | Lists all the roles registered with the backend.
 [**GetAuthApproleRoleRoleName**](Auth.md#GetAuthApproleRoleRoleName) | **Get** /auth/approle/role/{role_name} | Register an role with the backend.
 [**GetAuthApproleRoleRoleNameBindSecretId**](Auth.md#GetAuthApproleRoleRoleNameBindSecretId) | **Get** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
@@ -71,7 +65,7 @@ Method | HTTP request | Description
 [**GetAuthApproleRoleRoleNameSecretId**](Auth.md#GetAuthApproleRoleRoleNameSecretId) | **Get** /auth/approle/role/{role_name}/secret-id | Generate a SecretID against this role.
 [**GetAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Get** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 [**GetAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#GetAuthApproleRoleRoleNameSecretIdNumUses) | **Get** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**GetAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#GetAuthApproleRoleRoleNameSecretIdTtl) | **Get** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
+[**GetAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#GetAuthApproleRoleRoleNameSecretIdTtl) | **Get** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
 [**GetAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameTokenBoundCidrs) | **Get** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 [**GetAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenMaxTtl) | **Get** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 [**GetAuthApproleRoleRoleNameTokenNumUses**](Auth.md#GetAuthApproleRoleRoleNameTokenNumUses) | **Get** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
@@ -103,6 +97,7 @@ Method | HTTP request | Description
 [**GetAuthCentrifyConfig**](Auth.md#GetAuthCentrifyConfig) | **Get** /auth/centrify/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 [**GetAuthCertCerts**](Auth.md#GetAuthCertCerts) | **Get** /auth/cert/certs | Manage trusted certificates used for authentication.
 [**GetAuthCertCertsName**](Auth.md#GetAuthCertCertsName) | **Get** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
+[**GetAuthCertConfig**](Auth.md#GetAuthCertConfig) | **Get** /auth/cert/config | 
 [**GetAuthCertCrlsName**](Auth.md#GetAuthCertCrlsName) | **Get** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
 [**GetAuthCfConfig**](Auth.md#GetAuthCfConfig) | **Get** /auth/cf/config | 
 [**GetAuthCfRoles**](Auth.md#GetAuthCfRoles) | **Get** /auth/cf/roles | 
@@ -158,10 +153,6 @@ Method | HTTP request | Description
 [**GetAuthUserpassUsersUsername**](Auth.md#GetAuthUserpassUsersUsername) | **Get** /auth/userpass/users/{username} | Manage users allowed to authenticate.
 [**PostAuthAlicloudLogin**](Auth.md#PostAuthAlicloudLogin) | **Post** /auth/alicloud/login | Authenticates an RAM entity with Vault.
 [**PostAuthAlicloudRoleRole**](Auth.md#PostAuthAlicloudRoleRole) | **Post** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**PostAuthAppIdLogin**](Auth.md#PostAuthAppIdLogin) | **Post** /auth/app-id/login | Log in with an App ID and User ID.
-[**PostAuthAppIdLoginAppId**](Auth.md#PostAuthAppIdLoginAppId) | **Post** /auth/app-id/login/{app_id} | Log in with an App ID and User ID.
-[**PostAuthAppIdMapAppIdKey**](Auth.md#PostAuthAppIdMapAppIdKey) | **Post** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
-[**PostAuthAppIdMapUserIdKey**](Auth.md#PostAuthAppIdMapUserIdKey) | **Post** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
 [**PostAuthApproleLogin**](Auth.md#PostAuthApproleLogin) | **Post** /auth/approle/login | 
 [**PostAuthApproleRoleRoleName**](Auth.md#PostAuthApproleRoleRoleName) | **Post** /auth/approle/role/{role_name} | Register an role with the backend.
 [**PostAuthApproleRoleRoleNameBindSecretId**](Auth.md#PostAuthApproleRoleRoleNameBindSecretId) | **Post** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
@@ -177,7 +168,7 @@ Method | HTTP request | Description
 [**PostAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdDestroy) | **Post** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
 [**PostAuthApproleRoleRoleNameSecretIdLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdLookup) | **Post** /auth/approle/role/{role_name}/secret-id/lookup | Read the properties of an issued secret_id
 [**PostAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#PostAuthApproleRoleRoleNameSecretIdNumUses) | **Post** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**PostAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#PostAuthApproleRoleRoleNameSecretIdTtl) | **Post** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
+[**PostAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#PostAuthApproleRoleRoleNameSecretIdTtl) | **Post** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
 [**PostAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameTokenBoundCidrs) | **Post** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 [**PostAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenMaxTtl) | **Post** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 [**PostAuthApproleRoleRoleNameTokenNumUses**](Auth.md#PostAuthApproleRoleRoleNameTokenNumUses) | **Post** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
@@ -321,124 +312,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **role** | **string** | The name of the role as it should appear in Vault. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthAppIdMapAppIdKey
-
-> DeleteAuthAppIdMapAppIdKey(ctx, key).Execute()
-
-Read/write/delete a single app-id mapping
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Key for the app-id mapping
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Key for the app-id mapping | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthAppIdMapUserIdKey
-
-> DeleteAuthAppIdMapUserIdKey(ctx, key).Execute()
-
-Read/write/delete a single user-id mapping
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Key for the user-id mapping
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Key for the user-id mapping | 
 
 ### Other Parameters
 
@@ -988,7 +861,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx, roleName).Execute()
 
-Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
+Duration in seconds of the SecretID generated against the role.
 
 ### Example
 
@@ -3390,234 +3263,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAppIdMapAppId
-
-> GetAuthAppIdMapAppId(ctx).List(list).Execute()
-
-Read mappings for app-id
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAppIdMapAppId(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAppIdMapAppIdKey
-
-> GetAuthAppIdMapAppIdKey(ctx, key).Execute()
-
-Read/write/delete a single app-id mapping
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Key for the app-id mapping
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAppIdMapAppIdKey(context.Background(), key)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Key for the app-id mapping | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAppIdMapUserId
-
-> GetAuthAppIdMapUserId(ctx).List(list).Execute()
-
-Read mappings for user-id
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAppIdMapUserId(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAppIdMapUserIdKey
-
-> GetAuthAppIdMapUserIdKey(ctx, key).Execute()
-
-Read/write/delete a single user-id mapping
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Key for the user-id mapping
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAppIdMapUserIdKey(context.Background(), key)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Key for the user-id mapping | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
 ## GetAuthApproleRole
 
 > GetAuthApproleRole(ctx).List(list).Execute()
@@ -4269,7 +3914,7 @@ Name | Type | Description  | Notes
 
 > GetAuthApproleRoleRoleNameSecretIdTtl(ctx, roleName).Execute()
 
-Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
+Duration in seconds of the SecretID generated against the role.
 
 ### Example
 
@@ -6041,6 +5686,57 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetAuthCertConfig
+
+> GetAuthCertConfig(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Auth.GetAuthCertConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
 
 
  (empty response body)
@@ -9088,244 +8784,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAppIdLogin
-
-> PostAuthAppIdLogin(ctx).AppIdLoginRequest(appIdLoginRequest).Execute()
-
-Log in with an App ID and User ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAppIdLogin(context.Background(), appIdLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appIdLoginRequest** | [**AppIdLoginRequest**](AppIdLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAppIdLoginAppId
-
-> PostAuthAppIdLoginAppId(ctx, appId).AppIdLoginRequest(appIdLoginRequest).Execute()
-
-Log in with an App ID and User ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	appId := "appId_example" // string | The unique app ID
-
-	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAppIdLoginAppId(context.Background(), appId, appIdLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**appId** | **string** | The unique app ID | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **appIdLoginRequest** | [**AppIdLoginRequest**](AppIdLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAppIdMapAppIdKey
-
-> PostAuthAppIdMapAppIdKey(ctx, key).AppIdMapAppIdRequest(appIdMapAppIdRequest).Execute()
-
-Read/write/delete a single app-id mapping
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Key for the app-id mapping
-
-	appIdMapAppIdRequest := NewAppIdMapAppIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAppIdMapAppIdKey(context.Background(), key, appIdMapAppIdRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Key for the app-id mapping | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **appIdMapAppIdRequest** | [**AppIdMapAppIdRequest**](AppIdMapAppIdRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAppIdMapUserIdKey
-
-> PostAuthAppIdMapUserIdKey(ctx, key).AppIdMapUserIdRequest(appIdMapUserIdRequest).Execute()
-
-Read/write/delete a single user-id mapping
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	key := "key_example" // string | Key for the user-id mapping
-
-	appIdMapUserIdRequest := NewAppIdMapUserIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAppIdMapUserIdKey(context.Background(), key, appIdMapUserIdRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**key** | **string** | Key for the user-id mapping | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **appIdMapUserIdRequest** | [**AppIdMapUserIdRequest**](AppIdMapUserIdRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
 ## PostAuthApproleLogin
 
 > PostAuthApproleLogin(ctx).ApproleLoginRequest(approleLoginRequest).Execute()
@@ -10239,7 +9697,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameSecretIdTtl(ctx, roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
 
-Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
+Duration in seconds of the SecretID generated against the role.
 
 ### Example
 
@@ -14672,7 +14130,7 @@ Name | Type | Description  | Notes
 
 ## PostAuthTokenCreate
 
-> PostAuthTokenCreate(ctx).Execute()
+> PostAuthTokenCreate(ctx).Format(format).TokenCreateRequest(tokenCreateRequest).Execute()
 
 The token create path is used to create new tokens.
 
@@ -14698,7 +14156,9 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreate(context.Background())
+	format := NewstringWithDefaults()
+	tokenCreateRequest := NewTokenCreateRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreate(context.Background(), format, tokenCreateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14709,11 +14169,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
 
 ### Other Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string** | Return json formatted output | 
+ **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
 
  (empty response body)
 
@@ -14723,7 +14187,7 @@ This endpoint does not require any parameters.
 
 ## PostAuthTokenCreateOrphan
 
-> PostAuthTokenCreateOrphan(ctx).Execute()
+> PostAuthTokenCreateOrphan(ctx).Format(format).TokenCreateOrphanRequest(tokenCreateOrphanRequest).Execute()
 
 The token create path is used to create new orphan tokens.
 
@@ -14749,7 +14213,9 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateOrphan(context.Background())
+	format := NewstringWithDefaults()
+	tokenCreateOrphanRequest := NewTokenCreateOrphanRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateOrphan(context.Background(), format, tokenCreateOrphanRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14760,11 +14226,15 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
 
 ### Other Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string** | Return json formatted output | 
+ **tokenCreateOrphanRequest** | [**TokenCreateOrphanRequest**](TokenCreateOrphanRequest.md) |  | 
 
  (empty response body)
 
@@ -14774,7 +14244,7 @@ This endpoint does not require any parameters.
 
 ## PostAuthTokenCreateRoleName
 
-> PostAuthTokenCreateRoleName(ctx, roleName).Execute()
+> PostAuthTokenCreateRoleName(ctx, roleName).Format(format).TokenCreateRequest(tokenCreateRequest).Execute()
 
 This token create path is used to create new tokens adhering to the given role.
 
@@ -14801,7 +14271,9 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateRoleName(context.Background(), roleName)
+	format := NewstringWithDefaults()
+	tokenCreateRequest := NewTokenCreateRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateRoleName(context.Background(), roleName, format, tokenCreateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14824,6 +14296,8 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **format** | **string** | Return json formatted output | 
+ **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
 
  (empty response body)
 

@@ -16,10 +16,13 @@ Name | Type | Description | Notes
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **PrivateKeyFormat** | Pointer to **string** | Format for the returned private key. Generally the default will be controlled by the \&quot;format\&quot; parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \&quot;pkcs8\&quot; to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \&quot;der\&quot;. | [optional] [default to "der"]
+**RemoveRootsFromChain** | Pointer to **bool** | Whether or not to remove self-signed CA certificates in the output of the ca_chain field. | [optional] [default to false]
 **Role** | Pointer to **string** | The desired role with configuration for this request | [optional] 
 **SerialNumber** | Pointer to **string** | The Subject&#39;s requested serial number, if any. See RFC 4519 Section 2.31 &#39;serialNumber&#39; for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate&#39;s Serial Number field. | [optional] 
+**SignatureBits** | Pointer to **int32** | The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves). | [optional] [default to 0]
 **Ttl** | Pointer to **int32** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL. | [optional] 
 **UriSans** | Pointer to **[]string** | The requested URI SANs, if any, in a comma-delimited list. | [optional] 
+**UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
 
 ## Methods
 
@@ -340,6 +343,31 @@ SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
 
+### GetRemoveRootsFromChain
+
+`func (o *PkiIssuerSignVerbatimRequest) GetRemoveRootsFromChain() bool`
+
+GetRemoveRootsFromChain returns the RemoveRootsFromChain field if non-nil, zero value otherwise.
+
+### GetRemoveRootsFromChainOk
+
+`func (o *PkiIssuerSignVerbatimRequest) GetRemoveRootsFromChainOk() (*bool, bool)`
+
+GetRemoveRootsFromChainOk returns a tuple with the RemoveRootsFromChain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemoveRootsFromChain
+
+`func (o *PkiIssuerSignVerbatimRequest) SetRemoveRootsFromChain(v bool)`
+
+SetRemoveRootsFromChain sets RemoveRootsFromChain field to given value.
+
+### HasRemoveRootsFromChain
+
+`func (o *PkiIssuerSignVerbatimRequest) HasRemoveRootsFromChain() bool`
+
+HasRemoveRootsFromChain returns a boolean if a field has been set.
+
 ### GetRole
 
 `func (o *PkiIssuerSignVerbatimRequest) GetRole() string`
@@ -390,6 +418,31 @@ SetSerialNumber sets SerialNumber field to given value.
 
 HasSerialNumber returns a boolean if a field has been set.
 
+### GetSignatureBits
+
+`func (o *PkiIssuerSignVerbatimRequest) GetSignatureBits() int32`
+
+GetSignatureBits returns the SignatureBits field if non-nil, zero value otherwise.
+
+### GetSignatureBitsOk
+
+`func (o *PkiIssuerSignVerbatimRequest) GetSignatureBitsOk() (*int32, bool)`
+
+GetSignatureBitsOk returns a tuple with the SignatureBits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSignatureBits
+
+`func (o *PkiIssuerSignVerbatimRequest) SetSignatureBits(v int32)`
+
+SetSignatureBits sets SignatureBits field to given value.
+
+### HasSignatureBits
+
+`func (o *PkiIssuerSignVerbatimRequest) HasSignatureBits() bool`
+
+HasSignatureBits returns a boolean if a field has been set.
+
 ### GetTtl
 
 `func (o *PkiIssuerSignVerbatimRequest) GetTtl() int32`
@@ -439,6 +492,31 @@ SetUriSans sets UriSans field to given value.
 `func (o *PkiIssuerSignVerbatimRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
+
+### GetUsePss
+
+`func (o *PkiIssuerSignVerbatimRequest) GetUsePss() bool`
+
+GetUsePss returns the UsePss field if non-nil, zero value otherwise.
+
+### GetUsePssOk
+
+`func (o *PkiIssuerSignVerbatimRequest) GetUsePssOk() (*bool, bool)`
+
+GetUsePssOk returns a tuple with the UsePss field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsePss
+
+`func (o *PkiIssuerSignVerbatimRequest) SetUsePss(v bool)`
+
+SetUsePss sets UsePss field to given value.
+
+### HasUsePss
+
+`func (o *PkiIssuerSignVerbatimRequest) HasUsePss() bool`
+
+HasUsePss returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

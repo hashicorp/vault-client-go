@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **PrivateKeyFormat** | Pointer to **string** | Format for the returned private key. Generally the default will be controlled by the \&quot;format\&quot; parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \&quot;pkcs8\&quot; to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \&quot;der\&quot;. | [optional] [default to "der"]
+**RemoveRootsFromChain** | Pointer to **bool** | Whether or not to remove self-signed CA certificates in the output of the ca_chain field. | [optional] [default to false]
 **SerialNumber** | Pointer to **string** | The Subject&#39;s requested serial number, if any. See RFC 4519 Section 2.31 &#39;serialNumber&#39; for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate&#39;s Serial Number field. | [optional] 
 **Ttl** | Pointer to **int32** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL. | [optional] 
 **UriSans** | Pointer to **[]string** | The requested URI SANs, if any, in a comma-delimited list. | [optional] 
@@ -234,6 +235,31 @@ SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 `func (o *PkiIssuerIssueRequest) HasPrivateKeyFormat() bool`
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
+
+### GetRemoveRootsFromChain
+
+`func (o *PkiIssuerIssueRequest) GetRemoveRootsFromChain() bool`
+
+GetRemoveRootsFromChain returns the RemoveRootsFromChain field if non-nil, zero value otherwise.
+
+### GetRemoveRootsFromChainOk
+
+`func (o *PkiIssuerIssueRequest) GetRemoveRootsFromChainOk() (*bool, bool)`
+
+GetRemoveRootsFromChainOk returns a tuple with the RemoveRootsFromChain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemoveRootsFromChain
+
+`func (o *PkiIssuerIssueRequest) SetRemoveRootsFromChain(v bool)`
+
+SetRemoveRootsFromChain sets RemoveRootsFromChain field to given value.
+
+### HasRemoveRootsFromChain
+
+`func (o *PkiIssuerIssueRequest) HasRemoveRootsFromChain() bool`
+
+HasRemoveRootsFromChain returns a boolean if a field has been set.
 
 ### GetSerialNumber
 

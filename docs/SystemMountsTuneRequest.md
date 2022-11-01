@@ -10,10 +10,11 @@ Name | Type | Description | Notes
 **AuditNonHmacResponseKeys** | Pointer to **[]string** | The list of keys in the response data object that will not be HMAC&#39;ed by audit devices. | [optional] 
 **DefaultLeaseTtl** | Pointer to **string** | The default lease TTL for this mount. | [optional] 
 **Description** | Pointer to **string** | User-friendly description for this credential backend. | [optional] 
-**ListingVisibility** | Pointer to **string** | Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are &#39;unauth&#39; and &#39;&#39;. | [optional] 
+**ListingVisibility** | Pointer to **string** | Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are &#39;unauth&#39; and &#39;hidden&#39;, with the empty default (&#39;&#39;) behaving like &#39;hidden&#39;. | [optional] 
 **MaxLeaseTtl** | Pointer to **string** | The max lease TTL for this mount. | [optional] 
 **Options** | Pointer to **map[string]interface{}** | The options to pass into the backend. Should be a json object with string keys and values. | [optional] 
 **PassthroughRequestHeaders** | Pointer to **[]string** | A list of headers to whitelist and pass from the request to the plugin. | [optional] 
+**PluginVersion** | Pointer to **string** | The semantic version of the plugin to use. | [optional] 
 **TokenType** | Pointer to **string** | The type of token to issue (service or batch). | [optional] 
 
 ## Methods
@@ -284,6 +285,31 @@ SetPassthroughRequestHeaders sets PassthroughRequestHeaders field to given value
 `func (o *SystemMountsTuneRequest) HasPassthroughRequestHeaders() bool`
 
 HasPassthroughRequestHeaders returns a boolean if a field has been set.
+
+### GetPluginVersion
+
+`func (o *SystemMountsTuneRequest) GetPluginVersion() string`
+
+GetPluginVersion returns the PluginVersion field if non-nil, zero value otherwise.
+
+### GetPluginVersionOk
+
+`func (o *SystemMountsTuneRequest) GetPluginVersionOk() (*string, bool)`
+
+GetPluginVersionOk returns a tuple with the PluginVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginVersion
+
+`func (o *SystemMountsTuneRequest) SetPluginVersion(v string)`
+
+SetPluginVersion sets PluginVersion field to given value.
+
+### HasPluginVersion
+
+`func (o *SystemMountsTuneRequest) HasPluginVersion() bool`
+
+HasPluginVersion returns a boolean if a field has been set.
 
 ### GetTokenType
 

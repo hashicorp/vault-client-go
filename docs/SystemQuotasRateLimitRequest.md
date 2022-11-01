@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Interval** | Pointer to **int32** | The duration to enforce rate limiting for (default &#39;1s&#39;). | [optional] 
 **Path** | Pointer to **string** | Path of the mount or namespace to apply the quota. A blank path configures a global quota. For example namespace1/ adds a quota to a full namespace, namespace1/auth/userpass adds a quota to userpass in namespace1. | [optional] 
 **Rate** | Pointer to **float32** | The maximum number of requests in a given interval to be allowed by the quota rule. The &#39;rate&#39; must be positive. | [optional] 
+**Role** | Pointer to **string** | Login role to apply this quota to. Note that when set, path must be configured to a valid auth method with a concept of roles. | [optional] 
 **Type** | Pointer to **string** | Type of the quota rule. | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetRate sets Rate field to given value.
 `func (o *SystemQuotasRateLimitRequest) HasRate() bool`
 
 HasRate returns a boolean if a field has been set.
+
+### GetRole
+
+`func (o *SystemQuotasRateLimitRequest) GetRole() string`
+
+GetRole returns the Role field if non-nil, zero value otherwise.
+
+### GetRoleOk
+
+`func (o *SystemQuotasRateLimitRequest) GetRoleOk() (*string, bool)`
+
+GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRole
+
+`func (o *SystemQuotasRateLimitRequest) SetRole(v string)`
+
+SetRole sets Role field to given value.
+
+### HasRole
+
+`func (o *SystemQuotasRateLimitRequest) HasRole() bool`
+
+HasRole returns a boolean if a field has been set.
 
 ### GetType
 

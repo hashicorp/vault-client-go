@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AzureGroups** | Pointer to **string** | JSON list of Azure groups to add the service principal to. | [optional] 
 **AzureRoles** | Pointer to **string** | JSON list of Azure roles to assign. | [optional] 
 **MaxTtl** | Pointer to **int32** | Maximum time a service principal. If not set or set to 0, will use system default. | [optional] 
+**PermanentlyDelete** | Pointer to **bool** | Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted. | [optional] [default to false]
 **Ttl** | Pointer to **int32** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetMaxTtl sets MaxTtl field to given value.
 `func (o *AzureRolesRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+### GetPermanentlyDelete
+
+`func (o *AzureRolesRequest) GetPermanentlyDelete() bool`
+
+GetPermanentlyDelete returns the PermanentlyDelete field if non-nil, zero value otherwise.
+
+### GetPermanentlyDeleteOk
+
+`func (o *AzureRolesRequest) GetPermanentlyDeleteOk() (*bool, bool)`
+
+GetPermanentlyDeleteOk returns a tuple with the PermanentlyDelete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPermanentlyDelete
+
+`func (o *AzureRolesRequest) SetPermanentlyDelete(v bool)`
+
+SetPermanentlyDelete sets PermanentlyDelete field to given value.
+
+### HasPermanentlyDelete
+
+`func (o *AzureRolesRequest) HasPermanentlyDelete() bool`
+
+HasPermanentlyDelete returns a boolean if a field has been set.
 
 ### GetTtl
 

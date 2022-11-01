@@ -6,7 +6,7 @@ info:
     name: Mozilla Public License 2.0
     url: https://www.mozilla.org/en-US/MPL/2.0
   title: HashiCorp Vault API
-  version: 1.12.0
+  version: 1.13.0
 servers:
 - url: /
 paths:
@@ -599,203 +599,6 @@ paths:
       summary: Lists all the roles that are registered with Vault.
       tags:
       - auth
-  /auth/app-id/login:
-    description: Log in with an App ID and User ID.
-    post:
-      operationId: postAuthAppIdLogin
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/App-IdLoginRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Log in with an App ID and User ID.
-      tags:
-      - auth
-    x-vault-unauthenticated: true
-  /auth/app-id/login/{app_id}:
-    description: Log in with an App ID and User ID.
-    post:
-      operationId: postAuthAppIdLoginApp_id
-      parameters:
-      - description: The unique app ID
-        explode: false
-        in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/App-IdLoginRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Log in with an App ID and User ID.
-      tags:
-      - auth
-    x-vault-unauthenticated: true
-  /auth/app-id/map/app-id:
-    description: Read mappings for app-id
-    get:
-      operationId: getAuthAppIdMapAppId
-      parameters:
-      - description: Return a list if `true`
-        explode: true
-        in: query
-        name: list
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          description: OK
-      summary: Read mappings for app-id
-      tags:
-      - auth
-  /auth/app-id/map/app-id/{key}:
-    delete:
-      operationId: deleteAuthAppIdMapAppIdKey
-      parameters:
-      - description: Key for the app-id mapping
-        explode: false
-        in: path
-        name: key
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "204":
-          description: empty body
-      summary: Read/write/delete a single app-id mapping
-      tags:
-      - auth
-    description: Read/write/delete a single app-id mapping
-    get:
-      operationId: getAuthAppIdMapAppIdKey
-      parameters:
-      - description: Key for the app-id mapping
-        explode: false
-        in: path
-        name: key
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: OK
-      summary: Read/write/delete a single app-id mapping
-      tags:
-      - auth
-    post:
-      operationId: postAuthAppIdMapAppIdKey
-      parameters:
-      - description: Key for the app-id mapping
-        explode: false
-        in: path
-        name: key
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/App-IdMapAppIdRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Read/write/delete a single app-id mapping
-      tags:
-      - auth
-    x-vault-createSupported: true
-  /auth/app-id/map/user-id:
-    description: Read mappings for user-id
-    get:
-      operationId: getAuthAppIdMapUserId
-      parameters:
-      - description: Return a list if `true`
-        explode: true
-        in: query
-        name: list
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          description: OK
-      summary: Read mappings for user-id
-      tags:
-      - auth
-  /auth/app-id/map/user-id/{key}:
-    delete:
-      operationId: deleteAuthAppIdMapUserIdKey
-      parameters:
-      - description: Key for the user-id mapping
-        explode: false
-        in: path
-        name: key
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "204":
-          description: empty body
-      summary: Read/write/delete a single user-id mapping
-      tags:
-      - auth
-    description: Read/write/delete a single user-id mapping
-    get:
-      operationId: getAuthAppIdMapUserIdKey
-      parameters:
-      - description: Key for the user-id mapping
-        explode: false
-        in: path
-        name: key
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: OK
-      summary: Read/write/delete a single user-id mapping
-      tags:
-      - auth
-    post:
-      operationId: postAuthAppIdMapUserIdKey
-      parameters:
-      - description: Key for the user-id mapping
-        explode: false
-        in: path
-        name: key
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/App-IdMapUserIdRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Read/write/delete a single user-id mapping
-      tags:
-      - auth
-    x-vault-createSupported: true
   /auth/approle/login:
     description: Issue a token based on the credentials supplied
     post:
@@ -1463,15 +1266,10 @@ paths:
       responses:
         "204":
           description: empty body
-      summary: |-
-        Duration in seconds, representing the lifetime of the SecretIDs
-        that are generated against the role using 'role/<role_name>/secret-id' or
-        'role/<role_name>/custom-secret-id' endpoints.
+      summary: Duration in seconds of the SecretID generated against the role.
       tags:
       - auth
-    description: Duration in seconds, representing the lifetime of the SecretIDs that
-      are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id'
-      endpoints.
+    description: Duration in seconds of the SecretID generated against the role.
     get:
       operationId: getAuthApproleRoleRole_nameSecretIdTtl
       parameters:
@@ -1486,10 +1284,7 @@ paths:
       responses:
         "200":
           description: OK
-      summary: |-
-        Duration in seconds, representing the lifetime of the SecretIDs
-        that are generated against the role using 'role/<role_name>/secret-id' or
-        'role/<role_name>/custom-secret-id' endpoints.
+      summary: Duration in seconds of the SecretID generated against the role.
       tags:
       - auth
     post:
@@ -1511,10 +1306,7 @@ paths:
       responses:
         "200":
           description: OK
-      summary: |-
-        Duration in seconds, representing the lifetime of the SecretIDs
-        that are generated against the role using 'role/<role_name>/secret-id' or
-        'role/<role_name>/custom-secret-id' endpoints.
+      summary: Duration in seconds of the SecretID generated against the role.
       tags:
       - auth
   /auth/approle/role/{role_name}/secret-id/destroy:
@@ -2891,6 +2683,13 @@ paths:
       itemType: Certificate
       action: Create
   /auth/cert/config:
+    get:
+      operationId: getAuthCertConfig
+      responses:
+        "200":
+          description: OK
+      tags:
+      - auth
     post:
       operationId: postAuthCertConfig
       requestBody:
@@ -4160,6 +3959,9 @@ paths:
       tags:
       - auth
     x-vault-createSupported: true
+  /auth/oci/login:
+    description: Determines the role that would be used for login from a valid OCI
+      login request
   /auth/oci/login/{role}:
     description: Authenticates to Vault using OCI credentials
     post:
@@ -4871,6 +4673,20 @@ paths:
     description: The token create path is used to create new tokens.
     post:
       operationId: postAuthTokenCreate
+      parameters:
+      - description: Return json formatted output
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenCreateRequest'
       responses:
         "200":
           description: OK
@@ -4881,6 +4697,20 @@ paths:
     description: The token create path is used to create new orphan tokens.
     post:
       operationId: postAuthTokenCreateOrphan
+      parameters:
+      - description: Return json formatted output
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenCreateOrphanRequest'
       responses:
         "200":
           description: OK
@@ -4893,6 +4723,14 @@ paths:
     post:
       operationId: postAuthTokenCreateRole_name
       parameters:
+      - description: Return json formatted output
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Name of the role
         explode: false
         in: path
@@ -4901,6 +4739,11 @@ paths:
         schema:
           type: string
         style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenCreateRequest'
       responses:
         "200":
           description: OK
@@ -8199,6 +8042,16 @@ paths:
     get:
       operationId: getIdentityOidcProvider
       parameters:
+      - description: Filters the list of OIDC providers to those that allow the given
+          client ID in their set of allowed_client_ids.
+        explode: true
+        in: query
+        name: allowed_client_id
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
       - description: Must be set to `true`
         explode: true
         in: query
@@ -8869,6 +8722,426 @@ paths:
       tags:
       - secrets
     x-vault-createSupported: true
+  /ldap/config:
+    delete:
+      operationId: deleteLdapConfig
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Configure the LDAP secrets engine plugin.
+    get:
+      operationId: getLdapConfig
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postLdapConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LdapConfigRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-createSupported: true
+  /ldap/creds/{name}:
+    description: Request LDAP credentials for a dynamic role. These credentials are
+      created within the LDAP system when querying this endpoint.
+    get:
+      operationId: getLdapCredsName
+      parameters:
+      - description: Name of the dynamic role.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /ldap/library:
+    description: List the name of each set of service accounts currently stored.
+    get:
+      operationId: getLdapLibrary
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /ldap/library/manage/{name}/check-in:
+    description: Force checking service accounts in to the library.
+    post:
+      operationId: postLdapLibraryManageNameCheckIn
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LdapLibraryManageCheckInRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Check service accounts in to the library.
+      tags:
+      - secrets
+  /ldap/library/{name}:
+    delete:
+      operationId: deleteLdapLibraryName
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      summary: Delete a library set.
+      tags:
+      - secrets
+    description: Build a library of service accounts that can be checked out.
+    get:
+      operationId: getLdapLibraryName
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: Read a library set.
+      tags:
+      - secrets
+    post:
+      operationId: postLdapLibraryName
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LdapLibraryRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Update a library set.
+      tags:
+      - secrets
+    x-vault-createSupported: true
+  /ldap/library/{name}/check-in:
+    description: Check service accounts in to the library.
+    post:
+      operationId: postLdapLibraryNameCheckIn
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LdapLibraryCheckInRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Check service accounts in to the library.
+      tags:
+      - secrets
+  /ldap/library/{name}/check-out:
+    description: Check a service account out from the library.
+    post:
+      operationId: postLdapLibraryNameCheckOut
+      parameters:
+      - description: Name of the set
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LdapLibraryCheckOutRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Check a service account out from the library.
+      tags:
+      - secrets
+  /ldap/library/{name}/status:
+    description: Check the status of the service accounts in a library.
+    get:
+      operationId: getLdapLibraryNameStatus
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: Check the status of the service accounts in a library set.
+      tags:
+      - secrets
+  /ldap/role:
+    description: List all the dynamic roles Vault is currently managing in LDAP.
+    get:
+      operationId: getLdapRole
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /ldap/role/{name}:
+    delete:
+      operationId: deleteLdapRoleName
+      parameters:
+      - description: Name of the role (lowercase)
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Manage the static roles that can be created with this backend.
+    get:
+      operationId: getLdapRoleName
+      parameters:
+      - description: Name of the role (lowercase)
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postLdapRoleName
+      parameters:
+      - description: Name of the role (lowercase)
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LdapRoleRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-createSupported: true
+  /ldap/rotate-role/{name}:
+    description: Request to rotate the credentials for a static user account.
+    post:
+      operationId: postLdapRotateRoleName
+      parameters:
+      - description: Name of the static role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-createSupported: true
+  /ldap/rotate-root:
+    description: Request to rotate the root credentials Vault uses for the LDAP administrator
+      account.
+    post:
+      operationId: postLdapRotateRoot
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-createSupported: true
+  /ldap/static-cred/{name}:
+    description: Request LDAP credentials for a certain static role. These credentials
+      are rotated periodically.
+    get:
+      operationId: getLdapStaticCredName
+      parameters:
+      - description: Name of the static role.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /ldap/static-role:
+    description: This path lists all the static roles Vault is currently managing
+      within the LDAP system.
+    get:
+      operationId: getLdapStaticRole
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /ldap/static-role/{name}:
+    delete:
+      operationId: deleteLdapStaticRoleName
+      parameters:
+      - description: Name of the role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Manage the static roles that can be created with this backend.
+    get:
+      operationId: getLdapStaticRoleName
+      parameters:
+      - description: Name of the role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postLdapStaticRoleName
+      parameters:
+      - description: Name of the role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LdapStaticRoleRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-createSupported: true
   /mongodbatlas/config:
     description: Configure the credentials that are used to manage Database Users.
     get:
@@ -9166,7 +9439,7 @@ paths:
           description: empty body
       tags:
       - secrets
-    description: Configure the OpenLDAP secret engine plugin.
+    description: Configure the LDAP secrets engine plugin.
     get:
       operationId: getOpenldapConfig
       responses:
@@ -9189,7 +9462,7 @@ paths:
     x-vault-createSupported: true
   /openldap/creds/{name}:
     description: Request LDAP credentials for a dynamic role. These credentials are
-      created within OpenLDAP when querying this endpoint.
+      created within the LDAP system when querying this endpoint.
     get:
       operationId: getOpenldapCredsName
       parameters:
@@ -9206,8 +9479,178 @@ paths:
           description: OK
       tags:
       - secrets
+  /openldap/library:
+    description: List the name of each set of service accounts currently stored.
+    get:
+      operationId: getOpenldapLibrary
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /openldap/library/manage/{name}/check-in:
+    description: Force checking service accounts in to the library.
+    post:
+      operationId: postOpenldapLibraryManageNameCheckIn
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenldapLibraryManageCheckInRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Check service accounts in to the library.
+      tags:
+      - secrets
+  /openldap/library/{name}:
+    delete:
+      operationId: deleteOpenldapLibraryName
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      summary: Delete a library set.
+      tags:
+      - secrets
+    description: Build a library of service accounts that can be checked out.
+    get:
+      operationId: getOpenldapLibraryName
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: Read a library set.
+      tags:
+      - secrets
+    post:
+      operationId: postOpenldapLibraryName
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenldapLibraryRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Update a library set.
+      tags:
+      - secrets
+    x-vault-createSupported: true
+  /openldap/library/{name}/check-in:
+    description: Check service accounts in to the library.
+    post:
+      operationId: postOpenldapLibraryNameCheckIn
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenldapLibraryCheckInRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Check service accounts in to the library.
+      tags:
+      - secrets
+  /openldap/library/{name}/check-out:
+    description: Check a service account out from the library.
+    post:
+      operationId: postOpenldapLibraryNameCheckOut
+      parameters:
+      - description: Name of the set
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenldapLibraryCheckOutRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Check a service account out from the library.
+      tags:
+      - secrets
+  /openldap/library/{name}/status:
+    description: Check the status of the service accounts in a library.
+    get:
+      operationId: getOpenldapLibraryNameStatus
+      parameters:
+      - description: Name of the set.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: Check the status of the service accounts in a library set.
+      tags:
+      - secrets
   /openldap/role:
-    description: List all the dynamic roles Vault is currently managing in OpenLDAP.
+    description: List all the dynamic roles Vault is currently managing in LDAP.
     get:
       operationId: getOpenldapRole
       parameters:
@@ -9302,8 +9745,8 @@ paths:
       - secrets
     x-vault-createSupported: true
   /openldap/rotate-root:
-    description: Request to rotate the root credentials Vault uses for the OpenLDAP
-      administrator account.
+    description: Request to rotate the root credentials Vault uses for the LDAP administrator
+      account.
     post:
       operationId: postOpenldapRotateRoot
       responses:
@@ -9333,7 +9776,7 @@ paths:
       - secrets
   /openldap/static-role:
     description: This path lists all the static roles Vault is currently managing
-      in OpenLDAP.
+      within the LDAP system.
     get:
       operationId: getOpenldapStaticRole
       parameters:
@@ -9408,6 +9851,24 @@ paths:
       tags:
       - secrets
     x-vault-createSupported: true
+  /pki//delta:
+    description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+    get:
+      operationId: getPkiDelta
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki//delta/pem:
+    description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+    get:
+      operationId: getPkiDeltaPem
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
   /pki//der:
     description: Fetch an issuer's Certificate Revocation Log (CRL).
     get:
@@ -9440,6 +9901,15 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PkiJsonRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki//pem:
+    description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+    get:
+      operationId: getPkiPem
       responses:
         "200":
           description: OK
@@ -9507,16 +9977,6 @@ paths:
     description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
     get:
       operationId: getPkiCertCa_chain
-      responses:
-        "200":
-          description: OK
-      tags:
-      - secrets
-    x-vault-unauthenticated: true
-  /pki/cert/crl:
-    description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-    get:
-      operationId: getPkiCertCrl
       responses:
         "200":
           description: OK
@@ -9595,6 +10055,27 @@ paths:
           - "true"
           type: string
         style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/config/auto-tidy:
+    description: Modifies the current configuration for automatic tidy execution.
+    get:
+      operationId: getPkiConfigAutoTidy
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postPkiConfigAutoTidy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiConfigAutoTidyRequest'
       responses:
         "200":
           description: OK
@@ -9709,20 +10190,28 @@ paths:
       tags:
       - secrets
     x-vault-unauthenticated: true
-  /pki/crl/pem:
-    description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+  /pki/crl/rotate:
+    description: Force a rebuild of the CRL.
     get:
-      operationId: getPkiCrlPem
+      operationId: getPkiCrlRotate
       responses:
         "200":
           description: OK
       tags:
       - secrets
-    x-vault-unauthenticated: true
-  /pki/crl/rotate:
-    description: Force a rebuild of the CRL.
+  /pki/crl/rotate-delta:
+    description: Force a rebuild of the delta CRL.
     get:
-      operationId: getPkiCrlRotate
+      operationId: getPkiCrlRotateDelta
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/delta-crl:
+    description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+    get:
+      operationId: getPkiDeltaCrl
       responses:
         "200":
           description: OK
@@ -9785,20 +10274,6 @@ paths:
           description: OK
       tags:
       - secrets
-  /pki/internal|exported:
-    description: Generate a new private key used for signing.
-    post:
-      operationId: postPkiInternalExported
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PkiInternalExportedRequest'
-      responses:
-        "200":
-          description: OK
-      tags:
-      - secrets
   /pki/issue/{role}:
     description: Request a certificate using a certain role with the provided details.
     post:
@@ -9850,6 +10325,26 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PkiIssuerIssueRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuer/{issuer_ref}/revoke:
+    description: Revoke the specified issuer certificate.
+    post:
+      operationId: postPkiIssuerIssuer_refRevoke
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
       responses:
         "200":
           description: OK
@@ -10016,7 +10511,6 @@ paths:
           description: OK
       tags:
       - secrets
-    x-vault-unauthenticated: true
   /pki/issuers/generate/intermediate/{exported}:
     description: Generate a new CSR and private key used for signing.
     post:
@@ -10184,8 +10678,39 @@ paths:
           description: OK
       tags:
       - secrets
+  /pki/ocsp:
+    description: Query a certificate's revocation status through OCSP'
+    post:
+      operationId: postPkiOcsp
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-unauthenticated: true
+  /pki/ocsp/{req}:
+    description: Query a certificate's revocation status through OCSP'
+    get:
+      operationId: getPkiOcspReq
+      parameters:
+      - description: base-64 encoded ocsp request
+        explode: false
+        in: path
+        name: req
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-unauthenticated: true
   /pki/revoke:
-    description: Revoke a certificate by serial number.
+    description: Revoke a certificate by serial number or with explicit certificate.
+      When calling /revoke-with-key, the private key corresponding to the certificate
+      must be provided to authenticate the request.
     post:
       operationId: postPkiRevoke
       requestBody:
@@ -10193,6 +10718,22 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PkiRevokeRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/revoke-with-key:
+    description: Revoke a certificate by serial number or with explicit certificate.
+      When calling /revoke-with-key, the private key corresponding to the certificate
+      must be provided to authenticate the request.
+    post:
+      operationId: postPkiRevokeWithKey
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiRevokeWithKeyRequest'
       responses:
         "200":
           description: OK
@@ -10459,6 +11000,15 @@ paths:
           description: OK
       tags:
       - secrets
+  /pki/tidy-cancel:
+    description: Cancels a currently running tidy operation.
+    post:
+      operationId: postPkiTidyCancel
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
   /pki/tidy-status:
     description: Returns the status of the tidy operation.
     get:
@@ -10468,10 +11018,10 @@ paths:
           description: OK
       tags:
       - secrets
-  /pki/{issuer_ref}/crl/pem:
+  /pki/{issuer_ref}/crl/pem|/der|/delta/pem:
     description: Fetch an issuer's Certificate Revocation Log (CRL).
     get:
-      operationId: getPkiIssuer_refCrlPem
+      operationId: getPkiIssuer_refCrlPemDerDeltaPem
       parameters:
       - description: Reference to a existing issuer; either "default" for the configured
           default issuer, an identifier or the name assigned to the issuer.
@@ -10521,29 +11071,6 @@ paths:
           default: default
           type: string
         style: simple
-      responses:
-        "200":
-          description: OK
-      tags:
-      - secrets
-    post:
-      operationId: postPkiIssuer_refDerPem
-      parameters:
-      - description: Reference to a existing issuer; either "default" for the configured
-          default issuer, an identifier or the name assigned to the issuer.
-        explode: false
-        in: path
-        name: issuer_ref
-        required: true
-        schema:
-          default: default
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PkiDerPemRequest'
       responses:
         "200":
           description: OK
@@ -11021,6 +11548,29 @@ paths:
           description: OK
       summary: Creates a credential for establishing SSH connection with the remote
         host.
+      tags:
+      - secrets
+  /ssh/issue/{role}:
+    description: Request a certificate using a certain role with the provided details.
+    post:
+      operationId: postSshIssueRole
+      parameters:
+      - description: The desired role with configuration for this request.
+        explode: false
+        in: path
+        name: role
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SshIssueRequest'
+      responses:
+        "200":
+          description: OK
       tags:
       - secrets
   /ssh/keys/{key_name}:
@@ -12253,6 +12803,68 @@ paths:
       summary: |-
         This endpoint performs cleanup tasks that can be run if certain error
         conditions have occurred.
+      tags:
+      - system
+  /sys/loggers:
+    delete:
+      operationId: deleteSysLoggers
+      responses:
+        "204":
+          description: empty body
+      summary: Revert the all loggers to use log level provided in config.
+      tags:
+      - system
+    post:
+      operationId: postSysLoggers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemLoggersRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Modify the log level for all existing loggers.
+      tags:
+      - system
+  /sys/loggers/{name}:
+    delete:
+      operationId: deleteSysLoggersName
+      parameters:
+      - description: The name of the logger to be modified.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      summary: Revert a single logger to use log level provided in config.
+      tags:
+      - system
+    post:
+      operationId: postSysLoggersName
+      parameters:
+      - description: The name of the logger to be modified.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemLoggersRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Modify the log level of a single logger.
       tags:
       - system
   /sys/metrics:
@@ -14173,7 +14785,7 @@ paths:
     post:
       operationId: postTransitDecryptName
       parameters:
-      - description: Name of the policy
+      - description: Name of the key
         explode: false
         in: path
         name: name
@@ -14198,7 +14810,7 @@ paths:
     post:
       operationId: postTransitEncryptName
       parameters:
-      - description: Name of the policy
+      - description: Name of the key
         explode: false
         in: path
         name: name
@@ -15337,30 +15949,6 @@ components:
           format: seconds
           type: integer
       type: object
-    App-IdLoginRequest:
-      properties:
-        user_id:
-          description: The unique user ID
-          type: string
-      type: object
-    App-IdMapAppIdRequest:
-      properties:
-        display_name:
-          description: A name to map to this app ID for logs.
-          type: string
-        value:
-          description: Policies for the app ID.
-          type: string
-      type: object
-    App-IdMapUserIdRequest:
-      properties:
-        cidr_block:
-          description: If not blank, restricts auth by this CIDR block
-          type: string
-        value:
-          description: App IDs that this user associates with.
-          type: string
-      type: object
     ApproleLoginRequest:
       example:
         secret_id: secret_id
@@ -15403,9 +15991,11 @@ components:
       example:
         secret_id: secret_id
         metadata: metadata
+        num_uses: 0
         token_bound_cidrs:
         - token_bound_cidrs
         - token_bound_cidrs
+        ttl: 6
         cidr_list:
         - cidr_list
         - cidr_list
@@ -15422,6 +16012,11 @@ components:
           description: Metadata to be tied to the SecretID. This should be a JSON
             formatted string containing metadata in key value pairs.
           type: string
+        num_uses:
+          description: Number of times this SecretID can be used, after which the
+            SecretID expires. Overrides secret_id_num_uses role option when supplied.
+            May not be higher than role's secret_id_num_uses.
+          type: integer
         secret_id:
           description: SecretID to be attached to the role.
           type: string
@@ -15432,6 +16027,12 @@ components:
           items:
             type: string
           type: array
+        ttl:
+          description: Duration in seconds after which this SecretID expires. Overrides
+            secret_id_ttl role option when supplied. May not be longer than role's
+            secret_id_ttl.
+          format: seconds
+          type: integer
       type: object
     ApproleRolePeriodRequest:
       example:
@@ -15690,9 +16291,11 @@ components:
     ApproleRoleSecretIdRequest:
       example:
         metadata: metadata
+        num_uses: 0
         token_bound_cidrs:
         - token_bound_cidrs
         - token_bound_cidrs
+        ttl: 6
         cidr_list:
         - cidr_list
         - cidr_list
@@ -15709,6 +16312,11 @@ components:
           description: Metadata to be tied to the SecretID. This should be a JSON
             formatted string containing the metadata in key value pairs.
           type: string
+        num_uses:
+          description: Number of times this SecretID can be used, after which the
+            SecretID expires. Overrides secret_id_num_uses role option when supplied.
+            May not be higher than role's secret_id_num_uses.
+          type: integer
         token_bound_cidrs:
           description: Comma separated string or JSON list of CIDR blocks. If set,
             specifies the blocks of IP addresses which are allowed to use the generated
@@ -15716,6 +16324,12 @@ components:
           items:
             type: string
           type: array
+        ttl:
+          description: Duration in seconds after which this SecretID expires. Overrides
+            secret_id_ttl role option when supplied. May not be longer than role's
+            secret_id_ttl.
+          format: seconds
+          type: integer
       type: object
     ApproleRoleSecretIdTtlRequest:
       example:
@@ -16850,6 +17464,7 @@ components:
     AzureRolesRequest:
       example:
         max_ttl: 0
+        permanently_delete: false
         application_object_id: application_object_id
         azure_roles: azure_roles
         ttl: 6
@@ -16869,6 +17484,11 @@ components:
             use system default.
           format: seconds
           type: integer
+        permanently_delete:
+          default: false
+          description: Indicates whether new application objects should be permanently
+            deleted. If not set, objects will not be permanently deleted.
+          type: boolean
         ttl:
           description: Default lease for generated credentials. If not set or set
             to 0, will use system default.
@@ -17227,21 +17847,34 @@ components:
     CertConfigRequest:
       example:
         disable_binding: false
+        enable_identity_alias_metadata: false
       properties:
         disable_binding:
           default: false
           description: If set, during renewal, skips the matching of presented client
             identity with the client identity used during login. Defaults to false.
           type: boolean
+        enable_identity_alias_metadata:
+          default: false
+          description: If set, metadata of the certificate including the metadata
+            corresponding to allowed_metadata_extensions will be stored in the alias.
+            Defaults to false.
+          type: boolean
       type: object
     CertCrlsRequest:
       example:
         crl: crl
+        url: url
       properties:
         crl:
-          description: 'The public certificate that should be trusted. May be DER
-            or PEM encoded. Note: the expiration time is ignored; if the CRL is no
-            longer valid, delete it using the same name as specified here.'
+          description: 'The public CRL that should be trusted to attest to certificates''
+            validity statuses. May be DER or PEM encoded. Note: the expiration time
+            is ignored; if the CRL is no longer valid, delete it using the same name
+            as specified here.'
+          type: string
+        url:
+          description: The URL of a CRL distribution point. Only one of 'crl' or 'url'
+            parameters should be specified.
           type: string
       type: object
     CertLoginRequest:
@@ -18716,9 +19349,18 @@ components:
         from_entity_ids:
         - from_entity_ids
         - from_entity_ids
+        conflicting_alias_ids_to_keep:
+        - conflicting_alias_ids_to_keep
+        - conflicting_alias_ids_to_keep
         to_entity_id: to_entity_id
         force: true
       properties:
+        conflicting_alias_ids_to_keep:
+          description: Alias IDs to keep in case of conflicting aliases. Ignored if
+            no conflicting aliases found
+          items:
+            type: string
+          type: array
         force:
           description: Setting this will follow the 'mine' strategy for merging MFA
             secrets. If there are secrets of the same type both in entities that are
@@ -18727,7 +19369,7 @@ components:
             an error containing all the conflicts.
           type: boolean
         from_entity_ids:
-          description: Entity IDs which needs to get merged
+          description: Entity IDs which need to get merged
           items:
             type: string
           type: array
@@ -19432,7 +20074,6 @@ components:
       - redirect_uri
       - response_type
       - scope
-      - state
       type: object
     IdentityOidcProviderRequest:
       example:
@@ -19462,12 +20103,16 @@ components:
       example:
         code: code
         grant_type: grant_type
+        client_secret: client_secret
         redirect_uri: redirect_uri
         client_id: client_id
         code_verifier: code_verifier
       properties:
         client_id:
           description: The ID of the requesting client.
+          type: string
+        client_secret:
+          description: The secret of the requesting client.
           type: string
         code:
           description: The authorization code received from the provider's authorization
@@ -20244,13 +20889,22 @@ components:
     KerberosConfigRequest:
       example:
         service_account: service_account
+        remove_instance_name: true
+        add_group_aliases: true
         keytab: keytab
       properties:
+        add_group_aliases:
+          description: If set to true, returns any groups found in LDAP as a group
+            alias.
+          type: boolean
         keytab:
           description: Base64 encoded keytab
           type: string
           x-vault-displayAttrs:
             sensitive: true
+        remove_instance_name:
+          description: Remove instance/FQDN from keytab principal names.
+          type: boolean
         service_account:
           description: Service Account
           type: string
@@ -20547,6 +21201,7 @@ components:
         - allowed_kubernetes_namespaces
         - allowed_kubernetes_namespaces
         extra_labels: '{}'
+        allowed_kubernetes_namespace_selector: allowed_kubernetes_namespace_selector
         extra_annotations: '{}'
         name_template: name_template
         token_default_ttl: 0
@@ -20555,6 +21210,11 @@ components:
         kubernetes_role_type: Role
         kubernetes_role_name: kubernetes_role_name
       properties:
+        allowed_kubernetes_namespace_selector:
+          description: A label selector for Kubernetes namespaces in which credentials
+            can be generated. Accepts either a JSON or YAML object. If set with allowed_kubernetes_namespaces,
+            the conditions are conjuncted.
+          type: string
         allowed_kubernetes_namespaces:
           description: A list of the Kubernetes namespaces in which credentials can
             be generated. If set to "*" all namespaces are allowed.
@@ -20603,8 +21263,6 @@ components:
             If not set or set to 0, will use system default.
           format: seconds
           type: integer
-      required:
-      - allowed_kubernetes_namespaces
       type: object
     KvConfigRequest:
       example:
@@ -21014,12 +21672,132 @@ components:
             type: string
           type: array
       type: object
+    LdapLibraryCheckInRequest:
+      example:
+        service_account_names:
+        - service_account_names
+        - service_account_names
+      properties:
+        service_account_names:
+          description: The username/logon name for the service accounts to check in.
+          items:
+            type: string
+          type: array
+      type: object
+    LdapLibraryCheckOutRequest:
+      example:
+        ttl: 0
+      properties:
+        ttl:
+          description: The length of time before the check-out will expire, in seconds.
+          format: seconds
+          type: integer
+      type: object
+    LdapLibraryManageCheckInRequest:
+      example:
+        service_account_names:
+        - service_account_names
+        - service_account_names
+      properties:
+        service_account_names:
+          description: The username/logon name for the service accounts to check in.
+          items:
+            type: string
+          type: array
+      type: object
+    LdapLibraryRequest:
+      example:
+        max_ttl: 0
+        service_account_names:
+        - service_account_names
+        - service_account_names
+        disable_check_in_enforcement: false
+        ttl: 6
+      properties:
+        disable_check_in_enforcement:
+          default: false
+          description: Disable the default behavior of requiring that check-ins are
+            performed by the entity that checked them out.
+          type: boolean
+        max_ttl:
+          default: 86400
+          description: In seconds, the max amount of time a check-out's renewals should
+            last. Defaults to 24 hours.
+          format: seconds
+          type: integer
+        service_account_names:
+          description: The username/logon name for the service accounts with which
+            this set will be associated.
+          items:
+            type: string
+          type: array
+        ttl:
+          default: 86400
+          description: In seconds, the amount of time a check-out should last. Defaults
+            to 24 hours.
+          format: seconds
+          type: integer
+      type: object
     LdapLoginRequest:
       example:
         password: password
       properties:
         password:
           description: Password for this user.
+          type: string
+      type: object
+    LdapRoleRequest:
+      example:
+        max_ttl: 6
+        default_ttl: 0
+        username_template: username_template
+        rollback_ldif: rollback_ldif
+        deletion_ldif: deletion_ldif
+        creation_ldif: creation_ldif
+      properties:
+        creation_ldif:
+          description: LDIF string used to create new entities within the LDAP system.
+            This LDIF can be templated.
+          type: string
+        default_ttl:
+          description: Default TTL for dynamic credentials
+          format: seconds
+          type: integer
+        deletion_ldif:
+          description: LDIF string used to delete entities created within the LDAP
+            system. This LDIF can be templated.
+          type: string
+        max_ttl:
+          description: Max TTL a dynamic credential can be extended to
+          format: seconds
+          type: integer
+        rollback_ldif:
+          description: LDIF string used to rollback changes in the event of a failure
+            to create credentials. This LDIF can be templated.
+          type: string
+        username_template:
+          description: The template used to create a username
+          type: string
+      required:
+      - creation_ldif
+      - deletion_ldif
+      type: object
+    LdapStaticRoleRequest:
+      example:
+        dn: dn
+        rotation_period: 0
+        username: username
+      properties:
+        dn:
+          description: The distinguished name of the entry to manage.
+          type: string
+        rotation_period:
+          description: Period for automatic credential rotation of the given entry.
+          format: seconds
+          type: integer
+        username:
+          description: The username/logon name for the entry with which this role
+            will be associated.
           type: string
       type: object
     LdapUsersRequest:
@@ -22021,8 +22799,7 @@ components:
           type: integer
         schema:
           default: openldap
-          description: The desired OpenLDAP schema used when modifying user account
-            passwords.
+          description: The desired LDAP schema used when modifying user account passwords.
           type: string
         starttls:
           description: Issue a StartTLS command after establishing unencrypted connection
@@ -22112,6 +22889,72 @@ components:
           description: If true, sets the alias name to the username
           type: boolean
       type: object
+    OpenldapLibraryCheckInRequest:
+      example:
+        service_account_names:
+        - service_account_names
+        - service_account_names
+      properties:
+        service_account_names:
+          description: The username/logon name for the service accounts to check in.
+          items:
+            type: string
+          type: array
+      type: object
+    OpenldapLibraryCheckOutRequest:
+      example:
+        ttl: 0
+      properties:
+        ttl:
+          description: The length of time before the check-out will expire, in seconds.
+          format: seconds
+          type: integer
+      type: object
+    OpenldapLibraryManageCheckInRequest:
+      example:
+        service_account_names:
+        - service_account_names
+        - service_account_names
+      properties:
+        service_account_names:
+          description: The username/logon name for the service accounts to check in.
+          items:
+            type: string
+          type: array
+      type: object
+    OpenldapLibraryRequest:
+      example:
+        max_ttl: 0
+        service_account_names:
+        - service_account_names
+        - service_account_names
+        disable_check_in_enforcement: false
+        ttl: 6
+      properties:
+        disable_check_in_enforcement:
+          default: false
+          description: Disable the default behavior of requiring that check-ins are
+            performed by the entity that checked them out.
+          type: boolean
+        max_ttl:
+          default: 86400
+          description: In seconds, the max amount of time a check-out's renewals should
+            last. Defaults to 24 hours.
+          format: seconds
+          type: integer
+        service_account_names:
+          description: The username/logon name for the service accounts with which
+            this set will be associated.
+          items:
+            type: string
+          type: array
+        ttl:
+          default: 86400
+          description: In seconds, the amount of time a check-out should last. Defaults
+            to 24 hours.
+          format: seconds
+          type: integer
+      type: object
     OpenldapRoleRequest:
       example:
         max_ttl: 6
@@ -22122,16 +22965,16 @@ components:
         creation_ldif: creation_ldif
       properties:
         creation_ldif:
-          description: LDIF string used to create new entities within OpenLDAP. This
-            LDIF can be templated.
+          description: LDIF string used to create new entities within the LDAP system.
+            This LDIF can be templated.
           type: string
         default_ttl:
           description: Default TTL for dynamic credentials
           format: seconds
           type: integer
         deletion_ldif:
-          description: LDIF string used to delete entities created within OpenLDAP.
-            This LDIF can be templated.
+          description: LDIF string used to delete entities created within the LDAP
+            system. This LDIF can be templated.
           type: string
         max_ttl:
           description: Max TTL a dynamic credential can be extended to
@@ -22152,7 +22995,6 @@ components:
       example:
         dn: dn
         rotation_period: 0
-        ttl: 6
         username: username
       properties:
         dn:
@@ -22160,10 +23002,6 @@ components:
           type: string
         rotation_period:
           description: Period for automatic credential rotation of the given entry.
-          format: seconds
-          type: integer
-        ttl:
-          description: The time-to-live for the password.
           format: seconds
           type: integer
         username:
@@ -22189,6 +23027,60 @@ components:
             and certificates.
           type: string
       type: object
+    PkiConfigAutoTidyRequest:
+      example:
+        interval_duration: 0
+        pause_duration: 0s
+        tidy_revoked_cert_issuer_associations: true
+        tidy_revocation_list: true
+        tidy_cert_store: true
+        tidy_revoked_certs: true
+        safety_buffer: 6
+        enabled: true
+      properties:
+        enabled:
+          description: Set to true to enable automatic tidy operations.
+          type: boolean
+        interval_duration:
+          default: 43200
+          description: Interval at which to run an auto-tidy operation. This is the
+            time between tidy invocations (after one finishes to the start of the
+            next). Running a manual tidy will reset this duration.
+          format: seconds
+          type: integer
+        pause_duration:
+          default: 0s
+          description: The amount of time to wait between processing certificates.
+            This allows operators to change the execution profile of tidy to take
+            consume less resources by slowing down how long it takes to run. Note
+            that the entire list of certificates will be stored in memory during the
+            entire tidy operation, but resources to read/process/update existing entries
+            will be spread out over a greater period of time. By default this is zero
+            seconds.
+          type: string
+        safety_buffer:
+          default: 259200
+          description: The amount of extra time that must have passed beyond certificate
+            expiration before it is removed from the backend storage and/or revocation
+            list. Defaults to 72 hours.
+          format: seconds
+          type: integer
+        tidy_cert_store:
+          description: Set to true to enable tidying up the certificate store
+          type: boolean
+        tidy_revocation_list:
+          description: Deprecated; synonym for 'tidy_revoked_certs
+          type: boolean
+        tidy_revoked_cert_issuer_associations:
+          description: Set to true to validate issuer associations on revocation entries.
+            This helps increase the performance of CRL building and OCSP responses.
+          type: boolean
+        tidy_revoked_certs:
+          description: Set to true to expire all revoked and expired certificates,
+            removing them both from the CRL and from storage. The CRL will be rotated
+            if this causes any values to be removed.
+          type: boolean
+      type: object
     PkiConfigCaRequest:
       example:
         pem_bundle: pem_bundle
@@ -22199,16 +23091,46 @@ components:
       type: object
     PkiConfigCrlRequest:
       example:
+        auto_rebuild_grace_period: 12h
         disable: true
+        ocsp_disable: true
         expiry: 72h
+        ocsp_expiry: 1h
+        delta_rebuild_interval: 15m
+        enable_delta: true
+        auto_rebuild: true
       properties:
+        auto_rebuild:
+          description: If set to true, enables automatic rebuilding of the CRL
+          type: boolean
+        auto_rebuild_grace_period:
+          default: 12h
+          description: The time before the CRL expires to automatically rebuild it,
+            when enabled. Must be shorter than the CRL expiry. Defaults to 12h.
+          type: string
+        delta_rebuild_interval:
+          default: 15m
+          description: The time between delta CRL rebuilds if a new revocation has
+            occurred. Must be shorter than the CRL expiry. Defaults to 15m.
+          type: string
         disable:
           description: If set to true, disables generating the CRL entirely.
+          type: boolean
+        enable_delta:
+          description: Whether to enable delta CRLs between authoritative CRL rebuilds
           type: boolean
         expiry:
           default: 72h
           description: The amount of time the generated CRL should be valid; defaults
             to 72 hours
+          type: string
+        ocsp_disable:
+          description: If set to true, ocsp unauthorized responses will be returned.
+          type: boolean
+        ocsp_expiry:
+          default: 1h
+          description: The amount of time an OCSP response will be valid (controls
+            the NextUpdate field); defaults to 12 hours
           type: string
       type: object
     PkiConfigIssuersRequest:
@@ -22258,49 +23180,6 @@ components:
             type: string
           type: array
       type: object
-    PkiDerPemRequest:
-      example:
-        leaf_not_after_behavior: err
-        usage:
-        - usage
-        - usage
-        manual_chain:
-        - manual_chain
-        - manual_chain
-        issuer_name: issuer_name
-      properties:
-        issuer_name:
-          description: Provide a name to the generated or existing issuer, the name
-            must be unique across all issuers and not be the reserved value 'default'
-          type: string
-        leaf_not_after_behavior:
-          default: err
-          description: 'Behavior of leaf''s NotAfter fields: "err" to error if the
-            computed NotAfter date exceeds that of this issuer; "truncate" to silently
-            truncate to that of this issuer; or "permit" to allow this issuance to
-            succeed (with NotAfter exceeding that of an issuer). Note that not all
-            values will results in certificates that can be validated through the
-            entire validity period. It is suggested to use "truncate" for intermediate
-            CAs and "permit" only for root CAs.'
-          type: string
-        manual_chain:
-          description: Chain of issuer references to use to build this issuer's computed
-            CAChain field, when non-empty.
-          items:
-            type: string
-          type: array
-        usage:
-          default:
-          - read-only
-          - issuing-certificates
-          - crl-signing
-          description: Comma-separated list (or string slice) of usages for this issuer;
-            valid values are "read-only", "issuing-certificates", and "crl-signing".
-            Multiple values may be specified. Read-only is implicit and always set.
-          items:
-            type: string
-          type: array
-      type: object
     PkiIntermediateCrossSignRequest:
       example:
         other_sans:
@@ -22314,6 +23193,7 @@ components:
         - street_address
         add_basic_constraints: true
         key_type: rsa
+        signature_bits: 1
         uri_sans:
         - uri_sans
         - uri_sans
@@ -22338,7 +23218,7 @@ components:
         alt_names: alt_names
         serial_number: serial_number
         exclude_cn_from_sans: false
-        ttl: 1
+        ttl: 5
         not_before_duration: 6
         key_bits: 0
         key_name: key_name
@@ -22521,6 +23401,15 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
         street_address:
           description: If set, Street Address will be set to this value.
           items:
@@ -22559,6 +23448,7 @@ components:
         - street_address
         add_basic_constraints: true
         key_type: rsa
+        signature_bits: 1
         uri_sans:
         - uri_sans
         - uri_sans
@@ -22582,7 +23472,7 @@ components:
         alt_names: alt_names
         serial_number: serial_number
         exclude_cn_from_sans: false
-        ttl: 1
+        ttl: 5
         not_before_duration: 6
         key_bits: 0
         key_name: key_name
@@ -22756,6 +23646,15 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
         street_address:
           description: If set, Street Address will be set to this value.
           items:
@@ -22791,54 +23690,11 @@ components:
             endpoint. Additional parent CAs may be optionally appended to the bundle.
           type: string
       type: object
-    PkiInternalExportedRequest:
-      example:
-        key_bits: 0
-        key_name: key_name
-        key_type: rsa
-        managed_key_id: managed_key_id
-        managed_key_name: managed_key_name
-      properties:
-        key_bits:
-          default: 0
-          description: 'The number of bits to use. Allowed values are 0 (universal
-            default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type:
-            224, 256 (default), 384, or 521; ignored with ed25519.'
-          type: integer
-        key_name:
-          description: Optional name to be used for this key
-          type: string
-        key_type:
-          default: rsa
-          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
-            are the only valid values.
-          enum:
-          - rsa
-          - ec
-          - ed25519
-          type: string
-          x-vault-displayAttrs:
-            value: rsa
-        managed_key_id:
-          description: The name of the managed key to use when the exported type is
-            kms. When kms type is the key type, this field or managed_key_name is
-            required. Ignored for other types.
-          type: string
-        managed_key_name:
-          description: The name of the managed key to use when the exported type is
-            kms. When kms type is the key type, this field or managed_key_id is required.
-            Ignored for other types.
-          type: string
-      type: object
     PkiIssueRequest:
       example:
-        not_after: not_after
         other_sans:
         - other_sans
         - other_sans
-        ip_sans:
-        - ip_sans
-        - ip_sans
         issuer_ref: default
         format: pem
         private_key_format: der
@@ -22848,8 +23704,13 @@ components:
         uri_sans:
         - uri_sans
         - uri_sans
-        common_name: common_name
+        remove_roots_from_chain: false
         ttl: 0
+        not_after: not_after
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        common_name: common_name
       properties:
         alt_names:
           description: The requested Subject Alternative Names, if any, in a comma-delimited
@@ -22922,6 +23783,11 @@ components:
           type: string
           x-vault-displayAttrs:
             value: der
+        remove_roots_from_chain:
+          default: false
+          description: Whether or not to remove self-signed CA certificates in the
+            output of the ca_chain field.
+          type: boolean
         serial_number:
           description: The Subject's requested serial number, if any. See RFC 4519
             Section 2.31 'serialNumber' for a description of this field. If you want
@@ -22962,6 +23828,7 @@ components:
         - uri_sans
         - uri_sans
         common_name: common_name
+        remove_roots_from_chain: false
         ttl: 0
       properties:
         alt_names:
@@ -23030,6 +23897,11 @@ components:
           type: string
           x-vault-displayAttrs:
             value: der
+        remove_roots_from_chain:
+          default: false
+          description: Whether or not to remove self-signed CA certificates in the
+            output of the ca_chain field.
+          type: boolean
         serial_number:
           description: The Subject's requested serial number, if any. See RFC 4519
             Section 2.31 'serialNumber' for a description of this field. If you want
@@ -23064,6 +23936,20 @@ components:
         - street_address
         - street_address
         csr: csr
+        skid: skid
+        signature_bits: 1
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        max_path_length: 0
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        use_csr_values: false
+        common_name: common_name
         ou:
         - ou
         - ou
@@ -23074,29 +23960,18 @@ components:
         private_key_format: der
         alt_names: alt_names
         serial_number: serial_number
+        use_pss: false
         exclude_cn_from_sans: false
-        uri_sans:
-        - uri_sans
-        - uri_sans
-        max_path_length: 0
-        ttl: 1
+        ttl: 5
         not_before_duration: 6
         issuer_name: issuer_name
         not_after: not_after
         permitted_dns_domains:
         - permitted_dns_domains
         - permitted_dns_domains
-        province:
-        - province
-        - province
-        ip_sans:
-        - ip_sans
-        - ip_sans
         organization:
         - organization
         - organization
-        use_csr_values: false
-        common_name: common_name
         postal_code:
         - postal_code
         - postal_code
@@ -23240,6 +24115,27 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        skid:
+          default: ""
+          description: Value for the Subject Key Identifier field (RFC 5280 Section
+            4.2.1.2). This value should ONLY be used when cross-signing to mimic the
+            existing certificate's SKID value; this is necessary to allow certain
+            TLS implementations (such as OpenSSL) which use SKID/AKID matches in chain
+            building to restrict possible valid chains. Specified as a string in hex
+            format. Default is empty, allowing Vault to automatically calculate the
+            SKID according to method one in the above RFC section.
+          type: string
+          x-vault-displayAttrs:
+            value: ""
         street_address:
           description: If set, Street Address will be set to this value.
           items:
@@ -23273,17 +24169,18 @@ components:
             signed by this path; for instance, the non-repudiation flag; 3) Extensions
             requested in the CSR will be copied into the issued certificate.'
           type: boolean
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
+          type: boolean
       type: object
     PkiIssuerSignRequest:
       example:
-        not_after: not_after
         other_sans:
         - other_sans
         - other_sans
         csr: csr
-        ip_sans:
-        - ip_sans
-        - ip_sans
         format: pem
         private_key_format: der
         alt_names: alt_names
@@ -23292,8 +24189,13 @@ components:
         uri_sans:
         - uri_sans
         - uri_sans
-        common_name: common_name
+        remove_roots_from_chain: false
         ttl: 0
+        not_after: not_after
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        common_name: common_name
       properties:
         alt_names:
           description: The requested Subject Alternative Names, if any, in a comma-delimited
@@ -23365,6 +24267,11 @@ components:
           type: string
           x-vault-displayAttrs:
             value: der
+        remove_roots_from_chain:
+          default: false
+          description: Whether or not to remove self-signed CA certificates in the
+            output of the ca_chain field.
+          type: boolean
         serial_number:
           description: The Subject's requested serial number, if any. See RFC 4519
             Section 2.31 'serialNumber' for a description of this field. If you want
@@ -23413,13 +24320,16 @@ components:
         - key_usage
         format: pem
         private_key_format: der
+        signature_bits: 0
         alt_names: alt_names
         serial_number: serial_number
+        use_pss: false
         exclude_cn_from_sans: false
         uri_sans:
         - uri_sans
         - uri_sans
-        ttl: 0
+        remove_roots_from_chain: false
+        ttl: 6
         not_after: not_after
         ip_sans:
         - ip_sans
@@ -23529,6 +24439,11 @@ components:
           type: string
           x-vault-displayAttrs:
             value: der
+        remove_roots_from_chain:
+          default: false
+          description: Whether or not to remove self-signed CA certificates in the
+            output of the ca_chain field.
+          type: boolean
         role:
           description: The desired role with configuration for this request
           type: string
@@ -23538,6 +24453,15 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
         ttl:
           description: The requested Time To Live for the certificate; sets the expiration
             date. If not specified the role default, backend default, or system default
@@ -23553,6 +24477,11 @@ components:
           type: array
           x-vault-displayAttrs:
             name: URI Subject Alternative Names (SANs)
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
+          type: boolean
       type: object
     PkiIssuersGenerateIntermediateRequest:
       example:
@@ -23567,6 +24496,7 @@ components:
         - street_address
         add_basic_constraints: true
         key_type: rsa
+        signature_bits: 1
         uri_sans:
         - uri_sans
         - uri_sans
@@ -23590,7 +24520,7 @@ components:
         alt_names: alt_names
         serial_number: serial_number
         exclude_cn_from_sans: false
-        ttl: 1
+        ttl: 5
         not_before_duration: 6
         key_bits: 0
         key_name: key_name
@@ -23764,6 +24694,15 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
         street_address:
           description: If set, Street Address will be set to this value.
           items:
@@ -23825,6 +24764,7 @@ components:
         private_key_format: der
         alt_names: alt_names
         serial_number: serial_number
+        use_pss: false
         exclude_cn_from_sans: false
         ttl: 5
         not_before_duration: 1
@@ -24049,9 +24989,21 @@ components:
           type: array
           x-vault-displayAttrs:
             name: URI Subject Alternative Names (SANs)
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
+          type: boolean
       type: object
     PkiJsonRequest:
       example:
+        crl_distribution_points:
+        - crl_distribution_points
+        - crl_distribution_points
+        issuing_certificates:
+        - issuing_certificates
+        - issuing_certificates
+        revocation_signature_algorithm: revocation_signature_algorithm
         issuer_ref: default
         leaf_not_after_behavior: err
         usage:
@@ -24060,8 +25012,17 @@ components:
         manual_chain:
         - manual_chain
         - manual_chain
+        ocsp_servers:
+        - ocsp_servers
+        - ocsp_servers
         issuer_name: issuer_name
       properties:
+        crl_distribution_points:
+          description: Comma-separated list of URLs to be used for the CRL distribution
+            points attribute. See also RFC 5280 Section 4.2.1.13.
+          items:
+            type: string
+          type: array
         issuer_name:
           description: Provide a name to the generated or existing issuer, the name
             must be unique across all issuers and not be the reserved value 'default'
@@ -24071,6 +25032,12 @@ components:
           description: Reference to a existing issuer; either "default" for the configured
             default issuer, an identifier or the name assigned to the issuer.
           type: string
+        issuing_certificates:
+          description: Comma-separated list of URLs to be used for the issuing certificate
+            attribute. See also RFC 5280 Section 4.2.2.1.
+          items:
+            type: string
+          type: array
         leaf_not_after_behavior:
           default: err
           description: 'Behavior of leaf''s NotAfter fields: "err" to error if the
@@ -24087,14 +25054,31 @@ components:
           items:
             type: string
           type: array
+        ocsp_servers:
+          description: Comma-separated list of URLs to be used for the OCSP servers
+            attribute. See also RFC 5280 Section 4.2.2.1.
+          items:
+            type: string
+          type: array
+        revocation_signature_algorithm:
+          default: ""
+          description: Which x509.SignatureAlgorithm name to use for signing CRLs.
+            This parameter allows differentiation between PKCS#1v1.5 and PSS keys
+            and choice of signature hash algorithm. The default (empty string) value
+            is for Go to select the signature algorithm. This can fail if the underlying
+            key does not support the requested signature algorithm, which may not
+            be known at modification time (such as with PKCS#11 managed RSA keys).
+          type: string
         usage:
           default:
           - read-only
           - issuing-certificates
           - crl-signing
+          - ocsp-signing
           description: Comma-separated list (or string slice) of usages for this issuer;
-            valid values are "read-only", "issuing-certificates", and "crl-signing".
-            Multiple values may be specified. Read-only is implicit and always set.
+            valid values are "read-only", "issuing-certificates", "crl-signing", and
+            "ocsp-signing". Multiple values may be specified. Read-only is implicit
+            and always set.
           items:
             type: string
           type: array
@@ -24160,8 +25144,31 @@ components:
       type: object
     PkiRevokeRequest:
       example:
+        certificate: certificate
         serial_number: serial_number
       properties:
+        certificate:
+          description: Certificate to revoke in PEM format; must be signed by an issuer
+            in this mount.
+          type: string
+        serial_number:
+          description: Certificate serial number, in colon- or hyphen-separated octal
+          type: string
+      type: object
+    PkiRevokeWithKeyRequest:
+      example:
+        certificate: certificate
+        private_key: private_key
+        serial_number: serial_number
+      properties:
+        certificate:
+          description: Certificate to revoke in PEM format; must be signed by an issuer
+            in this mount.
+          type: string
+        private_key:
+          description: Key to use to verify revocation permission; must be in PEM
+            format.
+          type: string
         serial_number:
           description: Certificate serial number, in colon- or hyphen-separated octal
           type: string
@@ -24214,6 +25221,7 @@ components:
         allowed_domains_template: false
         basic_constraints_valid_for_non_ca: true
         server_flag: true
+        use_pss: false
         generate_lease: true
         ttl: 5
         use_csr_sans: true
@@ -24230,6 +25238,9 @@ components:
         organization:
         - organization
         - organization
+        cn_validations:
+        - cn_validations
+        - cn_validations
         allow_wildcard_certificates: true
         use_csr_common_name: true
         ext_key_usage:
@@ -24343,6 +25354,22 @@ components:
           type: boolean
           x-vault-displayAttrs:
             value: true
+        cn_validations:
+          default:
+          - email
+          - hostname
+          description: List of allowed validations to run against the Common Name
+            field. Values can include 'email' to validate the CN is a email address,
+            'hostname' to validate the CN is a valid hostname (potentially including
+            wildcards). When multiple validations are specified, these take OR semantics
+            (either email OR hostname are allowed). The special value 'disabled' allows
+            disabling all CN name validations, allowing for arbitrary non-Hostname,
+            non-Email address CNs.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Common Name Validations
         code_signing_flag:
           description: If set, certificates are flagged for code signing use. Defaults
             to false. See also RFC 5280 Section 4.2.1.12.
@@ -24555,6 +25582,11 @@ components:
           x-vault-displayAttrs:
             name: Use CSR Subject Alternative Names
             value: true
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
+          type: boolean
       type: object
     PkiRootGenerateRequest:
       example:
@@ -24592,6 +25624,7 @@ components:
         private_key_format: der
         alt_names: alt_names
         serial_number: serial_number
+        use_pss: false
         exclude_cn_from_sans: false
         ttl: 5
         not_before_duration: 1
@@ -24816,6 +25849,11 @@ components:
           type: array
           x-vault-displayAttrs:
             name: URI Subject Alternative Names (SANs)
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
+          type: boolean
       type: object
     PkiRootReplaceRequest:
       example:
@@ -24862,6 +25900,7 @@ components:
         private_key_format: der
         alt_names: alt_names
         serial_number: serial_number
+        use_pss: false
         exclude_cn_from_sans: false
         ttl: 5
         not_before_duration: 1
@@ -25086,6 +26125,11 @@ components:
           type: array
           x-vault-displayAttrs:
             name: URI Subject Alternative Names (SANs)
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
+          type: boolean
       type: object
     PkiRootSignIntermediateRequest:
       example:
@@ -25099,7 +26143,9 @@ components:
         - street_address
         - street_address
         csr: csr
+        skid: skid
         issuer_ref: default
+        signature_bits: 1
         uri_sans:
         - uri_sans
         - uri_sans
@@ -25122,8 +26168,9 @@ components:
         private_key_format: der
         alt_names: alt_names
         serial_number: serial_number
+        use_pss: false
         exclude_cn_from_sans: false
-        ttl: 1
+        ttl: 5
         not_before_duration: 6
         issuer_name: issuer_name
         not_after: not_after
@@ -25281,6 +26328,27 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        skid:
+          default: ""
+          description: Value for the Subject Key Identifier field (RFC 5280 Section
+            4.2.1.2). This value should ONLY be used when cross-signing to mimic the
+            existing certificate's SKID value; this is necessary to allow certain
+            TLS implementations (such as OpenSSL) which use SKID/AKID matches in chain
+            building to restrict possible valid chains. Specified as a string in hex
+            format. Default is empty, allowing Vault to automatically calculate the
+            SKID according to method one in the above RFC section.
+          type: string
+          x-vault-displayAttrs:
+            value: ""
         street_address:
           description: If set, Street Address will be set to this value.
           items:
@@ -25313,6 +26381,11 @@ components:
             in the CSR will be added to the basic set of key usages used for CA certs
             signed by this path; for instance, the non-repudiation flag; 3) Extensions
             requested in the CSR will be copied into the issued certificate.'
+          type: boolean
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
           type: boolean
       type: object
     PkiRootSignSelfIssuedRequest:
@@ -25350,6 +26423,7 @@ components:
         uri_sans:
         - uri_sans
         - uri_sans
+        remove_roots_from_chain: false
         ttl: 0
         not_after: not_after
         ip_sans:
@@ -25432,6 +26506,11 @@ components:
           type: string
           x-vault-displayAttrs:
             value: der
+        remove_roots_from_chain:
+          default: false
+          description: Whether or not to remove self-signed CA certificates in the
+            output of the ca_chain field.
+          type: boolean
         serial_number:
           description: The Subject's requested serial number, if any. See RFC 4519
             Section 2.31 'serialNumber' for a description of this field. If you want
@@ -25467,13 +26546,16 @@ components:
         issuer_ref: default
         format: pem
         private_key_format: der
+        signature_bits: 0
         alt_names: alt_names
         serial_number: serial_number
+        use_pss: false
         exclude_cn_from_sans: false
         uri_sans:
         - uri_sans
         - uri_sans
-        ttl: 0
+        remove_roots_from_chain: false
+        ttl: 6
         not_after: not_after
         ip_sans:
         - ip_sans
@@ -25588,6 +26670,11 @@ components:
           type: string
           x-vault-displayAttrs:
             value: der
+        remove_roots_from_chain:
+          default: false
+          description: Whether or not to remove self-signed CA certificates in the
+            output of the ca_chain field.
+          type: boolean
         role:
           description: The desired role with configuration for this request
           type: string
@@ -25597,6 +26684,15 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
         ttl:
           description: The requested Time To Live for the certificate; sets the expiration
             date. If not specified the role default, backend default, or system default
@@ -25612,14 +26708,31 @@ components:
           type: array
           x-vault-displayAttrs:
             name: URI Subject Alternative Names (SANs)
+        use_pss:
+          default: false
+          description: Whether or not to use PSS signatures when using a RSA key-type
+            issuer. Defaults to false.
+          type: boolean
       type: object
     PkiTidyRequest:
       example:
+        pause_duration: 0s
+        tidy_revoked_cert_issuer_associations: true
         tidy_revocation_list: true
         tidy_cert_store: true
         tidy_revoked_certs: true
         safety_buffer: 0
       properties:
+        pause_duration:
+          default: 0s
+          description: The amount of time to wait between processing certificates.
+            This allows operators to change the execution profile of tidy to take
+            consume less resources by slowing down how long it takes to run. Note
+            that the entire list of certificates will be stored in memory during the
+            entire tidy operation, but resources to read/process/update existing entries
+            will be spread out over a greater period of time. By default this is zero
+            seconds.
+          type: string
         safety_buffer:
           default: 259200
           description: The amount of extra time that must have passed beyond certificate
@@ -25632,6 +26745,10 @@ components:
           type: boolean
         tidy_revocation_list:
           description: Deprecated; synonym for 'tidy_revoked_certs
+          type: boolean
+        tidy_revoked_cert_issuer_associations:
+          description: Set to true to validate issuer associations on revocation entries.
+            This helps increase the performance of CRL building and OCSP responses.
           type: boolean
         tidy_revoked_certs:
           description: Set to true to expire all revoked and expired certificates,
@@ -25936,6 +27053,54 @@ components:
           description: '[Optional] Username in remote host'
           type: string
       type: object
+    SshIssueRequest:
+      example:
+        key_bits: 0
+        cert_type: user
+        extensions: '{}'
+        key_type: rsa
+        critical_options: '{}'
+        key_id: key_id
+        valid_principals: valid_principals
+        ttl: 6
+      properties:
+        cert_type:
+          default: user
+          description: Type of certificate to be created; either "user" or "host".
+          type: string
+        critical_options:
+          description: Critical options that the certificate should be signed for.
+          format: map
+          type: object
+        extensions:
+          description: Extensions that the certificate should be signed for.
+          format: map
+          type: object
+        key_bits:
+          default: 0
+          description: Specifies the number of bits to use for the generated keys.
+          type: integer
+        key_id:
+          description: Key id that the created certificate should have. If not specified,
+            the display name of the token will be used.
+          type: string
+        key_type:
+          default: rsa
+          description: Specifies the desired key type; must be `rsa`, `ed25519` or
+            `ec`
+          type: string
+        ttl:
+          description: The requested Time To Live for the SSH certificate; sets the
+            expiration date. If not specified the role default, backend default, or
+            system default TTL is used, in that order. Cannot be later than the role
+            max TTL.
+          format: seconds
+          type: integer
+        valid_principals:
+          description: Valid principals, either usernames or hostnames, that the certificate
+            should be signed for.
+          type: string
+      type: object
     SshKeysRequest:
       example:
         key: key
@@ -25963,12 +27128,14 @@ components:
         allow_bare_domains: true
         allowed_users_template: false
         install_script: install_script
+        default_user_template: false
         allowed_extensions: allowed_extensions
         allowed_user_key_lengths: '{}'
         algorithm_signer: algorithm_signer
         key: key
         allow_user_certificates: false
         default_extensions_template: false
+        allowed_domains_template: false
         exclude_cidr_list: exclude_cidr_list
         ttl: 5
         not_before_duration: 1
@@ -26046,6 +27213,12 @@ components:
             request for a signed certificate for any valid host. If only certain domains
             are allowed, then this list enforces it.'
           type: string
+        allowed_domains_template:
+          default: false
+          description: '[Not applicable for Dynamic type] [Not applicable for OTP
+            type] [Optional for CA type] If set, Allowed domains can be specified
+            using identity template policies. Non-templated domains are also permitted.'
+          type: boolean
         allowed_extensions:
           description: '[Not applicable for Dynamic type] [Not applicable for OTP
             type] [Optional for CA type] A comma-separated list of extensions that
@@ -26115,6 +27288,12 @@ components:
           type: string
           x-vault-displayAttrs:
             name: Default Username
+        default_user_template:
+          default: false
+          description: '[Not applicable for Dynamic type] [Not applicable for OTP
+            type] [Optional for CA type] If set, Default user can be specified using
+            identity template policies. Non-templated users are also permitted.'
+          type: boolean
         exclude_cidr_list:
           description: '[Optional for Dynamic type] [Optional for OTP type] [Not applicable
             for CA type] Comma separated list of CIDR blocks. IP addresses belonging
@@ -26286,6 +27465,7 @@ components:
     SystemAuthRequest:
       example:
         seal_wrap: false
+        plugin_version: plugin_version
         options: '{}'
         description: description
         external_entropy_access: false
@@ -26319,6 +27499,9 @@ components:
           description: Name of the auth plugin to use based from the name in the plugin
             catalog.
           type: string
+        plugin_version:
+          description: The semantic version of the plugin to use.
+          type: string
         seal_wrap:
           default: false
           description: Whether to turn on seal wrapping for the mount.
@@ -26330,6 +27513,7 @@ components:
     SystemAuthTuneRequest:
       example:
         listing_visibility: listing_visibility
+        plugin_version: plugin_version
         audit_non_hmac_request_keys:
         - audit_non_hmac_request_keys
         - audit_non_hmac_request_keys
@@ -26374,7 +27558,8 @@ components:
           type: string
         listing_visibility:
           description: Determines the visibility of the mount in the UI-specific listing
-            endpoint. Accepted value are 'unauth' and ''.
+            endpoint. Accepted value are 'unauth' and 'hidden', with the empty default
+            ('') behaving like 'hidden'.
           type: string
         max_lease_ttl:
           description: The max lease TTL for this mount.
@@ -26390,6 +27575,9 @@ components:
           items:
             type: string
           type: array
+        plugin_version:
+          description: The semantic version of the plugin to use.
+          type: string
         token_type:
           description: The type of token to issue (service or batch).
           type: string
@@ -26705,6 +27893,15 @@ components:
           description: The lease identifier to renew. This is included with a lease.
           type: string
       type: object
+    SystemLoggersRequest:
+      example:
+        level: level
+      properties:
+        level:
+          description: Log verbosity level. Supported values (in order of detail)
+            are "trace", "debug", "info", "warn", and "error".
+          type: string
+      type: object
     SystemMfaValidateRequest:
       example:
         mfa_request_id: mfa_request_id
@@ -26725,6 +27922,7 @@ components:
     SystemMountsRequest:
       example:
         seal_wrap: false
+        plugin_version: plugin_version
         options: '{}'
         description: description
         external_entropy_access: false
@@ -26759,6 +27957,9 @@ components:
           description: Name of the plugin to mount based from the name registered
             in the plugin catalog.
           type: string
+        plugin_version:
+          description: The semantic version of the plugin to use.
+          type: string
         seal_wrap:
           default: false
           description: Whether to turn on seal wrapping for the mount.
@@ -26770,6 +27971,7 @@ components:
     SystemMountsTuneRequest:
       example:
         listing_visibility: listing_visibility
+        plugin_version: plugin_version
         allowed_managed_keys:
         - allowed_managed_keys
         - allowed_managed_keys
@@ -26821,7 +28023,8 @@ components:
           type: string
         listing_visibility:
           description: Determines the visibility of the mount in the UI-specific listing
-            endpoint. Accepted value are 'unauth' and ''.
+            endpoint. Accepted value are 'unauth' and 'hidden', with the empty default
+            ('') behaving like 'hidden'.
           type: string
         max_lease_ttl:
           description: The max lease TTL for this mount.
@@ -26837,6 +28040,9 @@ components:
           items:
             type: string
           type: array
+        plugin_version:
+          description: The semantic version of the plugin to use.
+          type: string
         token_type:
           description: The type of token to issue (service or batch).
           type: string
@@ -26851,6 +28057,7 @@ components:
         - env
         - env
         type: type
+        version: version
         command: command
       properties:
         args:
@@ -26874,6 +28081,9 @@ components:
           type: string
         type:
           description: The type of the plugin, may be auth, secret, or database
+          type: string
+        version:
+          description: The semantic version of the plugin to use.
           type: string
       type: object
     SystemPluginsReloadBackendRequest:
@@ -26951,6 +28161,7 @@ components:
     SystemQuotasRateLimitRequest:
       example:
         path: path
+        role: role
         rate: 1.4658129
         block_interval: 0
         interval: 6
@@ -26977,6 +28188,10 @@ components:
             by the quota rule. The 'rate' must be positive.
           format: float
           type: number
+        role:
+          description: Login role to apply this quota to. Note that when set, path
+            must be configured to a valid auth method with a concept of roles.
+          type: string
         type:
           description: Type of the quota rule.
           type: string
@@ -27293,6 +28508,134 @@ components:
           type: integer
         user_id:
           description: ID of the Terraform Cloud or Enterprise user (e.g., user-xxxxxxxxxxxxxxxx)
+          type: string
+      type: object
+    TokenCreateOrphanRequest:
+      example:
+        entity_alias: entity_alias
+        metadata: '{}'
+        period: period
+        policies:
+        - policies
+        - policies
+        num_uses: 0
+        display_name: display_name
+        no_default_policy: true
+        type: type
+        no_parent: true
+        ttl: ttl
+        explicit_max_ttl: explicit_max_ttl
+        role_name: role_name
+        renewable: true
+        id: id
+      properties:
+        display_name:
+          description: Name to associate with this token
+          type: string
+        entity_alias:
+          description: Name of the entity alias to associate with this token
+          type: string
+        explicit_max_ttl:
+          description: Explicit Max TTL of this token
+          type: string
+        id:
+          description: Value for the token
+          type: string
+        metadata:
+          description: Arbitrary key=value metadata to associate with the token
+          format: map
+          type: object
+        no_default_policy:
+          description: Do not include default policy for this token
+          type: boolean
+        no_parent:
+          description: Create the token with no parent
+          type: boolean
+        num_uses:
+          description: Max number of uses for this token
+          type: integer
+        period:
+          description: Renew period
+          type: string
+        policies:
+          description: List of policies for the token
+          items:
+            type: string
+          type: array
+        renewable:
+          description: Allow token to be renewed past its initial TTL up to system/mount
+            maximum TTL
+          type: boolean
+        role_name:
+          description: Name of the role
+          type: string
+        ttl:
+          description: Time to live for this token
+          type: string
+        type:
+          description: Token type
+          type: string
+      type: object
+    TokenCreateRequest:
+      example:
+        entity_alias: entity_alias
+        metadata: '{}'
+        period: period
+        policies:
+        - policies
+        - policies
+        num_uses: 0
+        display_name: display_name
+        no_default_policy: true
+        type: type
+        no_parent: true
+        ttl: ttl
+        explicit_max_ttl: explicit_max_ttl
+        renewable: true
+        id: id
+      properties:
+        display_name:
+          description: Name to associate with this token
+          type: string
+        entity_alias:
+          description: Name of the entity alias to associate with this token
+          type: string
+        explicit_max_ttl:
+          description: Explicit Max TTL of this token
+          type: string
+        id:
+          description: Value for the token
+          type: string
+        metadata:
+          description: Arbitrary key=value metadata to associate with the token
+          format: map
+          type: object
+        no_default_policy:
+          description: Do not include default policy for this token
+          type: boolean
+        no_parent:
+          description: Create the token with no parent
+          type: boolean
+        num_uses:
+          description: Max number of uses for this token
+          type: integer
+        period:
+          description: Renew period
+          type: string
+        policies:
+          description: List of policies for the token
+          items:
+            type: string
+          type: array
+        renewable:
+          description: Allow token to be renewed past its initial TTL up to system/mount
+            maximum TTL
+          type: boolean
+        ttl:
+          description: Time to live for this token
+          type: string
+        type:
+          description: Token type
           type: string
       type: object
     TokenLookupAccessorRequest:
@@ -27659,6 +29002,7 @@ components:
     TransitDecryptRequest:
       example:
         ciphertext: ciphertext
+        partial_failure_response_code: 0
         context: context
         nonce: nonce
       properties:
@@ -27674,11 +29018,19 @@ components:
             provided if convergent encryption is enabled for this key and the key
             was generated with Vault 0.6.1. Not required for keys created in 0.6.2+.
           type: string
+        partial_failure_response_code:
+          description: Ordinarily, if a batch item fails to decrypt due to a bad input,
+            but other batch items succeed, the HTTP response code is 400 (Bad Request).
+            Some applications may want to treat partial failures differently. Providing
+            the parameter returns the given response code integer instead of a 400
+            in this case. If all values fail HTTP 400 is still returned.
+          type: integer
       type: object
     TransitEncryptRequest:
       example:
         convergent_encryption: true
         key_version: 0
+        partial_failure_response_code: 6
         context: context
         plaintext: plaintext
         type: aes256-gcm96
@@ -27711,6 +29063,13 @@ components:
             96 bits (12 bytes) long and the user must ensure that for any given context
             (and thus, any given encryption key) this nonce value is **never reused**.
           type: string
+        partial_failure_response_code:
+          description: Ordinarily, if a batch item fails to encrypt due to a bad input,
+            but other batch items succeed, the HTTP response code is 400 (Bad Request).
+            Some applications may want to treat partial failures differently. Providing
+            the parameter returns the given response code integer instead of a 400
+            in this case. If all values fail HTTP 400 is still returned.
+          type: integer
         plaintext:
           description: Base64 encoded plaintext value to be encrypted
           type: string
@@ -27891,6 +29250,7 @@ components:
         allow_plaintext_backup: true
         type: aes256-gcm96
         derived: true
+        key_size: 6
       properties:
         allow_plaintext_backup:
           description: Enables taking a backup of the named key in plaintext format.
@@ -27925,6 +29285,11 @@ components:
           description: Enables keys to be exportable. This allows for all the valid
             keys in the key ring to be exported.
           type: boolean
+        key_size:
+          default: 0
+          description: The key size in bytes for the algorithm. Only applies to HMAC
+            and must be no fewer than 32 bytes and no more than 512
+          type: integer
         type:
           default: aes256-gcm96
           description: The type of key to create. Currently, "aes128-gcm96" (symmetric),
@@ -28023,6 +29388,7 @@ components:
         context: context
         hash_algorithm: sha2-256
         signature_algorithm: signature_algorithm
+        salt_length: auto
         algorithm: sha2-256
         marshaling_algorithm: asn1
       properties:
@@ -28062,6 +29428,15 @@ components:
             type is 'rsa-2048', 'rsa-3072' or 'rsa-4096', then the algorithm used
             to hash the input should be indicated by the 'algorithm' parameter.
           type: boolean
+        salt_length:
+          default: auto
+          description: The salt length used to sign. Currently only applies to the
+            RSA PSS signature scheme. Options are 'auto' (the default used by Golang,
+            causing the salt to be as large as possible when signing), 'hash' (causes
+            the salt length to equal the length of the hash used in the signature),
+            or an integer between the minimum and the maximum permissible salt lengths
+            for the given RSA key size. Defaults to 'auto'.
+          type: string
         signature_algorithm:
           description: The signature algorithm to use for signing. Currently only
             applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to
@@ -28081,6 +29456,7 @@ components:
         context: context
         hash_algorithm: sha2-256
         signature_algorithm: signature_algorithm
+        salt_length: auto
         algorithm: sha2-256
         marshaling_algorithm: asn1
       properties:
@@ -28117,6 +29493,15 @@ components:
             type is 'rsa-2048', 'rsa-3072' or 'rsa-4096', then the algorithm used
             to hash the input should be indicated by the 'algorithm' parameter.
           type: boolean
+        salt_length:
+          default: auto
+          description: The salt length used to sign. Currently only applies to the
+            RSA PSS signature scheme. Options are 'auto' (the default used by Golang,
+            causing the salt to be as large as possible when signing), 'hash' (causes
+            the salt length to equal the length of the hash used in the signature),
+            or an integer between the minimum and the maximum permissible salt lengths
+            for the given RSA key size. Defaults to 'auto'.
+          type: string
         signature:
           description: The signature, including vault header/key version
           type: string

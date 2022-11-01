@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ConvergentEncryption** | Pointer to **bool** | This parameter will only be used when a key is expected to be created. Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext&#39;s security. | [optional] 
 **KeyVersion** | Pointer to **int32** | The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key. | [optional] 
 **Nonce** | Pointer to **string** | Base64 encoded nonce value. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+. The value must be exactly 96 bits (12 bytes) long and the user must ensure that for any given context (and thus, any given encryption key) this nonce value is **never reused**. | [optional] 
+**PartialFailureResponseCode** | Pointer to **int32** | Ordinarily, if a batch item fails to encrypt due to a bad input, but other batch items succeed, the HTTP response code is 400 (Bad Request). Some applications may want to treat partial failures differently. Providing the parameter returns the given response code integer instead of a 400 in this case. If all values fail HTTP 400 is still returned. | [optional] 
 **Plaintext** | Pointer to **string** | Base64 encoded plaintext value to be encrypted | [optional] 
 **Type** | Pointer to **string** | This parameter is required when encryption key is expected to be created. When performing an upsert operation, the type of key to create. Currently, \&quot;aes128-gcm96\&quot; (symmetric) and \&quot;aes256-gcm96\&quot; (symmetric) are the only types supported. Defaults to \&quot;aes256-gcm96\&quot;. | [optional] [default to "aes256-gcm96"]
 
@@ -129,6 +130,31 @@ SetNonce sets Nonce field to given value.
 `func (o *TransitEncryptRequest) HasNonce() bool`
 
 HasNonce returns a boolean if a field has been set.
+
+### GetPartialFailureResponseCode
+
+`func (o *TransitEncryptRequest) GetPartialFailureResponseCode() int32`
+
+GetPartialFailureResponseCode returns the PartialFailureResponseCode field if non-nil, zero value otherwise.
+
+### GetPartialFailureResponseCodeOk
+
+`func (o *TransitEncryptRequest) GetPartialFailureResponseCodeOk() (*int32, bool)`
+
+GetPartialFailureResponseCodeOk returns a tuple with the PartialFailureResponseCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartialFailureResponseCode
+
+`func (o *TransitEncryptRequest) SetPartialFailureResponseCode(v int32)`
+
+SetPartialFailureResponseCode sets PartialFailureResponseCode field to given value.
+
+### HasPartialFailureResponseCode
+
+`func (o *TransitEncryptRequest) HasPartialFailureResponseCode() bool`
+
+HasPartialFailureResponseCode returns a boolean if a field has been set.
 
 ### GetPlaintext
 

@@ -1,4 +1,4 @@
-# OpenldapRoleRequest
+# LdapRoleRequest
 
 ## Properties
 
@@ -13,160 +13,160 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewOpenldapRoleRequest
+### NewLdapRoleRequest
 
-`func NewOpenldapRoleRequest(creationLdif string, deletionLdif string, ) *OpenldapRoleRequest`
+`func NewLdapRoleRequest(creationLdif string, deletionLdif string, ) *LdapRoleRequest`
 
-NewOpenldapRoleRequest instantiates a new OpenldapRoleRequest object
+NewLdapRoleRequest instantiates a new LdapRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOpenldapRoleRequestWithDefaults
+### NewLdapRoleRequestWithDefaults
 
-`func NewOpenldapRoleRequestWithDefaults() *OpenldapRoleRequest`
+`func NewLdapRoleRequestWithDefaults() *LdapRoleRequest`
 
-NewOpenldapRoleRequestWithDefaults instantiates a new OpenldapRoleRequest object
+NewLdapRoleRequestWithDefaults instantiates a new LdapRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCreationLdif
 
-`func (o *OpenldapRoleRequest) GetCreationLdif() string`
+`func (o *LdapRoleRequest) GetCreationLdif() string`
 
 GetCreationLdif returns the CreationLdif field if non-nil, zero value otherwise.
 
 ### GetCreationLdifOk
 
-`func (o *OpenldapRoleRequest) GetCreationLdifOk() (*string, bool)`
+`func (o *LdapRoleRequest) GetCreationLdifOk() (*string, bool)`
 
 GetCreationLdifOk returns a tuple with the CreationLdif field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreationLdif
 
-`func (o *OpenldapRoleRequest) SetCreationLdif(v string)`
+`func (o *LdapRoleRequest) SetCreationLdif(v string)`
 
 SetCreationLdif sets CreationLdif field to given value.
 
 
 ### GetDefaultTtl
 
-`func (o *OpenldapRoleRequest) GetDefaultTtl() int32`
+`func (o *LdapRoleRequest) GetDefaultTtl() int32`
 
 GetDefaultTtl returns the DefaultTtl field if non-nil, zero value otherwise.
 
 ### GetDefaultTtlOk
 
-`func (o *OpenldapRoleRequest) GetDefaultTtlOk() (*int32, bool)`
+`func (o *LdapRoleRequest) GetDefaultTtlOk() (*int32, bool)`
 
 GetDefaultTtlOk returns a tuple with the DefaultTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultTtl
 
-`func (o *OpenldapRoleRequest) SetDefaultTtl(v int32)`
+`func (o *LdapRoleRequest) SetDefaultTtl(v int32)`
 
 SetDefaultTtl sets DefaultTtl field to given value.
 
 ### HasDefaultTtl
 
-`func (o *OpenldapRoleRequest) HasDefaultTtl() bool`
+`func (o *LdapRoleRequest) HasDefaultTtl() bool`
 
 HasDefaultTtl returns a boolean if a field has been set.
 
 ### GetDeletionLdif
 
-`func (o *OpenldapRoleRequest) GetDeletionLdif() string`
+`func (o *LdapRoleRequest) GetDeletionLdif() string`
 
 GetDeletionLdif returns the DeletionLdif field if non-nil, zero value otherwise.
 
 ### GetDeletionLdifOk
 
-`func (o *OpenldapRoleRequest) GetDeletionLdifOk() (*string, bool)`
+`func (o *LdapRoleRequest) GetDeletionLdifOk() (*string, bool)`
 
 GetDeletionLdifOk returns a tuple with the DeletionLdif field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletionLdif
 
-`func (o *OpenldapRoleRequest) SetDeletionLdif(v string)`
+`func (o *LdapRoleRequest) SetDeletionLdif(v string)`
 
 SetDeletionLdif sets DeletionLdif field to given value.
 
 
 ### GetMaxTtl
 
-`func (o *OpenldapRoleRequest) GetMaxTtl() int32`
+`func (o *LdapRoleRequest) GetMaxTtl() int32`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *OpenldapRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *LdapRoleRequest) GetMaxTtlOk() (*int32, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *OpenldapRoleRequest) SetMaxTtl(v int32)`
+`func (o *LdapRoleRequest) SetMaxTtl(v int32)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
 ### HasMaxTtl
 
-`func (o *OpenldapRoleRequest) HasMaxTtl() bool`
+`func (o *LdapRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
 
 ### GetRollbackLdif
 
-`func (o *OpenldapRoleRequest) GetRollbackLdif() string`
+`func (o *LdapRoleRequest) GetRollbackLdif() string`
 
 GetRollbackLdif returns the RollbackLdif field if non-nil, zero value otherwise.
 
 ### GetRollbackLdifOk
 
-`func (o *OpenldapRoleRequest) GetRollbackLdifOk() (*string, bool)`
+`func (o *LdapRoleRequest) GetRollbackLdifOk() (*string, bool)`
 
 GetRollbackLdifOk returns a tuple with the RollbackLdif field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRollbackLdif
 
-`func (o *OpenldapRoleRequest) SetRollbackLdif(v string)`
+`func (o *LdapRoleRequest) SetRollbackLdif(v string)`
 
 SetRollbackLdif sets RollbackLdif field to given value.
 
 ### HasRollbackLdif
 
-`func (o *OpenldapRoleRequest) HasRollbackLdif() bool`
+`func (o *LdapRoleRequest) HasRollbackLdif() bool`
 
 HasRollbackLdif returns a boolean if a field has been set.
 
 ### GetUsernameTemplate
 
-`func (o *OpenldapRoleRequest) GetUsernameTemplate() string`
+`func (o *LdapRoleRequest) GetUsernameTemplate() string`
 
 GetUsernameTemplate returns the UsernameTemplate field if non-nil, zero value otherwise.
 
 ### GetUsernameTemplateOk
 
-`func (o *OpenldapRoleRequest) GetUsernameTemplateOk() (*string, bool)`
+`func (o *LdapRoleRequest) GetUsernameTemplateOk() (*string, bool)`
 
 GetUsernameTemplateOk returns a tuple with the UsernameTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsernameTemplate
 
-`func (o *OpenldapRoleRequest) SetUsernameTemplate(v string)`
+`func (o *LdapRoleRequest) SetUsernameTemplate(v string)`
 
 SetUsernameTemplate sets UsernameTemplate field to given value.
 
 ### HasUsernameTemplate
 
-`func (o *OpenldapRoleRequest) HasUsernameTemplate() bool`
+`func (o *LdapRoleRequest) HasUsernameTemplate() bool`
 
 HasUsernameTemplate returns a boolean if a field has been set.
 

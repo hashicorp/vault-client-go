@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **AllowUserKeyIds** | Pointer to **bool** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If true, users can override the key ID for a signed certificate with the \&quot;key_id\&quot; field. When false, the key ID will always be the token display name. The key ID is logged by the SSH server and can be useful for auditing. | [optional] 
 **AllowedCriticalOptions** | Pointer to **string** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] A comma-separated list of critical options that certificates can have when signed. To allow any critical options, set this to an empty string. | [optional] 
 **AllowedDomains** | Pointer to **string** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If this option is not specified, client can request for a signed certificate for any valid host. If only certain domains are allowed, then this list enforces it. | [optional] 
+**AllowedDomainsTemplate** | Pointer to **bool** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, Allowed domains can be specified using identity template policies. Non-templated domains are also permitted. | [optional] [default to false]
 **AllowedExtensions** | Pointer to **string** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] A comma-separated list of extensions that certificates can have when signed. An empty list means that no extension overrides are allowed by an end-user; explicitly specify &#39;*&#39; to allow any extensions to be set. | [optional] 
 **AllowedUserKeyLengths** | Pointer to **map[string]interface{}** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, allows the enforcement of key types and minimum key sizes to be signed. | [optional] 
 **AllowedUsers** | Pointer to **string** | [Optional for all types] [Works differently for CA type] If this option is not specified, or is &#39;*&#39;, client can request a credential for any valid user at the remote host, including the admin user. If only certain usernames are to be allowed, then this list enforces it. If this field is set, then credentials can only be created for default_user and usernames present in this list. Setting this option will enable all the users with access to this role to fetch credentials for all other usernames in this list. Use with caution. N.B.: with the CA type, an empty list means that no users are allowed; explicitly specify &#39;*&#39; to allow any user. | [optional] 
@@ -22,6 +23,7 @@ Name | Type | Description | Notes
 **DefaultExtensions** | Pointer to **map[string]interface{}** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] Extensions certificates should have if none are provided when signing. This field takes in key value pairs in JSON format. Note that these are not restricted by \&quot;allowed_extensions\&quot;. Defaults to none. | [optional] 
 **DefaultExtensionsTemplate** | Pointer to **bool** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, Default extension values can be specified using identity template policies. Non-templated extension values are also permitted. | [optional] [default to false]
 **DefaultUser** | Pointer to **string** | [Required for Dynamic type] [Required for OTP type] [Optional for CA type] Default username for which a credential will be generated. When the endpoint &#39;creds/&#39; is used without a username, this value will be used as default username. | [optional] 
+**DefaultUserTemplate** | Pointer to **bool** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, Default user can be specified using identity template policies. Non-templated users are also permitted. | [optional] [default to false]
 **ExcludeCidrList** | Pointer to **string** | [Optional for Dynamic type] [Optional for OTP type] [Not applicable for CA type] Comma separated list of CIDR blocks. IP addresses belonging to these blocks are not accepted by the role. This is particularly useful when big CIDR blocks are being used by the role and certain parts of it needs to be kept out. | [optional] 
 **InstallScript** | Pointer to **string** | [Optional for Dynamic type] [Not-applicable for OTP type] [Not applicable for CA type] Script used to install and uninstall public keys in the target machine. The inbuilt default install script will be for Linux hosts. For sample script, refer the project documentation website. | [optional] 
 **Key** | Pointer to **string** | [Required for Dynamic type] [Not applicable for OTP type] [Not applicable for CA type] Name of the registered key in Vault. Before creating the role, use the &#39;keys/&#39; endpoint to create a named key. | [optional] 
@@ -278,6 +280,31 @@ SetAllowedDomains sets AllowedDomains field to given value.
 
 HasAllowedDomains returns a boolean if a field has been set.
 
+### GetAllowedDomainsTemplate
+
+`func (o *SshRolesRequest) GetAllowedDomainsTemplate() bool`
+
+GetAllowedDomainsTemplate returns the AllowedDomainsTemplate field if non-nil, zero value otherwise.
+
+### GetAllowedDomainsTemplateOk
+
+`func (o *SshRolesRequest) GetAllowedDomainsTemplateOk() (*bool, bool)`
+
+GetAllowedDomainsTemplateOk returns a tuple with the AllowedDomainsTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedDomainsTemplate
+
+`func (o *SshRolesRequest) SetAllowedDomainsTemplate(v bool)`
+
+SetAllowedDomainsTemplate sets AllowedDomainsTemplate field to given value.
+
+### HasAllowedDomainsTemplate
+
+`func (o *SshRolesRequest) HasAllowedDomainsTemplate() bool`
+
+HasAllowedDomainsTemplate returns a boolean if a field has been set.
+
 ### GetAllowedExtensions
 
 `func (o *SshRolesRequest) GetAllowedExtensions() string`
@@ -502,6 +529,31 @@ SetDefaultUser sets DefaultUser field to given value.
 `func (o *SshRolesRequest) HasDefaultUser() bool`
 
 HasDefaultUser returns a boolean if a field has been set.
+
+### GetDefaultUserTemplate
+
+`func (o *SshRolesRequest) GetDefaultUserTemplate() bool`
+
+GetDefaultUserTemplate returns the DefaultUserTemplate field if non-nil, zero value otherwise.
+
+### GetDefaultUserTemplateOk
+
+`func (o *SshRolesRequest) GetDefaultUserTemplateOk() (*bool, bool)`
+
+GetDefaultUserTemplateOk returns a tuple with the DefaultUserTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultUserTemplate
+
+`func (o *SshRolesRequest) SetDefaultUserTemplate(v bool)`
+
+SetDefaultUserTemplate sets DefaultUserTemplate field to given value.
+
+### HasDefaultUserTemplate
+
+`func (o *SshRolesRequest) HasDefaultUserTemplate() bool`
+
+HasDefaultUserTemplate returns a boolean if a field has been set.
 
 ### GetExcludeCidrList
 

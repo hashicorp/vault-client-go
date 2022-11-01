@@ -1,4 +1,4 @@
-# OpenldapStaticRoleRequest
+# LdapStaticRoleRequest
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewOpenldapStaticRoleRequest
+### NewLdapStaticRoleRequest
 
-`func NewOpenldapStaticRoleRequest() *OpenldapStaticRoleRequest`
+`func NewLdapStaticRoleRequest() *LdapStaticRoleRequest`
 
-NewOpenldapStaticRoleRequest instantiates a new OpenldapStaticRoleRequest object
+NewLdapStaticRoleRequest instantiates a new LdapStaticRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOpenldapStaticRoleRequestWithDefaults
+### NewLdapStaticRoleRequestWithDefaults
 
-`func NewOpenldapStaticRoleRequestWithDefaults() *OpenldapStaticRoleRequest`
+`func NewLdapStaticRoleRequestWithDefaults() *LdapStaticRoleRequest`
 
-NewOpenldapStaticRoleRequestWithDefaults instantiates a new OpenldapStaticRoleRequest object
+NewLdapStaticRoleRequestWithDefaults instantiates a new LdapStaticRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetDn
 
-`func (o *OpenldapStaticRoleRequest) GetDn() string`
+`func (o *LdapStaticRoleRequest) GetDn() string`
 
 GetDn returns the Dn field if non-nil, zero value otherwise.
 
 ### GetDnOk
 
-`func (o *OpenldapStaticRoleRequest) GetDnOk() (*string, bool)`
+`func (o *LdapStaticRoleRequest) GetDnOk() (*string, bool)`
 
 GetDnOk returns a tuple with the Dn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDn
 
-`func (o *OpenldapStaticRoleRequest) SetDn(v string)`
+`func (o *LdapStaticRoleRequest) SetDn(v string)`
 
 SetDn sets Dn field to given value.
 
 ### HasDn
 
-`func (o *OpenldapStaticRoleRequest) HasDn() bool`
+`func (o *LdapStaticRoleRequest) HasDn() bool`
 
 HasDn returns a boolean if a field has been set.
 
 ### GetRotationPeriod
 
-`func (o *OpenldapStaticRoleRequest) GetRotationPeriod() int32`
+`func (o *LdapStaticRoleRequest) GetRotationPeriod() int32`
 
 GetRotationPeriod returns the RotationPeriod field if non-nil, zero value otherwise.
 
 ### GetRotationPeriodOk
 
-`func (o *OpenldapStaticRoleRequest) GetRotationPeriodOk() (*int32, bool)`
+`func (o *LdapStaticRoleRequest) GetRotationPeriodOk() (*int32, bool)`
 
 GetRotationPeriodOk returns a tuple with the RotationPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationPeriod
 
-`func (o *OpenldapStaticRoleRequest) SetRotationPeriod(v int32)`
+`func (o *LdapStaticRoleRequest) SetRotationPeriod(v int32)`
 
 SetRotationPeriod sets RotationPeriod field to given value.
 
 ### HasRotationPeriod
 
-`func (o *OpenldapStaticRoleRequest) HasRotationPeriod() bool`
+`func (o *LdapStaticRoleRequest) HasRotationPeriod() bool`
 
 HasRotationPeriod returns a boolean if a field has been set.
 
 ### GetUsername
 
-`func (o *OpenldapStaticRoleRequest) GetUsername() string`
+`func (o *LdapStaticRoleRequest) GetUsername() string`
 
 GetUsername returns the Username field if non-nil, zero value otherwise.
 
 ### GetUsernameOk
 
-`func (o *OpenldapStaticRoleRequest) GetUsernameOk() (*string, bool)`
+`func (o *LdapStaticRoleRequest) GetUsernameOk() (*string, bool)`
 
 GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsername
 
-`func (o *OpenldapStaticRoleRequest) SetUsername(v string)`
+`func (o *LdapStaticRoleRequest) SetUsername(v string)`
 
 SetUsername sets Username field to given value.
 
 ### HasUsername
 
-`func (o *OpenldapStaticRoleRequest) HasUsername() bool`
+`func (o *LdapStaticRoleRequest) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
 

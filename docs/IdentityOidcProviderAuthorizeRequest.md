@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **RedirectUri** | **string** | The redirection URI to which the response will be sent. | 
 **ResponseType** | **string** | The OIDC authentication flow to be used. The following response types are supported: &#39;code&#39; | 
 **Scope** | **string** | A space-delimited, case-sensitive list of scopes to be requested. The &#39;openid&#39; scope is required. | 
-**State** | **string** | The value used to maintain state between the authentication request and client. | 
+**State** | Pointer to **string** | The value used to maintain state between the authentication request and client. | [optional] 
 
 ## Methods
 
 ### NewIdentityOidcProviderAuthorizeRequest
 
-`func NewIdentityOidcProviderAuthorizeRequest(clientId string, redirectUri string, responseType string, scope string, state string, ) *IdentityOidcProviderAuthorizeRequest`
+`func NewIdentityOidcProviderAuthorizeRequest(clientId string, redirectUri string, responseType string, scope string, ) *IdentityOidcProviderAuthorizeRequest`
 
 NewIdentityOidcProviderAuthorizeRequest instantiates a new IdentityOidcProviderAuthorizeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -232,6 +232,11 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+### HasState
+
+`func (o *IdentityOidcProviderAuthorizeRequest) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

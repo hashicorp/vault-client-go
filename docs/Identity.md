@@ -3108,7 +3108,7 @@ Name | Type | Description  | Notes
 
 ## GetIdentityOidcProvider
 
-> GetIdentityOidcProvider(ctx).List(list).Execute()
+> GetIdentityOidcProvider(ctx).List(list).AllowedClientId(allowedClientId).Execute()
 
 
 
@@ -3135,7 +3135,8 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProvider(context.Background(), list)
+	allowedClientId := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Identity.GetIdentityOidcProvider(context.Background(), list, allowedClientId)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3154,6 +3155,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
+ **allowedClientId** | **string** | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. | [default to &quot;&quot;]
 
  (empty response body)
 

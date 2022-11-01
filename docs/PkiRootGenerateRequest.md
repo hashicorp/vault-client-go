@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **StreetAddress** | Pointer to **[]string** | If set, Street Address will be set to this value. | [optional] 
 **Ttl** | Pointer to **int32** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. | [optional] 
 **UriSans** | Pointer to **[]string** | The requested URI SANs, if any, in a comma-delimited list. | [optional] 
+**UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
 
 ## Methods
 
@@ -777,6 +778,31 @@ SetUriSans sets UriSans field to given value.
 `func (o *PkiRootGenerateRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
+
+### GetUsePss
+
+`func (o *PkiRootGenerateRequest) GetUsePss() bool`
+
+GetUsePss returns the UsePss field if non-nil, zero value otherwise.
+
+### GetUsePssOk
+
+`func (o *PkiRootGenerateRequest) GetUsePssOk() (*bool, bool)`
+
+GetUsePssOk returns a tuple with the UsePss field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsePss
+
+`func (o *PkiRootGenerateRequest) SetUsePss(v bool)`
+
+SetUsePss sets UsePss field to given value.
+
+### HasUsePss
+
+`func (o *PkiRootGenerateRequest) HasUsePss() bool`
+
+HasUsePss returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**DeleteSysConfigUiHeadersHeader**](System.md#DeleteSysConfigUiHeadersHeader) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
 [**DeleteSysGenerateRoot**](System.md#DeleteSysGenerateRoot) | **Delete** /sys/generate-root | Cancels any in-progress root generation attempt.
 [**DeleteSysGenerateRootAttempt**](System.md#DeleteSysGenerateRootAttempt) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
+[**DeleteSysLoggers**](System.md#DeleteSysLoggers) | **Delete** /sys/loggers | Revert the all loggers to use log level provided in config.
+[**DeleteSysLoggersName**](System.md#DeleteSysLoggersName) | **Delete** /sys/loggers/{name} | Revert a single logger to use log level provided in config.
 [**DeleteSysMountsPath**](System.md#DeleteSysMountsPath) | **Delete** /sys/mounts/{path} | Disable the mount point specified at the given path.
 [**DeleteSysPluginsCatalogName**](System.md#DeleteSysPluginsCatalogName) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
 [**DeleteSysPluginsCatalogTypeName**](System.md#DeleteSysPluginsCatalogTypeName) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
@@ -124,6 +126,8 @@ Method | HTTP request | Description
 [**PostSysLeasesRevokePrefixPrefix**](System.md#PostSysLeasesRevokePrefixPrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
 [**PostSysLeasesRevokeUrlLeaseId**](System.md#PostSysLeasesRevokeUrlLeaseId) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
 [**PostSysLeasesTidy**](System.md#PostSysLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
+[**PostSysLoggers**](System.md#PostSysLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
+[**PostSysLoggersName**](System.md#PostSysLoggersName) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
 [**PostSysMfaValidate**](System.md#PostSysMfaValidate) | **Post** /sys/mfa/validate | Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
 [**PostSysMountsPath**](System.md#PostSysMountsPath) | **Post** /sys/mounts/{path} | Enable a new secrets engine at the given path.
 [**PostSysMountsPathTune**](System.md#PostSysMountsPathTune) | **Post** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
@@ -546,6 +550,116 @@ This endpoint does not require any parameters.
 
 ### Other Parameters
 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteSysLoggers
+
+> DeleteSysLoggers(ctx).Execute()
+
+Revert the all loggers to use log level provided in config.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.DeleteSysLoggers(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteSysLoggersName
+
+> DeleteSysLoggersName(ctx, name).Execute()
+
+Revert a single logger to use log level provided in config.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of the logger to be modified.
+
+	resp, err := client.WithToken("my-token").System.DeleteSysLoggersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of the logger to be modified. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -6876,6 +6990,122 @@ This endpoint does not require any parameters.
 ### Other Parameters
 
 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostSysLoggers
+
+> PostSysLoggers(ctx).SystemLoggersRequest(systemLoggersRequest).Execute()
+
+Modify the log level for all existing loggers.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	systemLoggersRequest := NewSystemLoggersRequestWithDefaults()
+	resp, err := client.WithToken("my-token").System.PostSysLoggers(context.Background(), systemLoggersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **systemLoggersRequest** | [**SystemLoggersRequest**](SystemLoggersRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostSysLoggersName
+
+> PostSysLoggersName(ctx, name).SystemLoggersRequest(systemLoggersRequest).Execute()
+
+Modify the log level of a single logger.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of the logger to be modified.
+
+	systemLoggersRequest := NewSystemLoggersRequestWithDefaults()
+	resp, err := client.WithToken("my-token").System.PostSysLoggersName(context.Background(), name, systemLoggersRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of the logger to be modified. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **systemLoggersRequest** | [**SystemLoggersRequest**](SystemLoggersRequest.md) |  | 
 
  (empty response body)
 

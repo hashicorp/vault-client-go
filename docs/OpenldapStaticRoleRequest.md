@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Dn** | Pointer to **string** | The distinguished name of the entry to manage. | [optional] 
 **RotationPeriod** | Pointer to **int32** | Period for automatic credential rotation of the given entry. | [optional] 
-**Ttl** | Pointer to **int32** | The time-to-live for the password. | [optional] 
 **Username** | Pointer to **string** | The username/logon name for the entry with which this role will be associated. | [optional] 
 
 ## Methods
@@ -77,31 +76,6 @@ SetRotationPeriod sets RotationPeriod field to given value.
 `func (o *OpenldapStaticRoleRequest) HasRotationPeriod() bool`
 
 HasRotationPeriod returns a boolean if a field has been set.
-
-### GetTtl
-
-`func (o *OpenldapStaticRoleRequest) GetTtl() int32`
-
-GetTtl returns the Ttl field if non-nil, zero value otherwise.
-
-### GetTtlOk
-
-`func (o *OpenldapStaticRoleRequest) GetTtlOk() (*int32, bool)`
-
-GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTtl
-
-`func (o *OpenldapStaticRoleRequest) SetTtl(v int32)`
-
-SetTtl sets Ttl field to given value.
-
-### HasTtl
-
-`func (o *OpenldapStaticRoleRequest) HasTtl() bool`
-
-HasTtl returns a boolean if a field has been set.
 
 ### GetUsername
 

@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ConflictingAliasIdsToKeep** | Pointer to **[]string** | Alias IDs to keep in case of conflicting aliases. Ignored if no conflicting aliases found | [optional] 
 **Force** | Pointer to **bool** | Setting this will follow the &#39;mine&#39; strategy for merging MFA secrets. If there are secrets of the same type both in entities that are merged from and in entity into which all others are getting merged, secrets in the destination will be unaltered. If not set, this API will throw an error containing all the conflicts. | [optional] 
-**FromEntityIds** | Pointer to **[]string** | Entity IDs which needs to get merged | [optional] 
+**FromEntityIds** | Pointer to **[]string** | Entity IDs which need to get merged | [optional] 
 **ToEntityId** | Pointer to **string** | Entity ID into which all the other entities need to get merged | [optional] 
 
 ## Methods
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewIdentityEntityMergeRequestWithDefaults instantiates a new IdentityEntityMergeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConflictingAliasIdsToKeep
+
+`func (o *IdentityEntityMergeRequest) GetConflictingAliasIdsToKeep() []string`
+
+GetConflictingAliasIdsToKeep returns the ConflictingAliasIdsToKeep field if non-nil, zero value otherwise.
+
+### GetConflictingAliasIdsToKeepOk
+
+`func (o *IdentityEntityMergeRequest) GetConflictingAliasIdsToKeepOk() (*[]string, bool)`
+
+GetConflictingAliasIdsToKeepOk returns a tuple with the ConflictingAliasIdsToKeep field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConflictingAliasIdsToKeep
+
+`func (o *IdentityEntityMergeRequest) SetConflictingAliasIdsToKeep(v []string)`
+
+SetConflictingAliasIdsToKeep sets ConflictingAliasIdsToKeep field to given value.
+
+### HasConflictingAliasIdsToKeep
+
+`func (o *IdentityEntityMergeRequest) HasConflictingAliasIdsToKeep() bool`
+
+HasConflictingAliasIdsToKeep returns a boolean if a field has been set.
 
 ### GetForce
 

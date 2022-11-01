@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Input** | Pointer to **string** | The base64-encoded input data to verify | [optional] 
 **MarshalingAlgorithm** | Pointer to **string** | The method by which to unmarshal the signature when verifying. The default is &#39;asn1&#39; which is used by openssl and X.509; can also be set to &#39;jws&#39; which is used for JWT signatures in which case the signature is also expected to be url-safe base64 encoding instead of standard base64 encoding. Currently only valid for ECDSA P-256 key types\&quot;. | [optional] [default to "asn1"]
 **Prehashed** | Pointer to **bool** | Set to &#39;true&#39; when the input is already hashed. If the key type is &#39;rsa-2048&#39;, &#39;rsa-3072&#39; or &#39;rsa-4096&#39;, then the algorithm used to hash the input should be indicated by the &#39;algorithm&#39; parameter. | [optional] 
+**SaltLength** | Pointer to **string** | The salt length used to sign. Currently only applies to the RSA PSS signature scheme. Options are &#39;auto&#39; (the default used by Golang, causing the salt to be as large as possible when signing), &#39;hash&#39; (causes the salt length to equal the length of the hash used in the signature), or an integer between the minimum and the maximum permissible salt lengths for the given RSA key size. Defaults to &#39;auto&#39;. | [optional] [default to "auto"]
 **Signature** | Pointer to **string** | The signature, including vault header/key version | [optional] 
 **SignatureAlgorithm** | Pointer to **string** | The signature algorithm to use for signature verification. Currently only applies to RSA key types. Options are &#39;pss&#39; or &#39;pkcs1v15&#39;. Defaults to &#39;pss&#39; | [optional] 
 **Urlalgorithm** | Pointer to **string** | Hash algorithm to use (POST URL parameter) | [optional] 
@@ -208,6 +209,31 @@ SetPrehashed sets Prehashed field to given value.
 `func (o *TransitVerifyRequest) HasPrehashed() bool`
 
 HasPrehashed returns a boolean if a field has been set.
+
+### GetSaltLength
+
+`func (o *TransitVerifyRequest) GetSaltLength() string`
+
+GetSaltLength returns the SaltLength field if non-nil, zero value otherwise.
+
+### GetSaltLengthOk
+
+`func (o *TransitVerifyRequest) GetSaltLengthOk() (*string, bool)`
+
+GetSaltLengthOk returns a tuple with the SaltLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSaltLength
+
+`func (o *TransitVerifyRequest) SetSaltLength(v string)`
+
+SetSaltLength sets SaltLength field to given value.
+
+### HasSaltLength
+
+`func (o *TransitVerifyRequest) HasSaltLength() bool`
+
+HasSaltLength returns a boolean if a field has been set.
 
 ### GetSignature
 

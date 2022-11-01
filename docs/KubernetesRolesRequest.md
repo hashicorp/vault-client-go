@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowedKubernetesNamespaces** | **[]string** | A list of the Kubernetes namespaces in which credentials can be generated. If set to \&quot;*\&quot; all namespaces are allowed. | 
+**AllowedKubernetesNamespaceSelector** | Pointer to **string** | A label selector for Kubernetes namespaces in which credentials can be generated. Accepts either a JSON or YAML object. If set with allowed_kubernetes_namespaces, the conditions are conjuncted. | [optional] 
+**AllowedKubernetesNamespaces** | Pointer to **[]string** | A list of the Kubernetes namespaces in which credentials can be generated. If set to \&quot;*\&quot; all namespaces are allowed. | [optional] 
 **ExtraAnnotations** | Pointer to **map[string]interface{}** | Additional annotations to apply to all generated Kubernetes objects. | [optional] 
 **ExtraLabels** | Pointer to **map[string]interface{}** | Additional labels to apply to all generated Kubernetes objects. | [optional] 
 **GeneratedRoleRules** | Pointer to **string** | The Role or ClusterRole rules to use when generating a role. Accepts either a JSON or YAML object. If set, the entire chain of Kubernetes objects will be generated. | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewKubernetesRolesRequest
 
-`func NewKubernetesRolesRequest(allowedKubernetesNamespaces []string, ) *KubernetesRolesRequest`
+`func NewKubernetesRolesRequest() *KubernetesRolesRequest`
 
 NewKubernetesRolesRequest instantiates a new KubernetesRolesRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,6 +34,31 @@ will change when the set of required properties is changed
 NewKubernetesRolesRequestWithDefaults instantiates a new KubernetesRolesRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllowedKubernetesNamespaceSelector
+
+`func (o *KubernetesRolesRequest) GetAllowedKubernetesNamespaceSelector() string`
+
+GetAllowedKubernetesNamespaceSelector returns the AllowedKubernetesNamespaceSelector field if non-nil, zero value otherwise.
+
+### GetAllowedKubernetesNamespaceSelectorOk
+
+`func (o *KubernetesRolesRequest) GetAllowedKubernetesNamespaceSelectorOk() (*string, bool)`
+
+GetAllowedKubernetesNamespaceSelectorOk returns a tuple with the AllowedKubernetesNamespaceSelector field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedKubernetesNamespaceSelector
+
+`func (o *KubernetesRolesRequest) SetAllowedKubernetesNamespaceSelector(v string)`
+
+SetAllowedKubernetesNamespaceSelector sets AllowedKubernetesNamespaceSelector field to given value.
+
+### HasAllowedKubernetesNamespaceSelector
+
+`func (o *KubernetesRolesRequest) HasAllowedKubernetesNamespaceSelector() bool`
+
+HasAllowedKubernetesNamespaceSelector returns a boolean if a field has been set.
 
 ### GetAllowedKubernetesNamespaces
 
@@ -53,6 +79,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedKubernetesNamespaces sets AllowedKubernetesNamespaces field to given value.
 
+### HasAllowedKubernetesNamespaces
+
+`func (o *KubernetesRolesRequest) HasAllowedKubernetesNamespaces() bool`
+
+HasAllowedKubernetesNamespaces returns a boolean if a field has been set.
 
 ### GetExtraAnnotations
 

@@ -21,11 +21,16 @@ Method | HTTP request | Description
 [**DeleteKubernetesConfig**](Secrets.md#DeleteKubernetesConfig) | **Delete** /kubernetes/config | 
 [**DeleteKubernetesRolesName**](Secrets.md#DeleteKubernetesRolesName) | **Delete** /kubernetes/roles/{name} | 
 [**DeleteKvPath**](Secrets.md#DeleteKvPath) | **Delete** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+[**DeleteLdapConfig**](Secrets.md#DeleteLdapConfig) | **Delete** /ldap/config | 
+[**DeleteLdapLibraryName**](Secrets.md#DeleteLdapLibraryName) | **Delete** /ldap/library/{name} | Delete a library set.
+[**DeleteLdapRoleName**](Secrets.md#DeleteLdapRoleName) | **Delete** /ldap/role/{name} | 
+[**DeleteLdapStaticRoleName**](Secrets.md#DeleteLdapStaticRoleName) | **Delete** /ldap/static-role/{name} | 
 [**DeleteMongodbatlasRolesName**](Secrets.md#DeleteMongodbatlasRolesName) | **Delete** /mongodbatlas/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 [**DeleteNomadConfigAccess**](Secrets.md#DeleteNomadConfigAccess) | **Delete** /nomad/config/access | 
 [**DeleteNomadConfigLease**](Secrets.md#DeleteNomadConfigLease) | **Delete** /nomad/config/lease | Configure the lease parameters for generated tokens
 [**DeleteNomadRoleName**](Secrets.md#DeleteNomadRoleName) | **Delete** /nomad/role/{name} | 
 [**DeleteOpenldapConfig**](Secrets.md#DeleteOpenldapConfig) | **Delete** /openldap/config | 
+[**DeleteOpenldapLibraryName**](Secrets.md#DeleteOpenldapLibraryName) | **Delete** /openldap/library/{name} | Delete a library set.
 [**DeleteOpenldapRoleName**](Secrets.md#DeleteOpenldapRoleName) | **Delete** /openldap/role/{name} | 
 [**DeleteOpenldapStaticRoleName**](Secrets.md#DeleteOpenldapStaticRoleName) | **Delete** /openldap/static-role/{name} | 
 [**DeletePkiIssuerRefDerPem**](Secrets.md#DeletePkiIssuerRefDerPem) | **Delete** /pki/{issuer_ref}/der|/pem | 
@@ -91,6 +96,16 @@ Method | HTTP request | Description
 [**GetKubernetesRoles**](Secrets.md#GetKubernetesRoles) | **Get** /kubernetes/roles | 
 [**GetKubernetesRolesName**](Secrets.md#GetKubernetesRolesName) | **Get** /kubernetes/roles/{name} | 
 [**GetKvPath**](Secrets.md#GetKvPath) | **Get** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+[**GetLdapConfig**](Secrets.md#GetLdapConfig) | **Get** /ldap/config | 
+[**GetLdapCredsName**](Secrets.md#GetLdapCredsName) | **Get** /ldap/creds/{name} | 
+[**GetLdapLibrary**](Secrets.md#GetLdapLibrary) | **Get** /ldap/library | 
+[**GetLdapLibraryName**](Secrets.md#GetLdapLibraryName) | **Get** /ldap/library/{name} | Read a library set.
+[**GetLdapLibraryNameStatus**](Secrets.md#GetLdapLibraryNameStatus) | **Get** /ldap/library/{name}/status | Check the status of the service accounts in a library set.
+[**GetLdapRole**](Secrets.md#GetLdapRole) | **Get** /ldap/role | 
+[**GetLdapRoleName**](Secrets.md#GetLdapRoleName) | **Get** /ldap/role/{name} | 
+[**GetLdapStaticCredName**](Secrets.md#GetLdapStaticCredName) | **Get** /ldap/static-cred/{name} | 
+[**GetLdapStaticRole**](Secrets.md#GetLdapStaticRole) | **Get** /ldap/static-role | 
+[**GetLdapStaticRoleName**](Secrets.md#GetLdapStaticRoleName) | **Get** /ldap/static-role/{name} | 
 [**GetMongodbatlasConfig**](Secrets.md#GetMongodbatlasConfig) | **Get** /mongodbatlas/config | Configure the  credentials that are used to manage Database Users.
 [**GetMongodbatlasCredsName**](Secrets.md#GetMongodbatlasCredsName) | **Get** /mongodbatlas/creds/{name} | Generate MongoDB Atlas Programmatic API from a specific Vault role.
 [**GetMongodbatlasRoles**](Secrets.md#GetMongodbatlasRoles) | **Get** /mongodbatlas/roles | List the existing roles in this backend
@@ -102,6 +117,9 @@ Method | HTTP request | Description
 [**GetNomadRoleName**](Secrets.md#GetNomadRoleName) | **Get** /nomad/role/{name} | 
 [**GetOpenldapConfig**](Secrets.md#GetOpenldapConfig) | **Get** /openldap/config | 
 [**GetOpenldapCredsName**](Secrets.md#GetOpenldapCredsName) | **Get** /openldap/creds/{name} | 
+[**GetOpenldapLibrary**](Secrets.md#GetOpenldapLibrary) | **Get** /openldap/library | 
+[**GetOpenldapLibraryName**](Secrets.md#GetOpenldapLibraryName) | **Get** /openldap/library/{name} | Read a library set.
+[**GetOpenldapLibraryNameStatus**](Secrets.md#GetOpenldapLibraryNameStatus) | **Get** /openldap/library/{name}/status | Check the status of the service accounts in a library set.
 [**GetOpenldapRole**](Secrets.md#GetOpenldapRole) | **Get** /openldap/role | 
 [**GetOpenldapRoleName**](Secrets.md#GetOpenldapRoleName) | **Get** /openldap/role/{name} | 
 [**GetOpenldapStaticCredName**](Secrets.md#GetOpenldapStaticCredName) | **Get** /openldap/static-cred/{name} | 
@@ -111,25 +129,30 @@ Method | HTTP request | Description
 [**GetPkiCaChain**](Secrets.md#GetPkiCaChain) | **Get** /pki/ca_chain | 
 [**GetPkiCaPem**](Secrets.md#GetPkiCaPem) | **Get** /pki/ca/pem | 
 [**GetPkiCertCaChain**](Secrets.md#GetPkiCertCaChain) | **Get** /pki/cert/ca_chain | 
-[**GetPkiCertCrl**](Secrets.md#GetPkiCertCrl) | **Get** /pki/cert/crl | 
 [**GetPkiCertSerial**](Secrets.md#GetPkiCertSerial) | **Get** /pki/cert/{serial} | 
 [**GetPkiCertSerialRaw**](Secrets.md#GetPkiCertSerialRaw) | **Get** /pki/cert/{serial}/raw | 
 [**GetPkiCertSerialRawPem**](Secrets.md#GetPkiCertSerialRawPem) | **Get** /pki/cert/{serial}/raw/pem | 
 [**GetPkiCerts**](Secrets.md#GetPkiCerts) | **Get** /pki/certs | 
+[**GetPkiConfigAutoTidy**](Secrets.md#GetPkiConfigAutoTidy) | **Get** /pki/config/auto-tidy | 
 [**GetPkiConfigCrl**](Secrets.md#GetPkiConfigCrl) | **Get** /pki/config/crl | 
 [**GetPkiConfigIssuers**](Secrets.md#GetPkiConfigIssuers) | **Get** /pki/config/issuers | 
 [**GetPkiConfigKeys**](Secrets.md#GetPkiConfigKeys) | **Get** /pki/config/keys | 
 [**GetPkiConfigUrls**](Secrets.md#GetPkiConfigUrls) | **Get** /pki/config/urls | 
 [**GetPkiCrl**](Secrets.md#GetPkiCrl) | **Get** /pki/crl | 
-[**GetPkiCrlPem**](Secrets.md#GetPkiCrlPem) | **Get** /pki/crl/pem | 
 [**GetPkiCrlRotate**](Secrets.md#GetPkiCrlRotate) | **Get** /pki/crl/rotate | 
+[**GetPkiCrlRotateDelta**](Secrets.md#GetPkiCrlRotateDelta) | **Get** /pki/crl/rotate-delta | 
+[**GetPkiDelta**](Secrets.md#GetPkiDelta) | **Get** /pki//delta | 
+[**GetPkiDeltaCrl**](Secrets.md#GetPkiDeltaCrl) | **Get** /pki/delta-crl | 
+[**GetPkiDeltaPem**](Secrets.md#GetPkiDeltaPem) | **Get** /pki//delta/pem | 
 [**GetPkiDer**](Secrets.md#GetPkiDer) | **Get** /pki//der | 
-[**GetPkiIssuerRefCrlPem**](Secrets.md#GetPkiIssuerRefCrlPem) | **Get** /pki/{issuer_ref}/crl/pem | 
+[**GetPkiIssuerRefCrlPemDerDeltaPem**](Secrets.md#GetPkiIssuerRefCrlPemDerDeltaPem) | **Get** /pki/{issuer_ref}/crl/pem|/der|/delta/pem | 
 [**GetPkiIssuerRefDerPem**](Secrets.md#GetPkiIssuerRefDerPem) | **Get** /pki/{issuer_ref}/der|/pem | 
 [**GetPkiIssuers**](Secrets.md#GetPkiIssuers) | **Get** /pki/issuers | 
 [**GetPkiJson**](Secrets.md#GetPkiJson) | **Get** /pki//json | 
 [**GetPkiKeyKeyRef**](Secrets.md#GetPkiKeyKeyRef) | **Get** /pki/key/{key_ref} | 
 [**GetPkiKeys**](Secrets.md#GetPkiKeys) | **Get** /pki/keys | 
+[**GetPkiOcspReq**](Secrets.md#GetPkiOcspReq) | **Get** /pki/ocsp/{req} | 
+[**GetPkiPem**](Secrets.md#GetPkiPem) | **Get** /pki//pem | 
 [**GetPkiRoles**](Secrets.md#GetPkiRoles) | **Get** /pki/roles | 
 [**GetPkiRolesName**](Secrets.md#GetPkiRolesName) | **Get** /pki/roles/{name} | 
 [**GetPkiTidyStatus**](Secrets.md#GetPkiTidyStatus) | **Get** /pki/tidy-status | 
@@ -211,6 +234,15 @@ Method | HTTP request | Description
 [**PostKubernetesCredsName**](Secrets.md#PostKubernetesCredsName) | **Post** /kubernetes/creds/{name} | 
 [**PostKubernetesRolesName**](Secrets.md#PostKubernetesRolesName) | **Post** /kubernetes/roles/{name} | 
 [**PostKvPath**](Secrets.md#PostKvPath) | **Post** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+[**PostLdapConfig**](Secrets.md#PostLdapConfig) | **Post** /ldap/config | 
+[**PostLdapLibraryManageNameCheckIn**](Secrets.md#PostLdapLibraryManageNameCheckIn) | **Post** /ldap/library/manage/{name}/check-in | Check service accounts in to the library.
+[**PostLdapLibraryName**](Secrets.md#PostLdapLibraryName) | **Post** /ldap/library/{name} | Update a library set.
+[**PostLdapLibraryNameCheckIn**](Secrets.md#PostLdapLibraryNameCheckIn) | **Post** /ldap/library/{name}/check-in | Check service accounts in to the library.
+[**PostLdapLibraryNameCheckOut**](Secrets.md#PostLdapLibraryNameCheckOut) | **Post** /ldap/library/{name}/check-out | Check a service account out from the library.
+[**PostLdapRoleName**](Secrets.md#PostLdapRoleName) | **Post** /ldap/role/{name} | 
+[**PostLdapRotateRoleName**](Secrets.md#PostLdapRotateRoleName) | **Post** /ldap/rotate-role/{name} | 
+[**PostLdapRotateRoot**](Secrets.md#PostLdapRotateRoot) | **Post** /ldap/rotate-root | 
+[**PostLdapStaticRoleName**](Secrets.md#PostLdapStaticRoleName) | **Post** /ldap/static-role/{name} | 
 [**PostMongodbatlasConfig**](Secrets.md#PostMongodbatlasConfig) | **Post** /mongodbatlas/config | Configure the  credentials that are used to manage Database Users.
 [**PostMongodbatlasCredsName**](Secrets.md#PostMongodbatlasCredsName) | **Post** /mongodbatlas/creds/{name} | Generate MongoDB Atlas Programmatic API from a specific Vault role.
 [**PostMongodbatlasRolesName**](Secrets.md#PostMongodbatlasRolesName) | **Post** /mongodbatlas/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -218,12 +250,17 @@ Method | HTTP request | Description
 [**PostNomadConfigLease**](Secrets.md#PostNomadConfigLease) | **Post** /nomad/config/lease | Configure the lease parameters for generated tokens
 [**PostNomadRoleName**](Secrets.md#PostNomadRoleName) | **Post** /nomad/role/{name} | 
 [**PostOpenldapConfig**](Secrets.md#PostOpenldapConfig) | **Post** /openldap/config | 
+[**PostOpenldapLibraryManageNameCheckIn**](Secrets.md#PostOpenldapLibraryManageNameCheckIn) | **Post** /openldap/library/manage/{name}/check-in | Check service accounts in to the library.
+[**PostOpenldapLibraryName**](Secrets.md#PostOpenldapLibraryName) | **Post** /openldap/library/{name} | Update a library set.
+[**PostOpenldapLibraryNameCheckIn**](Secrets.md#PostOpenldapLibraryNameCheckIn) | **Post** /openldap/library/{name}/check-in | Check service accounts in to the library.
+[**PostOpenldapLibraryNameCheckOut**](Secrets.md#PostOpenldapLibraryNameCheckOut) | **Post** /openldap/library/{name}/check-out | Check a service account out from the library.
 [**PostOpenldapRoleName**](Secrets.md#PostOpenldapRoleName) | **Post** /openldap/role/{name} | 
 [**PostOpenldapRotateRoleName**](Secrets.md#PostOpenldapRotateRoleName) | **Post** /openldap/rotate-role/{name} | 
 [**PostOpenldapRotateRoot**](Secrets.md#PostOpenldapRotateRoot) | **Post** /openldap/rotate-root | 
 [**PostOpenldapStaticRoleName**](Secrets.md#PostOpenldapStaticRoleName) | **Post** /openldap/static-role/{name} | 
 [**PostPkiBundle**](Secrets.md#PostPkiBundle) | **Post** /pki/bundle | 
 [**PostPkiCert**](Secrets.md#PostPkiCert) | **Post** /pki/cert | 
+[**PostPkiConfigAutoTidy**](Secrets.md#PostPkiConfigAutoTidy) | **Post** /pki/config/auto-tidy | 
 [**PostPkiConfigCa**](Secrets.md#PostPkiConfigCa) | **Post** /pki/config/ca | 
 [**PostPkiConfigCrl**](Secrets.md#PostPkiConfigCrl) | **Post** /pki/config/crl | 
 [**PostPkiConfigIssuers**](Secrets.md#PostPkiConfigIssuers) | **Post** /pki/config/issuers | 
@@ -232,22 +269,23 @@ Method | HTTP request | Description
 [**PostPkiIntermediateCrossSign**](Secrets.md#PostPkiIntermediateCrossSign) | **Post** /pki/intermediate/cross-sign | 
 [**PostPkiIntermediateGenerateExported**](Secrets.md#PostPkiIntermediateGenerateExported) | **Post** /pki/intermediate/generate/{exported} | 
 [**PostPkiIntermediateSetSigned**](Secrets.md#PostPkiIntermediateSetSigned) | **Post** /pki/intermediate/set-signed | 
-[**PostPkiInternalExported**](Secrets.md#PostPkiInternalExported) | **Post** /pki/internal|exported | 
 [**PostPkiIssueRole**](Secrets.md#PostPkiIssueRole) | **Post** /pki/issue/{role} | 
 [**PostPkiIssuerIssuerRefIssueRole**](Secrets.md#PostPkiIssuerIssuerRefIssueRole) | **Post** /pki/issuer/{issuer_ref}/issue/{role} | 
+[**PostPkiIssuerIssuerRefRevoke**](Secrets.md#PostPkiIssuerIssuerRefRevoke) | **Post** /pki/issuer/{issuer_ref}/revoke | 
 [**PostPkiIssuerIssuerRefSignIntermediate**](Secrets.md#PostPkiIssuerIssuerRefSignIntermediate) | **Post** /pki/issuer/{issuer_ref}/sign-intermediate | 
 [**PostPkiIssuerIssuerRefSignRole**](Secrets.md#PostPkiIssuerIssuerRefSignRole) | **Post** /pki/issuer/{issuer_ref}/sign/{role} | 
 [**PostPkiIssuerIssuerRefSignSelfIssued**](Secrets.md#PostPkiIssuerIssuerRefSignSelfIssued) | **Post** /pki/issuer/{issuer_ref}/sign-self-issued | 
 [**PostPkiIssuerIssuerRefSignVerbatim**](Secrets.md#PostPkiIssuerIssuerRefSignVerbatim) | **Post** /pki/issuer/{issuer_ref}/sign-verbatim | 
 [**PostPkiIssuerIssuerRefSignVerbatimRole**](Secrets.md#PostPkiIssuerIssuerRefSignVerbatimRole) | **Post** /pki/issuer/{issuer_ref}/sign-verbatim/{role} | 
-[**PostPkiIssuerRefDerPem**](Secrets.md#PostPkiIssuerRefDerPem) | **Post** /pki/{issuer_ref}/der|/pem | 
 [**PostPkiIssuersGenerateIntermediateExported**](Secrets.md#PostPkiIssuersGenerateIntermediateExported) | **Post** /pki/issuers/generate/intermediate/{exported} | 
 [**PostPkiIssuersGenerateRootExported**](Secrets.md#PostPkiIssuersGenerateRootExported) | **Post** /pki/issuers/generate/root/{exported} | 
 [**PostPkiJson**](Secrets.md#PostPkiJson) | **Post** /pki//json | 
 [**PostPkiKeyKeyRef**](Secrets.md#PostPkiKeyKeyRef) | **Post** /pki/key/{key_ref} | 
 [**PostPkiKeysImport**](Secrets.md#PostPkiKeysImport) | **Post** /pki/keys/import | 
 [**PostPkiKms**](Secrets.md#PostPkiKms) | **Post** /pki/kms | 
+[**PostPkiOcsp**](Secrets.md#PostPkiOcsp) | **Post** /pki/ocsp | 
 [**PostPkiRevoke**](Secrets.md#PostPkiRevoke) | **Post** /pki/revoke | 
+[**PostPkiRevokeWithKey**](Secrets.md#PostPkiRevokeWithKey) | **Post** /pki/revoke-with-key | 
 [**PostPkiRolesName**](Secrets.md#PostPkiRolesName) | **Post** /pki/roles/{name} | 
 [**PostPkiRootGenerateExported**](Secrets.md#PostPkiRootGenerateExported) | **Post** /pki/root/generate/{exported} | 
 [**PostPkiRootReplace**](Secrets.md#PostPkiRootReplace) | **Post** /pki/root/replace | 
@@ -258,6 +296,7 @@ Method | HTTP request | Description
 [**PostPkiSignVerbatim**](Secrets.md#PostPkiSignVerbatim) | **Post** /pki/sign-verbatim | 
 [**PostPkiSignVerbatimRole**](Secrets.md#PostPkiSignVerbatimRole) | **Post** /pki/sign-verbatim/{role} | 
 [**PostPkiTidy**](Secrets.md#PostPkiTidy) | **Post** /pki/tidy | 
+[**PostPkiTidyCancel**](Secrets.md#PostPkiTidyCancel) | **Post** /pki/tidy-cancel | 
 [**PostRabbitmqConfigConnection**](Secrets.md#PostRabbitmqConfigConnection) | **Post** /rabbitmq/config/connection | Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 [**PostRabbitmqConfigLease**](Secrets.md#PostRabbitmqConfigLease) | **Post** /rabbitmq/config/lease | Configure the lease parameters for generated credentials
 [**PostRabbitmqRolesName**](Secrets.md#PostRabbitmqRolesName) | **Post** /rabbitmq/roles/{name} | Manage the roles that can be created with this backend.
@@ -270,6 +309,7 @@ Method | HTTP request | Description
 [**PostSshConfigCa**](Secrets.md#PostSshConfigCa) | **Post** /ssh/config/ca | Set the SSH private key used for signing certificates.
 [**PostSshConfigZeroaddress**](Secrets.md#PostSshConfigZeroaddress) | **Post** /ssh/config/zeroaddress | Assign zero address as default CIDR block for select roles.
 [**PostSshCredsRole**](Secrets.md#PostSshCredsRole) | **Post** /ssh/creds/{role} | Creates a credential for establishing SSH connection with the remote host.
+[**PostSshIssueRole**](Secrets.md#PostSshIssueRole) | **Post** /ssh/issue/{role} | 
 [**PostSshKeysKeyName**](Secrets.md#PostSshKeysKeyName) | **Post** /ssh/keys/{key_name} | Register a shared private key with Vault.
 [**PostSshLookup**](Secrets.md#PostSshLookup) | **Post** /ssh/lookup | List all the roles associated with the given IP address.
 [**PostSshRolesRole**](Secrets.md#PostSshRolesRole) | **Post** /ssh/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
@@ -1390,6 +1430,234 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteLdapConfig
+
+> DeleteLdapConfig(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.DeleteLdapConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteLdapLibraryName
+
+> DeleteLdapLibraryName(ctx, name).Execute()
+
+Delete a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	resp, err := client.WithToken("my-token").Secrets.DeleteLdapLibraryName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteLdapRoleName
+
+> DeleteLdapRoleName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role (lowercase)
+
+	resp, err := client.WithToken("my-token").Secrets.DeleteLdapRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role (lowercase) | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteLdapStaticRoleName
+
+> DeleteLdapStaticRoleName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role
+
+	resp, err := client.WithToken("my-token").Secrets.DeleteLdapStaticRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## DeleteMongodbatlasRolesName
 
 > DeleteMongodbatlasRolesName(ctx, name).Execute()
@@ -1653,6 +1921,65 @@ This endpoint does not require any parameters.
 
 ### Other Parameters
 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteOpenldapLibraryName
+
+> DeleteOpenldapLibraryName(ctx, name).Execute()
+
+Delete a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapLibraryName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -5332,6 +5659,576 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetLdapConfig
+
+> GetLdapConfig(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.GetLdapConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapCredsName
+
+> GetLdapCredsName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the dynamic role.
+
+	resp, err := client.WithToken("my-token").Secrets.GetLdapCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the dynamic role. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapLibrary
+
+> GetLdapLibrary(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.GetLdapLibrary(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapLibraryName
+
+> GetLdapLibraryName(ctx, name).Execute()
+
+Read a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	resp, err := client.WithToken("my-token").Secrets.GetLdapLibraryName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapLibraryNameStatus
+
+> GetLdapLibraryNameStatus(ctx, name).Execute()
+
+Check the status of the service accounts in a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	resp, err := client.WithToken("my-token").Secrets.GetLdapLibraryNameStatus(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapRole
+
+> GetLdapRole(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.GetLdapRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapRoleName
+
+> GetLdapRoleName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role (lowercase)
+
+	resp, err := client.WithToken("my-token").Secrets.GetLdapRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role (lowercase) | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapStaticCredName
+
+> GetLdapStaticCredName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the static role.
+
+	resp, err := client.WithToken("my-token").Secrets.GetLdapStaticCredName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the static role. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapStaticRole
+
+> GetLdapStaticRole(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.GetLdapStaticRole(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetLdapStaticRoleName
+
+> GetLdapStaticRoleName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role
+
+	resp, err := client.WithToken("my-token").Secrets.GetLdapStaticRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GetMongodbatlasConfig
 
 > GetMongodbatlasConfig(ctx).Execute()
@@ -5941,6 +6838,179 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetOpenldapLibrary
+
+> GetOpenldapLibrary(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapLibrary(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetOpenldapLibraryName
+
+> GetOpenldapLibraryName(ctx, name).Execute()
+
+Read a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapLibraryName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetOpenldapLibraryNameStatus
+
+> GetOpenldapLibraryNameStatus(ctx, name).Execute()
+
+Check the status of the service accounts in a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	resp, err := client.WithToken("my-token").Secrets.GetOpenldapLibraryNameStatus(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GetOpenldapRole
 
 > GetOpenldapRole(ctx).List(list).Execute()
@@ -6432,57 +7502,6 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiCertCrl
-
-> GetPkiCertCrl(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCertCrl(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
 ## GetPkiCertSerial
 
 > GetPkiCertSerial(ctx, serial).Execute()
@@ -6708,6 +7727,57 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetPkiConfigAutoTidy
+
+> GetPkiConfigAutoTidy(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigAutoTidy(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
 
  (empty response body)
 
@@ -6970,57 +8040,6 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiCrlPem
-
-> GetPkiCrlPem(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCrlPem(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
 ## GetPkiCrlRotate
 
 > GetPkiCrlRotate(ctx).Execute()
@@ -7050,6 +8069,210 @@ func main() {
 
 
 	resp, err := client.WithToken("my-token").Secrets.GetPkiCrlRotate(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetPkiCrlRotateDelta
+
+> GetPkiCrlRotateDelta(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.GetPkiCrlRotateDelta(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetPkiDelta
+
+> GetPkiDelta(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.GetPkiDelta(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetPkiDeltaCrl
+
+> GetPkiDeltaCrl(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.GetPkiDeltaCrl(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetPkiDeltaPem
+
+> GetPkiDeltaPem(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.GetPkiDeltaPem(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7123,9 +8346,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiIssuerRefCrlPem
+## GetPkiIssuerRefCrlPemDerDeltaPem
 
-> GetPkiIssuerRefCrlPem(ctx, issuerRef).Execute()
+> GetPkiIssuerRefCrlPemDerDeltaPem(ctx, issuerRef).Execute()
 
 
 
@@ -7152,7 +8375,7 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuerRefCrlPem(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuerRefCrlPemDerDeltaPem(context.Background(), issuerRef)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7454,6 +8677,116 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetPkiOcspReq
+
+> GetPkiOcspReq(ctx, req).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	req := "req_example" // string | base-64 encoded ocsp request
+
+	resp, err := client.WithToken("my-token").Secrets.GetPkiOcspReq(context.Background(), req)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**req** | **string** | base-64 encoded ocsp request | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetPkiPem
+
+> GetPkiPem(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.GetPkiPem(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
 
  (empty response body)
 
@@ -12133,6 +13466,537 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## PostLdapConfig
+
+> PostLdapConfig(ctx).LdapConfigRequest(ldapConfigRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	ldapConfigRequest := NewLdapConfigRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostLdapConfig(context.Background(), ldapConfigRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ldapConfigRequest** | [**LdapConfigRequest**](LdapConfigRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapLibraryManageNameCheckIn
+
+> PostLdapLibraryManageNameCheckIn(ctx, name).LdapLibraryManageCheckInRequest(ldapLibraryManageCheckInRequest).Execute()
+
+Check service accounts in to the library.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	ldapLibraryManageCheckInRequest := NewLdapLibraryManageCheckInRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryManageNameCheckIn(context.Background(), name, ldapLibraryManageCheckInRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ldapLibraryManageCheckInRequest** | [**LdapLibraryManageCheckInRequest**](LdapLibraryManageCheckInRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapLibraryName
+
+> PostLdapLibraryName(ctx, name).LdapLibraryRequest(ldapLibraryRequest).Execute()
+
+Update a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	ldapLibraryRequest := NewLdapLibraryRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryName(context.Background(), name, ldapLibraryRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ldapLibraryRequest** | [**LdapLibraryRequest**](LdapLibraryRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapLibraryNameCheckIn
+
+> PostLdapLibraryNameCheckIn(ctx, name).LdapLibraryCheckInRequest(ldapLibraryCheckInRequest).Execute()
+
+Check service accounts in to the library.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	ldapLibraryCheckInRequest := NewLdapLibraryCheckInRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryNameCheckIn(context.Background(), name, ldapLibraryCheckInRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ldapLibraryCheckInRequest** | [**LdapLibraryCheckInRequest**](LdapLibraryCheckInRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapLibraryNameCheckOut
+
+> PostLdapLibraryNameCheckOut(ctx, name).LdapLibraryCheckOutRequest(ldapLibraryCheckOutRequest).Execute()
+
+Check a service account out from the library.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set
+
+	ldapLibraryCheckOutRequest := NewLdapLibraryCheckOutRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryNameCheckOut(context.Background(), name, ldapLibraryCheckOutRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ldapLibraryCheckOutRequest** | [**LdapLibraryCheckOutRequest**](LdapLibraryCheckOutRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapRoleName
+
+> PostLdapRoleName(ctx, name).LdapRoleRequest(ldapRoleRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role (lowercase)
+
+	ldapRoleRequest := NewLdapRoleRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostLdapRoleName(context.Background(), name, ldapRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role (lowercase) | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ldapRoleRequest** | [**LdapRoleRequest**](LdapRoleRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapRotateRoleName
+
+> PostLdapRotateRoleName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the static role
+
+	resp, err := client.WithToken("my-token").Secrets.PostLdapRotateRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the static role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapRotateRoot
+
+> PostLdapRotateRoot(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.PostLdapRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostLdapStaticRoleName
+
+> PostLdapStaticRoleName(ctx, name).LdapStaticRoleRequest(ldapStaticRoleRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role
+
+	ldapStaticRoleRequest := NewLdapStaticRoleRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostLdapStaticRoleName(context.Background(), name, ldapStaticRoleRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ldapStaticRoleRequest** | [**LdapStaticRoleRequest**](LdapStaticRoleRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## PostMongodbatlasConfig
 
 > PostMongodbatlasConfig(ctx).MongodbatlasConfigRequest(mongodbatlasConfigRequest).Execute()
@@ -12534,6 +14398,250 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## PostOpenldapLibraryManageNameCheckIn
+
+> PostOpenldapLibraryManageNameCheckIn(ctx, name).OpenldapLibraryManageCheckInRequest(openldapLibraryManageCheckInRequest).Execute()
+
+Check service accounts in to the library.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	openldapLibraryManageCheckInRequest := NewOpenldapLibraryManageCheckInRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryManageNameCheckIn(context.Background(), name, openldapLibraryManageCheckInRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **openldapLibraryManageCheckInRequest** | [**OpenldapLibraryManageCheckInRequest**](OpenldapLibraryManageCheckInRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostOpenldapLibraryName
+
+> PostOpenldapLibraryName(ctx, name).OpenldapLibraryRequest(openldapLibraryRequest).Execute()
+
+Update a library set.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	openldapLibraryRequest := NewOpenldapLibraryRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryName(context.Background(), name, openldapLibraryRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **openldapLibraryRequest** | [**OpenldapLibraryRequest**](OpenldapLibraryRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostOpenldapLibraryNameCheckIn
+
+> PostOpenldapLibraryNameCheckIn(ctx, name).OpenldapLibraryCheckInRequest(openldapLibraryCheckInRequest).Execute()
+
+Check service accounts in to the library.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set.
+
+	openldapLibraryCheckInRequest := NewOpenldapLibraryCheckInRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryNameCheckIn(context.Background(), name, openldapLibraryCheckInRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **openldapLibraryCheckInRequest** | [**OpenldapLibraryCheckInRequest**](OpenldapLibraryCheckInRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostOpenldapLibraryNameCheckOut
+
+> PostOpenldapLibraryNameCheckOut(ctx, name).OpenldapLibraryCheckOutRequest(openldapLibraryCheckOutRequest).Execute()
+
+Check a service account out from the library.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the set
+
+	openldapLibraryCheckOutRequest := NewOpenldapLibraryCheckOutRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryNameCheckOut(context.Background(), name, openldapLibraryCheckOutRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the set | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **openldapLibraryCheckOutRequest** | [**OpenldapLibraryCheckOutRequest**](OpenldapLibraryCheckOutRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## PostOpenldapRoleName
 
 > PostOpenldapRoleName(ctx, name).OpenldapRoleRequest(openldapRoleRequest).Execute()
@@ -12869,6 +14977,61 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiCertRequest** | [**PkiCertRequest**](PkiCertRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostPkiConfigAutoTidy
+
+> PostPkiConfigAutoTidy(ctx).PkiConfigAutoTidyRequest(pkiConfigAutoTidyRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	pkiConfigAutoTidyRequest := NewPkiConfigAutoTidyRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigAutoTidy(context.Background(), pkiConfigAutoTidyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiConfigAutoTidyRequest** | [**PkiConfigAutoTidyRequest**](PkiConfigAutoTidyRequest.md) |  | 
 
  (empty response body)
 
@@ -13322,61 +15485,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiInternalExported
-
-> PostPkiInternalExported(ctx).PkiInternalExportedRequest(pkiInternalExportedRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	pkiInternalExportedRequest := NewPkiInternalExportedRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiInternalExported(context.Background(), pkiInternalExportedRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiInternalExportedRequest** | [**PkiInternalExportedRequest**](PkiInternalExportedRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
 ## PostPkiIssueRole
 
 > PostPkiIssueRole(ctx, role).PkiIssueRequest(pkiIssueRequest).Execute()
@@ -13495,6 +15603,65 @@ Name | Type | Description  | Notes
 
 
  **pkiIssuerIssueRequest** | [**PkiIssuerIssueRequest**](PkiIssuerIssueRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerIssuerRefRevoke
+
+> PostPkiIssuerIssuerRefRevoke(ctx, issuerRef).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+
+	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefRevoke(context.Background(), issuerRef)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
  (empty response body)
 
@@ -13806,67 +15973,6 @@ Name | Type | Description  | Notes
 
 
  **pkiIssuerSignVerbatimRequest** | [**PkiIssuerSignVerbatimRequest**](PkiIssuerSignVerbatimRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostPkiIssuerRefDerPem
-
-> PostPkiIssuerRefDerPem(ctx, issuerRef).PkiDerPemRequest(pkiDerPemRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-	pkiDerPemRequest := NewPkiDerPemRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerRefDerPem(context.Background(), issuerRef, pkiDerPemRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **pkiDerPemRequest** | [**PkiDerPemRequest**](PkiDerPemRequest.md) |  | 
 
  (empty response body)
 
@@ -14222,6 +16328,57 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## PostPkiOcsp
+
+> PostPkiOcsp(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.PostPkiOcsp(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## PostPkiRevoke
 
 > PostPkiRevoke(ctx).PkiRevokeRequest(pkiRevokeRequest).Execute()
@@ -14270,6 +16427,61 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiRevokeRequest** | [**PkiRevokeRequest**](PkiRevokeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostPkiRevokeWithKey
+
+> PostPkiRevokeWithKey(ctx).PkiRevokeWithKeyRequest(pkiRevokeWithKeyRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	pkiRevokeWithKeyRequest := NewPkiRevokeWithKeyRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostPkiRevokeWithKey(context.Background(), pkiRevokeWithKeyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiRevokeWithKeyRequest** | [**PkiRevokeWithKeyRequest**](PkiRevokeWithKeyRequest.md) |  | 
 
  (empty response body)
 
@@ -14850,6 +17062,57 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiTidyRequest** | [**PkiTidyRequest**](PkiTidyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostPkiTidyCancel
+
+> PostPkiTidyCancel(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").Secrets.PostPkiTidyCancel(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
 
  (empty response body)
 
@@ -15552,6 +17815,67 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **sshCredsRequest** | [**SshCredsRequest**](SshCredsRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostSshIssueRole
+
+> PostSshIssueRole(ctx, role).SshIssueRequest(sshIssueRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	role := "role_example" // string | The desired role with configuration for this request.
+
+	sshIssueRequest := NewSshIssueRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.PostSshIssueRole(context.Background(), role, sshIssueRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**role** | **string** | The desired role with configuration for this request. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **sshIssueRequest** | [**SshIssueRequest**](SshIssueRequest.md) |  | 
 
  (empty response body)
 
@@ -16354,7 +18678,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the policy
+	name := "name_example" // string | Name of the key
 
 	transitDecryptRequest := NewTransitDecryptRequestWithDefaults()
 	resp, err := client.WithToken("my-token").Secrets.PostTransitDecryptName(context.Background(), name, transitDecryptRequest)
@@ -16372,7 +18696,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the policy | 
+**name** | **string** | Name of the key | 
 
 ### Other Parameters
 
@@ -16415,7 +18739,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the policy
+	name := "name_example" // string | Name of the key
 
 	transitEncryptRequest := NewTransitEncryptRequestWithDefaults()
 	resp, err := client.WithToken("my-token").Secrets.PostTransitEncryptName(context.Background(), name, transitEncryptRequest)
@@ -16433,7 +18757,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the policy | 
+**name** | **string** | Name of the key | 
 
 ### Other Parameters
 

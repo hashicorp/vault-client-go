@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**PauseDuration** | Pointer to **string** | The amount of time to wait between processing certificates. This allows operators to change the execution profile of tidy to take consume less resources by slowing down how long it takes to run. Note that the entire list of certificates will be stored in memory during the entire tidy operation, but resources to read/process/update existing entries will be spread out over a greater period of time. By default this is zero seconds. | [optional] [default to "0s"]
 **SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond certificate expiration before it is removed from the backend storage and/or revocation list. Defaults to 72 hours. | [optional] [default to 259200]
 **TidyCertStore** | Pointer to **bool** | Set to true to enable tidying up the certificate store | [optional] 
 **TidyRevocationList** | Pointer to **bool** | Deprecated; synonym for &#39;tidy_revoked_certs | [optional] 
+**TidyRevokedCertIssuerAssociations** | Pointer to **bool** | Set to true to validate issuer associations on revocation entries. This helps increase the performance of CRL building and OCSP responses. | [optional] 
 **TidyRevokedCerts** | Pointer to **bool** | Set to true to expire all revoked and expired certificates, removing them both from the CRL and from storage. The CRL will be rotated if this causes any values to be removed. | [optional] 
 
 ## Methods
@@ -27,6 +29,31 @@ will change when the set of required properties is changed
 NewPkiTidyRequestWithDefaults instantiates a new PkiTidyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetPauseDuration
+
+`func (o *PkiTidyRequest) GetPauseDuration() string`
+
+GetPauseDuration returns the PauseDuration field if non-nil, zero value otherwise.
+
+### GetPauseDurationOk
+
+`func (o *PkiTidyRequest) GetPauseDurationOk() (*string, bool)`
+
+GetPauseDurationOk returns a tuple with the PauseDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPauseDuration
+
+`func (o *PkiTidyRequest) SetPauseDuration(v string)`
+
+SetPauseDuration sets PauseDuration field to given value.
+
+### HasPauseDuration
+
+`func (o *PkiTidyRequest) HasPauseDuration() bool`
+
+HasPauseDuration returns a boolean if a field has been set.
 
 ### GetSafetyBuffer
 
@@ -102,6 +129,31 @@ SetTidyRevocationList sets TidyRevocationList field to given value.
 `func (o *PkiTidyRequest) HasTidyRevocationList() bool`
 
 HasTidyRevocationList returns a boolean if a field has been set.
+
+### GetTidyRevokedCertIssuerAssociations
+
+`func (o *PkiTidyRequest) GetTidyRevokedCertIssuerAssociations() bool`
+
+GetTidyRevokedCertIssuerAssociations returns the TidyRevokedCertIssuerAssociations field if non-nil, zero value otherwise.
+
+### GetTidyRevokedCertIssuerAssociationsOk
+
+`func (o *PkiTidyRequest) GetTidyRevokedCertIssuerAssociationsOk() (*bool, bool)`
+
+GetTidyRevokedCertIssuerAssociationsOk returns a tuple with the TidyRevokedCertIssuerAssociations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTidyRevokedCertIssuerAssociations
+
+`func (o *PkiTidyRequest) SetTidyRevokedCertIssuerAssociations(v bool)`
+
+SetTidyRevokedCertIssuerAssociations sets TidyRevokedCertIssuerAssociations field to given value.
+
+### HasTidyRevokedCertIssuerAssociations
+
+`func (o *PkiTidyRequest) HasTidyRevokedCertIssuerAssociations() bool`
+
+HasTidyRevokedCertIssuerAssociations returns a boolean if a field has been set.
 
 ### GetTidyRevokedCerts
 

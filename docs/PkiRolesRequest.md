@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Backend** | Pointer to **string** | Backend Type | [optional] 
 **BasicConstraintsValidForNonCa** | Pointer to **bool** | Mark Basic Constraints valid when issuing non-CA certificates. | [optional] 
 **ClientFlag** | Pointer to **bool** | If set, certificates are flagged for client auth use. Defaults to true. See also RFC 5280 Section 4.2.1.12. | [optional] [default to true]
+**CnValidations** | Pointer to **[]string** | List of allowed validations to run against the Common Name field. Values can include &#39;email&#39; to validate the CN is a email address, &#39;hostname&#39; to validate the CN is a valid hostname (potentially including wildcards). When multiple validations are specified, these take OR semantics (either email OR hostname are allowed). The special value &#39;disabled&#39; allows disabling all CN name validations, allowing for arbitrary non-Hostname, non-Email address CNs. | [optional] [default to ["email","hostname"]]
 **CodeSigningFlag** | Pointer to **bool** | If set, certificates are flagged for code signing use. Defaults to false. See also RFC 5280 Section 4.2.1.12. | [optional] 
 **Country** | Pointer to **[]string** | If set, Country will be set to this value in certificates issued by this role. | [optional] 
 **EmailProtectionFlag** | Pointer to **bool** | If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12. | [optional] 
@@ -48,6 +49,7 @@ Name | Type | Description | Notes
 **Ttl** | Pointer to **int32** | The lease duration (validity period of the certificate) if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the system default value or the value of max_ttl, whichever is shorter. | [optional] 
 **UseCsrCommonName** | Pointer to **bool** | If set, when used with a signing profile, the common name in the CSR will be used. This does *not* include any requested Subject Alternative Names; use use_csr_sans for that. Defaults to true. | [optional] [default to true]
 **UseCsrSans** | Pointer to **bool** | If set, when used with a signing profile, the SANs in the CSR will be used. This does *not* include the Common Name (cn); use use_csr_common_name for that. Defaults to true. | [optional] [default to true]
+**UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
 
 ## Methods
 
@@ -467,6 +469,31 @@ SetClientFlag sets ClientFlag field to given value.
 `func (o *PkiRolesRequest) HasClientFlag() bool`
 
 HasClientFlag returns a boolean if a field has been set.
+
+### GetCnValidations
+
+`func (o *PkiRolesRequest) GetCnValidations() []string`
+
+GetCnValidations returns the CnValidations field if non-nil, zero value otherwise.
+
+### GetCnValidationsOk
+
+`func (o *PkiRolesRequest) GetCnValidationsOk() (*[]string, bool)`
+
+GetCnValidationsOk returns a tuple with the CnValidations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCnValidations
+
+`func (o *PkiRolesRequest) SetCnValidations(v []string)`
+
+SetCnValidations sets CnValidations field to given value.
+
+### HasCnValidations
+
+`func (o *PkiRolesRequest) HasCnValidations() bool`
+
+HasCnValidations returns a boolean if a field has been set.
 
 ### GetCodeSigningFlag
 
@@ -1167,6 +1194,31 @@ SetUseCsrSans sets UseCsrSans field to given value.
 `func (o *PkiRolesRequest) HasUseCsrSans() bool`
 
 HasUseCsrSans returns a boolean if a field has been set.
+
+### GetUsePss
+
+`func (o *PkiRolesRequest) GetUsePss() bool`
+
+GetUsePss returns the UsePss field if non-nil, zero value otherwise.
+
+### GetUsePssOk
+
+`func (o *PkiRolesRequest) GetUsePssOk() (*bool, bool)`
+
+GetUsePssOk returns a tuple with the UsePss field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsePss
+
+`func (o *PkiRolesRequest) SetUsePss(v bool)`
+
+SetUsePss sets UsePss field to given value.
+
+### HasUsePss
+
+`func (o *PkiRolesRequest) HasUsePss() bool`
+
+HasUsePss returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

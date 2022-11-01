@@ -202,8 +202,8 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 		err  error
 	)
 
-	// allow at most one redirect
-	redirectCount := 0
+	// allow at most one redirect to prevent redirect loops
+	redirectCount := 1
 
 	for {
 		resp, err = c.doWithRetries(req, retry)
@@ -211,9 +211,9 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 			return resp, err
 		}
 
-		redirect, err := handleRedirect(req, resp, &redirectCount)
+		redirect, err := c.handleRedirect(req, resp, &redirectCount)
 		if err != nil {
-			return resp, fmt.Errorf("redirect error: %w", err)
+			return nil, err
 		}
 		if !redirect {
 			break
@@ -246,19 +246,9 @@ func (c *Client) doWithRetries(req *http.Request, retry bool) (*http.Response, e
 	return c.clientWithRetries.Do(retryableReq)
 }
 
-// handleRedirect checks the given response for a redirect status
-//
-//	returns:
-//	  true & modifies the request accordingly if the redirect is needed
-//	  false otherwise
-func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, error) {
-	// allow at most one redirect
-	if *redirectCount != 0 {
-		return false, nil
-	}
-
-	*redirectCount++
-
+// handleRedirect checks the given response for a redirect status & modifies
+// the request accordingly if the redirect is needed
+func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, *RedirectError) {
 	redirectStatuses := [...]int{
 		http.StatusMovedPermanently,  // 301
 		http.StatusFound,             // 302
@@ -269,25 +259,50 @@ func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) 
 		return false, nil
 	}
 
+	// a helper function to form a redirect error
+	redirectError := func(redirectTo *url.URL, message string, args ...any) *RedirectError {
+		var redirectURL string
+		if redirectTo != nil {
+			redirectURL = redirectTo.String()
+		}
+		return &RedirectError{
+			StatusCode:    resp.StatusCode,
+			Message:       fmt.Sprintf(message, args...),
+			RedirectURL:   redirectURL,
+			RequestMethod: req.Method,
+			RequestURL:    req.URL.String(),
+		}
+	}
+
 	redirectTo, err := resp.Location()
 	if err != nil {
-		return false, fmt.Errorf("could not read the redirect location: %w", err)
+		return false, redirectError(nil, "could not read the redirect location: %s", err.Error())
 	}
+
+	if c.configuration.DisableRedirects {
+		return false, redirectError(redirectTo, "the redirects are disabled")
+	}
+
+	if *redirectCount <= 0 {
+		return false, redirectError(redirectTo, "at most one redirect is allowed")
+	}
+
+	*redirectCount--
 
 	if req.URL.Scheme == "https" && redirectTo.Scheme != "https" {
-		return false, fmt.Errorf("redirect would cause a protocol downgrade")
+		return false, redirectError(redirectTo, "the redirect would cause a protocol downgrade")
 	}
-
-	req.URL = redirectTo
 
 	// restore the original request body (if any) since it had been consumed by client.Do
 	if req.GetBody != nil {
 		b, err := req.GetBody()
 		if err != nil {
-			return false, fmt.Errorf("could not restore request body: %w", err)
+			return false, redirectError(redirectTo, "could not restore the request body: %s", err.Error())
 		}
 		req.Body = b
 	}
+
+	req.URL = redirectTo
 
 	return true, nil
 }

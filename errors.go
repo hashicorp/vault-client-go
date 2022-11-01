@@ -8,6 +8,26 @@ import (
 	"strings"
 )
 
+// RedirectError is the error returned when the client receives a redirect
+// response and either
+//  1. the redirects are disabled in configuration
+//  2. more than one redirect was encountered
+//  3. the redirect response could not be properly parsed
+type RedirectError struct {
+	StatusCode int
+
+	Message string
+
+	RedirectURL string
+
+	RequestMethod string
+	RequestURL    string
+}
+
+func (e *RedirectError) Error() string {
+	return fmt.Sprintf("status: %d; redirect error: %s", e.StatusCode, e.Message)
+}
+
 // ErrorResponse is the error returned when Vault responds with a status code
 // outside of the 200 - 399 range. If a request to Vault fails because of a
 // network error a different error message will be returned.

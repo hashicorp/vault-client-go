@@ -202,7 +202,7 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 		err  error
 	)
 
-	// allow at most one redirect
+	// allow at most one redirect to prevent redirect loops
 	redirectCount := 1
 
 	for {

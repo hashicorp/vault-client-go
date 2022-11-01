@@ -12629,29 +12629,6 @@
         }
       }
     },
-    "/pki/internal|exported": {
-      "description": "Generate a new private key used for signing.",
-      "post": {
-        "operationId": "postPkiInternalExported",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PkiInternal|ExportedRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/pki/issue/{role}": {
       "description": "Request a certificate using a certain role with the provided details.",
       "parameters": [
@@ -13707,26 +13684,6 @@
         "tags": [
           "secrets"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "postPkiIssuer_refDerPem",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PkiDer|PemRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -26518,66 +26475,6 @@
           }
         }
       },
-      "PkiDer|PemRequest": {
-        "type": "object",
-        "properties": {
-          "crl_distribution_points": {
-            "type": "array",
-            "description": "Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "issuer_name": {
-            "type": "string",
-            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
-          },
-          "issuing_certificates": {
-            "type": "array",
-            "description": "Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "leaf_not_after_behavior": {
-            "type": "string",
-            "description": "Behavior of leaf's NotAfter fields: \"err\" to error if the computed NotAfter date exceeds that of this issuer; \"truncate\" to silently truncate to that of this issuer; or \"permit\" to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use \"truncate\" for intermediate CAs and \"permit\" only for root CAs.",
-            "default": "err"
-          },
-          "manual_chain": {
-            "type": "array",
-            "description": "Chain of issuer references to use to build this issuer's computed CAChain field, when non-empty.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "ocsp_servers": {
-            "type": "array",
-            "description": "Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "revocation_signature_algorithm": {
-            "type": "string",
-            "description": "Which x509.SignatureAlgorithm name to use for signing CRLs. This parameter allows differentiation between PKCS#1v1.5 and PSS keys and choice of signature hash algorithm. The default (empty string) value is for Go to select the signature algorithm. This can fail if the underlying key does not support the requested signature algorithm, which may not be known at modification time (such as with PKCS#11 managed RSA keys).",
-            "default": ""
-          },
-          "usage": {
-            "type": "array",
-            "description": "Comma-separated list (or string slice) of usages for this issuer; valid values are \"read-only\", \"issuing-certificates\", \"crl-signing\", and \"ocsp-signing\". Multiple values may be specified. Read-only is implicit and always set.",
-            "items": {
-              "type": "string"
-            },
-            "default": [
-              "read-only",
-              "issuing-certificates",
-              "crl-signing",
-              "ocsp-signing"
-            ]
-          }
-        }
-      },
       "PkiIntermediateCrossSignRequest": {
         "type": "object",
         "properties": {
@@ -27033,41 +26930,6 @@
           "certificate": {
             "type": "string",
             "description": "PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint. Additional parent CAs may be optionally appended to the bundle."
-          }
-        }
-      },
-      "PkiInternal|ExportedRequest": {
-        "type": "object",
-        "properties": {
-          "key_bits": {
-            "type": "integer",
-            "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
-            "default": 0
-          },
-          "key_name": {
-            "type": "string",
-            "description": "Optional name to be used for this key"
-          },
-          "key_type": {
-            "type": "string",
-            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
-            "enum": [
-              "rsa",
-              "ec",
-              "ed25519"
-            ],
-            "default": "rsa",
-            "x-vault-displayAttrs": {
-              "value": "rsa"
-            }
-          },
-          "managed_key_id": {
-            "type": "string",
-            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types."
-          },
-          "managed_key_name": {
-            "type": "string",
-            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types."
           }
         }
       },

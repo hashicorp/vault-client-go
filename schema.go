@@ -11909,6 +11909,8 @@ type SystemAuthTuneRequest struct {
 	PluginVersion string `json:"plugin_version"`
 	// The type of token to issue (service or batch).
 	TokenType string `json:"token_type"`
+	// The user lockout configuration to pass into the backend. Should be a json object with string keys and values.
+	UserLockoutConfig map[string]interface{} `json:"user_lockout_config"`
 }
 
 // NewSystemAuthTuneRequestWithDefaults instantiates a new SystemAuthTuneRequest object
@@ -11934,6 +11936,7 @@ func (o SystemAuthTuneRequest) MarshalJSON() ([]byte, error) {
 	toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
 	toSerialize["plugin_version"] = o.PluginVersion
 	toSerialize["token_type"] = o.TokenType
+	toSerialize["user_lockout_config"] = o.UserLockoutConfig
 
 	return json.Marshal(toSerialize)
 }
@@ -12784,6 +12787,8 @@ type SystemMountsTuneRequest struct {
 	PluginVersion string `json:"plugin_version"`
 	// The type of token to issue (service or batch).
 	TokenType string `json:"token_type"`
+	// The user lockout configuration to pass into the backend. Should be a json object with string keys and values.
+	UserLockoutConfig map[string]interface{} `json:"user_lockout_config"`
 }
 
 // NewSystemMountsTuneRequestWithDefaults instantiates a new SystemMountsTuneRequest object
@@ -12810,6 +12815,7 @@ func (o SystemMountsTuneRequest) MarshalJSON() ([]byte, error) {
 	toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
 	toSerialize["plugin_version"] = o.PluginVersion
 	toSerialize["token_type"] = o.TokenType
+	toSerialize["user_lockout_config"] = o.UserLockoutConfig
 
 	return json.Marshal(toSerialize)
 }
@@ -14558,6 +14564,8 @@ API version: 1.13.0
 
 // TransitDecryptRequest struct for TransitDecryptRequest
 type TransitDecryptRequest struct {
+	// When using an AEAD cipher mode, such as AES-GCM, this parameter allows passing associated data (AD/AAD) into the encryption function; this data must be passed on subsequent decryption requests but can be transited in plaintext. On successful decryption, both the ciphertext and the associated data are attested not to have been tampered with.
+	AssociatedData string `json:"associated_data"`
 	// The ciphertext to decrypt, provided as returned by encrypt.
 	Ciphertext string `json:"ciphertext"`
 	// Base64 encoded context for key derivation. Required if key derivation is enabled.
@@ -14580,6 +14588,7 @@ func NewTransitDecryptRequestWithDefaults() *TransitDecryptRequest {
 func (o TransitDecryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
+	toSerialize["associated_data"] = o.AssociatedData
 	toSerialize["ciphertext"] = o.Ciphertext
 	toSerialize["context"] = o.Context
 	toSerialize["nonce"] = o.Nonce
@@ -14600,6 +14609,8 @@ API version: 1.13.0
 
 // TransitEncryptRequest struct for TransitEncryptRequest
 type TransitEncryptRequest struct {
+	// When using an AEAD cipher mode, such as AES-GCM, this parameter allows passing associated data (AD/AAD) into the encryption function; this data must be passed on subsequent decryption requests but can be transited in plaintext. On successful decryption, both the ciphertext and the associated data are attested not to have been tampered with.
+	AssociatedData string `json:"associated_data"`
 	// Base64 encoded context for key derivation. Required if key derivation is enabled
 	Context string `json:"context"`
 	// This parameter will only be used when a key is expected to be created. Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext's security.
@@ -14630,6 +14641,7 @@ func NewTransitEncryptRequestWithDefaults() *TransitEncryptRequest {
 func (o TransitEncryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
+	toSerialize["associated_data"] = o.AssociatedData
 	toSerialize["context"] = o.Context
 	toSerialize["convergent_encryption"] = o.ConvergentEncryption
 	toSerialize["key_version"] = o.KeyVersion
@@ -15113,7 +15125,7 @@ type TransitSignRequest struct {
 	Algorithm string `json:"algorithm"`
 	// Base64 encoded context for key derivation. Required if key derivation is enabled; currently only available with ed25519 keys.
 	Context string `json:"context"`
-	// Hash algorithm to use (POST body parameter). Valid values are: * sha1 * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 Defaults to \"sha2-256\". Not valid for all key types, including ed25519.
+	// Hash algorithm to use (POST body parameter). Valid values are: * sha1 * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 * none Defaults to \"sha2-256\". Not valid for all key types, including ed25519. Using none requires setting prehashed=true and signature_algorithm=pkcs1v15, yielding a PKCSv1_5_NoOID instead of the usual PKCSv1_5_DERnull signature.
 	HashAlgorithm string `json:"hash_algorithm"`
 	// The base64-encoded input data
 	Input string `json:"input"`
@@ -15178,7 +15190,7 @@ type TransitVerifyRequest struct {
 	Algorithm string `json:"algorithm"`
 	// Base64 encoded context for key derivation. Required if key derivation is enabled; currently only available with ed25519 keys.
 	Context string `json:"context"`
-	// Hash algorithm to use (POST body parameter). Valid values are: * sha1 * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 Defaults to \"sha2-256\". Not valid for all key types.
+	// Hash algorithm to use (POST body parameter). Valid values are: * sha1 * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 * none Defaults to \"sha2-256\". Not valid for all key types. See note about none on signing path.
 	HashAlgorithm string `json:"hash_algorithm"`
 	// The HMAC, including vault header/key version
 	Hmac string `json:"hmac"`

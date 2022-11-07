@@ -2,176 +2,176 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteSysAuditPath**](System.md#DeleteSysAuditPath) | **Delete** /sys/audit/{path} | Disable the audit device at the given path.
-[**DeleteSysAuthPath**](System.md#DeleteSysAuthPath) | **Delete** /sys/auth/{path} | Disable the auth method at the given auth path
-[**DeleteSysConfigAuditingRequestHeadersHeader**](System.md#DeleteSysConfigAuditingRequestHeadersHeader) | **Delete** /sys/config/auditing/request-headers/{header} | Disable auditing of the given request header.
-[**DeleteSysConfigCors**](System.md#DeleteSysConfigCors) | **Delete** /sys/config/cors | Remove any CORS settings.
-[**DeleteSysConfigUiHeadersHeader**](System.md#DeleteSysConfigUiHeadersHeader) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
-[**DeleteSysGenerateRoot**](System.md#DeleteSysGenerateRoot) | **Delete** /sys/generate-root | Cancels any in-progress root generation attempt.
-[**DeleteSysGenerateRootAttempt**](System.md#DeleteSysGenerateRootAttempt) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
-[**DeleteSysLoggers**](System.md#DeleteSysLoggers) | **Delete** /sys/loggers | Revert the all loggers to use log level provided in config.
-[**DeleteSysLoggersName**](System.md#DeleteSysLoggersName) | **Delete** /sys/loggers/{name} | Revert a single logger to use log level provided in config.
-[**DeleteSysMountsPath**](System.md#DeleteSysMountsPath) | **Delete** /sys/mounts/{path} | Disable the mount point specified at the given path.
-[**DeleteSysPluginsCatalogName**](System.md#DeleteSysPluginsCatalogName) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
-[**DeleteSysPluginsCatalogTypeName**](System.md#DeleteSysPluginsCatalogTypeName) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
-[**DeleteSysPoliciesAclName**](System.md#DeleteSysPoliciesAclName) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
-[**DeleteSysPoliciesPasswordName**](System.md#DeleteSysPoliciesPasswordName) | **Delete** /sys/policies/password/{name} | Delete a password policy.
-[**DeleteSysPolicyName**](System.md#DeleteSysPolicyName) | **Delete** /sys/policy/{name} | Delete the policy with the given name.
-[**DeleteSysQuotasRateLimitName**](System.md#DeleteSysQuotasRateLimitName) | **Delete** /sys/quotas/rate-limit/{name} | 
-[**DeleteSysRaw**](System.md#DeleteSysRaw) | **Delete** /sys/raw | Delete the key with given path.
-[**DeleteSysRawPath**](System.md#DeleteSysRawPath) | **Delete** /sys/raw/{path} | Delete the key with given path.
-[**DeleteSysRekeyBackup**](System.md#DeleteSysRekeyBackup) | **Delete** /sys/rekey/backup | Delete the backup copy of PGP-encrypted unseal keys.
-[**DeleteSysRekeyInit**](System.md#DeleteSysRekeyInit) | **Delete** /sys/rekey/init | Cancels any in-progress rekey.
-[**DeleteSysRekeyRecoveryKeyBackup**](System.md#DeleteSysRekeyRecoveryKeyBackup) | **Delete** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
-[**DeleteSysRekeyVerify**](System.md#DeleteSysRekeyVerify) | **Delete** /sys/rekey/verify | Cancel any in-progress rekey verification operation.
-[**GetSysAudit**](System.md#GetSysAudit) | **Get** /sys/audit | List the enabled audit devices.
-[**GetSysAuth**](System.md#GetSysAuth) | **Get** /sys/auth | List the currently enabled credential backends.
-[**GetSysAuthPath**](System.md#GetSysAuthPath) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
-[**GetSysAuthPathTune**](System.md#GetSysAuthPathTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#39;s configuration.
-[**GetSysConfigAuditingRequestHeaders**](System.md#GetSysConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
-[**GetSysConfigAuditingRequestHeadersHeader**](System.md#GetSysConfigAuditingRequestHeadersHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
-[**GetSysConfigCors**](System.md#GetSysConfigCors) | **Get** /sys/config/cors | Return the current CORS settings.
-[**GetSysConfigStateSanitized**](System.md#GetSysConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
-[**GetSysConfigUiHeaders**](System.md#GetSysConfigUiHeaders) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
-[**GetSysConfigUiHeadersHeader**](System.md#GetSysConfigUiHeadersHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#39;s configuration
-[**GetSysGenerateRoot**](System.md#GetSysGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
-[**GetSysGenerateRootAttempt**](System.md#GetSysGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
-[**GetSysHaStatus**](System.md#GetSysHaStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
-[**GetSysHealth**](System.md#GetSysHealth) | **Get** /sys/health | Returns the health status of Vault.
-[**GetSysHostInfo**](System.md#GetSysHostInfo) | **Get** /sys/host-info | Information about the host instance that this Vault server is running on.
-[**GetSysInFlightReq**](System.md#GetSysInFlightReq) | **Get** /sys/in-flight-req | reports in-flight requests
-[**GetSysInit**](System.md#GetSysInit) | **Get** /sys/init | Returns the initialization status of Vault.
-[**GetSysInternalCountersActivity**](System.md#GetSysInternalCountersActivity) | **Get** /sys/internal/counters/activity | Report the client count metrics, for this namespace and all child namespaces.
-[**GetSysInternalCountersActivityExport**](System.md#GetSysInternalCountersActivityExport) | **Get** /sys/internal/counters/activity/export | Report the client count metrics, for this namespace and all child namespaces.
-[**GetSysInternalCountersActivityMonthly**](System.md#GetSysInternalCountersActivityMonthly) | **Get** /sys/internal/counters/activity/monthly | Report the number of clients for this month, for this namespace and all child namespaces.
-[**GetSysInternalCountersConfig**](System.md#GetSysInternalCountersConfig) | **Get** /sys/internal/counters/config | Read the client count tracking configuration.
-[**GetSysInternalCountersEntities**](System.md#GetSysInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
-[**GetSysInternalCountersRequests**](System.md#GetSysInternalCountersRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
-[**GetSysInternalCountersTokens**](System.md#GetSysInternalCountersTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
-[**GetSysInternalSpecsOpenapi**](System.md#GetSysInternalSpecsOpenapi) | **Get** /sys/internal/specs/openapi | Generate an OpenAPI 3 document of all mounted paths.
-[**GetSysInternalUiFeatureFlags**](System.md#GetSysInternalUiFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
-[**GetSysInternalUiMounts**](System.md#GetSysInternalUiMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
-[**GetSysInternalUiMountsPath**](System.md#GetSysInternalUiMountsPath) | **Get** /sys/internal/ui/mounts/{path} | Return information about the given mount.
-[**GetSysInternalUiNamespaces**](System.md#GetSysInternalUiNamespaces) | **Get** /sys/internal/ui/namespaces | Backwards compatibility is not guaranteed for this API
-[**GetSysInternalUiResultantAcl**](System.md#GetSysInternalUiResultantAcl) | **Get** /sys/internal/ui/resultant-acl | Backwards compatibility is not guaranteed for this API
-[**GetSysKeyStatus**](System.md#GetSysKeyStatus) | **Get** /sys/key-status | Provides information about the backend encryption key.
-[**GetSysLeader**](System.md#GetSysLeader) | **Get** /sys/leader | Returns the high availability status and current leader instance of Vault.
-[**GetSysLeases**](System.md#GetSysLeases) | **Get** /sys/leases | List leases associated with this Vault cluster
-[**GetSysLeasesCount**](System.md#GetSysLeasesCount) | **Get** /sys/leases/count | Count of leases associated with this Vault cluster
-[**GetSysLeasesLookup**](System.md#GetSysLeasesLookup) | **Get** /sys/leases/lookup/ | Returns a list of lease ids.
-[**GetSysLeasesLookupPrefix**](System.md#GetSysLeasesLookupPrefix) | **Get** /sys/leases/lookup/{prefix} | Returns a list of lease ids.
-[**GetSysMetrics**](System.md#GetSysMetrics) | **Get** /sys/metrics | Export the metrics aggregated for telemetry purpose.
-[**GetSysMonitor**](System.md#GetSysMonitor) | **Get** /sys/monitor | 
-[**GetSysMounts**](System.md#GetSysMounts) | **Get** /sys/mounts | List the currently mounted backends.
-[**GetSysMountsPath**](System.md#GetSysMountsPath) | **Get** /sys/mounts/{path} | Read the configuration of the secret engine at the given path.
-[**GetSysMountsPathTune**](System.md#GetSysMountsPathTune) | **Get** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
-[**GetSysPluginsCatalog**](System.md#GetSysPluginsCatalog) | **Get** /sys/plugins/catalog | Lists all the plugins known to Vault
-[**GetSysPluginsCatalogName**](System.md#GetSysPluginsCatalogName) | **Get** /sys/plugins/catalog/{name} | Return the configuration data for the plugin with the given name.
-[**GetSysPluginsCatalogType**](System.md#GetSysPluginsCatalogType) | **Get** /sys/plugins/catalog/{type} | List the plugins in the catalog.
-[**GetSysPluginsCatalogTypeName**](System.md#GetSysPluginsCatalogTypeName) | **Get** /sys/plugins/catalog/{type}/{name} | Return the configuration data for the plugin with the given name.
-[**GetSysPoliciesAcl**](System.md#GetSysPoliciesAcl) | **Get** /sys/policies/acl | List the configured access control policies.
-[**GetSysPoliciesAclName**](System.md#GetSysPoliciesAclName) | **Get** /sys/policies/acl/{name} | Retrieve information about the named ACL policy.
-[**GetSysPoliciesPassword**](System.md#GetSysPoliciesPassword) | **Get** /sys/policies/password | List the existing password policies.
-[**GetSysPoliciesPasswordName**](System.md#GetSysPoliciesPasswordName) | **Get** /sys/policies/password/{name} | Retrieve an existing password policy.
-[**GetSysPoliciesPasswordNameGenerate**](System.md#GetSysPoliciesPasswordNameGenerate) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
-[**GetSysPolicy**](System.md#GetSysPolicy) | **Get** /sys/policy | List the configured access control policies.
-[**GetSysPolicyName**](System.md#GetSysPolicyName) | **Get** /sys/policy/{name} | Retrieve the policy body for the named policy.
-[**GetSysPprof**](System.md#GetSysPprof) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
-[**GetSysPprofAllocs**](System.md#GetSysPprofAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
-[**GetSysPprofBlock**](System.md#GetSysPprofBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
-[**GetSysPprofCmdline**](System.md#GetSysPprofCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#39;s command line.
-[**GetSysPprofGoroutine**](System.md#GetSysPprofGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
-[**GetSysPprofHeap**](System.md#GetSysPprofHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
-[**GetSysPprofMutex**](System.md#GetSysPprofMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
-[**GetSysPprofProfile**](System.md#GetSysPprofProfile) | **Get** /sys/pprof/profile | Returns a pprof-formatted cpu profile payload.
-[**GetSysPprofSymbol**](System.md#GetSysPprofSymbol) | **Get** /sys/pprof/symbol | Returns the program counters listed in the request.
-[**GetSysPprofThreadcreate**](System.md#GetSysPprofThreadcreate) | **Get** /sys/pprof/threadcreate | Returns stack traces that led to the creation of new OS threads
-[**GetSysPprofTrace**](System.md#GetSysPprofTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
-[**GetSysQuotasConfig**](System.md#GetSysQuotasConfig) | **Get** /sys/quotas/config | 
-[**GetSysQuotasRateLimit**](System.md#GetSysQuotasRateLimit) | **Get** /sys/quotas/rate-limit | 
-[**GetSysQuotasRateLimitName**](System.md#GetSysQuotasRateLimitName) | **Get** /sys/quotas/rate-limit/{name} | 
-[**GetSysRaw**](System.md#GetSysRaw) | **Get** /sys/raw | Read the value of the key at the given path.
-[**GetSysRawPath**](System.md#GetSysRawPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
-[**GetSysRekeyBackup**](System.md#GetSysRekeyBackup) | **Get** /sys/rekey/backup | Return the backup copy of PGP-encrypted unseal keys.
-[**GetSysRekeyInit**](System.md#GetSysRekeyInit) | **Get** /sys/rekey/init | Reads the configuration and progress of the current rekey attempt.
-[**GetSysRekeyRecoveryKeyBackup**](System.md#GetSysRekeyRecoveryKeyBackup) | **Get** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
-[**GetSysRekeyVerify**](System.md#GetSysRekeyVerify) | **Get** /sys/rekey/verify | Read the configuration and progress of the current rekey verification attempt.
-[**GetSysRemountStatusMigrationId**](System.md#GetSysRemountStatusMigrationId) | **Get** /sys/remount/status/{migration_id} | Check status of a mount migration
-[**GetSysReplicationStatus**](System.md#GetSysReplicationStatus) | **Get** /sys/replication/status | 
-[**GetSysRotateConfig**](System.md#GetSysRotateConfig) | **Get** /sys/rotate/config | 
-[**GetSysSealStatus**](System.md#GetSysSealStatus) | **Get** /sys/seal-status | Check the seal status of a Vault.
-[**GetSysVersionHistory**](System.md#GetSysVersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
-[**GetSysWrappingLookup**](System.md#GetSysWrappingLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#39;s token.
-[**PostSysAuditHashPath**](System.md#PostSysAuditHashPath) | **Post** /sys/audit-hash/{path} | The hash of the given string via the given audit backend
-[**PostSysAuditPath**](System.md#PostSysAuditPath) | **Post** /sys/audit/{path} | Enable a new audit device at the supplied path.
-[**PostSysAuthPath**](System.md#PostSysAuthPath) | **Post** /sys/auth/{path} | Enables a new auth method.
-[**PostSysAuthPathTune**](System.md#PostSysAuthPathTune) | **Post** /sys/auth/{path}/tune | Tune configuration parameters for a given auth path.
-[**PostSysCapabilities**](System.md#PostSysCapabilities) | **Post** /sys/capabilities | Fetches the capabilities of the given token on the given path.
-[**PostSysCapabilitiesAccessor**](System.md#PostSysCapabilitiesAccessor) | **Post** /sys/capabilities-accessor | Fetches the capabilities of the token associated with the given token, on the given path.
-[**PostSysCapabilitiesSelf**](System.md#PostSysCapabilitiesSelf) | **Post** /sys/capabilities-self | Fetches the capabilities of the given token on the given path.
-[**PostSysConfigAuditingRequestHeadersHeader**](System.md#PostSysConfigAuditingRequestHeadersHeader) | **Post** /sys/config/auditing/request-headers/{header} | Enable auditing of a header.
-[**PostSysConfigCors**](System.md#PostSysConfigCors) | **Post** /sys/config/cors | Configure the CORS settings.
-[**PostSysConfigReloadSubsystem**](System.md#PostSysConfigReloadSubsystem) | **Post** /sys/config/reload/{subsystem} | Reload the given subsystem
-[**PostSysConfigUiHeadersHeader**](System.md#PostSysConfigUiHeadersHeader) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
-[**PostSysGenerateRoot**](System.md#PostSysGenerateRoot) | **Post** /sys/generate-root | Initializes a new root generation attempt.
-[**PostSysGenerateRootAttempt**](System.md#PostSysGenerateRootAttempt) | **Post** /sys/generate-root/attempt | Initializes a new root generation attempt.
-[**PostSysGenerateRootUpdate**](System.md#PostSysGenerateRootUpdate) | **Post** /sys/generate-root/update | Enter a single unseal key share to progress the root generation attempt.
-[**PostSysInit**](System.md#PostSysInit) | **Post** /sys/init | Initialize a new Vault.
-[**PostSysInternalCountersConfig**](System.md#PostSysInternalCountersConfig) | **Post** /sys/internal/counters/config | Enable or disable collection of client count, set retention period, or set default reporting period.
-[**PostSysLeasesLookup**](System.md#PostSysLeasesLookup) | **Post** /sys/leases/lookup | Retrieve lease metadata.
-[**PostSysLeasesRenew**](System.md#PostSysLeasesRenew) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
-[**PostSysLeasesRenewUrlLeaseId**](System.md#PostSysLeasesRenewUrlLeaseId) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
-[**PostSysLeasesRevoke**](System.md#PostSysLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
-[**PostSysLeasesRevokeForcePrefix**](System.md#PostSysLeasesRevokeForcePrefix) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**PostSysLeasesRevokePrefixPrefix**](System.md#PostSysLeasesRevokePrefixPrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
-[**PostSysLeasesRevokeUrlLeaseId**](System.md#PostSysLeasesRevokeUrlLeaseId) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
-[**PostSysLeasesTidy**](System.md#PostSysLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-[**PostSysLoggers**](System.md#PostSysLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
-[**PostSysLoggersName**](System.md#PostSysLoggersName) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
-[**PostSysMfaValidate**](System.md#PostSysMfaValidate) | **Post** /sys/mfa/validate | Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
-[**PostSysMountsPath**](System.md#PostSysMountsPath) | **Post** /sys/mounts/{path} | Enable a new secrets engine at the given path.
-[**PostSysMountsPathTune**](System.md#PostSysMountsPathTune) | **Post** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
-[**PostSysPluginsCatalogName**](System.md#PostSysPluginsCatalogName) | **Post** /sys/plugins/catalog/{name} | Register a new plugin, or updates an existing one with the supplied name.
-[**PostSysPluginsCatalogTypeName**](System.md#PostSysPluginsCatalogTypeName) | **Post** /sys/plugins/catalog/{type}/{name} | Register a new plugin, or updates an existing one with the supplied name.
-[**PostSysPluginsReloadBackend**](System.md#PostSysPluginsReloadBackend) | **Post** /sys/plugins/reload/backend | Reload mounted plugin backends.
-[**PostSysPoliciesAclName**](System.md#PostSysPoliciesAclName) | **Post** /sys/policies/acl/{name} | Add a new or update an existing ACL policy.
-[**PostSysPoliciesPasswordName**](System.md#PostSysPoliciesPasswordName) | **Post** /sys/policies/password/{name} | Add a new or update an existing password policy.
-[**PostSysPolicyName**](System.md#PostSysPolicyName) | **Post** /sys/policy/{name} | Add a new or update an existing policy.
-[**PostSysQuotasConfig**](System.md#PostSysQuotasConfig) | **Post** /sys/quotas/config | 
-[**PostSysQuotasRateLimitName**](System.md#PostSysQuotasRateLimitName) | **Post** /sys/quotas/rate-limit/{name} | 
-[**PostSysRaw**](System.md#PostSysRaw) | **Post** /sys/raw | Update the value of the key at the given path.
-[**PostSysRawPath**](System.md#PostSysRawPath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
-[**PostSysRekeyInit**](System.md#PostSysRekeyInit) | **Post** /sys/rekey/init | Initializes a new rekey attempt.
-[**PostSysRekeyUpdate**](System.md#PostSysRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
-[**PostSysRekeyVerify**](System.md#PostSysRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
-[**PostSysRemount**](System.md#PostSysRemount) | **Post** /sys/remount | Initiate a mount migration
-[**PostSysRenew**](System.md#PostSysRenew) | **Post** /sys/renew | Renews a lease, requesting to extend the lease.
-[**PostSysRenewUrlLeaseId**](System.md#PostSysRenewUrlLeaseId) | **Post** /sys/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
-[**PostSysRevoke**](System.md#PostSysRevoke) | **Post** /sys/revoke | Revokes a lease immediately.
-[**PostSysRevokeForcePrefix**](System.md#PostSysRevokeForcePrefix) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**PostSysRevokePrefixPrefix**](System.md#PostSysRevokePrefixPrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
-[**PostSysRevokeUrlLeaseId**](System.md#PostSysRevokeUrlLeaseId) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
-[**PostSysRotate**](System.md#PostSysRotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
-[**PostSysRotateConfig**](System.md#PostSysRotateConfig) | **Post** /sys/rotate/config | 
-[**PostSysSeal**](System.md#PostSysSeal) | **Post** /sys/seal | Seal the Vault.
-[**PostSysStepDown**](System.md#PostSysStepDown) | **Post** /sys/step-down | Cause the node to give up active status.
-[**PostSysToolsHash**](System.md#PostSysToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
-[**PostSysToolsHashUrlalgorithm**](System.md#PostSysToolsHashUrlalgorithm) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
-[**PostSysToolsRandom**](System.md#PostSysToolsRandom) | **Post** /sys/tools/random | Generate random bytes
-[**PostSysToolsRandomSource**](System.md#PostSysToolsRandomSource) | **Post** /sys/tools/random/{source} | Generate random bytes
-[**PostSysToolsRandomSourceUrlbytes**](System.md#PostSysToolsRandomSourceUrlbytes) | **Post** /sys/tools/random/{source}/{urlbytes} | Generate random bytes
-[**PostSysToolsRandomUrlbytes**](System.md#PostSysToolsRandomUrlbytes) | **Post** /sys/tools/random/{urlbytes} | Generate random bytes
-[**PostSysUnseal**](System.md#PostSysUnseal) | **Post** /sys/unseal | Unseal the Vault.
-[**PostSysWrappingLookup**](System.md#PostSysWrappingLookup) | **Post** /sys/wrapping/lookup | Look up wrapping properties for the given token.
-[**PostSysWrappingRewrap**](System.md#PostSysWrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
-[**PostSysWrappingUnwrap**](System.md#PostSysWrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
-[**PostSysWrappingWrap**](System.md#PostSysWrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
+[**DeleteSystemAuditPath**](System.md#DeleteSystemAuditPath) | **Delete** /sys/audit/{path} | Disable the audit device at the given path.
+[**DeleteSystemAuthPath**](System.md#DeleteSystemAuthPath) | **Delete** /sys/auth/{path} | Disable the auth method at the given auth path
+[**DeleteSystemConfigAuditingRequestHeadersHeader**](System.md#DeleteSystemConfigAuditingRequestHeadersHeader) | **Delete** /sys/config/auditing/request-headers/{header} | Disable auditing of the given request header.
+[**DeleteSystemConfigCors**](System.md#DeleteSystemConfigCors) | **Delete** /sys/config/cors | Remove any CORS settings.
+[**DeleteSystemConfigUiHeadersHeader**](System.md#DeleteSystemConfigUiHeadersHeader) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
+[**DeleteSystemGenerateRoot**](System.md#DeleteSystemGenerateRoot) | **Delete** /sys/generate-root | Cancels any in-progress root generation attempt.
+[**DeleteSystemGenerateRootAttempt**](System.md#DeleteSystemGenerateRootAttempt) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
+[**DeleteSystemLoggers**](System.md#DeleteSystemLoggers) | **Delete** /sys/loggers | Revert the all loggers to use log level provided in config.
+[**DeleteSystemLoggersName**](System.md#DeleteSystemLoggersName) | **Delete** /sys/loggers/{name} | Revert a single logger to use log level provided in config.
+[**DeleteSystemMountsPath**](System.md#DeleteSystemMountsPath) | **Delete** /sys/mounts/{path} | Disable the mount point specified at the given path.
+[**DeleteSystemPluginsCatalogName**](System.md#DeleteSystemPluginsCatalogName) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
+[**DeleteSystemPluginsCatalogTypeName**](System.md#DeleteSystemPluginsCatalogTypeName) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
+[**DeleteSystemPoliciesAclName**](System.md#DeleteSystemPoliciesAclName) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
+[**DeleteSystemPoliciesPasswordName**](System.md#DeleteSystemPoliciesPasswordName) | **Delete** /sys/policies/password/{name} | Delete a password policy.
+[**DeleteSystemPolicyName**](System.md#DeleteSystemPolicyName) | **Delete** /sys/policy/{name} | Delete the policy with the given name.
+[**DeleteSystemQuotasRateLimitName**](System.md#DeleteSystemQuotasRateLimitName) | **Delete** /sys/quotas/rate-limit/{name} | 
+[**DeleteSystemRaw**](System.md#DeleteSystemRaw) | **Delete** /sys/raw | Delete the key with given path.
+[**DeleteSystemRawPath**](System.md#DeleteSystemRawPath) | **Delete** /sys/raw/{path} | Delete the key with given path.
+[**DeleteSystemRekeyBackup**](System.md#DeleteSystemRekeyBackup) | **Delete** /sys/rekey/backup | Delete the backup copy of PGP-encrypted unseal keys.
+[**DeleteSystemRekeyInit**](System.md#DeleteSystemRekeyInit) | **Delete** /sys/rekey/init | Cancels any in-progress rekey.
+[**DeleteSystemRekeyRecoveryKeyBackup**](System.md#DeleteSystemRekeyRecoveryKeyBackup) | **Delete** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
+[**DeleteSystemRekeyVerify**](System.md#DeleteSystemRekeyVerify) | **Delete** /sys/rekey/verify | Cancel any in-progress rekey verification operation.
+[**ListSystemConfigUiHeaders**](System.md#ListSystemConfigUiHeaders) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
+[**ListSystemLeasesLookup**](System.md#ListSystemLeasesLookup) | **Get** /sys/leases/lookup/ | Returns a list of lease ids.
+[**ListSystemLeasesLookupPrefix**](System.md#ListSystemLeasesLookupPrefix) | **Get** /sys/leases/lookup/{prefix} | Returns a list of lease ids.
+[**ListSystemPluginsCatalogType**](System.md#ListSystemPluginsCatalogType) | **Get** /sys/plugins/catalog/{type} | List the plugins in the catalog.
+[**ListSystemPoliciesAcl**](System.md#ListSystemPoliciesAcl) | **Get** /sys/policies/acl | List the configured access control policies.
+[**ListSystemPoliciesPassword**](System.md#ListSystemPoliciesPassword) | **Get** /sys/policies/password | List the existing password policies.
+[**ListSystemQuotasRateLimit**](System.md#ListSystemQuotasRateLimit) | **Get** /sys/quotas/rate-limit | 
+[**ListSystemVersionHistory**](System.md#ListSystemVersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
+[**ReadSystemAudit**](System.md#ReadSystemAudit) | **Get** /sys/audit | List the enabled audit devices.
+[**ReadSystemAuth**](System.md#ReadSystemAuth) | **Get** /sys/auth | List the currently enabled credential backends.
+[**ReadSystemAuthPath**](System.md#ReadSystemAuthPath) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
+[**ReadSystemAuthPathTune**](System.md#ReadSystemAuthPathTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#39;s configuration.
+[**ReadSystemConfigAuditingRequestHeaders**](System.md#ReadSystemConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
+[**ReadSystemConfigAuditingRequestHeadersHeader**](System.md#ReadSystemConfigAuditingRequestHeadersHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
+[**ReadSystemConfigCors**](System.md#ReadSystemConfigCors) | **Get** /sys/config/cors | Return the current CORS settings.
+[**ReadSystemConfigStateSanitized**](System.md#ReadSystemConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
+[**ReadSystemConfigUiHeadersHeader**](System.md#ReadSystemConfigUiHeadersHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#39;s configuration
+[**ReadSystemGenerateRoot**](System.md#ReadSystemGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
+[**ReadSystemGenerateRootAttempt**](System.md#ReadSystemGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
+[**ReadSystemHaStatus**](System.md#ReadSystemHaStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
+[**ReadSystemHealth**](System.md#ReadSystemHealth) | **Get** /sys/health | Returns the health status of Vault.
+[**ReadSystemHostInfo**](System.md#ReadSystemHostInfo) | **Get** /sys/host-info | Information about the host instance that this Vault server is running on.
+[**ReadSystemInFlightReq**](System.md#ReadSystemInFlightReq) | **Get** /sys/in-flight-req | reports in-flight requests
+[**ReadSystemInit**](System.md#ReadSystemInit) | **Get** /sys/init | Returns the initialization status of Vault.
+[**ReadSystemInternalCountersActivity**](System.md#ReadSystemInternalCountersActivity) | **Get** /sys/internal/counters/activity | Report the client count metrics, for this namespace and all child namespaces.
+[**ReadSystemInternalCountersActivityExport**](System.md#ReadSystemInternalCountersActivityExport) | **Get** /sys/internal/counters/activity/export | Report the client count metrics, for this namespace and all child namespaces.
+[**ReadSystemInternalCountersActivityMonthly**](System.md#ReadSystemInternalCountersActivityMonthly) | **Get** /sys/internal/counters/activity/monthly | Report the number of clients for this month, for this namespace and all child namespaces.
+[**ReadSystemInternalCountersConfig**](System.md#ReadSystemInternalCountersConfig) | **Get** /sys/internal/counters/config | Read the client count tracking configuration.
+[**ReadSystemInternalCountersEntities**](System.md#ReadSystemInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
+[**ReadSystemInternalCountersRequests**](System.md#ReadSystemInternalCountersRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
+[**ReadSystemInternalCountersTokens**](System.md#ReadSystemInternalCountersTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
+[**ReadSystemInternalSpecsOpenapi**](System.md#ReadSystemInternalSpecsOpenapi) | **Get** /sys/internal/specs/openapi | Generate an OpenAPI 3 document of all mounted paths.
+[**ReadSystemInternalUiFeatureFlags**](System.md#ReadSystemInternalUiFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
+[**ReadSystemInternalUiMounts**](System.md#ReadSystemInternalUiMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
+[**ReadSystemInternalUiMountsPath**](System.md#ReadSystemInternalUiMountsPath) | **Get** /sys/internal/ui/mounts/{path} | Return information about the given mount.
+[**ReadSystemInternalUiNamespaces**](System.md#ReadSystemInternalUiNamespaces) | **Get** /sys/internal/ui/namespaces | Backwards compatibility is not guaranteed for this API
+[**ReadSystemInternalUiResultantAcl**](System.md#ReadSystemInternalUiResultantAcl) | **Get** /sys/internal/ui/resultant-acl | Backwards compatibility is not guaranteed for this API
+[**ReadSystemKeyStatus**](System.md#ReadSystemKeyStatus) | **Get** /sys/key-status | Provides information about the backend encryption key.
+[**ReadSystemLeader**](System.md#ReadSystemLeader) | **Get** /sys/leader | Returns the high availability status and current leader instance of Vault.
+[**ReadSystemLeases**](System.md#ReadSystemLeases) | **Get** /sys/leases | List leases associated with this Vault cluster
+[**ReadSystemLeasesCount**](System.md#ReadSystemLeasesCount) | **Get** /sys/leases/count | Count of leases associated with this Vault cluster
+[**ReadSystemMetrics**](System.md#ReadSystemMetrics) | **Get** /sys/metrics | Export the metrics aggregated for telemetry purpose.
+[**ReadSystemMonitor**](System.md#ReadSystemMonitor) | **Get** /sys/monitor | 
+[**ReadSystemMounts**](System.md#ReadSystemMounts) | **Get** /sys/mounts | List the currently mounted backends.
+[**ReadSystemMountsPath**](System.md#ReadSystemMountsPath) | **Get** /sys/mounts/{path} | Read the configuration of the secret engine at the given path.
+[**ReadSystemMountsPathTune**](System.md#ReadSystemMountsPathTune) | **Get** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
+[**ReadSystemPluginsCatalog**](System.md#ReadSystemPluginsCatalog) | **Get** /sys/plugins/catalog | Lists all the plugins known to Vault
+[**ReadSystemPluginsCatalogName**](System.md#ReadSystemPluginsCatalogName) | **Get** /sys/plugins/catalog/{name} | Return the configuration data for the plugin with the given name.
+[**ReadSystemPluginsCatalogTypeName**](System.md#ReadSystemPluginsCatalogTypeName) | **Get** /sys/plugins/catalog/{type}/{name} | Return the configuration data for the plugin with the given name.
+[**ReadSystemPoliciesAclName**](System.md#ReadSystemPoliciesAclName) | **Get** /sys/policies/acl/{name} | Retrieve information about the named ACL policy.
+[**ReadSystemPoliciesPasswordName**](System.md#ReadSystemPoliciesPasswordName) | **Get** /sys/policies/password/{name} | Retrieve an existing password policy.
+[**ReadSystemPoliciesPasswordNameGenerate**](System.md#ReadSystemPoliciesPasswordNameGenerate) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
+[**ReadSystemPolicy**](System.md#ReadSystemPolicy) | **Get** /sys/policy | List the configured access control policies.
+[**ReadSystemPolicyName**](System.md#ReadSystemPolicyName) | **Get** /sys/policy/{name} | Retrieve the policy body for the named policy.
+[**ReadSystemPprof**](System.md#ReadSystemPprof) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
+[**ReadSystemPprofAllocs**](System.md#ReadSystemPprofAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
+[**ReadSystemPprofBlock**](System.md#ReadSystemPprofBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
+[**ReadSystemPprofCmdline**](System.md#ReadSystemPprofCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#39;s command line.
+[**ReadSystemPprofGoroutine**](System.md#ReadSystemPprofGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
+[**ReadSystemPprofHeap**](System.md#ReadSystemPprofHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
+[**ReadSystemPprofMutex**](System.md#ReadSystemPprofMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
+[**ReadSystemPprofProfile**](System.md#ReadSystemPprofProfile) | **Get** /sys/pprof/profile | Returns a pprof-formatted cpu profile payload.
+[**ReadSystemPprofSymbol**](System.md#ReadSystemPprofSymbol) | **Get** /sys/pprof/symbol | Returns the program counters listed in the request.
+[**ReadSystemPprofThreadcreate**](System.md#ReadSystemPprofThreadcreate) | **Get** /sys/pprof/threadcreate | Returns stack traces that led to the creation of new OS threads
+[**ReadSystemPprofTrace**](System.md#ReadSystemPprofTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
+[**ReadSystemQuotasConfig**](System.md#ReadSystemQuotasConfig) | **Get** /sys/quotas/config | 
+[**ReadSystemQuotasRateLimitName**](System.md#ReadSystemQuotasRateLimitName) | **Get** /sys/quotas/rate-limit/{name} | 
+[**ReadSystemRaw**](System.md#ReadSystemRaw) | **Get** /sys/raw | Read the value of the key at the given path.
+[**ReadSystemRawPath**](System.md#ReadSystemRawPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
+[**ReadSystemRekeyBackup**](System.md#ReadSystemRekeyBackup) | **Get** /sys/rekey/backup | Return the backup copy of PGP-encrypted unseal keys.
+[**ReadSystemRekeyInit**](System.md#ReadSystemRekeyInit) | **Get** /sys/rekey/init | Reads the configuration and progress of the current rekey attempt.
+[**ReadSystemRekeyRecoveryKeyBackup**](System.md#ReadSystemRekeyRecoveryKeyBackup) | **Get** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
+[**ReadSystemRekeyVerify**](System.md#ReadSystemRekeyVerify) | **Get** /sys/rekey/verify | Read the configuration and progress of the current rekey verification attempt.
+[**ReadSystemRemountStatusMigrationId**](System.md#ReadSystemRemountStatusMigrationId) | **Get** /sys/remount/status/{migration_id} | Check status of a mount migration
+[**ReadSystemReplicationStatus**](System.md#ReadSystemReplicationStatus) | **Get** /sys/replication/status | 
+[**ReadSystemRotateConfig**](System.md#ReadSystemRotateConfig) | **Get** /sys/rotate/config | 
+[**ReadSystemSealStatus**](System.md#ReadSystemSealStatus) | **Get** /sys/seal-status | Check the seal status of a Vault.
+[**ReadSystemWrappingLookup**](System.md#ReadSystemWrappingLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#39;s token.
+[**UpdateSystemAuditHashPath**](System.md#UpdateSystemAuditHashPath) | **Post** /sys/audit-hash/{path} | The hash of the given string via the given audit backend
+[**UpdateSystemAuditPath**](System.md#UpdateSystemAuditPath) | **Post** /sys/audit/{path} | Enable a new audit device at the supplied path.
+[**UpdateSystemAuthPath**](System.md#UpdateSystemAuthPath) | **Post** /sys/auth/{path} | Enables a new auth method.
+[**UpdateSystemAuthPathTune**](System.md#UpdateSystemAuthPathTune) | **Post** /sys/auth/{path}/tune | Tune configuration parameters for a given auth path.
+[**UpdateSystemCapabilities**](System.md#UpdateSystemCapabilities) | **Post** /sys/capabilities | Fetches the capabilities of the given token on the given path.
+[**UpdateSystemCapabilitiesAccessor**](System.md#UpdateSystemCapabilitiesAccessor) | **Post** /sys/capabilities-accessor | Fetches the capabilities of the token associated with the given token, on the given path.
+[**UpdateSystemCapabilitiesSelf**](System.md#UpdateSystemCapabilitiesSelf) | **Post** /sys/capabilities-self | Fetches the capabilities of the given token on the given path.
+[**UpdateSystemConfigAuditingRequestHeadersHeader**](System.md#UpdateSystemConfigAuditingRequestHeadersHeader) | **Post** /sys/config/auditing/request-headers/{header} | Enable auditing of a header.
+[**UpdateSystemConfigCors**](System.md#UpdateSystemConfigCors) | **Post** /sys/config/cors | Configure the CORS settings.
+[**UpdateSystemConfigReloadSubsystem**](System.md#UpdateSystemConfigReloadSubsystem) | **Post** /sys/config/reload/{subsystem} | Reload the given subsystem
+[**UpdateSystemConfigUiHeadersHeader**](System.md#UpdateSystemConfigUiHeadersHeader) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
+[**UpdateSystemGenerateRoot**](System.md#UpdateSystemGenerateRoot) | **Post** /sys/generate-root | Initializes a new root generation attempt.
+[**UpdateSystemGenerateRootAttempt**](System.md#UpdateSystemGenerateRootAttempt) | **Post** /sys/generate-root/attempt | Initializes a new root generation attempt.
+[**UpdateSystemGenerateRootUpdate**](System.md#UpdateSystemGenerateRootUpdate) | **Post** /sys/generate-root/update | Enter a single unseal key share to progress the root generation attempt.
+[**UpdateSystemInit**](System.md#UpdateSystemInit) | **Post** /sys/init | Initialize a new Vault.
+[**UpdateSystemInternalCountersConfig**](System.md#UpdateSystemInternalCountersConfig) | **Post** /sys/internal/counters/config | Enable or disable collection of client count, set retention period, or set default reporting period.
+[**UpdateSystemLeasesLookup**](System.md#UpdateSystemLeasesLookup) | **Post** /sys/leases/lookup | Retrieve lease metadata.
+[**UpdateSystemLeasesRenew**](System.md#UpdateSystemLeasesRenew) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
+[**UpdateSystemLeasesRenewUrlLeaseId**](System.md#UpdateSystemLeasesRenewUrlLeaseId) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
+[**UpdateSystemLeasesRevoke**](System.md#UpdateSystemLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
+[**UpdateSystemLeasesRevokeForcePrefix**](System.md#UpdateSystemLeasesRevokeForcePrefix) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
+[**UpdateSystemLeasesRevokePrefixPrefix**](System.md#UpdateSystemLeasesRevokePrefixPrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
+[**UpdateSystemLeasesRevokeUrlLeaseId**](System.md#UpdateSystemLeasesRevokeUrlLeaseId) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
+[**UpdateSystemLeasesTidy**](System.md#UpdateSystemLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
+[**UpdateSystemLoggers**](System.md#UpdateSystemLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
+[**UpdateSystemLoggersName**](System.md#UpdateSystemLoggersName) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
+[**UpdateSystemMfaValidate**](System.md#UpdateSystemMfaValidate) | **Post** /sys/mfa/validate | Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
+[**UpdateSystemMountsPath**](System.md#UpdateSystemMountsPath) | **Post** /sys/mounts/{path} | Enable a new secrets engine at the given path.
+[**UpdateSystemMountsPathTune**](System.md#UpdateSystemMountsPathTune) | **Post** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
+[**UpdateSystemPluginsCatalogName**](System.md#UpdateSystemPluginsCatalogName) | **Post** /sys/plugins/catalog/{name} | Register a new plugin, or updates an existing one with the supplied name.
+[**UpdateSystemPluginsCatalogTypeName**](System.md#UpdateSystemPluginsCatalogTypeName) | **Post** /sys/plugins/catalog/{type}/{name} | Register a new plugin, or updates an existing one with the supplied name.
+[**UpdateSystemPluginsReloadBackend**](System.md#UpdateSystemPluginsReloadBackend) | **Post** /sys/plugins/reload/backend | Reload mounted plugin backends.
+[**UpdateSystemPoliciesAclName**](System.md#UpdateSystemPoliciesAclName) | **Post** /sys/policies/acl/{name} | Add a new or update an existing ACL policy.
+[**UpdateSystemPoliciesPasswordName**](System.md#UpdateSystemPoliciesPasswordName) | **Post** /sys/policies/password/{name} | Add a new or update an existing password policy.
+[**UpdateSystemPolicyName**](System.md#UpdateSystemPolicyName) | **Post** /sys/policy/{name} | Add a new or update an existing policy.
+[**UpdateSystemQuotasConfig**](System.md#UpdateSystemQuotasConfig) | **Post** /sys/quotas/config | 
+[**UpdateSystemQuotasRateLimitName**](System.md#UpdateSystemQuotasRateLimitName) | **Post** /sys/quotas/rate-limit/{name} | 
+[**UpdateSystemRaw**](System.md#UpdateSystemRaw) | **Post** /sys/raw | Update the value of the key at the given path.
+[**UpdateSystemRawPath**](System.md#UpdateSystemRawPath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
+[**UpdateSystemRekeyInit**](System.md#UpdateSystemRekeyInit) | **Post** /sys/rekey/init | Initializes a new rekey attempt.
+[**UpdateSystemRekeyUpdate**](System.md#UpdateSystemRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
+[**UpdateSystemRekeyVerify**](System.md#UpdateSystemRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
+[**UpdateSystemRemount**](System.md#UpdateSystemRemount) | **Post** /sys/remount | Initiate a mount migration
+[**UpdateSystemRenew**](System.md#UpdateSystemRenew) | **Post** /sys/renew | Renews a lease, requesting to extend the lease.
+[**UpdateSystemRenewUrlLeaseId**](System.md#UpdateSystemRenewUrlLeaseId) | **Post** /sys/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
+[**UpdateSystemRevoke**](System.md#UpdateSystemRevoke) | **Post** /sys/revoke | Revokes a lease immediately.
+[**UpdateSystemRevokeForcePrefix**](System.md#UpdateSystemRevokeForcePrefix) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
+[**UpdateSystemRevokePrefixPrefix**](System.md#UpdateSystemRevokePrefixPrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
+[**UpdateSystemRevokeUrlLeaseId**](System.md#UpdateSystemRevokeUrlLeaseId) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
+[**UpdateSystemRotate**](System.md#UpdateSystemRotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
+[**UpdateSystemRotateConfig**](System.md#UpdateSystemRotateConfig) | **Post** /sys/rotate/config | 
+[**UpdateSystemSeal**](System.md#UpdateSystemSeal) | **Post** /sys/seal | Seal the Vault.
+[**UpdateSystemStepDown**](System.md#UpdateSystemStepDown) | **Post** /sys/step-down | Cause the node to give up active status.
+[**UpdateSystemToolsHash**](System.md#UpdateSystemToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
+[**UpdateSystemToolsHashUrlalgorithm**](System.md#UpdateSystemToolsHashUrlalgorithm) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
+[**UpdateSystemToolsRandom**](System.md#UpdateSystemToolsRandom) | **Post** /sys/tools/random | Generate random bytes
+[**UpdateSystemToolsRandomSource**](System.md#UpdateSystemToolsRandomSource) | **Post** /sys/tools/random/{source} | Generate random bytes
+[**UpdateSystemToolsRandomSourceUrlbytes**](System.md#UpdateSystemToolsRandomSourceUrlbytes) | **Post** /sys/tools/random/{source}/{urlbytes} | Generate random bytes
+[**UpdateSystemToolsRandomUrlbytes**](System.md#UpdateSystemToolsRandomUrlbytes) | **Post** /sys/tools/random/{urlbytes} | Generate random bytes
+[**UpdateSystemUnseal**](System.md#UpdateSystemUnseal) | **Post** /sys/unseal | Unseal the Vault.
+[**UpdateSystemWrappingLookup**](System.md#UpdateSystemWrappingLookup) | **Post** /sys/wrapping/lookup | Look up wrapping properties for the given token.
+[**UpdateSystemWrappingRewrap**](System.md#UpdateSystemWrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
+[**UpdateSystemWrappingUnwrap**](System.md#UpdateSystemWrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
+[**UpdateSystemWrappingWrap**](System.md#UpdateSystemWrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
 
 
 
-## DeleteSysAuditPath
+## DeleteSystemAuditPath
 
-> DeleteSysAuditPath(ctx, path).Execute()
+> DeleteSystemAuditPath(ctx, path).Execute()
 
 Disable the audit device at the given path.
 
@@ -198,7 +198,7 @@ func main() {
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysAuditPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").System.DeleteSystemAuditPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -228,9 +228,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysAuthPath
+## DeleteSystemAuthPath
 
-> DeleteSysAuthPath(ctx, path).Execute()
+> DeleteSystemAuthPath(ctx, path).Execute()
 
 Disable the auth method at the given auth path
 
@@ -257,7 +257,7 @@ func main() {
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysAuthPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").System.DeleteSystemAuthPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -287,9 +287,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysConfigAuditingRequestHeadersHeader
+## DeleteSystemConfigAuditingRequestHeadersHeader
 
-> DeleteSysConfigAuditingRequestHeadersHeader(ctx, header).Execute()
+> DeleteSystemConfigAuditingRequestHeadersHeader(ctx, header).Execute()
 
 Disable auditing of the given request header.
 
@@ -316,7 +316,7 @@ func main() {
 
 	header := "header_example" // string | 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysConfigAuditingRequestHeadersHeader(context.Background(), header)
+	resp, err := client.WithToken("my-token").System.DeleteSystemConfigAuditingRequestHeadersHeader(context.Background(), header)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -346,9 +346,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysConfigCors
+## DeleteSystemConfigCors
 
-> DeleteSysConfigCors(ctx).Execute()
+> DeleteSystemConfigCors(ctx).Execute()
 
 Remove any CORS settings.
 
@@ -374,7 +374,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysConfigCors(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemConfigCors(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -397,9 +397,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteSysConfigUiHeadersHeader
+## DeleteSystemConfigUiHeadersHeader
 
-> DeleteSysConfigUiHeadersHeader(ctx, header).Execute()
+> DeleteSystemConfigUiHeadersHeader(ctx, header).Execute()
 
 Remove a UI header.
 
@@ -426,7 +426,7 @@ func main() {
 
 	header := "header_example" // string | The name of the header.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysConfigUiHeadersHeader(context.Background(), header)
+	resp, err := client.WithToken("my-token").System.DeleteSystemConfigUiHeadersHeader(context.Background(), header)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -456,60 +456,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysGenerateRoot
+## DeleteSystemGenerateRoot
 
-> DeleteSysGenerateRoot(ctx).Execute()
-
-Cancels any in-progress root generation attempt.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.DeleteSysGenerateRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteSysGenerateRootAttempt
-
-> DeleteSysGenerateRootAttempt(ctx).Execute()
+> DeleteSystemGenerateRoot(ctx).Execute()
 
 Cancels any in-progress root generation attempt.
 
@@ -535,7 +484,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysGenerateRootAttempt(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemGenerateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -558,9 +507,60 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteSysLoggers
+## DeleteSystemGenerateRootAttempt
 
-> DeleteSysLoggers(ctx).Execute()
+> DeleteSystemGenerateRootAttempt(ctx).Execute()
+
+Cancels any in-progress root generation attempt.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.DeleteSystemGenerateRootAttempt(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteSystemLoggers
+
+> DeleteSystemLoggers(ctx).Execute()
 
 Revert the all loggers to use log level provided in config.
 
@@ -586,7 +586,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysLoggers(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemLoggers(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -609,9 +609,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteSysLoggersName
+## DeleteSystemLoggersName
 
-> DeleteSysLoggersName(ctx, name).Execute()
+> DeleteSystemLoggersName(ctx, name).Execute()
 
 Revert a single logger to use log level provided in config.
 
@@ -638,7 +638,7 @@ func main() {
 
 	name := "name_example" // string | The name of the logger to be modified.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysLoggersName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.DeleteSystemLoggersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -668,9 +668,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysMountsPath
+## DeleteSystemMountsPath
 
-> DeleteSysMountsPath(ctx, path).Execute()
+> DeleteSystemMountsPath(ctx, path).Execute()
 
 Disable the mount point specified at the given path.
 
@@ -697,7 +697,7 @@ func main() {
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysMountsPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").System.DeleteSystemMountsPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -727,9 +727,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysPluginsCatalogName
+## DeleteSystemPluginsCatalogName
 
-> DeleteSysPluginsCatalogName(ctx, name).Execute()
+> DeleteSystemPluginsCatalogName(ctx, name).Execute()
 
 Remove the plugin with the given name.
 
@@ -756,7 +756,7 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPluginsCatalogName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.DeleteSystemPluginsCatalogName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -786,9 +786,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysPluginsCatalogTypeName
+## DeleteSystemPluginsCatalogTypeName
 
-> DeleteSysPluginsCatalogTypeName(ctx, name, type_).Execute()
+> DeleteSystemPluginsCatalogTypeName(ctx, name, type_).Execute()
 
 Remove the plugin with the given name.
 
@@ -816,7 +816,7 @@ func main() {
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPluginsCatalogTypeName(context.Background(), name, type_)
+	resp, err := client.WithToken("my-token").System.DeleteSystemPluginsCatalogTypeName(context.Background(), name, type_)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -848,9 +848,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysPoliciesAclName
+## DeleteSystemPoliciesAclName
 
-> DeleteSysPoliciesAclName(ctx, name).Execute()
+> DeleteSystemPoliciesAclName(ctx, name).Execute()
 
 Delete the ACL policy with the given name.
 
@@ -877,7 +877,7 @@ func main() {
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPoliciesAclName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.DeleteSystemPoliciesAclName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -907,9 +907,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysPoliciesPasswordName
+## DeleteSystemPoliciesPasswordName
 
-> DeleteSysPoliciesPasswordName(ctx, name).Execute()
+> DeleteSystemPoliciesPasswordName(ctx, name).Execute()
 
 Delete a password policy.
 
@@ -936,7 +936,7 @@ func main() {
 
 	name := "name_example" // string | The name of the password policy.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPoliciesPasswordName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.DeleteSystemPoliciesPasswordName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -966,9 +966,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysPolicyName
+## DeleteSystemPolicyName
 
-> DeleteSysPolicyName(ctx, name).Execute()
+> DeleteSystemPolicyName(ctx, name).Execute()
 
 Delete the policy with the given name.
 
@@ -995,7 +995,7 @@ func main() {
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPolicyName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.DeleteSystemPolicyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1025,9 +1025,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysQuotasRateLimitName
+## DeleteSystemQuotasRateLimitName
 
-> DeleteSysQuotasRateLimitName(ctx, name).Execute()
+> DeleteSystemQuotasRateLimitName(ctx, name).Execute()
 
 
 
@@ -1054,7 +1054,7 @@ func main() {
 
 	name := "name_example" // string | Name of the quota rule.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysQuotasRateLimitName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.DeleteSystemQuotasRateLimitName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1084,9 +1084,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysRaw
+## DeleteSystemRaw
 
-> DeleteSysRaw(ctx).Execute()
+> DeleteSystemRaw(ctx).Execute()
 
 Delete the key with given path.
 
@@ -1112,7 +1112,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRaw(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemRaw(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1135,9 +1135,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteSysRawPath
+## DeleteSystemRawPath
 
-> DeleteSysRawPath(ctx, path).Execute()
+> DeleteSystemRawPath(ctx, path).Execute()
 
 Delete the key with given path.
 
@@ -1164,7 +1164,7 @@ func main() {
 
 	path := "path_example" // string | 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRawPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").System.DeleteSystemRawPath(context.Background(), path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1194,9 +1194,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSysRekeyBackup
+## DeleteSystemRekeyBackup
 
-> DeleteSysRekeyBackup(ctx).Execute()
+> DeleteSystemRekeyBackup(ctx).Execute()
 
 Delete the backup copy of PGP-encrypted unseal keys.
 
@@ -1222,7 +1222,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyBackup(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemRekeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1245,9 +1245,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteSysRekeyInit
+## DeleteSystemRekeyInit
 
-> DeleteSysRekeyInit(ctx).Execute()
+> DeleteSystemRekeyInit(ctx).Execute()
 
 Cancels any in-progress rekey.
 
@@ -1275,7 +1275,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyInit(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemRekeyInit(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1298,9 +1298,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteSysRekeyRecoveryKeyBackup
+## DeleteSystemRekeyRecoveryKeyBackup
 
-> DeleteSysRekeyRecoveryKeyBackup(ctx).Execute()
+> DeleteSystemRekeyRecoveryKeyBackup(ctx).Execute()
 
 Allows fetching or deleting the backup of the rotated unseal keys.
 
@@ -1326,7 +1326,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyRecoveryKeyBackup(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemRekeyRecoveryKeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1349,9 +1349,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteSysRekeyVerify
+## DeleteSystemRekeyVerify
 
-> DeleteSysRekeyVerify(ctx).Execute()
+> DeleteSystemRekeyVerify(ctx).Execute()
 
 Cancel any in-progress rekey verification operation.
 
@@ -1379,7 +1379,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyVerify(context.Background())
+	resp, err := client.WithToken("my-token").System.DeleteSystemRekeyVerify(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1402,445 +1402,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysAudit
+## ListSystemConfigUiHeaders
 
-> GetSysAudit(ctx).Execute()
-
-List the enabled audit devices.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysAudit(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysAuth
-
-> GetSysAuth(ctx).Execute()
-
-List the currently enabled credential backends.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysAuth(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysAuthPath
-
-> GetSysAuthPath(ctx, path).Execute()
-
-Read the configuration of the auth engine at the given path.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-
-	resp, err := client.WithToken("my-token").System.GetSysAuthPath(context.Background(), path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysAuthPathTune
-
-> GetSysAuthPathTune(ctx, path).Execute()
-
-Reads the given auth path's configuration.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Tune the configuration parameters for an auth path.
-
-	resp, err := client.WithToken("my-token").System.GetSysAuthPathTune(context.Background(), path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Tune the configuration parameters for an auth path. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysConfigAuditingRequestHeaders
-
-> GetSysConfigAuditingRequestHeaders(ctx).Execute()
-
-List the request headers that are configured to be audited.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysConfigAuditingRequestHeaders(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysConfigAuditingRequestHeadersHeader
-
-> GetSysConfigAuditingRequestHeadersHeader(ctx, header).Execute()
-
-List the information for the given request header.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	header := "header_example" // string | 
-
-	resp, err := client.WithToken("my-token").System.GetSysConfigAuditingRequestHeadersHeader(context.Background(), header)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**header** | **string** |  | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysConfigCors
-
-> GetSysConfigCors(ctx).Execute()
-
-Return the current CORS settings.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysConfigCors(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysConfigStateSanitized
-
-> GetSysConfigStateSanitized(ctx).Execute()
-
-Return a sanitized version of the Vault server configuration.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysConfigStateSanitized(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysConfigUiHeaders
-
-> GetSysConfigUiHeaders(ctx).List(list).Execute()
+> ListSystemConfigUiHeaders(ctx).List(list).Execute()
 
 Return a list of configured UI headers.
 
@@ -1867,7 +1431,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysConfigUiHeaders(context.Background(), list)
+	resp, err := client.WithToken("my-token").System.ListSystemConfigUiHeaders(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1893,1304 +1457,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysConfigUiHeadersHeader
+## ListSystemLeasesLookup
 
-> GetSysConfigUiHeadersHeader(ctx, header).Execute()
-
-Return the given UI header's configuration
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	header := "header_example" // string | The name of the header.
-
-	resp, err := client.WithToken("my-token").System.GetSysConfigUiHeadersHeader(context.Background(), header)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**header** | **string** | The name of the header. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysGenerateRoot
-
-> GetSysGenerateRoot(ctx).Execute()
-
-Read the configuration and progress of the current root generation attempt.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysGenerateRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysGenerateRootAttempt
-
-> GetSysGenerateRootAttempt(ctx).Execute()
-
-Read the configuration and progress of the current root generation attempt.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysGenerateRootAttempt(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysHaStatus
-
-> GetSysHaStatus(ctx).Execute()
-
-Check the HA status of a Vault cluster
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysHaStatus(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysHealth
-
-> GetSysHealth(ctx).Execute()
-
-Returns the health status of Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysHealth(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysHostInfo
-
-> GetSysHostInfo(ctx).Execute()
-
-Information about the host instance that this Vault server is running on.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysHostInfo(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInFlightReq
-
-> GetSysInFlightReq(ctx).Execute()
-
-reports in-flight requests
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInFlightReq(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInit
-
-> GetSysInit(ctx).Execute()
-
-Returns the initialization status of Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInit(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalCountersActivity
-
-> GetSysInternalCountersActivity(ctx).Execute()
-
-Report the client count metrics, for this namespace and all child namespaces.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersActivity(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalCountersActivityExport
-
-> GetSysInternalCountersActivityExport(ctx).Execute()
-
-Report the client count metrics, for this namespace and all child namespaces.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersActivityExport(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalCountersActivityMonthly
-
-> GetSysInternalCountersActivityMonthly(ctx).Execute()
-
-Report the number of clients for this month, for this namespace and all child namespaces.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersActivityMonthly(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalCountersConfig
-
-> GetSysInternalCountersConfig(ctx).Execute()
-
-Read the client count tracking configuration.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalCountersEntities
-
-> GetSysInternalCountersEntities(ctx).Execute()
-
-Backwards compatibility is not guaranteed for this API
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersEntities(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalCountersRequests
-
-> GetSysInternalCountersRequests(ctx).Execute()
-
-Backwards compatibility is not guaranteed for this API
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersRequests(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalCountersTokens
-
-> GetSysInternalCountersTokens(ctx).Execute()
-
-Backwards compatibility is not guaranteed for this API
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersTokens(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalSpecsOpenapi
-
-> GetSysInternalSpecsOpenapi(ctx).Execute()
-
-Generate an OpenAPI 3 document of all mounted paths.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalSpecsOpenapi(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalUiFeatureFlags
-
-> GetSysInternalUiFeatureFlags(ctx).Execute()
-
-Lists enabled feature flags.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiFeatureFlags(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalUiMounts
-
-> GetSysInternalUiMounts(ctx).Execute()
-
-Lists all enabled and visible auth and secrets mounts.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiMounts(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalUiMountsPath
-
-> GetSysInternalUiMountsPath(ctx, path).Execute()
-
-Return information about the given mount.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | The path of the mount.
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiMountsPath(context.Background(), path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | The path of the mount. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalUiNamespaces
-
-> GetSysInternalUiNamespaces(ctx).Execute()
-
-Backwards compatibility is not guaranteed for this API
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiNamespaces(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysInternalUiResultantAcl
-
-> GetSysInternalUiResultantAcl(ctx).Execute()
-
-Backwards compatibility is not guaranteed for this API
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiResultantAcl(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysKeyStatus
-
-> GetSysKeyStatus(ctx).Execute()
-
-Provides information about the backend encryption key.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysKeyStatus(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysLeader
-
-> GetSysLeader(ctx).Execute()
-
-Returns the high availability status and current leader instance of Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysLeader(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysLeases
-
-> GetSysLeases(ctx).Execute()
-
-List leases associated with this Vault cluster
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysLeases(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysLeasesCount
-
-> GetSysLeasesCount(ctx).Execute()
-
-Count of leases associated with this Vault cluster
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysLeasesCount(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysLeasesLookup
-
-> GetSysLeasesLookup(ctx).List(list).Execute()
+> ListSystemLeasesLookup(ctx).List(list).Execute()
 
 Returns a list of lease ids.
 
@@ -3217,7 +1486,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysLeasesLookup(context.Background(), list)
+	resp, err := client.WithToken("my-token").System.ListSystemLeasesLookup(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3243,9 +1512,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysLeasesLookupPrefix
+## ListSystemLeasesLookupPrefix
 
-> GetSysLeasesLookupPrefix(ctx, prefix).List(list).Execute()
+> ListSystemLeasesLookupPrefix(ctx, prefix).List(list).Execute()
 
 Returns a list of lease ids.
 
@@ -3273,7 +1542,7 @@ func main() {
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysLeasesLookupPrefix(context.Background(), prefix, list)
+	resp, err := client.WithToken("my-token").System.ListSystemLeasesLookupPrefix(context.Background(), prefix, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3304,400 +1573,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysMetrics
+## ListSystemPluginsCatalogType
 
-> GetSysMetrics(ctx).Format(format).Execute()
-
-Export the metrics aggregated for telemetry purpose.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	format := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysMetrics(context.Background(), format)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysMonitor
-
-> GetSysMonitor(ctx).LogFormat(logFormat).LogLevel(logLevel).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	logFormat := NewstringWithDefaults()
-	logLevel := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysMonitor(context.Background(), logFormat, logLevel)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
- **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysMounts
-
-> GetSysMounts(ctx).Execute()
-
-List the currently mounted backends.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysMounts(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysMountsPath
-
-> GetSysMountsPath(ctx, path).Execute()
-
-Read the configuration of the secret engine at the given path.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-	resp, err := client.WithToken("my-token").System.GetSysMountsPath(context.Background(), path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysMountsPathTune
-
-> GetSysMountsPathTune(ctx, path).Execute()
-
-Tune backend configuration parameters for this mount.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-	resp, err := client.WithToken("my-token").System.GetSysMountsPathTune(context.Background(), path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysPluginsCatalog
-
-> GetSysPluginsCatalog(ctx).Execute()
-
-Lists all the plugins known to Vault
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalog(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysPluginsCatalogName
-
-> GetSysPluginsCatalogName(ctx, name).Execute()
-
-Return the configuration data for the plugin with the given name.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the plugin
-
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalogName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the plugin | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysPluginsCatalogType
-
-> GetSysPluginsCatalogType(ctx, type_).List(list).Execute()
+> ListSystemPluginsCatalogType(ctx, type_).List(list).Execute()
 
 List the plugins in the catalog.
 
@@ -3725,7 +1603,7 @@ func main() {
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalogType(context.Background(), type_, list)
+	resp, err := client.WithToken("my-token").System.ListSystemPluginsCatalogType(context.Background(), type_, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3756,9 +1634,2351 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysPluginsCatalogTypeName
+## ListSystemPoliciesAcl
 
-> GetSysPluginsCatalogTypeName(ctx, name, type_).Execute()
+> ListSystemPoliciesAcl(ctx).List(list).Execute()
+
+List the configured access control policies.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").System.ListSystemPoliciesAcl(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListSystemPoliciesPassword
+
+> ListSystemPoliciesPassword(ctx).List(list).Execute()
+
+List the existing password policies.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").System.ListSystemPoliciesPassword(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListSystemQuotasRateLimit
+
+> ListSystemQuotasRateLimit(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").System.ListSystemQuotasRateLimit(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListSystemVersionHistory
+
+> ListSystemVersionHistory(ctx).List(list).Execute()
+
+Returns map of historical version change entries
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").System.ListSystemVersionHistory(context.Background(), list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemAudit
+
+> ReadSystemAudit(ctx).Execute()
+
+List the enabled audit devices.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemAudit(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemAuth
+
+> ReadSystemAuth(ctx).Execute()
+
+List the currently enabled credential backends.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemAuth(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemAuthPath
+
+> ReadSystemAuthPath(ctx, path).Execute()
+
+Read the configuration of the auth engine at the given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+
+	resp, err := client.WithToken("my-token").System.ReadSystemAuthPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | The path to mount to. Cannot be delimited. Example: \&quot;user\&quot; | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemAuthPathTune
+
+> ReadSystemAuthPathTune(ctx, path).Execute()
+
+Reads the given auth path's configuration.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Tune the configuration parameters for an auth path.
+
+	resp, err := client.WithToken("my-token").System.ReadSystemAuthPathTune(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Tune the configuration parameters for an auth path. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemConfigAuditingRequestHeaders
+
+> ReadSystemConfigAuditingRequestHeaders(ctx).Execute()
+
+List the request headers that are configured to be audited.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemConfigAuditingRequestHeaders(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemConfigAuditingRequestHeadersHeader
+
+> ReadSystemConfigAuditingRequestHeadersHeader(ctx, header).Execute()
+
+List the information for the given request header.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	header := "header_example" // string | 
+
+	resp, err := client.WithToken("my-token").System.ReadSystemConfigAuditingRequestHeadersHeader(context.Background(), header)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**header** | **string** |  | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemConfigCors
+
+> ReadSystemConfigCors(ctx).Execute()
+
+Return the current CORS settings.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemConfigCors(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemConfigStateSanitized
+
+> ReadSystemConfigStateSanitized(ctx).Execute()
+
+Return a sanitized version of the Vault server configuration.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemConfigStateSanitized(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemConfigUiHeadersHeader
+
+> ReadSystemConfigUiHeadersHeader(ctx, header).Execute()
+
+Return the given UI header's configuration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	header := "header_example" // string | The name of the header.
+
+	resp, err := client.WithToken("my-token").System.ReadSystemConfigUiHeadersHeader(context.Background(), header)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**header** | **string** | The name of the header. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemGenerateRoot
+
+> ReadSystemGenerateRoot(ctx).Execute()
+
+Read the configuration and progress of the current root generation attempt.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemGenerateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemGenerateRootAttempt
+
+> ReadSystemGenerateRootAttempt(ctx).Execute()
+
+Read the configuration and progress of the current root generation attempt.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemGenerateRootAttempt(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemHaStatus
+
+> ReadSystemHaStatus(ctx).Execute()
+
+Check the HA status of a Vault cluster
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemHaStatus(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemHealth
+
+> ReadSystemHealth(ctx).Execute()
+
+Returns the health status of Vault.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemHealth(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemHostInfo
+
+> ReadSystemHostInfo(ctx).Execute()
+
+Information about the host instance that this Vault server is running on.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemHostInfo(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInFlightReq
+
+> ReadSystemInFlightReq(ctx).Execute()
+
+reports in-flight requests
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInFlightReq(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInit
+
+> ReadSystemInit(ctx).Execute()
+
+Returns the initialization status of Vault.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInit(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalCountersActivity
+
+> ReadSystemInternalCountersActivity(ctx).Execute()
+
+Report the client count metrics, for this namespace and all child namespaces.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalCountersActivity(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalCountersActivityExport
+
+> ReadSystemInternalCountersActivityExport(ctx).Execute()
+
+Report the client count metrics, for this namespace and all child namespaces.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalCountersActivityExport(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalCountersActivityMonthly
+
+> ReadSystemInternalCountersActivityMonthly(ctx).Execute()
+
+Report the number of clients for this month, for this namespace and all child namespaces.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalCountersActivityMonthly(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalCountersConfig
+
+> ReadSystemInternalCountersConfig(ctx).Execute()
+
+Read the client count tracking configuration.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalCountersConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalCountersEntities
+
+> ReadSystemInternalCountersEntities(ctx).Execute()
+
+Backwards compatibility is not guaranteed for this API
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalCountersEntities(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalCountersRequests
+
+> ReadSystemInternalCountersRequests(ctx).Execute()
+
+Backwards compatibility is not guaranteed for this API
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalCountersRequests(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalCountersTokens
+
+> ReadSystemInternalCountersTokens(ctx).Execute()
+
+Backwards compatibility is not guaranteed for this API
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalCountersTokens(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalSpecsOpenapi
+
+> ReadSystemInternalSpecsOpenapi(ctx).Execute()
+
+Generate an OpenAPI 3 document of all mounted paths.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalSpecsOpenapi(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalUiFeatureFlags
+
+> ReadSystemInternalUiFeatureFlags(ctx).Execute()
+
+Lists enabled feature flags.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalUiFeatureFlags(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalUiMounts
+
+> ReadSystemInternalUiMounts(ctx).Execute()
+
+Lists all enabled and visible auth and secrets mounts.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalUiMounts(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalUiMountsPath
+
+> ReadSystemInternalUiMountsPath(ctx, path).Execute()
+
+Return information about the given mount.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | The path of the mount.
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalUiMountsPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | The path of the mount. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalUiNamespaces
+
+> ReadSystemInternalUiNamespaces(ctx).Execute()
+
+Backwards compatibility is not guaranteed for this API
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalUiNamespaces(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemInternalUiResultantAcl
+
+> ReadSystemInternalUiResultantAcl(ctx).Execute()
+
+Backwards compatibility is not guaranteed for this API
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemInternalUiResultantAcl(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemKeyStatus
+
+> ReadSystemKeyStatus(ctx).Execute()
+
+Provides information about the backend encryption key.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemKeyStatus(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemLeader
+
+> ReadSystemLeader(ctx).Execute()
+
+Returns the high availability status and current leader instance of Vault.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemLeader(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemLeases
+
+> ReadSystemLeases(ctx).Execute()
+
+List leases associated with this Vault cluster
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemLeases(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemLeasesCount
+
+> ReadSystemLeasesCount(ctx).Execute()
+
+Count of leases associated with this Vault cluster
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemLeasesCount(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemMetrics
+
+> ReadSystemMetrics(ctx).Format(format).Execute()
+
+Export the metrics aggregated for telemetry purpose.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	format := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").System.ReadSystemMetrics(context.Background(), format)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemMonitor
+
+> ReadSystemMonitor(ctx).LogFormat(logFormat).LogLevel(logLevel).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	logFormat := NewstringWithDefaults()
+	logLevel := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").System.ReadSystemMonitor(context.Background(), logFormat, logLevel)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
+ **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemMounts
+
+> ReadSystemMounts(ctx).Execute()
+
+List the currently mounted backends.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemMounts(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemMountsPath
+
+> ReadSystemMountsPath(ctx, path).Execute()
+
+Read the configuration of the secret engine at the given path.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
+	resp, err := client.WithToken("my-token").System.ReadSystemMountsPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemMountsPathTune
+
+> ReadSystemMountsPathTune(ctx, path).Execute()
+
+Tune backend configuration parameters for this mount.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
+	resp, err := client.WithToken("my-token").System.ReadSystemMountsPathTune(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | The path to mount to. Example: \&quot;aws/east\&quot; | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemPluginsCatalog
+
+> ReadSystemPluginsCatalog(ctx).Execute()
+
+Lists all the plugins known to Vault
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemPluginsCatalog(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemPluginsCatalogName
+
+> ReadSystemPluginsCatalogName(ctx, name).Execute()
+
+Return the configuration data for the plugin with the given name.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of the plugin
+
+	resp, err := client.WithToken("my-token").System.ReadSystemPluginsCatalogName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of the plugin | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemPluginsCatalogTypeName
+
+> ReadSystemPluginsCatalogTypeName(ctx, name, type_).Execute()
 
 Return the configuration data for the plugin with the given name.
 
@@ -3786,7 +4006,7 @@ func main() {
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalogTypeName(context.Background(), name, type_)
+	resp, err := client.WithToken("my-token").System.ReadSystemPluginsCatalogTypeName(context.Background(), name, type_)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3818,64 +4038,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysPoliciesAcl
+## ReadSystemPoliciesAclName
 
-> GetSysPoliciesAcl(ctx).List(list).Execute()
-
-List the configured access control policies.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesAcl(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysPoliciesAclName
-
-> GetSysPoliciesAclName(ctx, name).Execute()
+> ReadSystemPoliciesAclName(ctx, name).Execute()
 
 Retrieve information about the named ACL policy.
 
@@ -3902,7 +4067,7 @@ func main() {
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesAclName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.ReadSystemPoliciesAclName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3932,64 +4097,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysPoliciesPassword
+## ReadSystemPoliciesPasswordName
 
-> GetSysPoliciesPassword(ctx).List(list).Execute()
-
-List the existing password policies.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesPassword(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysPoliciesPasswordName
-
-> GetSysPoliciesPasswordName(ctx, name).Execute()
+> ReadSystemPoliciesPasswordName(ctx, name).Execute()
 
 Retrieve an existing password policy.
 
@@ -4016,7 +4126,7 @@ func main() {
 
 	name := "name_example" // string | The name of the password policy.
 
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesPasswordName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.ReadSystemPoliciesPasswordName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4046,9 +4156,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysPoliciesPasswordNameGenerate
+## ReadSystemPoliciesPasswordNameGenerate
 
-> GetSysPoliciesPasswordNameGenerate(ctx, name).Execute()
+> ReadSystemPoliciesPasswordNameGenerate(ctx, name).Execute()
 
 Generate a password from an existing password policy.
 
@@ -4075,7 +4185,7 @@ func main() {
 
 	name := "name_example" // string | The name of the password policy.
 
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesPasswordNameGenerate(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.ReadSystemPoliciesPasswordNameGenerate(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4105,9 +4215,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysPolicy
+## ReadSystemPolicy
 
-> GetSysPolicy(ctx).List(list).Execute()
+> ReadSystemPolicy(ctx).List(list).Execute()
 
 List the configured access control policies.
 
@@ -4134,7 +4244,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPolicy(context.Background(), list)
+	resp, err := client.WithToken("my-token").System.ReadSystemPolicy(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4160,9 +4270,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysPolicyName
+## ReadSystemPolicyName
 
-> GetSysPolicyName(ctx, name).Execute()
+> ReadSystemPolicyName(ctx, name).Execute()
 
 Retrieve the policy body for the named policy.
 
@@ -4189,7 +4299,7 @@ func main() {
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.GetSysPolicyName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.ReadSystemPolicyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4219,9 +4329,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysPprof
+## ReadSystemPprof
 
-> GetSysPprof(ctx).Execute()
+> ReadSystemPprof(ctx).Execute()
 
 Returns an HTML page listing the available profiles.
 
@@ -4249,7 +4359,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprof(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprof(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4272,9 +4382,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofAllocs
+## ReadSystemPprofAllocs
 
-> GetSysPprofAllocs(ctx).Execute()
+> ReadSystemPprofAllocs(ctx).Execute()
 
 Returns a sampling of all past memory allocations.
 
@@ -4302,7 +4412,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofAllocs(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofAllocs(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4325,9 +4435,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofBlock
+## ReadSystemPprofBlock
 
-> GetSysPprofBlock(ctx).Execute()
+> ReadSystemPprofBlock(ctx).Execute()
 
 Returns stack traces that led to blocking on synchronization primitives
 
@@ -4355,7 +4465,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofBlock(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofBlock(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4378,9 +4488,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofCmdline
+## ReadSystemPprofCmdline
 
-> GetSysPprofCmdline(ctx).Execute()
+> ReadSystemPprofCmdline(ctx).Execute()
 
 Returns the running program's command line.
 
@@ -4408,7 +4518,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofCmdline(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofCmdline(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4431,9 +4541,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofGoroutine
+## ReadSystemPprofGoroutine
 
-> GetSysPprofGoroutine(ctx).Execute()
+> ReadSystemPprofGoroutine(ctx).Execute()
 
 Returns stack traces of all current goroutines.
 
@@ -4461,7 +4571,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofGoroutine(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofGoroutine(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4484,9 +4594,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofHeap
+## ReadSystemPprofHeap
 
-> GetSysPprofHeap(ctx).Execute()
+> ReadSystemPprofHeap(ctx).Execute()
 
 Returns a sampling of memory allocations of live object.
 
@@ -4514,7 +4624,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofHeap(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofHeap(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4537,9 +4647,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofMutex
+## ReadSystemPprofMutex
 
-> GetSysPprofMutex(ctx).Execute()
+> ReadSystemPprofMutex(ctx).Execute()
 
 Returns stack traces of holders of contended mutexes
 
@@ -4567,7 +4677,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofMutex(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofMutex(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4590,9 +4700,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofProfile
+## ReadSystemPprofProfile
 
-> GetSysPprofProfile(ctx).Execute()
+> ReadSystemPprofProfile(ctx).Execute()
 
 Returns a pprof-formatted cpu profile payload.
 
@@ -4620,7 +4730,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofProfile(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofProfile(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4643,9 +4753,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofSymbol
+## ReadSystemPprofSymbol
 
-> GetSysPprofSymbol(ctx).Execute()
+> ReadSystemPprofSymbol(ctx).Execute()
 
 Returns the program counters listed in the request.
 
@@ -4673,7 +4783,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofSymbol(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofSymbol(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4696,9 +4806,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofThreadcreate
+## ReadSystemPprofThreadcreate
 
-> GetSysPprofThreadcreate(ctx).Execute()
+> ReadSystemPprofThreadcreate(ctx).Execute()
 
 Returns stack traces that led to the creation of new OS threads
 
@@ -4726,7 +4836,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofThreadcreate(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofThreadcreate(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4749,9 +4859,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysPprofTrace
+## ReadSystemPprofTrace
 
-> GetSysPprofTrace(ctx).Execute()
+> ReadSystemPprofTrace(ctx).Execute()
 
 Returns the execution trace in binary form.
 
@@ -4779,7 +4889,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofTrace(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemPprofTrace(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4802,9 +4912,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysQuotasConfig
+## ReadSystemQuotasConfig
 
-> GetSysQuotasConfig(ctx).Execute()
+> ReadSystemQuotasConfig(ctx).Execute()
 
 
 
@@ -4830,7 +4940,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysQuotasConfig(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemQuotasConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4853,64 +4963,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysQuotasRateLimit
+## ReadSystemQuotasRateLimitName
 
-> GetSysQuotasRateLimit(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysQuotasRateLimit(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysQuotasRateLimitName
-
-> GetSysQuotasRateLimitName(ctx, name).Execute()
+> ReadSystemQuotasRateLimitName(ctx, name).Execute()
 
 
 
@@ -4937,7 +4992,7 @@ func main() {
 
 	name := "name_example" // string | Name of the quota rule.
 
-	resp, err := client.WithToken("my-token").System.GetSysQuotasRateLimitName(context.Background(), name)
+	resp, err := client.WithToken("my-token").System.ReadSystemQuotasRateLimitName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4967,9 +5022,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysRaw
+## ReadSystemRaw
 
-> GetSysRaw(ctx).List(list).Execute()
+> ReadSystemRaw(ctx).List(list).Execute()
 
 Read the value of the key at the given path.
 
@@ -4996,7 +5051,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysRaw(context.Background(), list)
+	resp, err := client.WithToken("my-token").System.ReadSystemRaw(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5022,9 +5077,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysRawPath
+## ReadSystemRawPath
 
-> GetSysRawPath(ctx, path).List(list).Execute()
+> ReadSystemRawPath(ctx, path).List(list).Execute()
 
 Read the value of the key at the given path.
 
@@ -5052,7 +5107,7 @@ func main() {
 	path := "path_example" // string | 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysRawPath(context.Background(), path, list)
+	resp, err := client.WithToken("my-token").System.ReadSystemRawPath(context.Background(), path, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5083,9 +5138,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysRekeyBackup
+## ReadSystemRekeyBackup
 
-> GetSysRekeyBackup(ctx).Execute()
+> ReadSystemRekeyBackup(ctx).Execute()
 
 Return the backup copy of PGP-encrypted unseal keys.
 
@@ -5111,7 +5166,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyBackup(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemRekeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5134,9 +5189,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysRekeyInit
+## ReadSystemRekeyInit
 
-> GetSysRekeyInit(ctx).Execute()
+> ReadSystemRekeyInit(ctx).Execute()
 
 Reads the configuration and progress of the current rekey attempt.
 
@@ -5162,7 +5217,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyInit(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemRekeyInit(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5185,9 +5240,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysRekeyRecoveryKeyBackup
+## ReadSystemRekeyRecoveryKeyBackup
 
-> GetSysRekeyRecoveryKeyBackup(ctx).Execute()
+> ReadSystemRekeyRecoveryKeyBackup(ctx).Execute()
 
 Allows fetching or deleting the backup of the rotated unseal keys.
 
@@ -5213,7 +5268,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyRecoveryKeyBackup(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemRekeyRecoveryKeyBackup(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5236,9 +5291,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysRekeyVerify
+## ReadSystemRekeyVerify
 
-> GetSysRekeyVerify(ctx).Execute()
+> ReadSystemRekeyVerify(ctx).Execute()
 
 Read the configuration and progress of the current rekey verification attempt.
 
@@ -5264,7 +5319,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyVerify(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemRekeyVerify(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5287,9 +5342,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysRemountStatusMigrationId
+## ReadSystemRemountStatusMigrationId
 
-> GetSysRemountStatusMigrationId(ctx, migrationId).Execute()
+> ReadSystemRemountStatusMigrationId(ctx, migrationId).Execute()
 
 Check status of a mount migration
 
@@ -5316,7 +5371,7 @@ func main() {
 
 	migrationId := "migrationId_example" // string | The ID of the migration operation
 
-	resp, err := client.WithToken("my-token").System.GetSysRemountStatusMigrationId(context.Background(), migrationId)
+	resp, err := client.WithToken("my-token").System.ReadSystemRemountStatusMigrationId(context.Background(), migrationId)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5346,60 +5401,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSysReplicationStatus
+## ReadSystemReplicationStatus
 
-> GetSysReplicationStatus(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").System.GetSysReplicationStatus(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysRotateConfig
-
-> GetSysRotateConfig(ctx).Execute()
+> ReadSystemReplicationStatus(ctx).Execute()
 
 
 
@@ -5425,7 +5429,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRotateConfig(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemReplicationStatus(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5448,9 +5452,60 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysSealStatus
+## ReadSystemRotateConfig
 
-> GetSysSealStatus(ctx).Execute()
+> ReadSystemRotateConfig(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.WithToken("my-token").System.ReadSystemRotateConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadSystemSealStatus
+
+> ReadSystemSealStatus(ctx).Execute()
 
 Check the seal status of a Vault.
 
@@ -5476,7 +5531,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysSealStatus(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemSealStatus(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5499,64 +5554,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSysVersionHistory
+## ReadSystemWrappingLookup
 
-> GetSysVersionHistory(ctx).List(list).Execute()
-
-Returns map of historical version change entries
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysVersionHistory(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSysWrappingLookup
-
-> GetSysWrappingLookup(ctx).Execute()
+> ReadSystemWrappingLookup(ctx).Execute()
 
 Look up wrapping properties for the requester's token.
 
@@ -5582,7 +5582,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysWrappingLookup(context.Background())
+	resp, err := client.WithToken("my-token").System.ReadSystemWrappingLookup(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5605,9 +5605,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostSysAuditHashPath
+## UpdateSystemAuditHashPath
 
-> PostSysAuditHashPath(ctx, path).SystemAuditHashRequest(systemAuditHashRequest).Execute()
+> UpdateSystemAuditHashPath(ctx, path).SystemAuditHashRequest(systemAuditHashRequest).Execute()
 
 The hash of the given string via the given audit backend
 
@@ -5635,7 +5635,7 @@ func main() {
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 
 	systemAuditHashRequest := NewSystemAuditHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuditHashPath(context.Background(), path, systemAuditHashRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemAuditHashPath(context.Background(), path, systemAuditHashRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5666,9 +5666,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysAuditPath
+## UpdateSystemAuditPath
 
-> PostSysAuditPath(ctx, path).SystemAuditRequest(systemAuditRequest).Execute()
+> UpdateSystemAuditPath(ctx, path).SystemAuditRequest(systemAuditRequest).Execute()
 
 Enable a new audit device at the supplied path.
 
@@ -5696,7 +5696,7 @@ func main() {
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 
 	systemAuditRequest := NewSystemAuditRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuditPath(context.Background(), path, systemAuditRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemAuditPath(context.Background(), path, systemAuditRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5727,9 +5727,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysAuthPath
+## UpdateSystemAuthPath
 
-> PostSysAuthPath(ctx, path).SystemAuthRequest(systemAuthRequest).Execute()
+> UpdateSystemAuthPath(ctx, path).SystemAuthRequest(systemAuthRequest).Execute()
 
 Enables a new auth method.
 
@@ -5759,7 +5759,7 @@ func main() {
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 
 	systemAuthRequest := NewSystemAuthRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuthPath(context.Background(), path, systemAuthRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemAuthPath(context.Background(), path, systemAuthRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5790,9 +5790,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysAuthPathTune
+## UpdateSystemAuthPathTune
 
-> PostSysAuthPathTune(ctx, path).SystemAuthTuneRequest(systemAuthTuneRequest).Execute()
+> UpdateSystemAuthPathTune(ctx, path).SystemAuthTuneRequest(systemAuthTuneRequest).Execute()
 
 Tune configuration parameters for a given auth path.
 
@@ -5822,7 +5822,7 @@ func main() {
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 
 	systemAuthTuneRequest := NewSystemAuthTuneRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuthPathTune(context.Background(), path, systemAuthTuneRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemAuthPathTune(context.Background(), path, systemAuthTuneRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5853,9 +5853,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysCapabilities
+## UpdateSystemCapabilities
 
-> PostSysCapabilities(ctx).SystemCapabilitiesRequest(systemCapabilitiesRequest).Execute()
+> UpdateSystemCapabilities(ctx).SystemCapabilitiesRequest(systemCapabilitiesRequest).Execute()
 
 Fetches the capabilities of the given token on the given path.
 
@@ -5882,7 +5882,7 @@ func main() {
 
 
 	systemCapabilitiesRequest := NewSystemCapabilitiesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysCapabilities(context.Background(), systemCapabilitiesRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemCapabilities(context.Background(), systemCapabilitiesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5908,9 +5908,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysCapabilitiesAccessor
+## UpdateSystemCapabilitiesAccessor
 
-> PostSysCapabilitiesAccessor(ctx).SystemCapabilitiesAccessorRequest(systemCapabilitiesAccessorRequest).Execute()
+> UpdateSystemCapabilitiesAccessor(ctx).SystemCapabilitiesAccessorRequest(systemCapabilitiesAccessorRequest).Execute()
 
 Fetches the capabilities of the token associated with the given token, on the given path.
 
@@ -5937,7 +5937,7 @@ func main() {
 
 
 	systemCapabilitiesAccessorRequest := NewSystemCapabilitiesAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysCapabilitiesAccessor(context.Background(), systemCapabilitiesAccessorRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemCapabilitiesAccessor(context.Background(), systemCapabilitiesAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5963,9 +5963,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysCapabilitiesSelf
+## UpdateSystemCapabilitiesSelf
 
-> PostSysCapabilitiesSelf(ctx).SystemCapabilitiesSelfRequest(systemCapabilitiesSelfRequest).Execute()
+> UpdateSystemCapabilitiesSelf(ctx).SystemCapabilitiesSelfRequest(systemCapabilitiesSelfRequest).Execute()
 
 Fetches the capabilities of the given token on the given path.
 
@@ -5992,7 +5992,7 @@ func main() {
 
 
 	systemCapabilitiesSelfRequest := NewSystemCapabilitiesSelfRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysCapabilitiesSelf(context.Background(), systemCapabilitiesSelfRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemCapabilitiesSelf(context.Background(), systemCapabilitiesSelfRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6018,9 +6018,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysConfigAuditingRequestHeadersHeader
+## UpdateSystemConfigAuditingRequestHeadersHeader
 
-> PostSysConfigAuditingRequestHeadersHeader(ctx, header).SystemConfigAuditingRequestHeadersRequest(systemConfigAuditingRequestHeadersRequest).Execute()
+> UpdateSystemConfigAuditingRequestHeadersHeader(ctx, header).SystemConfigAuditingRequestHeadersRequest(systemConfigAuditingRequestHeadersRequest).Execute()
 
 Enable auditing of a header.
 
@@ -6048,7 +6048,7 @@ func main() {
 	header := "header_example" // string | 
 
 	systemConfigAuditingRequestHeadersRequest := NewSystemConfigAuditingRequestHeadersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysConfigAuditingRequestHeadersHeader(context.Background(), header, systemConfigAuditingRequestHeadersRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemConfigAuditingRequestHeadersHeader(context.Background(), header, systemConfigAuditingRequestHeadersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6079,9 +6079,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysConfigCors
+## UpdateSystemConfigCors
 
-> PostSysConfigCors(ctx).SystemConfigCorsRequest(systemConfigCorsRequest).Execute()
+> UpdateSystemConfigCors(ctx).SystemConfigCorsRequest(systemConfigCorsRequest).Execute()
 
 Configure the CORS settings.
 
@@ -6108,7 +6108,7 @@ func main() {
 
 
 	systemConfigCorsRequest := NewSystemConfigCorsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysConfigCors(context.Background(), systemConfigCorsRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemConfigCors(context.Background(), systemConfigCorsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6134,9 +6134,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysConfigReloadSubsystem
+## UpdateSystemConfigReloadSubsystem
 
-> PostSysConfigReloadSubsystem(ctx, subsystem).Execute()
+> UpdateSystemConfigReloadSubsystem(ctx, subsystem).Execute()
 
 Reload the given subsystem
 
@@ -6163,7 +6163,7 @@ func main() {
 
 	subsystem := "subsystem_example" // string | 
 
-	resp, err := client.WithToken("my-token").System.PostSysConfigReloadSubsystem(context.Background(), subsystem)
+	resp, err := client.WithToken("my-token").System.UpdateSystemConfigReloadSubsystem(context.Background(), subsystem)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6193,9 +6193,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysConfigUiHeadersHeader
+## UpdateSystemConfigUiHeadersHeader
 
-> PostSysConfigUiHeadersHeader(ctx, header).SystemConfigUiHeadersRequest(systemConfigUiHeadersRequest).Execute()
+> UpdateSystemConfigUiHeadersHeader(ctx, header).SystemConfigUiHeadersRequest(systemConfigUiHeadersRequest).Execute()
 
 Configure the values to be returned for the UI header.
 
@@ -6223,7 +6223,7 @@ func main() {
 	header := "header_example" // string | The name of the header.
 
 	systemConfigUiHeadersRequest := NewSystemConfigUiHeadersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysConfigUiHeadersHeader(context.Background(), header, systemConfigUiHeadersRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemConfigUiHeadersHeader(context.Background(), header, systemConfigUiHeadersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6254,9 +6254,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysGenerateRoot
+## UpdateSystemGenerateRoot
 
-> PostSysGenerateRoot(ctx).SystemGenerateRootRequest(systemGenerateRootRequest).Execute()
+> UpdateSystemGenerateRoot(ctx).SystemGenerateRootRequest(systemGenerateRootRequest).Execute()
 
 Initializes a new root generation attempt.
 
@@ -6285,7 +6285,7 @@ func main() {
 
 
 	systemGenerateRootRequest := NewSystemGenerateRootRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysGenerateRoot(context.Background(), systemGenerateRootRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemGenerateRoot(context.Background(), systemGenerateRootRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6311,9 +6311,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysGenerateRootAttempt
+## UpdateSystemGenerateRootAttempt
 
-> PostSysGenerateRootAttempt(ctx).SystemGenerateRootAttemptRequest(systemGenerateRootAttemptRequest).Execute()
+> UpdateSystemGenerateRootAttempt(ctx).SystemGenerateRootAttemptRequest(systemGenerateRootAttemptRequest).Execute()
 
 Initializes a new root generation attempt.
 
@@ -6342,7 +6342,7 @@ func main() {
 
 
 	systemGenerateRootAttemptRequest := NewSystemGenerateRootAttemptRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysGenerateRootAttempt(context.Background(), systemGenerateRootAttemptRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemGenerateRootAttempt(context.Background(), systemGenerateRootAttemptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6368,9 +6368,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysGenerateRootUpdate
+## UpdateSystemGenerateRootUpdate
 
-> PostSysGenerateRootUpdate(ctx).SystemGenerateRootUpdateRequest(systemGenerateRootUpdateRequest).Execute()
+> UpdateSystemGenerateRootUpdate(ctx).SystemGenerateRootUpdateRequest(systemGenerateRootUpdateRequest).Execute()
 
 Enter a single unseal key share to progress the root generation attempt.
 
@@ -6399,7 +6399,7 @@ func main() {
 
 
 	systemGenerateRootUpdateRequest := NewSystemGenerateRootUpdateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysGenerateRootUpdate(context.Background(), systemGenerateRootUpdateRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemGenerateRootUpdate(context.Background(), systemGenerateRootUpdateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6425,9 +6425,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysInit
+## UpdateSystemInit
 
-> PostSysInit(ctx).SystemInitRequest(systemInitRequest).Execute()
+> UpdateSystemInit(ctx).SystemInitRequest(systemInitRequest).Execute()
 
 Initialize a new Vault.
 
@@ -6456,7 +6456,7 @@ func main() {
 
 
 	systemInitRequest := NewSystemInitRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysInit(context.Background(), systemInitRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemInit(context.Background(), systemInitRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6482,9 +6482,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysInternalCountersConfig
+## UpdateSystemInternalCountersConfig
 
-> PostSysInternalCountersConfig(ctx).SystemInternalCountersConfigRequest(systemInternalCountersConfigRequest).Execute()
+> UpdateSystemInternalCountersConfig(ctx).SystemInternalCountersConfigRequest(systemInternalCountersConfigRequest).Execute()
 
 Enable or disable collection of client count, set retention period, or set default reporting period.
 
@@ -6511,7 +6511,7 @@ func main() {
 
 
 	systemInternalCountersConfigRequest := NewSystemInternalCountersConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysInternalCountersConfig(context.Background(), systemInternalCountersConfigRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemInternalCountersConfig(context.Background(), systemInternalCountersConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6537,9 +6537,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesLookup
+## UpdateSystemLeasesLookup
 
-> PostSysLeasesLookup(ctx).SystemLeasesLookupRequest(systemLeasesLookupRequest).Execute()
+> UpdateSystemLeasesLookup(ctx).SystemLeasesLookupRequest(systemLeasesLookupRequest).Execute()
 
 Retrieve lease metadata.
 
@@ -6566,7 +6566,7 @@ func main() {
 
 
 	systemLeasesLookupRequest := NewSystemLeasesLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesLookup(context.Background(), systemLeasesLookupRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesLookup(context.Background(), systemLeasesLookupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6592,9 +6592,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesRenew
+## UpdateSystemLeasesRenew
 
-> PostSysLeasesRenew(ctx).SystemLeasesRenewRequest(systemLeasesRenewRequest).Execute()
+> UpdateSystemLeasesRenew(ctx).SystemLeasesRenewRequest(systemLeasesRenewRequest).Execute()
 
 Renews a lease, requesting to extend the lease.
 
@@ -6621,7 +6621,7 @@ func main() {
 
 
 	systemLeasesRenewRequest := NewSystemLeasesRenewRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRenew(context.Background(), systemLeasesRenewRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesRenew(context.Background(), systemLeasesRenewRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6647,9 +6647,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesRenewUrlLeaseId
+## UpdateSystemLeasesRenewUrlLeaseId
 
-> PostSysLeasesRenewUrlLeaseId(ctx, urlLeaseId).SystemLeasesRenewLeaseRequest(systemLeasesRenewLeaseRequest).Execute()
+> UpdateSystemLeasesRenewUrlLeaseId(ctx, urlLeaseId).SystemLeasesRenewLeaseRequest(systemLeasesRenewLeaseRequest).Execute()
 
 Renews a lease, requesting to extend the lease.
 
@@ -6677,7 +6677,7 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemLeasesRenewLeaseRequest := NewSystemLeasesRenewLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRenewUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRenewLeaseRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesRenewUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRenewLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6708,9 +6708,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesRevoke
+## UpdateSystemLeasesRevoke
 
-> PostSysLeasesRevoke(ctx).SystemLeasesRevokeRequest(systemLeasesRevokeRequest).Execute()
+> UpdateSystemLeasesRevoke(ctx).SystemLeasesRevokeRequest(systemLeasesRevokeRequest).Execute()
 
 Revokes a lease immediately.
 
@@ -6737,7 +6737,7 @@ func main() {
 
 
 	systemLeasesRevokeRequest := NewSystemLeasesRevokeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevoke(context.Background(), systemLeasesRevokeRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesRevoke(context.Background(), systemLeasesRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6763,9 +6763,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesRevokeForcePrefix
+## UpdateSystemLeasesRevokeForcePrefix
 
-> PostSysLeasesRevokeForcePrefix(ctx, prefix).Execute()
+> UpdateSystemLeasesRevokeForcePrefix(ctx, prefix).Execute()
 
 Revokes all secrets or tokens generated under a given prefix immediately
 
@@ -6794,7 +6794,7 @@ func main() {
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevokeForcePrefix(context.Background(), prefix)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesRevokeForcePrefix(context.Background(), prefix)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6824,9 +6824,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesRevokePrefixPrefix
+## UpdateSystemLeasesRevokePrefixPrefix
 
-> PostSysLeasesRevokePrefixPrefix(ctx, prefix).SystemLeasesRevokePrefixRequest(systemLeasesRevokePrefixRequest).Execute()
+> UpdateSystemLeasesRevokePrefixPrefix(ctx, prefix).SystemLeasesRevokePrefixRequest(systemLeasesRevokePrefixRequest).Execute()
 
 Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 
@@ -6854,7 +6854,7 @@ func main() {
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
 	systemLeasesRevokePrefixRequest := NewSystemLeasesRevokePrefixRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevokePrefixPrefix(context.Background(), prefix, systemLeasesRevokePrefixRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesRevokePrefixPrefix(context.Background(), prefix, systemLeasesRevokePrefixRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6885,9 +6885,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesRevokeUrlLeaseId
+## UpdateSystemLeasesRevokeUrlLeaseId
 
-> PostSysLeasesRevokeUrlLeaseId(ctx, urlLeaseId).SystemLeasesRevokeLeaseRequest(systemLeasesRevokeLeaseRequest).Execute()
+> UpdateSystemLeasesRevokeUrlLeaseId(ctx, urlLeaseId).SystemLeasesRevokeLeaseRequest(systemLeasesRevokeLeaseRequest).Execute()
 
 Revokes a lease immediately.
 
@@ -6915,7 +6915,7 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemLeasesRevokeLeaseRequest := NewSystemLeasesRevokeLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRevokeLeaseRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRevokeLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6946,9 +6946,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLeasesTidy
+## UpdateSystemLeasesTidy
 
-> PostSysLeasesTidy(ctx).Execute()
+> UpdateSystemLeasesTidy(ctx).Execute()
 
 This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 
@@ -6974,7 +6974,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysLeasesTidy(context.Background())
+	resp, err := client.WithToken("my-token").System.UpdateSystemLeasesTidy(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6997,9 +6997,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostSysLoggers
+## UpdateSystemLoggers
 
-> PostSysLoggers(ctx).SystemLoggersRequest(systemLoggersRequest).Execute()
+> UpdateSystemLoggers(ctx).SystemLoggersRequest(systemLoggersRequest).Execute()
 
 Modify the log level for all existing loggers.
 
@@ -7026,7 +7026,7 @@ func main() {
 
 
 	systemLoggersRequest := NewSystemLoggersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLoggers(context.Background(), systemLoggersRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLoggers(context.Background(), systemLoggersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7052,9 +7052,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysLoggersName
+## UpdateSystemLoggersName
 
-> PostSysLoggersName(ctx, name).SystemLoggersRequest(systemLoggersRequest).Execute()
+> UpdateSystemLoggersName(ctx, name).SystemLoggersRequest(systemLoggersRequest).Execute()
 
 Modify the log level of a single logger.
 
@@ -7082,7 +7082,7 @@ func main() {
 	name := "name_example" // string | The name of the logger to be modified.
 
 	systemLoggersRequest := NewSystemLoggersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLoggersName(context.Background(), name, systemLoggersRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemLoggersName(context.Background(), name, systemLoggersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7113,9 +7113,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysMfaValidate
+## UpdateSystemMfaValidate
 
-> PostSysMfaValidate(ctx).SystemMfaValidateRequest(systemMfaValidateRequest).Execute()
+> UpdateSystemMfaValidate(ctx).SystemMfaValidateRequest(systemMfaValidateRequest).Execute()
 
 Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
 
@@ -7142,7 +7142,7 @@ func main() {
 
 
 	systemMfaValidateRequest := NewSystemMfaValidateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysMfaValidate(context.Background(), systemMfaValidateRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemMfaValidate(context.Background(), systemMfaValidateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7168,9 +7168,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysMountsPath
+## UpdateSystemMountsPath
 
-> PostSysMountsPath(ctx, path).SystemMountsRequest(systemMountsRequest).Execute()
+> UpdateSystemMountsPath(ctx, path).SystemMountsRequest(systemMountsRequest).Execute()
 
 Enable a new secrets engine at the given path.
 
@@ -7198,7 +7198,7 @@ func main() {
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
 	systemMountsRequest := NewSystemMountsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysMountsPath(context.Background(), path, systemMountsRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemMountsPath(context.Background(), path, systemMountsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7229,9 +7229,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysMountsPathTune
+## UpdateSystemMountsPathTune
 
-> PostSysMountsPathTune(ctx, path).SystemMountsTuneRequest(systemMountsTuneRequest).Execute()
+> UpdateSystemMountsPathTune(ctx, path).SystemMountsTuneRequest(systemMountsTuneRequest).Execute()
 
 Tune backend configuration parameters for this mount.
 
@@ -7259,7 +7259,7 @@ func main() {
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
 	systemMountsTuneRequest := NewSystemMountsTuneRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysMountsPathTune(context.Background(), path, systemMountsTuneRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemMountsPathTune(context.Background(), path, systemMountsTuneRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7290,9 +7290,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysPluginsCatalogName
+## UpdateSystemPluginsCatalogName
 
-> PostSysPluginsCatalogName(ctx, name).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
+> UpdateSystemPluginsCatalogName(ctx, name).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
 
 Register a new plugin, or updates an existing one with the supplied name.
 
@@ -7320,7 +7320,7 @@ func main() {
 	name := "name_example" // string | The name of the plugin
 
 	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPluginsCatalogName(context.Background(), name, systemPluginsCatalogRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemPluginsCatalogName(context.Background(), name, systemPluginsCatalogRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7351,9 +7351,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysPluginsCatalogTypeName
+## UpdateSystemPluginsCatalogTypeName
 
-> PostSysPluginsCatalogTypeName(ctx, name, type_).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
+> UpdateSystemPluginsCatalogTypeName(ctx, name, type_).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
 
 Register a new plugin, or updates an existing one with the supplied name.
 
@@ -7382,7 +7382,7 @@ func main() {
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
 	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPluginsCatalogTypeName(context.Background(), name, type_, systemPluginsCatalogRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemPluginsCatalogTypeName(context.Background(), name, type_, systemPluginsCatalogRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7415,9 +7415,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysPluginsReloadBackend
+## UpdateSystemPluginsReloadBackend
 
-> PostSysPluginsReloadBackend(ctx).SystemPluginsReloadBackendRequest(systemPluginsReloadBackendRequest).Execute()
+> UpdateSystemPluginsReloadBackend(ctx).SystemPluginsReloadBackendRequest(systemPluginsReloadBackendRequest).Execute()
 
 Reload mounted plugin backends.
 
@@ -7446,7 +7446,7 @@ func main() {
 
 
 	systemPluginsReloadBackendRequest := NewSystemPluginsReloadBackendRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPluginsReloadBackend(context.Background(), systemPluginsReloadBackendRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemPluginsReloadBackend(context.Background(), systemPluginsReloadBackendRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7472,9 +7472,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysPoliciesAclName
+## UpdateSystemPoliciesAclName
 
-> PostSysPoliciesAclName(ctx, name).SystemPoliciesAclRequest(systemPoliciesAclRequest).Execute()
+> UpdateSystemPoliciesAclName(ctx, name).SystemPoliciesAclRequest(systemPoliciesAclRequest).Execute()
 
 Add a new or update an existing ACL policy.
 
@@ -7502,7 +7502,7 @@ func main() {
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
 	systemPoliciesAclRequest := NewSystemPoliciesAclRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPoliciesAclName(context.Background(), name, systemPoliciesAclRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemPoliciesAclName(context.Background(), name, systemPoliciesAclRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7533,9 +7533,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysPoliciesPasswordName
+## UpdateSystemPoliciesPasswordName
 
-> PostSysPoliciesPasswordName(ctx, name).SystemPoliciesPasswordRequest(systemPoliciesPasswordRequest).Execute()
+> UpdateSystemPoliciesPasswordName(ctx, name).SystemPoliciesPasswordRequest(systemPoliciesPasswordRequest).Execute()
 
 Add a new or update an existing password policy.
 
@@ -7563,7 +7563,7 @@ func main() {
 	name := "name_example" // string | The name of the password policy.
 
 	systemPoliciesPasswordRequest := NewSystemPoliciesPasswordRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPoliciesPasswordName(context.Background(), name, systemPoliciesPasswordRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemPoliciesPasswordName(context.Background(), name, systemPoliciesPasswordRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7594,9 +7594,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysPolicyName
+## UpdateSystemPolicyName
 
-> PostSysPolicyName(ctx, name).SystemPolicyRequest(systemPolicyRequest).Execute()
+> UpdateSystemPolicyName(ctx, name).SystemPolicyRequest(systemPolicyRequest).Execute()
 
 Add a new or update an existing policy.
 
@@ -7624,7 +7624,7 @@ func main() {
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
 	systemPolicyRequest := NewSystemPolicyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPolicyName(context.Background(), name, systemPolicyRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemPolicyName(context.Background(), name, systemPolicyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7655,9 +7655,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysQuotasConfig
+## UpdateSystemQuotasConfig
 
-> PostSysQuotasConfig(ctx).SystemQuotasConfigRequest(systemQuotasConfigRequest).Execute()
+> UpdateSystemQuotasConfig(ctx).SystemQuotasConfigRequest(systemQuotasConfigRequest).Execute()
 
 
 
@@ -7684,7 +7684,7 @@ func main() {
 
 
 	systemQuotasConfigRequest := NewSystemQuotasConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysQuotasConfig(context.Background(), systemQuotasConfigRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemQuotasConfig(context.Background(), systemQuotasConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7710,9 +7710,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysQuotasRateLimitName
+## UpdateSystemQuotasRateLimitName
 
-> PostSysQuotasRateLimitName(ctx, name).SystemQuotasRateLimitRequest(systemQuotasRateLimitRequest).Execute()
+> UpdateSystemQuotasRateLimitName(ctx, name).SystemQuotasRateLimitRequest(systemQuotasRateLimitRequest).Execute()
 
 
 
@@ -7740,7 +7740,7 @@ func main() {
 	name := "name_example" // string | Name of the quota rule.
 
 	systemQuotasRateLimitRequest := NewSystemQuotasRateLimitRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysQuotasRateLimitName(context.Background(), name, systemQuotasRateLimitRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemQuotasRateLimitName(context.Background(), name, systemQuotasRateLimitRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7771,9 +7771,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRaw
+## UpdateSystemRaw
 
-> PostSysRaw(ctx).SystemRawRequest(systemRawRequest).Execute()
+> UpdateSystemRaw(ctx).SystemRawRequest(systemRawRequest).Execute()
 
 Update the value of the key at the given path.
 
@@ -7800,7 +7800,7 @@ func main() {
 
 
 	systemRawRequest := NewSystemRawRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRaw(context.Background(), systemRawRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRaw(context.Background(), systemRawRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7826,9 +7826,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRawPath
+## UpdateSystemRawPath
 
-> PostSysRawPath(ctx, path).SystemRawRequest(systemRawRequest).Execute()
+> UpdateSystemRawPath(ctx, path).SystemRawRequest(systemRawRequest).Execute()
 
 Update the value of the key at the given path.
 
@@ -7856,7 +7856,7 @@ func main() {
 	path := "path_example" // string | 
 
 	systemRawRequest := NewSystemRawRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRawPath(context.Background(), path, systemRawRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRawPath(context.Background(), path, systemRawRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7887,9 +7887,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRekeyInit
+## UpdateSystemRekeyInit
 
-> PostSysRekeyInit(ctx).SystemRekeyInitRequest(systemRekeyInitRequest).Execute()
+> UpdateSystemRekeyInit(ctx).SystemRekeyInitRequest(systemRekeyInitRequest).Execute()
 
 Initializes a new rekey attempt.
 
@@ -7918,7 +7918,7 @@ func main() {
 
 
 	systemRekeyInitRequest := NewSystemRekeyInitRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRekeyInit(context.Background(), systemRekeyInitRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRekeyInit(context.Background(), systemRekeyInitRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7944,9 +7944,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRekeyUpdate
+## UpdateSystemRekeyUpdate
 
-> PostSysRekeyUpdate(ctx).SystemRekeyUpdateRequest(systemRekeyUpdateRequest).Execute()
+> UpdateSystemRekeyUpdate(ctx).SystemRekeyUpdateRequest(systemRekeyUpdateRequest).Execute()
 
 Enter a single unseal key share to progress the rekey of the Vault.
 
@@ -7973,7 +7973,7 @@ func main() {
 
 
 	systemRekeyUpdateRequest := NewSystemRekeyUpdateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRekeyUpdate(context.Background(), systemRekeyUpdateRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRekeyUpdate(context.Background(), systemRekeyUpdateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7999,9 +7999,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRekeyVerify
+## UpdateSystemRekeyVerify
 
-> PostSysRekeyVerify(ctx).SystemRekeyVerifyRequest(systemRekeyVerifyRequest).Execute()
+> UpdateSystemRekeyVerify(ctx).SystemRekeyVerifyRequest(systemRekeyVerifyRequest).Execute()
 
 Enter a single new key share to progress the rekey verification operation.
 
@@ -8028,7 +8028,7 @@ func main() {
 
 
 	systemRekeyVerifyRequest := NewSystemRekeyVerifyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRekeyVerify(context.Background(), systemRekeyVerifyRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRekeyVerify(context.Background(), systemRekeyVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8054,9 +8054,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRemount
+## UpdateSystemRemount
 
-> PostSysRemount(ctx).SystemRemountRequest(systemRemountRequest).Execute()
+> UpdateSystemRemount(ctx).SystemRemountRequest(systemRemountRequest).Execute()
 
 Initiate a mount migration
 
@@ -8083,7 +8083,7 @@ func main() {
 
 
 	systemRemountRequest := NewSystemRemountRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRemount(context.Background(), systemRemountRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRemount(context.Background(), systemRemountRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8109,9 +8109,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRenew
+## UpdateSystemRenew
 
-> PostSysRenew(ctx).SystemRenewRequest(systemRenewRequest).Execute()
+> UpdateSystemRenew(ctx).SystemRenewRequest(systemRenewRequest).Execute()
 
 Renews a lease, requesting to extend the lease.
 
@@ -8138,7 +8138,7 @@ func main() {
 
 
 	systemRenewRequest := NewSystemRenewRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRenew(context.Background(), systemRenewRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRenew(context.Background(), systemRenewRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8164,9 +8164,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRenewUrlLeaseId
+## UpdateSystemRenewUrlLeaseId
 
-> PostSysRenewUrlLeaseId(ctx, urlLeaseId).SystemRenewLeaseRequest(systemRenewLeaseRequest).Execute()
+> UpdateSystemRenewUrlLeaseId(ctx, urlLeaseId).SystemRenewLeaseRequest(systemRenewLeaseRequest).Execute()
 
 Renews a lease, requesting to extend the lease.
 
@@ -8194,7 +8194,7 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemRenewLeaseRequest := NewSystemRenewLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRenewUrlLeaseId(context.Background(), urlLeaseId, systemRenewLeaseRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRenewUrlLeaseId(context.Background(), urlLeaseId, systemRenewLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8225,9 +8225,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRevoke
+## UpdateSystemRevoke
 
-> PostSysRevoke(ctx).SystemRevokeRequest(systemRevokeRequest).Execute()
+> UpdateSystemRevoke(ctx).SystemRevokeRequest(systemRevokeRequest).Execute()
 
 Revokes a lease immediately.
 
@@ -8254,7 +8254,7 @@ func main() {
 
 
 	systemRevokeRequest := NewSystemRevokeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRevoke(context.Background(), systemRevokeRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRevoke(context.Background(), systemRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8280,9 +8280,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRevokeForcePrefix
+## UpdateSystemRevokeForcePrefix
 
-> PostSysRevokeForcePrefix(ctx, prefix).Execute()
+> UpdateSystemRevokeForcePrefix(ctx, prefix).Execute()
 
 Revokes all secrets or tokens generated under a given prefix immediately
 
@@ -8311,7 +8311,7 @@ func main() {
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
-	resp, err := client.WithToken("my-token").System.PostSysRevokeForcePrefix(context.Background(), prefix)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRevokeForcePrefix(context.Background(), prefix)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8341,9 +8341,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRevokePrefixPrefix
+## UpdateSystemRevokePrefixPrefix
 
-> PostSysRevokePrefixPrefix(ctx, prefix).SystemRevokePrefixRequest(systemRevokePrefixRequest).Execute()
+> UpdateSystemRevokePrefixPrefix(ctx, prefix).SystemRevokePrefixRequest(systemRevokePrefixRequest).Execute()
 
 Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 
@@ -8371,7 +8371,7 @@ func main() {
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
 	systemRevokePrefixRequest := NewSystemRevokePrefixRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRevokePrefixPrefix(context.Background(), prefix, systemRevokePrefixRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRevokePrefixPrefix(context.Background(), prefix, systemRevokePrefixRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8402,9 +8402,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRevokeUrlLeaseId
+## UpdateSystemRevokeUrlLeaseId
 
-> PostSysRevokeUrlLeaseId(ctx, urlLeaseId).SystemRevokeLeaseRequest(systemRevokeLeaseRequest).Execute()
+> UpdateSystemRevokeUrlLeaseId(ctx, urlLeaseId).SystemRevokeLeaseRequest(systemRevokeLeaseRequest).Execute()
 
 Revokes a lease immediately.
 
@@ -8432,7 +8432,7 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemRevokeLeaseRequest := NewSystemRevokeLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRevokeUrlLeaseId(context.Background(), urlLeaseId, systemRevokeLeaseRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRevokeUrlLeaseId(context.Background(), urlLeaseId, systemRevokeLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8463,9 +8463,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysRotate
+## UpdateSystemRotate
 
-> PostSysRotate(ctx).Execute()
+> UpdateSystemRotate(ctx).Execute()
 
 Rotates the backend encryption key used to persist data.
 
@@ -8491,7 +8491,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysRotate(context.Background())
+	resp, err := client.WithToken("my-token").System.UpdateSystemRotate(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8514,9 +8514,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostSysRotateConfig
+## UpdateSystemRotateConfig
 
-> PostSysRotateConfig(ctx).SystemRotateConfigRequest(systemRotateConfigRequest).Execute()
+> UpdateSystemRotateConfig(ctx).SystemRotateConfigRequest(systemRotateConfigRequest).Execute()
 
 
 
@@ -8543,7 +8543,7 @@ func main() {
 
 
 	systemRotateConfigRequest := NewSystemRotateConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRotateConfig(context.Background(), systemRotateConfigRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemRotateConfig(context.Background(), systemRotateConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8569,9 +8569,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysSeal
+## UpdateSystemSeal
 
-> PostSysSeal(ctx).Execute()
+> UpdateSystemSeal(ctx).Execute()
 
 Seal the Vault.
 
@@ -8597,7 +8597,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysSeal(context.Background())
+	resp, err := client.WithToken("my-token").System.UpdateSystemSeal(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8620,9 +8620,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostSysStepDown
+## UpdateSystemStepDown
 
-> PostSysStepDown(ctx).Execute()
+> UpdateSystemStepDown(ctx).Execute()
 
 Cause the node to give up active status.
 
@@ -8650,7 +8650,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysStepDown(context.Background())
+	resp, err := client.WithToken("my-token").System.UpdateSystemStepDown(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8673,9 +8673,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostSysToolsHash
+## UpdateSystemToolsHash
 
-> PostSysToolsHash(ctx).SystemToolsHashRequest(systemToolsHashRequest).Execute()
+> UpdateSystemToolsHash(ctx).SystemToolsHashRequest(systemToolsHashRequest).Execute()
 
 Generate a hash sum for input data
 
@@ -8702,7 +8702,7 @@ func main() {
 
 
 	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsHash(context.Background(), systemToolsHashRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemToolsHash(context.Background(), systemToolsHashRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8728,9 +8728,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysToolsHashUrlalgorithm
+## UpdateSystemToolsHashUrlalgorithm
 
-> PostSysToolsHashUrlalgorithm(ctx, urlalgorithm).SystemToolsHashRequest(systemToolsHashRequest).Execute()
+> UpdateSystemToolsHashUrlalgorithm(ctx, urlalgorithm).SystemToolsHashRequest(systemToolsHashRequest).Execute()
 
 Generate a hash sum for input data
 
@@ -8758,7 +8758,7 @@ func main() {
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 
 	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsHashUrlalgorithm(context.Background(), urlalgorithm, systemToolsHashRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemToolsHashUrlalgorithm(context.Background(), urlalgorithm, systemToolsHashRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8789,9 +8789,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysToolsRandom
+## UpdateSystemToolsRandom
 
-> PostSysToolsRandom(ctx).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+> UpdateSystemToolsRandom(ctx).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
 
 Generate random bytes
 
@@ -8818,7 +8818,7 @@ func main() {
 
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandom(context.Background(), systemToolsRandomRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemToolsRandom(context.Background(), systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8844,9 +8844,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysToolsRandomSource
+## UpdateSystemToolsRandomSource
 
-> PostSysToolsRandomSource(ctx, source).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+> UpdateSystemToolsRandomSource(ctx, source).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
 
 Generate random bytes
 
@@ -8874,7 +8874,7 @@ func main() {
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandomSource(context.Background(), source, systemToolsRandomRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemToolsRandomSource(context.Background(), source, systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8905,9 +8905,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysToolsRandomSourceUrlbytes
+## UpdateSystemToolsRandomSourceUrlbytes
 
-> PostSysToolsRandomSourceUrlbytes(ctx, source, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+> UpdateSystemToolsRandomSourceUrlbytes(ctx, source, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
 
 Generate random bytes
 
@@ -8936,7 +8936,7 @@ func main() {
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes, systemToolsRandomRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemToolsRandomSourceUrlbytes(context.Background(), source, urlbytes, systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8969,9 +8969,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysToolsRandomUrlbytes
+## UpdateSystemToolsRandomUrlbytes
 
-> PostSysToolsRandomUrlbytes(ctx, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+> UpdateSystemToolsRandomUrlbytes(ctx, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
 
 Generate random bytes
 
@@ -8999,7 +8999,7 @@ func main() {
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandomUrlbytes(context.Background(), urlbytes, systemToolsRandomRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemToolsRandomUrlbytes(context.Background(), urlbytes, systemToolsRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9030,9 +9030,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysUnseal
+## UpdateSystemUnseal
 
-> PostSysUnseal(ctx).SystemUnsealRequest(systemUnsealRequest).Execute()
+> UpdateSystemUnseal(ctx).SystemUnsealRequest(systemUnsealRequest).Execute()
 
 Unseal the Vault.
 
@@ -9059,7 +9059,7 @@ func main() {
 
 
 	systemUnsealRequest := NewSystemUnsealRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysUnseal(context.Background(), systemUnsealRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemUnseal(context.Background(), systemUnsealRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9085,9 +9085,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysWrappingLookup
+## UpdateSystemWrappingLookup
 
-> PostSysWrappingLookup(ctx).SystemWrappingLookupRequest(systemWrappingLookupRequest).Execute()
+> UpdateSystemWrappingLookup(ctx).SystemWrappingLookupRequest(systemWrappingLookupRequest).Execute()
 
 Look up wrapping properties for the given token.
 
@@ -9114,7 +9114,7 @@ func main() {
 
 
 	systemWrappingLookupRequest := NewSystemWrappingLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysWrappingLookup(context.Background(), systemWrappingLookupRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemWrappingLookup(context.Background(), systemWrappingLookupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9140,9 +9140,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysWrappingRewrap
+## UpdateSystemWrappingRewrap
 
-> PostSysWrappingRewrap(ctx).SystemWrappingRewrapRequest(systemWrappingRewrapRequest).Execute()
+> UpdateSystemWrappingRewrap(ctx).SystemWrappingRewrapRequest(systemWrappingRewrapRequest).Execute()
 
 Rotates a response-wrapped token.
 
@@ -9169,7 +9169,7 @@ func main() {
 
 
 	systemWrappingRewrapRequest := NewSystemWrappingRewrapRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysWrappingRewrap(context.Background(), systemWrappingRewrapRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemWrappingRewrap(context.Background(), systemWrappingRewrapRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9195,9 +9195,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysWrappingUnwrap
+## UpdateSystemWrappingUnwrap
 
-> PostSysWrappingUnwrap(ctx).SystemWrappingUnwrapRequest(systemWrappingUnwrapRequest).Execute()
+> UpdateSystemWrappingUnwrap(ctx).SystemWrappingUnwrapRequest(systemWrappingUnwrapRequest).Execute()
 
 Unwraps a response-wrapped token.
 
@@ -9224,7 +9224,7 @@ func main() {
 
 
 	systemWrappingUnwrapRequest := NewSystemWrappingUnwrapRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysWrappingUnwrap(context.Background(), systemWrappingUnwrapRequest)
+	resp, err := client.WithToken("my-token").System.UpdateSystemWrappingUnwrap(context.Background(), systemWrappingUnwrapRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9250,9 +9250,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSysWrappingWrap
+## UpdateSystemWrappingWrap
 
-> PostSysWrappingWrap(ctx).Execute()
+> UpdateSystemWrappingWrap(ctx).Execute()
 
 Response-wraps an arbitrary JSON object.
 
@@ -9278,7 +9278,7 @@ func main() {
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysWrappingWrap(context.Background())
+	resp, err := client.WithToken("my-token").System.UpdateSystemWrappingWrap(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}

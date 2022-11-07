@@ -2,333 +2,179 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAuthAlicloudRoleRole**](Auth.md#DeleteAuthAlicloudRoleRole) | **Delete** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**DeleteAuthApproleRoleRoleName**](Auth.md#DeleteAuthApproleRoleRoleName) | **Delete** /auth/approle/role/{role_name} | Register an role with the backend.
-[**DeleteAuthApproleRoleRoleNameBindSecretId**](Auth.md#DeleteAuthApproleRoleRoleNameBindSecretId) | **Delete** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**DeleteAuthApproleRoleRoleNameBoundCidrList**](Auth.md#DeleteAuthApproleRoleRoleNameBoundCidrList) | **Delete** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**DeleteAuthApproleRoleRoleNamePeriod**](Auth.md#DeleteAuthApproleRoleRoleNamePeriod) | **Delete** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**DeleteAuthApproleRoleRoleNamePolicies**](Auth.md#DeleteAuthApproleRoleRoleNamePolicies) | **Delete** /auth/approle/role/{role_name}/policies | Policies of the role.
-[**DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Delete** /auth/approle/role/{role_name}/secret-id-accessor/destroy | 
-[**DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Delete** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**DeleteAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdDestroy) | **Delete** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
-[**DeleteAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdNumUses) | **Delete** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**DeleteAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
-[**DeleteAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameTokenBoundCidrs) | **Delete** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**DeleteAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenMaxTtl) | **Delete** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**DeleteAuthApproleRoleRoleNameTokenNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameTokenNumUses) | **Delete** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**DeleteAuthApproleRoleRoleNameTokenTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenTtl) | **Delete** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-[**DeleteAuthAwsConfigCertificateCertName**](Auth.md#DeleteAuthAwsConfigCertificateCertName) | **Delete** /auth/aws/config/certificate/{cert_name} | 
-[**DeleteAuthAwsConfigClient**](Auth.md#DeleteAuthAwsConfigClient) | **Delete** /auth/aws/config/client | 
-[**DeleteAuthAwsConfigStsAccountId**](Auth.md#DeleteAuthAwsConfigStsAccountId) | **Delete** /auth/aws/config/sts/{account_id} | 
-[**DeleteAuthAwsConfigTidyIdentityAccesslist**](Auth.md#DeleteAuthAwsConfigTidyIdentityAccesslist) | **Delete** /auth/aws/config/tidy/identity-accesslist | 
-[**DeleteAuthAwsConfigTidyIdentityWhitelist**](Auth.md#DeleteAuthAwsConfigTidyIdentityWhitelist) | **Delete** /auth/aws/config/tidy/identity-whitelist | 
-[**DeleteAuthAwsConfigTidyRoletagBlacklist**](Auth.md#DeleteAuthAwsConfigTidyRoletagBlacklist) | **Delete** /auth/aws/config/tidy/roletag-blacklist | 
-[**DeleteAuthAwsConfigTidyRoletagDenylist**](Auth.md#DeleteAuthAwsConfigTidyRoletagDenylist) | **Delete** /auth/aws/config/tidy/roletag-denylist | 
-[**DeleteAuthAwsIdentityAccesslistInstanceId**](Auth.md#DeleteAuthAwsIdentityAccesslistInstanceId) | **Delete** /auth/aws/identity-accesslist/{instance_id} | 
-[**DeleteAuthAwsIdentityWhitelistInstanceId**](Auth.md#DeleteAuthAwsIdentityWhitelistInstanceId) | **Delete** /auth/aws/identity-whitelist/{instance_id} | 
-[**DeleteAuthAwsRoleRole**](Auth.md#DeleteAuthAwsRoleRole) | **Delete** /auth/aws/role/{role} | 
-[**DeleteAuthAwsRoletagBlacklistRoleTag**](Auth.md#DeleteAuthAwsRoletagBlacklistRoleTag) | **Delete** /auth/aws/roletag-blacklist/{role_tag} | 
-[**DeleteAuthAwsRoletagDenylistRoleTag**](Auth.md#DeleteAuthAwsRoletagDenylistRoleTag) | **Delete** /auth/aws/roletag-denylist/{role_tag} | 
-[**DeleteAuthAzureConfig**](Auth.md#DeleteAuthAzureConfig) | **Delete** /auth/azure/config | 
-[**DeleteAuthAzureRoleName**](Auth.md#DeleteAuthAzureRoleName) | **Delete** /auth/azure/role/{name} | 
-[**DeleteAuthCertCertsName**](Auth.md#DeleteAuthCertCertsName) | **Delete** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
-[**DeleteAuthCertCrlsName**](Auth.md#DeleteAuthCertCrlsName) | **Delete** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
-[**DeleteAuthCfConfig**](Auth.md#DeleteAuthCfConfig) | **Delete** /auth/cf/config | 
-[**DeleteAuthCfRolesRole**](Auth.md#DeleteAuthCfRolesRole) | **Delete** /auth/cf/roles/{role} | 
-[**DeleteAuthGcpRoleName**](Auth.md#DeleteAuthGcpRoleName) | **Delete** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
-[**DeleteAuthGithubMapTeamsKey**](Auth.md#DeleteAuthGithubMapTeamsKey) | **Delete** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
-[**DeleteAuthGithubMapUsersKey**](Auth.md#DeleteAuthGithubMapUsersKey) | **Delete** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**DeleteAuthJwtRoleName**](Auth.md#DeleteAuthJwtRoleName) | **Delete** /auth/jwt/role/{name} | Delete an existing role.
-[**DeleteAuthKerberosGroupsName**](Auth.md#DeleteAuthKerberosGroupsName) | **Delete** /auth/kerberos/groups/{name} | 
-[**DeleteAuthKubernetesRoleName**](Auth.md#DeleteAuthKubernetesRoleName) | **Delete** /auth/kubernetes/role/{name} | Register an role with the backend.
-[**DeleteAuthLdapGroupsName**](Auth.md#DeleteAuthLdapGroupsName) | **Delete** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
-[**DeleteAuthLdapUsersName**](Auth.md#DeleteAuthLdapUsersName) | **Delete** /auth/ldap/users/{name} | Manage users allowed to authenticate.
-[**DeleteAuthOciConfig**](Auth.md#DeleteAuthOciConfig) | **Delete** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
-[**DeleteAuthOciRoleRole**](Auth.md#DeleteAuthOciRoleRole) | **Delete** /auth/oci/role/{role} | Create a role and associate policies to it.
-[**DeleteAuthOidcRoleName**](Auth.md#DeleteAuthOidcRoleName) | **Delete** /auth/oidc/role/{name} | Delete an existing role.
-[**DeleteAuthOktaGroupsName**](Auth.md#DeleteAuthOktaGroupsName) | **Delete** /auth/okta/groups/{name} | Manage users allowed to authenticate.
-[**DeleteAuthOktaUsersName**](Auth.md#DeleteAuthOktaUsersName) | **Delete** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
-[**DeleteAuthRadiusUsersName**](Auth.md#DeleteAuthRadiusUsersName) | **Delete** /auth/radius/users/{name} | Manage users allowed to authenticate.
-[**DeleteAuthTokenRolesRoleName**](Auth.md#DeleteAuthTokenRolesRoleName) | **Delete** /auth/token/roles/{role_name} | 
-[**DeleteAuthUserpassUsersUsername**](Auth.md#DeleteAuthUserpassUsersUsername) | **Delete** /auth/userpass/users/{username} | Manage users allowed to authenticate.
-[**GetAuthAlicloudRole**](Auth.md#GetAuthAlicloudRole) | **Get** /auth/alicloud/role | Lists all the roles that are registered with Vault.
-[**GetAuthAlicloudRoleRole**](Auth.md#GetAuthAlicloudRoleRole) | **Get** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**GetAuthAlicloudRoles**](Auth.md#GetAuthAlicloudRoles) | **Get** /auth/alicloud/roles | Lists all the roles that are registered with Vault.
-[**GetAuthApproleRole**](Auth.md#GetAuthApproleRole) | **Get** /auth/approle/role | Lists all the roles registered with the backend.
-[**GetAuthApproleRoleRoleName**](Auth.md#GetAuthApproleRoleRoleName) | **Get** /auth/approle/role/{role_name} | Register an role with the backend.
-[**GetAuthApproleRoleRoleNameBindSecretId**](Auth.md#GetAuthApproleRoleRoleNameBindSecretId) | **Get** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**GetAuthApproleRoleRoleNameBoundCidrList**](Auth.md#GetAuthApproleRoleRoleNameBoundCidrList) | **Get** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**GetAuthApproleRoleRoleNameLocalSecretIds**](Auth.md#GetAuthApproleRoleRoleNameLocalSecretIds) | **Get** /auth/approle/role/{role_name}/local-secret-ids | Enables cluster local secret IDs
-[**GetAuthApproleRoleRoleNamePeriod**](Auth.md#GetAuthApproleRoleRoleNamePeriod) | **Get** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**GetAuthApproleRoleRoleNamePolicies**](Auth.md#GetAuthApproleRoleRoleNamePolicies) | **Get** /auth/approle/role/{role_name}/policies | Policies of the role.
-[**GetAuthApproleRoleRoleNameRoleId**](Auth.md#GetAuthApproleRoleRoleNameRoleId) | **Get** /auth/approle/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
-[**GetAuthApproleRoleRoleNameSecretId**](Auth.md#GetAuthApproleRoleRoleNameSecretId) | **Get** /auth/approle/role/{role_name}/secret-id | Generate a SecretID against this role.
-[**GetAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Get** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**GetAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#GetAuthApproleRoleRoleNameSecretIdNumUses) | **Get** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**GetAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#GetAuthApproleRoleRoleNameSecretIdTtl) | **Get** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
-[**GetAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameTokenBoundCidrs) | **Get** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**GetAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenMaxTtl) | **Get** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**GetAuthApproleRoleRoleNameTokenNumUses**](Auth.md#GetAuthApproleRoleRoleNameTokenNumUses) | **Get** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**GetAuthApproleRoleRoleNameTokenTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenTtl) | **Get** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-[**GetAuthAwsConfigCertificateCertName**](Auth.md#GetAuthAwsConfigCertificateCertName) | **Get** /auth/aws/config/certificate/{cert_name} | 
-[**GetAuthAwsConfigCertificates**](Auth.md#GetAuthAwsConfigCertificates) | **Get** /auth/aws/config/certificates | 
-[**GetAuthAwsConfigClient**](Auth.md#GetAuthAwsConfigClient) | **Get** /auth/aws/config/client | 
-[**GetAuthAwsConfigIdentity**](Auth.md#GetAuthAwsConfigIdentity) | **Get** /auth/aws/config/identity | 
-[**GetAuthAwsConfigSts**](Auth.md#GetAuthAwsConfigSts) | **Get** /auth/aws/config/sts | 
-[**GetAuthAwsConfigStsAccountId**](Auth.md#GetAuthAwsConfigStsAccountId) | **Get** /auth/aws/config/sts/{account_id} | 
-[**GetAuthAwsConfigTidyIdentityAccesslist**](Auth.md#GetAuthAwsConfigTidyIdentityAccesslist) | **Get** /auth/aws/config/tidy/identity-accesslist | 
-[**GetAuthAwsConfigTidyIdentityWhitelist**](Auth.md#GetAuthAwsConfigTidyIdentityWhitelist) | **Get** /auth/aws/config/tidy/identity-whitelist | 
-[**GetAuthAwsConfigTidyRoletagBlacklist**](Auth.md#GetAuthAwsConfigTidyRoletagBlacklist) | **Get** /auth/aws/config/tidy/roletag-blacklist | 
-[**GetAuthAwsConfigTidyRoletagDenylist**](Auth.md#GetAuthAwsConfigTidyRoletagDenylist) | **Get** /auth/aws/config/tidy/roletag-denylist | 
-[**GetAuthAwsIdentityAccesslist**](Auth.md#GetAuthAwsIdentityAccesslist) | **Get** /auth/aws/identity-accesslist | 
-[**GetAuthAwsIdentityAccesslistInstanceId**](Auth.md#GetAuthAwsIdentityAccesslistInstanceId) | **Get** /auth/aws/identity-accesslist/{instance_id} | 
-[**GetAuthAwsIdentityWhitelist**](Auth.md#GetAuthAwsIdentityWhitelist) | **Get** /auth/aws/identity-whitelist | 
-[**GetAuthAwsIdentityWhitelistInstanceId**](Auth.md#GetAuthAwsIdentityWhitelistInstanceId) | **Get** /auth/aws/identity-whitelist/{instance_id} | 
-[**GetAuthAwsRole**](Auth.md#GetAuthAwsRole) | **Get** /auth/aws/role | 
-[**GetAuthAwsRoleRole**](Auth.md#GetAuthAwsRoleRole) | **Get** /auth/aws/role/{role} | 
-[**GetAuthAwsRoles**](Auth.md#GetAuthAwsRoles) | **Get** /auth/aws/roles | 
-[**GetAuthAwsRoletagBlacklist**](Auth.md#GetAuthAwsRoletagBlacklist) | **Get** /auth/aws/roletag-blacklist | 
-[**GetAuthAwsRoletagBlacklistRoleTag**](Auth.md#GetAuthAwsRoletagBlacklistRoleTag) | **Get** /auth/aws/roletag-blacklist/{role_tag} | 
-[**GetAuthAwsRoletagDenylist**](Auth.md#GetAuthAwsRoletagDenylist) | **Get** /auth/aws/roletag-denylist | 
-[**GetAuthAwsRoletagDenylistRoleTag**](Auth.md#GetAuthAwsRoletagDenylistRoleTag) | **Get** /auth/aws/roletag-denylist/{role_tag} | 
-[**GetAuthAzureConfig**](Auth.md#GetAuthAzureConfig) | **Get** /auth/azure/config | 
-[**GetAuthAzureRole**](Auth.md#GetAuthAzureRole) | **Get** /auth/azure/role | 
-[**GetAuthAzureRoleName**](Auth.md#GetAuthAzureRoleName) | **Get** /auth/azure/role/{name} | 
-[**GetAuthCentrifyConfig**](Auth.md#GetAuthCentrifyConfig) | **Get** /auth/centrify/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-[**GetAuthCertCerts**](Auth.md#GetAuthCertCerts) | **Get** /auth/cert/certs | Manage trusted certificates used for authentication.
-[**GetAuthCertCertsName**](Auth.md#GetAuthCertCertsName) | **Get** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
-[**GetAuthCertConfig**](Auth.md#GetAuthCertConfig) | **Get** /auth/cert/config | 
-[**GetAuthCertCrlsName**](Auth.md#GetAuthCertCrlsName) | **Get** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
-[**GetAuthCfConfig**](Auth.md#GetAuthCfConfig) | **Get** /auth/cf/config | 
-[**GetAuthCfRoles**](Auth.md#GetAuthCfRoles) | **Get** /auth/cf/roles | 
-[**GetAuthCfRolesRole**](Auth.md#GetAuthCfRolesRole) | **Get** /auth/cf/roles/{role} | 
-[**GetAuthGcpConfig**](Auth.md#GetAuthGcpConfig) | **Get** /auth/gcp/config | Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-[**GetAuthGcpRole**](Auth.md#GetAuthGcpRole) | **Get** /auth/gcp/role | Lists all the roles that are registered with Vault.
-[**GetAuthGcpRoleName**](Auth.md#GetAuthGcpRoleName) | **Get** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
-[**GetAuthGcpRoles**](Auth.md#GetAuthGcpRoles) | **Get** /auth/gcp/roles | Lists all the roles that are registered with Vault.
-[**GetAuthGithubConfig**](Auth.md#GetAuthGithubConfig) | **Get** /auth/github/config | 
-[**GetAuthGithubMapTeams**](Auth.md#GetAuthGithubMapTeams) | **Get** /auth/github/map/teams | Read mappings for teams
-[**GetAuthGithubMapTeamsKey**](Auth.md#GetAuthGithubMapTeamsKey) | **Get** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
-[**GetAuthGithubMapUsers**](Auth.md#GetAuthGithubMapUsers) | **Get** /auth/github/map/users | Read mappings for users
-[**GetAuthGithubMapUsersKey**](Auth.md#GetAuthGithubMapUsersKey) | **Get** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**GetAuthJwtConfig**](Auth.md#GetAuthJwtConfig) | **Get** /auth/jwt/config | Read the current JWT authentication backend configuration.
-[**GetAuthJwtOidcCallback**](Auth.md#GetAuthJwtOidcCallback) | **Get** /auth/jwt/oidc/callback | Callback endpoint to complete an OIDC login.
-[**GetAuthJwtRole**](Auth.md#GetAuthJwtRole) | **Get** /auth/jwt/role | Lists all the roles registered with the backend.
-[**GetAuthJwtRoleName**](Auth.md#GetAuthJwtRoleName) | **Get** /auth/jwt/role/{name} | Read an existing role.
-[**GetAuthKerberosConfig**](Auth.md#GetAuthKerberosConfig) | **Get** /auth/kerberos/config | 
-[**GetAuthKerberosConfigLdap**](Auth.md#GetAuthKerberosConfigLdap) | **Get** /auth/kerberos/config/ldap | 
-[**GetAuthKerberosGroups**](Auth.md#GetAuthKerberosGroups) | **Get** /auth/kerberos/groups | 
-[**GetAuthKerberosGroupsName**](Auth.md#GetAuthKerberosGroupsName) | **Get** /auth/kerberos/groups/{name} | 
-[**GetAuthKerberosLogin**](Auth.md#GetAuthKerberosLogin) | **Get** /auth/kerberos/login | 
-[**GetAuthKubernetesConfig**](Auth.md#GetAuthKubernetesConfig) | **Get** /auth/kubernetes/config | Configures the JWT Public Key and Kubernetes API information.
-[**GetAuthKubernetesRole**](Auth.md#GetAuthKubernetesRole) | **Get** /auth/kubernetes/role | Lists all the roles registered with the backend.
-[**GetAuthKubernetesRoleName**](Auth.md#GetAuthKubernetesRoleName) | **Get** /auth/kubernetes/role/{name} | Register an role with the backend.
-[**GetAuthLdapConfig**](Auth.md#GetAuthLdapConfig) | **Get** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
-[**GetAuthLdapGroups**](Auth.md#GetAuthLdapGroups) | **Get** /auth/ldap/groups | Manage additional groups for users allowed to authenticate.
-[**GetAuthLdapGroupsName**](Auth.md#GetAuthLdapGroupsName) | **Get** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
-[**GetAuthLdapUsers**](Auth.md#GetAuthLdapUsers) | **Get** /auth/ldap/users | Manage users allowed to authenticate.
-[**GetAuthLdapUsersName**](Auth.md#GetAuthLdapUsersName) | **Get** /auth/ldap/users/{name} | Manage users allowed to authenticate.
-[**GetAuthOciConfig**](Auth.md#GetAuthOciConfig) | **Get** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
-[**GetAuthOciRole**](Auth.md#GetAuthOciRole) | **Get** /auth/oci/role | Lists all the roles that are registered with Vault.
-[**GetAuthOciRoleRole**](Auth.md#GetAuthOciRoleRole) | **Get** /auth/oci/role/{role} | Create a role and associate policies to it.
-[**GetAuthOidcConfig**](Auth.md#GetAuthOidcConfig) | **Get** /auth/oidc/config | Read the current JWT authentication backend configuration.
-[**GetAuthOidcOidcCallback**](Auth.md#GetAuthOidcOidcCallback) | **Get** /auth/oidc/oidc/callback | Callback endpoint to complete an OIDC login.
-[**GetAuthOidcRole**](Auth.md#GetAuthOidcRole) | **Get** /auth/oidc/role | Lists all the roles registered with the backend.
-[**GetAuthOidcRoleName**](Auth.md#GetAuthOidcRoleName) | **Get** /auth/oidc/role/{name} | Read an existing role.
-[**GetAuthOktaConfig**](Auth.md#GetAuthOktaConfig) | **Get** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-[**GetAuthOktaGroups**](Auth.md#GetAuthOktaGroups) | **Get** /auth/okta/groups | Manage users allowed to authenticate.
-[**GetAuthOktaGroupsName**](Auth.md#GetAuthOktaGroupsName) | **Get** /auth/okta/groups/{name} | Manage users allowed to authenticate.
-[**GetAuthOktaUsers**](Auth.md#GetAuthOktaUsers) | **Get** /auth/okta/users | Manage additional groups for users allowed to authenticate.
-[**GetAuthOktaUsersName**](Auth.md#GetAuthOktaUsersName) | **Get** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
-[**GetAuthOktaVerifyNonce**](Auth.md#GetAuthOktaVerifyNonce) | **Get** /auth/okta/verify/{nonce} | 
-[**GetAuthRadiusConfig**](Auth.md#GetAuthRadiusConfig) | **Get** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
-[**GetAuthRadiusUsers**](Auth.md#GetAuthRadiusUsers) | **Get** /auth/radius/users | Manage users allowed to authenticate.
-[**GetAuthRadiusUsersName**](Auth.md#GetAuthRadiusUsersName) | **Get** /auth/radius/users/{name} | Manage users allowed to authenticate.
-[**GetAuthTokenAccessors**](Auth.md#GetAuthTokenAccessors) | **Get** /auth/token/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#39;sudo&#39; capability in addition to &#39;list&#39;.
-[**GetAuthTokenLookup**](Auth.md#GetAuthTokenLookup) | **Get** /auth/token/lookup | This endpoint will lookup a token and its properties.
-[**GetAuthTokenLookupSelf**](Auth.md#GetAuthTokenLookupSelf) | **Get** /auth/token/lookup-self | This endpoint will lookup a token and its properties.
-[**GetAuthTokenRoles**](Auth.md#GetAuthTokenRoles) | **Get** /auth/token/roles | This endpoint lists configured roles.
-[**GetAuthTokenRolesRoleName**](Auth.md#GetAuthTokenRolesRoleName) | **Get** /auth/token/roles/{role_name} | 
-[**GetAuthUserpassUsers**](Auth.md#GetAuthUserpassUsers) | **Get** /auth/userpass/users | Manage users allowed to authenticate.
-[**GetAuthUserpassUsersUsername**](Auth.md#GetAuthUserpassUsersUsername) | **Get** /auth/userpass/users/{username} | Manage users allowed to authenticate.
-[**PostAuthAlicloudLogin**](Auth.md#PostAuthAlicloudLogin) | **Post** /auth/alicloud/login | Authenticates an RAM entity with Vault.
-[**PostAuthAlicloudRoleRole**](Auth.md#PostAuthAlicloudRoleRole) | **Post** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**PostAuthApproleLogin**](Auth.md#PostAuthApproleLogin) | **Post** /auth/approle/login | 
-[**PostAuthApproleRoleRoleName**](Auth.md#PostAuthApproleRoleRoleName) | **Post** /auth/approle/role/{role_name} | Register an role with the backend.
-[**PostAuthApproleRoleRoleNameBindSecretId**](Auth.md#PostAuthApproleRoleRoleNameBindSecretId) | **Post** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**PostAuthApproleRoleRoleNameBoundCidrList**](Auth.md#PostAuthApproleRoleRoleNameBoundCidrList) | **Post** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**PostAuthApproleRoleRoleNameCustomSecretId**](Auth.md#PostAuthApproleRoleRoleNameCustomSecretId) | **Post** /auth/approle/role/{role_name}/custom-secret-id | Assign a SecretID of choice against the role.
-[**PostAuthApproleRoleRoleNamePeriod**](Auth.md#PostAuthApproleRoleRoleNamePeriod) | **Post** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**PostAuthApproleRoleRoleNamePolicies**](Auth.md#PostAuthApproleRoleRoleNamePolicies) | **Post** /auth/approle/role/{role_name}/policies | Policies of the role.
-[**PostAuthApproleRoleRoleNameRoleId**](Auth.md#PostAuthApproleRoleRoleNameRoleId) | **Post** /auth/approle/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
-[**PostAuthApproleRoleRoleNameSecretId**](Auth.md#PostAuthApproleRoleRoleNameSecretId) | **Post** /auth/approle/role/{role_name}/secret-id | Generate a SecretID against this role.
-[**PostAuthApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Post** /auth/approle/role/{role_name}/secret-id-accessor/destroy | 
-[**PostAuthApproleRoleRoleNameSecretIdAccessorLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdAccessorLookup) | **Post** /auth/approle/role/{role_name}/secret-id-accessor/lookup | 
-[**PostAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Post** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**PostAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdDestroy) | **Post** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
-[**PostAuthApproleRoleRoleNameSecretIdLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdLookup) | **Post** /auth/approle/role/{role_name}/secret-id/lookup | Read the properties of an issued secret_id
-[**PostAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#PostAuthApproleRoleRoleNameSecretIdNumUses) | **Post** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**PostAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#PostAuthApproleRoleRoleNameSecretIdTtl) | **Post** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
-[**PostAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameTokenBoundCidrs) | **Post** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**PostAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenMaxTtl) | **Post** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**PostAuthApproleRoleRoleNameTokenNumUses**](Auth.md#PostAuthApproleRoleRoleNameTokenNumUses) | **Post** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**PostAuthApproleRoleRoleNameTokenTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenTtl) | **Post** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-[**PostAuthApproleTidySecretId**](Auth.md#PostAuthApproleTidySecretId) | **Post** /auth/approle/tidy/secret-id | Trigger the clean-up of expired SecretID entries.
-[**PostAuthAwsConfigCertificateCertName**](Auth.md#PostAuthAwsConfigCertificateCertName) | **Post** /auth/aws/config/certificate/{cert_name} | 
-[**PostAuthAwsConfigClient**](Auth.md#PostAuthAwsConfigClient) | **Post** /auth/aws/config/client | 
-[**PostAuthAwsConfigIdentity**](Auth.md#PostAuthAwsConfigIdentity) | **Post** /auth/aws/config/identity | 
-[**PostAuthAwsConfigRotateRoot**](Auth.md#PostAuthAwsConfigRotateRoot) | **Post** /auth/aws/config/rotate-root | 
-[**PostAuthAwsConfigStsAccountId**](Auth.md#PostAuthAwsConfigStsAccountId) | **Post** /auth/aws/config/sts/{account_id} | 
-[**PostAuthAwsConfigTidyIdentityAccesslist**](Auth.md#PostAuthAwsConfigTidyIdentityAccesslist) | **Post** /auth/aws/config/tidy/identity-accesslist | 
-[**PostAuthAwsConfigTidyIdentityWhitelist**](Auth.md#PostAuthAwsConfigTidyIdentityWhitelist) | **Post** /auth/aws/config/tidy/identity-whitelist | 
-[**PostAuthAwsConfigTidyRoletagBlacklist**](Auth.md#PostAuthAwsConfigTidyRoletagBlacklist) | **Post** /auth/aws/config/tidy/roletag-blacklist | 
-[**PostAuthAwsConfigTidyRoletagDenylist**](Auth.md#PostAuthAwsConfigTidyRoletagDenylist) | **Post** /auth/aws/config/tidy/roletag-denylist | 
-[**PostAuthAwsLogin**](Auth.md#PostAuthAwsLogin) | **Post** /auth/aws/login | 
-[**PostAuthAwsRoleRole**](Auth.md#PostAuthAwsRoleRole) | **Post** /auth/aws/role/{role} | 
-[**PostAuthAwsRoleRoleTag**](Auth.md#PostAuthAwsRoleRoleTag) | **Post** /auth/aws/role/{role}/tag | 
-[**PostAuthAwsRoletagBlacklistRoleTag**](Auth.md#PostAuthAwsRoletagBlacklistRoleTag) | **Post** /auth/aws/roletag-blacklist/{role_tag} | 
-[**PostAuthAwsRoletagDenylistRoleTag**](Auth.md#PostAuthAwsRoletagDenylistRoleTag) | **Post** /auth/aws/roletag-denylist/{role_tag} | 
-[**PostAuthAwsTidyIdentityAccesslist**](Auth.md#PostAuthAwsTidyIdentityAccesslist) | **Post** /auth/aws/tidy/identity-accesslist | 
-[**PostAuthAwsTidyIdentityWhitelist**](Auth.md#PostAuthAwsTidyIdentityWhitelist) | **Post** /auth/aws/tidy/identity-whitelist | 
-[**PostAuthAwsTidyRoletagBlacklist**](Auth.md#PostAuthAwsTidyRoletagBlacklist) | **Post** /auth/aws/tidy/roletag-blacklist | 
-[**PostAuthAwsTidyRoletagDenylist**](Auth.md#PostAuthAwsTidyRoletagDenylist) | **Post** /auth/aws/tidy/roletag-denylist | 
-[**PostAuthAzureConfig**](Auth.md#PostAuthAzureConfig) | **Post** /auth/azure/config | 
-[**PostAuthAzureLogin**](Auth.md#PostAuthAzureLogin) | **Post** /auth/azure/login | 
-[**PostAuthAzureRoleName**](Auth.md#PostAuthAzureRoleName) | **Post** /auth/azure/role/{name} | 
-[**PostAuthCentrifyConfig**](Auth.md#PostAuthCentrifyConfig) | **Post** /auth/centrify/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-[**PostAuthCentrifyLogin**](Auth.md#PostAuthCentrifyLogin) | **Post** /auth/centrify/login | Log in with a username and password.
-[**PostAuthCertCertsName**](Auth.md#PostAuthCertCertsName) | **Post** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
-[**PostAuthCertConfig**](Auth.md#PostAuthCertConfig) | **Post** /auth/cert/config | 
-[**PostAuthCertCrlsName**](Auth.md#PostAuthCertCrlsName) | **Post** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
-[**PostAuthCertLogin**](Auth.md#PostAuthCertLogin) | **Post** /auth/cert/login | 
-[**PostAuthCfConfig**](Auth.md#PostAuthCfConfig) | **Post** /auth/cf/config | 
-[**PostAuthCfLogin**](Auth.md#PostAuthCfLogin) | **Post** /auth/cf/login | 
-[**PostAuthCfRolesRole**](Auth.md#PostAuthCfRolesRole) | **Post** /auth/cf/roles/{role} | 
-[**PostAuthGcpConfig**](Auth.md#PostAuthGcpConfig) | **Post** /auth/gcp/config | Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-[**PostAuthGcpLogin**](Auth.md#PostAuthGcpLogin) | **Post** /auth/gcp/login | 
-[**PostAuthGcpRoleName**](Auth.md#PostAuthGcpRoleName) | **Post** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
-[**PostAuthGcpRoleNameLabels**](Auth.md#PostAuthGcpRoleNameLabels) | **Post** /auth/gcp/role/{name}/labels | Add or remove labels for an existing &#39;gce&#39; role
-[**PostAuthGcpRoleNameServiceAccounts**](Auth.md#PostAuthGcpRoleNameServiceAccounts) | **Post** /auth/gcp/role/{name}/service-accounts | Add or remove service accounts for an existing &#x60;iam&#x60; role
-[**PostAuthGithubConfig**](Auth.md#PostAuthGithubConfig) | **Post** /auth/github/config | 
-[**PostAuthGithubLogin**](Auth.md#PostAuthGithubLogin) | **Post** /auth/github/login | 
-[**PostAuthGithubMapTeamsKey**](Auth.md#PostAuthGithubMapTeamsKey) | **Post** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
-[**PostAuthGithubMapUsersKey**](Auth.md#PostAuthGithubMapUsersKey) | **Post** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**PostAuthJwtConfig**](Auth.md#PostAuthJwtConfig) | **Post** /auth/jwt/config | Configure the JWT authentication backend.
-[**PostAuthJwtLogin**](Auth.md#PostAuthJwtLogin) | **Post** /auth/jwt/login | Authenticates to Vault using a JWT (or OIDC) token.
-[**PostAuthJwtOidcAuthUrl**](Auth.md#PostAuthJwtOidcAuthUrl) | **Post** /auth/jwt/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
-[**PostAuthJwtOidcCallback**](Auth.md#PostAuthJwtOidcCallback) | **Post** /auth/jwt/oidc/callback | Callback endpoint to handle form_posts.
-[**PostAuthJwtRoleName**](Auth.md#PostAuthJwtRoleName) | **Post** /auth/jwt/role/{name} | Register an role with the backend.
-[**PostAuthKerberosConfig**](Auth.md#PostAuthKerberosConfig) | **Post** /auth/kerberos/config | 
-[**PostAuthKerberosConfigLdap**](Auth.md#PostAuthKerberosConfigLdap) | **Post** /auth/kerberos/config/ldap | 
-[**PostAuthKerberosGroupsName**](Auth.md#PostAuthKerberosGroupsName) | **Post** /auth/kerberos/groups/{name} | 
-[**PostAuthKerberosLogin**](Auth.md#PostAuthKerberosLogin) | **Post** /auth/kerberos/login | 
-[**PostAuthKubernetesConfig**](Auth.md#PostAuthKubernetesConfig) | **Post** /auth/kubernetes/config | Configures the JWT Public Key and Kubernetes API information.
-[**PostAuthKubernetesLogin**](Auth.md#PostAuthKubernetesLogin) | **Post** /auth/kubernetes/login | Authenticates Kubernetes service accounts with Vault.
-[**PostAuthKubernetesRoleName**](Auth.md#PostAuthKubernetesRoleName) | **Post** /auth/kubernetes/role/{name} | Register an role with the backend.
-[**PostAuthLdapConfig**](Auth.md#PostAuthLdapConfig) | **Post** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
-[**PostAuthLdapGroupsName**](Auth.md#PostAuthLdapGroupsName) | **Post** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
-[**PostAuthLdapLoginUsername**](Auth.md#PostAuthLdapLoginUsername) | **Post** /auth/ldap/login/{username} | Log in with a username and password.
-[**PostAuthLdapUsersName**](Auth.md#PostAuthLdapUsersName) | **Post** /auth/ldap/users/{name} | Manage users allowed to authenticate.
-[**PostAuthOciConfig**](Auth.md#PostAuthOciConfig) | **Post** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
-[**PostAuthOciLoginRole**](Auth.md#PostAuthOciLoginRole) | **Post** /auth/oci/login/{role} | Authenticates to Vault using OCI credentials
-[**PostAuthOciRoleRole**](Auth.md#PostAuthOciRoleRole) | **Post** /auth/oci/role/{role} | Create a role and associate policies to it.
-[**PostAuthOidcConfig**](Auth.md#PostAuthOidcConfig) | **Post** /auth/oidc/config | Configure the JWT authentication backend.
-[**PostAuthOidcLogin**](Auth.md#PostAuthOidcLogin) | **Post** /auth/oidc/login | Authenticates to Vault using a JWT (or OIDC) token.
-[**PostAuthOidcOidcAuthUrl**](Auth.md#PostAuthOidcOidcAuthUrl) | **Post** /auth/oidc/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
-[**PostAuthOidcOidcCallback**](Auth.md#PostAuthOidcOidcCallback) | **Post** /auth/oidc/oidc/callback | Callback endpoint to handle form_posts.
-[**PostAuthOidcRoleName**](Auth.md#PostAuthOidcRoleName) | **Post** /auth/oidc/role/{name} | Register an role with the backend.
-[**PostAuthOktaConfig**](Auth.md#PostAuthOktaConfig) | **Post** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-[**PostAuthOktaGroupsName**](Auth.md#PostAuthOktaGroupsName) | **Post** /auth/okta/groups/{name} | Manage users allowed to authenticate.
-[**PostAuthOktaLoginUsername**](Auth.md#PostAuthOktaLoginUsername) | **Post** /auth/okta/login/{username} | Log in with a username and password.
-[**PostAuthOktaUsersName**](Auth.md#PostAuthOktaUsersName) | **Post** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
-[**PostAuthRadiusConfig**](Auth.md#PostAuthRadiusConfig) | **Post** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
-[**PostAuthRadiusLogin**](Auth.md#PostAuthRadiusLogin) | **Post** /auth/radius/login | Log in with a username and password.
-[**PostAuthRadiusLoginUrlusername**](Auth.md#PostAuthRadiusLoginUrlusername) | **Post** /auth/radius/login/{urlusername} | Log in with a username and password.
-[**PostAuthRadiusUsersName**](Auth.md#PostAuthRadiusUsersName) | **Post** /auth/radius/users/{name} | Manage users allowed to authenticate.
-[**PostAuthTokenCreate**](Auth.md#PostAuthTokenCreate) | **Post** /auth/token/create | The token create path is used to create new tokens.
-[**PostAuthTokenCreateOrphan**](Auth.md#PostAuthTokenCreateOrphan) | **Post** /auth/token/create-orphan | The token create path is used to create new orphan tokens.
-[**PostAuthTokenCreateRoleName**](Auth.md#PostAuthTokenCreateRoleName) | **Post** /auth/token/create/{role_name} | This token create path is used to create new tokens adhering to the given role.
-[**PostAuthTokenLookup**](Auth.md#PostAuthTokenLookup) | **Post** /auth/token/lookup | This endpoint will lookup a token and its properties.
-[**PostAuthTokenLookupAccessor**](Auth.md#PostAuthTokenLookupAccessor) | **Post** /auth/token/lookup-accessor | This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
-[**PostAuthTokenLookupSelf**](Auth.md#PostAuthTokenLookupSelf) | **Post** /auth/token/lookup-self | This endpoint will lookup a token and its properties.
-[**PostAuthTokenRenew**](Auth.md#PostAuthTokenRenew) | **Post** /auth/token/renew | This endpoint will renew the given token and prevent expiration.
-[**PostAuthTokenRenewAccessor**](Auth.md#PostAuthTokenRenewAccessor) | **Post** /auth/token/renew-accessor | This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
-[**PostAuthTokenRenewSelf**](Auth.md#PostAuthTokenRenewSelf) | **Post** /auth/token/renew-self | This endpoint will renew the token used to call it and prevent expiration.
-[**PostAuthTokenRevoke**](Auth.md#PostAuthTokenRevoke) | **Post** /auth/token/revoke | This endpoint will delete the given token and all of its child tokens.
-[**PostAuthTokenRevokeAccessor**](Auth.md#PostAuthTokenRevokeAccessor) | **Post** /auth/token/revoke-accessor | This endpoint will delete the token associated with the accessor and all of its child tokens.
-[**PostAuthTokenRevokeOrphan**](Auth.md#PostAuthTokenRevokeOrphan) | **Post** /auth/token/revoke-orphan | This endpoint will delete the token and orphan its child tokens.
-[**PostAuthTokenRevokeSelf**](Auth.md#PostAuthTokenRevokeSelf) | **Post** /auth/token/revoke-self | This endpoint will delete the token used to call it and all of its child tokens.
-[**PostAuthTokenRolesRoleName**](Auth.md#PostAuthTokenRolesRoleName) | **Post** /auth/token/roles/{role_name} | 
-[**PostAuthTokenTidy**](Auth.md#PostAuthTokenTidy) | **Post** /auth/token/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-[**PostAuthUserpassLoginUsername**](Auth.md#PostAuthUserpassLoginUsername) | **Post** /auth/userpass/login/{username} | Log in with a username and password.
-[**PostAuthUserpassUsersUsername**](Auth.md#PostAuthUserpassUsersUsername) | **Post** /auth/userpass/users/{username} | Manage users allowed to authenticate.
-[**PostAuthUserpassUsersUsernamePassword**](Auth.md#PostAuthUserpassUsersUsernamePassword) | **Post** /auth/userpass/users/{username}/password | Reset user&#39;s password.
-[**PostAuthUserpassUsersUsernamePolicies**](Auth.md#PostAuthUserpassUsersUsernamePolicies) | **Post** /auth/userpass/users/{username}/policies | Update the policies associated with the username.
+[**DeleteApproleRoleRoleName**](Auth.md#DeleteApproleRoleRoleName) | **Delete** /auth/{mount_path}/role/{role_name} | Register an role with the backend.
+[**DeleteApproleRoleRoleNameBindSecretId**](Auth.md#DeleteApproleRoleRoleNameBindSecretId) | **Delete** /auth/{mount_path}/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
+[**DeleteApproleRoleRoleNameBoundCidrList**](Auth.md#DeleteApproleRoleRoleNameBoundCidrList) | **Delete** /auth/{mount_path}/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**DeleteApproleRoleRoleNamePeriod**](Auth.md#DeleteApproleRoleRoleNamePeriod) | **Delete** /auth/{mount_path}/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
+[**DeleteApproleRoleRoleNamePolicies**](Auth.md#DeleteApproleRoleRoleNamePolicies) | **Delete** /auth/{mount_path}/role/{role_name}/policies | Policies of the role.
+[**DeleteApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#DeleteApproleRoleRoleNameSecretIdAccessorDestroy) | **Delete** /auth/{mount_path}/role/{role_name}/secret-id-accessor/destroy | 
+[**DeleteApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#DeleteApproleRoleRoleNameSecretIdBoundCidrs) | **Delete** /auth/{mount_path}/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**DeleteApproleRoleRoleNameSecretIdDestroy**](Auth.md#DeleteApproleRoleRoleNameSecretIdDestroy) | **Delete** /auth/{mount_path}/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
+[**DeleteApproleRoleRoleNameSecretIdNumUses**](Auth.md#DeleteApproleRoleRoleNameSecretIdNumUses) | **Delete** /auth/{mount_path}/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
+[**DeleteApproleRoleRoleNameSecretIdTtl**](Auth.md#DeleteApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/{mount_path}/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
+[**DeleteApproleRoleRoleNameTokenBoundCidrs**](Auth.md#DeleteApproleRoleRoleNameTokenBoundCidrs) | **Delete** /auth/{mount_path}/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+[**DeleteApproleRoleRoleNameTokenMaxTtl**](Auth.md#DeleteApproleRoleRoleNameTokenMaxTtl) | **Delete** /auth/{mount_path}/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+[**DeleteApproleRoleRoleNameTokenNumUses**](Auth.md#DeleteApproleRoleRoleNameTokenNumUses) | **Delete** /auth/{mount_path}/role/{role_name}/token-num-uses | Number of times issued tokens can be used
+[**DeleteApproleRoleRoleNameTokenTtl**](Auth.md#DeleteApproleRoleRoleNameTokenTtl) | **Delete** /auth/{mount_path}/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**DeleteAwsConfigCertificateCertName**](Auth.md#DeleteAwsConfigCertificateCertName) | **Delete** /auth/{mount_path}/config/certificate/{cert_name} | 
+[**DeleteAwsConfigClient**](Auth.md#DeleteAwsConfigClient) | **Delete** /auth/{mount_path}/config/client | 
+[**DeleteAwsConfigStsAccountId**](Auth.md#DeleteAwsConfigStsAccountId) | **Delete** /auth/{mount_path}/config/sts/{account_id} | 
+[**DeleteAwsConfigTidyIdentityAccesslist**](Auth.md#DeleteAwsConfigTidyIdentityAccesslist) | **Delete** /auth/{mount_path}/config/tidy/identity-accesslist | 
+[**DeleteAwsConfigTidyIdentityWhitelist**](Auth.md#DeleteAwsConfigTidyIdentityWhitelist) | **Delete** /auth/{mount_path}/config/tidy/identity-whitelist | 
+[**DeleteAwsConfigTidyRoletagBlacklist**](Auth.md#DeleteAwsConfigTidyRoletagBlacklist) | **Delete** /auth/{mount_path}/config/tidy/roletag-blacklist | 
+[**DeleteAwsConfigTidyRoletagDenylist**](Auth.md#DeleteAwsConfigTidyRoletagDenylist) | **Delete** /auth/{mount_path}/config/tidy/roletag-denylist | 
+[**DeleteAwsIdentityAccesslistInstanceId**](Auth.md#DeleteAwsIdentityAccesslistInstanceId) | **Delete** /auth/{mount_path}/identity-accesslist/{instance_id} | 
+[**DeleteAwsIdentityWhitelistInstanceId**](Auth.md#DeleteAwsIdentityWhitelistInstanceId) | **Delete** /auth/{mount_path}/identity-whitelist/{instance_id} | 
+[**DeleteAwsRoleRole**](Auth.md#DeleteAwsRoleRole) | **Delete** /auth/{mount_path}/role/{role} | 
+[**DeleteAwsRoletagBlacklistRoleTag**](Auth.md#DeleteAwsRoletagBlacklistRoleTag) | **Delete** /auth/{mount_path}/roletag-blacklist/{role_tag} | 
+[**DeleteAwsRoletagDenylistRoleTag**](Auth.md#DeleteAwsRoletagDenylistRoleTag) | **Delete** /auth/{mount_path}/roletag-denylist/{role_tag} | 
+[**DeleteCertCertsName**](Auth.md#DeleteCertCertsName) | **Delete** /auth/{mount_path}/certs/{name} | Manage trusted certificates used for authentication.
+[**DeleteCertCrlsName**](Auth.md#DeleteCertCrlsName) | **Delete** /auth/{mount_path}/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
+[**DeleteCfRolesRole**](Auth.md#DeleteCfRolesRole) | **Delete** /auth/{mount_path}/roles/{role} | 
+[**DeleteGithubMapTeamsKey**](Auth.md#DeleteGithubMapTeamsKey) | **Delete** /auth/{mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
+[**DeleteGithubMapUsersKey**](Auth.md#DeleteGithubMapUsersKey) | **Delete** /auth/{mount_path}/map/users/{key} | Read/write/delete a single users mapping
+[**DeleteKerberosGroupsName**](Auth.md#DeleteKerberosGroupsName) | **Delete** /auth/{mount_path}/groups/{name} | 
+[**DeleteOidcRoleName**](Auth.md#DeleteOidcRoleName) | **Delete** /auth/{mount_path}/role/{name} | Delete an existing role.
+[**DeleteRadiusUsersName**](Auth.md#DeleteRadiusUsersName) | **Delete** /auth/{mount_path}/users/{name} | Manage users allowed to authenticate.
+[**DeleteTokenRolesRoleName**](Auth.md#DeleteTokenRolesRoleName) | **Delete** /auth/{mount_path}/roles/{role_name} | 
+[**DeleteUserpassUsersUsername**](Auth.md#DeleteUserpassUsersUsername) | **Delete** /auth/{mount_path}/users/{username} | Manage users allowed to authenticate.
+[**ListApproleRoleRoleNameSecretId**](Auth.md#ListApproleRoleRoleNameSecretId) | **Get** /auth/{mount_path}/role/{role_name}/secret-id | Generate a SecretID against this role.
+[**ListAwsConfigCertificates**](Auth.md#ListAwsConfigCertificates) | **Get** /auth/{mount_path}/config/certificates | 
+[**ListAwsConfigSts**](Auth.md#ListAwsConfigSts) | **Get** /auth/{mount_path}/config/sts | 
+[**ListAwsIdentityAccesslist**](Auth.md#ListAwsIdentityAccesslist) | **Get** /auth/{mount_path}/identity-accesslist | 
+[**ListAwsIdentityWhitelist**](Auth.md#ListAwsIdentityWhitelist) | **Get** /auth/{mount_path}/identity-whitelist | 
+[**ListAwsRoletagBlacklist**](Auth.md#ListAwsRoletagBlacklist) | **Get** /auth/{mount_path}/roletag-blacklist | 
+[**ListAwsRoletagDenylist**](Auth.md#ListAwsRoletagDenylist) | **Get** /auth/{mount_path}/roletag-denylist | 
+[**ListCertCerts**](Auth.md#ListCertCerts) | **Get** /auth/{mount_path}/certs | Manage trusted certificates used for authentication.
+[**ListGcpRoles**](Auth.md#ListGcpRoles) | **Get** /auth/{mount_path}/roles | Lists all the roles that are registered with Vault.
+[**ListKerberosGroups**](Auth.md#ListKerberosGroups) | **Get** /auth/{mount_path}/groups | 
+[**ListOidcRole**](Auth.md#ListOidcRole) | **Get** /auth/{mount_path}/role | Lists all the roles registered with the backend.
+[**ListTokenAccessors**](Auth.md#ListTokenAccessors) | **Get** /auth/{mount_path}/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#39;sudo&#39; capability in addition to &#39;list&#39;.
+[**ListUserpassUsers**](Auth.md#ListUserpassUsers) | **Get** /auth/{mount_path}/users | Manage users allowed to authenticate.
+[**ReadApproleRoleRoleName**](Auth.md#ReadApproleRoleRoleName) | **Get** /auth/{mount_path}/role/{role_name} | Register an role with the backend.
+[**ReadApproleRoleRoleNameBindSecretId**](Auth.md#ReadApproleRoleRoleNameBindSecretId) | **Get** /auth/{mount_path}/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
+[**ReadApproleRoleRoleNameBoundCidrList**](Auth.md#ReadApproleRoleRoleNameBoundCidrList) | **Get** /auth/{mount_path}/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**ReadApproleRoleRoleNameLocalSecretIds**](Auth.md#ReadApproleRoleRoleNameLocalSecretIds) | **Get** /auth/{mount_path}/role/{role_name}/local-secret-ids | Enables cluster local secret IDs
+[**ReadApproleRoleRoleNamePeriod**](Auth.md#ReadApproleRoleRoleNamePeriod) | **Get** /auth/{mount_path}/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
+[**ReadApproleRoleRoleNamePolicies**](Auth.md#ReadApproleRoleRoleNamePolicies) | **Get** /auth/{mount_path}/role/{role_name}/policies | Policies of the role.
+[**ReadApproleRoleRoleNameRoleId**](Auth.md#ReadApproleRoleRoleNameRoleId) | **Get** /auth/{mount_path}/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
+[**ReadApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#ReadApproleRoleRoleNameSecretIdBoundCidrs) | **Get** /auth/{mount_path}/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**ReadApproleRoleRoleNameSecretIdNumUses**](Auth.md#ReadApproleRoleRoleNameSecretIdNumUses) | **Get** /auth/{mount_path}/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
+[**ReadApproleRoleRoleNameSecretIdTtl**](Auth.md#ReadApproleRoleRoleNameSecretIdTtl) | **Get** /auth/{mount_path}/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
+[**ReadApproleRoleRoleNameTokenBoundCidrs**](Auth.md#ReadApproleRoleRoleNameTokenBoundCidrs) | **Get** /auth/{mount_path}/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+[**ReadApproleRoleRoleNameTokenMaxTtl**](Auth.md#ReadApproleRoleRoleNameTokenMaxTtl) | **Get** /auth/{mount_path}/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+[**ReadApproleRoleRoleNameTokenNumUses**](Auth.md#ReadApproleRoleRoleNameTokenNumUses) | **Get** /auth/{mount_path}/role/{role_name}/token-num-uses | Number of times issued tokens can be used
+[**ReadApproleRoleRoleNameTokenTtl**](Auth.md#ReadApproleRoleRoleNameTokenTtl) | **Get** /auth/{mount_path}/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**ReadAwsConfigCertificateCertName**](Auth.md#ReadAwsConfigCertificateCertName) | **Get** /auth/{mount_path}/config/certificate/{cert_name} | 
+[**ReadAwsConfigClient**](Auth.md#ReadAwsConfigClient) | **Get** /auth/{mount_path}/config/client | 
+[**ReadAwsConfigIdentity**](Auth.md#ReadAwsConfigIdentity) | **Get** /auth/{mount_path}/config/identity | 
+[**ReadAwsConfigStsAccountId**](Auth.md#ReadAwsConfigStsAccountId) | **Get** /auth/{mount_path}/config/sts/{account_id} | 
+[**ReadAwsConfigTidyIdentityAccesslist**](Auth.md#ReadAwsConfigTidyIdentityAccesslist) | **Get** /auth/{mount_path}/config/tidy/identity-accesslist | 
+[**ReadAwsConfigTidyIdentityWhitelist**](Auth.md#ReadAwsConfigTidyIdentityWhitelist) | **Get** /auth/{mount_path}/config/tidy/identity-whitelist | 
+[**ReadAwsConfigTidyRoletagBlacklist**](Auth.md#ReadAwsConfigTidyRoletagBlacklist) | **Get** /auth/{mount_path}/config/tidy/roletag-blacklist | 
+[**ReadAwsConfigTidyRoletagDenylist**](Auth.md#ReadAwsConfigTidyRoletagDenylist) | **Get** /auth/{mount_path}/config/tidy/roletag-denylist | 
+[**ReadAwsIdentityAccesslistInstanceId**](Auth.md#ReadAwsIdentityAccesslistInstanceId) | **Get** /auth/{mount_path}/identity-accesslist/{instance_id} | 
+[**ReadAwsIdentityWhitelistInstanceId**](Auth.md#ReadAwsIdentityWhitelistInstanceId) | **Get** /auth/{mount_path}/identity-whitelist/{instance_id} | 
+[**ReadAwsRoleRole**](Auth.md#ReadAwsRoleRole) | **Get** /auth/{mount_path}/role/{role} | 
+[**ReadAwsRoletagBlacklistRoleTag**](Auth.md#ReadAwsRoletagBlacklistRoleTag) | **Get** /auth/{mount_path}/roletag-blacklist/{role_tag} | 
+[**ReadAwsRoletagDenylistRoleTag**](Auth.md#ReadAwsRoletagDenylistRoleTag) | **Get** /auth/{mount_path}/roletag-denylist/{role_tag} | 
+[**ReadCertCertsName**](Auth.md#ReadCertCertsName) | **Get** /auth/{mount_path}/certs/{name} | Manage trusted certificates used for authentication.
+[**ReadCertCrlsName**](Auth.md#ReadCertCrlsName) | **Get** /auth/{mount_path}/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
+[**ReadCfRolesRole**](Auth.md#ReadCfRolesRole) | **Get** /auth/{mount_path}/roles/{role} | 
+[**ReadGithubMapTeams**](Auth.md#ReadGithubMapTeams) | **Get** /auth/{mount_path}/map/teams | Read mappings for teams
+[**ReadGithubMapTeamsKey**](Auth.md#ReadGithubMapTeamsKey) | **Get** /auth/{mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
+[**ReadGithubMapUsers**](Auth.md#ReadGithubMapUsers) | **Get** /auth/{mount_path}/map/users | Read mappings for users
+[**ReadGithubMapUsersKey**](Auth.md#ReadGithubMapUsersKey) | **Get** /auth/{mount_path}/map/users/{key} | Read/write/delete a single users mapping
+[**ReadKerberosConfigLdap**](Auth.md#ReadKerberosConfigLdap) | **Get** /auth/{mount_path}/config/ldap | 
+[**ReadKerberosGroupsName**](Auth.md#ReadKerberosGroupsName) | **Get** /auth/{mount_path}/groups/{name} | 
+[**ReadOidcConfig**](Auth.md#ReadOidcConfig) | **Get** /auth/{mount_path}/config | Read the current JWT authentication backend configuration.
+[**ReadOidcOidcCallback**](Auth.md#ReadOidcOidcCallback) | **Get** /auth/{mount_path}/oidc/callback | Callback endpoint to complete an OIDC login.
+[**ReadOidcRoleName**](Auth.md#ReadOidcRoleName) | **Get** /auth/{mount_path}/role/{name} | Read an existing role.
+[**ReadOktaVerifyNonce**](Auth.md#ReadOktaVerifyNonce) | **Get** /auth/{mount_path}/verify/{nonce} | 
+[**ReadRadiusUsersName**](Auth.md#ReadRadiusUsersName) | **Get** /auth/{mount_path}/users/{name} | Manage users allowed to authenticate.
+[**ReadTokenLookup**](Auth.md#ReadTokenLookup) | **Get** /auth/{mount_path}/lookup | This endpoint will lookup a token and its properties.
+[**ReadTokenLookupSelf**](Auth.md#ReadTokenLookupSelf) | **Get** /auth/{mount_path}/lookup-self | This endpoint will lookup a token and its properties.
+[**ReadTokenRolesRoleName**](Auth.md#ReadTokenRolesRoleName) | **Get** /auth/{mount_path}/roles/{role_name} | 
+[**ReadUserpassUsersUsername**](Auth.md#ReadUserpassUsersUsername) | **Get** /auth/{mount_path}/users/{username} | Manage users allowed to authenticate.
+[**UpdateApproleRoleRoleName**](Auth.md#UpdateApproleRoleRoleName) | **Post** /auth/{mount_path}/role/{role_name} | Register an role with the backend.
+[**UpdateApproleRoleRoleNameBindSecretId**](Auth.md#UpdateApproleRoleRoleNameBindSecretId) | **Post** /auth/{mount_path}/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
+[**UpdateApproleRoleRoleNameBoundCidrList**](Auth.md#UpdateApproleRoleRoleNameBoundCidrList) | **Post** /auth/{mount_path}/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**UpdateApproleRoleRoleNameCustomSecretId**](Auth.md#UpdateApproleRoleRoleNameCustomSecretId) | **Post** /auth/{mount_path}/role/{role_name}/custom-secret-id | Assign a SecretID of choice against the role.
+[**UpdateApproleRoleRoleNamePeriod**](Auth.md#UpdateApproleRoleRoleNamePeriod) | **Post** /auth/{mount_path}/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
+[**UpdateApproleRoleRoleNamePolicies**](Auth.md#UpdateApproleRoleRoleNamePolicies) | **Post** /auth/{mount_path}/role/{role_name}/policies | Policies of the role.
+[**UpdateApproleRoleRoleNameRoleId**](Auth.md#UpdateApproleRoleRoleNameRoleId) | **Post** /auth/{mount_path}/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
+[**UpdateApproleRoleRoleNameSecretId**](Auth.md#UpdateApproleRoleRoleNameSecretId) | **Post** /auth/{mount_path}/role/{role_name}/secret-id | Generate a SecretID against this role.
+[**UpdateApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#UpdateApproleRoleRoleNameSecretIdAccessorDestroy) | **Post** /auth/{mount_path}/role/{role_name}/secret-id-accessor/destroy | 
+[**UpdateApproleRoleRoleNameSecretIdAccessorLookup**](Auth.md#UpdateApproleRoleRoleNameSecretIdAccessorLookup) | **Post** /auth/{mount_path}/role/{role_name}/secret-id-accessor/lookup | 
+[**UpdateApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#UpdateApproleRoleRoleNameSecretIdBoundCidrs) | **Post** /auth/{mount_path}/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**UpdateApproleRoleRoleNameSecretIdDestroy**](Auth.md#UpdateApproleRoleRoleNameSecretIdDestroy) | **Post** /auth/{mount_path}/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
+[**UpdateApproleRoleRoleNameSecretIdLookup**](Auth.md#UpdateApproleRoleRoleNameSecretIdLookup) | **Post** /auth/{mount_path}/role/{role_name}/secret-id/lookup | Read the properties of an issued secret_id
+[**UpdateApproleRoleRoleNameSecretIdNumUses**](Auth.md#UpdateApproleRoleRoleNameSecretIdNumUses) | **Post** /auth/{mount_path}/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
+[**UpdateApproleRoleRoleNameSecretIdTtl**](Auth.md#UpdateApproleRoleRoleNameSecretIdTtl) | **Post** /auth/{mount_path}/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
+[**UpdateApproleRoleRoleNameTokenBoundCidrs**](Auth.md#UpdateApproleRoleRoleNameTokenBoundCidrs) | **Post** /auth/{mount_path}/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+[**UpdateApproleRoleRoleNameTokenMaxTtl**](Auth.md#UpdateApproleRoleRoleNameTokenMaxTtl) | **Post** /auth/{mount_path}/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+[**UpdateApproleRoleRoleNameTokenNumUses**](Auth.md#UpdateApproleRoleRoleNameTokenNumUses) | **Post** /auth/{mount_path}/role/{role_name}/token-num-uses | Number of times issued tokens can be used
+[**UpdateApproleRoleRoleNameTokenTtl**](Auth.md#UpdateApproleRoleRoleNameTokenTtl) | **Post** /auth/{mount_path}/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**UpdateApproleTidySecretId**](Auth.md#UpdateApproleTidySecretId) | **Post** /auth/{mount_path}/tidy/secret-id | Trigger the clean-up of expired SecretID entries.
+[**UpdateAwsConfigCertificateCertName**](Auth.md#UpdateAwsConfigCertificateCertName) | **Post** /auth/{mount_path}/config/certificate/{cert_name} | 
+[**UpdateAwsConfigClient**](Auth.md#UpdateAwsConfigClient) | **Post** /auth/{mount_path}/config/client | 
+[**UpdateAwsConfigIdentity**](Auth.md#UpdateAwsConfigIdentity) | **Post** /auth/{mount_path}/config/identity | 
+[**UpdateAwsConfigRotateRoot**](Auth.md#UpdateAwsConfigRotateRoot) | **Post** /auth/{mount_path}/config/rotate-root | 
+[**UpdateAwsConfigStsAccountId**](Auth.md#UpdateAwsConfigStsAccountId) | **Post** /auth/{mount_path}/config/sts/{account_id} | 
+[**UpdateAwsConfigTidyIdentityAccesslist**](Auth.md#UpdateAwsConfigTidyIdentityAccesslist) | **Post** /auth/{mount_path}/config/tidy/identity-accesslist | 
+[**UpdateAwsConfigTidyIdentityWhitelist**](Auth.md#UpdateAwsConfigTidyIdentityWhitelist) | **Post** /auth/{mount_path}/config/tidy/identity-whitelist | 
+[**UpdateAwsConfigTidyRoletagBlacklist**](Auth.md#UpdateAwsConfigTidyRoletagBlacklist) | **Post** /auth/{mount_path}/config/tidy/roletag-blacklist | 
+[**UpdateAwsConfigTidyRoletagDenylist**](Auth.md#UpdateAwsConfigTidyRoletagDenylist) | **Post** /auth/{mount_path}/config/tidy/roletag-denylist | 
+[**UpdateAwsRoleRole**](Auth.md#UpdateAwsRoleRole) | **Post** /auth/{mount_path}/role/{role} | 
+[**UpdateAwsRoleRoleTag**](Auth.md#UpdateAwsRoleRoleTag) | **Post** /auth/{mount_path}/role/{role}/tag | 
+[**UpdateAwsRoletagBlacklistRoleTag**](Auth.md#UpdateAwsRoletagBlacklistRoleTag) | **Post** /auth/{mount_path}/roletag-blacklist/{role_tag} | 
+[**UpdateAwsRoletagDenylistRoleTag**](Auth.md#UpdateAwsRoletagDenylistRoleTag) | **Post** /auth/{mount_path}/roletag-denylist/{role_tag} | 
+[**UpdateAwsTidyIdentityAccesslist**](Auth.md#UpdateAwsTidyIdentityAccesslist) | **Post** /auth/{mount_path}/tidy/identity-accesslist | 
+[**UpdateAwsTidyIdentityWhitelist**](Auth.md#UpdateAwsTidyIdentityWhitelist) | **Post** /auth/{mount_path}/tidy/identity-whitelist | 
+[**UpdateAwsTidyRoletagBlacklist**](Auth.md#UpdateAwsTidyRoletagBlacklist) | **Post** /auth/{mount_path}/tidy/roletag-blacklist | 
+[**UpdateAwsTidyRoletagDenylist**](Auth.md#UpdateAwsTidyRoletagDenylist) | **Post** /auth/{mount_path}/tidy/roletag-denylist | 
+[**UpdateCertCertsName**](Auth.md#UpdateCertCertsName) | **Post** /auth/{mount_path}/certs/{name} | Manage trusted certificates used for authentication.
+[**UpdateCertCrlsName**](Auth.md#UpdateCertCrlsName) | **Post** /auth/{mount_path}/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
+[**UpdateCfRolesRole**](Auth.md#UpdateCfRolesRole) | **Post** /auth/{mount_path}/roles/{role} | 
+[**UpdateGcpRoleNameLabels**](Auth.md#UpdateGcpRoleNameLabels) | **Post** /auth/{mount_path}/role/{name}/labels | Add or remove labels for an existing &#39;gce&#39; role
+[**UpdateGcpRoleNameServiceAccounts**](Auth.md#UpdateGcpRoleNameServiceAccounts) | **Post** /auth/{mount_path}/role/{name}/service-accounts | Add or remove service accounts for an existing &#x60;iam&#x60; role
+[**UpdateGithubMapTeamsKey**](Auth.md#UpdateGithubMapTeamsKey) | **Post** /auth/{mount_path}/map/teams/{key} | Read/write/delete a single teams mapping
+[**UpdateGithubMapUsersKey**](Auth.md#UpdateGithubMapUsersKey) | **Post** /auth/{mount_path}/map/users/{key} | Read/write/delete a single users mapping
+[**UpdateKerberosConfigLdap**](Auth.md#UpdateKerberosConfigLdap) | **Post** /auth/{mount_path}/config/ldap | 
+[**UpdateKerberosGroupsName**](Auth.md#UpdateKerberosGroupsName) | **Post** /auth/{mount_path}/groups/{name} | 
+[**UpdateOciLoginRole**](Auth.md#UpdateOciLoginRole) | **Post** /auth/{mount_path}/login/{role} | Authenticates to Vault using OCI credentials
+[**UpdateOidcConfig**](Auth.md#UpdateOidcConfig) | **Post** /auth/{mount_path}/config | Configure the JWT authentication backend.
+[**UpdateOidcLogin**](Auth.md#UpdateOidcLogin) | **Post** /auth/{mount_path}/login | Authenticates to Vault using a JWT (or OIDC) token.
+[**UpdateOidcOidcAuthUrl**](Auth.md#UpdateOidcOidcAuthUrl) | **Post** /auth/{mount_path}/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
+[**UpdateOidcOidcCallback**](Auth.md#UpdateOidcOidcCallback) | **Post** /auth/{mount_path}/oidc/callback | Callback endpoint to handle form_posts.
+[**UpdateOidcRoleName**](Auth.md#UpdateOidcRoleName) | **Post** /auth/{mount_path}/role/{name} | Register an role with the backend.
+[**UpdateRadiusLoginUrlusername**](Auth.md#UpdateRadiusLoginUrlusername) | **Post** /auth/{mount_path}/login/{urlusername} | Log in with a username and password.
+[**UpdateRadiusUsersName**](Auth.md#UpdateRadiusUsersName) | **Post** /auth/{mount_path}/users/{name} | Manage users allowed to authenticate.
+[**UpdateTokenCreate**](Auth.md#UpdateTokenCreate) | **Post** /auth/{mount_path}/create | The token create path is used to create new tokens.
+[**UpdateTokenCreateOrphan**](Auth.md#UpdateTokenCreateOrphan) | **Post** /auth/{mount_path}/create-orphan | The token create path is used to create new orphan tokens.
+[**UpdateTokenCreateRoleName**](Auth.md#UpdateTokenCreateRoleName) | **Post** /auth/{mount_path}/create/{role_name} | This token create path is used to create new tokens adhering to the given role.
+[**UpdateTokenLookup**](Auth.md#UpdateTokenLookup) | **Post** /auth/{mount_path}/lookup | This endpoint will lookup a token and its properties.
+[**UpdateTokenLookupAccessor**](Auth.md#UpdateTokenLookupAccessor) | **Post** /auth/{mount_path}/lookup-accessor | This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
+[**UpdateTokenLookupSelf**](Auth.md#UpdateTokenLookupSelf) | **Post** /auth/{mount_path}/lookup-self | This endpoint will lookup a token and its properties.
+[**UpdateTokenRenew**](Auth.md#UpdateTokenRenew) | **Post** /auth/{mount_path}/renew | This endpoint will renew the given token and prevent expiration.
+[**UpdateTokenRenewAccessor**](Auth.md#UpdateTokenRenewAccessor) | **Post** /auth/{mount_path}/renew-accessor | This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
+[**UpdateTokenRenewSelf**](Auth.md#UpdateTokenRenewSelf) | **Post** /auth/{mount_path}/renew-self | This endpoint will renew the token used to call it and prevent expiration.
+[**UpdateTokenRevoke**](Auth.md#UpdateTokenRevoke) | **Post** /auth/{mount_path}/revoke | This endpoint will delete the given token and all of its child tokens.
+[**UpdateTokenRevokeAccessor**](Auth.md#UpdateTokenRevokeAccessor) | **Post** /auth/{mount_path}/revoke-accessor | This endpoint will delete the token associated with the accessor and all of its child tokens.
+[**UpdateTokenRevokeOrphan**](Auth.md#UpdateTokenRevokeOrphan) | **Post** /auth/{mount_path}/revoke-orphan | This endpoint will delete the token and orphan its child tokens.
+[**UpdateTokenRevokeSelf**](Auth.md#UpdateTokenRevokeSelf) | **Post** /auth/{mount_path}/revoke-self | This endpoint will delete the token used to call it and all of its child tokens.
+[**UpdateTokenRolesRoleName**](Auth.md#UpdateTokenRolesRoleName) | **Post** /auth/{mount_path}/roles/{role_name} | 
+[**UpdateTokenTidy**](Auth.md#UpdateTokenTidy) | **Post** /auth/{mount_path}/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
+[**UpdateUserpassLoginUsername**](Auth.md#UpdateUserpassLoginUsername) | **Post** /auth/{mount_path}/login/{username} | Log in with a username and password.
+[**UpdateUserpassUsersUsername**](Auth.md#UpdateUserpassUsersUsername) | **Post** /auth/{mount_path}/users/{username} | Manage users allowed to authenticate.
+[**UpdateUserpassUsersUsernamePassword**](Auth.md#UpdateUserpassUsersUsernamePassword) | **Post** /auth/{mount_path}/users/{username}/password | Reset user&#39;s password.
+[**UpdateUserpassUsersUsernamePolicies**](Auth.md#UpdateUserpassUsersUsernamePolicies) | **Post** /auth/{mount_path}/users/{username}/policies | Update the policies associated with the username.
 
 
 
-## DeleteAuthAlicloudRoleRole
+## DeleteApproleRoleRoleName
 
-> DeleteAuthAlicloudRoleRole(ctx, role).Execute()
-
-Create a role and associate policies to it.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | The name of the role as it should appear in Vault.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAlicloudRoleRole(context.Background(), role)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | The name of the role as it should appear in Vault. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthApproleRoleRoleName
-
-> DeleteAuthApproleRoleRoleName(ctx, roleName).Execute()
+> DeleteApproleRoleRoleName(ctx, mountPath, roleName).Execute()
 
 Register an role with the backend.
 
@@ -353,9 +199,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleName(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -370,7 +217,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -379,15 +227,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameBindSecretId
+## DeleteApproleRoleRoleNameBindSecretId
 
-> DeleteAuthApproleRoleRoleNameBindSecretId(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameBindSecretId(ctx, mountPath, roleName).Execute()
 
 Impose secret_id to be presented during login using this role.
 
@@ -412,9 +261,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameBindSecretId(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -429,7 +279,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -438,15 +289,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameBoundCidrList
+## DeleteApproleRoleRoleNameBoundCidrList
 
-> DeleteAuthApproleRoleRoleNameBoundCidrList(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameBoundCidrList(ctx, mountPath, roleName).Execute()
 
 Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 
@@ -471,9 +323,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameBoundCidrList(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -488,7 +341,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -497,15 +351,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNamePeriod
+## DeleteApproleRoleRoleNamePeriod
 
-> DeleteAuthApproleRoleRoleNamePeriod(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNamePeriod(ctx, mountPath, roleName).Execute()
 
 Updates the value of 'period' on the role
 
@@ -530,9 +385,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNamePeriod(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -547,7 +403,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -556,15 +413,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNamePolicies
+## DeleteApproleRoleRoleNamePolicies
 
-> DeleteAuthApproleRoleRoleNamePolicies(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNamePolicies(ctx, mountPath, roleName).Execute()
 
 Policies of the role.
 
@@ -589,9 +447,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNamePolicies(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -606,7 +465,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -615,15 +475,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy
+## DeleteApproleRoleRoleNameSecretIdAccessorDestroy
 
-> DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameSecretIdAccessorDestroy(ctx, mountPath, roleName).Execute()
 
 
 
@@ -648,9 +509,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -665,7 +527,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -674,15 +537,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs
+## DeleteApproleRoleRoleNameSecretIdBoundCidrs
 
-> DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameSecretIdBoundCidrs(ctx, mountPath, roleName).Execute()
 
 Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 
@@ -707,9 +571,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -724,7 +589,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -733,15 +599,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameSecretIdDestroy
+## DeleteApproleRoleRoleNameSecretIdDestroy
 
-> DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameSecretIdDestroy(ctx, mountPath, roleName).Execute()
 
 Invalidate an issued secret_id
 
@@ -766,9 +633,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameSecretIdDestroy(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -783,7 +651,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -792,15 +661,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameSecretIdNumUses
+## DeleteApproleRoleRoleNameSecretIdNumUses
 
-> DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameSecretIdNumUses(ctx, mountPath, roleName).Execute()
 
 Use limit of the SecretID generated against the role.
 
@@ -825,9 +695,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameSecretIdNumUses(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -842,7 +713,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -851,15 +723,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameSecretIdTtl
+## DeleteApproleRoleRoleNameSecretIdTtl
 
-> DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameSecretIdTtl(ctx, mountPath, roleName).Execute()
 
 Duration in seconds of the SecretID generated against the role.
 
@@ -884,9 +757,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameSecretIdTtl(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -901,7 +775,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -910,15 +785,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameTokenBoundCidrs
+## DeleteApproleRoleRoleNameTokenBoundCidrs
 
-> DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameTokenBoundCidrs(ctx, mountPath, roleName).Execute()
 
 Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 
@@ -943,9 +819,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameTokenBoundCidrs(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -960,7 +837,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -969,15 +847,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameTokenMaxTtl
+## DeleteApproleRoleRoleNameTokenMaxTtl
 
-> DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameTokenMaxTtl(ctx, mountPath, roleName).Execute()
 
 Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 
@@ -1002,9 +881,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameTokenMaxTtl(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1019,7 +899,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -1028,15 +909,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameTokenNumUses
+## DeleteApproleRoleRoleNameTokenNumUses
 
-> DeleteAuthApproleRoleRoleNameTokenNumUses(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameTokenNumUses(ctx, mountPath, roleName).Execute()
 
 Number of times issued tokens can be used
 
@@ -1061,9 +943,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameTokenNumUses(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1078,7 +961,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -1087,15 +971,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthApproleRoleRoleNameTokenTtl
+## DeleteApproleRoleRoleNameTokenTtl
 
-> DeleteAuthApproleRoleRoleNameTokenTtl(ctx, roleName).Execute()
+> DeleteApproleRoleRoleNameTokenTtl(ctx, mountPath, roleName).Execute()
 
 Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 
@@ -1120,9 +1005,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteApproleRoleRoleNameTokenTtl(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1137,7 +1023,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -1146,15 +1033,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsConfigCertificateCertName
+## DeleteAwsConfigCertificateCertName
 
-> DeleteAuthAwsConfigCertificateCertName(ctx, certName).Execute()
+> DeleteAwsConfigCertificateCertName(ctx, certName, mountPath).Execute()
 
 
 
@@ -1180,8 +1068,9 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName)
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsConfigCertificateCertName(context.Background(), certName, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1197,6 +1086,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1205,15 +1095,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsConfigClient
+## DeleteAwsConfigClient
 
-> DeleteAuthAwsConfigClient(ctx).Execute()
+> DeleteAwsConfigClient(ctx, mountPath).Execute()
 
 
 
@@ -1238,8 +1129,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigClient(context.Background())
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsConfigClient(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1250,10 +1142,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -1262,9 +1161,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsConfigStsAccountId
+## DeleteAwsConfigStsAccountId
 
-> DeleteAuthAwsConfigStsAccountId(ctx, accountId).Execute()
+> DeleteAwsConfigStsAccountId(ctx, accountId, mountPath).Execute()
 
 
 
@@ -1290,8 +1189,9 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId)
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsConfigStsAccountId(context.Background(), accountId, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1307,6 +1207,67 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## DeleteAwsConfigTidyIdentityAccesslist
+
+> DeleteAwsConfigTidyIdentityAccesslist(ctx, mountPath).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsConfigTidyIdentityAccesslist(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1321,60 +1282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsConfigTidyIdentityAccesslist
+## DeleteAwsConfigTidyIdentityWhitelist
 
-> DeleteAuthAwsConfigTidyIdentityAccesslist(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthAwsConfigTidyIdentityWhitelist
-
-> DeleteAuthAwsConfigTidyIdentityWhitelist(ctx).Execute()
+> DeleteAwsConfigTidyIdentityWhitelist(ctx, mountPath).Execute()
 
 
 
@@ -1399,8 +1309,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background())
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsConfigTidyIdentityWhitelist(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1411,10 +1322,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -1423,9 +1341,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsConfigTidyRoletagBlacklist
+## DeleteAwsConfigTidyRoletagBlacklist
 
-> DeleteAuthAwsConfigTidyRoletagBlacklist(ctx).Execute()
+> DeleteAwsConfigTidyRoletagBlacklist(ctx, mountPath).Execute()
 
 
 
@@ -1450,8 +1368,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background())
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsConfigTidyRoletagBlacklist(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1462,10 +1381,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -1474,9 +1400,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsConfigTidyRoletagDenylist
+## DeleteAwsConfigTidyRoletagDenylist
 
-> DeleteAuthAwsConfigTidyRoletagDenylist(ctx).Execute()
+> DeleteAwsConfigTidyRoletagDenylist(ctx, mountPath).Execute()
 
 
 
@@ -1501,8 +1427,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background())
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsConfigTidyRoletagDenylist(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1513,10 +1440,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -1525,9 +1459,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsIdentityAccesslistInstanceId
+## DeleteAwsIdentityAccesslistInstanceId
 
-> DeleteAuthAwsIdentityAccesslistInstanceId(ctx, instanceId).Execute()
+> DeleteAwsIdentityAccesslistInstanceId(ctx, instanceId, mountPath).Execute()
 
 
 
@@ -1553,8 +1487,9 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsIdentityAccesslistInstanceId(context.Background(), instanceId, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1570,6 +1505,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1578,15 +1514,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsIdentityWhitelistInstanceId
+## DeleteAwsIdentityWhitelistInstanceId
 
-> DeleteAuthAwsIdentityWhitelistInstanceId(ctx, instanceId).Execute()
+> DeleteAwsIdentityWhitelistInstanceId(ctx, instanceId, mountPath).Execute()
 
 
 
@@ -1612,8 +1549,9 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsIdentityWhitelistInstanceId(context.Background(), instanceId, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1629,6 +1567,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1637,15 +1576,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsRoleRole
+## DeleteAwsRoleRole
 
-> DeleteAuthAwsRoleRole(ctx, role).Execute()
+> DeleteAwsRoleRole(ctx, mountPath, role).Execute()
 
 
 
@@ -1671,8 +1611,9 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsRoleRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsRoleRole(context.Background(), mountPath, role)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1687,6 +1628,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -1696,15 +1638,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsRoletagBlacklistRoleTag
+## DeleteAwsRoletagBlacklistRoleTag
 
-> DeleteAuthAwsRoletagBlacklistRoleTag(ctx, roleTag).Execute()
+> DeleteAwsRoletagBlacklistRoleTag(ctx, mountPath, roleTag).Execute()
 
 
 
@@ -1730,8 +1673,9 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsRoletagBlacklistRoleTag(context.Background(), mountPath, roleTag)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1746,6 +1690,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -1755,15 +1700,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAwsRoletagDenylistRoleTag
+## DeleteAwsRoletagDenylistRoleTag
 
-> DeleteAuthAwsRoletagDenylistRoleTag(ctx, roleTag).Execute()
+> DeleteAwsRoletagDenylistRoleTag(ctx, mountPath, roleTag).Execute()
 
 
 
@@ -1789,8 +1735,9 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	resp, err := client.WithToken("my-token").Auth.DeleteAwsRoletagDenylistRoleTag(context.Background(), mountPath, roleTag)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1805,6 +1752,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -1814,56 +1762,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthAzureConfig
-
-> DeleteAuthAzureConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAzureConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -1871,68 +1769,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteAuthAzureRoleName
+## DeleteCertCertsName
 
-> DeleteAuthAzureRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAzureRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthCertCertsName
-
-> DeleteAuthCertCertsName(ctx, name).Execute()
+> DeleteCertCertsName(ctx, mountPath, name).Execute()
 
 Manage trusted certificates used for authentication.
 
@@ -1958,8 +1797,9 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCertCertsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.DeleteCertCertsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1974,6 +1814,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -1983,15 +1824,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthCertCrlsName
+## DeleteCertCrlsName
 
-> DeleteAuthCertCrlsName(ctx, name).Execute()
+> DeleteCertCrlsName(ctx, mountPath, name).Execute()
 
 Manage Certificate Revocation Lists checked during authentication.
 
@@ -2017,8 +1859,9 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCertCrlsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.DeleteCertCrlsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2033,6 +1876,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -2042,56 +1886,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthCfConfig
-
-> DeleteAuthCfConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCfConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -2099,9 +1893,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## DeleteAuthCfRolesRole
+## DeleteCfRolesRole
 
-> DeleteAuthCfRolesRole(ctx, role).Execute()
+> DeleteCfRolesRole(ctx, mountPath, role).Execute()
 
 
 
@@ -2127,8 +1921,9 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCfRolesRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Auth.DeleteCfRolesRole(context.Background(), mountPath, role)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2143,6 +1938,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
@@ -2152,64 +1948,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthGcpRoleName
-
-> DeleteAuthGcpRoleName(ctx, name).Execute()
-
-Create a GCP role with associated policies and required attributes.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthGcpRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
 
  (empty response body)
 
@@ -2217,9 +1955,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteAuthGithubMapTeamsKey
+## DeleteGithubMapTeamsKey
 
-> DeleteAuthGithubMapTeamsKey(ctx, key).Execute()
+> DeleteGithubMapTeamsKey(ctx, key, mountPath).Execute()
 
 Read/write/delete a single teams mapping
 
@@ -2245,8 +1983,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Auth.DeleteGithubMapTeamsKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2262,6 +2001,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -2270,15 +2010,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthGithubMapUsersKey
+## DeleteGithubMapUsersKey
 
-> DeleteAuthGithubMapUsersKey(ctx, key).Execute()
+> DeleteGithubMapUsersKey(ctx, key, mountPath).Execute()
 
 Read/write/delete a single users mapping
 
@@ -2304,8 +2045,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthGithubMapUsersKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Auth.DeleteGithubMapUsersKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2321,6 +2063,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -2329,64 +2072,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthJwtRoleName
-
-> DeleteAuthJwtRoleName(ctx, name).Execute()
-
-Delete an existing role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthJwtRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
 
  (empty response body)
 
@@ -2394,9 +2079,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteAuthKerberosGroupsName
+## DeleteKerberosGroupsName
 
-> DeleteAuthKerberosGroupsName(ctx, name).Execute()
+> DeleteKerberosGroupsName(ctx, mountPath, name).Execute()
 
 
 
@@ -2422,8 +2107,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthKerberosGroupsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.DeleteKerberosGroupsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2438,6 +2124,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -2447,64 +2134,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthKubernetesRoleName
-
-> DeleteAuthKubernetesRoleName(ctx, name).Execute()
-
-Register an role with the backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthKubernetesRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
 
  (empty response body)
 
@@ -2512,237 +2141,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteAuthLdapGroupsName
+## DeleteOidcRoleName
 
-> DeleteAuthLdapGroupsName(ctx, name).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the LDAP group.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthLdapGroupsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the LDAP group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthLdapUsersName
-
-> DeleteAuthLdapUsersName(ctx, name).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the LDAP user.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthLdapUsersName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the LDAP user. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthOciConfig
-
-> DeleteAuthOciConfig(ctx).Execute()
-
-Manages the configuration for the Vault Auth Plugin.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOciConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthOciRoleRole
-
-> DeleteAuthOciRoleRole(ctx, role).Execute()
-
-Create a role and associate policies to it.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOciRoleRole(context.Background(), role)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthOidcRoleName
-
-> DeleteAuthOidcRoleName(ctx, name).Execute()
+> DeleteOidcRoleName(ctx, mountPath, name).Execute()
 
 Delete an existing role.
 
@@ -2768,8 +2169,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOidcRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.DeleteOidcRoleName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2784,6 +2186,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -2793,64 +2196,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthOktaGroupsName
-
-> DeleteAuthOktaGroupsName(ctx, name).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the Okta group.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOktaGroupsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the Okta group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
 
  (empty response body)
 
@@ -2858,68 +2203,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteAuthOktaUsersName
+## DeleteRadiusUsersName
 
-> DeleteAuthOktaUsersName(ctx, name).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the user.
-
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOktaUsersName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the user. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAuthRadiusUsersName
-
-> DeleteAuthRadiusUsersName(ctx, name).Execute()
+> DeleteRadiusUsersName(ctx, mountPath, name).Execute()
 
 Manage users allowed to authenticate.
 
@@ -2945,8 +2231,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthRadiusUsersName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.DeleteRadiusUsersName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2961,6 +2248,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
@@ -2970,15 +2258,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthTokenRolesRoleName
+## DeleteTokenRolesRoleName
 
-> DeleteAuthTokenRolesRoleName(ctx, roleName).Execute()
+> DeleteTokenRolesRoleName(ctx, mountPath, roleName).Execute()
 
 
 
@@ -3004,8 +2293,9 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.DeleteTokenRolesRoleName(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3020,6 +2310,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -3029,15 +2320,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## DeleteAuthUserpassUsersUsername
+## DeleteUserpassUsersUsername
 
-> DeleteAuthUserpassUsersUsername(ctx, username).Execute()
+> DeleteUserpassUsersUsername(ctx, mountPath, username).Execute()
 
 Manage users allowed to authenticate.
 
@@ -3063,8 +2355,9 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthUserpassUsersUsername(context.Background(), username)
+	resp, err := client.WithToken("my-token").Auth.DeleteUserpassUsersUsername(context.Background(), mountPath, username)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3079,6 +2372,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
@@ -3088,60 +2382,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAlicloudRole
-
-> GetAuthAlicloudRole(ctx).List(list).Execute()
-
-Lists all the roles that are registered with Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAlicloudRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -3149,591 +2389,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAlicloudRoleRole
+## ListApproleRoleRoleNameSecretId
 
-> GetAuthAlicloudRoleRole(ctx, role).Execute()
-
-Create a role and associate policies to it.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | The name of the role as it should appear in Vault.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAlicloudRoleRole(context.Background(), role)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | The name of the role as it should appear in Vault. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAlicloudRoles
-
-> GetAuthAlicloudRoles(ctx).List(list).Execute()
-
-Lists all the roles that are registered with Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAlicloudRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRole
-
-> GetAuthApproleRole(ctx).List(list).Execute()
-
-Lists all the roles registered with the backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleName
-
-> GetAuthApproleRoleRoleName(ctx, roleName).Execute()
-
-Register an role with the backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleName := "roleName_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleName(context.Background(), roleName)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleNameBindSecretId
-
-> GetAuthApproleRoleRoleNameBindSecretId(ctx, roleName).Execute()
-
-Impose secret_id to be presented during login using this role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleName := "roleName_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleNameBoundCidrList
-
-> GetAuthApproleRoleRoleNameBoundCidrList(ctx, roleName).Execute()
-
-Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleName := "roleName_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleNameLocalSecretIds
-
-> GetAuthApproleRoleRoleNameLocalSecretIds(ctx, roleName).Execute()
-
-Enables cluster local secret IDs
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleName := "roleName_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleNamePeriod
-
-> GetAuthApproleRoleRoleNamePeriod(ctx, roleName).Execute()
-
-Updates the value of 'period' on the role
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleName := "roleName_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleNamePolicies
-
-> GetAuthApproleRoleRoleNamePolicies(ctx, roleName).Execute()
-
-Policies of the role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleName := "roleName_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleNameRoleId
-
-> GetAuthApproleRoleRoleNameRoleId(ctx, roleName).Execute()
-
-Returns the 'role_id' of the role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleName := "roleName_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthApproleRoleRoleNameSecretId
-
-> GetAuthApproleRoleRoleNameSecretId(ctx, roleName).List(list).Execute()
+> ListApproleRoleRoleNameSecretId(ctx, mountPath, roleName).List(list).Execute()
 
 Generate a SecretID against this role.
 
@@ -3758,10 +2416,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName, list)
+	resp, err := client.WithToken("my-token").Auth.ListApproleRoleRoleNameSecretId(context.Background(), mountPath, roleName, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3776,7 +2435,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -3786,15 +2446,1184 @@ Name | Type | Description  | Notes
 
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthApproleRoleRoleNameSecretIdBoundCidrs
+## ListAwsConfigCertificates
 
-> GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx, roleName).Execute()
+> ListAwsConfigCertificates(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListAwsConfigCertificates(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListAwsConfigSts
+
+> ListAwsConfigSts(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListAwsConfigSts(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListAwsIdentityAccesslist
+
+> ListAwsIdentityAccesslist(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListAwsIdentityAccesslist(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListAwsIdentityWhitelist
+
+> ListAwsIdentityWhitelist(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListAwsIdentityWhitelist(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListAwsRoletagBlacklist
+
+> ListAwsRoletagBlacklist(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListAwsRoletagBlacklist(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListAwsRoletagDenylist
+
+> ListAwsRoletagDenylist(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListAwsRoletagDenylist(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListCertCerts
+
+> ListCertCerts(ctx, mountPath).List(list).Execute()
+
+Manage trusted certificates used for authentication.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListCertCerts(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListGcpRoles
+
+> ListGcpRoles(ctx, mountPath).List(list).Execute()
+
+Lists all the roles that are registered with Vault.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListGcpRoles(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListKerberosGroups
+
+> ListKerberosGroups(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListKerberosGroups(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListOidcRole
+
+> ListOidcRole(ctx, mountPath).List(list).Execute()
+
+Lists all the roles registered with the backend.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListOidcRole(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListTokenAccessors
+
+> ListTokenAccessors(ctx, mountPath).List(list).Execute()
+
+List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListTokenAccessors(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListUserpassUsers
+
+> ListUserpassUsers(ctx, mountPath).List(list).Execute()
+
+Manage users allowed to authenticate.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.ListUserpassUsers(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleName
+
+> ReadApproleRoleRoleName(ctx, mountPath, roleName).Execute()
+
+Register an role with the backend.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
+
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleName(context.Background(), mountPath, roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleNameBindSecretId
+
+> ReadApproleRoleRoleNameBindSecretId(ctx, mountPath, roleName).Execute()
+
+Impose secret_id to be presented during login using this role.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
+
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameBindSecretId(context.Background(), mountPath, roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleNameBoundCidrList
+
+> ReadApproleRoleRoleNameBoundCidrList(ctx, mountPath, roleName).Execute()
+
+Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
+
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameBoundCidrList(context.Background(), mountPath, roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleNameLocalSecretIds
+
+> ReadApproleRoleRoleNameLocalSecretIds(ctx, mountPath, roleName).Execute()
+
+Enables cluster local secret IDs
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
+
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameLocalSecretIds(context.Background(), mountPath, roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleNamePeriod
+
+> ReadApproleRoleRoleNamePeriod(ctx, mountPath, roleName).Execute()
+
+Updates the value of 'period' on the role
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
+
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNamePeriod(context.Background(), mountPath, roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleNamePolicies
+
+> ReadApproleRoleRoleNamePolicies(ctx, mountPath, roleName).Execute()
+
+Policies of the role.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
+
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNamePolicies(context.Background(), mountPath, roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleNameRoleId
+
+> ReadApproleRoleRoleNameRoleId(ctx, mountPath, roleName).Execute()
+
+Returns the 'role_id' of the role.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
+
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameRoleId(context.Background(), mountPath, roleName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadApproleRoleRoleNameSecretIdBoundCidrs
+
+> ReadApproleRoleRoleNameSecretIdBoundCidrs(ctx, mountPath, roleName).Execute()
 
 Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 
@@ -3819,9 +3648,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3836,7 +3666,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -3845,15 +3676,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthApproleRoleRoleNameSecretIdNumUses
+## ReadApproleRoleRoleNameSecretIdNumUses
 
-> GetAuthApproleRoleRoleNameSecretIdNumUses(ctx, roleName).Execute()
+> ReadApproleRoleRoleNameSecretIdNumUses(ctx, mountPath, roleName).Execute()
 
 Use limit of the SecretID generated against the role.
 
@@ -3878,9 +3710,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameSecretIdNumUses(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3895,7 +3728,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -3904,15 +3738,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthApproleRoleRoleNameSecretIdTtl
+## ReadApproleRoleRoleNameSecretIdTtl
 
-> GetAuthApproleRoleRoleNameSecretIdTtl(ctx, roleName).Execute()
+> ReadApproleRoleRoleNameSecretIdTtl(ctx, mountPath, roleName).Execute()
 
 Duration in seconds of the SecretID generated against the role.
 
@@ -3937,9 +3772,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameSecretIdTtl(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3954,7 +3790,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -3963,15 +3800,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthApproleRoleRoleNameTokenBoundCidrs
+## ReadApproleRoleRoleNameTokenBoundCidrs
 
-> GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx, roleName).Execute()
+> ReadApproleRoleRoleNameTokenBoundCidrs(ctx, mountPath, roleName).Execute()
 
 Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 
@@ -3996,9 +3834,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameTokenBoundCidrs(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4013,7 +3852,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -4022,15 +3862,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthApproleRoleRoleNameTokenMaxTtl
+## ReadApproleRoleRoleNameTokenMaxTtl
 
-> GetAuthApproleRoleRoleNameTokenMaxTtl(ctx, roleName).Execute()
+> ReadApproleRoleRoleNameTokenMaxTtl(ctx, mountPath, roleName).Execute()
 
 Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 
@@ -4055,9 +3896,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameTokenMaxTtl(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4072,7 +3914,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -4081,15 +3924,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthApproleRoleRoleNameTokenNumUses
+## ReadApproleRoleRoleNameTokenNumUses
 
-> GetAuthApproleRoleRoleNameTokenNumUses(ctx, roleName).Execute()
+> ReadApproleRoleRoleNameTokenNumUses(ctx, mountPath, roleName).Execute()
 
 Number of times issued tokens can be used
 
@@ -4114,9 +3958,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameTokenNumUses(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4131,7 +3976,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -4140,15 +3986,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthApproleRoleRoleNameTokenTtl
+## ReadApproleRoleRoleNameTokenTtl
 
-> GetAuthApproleRoleRoleNameTokenTtl(ctx, roleName).Execute()
+> ReadApproleRoleRoleNameTokenTtl(ctx, mountPath, roleName).Execute()
 
 Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 
@@ -4173,9 +4020,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadApproleRoleRoleNameTokenTtl(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4190,7 +4038,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
@@ -4199,15 +4048,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsConfigCertificateCertName
+## ReadAwsConfigCertificateCertName
 
-> GetAuthAwsConfigCertificateCertName(ctx, certName).Execute()
+> ReadAwsConfigCertificateCertName(ctx, certName, mountPath).Execute()
 
 
 
@@ -4233,8 +4083,9 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigCertificateCertName(context.Background(), certName, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4250,6 +4101,67 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsConfigClient
+
+> ReadAwsConfigClient(ctx, mountPath).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigClient(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -4264,9 +4176,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsConfigCertificates
+## ReadAwsConfigIdentity
 
-> GetAuthAwsConfigCertificates(ctx).List(list).Execute()
+> ReadAwsConfigIdentity(ctx, mountPath).Execute()
 
 
 
@@ -4291,9 +4203,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigCertificates(context.Background(), list)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigIdentity(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4305,63 +4217,16 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsConfigClient
-
-> GetAuthAwsConfigClient(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigClient(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
 
 
  (empty response body)
@@ -4370,115 +4235,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsConfigIdentity
+## ReadAwsConfigStsAccountId
 
-> GetAuthAwsConfigIdentity(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigIdentity(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsConfigSts
-
-> GetAuthAwsConfigSts(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigSts(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsConfigStsAccountId
-
-> GetAuthAwsConfigStsAccountId(ctx, accountId).Execute()
+> ReadAwsConfigStsAccountId(ctx, accountId, mountPath).Execute()
 
 
 
@@ -4504,8 +4263,9 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigStsAccountId(context.Background(), accountId, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4521,6 +4281,67 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsConfigTidyIdentityAccesslist
+
+> ReadAwsConfigTidyIdentityAccesslist(ctx, mountPath).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigTidyIdentityAccesslist(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -4535,60 +4356,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsConfigTidyIdentityAccesslist
+## ReadAwsConfigTidyIdentityWhitelist
 
-> GetAuthAwsConfigTidyIdentityAccesslist(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsConfigTidyIdentityWhitelist
-
-> GetAuthAwsConfigTidyIdentityWhitelist(ctx).Execute()
+> ReadAwsConfigTidyIdentityWhitelist(ctx, mountPath).Execute()
 
 
 
@@ -4613,162 +4383,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsConfigTidyRoletagBlacklist
-
-> GetAuthAwsConfigTidyRoletagBlacklist(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsConfigTidyRoletagDenylist
-
-> GetAuthAwsConfigTidyRoletagDenylist(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsIdentityAccesslist
-
-> GetAuthAwsIdentityAccesslist(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityAccesslist(context.Background(), list)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigTidyIdentityWhitelist(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4780,13 +4397,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
+
 
  (empty response body)
 
@@ -4794,9 +4415,127 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsIdentityAccesslistInstanceId
+## ReadAwsConfigTidyRoletagBlacklist
 
-> GetAuthAwsIdentityAccesslistInstanceId(ctx, instanceId).Execute()
+> ReadAwsConfigTidyRoletagBlacklist(ctx, mountPath).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigTidyRoletagBlacklist(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsConfigTidyRoletagDenylist
+
+> ReadAwsConfigTidyRoletagDenylist(ctx, mountPath).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Auth.ReadAwsConfigTidyRoletagDenylist(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsIdentityAccesslistInstanceId
+
+> ReadAwsIdentityAccesslistInstanceId(ctx, instanceId, mountPath).Execute()
 
 
 
@@ -4822,8 +4561,9 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsIdentityAccesslistInstanceId(context.Background(), instanceId, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4839,6 +4579,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -4847,60 +4588,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsIdentityWhitelist
-
-> GetAuthAwsIdentityWhitelist(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityWhitelist(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -4908,9 +4595,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsIdentityWhitelistInstanceId
+## ReadAwsIdentityWhitelistInstanceId
 
-> GetAuthAwsIdentityWhitelistInstanceId(ctx, instanceId).Execute()
+> ReadAwsIdentityWhitelistInstanceId(ctx, instanceId, mountPath).Execute()
 
 
 
@@ -4936,8 +4623,9 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsIdentityWhitelistInstanceId(context.Background(), instanceId, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4953,6 +4641,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -4961,60 +4650,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsRole
-
-> GetAuthAwsRole(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5022,9 +4657,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsRoleRole
+## ReadAwsRoleRole
 
-> GetAuthAwsRoleRole(ctx, role).Execute()
+> ReadAwsRoleRole(ctx, mountPath, role).Execute()
 
 
 
@@ -5050,8 +4685,9 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoleRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsRoleRole(context.Background(), mountPath, role)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5066,6 +4702,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -5075,60 +4712,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsRoles
-
-> GetAuthAwsRoles(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5136,64 +4719,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsRoletagBlacklist
+## ReadAwsRoletagBlacklistRoleTag
 
-> GetAuthAwsRoletagBlacklist(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagBlacklist(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsRoletagBlacklistRoleTag
-
-> GetAuthAwsRoletagBlacklistRoleTag(ctx, roleTag).Execute()
+> ReadAwsRoletagBlacklistRoleTag(ctx, mountPath, roleTag).Execute()
 
 
 
@@ -5219,8 +4747,9 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsRoletagBlacklistRoleTag(context.Background(), mountPath, roleTag)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5235,6 +4764,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -5244,60 +4774,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAwsRoletagDenylist
-
-> GetAuthAwsRoletagDenylist(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagDenylist(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5305,9 +4781,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthAwsRoletagDenylistRoleTag
+## ReadAwsRoletagDenylistRoleTag
 
-> GetAuthAwsRoletagDenylistRoleTag(ctx, roleTag).Execute()
+> ReadAwsRoletagDenylistRoleTag(ctx, mountPath, roleTag).Execute()
 
 
 
@@ -5333,8 +4809,9 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	resp, err := client.WithToken("my-token").Auth.ReadAwsRoletagDenylistRoleTag(context.Background(), mountPath, roleTag)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5349,6 +4826,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -5358,56 +4836,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAzureConfig
-
-> GetAuthAzureConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAzureConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -5415,229 +4843,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthAzureRole
+## ReadCertCertsName
 
-> GetAuthAzureRole(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAzureRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthAzureRoleName
-
-> GetAuthAzureRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthAzureRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthCentrifyConfig
-
-> GetAuthCentrifyConfig(ctx).Execute()
-
-This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthCentrifyConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthCertCerts
-
-> GetAuthCertCerts(ctx).List(list).Execute()
-
-Manage trusted certificates used for authentication.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertCerts(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthCertCertsName
-
-> GetAuthCertCertsName(ctx, name).Execute()
+> ReadCertCertsName(ctx, mountPath, name).Execute()
 
 Manage trusted certificates used for authentication.
 
@@ -5663,8 +4871,9 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertCertsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.ReadCertCertsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5679,6 +4888,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -5688,56 +4898,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthCertConfig
-
-> GetAuthCertConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -5745,9 +4905,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthCertCrlsName
+## ReadCertCrlsName
 
-> GetAuthCertCrlsName(ctx, name).Execute()
+> ReadCertCrlsName(ctx, mountPath, name).Execute()
 
 Manage Certificate Revocation Lists checked during authentication.
 
@@ -5773,8 +4933,9 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertCrlsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.ReadCertCrlsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5789,6 +4950,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -5798,56 +4960,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthCfConfig
-
-> GetAuthCfConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthCfConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -5855,64 +4967,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthCfRoles
+## ReadCfRolesRole
 
-> GetAuthCfRoles(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthCfRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthCfRolesRole
-
-> GetAuthCfRolesRole(ctx, role).Execute()
+> ReadCfRolesRole(ctx, mountPath, role).Execute()
 
 
 
@@ -5938,8 +4995,9 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCfRolesRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Auth.ReadCfRolesRole(context.Background(), mountPath, role)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5954,6 +5012,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
@@ -5963,56 +5022,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthGcpConfig
-
-> GetAuthGcpConfig(ctx).Execute()
-
-Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -6020,229 +5029,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthGcpRole
+## ReadGithubMapTeams
 
-> GetAuthGcpRole(ctx).List(list).Execute()
-
-Lists all the roles that are registered with Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthGcpRoleName
-
-> GetAuthGcpRoleName(ctx, name).Execute()
-
-Create a GCP role with associated policies and required attributes.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthGcpRoles
-
-> GetAuthGcpRoles(ctx).List(list).Execute()
-
-Lists all the roles that are registered with Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthGithubConfig
-
-> GetAuthGithubConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthGithubMapTeams
-
-> GetAuthGithubMapTeams(ctx).List(list).Execute()
+> ReadGithubMapTeams(ctx, mountPath).List(list).Execute()
 
 Read mappings for teams
 
@@ -6267,9 +5056,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapTeams(context.Background(), list)
+	resp, err := client.WithToken("my-token").Auth.ReadGithubMapTeams(context.Background(), mountPath, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6281,12 +5071,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
@@ -6295,9 +5090,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthGithubMapTeamsKey
+## ReadGithubMapTeamsKey
 
-> GetAuthGithubMapTeamsKey(ctx, key).Execute()
+> ReadGithubMapTeamsKey(ctx, key, mountPath).Execute()
 
 Read/write/delete a single teams mapping
 
@@ -6323,8 +5118,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapTeamsKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Auth.ReadGithubMapTeamsKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6340,6 +5136,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -6348,15 +5145,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAuthGithubMapUsers
+## ReadGithubMapUsers
 
-> GetAuthGithubMapUsers(ctx).List(list).Execute()
+> ReadGithubMapUsers(ctx, mountPath).List(list).Execute()
 
 Read mappings for users
 
@@ -6381,9 +5179,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapUsers(context.Background(), list)
+	resp, err := client.WithToken("my-token").Auth.ReadGithubMapUsers(context.Background(), mountPath, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6395,12 +5194,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
@@ -6409,9 +5213,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthGithubMapUsersKey
+## ReadGithubMapUsersKey
 
-> GetAuthGithubMapUsersKey(ctx, key).Execute()
+> ReadGithubMapUsersKey(ctx, key, mountPath).Execute()
 
 Read/write/delete a single users mapping
 
@@ -6437,8 +5241,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapUsersKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Auth.ReadGithubMapUsersKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6454,6 +5259,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -6462,56 +5268,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthJwtConfig
-
-> GetAuthJwtConfig(ctx).Execute()
-
-Read the current JWT authentication backend configuration.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -6519,62 +5275,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthJwtOidcCallback
+## ReadKerberosConfigLdap
 
-> GetAuthJwtOidcCallback(ctx).Execute()
-
-Callback endpoint to complete an OIDC login.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtOidcCallback(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthJwtRole
-
-> GetAuthJwtRole(ctx).List(list).Execute()
-
-Lists all the roles registered with the backend.
+> ReadKerberosConfigLdap(ctx, mountPath).Execute()
 
 
 
@@ -6599,64 +5302,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthJwtRoleName
-
-> GetAuthJwtRoleName(ctx, name).Execute()
-
-Read an existing role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.ReadKerberosConfigLdap(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6671,7 +5319,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -6686,166 +5334,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthKerberosConfig
+## ReadKerberosGroupsName
 
-> GetAuthKerberosConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthKerberosConfigLdap
-
-> GetAuthKerberosConfigLdap(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosConfigLdap(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthKerberosGroups
-
-> GetAuthKerberosGroups(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosGroups(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthKerberosGroupsName
-
-> GetAuthKerberosGroupsName(ctx, name).Execute()
+> ReadKerberosGroupsName(ctx, mountPath, name).Execute()
 
 
 
@@ -6871,8 +5362,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosGroupsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.ReadKerberosGroupsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6887,6 +5379,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -6896,56 +5389,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthKerberosLogin
-
-> GetAuthKerberosLogin(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosLogin(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -6953,618 +5396,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthKubernetesConfig
+## ReadOidcConfig
 
-> GetAuthKubernetesConfig(ctx).Execute()
-
-Configures the JWT Public Key and Kubernetes API information.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthKubernetesConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthKubernetesRole
-
-> GetAuthKubernetesRole(ctx).List(list).Execute()
-
-Lists all the roles registered with the backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthKubernetesRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthKubernetesRoleName
-
-> GetAuthKubernetesRoleName(ctx, name).Execute()
-
-Register an role with the backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthKubernetesRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthLdapConfig
-
-> GetAuthLdapConfig(ctx).Execute()
-
-Configure the LDAP server to connect to, along with its options.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthLdapGroups
-
-> GetAuthLdapGroups(ctx).List(list).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapGroups(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthLdapGroupsName
-
-> GetAuthLdapGroupsName(ctx, name).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the LDAP group.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapGroupsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the LDAP group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthLdapUsers
-
-> GetAuthLdapUsers(ctx).List(list).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapUsers(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthLdapUsersName
-
-> GetAuthLdapUsersName(ctx, name).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the LDAP user.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapUsersName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the LDAP user. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOciConfig
-
-> GetAuthOciConfig(ctx).Execute()
-
-Manages the configuration for the Vault Auth Plugin.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthOciConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOciRole
-
-> GetAuthOciRole(ctx).List(list).Execute()
-
-Lists all the roles that are registered with Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOciRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOciRoleRole
-
-> GetAuthOciRoleRole(ctx, role).Execute()
-
-Create a role and associate policies to it.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthOciRoleRole(context.Background(), role)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOidcConfig
-
-> GetAuthOidcConfig(ctx).Execute()
+> ReadOidcConfig(ctx, mountPath).Execute()
 
 Read the current JWT authentication backend configuration.
 
@@ -7589,8 +5423,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcConfig(context.Background())
+	resp, err := client.WithToken("my-token").Auth.ReadOidcConfig(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7601,10 +5436,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -7613,9 +5455,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthOidcOidcCallback
+## ReadOidcOidcCallback
 
-> GetAuthOidcOidcCallback(ctx).Execute()
+> ReadOidcOidcCallback(ctx, mountPath).Execute()
 
 Callback endpoint to complete an OIDC login.
 
@@ -7640,62 +5482,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcOidcCallback(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOidcRole
-
-> GetAuthOidcRole(ctx).List(list).Execute()
-
-Lists all the roles registered with the backend.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcRole(context.Background(), list)
+	resp, err := client.WithToken("my-token").Auth.ReadOidcOidcCallback(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7707,13 +5496,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
+
 
  (empty response body)
 
@@ -7721,9 +5514,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthOidcRoleName
+## ReadOidcRoleName
 
-> GetAuthOidcRoleName(ctx, name).Execute()
+> ReadOidcRoleName(ctx, mountPath, name).Execute()
 
 Read an existing role.
 
@@ -7749,8 +5542,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.ReadOidcRoleName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7765,6 +5559,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -7774,56 +5569,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOktaConfig
-
-> GetAuthOktaConfig(ctx).Execute()
-
-This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -7831,237 +5576,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthOktaGroups
+## ReadOktaVerifyNonce
 
-> GetAuthOktaGroups(ctx).List(list).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaGroups(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOktaGroupsName
-
-> GetAuthOktaGroupsName(ctx, name).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the Okta group.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaGroupsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the Okta group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOktaUsers
-
-> GetAuthOktaUsers(ctx).List(list).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaUsers(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOktaUsersName
-
-> GetAuthOktaUsersName(ctx, name).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the user.
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaUsersName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the user. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthOktaVerifyNonce
-
-> GetAuthOktaVerifyNonce(ctx, nonce).Execute()
+> ReadOktaVerifyNonce(ctx, mountPath, nonce).Execute()
 
 
 
@@ -8087,8 +5604,9 @@ func main() {
 	}
 
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaVerifyNonce(context.Background(), nonce)
+	resp, err := client.WithToken("my-token").Auth.ReadOktaVerifyNonce(context.Background(), mountPath, nonce)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8103,6 +5621,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 **nonce** | **string** | Nonce provided during a login request to retrieve the number verification challenge for the matching request. | 
 
 ### Other Parameters
@@ -8112,56 +5631,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthRadiusConfig
-
-> GetAuthRadiusConfig(ctx).Execute()
-
-Configure the RADIUS server to connect to, along with its options.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Auth.GetAuthRadiusConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -8169,64 +5638,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthRadiusUsers
+## ReadRadiusUsersName
 
-> GetAuthRadiusUsers(ctx).List(list).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthRadiusUsers(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthRadiusUsersName
-
-> GetAuthRadiusUsersName(ctx, name).Execute()
+> ReadRadiusUsersName(ctx, mountPath, name).Execute()
 
 Manage users allowed to authenticate.
 
@@ -8252,8 +5666,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthRadiusUsersName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Auth.ReadRadiusUsersName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8268,6 +5683,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
@@ -8277,60 +5693,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthTokenAccessors
-
-> GetAuthTokenAccessors(ctx).List(list).Execute()
-
-List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenAccessors(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -8338,9 +5700,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthTokenLookup
+## ReadTokenLookup
 
-> GetAuthTokenLookup(ctx).Execute()
+> ReadTokenLookup(ctx, mountPath).Execute()
 
 This endpoint will lookup a token and its properties.
 
@@ -8365,8 +5727,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenLookup(context.Background())
+	resp, err := client.WithToken("my-token").Auth.ReadTokenLookup(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8377,10 +5740,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -8389,9 +5759,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAuthTokenLookupSelf
+## ReadTokenLookupSelf
 
-> GetAuthTokenLookupSelf(ctx).Execute()
+> ReadTokenLookupSelf(ctx, mountPath).Execute()
 
 This endpoint will lookup a token and its properties.
 
@@ -8416,60 +5786,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenLookupSelf(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthTokenRoles
-
-> GetAuthTokenRoles(ctx).List(list).Execute()
-
-This endpoint lists configured roles.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Auth.ReadTokenLookupSelf(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8481,13 +5800,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
+
 
  (empty response body)
 
@@ -8495,9 +5818,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthTokenRolesRoleName
+## ReadTokenRolesRoleName
 
-> GetAuthTokenRolesRoleName(ctx, roleName).Execute()
+> ReadTokenRolesRoleName(ctx, mountPath, roleName).Execute()
 
 
 
@@ -8523,8 +5846,9 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenRolesRoleName(context.Background(), roleName)
+	resp, err := client.WithToken("my-token").Auth.ReadTokenRolesRoleName(context.Background(), mountPath, roleName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8539,6 +5863,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -8548,60 +5873,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAuthUserpassUsers
-
-> GetAuthUserpassUsers(ctx).List(list).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthUserpassUsers(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -8609,9 +5880,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAuthUserpassUsersUsername
+## ReadUserpassUsersUsername
 
-> GetAuthUserpassUsersUsername(ctx, username).Execute()
+> ReadUserpassUsersUsername(ctx, mountPath, username).Execute()
 
 Manage users allowed to authenticate.
 
@@ -8637,8 +5908,9 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthUserpassUsersUsername(context.Background(), username)
+	resp, err := client.WithToken("my-token").Auth.ReadUserpassUsersUsername(context.Background(), mountPath, username)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8653,6 +5925,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
@@ -8662,60 +5935,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAlicloudLogin
-
-> PostAuthAlicloudLogin(ctx).AlicloudLoginRequest(alicloudLoginRequest).Execute()
-
-Authenticates an RAM entity with Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	alicloudLoginRequest := NewAlicloudLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAlicloudLogin(context.Background(), alicloudLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **alicloudLoginRequest** | [**AlicloudLoginRequest**](AlicloudLoginRequest.md) |  | 
 
  (empty response body)
 
@@ -8723,125 +5942,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAlicloudRoleRole
+## UpdateApproleRoleRoleName
 
-> PostAuthAlicloudRoleRole(ctx, role).AlicloudRoleRequest(alicloudRoleRequest).Execute()
-
-Create a role and associate policies to it.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | The name of the role as it should appear in Vault.
-
-	alicloudRoleRequest := NewAlicloudRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAlicloudRoleRole(context.Background(), role, alicloudRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | The name of the role as it should appear in Vault. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **alicloudRoleRequest** | [**AlicloudRoleRequest**](AlicloudRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthApproleLogin
-
-> PostAuthApproleLogin(ctx).ApproleLoginRequest(approleLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	approleLoginRequest := NewApproleLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleLogin(context.Background(), approleLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **approleLoginRequest** | [**ApproleLoginRequest**](ApproleLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthApproleRoleRoleName
-
-> PostAuthApproleRoleRoleName(ctx, roleName).ApproleRoleRequest(approleRoleRequest).Execute()
+> UpdateApproleRoleRoleName(ctx, mountPath, roleName).ApproleRoleRequest(approleRoleRequest).Execute()
 
 Register an role with the backend.
 
@@ -8866,10 +5969,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleRequest := NewApproleRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleName(context.Background(), roleName, approleRoleRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleName(context.Background(), mountPath, roleName, approleRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8884,13 +5988,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleRequest** | [**ApproleRoleRequest**](ApproleRoleRequest.md) |  | 
 
@@ -8900,9 +6006,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameBindSecretId
+## UpdateApproleRoleRoleNameBindSecretId
 
-> PostAuthApproleRoleRoleNameBindSecretId(ctx, roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
+> UpdateApproleRoleRoleNameBindSecretId(ctx, mountPath, roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
 
 Impose secret_id to be presented during login using this role.
 
@@ -8927,10 +6033,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleBindSecretIdRequest := NewApproleRoleBindSecretIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName, approleRoleBindSecretIdRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameBindSecretId(context.Background(), mountPath, roleName, approleRoleBindSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8945,13 +6052,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleBindSecretIdRequest** | [**ApproleRoleBindSecretIdRequest**](ApproleRoleBindSecretIdRequest.md) |  | 
 
@@ -8961,9 +6070,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameBoundCidrList
+## UpdateApproleRoleRoleNameBoundCidrList
 
-> PostAuthApproleRoleRoleNameBoundCidrList(ctx, roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
+> UpdateApproleRoleRoleNameBoundCidrList(ctx, mountPath, roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
 
 Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 
@@ -8988,10 +6097,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleBoundCidrListRequest := NewApproleRoleBoundCidrListRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName, approleRoleBoundCidrListRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameBoundCidrList(context.Background(), mountPath, roleName, approleRoleBoundCidrListRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9006,13 +6116,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleBoundCidrListRequest** | [**ApproleRoleBoundCidrListRequest**](ApproleRoleBoundCidrListRequest.md) |  | 
 
@@ -9022,9 +6134,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameCustomSecretId
+## UpdateApproleRoleRoleNameCustomSecretId
 
-> PostAuthApproleRoleRoleNameCustomSecretId(ctx, roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
+> UpdateApproleRoleRoleNameCustomSecretId(ctx, mountPath, roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
 
 Assign a SecretID of choice against the role.
 
@@ -9049,10 +6161,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleCustomSecretIdRequest := NewApproleRoleCustomSecretIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName, approleRoleCustomSecretIdRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameCustomSecretId(context.Background(), mountPath, roleName, approleRoleCustomSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9067,13 +6180,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleCustomSecretIdRequest** | [**ApproleRoleCustomSecretIdRequest**](ApproleRoleCustomSecretIdRequest.md) |  | 
 
@@ -9083,9 +6198,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNamePeriod
+## UpdateApproleRoleRoleNamePeriod
 
-> PostAuthApproleRoleRoleNamePeriod(ctx, roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
+> UpdateApproleRoleRoleNamePeriod(ctx, mountPath, roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
 
 Updates the value of 'period' on the role
 
@@ -9110,10 +6225,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRolePeriodRequest := NewApproleRolePeriodRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName, approleRolePeriodRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNamePeriod(context.Background(), mountPath, roleName, approleRolePeriodRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9128,13 +6244,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRolePeriodRequest** | [**ApproleRolePeriodRequest**](ApproleRolePeriodRequest.md) |  | 
 
@@ -9144,9 +6262,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNamePolicies
+## UpdateApproleRoleRoleNamePolicies
 
-> PostAuthApproleRoleRoleNamePolicies(ctx, roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
+> UpdateApproleRoleRoleNamePolicies(ctx, mountPath, roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
 
 Policies of the role.
 
@@ -9171,10 +6289,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRolePoliciesRequest := NewApproleRolePoliciesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName, approleRolePoliciesRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNamePolicies(context.Background(), mountPath, roleName, approleRolePoliciesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9189,13 +6308,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRolePoliciesRequest** | [**ApproleRolePoliciesRequest**](ApproleRolePoliciesRequest.md) |  | 
 
@@ -9205,9 +6326,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameRoleId
+## UpdateApproleRoleRoleNameRoleId
 
-> PostAuthApproleRoleRoleNameRoleId(ctx, roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
+> UpdateApproleRoleRoleNameRoleId(ctx, mountPath, roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
 
 Returns the 'role_id' of the role.
 
@@ -9232,10 +6353,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleRoleIdRequest := NewApproleRoleRoleIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName, approleRoleRoleIdRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameRoleId(context.Background(), mountPath, roleName, approleRoleRoleIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9250,13 +6372,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleRoleIdRequest** | [**ApproleRoleRoleIdRequest**](ApproleRoleRoleIdRequest.md) |  | 
 
@@ -9266,9 +6390,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretId
+## UpdateApproleRoleRoleNameSecretId
 
-> PostAuthApproleRoleRoleNameSecretId(ctx, roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
+> UpdateApproleRoleRoleNameSecretId(ctx, mountPath, roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
 
 Generate a SecretID against this role.
 
@@ -9293,10 +6417,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdRequest := NewApproleRoleSecretIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName, approleRoleSecretIdRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretId(context.Background(), mountPath, roleName, approleRoleSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9311,13 +6436,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdRequest** | [**ApproleRoleSecretIdRequest**](ApproleRoleSecretIdRequest.md) |  | 
 
@@ -9327,9 +6454,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretIdAccessorDestroy
+## UpdateApproleRoleRoleNameSecretIdAccessorDestroy
 
-> PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx, roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
+> UpdateApproleRoleRoleNameSecretIdAccessorDestroy(ctx, mountPath, roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
 
 
 
@@ -9354,10 +6481,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdAccessorDestroyRequest := NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName, approleRoleSecretIdAccessorDestroyRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), mountPath, roleName, approleRoleSecretIdAccessorDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9372,13 +6500,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdAccessorDestroyRequest** | [**ApproleRoleSecretIdAccessorDestroyRequest**](ApproleRoleSecretIdAccessorDestroyRequest.md) |  | 
 
@@ -9388,9 +6518,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretIdAccessorLookup
+## UpdateApproleRoleRoleNameSecretIdAccessorLookup
 
-> PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx, roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
+> UpdateApproleRoleRoleNameSecretIdAccessorLookup(ctx, mountPath, roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
 
 
 
@@ -9415,10 +6545,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdAccessorLookupRequest := NewApproleRoleSecretIdAccessorLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName, approleRoleSecretIdAccessorLookupRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), mountPath, roleName, approleRoleSecretIdAccessorLookupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9433,13 +6564,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdAccessorLookupRequest** | [**ApproleRoleSecretIdAccessorLookupRequest**](ApproleRoleSecretIdAccessorLookupRequest.md) |  | 
 
@@ -9449,9 +6582,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretIdBoundCidrs
+## UpdateApproleRoleRoleNameSecretIdBoundCidrs
 
-> PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx, roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
+> UpdateApproleRoleRoleNameSecretIdBoundCidrs(ctx, mountPath, roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
 
 Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 
@@ -9476,10 +6609,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdBoundCidrsRequest := NewApproleRoleSecretIdBoundCidrsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName, approleRoleSecretIdBoundCidrsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), mountPath, roleName, approleRoleSecretIdBoundCidrsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9494,13 +6628,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdBoundCidrsRequest** | [**ApproleRoleSecretIdBoundCidrsRequest**](ApproleRoleSecretIdBoundCidrsRequest.md) |  | 
 
@@ -9510,9 +6646,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretIdDestroy
+## UpdateApproleRoleRoleNameSecretIdDestroy
 
-> PostAuthApproleRoleRoleNameSecretIdDestroy(ctx, roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
+> UpdateApproleRoleRoleNameSecretIdDestroy(ctx, mountPath, roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
 
 Invalidate an issued secret_id
 
@@ -9537,10 +6673,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdDestroyRequest := NewApproleRoleSecretIdDestroyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName, approleRoleSecretIdDestroyRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretIdDestroy(context.Background(), mountPath, roleName, approleRoleSecretIdDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9555,13 +6692,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdDestroyRequest** | [**ApproleRoleSecretIdDestroyRequest**](ApproleRoleSecretIdDestroyRequest.md) |  | 
 
@@ -9571,9 +6710,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretIdLookup
+## UpdateApproleRoleRoleNameSecretIdLookup
 
-> PostAuthApproleRoleRoleNameSecretIdLookup(ctx, roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
+> UpdateApproleRoleRoleNameSecretIdLookup(ctx, mountPath, roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
 
 Read the properties of an issued secret_id
 
@@ -9598,10 +6737,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdLookupRequest := NewApproleRoleSecretIdLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName, approleRoleSecretIdLookupRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretIdLookup(context.Background(), mountPath, roleName, approleRoleSecretIdLookupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9616,13 +6756,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdLookupRequest** | [**ApproleRoleSecretIdLookupRequest**](ApproleRoleSecretIdLookupRequest.md) |  | 
 
@@ -9632,9 +6774,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretIdNumUses
+## UpdateApproleRoleRoleNameSecretIdNumUses
 
-> PostAuthApproleRoleRoleNameSecretIdNumUses(ctx, roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
+> UpdateApproleRoleRoleNameSecretIdNumUses(ctx, mountPath, roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
 
 Use limit of the SecretID generated against the role.
 
@@ -9659,10 +6801,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdNumUsesRequest := NewApproleRoleSecretIdNumUsesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName, approleRoleSecretIdNumUsesRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretIdNumUses(context.Background(), mountPath, roleName, approleRoleSecretIdNumUsesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9677,13 +6820,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdNumUsesRequest** | [**ApproleRoleSecretIdNumUsesRequest**](ApproleRoleSecretIdNumUsesRequest.md) |  | 
 
@@ -9693,9 +6838,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameSecretIdTtl
+## UpdateApproleRoleRoleNameSecretIdTtl
 
-> PostAuthApproleRoleRoleNameSecretIdTtl(ctx, roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
+> UpdateApproleRoleRoleNameSecretIdTtl(ctx, mountPath, roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
 
 Duration in seconds of the SecretID generated against the role.
 
@@ -9720,10 +6865,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdTtlRequest := NewApproleRoleSecretIdTtlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName, approleRoleSecretIdTtlRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameSecretIdTtl(context.Background(), mountPath, roleName, approleRoleSecretIdTtlRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9738,13 +6884,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleSecretIdTtlRequest** | [**ApproleRoleSecretIdTtlRequest**](ApproleRoleSecretIdTtlRequest.md) |  | 
 
@@ -9754,9 +6902,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameTokenBoundCidrs
+## UpdateApproleRoleRoleNameTokenBoundCidrs
 
-> PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx, roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
+> UpdateApproleRoleRoleNameTokenBoundCidrs(ctx, mountPath, roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
 
 Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 
@@ -9781,10 +6929,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenBoundCidrsRequest := NewApproleRoleTokenBoundCidrsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName, approleRoleTokenBoundCidrsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameTokenBoundCidrs(context.Background(), mountPath, roleName, approleRoleTokenBoundCidrsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9799,13 +6948,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleTokenBoundCidrsRequest** | [**ApproleRoleTokenBoundCidrsRequest**](ApproleRoleTokenBoundCidrsRequest.md) |  | 
 
@@ -9815,9 +6966,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameTokenMaxTtl
+## UpdateApproleRoleRoleNameTokenMaxTtl
 
-> PostAuthApproleRoleRoleNameTokenMaxTtl(ctx, roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
+> UpdateApproleRoleRoleNameTokenMaxTtl(ctx, mountPath, roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
 
 Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 
@@ -9842,10 +6993,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenMaxTtlRequest := NewApproleRoleTokenMaxTtlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName, approleRoleTokenMaxTtlRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameTokenMaxTtl(context.Background(), mountPath, roleName, approleRoleTokenMaxTtlRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9860,13 +7012,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleTokenMaxTtlRequest** | [**ApproleRoleTokenMaxTtlRequest**](ApproleRoleTokenMaxTtlRequest.md) |  | 
 
@@ -9876,9 +7030,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameTokenNumUses
+## UpdateApproleRoleRoleNameTokenNumUses
 
-> PostAuthApproleRoleRoleNameTokenNumUses(ctx, roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
+> UpdateApproleRoleRoleNameTokenNumUses(ctx, mountPath, roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
 
 Number of times issued tokens can be used
 
@@ -9903,10 +7057,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenNumUsesRequest := NewApproleRoleTokenNumUsesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName, approleRoleTokenNumUsesRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameTokenNumUses(context.Background(), mountPath, roleName, approleRoleTokenNumUsesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9921,13 +7076,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleTokenNumUsesRequest** | [**ApproleRoleTokenNumUsesRequest**](ApproleRoleTokenNumUsesRequest.md) |  | 
 
@@ -9937,9 +7094,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleRoleRoleNameTokenTtl
+## UpdateApproleRoleRoleNameTokenTtl
 
-> PostAuthApproleRoleRoleNameTokenTtl(ctx, roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
+> UpdateApproleRoleRoleNameTokenTtl(ctx, mountPath, roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
 
 Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 
@@ -9964,10 +7121,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenTtlRequest := NewApproleRoleTokenTtlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName, approleRoleTokenTtlRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleRoleRoleNameTokenTtl(context.Background(), mountPath, roleName, approleRoleTokenTtlRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9982,13 +7140,15 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**roleName** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
+**roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **approleRoleTokenTtlRequest** | [**ApproleRoleTokenTtlRequest**](ApproleRoleTokenTtlRequest.md) |  | 
 
@@ -9998,9 +7158,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthApproleTidySecretId
+## UpdateApproleTidySecretId
 
-> PostAuthApproleTidySecretId(ctx).Execute()
+> UpdateApproleTidySecretId(ctx, mountPath).Execute()
 
 Trigger the clean-up of expired SecretID entries.
 
@@ -10025,8 +7185,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleTidySecretId(context.Background())
+	resp, err := client.WithToken("my-token").Auth.UpdateApproleTidySecretId(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10037,10 +7198,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -10049,9 +7217,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigCertificateCertName
+## UpdateAwsConfigCertificateCertName
 
-> PostAuthAwsConfigCertificateCertName(ctx, certName).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
+> UpdateAwsConfigCertificateCertName(ctx, certName, mountPath).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
 
 
 
@@ -10077,9 +7245,10 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigCertificateRequest := NewAwsConfigCertificateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName, awsConfigCertificateRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigCertificateCertName(context.Background(), certName, mountPath, awsConfigCertificateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10095,12 +7264,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **certName** | **string** | Name of the certificate. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **awsConfigCertificateRequest** | [**AwsConfigCertificateRequest**](AwsConfigCertificateRequest.md) |  | 
 
@@ -10110,9 +7281,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigClient
+## UpdateAwsConfigClient
 
-> PostAuthAwsConfigClient(ctx).AwsConfigClientRequest(awsConfigClientRequest).Execute()
+> UpdateAwsConfigClient(ctx, mountPath).AwsConfigClientRequest(awsConfigClientRequest).Execute()
 
 
 
@@ -10137,9 +7308,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigClientRequest := NewAwsConfigClientRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigClient(context.Background(), awsConfigClientRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigClient(context.Background(), mountPath, awsConfigClientRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10151,12 +7323,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigClientRequest** | [**AwsConfigClientRequest**](AwsConfigClientRequest.md) |  | 
 
  (empty response body)
@@ -10165,9 +7342,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigIdentity
+## UpdateAwsConfigIdentity
 
-> PostAuthAwsConfigIdentity(ctx).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
+> UpdateAwsConfigIdentity(ctx, mountPath).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
 
 
 
@@ -10192,9 +7369,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigIdentityRequest := NewAwsConfigIdentityRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigIdentity(context.Background(), awsConfigIdentityRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigIdentity(context.Background(), mountPath, awsConfigIdentityRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10206,12 +7384,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigIdentityRequest** | [**AwsConfigIdentityRequest**](AwsConfigIdentityRequest.md) |  | 
 
  (empty response body)
@@ -10220,9 +7403,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigRotateRoot
+## UpdateAwsConfigRotateRoot
 
-> PostAuthAwsConfigRotateRoot(ctx).Execute()
+> UpdateAwsConfigRotateRoot(ctx, mountPath).Execute()
 
 
 
@@ -10247,8 +7430,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigRotateRoot(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10259,10 +7443,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -10271,9 +7462,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigStsAccountId
+## UpdateAwsConfigStsAccountId
 
-> PostAuthAwsConfigStsAccountId(ctx, accountId).AwsConfigStsRequest(awsConfigStsRequest).Execute()
+> UpdateAwsConfigStsAccountId(ctx, accountId, mountPath).AwsConfigStsRequest(awsConfigStsRequest).Execute()
 
 
 
@@ -10299,9 +7490,10 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigStsRequest := NewAwsConfigStsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId, awsConfigStsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigStsAccountId(context.Background(), accountId, mountPath, awsConfigStsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10317,12 +7509,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **awsConfigStsRequest** | [**AwsConfigStsRequest**](AwsConfigStsRequest.md) |  | 
 
@@ -10332,9 +7526,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigTidyIdentityAccesslist
+## UpdateAwsConfigTidyIdentityAccesslist
 
-> PostAuthAwsConfigTidyIdentityAccesslist(ctx).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
+> UpdateAwsConfigTidyIdentityAccesslist(ctx, mountPath).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
 
 
 
@@ -10359,9 +7553,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyIdentityAccesslistRequest := NewAwsConfigTidyIdentityAccesslistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background(), awsConfigTidyIdentityAccesslistRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigTidyIdentityAccesslist(context.Background(), mountPath, awsConfigTidyIdentityAccesslistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10373,12 +7568,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigTidyIdentityAccesslistRequest** | [**AwsConfigTidyIdentityAccesslistRequest**](AwsConfigTidyIdentityAccesslistRequest.md) |  | 
 
  (empty response body)
@@ -10387,9 +7587,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigTidyIdentityWhitelist
+## UpdateAwsConfigTidyIdentityWhitelist
 
-> PostAuthAwsConfigTidyIdentityWhitelist(ctx).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
+> UpdateAwsConfigTidyIdentityWhitelist(ctx, mountPath).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
 
 
 
@@ -10414,9 +7614,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyIdentityWhitelistRequest := NewAwsConfigTidyIdentityWhitelistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background(), awsConfigTidyIdentityWhitelistRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigTidyIdentityWhitelist(context.Background(), mountPath, awsConfigTidyIdentityWhitelistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10428,12 +7629,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigTidyIdentityWhitelistRequest** | [**AwsConfigTidyIdentityWhitelistRequest**](AwsConfigTidyIdentityWhitelistRequest.md) |  | 
 
  (empty response body)
@@ -10442,9 +7648,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigTidyRoletagBlacklist
+## UpdateAwsConfigTidyRoletagBlacklist
 
-> PostAuthAwsConfigTidyRoletagBlacklist(ctx).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
+> UpdateAwsConfigTidyRoletagBlacklist(ctx, mountPath).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
 
 
 
@@ -10469,9 +7675,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyRoletagBlacklistRequest := NewAwsConfigTidyRoletagBlacklistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background(), awsConfigTidyRoletagBlacklistRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigTidyRoletagBlacklist(context.Background(), mountPath, awsConfigTidyRoletagBlacklistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10483,12 +7690,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigTidyRoletagBlacklistRequest** | [**AwsConfigTidyRoletagBlacklistRequest**](AwsConfigTidyRoletagBlacklistRequest.md) |  | 
 
  (empty response body)
@@ -10497,9 +7709,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsConfigTidyRoletagDenylist
+## UpdateAwsConfigTidyRoletagDenylist
 
-> PostAuthAwsConfigTidyRoletagDenylist(ctx).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
+> UpdateAwsConfigTidyRoletagDenylist(ctx, mountPath).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
 
 
 
@@ -10524,9 +7736,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyRoletagDenylistRequest := NewAwsConfigTidyRoletagDenylistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background(), awsConfigTidyRoletagDenylistRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsConfigTidyRoletagDenylist(context.Background(), mountPath, awsConfigTidyRoletagDenylistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10538,12 +7751,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigTidyRoletagDenylistRequest** | [**AwsConfigTidyRoletagDenylistRequest**](AwsConfigTidyRoletagDenylistRequest.md) |  | 
 
  (empty response body)
@@ -10552,64 +7770,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsLogin
+## UpdateAwsRoleRole
 
-> PostAuthAwsLogin(ctx).AwsLoginRequest(awsLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	awsLoginRequest := NewAwsLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsLogin(context.Background(), awsLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **awsLoginRequest** | [**AwsLoginRequest**](AwsLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAwsRoleRole
-
-> PostAuthAwsRoleRole(ctx, role).AwsRoleRequest(awsRoleRequest).Execute()
+> UpdateAwsRoleRole(ctx, mountPath, role).AwsRoleRequest(awsRoleRequest).Execute()
 
 
 
@@ -10635,9 +7798,10 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsRoleRequest := NewAwsRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoleRole(context.Background(), role, awsRoleRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsRoleRole(context.Background(), mountPath, role, awsRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10652,6 +7816,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -10659,6 +7824,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **awsRoleRequest** | [**AwsRoleRequest**](AwsRoleRequest.md) |  | 
 
@@ -10668,9 +7834,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsRoleRoleTag
+## UpdateAwsRoleRoleTag
 
-> PostAuthAwsRoleRoleTag(ctx, role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
+> UpdateAwsRoleRoleTag(ctx, mountPath, role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
 
 
 
@@ -10696,9 +7862,10 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsRoleTagRequest := NewAwsRoleTagRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoleRoleTag(context.Background(), role, awsRoleTagRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsRoleRoleTag(context.Background(), mountPath, role, awsRoleTagRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10713,6 +7880,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -10720,6 +7888,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **awsRoleTagRequest** | [**AwsRoleTagRequest**](AwsRoleTagRequest.md) |  | 
 
@@ -10729,68 +7898,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsRoletagBlacklistRoleTag
+## UpdateAwsRoletagBlacklistRoleTag
 
-> PostAuthAwsRoletagBlacklistRoleTag(ctx, roleTag).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAwsRoletagDenylistRoleTag
-
-> PostAuthAwsRoletagDenylistRoleTag(ctx, roleTag).Execute()
+> UpdateAwsRoletagBlacklistRoleTag(ctx, mountPath, roleTag).Execute()
 
 
 
@@ -10816,8 +7926,9 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsRoletagBlacklistRoleTag(context.Background(), mountPath, roleTag)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10832,6 +7943,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -10841,15 +7953,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsTidyIdentityAccesslist
+## UpdateAwsRoletagDenylistRoleTag
 
-> PostAuthAwsTidyIdentityAccesslist(ctx).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
+> UpdateAwsRoletagDenylistRoleTag(ctx, mountPath, roleTag).Execute()
 
 
 
@@ -10874,9 +7987,72 @@ func main() {
 		log.Fatal(err)
 	}
 
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsRoletagDenylistRoleTag(context.Background(), mountPath, roleTag)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+**roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## UpdateAwsTidyIdentityAccesslist
+
+> UpdateAwsTidyIdentityAccesslist(ctx, mountPath).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsTidyIdentityAccesslistRequest := NewAwsTidyIdentityAccesslistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyIdentityAccesslist(context.Background(), awsTidyIdentityAccesslistRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsTidyIdentityAccesslist(context.Background(), mountPath, awsTidyIdentityAccesslistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10888,12 +8064,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsTidyIdentityAccesslistRequest** | [**AwsTidyIdentityAccesslistRequest**](AwsTidyIdentityAccesslistRequest.md) |  | 
 
  (empty response body)
@@ -10902,9 +8083,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthAwsTidyIdentityWhitelist
+## UpdateAwsTidyIdentityWhitelist
 
-> PostAuthAwsTidyIdentityWhitelist(ctx).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
+> UpdateAwsTidyIdentityWhitelist(ctx, mountPath).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
 
 
 
@@ -10929,285 +8110,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsTidyIdentityWhitelistRequest := NewAwsTidyIdentityWhitelistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyIdentityWhitelist(context.Background(), awsTidyIdentityWhitelistRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **awsTidyIdentityWhitelistRequest** | [**AwsTidyIdentityWhitelistRequest**](AwsTidyIdentityWhitelistRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAwsTidyRoletagBlacklist
-
-> PostAuthAwsTidyRoletagBlacklist(ctx).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	awsTidyRoletagBlacklistRequest := NewAwsTidyRoletagBlacklistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyRoletagBlacklist(context.Background(), awsTidyRoletagBlacklistRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **awsTidyRoletagBlacklistRequest** | [**AwsTidyRoletagBlacklistRequest**](AwsTidyRoletagBlacklistRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAwsTidyRoletagDenylist
-
-> PostAuthAwsTidyRoletagDenylist(ctx).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	awsTidyRoletagDenylistRequest := NewAwsTidyRoletagDenylistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyRoletagDenylist(context.Background(), awsTidyRoletagDenylistRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **awsTidyRoletagDenylistRequest** | [**AwsTidyRoletagDenylistRequest**](AwsTidyRoletagDenylistRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAzureConfig
-
-> PostAuthAzureConfig(ctx).AzureConfigRequest(azureConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	azureConfigRequest := NewAzureConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAzureConfig(context.Background(), azureConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **azureConfigRequest** | [**AzureConfigRequest**](AzureConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAzureLogin
-
-> PostAuthAzureLogin(ctx).AzureLoginRequest(azureLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	azureLoginRequest := NewAzureLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAzureLogin(context.Background(), azureLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **azureLoginRequest** | [**AzureLoginRequest**](AzureLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthAzureRoleName
-
-> PostAuthAzureRoleName(ctx, name).AzureRoleRequest(azureRoleRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	azureRoleRequest := NewAzureRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAzureRoleName(context.Background(), name, azureRoleRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsTidyIdentityWhitelist(context.Background(), mountPath, awsTidyIdentityWhitelistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11222,7 +8128,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11230,7 +8136,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **azureRoleRequest** | [**AzureRoleRequest**](AzureRoleRequest.md) |  | 
+ **awsTidyIdentityWhitelistRequest** | [**AwsTidyIdentityWhitelistRequest**](AwsTidyIdentityWhitelistRequest.md) |  | 
 
  (empty response body)
 
@@ -11238,11 +8144,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthCentrifyConfig
+## UpdateAwsTidyRoletagBlacklist
 
-> PostAuthCentrifyConfig(ctx).CentrifyConfigRequest(centrifyConfigRequest).Execute()
+> UpdateAwsTidyRoletagBlacklist(ctx, mountPath).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
 
-This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
+
 
 ### Example
 
@@ -11265,9 +8171,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	centrifyConfigRequest := NewCentrifyConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCentrifyConfig(context.Background(), centrifyConfigRequest)
+	awsTidyRoletagBlacklistRequest := NewAwsTidyRoletagBlacklistRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsTidyRoletagBlacklist(context.Background(), mountPath, awsTidyRoletagBlacklistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11279,13 +8186,18 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **centrifyConfigRequest** | [**CentrifyConfigRequest**](CentrifyConfigRequest.md) |  | 
+
+ **awsTidyRoletagBlacklistRequest** | [**AwsTidyRoletagBlacklistRequest**](AwsTidyRoletagBlacklistRequest.md) |  | 
 
  (empty response body)
 
@@ -11293,11 +8205,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthCentrifyLogin
+## UpdateAwsTidyRoletagDenylist
 
-> PostAuthCentrifyLogin(ctx).CentrifyLoginRequest(centrifyLoginRequest).Execute()
+> UpdateAwsTidyRoletagDenylist(ctx, mountPath).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
 
-Log in with a username and password.
+
 
 ### Example
 
@@ -11320,9 +8232,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	centrifyLoginRequest := NewCentrifyLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCentrifyLogin(context.Background(), centrifyLoginRequest)
+	awsTidyRoletagDenylistRequest := NewAwsTidyRoletagDenylistRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.UpdateAwsTidyRoletagDenylist(context.Background(), mountPath, awsTidyRoletagDenylistRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11334,13 +8247,18 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **centrifyLoginRequest** | [**CentrifyLoginRequest**](CentrifyLoginRequest.md) |  | 
+
+ **awsTidyRoletagDenylistRequest** | [**AwsTidyRoletagDenylistRequest**](AwsTidyRoletagDenylistRequest.md) |  | 
 
  (empty response body)
 
@@ -11348,9 +8266,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthCertCertsName
+## UpdateCertCertsName
 
-> PostAuthCertCertsName(ctx, name).CertCertsRequest(certCertsRequest).Execute()
+> UpdateCertCertsName(ctx, mountPath, name).CertCertsRequest(certCertsRequest).Execute()
 
 Manage trusted certificates used for authentication.
 
@@ -11376,9 +8294,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
 	certCertsRequest := NewCertCertsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertCertsName(context.Background(), name, certCertsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateCertCertsName(context.Background(), mountPath, name, certCertsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11393,6 +8312,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -11400,6 +8320,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **certCertsRequest** | [**CertCertsRequest**](CertCertsRequest.md) |  | 
 
@@ -11409,64 +8330,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthCertConfig
+## UpdateCertCrlsName
 
-> PostAuthCertConfig(ctx).CertConfigRequest(certConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	certConfigRequest := NewCertConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertConfig(context.Background(), certConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **certConfigRequest** | [**CertConfigRequest**](CertConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthCertCrlsName
-
-> PostAuthCertCrlsName(ctx, name).CertCrlsRequest(certCrlsRequest).Execute()
+> UpdateCertCrlsName(ctx, mountPath, name).CertCrlsRequest(certCrlsRequest).Execute()
 
 Manage Certificate Revocation Lists checked during authentication.
 
@@ -11492,9 +8358,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
 	certCrlsRequest := NewCertCrlsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertCrlsName(context.Background(), name, certCrlsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateCertCrlsName(context.Background(), mountPath, name, certCrlsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11509,6 +8376,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -11516,6 +8384,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **certCrlsRequest** | [**CertCrlsRequest**](CertCrlsRequest.md) |  | 
 
@@ -11525,174 +8394,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthCertLogin
+## UpdateCfRolesRole
 
-> PostAuthCertLogin(ctx).CertLoginRequest(certLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	certLoginRequest := NewCertLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertLogin(context.Background(), certLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **certLoginRequest** | [**CertLoginRequest**](CertLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthCfConfig
-
-> PostAuthCfConfig(ctx).CfConfigRequest(cfConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	cfConfigRequest := NewCfConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCfConfig(context.Background(), cfConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cfConfigRequest** | [**CfConfigRequest**](CfConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthCfLogin
-
-> PostAuthCfLogin(ctx).CfLoginRequest(cfLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	cfLoginRequest := NewCfLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCfLogin(context.Background(), cfLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cfLoginRequest** | [**CfLoginRequest**](CfLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthCfRolesRole
-
-> PostAuthCfRolesRole(ctx, role).CfRolesRequest(cfRolesRequest).Execute()
+> UpdateCfRolesRole(ctx, mountPath, role).CfRolesRequest(cfRolesRequest).Execute()
 
 
 
@@ -11718,9 +8422,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
 	cfRolesRequest := NewCfRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCfRolesRole(context.Background(), role, cfRolesRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateCfRolesRole(context.Background(), mountPath, role, cfRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11735,6 +8440,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
@@ -11742,6 +8448,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **cfRolesRequest** | [**CfRolesRequest**](CfRolesRequest.md) |  | 
 
@@ -11751,180 +8458,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthGcpConfig
+## UpdateGcpRoleNameLabels
 
-> PostAuthGcpConfig(ctx).GcpConfigRequest(gcpConfigRequest).Execute()
-
-Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	gcpConfigRequest := NewGcpConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpConfig(context.Background(), gcpConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gcpConfigRequest** | [**GcpConfigRequest**](GcpConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthGcpLogin
-
-> PostAuthGcpLogin(ctx).GcpLoginRequest(gcpLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	gcpLoginRequest := NewGcpLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpLogin(context.Background(), gcpLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gcpLoginRequest** | [**GcpLoginRequest**](GcpLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthGcpRoleName
-
-> PostAuthGcpRoleName(ctx, name).GcpRoleRequest(gcpRoleRequest).Execute()
-
-Create a GCP role with associated policies and required attributes.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	gcpRoleRequest := NewGcpRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpRoleName(context.Background(), name, gcpRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **gcpRoleRequest** | [**GcpRoleRequest**](GcpRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthGcpRoleNameLabels
-
-> PostAuthGcpRoleNameLabels(ctx, name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
+> UpdateGcpRoleNameLabels(ctx, mountPath, name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
 
 Add or remove labels for an existing 'gce' role
 
@@ -11950,9 +8486,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpRoleLabelsRequest := NewGcpRoleLabelsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpRoleNameLabels(context.Background(), name, gcpRoleLabelsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateGcpRoleNameLabels(context.Background(), mountPath, name, gcpRoleLabelsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11967,6 +8504,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -11974,6 +8512,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpRoleLabelsRequest** | [**GcpRoleLabelsRequest**](GcpRoleLabelsRequest.md) |  | 
 
@@ -11983,9 +8522,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthGcpRoleNameServiceAccounts
+## UpdateGcpRoleNameServiceAccounts
 
-> PostAuthGcpRoleNameServiceAccounts(ctx, name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
+> UpdateGcpRoleNameServiceAccounts(ctx, mountPath, name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
 
 Add or remove service accounts for an existing `iam` role
 
@@ -12011,9 +8550,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpRoleServiceAccountsRequest := NewGcpRoleServiceAccountsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name, gcpRoleServiceAccountsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateGcpRoleNameServiceAccounts(context.Background(), mountPath, name, gcpRoleServiceAccountsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12028,6 +8568,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -12035,6 +8576,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpRoleServiceAccountsRequest** | [**GcpRoleServiceAccountsRequest**](GcpRoleServiceAccountsRequest.md) |  | 
 
@@ -12044,119 +8586,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthGithubConfig
+## UpdateGithubMapTeamsKey
 
-> PostAuthGithubConfig(ctx).GithubConfigRequest(githubConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	githubConfigRequest := NewGithubConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubConfig(context.Background(), githubConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **githubConfigRequest** | [**GithubConfigRequest**](GithubConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthGithubLogin
-
-> PostAuthGithubLogin(ctx).GithubLoginRequest(githubLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	githubLoginRequest := NewGithubLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubLogin(context.Background(), githubLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **githubLoginRequest** | [**GithubLoginRequest**](GithubLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthGithubMapTeamsKey
-
-> PostAuthGithubMapTeamsKey(ctx, key).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
+> UpdateGithubMapTeamsKey(ctx, key, mountPath).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
 
 Read/write/delete a single teams mapping
 
@@ -12182,9 +8614,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	githubMapTeamsRequest := NewGithubMapTeamsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubMapTeamsKey(context.Background(), key, githubMapTeamsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateGithubMapTeamsKey(context.Background(), key, mountPath, githubMapTeamsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12200,12 +8633,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the teams mapping | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **githubMapTeamsRequest** | [**GithubMapTeamsRequest**](GithubMapTeamsRequest.md) |  | 
 
@@ -12215,9 +8650,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthGithubMapUsersKey
+## UpdateGithubMapUsersKey
 
-> PostAuthGithubMapUsersKey(ctx, key).GithubMapUsersRequest(githubMapUsersRequest).Execute()
+> UpdateGithubMapUsersKey(ctx, key, mountPath).GithubMapUsersRequest(githubMapUsersRequest).Execute()
 
 Read/write/delete a single users mapping
 
@@ -12243,9 +8678,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	githubMapUsersRequest := NewGithubMapUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubMapUsersKey(context.Background(), key, githubMapUsersRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateGithubMapUsersKey(context.Background(), key, mountPath, githubMapUsersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12261,12 +8697,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Key for the users mapping | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **githubMapUsersRequest** | [**GithubMapUsersRequest**](GithubMapUsersRequest.md) |  | 
 
@@ -12276,11 +8714,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthJwtConfig
+## UpdateKerberosConfigLdap
 
-> PostAuthJwtConfig(ctx).JwtConfigRequest(jwtConfigRequest).Execute()
-
-Configure the JWT authentication backend.
+> UpdateKerberosConfigLdap(ctx, mountPath).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
 
 
 
@@ -12305,232 +8741,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	jwtConfigRequest := NewJwtConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtConfig(context.Background(), jwtConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jwtConfigRequest** | [**JwtConfigRequest**](JwtConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthJwtLogin
-
-> PostAuthJwtLogin(ctx).JwtLoginRequest(jwtLoginRequest).Execute()
-
-Authenticates to Vault using a JWT (or OIDC) token.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	jwtLoginRequest := NewJwtLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtLogin(context.Background(), jwtLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jwtLoginRequest** | [**JwtLoginRequest**](JwtLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthJwtOidcAuthUrl
-
-> PostAuthJwtOidcAuthUrl(ctx).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest).Execute()
-
-Request an authorization URL to start an OIDC login flow.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	jwtOidcAuthUrlRequest := NewJwtOidcAuthUrlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtOidcAuthUrl(context.Background(), jwtOidcAuthUrlRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jwtOidcAuthUrlRequest** | [**JwtOidcAuthUrlRequest**](JwtOidcAuthUrlRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthJwtOidcCallback
-
-> PostAuthJwtOidcCallback(ctx).JwtOidcCallbackRequest(jwtOidcCallbackRequest).Execute()
-
-Callback endpoint to handle form_posts.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	jwtOidcCallbackRequest := NewJwtOidcCallbackRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtOidcCallback(context.Background(), jwtOidcCallbackRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jwtOidcCallbackRequest** | [**JwtOidcCallbackRequest**](JwtOidcCallbackRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthJwtRoleName
-
-> PostAuthJwtRoleName(ctx, name).JwtRoleRequest(jwtRoleRequest).Execute()
-
-Register an role with the backend.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	jwtRoleRequest := NewJwtRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtRoleName(context.Background(), name, jwtRoleRequest)
+	kerberosConfigLdapRequest := NewKerberosConfigLdapRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Auth.UpdateKerberosConfigLdap(context.Background(), mountPath, kerberosConfigLdapRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12545,7 +8759,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -12553,116 +8767,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **jwtRoleRequest** | [**JwtRoleRequest**](JwtRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthKerberosConfig
-
-> PostAuthKerberosConfig(ctx).KerberosConfigRequest(kerberosConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	kerberosConfigRequest := NewKerberosConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosConfig(context.Background(), kerberosConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **kerberosConfigRequest** | [**KerberosConfigRequest**](KerberosConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthKerberosConfigLdap
-
-> PostAuthKerberosConfigLdap(ctx).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	kerberosConfigLdapRequest := NewKerberosConfigLdapRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosConfigLdap(context.Background(), kerberosConfigLdapRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **kerberosConfigLdapRequest** | [**KerberosConfigLdapRequest**](KerberosConfigLdapRequest.md) |  | 
 
  (empty response body)
@@ -12671,9 +8775,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthKerberosGroupsName
+## UpdateKerberosGroupsName
 
-> PostAuthKerberosGroupsName(ctx, name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
+> UpdateKerberosGroupsName(ctx, mountPath, name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
 
 
 
@@ -12699,9 +8803,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
 	kerberosGroupsRequest := NewKerberosGroupsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosGroupsName(context.Background(), name, kerberosGroupsRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateKerberosGroupsName(context.Background(), mountPath, name, kerberosGroupsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12716,6 +8821,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -12723,6 +8829,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **kerberosGroupsRequest** | [**KerberosGroupsRequest**](KerberosGroupsRequest.md) |  | 
 
@@ -12732,528 +8839,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthKerberosLogin
+## UpdateOciLoginRole
 
-> PostAuthKerberosLogin(ctx).KerberosLoginRequest(kerberosLoginRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	kerberosLoginRequest := NewKerberosLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosLogin(context.Background(), kerberosLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **kerberosLoginRequest** | [**KerberosLoginRequest**](KerberosLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthKubernetesConfig
-
-> PostAuthKubernetesConfig(ctx).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
-
-Configures the JWT Public Key and Kubernetes API information.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	kubernetesConfigRequest := NewKubernetesConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKubernetesConfig(context.Background(), kubernetesConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **kubernetesConfigRequest** | [**KubernetesConfigRequest**](KubernetesConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthKubernetesLogin
-
-> PostAuthKubernetesLogin(ctx).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
-
-Authenticates Kubernetes service accounts with Vault.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	kubernetesLoginRequest := NewKubernetesLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKubernetesLogin(context.Background(), kubernetesLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **kubernetesLoginRequest** | [**KubernetesLoginRequest**](KubernetesLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthKubernetesRoleName
-
-> PostAuthKubernetesRoleName(ctx, name).KubernetesRoleRequest(kubernetesRoleRequest).Execute()
-
-Register an role with the backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	kubernetesRoleRequest := NewKubernetesRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKubernetesRoleName(context.Background(), name, kubernetesRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **kubernetesRoleRequest** | [**KubernetesRoleRequest**](KubernetesRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthLdapConfig
-
-> PostAuthLdapConfig(ctx).LdapConfigRequest(ldapConfigRequest).Execute()
-
-Configure the LDAP server to connect to, along with its options.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	ldapConfigRequest := NewLdapConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapConfig(context.Background(), ldapConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ldapConfigRequest** | [**LdapConfigRequest**](LdapConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthLdapGroupsName
-
-> PostAuthLdapGroupsName(ctx, name).LdapGroupsRequest(ldapGroupsRequest).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the LDAP group.
-
-	ldapGroupsRequest := NewLdapGroupsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapGroupsName(context.Background(), name, ldapGroupsRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the LDAP group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ldapGroupsRequest** | [**LdapGroupsRequest**](LdapGroupsRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthLdapLoginUsername
-
-> PostAuthLdapLoginUsername(ctx, username).LdapLoginRequest(ldapLoginRequest).Execute()
-
-Log in with a username and password.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	username := "username_example" // string | DN (distinguished name) to be used for login.
-
-	ldapLoginRequest := NewLdapLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapLoginUsername(context.Background(), username, ldapLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**username** | **string** | DN (distinguished name) to be used for login. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ldapLoginRequest** | [**LdapLoginRequest**](LdapLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthLdapUsersName
-
-> PostAuthLdapUsersName(ctx, name).LdapUsersRequest(ldapUsersRequest).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the LDAP user.
-
-	ldapUsersRequest := NewLdapUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapUsersName(context.Background(), name, ldapUsersRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the LDAP user. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ldapUsersRequest** | [**LdapUsersRequest**](LdapUsersRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthOciConfig
-
-> PostAuthOciConfig(ctx).OciConfigRequest(ociConfigRequest).Execute()
-
-Manages the configuration for the Vault Auth Plugin.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	ociConfigRequest := NewOciConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOciConfig(context.Background(), ociConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ociConfigRequest** | [**OciConfigRequest**](OciConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthOciLoginRole
-
-> PostAuthOciLoginRole(ctx, role).OciLoginRequest(ociLoginRequest).Execute()
+> UpdateOciLoginRole(ctx, mountPath, role).OciLoginRequest(ociLoginRequest).Execute()
 
 Authenticates to Vault using OCI credentials
 
@@ -13279,9 +8867,10 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
 	ociLoginRequest := NewOciLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOciLoginRole(context.Background(), role, ociLoginRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateOciLoginRole(context.Background(), mountPath, role, ociLoginRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13296,6 +8885,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -13303,6 +8893,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **ociLoginRequest** | [**OciLoginRequest**](OciLoginRequest.md) |  | 
 
@@ -13312,70 +8903,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthOciRoleRole
+## UpdateOidcConfig
 
-> PostAuthOciRoleRole(ctx, role).OciRoleRequest(ociRoleRequest).Execute()
-
-Create a role and associate policies to it.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | Name of the role.
-
-	ociRoleRequest := NewOciRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOciRoleRole(context.Background(), role, ociRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **ociRoleRequest** | [**OciRoleRequest**](OciRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthOidcConfig
-
-> PostAuthOidcConfig(ctx).OidcConfigRequest(oidcConfigRequest).Execute()
+> UpdateOidcConfig(ctx, mountPath).OidcConfigRequest(oidcConfigRequest).Execute()
 
 Configure the JWT authentication backend.
 
@@ -13402,9 +8932,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcConfigRequest := NewOidcConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcConfig(context.Background(), oidcConfigRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateOidcConfig(context.Background(), mountPath, oidcConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13416,12 +8947,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **oidcConfigRequest** | [**OidcConfigRequest**](OidcConfigRequest.md) |  | 
 
  (empty response body)
@@ -13430,9 +8966,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthOidcLogin
+## UpdateOidcLogin
 
-> PostAuthOidcLogin(ctx).OidcLoginRequest(oidcLoginRequest).Execute()
+> UpdateOidcLogin(ctx, mountPath).OidcLoginRequest(oidcLoginRequest).Execute()
 
 Authenticates to Vault using a JWT (or OIDC) token.
 
@@ -13457,9 +8993,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcLoginRequest := NewOidcLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcLogin(context.Background(), oidcLoginRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateOidcLogin(context.Background(), mountPath, oidcLoginRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13471,12 +9008,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **oidcLoginRequest** | [**OidcLoginRequest**](OidcLoginRequest.md) |  | 
 
  (empty response body)
@@ -13485,9 +9027,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthOidcOidcAuthUrl
+## UpdateOidcOidcAuthUrl
 
-> PostAuthOidcOidcAuthUrl(ctx).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
+> UpdateOidcOidcAuthUrl(ctx, mountPath).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
 
 Request an authorization URL to start an OIDC login flow.
 
@@ -13512,9 +9054,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcOidcAuthUrlRequest := NewOidcOidcAuthUrlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcOidcAuthUrl(context.Background(), oidcOidcAuthUrlRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateOidcOidcAuthUrl(context.Background(), mountPath, oidcOidcAuthUrlRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13526,12 +9069,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **oidcOidcAuthUrlRequest** | [**OidcOidcAuthUrlRequest**](OidcOidcAuthUrlRequest.md) |  | 
 
  (empty response body)
@@ -13540,9 +9088,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthOidcOidcCallback
+## UpdateOidcOidcCallback
 
-> PostAuthOidcOidcCallback(ctx).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
+> UpdateOidcOidcCallback(ctx, mountPath).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
 
 Callback endpoint to handle form_posts.
 
@@ -13567,9 +9115,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcOidcCallbackRequest := NewOidcOidcCallbackRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcOidcCallback(context.Background(), oidcOidcCallbackRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateOidcOidcCallback(context.Background(), mountPath, oidcOidcCallbackRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13581,12 +9130,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **oidcOidcCallbackRequest** | [**OidcOidcCallbackRequest**](OidcOidcCallbackRequest.md) |  | 
 
  (empty response body)
@@ -13595,9 +9149,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthOidcRoleName
+## UpdateOidcRoleName
 
-> PostAuthOidcRoleName(ctx, name).OidcRoleRequest(oidcRoleRequest).Execute()
+> UpdateOidcRoleName(ctx, mountPath, name).OidcRoleRequest(oidcRoleRequest).Execute()
 
 Register an role with the backend.
 
@@ -13625,9 +9179,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcRoleRequest := NewOidcRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcRoleName(context.Background(), name, oidcRoleRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateOidcRoleName(context.Background(), mountPath, name, oidcRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13642,6 +9197,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -13649,6 +9205,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **oidcRoleRequest** | [**OidcRoleRequest**](OidcRoleRequest.md) |  | 
 
@@ -13658,357 +9215,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthOktaConfig
+## UpdateRadiusLoginUrlusername
 
-> PostAuthOktaConfig(ctx).OktaConfigRequest(oktaConfigRequest).Execute()
-
-This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	oktaConfigRequest := NewOktaConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaConfig(context.Background(), oktaConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oktaConfigRequest** | [**OktaConfigRequest**](OktaConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthOktaGroupsName
-
-> PostAuthOktaGroupsName(ctx, name).OktaGroupsRequest(oktaGroupsRequest).Execute()
-
-Manage users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the Okta group.
-
-	oktaGroupsRequest := NewOktaGroupsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaGroupsName(context.Background(), name, oktaGroupsRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the Okta group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oktaGroupsRequest** | [**OktaGroupsRequest**](OktaGroupsRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthOktaLoginUsername
-
-> PostAuthOktaLoginUsername(ctx, username).OktaLoginRequest(oktaLoginRequest).Execute()
-
-Log in with a username and password.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	username := "username_example" // string | Username to be used for login.
-
-	oktaLoginRequest := NewOktaLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaLoginUsername(context.Background(), username, oktaLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**username** | **string** | Username to be used for login. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oktaLoginRequest** | [**OktaLoginRequest**](OktaLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthOktaUsersName
-
-> PostAuthOktaUsersName(ctx, name).OktaUsersRequest(oktaUsersRequest).Execute()
-
-Manage additional groups for users allowed to authenticate.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the user.
-
-	oktaUsersRequest := NewOktaUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaUsersName(context.Background(), name, oktaUsersRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the user. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oktaUsersRequest** | [**OktaUsersRequest**](OktaUsersRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthRadiusConfig
-
-> PostAuthRadiusConfig(ctx).RadiusConfigRequest(radiusConfigRequest).Execute()
-
-Configure the RADIUS server to connect to, along with its options.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	radiusConfigRequest := NewRadiusConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusConfig(context.Background(), radiusConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **radiusConfigRequest** | [**RadiusConfigRequest**](RadiusConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthRadiusLogin
-
-> PostAuthRadiusLogin(ctx).RadiusLoginRequest(radiusLoginRequest).Execute()
-
-Log in with a username and password.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusLogin(context.Background(), radiusLoginRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **radiusLoginRequest** | [**RadiusLoginRequest**](RadiusLoginRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAuthRadiusLoginUrlusername
-
-> PostAuthRadiusLoginUrlusername(ctx, urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
+> UpdateRadiusLoginUrlusername(ctx, mountPath, urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
 
 Log in with a username and password.
 
@@ -14034,9 +9243,10 @@ func main() {
 	}
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
 	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername, radiusLoginRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateRadiusLoginUrlusername(context.Background(), mountPath, urlusername, radiusLoginRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14051,6 +9261,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 **urlusername** | **string** | Username to be used for login. (URL parameter) | 
 
 ### Other Parameters
@@ -14058,6 +9269,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **radiusLoginRequest** | [**RadiusLoginRequest**](RadiusLoginRequest.md) |  | 
 
@@ -14067,9 +9279,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthRadiusUsersName
+## UpdateRadiusUsersName
 
-> PostAuthRadiusUsersName(ctx, name).RadiusUsersRequest(radiusUsersRequest).Execute()
+> UpdateRadiusUsersName(ctx, mountPath, name).RadiusUsersRequest(radiusUsersRequest).Execute()
 
 Manage users allowed to authenticate.
 
@@ -14095,9 +9307,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
 	radiusUsersRequest := NewRadiusUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusUsersName(context.Background(), name, radiusUsersRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateRadiusUsersName(context.Background(), mountPath, name, radiusUsersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14112,6 +9325,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 **name** | **string** | Name of the RADIUS user. | 
 
 ### Other Parameters
@@ -14119,6 +9333,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **radiusUsersRequest** | [**RadiusUsersRequest**](RadiusUsersRequest.md) |  | 
 
@@ -14128,9 +9343,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenCreate
+## UpdateTokenCreate
 
-> PostAuthTokenCreate(ctx).Format(format).TokenCreateRequest(tokenCreateRequest).Execute()
+> UpdateTokenCreate(ctx, mountPath).Format(format).TokenCreateRequest(tokenCreateRequest).Execute()
 
 The token create path is used to create new tokens.
 
@@ -14155,10 +9370,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	format := NewstringWithDefaults()
 	tokenCreateRequest := NewTokenCreateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreate(context.Background(), format, tokenCreateRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenCreate(context.Background(), mountPath, format, tokenCreateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14170,6 +9386,10 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -14177,6 +9397,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string** | Return json formatted output | 
+
  **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
 
  (empty response body)
@@ -14185,9 +9406,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenCreateOrphan
+## UpdateTokenCreateOrphan
 
-> PostAuthTokenCreateOrphan(ctx).Format(format).TokenCreateOrphanRequest(tokenCreateOrphanRequest).Execute()
+> UpdateTokenCreateOrphan(ctx, mountPath).Format(format).TokenCreateOrphanRequest(tokenCreateOrphanRequest).Execute()
 
 The token create path is used to create new orphan tokens.
 
@@ -14212,10 +9433,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	format := NewstringWithDefaults()
 	tokenCreateOrphanRequest := NewTokenCreateOrphanRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateOrphan(context.Background(), format, tokenCreateOrphanRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenCreateOrphan(context.Background(), mountPath, format, tokenCreateOrphanRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14227,6 +9449,10 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -14234,6 +9460,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string** | Return json formatted output | 
+
  **tokenCreateOrphanRequest** | [**TokenCreateOrphanRequest**](TokenCreateOrphanRequest.md) |  | 
 
  (empty response body)
@@ -14242,9 +9469,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenCreateRoleName
+## UpdateTokenCreateRoleName
 
-> PostAuthTokenCreateRoleName(ctx, roleName).Format(format).TokenCreateRequest(tokenCreateRequest).Execute()
+> UpdateTokenCreateRoleName(ctx, mountPath, roleName).Format(format).TokenCreateRequest(tokenCreateRequest).Execute()
 
 This token create path is used to create new tokens adhering to the given role.
 
@@ -14270,10 +9497,11 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	format := NewstringWithDefaults()
 	tokenCreateRequest := NewTokenCreateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateRoleName(context.Background(), roleName, format, tokenCreateRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenCreateRoleName(context.Background(), mountPath, roleName, format, tokenCreateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14288,6 +9516,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -14297,6 +9526,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **format** | **string** | Return json formatted output | 
+
  **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
 
  (empty response body)
@@ -14305,9 +9535,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenLookup
+## UpdateTokenLookup
 
-> PostAuthTokenLookup(ctx).TokenLookupRequest(tokenLookupRequest).Execute()
+> UpdateTokenLookup(ctx, mountPath).TokenLookupRequest(tokenLookupRequest).Execute()
 
 This endpoint will lookup a token and its properties.
 
@@ -14332,9 +9562,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenLookupRequest := NewTokenLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenLookup(context.Background(), tokenLookupRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenLookup(context.Background(), mountPath, tokenLookupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14346,12 +9577,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenLookupRequest** | [**TokenLookupRequest**](TokenLookupRequest.md) |  | 
 
  (empty response body)
@@ -14360,9 +9596,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenLookupAccessor
+## UpdateTokenLookupAccessor
 
-> PostAuthTokenLookupAccessor(ctx).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
+> UpdateTokenLookupAccessor(ctx, mountPath).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
 
 This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
 
@@ -14387,9 +9623,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenLookupAccessorRequest := NewTokenLookupAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenLookupAccessor(context.Background(), tokenLookupAccessorRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenLookupAccessor(context.Background(), mountPath, tokenLookupAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14401,12 +9638,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenLookupAccessorRequest** | [**TokenLookupAccessorRequest**](TokenLookupAccessorRequest.md) |  | 
 
  (empty response body)
@@ -14415,9 +9657,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenLookupSelf
+## UpdateTokenLookupSelf
 
-> PostAuthTokenLookupSelf(ctx).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
+> UpdateTokenLookupSelf(ctx, mountPath).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
 
 This endpoint will lookup a token and its properties.
 
@@ -14442,9 +9684,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenLookupSelfRequest := NewTokenLookupSelfRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenLookupSelf(context.Background(), tokenLookupSelfRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenLookupSelf(context.Background(), mountPath, tokenLookupSelfRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14456,12 +9699,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenLookupSelfRequest** | [**TokenLookupSelfRequest**](TokenLookupSelfRequest.md) |  | 
 
  (empty response body)
@@ -14470,9 +9718,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRenew
+## UpdateTokenRenew
 
-> PostAuthTokenRenew(ctx).TokenRenewRequest(tokenRenewRequest).Execute()
+> UpdateTokenRenew(ctx, mountPath).TokenRenewRequest(tokenRenewRequest).Execute()
 
 This endpoint will renew the given token and prevent expiration.
 
@@ -14497,9 +9745,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRenewRequest := NewTokenRenewRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRenew(context.Background(), tokenRenewRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRenew(context.Background(), mountPath, tokenRenewRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14511,12 +9760,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenRenewRequest** | [**TokenRenewRequest**](TokenRenewRequest.md) |  | 
 
  (empty response body)
@@ -14525,9 +9779,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRenewAccessor
+## UpdateTokenRenewAccessor
 
-> PostAuthTokenRenewAccessor(ctx).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
+> UpdateTokenRenewAccessor(ctx, mountPath).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
 
 This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
 
@@ -14552,9 +9806,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRenewAccessorRequest := NewTokenRenewAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRenewAccessor(context.Background(), tokenRenewAccessorRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRenewAccessor(context.Background(), mountPath, tokenRenewAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14566,12 +9821,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenRenewAccessorRequest** | [**TokenRenewAccessorRequest**](TokenRenewAccessorRequest.md) |  | 
 
  (empty response body)
@@ -14580,9 +9840,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRenewSelf
+## UpdateTokenRenewSelf
 
-> PostAuthTokenRenewSelf(ctx).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
+> UpdateTokenRenewSelf(ctx, mountPath).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
 
 This endpoint will renew the token used to call it and prevent expiration.
 
@@ -14607,9 +9867,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRenewSelfRequest := NewTokenRenewSelfRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRenewSelf(context.Background(), tokenRenewSelfRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRenewSelf(context.Background(), mountPath, tokenRenewSelfRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14621,12 +9882,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenRenewSelfRequest** | [**TokenRenewSelfRequest**](TokenRenewSelfRequest.md) |  | 
 
  (empty response body)
@@ -14635,9 +9901,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRevoke
+## UpdateTokenRevoke
 
-> PostAuthTokenRevoke(ctx).TokenRevokeRequest(tokenRevokeRequest).Execute()
+> UpdateTokenRevoke(ctx, mountPath).TokenRevokeRequest(tokenRevokeRequest).Execute()
 
 This endpoint will delete the given token and all of its child tokens.
 
@@ -14662,9 +9928,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRevokeRequest := NewTokenRevokeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevoke(context.Background(), tokenRevokeRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRevoke(context.Background(), mountPath, tokenRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14676,12 +9943,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenRevokeRequest** | [**TokenRevokeRequest**](TokenRevokeRequest.md) |  | 
 
  (empty response body)
@@ -14690,9 +9962,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRevokeAccessor
+## UpdateTokenRevokeAccessor
 
-> PostAuthTokenRevokeAccessor(ctx).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
+> UpdateTokenRevokeAccessor(ctx, mountPath).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
 
 This endpoint will delete the token associated with the accessor and all of its child tokens.
 
@@ -14717,9 +9989,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRevokeAccessorRequest := NewTokenRevokeAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevokeAccessor(context.Background(), tokenRevokeAccessorRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRevokeAccessor(context.Background(), mountPath, tokenRevokeAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14731,12 +10004,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenRevokeAccessorRequest** | [**TokenRevokeAccessorRequest**](TokenRevokeAccessorRequest.md) |  | 
 
  (empty response body)
@@ -14745,9 +10023,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRevokeOrphan
+## UpdateTokenRevokeOrphan
 
-> PostAuthTokenRevokeOrphan(ctx).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
+> UpdateTokenRevokeOrphan(ctx, mountPath).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
 
 This endpoint will delete the token and orphan its child tokens.
 
@@ -14772,9 +10050,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRevokeOrphanRequest := NewTokenRevokeOrphanRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevokeOrphan(context.Background(), tokenRevokeOrphanRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRevokeOrphan(context.Background(), mountPath, tokenRevokeOrphanRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14786,12 +10065,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **tokenRevokeOrphanRequest** | [**TokenRevokeOrphanRequest**](TokenRevokeOrphanRequest.md) |  | 
 
  (empty response body)
@@ -14800,9 +10084,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRevokeSelf
+## UpdateTokenRevokeSelf
 
-> PostAuthTokenRevokeSelf(ctx).Execute()
+> UpdateTokenRevokeSelf(ctx, mountPath).Execute()
 
 This endpoint will delete the token used to call it and all of its child tokens.
 
@@ -14827,8 +10111,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevokeSelf(context.Background())
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRevokeSelf(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14839,10 +10124,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -14851,9 +10143,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenRolesRoleName
+## UpdateTokenRolesRoleName
 
-> PostAuthTokenRolesRoleName(ctx, roleName).TokenRolesRequest(tokenRolesRequest).Execute()
+> UpdateTokenRolesRoleName(ctx, mountPath, roleName).TokenRolesRequest(tokenRolesRequest).Execute()
 
 
 
@@ -14879,9 +10171,10 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRolesRequest := NewTokenRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRolesRoleName(context.Background(), roleName, tokenRolesRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenRolesRoleName(context.Background(), mountPath, roleName, tokenRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14896,6 +10189,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 **roleName** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -14903,6 +10197,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **tokenRolesRequest** | [**TokenRolesRequest**](TokenRolesRequest.md) |  | 
 
@@ -14912,9 +10207,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthTokenTidy
+## UpdateTokenTidy
 
-> PostAuthTokenTidy(ctx).Execute()
+> UpdateTokenTidy(ctx, mountPath).Execute()
 
 This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 
@@ -14939,8 +10234,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenTidy(context.Background())
+	resp, err := client.WithToken("my-token").Auth.UpdateTokenTidy(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14951,10 +10247,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -14963,9 +10266,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostAuthUserpassLoginUsername
+## UpdateUserpassLoginUsername
 
-> PostAuthUserpassLoginUsername(ctx, username).UserpassLoginRequest(userpassLoginRequest).Execute()
+> UpdateUserpassLoginUsername(ctx, mountPath, username).UserpassLoginRequest(userpassLoginRequest).Execute()
 
 Log in with a username and password.
 
@@ -14991,9 +10294,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username of the user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassLoginRequest := NewUserpassLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassLoginUsername(context.Background(), username, userpassLoginRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateUserpassLoginUsername(context.Background(), mountPath, username, userpassLoginRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15008,6 +10312,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 **username** | **string** | Username of the user. | 
 
 ### Other Parameters
@@ -15015,6 +10320,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **userpassLoginRequest** | [**UserpassLoginRequest**](UserpassLoginRequest.md) |  | 
 
@@ -15024,9 +10330,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthUserpassUsersUsername
+## UpdateUserpassUsersUsername
 
-> PostAuthUserpassUsersUsername(ctx, username).UserpassUsersRequest(userpassUsersRequest).Execute()
+> UpdateUserpassUsersUsername(ctx, mountPath, username).UserpassUsersRequest(userpassUsersRequest).Execute()
 
 Manage users allowed to authenticate.
 
@@ -15052,9 +10358,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassUsersRequest := NewUserpassUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassUsersUsername(context.Background(), username, userpassUsersRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateUserpassUsersUsername(context.Background(), mountPath, username, userpassUsersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15069,6 +10376,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
@@ -15076,6 +10384,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **userpassUsersRequest** | [**UserpassUsersRequest**](UserpassUsersRequest.md) |  | 
 
@@ -15085,9 +10394,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthUserpassUsersUsernamePassword
+## UpdateUserpassUsersUsernamePassword
 
-> PostAuthUserpassUsersUsernamePassword(ctx, username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
+> UpdateUserpassUsersUsernamePassword(ctx, mountPath, username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
 
 Reset user's password.
 
@@ -15113,9 +10422,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassUsersPasswordRequest := NewUserpassUsersPasswordRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username, userpassUsersPasswordRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateUserpassUsersUsernamePassword(context.Background(), mountPath, username, userpassUsersPasswordRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15130,6 +10440,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
@@ -15137,6 +10448,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **userpassUsersPasswordRequest** | [**UserpassUsersPasswordRequest**](UserpassUsersPasswordRequest.md) |  | 
 
@@ -15146,9 +10458,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAuthUserpassUsersUsernamePolicies
+## UpdateUserpassUsersUsernamePolicies
 
-> PostAuthUserpassUsersUsernamePolicies(ctx, username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
+> UpdateUserpassUsersUsernamePolicies(ctx, mountPath, username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
 
 Update the policies associated with the username.
 
@@ -15174,9 +10486,10 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassUsersPoliciesRequest := NewUserpassUsersPoliciesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username, userpassUsersPoliciesRequest)
+	resp, err := client.WithToken("my-token").Auth.UpdateUserpassUsersUsernamePolicies(context.Background(), mountPath, username, userpassUsersPoliciesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15191,6 +10504,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 **username** | **string** | Username for this user. | 
 
 ### Other Parameters
@@ -15198,6 +10512,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **userpassUsersPoliciesRequest** | [**UserpassUsersPoliciesRequest**](UserpassUsersPoliciesRequest.md) |  | 
 

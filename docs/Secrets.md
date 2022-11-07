@@ -2,635 +2,221 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAdConfig**](Secrets.md#DeleteAdConfig) | **Delete** /ad/config | Configure the AD server to connect to, along with password options.
-[**DeleteAdLibraryName**](Secrets.md#DeleteAdLibraryName) | **Delete** /ad/library/{name} | Delete a library set.
-[**DeleteAdRolesName**](Secrets.md#DeleteAdRolesName) | **Delete** /ad/roles/{name} | Manage roles to build links between Vault and Active Directory service accounts.
-[**DeleteAlicloudConfig**](Secrets.md#DeleteAlicloudConfig) | **Delete** /alicloud/config | Configure the access key and secret to use for RAM and STS calls.
-[**DeleteAlicloudRoleName**](Secrets.md#DeleteAlicloudRoleName) | **Delete** /alicloud/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
-[**DeleteAwsRolesName**](Secrets.md#DeleteAwsRolesName) | **Delete** /aws/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
-[**DeleteAzureConfig**](Secrets.md#DeleteAzureConfig) | **Delete** /azure/config | 
-[**DeleteAzureRolesName**](Secrets.md#DeleteAzureRolesName) | **Delete** /azure/roles/{name} | Manage the Vault roles used to generate Azure credentials.
-[**DeleteConsulRolesName**](Secrets.md#DeleteConsulRolesName) | **Delete** /consul/roles/{name} | 
-[**DeleteCubbyholePath**](Secrets.md#DeleteCubbyholePath) | **Delete** /cubbyhole/{path} | Deletes the secret at the specified location.
-[**DeleteGcpRolesetName**](Secrets.md#DeleteGcpRolesetName) | **Delete** /gcp/roleset/{name} | 
-[**DeleteGcpStaticAccountName**](Secrets.md#DeleteGcpStaticAccountName) | **Delete** /gcp/static-account/{name} | 
-[**DeleteGcpkmsConfig**](Secrets.md#DeleteGcpkmsConfig) | **Delete** /gcpkms/config | Configure the GCP KMS secrets engine
-[**DeleteGcpkmsKeysDeregisterKey**](Secrets.md#DeleteGcpkmsKeysDeregisterKey) | **Delete** /gcpkms/keys/deregister/{key} | Deregister an existing key in Vault
-[**DeleteGcpkmsKeysKey**](Secrets.md#DeleteGcpkmsKeysKey) | **Delete** /gcpkms/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
-[**DeleteGcpkmsKeysTrimKey**](Secrets.md#DeleteGcpkmsKeysTrimKey) | **Delete** /gcpkms/keys/trim/{key} | Delete old crypto key versions from Google Cloud KMS
-[**DeleteKubernetesConfig**](Secrets.md#DeleteKubernetesConfig) | **Delete** /kubernetes/config | 
-[**DeleteKubernetesRolesName**](Secrets.md#DeleteKubernetesRolesName) | **Delete** /kubernetes/roles/{name} | 
-[**DeleteKvPath**](Secrets.md#DeleteKvPath) | **Delete** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-[**DeleteLdapConfig**](Secrets.md#DeleteLdapConfig) | **Delete** /ldap/config | 
-[**DeleteLdapLibraryName**](Secrets.md#DeleteLdapLibraryName) | **Delete** /ldap/library/{name} | Delete a library set.
-[**DeleteLdapRoleName**](Secrets.md#DeleteLdapRoleName) | **Delete** /ldap/role/{name} | 
-[**DeleteLdapStaticRoleName**](Secrets.md#DeleteLdapStaticRoleName) | **Delete** /ldap/static-role/{name} | 
-[**DeleteMongodbatlasRolesName**](Secrets.md#DeleteMongodbatlasRolesName) | **Delete** /mongodbatlas/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-[**DeleteNomadConfigAccess**](Secrets.md#DeleteNomadConfigAccess) | **Delete** /nomad/config/access | 
-[**DeleteNomadConfigLease**](Secrets.md#DeleteNomadConfigLease) | **Delete** /nomad/config/lease | Configure the lease parameters for generated tokens
-[**DeleteNomadRoleName**](Secrets.md#DeleteNomadRoleName) | **Delete** /nomad/role/{name} | 
-[**DeleteOpenldapConfig**](Secrets.md#DeleteOpenldapConfig) | **Delete** /openldap/config | 
-[**DeleteOpenldapLibraryName**](Secrets.md#DeleteOpenldapLibraryName) | **Delete** /openldap/library/{name} | Delete a library set.
-[**DeleteOpenldapRoleName**](Secrets.md#DeleteOpenldapRoleName) | **Delete** /openldap/role/{name} | 
-[**DeleteOpenldapStaticRoleName**](Secrets.md#DeleteOpenldapStaticRoleName) | **Delete** /openldap/static-role/{name} | 
-[**DeletePkiIssuerRefDerPem**](Secrets.md#DeletePkiIssuerRefDerPem) | **Delete** /pki/{issuer_ref}/der|/pem | 
-[**DeletePkiJson**](Secrets.md#DeletePkiJson) | **Delete** /pki//json | 
-[**DeletePkiKeyKeyRef**](Secrets.md#DeletePkiKeyKeyRef) | **Delete** /pki/key/{key_ref} | 
-[**DeletePkiRolesName**](Secrets.md#DeletePkiRolesName) | **Delete** /pki/roles/{name} | 
-[**DeletePkiRoot**](Secrets.md#DeletePkiRoot) | **Delete** /pki/root | 
-[**DeleteRabbitmqRolesName**](Secrets.md#DeleteRabbitmqRolesName) | **Delete** /rabbitmq/roles/{name} | Manage the roles that can be created with this backend.
-[**DeleteSecretDataPath**](Secrets.md#DeleteSecretDataPath) | **Delete** /secret/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
-[**DeleteSecretMetadataPath**](Secrets.md#DeleteSecretMetadataPath) | **Delete** /secret/metadata/{path} | Configures settings for the KV store
-[**DeleteSshConfigCa**](Secrets.md#DeleteSshConfigCa) | **Delete** /ssh/config/ca | Set the SSH private key used for signing certificates.
-[**DeleteSshConfigZeroaddress**](Secrets.md#DeleteSshConfigZeroaddress) | **Delete** /ssh/config/zeroaddress | Assign zero address as default CIDR block for select roles.
-[**DeleteSshKeysKeyName**](Secrets.md#DeleteSshKeysKeyName) | **Delete** /ssh/keys/{key_name} | Register a shared private key with Vault.
-[**DeleteSshRolesRole**](Secrets.md#DeleteSshRolesRole) | **Delete** /ssh/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
-[**DeleteTerraformConfig**](Secrets.md#DeleteTerraformConfig) | **Delete** /terraform/config | 
-[**DeleteTerraformRoleName**](Secrets.md#DeleteTerraformRoleName) | **Delete** /terraform/role/{name} | 
-[**DeleteTotpKeysName**](Secrets.md#DeleteTotpKeysName) | **Delete** /totp/keys/{name} | Manage the keys that can be created with this backend.
-[**DeleteTransitKeysName**](Secrets.md#DeleteTransitKeysName) | **Delete** /transit/keys/{name} | Managed named encryption keys
-[**GetAdConfig**](Secrets.md#GetAdConfig) | **Get** /ad/config | Configure the AD server to connect to, along with password options.
-[**GetAdCredsName**](Secrets.md#GetAdCredsName) | **Get** /ad/creds/{name} | 
-[**GetAdLibrary**](Secrets.md#GetAdLibrary) | **Get** /ad/library | 
-[**GetAdLibraryName**](Secrets.md#GetAdLibraryName) | **Get** /ad/library/{name} | Read a library set.
-[**GetAdLibraryNameStatus**](Secrets.md#GetAdLibraryNameStatus) | **Get** /ad/library/{name}/status | Check the status of the service accounts in a library set.
-[**GetAdRoles**](Secrets.md#GetAdRoles) | **Get** /ad/roles | List the name of each role currently stored.
-[**GetAdRolesName**](Secrets.md#GetAdRolesName) | **Get** /ad/roles/{name} | Manage roles to build links between Vault and Active Directory service accounts.
-[**GetAdRotateRoot**](Secrets.md#GetAdRotateRoot) | **Get** /ad/rotate-root | 
-[**GetAlicloudConfig**](Secrets.md#GetAlicloudConfig) | **Get** /alicloud/config | Configure the access key and secret to use for RAM and STS calls.
-[**GetAlicloudCredsName**](Secrets.md#GetAlicloudCredsName) | **Get** /alicloud/creds/{name} | Generate an API key or STS credential using the given role&#39;s configuration.&#39;
-[**GetAlicloudRole**](Secrets.md#GetAlicloudRole) | **Get** /alicloud/role | List the existing roles in this backend.
-[**GetAlicloudRoleName**](Secrets.md#GetAlicloudRoleName) | **Get** /alicloud/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
-[**GetAwsConfigLease**](Secrets.md#GetAwsConfigLease) | **Get** /aws/config/lease | Configure the default lease information for generated credentials.
-[**GetAwsConfigRoot**](Secrets.md#GetAwsConfigRoot) | **Get** /aws/config/root | Configure the root credentials that are used to manage IAM.
-[**GetAwsCreds**](Secrets.md#GetAwsCreds) | **Get** /aws/creds | Generate AWS credentials from a specific Vault role.
-[**GetAwsRoles**](Secrets.md#GetAwsRoles) | **Get** /aws/roles | List the existing roles in this backend
-[**GetAwsRolesName**](Secrets.md#GetAwsRolesName) | **Get** /aws/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
-[**GetAwsStsName**](Secrets.md#GetAwsStsName) | **Get** /aws/sts/{name} | Generate AWS credentials from a specific Vault role.
-[**GetAzureConfig**](Secrets.md#GetAzureConfig) | **Get** /azure/config | 
-[**GetAzureCredsRole**](Secrets.md#GetAzureCredsRole) | **Get** /azure/creds/{role} | 
-[**GetAzureRoles**](Secrets.md#GetAzureRoles) | **Get** /azure/roles | List existing roles.
-[**GetAzureRolesName**](Secrets.md#GetAzureRolesName) | **Get** /azure/roles/{name} | Manage the Vault roles used to generate Azure credentials.
-[**GetConsulConfigAccess**](Secrets.md#GetConsulConfigAccess) | **Get** /consul/config/access | 
-[**GetConsulCredsRole**](Secrets.md#GetConsulCredsRole) | **Get** /consul/creds/{role} | 
-[**GetConsulRoles**](Secrets.md#GetConsulRoles) | **Get** /consul/roles | 
-[**GetConsulRolesName**](Secrets.md#GetConsulRolesName) | **Get** /consul/roles/{name} | 
-[**GetCubbyholePath**](Secrets.md#GetCubbyholePath) | **Get** /cubbyhole/{path} | Retrieve the secret at the specified location.
-[**GetGcpConfig**](Secrets.md#GetGcpConfig) | **Get** /gcp/config | 
-[**GetGcpKeyRoleset**](Secrets.md#GetGcpKeyRoleset) | **Get** /gcp/key/{roleset} | 
-[**GetGcpRolesetName**](Secrets.md#GetGcpRolesetName) | **Get** /gcp/roleset/{name} | 
-[**GetGcpRolesetRolesetKey**](Secrets.md#GetGcpRolesetRolesetKey) | **Get** /gcp/roleset/{roleset}/key | 
-[**GetGcpRolesetRolesetToken**](Secrets.md#GetGcpRolesetRolesetToken) | **Get** /gcp/roleset/{roleset}/token | 
-[**GetGcpRolesets**](Secrets.md#GetGcpRolesets) | **Get** /gcp/rolesets | 
-[**GetGcpStaticAccountName**](Secrets.md#GetGcpStaticAccountName) | **Get** /gcp/static-account/{name} | 
-[**GetGcpStaticAccountNameKey**](Secrets.md#GetGcpStaticAccountNameKey) | **Get** /gcp/static-account/{name}/key | 
-[**GetGcpStaticAccountNameToken**](Secrets.md#GetGcpStaticAccountNameToken) | **Get** /gcp/static-account/{name}/token | 
-[**GetGcpStaticAccounts**](Secrets.md#GetGcpStaticAccounts) | **Get** /gcp/static-accounts | 
-[**GetGcpTokenRoleset**](Secrets.md#GetGcpTokenRoleset) | **Get** /gcp/token/{roleset} | 
-[**GetGcpkmsConfig**](Secrets.md#GetGcpkmsConfig) | **Get** /gcpkms/config | Configure the GCP KMS secrets engine
-[**GetGcpkmsKeys**](Secrets.md#GetGcpkmsKeys) | **Get** /gcpkms/keys | List named keys
-[**GetGcpkmsKeysConfigKey**](Secrets.md#GetGcpkmsKeysConfigKey) | **Get** /gcpkms/keys/config/{key} | Configure the key in Vault
-[**GetGcpkmsKeysKey**](Secrets.md#GetGcpkmsKeysKey) | **Get** /gcpkms/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
-[**GetGcpkmsPubkeyKey**](Secrets.md#GetGcpkmsPubkeyKey) | **Get** /gcpkms/pubkey/{key} | Retrieve the public key associated with the named key
-[**GetKubernetesConfig**](Secrets.md#GetKubernetesConfig) | **Get** /kubernetes/config | 
-[**GetKubernetesRoles**](Secrets.md#GetKubernetesRoles) | **Get** /kubernetes/roles | 
-[**GetKubernetesRolesName**](Secrets.md#GetKubernetesRolesName) | **Get** /kubernetes/roles/{name} | 
-[**GetKvPath**](Secrets.md#GetKvPath) | **Get** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-[**GetLdapConfig**](Secrets.md#GetLdapConfig) | **Get** /ldap/config | 
-[**GetLdapCredsName**](Secrets.md#GetLdapCredsName) | **Get** /ldap/creds/{name} | 
-[**GetLdapLibrary**](Secrets.md#GetLdapLibrary) | **Get** /ldap/library | 
-[**GetLdapLibraryName**](Secrets.md#GetLdapLibraryName) | **Get** /ldap/library/{name} | Read a library set.
-[**GetLdapLibraryNameStatus**](Secrets.md#GetLdapLibraryNameStatus) | **Get** /ldap/library/{name}/status | Check the status of the service accounts in a library set.
-[**GetLdapRole**](Secrets.md#GetLdapRole) | **Get** /ldap/role | 
-[**GetLdapRoleName**](Secrets.md#GetLdapRoleName) | **Get** /ldap/role/{name} | 
-[**GetLdapStaticCredName**](Secrets.md#GetLdapStaticCredName) | **Get** /ldap/static-cred/{name} | 
-[**GetLdapStaticRole**](Secrets.md#GetLdapStaticRole) | **Get** /ldap/static-role | 
-[**GetLdapStaticRoleName**](Secrets.md#GetLdapStaticRoleName) | **Get** /ldap/static-role/{name} | 
-[**GetMongodbatlasConfig**](Secrets.md#GetMongodbatlasConfig) | **Get** /mongodbatlas/config | Configure the  credentials that are used to manage Database Users.
-[**GetMongodbatlasCredsName**](Secrets.md#GetMongodbatlasCredsName) | **Get** /mongodbatlas/creds/{name} | Generate MongoDB Atlas Programmatic API from a specific Vault role.
-[**GetMongodbatlasRoles**](Secrets.md#GetMongodbatlasRoles) | **Get** /mongodbatlas/roles | List the existing roles in this backend
-[**GetMongodbatlasRolesName**](Secrets.md#GetMongodbatlasRolesName) | **Get** /mongodbatlas/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-[**GetNomadConfigAccess**](Secrets.md#GetNomadConfigAccess) | **Get** /nomad/config/access | 
-[**GetNomadConfigLease**](Secrets.md#GetNomadConfigLease) | **Get** /nomad/config/lease | Configure the lease parameters for generated tokens
-[**GetNomadCredsName**](Secrets.md#GetNomadCredsName) | **Get** /nomad/creds/{name} | 
-[**GetNomadRole**](Secrets.md#GetNomadRole) | **Get** /nomad/role | 
-[**GetNomadRoleName**](Secrets.md#GetNomadRoleName) | **Get** /nomad/role/{name} | 
-[**GetOpenldapConfig**](Secrets.md#GetOpenldapConfig) | **Get** /openldap/config | 
-[**GetOpenldapCredsName**](Secrets.md#GetOpenldapCredsName) | **Get** /openldap/creds/{name} | 
-[**GetOpenldapLibrary**](Secrets.md#GetOpenldapLibrary) | **Get** /openldap/library | 
-[**GetOpenldapLibraryName**](Secrets.md#GetOpenldapLibraryName) | **Get** /openldap/library/{name} | Read a library set.
-[**GetOpenldapLibraryNameStatus**](Secrets.md#GetOpenldapLibraryNameStatus) | **Get** /openldap/library/{name}/status | Check the status of the service accounts in a library set.
-[**GetOpenldapRole**](Secrets.md#GetOpenldapRole) | **Get** /openldap/role | 
-[**GetOpenldapRoleName**](Secrets.md#GetOpenldapRoleName) | **Get** /openldap/role/{name} | 
-[**GetOpenldapStaticCredName**](Secrets.md#GetOpenldapStaticCredName) | **Get** /openldap/static-cred/{name} | 
-[**GetOpenldapStaticRole**](Secrets.md#GetOpenldapStaticRole) | **Get** /openldap/static-role | 
-[**GetOpenldapStaticRoleName**](Secrets.md#GetOpenldapStaticRoleName) | **Get** /openldap/static-role/{name} | 
-[**GetPkiCa**](Secrets.md#GetPkiCa) | **Get** /pki/ca | 
-[**GetPkiCaChain**](Secrets.md#GetPkiCaChain) | **Get** /pki/ca_chain | 
-[**GetPkiCaPem**](Secrets.md#GetPkiCaPem) | **Get** /pki/ca/pem | 
-[**GetPkiCertCaChain**](Secrets.md#GetPkiCertCaChain) | **Get** /pki/cert/ca_chain | 
-[**GetPkiCertSerial**](Secrets.md#GetPkiCertSerial) | **Get** /pki/cert/{serial} | 
-[**GetPkiCertSerialRaw**](Secrets.md#GetPkiCertSerialRaw) | **Get** /pki/cert/{serial}/raw | 
-[**GetPkiCertSerialRawPem**](Secrets.md#GetPkiCertSerialRawPem) | **Get** /pki/cert/{serial}/raw/pem | 
-[**GetPkiCerts**](Secrets.md#GetPkiCerts) | **Get** /pki/certs | 
-[**GetPkiConfigAutoTidy**](Secrets.md#GetPkiConfigAutoTidy) | **Get** /pki/config/auto-tidy | 
-[**GetPkiConfigCrl**](Secrets.md#GetPkiConfigCrl) | **Get** /pki/config/crl | 
-[**GetPkiConfigIssuers**](Secrets.md#GetPkiConfigIssuers) | **Get** /pki/config/issuers | 
-[**GetPkiConfigKeys**](Secrets.md#GetPkiConfigKeys) | **Get** /pki/config/keys | 
-[**GetPkiConfigUrls**](Secrets.md#GetPkiConfigUrls) | **Get** /pki/config/urls | 
-[**GetPkiCrl**](Secrets.md#GetPkiCrl) | **Get** /pki/crl | 
-[**GetPkiCrlRotate**](Secrets.md#GetPkiCrlRotate) | **Get** /pki/crl/rotate | 
-[**GetPkiCrlRotateDelta**](Secrets.md#GetPkiCrlRotateDelta) | **Get** /pki/crl/rotate-delta | 
-[**GetPkiDelta**](Secrets.md#GetPkiDelta) | **Get** /pki//delta | 
-[**GetPkiDeltaCrl**](Secrets.md#GetPkiDeltaCrl) | **Get** /pki/delta-crl | 
-[**GetPkiDeltaPem**](Secrets.md#GetPkiDeltaPem) | **Get** /pki//delta/pem | 
-[**GetPkiDer**](Secrets.md#GetPkiDer) | **Get** /pki//der | 
-[**GetPkiIssuerRefCrlPemDerDeltaPem**](Secrets.md#GetPkiIssuerRefCrlPemDerDeltaPem) | **Get** /pki/{issuer_ref}/crl/pem|/der|/delta/pem | 
-[**GetPkiIssuerRefDerPem**](Secrets.md#GetPkiIssuerRefDerPem) | **Get** /pki/{issuer_ref}/der|/pem | 
-[**GetPkiIssuers**](Secrets.md#GetPkiIssuers) | **Get** /pki/issuers | 
-[**GetPkiJson**](Secrets.md#GetPkiJson) | **Get** /pki//json | 
-[**GetPkiKeyKeyRef**](Secrets.md#GetPkiKeyKeyRef) | **Get** /pki/key/{key_ref} | 
-[**GetPkiKeys**](Secrets.md#GetPkiKeys) | **Get** /pki/keys | 
-[**GetPkiOcspReq**](Secrets.md#GetPkiOcspReq) | **Get** /pki/ocsp/{req} | 
-[**GetPkiPem**](Secrets.md#GetPkiPem) | **Get** /pki//pem | 
-[**GetPkiRoles**](Secrets.md#GetPkiRoles) | **Get** /pki/roles | 
-[**GetPkiRolesName**](Secrets.md#GetPkiRolesName) | **Get** /pki/roles/{name} | 
-[**GetPkiTidyStatus**](Secrets.md#GetPkiTidyStatus) | **Get** /pki/tidy-status | 
-[**GetRabbitmqConfigLease**](Secrets.md#GetRabbitmqConfigLease) | **Get** /rabbitmq/config/lease | Configure the lease parameters for generated credentials
-[**GetRabbitmqCredsName**](Secrets.md#GetRabbitmqCredsName) | **Get** /rabbitmq/creds/{name} | Request RabbitMQ credentials for a certain role.
-[**GetRabbitmqRoles**](Secrets.md#GetRabbitmqRoles) | **Get** /rabbitmq/roles | Manage the roles that can be created with this backend.
-[**GetRabbitmqRolesName**](Secrets.md#GetRabbitmqRolesName) | **Get** /rabbitmq/roles/{name} | Manage the roles that can be created with this backend.
-[**GetSecretConfig**](Secrets.md#GetSecretConfig) | **Get** /secret/config | Read the backend level settings.
-[**GetSecretDataPath**](Secrets.md#GetSecretDataPath) | **Get** /secret/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
-[**GetSecretMetadataPath**](Secrets.md#GetSecretMetadataPath) | **Get** /secret/metadata/{path} | Configures settings for the KV store
-[**GetSecretSubkeysPath**](Secrets.md#GetSecretSubkeysPath) | **Get** /secret/subkeys/{path} | Read the structure of a secret entry from the Key-Value store with the values removed.
-[**GetSshConfigCa**](Secrets.md#GetSshConfigCa) | **Get** /ssh/config/ca | Set the SSH private key used for signing certificates.
-[**GetSshConfigZeroaddress**](Secrets.md#GetSshConfigZeroaddress) | **Get** /ssh/config/zeroaddress | Assign zero address as default CIDR block for select roles.
-[**GetSshPublicKey**](Secrets.md#GetSshPublicKey) | **Get** /ssh/public_key | Retrieve the public key.
-[**GetSshRoles**](Secrets.md#GetSshRoles) | **Get** /ssh/roles | Manage the &#39;roles&#39; that can be created with this backend.
-[**GetSshRolesRole**](Secrets.md#GetSshRolesRole) | **Get** /ssh/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
-[**GetTerraformConfig**](Secrets.md#GetTerraformConfig) | **Get** /terraform/config | 
-[**GetTerraformCredsName**](Secrets.md#GetTerraformCredsName) | **Get** /terraform/creds/{name} | Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
-[**GetTerraformRole**](Secrets.md#GetTerraformRole) | **Get** /terraform/role | 
-[**GetTerraformRoleName**](Secrets.md#GetTerraformRoleName) | **Get** /terraform/role/{name} | 
-[**GetTotpCodeName**](Secrets.md#GetTotpCodeName) | **Get** /totp/code/{name} | Request time-based one-time use password or validate a password for a certain key .
-[**GetTotpKeys**](Secrets.md#GetTotpKeys) | **Get** /totp/keys | Manage the keys that can be created with this backend.
-[**GetTotpKeysName**](Secrets.md#GetTotpKeysName) | **Get** /totp/keys/{name} | Manage the keys that can be created with this backend.
-[**GetTransitBackupName**](Secrets.md#GetTransitBackupName) | **Get** /transit/backup/{name} | Backup the named key
-[**GetTransitCacheConfig**](Secrets.md#GetTransitCacheConfig) | **Get** /transit/cache-config | Returns the size of the active cache
-[**GetTransitExportTypeName**](Secrets.md#GetTransitExportTypeName) | **Get** /transit/export/{type}/{name} | Export named encryption or signing key
-[**GetTransitExportTypeNameVersion**](Secrets.md#GetTransitExportTypeNameVersion) | **Get** /transit/export/{type}/{name}/{version} | Export named encryption or signing key
-[**GetTransitKeys**](Secrets.md#GetTransitKeys) | **Get** /transit/keys | Managed named encryption keys
-[**GetTransitKeysName**](Secrets.md#GetTransitKeysName) | **Get** /transit/keys/{name} | Managed named encryption keys
-[**GetTransitWrappingKey**](Secrets.md#GetTransitWrappingKey) | **Get** /transit/wrapping_key | Returns the public key to use for wrapping imported keys
-[**PostAdConfig**](Secrets.md#PostAdConfig) | **Post** /ad/config | Configure the AD server to connect to, along with password options.
-[**PostAdLibraryManageNameCheckIn**](Secrets.md#PostAdLibraryManageNameCheckIn) | **Post** /ad/library/manage/{name}/check-in | Check service accounts in to the library.
-[**PostAdLibraryName**](Secrets.md#PostAdLibraryName) | **Post** /ad/library/{name} | Update a library set.
-[**PostAdLibraryNameCheckIn**](Secrets.md#PostAdLibraryNameCheckIn) | **Post** /ad/library/{name}/check-in | Check service accounts in to the library.
-[**PostAdLibraryNameCheckOut**](Secrets.md#PostAdLibraryNameCheckOut) | **Post** /ad/library/{name}/check-out | Check a service account out from the library.
-[**PostAdRolesName**](Secrets.md#PostAdRolesName) | **Post** /ad/roles/{name} | Manage roles to build links between Vault and Active Directory service accounts.
-[**PostAdRotateRoleName**](Secrets.md#PostAdRotateRoleName) | **Post** /ad/rotate-role/{name} | 
-[**PostAdRotateRoot**](Secrets.md#PostAdRotateRoot) | **Post** /ad/rotate-root | 
-[**PostAlicloudConfig**](Secrets.md#PostAlicloudConfig) | **Post** /alicloud/config | Configure the access key and secret to use for RAM and STS calls.
-[**PostAlicloudRoleName**](Secrets.md#PostAlicloudRoleName) | **Post** /alicloud/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
-[**PostAwsConfigLease**](Secrets.md#PostAwsConfigLease) | **Post** /aws/config/lease | Configure the default lease information for generated credentials.
-[**PostAwsConfigRoot**](Secrets.md#PostAwsConfigRoot) | **Post** /aws/config/root | Configure the root credentials that are used to manage IAM.
-[**PostAwsConfigRotateRoot**](Secrets.md#PostAwsConfigRotateRoot) | **Post** /aws/config/rotate-root | 
-[**PostAwsCreds**](Secrets.md#PostAwsCreds) | **Post** /aws/creds | Generate AWS credentials from a specific Vault role.
-[**PostAwsRolesName**](Secrets.md#PostAwsRolesName) | **Post** /aws/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
-[**PostAwsStsName**](Secrets.md#PostAwsStsName) | **Post** /aws/sts/{name} | Generate AWS credentials from a specific Vault role.
-[**PostAzureConfig**](Secrets.md#PostAzureConfig) | **Post** /azure/config | 
-[**PostAzureRolesName**](Secrets.md#PostAzureRolesName) | **Post** /azure/roles/{name} | Manage the Vault roles used to generate Azure credentials.
-[**PostAzureRotateRoot**](Secrets.md#PostAzureRotateRoot) | **Post** /azure/rotate-root | 
-[**PostConsulConfigAccess**](Secrets.md#PostConsulConfigAccess) | **Post** /consul/config/access | 
-[**PostConsulRolesName**](Secrets.md#PostConsulRolesName) | **Post** /consul/roles/{name} | 
-[**PostCubbyholePath**](Secrets.md#PostCubbyholePath) | **Post** /cubbyhole/{path} | Store a secret at the specified location.
-[**PostGcpConfig**](Secrets.md#PostGcpConfig) | **Post** /gcp/config | 
-[**PostGcpConfigRotateRoot**](Secrets.md#PostGcpConfigRotateRoot) | **Post** /gcp/config/rotate-root | 
-[**PostGcpKeyRoleset**](Secrets.md#PostGcpKeyRoleset) | **Post** /gcp/key/{roleset} | 
-[**PostGcpRolesetName**](Secrets.md#PostGcpRolesetName) | **Post** /gcp/roleset/{name} | 
-[**PostGcpRolesetNameRotate**](Secrets.md#PostGcpRolesetNameRotate) | **Post** /gcp/roleset/{name}/rotate | 
-[**PostGcpRolesetNameRotateKey**](Secrets.md#PostGcpRolesetNameRotateKey) | **Post** /gcp/roleset/{name}/rotate-key | 
-[**PostGcpRolesetRolesetKey**](Secrets.md#PostGcpRolesetRolesetKey) | **Post** /gcp/roleset/{roleset}/key | 
-[**PostGcpRolesetRolesetToken**](Secrets.md#PostGcpRolesetRolesetToken) | **Post** /gcp/roleset/{roleset}/token | 
-[**PostGcpStaticAccountName**](Secrets.md#PostGcpStaticAccountName) | **Post** /gcp/static-account/{name} | 
-[**PostGcpStaticAccountNameKey**](Secrets.md#PostGcpStaticAccountNameKey) | **Post** /gcp/static-account/{name}/key | 
-[**PostGcpStaticAccountNameRotateKey**](Secrets.md#PostGcpStaticAccountNameRotateKey) | **Post** /gcp/static-account/{name}/rotate-key | 
-[**PostGcpStaticAccountNameToken**](Secrets.md#PostGcpStaticAccountNameToken) | **Post** /gcp/static-account/{name}/token | 
-[**PostGcpTokenRoleset**](Secrets.md#PostGcpTokenRoleset) | **Post** /gcp/token/{roleset} | 
-[**PostGcpkmsConfig**](Secrets.md#PostGcpkmsConfig) | **Post** /gcpkms/config | Configure the GCP KMS secrets engine
-[**PostGcpkmsDecryptKey**](Secrets.md#PostGcpkmsDecryptKey) | **Post** /gcpkms/decrypt/{key} | Decrypt a ciphertext value using a named key
-[**PostGcpkmsEncryptKey**](Secrets.md#PostGcpkmsEncryptKey) | **Post** /gcpkms/encrypt/{key} | Encrypt a plaintext value using a named key
-[**PostGcpkmsKeysConfigKey**](Secrets.md#PostGcpkmsKeysConfigKey) | **Post** /gcpkms/keys/config/{key} | Configure the key in Vault
-[**PostGcpkmsKeysDeregisterKey**](Secrets.md#PostGcpkmsKeysDeregisterKey) | **Post** /gcpkms/keys/deregister/{key} | Deregister an existing key in Vault
-[**PostGcpkmsKeysKey**](Secrets.md#PostGcpkmsKeysKey) | **Post** /gcpkms/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
-[**PostGcpkmsKeysRegisterKey**](Secrets.md#PostGcpkmsKeysRegisterKey) | **Post** /gcpkms/keys/register/{key} | Register an existing crypto key in Google Cloud KMS
-[**PostGcpkmsKeysRotateKey**](Secrets.md#PostGcpkmsKeysRotateKey) | **Post** /gcpkms/keys/rotate/{key} | Rotate a crypto key to a new primary version
-[**PostGcpkmsKeysTrimKey**](Secrets.md#PostGcpkmsKeysTrimKey) | **Post** /gcpkms/keys/trim/{key} | Delete old crypto key versions from Google Cloud KMS
-[**PostGcpkmsReencryptKey**](Secrets.md#PostGcpkmsReencryptKey) | **Post** /gcpkms/reencrypt/{key} | Re-encrypt existing ciphertext data to a new version
-[**PostGcpkmsSignKey**](Secrets.md#PostGcpkmsSignKey) | **Post** /gcpkms/sign/{key} | Signs a message or digest using a named key
-[**PostGcpkmsVerifyKey**](Secrets.md#PostGcpkmsVerifyKey) | **Post** /gcpkms/verify/{key} | Verify a signature using a named key
-[**PostKubernetesConfig**](Secrets.md#PostKubernetesConfig) | **Post** /kubernetes/config | 
-[**PostKubernetesCredsName**](Secrets.md#PostKubernetesCredsName) | **Post** /kubernetes/creds/{name} | 
-[**PostKubernetesRolesName**](Secrets.md#PostKubernetesRolesName) | **Post** /kubernetes/roles/{name} | 
-[**PostKvPath**](Secrets.md#PostKvPath) | **Post** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-[**PostLdapConfig**](Secrets.md#PostLdapConfig) | **Post** /ldap/config | 
-[**PostLdapLibraryManageNameCheckIn**](Secrets.md#PostLdapLibraryManageNameCheckIn) | **Post** /ldap/library/manage/{name}/check-in | Check service accounts in to the library.
-[**PostLdapLibraryName**](Secrets.md#PostLdapLibraryName) | **Post** /ldap/library/{name} | Update a library set.
-[**PostLdapLibraryNameCheckIn**](Secrets.md#PostLdapLibraryNameCheckIn) | **Post** /ldap/library/{name}/check-in | Check service accounts in to the library.
-[**PostLdapLibraryNameCheckOut**](Secrets.md#PostLdapLibraryNameCheckOut) | **Post** /ldap/library/{name}/check-out | Check a service account out from the library.
-[**PostLdapRoleName**](Secrets.md#PostLdapRoleName) | **Post** /ldap/role/{name} | 
-[**PostLdapRotateRoleName**](Secrets.md#PostLdapRotateRoleName) | **Post** /ldap/rotate-role/{name} | 
-[**PostLdapRotateRoot**](Secrets.md#PostLdapRotateRoot) | **Post** /ldap/rotate-root | 
-[**PostLdapStaticRoleName**](Secrets.md#PostLdapStaticRoleName) | **Post** /ldap/static-role/{name} | 
-[**PostMongodbatlasConfig**](Secrets.md#PostMongodbatlasConfig) | **Post** /mongodbatlas/config | Configure the  credentials that are used to manage Database Users.
-[**PostMongodbatlasCredsName**](Secrets.md#PostMongodbatlasCredsName) | **Post** /mongodbatlas/creds/{name} | Generate MongoDB Atlas Programmatic API from a specific Vault role.
-[**PostMongodbatlasRolesName**](Secrets.md#PostMongodbatlasRolesName) | **Post** /mongodbatlas/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-[**PostNomadConfigAccess**](Secrets.md#PostNomadConfigAccess) | **Post** /nomad/config/access | 
-[**PostNomadConfigLease**](Secrets.md#PostNomadConfigLease) | **Post** /nomad/config/lease | Configure the lease parameters for generated tokens
-[**PostNomadRoleName**](Secrets.md#PostNomadRoleName) | **Post** /nomad/role/{name} | 
-[**PostOpenldapConfig**](Secrets.md#PostOpenldapConfig) | **Post** /openldap/config | 
-[**PostOpenldapLibraryManageNameCheckIn**](Secrets.md#PostOpenldapLibraryManageNameCheckIn) | **Post** /openldap/library/manage/{name}/check-in | Check service accounts in to the library.
-[**PostOpenldapLibraryName**](Secrets.md#PostOpenldapLibraryName) | **Post** /openldap/library/{name} | Update a library set.
-[**PostOpenldapLibraryNameCheckIn**](Secrets.md#PostOpenldapLibraryNameCheckIn) | **Post** /openldap/library/{name}/check-in | Check service accounts in to the library.
-[**PostOpenldapLibraryNameCheckOut**](Secrets.md#PostOpenldapLibraryNameCheckOut) | **Post** /openldap/library/{name}/check-out | Check a service account out from the library.
-[**PostOpenldapRoleName**](Secrets.md#PostOpenldapRoleName) | **Post** /openldap/role/{name} | 
-[**PostOpenldapRotateRoleName**](Secrets.md#PostOpenldapRotateRoleName) | **Post** /openldap/rotate-role/{name} | 
-[**PostOpenldapRotateRoot**](Secrets.md#PostOpenldapRotateRoot) | **Post** /openldap/rotate-root | 
-[**PostOpenldapStaticRoleName**](Secrets.md#PostOpenldapStaticRoleName) | **Post** /openldap/static-role/{name} | 
-[**PostPkiBundle**](Secrets.md#PostPkiBundle) | **Post** /pki/bundle | 
-[**PostPkiCert**](Secrets.md#PostPkiCert) | **Post** /pki/cert | 
-[**PostPkiConfigAutoTidy**](Secrets.md#PostPkiConfigAutoTidy) | **Post** /pki/config/auto-tidy | 
-[**PostPkiConfigCa**](Secrets.md#PostPkiConfigCa) | **Post** /pki/config/ca | 
-[**PostPkiConfigCrl**](Secrets.md#PostPkiConfigCrl) | **Post** /pki/config/crl | 
-[**PostPkiConfigIssuers**](Secrets.md#PostPkiConfigIssuers) | **Post** /pki/config/issuers | 
-[**PostPkiConfigKeys**](Secrets.md#PostPkiConfigKeys) | **Post** /pki/config/keys | 
-[**PostPkiConfigUrls**](Secrets.md#PostPkiConfigUrls) | **Post** /pki/config/urls | 
-[**PostPkiIntermediateCrossSign**](Secrets.md#PostPkiIntermediateCrossSign) | **Post** /pki/intermediate/cross-sign | 
-[**PostPkiIntermediateGenerateExported**](Secrets.md#PostPkiIntermediateGenerateExported) | **Post** /pki/intermediate/generate/{exported} | 
-[**PostPkiIntermediateSetSigned**](Secrets.md#PostPkiIntermediateSetSigned) | **Post** /pki/intermediate/set-signed | 
-[**PostPkiIssueRole**](Secrets.md#PostPkiIssueRole) | **Post** /pki/issue/{role} | 
-[**PostPkiIssuerIssuerRefIssueRole**](Secrets.md#PostPkiIssuerIssuerRefIssueRole) | **Post** /pki/issuer/{issuer_ref}/issue/{role} | 
-[**PostPkiIssuerIssuerRefRevoke**](Secrets.md#PostPkiIssuerIssuerRefRevoke) | **Post** /pki/issuer/{issuer_ref}/revoke | 
-[**PostPkiIssuerIssuerRefSignIntermediate**](Secrets.md#PostPkiIssuerIssuerRefSignIntermediate) | **Post** /pki/issuer/{issuer_ref}/sign-intermediate | 
-[**PostPkiIssuerIssuerRefSignRole**](Secrets.md#PostPkiIssuerIssuerRefSignRole) | **Post** /pki/issuer/{issuer_ref}/sign/{role} | 
-[**PostPkiIssuerIssuerRefSignSelfIssued**](Secrets.md#PostPkiIssuerIssuerRefSignSelfIssued) | **Post** /pki/issuer/{issuer_ref}/sign-self-issued | 
-[**PostPkiIssuerIssuerRefSignVerbatim**](Secrets.md#PostPkiIssuerIssuerRefSignVerbatim) | **Post** /pki/issuer/{issuer_ref}/sign-verbatim | 
-[**PostPkiIssuerIssuerRefSignVerbatimRole**](Secrets.md#PostPkiIssuerIssuerRefSignVerbatimRole) | **Post** /pki/issuer/{issuer_ref}/sign-verbatim/{role} | 
-[**PostPkiIssuersGenerateIntermediateExported**](Secrets.md#PostPkiIssuersGenerateIntermediateExported) | **Post** /pki/issuers/generate/intermediate/{exported} | 
-[**PostPkiIssuersGenerateRootExported**](Secrets.md#PostPkiIssuersGenerateRootExported) | **Post** /pki/issuers/generate/root/{exported} | 
-[**PostPkiJson**](Secrets.md#PostPkiJson) | **Post** /pki//json | 
-[**PostPkiKeyKeyRef**](Secrets.md#PostPkiKeyKeyRef) | **Post** /pki/key/{key_ref} | 
-[**PostPkiKeysImport**](Secrets.md#PostPkiKeysImport) | **Post** /pki/keys/import | 
-[**PostPkiKms**](Secrets.md#PostPkiKms) | **Post** /pki/kms | 
-[**PostPkiOcsp**](Secrets.md#PostPkiOcsp) | **Post** /pki/ocsp | 
-[**PostPkiRevoke**](Secrets.md#PostPkiRevoke) | **Post** /pki/revoke | 
-[**PostPkiRevokeWithKey**](Secrets.md#PostPkiRevokeWithKey) | **Post** /pki/revoke-with-key | 
-[**PostPkiRolesName**](Secrets.md#PostPkiRolesName) | **Post** /pki/roles/{name} | 
-[**PostPkiRootGenerateExported**](Secrets.md#PostPkiRootGenerateExported) | **Post** /pki/root/generate/{exported} | 
-[**PostPkiRootReplace**](Secrets.md#PostPkiRootReplace) | **Post** /pki/root/replace | 
-[**PostPkiRootRotateExported**](Secrets.md#PostPkiRootRotateExported) | **Post** /pki/root/rotate/{exported} | 
-[**PostPkiRootSignIntermediate**](Secrets.md#PostPkiRootSignIntermediate) | **Post** /pki/root/sign-intermediate | 
-[**PostPkiRootSignSelfIssued**](Secrets.md#PostPkiRootSignSelfIssued) | **Post** /pki/root/sign-self-issued | 
-[**PostPkiSignRole**](Secrets.md#PostPkiSignRole) | **Post** /pki/sign/{role} | 
-[**PostPkiSignVerbatim**](Secrets.md#PostPkiSignVerbatim) | **Post** /pki/sign-verbatim | 
-[**PostPkiSignVerbatimRole**](Secrets.md#PostPkiSignVerbatimRole) | **Post** /pki/sign-verbatim/{role} | 
-[**PostPkiTidy**](Secrets.md#PostPkiTidy) | **Post** /pki/tidy | 
-[**PostPkiTidyCancel**](Secrets.md#PostPkiTidyCancel) | **Post** /pki/tidy-cancel | 
-[**PostRabbitmqConfigConnection**](Secrets.md#PostRabbitmqConfigConnection) | **Post** /rabbitmq/config/connection | Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
-[**PostRabbitmqConfigLease**](Secrets.md#PostRabbitmqConfigLease) | **Post** /rabbitmq/config/lease | Configure the lease parameters for generated credentials
-[**PostRabbitmqRolesName**](Secrets.md#PostRabbitmqRolesName) | **Post** /rabbitmq/roles/{name} | Manage the roles that can be created with this backend.
-[**PostSecretConfig**](Secrets.md#PostSecretConfig) | **Post** /secret/config | Configure backend level settings that are applied to every key in the key-value store.
-[**PostSecretDataPath**](Secrets.md#PostSecretDataPath) | **Post** /secret/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
-[**PostSecretDeletePath**](Secrets.md#PostSecretDeletePath) | **Post** /secret/delete/{path} | Marks one or more versions as deleted in the KV store.
-[**PostSecretDestroyPath**](Secrets.md#PostSecretDestroyPath) | **Post** /secret/destroy/{path} | Permanently removes one or more versions in the KV store
-[**PostSecretMetadataPath**](Secrets.md#PostSecretMetadataPath) | **Post** /secret/metadata/{path} | Configures settings for the KV store
-[**PostSecretUndeletePath**](Secrets.md#PostSecretUndeletePath) | **Post** /secret/undelete/{path} | Undeletes one or more versions from the KV store.
-[**PostSshConfigCa**](Secrets.md#PostSshConfigCa) | **Post** /ssh/config/ca | Set the SSH private key used for signing certificates.
-[**PostSshConfigZeroaddress**](Secrets.md#PostSshConfigZeroaddress) | **Post** /ssh/config/zeroaddress | Assign zero address as default CIDR block for select roles.
-[**PostSshCredsRole**](Secrets.md#PostSshCredsRole) | **Post** /ssh/creds/{role} | Creates a credential for establishing SSH connection with the remote host.
-[**PostSshIssueRole**](Secrets.md#PostSshIssueRole) | **Post** /ssh/issue/{role} | 
-[**PostSshKeysKeyName**](Secrets.md#PostSshKeysKeyName) | **Post** /ssh/keys/{key_name} | Register a shared private key with Vault.
-[**PostSshLookup**](Secrets.md#PostSshLookup) | **Post** /ssh/lookup | List all the roles associated with the given IP address.
-[**PostSshRolesRole**](Secrets.md#PostSshRolesRole) | **Post** /ssh/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
-[**PostSshSignRole**](Secrets.md#PostSshSignRole) | **Post** /ssh/sign/{role} | Request signing an SSH key using a certain role with the provided details.
-[**PostSshVerify**](Secrets.md#PostSshVerify) | **Post** /ssh/verify | Validate the OTP provided by Vault SSH Agent.
-[**PostTerraformConfig**](Secrets.md#PostTerraformConfig) | **Post** /terraform/config | 
-[**PostTerraformCredsName**](Secrets.md#PostTerraformCredsName) | **Post** /terraform/creds/{name} | Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
-[**PostTerraformRoleName**](Secrets.md#PostTerraformRoleName) | **Post** /terraform/role/{name} | 
-[**PostTerraformRotateRoleName**](Secrets.md#PostTerraformRotateRoleName) | **Post** /terraform/rotate-role/{name} | 
-[**PostTotpCodeName**](Secrets.md#PostTotpCodeName) | **Post** /totp/code/{name} | Request time-based one-time use password or validate a password for a certain key .
-[**PostTotpKeysName**](Secrets.md#PostTotpKeysName) | **Post** /totp/keys/{name} | Manage the keys that can be created with this backend.
-[**PostTransitCacheConfig**](Secrets.md#PostTransitCacheConfig) | **Post** /transit/cache-config | Configures a new cache of the specified size
-[**PostTransitDatakeyPlaintextName**](Secrets.md#PostTransitDatakeyPlaintextName) | **Post** /transit/datakey/{plaintext}/{name} | Generate a data key
-[**PostTransitDecryptName**](Secrets.md#PostTransitDecryptName) | **Post** /transit/decrypt/{name} | Decrypt a ciphertext value using a named key
-[**PostTransitEncryptName**](Secrets.md#PostTransitEncryptName) | **Post** /transit/encrypt/{name} | Encrypt a plaintext value or a batch of plaintext blocks using a named key
-[**PostTransitHash**](Secrets.md#PostTransitHash) | **Post** /transit/hash | Generate a hash sum for input data
-[**PostTransitHashUrlalgorithm**](Secrets.md#PostTransitHashUrlalgorithm) | **Post** /transit/hash/{urlalgorithm} | Generate a hash sum for input data
-[**PostTransitHmacName**](Secrets.md#PostTransitHmacName) | **Post** /transit/hmac/{name} | Generate an HMAC for input data using the named key
-[**PostTransitHmacNameUrlalgorithm**](Secrets.md#PostTransitHmacNameUrlalgorithm) | **Post** /transit/hmac/{name}/{urlalgorithm} | Generate an HMAC for input data using the named key
-[**PostTransitKeysName**](Secrets.md#PostTransitKeysName) | **Post** /transit/keys/{name} | Managed named encryption keys
-[**PostTransitKeysNameConfig**](Secrets.md#PostTransitKeysNameConfig) | **Post** /transit/keys/{name}/config | Configure a named encryption key
-[**PostTransitKeysNameImport**](Secrets.md#PostTransitKeysNameImport) | **Post** /transit/keys/{name}/import | Imports an externally-generated key into a new transit key
-[**PostTransitKeysNameImportVersion**](Secrets.md#PostTransitKeysNameImportVersion) | **Post** /transit/keys/{name}/import_version | Imports an externally-generated key into an existing imported key
-[**PostTransitKeysNameRotate**](Secrets.md#PostTransitKeysNameRotate) | **Post** /transit/keys/{name}/rotate | Rotate named encryption key
-[**PostTransitKeysNameTrim**](Secrets.md#PostTransitKeysNameTrim) | **Post** /transit/keys/{name}/trim | Trim key versions of a named key
-[**PostTransitRandom**](Secrets.md#PostTransitRandom) | **Post** /transit/random | Generate random bytes
-[**PostTransitRandomSource**](Secrets.md#PostTransitRandomSource) | **Post** /transit/random/{source} | Generate random bytes
-[**PostTransitRandomSourceUrlbytes**](Secrets.md#PostTransitRandomSourceUrlbytes) | **Post** /transit/random/{source}/{urlbytes} | Generate random bytes
-[**PostTransitRandomUrlbytes**](Secrets.md#PostTransitRandomUrlbytes) | **Post** /transit/random/{urlbytes} | Generate random bytes
-[**PostTransitRestore**](Secrets.md#PostTransitRestore) | **Post** /transit/restore | Restore the named key
-[**PostTransitRestoreName**](Secrets.md#PostTransitRestoreName) | **Post** /transit/restore/{name} | Restore the named key
-[**PostTransitRewrapName**](Secrets.md#PostTransitRewrapName) | **Post** /transit/rewrap/{name} | Rewrap ciphertext
-[**PostTransitSignName**](Secrets.md#PostTransitSignName) | **Post** /transit/sign/{name} | Generate a signature for input data using the named key
-[**PostTransitSignNameUrlalgorithm**](Secrets.md#PostTransitSignNameUrlalgorithm) | **Post** /transit/sign/{name}/{urlalgorithm} | Generate a signature for input data using the named key
-[**PostTransitVerifyName**](Secrets.md#PostTransitVerifyName) | **Post** /transit/verify/{name} | Verify a signature or HMAC for input data created using the named key
-[**PostTransitVerifyNameUrlalgorithm**](Secrets.md#PostTransitVerifyNameUrlalgorithm) | **Post** /transit/verify/{name}/{urlalgorithm} | Verify a signature or HMAC for input data created using the named key
+[**DeleteAwsRolesName**](Secrets.md#DeleteAwsRolesName) | **Delete** /{mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
+[**DeleteCubbyholePath**](Secrets.md#DeleteCubbyholePath) | **Delete** /{mount_path}/{path} | Deletes the secret at the specified location.
+[**DeleteGcpRolesetName**](Secrets.md#DeleteGcpRolesetName) | **Delete** /{mount_path}/roleset/{name} | 
+[**DeleteGcpStaticAccountName**](Secrets.md#DeleteGcpStaticAccountName) | **Delete** /{mount_path}/static-account/{name} | 
+[**DeleteGcpkmsKeysDeregisterKey**](Secrets.md#DeleteGcpkmsKeysDeregisterKey) | **Delete** /{mount_path}/keys/deregister/{key} | Deregister an existing key in Vault
+[**DeleteGcpkmsKeysKey**](Secrets.md#DeleteGcpkmsKeysKey) | **Delete** /{mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
+[**DeleteGcpkmsKeysTrimKey**](Secrets.md#DeleteGcpkmsKeysTrimKey) | **Delete** /{mount_path}/keys/trim/{key} | Delete old crypto key versions from Google Cloud KMS
+[**DeleteLdapLibraryName**](Secrets.md#DeleteLdapLibraryName) | **Delete** /{mount_path}/library/{name} | Delete a library set.
+[**DeleteLdapRoleName**](Secrets.md#DeleteLdapRoleName) | **Delete** /{mount_path}/role/{name} | 
+[**DeleteLdapStaticRoleName**](Secrets.md#DeleteLdapStaticRoleName) | **Delete** /{mount_path}/static-role/{name} | 
+[**DeleteNomadConfigAccess**](Secrets.md#DeleteNomadConfigAccess) | **Delete** /{mount_path}/config/access | 
+[**DeletePkiIssuerRefDerPem**](Secrets.md#DeletePkiIssuerRefDerPem) | **Delete** /{mount_path}/{issuer_ref}/der|/pem | 
+[**DeletePkiJson**](Secrets.md#DeletePkiJson) | **Delete** /{mount_path}//json | 
+[**DeletePkiKeyKeyRef**](Secrets.md#DeletePkiKeyKeyRef) | **Delete** /{mount_path}/key/{key_ref} | 
+[**DeletePkiRoot**](Secrets.md#DeletePkiRoot) | **Delete** /{mount_path}/root | 
+[**DeleteSecretDataPath**](Secrets.md#DeleteSecretDataPath) | **Delete** /{mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
+[**DeleteSecretMetadataPath**](Secrets.md#DeleteSecretMetadataPath) | **Delete** /{mount_path}/metadata/{path} | Configures settings for the KV store
+[**DeleteSshConfigZeroaddress**](Secrets.md#DeleteSshConfigZeroaddress) | **Delete** /{mount_path}/config/zeroaddress | Assign zero address as default CIDR block for select roles.
+[**DeleteSshKeysKeyName**](Secrets.md#DeleteSshKeysKeyName) | **Delete** /{mount_path}/keys/{key_name} | Register a shared private key with Vault.
+[**DeleteSshRolesRole**](Secrets.md#DeleteSshRolesRole) | **Delete** /{mount_path}/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
+[**DeleteTotpKeysName**](Secrets.md#DeleteTotpKeysName) | **Delete** /{mount_path}/keys/{name} | Manage the keys that can be created with this backend.
+[**ListAwsRoles**](Secrets.md#ListAwsRoles) | **Get** /{mount_path}/roles | List the existing roles in this backend
+[**ListGcpRolesets**](Secrets.md#ListGcpRolesets) | **Get** /{mount_path}/rolesets | 
+[**ListGcpStaticAccounts**](Secrets.md#ListGcpStaticAccounts) | **Get** /{mount_path}/static-accounts | 
+[**ListLdapLibrary**](Secrets.md#ListLdapLibrary) | **Get** /{mount_path}/library | 
+[**ListLdapRole**](Secrets.md#ListLdapRole) | **Get** /{mount_path}/role | 
+[**ListLdapStaticRole**](Secrets.md#ListLdapStaticRole) | **Get** /{mount_path}/static-role | 
+[**ListPkiCerts**](Secrets.md#ListPkiCerts) | **Get** /{mount_path}/certs | 
+[**ListPkiIssuers**](Secrets.md#ListPkiIssuers) | **Get** /{mount_path}/issuers | 
+[**ListTotpKeys**](Secrets.md#ListTotpKeys) | **Get** /{mount_path}/keys | Manage the keys that can be created with this backend.
+[**ReadAwsConfigLease**](Secrets.md#ReadAwsConfigLease) | **Get** /{mount_path}/config/lease | Configure the default lease information for generated credentials.
+[**ReadAwsConfigRoot**](Secrets.md#ReadAwsConfigRoot) | **Get** /{mount_path}/config/root | Configure the root credentials that are used to manage IAM.
+[**ReadAwsCreds**](Secrets.md#ReadAwsCreds) | **Get** /{mount_path}/creds | Generate AWS credentials from a specific Vault role.
+[**ReadAwsRolesName**](Secrets.md#ReadAwsRolesName) | **Get** /{mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
+[**ReadAwsStsName**](Secrets.md#ReadAwsStsName) | **Get** /{mount_path}/sts/{name} | Generate AWS credentials from a specific Vault role.
+[**ReadAzureCredsRole**](Secrets.md#ReadAzureCredsRole) | **Get** /{mount_path}/creds/{role} | 
+[**ReadCubbyholePath**](Secrets.md#ReadCubbyholePath) | **Get** /{mount_path}/{path} | Retrieve the secret at the specified location.
+[**ReadGcpConfig**](Secrets.md#ReadGcpConfig) | **Get** /{mount_path}/config | 
+[**ReadGcpKeyRoleset**](Secrets.md#ReadGcpKeyRoleset) | **Get** /{mount_path}/key/{roleset} | 
+[**ReadGcpRolesetName**](Secrets.md#ReadGcpRolesetName) | **Get** /{mount_path}/roleset/{name} | 
+[**ReadGcpRolesetRolesetKey**](Secrets.md#ReadGcpRolesetRolesetKey) | **Get** /{mount_path}/roleset/{roleset}/key | 
+[**ReadGcpRolesetRolesetToken**](Secrets.md#ReadGcpRolesetRolesetToken) | **Get** /{mount_path}/roleset/{roleset}/token | 
+[**ReadGcpStaticAccountName**](Secrets.md#ReadGcpStaticAccountName) | **Get** /{mount_path}/static-account/{name} | 
+[**ReadGcpStaticAccountNameKey**](Secrets.md#ReadGcpStaticAccountNameKey) | **Get** /{mount_path}/static-account/{name}/key | 
+[**ReadGcpStaticAccountNameToken**](Secrets.md#ReadGcpStaticAccountNameToken) | **Get** /{mount_path}/static-account/{name}/token | 
+[**ReadGcpTokenRoleset**](Secrets.md#ReadGcpTokenRoleset) | **Get** /{mount_path}/token/{roleset} | 
+[**ReadGcpkmsKeysConfigKey**](Secrets.md#ReadGcpkmsKeysConfigKey) | **Get** /{mount_path}/keys/config/{key} | Configure the key in Vault
+[**ReadGcpkmsKeysKey**](Secrets.md#ReadGcpkmsKeysKey) | **Get** /{mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
+[**ReadGcpkmsPubkeyKey**](Secrets.md#ReadGcpkmsPubkeyKey) | **Get** /{mount_path}/pubkey/{key} | Retrieve the public key associated with the named key
+[**ReadLdapCredsName**](Secrets.md#ReadLdapCredsName) | **Get** /{mount_path}/creds/{name} | 
+[**ReadLdapLibraryName**](Secrets.md#ReadLdapLibraryName) | **Get** /{mount_path}/library/{name} | Read a library set.
+[**ReadLdapLibraryNameStatus**](Secrets.md#ReadLdapLibraryNameStatus) | **Get** /{mount_path}/library/{name}/status | Check the status of the service accounts in a library set.
+[**ReadLdapRoleName**](Secrets.md#ReadLdapRoleName) | **Get** /{mount_path}/role/{name} | 
+[**ReadLdapStaticCredName**](Secrets.md#ReadLdapStaticCredName) | **Get** /{mount_path}/static-cred/{name} | 
+[**ReadLdapStaticRoleName**](Secrets.md#ReadLdapStaticRoleName) | **Get** /{mount_path}/static-role/{name} | 
+[**ReadNomadConfigAccess**](Secrets.md#ReadNomadConfigAccess) | **Get** /{mount_path}/config/access | 
+[**ReadPkiCa**](Secrets.md#ReadPkiCa) | **Get** /{mount_path}/ca | 
+[**ReadPkiCaChain**](Secrets.md#ReadPkiCaChain) | **Get** /{mount_path}/ca_chain | 
+[**ReadPkiCaPem**](Secrets.md#ReadPkiCaPem) | **Get** /{mount_path}/ca/pem | 
+[**ReadPkiCertCaChain**](Secrets.md#ReadPkiCertCaChain) | **Get** /{mount_path}/cert/ca_chain | 
+[**ReadPkiCertSerial**](Secrets.md#ReadPkiCertSerial) | **Get** /{mount_path}/cert/{serial} | 
+[**ReadPkiCertSerialRaw**](Secrets.md#ReadPkiCertSerialRaw) | **Get** /{mount_path}/cert/{serial}/raw | 
+[**ReadPkiCertSerialRawPem**](Secrets.md#ReadPkiCertSerialRawPem) | **Get** /{mount_path}/cert/{serial}/raw/pem | 
+[**ReadPkiConfigAutoTidy**](Secrets.md#ReadPkiConfigAutoTidy) | **Get** /{mount_path}/config/auto-tidy | 
+[**ReadPkiConfigCrl**](Secrets.md#ReadPkiConfigCrl) | **Get** /{mount_path}/config/crl | 
+[**ReadPkiConfigIssuers**](Secrets.md#ReadPkiConfigIssuers) | **Get** /{mount_path}/config/issuers | 
+[**ReadPkiConfigKeys**](Secrets.md#ReadPkiConfigKeys) | **Get** /{mount_path}/config/keys | 
+[**ReadPkiConfigUrls**](Secrets.md#ReadPkiConfigUrls) | **Get** /{mount_path}/config/urls | 
+[**ReadPkiCrl**](Secrets.md#ReadPkiCrl) | **Get** /{mount_path}/crl | 
+[**ReadPkiCrlRotate**](Secrets.md#ReadPkiCrlRotate) | **Get** /{mount_path}/crl/rotate | 
+[**ReadPkiCrlRotateDelta**](Secrets.md#ReadPkiCrlRotateDelta) | **Get** /{mount_path}/crl/rotate-delta | 
+[**ReadPkiDelta**](Secrets.md#ReadPkiDelta) | **Get** /{mount_path}//delta | 
+[**ReadPkiDeltaCrl**](Secrets.md#ReadPkiDeltaCrl) | **Get** /{mount_path}/delta-crl | 
+[**ReadPkiDeltaPem**](Secrets.md#ReadPkiDeltaPem) | **Get** /{mount_path}//delta/pem | 
+[**ReadPkiDer**](Secrets.md#ReadPkiDer) | **Get** /{mount_path}//der | 
+[**ReadPkiIssuerRefCrlPemDerDeltaPem**](Secrets.md#ReadPkiIssuerRefCrlPemDerDeltaPem) | **Get** /{mount_path}/{issuer_ref}/crl/pem|/der|/delta/pem | 
+[**ReadPkiIssuerRefDerPem**](Secrets.md#ReadPkiIssuerRefDerPem) | **Get** /{mount_path}/{issuer_ref}/der|/pem | 
+[**ReadPkiJson**](Secrets.md#ReadPkiJson) | **Get** /{mount_path}//json | 
+[**ReadPkiKeyKeyRef**](Secrets.md#ReadPkiKeyKeyRef) | **Get** /{mount_path}/key/{key_ref} | 
+[**ReadPkiOcspReq**](Secrets.md#ReadPkiOcspReq) | **Get** /{mount_path}/ocsp/{req} | 
+[**ReadPkiPem**](Secrets.md#ReadPkiPem) | **Get** /{mount_path}//pem | 
+[**ReadPkiTidyStatus**](Secrets.md#ReadPkiTidyStatus) | **Get** /{mount_path}/tidy-status | 
+[**ReadSecretDataPath**](Secrets.md#ReadSecretDataPath) | **Get** /{mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
+[**ReadSecretMetadataPath**](Secrets.md#ReadSecretMetadataPath) | **Get** /{mount_path}/metadata/{path} | Configures settings for the KV store
+[**ReadSecretSubkeysPath**](Secrets.md#ReadSecretSubkeysPath) | **Get** /{mount_path}/subkeys/{path} | Read the structure of a secret entry from the Key-Value store with the values removed.
+[**ReadSshConfigZeroaddress**](Secrets.md#ReadSshConfigZeroaddress) | **Get** /{mount_path}/config/zeroaddress | Assign zero address as default CIDR block for select roles.
+[**ReadSshPublicKey**](Secrets.md#ReadSshPublicKey) | **Get** /{mount_path}/public_key | Retrieve the public key.
+[**ReadSshRolesRole**](Secrets.md#ReadSshRolesRole) | **Get** /{mount_path}/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
+[**ReadTotpCodeName**](Secrets.md#ReadTotpCodeName) | **Get** /{mount_path}/code/{name} | Request time-based one-time use password or validate a password for a certain key .
+[**ReadTotpKeysName**](Secrets.md#ReadTotpKeysName) | **Get** /{mount_path}/keys/{name} | Manage the keys that can be created with this backend.
+[**ReadTransitBackupName**](Secrets.md#ReadTransitBackupName) | **Get** /{mount_path}/backup/{name} | Backup the named key
+[**ReadTransitCacheConfig**](Secrets.md#ReadTransitCacheConfig) | **Get** /{mount_path}/cache-config | Returns the size of the active cache
+[**ReadTransitExportTypeName**](Secrets.md#ReadTransitExportTypeName) | **Get** /{mount_path}/export/{type}/{name} | Export named encryption or signing key
+[**ReadTransitExportTypeNameVersion**](Secrets.md#ReadTransitExportTypeNameVersion) | **Get** /{mount_path}/export/{type}/{name}/{version} | Export named encryption or signing key
+[**ReadTransitWrappingKey**](Secrets.md#ReadTransitWrappingKey) | **Get** /{mount_path}/wrapping_key | Returns the public key to use for wrapping imported keys
+[**UpdateAwsConfigLease**](Secrets.md#UpdateAwsConfigLease) | **Post** /{mount_path}/config/lease | Configure the default lease information for generated credentials.
+[**UpdateAwsConfigRoot**](Secrets.md#UpdateAwsConfigRoot) | **Post** /{mount_path}/config/root | Configure the root credentials that are used to manage IAM.
+[**UpdateAwsCreds**](Secrets.md#UpdateAwsCreds) | **Post** /{mount_path}/creds | Generate AWS credentials from a specific Vault role.
+[**UpdateAwsRolesName**](Secrets.md#UpdateAwsRolesName) | **Post** /{mount_path}/roles/{name} | Read, write and reference IAM policies that access keys can be made for.
+[**UpdateAwsStsName**](Secrets.md#UpdateAwsStsName) | **Post** /{mount_path}/sts/{name} | Generate AWS credentials from a specific Vault role.
+[**UpdateCubbyholePath**](Secrets.md#UpdateCubbyholePath) | **Post** /{mount_path}/{path} | Store a secret at the specified location.
+[**UpdateGcpConfig**](Secrets.md#UpdateGcpConfig) | **Post** /{mount_path}/config | 
+[**UpdateGcpConfigRotateRoot**](Secrets.md#UpdateGcpConfigRotateRoot) | **Post** /{mount_path}/config/rotate-root | 
+[**UpdateGcpKeyRoleset**](Secrets.md#UpdateGcpKeyRoleset) | **Post** /{mount_path}/key/{roleset} | 
+[**UpdateGcpRolesetName**](Secrets.md#UpdateGcpRolesetName) | **Post** /{mount_path}/roleset/{name} | 
+[**UpdateGcpRolesetNameRotate**](Secrets.md#UpdateGcpRolesetNameRotate) | **Post** /{mount_path}/roleset/{name}/rotate | 
+[**UpdateGcpRolesetNameRotateKey**](Secrets.md#UpdateGcpRolesetNameRotateKey) | **Post** /{mount_path}/roleset/{name}/rotate-key | 
+[**UpdateGcpRolesetRolesetKey**](Secrets.md#UpdateGcpRolesetRolesetKey) | **Post** /{mount_path}/roleset/{roleset}/key | 
+[**UpdateGcpRolesetRolesetToken**](Secrets.md#UpdateGcpRolesetRolesetToken) | **Post** /{mount_path}/roleset/{roleset}/token | 
+[**UpdateGcpStaticAccountName**](Secrets.md#UpdateGcpStaticAccountName) | **Post** /{mount_path}/static-account/{name} | 
+[**UpdateGcpStaticAccountNameKey**](Secrets.md#UpdateGcpStaticAccountNameKey) | **Post** /{mount_path}/static-account/{name}/key | 
+[**UpdateGcpStaticAccountNameRotateKey**](Secrets.md#UpdateGcpStaticAccountNameRotateKey) | **Post** /{mount_path}/static-account/{name}/rotate-key | 
+[**UpdateGcpStaticAccountNameToken**](Secrets.md#UpdateGcpStaticAccountNameToken) | **Post** /{mount_path}/static-account/{name}/token | 
+[**UpdateGcpTokenRoleset**](Secrets.md#UpdateGcpTokenRoleset) | **Post** /{mount_path}/token/{roleset} | 
+[**UpdateGcpkmsDecryptKey**](Secrets.md#UpdateGcpkmsDecryptKey) | **Post** /{mount_path}/decrypt/{key} | Decrypt a ciphertext value using a named key
+[**UpdateGcpkmsEncryptKey**](Secrets.md#UpdateGcpkmsEncryptKey) | **Post** /{mount_path}/encrypt/{key} | Encrypt a plaintext value using a named key
+[**UpdateGcpkmsKeysConfigKey**](Secrets.md#UpdateGcpkmsKeysConfigKey) | **Post** /{mount_path}/keys/config/{key} | Configure the key in Vault
+[**UpdateGcpkmsKeysDeregisterKey**](Secrets.md#UpdateGcpkmsKeysDeregisterKey) | **Post** /{mount_path}/keys/deregister/{key} | Deregister an existing key in Vault
+[**UpdateGcpkmsKeysKey**](Secrets.md#UpdateGcpkmsKeysKey) | **Post** /{mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
+[**UpdateGcpkmsKeysRegisterKey**](Secrets.md#UpdateGcpkmsKeysRegisterKey) | **Post** /{mount_path}/keys/register/{key} | Register an existing crypto key in Google Cloud KMS
+[**UpdateGcpkmsKeysRotateKey**](Secrets.md#UpdateGcpkmsKeysRotateKey) | **Post** /{mount_path}/keys/rotate/{key} | Rotate a crypto key to a new primary version
+[**UpdateGcpkmsKeysTrimKey**](Secrets.md#UpdateGcpkmsKeysTrimKey) | **Post** /{mount_path}/keys/trim/{key} | Delete old crypto key versions from Google Cloud KMS
+[**UpdateGcpkmsReencryptKey**](Secrets.md#UpdateGcpkmsReencryptKey) | **Post** /{mount_path}/reencrypt/{key} | Re-encrypt existing ciphertext data to a new version
+[**UpdateGcpkmsSignKey**](Secrets.md#UpdateGcpkmsSignKey) | **Post** /{mount_path}/sign/{key} | Signs a message or digest using a named key
+[**UpdateGcpkmsVerifyKey**](Secrets.md#UpdateGcpkmsVerifyKey) | **Post** /{mount_path}/verify/{key} | Verify a signature using a named key
+[**UpdateLdapLibraryManageNameCheckIn**](Secrets.md#UpdateLdapLibraryManageNameCheckIn) | **Post** /{mount_path}/library/manage/{name}/check-in | Check service accounts in to the library.
+[**UpdateLdapLibraryName**](Secrets.md#UpdateLdapLibraryName) | **Post** /{mount_path}/library/{name} | Update a library set.
+[**UpdateLdapLibraryNameCheckIn**](Secrets.md#UpdateLdapLibraryNameCheckIn) | **Post** /{mount_path}/library/{name}/check-in | Check service accounts in to the library.
+[**UpdateLdapLibraryNameCheckOut**](Secrets.md#UpdateLdapLibraryNameCheckOut) | **Post** /{mount_path}/library/{name}/check-out | Check a service account out from the library.
+[**UpdateLdapRoleName**](Secrets.md#UpdateLdapRoleName) | **Post** /{mount_path}/role/{name} | 
+[**UpdateLdapRotateRoleName**](Secrets.md#UpdateLdapRotateRoleName) | **Post** /{mount_path}/rotate-role/{name} | 
+[**UpdateLdapRotateRoot**](Secrets.md#UpdateLdapRotateRoot) | **Post** /{mount_path}/rotate-root | 
+[**UpdateLdapStaticRoleName**](Secrets.md#UpdateLdapStaticRoleName) | **Post** /{mount_path}/static-role/{name} | 
+[**UpdateNomadConfigAccess**](Secrets.md#UpdateNomadConfigAccess) | **Post** /{mount_path}/config/access | 
+[**UpdatePkiBundle**](Secrets.md#UpdatePkiBundle) | **Post** /{mount_path}/bundle | 
+[**UpdatePkiCert**](Secrets.md#UpdatePkiCert) | **Post** /{mount_path}/cert | 
+[**UpdatePkiConfigAutoTidy**](Secrets.md#UpdatePkiConfigAutoTidy) | **Post** /{mount_path}/config/auto-tidy | 
+[**UpdatePkiConfigCa**](Secrets.md#UpdatePkiConfigCa) | **Post** /{mount_path}/config/ca | 
+[**UpdatePkiConfigCrl**](Secrets.md#UpdatePkiConfigCrl) | **Post** /{mount_path}/config/crl | 
+[**UpdatePkiConfigIssuers**](Secrets.md#UpdatePkiConfigIssuers) | **Post** /{mount_path}/config/issuers | 
+[**UpdatePkiConfigKeys**](Secrets.md#UpdatePkiConfigKeys) | **Post** /{mount_path}/config/keys | 
+[**UpdatePkiConfigUrls**](Secrets.md#UpdatePkiConfigUrls) | **Post** /{mount_path}/config/urls | 
+[**UpdatePkiIntermediateCrossSign**](Secrets.md#UpdatePkiIntermediateCrossSign) | **Post** /{mount_path}/intermediate/cross-sign | 
+[**UpdatePkiIntermediateGenerateExported**](Secrets.md#UpdatePkiIntermediateGenerateExported) | **Post** /{mount_path}/intermediate/generate/{exported} | 
+[**UpdatePkiIntermediateSetSigned**](Secrets.md#UpdatePkiIntermediateSetSigned) | **Post** /{mount_path}/intermediate/set-signed | 
+[**UpdatePkiIssueRole**](Secrets.md#UpdatePkiIssueRole) | **Post** /{mount_path}/issue/{role} | 
+[**UpdatePkiIssuerIssuerRefIssueRole**](Secrets.md#UpdatePkiIssuerIssuerRefIssueRole) | **Post** /{mount_path}/issuer/{issuer_ref}/issue/{role} | 
+[**UpdatePkiIssuerIssuerRefRevoke**](Secrets.md#UpdatePkiIssuerIssuerRefRevoke) | **Post** /{mount_path}/issuer/{issuer_ref}/revoke | 
+[**UpdatePkiIssuerIssuerRefSignIntermediate**](Secrets.md#UpdatePkiIssuerIssuerRefSignIntermediate) | **Post** /{mount_path}/issuer/{issuer_ref}/sign-intermediate | 
+[**UpdatePkiIssuerIssuerRefSignRole**](Secrets.md#UpdatePkiIssuerIssuerRefSignRole) | **Post** /{mount_path}/issuer/{issuer_ref}/sign/{role} | 
+[**UpdatePkiIssuerIssuerRefSignSelfIssued**](Secrets.md#UpdatePkiIssuerIssuerRefSignSelfIssued) | **Post** /{mount_path}/issuer/{issuer_ref}/sign-self-issued | 
+[**UpdatePkiIssuerIssuerRefSignVerbatim**](Secrets.md#UpdatePkiIssuerIssuerRefSignVerbatim) | **Post** /{mount_path}/issuer/{issuer_ref}/sign-verbatim | 
+[**UpdatePkiIssuerIssuerRefSignVerbatimRole**](Secrets.md#UpdatePkiIssuerIssuerRefSignVerbatimRole) | **Post** /{mount_path}/issuer/{issuer_ref}/sign-verbatim/{role} | 
+[**UpdatePkiIssuersGenerateIntermediateExported**](Secrets.md#UpdatePkiIssuersGenerateIntermediateExported) | **Post** /{mount_path}/issuers/generate/intermediate/{exported} | 
+[**UpdatePkiIssuersGenerateRootExported**](Secrets.md#UpdatePkiIssuersGenerateRootExported) | **Post** /{mount_path}/issuers/generate/root/{exported} | 
+[**UpdatePkiJson**](Secrets.md#UpdatePkiJson) | **Post** /{mount_path}//json | 
+[**UpdatePkiKeyKeyRef**](Secrets.md#UpdatePkiKeyKeyRef) | **Post** /{mount_path}/key/{key_ref} | 
+[**UpdatePkiKeysImport**](Secrets.md#UpdatePkiKeysImport) | **Post** /{mount_path}/keys/import | 
+[**UpdatePkiKms**](Secrets.md#UpdatePkiKms) | **Post** /{mount_path}/kms | 
+[**UpdatePkiOcsp**](Secrets.md#UpdatePkiOcsp) | **Post** /{mount_path}/ocsp | 
+[**UpdatePkiRevoke**](Secrets.md#UpdatePkiRevoke) | **Post** /{mount_path}/revoke | 
+[**UpdatePkiRevokeWithKey**](Secrets.md#UpdatePkiRevokeWithKey) | **Post** /{mount_path}/revoke-with-key | 
+[**UpdatePkiRootGenerateExported**](Secrets.md#UpdatePkiRootGenerateExported) | **Post** /{mount_path}/root/generate/{exported} | 
+[**UpdatePkiRootReplace**](Secrets.md#UpdatePkiRootReplace) | **Post** /{mount_path}/root/replace | 
+[**UpdatePkiRootRotateExported**](Secrets.md#UpdatePkiRootRotateExported) | **Post** /{mount_path}/root/rotate/{exported} | 
+[**UpdatePkiRootSignIntermediate**](Secrets.md#UpdatePkiRootSignIntermediate) | **Post** /{mount_path}/root/sign-intermediate | 
+[**UpdatePkiRootSignSelfIssued**](Secrets.md#UpdatePkiRootSignSelfIssued) | **Post** /{mount_path}/root/sign-self-issued | 
+[**UpdatePkiSignRole**](Secrets.md#UpdatePkiSignRole) | **Post** /{mount_path}/sign/{role} | 
+[**UpdatePkiSignVerbatim**](Secrets.md#UpdatePkiSignVerbatim) | **Post** /{mount_path}/sign-verbatim | 
+[**UpdatePkiSignVerbatimRole**](Secrets.md#UpdatePkiSignVerbatimRole) | **Post** /{mount_path}/sign-verbatim/{role} | 
+[**UpdatePkiTidy**](Secrets.md#UpdatePkiTidy) | **Post** /{mount_path}/tidy | 
+[**UpdatePkiTidyCancel**](Secrets.md#UpdatePkiTidyCancel) | **Post** /{mount_path}/tidy-cancel | 
+[**UpdateRabbitmqConfigConnection**](Secrets.md#UpdateRabbitmqConfigConnection) | **Post** /{mount_path}/config/connection | Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
+[**UpdateSecretDataPath**](Secrets.md#UpdateSecretDataPath) | **Post** /{mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
+[**UpdateSecretDeletePath**](Secrets.md#UpdateSecretDeletePath) | **Post** /{mount_path}/delete/{path} | Marks one or more versions as deleted in the KV store.
+[**UpdateSecretDestroyPath**](Secrets.md#UpdateSecretDestroyPath) | **Post** /{mount_path}/destroy/{path} | Permanently removes one or more versions in the KV store
+[**UpdateSecretMetadataPath**](Secrets.md#UpdateSecretMetadataPath) | **Post** /{mount_path}/metadata/{path} | Configures settings for the KV store
+[**UpdateSecretUndeletePath**](Secrets.md#UpdateSecretUndeletePath) | **Post** /{mount_path}/undelete/{path} | Undeletes one or more versions from the KV store.
+[**UpdateSshConfigZeroaddress**](Secrets.md#UpdateSshConfigZeroaddress) | **Post** /{mount_path}/config/zeroaddress | Assign zero address as default CIDR block for select roles.
+[**UpdateSshKeysKeyName**](Secrets.md#UpdateSshKeysKeyName) | **Post** /{mount_path}/keys/{key_name} | Register a shared private key with Vault.
+[**UpdateSshLookup**](Secrets.md#UpdateSshLookup) | **Post** /{mount_path}/lookup | List all the roles associated with the given IP address.
+[**UpdateSshRolesRole**](Secrets.md#UpdateSshRolesRole) | **Post** /{mount_path}/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
+[**UpdateSshVerify**](Secrets.md#UpdateSshVerify) | **Post** /{mount_path}/verify | Validate the OTP provided by Vault SSH Agent.
+[**UpdateTotpCodeName**](Secrets.md#UpdateTotpCodeName) | **Post** /{mount_path}/code/{name} | Request time-based one-time use password or validate a password for a certain key .
+[**UpdateTotpKeysName**](Secrets.md#UpdateTotpKeysName) | **Post** /{mount_path}/keys/{name} | Manage the keys that can be created with this backend.
+[**UpdateTransitCacheConfig**](Secrets.md#UpdateTransitCacheConfig) | **Post** /{mount_path}/cache-config | Configures a new cache of the specified size
+[**UpdateTransitDatakeyPlaintextName**](Secrets.md#UpdateTransitDatakeyPlaintextName) | **Post** /{mount_path}/datakey/{plaintext}/{name} | Generate a data key
+[**UpdateTransitDecryptName**](Secrets.md#UpdateTransitDecryptName) | **Post** /{mount_path}/decrypt/{name} | Decrypt a ciphertext value using a named key
+[**UpdateTransitEncryptName**](Secrets.md#UpdateTransitEncryptName) | **Post** /{mount_path}/encrypt/{name} | Encrypt a plaintext value or a batch of plaintext blocks using a named key
+[**UpdateTransitHash**](Secrets.md#UpdateTransitHash) | **Post** /{mount_path}/hash | Generate a hash sum for input data
+[**UpdateTransitHashUrlalgorithm**](Secrets.md#UpdateTransitHashUrlalgorithm) | **Post** /{mount_path}/hash/{urlalgorithm} | Generate a hash sum for input data
+[**UpdateTransitHmacName**](Secrets.md#UpdateTransitHmacName) | **Post** /{mount_path}/hmac/{name} | Generate an HMAC for input data using the named key
+[**UpdateTransitHmacNameUrlalgorithm**](Secrets.md#UpdateTransitHmacNameUrlalgorithm) | **Post** /{mount_path}/hmac/{name}/{urlalgorithm} | Generate an HMAC for input data using the named key
+[**UpdateTransitKeysNameConfig**](Secrets.md#UpdateTransitKeysNameConfig) | **Post** /{mount_path}/keys/{name}/config | Configure a named encryption key
+[**UpdateTransitKeysNameImport**](Secrets.md#UpdateTransitKeysNameImport) | **Post** /{mount_path}/keys/{name}/import | Imports an externally-generated key into a new transit key
+[**UpdateTransitKeysNameImportVersion**](Secrets.md#UpdateTransitKeysNameImportVersion) | **Post** /{mount_path}/keys/{name}/import_version | Imports an externally-generated key into an existing imported key
+[**UpdateTransitKeysNameRotate**](Secrets.md#UpdateTransitKeysNameRotate) | **Post** /{mount_path}/keys/{name}/rotate | Rotate named encryption key
+[**UpdateTransitKeysNameTrim**](Secrets.md#UpdateTransitKeysNameTrim) | **Post** /{mount_path}/keys/{name}/trim | Trim key versions of a named key
+[**UpdateTransitRandom**](Secrets.md#UpdateTransitRandom) | **Post** /{mount_path}/random | Generate random bytes
+[**UpdateTransitRandomSource**](Secrets.md#UpdateTransitRandomSource) | **Post** /{mount_path}/random/{source} | Generate random bytes
+[**UpdateTransitRandomSourceUrlbytes**](Secrets.md#UpdateTransitRandomSourceUrlbytes) | **Post** /{mount_path}/random/{source}/{urlbytes} | Generate random bytes
+[**UpdateTransitRandomUrlbytes**](Secrets.md#UpdateTransitRandomUrlbytes) | **Post** /{mount_path}/random/{urlbytes} | Generate random bytes
+[**UpdateTransitRestore**](Secrets.md#UpdateTransitRestore) | **Post** /{mount_path}/restore | Restore the named key
+[**UpdateTransitRestoreName**](Secrets.md#UpdateTransitRestoreName) | **Post** /{mount_path}/restore/{name} | Restore the named key
+[**UpdateTransitRewrapName**](Secrets.md#UpdateTransitRewrapName) | **Post** /{mount_path}/rewrap/{name} | Rewrap ciphertext
+[**UpdateTransitSignName**](Secrets.md#UpdateTransitSignName) | **Post** /{mount_path}/sign/{name} | Generate a signature for input data using the named key
+[**UpdateTransitSignNameUrlalgorithm**](Secrets.md#UpdateTransitSignNameUrlalgorithm) | **Post** /{mount_path}/sign/{name}/{urlalgorithm} | Generate a signature for input data using the named key
+[**UpdateTransitVerifyName**](Secrets.md#UpdateTransitVerifyName) | **Post** /{mount_path}/verify/{name} | Verify a signature or HMAC for input data created using the named key
+[**UpdateTransitVerifyNameUrlalgorithm**](Secrets.md#UpdateTransitVerifyNameUrlalgorithm) | **Post** /{mount_path}/verify/{name}/{urlalgorithm} | Verify a signature or HMAC for input data created using the named key
 
-
-
-## DeleteAdConfig
-
-> DeleteAdConfig(ctx).Execute()
-
-Configure the AD server to connect to, along with password options.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteAdConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAdLibraryName
-
-> DeleteAdLibraryName(ctx, name).Execute()
-
-Delete a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteAdLibraryName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAdRolesName
-
-> DeleteAdRolesName(ctx, name).Execute()
-
-Manage roles to build links between Vault and Active Directory service accounts.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteAdRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAlicloudConfig
-
-> DeleteAlicloudConfig(ctx).Execute()
-
-Configure the access key and secret to use for RAM and STS calls.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteAlicloudConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAlicloudRoleName
-
-> DeleteAlicloudRoleName(ctx, name).Execute()
-
-Read, write and reference policies and roles that API keys or STS credentials can be made for.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteAlicloudRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
 
 
 ## DeleteAwsRolesName
 
-> DeleteAwsRolesName(ctx, name).Execute()
+> DeleteAwsRolesName(ctx, mountPath, name).Execute()
 
 Read, write and reference IAM policies that access keys can be made for.
 
@@ -656,8 +242,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteAwsRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteAwsRolesName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -672,6 +259,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **name** | **string** | Name of the policy | 
 
 ### Other Parameters
@@ -680,174 +268,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAzureConfig
-
-> DeleteAzureConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteAzureConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteAzureRolesName
-
-> DeleteAzureRolesName(ctx, name).Execute()
-
-Manage the Vault roles used to generate Azure credentials.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteAzureRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteConsulRolesName
-
-> DeleteConsulRolesName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteConsulRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -858,7 +278,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCubbyholePath
 
-> DeleteCubbyholePath(ctx, path).Execute()
+> DeleteCubbyholePath(ctx, mountPath, path).Execute()
 
 Deletes the secret at the specified location.
 
@@ -884,8 +304,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cubbyhole")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteCubbyholePath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.DeleteCubbyholePath(context.Background(), mountPath, path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -900,6 +321,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cubbyhole&quot;]
 **path** | **string** | Specifies the path of the secret. | 
 
 ### Other Parameters
@@ -907,6 +329,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -917,7 +340,7 @@ Name | Type | Description  | Notes
 
 ## DeleteGcpRolesetName
 
-> DeleteGcpRolesetName(ctx, name).Execute()
+> DeleteGcpRolesetName(ctx, mountPath, name).Execute()
 
 
 
@@ -943,8 +366,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteGcpRolesetName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpRolesetName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -959,6 +383,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name of the role. | 
 
 ### Other Parameters
@@ -966,6 +391,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -976,7 +402,7 @@ Name | Type | Description  | Notes
 
 ## DeleteGcpStaticAccountName
 
-> DeleteGcpStaticAccountName(ctx, name).Execute()
+> DeleteGcpStaticAccountName(ctx, mountPath, name).Execute()
 
 
 
@@ -1002,8 +428,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteGcpStaticAccountName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpStaticAccountName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1018,6 +445,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name to refer to this static account in Vault. Cannot be updated. | 
 
 ### Other Parameters
@@ -1025,56 +453,6 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteGcpkmsConfig
-
-> DeleteGcpkmsConfig(ctx).Execute()
-
-Configure the GCP KMS secrets engine
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
 
 
 
@@ -1086,7 +464,7 @@ This endpoint does not require any parameters.
 
 ## DeleteGcpkmsKeysDeregisterKey
 
-> DeleteGcpkmsKeysDeregisterKey(ctx, key).Execute()
+> DeleteGcpkmsKeysDeregisterKey(ctx, key, mountPath).Execute()
 
 Deregister an existing key in Vault
 
@@ -1112,8 +490,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysDeregisterKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysDeregisterKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1129,12 +508,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -1145,7 +526,7 @@ Name | Type | Description  | Notes
 
 ## DeleteGcpkmsKeysKey
 
-> DeleteGcpkmsKeysKey(ctx, key).Execute()
+> DeleteGcpkmsKeysKey(ctx, key, mountPath).Execute()
 
 Interact with crypto keys in Vault and Google Cloud KMS
 
@@ -1171,8 +552,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1188,12 +570,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -1204,7 +588,7 @@ Name | Type | Description  | Notes
 
 ## DeleteGcpkmsKeysTrimKey
 
-> DeleteGcpkmsKeysTrimKey(ctx, key).Execute()
+> DeleteGcpkmsKeysTrimKey(ctx, key, mountPath).Execute()
 
 Delete old crypto key versions from Google Cloud KMS
 
@@ -1230,8 +614,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysTrimKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.DeleteGcpkmsKeysTrimKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1247,231 +632,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteKubernetesConfig
-
-> DeleteKubernetesConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteKubernetesConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteKubernetesRolesName
-
-> DeleteKubernetesRolesName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteKubernetesRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteKvPath
-
-> DeleteKvPath(ctx, path).Execute()
-
-Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteKvPath(context.Background(), path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteLdapConfig
-
-> DeleteLdapConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteLdapConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
 
 
 
@@ -1483,7 +650,7 @@ This endpoint does not require any parameters.
 
 ## DeleteLdapLibraryName
 
-> DeleteLdapLibraryName(ctx, name).Execute()
+> DeleteLdapLibraryName(ctx, mountPath, name).Execute()
 
 Delete a library set.
 
@@ -1509,8 +676,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteLdapLibraryName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteLdapLibraryName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1525,6 +693,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the set. | 
 
 ### Other Parameters
@@ -1532,6 +701,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -1542,7 +712,7 @@ Name | Type | Description  | Notes
 
 ## DeleteLdapRoleName
 
-> DeleteLdapRoleName(ctx, name).Execute()
+> DeleteLdapRoleName(ctx, mountPath, name).Execute()
 
 
 
@@ -1568,8 +738,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteLdapRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteLdapRoleName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1584,6 +755,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the role (lowercase) | 
 
 ### Other Parameters
@@ -1591,6 +763,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -1601,7 +774,7 @@ Name | Type | Description  | Notes
 
 ## DeleteLdapStaticRoleName
 
-> DeleteLdapStaticRoleName(ctx, name).Execute()
+> DeleteLdapStaticRoleName(ctx, mountPath, name).Execute()
 
 
 
@@ -1627,8 +800,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteLdapStaticRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteLdapStaticRoleName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1643,6 +817,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -1651,64 +826,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteMongodbatlasRolesName
-
-> DeleteMongodbatlasRolesName(ctx, name).Execute()
-
-Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the Roles
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteMongodbatlasRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the Roles | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -1719,7 +836,7 @@ Name | Type | Description  | Notes
 
 ## DeleteNomadConfigAccess
 
-> DeleteNomadConfigAccess(ctx).Execute()
+> DeleteNomadConfigAccess(ctx, mountPath).Execute()
 
 
 
@@ -1744,111 +861,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "nomad")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteNomadConfigAccess(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteNomadConfigLease
-
-> DeleteNomadConfigLease(ctx).Execute()
-
-Configure the lease parameters for generated tokens
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteNomadConfigLease(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteNomadRoleName
-
-> DeleteNomadRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteNomadRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteNomadConfigAccess(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1863,235 +878,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteOpenldapConfig
-
-> DeleteOpenldapConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteOpenldapLibraryName
-
-> DeleteOpenldapLibraryName(ctx, name).Execute()
-
-Delete a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapLibraryName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteOpenldapRoleName
-
-> DeleteOpenldapRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role (lowercase)
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role (lowercase) | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteOpenldapStaticRoleName
-
-> DeleteOpenldapStaticRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteOpenldapStaticRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;nomad&quot;]
 
 ### Other Parameters
 
@@ -2108,7 +895,7 @@ Name | Type | Description  | Notes
 
 ## DeletePkiIssuerRefDerPem
 
-> DeletePkiIssuerRefDerPem(ctx, issuerRef).Execute()
+> DeletePkiIssuerRefDerPem(ctx, issuerRef, mountPath).Execute()
 
 
 
@@ -2134,8 +921,9 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.DeletePkiIssuerRefDerPem(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiIssuerRefDerPem(context.Background(), issuerRef, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2151,12 +939,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -2167,7 +957,7 @@ Name | Type | Description  | Notes
 
 ## DeletePkiJson
 
-> DeletePkiJson(ctx).Execute()
+> DeletePkiJson(ctx, mountPath).Execute()
 
 
 
@@ -2192,8 +982,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.DeletePkiJson(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiJson(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2204,10 +995,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -2218,7 +1016,7 @@ This endpoint does not require any parameters.
 
 ## DeletePkiKeyKeyRef
 
-> DeletePkiKeyKeyRef(ctx, keyRef).Execute()
+> DeletePkiKeyKeyRef(ctx, keyRef, mountPath).Execute()
 
 
 
@@ -2244,8 +1042,9 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.DeletePkiKeyKeyRef(context.Background(), keyRef)
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiKeyKeyRef(context.Background(), keyRef, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2261,6 +1060,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **keyRef** | **string** | Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -2268,64 +1068,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeletePkiRolesName
-
-> DeletePkiRolesName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.DeletePkiRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -2336,7 +1078,7 @@ Name | Type | Description  | Notes
 
 ## DeletePkiRoot
 
-> DeletePkiRoot(ctx).Execute()
+> DeletePkiRoot(ctx, mountPath).Execute()
 
 
 
@@ -2361,60 +1103,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.DeletePkiRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteRabbitmqRolesName
-
-> DeleteRabbitmqRolesName(ctx, name).Execute()
-
-Manage the roles that can be created with this backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteRabbitmqRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeletePkiRoot(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2429,7 +1120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -2446,7 +1137,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSecretDataPath
 
-> DeleteSecretDataPath(ctx, path).Execute()
+> DeleteSecretDataPath(ctx, mountPath, path).Execute()
 
 Write, Patch, Read, and Delete data in the Key-Value Store.
 
@@ -2472,8 +1163,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteSecretDataPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSecretDataPath(context.Background(), mountPath, path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2488,6 +1180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -2495,6 +1188,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -2505,7 +1199,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSecretMetadataPath
 
-> DeleteSecretMetadataPath(ctx, path).Execute()
+> DeleteSecretMetadataPath(ctx, mountPath, path).Execute()
 
 Configures settings for the KV store
 
@@ -2531,8 +1225,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteSecretMetadataPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSecretMetadataPath(context.Background(), mountPath, path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2547,6 +1242,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -2554,56 +1250,6 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteSshConfigCa
-
-> DeleteSshConfigCa(ctx).Execute()
-
-Set the SSH private key used for signing certificates.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteSshConfigCa(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
 
 
 
@@ -2615,7 +1261,7 @@ This endpoint does not require any parameters.
 
 ## DeleteSshConfigZeroaddress
 
-> DeleteSshConfigZeroaddress(ctx).Execute()
+> DeleteSshConfigZeroaddress(ctx, mountPath).Execute()
 
 Assign zero address as default CIDR block for select roles.
 
@@ -2640,8 +1286,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteSshConfigZeroaddress(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.DeleteSshConfigZeroaddress(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2652,10 +1299,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -2666,7 +1320,7 @@ This endpoint does not require any parameters.
 
 ## DeleteSshKeysKeyName
 
-> DeleteSshKeysKeyName(ctx, keyName).Execute()
+> DeleteSshKeysKeyName(ctx, keyName, mountPath).Execute()
 
 Register a shared private key with Vault.
 
@@ -2692,8 +1346,9 @@ func main() {
 	}
 
 	keyName := "keyName_example" // string | [Required] Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteSshKeysKeyName(context.Background(), keyName)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSshKeysKeyName(context.Background(), keyName, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2709,12 +1364,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **keyName** | **string** | [Required] Name of the key | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -2725,7 +1382,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSshRolesRole
 
-> DeleteSshRolesRole(ctx, role).Execute()
+> DeleteSshRolesRole(ctx, mountPath, role).Execute()
 
 Manage the 'roles' that can be created with this backend.
 
@@ -2751,8 +1408,9 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteSshRolesRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Secrets.DeleteSshRolesRole(context.Background(), mountPath, role)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2767,6 +1425,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 **role** | **string** | [Required for all types] Name of the role being created. | 
 
 ### Other Parameters
@@ -2775,115 +1434,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteTerraformConfig
-
-> DeleteTerraformConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteTerraformConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteTerraformRoleName
-
-> DeleteTerraformRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteTerraformRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -2894,7 +1444,7 @@ Name | Type | Description  | Notes
 
 ## DeleteTotpKeysName
 
-> DeleteTotpKeysName(ctx, name).Execute()
+> DeleteTotpKeysName(ctx, mountPath, name).Execute()
 
 Manage the keys that can be created with this backend.
 
@@ -2920,8 +1470,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "totp")
 
-	resp, err := client.WithToken("my-token").Secrets.DeleteTotpKeysName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.DeleteTotpKeysName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2936,6 +1487,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;totp&quot;]
 **name** | **string** | Name of the key. | 
 
 ### Other Parameters
@@ -2945,64 +1497,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteTransitKeysName
-
-> DeleteTransitKeysName(ctx, name).Execute()
-
-Managed named encryption keys
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the key
-
-	resp, err := client.WithToken("my-token").Secrets.DeleteTransitKeysName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the key | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
 
  (empty response body)
 
@@ -3010,834 +1504,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAdConfig
+## ListAwsRoles
 
-> GetAdConfig(ctx).Execute()
-
-Configure the AD server to connect to, along with password options.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetAdConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAdCredsName
-
-> GetAdCredsName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetAdCredsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAdLibrary
-
-> GetAdLibrary(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetAdLibrary(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAdLibraryName
-
-> GetAdLibraryName(ctx, name).Execute()
-
-Read a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	resp, err := client.WithToken("my-token").Secrets.GetAdLibraryName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAdLibraryNameStatus
-
-> GetAdLibraryNameStatus(ctx, name).Execute()
-
-Check the status of the service accounts in a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	resp, err := client.WithToken("my-token").Secrets.GetAdLibraryNameStatus(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAdRoles
-
-> GetAdRoles(ctx).List(list).Execute()
-
-List the name of each role currently stored.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetAdRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAdRolesName
-
-> GetAdRolesName(ctx, name).Execute()
-
-Manage roles to build links between Vault and Active Directory service accounts.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetAdRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAdRotateRoot
-
-> GetAdRotateRoot(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetAdRotateRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAlicloudConfig
-
-> GetAlicloudConfig(ctx).Execute()
-
-Configure the access key and secret to use for RAM and STS calls.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetAlicloudConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAlicloudCredsName
-
-> GetAlicloudCredsName(ctx, name).Execute()
-
-Generate an API key or STS credential using the given role's configuration.'
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetAlicloudCredsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAlicloudRole
-
-> GetAlicloudRole(ctx).List(list).Execute()
-
-List the existing roles in this backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetAlicloudRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAlicloudRoleName
-
-> GetAlicloudRoleName(ctx, name).Execute()
-
-Read, write and reference policies and roles that API keys or STS credentials can be made for.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetAlicloudRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAwsConfigLease
-
-> GetAwsConfigLease(ctx).Execute()
-
-Configure the default lease information for generated credentials.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetAwsConfigLease(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAwsConfigRoot
-
-> GetAwsConfigRoot(ctx).Execute()
-
-Configure the root credentials that are used to manage IAM.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetAwsConfigRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAwsCreds
-
-> GetAwsCreds(ctx).Execute()
-
-Generate AWS credentials from a specific Vault role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetAwsCreds(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAwsRoles
-
-> GetAwsRoles(ctx).List(list).Execute()
+> ListAwsRoles(ctx, mountPath).List(list).Execute()
 
 List the existing roles in this backend
 
@@ -3862,9 +1531,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetAwsRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.ListAwsRoles(context.Background(), mountPath, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3876,6 +1546,10 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -3884,15 +1558,681 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAwsRolesName
+## ListGcpRolesets
 
-> GetAwsRolesName(ctx, name).Execute()
+> ListGcpRolesets(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListGcpRolesets(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListGcpStaticAccounts
+
+> ListGcpStaticAccounts(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListGcpStaticAccounts(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListLdapLibrary
+
+> ListLdapLibrary(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListLdapLibrary(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListLdapRole
+
+> ListLdapRole(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListLdapRole(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListLdapStaticRole
+
+> ListLdapStaticRole(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListLdapStaticRole(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListPkiCerts
+
+> ListPkiCerts(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListPkiCerts(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListPkiIssuers
+
+> ListPkiIssuers(ctx, mountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListPkiIssuers(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ListTotpKeys
+
+> ListTotpKeys(ctx, mountPath).List(list).Execute()
+
+Manage the keys that can be created with this backend.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "totp")
+
+	list := NewstringWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.ListTotpKeys(context.Background(), mountPath, list)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;totp&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsConfigLease
+
+> ReadAwsConfigLease(ctx, mountPath).Execute()
+
+Configure the default lease information for generated credentials.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Secrets.ReadAwsConfigLease(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsConfigRoot
+
+> ReadAwsConfigRoot(ctx, mountPath).Execute()
+
+Configure the root credentials that are used to manage IAM.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Secrets.ReadAwsConfigRoot(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsCreds
+
+> ReadAwsCreds(ctx, mountPath).Execute()
+
+Generate AWS credentials from a specific Vault role.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
+
+	resp, err := client.WithToken("my-token").Secrets.ReadAwsCreds(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ReadAwsRolesName
+
+> ReadAwsRolesName(ctx, mountPath, name).Execute()
 
 Read, write and reference IAM policies that access keys can be made for.
 
@@ -3918,8 +2258,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Secrets.GetAwsRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadAwsRolesName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3934,6 +2275,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **name** | **string** | Name of the policy | 
 
 ### Other Parameters
@@ -3943,15 +2285,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetAwsStsName
+## ReadAwsStsName
 
-> GetAwsStsName(ctx, name).Execute()
+> ReadAwsStsName(ctx, mountPath, name).Execute()
 
 Generate AWS credentials from a specific Vault role.
 
@@ -3977,8 +2320,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Secrets.GetAwsStsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadAwsStsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3993,6 +2337,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -4002,56 +2347,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAzureConfig
-
-> GetAzureConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetAzureConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -4059,9 +2354,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetAzureCredsRole
+## ReadAzureCredsRole
 
-> GetAzureCredsRole(ctx, role).Execute()
+> ReadAzureCredsRole(ctx, mountPath, role).Execute()
 
 
 
@@ -4087,8 +2382,9 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the Vault role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
-	resp, err := client.WithToken("my-token").Secrets.GetAzureCredsRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Secrets.ReadAzureCredsRole(context.Background(), mountPath, role)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4103,6 +2399,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 **role** | **string** | Name of the Vault role | 
 
 ### Other Parameters
@@ -4112,60 +2409,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetAzureRoles
-
-> GetAzureRoles(ctx).List(list).Execute()
-
-List existing roles.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetAzureRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -4173,292 +2416,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAzureRolesName
+## ReadCubbyholePath
 
-> GetAzureRolesName(ctx, name).Execute()
-
-Manage the Vault roles used to generate Azure credentials.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetAzureRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetConsulConfigAccess
-
-> GetConsulConfigAccess(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetConsulConfigAccess(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetConsulCredsRole
-
-> GetConsulCredsRole(ctx, role).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetConsulCredsRole(context.Background(), role)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetConsulRoles
-
-> GetConsulRoles(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetConsulRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetConsulRolesName
-
-> GetConsulRolesName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetConsulRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetCubbyholePath
-
-> GetCubbyholePath(ctx, path).List(list).Execute()
+> ReadCubbyholePath(ctx, mountPath, path).List(list).Execute()
 
 Retrieve the secret at the specified location.
 
@@ -4484,9 +2444,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cubbyhole")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetCubbyholePath(context.Background(), path, list)
+	resp, err := client.WithToken("my-token").Secrets.ReadCubbyholePath(context.Background(), mountPath, path, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4501,6 +2462,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cubbyhole&quot;]
 **path** | **string** | Specifies the path of the secret. | 
 
 ### Other Parameters
@@ -4508,6 +2470,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
@@ -4517,9 +2480,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetGcpConfig
+## ReadGcpConfig
 
-> GetGcpConfig(ctx).Execute()
+> ReadGcpConfig(ctx, mountPath).Execute()
 
 
 
@@ -4544,8 +2507,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpConfig(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4556,10 +2520,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -4568,9 +2539,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetGcpKeyRoleset
+## ReadGcpKeyRoleset
 
-> GetGcpKeyRoleset(ctx, roleset).Execute()
+> ReadGcpKeyRoleset(ctx, mountPath, roleset).Execute()
 
 
 
@@ -4596,8 +2567,9 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpKeyRoleset(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpKeyRoleset(context.Background(), mountPath, roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4612,6 +2584,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -4621,15 +2594,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetGcpRolesetName
+## ReadGcpRolesetName
 
-> GetGcpRolesetName(ctx, name).Execute()
+> ReadGcpRolesetName(ctx, mountPath, name).Execute()
 
 
 
@@ -4655,8 +2629,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesetName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpRolesetName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4671,6 +2646,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name of the role. | 
 
 ### Other Parameters
@@ -4680,15 +2656,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetGcpRolesetRolesetKey
+## ReadGcpRolesetRolesetKey
 
-> GetGcpRolesetRolesetKey(ctx, roleset).Execute()
+> ReadGcpRolesetRolesetKey(ctx, mountPath, roleset).Execute()
 
 
 
@@ -4714,8 +2691,9 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesetRolesetKey(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpRolesetRolesetKey(context.Background(), mountPath, roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4730,6 +2708,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -4739,15 +2718,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetGcpRolesetRolesetToken
+## ReadGcpRolesetRolesetToken
 
-> GetGcpRolesetRolesetToken(ctx, roleset).Execute()
+> ReadGcpRolesetRolesetToken(ctx, mountPath, roleset).Execute()
 
 
 
@@ -4773,8 +2753,9 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesetRolesetToken(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpRolesetRolesetToken(context.Background(), mountPath, roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4789,6 +2770,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -4798,60 +2780,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetGcpRolesets
-
-> GetGcpRolesets(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetGcpRolesets(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -4859,9 +2787,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetGcpStaticAccountName
+## ReadGcpStaticAccountName
 
-> GetGcpStaticAccountName(ctx, name).Execute()
+> ReadGcpStaticAccountName(ctx, mountPath, name).Execute()
 
 
 
@@ -4887,8 +2815,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccountName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpStaticAccountName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4903,6 +2832,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name to refer to this static account in Vault. Cannot be updated. | 
 
 ### Other Parameters
@@ -4912,15 +2842,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetGcpStaticAccountNameKey
+## ReadGcpStaticAccountNameKey
 
-> GetGcpStaticAccountNameKey(ctx, name).Execute()
+> ReadGcpStaticAccountNameKey(ctx, mountPath, name).Execute()
 
 
 
@@ -4946,8 +2877,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccountNameKey(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpStaticAccountNameKey(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4962,6 +2894,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name of the static account. | 
 
 ### Other Parameters
@@ -4971,15 +2904,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetGcpStaticAccountNameToken
+## ReadGcpStaticAccountNameToken
 
-> GetGcpStaticAccountNameToken(ctx, name).Execute()
+> ReadGcpStaticAccountNameToken(ctx, mountPath, name).Execute()
 
 
 
@@ -5005,8 +2939,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccountNameToken(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpStaticAccountNameToken(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5021,6 +2956,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name of the static account. | 
 
 ### Other Parameters
@@ -5030,60 +2966,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetGcpStaticAccounts
-
-> GetGcpStaticAccounts(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetGcpStaticAccounts(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5091,9 +2973,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetGcpTokenRoleset
+## ReadGcpTokenRoleset
 
-> GetGcpTokenRoleset(ctx, roleset).Execute()
+> ReadGcpTokenRoleset(ctx, mountPath, roleset).Execute()
 
 
 
@@ -5119,8 +3001,9 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpTokenRoleset(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpTokenRoleset(context.Background(), mountPath, roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5135,6 +3018,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -5144,56 +3028,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetGcpkmsConfig
-
-> GetGcpkmsConfig(ctx).Execute()
-
-Configure the GCP KMS secrets engine
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -5201,64 +3035,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetGcpkmsKeys
+## ReadGcpkmsKeysConfigKey
 
-> GetGcpkmsKeys(ctx).List(list).Execute()
-
-List named keys
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsKeys(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetGcpkmsKeysConfigKey
-
-> GetGcpkmsKeysConfigKey(ctx, key).Execute()
+> ReadGcpkmsKeysConfigKey(ctx, key, mountPath).Execute()
 
 Configure the key in Vault
 
@@ -5284,8 +3063,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsKeysConfigKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpkmsKeysConfigKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5301,6 +3081,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
@@ -5309,15 +3090,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetGcpkmsKeysKey
+## ReadGcpkmsKeysKey
 
-> GetGcpkmsKeysKey(ctx, key).Execute()
+> ReadGcpkmsKeysKey(ctx, key, mountPath).Execute()
 
 Interact with crypto keys in Vault and Google Cloud KMS
 
@@ -5343,8 +3125,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsKeysKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpkmsKeysKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5360,6 +3143,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
@@ -5368,15 +3152,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetGcpkmsPubkeyKey
+## ReadGcpkmsPubkeyKey
 
-> GetGcpkmsPubkeyKey(ctx, key).Execute()
+> ReadGcpkmsPubkeyKey(ctx, key, mountPath).Execute()
 
 Retrieve the public key associated with the named key
 
@@ -5402,8 +3187,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.GetGcpkmsPubkeyKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.ReadGcpkmsPubkeyKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5419,62 +3205,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetKubernetesConfig
-
-> GetKubernetesConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetKubernetesConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
 
 
 
@@ -5484,235 +3221,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetKubernetesRoles
+## ReadLdapCredsName
 
-> GetKubernetesRoles(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetKubernetesRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetKubernetesRolesName
-
-> GetKubernetesRolesName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetKubernetesRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetKvPath
-
-> GetKvPath(ctx, path).List(list).Execute()
-
-Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetKvPath(context.Background(), path, list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **list** | **string** | Return a list if &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetLdapConfig
-
-> GetLdapConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetLdapConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetLdapCredsName
-
-> GetLdapCredsName(ctx, name).Execute()
+> ReadLdapCredsName(ctx, mountPath, name).Execute()
 
 
 
@@ -5738,8 +3249,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.GetLdapCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadLdapCredsName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5754,6 +3266,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the dynamic role. | 
 
 ### Other Parameters
@@ -5763,60 +3276,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetLdapLibrary
-
-> GetLdapLibrary(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetLdapLibrary(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5824,9 +3283,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetLdapLibraryName
+## ReadLdapLibraryName
 
-> GetLdapLibraryName(ctx, name).Execute()
+> ReadLdapLibraryName(ctx, mountPath, name).Execute()
 
 Read a library set.
 
@@ -5852,8 +3311,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.GetLdapLibraryName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadLdapLibraryName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5868,6 +3328,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the set. | 
 
 ### Other Parameters
@@ -5877,15 +3338,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetLdapLibraryNameStatus
+## ReadLdapLibraryNameStatus
 
-> GetLdapLibraryNameStatus(ctx, name).Execute()
+> ReadLdapLibraryNameStatus(ctx, mountPath, name).Execute()
 
 Check the status of the service accounts in a library set.
 
@@ -5911,8 +3373,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.GetLdapLibraryNameStatus(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadLdapLibraryNameStatus(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5927,6 +3390,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the set. | 
 
 ### Other Parameters
@@ -5936,60 +3400,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetLdapRole
-
-> GetLdapRole(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetLdapRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5997,9 +3407,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetLdapRoleName
+## ReadLdapRoleName
 
-> GetLdapRoleName(ctx, name).Execute()
+> ReadLdapRoleName(ctx, mountPath, name).Execute()
 
 
 
@@ -6025,8 +3435,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.GetLdapRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadLdapRoleName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6041,6 +3452,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the role (lowercase) | 
 
 ### Other Parameters
@@ -6050,15 +3462,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetLdapStaticCredName
+## ReadLdapStaticCredName
 
-> GetLdapStaticCredName(ctx, name).Execute()
+> ReadLdapStaticCredName(ctx, mountPath, name).Execute()
 
 
 
@@ -6084,8 +3497,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.GetLdapStaticCredName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadLdapStaticCredName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6100,6 +3514,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the static role. | 
 
 ### Other Parameters
@@ -6109,60 +3524,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetLdapStaticRole
-
-> GetLdapStaticRole(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetLdapStaticRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -6170,9 +3531,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetLdapStaticRoleName
+## ReadLdapStaticRoleName
 
-> GetLdapStaticRoleName(ctx, name).Execute()
+> ReadLdapStaticRoleName(ctx, mountPath, name).Execute()
 
 
 
@@ -6198,8 +3559,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.GetLdapStaticRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadLdapStaticRoleName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6214,6 +3576,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -6223,17 +3586,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetMongodbatlasConfig
+## ReadNomadConfigAccess
 
-> GetMongodbatlasConfig(ctx).Execute()
+> ReadNomadConfigAccess(ctx, mountPath).Execute()
 
-Configure the  credentials that are used to manage Database Users.
+
 
 ### Example
 
@@ -6256,60 +3620,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "nomad")
 
-	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetMongodbatlasCredsName
-
-> GetMongodbatlasCredsName(ctx, name).Execute()
-
-Generate MongoDB Atlas Programmatic API from a specific Vault role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadNomadConfigAccess(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6324,7 +3637,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;nomad&quot;]
 
 ### Other Parameters
 
@@ -6339,11 +3652,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetMongodbatlasRoles
+## ReadPkiCa
 
-> GetMongodbatlasRoles(ctx).List(list).Execute()
+> ReadPkiCa(ctx, mountPath).Execute()
 
-List the existing roles in this backend
+
 
 ### Example
 
@@ -6366,64 +3679,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetMongodbatlasRolesName
-
-> GetMongodbatlasRolesName(ctx, name).Execute()
-
-Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the Roles
-
-	resp, err := client.WithToken("my-token").Secrets.GetMongodbatlasRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCa(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6438,7 +3696,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the Roles | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -6453,111 +3711,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetNomadConfigAccess
+## ReadPkiCaChain
 
-> GetNomadConfigAccess(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetNomadConfigAccess(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetNomadConfigLease
-
-> GetNomadConfigLease(ctx).Execute()
-
-Configure the lease parameters for generated tokens
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetNomadConfigLease(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetNomadCredsName
-
-> GetNomadCredsName(ctx, name).Execute()
+> ReadPkiCaChain(ctx, mountPath).Execute()
 
 
 
@@ -6582,9 +3738,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetNomadCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCaChain(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6599,7 +3755,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -6614,9 +3770,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetNomadRole
+## ReadPkiCaPem
 
-> GetNomadRole(ctx).List(list).Execute()
+> ReadPkiCaPem(ctx, mountPath).Execute()
 
 
 
@@ -6641,64 +3797,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetNomadRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetNomadRoleName
-
-> GetNomadRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetNomadRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCaPem(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6713,7 +3814,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -6728,60 +3829,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetOpenldapConfig
+## ReadPkiCertCaChain
 
-> GetOpenldapConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapCredsName
-
-> GetOpenldapCredsName(ctx, name).Execute()
+> ReadPkiCertCaChain(ctx, mountPath).Execute()
 
 
 
@@ -6806,9 +3856,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the dynamic role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCertCaChain(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6823,7 +3873,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the dynamic role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -6838,673 +3888,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetOpenldapLibrary
+## ReadPkiCertSerial
 
-> GetOpenldapLibrary(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapLibrary(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapLibraryName
-
-> GetOpenldapLibraryName(ctx, name).Execute()
-
-Read a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapLibraryName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapLibraryNameStatus
-
-> GetOpenldapLibraryNameStatus(ctx, name).Execute()
-
-Check the status of the service accounts in a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapLibraryNameStatus(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapRole
-
-> GetOpenldapRole(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapRoleName
-
-> GetOpenldapRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role (lowercase)
-
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role (lowercase) | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapStaticCredName
-
-> GetOpenldapStaticCredName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the static role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapStaticCredName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the static role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapStaticRole
-
-> GetOpenldapStaticRole(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapStaticRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetOpenldapStaticRoleName
-
-> GetOpenldapStaticRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetOpenldapStaticRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiCa
-
-> GetPkiCa(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCa(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiCaChain
-
-> GetPkiCaChain(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCaChain(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiCaPem
-
-> GetPkiCaPem(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCaPem(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiCertCaChain
-
-> GetPkiCertCaChain(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCertCaChain(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiCertSerial
-
-> GetPkiCertSerial(ctx, serial).Execute()
+> ReadPkiCertSerial(ctx, mountPath, serial).Execute()
 
 
 
@@ -7530,8 +3916,9 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCertSerial(context.Background(), serial)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCertSerial(context.Background(), mountPath, serial)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7546,6 +3933,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **serial** | **string** | Certificate serial number, in colon- or hyphen-separated octal | 
 
 ### Other Parameters
@@ -7555,15 +3943,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetPkiCertSerialRaw
+## ReadPkiCertSerialRaw
 
-> GetPkiCertSerialRaw(ctx, serial).Execute()
+> ReadPkiCertSerialRaw(ctx, mountPath, serial).Execute()
 
 
 
@@ -7589,8 +3978,9 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCertSerialRaw(context.Background(), serial)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCertSerialRaw(context.Background(), mountPath, serial)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7605,6 +3995,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **serial** | **string** | Certificate serial number, in colon- or hyphen-separated octal | 
 
 ### Other Parameters
@@ -7614,15 +4005,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetPkiCertSerialRawPem
+## ReadPkiCertSerialRawPem
 
-> GetPkiCertSerialRawPem(ctx, serial).Execute()
+> ReadPkiCertSerialRawPem(ctx, mountPath, serial).Execute()
 
 
 
@@ -7648,8 +4040,9 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCertSerialRawPem(context.Background(), serial)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCertSerialRawPem(context.Background(), mountPath, serial)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7664,6 +4057,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **serial** | **string** | Certificate serial number, in colon- or hyphen-separated octal | 
 
 ### Other Parameters
@@ -7673,15 +4067,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetPkiCerts
+## ReadPkiConfigAutoTidy
 
-> GetPkiCerts(ctx).List(list).Execute()
+> ReadPkiConfigAutoTidy(ctx, mountPath).Execute()
 
 
 
@@ -7706,9 +4101,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCerts(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiConfigAutoTidy(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7720,13 +4115,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
+
 
  (empty response body)
 
@@ -7734,9 +4133,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetPkiConfigAutoTidy
+## ReadPkiConfigCrl
 
-> GetPkiConfigAutoTidy(ctx).Execute()
+> ReadPkiConfigCrl(ctx, mountPath).Execute()
 
 
 
@@ -7761,8 +4160,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigAutoTidy(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiConfigCrl(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7773,10 +4173,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -7785,9 +4192,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiConfigCrl
+## ReadPkiConfigIssuers
 
-> GetPkiConfigCrl(ctx).Execute()
+> ReadPkiConfigIssuers(ctx, mountPath).Execute()
 
 
 
@@ -7812,8 +4219,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigCrl(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiConfigIssuers(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7824,10 +4232,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -7836,9 +4251,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiConfigIssuers
+## ReadPkiConfigKeys
 
-> GetPkiConfigIssuers(ctx).Execute()
+> ReadPkiConfigKeys(ctx, mountPath).Execute()
 
 
 
@@ -7863,8 +4278,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigIssuers(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiConfigKeys(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7875,10 +4291,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -7887,9 +4310,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiConfigKeys
+## ReadPkiConfigUrls
 
-> GetPkiConfigKeys(ctx).Execute()
+> ReadPkiConfigUrls(ctx, mountPath).Execute()
 
 
 
@@ -7914,8 +4337,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigKeys(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiConfigUrls(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7926,10 +4350,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -7938,9 +4369,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiConfigUrls
+## ReadPkiCrl
 
-> GetPkiConfigUrls(ctx).Execute()
+> ReadPkiCrl(ctx, mountPath).Execute()
 
 
 
@@ -7965,8 +4396,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiConfigUrls(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCrl(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7977,10 +4409,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -7989,9 +4428,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiCrl
+## ReadPkiCrlRotate
 
-> GetPkiCrl(ctx).Execute()
+> ReadPkiCrlRotate(ctx, mountPath).Execute()
 
 
 
@@ -8016,8 +4455,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCrl(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCrlRotate(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8028,10 +4468,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -8040,9 +4487,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiCrlRotate
+## ReadPkiCrlRotateDelta
 
-> GetPkiCrlRotate(ctx).Execute()
+> ReadPkiCrlRotateDelta(ctx, mountPath).Execute()
 
 
 
@@ -8067,8 +4514,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCrlRotate(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiCrlRotateDelta(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8079,10 +4527,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -8091,9 +4546,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiCrlRotateDelta
+## ReadPkiDelta
 
-> GetPkiCrlRotateDelta(ctx).Execute()
+> ReadPkiDelta(ctx, mountPath).Execute()
 
 
 
@@ -8118,8 +4573,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiCrlRotateDelta(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiDelta(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8130,10 +4586,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -8142,9 +4605,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiDelta
+## ReadPkiDeltaCrl
 
-> GetPkiDelta(ctx).Execute()
+> ReadPkiDeltaCrl(ctx, mountPath).Execute()
 
 
 
@@ -8169,8 +4632,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiDelta(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiDeltaCrl(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8181,10 +4645,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -8193,9 +4664,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiDeltaCrl
+## ReadPkiDeltaPem
 
-> GetPkiDeltaCrl(ctx).Execute()
+> ReadPkiDeltaPem(ctx, mountPath).Execute()
 
 
 
@@ -8220,8 +4691,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiDeltaCrl(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiDeltaPem(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8232,10 +4704,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -8244,9 +4723,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiDeltaPem
+## ReadPkiDer
 
-> GetPkiDeltaPem(ctx).Execute()
+> ReadPkiDer(ctx, mountPath).Execute()
 
 
 
@@ -8271,8 +4750,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiDeltaPem(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiDer(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8283,10 +4763,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -8295,60 +4782,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiDer
+## ReadPkiIssuerRefCrlPemDerDeltaPem
 
-> GetPkiDer(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiDer(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiIssuerRefCrlPemDerDeltaPem
-
-> GetPkiIssuerRefCrlPemDerDeltaPem(ctx, issuerRef).Execute()
+> ReadPkiIssuerRefCrlPemDerDeltaPem(ctx, issuerRef, mountPath).Execute()
 
 
 
@@ -8374,8 +4810,9 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuerRefCrlPemDerDeltaPem(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiIssuerRefCrlPemDerDeltaPem(context.Background(), issuerRef, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8391,6 +4828,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -8399,15 +4837,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetPkiIssuerRefDerPem
+## ReadPkiIssuerRefDerPem
 
-> GetPkiIssuerRefDerPem(ctx, issuerRef).Execute()
+> ReadPkiIssuerRefDerPem(ctx, issuerRef, mountPath).Execute()
 
 
 
@@ -8433,8 +4872,9 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuerRefDerPem(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiIssuerRefDerPem(context.Background(), issuerRef, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8450,6 +4890,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -8458,15 +4899,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetPkiIssuers
+## ReadPkiJson
 
-> GetPkiIssuers(ctx).List(list).Execute()
+> ReadPkiJson(ctx, mountPath).Execute()
 
 
 
@@ -8491,9 +4933,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetPkiIssuers(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiJson(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8505,63 +4947,16 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiJson
-
-> GetPkiJson(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiJson(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
 
 
  (empty response body)
@@ -8570,9 +4965,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetPkiKeyKeyRef
+## ReadPkiKeyKeyRef
 
-> GetPkiKeyKeyRef(ctx, keyRef).Execute()
+> ReadPkiKeyKeyRef(ctx, keyRef, mountPath).Execute()
 
 
 
@@ -8598,8 +4993,9 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiKeyKeyRef(context.Background(), keyRef)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiKeyKeyRef(context.Background(), keyRef, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8615,6 +5011,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **keyRef** | **string** | Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -8623,60 +5020,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiKeys
-
-> GetPkiKeys(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetPkiKeys(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -8684,9 +5027,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetPkiOcspReq
+## ReadPkiOcspReq
 
-> GetPkiOcspReq(ctx, req).Execute()
+> ReadPkiOcspReq(ctx, mountPath, req).Execute()
 
 
 
@@ -8712,8 +5055,9 @@ func main() {
 	}
 
 	req := "req_example" // string | base-64 encoded ocsp request
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiOcspReq(context.Background(), req)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiOcspReq(context.Background(), mountPath, req)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8728,6 +5072,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **req** | **string** | base-64 encoded ocsp request | 
 
 ### Other Parameters
@@ -8737,15 +5082,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetPkiPem
+## ReadPkiPem
 
-> GetPkiPem(ctx).Execute()
+> ReadPkiPem(ctx, mountPath).Execute()
 
 
 
@@ -8770,115 +5116,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiPem(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiRoles
-
-> GetPkiRoles(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetPkiRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetPkiRolesName
-
-> GetPkiRolesName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetPkiRolesName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiPem(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8893,7 +5133,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -8908,9 +5148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetPkiTidyStatus
+## ReadPkiTidyStatus
 
-> GetPkiTidyStatus(ctx).Execute()
+> ReadPkiTidyStatus(ctx, mountPath).Execute()
 
 
 
@@ -8935,111 +5175,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.GetPkiTidyStatus(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetRabbitmqConfigLease
-
-> GetRabbitmqConfigLease(ctx).Execute()
-
-Configure the lease parameters for generated credentials
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqConfigLease(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetRabbitmqCredsName
-
-> GetRabbitmqCredsName(ctx, name).Execute()
-
-Request RabbitMQ credentials for a certain role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqCredsName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadPkiTidyStatus(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9054,7 +5192,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -9069,174 +5207,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetRabbitmqRoles
+## ReadSecretDataPath
 
-> GetRabbitmqRoles(ctx).List(list).Execute()
-
-Manage the roles that can be created with this backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqRoles(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetRabbitmqRolesName
-
-> GetRabbitmqRolesName(ctx, name).Execute()
-
-Manage the roles that can be created with this backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.GetRabbitmqRolesName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSecretConfig
-
-> GetSecretConfig(ctx).Execute()
-
-Read the backend level settings.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetSecretConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSecretDataPath
-
-> GetSecretDataPath(ctx, path).Execute()
+> ReadSecretDataPath(ctx, mountPath, path).Execute()
 
 Write, Patch, Read, and Delete data in the Key-Value Store.
 
@@ -9262,8 +5235,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
-	resp, err := client.WithToken("my-token").Secrets.GetSecretDataPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.ReadSecretDataPath(context.Background(), mountPath, path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9278,6 +5252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -9287,15 +5262,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetSecretMetadataPath
+## ReadSecretMetadataPath
 
-> GetSecretMetadataPath(ctx, path).List(list).Execute()
+> ReadSecretMetadataPath(ctx, mountPath, path).List(list).Execute()
 
 Configures settings for the KV store
 
@@ -9321,9 +5297,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetSecretMetadataPath(context.Background(), path, list)
+	resp, err := client.WithToken("my-token").Secrets.ReadSecretMetadataPath(context.Background(), mountPath, path, list)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9338,6 +5315,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -9345,6 +5323,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **list** | **string** | Return a list if &#x60;true&#x60; | 
 
@@ -9354,9 +5333,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSecretSubkeysPath
+## ReadSecretSubkeysPath
 
-> GetSecretSubkeysPath(ctx, path).Execute()
+> ReadSecretSubkeysPath(ctx, mountPath, path).Execute()
 
 Read the structure of a secret entry from the Key-Value store with the values removed.
 
@@ -9382,8 +5361,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
-	resp, err := client.WithToken("my-token").Secrets.GetSecretSubkeysPath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.ReadSecretSubkeysPath(context.Background(), mountPath, path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9398,6 +5378,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -9407,56 +5388,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSshConfigCa
-
-> GetSshConfigCa(ctx).Execute()
-
-Set the SSH private key used for signing certificates.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetSshConfigCa(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -9464,9 +5395,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSshConfigZeroaddress
+## ReadSshConfigZeroaddress
 
-> GetSshConfigZeroaddress(ctx).Execute()
+> ReadSshConfigZeroaddress(ctx, mountPath).Execute()
 
 Assign zero address as default CIDR block for select roles.
 
@@ -9491,8 +5422,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
-	resp, err := client.WithToken("my-token").Secrets.GetSshConfigZeroaddress(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadSshConfigZeroaddress(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9503,10 +5435,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -9515,9 +5454,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetSshPublicKey
+## ReadSshPublicKey
 
-> GetSshPublicKey(ctx).Execute()
+> ReadSshPublicKey(ctx, mountPath).Execute()
 
 Retrieve the public key.
 
@@ -9542,60 +5481,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
-	resp, err := client.WithToken("my-token").Secrets.GetSshPublicKey(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetSshRoles
-
-> GetSshRoles(ctx).List(list).Execute()
-
-Manage the 'roles' that can be created with this backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetSshRoles(context.Background(), list)
+	resp, err := client.WithToken("my-token").Secrets.ReadSshPublicKey(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9607,13 +5495,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
+
 
  (empty response body)
 
@@ -9621,9 +5513,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSshRolesRole
+## ReadSshRolesRole
 
-> GetSshRolesRole(ctx, role).Execute()
+> ReadSshRolesRole(ctx, mountPath, role).Execute()
 
 Manage the 'roles' that can be created with this backend.
 
@@ -9649,8 +5541,9 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
-	resp, err := client.WithToken("my-token").Secrets.GetSshRolesRole(context.Background(), role)
+	resp, err := client.WithToken("my-token").Secrets.ReadSshRolesRole(context.Background(), mountPath, role)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9665,6 +5558,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 **role** | **string** | [Required for all types] Name of the role being created. | 
 
 ### Other Parameters
@@ -9674,56 +5568,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetTerraformConfig
-
-> GetTerraformConfig(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.GetTerraformConfig(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
 
  (empty response body)
 
@@ -9731,182 +5575,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetTerraformCredsName
+## ReadTotpCodeName
 
-> GetTerraformCredsName(ctx, name).Execute()
-
-Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetTerraformCredsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetTerraformRole
-
-> GetTerraformRole(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetTerraformRole(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetTerraformRoleName
-
-> GetTerraformRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.GetTerraformRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetTotpCodeName
-
-> GetTotpCodeName(ctx, name).Execute()
+> ReadTotpCodeName(ctx, mountPath, name).Execute()
 
 Request time-based one-time use password or validate a password for a certain key .
 
@@ -9932,8 +5603,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "totp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetTotpCodeName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadTotpCodeName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9948,6 +5620,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;totp&quot;]
 **name** | **string** | Name of the key. | 
 
 ### Other Parameters
@@ -9957,60 +5630,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetTotpKeys
-
-> GetTotpKeys(ctx).List(list).Execute()
-
-Manage the keys that can be created with this backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetTotpKeys(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -10018,9 +5637,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetTotpKeysName
+## ReadTotpKeysName
 
-> GetTotpKeysName(ctx, name).Execute()
+> ReadTotpKeysName(ctx, mountPath, name).Execute()
 
 Manage the keys that can be created with this backend.
 
@@ -10046,8 +5665,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "totp")
 
-	resp, err := client.WithToken("my-token").Secrets.GetTotpKeysName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadTotpKeysName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10062,6 +5682,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;totp&quot;]
 **name** | **string** | Name of the key. | 
 
 ### Other Parameters
@@ -10071,15 +5692,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetTransitBackupName
+## ReadTransitBackupName
 
-> GetTransitBackupName(ctx, name).Execute()
+> ReadTransitBackupName(ctx, mountPath, name).Execute()
 
 Backup the named key
 
@@ -10105,8 +5727,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
-	resp, err := client.WithToken("my-token").Secrets.GetTransitBackupName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.ReadTransitBackupName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10121,6 +5744,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
@@ -10130,15 +5754,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetTransitCacheConfig
+## ReadTransitCacheConfig
 
-> GetTransitCacheConfig(ctx).Execute()
+> ReadTransitCacheConfig(ctx, mountPath).Execute()
 
 Returns the size of the active cache
 
@@ -10163,8 +5788,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
-	resp, err := client.WithToken("my-token").Secrets.GetTransitCacheConfig(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.ReadTransitCacheConfig(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10175,10 +5801,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -10187,9 +5820,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## GetTransitExportTypeName
+## ReadTransitExportTypeName
 
-> GetTransitExportTypeName(ctx, name, type_).Execute()
+> ReadTransitExportTypeName(ctx, mountPath, name, type_).Execute()
 
 Export named encryption or signing key
 
@@ -10216,8 +5849,9 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
-	resp, err := client.WithToken("my-token").Secrets.GetTransitExportTypeName(context.Background(), name, type_)
+	resp, err := client.WithToken("my-token").Secrets.ReadTransitExportTypeName(context.Background(), mountPath, name, type_)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10232,6 +5866,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 **type_** | **string** | Type of key to export (encryption-key, signing-key, hmac-key) | 
 
@@ -10243,15 +5878,16 @@ Name | Type | Description  | Notes
 
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## GetTransitExportTypeNameVersion
+## ReadTransitExportTypeNameVersion
 
-> GetTransitExportTypeNameVersion(ctx, name, type_, version).Execute()
+> ReadTransitExportTypeNameVersion(ctx, mountPath, name, type_, version).Execute()
 
 Export named encryption or signing key
 
@@ -10279,8 +5915,9 @@ func main() {
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 	version := "version_example" // string | Version of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
-	resp, err := client.WithToken("my-token").Secrets.GetTransitExportTypeNameVersion(context.Background(), name, type_, version)
+	resp, err := client.WithToken("my-token").Secrets.ReadTransitExportTypeNameVersion(context.Background(), mountPath, name, type_, version)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10295,6 +5932,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 **type_** | **string** | Type of key to export (encryption-key, signing-key, hmac-key) | 
 **version** | **string** | Version of the key | 
@@ -10308,60 +5946,6 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetTransitKeys
-
-> GetTransitKeys(ctx).List(list).Execute()
-
-Managed named encryption keys
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.GetTransitKeys(context.Background(), list)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -10369,68 +5953,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetTransitKeysName
+## ReadTransitWrappingKey
 
-> GetTransitKeysName(ctx, name).Execute()
-
-Managed named encryption keys
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the key
-
-	resp, err := client.WithToken("my-token").Secrets.GetTransitKeysName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the key | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetTransitWrappingKey
-
-> GetTransitWrappingKey(ctx).Execute()
+> ReadTransitWrappingKey(ctx, mountPath).Execute()
 
 Returns the public key to use for wrapping imported keys
 
@@ -10455,116 +5980,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
-	resp, err := client.WithToken("my-token").Secrets.GetTransitWrappingKey(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAdConfig
-
-> PostAdConfig(ctx).AdConfigRequest(adConfigRequest).Execute()
-
-Configure the AD server to connect to, along with password options.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	adConfigRequest := NewAdConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAdConfig(context.Background(), adConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **adConfigRequest** | [**AdConfigRequest**](AdConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAdLibraryManageNameCheckIn
-
-> PostAdLibraryManageNameCheckIn(ctx, name).AdLibraryManageCheckInRequest(adLibraryManageCheckInRequest).Execute()
-
-Check service accounts in to the library.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	adLibraryManageCheckInRequest := NewAdLibraryManageCheckInRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryManageNameCheckIn(context.Background(), name, adLibraryManageCheckInRequest)
+	resp, err := client.WithToken("my-token").Secrets.ReadTransitWrappingKey(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10579,311 +5997,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **adLibraryManageCheckInRequest** | [**AdLibraryManageCheckInRequest**](AdLibraryManageCheckInRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAdLibraryName
-
-> PostAdLibraryName(ctx, name).AdLibraryRequest(adLibraryRequest).Execute()
-
-Update a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	adLibraryRequest := NewAdLibraryRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryName(context.Background(), name, adLibraryRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **adLibraryRequest** | [**AdLibraryRequest**](AdLibraryRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAdLibraryNameCheckIn
-
-> PostAdLibraryNameCheckIn(ctx, name).AdLibraryCheckInRequest(adLibraryCheckInRequest).Execute()
-
-Check service accounts in to the library.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	adLibraryCheckInRequest := NewAdLibraryCheckInRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryNameCheckIn(context.Background(), name, adLibraryCheckInRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **adLibraryCheckInRequest** | [**AdLibraryCheckInRequest**](AdLibraryCheckInRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAdLibraryNameCheckOut
-
-> PostAdLibraryNameCheckOut(ctx, name).AdLibraryCheckOutRequest(adLibraryCheckOutRequest).Execute()
-
-Check a service account out from the library.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set
-
-	adLibraryCheckOutRequest := NewAdLibraryCheckOutRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAdLibraryNameCheckOut(context.Background(), name, adLibraryCheckOutRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **adLibraryCheckOutRequest** | [**AdLibraryCheckOutRequest**](AdLibraryCheckOutRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAdRolesName
-
-> PostAdRolesName(ctx, name).AdRolesRequest(adRolesRequest).Execute()
-
-Manage roles to build links between Vault and Active Directory service accounts.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	adRolesRequest := NewAdRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAdRolesName(context.Background(), name, adRolesRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **adRolesRequest** | [**AdRolesRequest**](AdRolesRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAdRotateRoleName
-
-> PostAdRotateRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the static role
-
-	resp, err := client.WithToken("my-token").Secrets.PostAdRotateRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the static role | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 
 ### Other Parameters
 
@@ -10898,176 +6012,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAdRotateRoot
+## UpdateAwsConfigLease
 
-> PostAdRotateRoot(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.PostAdRotateRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAlicloudConfig
-
-> PostAlicloudConfig(ctx).AlicloudConfigRequest(alicloudConfigRequest).Execute()
-
-Configure the access key and secret to use for RAM and STS calls.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	alicloudConfigRequest := NewAlicloudConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAlicloudConfig(context.Background(), alicloudConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **alicloudConfigRequest** | [**AlicloudConfigRequest**](AlicloudConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAlicloudRoleName
-
-> PostAlicloudRoleName(ctx, name).AlicloudRoleRequest(alicloudRoleRequest).Execute()
-
-Read, write and reference policies and roles that API keys or STS credentials can be made for.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | The name of the role.
-
-	alicloudRoleRequest := NewAlicloudRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAlicloudRoleName(context.Background(), name, alicloudRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | The name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **alicloudRoleRequest** | [**AlicloudRoleRequest**](AlicloudRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAwsConfigLease
-
-> PostAwsConfigLease(ctx).AwsConfigLeaseRequest(awsConfigLeaseRequest).Execute()
+> UpdateAwsConfigLease(ctx, mountPath).AwsConfigLeaseRequest(awsConfigLeaseRequest).Execute()
 
 Configure the default lease information for generated credentials.
 
@@ -11092,9 +6039,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigLeaseRequest := NewAwsConfigLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAwsConfigLease(context.Background(), awsConfigLeaseRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateAwsConfigLease(context.Background(), mountPath, awsConfigLeaseRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11106,12 +6054,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigLeaseRequest** | [**AwsConfigLeaseRequest**](AwsConfigLeaseRequest.md) |  | 
 
  (empty response body)
@@ -11120,9 +6073,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAwsConfigRoot
+## UpdateAwsConfigRoot
 
-> PostAwsConfigRoot(ctx).AwsConfigRootRequest(awsConfigRootRequest).Execute()
+> UpdateAwsConfigRoot(ctx, mountPath).AwsConfigRootRequest(awsConfigRootRequest).Execute()
 
 Configure the root credentials that are used to manage IAM.
 
@@ -11147,9 +6100,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigRootRequest := NewAwsConfigRootRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAwsConfigRoot(context.Background(), awsConfigRootRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateAwsConfigRoot(context.Background(), mountPath, awsConfigRootRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11161,12 +6115,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsConfigRootRequest** | [**AwsConfigRootRequest**](AwsConfigRootRequest.md) |  | 
 
  (empty response body)
@@ -11175,60 +6134,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAwsConfigRotateRoot
+## UpdateAwsCreds
 
-> PostAwsConfigRotateRoot(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.PostAwsConfigRotateRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAwsCreds
-
-> PostAwsCreds(ctx).AwsCredsRequest(awsCredsRequest).Execute()
+> UpdateAwsCreds(ctx, mountPath).AwsCredsRequest(awsCredsRequest).Execute()
 
 Generate AWS credentials from a specific Vault role.
 
@@ -11253,9 +6161,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsCredsRequest := NewAwsCredsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAwsCreds(context.Background(), awsCredsRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateAwsCreds(context.Background(), mountPath, awsCredsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11267,12 +6176,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **awsCredsRequest** | [**AwsCredsRequest**](AwsCredsRequest.md) |  | 
 
  (empty response body)
@@ -11281,9 +6195,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAwsRolesName
+## UpdateAwsRolesName
 
-> PostAwsRolesName(ctx, name).AwsRolesRequest(awsRolesRequest).Execute()
+> UpdateAwsRolesName(ctx, mountPath, name).AwsRolesRequest(awsRolesRequest).Execute()
 
 Read, write and reference IAM policies that access keys can be made for.
 
@@ -11309,9 +6223,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsRolesRequest := NewAwsRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAwsRolesName(context.Background(), name, awsRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateAwsRolesName(context.Background(), mountPath, name, awsRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11326,6 +6241,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **name** | **string** | Name of the policy | 
 
 ### Other Parameters
@@ -11333,6 +6249,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **awsRolesRequest** | [**AwsRolesRequest**](AwsRolesRequest.md) |  | 
 
@@ -11342,9 +6259,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAwsStsName
+## UpdateAwsStsName
 
-> PostAwsStsName(ctx, name).AwsStsRequest(awsStsRequest).Execute()
+> UpdateAwsStsName(ctx, mountPath, name).AwsStsRequest(awsStsRequest).Execute()
 
 Generate AWS credentials from a specific Vault role.
 
@@ -11370,9 +6287,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsStsRequest := NewAwsStsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAwsStsName(context.Background(), name, awsStsRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateAwsStsName(context.Background(), mountPath, name, awsStsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11387,6 +6305,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -11394,6 +6313,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **awsStsRequest** | [**AwsStsRequest**](AwsStsRequest.md) |  | 
 
@@ -11403,292 +6323,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAzureConfig
+## UpdateCubbyholePath
 
-> PostAzureConfig(ctx).AzureConfigRequest(azureConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	azureConfigRequest := NewAzureConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAzureConfig(context.Background(), azureConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **azureConfigRequest** | [**AzureConfigRequest**](AzureConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAzureRolesName
-
-> PostAzureRolesName(ctx, name).AzureRolesRequest(azureRolesRequest).Execute()
-
-Manage the Vault roles used to generate Azure credentials.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	azureRolesRequest := NewAzureRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostAzureRolesName(context.Background(), name, azureRolesRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **azureRolesRequest** | [**AzureRolesRequest**](AzureRolesRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostAzureRotateRoot
-
-> PostAzureRotateRoot(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.PostAzureRotateRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostConsulConfigAccess
-
-> PostConsulConfigAccess(ctx).ConsulConfigAccessRequest(consulConfigAccessRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	consulConfigAccessRequest := NewConsulConfigAccessRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostConsulConfigAccess(context.Background(), consulConfigAccessRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consulConfigAccessRequest** | [**ConsulConfigAccessRequest**](ConsulConfigAccessRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostConsulRolesName
-
-> PostConsulRolesName(ctx, name).ConsulRolesRequest(consulRolesRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	consulRolesRequest := NewConsulRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostConsulRolesName(context.Background(), name, consulRolesRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **consulRolesRequest** | [**ConsulRolesRequest**](ConsulRolesRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostCubbyholePath
-
-> PostCubbyholePath(ctx, path).Execute()
+> UpdateCubbyholePath(ctx, mountPath, path).Execute()
 
 Store a secret at the specified location.
 
@@ -11714,8 +6351,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cubbyhole")
 
-	resp, err := client.WithToken("my-token").Secrets.PostCubbyholePath(context.Background(), path)
+	resp, err := client.WithToken("my-token").Secrets.UpdateCubbyholePath(context.Background(), mountPath, path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11730,6 +6368,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cubbyhole&quot;]
 **path** | **string** | Specifies the path of the secret. | 
 
 ### Other Parameters
@@ -11739,15 +6378,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpConfig
+## UpdateGcpConfig
 
-> PostGcpConfig(ctx).GcpConfigRequest(gcpConfigRequest).Execute()
+> UpdateGcpConfig(ctx, mountPath).GcpConfigRequest(gcpConfigRequest).Execute()
 
 
 
@@ -11772,9 +6412,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpConfigRequest := NewGcpConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpConfig(context.Background(), gcpConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpConfig(context.Background(), mountPath, gcpConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11786,12 +6427,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **gcpConfigRequest** | [**GcpConfigRequest**](GcpConfigRequest.md) |  | 
 
  (empty response body)
@@ -11800,9 +6446,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpConfigRotateRoot
+## UpdateGcpConfigRotateRoot
 
-> PostGcpConfigRotateRoot(ctx).Execute()
+> UpdateGcpConfigRotateRoot(ctx, mountPath).Execute()
 
 
 
@@ -11827,8 +6473,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpConfigRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpConfigRotateRoot(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11839,10 +6486,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -11851,9 +6505,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostGcpKeyRoleset
+## UpdateGcpKeyRoleset
 
-> PostGcpKeyRoleset(ctx, roleset).GcpKeyRequest(gcpKeyRequest).Execute()
+> UpdateGcpKeyRoleset(ctx, mountPath, roleset).GcpKeyRequest(gcpKeyRequest).Execute()
 
 
 
@@ -11879,9 +6533,10 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpKeyRequest := NewGcpKeyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpKeyRoleset(context.Background(), roleset, gcpKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpKeyRoleset(context.Background(), mountPath, roleset, gcpKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11896,6 +6551,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -11903,6 +6559,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpKeyRequest** | [**GcpKeyRequest**](GcpKeyRequest.md) |  | 
 
@@ -11912,9 +6569,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpRolesetName
+## UpdateGcpRolesetName
 
-> PostGcpRolesetName(ctx, name).GcpRolesetRequest(gcpRolesetRequest).Execute()
+> UpdateGcpRolesetName(ctx, mountPath, name).GcpRolesetRequest(gcpRolesetRequest).Execute()
 
 
 
@@ -11940,9 +6597,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpRolesetRequest := NewGcpRolesetRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetName(context.Background(), name, gcpRolesetRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpRolesetName(context.Background(), mountPath, name, gcpRolesetRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11957,6 +6615,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name of the role. | 
 
 ### Other Parameters
@@ -11964,6 +6623,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpRolesetRequest** | [**GcpRolesetRequest**](GcpRolesetRequest.md) |  | 
 
@@ -11973,68 +6633,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpRolesetNameRotate
+## UpdateGcpRolesetNameRotate
 
-> PostGcpRolesetNameRotate(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetNameRotate(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostGcpRolesetNameRotateKey
-
-> PostGcpRolesetNameRotateKey(ctx, name).Execute()
+> UpdateGcpRolesetNameRotate(ctx, mountPath, name).Execute()
 
 
 
@@ -12060,8 +6661,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetNameRotateKey(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpRolesetNameRotate(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12076,6 +6678,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -12085,15 +6688,78 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpRolesetRolesetKey
+## UpdateGcpRolesetNameRotateKey
 
-> PostGcpRolesetRolesetKey(ctx, roleset).GcpRolesetKeyRequest(gcpRolesetKeyRequest).Execute()
+> UpdateGcpRolesetNameRotateKey(ctx, mountPath, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
+
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpRolesetNameRotateKey(context.Background(), mountPath, name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
+**name** | **string** | Name of the role. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## UpdateGcpRolesetRolesetKey
+
+> UpdateGcpRolesetRolesetKey(ctx, mountPath, roleset).GcpRolesetKeyRequest(gcpRolesetKeyRequest).Execute()
 
 
 
@@ -12119,9 +6785,10 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpRolesetKeyRequest := NewGcpRolesetKeyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetRolesetKey(context.Background(), roleset, gcpRolesetKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpRolesetRolesetKey(context.Background(), mountPath, roleset, gcpRolesetKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12136,6 +6803,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -12143,6 +6811,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpRolesetKeyRequest** | [**GcpRolesetKeyRequest**](GcpRolesetKeyRequest.md) |  | 
 
@@ -12152,9 +6821,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpRolesetRolesetToken
+## UpdateGcpRolesetRolesetToken
 
-> PostGcpRolesetRolesetToken(ctx, roleset).Execute()
+> UpdateGcpRolesetRolesetToken(ctx, mountPath, roleset).Execute()
 
 
 
@@ -12180,8 +6849,9 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpRolesetRolesetToken(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpRolesetRolesetToken(context.Background(), mountPath, roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12196,6 +6866,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -12205,15 +6876,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpStaticAccountName
+## UpdateGcpStaticAccountName
 
-> PostGcpStaticAccountName(ctx, name).GcpStaticAccountRequest(gcpStaticAccountRequest).Execute()
+> UpdateGcpStaticAccountName(ctx, mountPath, name).GcpStaticAccountRequest(gcpStaticAccountRequest).Execute()
 
 
 
@@ -12239,9 +6911,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpStaticAccountRequest := NewGcpStaticAccountRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountName(context.Background(), name, gcpStaticAccountRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpStaticAccountName(context.Background(), mountPath, name, gcpStaticAccountRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12256,6 +6929,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name to refer to this static account in Vault. Cannot be updated. | 
 
 ### Other Parameters
@@ -12263,6 +6937,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpStaticAccountRequest** | [**GcpStaticAccountRequest**](GcpStaticAccountRequest.md) |  | 
 
@@ -12272,9 +6947,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpStaticAccountNameKey
+## UpdateGcpStaticAccountNameKey
 
-> PostGcpStaticAccountNameKey(ctx, name).GcpStaticAccountKeyRequest(gcpStaticAccountKeyRequest).Execute()
+> UpdateGcpStaticAccountNameKey(ctx, mountPath, name).GcpStaticAccountKeyRequest(gcpStaticAccountKeyRequest).Execute()
 
 
 
@@ -12300,9 +6975,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpStaticAccountKeyRequest := NewGcpStaticAccountKeyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountNameKey(context.Background(), name, gcpStaticAccountKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpStaticAccountNameKey(context.Background(), mountPath, name, gcpStaticAccountKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12317,6 +6993,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name of the static account. | 
 
 ### Other Parameters
@@ -12324,6 +7001,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpStaticAccountKeyRequest** | [**GcpStaticAccountKeyRequest**](GcpStaticAccountKeyRequest.md) |  | 
 
@@ -12333,9 +7011,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpStaticAccountNameRotateKey
+## UpdateGcpStaticAccountNameRotateKey
 
-> PostGcpStaticAccountNameRotateKey(ctx, name).Execute()
+> UpdateGcpStaticAccountNameRotateKey(ctx, mountPath, name).Execute()
 
 
 
@@ -12361,8 +7039,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountNameRotateKey(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpStaticAccountNameRotateKey(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12377,6 +7056,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the account. | 
 
 ### Other Parameters
@@ -12386,15 +7066,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpStaticAccountNameToken
+## UpdateGcpStaticAccountNameToken
 
-> PostGcpStaticAccountNameToken(ctx, name).Execute()
+> UpdateGcpStaticAccountNameToken(ctx, mountPath, name).Execute()
 
 
 
@@ -12420,8 +7101,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpStaticAccountNameToken(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpStaticAccountNameToken(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12436,6 +7118,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Required. Name of the static account. | 
 
 ### Other Parameters
@@ -12445,15 +7128,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpTokenRoleset
+## UpdateGcpTokenRoleset
 
-> PostGcpTokenRoleset(ctx, roleset).Execute()
+> UpdateGcpTokenRoleset(ctx, mountPath, roleset).Execute()
 
 
 
@@ -12479,8 +7163,9 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpTokenRoleset(context.Background(), roleset)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpTokenRoleset(context.Background(), mountPath, roleset)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12495,6 +7180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **roleset** | **string** | Required. Name of the role set. | 
 
 ### Other Parameters
@@ -12504,60 +7190,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostGcpkmsConfig
-
-> PostGcpkmsConfig(ctx).GcpkmsConfigRequest(gcpkmsConfigRequest).Execute()
-
-Configure the GCP KMS secrets engine
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	gcpkmsConfigRequest := NewGcpkmsConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsConfig(context.Background(), gcpkmsConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gcpkmsConfigRequest** | [**GcpkmsConfigRequest**](GcpkmsConfigRequest.md) |  | 
 
  (empty response body)
 
@@ -12565,9 +7197,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsDecryptKey
+## UpdateGcpkmsDecryptKey
 
-> PostGcpkmsDecryptKey(ctx, key).GcpkmsDecryptRequest(gcpkmsDecryptRequest).Execute()
+> UpdateGcpkmsDecryptKey(ctx, key, mountPath).GcpkmsDecryptRequest(gcpkmsDecryptRequest).Execute()
 
 Decrypt a ciphertext value using a named key
 
@@ -12593,9 +7225,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsDecryptRequest := NewGcpkmsDecryptRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsDecryptKey(context.Background(), key, gcpkmsDecryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsDecryptKey(context.Background(), key, mountPath, gcpkmsDecryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12611,12 +7244,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsDecryptRequest** | [**GcpkmsDecryptRequest**](GcpkmsDecryptRequest.md) |  | 
 
@@ -12626,9 +7261,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsEncryptKey
+## UpdateGcpkmsEncryptKey
 
-> PostGcpkmsEncryptKey(ctx, key).GcpkmsEncryptRequest(gcpkmsEncryptRequest).Execute()
+> UpdateGcpkmsEncryptKey(ctx, key, mountPath).GcpkmsEncryptRequest(gcpkmsEncryptRequest).Execute()
 
 Encrypt a plaintext value using a named key
 
@@ -12654,9 +7289,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsEncryptRequest := NewGcpkmsEncryptRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsEncryptKey(context.Background(), key, gcpkmsEncryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsEncryptKey(context.Background(), key, mountPath, gcpkmsEncryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12672,12 +7308,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsEncryptRequest** | [**GcpkmsEncryptRequest**](GcpkmsEncryptRequest.md) |  | 
 
@@ -12687,9 +7325,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsKeysConfigKey
+## UpdateGcpkmsKeysConfigKey
 
-> PostGcpkmsKeysConfigKey(ctx, key).GcpkmsKeysConfigRequest(gcpkmsKeysConfigRequest).Execute()
+> UpdateGcpkmsKeysConfigKey(ctx, key, mountPath).GcpkmsKeysConfigRequest(gcpkmsKeysConfigRequest).Execute()
 
 Configure the key in Vault
 
@@ -12715,9 +7353,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsKeysConfigRequest := NewGcpkmsKeysConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysConfigKey(context.Background(), key, gcpkmsKeysConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsKeysConfigKey(context.Background(), key, mountPath, gcpkmsKeysConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12733,12 +7372,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsKeysConfigRequest** | [**GcpkmsKeysConfigRequest**](GcpkmsKeysConfigRequest.md) |  | 
 
@@ -12748,9 +7389,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsKeysDeregisterKey
+## UpdateGcpkmsKeysDeregisterKey
 
-> PostGcpkmsKeysDeregisterKey(ctx, key).Execute()
+> UpdateGcpkmsKeysDeregisterKey(ctx, key, mountPath).Execute()
 
 Deregister an existing key in Vault
 
@@ -12776,8 +7417,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysDeregisterKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsKeysDeregisterKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12793,6 +7435,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
@@ -12801,15 +7444,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsKeysKey
+## UpdateGcpkmsKeysKey
 
-> PostGcpkmsKeysKey(ctx, key).GcpkmsKeysRequest(gcpkmsKeysRequest).Execute()
+> UpdateGcpkmsKeysKey(ctx, key, mountPath).GcpkmsKeysRequest(gcpkmsKeysRequest).Execute()
 
 Interact with crypto keys in Vault and Google Cloud KMS
 
@@ -12835,9 +7479,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsKeysRequest := NewGcpkmsKeysRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysKey(context.Background(), key, gcpkmsKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsKeysKey(context.Background(), key, mountPath, gcpkmsKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12853,12 +7498,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsKeysRequest** | [**GcpkmsKeysRequest**](GcpkmsKeysRequest.md) |  | 
 
@@ -12868,9 +7515,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsKeysRegisterKey
+## UpdateGcpkmsKeysRegisterKey
 
-> PostGcpkmsKeysRegisterKey(ctx, key).GcpkmsKeysRegisterRequest(gcpkmsKeysRegisterRequest).Execute()
+> UpdateGcpkmsKeysRegisterKey(ctx, key, mountPath).GcpkmsKeysRegisterRequest(gcpkmsKeysRegisterRequest).Execute()
 
 Register an existing crypto key in Google Cloud KMS
 
@@ -12896,9 +7543,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsKeysRegisterRequest := NewGcpkmsKeysRegisterRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysRegisterKey(context.Background(), key, gcpkmsKeysRegisterRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsKeysRegisterKey(context.Background(), key, mountPath, gcpkmsKeysRegisterRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12914,12 +7562,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsKeysRegisterRequest** | [**GcpkmsKeysRegisterRequest**](GcpkmsKeysRegisterRequest.md) |  | 
 
@@ -12929,9 +7579,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsKeysRotateKey
+## UpdateGcpkmsKeysRotateKey
 
-> PostGcpkmsKeysRotateKey(ctx, key).Execute()
+> UpdateGcpkmsKeysRotateKey(ctx, key, mountPath).Execute()
 
 Rotate a crypto key to a new primary version
 
@@ -12957,8 +7607,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysRotateKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsKeysRotateKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12974,6 +7625,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
@@ -12982,15 +7634,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsKeysTrimKey
+## UpdateGcpkmsKeysTrimKey
 
-> PostGcpkmsKeysTrimKey(ctx, key).Execute()
+> UpdateGcpkmsKeysTrimKey(ctx, key, mountPath).Execute()
 
 Delete old crypto key versions from Google Cloud KMS
 
@@ -13016,8 +7669,9 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsKeysTrimKey(context.Background(), key)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsKeysTrimKey(context.Background(), key, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13033,6 +7687,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
@@ -13041,15 +7696,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsReencryptKey
+## UpdateGcpkmsReencryptKey
 
-> PostGcpkmsReencryptKey(ctx, key).GcpkmsReencryptRequest(gcpkmsReencryptRequest).Execute()
+> UpdateGcpkmsReencryptKey(ctx, key, mountPath).GcpkmsReencryptRequest(gcpkmsReencryptRequest).Execute()
 
 Re-encrypt existing ciphertext data to a new version
 
@@ -13075,9 +7731,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsReencryptRequest := NewGcpkmsReencryptRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsReencryptKey(context.Background(), key, gcpkmsReencryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsReencryptKey(context.Background(), key, mountPath, gcpkmsReencryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13093,12 +7750,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsReencryptRequest** | [**GcpkmsReencryptRequest**](GcpkmsReencryptRequest.md) |  | 
 
@@ -13108,9 +7767,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsSignKey
+## UpdateGcpkmsSignKey
 
-> PostGcpkmsSignKey(ctx, key).GcpkmsSignRequest(gcpkmsSignRequest).Execute()
+> UpdateGcpkmsSignKey(ctx, key, mountPath).GcpkmsSignRequest(gcpkmsSignRequest).Execute()
 
 Signs a message or digest using a named key
 
@@ -13136,9 +7795,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsSignRequest := NewGcpkmsSignRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsSignKey(context.Background(), key, gcpkmsSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsSignKey(context.Background(), key, mountPath, gcpkmsSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13154,12 +7814,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsSignRequest** | [**GcpkmsSignRequest**](GcpkmsSignRequest.md) |  | 
 
@@ -13169,9 +7831,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostGcpkmsVerifyKey
+## UpdateGcpkmsVerifyKey
 
-> PostGcpkmsVerifyKey(ctx, key).GcpkmsVerifyRequest(gcpkmsVerifyRequest).Execute()
+> UpdateGcpkmsVerifyKey(ctx, key, mountPath).GcpkmsVerifyRequest(gcpkmsVerifyRequest).Execute()
 
 Verify a signature using a named key
 
@@ -13197,9 +7859,10 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcpkms")
 
 	gcpkmsVerifyRequest := NewGcpkmsVerifyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostGcpkmsVerifyKey(context.Background(), key, gcpkmsVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateGcpkmsVerifyKey(context.Background(), key, mountPath, gcpkmsVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13215,12 +7878,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **key** | **string** | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcpkms&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **gcpkmsVerifyRequest** | [**GcpkmsVerifyRequest**](GcpkmsVerifyRequest.md) |  | 
 
@@ -13230,300 +7895,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostKubernetesConfig
+## UpdateLdapLibraryManageNameCheckIn
 
-> PostKubernetesConfig(ctx).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	kubernetesConfigRequest := NewKubernetesConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostKubernetesConfig(context.Background(), kubernetesConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **kubernetesConfigRequest** | [**KubernetesConfigRequest**](KubernetesConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostKubernetesCredsName
-
-> PostKubernetesCredsName(ctx, name).KubernetesCredsRequest(kubernetesCredsRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the Vault role
-
-	kubernetesCredsRequest := NewKubernetesCredsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostKubernetesCredsName(context.Background(), name, kubernetesCredsRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the Vault role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **kubernetesCredsRequest** | [**KubernetesCredsRequest**](KubernetesCredsRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostKubernetesRolesName
-
-> PostKubernetesRolesName(ctx, name).KubernetesRolesRequest(kubernetesRolesRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	kubernetesRolesRequest := NewKubernetesRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostKubernetesRolesName(context.Background(), name, kubernetesRolesRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **kubernetesRolesRequest** | [**KubernetesRolesRequest**](KubernetesRolesRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostKvPath
-
-> PostKvPath(ctx, path).Execute()
-
-Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	resp, err := client.WithToken("my-token").Secrets.PostKvPath(context.Background(), path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostLdapConfig
-
-> PostLdapConfig(ctx).LdapConfigRequest(ldapConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	ldapConfigRequest := NewLdapConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostLdapConfig(context.Background(), ldapConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ldapConfigRequest** | [**LdapConfigRequest**](LdapConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostLdapLibraryManageNameCheckIn
-
-> PostLdapLibraryManageNameCheckIn(ctx, name).LdapLibraryManageCheckInRequest(ldapLibraryManageCheckInRequest).Execute()
+> UpdateLdapLibraryManageNameCheckIn(ctx, mountPath, name).LdapLibraryManageCheckInRequest(ldapLibraryManageCheckInRequest).Execute()
 
 Check service accounts in to the library.
 
@@ -13549,9 +7923,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapLibraryManageCheckInRequest := NewLdapLibraryManageCheckInRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryManageNameCheckIn(context.Background(), name, ldapLibraryManageCheckInRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapLibraryManageNameCheckIn(context.Background(), mountPath, name, ldapLibraryManageCheckInRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13566,6 +7941,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the set. | 
 
 ### Other Parameters
@@ -13573,6 +7949,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **ldapLibraryManageCheckInRequest** | [**LdapLibraryManageCheckInRequest**](LdapLibraryManageCheckInRequest.md) |  | 
 
@@ -13582,9 +7959,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostLdapLibraryName
+## UpdateLdapLibraryName
 
-> PostLdapLibraryName(ctx, name).LdapLibraryRequest(ldapLibraryRequest).Execute()
+> UpdateLdapLibraryName(ctx, mountPath, name).LdapLibraryRequest(ldapLibraryRequest).Execute()
 
 Update a library set.
 
@@ -13610,9 +7987,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapLibraryRequest := NewLdapLibraryRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryName(context.Background(), name, ldapLibraryRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapLibraryName(context.Background(), mountPath, name, ldapLibraryRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13627,6 +8005,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the set. | 
 
 ### Other Parameters
@@ -13634,6 +8013,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **ldapLibraryRequest** | [**LdapLibraryRequest**](LdapLibraryRequest.md) |  | 
 
@@ -13643,9 +8023,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostLdapLibraryNameCheckIn
+## UpdateLdapLibraryNameCheckIn
 
-> PostLdapLibraryNameCheckIn(ctx, name).LdapLibraryCheckInRequest(ldapLibraryCheckInRequest).Execute()
+> UpdateLdapLibraryNameCheckIn(ctx, mountPath, name).LdapLibraryCheckInRequest(ldapLibraryCheckInRequest).Execute()
 
 Check service accounts in to the library.
 
@@ -13671,9 +8051,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapLibraryCheckInRequest := NewLdapLibraryCheckInRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryNameCheckIn(context.Background(), name, ldapLibraryCheckInRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapLibraryNameCheckIn(context.Background(), mountPath, name, ldapLibraryCheckInRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13688,6 +8069,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the set. | 
 
 ### Other Parameters
@@ -13695,6 +8077,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **ldapLibraryCheckInRequest** | [**LdapLibraryCheckInRequest**](LdapLibraryCheckInRequest.md) |  | 
 
@@ -13704,9 +8087,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostLdapLibraryNameCheckOut
+## UpdateLdapLibraryNameCheckOut
 
-> PostLdapLibraryNameCheckOut(ctx, name).LdapLibraryCheckOutRequest(ldapLibraryCheckOutRequest).Execute()
+> UpdateLdapLibraryNameCheckOut(ctx, mountPath, name).LdapLibraryCheckOutRequest(ldapLibraryCheckOutRequest).Execute()
 
 Check a service account out from the library.
 
@@ -13732,9 +8115,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapLibraryCheckOutRequest := NewLdapLibraryCheckOutRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostLdapLibraryNameCheckOut(context.Background(), name, ldapLibraryCheckOutRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapLibraryNameCheckOut(context.Background(), mountPath, name, ldapLibraryCheckOutRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13749,6 +8133,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the set | 
 
 ### Other Parameters
@@ -13756,6 +8141,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **ldapLibraryCheckOutRequest** | [**LdapLibraryCheckOutRequest**](LdapLibraryCheckOutRequest.md) |  | 
 
@@ -13765,9 +8151,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostLdapRoleName
+## UpdateLdapRoleName
 
-> PostLdapRoleName(ctx, name).LdapRoleRequest(ldapRoleRequest).Execute()
+> UpdateLdapRoleName(ctx, mountPath, name).LdapRoleRequest(ldapRoleRequest).Execute()
 
 
 
@@ -13793,9 +8179,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapRoleRequest := NewLdapRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostLdapRoleName(context.Background(), name, ldapRoleRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapRoleName(context.Background(), mountPath, name, ldapRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13810,6 +8197,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the role (lowercase) | 
 
 ### Other Parameters
@@ -13817,6 +8205,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **ldapRoleRequest** | [**LdapRoleRequest**](LdapRoleRequest.md) |  | 
 
@@ -13826,9 +8215,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostLdapRotateRoleName
+## UpdateLdapRotateRoleName
 
-> PostLdapRotateRoleName(ctx, name).Execute()
+> UpdateLdapRotateRoleName(ctx, mountPath, name).Execute()
 
 
 
@@ -13854,8 +8243,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.PostLdapRotateRoleName(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapRotateRoleName(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13870,6 +8260,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the static role | 
 
 ### Other Parameters
@@ -13879,15 +8270,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostLdapRotateRoot
+## UpdateLdapRotateRoot
 
-> PostLdapRotateRoot(ctx).Execute()
+> UpdateLdapRotateRoot(ctx, mountPath).Execute()
 
 
 
@@ -13912,8 +8304,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Secrets.PostLdapRotateRoot(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapRotateRoot(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13924,10 +8317,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -13936,9 +8336,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostLdapStaticRoleName
+## UpdateLdapStaticRoleName
 
-> PostLdapStaticRoleName(ctx, name).LdapStaticRoleRequest(ldapStaticRoleRequest).Execute()
+> UpdateLdapStaticRoleName(ctx, mountPath, name).LdapStaticRoleRequest(ldapStaticRoleRequest).Execute()
 
 
 
@@ -13964,9 +8364,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapStaticRoleRequest := NewLdapStaticRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostLdapStaticRoleName(context.Background(), name, ldapStaticRoleRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateLdapStaticRoleName(context.Background(), mountPath, name, ldapStaticRoleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13981,6 +8382,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the role | 
 
 ### Other Parameters
@@ -13988,6 +8390,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **ldapStaticRoleRequest** | [**LdapStaticRoleRequest**](LdapStaticRoleRequest.md) |  | 
 
@@ -13997,184 +8400,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostMongodbatlasConfig
+## UpdateNomadConfigAccess
 
-> PostMongodbatlasConfig(ctx).MongodbatlasConfigRequest(mongodbatlasConfigRequest).Execute()
-
-Configure the  credentials that are used to manage Database Users.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	mongodbatlasConfigRequest := NewMongodbatlasConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostMongodbatlasConfig(context.Background(), mongodbatlasConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mongodbatlasConfigRequest** | [**MongodbatlasConfigRequest**](MongodbatlasConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostMongodbatlasCredsName
-
-> PostMongodbatlasCredsName(ctx, name).Execute()
-
-Generate MongoDB Atlas Programmatic API from a specific Vault role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.PostMongodbatlasCredsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostMongodbatlasRolesName
-
-> PostMongodbatlasRolesName(ctx, name).MongodbatlasRolesRequest(mongodbatlasRolesRequest).Execute()
-
-Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the Roles
-
-	mongodbatlasRolesRequest := NewMongodbatlasRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostMongodbatlasRolesName(context.Background(), name, mongodbatlasRolesRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the Roles | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **mongodbatlasRolesRequest** | [**MongodbatlasRolesRequest**](MongodbatlasRolesRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostNomadConfigAccess
-
-> PostNomadConfigAccess(ctx).NomadConfigAccessRequest(nomadConfigAccessRequest).Execute()
+> UpdateNomadConfigAccess(ctx, mountPath).NomadConfigAccessRequest(nomadConfigAccessRequest).Execute()
 
 
 
@@ -14199,9 +8427,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "nomad")
 
 	nomadConfigAccessRequest := NewNomadConfigAccessRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostNomadConfigAccess(context.Background(), nomadConfigAccessRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateNomadConfigAccess(context.Background(), mountPath, nomadConfigAccessRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14213,12 +8442,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;nomad&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **nomadConfigAccessRequest** | [**NomadConfigAccessRequest**](NomadConfigAccessRequest.md) |  | 
 
  (empty response body)
@@ -14227,64 +8461,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostNomadConfigLease
+## UpdatePkiBundle
 
-> PostNomadConfigLease(ctx).NomadConfigLeaseRequest(nomadConfigLeaseRequest).Execute()
-
-Configure the lease parameters for generated tokens
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	nomadConfigLeaseRequest := NewNomadConfigLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostNomadConfigLease(context.Background(), nomadConfigLeaseRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **nomadConfigLeaseRequest** | [**NomadConfigLeaseRequest**](NomadConfigLeaseRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostNomadRoleName
-
-> PostNomadRoleName(ctx, name).NomadRoleRequest(nomadRoleRequest).Execute()
+> UpdatePkiBundle(ctx, mountPath).PkiBundleRequest(pkiBundleRequest).Execute()
 
 
 
@@ -14309,601 +8488,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	name := "name_example" // string | Name of the role
-
-	nomadRoleRequest := NewNomadRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostNomadRoleName(context.Background(), name, nomadRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **nomadRoleRequest** | [**NomadRoleRequest**](NomadRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapConfig
-
-> PostOpenldapConfig(ctx).OpenldapConfigRequest(openldapConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	openldapConfigRequest := NewOpenldapConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapConfig(context.Background(), openldapConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **openldapConfigRequest** | [**OpenldapConfigRequest**](OpenldapConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapLibraryManageNameCheckIn
-
-> PostOpenldapLibraryManageNameCheckIn(ctx, name).OpenldapLibraryManageCheckInRequest(openldapLibraryManageCheckInRequest).Execute()
-
-Check service accounts in to the library.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	openldapLibraryManageCheckInRequest := NewOpenldapLibraryManageCheckInRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryManageNameCheckIn(context.Background(), name, openldapLibraryManageCheckInRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **openldapLibraryManageCheckInRequest** | [**OpenldapLibraryManageCheckInRequest**](OpenldapLibraryManageCheckInRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapLibraryName
-
-> PostOpenldapLibraryName(ctx, name).OpenldapLibraryRequest(openldapLibraryRequest).Execute()
-
-Update a library set.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	openldapLibraryRequest := NewOpenldapLibraryRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryName(context.Background(), name, openldapLibraryRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **openldapLibraryRequest** | [**OpenldapLibraryRequest**](OpenldapLibraryRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapLibraryNameCheckIn
-
-> PostOpenldapLibraryNameCheckIn(ctx, name).OpenldapLibraryCheckInRequest(openldapLibraryCheckInRequest).Execute()
-
-Check service accounts in to the library.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set.
-
-	openldapLibraryCheckInRequest := NewOpenldapLibraryCheckInRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryNameCheckIn(context.Background(), name, openldapLibraryCheckInRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **openldapLibraryCheckInRequest** | [**OpenldapLibraryCheckInRequest**](OpenldapLibraryCheckInRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapLibraryNameCheckOut
-
-> PostOpenldapLibraryNameCheckOut(ctx, name).OpenldapLibraryCheckOutRequest(openldapLibraryCheckOutRequest).Execute()
-
-Check a service account out from the library.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the set
-
-	openldapLibraryCheckOutRequest := NewOpenldapLibraryCheckOutRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapLibraryNameCheckOut(context.Background(), name, openldapLibraryCheckOutRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the set | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **openldapLibraryCheckOutRequest** | [**OpenldapLibraryCheckOutRequest**](OpenldapLibraryCheckOutRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapRoleName
-
-> PostOpenldapRoleName(ctx, name).OpenldapRoleRequest(openldapRoleRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role (lowercase)
-
-	openldapRoleRequest := NewOpenldapRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapRoleName(context.Background(), name, openldapRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role (lowercase) | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **openldapRoleRequest** | [**OpenldapRoleRequest**](OpenldapRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapRotateRoleName
-
-> PostOpenldapRotateRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the static role
-
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapRotateRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the static role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapRotateRoot
-
-> PostOpenldapRotateRoot(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapRotateRoot(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostOpenldapStaticRoleName
-
-> PostOpenldapStaticRoleName(ctx, name).OpenldapStaticRoleRequest(openldapStaticRoleRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	openldapStaticRoleRequest := NewOpenldapStaticRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostOpenldapStaticRoleName(context.Background(), name, openldapStaticRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **openldapStaticRoleRequest** | [**OpenldapStaticRoleRequest**](OpenldapStaticRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostPkiBundle
-
-> PostPkiBundle(ctx).PkiBundleRequest(pkiBundleRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiBundleRequest := NewPkiBundleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiBundle(context.Background(), pkiBundleRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiBundle(context.Background(), mountPath, pkiBundleRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14915,12 +8503,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiBundleRequest** | [**PkiBundleRequest**](PkiBundleRequest.md) |  | 
 
  (empty response body)
@@ -14929,9 +8522,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiCert
+## UpdatePkiCert
 
-> PostPkiCert(ctx).PkiCertRequest(pkiCertRequest).Execute()
+> UpdatePkiCert(ctx, mountPath).PkiCertRequest(pkiCertRequest).Execute()
 
 
 
@@ -14956,9 +8549,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiCertRequest := NewPkiCertRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiCert(context.Background(), pkiCertRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiCert(context.Background(), mountPath, pkiCertRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14970,12 +8564,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiCertRequest** | [**PkiCertRequest**](PkiCertRequest.md) |  | 
 
  (empty response body)
@@ -14984,9 +8583,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiConfigAutoTidy
+## UpdatePkiConfigAutoTidy
 
-> PostPkiConfigAutoTidy(ctx).PkiConfigAutoTidyRequest(pkiConfigAutoTidyRequest).Execute()
+> UpdatePkiConfigAutoTidy(ctx, mountPath).PkiConfigAutoTidyRequest(pkiConfigAutoTidyRequest).Execute()
 
 
 
@@ -15011,9 +8610,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiConfigAutoTidyRequest := NewPkiConfigAutoTidyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigAutoTidy(context.Background(), pkiConfigAutoTidyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiConfigAutoTidy(context.Background(), mountPath, pkiConfigAutoTidyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15025,12 +8625,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiConfigAutoTidyRequest** | [**PkiConfigAutoTidyRequest**](PkiConfigAutoTidyRequest.md) |  | 
 
  (empty response body)
@@ -15039,9 +8644,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiConfigCa
+## UpdatePkiConfigCa
 
-> PostPkiConfigCa(ctx).PkiConfigCaRequest(pkiConfigCaRequest).Execute()
+> UpdatePkiConfigCa(ctx, mountPath).PkiConfigCaRequest(pkiConfigCaRequest).Execute()
 
 
 
@@ -15066,9 +8671,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiConfigCaRequest := NewPkiConfigCaRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigCa(context.Background(), pkiConfigCaRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiConfigCa(context.Background(), mountPath, pkiConfigCaRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15080,12 +8686,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiConfigCaRequest** | [**PkiConfigCaRequest**](PkiConfigCaRequest.md) |  | 
 
  (empty response body)
@@ -15094,9 +8705,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiConfigCrl
+## UpdatePkiConfigCrl
 
-> PostPkiConfigCrl(ctx).PkiConfigCrlRequest(pkiConfigCrlRequest).Execute()
+> UpdatePkiConfigCrl(ctx, mountPath).PkiConfigCrlRequest(pkiConfigCrlRequest).Execute()
 
 
 
@@ -15121,9 +8732,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiConfigCrlRequest := NewPkiConfigCrlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigCrl(context.Background(), pkiConfigCrlRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiConfigCrl(context.Background(), mountPath, pkiConfigCrlRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15135,12 +8747,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiConfigCrlRequest** | [**PkiConfigCrlRequest**](PkiConfigCrlRequest.md) |  | 
 
  (empty response body)
@@ -15149,9 +8766,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiConfigIssuers
+## UpdatePkiConfigIssuers
 
-> PostPkiConfigIssuers(ctx).PkiConfigIssuersRequest(pkiConfigIssuersRequest).Execute()
+> UpdatePkiConfigIssuers(ctx, mountPath).PkiConfigIssuersRequest(pkiConfigIssuersRequest).Execute()
 
 
 
@@ -15176,9 +8793,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiConfigIssuersRequest := NewPkiConfigIssuersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigIssuers(context.Background(), pkiConfigIssuersRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiConfigIssuers(context.Background(), mountPath, pkiConfigIssuersRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15190,12 +8808,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiConfigIssuersRequest** | [**PkiConfigIssuersRequest**](PkiConfigIssuersRequest.md) |  | 
 
  (empty response body)
@@ -15204,9 +8827,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiConfigKeys
+## UpdatePkiConfigKeys
 
-> PostPkiConfigKeys(ctx).PkiConfigKeysRequest(pkiConfigKeysRequest).Execute()
+> UpdatePkiConfigKeys(ctx, mountPath).PkiConfigKeysRequest(pkiConfigKeysRequest).Execute()
 
 
 
@@ -15231,9 +8854,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiConfigKeysRequest := NewPkiConfigKeysRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigKeys(context.Background(), pkiConfigKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiConfigKeys(context.Background(), mountPath, pkiConfigKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15245,12 +8869,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiConfigKeysRequest** | [**PkiConfigKeysRequest**](PkiConfigKeysRequest.md) |  | 
 
  (empty response body)
@@ -15259,9 +8888,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiConfigUrls
+## UpdatePkiConfigUrls
 
-> PostPkiConfigUrls(ctx).PkiConfigUrlsRequest(pkiConfigUrlsRequest).Execute()
+> UpdatePkiConfigUrls(ctx, mountPath).PkiConfigUrlsRequest(pkiConfigUrlsRequest).Execute()
 
 
 
@@ -15286,9 +8915,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiConfigUrlsRequest := NewPkiConfigUrlsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiConfigUrls(context.Background(), pkiConfigUrlsRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiConfigUrls(context.Background(), mountPath, pkiConfigUrlsRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15300,12 +8930,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiConfigUrlsRequest** | [**PkiConfigUrlsRequest**](PkiConfigUrlsRequest.md) |  | 
 
  (empty response body)
@@ -15314,9 +8949,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIntermediateCrossSign
+## UpdatePkiIntermediateCrossSign
 
-> PostPkiIntermediateCrossSign(ctx).PkiIntermediateCrossSignRequest(pkiIntermediateCrossSignRequest).Execute()
+> UpdatePkiIntermediateCrossSign(ctx, mountPath).PkiIntermediateCrossSignRequest(pkiIntermediateCrossSignRequest).Execute()
 
 
 
@@ -15341,9 +8976,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIntermediateCrossSignRequest := NewPkiIntermediateCrossSignRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIntermediateCrossSign(context.Background(), pkiIntermediateCrossSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIntermediateCrossSign(context.Background(), mountPath, pkiIntermediateCrossSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15355,12 +8991,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiIntermediateCrossSignRequest** | [**PkiIntermediateCrossSignRequest**](PkiIntermediateCrossSignRequest.md) |  | 
 
  (empty response body)
@@ -15369,9 +9010,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIntermediateGenerateExported
+## UpdatePkiIntermediateGenerateExported
 
-> PostPkiIntermediateGenerateExported(ctx, exported).PkiIntermediateGenerateRequest(pkiIntermediateGenerateRequest).Execute()
+> UpdatePkiIntermediateGenerateExported(ctx, exported, mountPath).PkiIntermediateGenerateRequest(pkiIntermediateGenerateRequest).Execute()
 
 
 
@@ -15397,9 +9038,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIntermediateGenerateRequest := NewPkiIntermediateGenerateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIntermediateGenerateExported(context.Background(), exported, pkiIntermediateGenerateRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIntermediateGenerateExported(context.Background(), exported, mountPath, pkiIntermediateGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15415,12 +9057,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiIntermediateGenerateRequest** | [**PkiIntermediateGenerateRequest**](PkiIntermediateGenerateRequest.md) |  | 
 
@@ -15430,9 +9074,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIntermediateSetSigned
+## UpdatePkiIntermediateSetSigned
 
-> PostPkiIntermediateSetSigned(ctx).PkiIntermediateSetSignedRequest(pkiIntermediateSetSignedRequest).Execute()
+> UpdatePkiIntermediateSetSigned(ctx, mountPath).PkiIntermediateSetSignedRequest(pkiIntermediateSetSignedRequest).Execute()
 
 
 
@@ -15457,9 +9101,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIntermediateSetSignedRequest := NewPkiIntermediateSetSignedRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIntermediateSetSigned(context.Background(), pkiIntermediateSetSignedRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIntermediateSetSigned(context.Background(), mountPath, pkiIntermediateSetSignedRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15471,12 +9116,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiIntermediateSetSignedRequest** | [**PkiIntermediateSetSignedRequest**](PkiIntermediateSetSignedRequest.md) |  | 
 
  (empty response body)
@@ -15485,9 +9135,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssueRole
+## UpdatePkiIssueRole
 
-> PostPkiIssueRole(ctx, role).PkiIssueRequest(pkiIssueRequest).Execute()
+> UpdatePkiIssueRole(ctx, mountPath, role).PkiIssueRequest(pkiIssueRequest).Execute()
 
 
 
@@ -15513,9 +9163,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssueRequest := NewPkiIssueRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssueRole(context.Background(), role, pkiIssueRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssueRole(context.Background(), mountPath, role, pkiIssueRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15530,6 +9181,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **role** | **string** | The desired role with configuration for this request | 
 
 ### Other Parameters
@@ -15537,6 +9189,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiIssueRequest** | [**PkiIssueRequest**](PkiIssueRequest.md) |  | 
 
@@ -15546,9 +9199,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuerIssuerRefIssueRole
+## UpdatePkiIssuerIssuerRefIssueRole
 
-> PostPkiIssuerIssuerRefIssueRole(ctx, issuerRef, role).PkiIssuerIssueRequest(pkiIssuerIssueRequest).Execute()
+> UpdatePkiIssuerIssuerRefIssueRole(ctx, issuerRef, mountPath, role).PkiIssuerIssueRequest(pkiIssuerIssueRequest).Execute()
 
 
 
@@ -15575,9 +9228,10 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuerIssueRequest := NewPkiIssuerIssueRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefIssueRole(context.Background(), issuerRef, role, pkiIssuerIssueRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuerIssuerRefIssueRole(context.Background(), issuerRef, mountPath, role, pkiIssuerIssueRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15593,6 +9247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **role** | **string** | The desired role with configuration for this request | 
 
 ### Other Parameters
@@ -15600,6 +9255,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  **pkiIssuerIssueRequest** | [**PkiIssuerIssueRequest**](PkiIssuerIssueRequest.md) |  | 
@@ -15610,9 +9266,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuerIssuerRefRevoke
+## UpdatePkiIssuerIssuerRefRevoke
 
-> PostPkiIssuerIssuerRefRevoke(ctx, issuerRef).Execute()
+> UpdatePkiIssuerIssuerRefRevoke(ctx, issuerRef, mountPath).Execute()
 
 
 
@@ -15638,8 +9294,9 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefRevoke(context.Background(), issuerRef)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuerIssuerRefRevoke(context.Background(), issuerRef, mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15655,12 +9312,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  (empty response body)
@@ -15669,9 +9328,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuerIssuerRefSignIntermediate
+## UpdatePkiIssuerIssuerRefSignIntermediate
 
-> PostPkiIssuerIssuerRefSignIntermediate(ctx, issuerRef).PkiIssuerSignIntermediateRequest(pkiIssuerSignIntermediateRequest).Execute()
+> UpdatePkiIssuerIssuerRefSignIntermediate(ctx, issuerRef, mountPath).PkiIssuerSignIntermediateRequest(pkiIssuerSignIntermediateRequest).Execute()
 
 
 
@@ -15697,9 +9356,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuerSignIntermediateRequest := NewPkiIssuerSignIntermediateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignIntermediate(context.Background(), issuerRef, pkiIssuerSignIntermediateRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuerIssuerRefSignIntermediate(context.Background(), issuerRef, mountPath, pkiIssuerSignIntermediateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15715,12 +9375,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiIssuerSignIntermediateRequest** | [**PkiIssuerSignIntermediateRequest**](PkiIssuerSignIntermediateRequest.md) |  | 
 
@@ -15730,9 +9392,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuerIssuerRefSignRole
+## UpdatePkiIssuerIssuerRefSignRole
 
-> PostPkiIssuerIssuerRefSignRole(ctx, issuerRef, role).PkiIssuerSignRequest(pkiIssuerSignRequest).Execute()
+> UpdatePkiIssuerIssuerRefSignRole(ctx, issuerRef, mountPath, role).PkiIssuerSignRequest(pkiIssuerSignRequest).Execute()
 
 
 
@@ -15759,9 +9421,10 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuerSignRequest := NewPkiIssuerSignRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignRole(context.Background(), issuerRef, role, pkiIssuerSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuerIssuerRefSignRole(context.Background(), issuerRef, mountPath, role, pkiIssuerSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15777,6 +9440,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **role** | **string** | The desired role with configuration for this request | 
 
 ### Other Parameters
@@ -15784,6 +9448,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  **pkiIssuerSignRequest** | [**PkiIssuerSignRequest**](PkiIssuerSignRequest.md) |  | 
@@ -15794,9 +9459,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuerIssuerRefSignSelfIssued
+## UpdatePkiIssuerIssuerRefSignSelfIssued
 
-> PostPkiIssuerIssuerRefSignSelfIssued(ctx, issuerRef).PkiIssuerSignSelfIssuedRequest(pkiIssuerSignSelfIssuedRequest).Execute()
+> UpdatePkiIssuerIssuerRefSignSelfIssued(ctx, issuerRef, mountPath).PkiIssuerSignSelfIssuedRequest(pkiIssuerSignSelfIssuedRequest).Execute()
 
 
 
@@ -15822,9 +9487,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuerSignSelfIssuedRequest := NewPkiIssuerSignSelfIssuedRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignSelfIssued(context.Background(), issuerRef, pkiIssuerSignSelfIssuedRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuerIssuerRefSignSelfIssued(context.Background(), issuerRef, mountPath, pkiIssuerSignSelfIssuedRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15840,12 +9506,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiIssuerSignSelfIssuedRequest** | [**PkiIssuerSignSelfIssuedRequest**](PkiIssuerSignSelfIssuedRequest.md) |  | 
 
@@ -15855,9 +9523,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuerIssuerRefSignVerbatim
+## UpdatePkiIssuerIssuerRefSignVerbatim
 
-> PostPkiIssuerIssuerRefSignVerbatim(ctx, issuerRef).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
+> UpdatePkiIssuerIssuerRefSignVerbatim(ctx, issuerRef, mountPath).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
 
 
 
@@ -15883,9 +9551,10 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuerSignVerbatimRequest := NewPkiIssuerSignVerbatimRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignVerbatim(context.Background(), issuerRef, pkiIssuerSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuerIssuerRefSignVerbatim(context.Background(), issuerRef, mountPath, pkiIssuerSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15901,12 +9570,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiIssuerSignVerbatimRequest** | [**PkiIssuerSignVerbatimRequest**](PkiIssuerSignVerbatimRequest.md) |  | 
 
@@ -15916,9 +9587,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuerIssuerRefSignVerbatimRole
+## UpdatePkiIssuerIssuerRefSignVerbatimRole
 
-> PostPkiIssuerIssuerRefSignVerbatimRole(ctx, issuerRef, role).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
+> UpdatePkiIssuerIssuerRefSignVerbatimRole(ctx, issuerRef, mountPath, role).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
 
 
 
@@ -15945,9 +9616,10 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuerSignVerbatimRequest := NewPkiIssuerSignVerbatimRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuerIssuerRefSignVerbatimRole(context.Background(), issuerRef, role, pkiIssuerSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuerIssuerRefSignVerbatimRole(context.Background(), issuerRef, mountPath, role, pkiIssuerSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15963,6 +9635,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **role** | **string** | The desired role with configuration for this request | 
 
 ### Other Parameters
@@ -15970,6 +9643,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  **pkiIssuerSignVerbatimRequest** | [**PkiIssuerSignVerbatimRequest**](PkiIssuerSignVerbatimRequest.md) |  | 
@@ -15980,9 +9654,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuersGenerateIntermediateExported
+## UpdatePkiIssuersGenerateIntermediateExported
 
-> PostPkiIssuersGenerateIntermediateExported(ctx, exported).PkiIssuersGenerateIntermediateRequest(pkiIssuersGenerateIntermediateRequest).Execute()
+> UpdatePkiIssuersGenerateIntermediateExported(ctx, exported, mountPath).PkiIssuersGenerateIntermediateRequest(pkiIssuersGenerateIntermediateRequest).Execute()
 
 
 
@@ -16008,9 +9682,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuersGenerateIntermediateRequest := NewPkiIssuersGenerateIntermediateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuersGenerateIntermediateExported(context.Background(), exported, pkiIssuersGenerateIntermediateRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuersGenerateIntermediateExported(context.Background(), exported, mountPath, pkiIssuersGenerateIntermediateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16026,12 +9701,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiIssuersGenerateIntermediateRequest** | [**PkiIssuersGenerateIntermediateRequest**](PkiIssuersGenerateIntermediateRequest.md) |  | 
 
@@ -16041,9 +9718,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiIssuersGenerateRootExported
+## UpdatePkiIssuersGenerateRootExported
 
-> PostPkiIssuersGenerateRootExported(ctx, exported).PkiIssuersGenerateRootRequest(pkiIssuersGenerateRootRequest).Execute()
+> UpdatePkiIssuersGenerateRootExported(ctx, exported, mountPath).PkiIssuersGenerateRootRequest(pkiIssuersGenerateRootRequest).Execute()
 
 
 
@@ -16069,9 +9746,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiIssuersGenerateRootRequest := NewPkiIssuersGenerateRootRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiIssuersGenerateRootExported(context.Background(), exported, pkiIssuersGenerateRootRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiIssuersGenerateRootExported(context.Background(), exported, mountPath, pkiIssuersGenerateRootRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16087,12 +9765,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiIssuersGenerateRootRequest** | [**PkiIssuersGenerateRootRequest**](PkiIssuersGenerateRootRequest.md) |  | 
 
@@ -16102,9 +9782,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiJson
+## UpdatePkiJson
 
-> PostPkiJson(ctx).PkiJsonRequest(pkiJsonRequest).Execute()
+> UpdatePkiJson(ctx, mountPath).PkiJsonRequest(pkiJsonRequest).Execute()
 
 
 
@@ -16129,9 +9809,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiJsonRequest := NewPkiJsonRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiJson(context.Background(), pkiJsonRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiJson(context.Background(), mountPath, pkiJsonRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16143,12 +9824,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiJsonRequest** | [**PkiJsonRequest**](PkiJsonRequest.md) |  | 
 
  (empty response body)
@@ -16157,9 +9843,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiKeyKeyRef
+## UpdatePkiKeyKeyRef
 
-> PostPkiKeyKeyRef(ctx, keyRef).PkiKeyRequest(pkiKeyRequest).Execute()
+> UpdatePkiKeyKeyRef(ctx, keyRef, mountPath).PkiKeyRequest(pkiKeyRequest).Execute()
 
 
 
@@ -16185,9 +9871,10 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiKeyRequest := NewPkiKeyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiKeyKeyRef(context.Background(), keyRef, pkiKeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiKeyKeyRef(context.Background(), keyRef, mountPath, pkiKeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16203,12 +9890,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **keyRef** | **string** | Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key. | [default to &quot;default&quot;]
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiKeyRequest** | [**PkiKeyRequest**](PkiKeyRequest.md) |  | 
 
@@ -16218,9 +9907,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiKeysImport
+## UpdatePkiKeysImport
 
-> PostPkiKeysImport(ctx).PkiKeysImportRequest(pkiKeysImportRequest).Execute()
+> UpdatePkiKeysImport(ctx, mountPath).PkiKeysImportRequest(pkiKeysImportRequest).Execute()
 
 
 
@@ -16245,281 +9934,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiKeysImportRequest := NewPkiKeysImportRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiKeysImport(context.Background(), pkiKeysImportRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiKeysImportRequest** | [**PkiKeysImportRequest**](PkiKeysImportRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostPkiKms
-
-> PostPkiKms(ctx).PkiKmsRequest(pkiKmsRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	pkiKmsRequest := NewPkiKmsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiKms(context.Background(), pkiKmsRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiKmsRequest** | [**PkiKmsRequest**](PkiKmsRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostPkiOcsp
-
-> PostPkiOcsp(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.WithToken("my-token").Secrets.PostPkiOcsp(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostPkiRevoke
-
-> PostPkiRevoke(ctx).PkiRevokeRequest(pkiRevokeRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	pkiRevokeRequest := NewPkiRevokeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRevoke(context.Background(), pkiRevokeRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiRevokeRequest** | [**PkiRevokeRequest**](PkiRevokeRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostPkiRevokeWithKey
-
-> PostPkiRevokeWithKey(ctx).PkiRevokeWithKeyRequest(pkiRevokeWithKeyRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	pkiRevokeWithKeyRequest := NewPkiRevokeWithKeyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRevokeWithKey(context.Background(), pkiRevokeWithKeyRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiRevokeWithKeyRequest** | [**PkiRevokeWithKeyRequest**](PkiRevokeWithKeyRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostPkiRolesName
-
-> PostPkiRolesName(ctx, name).PkiRolesRequest(pkiRolesRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	pkiRolesRequest := NewPkiRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRolesName(context.Background(), name, pkiRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiKeysImport(context.Background(), mountPath, pkiKeysImportRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16534,7 +9952,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
@@ -16542,7 +9960,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **pkiRolesRequest** | [**PkiRolesRequest**](PkiRolesRequest.md) |  | 
+ **pkiKeysImportRequest** | [**PkiKeysImportRequest**](PkiKeysImportRequest.md) |  | 
 
  (empty response body)
 
@@ -16550,9 +9968,251 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiRootGenerateExported
+## UpdatePkiKms
 
-> PostPkiRootGenerateExported(ctx, exported).PkiRootGenerateRequest(pkiRootGenerateRequest).Execute()
+> UpdatePkiKms(ctx, mountPath).PkiKmsRequest(pkiKmsRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
+
+	pkiKmsRequest := NewPkiKmsRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiKms(context.Background(), mountPath, pkiKmsRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiKmsRequest** | [**PkiKmsRequest**](PkiKmsRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## UpdatePkiOcsp
+
+> UpdatePkiOcsp(ctx, mountPath).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
+
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiOcsp(context.Background(), mountPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## UpdatePkiRevoke
+
+> UpdatePkiRevoke(ctx, mountPath).PkiRevokeRequest(pkiRevokeRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
+
+	pkiRevokeRequest := NewPkiRevokeRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiRevoke(context.Background(), mountPath, pkiRevokeRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiRevokeRequest** | [**PkiRevokeRequest**](PkiRevokeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## UpdatePkiRevokeWithKey
+
+> UpdatePkiRevokeWithKey(ctx, mountPath).PkiRevokeWithKeyRequest(pkiRevokeWithKeyRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
+
+	pkiRevokeWithKeyRequest := NewPkiRevokeWithKeyRequestWithDefaults()
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiRevokeWithKey(context.Background(), mountPath, pkiRevokeWithKeyRequest)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiRevokeWithKeyRequest** | [**PkiRevokeWithKeyRequest**](PkiRevokeWithKeyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## UpdatePkiRootGenerateExported
+
+> UpdatePkiRootGenerateExported(ctx, exported, mountPath).PkiRootGenerateRequest(pkiRootGenerateRequest).Execute()
 
 
 
@@ -16578,9 +10238,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiRootGenerateRequest := NewPkiRootGenerateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRootGenerateExported(context.Background(), exported, pkiRootGenerateRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiRootGenerateExported(context.Background(), exported, mountPath, pkiRootGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16596,12 +10257,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiRootGenerateRequest** | [**PkiRootGenerateRequest**](PkiRootGenerateRequest.md) |  | 
 
@@ -16611,9 +10274,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiRootReplace
+## UpdatePkiRootReplace
 
-> PostPkiRootReplace(ctx).PkiRootReplaceRequest(pkiRootReplaceRequest).Execute()
+> UpdatePkiRootReplace(ctx, mountPath).PkiRootReplaceRequest(pkiRootReplaceRequest).Execute()
 
 
 
@@ -16638,9 +10301,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiRootReplaceRequest := NewPkiRootReplaceRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRootReplace(context.Background(), pkiRootReplaceRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiRootReplace(context.Background(), mountPath, pkiRootReplaceRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16652,12 +10316,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiRootReplaceRequest** | [**PkiRootReplaceRequest**](PkiRootReplaceRequest.md) |  | 
 
  (empty response body)
@@ -16666,9 +10335,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiRootRotateExported
+## UpdatePkiRootRotateExported
 
-> PostPkiRootRotateExported(ctx, exported).PkiRootRotateRequest(pkiRootRotateRequest).Execute()
+> UpdatePkiRootRotateExported(ctx, exported, mountPath).PkiRootRotateRequest(pkiRootRotateRequest).Execute()
 
 
 
@@ -16694,9 +10363,10 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiRootRotateRequest := NewPkiRootRotateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRootRotateExported(context.Background(), exported, pkiRootRotateRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiRootRotateExported(context.Background(), exported, mountPath, pkiRootRotateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16712,12 +10382,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiRootRotateRequest** | [**PkiRootRotateRequest**](PkiRootRotateRequest.md) |  | 
 
@@ -16727,9 +10399,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiRootSignIntermediate
+## UpdatePkiRootSignIntermediate
 
-> PostPkiRootSignIntermediate(ctx).PkiRootSignIntermediateRequest(pkiRootSignIntermediateRequest).Execute()
+> UpdatePkiRootSignIntermediate(ctx, mountPath).PkiRootSignIntermediateRequest(pkiRootSignIntermediateRequest).Execute()
 
 
 
@@ -16754,9 +10426,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiRootSignIntermediateRequest := NewPkiRootSignIntermediateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRootSignIntermediate(context.Background(), pkiRootSignIntermediateRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiRootSignIntermediate(context.Background(), mountPath, pkiRootSignIntermediateRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16768,12 +10441,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiRootSignIntermediateRequest** | [**PkiRootSignIntermediateRequest**](PkiRootSignIntermediateRequest.md) |  | 
 
  (empty response body)
@@ -16782,9 +10460,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiRootSignSelfIssued
+## UpdatePkiRootSignSelfIssued
 
-> PostPkiRootSignSelfIssued(ctx).PkiRootSignSelfIssuedRequest(pkiRootSignSelfIssuedRequest).Execute()
+> UpdatePkiRootSignSelfIssued(ctx, mountPath).PkiRootSignSelfIssuedRequest(pkiRootSignSelfIssuedRequest).Execute()
 
 
 
@@ -16809,9 +10487,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiRootSignSelfIssuedRequest := NewPkiRootSignSelfIssuedRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiRootSignSelfIssued(context.Background(), pkiRootSignSelfIssuedRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiRootSignSelfIssued(context.Background(), mountPath, pkiRootSignSelfIssuedRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16823,12 +10502,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiRootSignSelfIssuedRequest** | [**PkiRootSignSelfIssuedRequest**](PkiRootSignSelfIssuedRequest.md) |  | 
 
  (empty response body)
@@ -16837,9 +10521,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiSignRole
+## UpdatePkiSignRole
 
-> PostPkiSignRole(ctx, role).PkiSignRequest(pkiSignRequest).Execute()
+> UpdatePkiSignRole(ctx, mountPath, role).PkiSignRequest(pkiSignRequest).Execute()
 
 
 
@@ -16865,9 +10549,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiSignRequest := NewPkiSignRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiSignRole(context.Background(), role, pkiSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiSignRole(context.Background(), mountPath, role, pkiSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16882,6 +10567,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **role** | **string** | The desired role with configuration for this request | 
 
 ### Other Parameters
@@ -16889,6 +10575,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiSignRequest** | [**PkiSignRequest**](PkiSignRequest.md) |  | 
 
@@ -16898,9 +10585,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiSignVerbatim
+## UpdatePkiSignVerbatim
 
-> PostPkiSignVerbatim(ctx).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
+> UpdatePkiSignVerbatim(ctx, mountPath).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
 
 
 
@@ -16925,9 +10612,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiSignVerbatimRequest := NewPkiSignVerbatimRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiSignVerbatim(context.Background(), pkiSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiSignVerbatim(context.Background(), mountPath, pkiSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16939,12 +10627,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiSignVerbatimRequest** | [**PkiSignVerbatimRequest**](PkiSignVerbatimRequest.md) |  | 
 
  (empty response body)
@@ -16953,9 +10646,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiSignVerbatimRole
+## UpdatePkiSignVerbatimRole
 
-> PostPkiSignVerbatimRole(ctx, role).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
+> UpdatePkiSignVerbatimRole(ctx, mountPath, role).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
 
 
 
@@ -16981,9 +10674,10 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiSignVerbatimRequest := NewPkiSignVerbatimRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiSignVerbatimRole(context.Background(), role, pkiSignVerbatimRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiSignVerbatimRole(context.Background(), mountPath, role, pkiSignVerbatimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16998,6 +10692,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 **role** | **string** | The desired role with configuration for this request | 
 
 ### Other Parameters
@@ -17005,6 +10700,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **pkiSignVerbatimRequest** | [**PkiSignVerbatimRequest**](PkiSignVerbatimRequest.md) |  | 
 
@@ -17014,9 +10710,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiTidy
+## UpdatePkiTidy
 
-> PostPkiTidy(ctx).PkiTidyRequest(pkiTidyRequest).Execute()
+> UpdatePkiTidy(ctx, mountPath).PkiTidyRequest(pkiTidyRequest).Execute()
 
 
 
@@ -17041,9 +10737,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
 	pkiTidyRequest := NewPkiTidyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostPkiTidy(context.Background(), pkiTidyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiTidy(context.Background(), mountPath, pkiTidyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17055,12 +10752,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **pkiTidyRequest** | [**PkiTidyRequest**](PkiTidyRequest.md) |  | 
 
  (empty response body)
@@ -17069,9 +10771,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostPkiTidyCancel
+## UpdatePkiTidyCancel
 
-> PostPkiTidyCancel(ctx).Execute()
+> UpdatePkiTidyCancel(ctx, mountPath).Execute()
 
 
 
@@ -17096,8 +10798,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "pki")
 
-	resp, err := client.WithToken("my-token").Secrets.PostPkiTidyCancel(context.Background())
+	resp, err := client.WithToken("my-token").Secrets.UpdatePkiTidyCancel(context.Background(), mountPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17108,10 +10811,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not require any parameters.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;pki&quot;]
 
 ### Other Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
  (empty response body)
@@ -17120,9 +10830,9 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
-## PostRabbitmqConfigConnection
+## UpdateRabbitmqConfigConnection
 
-> PostRabbitmqConfigConnection(ctx).RabbitmqConfigConnectionRequest(rabbitmqConfigConnectionRequest).Execute()
+> UpdateRabbitmqConfigConnection(ctx, mountPath).RabbitmqConfigConnectionRequest(rabbitmqConfigConnectionRequest).Execute()
 
 Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 
@@ -17147,120 +10857,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "rabbitmq")
 
 	rabbitmqConfigConnectionRequest := NewRabbitmqConfigConnectionRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostRabbitmqConfigConnection(context.Background(), rabbitmqConfigConnectionRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rabbitmqConfigConnectionRequest** | [**RabbitmqConfigConnectionRequest**](RabbitmqConfigConnectionRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostRabbitmqConfigLease
-
-> PostRabbitmqConfigLease(ctx).RabbitmqConfigLeaseRequest(rabbitmqConfigLeaseRequest).Execute()
-
-Configure the lease parameters for generated credentials
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	rabbitmqConfigLeaseRequest := NewRabbitmqConfigLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostRabbitmqConfigLease(context.Background(), rabbitmqConfigLeaseRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rabbitmqConfigLeaseRequest** | [**RabbitmqConfigLeaseRequest**](RabbitmqConfigLeaseRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostRabbitmqRolesName
-
-> PostRabbitmqRolesName(ctx, name).RabbitmqRolesRequest(rabbitmqRolesRequest).Execute()
-
-Manage the roles that can be created with this backend.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role.
-
-	rabbitmqRolesRequest := NewRabbitmqRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostRabbitmqRolesName(context.Background(), name, rabbitmqRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateRabbitmqConfigConnection(context.Background(), mountPath, rabbitmqConfigConnectionRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17275,7 +10875,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role. | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;rabbitmq&quot;]
 
 ### Other Parameters
 
@@ -17283,7 +10883,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **rabbitmqRolesRequest** | [**RabbitmqRolesRequest**](RabbitmqRolesRequest.md) |  | 
+ **rabbitmqConfigConnectionRequest** | [**RabbitmqConfigConnectionRequest**](RabbitmqConfigConnectionRequest.md) |  | 
 
  (empty response body)
 
@@ -17291,64 +10891,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSecretConfig
+## UpdateSecretDataPath
 
-> PostSecretConfig(ctx).KvConfigRequest(kvConfigRequest).Execute()
-
-Configure backend level settings that are applied to every key in the key-value store.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	kvConfigRequest := NewKvConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSecretConfig(context.Background(), kvConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **kvConfigRequest** | [**KvConfigRequest**](KvConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostSecretDataPath
-
-> PostSecretDataPath(ctx, path).KvDataRequest(kvDataRequest).Execute()
+> UpdateSecretDataPath(ctx, mountPath, path).KvDataRequest(kvDataRequest).Execute()
 
 Write, Patch, Read, and Delete data in the Key-Value Store.
 
@@ -17374,9 +10919,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
 	kvDataRequest := NewKvDataRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSecretDataPath(context.Background(), path, kvDataRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSecretDataPath(context.Background(), mountPath, path, kvDataRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17391,6 +10937,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -17398,6 +10945,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **kvDataRequest** | [**KvDataRequest**](KvDataRequest.md) |  | 
 
@@ -17407,9 +10955,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSecretDeletePath
+## UpdateSecretDeletePath
 
-> PostSecretDeletePath(ctx, path).KvDeleteRequest(kvDeleteRequest).Execute()
+> UpdateSecretDeletePath(ctx, mountPath, path).KvDeleteRequest(kvDeleteRequest).Execute()
 
 Marks one or more versions as deleted in the KV store.
 
@@ -17435,9 +10983,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
 	kvDeleteRequest := NewKvDeleteRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSecretDeletePath(context.Background(), path, kvDeleteRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSecretDeletePath(context.Background(), mountPath, path, kvDeleteRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17452,6 +11001,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -17459,6 +11009,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **kvDeleteRequest** | [**KvDeleteRequest**](KvDeleteRequest.md) |  | 
 
@@ -17468,9 +11019,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSecretDestroyPath
+## UpdateSecretDestroyPath
 
-> PostSecretDestroyPath(ctx, path).KvDestroyRequest(kvDestroyRequest).Execute()
+> UpdateSecretDestroyPath(ctx, mountPath, path).KvDestroyRequest(kvDestroyRequest).Execute()
 
 Permanently removes one or more versions in the KV store
 
@@ -17496,9 +11047,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
 	kvDestroyRequest := NewKvDestroyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSecretDestroyPath(context.Background(), path, kvDestroyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSecretDestroyPath(context.Background(), mountPath, path, kvDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17513,6 +11065,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -17520,6 +11073,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **kvDestroyRequest** | [**KvDestroyRequest**](KvDestroyRequest.md) |  | 
 
@@ -17529,9 +11083,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSecretMetadataPath
+## UpdateSecretMetadataPath
 
-> PostSecretMetadataPath(ctx, path).KvMetadataRequest(kvMetadataRequest).Execute()
+> UpdateSecretMetadataPath(ctx, mountPath, path).KvMetadataRequest(kvMetadataRequest).Execute()
 
 Configures settings for the KV store
 
@@ -17557,9 +11111,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
 	kvMetadataRequest := NewKvMetadataRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSecretMetadataPath(context.Background(), path, kvMetadataRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSecretMetadataPath(context.Background(), mountPath, path, kvMetadataRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17574,6 +11129,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -17581,6 +11137,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **kvMetadataRequest** | [**KvMetadataRequest**](KvMetadataRequest.md) |  | 
 
@@ -17590,9 +11147,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSecretUndeletePath
+## UpdateSecretUndeletePath
 
-> PostSecretUndeletePath(ctx, path).KvUndeleteRequest(kvUndeleteRequest).Execute()
+> UpdateSecretUndeletePath(ctx, mountPath, path).KvUndeleteRequest(kvUndeleteRequest).Execute()
 
 Undeletes one or more versions from the KV store.
 
@@ -17618,9 +11175,10 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "secret")
 
 	kvUndeleteRequest := NewKvUndeleteRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSecretUndeletePath(context.Background(), path, kvUndeleteRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSecretUndeletePath(context.Background(), mountPath, path, kvUndeleteRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17635,6 +11193,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;secret&quot;]
 **path** | **string** | Location of the secret. | 
 
 ### Other Parameters
@@ -17642,6 +11201,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **kvUndeleteRequest** | [**KvUndeleteRequest**](KvUndeleteRequest.md) |  | 
 
@@ -17651,64 +11211,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSshConfigCa
+## UpdateSshConfigZeroaddress
 
-> PostSshConfigCa(ctx).SshConfigCaRequest(sshConfigCaRequest).Execute()
-
-Set the SSH private key used for signing certificates.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	sshConfigCaRequest := NewSshConfigCaRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshConfigCa(context.Background(), sshConfigCaRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sshConfigCaRequest** | [**SshConfigCaRequest**](SshConfigCaRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostSshConfigZeroaddress
-
-> PostSshConfigZeroaddress(ctx).SshConfigZeroaddressRequest(sshConfigZeroaddressRequest).Execute()
+> UpdateSshConfigZeroaddress(ctx, mountPath).SshConfigZeroaddressRequest(sshConfigZeroaddressRequest).Execute()
 
 Assign zero address as default CIDR block for select roles.
 
@@ -17733,9 +11238,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
 	sshConfigZeroaddressRequest := NewSshConfigZeroaddressRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshConfigZeroaddress(context.Background(), sshConfigZeroaddressRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSshConfigZeroaddress(context.Background(), mountPath, sshConfigZeroaddressRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17747,12 +11253,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **sshConfigZeroaddressRequest** | [**SshConfigZeroaddressRequest**](SshConfigZeroaddressRequest.md) |  | 
 
  (empty response body)
@@ -17761,131 +11272,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSshCredsRole
+## UpdateSshKeysKeyName
 
-> PostSshCredsRole(ctx, role).SshCredsRequest(sshCredsRequest).Execute()
-
-Creates a credential for establishing SSH connection with the remote host.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | [Required] Name of the role
-
-	sshCredsRequest := NewSshCredsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshCredsRole(context.Background(), role, sshCredsRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | [Required] Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **sshCredsRequest** | [**SshCredsRequest**](SshCredsRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostSshIssueRole
-
-> PostSshIssueRole(ctx, role).SshIssueRequest(sshIssueRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | The desired role with configuration for this request.
-
-	sshIssueRequest := NewSshIssueRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshIssueRole(context.Background(), role, sshIssueRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | The desired role with configuration for this request. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **sshIssueRequest** | [**SshIssueRequest**](SshIssueRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostSshKeysKeyName
-
-> PostSshKeysKeyName(ctx, keyName).SshKeysRequest(sshKeysRequest).Execute()
+> UpdateSshKeysKeyName(ctx, keyName, mountPath).SshKeysRequest(sshKeysRequest).Execute()
 
 Register a shared private key with Vault.
 
@@ -17911,9 +11300,10 @@ func main() {
 	}
 
 	keyName := "keyName_example" // string | [Required] Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
 	sshKeysRequest := NewSshKeysRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshKeysKeyName(context.Background(), keyName, sshKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSshKeysKeyName(context.Background(), keyName, mountPath, sshKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17929,12 +11319,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **keyName** | **string** | [Required] Name of the key | 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **sshKeysRequest** | [**SshKeysRequest**](SshKeysRequest.md) |  | 
 
@@ -17944,9 +11336,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSshLookup
+## UpdateSshLookup
 
-> PostSshLookup(ctx).SshLookupRequest(sshLookupRequest).Execute()
+> UpdateSshLookup(ctx, mountPath).SshLookupRequest(sshLookupRequest).Execute()
 
 List all the roles associated with the given IP address.
 
@@ -17971,9 +11363,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
 	sshLookupRequest := NewSshLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshLookup(context.Background(), sshLookupRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSshLookup(context.Background(), mountPath, sshLookupRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17985,12 +11378,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **sshLookupRequest** | [**SshLookupRequest**](SshLookupRequest.md) |  | 
 
  (empty response body)
@@ -17999,9 +11397,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSshRolesRole
+## UpdateSshRolesRole
 
-> PostSshRolesRole(ctx, role).SshRolesRequest(sshRolesRequest).Execute()
+> UpdateSshRolesRole(ctx, mountPath, role).SshRolesRequest(sshRolesRequest).Execute()
 
 Manage the 'roles' that can be created with this backend.
 
@@ -18027,9 +11425,10 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
 	sshRolesRequest := NewSshRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshRolesRole(context.Background(), role, sshRolesRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSshRolesRole(context.Background(), mountPath, role, sshRolesRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18044,6 +11443,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 **role** | **string** | [Required for all types] Name of the role being created. | 
 
 ### Other Parameters
@@ -18051,6 +11451,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **sshRolesRequest** | [**SshRolesRequest**](SshRolesRequest.md) |  | 
 
@@ -18060,70 +11461,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostSshSignRole
+## UpdateSshVerify
 
-> PostSshSignRole(ctx, role).SshSignRequest(sshSignRequest).Execute()
-
-Request signing an SSH key using a certain role with the provided details.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	role := "role_example" // string | The desired role with configuration for this request.
-
-	sshSignRequest := NewSshSignRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshSignRole(context.Background(), role, sshSignRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**role** | **string** | The desired role with configuration for this request. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **sshSignRequest** | [**SshSignRequest**](SshSignRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostSshVerify
-
-> PostSshVerify(ctx).SshVerifyRequest(sshVerifyRequest).Execute()
+> UpdateSshVerify(ctx, mountPath).SshVerifyRequest(sshVerifyRequest).Execute()
 
 Validate the OTP provided by Vault SSH Agent.
 
@@ -18148,9 +11488,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ssh")
 
 	sshVerifyRequest := NewSshVerifyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostSshVerify(context.Background(), sshVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateSshVerify(context.Background(), mountPath, sshVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18162,12 +11503,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ssh&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **sshVerifyRequest** | [**SshVerifyRequest**](SshVerifyRequest.md) |  | 
 
  (empty response body)
@@ -18176,243 +11522,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTerraformConfig
+## UpdateTotpCodeName
 
-> PostTerraformConfig(ctx).TerraformConfigRequest(terraformConfigRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	terraformConfigRequest := NewTerraformConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTerraformConfig(context.Background(), terraformConfigRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **terraformConfigRequest** | [**TerraformConfigRequest**](TerraformConfigRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostTerraformCredsName
-
-> PostTerraformCredsName(ctx, name).Execute()
-
-Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.WithToken("my-token").Secrets.PostTerraformCredsName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostTerraformRoleName
-
-> PostTerraformRoleName(ctx, name).TerraformRoleRequest(terraformRoleRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	terraformRoleRequest := NewTerraformRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTerraformRoleName(context.Background(), name, terraformRoleRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **terraformRoleRequest** | [**TerraformRoleRequest**](TerraformRoleRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostTerraformRotateRoleName
-
-> PostTerraformRotateRoleName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the team or organization role
-
-	resp, err := client.WithToken("my-token").Secrets.PostTerraformRotateRoleName(context.Background(), name)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the team or organization role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostTotpCodeName
-
-> PostTotpCodeName(ctx, name).TotpCodeRequest(totpCodeRequest).Execute()
+> UpdateTotpCodeName(ctx, mountPath, name).TotpCodeRequest(totpCodeRequest).Execute()
 
 Request time-based one-time use password or validate a password for a certain key .
 
@@ -18438,9 +11550,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "totp")
 
 	totpCodeRequest := NewTotpCodeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTotpCodeName(context.Background(), name, totpCodeRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTotpCodeName(context.Background(), mountPath, name, totpCodeRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18455,6 +11568,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;totp&quot;]
 **name** | **string** | Name of the key. | 
 
 ### Other Parameters
@@ -18462,6 +11576,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **totpCodeRequest** | [**TotpCodeRequest**](TotpCodeRequest.md) |  | 
 
@@ -18471,9 +11586,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTotpKeysName
+## UpdateTotpKeysName
 
-> PostTotpKeysName(ctx, name).TotpKeysRequest(totpKeysRequest).Execute()
+> UpdateTotpKeysName(ctx, mountPath, name).TotpKeysRequest(totpKeysRequest).Execute()
 
 Manage the keys that can be created with this backend.
 
@@ -18499,9 +11614,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "totp")
 
 	totpKeysRequest := NewTotpKeysRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTotpKeysName(context.Background(), name, totpKeysRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTotpKeysName(context.Background(), mountPath, name, totpKeysRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18516,6 +11632,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;totp&quot;]
 **name** | **string** | Name of the key. | 
 
 ### Other Parameters
@@ -18523,6 +11640,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **totpKeysRequest** | [**TotpKeysRequest**](TotpKeysRequest.md) |  | 
 
@@ -18532,9 +11650,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitCacheConfig
+## UpdateTransitCacheConfig
 
-> PostTransitCacheConfig(ctx).TransitCacheConfigRequest(transitCacheConfigRequest).Execute()
+> UpdateTransitCacheConfig(ctx, mountPath).TransitCacheConfigRequest(transitCacheConfigRequest).Execute()
 
 Configures a new cache of the specified size
 
@@ -18559,9 +11677,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitCacheConfigRequest := NewTransitCacheConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitCacheConfig(context.Background(), transitCacheConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitCacheConfig(context.Background(), mountPath, transitCacheConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18573,12 +11692,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **transitCacheConfigRequest** | [**TransitCacheConfigRequest**](TransitCacheConfigRequest.md) |  | 
 
  (empty response body)
@@ -18587,9 +11711,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitDatakeyPlaintextName
+## UpdateTransitDatakeyPlaintextName
 
-> PostTransitDatakeyPlaintextName(ctx, name, plaintext).TransitDatakeyRequest(transitDatakeyRequest).Execute()
+> UpdateTransitDatakeyPlaintextName(ctx, mountPath, name, plaintext).TransitDatakeyRequest(transitDatakeyRequest).Execute()
 
 Generate a data key
 
@@ -18616,9 +11740,10 @@ func main() {
 
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitDatakeyRequest := NewTransitDatakeyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitDatakeyPlaintextName(context.Background(), name, plaintext, transitDatakeyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitDatakeyPlaintextName(context.Background(), mountPath, name, plaintext, transitDatakeyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18633,6 +11758,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The backend key used for encrypting the data key | 
 **plaintext** | **string** | \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only. | 
 
@@ -18643,6 +11769,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  **transitDatakeyRequest** | [**TransitDatakeyRequest**](TransitDatakeyRequest.md) |  | 
 
  (empty response body)
@@ -18651,9 +11778,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitDecryptName
+## UpdateTransitDecryptName
 
-> PostTransitDecryptName(ctx, name).TransitDecryptRequest(transitDecryptRequest).Execute()
+> UpdateTransitDecryptName(ctx, mountPath, name).TransitDecryptRequest(transitDecryptRequest).Execute()
 
 Decrypt a ciphertext value using a named key
 
@@ -18679,9 +11806,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitDecryptRequest := NewTransitDecryptRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitDecryptName(context.Background(), name, transitDecryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitDecryptName(context.Background(), mountPath, name, transitDecryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18696,6 +11824,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
@@ -18703,6 +11832,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitDecryptRequest** | [**TransitDecryptRequest**](TransitDecryptRequest.md) |  | 
 
@@ -18712,9 +11842,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitEncryptName
+## UpdateTransitEncryptName
 
-> PostTransitEncryptName(ctx, name).TransitEncryptRequest(transitEncryptRequest).Execute()
+> UpdateTransitEncryptName(ctx, mountPath, name).TransitEncryptRequest(transitEncryptRequest).Execute()
 
 Encrypt a plaintext value or a batch of plaintext blocks using a named key
 
@@ -18740,9 +11870,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitEncryptRequest := NewTransitEncryptRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitEncryptName(context.Background(), name, transitEncryptRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitEncryptName(context.Background(), mountPath, name, transitEncryptRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18757,6 +11888,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
@@ -18764,6 +11896,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitEncryptRequest** | [**TransitEncryptRequest**](TransitEncryptRequest.md) |  | 
 
@@ -18773,9 +11906,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitHash
+## UpdateTransitHash
 
-> PostTransitHash(ctx).TransitHashRequest(transitHashRequest).Execute()
+> UpdateTransitHash(ctx, mountPath).TransitHashRequest(transitHashRequest).Execute()
 
 Generate a hash sum for input data
 
@@ -18800,9 +11933,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitHashRequest := NewTransitHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitHash(context.Background(), transitHashRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitHash(context.Background(), mountPath, transitHashRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18814,12 +11948,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **transitHashRequest** | [**TransitHashRequest**](TransitHashRequest.md) |  | 
 
  (empty response body)
@@ -18828,9 +11967,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitHashUrlalgorithm
+## UpdateTransitHashUrlalgorithm
 
-> PostTransitHashUrlalgorithm(ctx, urlalgorithm).TransitHashRequest(transitHashRequest).Execute()
+> UpdateTransitHashUrlalgorithm(ctx, mountPath, urlalgorithm).TransitHashRequest(transitHashRequest).Execute()
 
 Generate a hash sum for input data
 
@@ -18856,9 +11995,10 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitHashRequest := NewTransitHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitHashUrlalgorithm(context.Background(), urlalgorithm, transitHashRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitHashUrlalgorithm(context.Background(), mountPath, urlalgorithm, transitHashRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18873,6 +12013,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **urlalgorithm** | **string** | Algorithm to use (POST URL parameter) | 
 
 ### Other Parameters
@@ -18880,6 +12021,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitHashRequest** | [**TransitHashRequest**](TransitHashRequest.md) |  | 
 
@@ -18889,9 +12031,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitHmacName
+## UpdateTransitHmacName
 
-> PostTransitHmacName(ctx, name).TransitHmacRequest(transitHmacRequest).Execute()
+> UpdateTransitHmacName(ctx, mountPath, name).TransitHmacRequest(transitHmacRequest).Execute()
 
 Generate an HMAC for input data using the named key
 
@@ -18917,9 +12059,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use for the HMAC function
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitHmacRequest := NewTransitHmacRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitHmacName(context.Background(), name, transitHmacRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitHmacName(context.Background(), mountPath, name, transitHmacRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18934,6 +12077,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The key to use for the HMAC function | 
 
 ### Other Parameters
@@ -18941,6 +12085,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitHmacRequest** | [**TransitHmacRequest**](TransitHmacRequest.md) |  | 
 
@@ -18950,9 +12095,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitHmacNameUrlalgorithm
+## UpdateTransitHmacNameUrlalgorithm
 
-> PostTransitHmacNameUrlalgorithm(ctx, name, urlalgorithm).TransitHmacRequest(transitHmacRequest).Execute()
+> UpdateTransitHmacNameUrlalgorithm(ctx, mountPath, name, urlalgorithm).TransitHmacRequest(transitHmacRequest).Execute()
 
 Generate an HMAC for input data using the named key
 
@@ -18979,9 +12124,10 @@ func main() {
 
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitHmacRequest := NewTransitHmacRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitHmacNameUrlalgorithm(context.Background(), name, urlalgorithm, transitHmacRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitHmacNameUrlalgorithm(context.Background(), mountPath, name, urlalgorithm, transitHmacRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18996,6 +12142,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The key to use for the HMAC function | 
 **urlalgorithm** | **string** | Algorithm to use (POST URL parameter) | 
 
@@ -19006,6 +12153,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  **transitHmacRequest** | [**TransitHmacRequest**](TransitHmacRequest.md) |  | 
 
  (empty response body)
@@ -19014,70 +12162,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitKeysName
+## UpdateTransitKeysNameConfig
 
-> PostTransitKeysName(ctx, name).TransitKeysRequest(transitKeysRequest).Execute()
-
-Managed named encryption keys
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the key
-
-	transitKeysRequest := NewTransitKeysRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysName(context.Background(), name, transitKeysRequest)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the key | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **transitKeysRequest** | [**TransitKeysRequest**](TransitKeysRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostTransitKeysNameConfig
-
-> PostTransitKeysNameConfig(ctx, name).TransitKeysConfigRequest(transitKeysConfigRequest).Execute()
+> UpdateTransitKeysNameConfig(ctx, mountPath, name).TransitKeysConfigRequest(transitKeysConfigRequest).Execute()
 
 Configure a named encryption key
 
@@ -19103,9 +12190,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitKeysConfigRequest := NewTransitKeysConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameConfig(context.Background(), name, transitKeysConfigRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitKeysNameConfig(context.Background(), mountPath, name, transitKeysConfigRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19120,6 +12208,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
@@ -19127,6 +12216,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitKeysConfigRequest** | [**TransitKeysConfigRequest**](TransitKeysConfigRequest.md) |  | 
 
@@ -19136,9 +12226,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitKeysNameImport
+## UpdateTransitKeysNameImport
 
-> PostTransitKeysNameImport(ctx, name).TransitKeysImportRequest(transitKeysImportRequest).Execute()
+> UpdateTransitKeysNameImport(ctx, mountPath, name).TransitKeysImportRequest(transitKeysImportRequest).Execute()
 
 Imports an externally-generated key into a new transit key
 
@@ -19164,9 +12254,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitKeysImportRequest := NewTransitKeysImportRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameImport(context.Background(), name, transitKeysImportRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitKeysNameImport(context.Background(), mountPath, name, transitKeysImportRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19181,6 +12272,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The name of the key | 
 
 ### Other Parameters
@@ -19188,6 +12280,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitKeysImportRequest** | [**TransitKeysImportRequest**](TransitKeysImportRequest.md) |  | 
 
@@ -19197,9 +12290,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitKeysNameImportVersion
+## UpdateTransitKeysNameImportVersion
 
-> PostTransitKeysNameImportVersion(ctx, name).TransitKeysImportVersionRequest(transitKeysImportVersionRequest).Execute()
+> UpdateTransitKeysNameImportVersion(ctx, mountPath, name).TransitKeysImportVersionRequest(transitKeysImportVersionRequest).Execute()
 
 Imports an externally-generated key into an existing imported key
 
@@ -19225,9 +12318,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitKeysImportVersionRequest := NewTransitKeysImportVersionRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameImportVersion(context.Background(), name, transitKeysImportVersionRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitKeysNameImportVersion(context.Background(), mountPath, name, transitKeysImportVersionRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19242,6 +12336,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The name of the key | 
 
 ### Other Parameters
@@ -19249,6 +12344,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitKeysImportVersionRequest** | [**TransitKeysImportVersionRequest**](TransitKeysImportVersionRequest.md) |  | 
 
@@ -19258,9 +12354,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitKeysNameRotate
+## UpdateTransitKeysNameRotate
 
-> PostTransitKeysNameRotate(ctx, name).Execute()
+> UpdateTransitKeysNameRotate(ctx, mountPath, name).Execute()
 
 Rotate named encryption key
 
@@ -19286,8 +12382,9 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
-	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameRotate(context.Background(), name)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitKeysNameRotate(context.Background(), mountPath, name)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19302,6 +12399,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
@@ -19311,15 +12409,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  (empty response body)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
 
 
-## PostTransitKeysNameTrim
+## UpdateTransitKeysNameTrim
 
-> PostTransitKeysNameTrim(ctx, name).TransitKeysTrimRequest(transitKeysTrimRequest).Execute()
+> UpdateTransitKeysNameTrim(ctx, mountPath, name).TransitKeysTrimRequest(transitKeysTrimRequest).Execute()
 
 Trim key versions of a named key
 
@@ -19345,9 +12444,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitKeysTrimRequest := NewTransitKeysTrimRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitKeysNameTrim(context.Background(), name, transitKeysTrimRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitKeysNameTrim(context.Background(), mountPath, name, transitKeysTrimRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19362,6 +12462,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
@@ -19369,6 +12470,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitKeysTrimRequest** | [**TransitKeysTrimRequest**](TransitKeysTrimRequest.md) |  | 
 
@@ -19378,9 +12480,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitRandom
+## UpdateTransitRandom
 
-> PostTransitRandom(ctx).TransitRandomRequest(transitRandomRequest).Execute()
+> UpdateTransitRandom(ctx, mountPath).TransitRandomRequest(transitRandomRequest).Execute()
 
 Generate random bytes
 
@@ -19405,9 +12507,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitRandom(context.Background(), transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitRandom(context.Background(), mountPath, transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19419,12 +12522,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **transitRandomRequest** | [**TransitRandomRequest**](TransitRandomRequest.md) |  | 
 
  (empty response body)
@@ -19433,9 +12541,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitRandomSource
+## UpdateTransitRandomSource
 
-> PostTransitRandomSource(ctx, source).TransitRandomRequest(transitRandomRequest).Execute()
+> UpdateTransitRandomSource(ctx, mountPath, source).TransitRandomRequest(transitRandomRequest).Execute()
 
 Generate random bytes
 
@@ -19461,9 +12569,10 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitRandomSource(context.Background(), source, transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitRandomSource(context.Background(), mountPath, source, transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19478,6 +12587,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
 
 ### Other Parameters
@@ -19485,6 +12595,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitRandomRequest** | [**TransitRandomRequest**](TransitRandomRequest.md) |  | 
 
@@ -19494,9 +12605,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitRandomSourceUrlbytes
+## UpdateTransitRandomSourceUrlbytes
 
-> PostTransitRandomSourceUrlbytes(ctx, source, urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
+> UpdateTransitRandomSourceUrlbytes(ctx, mountPath, source, urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
 
 Generate random bytes
 
@@ -19523,9 +12634,10 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitRandomSourceUrlbytes(context.Background(), source, urlbytes, transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitRandomSourceUrlbytes(context.Background(), mountPath, source, urlbytes, transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19540,6 +12652,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
 **urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
 
@@ -19550,6 +12663,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  **transitRandomRequest** | [**TransitRandomRequest**](TransitRandomRequest.md) |  | 
 
  (empty response body)
@@ -19558,9 +12672,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitRandomUrlbytes
+## UpdateTransitRandomUrlbytes
 
-> PostTransitRandomUrlbytes(ctx, urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
+> UpdateTransitRandomUrlbytes(ctx, mountPath, urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
 
 Generate random bytes
 
@@ -19586,9 +12700,10 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitRandomRequest := NewTransitRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitRandomUrlbytes(context.Background(), urlbytes, transitRandomRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitRandomUrlbytes(context.Background(), mountPath, urlbytes, transitRandomRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19603,6 +12718,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
 
 ### Other Parameters
@@ -19610,6 +12726,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitRandomRequest** | [**TransitRandomRequest**](TransitRandomRequest.md) |  | 
 
@@ -19619,9 +12736,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitRestore
+## UpdateTransitRestore
 
-> PostTransitRestore(ctx).TransitRestoreRequest(transitRestoreRequest).Execute()
+> UpdateTransitRestore(ctx, mountPath).TransitRestoreRequest(transitRestoreRequest).Execute()
 
 Restore the named key
 
@@ -19646,9 +12763,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitRestoreRequest := NewTransitRestoreRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitRestore(context.Background(), transitRestoreRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitRestore(context.Background(), mountPath, transitRestoreRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19660,12 +12778,17 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **transitRestoreRequest** | [**TransitRestoreRequest**](TransitRestoreRequest.md) |  | 
 
  (empty response body)
@@ -19674,9 +12797,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitRestoreName
+## UpdateTransitRestoreName
 
-> PostTransitRestoreName(ctx, name).TransitRestoreRequest(transitRestoreRequest).Execute()
+> UpdateTransitRestoreName(ctx, mountPath, name).TransitRestoreRequest(transitRestoreRequest).Execute()
 
 Restore the named key
 
@@ -19702,9 +12825,10 @@ func main() {
 	}
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitRestoreRequest := NewTransitRestoreRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitRestoreName(context.Background(), name, transitRestoreRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitRestoreName(context.Background(), mountPath, name, transitRestoreRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19719,6 +12843,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | If set, this will be the name of the restored key. | 
 
 ### Other Parameters
@@ -19726,6 +12851,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitRestoreRequest** | [**TransitRestoreRequest**](TransitRestoreRequest.md) |  | 
 
@@ -19735,9 +12861,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitRewrapName
+## UpdateTransitRewrapName
 
-> PostTransitRewrapName(ctx, name).TransitRewrapRequest(transitRewrapRequest).Execute()
+> UpdateTransitRewrapName(ctx, mountPath, name).TransitRewrapRequest(transitRewrapRequest).Execute()
 
 Rewrap ciphertext
 
@@ -19763,9 +12889,10 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitRewrapRequest := NewTransitRewrapRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitRewrapName(context.Background(), name, transitRewrapRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitRewrapName(context.Background(), mountPath, name, transitRewrapRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19780,6 +12907,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | Name of the key | 
 
 ### Other Parameters
@@ -19787,6 +12915,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitRewrapRequest** | [**TransitRewrapRequest**](TransitRewrapRequest.md) |  | 
 
@@ -19796,9 +12925,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitSignName
+## UpdateTransitSignName
 
-> PostTransitSignName(ctx, name).TransitSignRequest(transitSignRequest).Execute()
+> UpdateTransitSignName(ctx, mountPath, name).TransitSignRequest(transitSignRequest).Execute()
 
 Generate a signature for input data using the named key
 
@@ -19824,9 +12953,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitSignRequest := NewTransitSignRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitSignName(context.Background(), name, transitSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitSignName(context.Background(), mountPath, name, transitSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19841,6 +12971,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The key to use | 
 
 ### Other Parameters
@@ -19848,6 +12979,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitSignRequest** | [**TransitSignRequest**](TransitSignRequest.md) |  | 
 
@@ -19857,9 +12989,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitSignNameUrlalgorithm
+## UpdateTransitSignNameUrlalgorithm
 
-> PostTransitSignNameUrlalgorithm(ctx, name, urlalgorithm).TransitSignRequest(transitSignRequest).Execute()
+> UpdateTransitSignNameUrlalgorithm(ctx, mountPath, name, urlalgorithm).TransitSignRequest(transitSignRequest).Execute()
 
 Generate a signature for input data using the named key
 
@@ -19886,9 +13018,10 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitSignRequest := NewTransitSignRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitSignNameUrlalgorithm(context.Background(), name, urlalgorithm, transitSignRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitSignNameUrlalgorithm(context.Background(), mountPath, name, urlalgorithm, transitSignRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19903,6 +13036,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The key to use | 
 **urlalgorithm** | **string** | Hash algorithm to use (POST URL parameter) | 
 
@@ -19913,6 +13047,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+
  **transitSignRequest** | [**TransitSignRequest**](TransitSignRequest.md) |  | 
 
  (empty response body)
@@ -19921,9 +13056,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitVerifyName
+## UpdateTransitVerifyName
 
-> PostTransitVerifyName(ctx, name).TransitVerifyRequest(transitVerifyRequest).Execute()
+> UpdateTransitVerifyName(ctx, mountPath, name).TransitVerifyRequest(transitVerifyRequest).Execute()
 
 Verify a signature or HMAC for input data created using the named key
 
@@ -19949,9 +13084,10 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitVerifyRequest := NewTransitVerifyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitVerifyName(context.Background(), name, transitVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitVerifyName(context.Background(), mountPath, name, transitVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19966,6 +13102,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The key to use | 
 
 ### Other Parameters
@@ -19973,6 +13110,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
  **transitVerifyRequest** | [**TransitVerifyRequest**](TransitVerifyRequest.md) |  | 
 
@@ -19982,9 +13120,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostTransitVerifyNameUrlalgorithm
+## UpdateTransitVerifyNameUrlalgorithm
 
-> PostTransitVerifyNameUrlalgorithm(ctx, name, urlalgorithm).TransitVerifyRequest(transitVerifyRequest).Execute()
+> UpdateTransitVerifyNameUrlalgorithm(ctx, mountPath, name, urlalgorithm).TransitVerifyRequest(transitVerifyRequest).Execute()
 
 Verify a signature or HMAC for input data created using the named key
 
@@ -20011,9 +13149,10 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
+	mountPath := "mountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "transit")
 
 	transitVerifyRequest := NewTransitVerifyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Secrets.PostTransitVerifyNameUrlalgorithm(context.Background(), name, urlalgorithm, transitVerifyRequest)
+	resp, err := client.WithToken("my-token").Secrets.UpdateTransitVerifyNameUrlalgorithm(context.Background(), mountPath, name, urlalgorithm, transitVerifyRequest)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -20028,6 +13167,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
+**mountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;transit&quot;]
 **name** | **string** | The key to use | 
 **urlalgorithm** | **string** | Hash algorithm to use (POST URL parameter) | 
 
@@ -20036,6 +13176,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
  **transitVerifyRequest** | [**TransitVerifyRequest**](TransitVerifyRequest.md) |  | 

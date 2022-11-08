@@ -3,7 +3,6 @@ package vault
 type ClientOption func(*Configuration) error
 
 func New(opts ...ClientOption) (*Client, error) {
-
 	configuration := DefaultConfiguration()
 	for _, opt := range opts {
 		if err := opt(&configuration); err != nil {

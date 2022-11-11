@@ -155,6 +155,17 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
+func New(opts ...ClientOption) (*Client, error) {
+	configuration := DefaultConfiguration()
+	for _, opt := range opts {
+		if err := opt(&configuration); err != nil {
+			return nil, err
+		}
+	}
+
+	return NewClient(configuration)
+}
+
 // parseAddress parses the given address string with special handling for unix
 // domain sockets
 func parseAddress(address string) (*url.URL, error) {

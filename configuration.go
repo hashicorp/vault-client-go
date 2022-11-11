@@ -457,7 +457,7 @@ func WithBaseAddress(address string) ClientOption {
 	}
 }
 
-func WithHTTPClient(client *http.Client) ClientOption {
+func WithBaseClient(client *http.Client) ClientOption {
 	return func(configuration *Configuration) error {
 		configuration.BaseClient = client
 		return nil
@@ -513,9 +513,9 @@ func WithEnableSRVLookup(enabled bool) ClientOption {
 	}
 }
 
-func WithDisableRedirects(disable bool) ClientOption {
+func WithDisableRedirects(disabled bool) ClientOption {
 	return func(configuration *Configuration) error {
-		configuration.DisableRedirects = disable
+		configuration.DisableRedirects = disabled
 		return nil
 	}
 }

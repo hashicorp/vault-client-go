@@ -122,6 +122,7 @@ type TLSConfiguration struct {
 		FromFile string `env:"VAULT_CLIENT_CERT"`
 
 		// FromBytes is PEM-encoded certificate data.
+		// Default: nil
 		FromBytes []byte
 	}
 
@@ -135,6 +136,7 @@ type TLSConfiguration struct {
 		FromFile string `env:"VAULT_CLIENT_KEY"`
 
 		// FromBytes is PEM-encoded private key data.
+		// Default: nil
 		FromBytes []byte
 	}
 
@@ -389,7 +391,7 @@ func (from *TLSConfiguration) applyTo(to *tls.Config) error {
 			}
 			return b, nil
 		}
-		return fromBytes
+		return fromBytes, nil
 	}
 
 	var (
@@ -404,25 +406,17 @@ func (from *TLSConfiguration) applyTo(to *tls.Config) error {
 	if hasClientCertificate && hasClientCertificateKey {
 		clientCertificateBytes, err := read(from.ClientCertificate.FromFile, from.ClientCertificate.FromBytes)
 		if err != nil {
-			return fmt.Errorf("")
+			return fmt.Errorf("could not read certificate file: %w", err)
 		}
 
-		clientCertificate := tls.X509KeyPair()
-	}
-
-	switch {
-	case true:
-		clientCertificate, err := tls.LoadX509KeyPair(
-			from.ClientCertificateFile,
-			from.ClientCertificateKeyFile,
-		)
+		clientCertificateKeyBytes, err := read(from.ClientCertificateKey.FromFile, from.ClientCertificateKey.FromBytes)
 		if err != nil {
-			return fmt.Errorf(
-				"could not load client certificate from certificate file %q and key file %q: %w",
-				from.ClientCertificateFile,
-				from.ClientCertificateKeyFile,
-				err,
-			)
+			return fmt.Errorf("could not read certificate key file: %w", err)
+		}
+
+		clientCertificate, err := tls.X509KeyPair(clientCertificateBytes, clientCertificateKeyBytes)
+		if err != nil {
+			return fmt.Errorf("error parsing certificate pair: %w", err)
 		}
 
 		// Set this function to ignore the server's preferential list of CAs.
@@ -431,12 +425,6 @@ func (from *TLSConfiguration) applyTo(to *tls.Config) error {
 		to.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
 			return &clientCertificate, nil
 		}
-
-	case from.ClientCertificateFile != "":
-		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", from.ClientCertificateFile)
-
-	case from.ClientCertificateKeyFile != "":
-		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", from.ClientCertificateKeyFile)
 	}
 
 	if from.InsecureSkipVerify {

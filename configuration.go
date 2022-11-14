@@ -95,10 +95,10 @@ type Configuration struct {
 // TLSConfiguration is a collection of TLS settings used to configure the internal
 // http.Client.
 type TLSConfiguration struct {
-	// ServerCACertificate is a PEM-encoded CA certificate, which  the client
+	// ServerCertificate is a PEM-encoded CA certificate, which  the client
 	// will use to verify the Vault server TLS certificate. It can be sourced
 	// from a file, from a directory or from raw bytes.
-	ServerCACertificate struct {
+	ServerCertificate struct {
 		// FromFile is the path to a PEM-encoded CA certificate file or bundle.
 		// Default: "", takes precedence over 'FromBytes' and 'FromDirectory'.
 		FromFile string `env:"VAULT_CACERT"`
@@ -369,11 +369,11 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 // applyTo applies the user-defined TLS configuration to the given client's
 // *tls.Config pointer; it is used to configure the internal http.Client
 func (from *TLSConfiguration) applyTo(to *tls.Config) error {
-	if len(from.ServerCACertificate.FromBytes) != 0 || from.ServerCACertificate.FromFile != "" || from.ServerCACertificate.FromDirectory != "" {
+	if len(from.ServerCertificate.FromBytes) != 0 || from.ServerCertificate.FromFile != "" || from.ServerCertificate.FromDirectory != "" {
 		rootCertificateConfig := rootcerts.Config{
-			CAFile:        from.ServerCACertificate.FromFile,
-			CACertificate: from.ServerCACertificate.FromBytes,
-			CAPath:        from.ServerCACertificate.FromDirectory,
+			CAFile:        from.ServerCertificate.FromFile,
+			CACertificate: from.ServerCertificate.FromBytes,
+			CAPath:        from.ServerCertificate.FromDirectory,
 		}
 		if err := rootcerts.ConfigureTLS(
 			to,

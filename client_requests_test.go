@@ -33,6 +33,9 @@ func TestV1Path(t *testing.T) {
 }
 
 func FuzzV1Path(f *testing.F) {
+	f.Add("/sfd/sdf")
+	f.Add("")
+	f.Add("dfgdfg")
 	f.Fuzz(func(t *testing.T, path string) {
 		formatted := v1Path(path)
 

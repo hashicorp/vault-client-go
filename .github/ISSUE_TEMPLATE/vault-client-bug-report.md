@@ -17,7 +17,7 @@ What is the current behavior?
 
 # Failure Information
 
-Please include the version of Vault and the version of Vault Go Client you're using.
+Please include the version of Vault binary and the version of `vault-client-go` you're using.
 
 ## Steps to Reproduce
 

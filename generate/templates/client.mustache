@@ -70,11 +70,21 @@ type requestHeaders struct {
 	customHeaders             http.Header
 }
 
-// NewClient returns a new Vault client with a copy of the given configuration
-func NewClient(configuration Configuration) (*Client, error) {
-	// Ensure that the configuration fields are initialized
-	configuration.SetDefaultsForUninitialized()
+// New returns a new client decorated with the given configuration options
+func New(opts ...ClientOption) (*Client, error) {
+	configuration := DefaultConfiguration()
 
+	for _, opt := range opts {
+		if err := opt(&configuration); err != nil {
+			return nil, err
+		}
+	}
+
+	return newClient(configuration)
+}
+
+// newClient returns a new Vault client with a copy of the given configuration
+func newClient(configuration Configuration) (*Client, error) {
 	c := Client{
 		configuration: configuration,
 

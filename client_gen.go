@@ -76,11 +76,21 @@ type requestHeaders struct {
 	customHeaders             http.Header
 }
 
-// NewClient returns a new Vault client with a copy of the given configuration
-func NewClient(configuration Configuration) (*Client, error) {
-	// Ensure that the configuration fields are initialized
-	configuration.SetDefaultsForUninitialized()
+// New returns a new client decorated with the given configuration options
+func New(options ...ClientOption) (*Client, error) {
+	configuration := DefaultConfiguration()
 
+	for _, option := range options {
+		if err := option(&configuration); err != nil {
+			return nil, err
+		}
+	}
+
+	return newClient(configuration)
+}
+
+// newClient returns a new Vault client with a copy of the given configuration
+func newClient(configuration Configuration) (*Client, error) {
 	c := Client{
 		configuration: configuration,
 
@@ -90,19 +100,19 @@ func NewClient(configuration Configuration) (*Client, error) {
 		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
 			HTTPClient:   configuration.BaseClient,
-			Logger:       configuration.Retry.Logger,
-			RetryWaitMin: configuration.Retry.RetryWaitMin,
-			RetryWaitMax: configuration.Retry.RetryWaitMax,
-			RetryMax:     configuration.Retry.RetryMax,
-			CheckRetry:   configuration.Retry.CheckRetry,
-			Backoff:      configuration.Retry.Backoff,
-			ErrorHandler: configuration.Retry.ErrorHandler,
+			Logger:       configuration.Retries.Logger,
+			RetryWaitMin: configuration.Retries.RetryWaitMin,
+			RetryWaitMax: configuration.Retries.RetryWaitMax,
+			RetryMax:     configuration.Retries.RetryMax,
+			CheckRetry:   configuration.Retries.CheckRetry,
+			Backoff:      configuration.Retries.Backoff,
+			ErrorHandler: configuration.Retries.ErrorHandler,
 		},
 
 		requestModifiers: requestModifiers{
 			headers: requestHeaders{
-				token:                     configuration.InitialToken,
-				namespace:                 configuration.InitialNamespace,
+				token:                     configuration.initialToken,
+				namespace:                 configuration.initialNamespace,
 				replicationForwardingMode: ReplicationForwardNone,
 			},
 			validationError: nil,
@@ -153,17 +163,6 @@ func NewClient(configuration Configuration) (*Client, error) {
 	}
 
 	return &c, nil
-}
-
-func New(opts ...ClientOption) (*Client, error) {
-	configuration := DefaultConfiguration()
-	for _, opt := range opts {
-		if err := opt(&configuration); err != nil {
-			return nil, err
-		}
-	}
-
-	return NewClient(configuration)
 }
 
 // parseAddress parses the given address string with special handling for unix

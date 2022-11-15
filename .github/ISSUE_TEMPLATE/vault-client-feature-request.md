@@ -1,5 +1,5 @@
 ---
-name: Vault Go Client Feature request or discussion
+name: Vault Go Client Feature Request or Discussion
 about: Suggest a feature for this project or ask a question
 title: ''
 labels: ''

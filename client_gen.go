@@ -100,19 +100,19 @@ func newClient(configuration Configuration) (*Client, error) {
 		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
 			HTTPClient:   configuration.BaseClient,
-			Logger:       configuration.Retry.Logger,
-			RetryWaitMin: configuration.Retry.RetryWaitMin,
-			RetryWaitMax: configuration.Retry.RetryWaitMax,
-			RetryMax:     configuration.Retry.RetryMax,
-			CheckRetry:   configuration.Retry.CheckRetry,
-			Backoff:      configuration.Retry.Backoff,
-			ErrorHandler: configuration.Retry.ErrorHandler,
+			Logger:       configuration.Retries.Logger,
+			RetryWaitMin: configuration.Retries.RetryWaitMin,
+			RetryWaitMax: configuration.Retries.RetryWaitMax,
+			RetryMax:     configuration.Retries.RetryMax,
+			CheckRetry:   configuration.Retries.CheckRetry,
+			Backoff:      configuration.Retries.Backoff,
+			ErrorHandler: configuration.Retries.ErrorHandler,
 		},
 
 		requestModifiers: requestModifiers{
 			headers: requestHeaders{
-				token:                     configuration.InitialToken,
-				namespace:                 configuration.InitialNamespace,
+				token:                     configuration.initialToken,
+				namespace:                 configuration.initialNamespace,
 				replicationForwardingMode: ReplicationForwardNone,
 			},
 			validationError: nil,

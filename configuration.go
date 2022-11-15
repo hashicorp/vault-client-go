@@ -81,6 +81,13 @@ func WithDisableRedirects() ClientOption {
 	}
 }
 
+func WithConfiguration(configuration Configuration) ClientOption {
+	return func(c *Configuration) error {
+		*c = configuration
+		return nil
+	}
+}
+
 // Configuration is used to configure the creation of the client
 type Configuration struct {
 	// BaseAddress specifies the Vault server base address in the form of

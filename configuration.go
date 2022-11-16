@@ -19,6 +19,123 @@ import (
 	"golang.org/x/time/rate"
 )
 
+type ClientOption func(*Configuration) error
+
+func FromEnv(configuration *Configuration) error {
+	return configuration.LoadEnvironment()
+}
+
+// BaseAddress specifies the Vault server base address in the form of
+// scheme://host:port
+// Default: https://127.0.0.1:8200
+func WithBaseAddress(address string) ClientOption {
+	return func(c *Configuration) error {
+		c.BaseAddress = address
+		return nil
+	}
+}
+
+// WithBaseClient sets the HTTP client to use for all API requests.
+// The library sets reasonable defaults for the BaseClient and its associated
+// http.Transport. If you must modify Vault's defaults, it is suggested that
+// you start with DefaultConfiguration().BaseClient and modify it as needed
+// rather than starting with an empty client or http.DefaultClient.
+func WithBaseClient(client *http.Client) ClientOption {
+	return func(c *Configuration) error {
+		c.BaseClient = client
+		return nil
+	}
+}
+
+// WithTLS configures the TLS settings in the base http.Client.
+func WithTLS(configuration TLSConfiguration) ClientOption {
+	return func(c *Configuration) error {
+		c.TLS = configuration
+		return nil
+	}
+}
+
+// WithRetries configures the internal go-retryablehttp client.
+// The library sets reasonable defaults for this setting.
+func WithRetries(configuration RetryConfiguration) ClientOption {
+	return func(c *Configuration) error {
+		c.Retries = configuration
+		return nil
+	}
+}
+
+// WithRateLimiter configures how frequently requests are allowed to happen.
+// If this pointer is nil, then there will be no limit set. Note that an
+// empty struct rate.Limiter is equivalent to blocking all requests.
+// Default: nil
+func WithRateLimiter(limiter *rate.Limiter) ClientOption {
+	return func(c *Configuration) error {
+		c.RateLimiter = limiter
+		return nil
+	}
+}
+
+// WithEnforceReadYourWritesConsistency ensures isolated read-after-write
+// semantics by providing discovered cluster replication states in each
+// request.
+//
+// Background: when running in a cluster, Vault has an eventual consistency
+// model. Only one node (the leader) can write to Vault's storage. Users
+// generally expect read-after-write consistency: in other words, after
+// writing foo=1, a subsequent read of foo should return 1.
+//
+// Setting this to true will enable "Conditional Forwarding" as described in
+// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+//
+// Note: careful consideration should be made prior to enabling this setting
+// since there will be a performance penalty paid upon each request.
+// This feature requires enterprise server-side.
+func WithEnforceReadYourWritesConsistency() ClientOption {
+	return func(c *Configuration) error {
+		c.EnforceReadYourWritesConsistency = true
+		return nil
+	}
+}
+
+// WithEnableSRVLookup enables the client to look up the Vault server host
+// through DNS SRV lookup. The lookup will happen on each request. The base
+// address' port must be empty for this setting to be respected.
+//
+// Note: this feature is not designed for high availability, just discovery.
+//
+// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02 for more
+// information
+func WithEnableSRVLookup() ClientOption {
+	return func(c *Configuration) error {
+		c.EnableSRVLookup = true
+		return nil
+	}
+}
+
+// WithDisableRedirects prevents the client from automatically following
+// redirects. Any redirect responses will result in `RedirectError` instead.
+//
+// Background: by default, the client follows a single redirect; disabling
+// redirects could cause issues with certain requests, e.g. raft-related
+// calls will fail to redirect to the primary node.
+func WithDisableRedirects() ClientOption {
+	return func(c *Configuration) error {
+		c.DisableRedirects = true
+		return nil
+	}
+}
+
+// WithConfiguration overwrites the default configuration object with the given
+// one. It is recommended to start with DefaultConfiguration() and modify it as
+// necessary. If only an individual configuration field needs to be modified,
+// consider using other ClientOption functions.
+func WithConfiguration(configuration Configuration) ClientOption {
+	return func(c *Configuration) error {
+		*c = configuration
+		return nil
+	}
+}
+
 // Configuration is used to configure the creation of the client
 type Configuration struct {
 	// BaseAddress specifies the Vault server base address in the form of
@@ -37,13 +154,13 @@ type Configuration struct {
 	// http.Client.
 	TLS TLSConfiguration
 
-	// Retry is a collection of settings used to configure the internal
+	// Retries is a collection of settings used to configure the internal
 	// go-retryablehttp client.
-	Retry RetryConfiguration
+	Retries RetryConfiguration
 
 	// RateLimiter controls how frequently requests are allowed to happen.
 	// If this pointer is nil, then there will be no limit set. Note that an
-	// empty struct rate.Limiter is equivalent blocking all requests.
+	// empty struct rate.Limiter is equivalent to blocking all requests.
 	// Default: nil
 	RateLimiter *rate.Limiter `env:"VAULT_RATE_LIMIT"`
 
@@ -64,14 +181,6 @@ type Configuration struct {
 	// This feature requires enterprise server-side.
 	EnforceReadYourWritesConsistency bool
 
-	// InitialToken will be used as the token in client requests unless
-	// overwritten with client.SetToken or client.WithToken
-	InitialToken string `env:"VAULT_TOKEN"`
-
-	// InitialNamespace will be used as the namespace in client requests unless
-	// overwritten with client.SetNamespace or client.WithNamespace
-	InitialNamespace string `env:"VAULT_NAMESPACE"`
-
 	// EnableSRVLookup enables the client to look up the Vault server host
 	// through DNS SRV lookup. The lookup will happen on each request. The base
 	// address' port must be empty for this setting to be respected.
@@ -90,6 +199,16 @@ type Configuration struct {
 	// redirects could cause issues with certain requests, e.g. raft-related
 	// calls will fail to redirect to the primary node.
 	DisableRedirects bool `env:"VAULT_DISABLE_REDIRECTS"`
+
+	// initialToken is populated from environment variable VAULT_TOKEN and will
+	// be used as the initial token in client requests; to programmatically
+	// modify the token, use client.Set/With/ClearToken
+	initialToken string `env:"VAULT_TOKEN"`
+
+	// initialNamespace is populated from environment variable VAULT_NAMESPACE
+	// and will be used as the initial namespace in client requests; to
+	// programmatically modify the namespace use client.Set/With/ClearNamespace
+	initialNamespace string `env:"VAULT_NAMESPACE"`
 }
 
 // TLSConfiguration is a collection of TLS settings used to configure the internal
@@ -219,7 +338,7 @@ func DefaultConfiguration() Configuration {
 	return Configuration{
 		BaseAddress: "https://127.0.0.1:8200",
 		BaseClient:  defaultClient,
-		Retry: RetryConfiguration{
+		Retries: RetryConfiguration{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,
 			RetryMax:     2,
@@ -306,6 +425,21 @@ func (c *Configuration) LoadEnvironment() error {
 		return fmt.Errorf("configuration error: %w", err)
 	}
 
+	// assign initial token & namespace manually since they are not exported
+	if env := os.Getenv("VAULT_TOKEN"); env == "" {
+		if err := validateToken(env); err != nil {
+			return fmt.Errorf("configuration error: VAULT_TOKEN: %w", err)
+		}
+		copy.initialToken = env
+	}
+
+	if env := os.Getenv("VAULT_NAMESPACE"); env == "" {
+		if err := validateNamespace(env); err != nil {
+			return fmt.Errorf("configuration error: VAULT_NAMESPACE: %w", err)
+		}
+		copy.initialNamespace = env
+	}
+
 	*c = copy
 
 	return nil
@@ -325,51 +459,6 @@ func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bo
 	}
 
 	return false, nil
-}
-
-// SetDefaultsForUninitialized sets default values for uninitialized fields.
-func (c *Configuration) SetDefaultsForUninitialized() {
-	defaults := DefaultConfiguration()
-
-	if c.BaseAddress == "" {
-		c.BaseAddress = defaults.BaseAddress
-	}
-
-	if c.BaseClient == nil {
-		c.BaseClient = defaults.BaseClient
-	}
-
-	if c.BaseClient.Transport == nil {
-		c.BaseClient.Transport = defaults.BaseClient.Transport
-	}
-
-	if c.Retry.RetryWaitMin == 0 {
-		c.Retry.RetryWaitMin = defaults.Retry.RetryWaitMin
-	}
-
-	if c.Retry.RetryWaitMax == 0 {
-		c.Retry.RetryWaitMax = defaults.Retry.RetryWaitMax
-	}
-
-	if c.Retry.RetryMax == 0 {
-		c.Retry.RetryMax = defaults.Retry.RetryMax
-	}
-
-	if c.Retry.CheckRetry == nil {
-		c.Retry.CheckRetry = defaults.Retry.CheckRetry
-	}
-
-	if c.Retry.Backoff == nil {
-		c.Retry.Backoff = defaults.Retry.Backoff
-	}
-
-	if c.Retry.ErrorHandler == nil {
-		c.Retry.ErrorHandler = defaults.Retry.ErrorHandler
-	}
-
-	if c.Retry.Logger == nil {
-		c.Retry.Logger = defaults.Retry.Logger
-	}
 }
 
 // applyTo applies the user-defined TLS configuration to the given client's
@@ -479,80 +568,4 @@ func walkConfigurationFields(structPtr any, f func(field reflect.Value, environm
 	}
 
 	return nil
-}
-
-type ClientOption func(*Configuration) error
-
-func FromEnv(configuration *Configuration) error {
-	return configuration.LoadEnvironment()
-}
-
-func WithBaseAddress(address string) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.BaseAddress = address
-		return nil
-	}
-}
-
-func WithBaseClient(client *http.Client) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.BaseClient = client
-		return nil
-	}
-}
-
-func WithTLSConfiguration(tlsConfig TLSConfiguration) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.TLS = tlsConfig
-		return nil
-	}
-}
-
-func WithRetryConfiguration(retryConfig RetryConfiguration) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.Retry = retryConfig
-		return nil
-	}
-}
-
-func WithRateLimiter(limiter *rate.Limiter) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.RateLimiter = limiter
-		return nil
-	}
-}
-
-func WithEnforceReadYourWritesConsistency(enabled bool) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.EnforceReadYourWritesConsistency = enabled
-		return nil
-	}
-}
-
-func WithInitialToken(token string) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.InitialToken = token
-		return nil
-	}
-}
-
-func WithInitialNamespace(namespace string) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.InitialNamespace = namespace
-		return nil
-	}
-}
-
-func WithEnableSRVLookup(enabled bool) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.EnableSRVLookup = enabled
-		return nil
-	}
-}
-
-func WithDisableRedirects(disabled bool) ClientOption {
-	return func(configuration *Configuration) error {
-		configuration.DisableRedirects = disabled
-		return nil
-	}
 }

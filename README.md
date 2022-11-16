@@ -8,22 +8,19 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 
 ## Contents
 
-- [Go Client for HashiCorp Vault](#go-client-for-hashicorp-vault)
-	- [:warning: _Stability Warning: Under Development!_ :warning:](#warning-stability-warning-under-development-warning)
-	- [Contents](#contents)
-	- [Installation](#installation)
-	- [Examples](#examples)
-	- [Getting Started](#getting-started)
-	- [Accessing a Generated Endpoint](#accessing-a-generated-endpoint)
-		- [Using TLS](#using-tls)
-		- [Using TLS with client-side certificate authentication](#using-tls-with-client-side-certificate-authentication)
-		- [Using enterprise namespaces](#using-enterprise-namespaces)
-		- [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
-		- [Logging requests & responses with request/response callbacks](#logging-requests--responses-with-requestresponse-callbacks)
-		- [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
-	- [Building the Library](#building-the-library)
-	- [Under Development](#under-development)
-	- [Documentation for API Endpoints](#documentation-for-api-endpoints)
+1. [Installation](#installation)
+1. [Examples](#examples)
+   - [Getting Started](#getting-started)
+   - [Accessing a Generated Endpoint](#accessing-a-generated-endpoint)
+   - [Using TLS](#using-tls)
+   - [Using TLS with client-side certificate authentication](#using-tls-with-client-side-certificate-authentication)
+   - [Using enterprise namespaces](#using-enterprise-namespaces)
+   - [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
+   - [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
+   - [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
+1. [Building the Library](#building-the-library)
+1. [Under Development](#under-development)
+1. [Documentation for API Endpoints](#documentation-for-api-endpoints)
 
 ## Installation
 

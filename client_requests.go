@@ -149,7 +149,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		return nil, m.validationError
 	}
 
-	if m.headers.token != "" {
+	if m.headers.userAgent != "" {
 		req.Header.Set("User-Agent", m.headers.userAgent)
 	}
 

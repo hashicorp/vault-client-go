@@ -23,6 +23,9 @@ import (
 	"github.com/hashicorp/go-retryablehttp"
 )
 
+// version is the version of this client, populated with -ldflags
+var version = "development"
+
 // Client manages communication with the HashiCorp Vault API v1.13.0
 // In most cases there should be only one, shared, Client.
 type Client struct {

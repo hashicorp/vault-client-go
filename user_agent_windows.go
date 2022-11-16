@@ -10,19 +10,19 @@ import (
 )
 
 // UserAgent returns a user agent string [executable/version (os version; go version)]
-func UserAgent(version string) string {
+func UserAgent(clientVersion string) string {
 	windowsVersion, err := windows.GetVersion()
 	if err != nil {
 		return fmt.Sprintf(
 			"vault-client-go/%s (Go %s)",
-			version,
+			clientVersion,
 			runtime.Version(),
 		)
 	}
 
 	return fmt.Sprintf(
 		"vault-client-go/%s (Windows %d.%d; Go %s)",
-		version,
+		clientVersion,
 		windowsVersion&0xFF,
 		windowsVersion&0xFF00>>8,
 		runtime.Version(),

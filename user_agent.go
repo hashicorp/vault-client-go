@@ -11,12 +11,12 @@ import (
 )
 
 // UserAgent returns a user agent string [executable/version (os version; go version)]
-func UserAgent(version string) string {
+func UserAgent(clientVersion string) string {
 	var uname unix.Utsname
 	if err := unix.Uname(&uname); err != nil {
 		return fmt.Sprintf(
 			"vault-client-go/%s (Go %s)",
-			version,
+			clientVersion,
 			runtime.Version(),
 		)
 	}

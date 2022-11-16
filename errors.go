@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-// IsErrorStatusv returns true if the given error is a ResponseError with the
+// IsErrorStatus returns true if the given error is a ResponseError with the
 // given status code.
 func IsErrorStatus(err error, status int) bool {
 	var responseError *ResponseError

@@ -95,34 +95,21 @@ type Configuration struct {
 // TLSConfiguration is a collection of TLS settings used to configure the internal
 // http.Client.
 type TLSConfiguration struct {
-	// ServerCACertificateFile is a path to a PEM-encoded CA certificate
-	// file or bundle, which the client will use to verify the Vault server TLS
-	// certificate.
-	// Default: "", takes precedence over other ServerCACertificate* variables.
-	ServerCACertificateFile string `env:"VAULT_CACERT"`
+	// ServerCertificate is a PEM-encoded CA certificate, which  the client
+	// will use to verify the Vault server TLS certificate. It can be sourced
+	// from a file, from a directory or from raw bytes.
+	ServerCertificate ServerCertificateEntry
 
-	// ServerCACertificate is a PEM-encoded CA certificate or bundle,
-	// which the client will use to verify the Vault server TLS certificate.
-	// Default: nil, takes precedence over ServerCACertificateDir.
-	ServerCACertificate []byte `env:"VAULT_CACERT_BYTES"`
+	// ClientCertificate is a PEM-encoded client certificate (signed by a CA or
+	// self-signed), which is used to authenticate with Vault via the cert auth
+	// method (see https://www.vaultproject.io/docs/auth/cert)
+	ClientCertificate ClientCertificateEntry
 
-	// ServerCACertificateDir is a path to a directory populated with
-	// PEM-encoded certificates, which the client will use to verify the Vault
-	// server TLS certificate.
+	// ClientCertificateKey is a private key, which is used together with
+	// ClientCertificate to authenticate with Vault via the cert auth method
+	// (see https://www.vaultproject.io/docs/auth/cert)
 	// Default: ""
-	ServerCACertificateDir string `env:"VAULT_CAPATH"`
-
-	// ClientCertificateFile is the path to a client certificate (signed by a
-	// CA or self-signed), which is used to authenticate with Vault via the
-	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
-	// Default: ""
-	ClientCertificateFile string `env:"VAULT_CLIENT_CERT"`
-
-	// ClientCertificateKeyFile is the path to a private key, which is used
-	// together with ClientCertificateFile to authenticate with Vault via the
-	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
-	// Default: ""
-	ClientCertificateKeyFile string `env:"VAULT_CLIENT_KEY"`
+	ClientCertificateKey ClientCertificateKeyEntry
 
 	// ServerName is used to verify the hostname on the returned certificates
 	// unless InsecureSkipVerify is given.
@@ -133,6 +120,41 @@ type TLSConfiguration struct {
 	// certificate chain and hostname.
 	// Default: false
 	InsecureSkipVerify bool `env:"VAULT_SKIP_VERIFY"`
+}
+
+type ServerCertificateEntry struct {
+	// FromFile is the path to a PEM-encoded CA certificate file or bundle.
+	// Default: "", takes precedence over 'FromBytes' and 'FromDirectory'.
+	FromFile string `env:"VAULT_CACERT"`
+
+	// FromBytes is PEM-encoded CA certificate data.
+	// Default: nil, takes precedence over 'FromDirectory'.
+	FromBytes []byte `env:"VAULT_CACERT_BYTES"`
+
+	// FromDirectory is the path to a directory populated with PEM-encoded
+	// certificates.
+	// Default: ""
+	FromDirectory string `env:"VAULT_CAPATH"`
+}
+
+type ClientCertificateEntry struct {
+	// FromFile is the path to a PEM-encoded client certificate file.
+	// Default: "", takes precedence over 'FromBytes'
+	FromFile string `env:"VAULT_CLIENT_CERT"`
+
+	// FromBytes is PEM-encoded certificate data.
+	// Default: nil
+	FromBytes []byte
+}
+
+type ClientCertificateKeyEntry struct {
+	// FromFile is the path to a PEM-encoded private key file.
+	// Default: "", takes precedence over 'FromBytes'
+	FromFile string `env:"VAULT_CLIENT_KEY"`
+
+	// FromBytes is PEM-encoded private key data.
+	// Default: nil
+	FromBytes []byte
 }
 
 // RetryConfiguration is a collection of settings used to configure the internal
@@ -353,11 +375,11 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 // applyTo applies the user-defined TLS configuration to the given client's
 // *tls.Config pointer; it is used to configure the internal http.Client
 func (from *TLSConfiguration) applyTo(to *tls.Config) error {
-	if len(from.ServerCACertificate) != 0 || from.ServerCACertificateFile != "" || from.ServerCACertificateDir != "" {
+	if len(from.ServerCertificate.FromBytes) != 0 || from.ServerCertificate.FromFile != "" || from.ServerCertificate.FromDirectory != "" {
 		rootCertificateConfig := rootcerts.Config{
-			CAFile:        from.ServerCACertificateFile,
-			CACertificate: from.ServerCACertificate,
-			CAPath:        from.ServerCACertificateDir,
+			CAFile:        from.ServerCertificate.FromFile,
+			CACertificate: from.ServerCertificate.FromBytes,
+			CAPath:        from.ServerCertificate.FromDirectory,
 		}
 		if err := rootcerts.ConfigureTLS(
 			to,
@@ -367,19 +389,40 @@ func (from *TLSConfiguration) applyTo(to *tls.Config) error {
 		}
 	}
 
-	switch {
-	case from.ClientCertificateFile != "" && from.ClientCertificateKeyFile != "":
-		clientCertificate, err := tls.LoadX509KeyPair(
-			from.ClientCertificateFile,
-			from.ClientCertificateKeyFile,
-		)
+	read := func(fromFile string, fromBytes []byte) ([]byte, error) {
+		if fromFile != "" {
+			b, err := os.ReadFile(fromFile)
+			if err != nil {
+				return nil, err
+			}
+			return b, nil
+		}
+		return fromBytes, nil
+	}
+
+	var (
+		hasClientCertificate    = from.ClientCertificate.FromFile != "" || len(from.ClientCertificate.FromBytes) != 0
+		hasClientCertificateKey = from.ClientCertificateKey.FromFile != "" || len(from.ClientCertificateKey.FromBytes) != 0
+	)
+
+	if hasClientCertificate != hasClientCertificateKey {
+		return fmt.Errorf("client certificate and client certificate key must be provided together")
+	}
+
+	if hasClientCertificate && hasClientCertificateKey {
+		clientCertificateBytes, err := read(from.ClientCertificate.FromFile, from.ClientCertificate.FromBytes)
 		if err != nil {
-			return fmt.Errorf(
-				"could not load client certificate from certificate file %q and key file %q: %w",
-				from.ClientCertificateFile,
-				from.ClientCertificateKeyFile,
-				err,
-			)
+			return fmt.Errorf("could not read certificate file: %w", err)
+		}
+
+		clientCertificateKeyBytes, err := read(from.ClientCertificateKey.FromFile, from.ClientCertificateKey.FromBytes)
+		if err != nil {
+			return fmt.Errorf("could not read certificate key file: %w", err)
+		}
+
+		clientCertificate, err := tls.X509KeyPair(clientCertificateBytes, clientCertificateKeyBytes)
+		if err != nil {
+			return fmt.Errorf("error parsing certificate pair: %w", err)
 		}
 
 		// Set this function to ignore the server's preferential list of CAs.
@@ -388,12 +431,6 @@ func (from *TLSConfiguration) applyTo(to *tls.Config) error {
 		to.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
 			return &clientCertificate, nil
 		}
-
-	case from.ClientCertificateFile != "":
-		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", from.ClientCertificateFile)
-
-	case from.ClientCertificateKeyFile != "":
-		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", from.ClientCertificateKeyFile)
 	}
 
 	if from.InsecureSkipVerify {

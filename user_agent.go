@@ -23,7 +23,7 @@ func UserAgent(clientVersion string) string {
 
 	return fmt.Sprintf(
 		"vault-client-go/%s (%s %s; Go %s)",
-		version,
+		clientVersion,
 		string(bytes.Trim(uname.Sysname[:], "\x00")),
 		string(bytes.Trim(uname.Machine[:], "\x00")),
 		runtime.Version(),

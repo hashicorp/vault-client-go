@@ -108,7 +108,7 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 	}
 	defer resp.Body.Close()
 
-	if err := isErrorResponse(req, resp); err != nil {
+	if err := isResponseError(req, resp); err != nil {
 		return nil, err
 	}
 

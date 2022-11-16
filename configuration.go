@@ -98,47 +98,18 @@ type TLSConfiguration struct {
 	// ServerCertificate is a PEM-encoded CA certificate, which  the client
 	// will use to verify the Vault server TLS certificate. It can be sourced
 	// from a file, from a directory or from raw bytes.
-	ServerCertificate struct {
-		// FromFile is the path to a PEM-encoded CA certificate file or bundle.
-		// Default: "", takes precedence over 'FromBytes' and 'FromDirectory'.
-		FromFile string `env:"VAULT_CACERT"`
-
-		// FromBytes is PEM-encoded CA certificate data.
-		// Default: nil, takes precedence over 'FromDirectory'.
-		FromBytes []byte `env:"VAULT_CACERT_BYTES"`
-
-		// FromDirectory is the path to a directory populated with PEM-encoded
-		// certificates.
-		// Default: ""
-		FromDirectory string `env:"VAULT_CAPATH"`
-	}
+	ServerCertificate ServerCertificateEntry
 
 	// ClientCertificate is a PEM-encoded client certificate (signed by a CA or
 	// self-signed), which is used to authenticate with Vault via the cert auth
 	// method (see https://www.vaultproject.io/docs/auth/cert)
-	ClientCertificate struct {
-		// FromFile is the path to a PEM-encoded client certificate.
-		// Default: "", takes precedence over 'FromBytes'
-		FromFile string `env:"VAULT_CLIENT_CERT"`
-
-		// FromBytes is PEM-encoded certificate data.
-		// Default: nil
-		FromBytes []byte
-	}
+	ClientCertificate ClientCertificateEntry
 
 	// ClientCertificateKey is a private key, which is used together with
 	// ClientCertificate to authenticate with Vault via the cert auth method
 	// (see https://www.vaultproject.io/docs/auth/cert)
 	// Default: ""
-	ClientCertificateKey struct {
-		// FromFile is the path to a PEM-encoded private key.
-		// Default: "", takes precedence over 'FromBytes'
-		FromFile string `env:"VAULT_CLIENT_KEY"`
-
-		// FromBytes is PEM-encoded private key data.
-		// Default: nil
-		FromBytes []byte
-	}
+	ClientCertificateKey ClientCertificateKeyEntry
 
 	// ServerName is used to verify the hostname on the returned certificates
 	// unless InsecureSkipVerify is given.
@@ -149,6 +120,41 @@ type TLSConfiguration struct {
 	// certificate chain and hostname.
 	// Default: false
 	InsecureSkipVerify bool `env:"VAULT_SKIP_VERIFY"`
+}
+
+type ServerCertificateEntry struct {
+	// FromFile is the path to a PEM-encoded CA certificate file or bundle.
+	// Default: "", takes precedence over 'FromBytes' and 'FromDirectory'.
+	FromFile string `env:"VAULT_CACERT"`
+
+	// FromBytes is PEM-encoded CA certificate data.
+	// Default: nil, takes precedence over 'FromDirectory'.
+	FromBytes []byte `env:"VAULT_CACERT_BYTES"`
+
+	// FromDirectory is the path to a directory populated with PEM-encoded
+	// certificates.
+	// Default: ""
+	FromDirectory string `env:"VAULT_CAPATH"`
+}
+
+type ClientCertificateEntry struct {
+	// FromFile is the path to a PEM-encoded client certificate file.
+	// Default: "", takes precedence over 'FromBytes'
+	FromFile string `env:"VAULT_CLIENT_CERT"`
+
+	// FromBytes is PEM-encoded certificate data.
+	// Default: nil
+	FromBytes []byte
+}
+
+type ClientCertificateKeyEntry struct {
+	// FromFile is the path to a PEM-encoded private key file.
+	// Default: "", takes precedence over 'FromBytes'
+	FromFile string `env:"VAULT_CLIENT_KEY"`
+
+	// FromBytes is PEM-encoded private key data.
+	// Default: nil
+	FromBytes []byte
 }
 
 // RetryConfiguration is a collection of settings used to configure the internal

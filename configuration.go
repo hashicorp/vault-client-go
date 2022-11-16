@@ -25,6 +25,9 @@ func FromEnv(configuration *Configuration) error {
 	return configuration.LoadEnvironment()
 }
 
+// BaseAddress specifies the Vault server base address in the form of
+// scheme://host:port
+// Default: https://127.0.0.1:8200
 func WithBaseAddress(address string) ClientOption {
 	return func(c *Configuration) error {
 		c.BaseAddress = address
@@ -32,6 +35,11 @@ func WithBaseAddress(address string) ClientOption {
 	}
 }
 
+// WithBaseClient sets the HTTP client to use for all API requests.
+// The library sets reasonable defaults for the BaseClient and its associated
+// http.Transport. If you must modify Vault's defaults, it is suggested that
+// you start with DefaultConfiguration().BaseClient and modify it as needed
+// rather than starting with an empty client or http.DefaultClient.
 func WithBaseClient(client *http.Client) ClientOption {
 	return func(c *Configuration) error {
 		c.BaseClient = client
@@ -39,6 +47,7 @@ func WithBaseClient(client *http.Client) ClientOption {
 	}
 }
 
+// WithTLS configures the TLS settings in the base http.Client.
 func WithTLS(configuration TLSConfiguration) ClientOption {
 	return func(c *Configuration) error {
 		c.TLS = configuration
@@ -46,6 +55,8 @@ func WithTLS(configuration TLSConfiguration) ClientOption {
 	}
 }
 
+// WithRetries configures the internal go-retryablehttp client.
+// The library sets reasonable defaults for this setting.
 func WithRetries(configuration RetryConfiguration) ClientOption {
 	return func(c *Configuration) error {
 		c.Retries = configuration
@@ -53,6 +64,10 @@ func WithRetries(configuration RetryConfiguration) ClientOption {
 	}
 }
 
+// WithRateLimiter configures how frequently requests are allowed to happen.
+// If this pointer is nil, then there will be no limit set. Note that an
+// empty struct rate.Limiter is equivalent blocking all requests.
+// Default: nil
 func WithRateLimiter(limiter *rate.Limiter) ClientOption {
 	return func(c *Configuration) error {
 		c.RateLimiter = limiter
@@ -60,6 +75,21 @@ func WithRateLimiter(limiter *rate.Limiter) ClientOption {
 	}
 }
 
+// WithEnforceReadYourWritesConsistency ensures isolated read-after-write
+// semantics by providing discovered cluster replication states in each
+// request.
+//
+// Background: when running in a cluster, Vault has an eventual consistency
+// model. Only one node (the leader) can write to Vault's storage. Users
+// generally expect read-after-write consistency: in other words, after
+// writing foo=1, a subsequent read of foo should return 1.
+//
+// Setting this to true will enable "Conditional Forwarding" as described in
+// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+//
+// Note: careful consideration should be made prior to enabling this setting
+// since there will be a performance penalty paid upon each request.
+// This feature requires enterprise server-sid
 func WithEnforceReadYourWritesConsistency() ClientOption {
 	return func(c *Configuration) error {
 		c.EnforceReadYourWritesConsistency = true
@@ -67,6 +97,15 @@ func WithEnforceReadYourWritesConsistency() ClientOption {
 	}
 }
 
+// WithEnableSRVLookup enables the client to look up the Vault server host
+// through DNS SRV lookup. The lookup will happen on each request. The base
+// address' port must be empty for this setting to be respected.
+//
+// Note: this feature is not designed for high availability, just
+// discovery.
+//
+// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
+// for more information
 func WithEnableSRVLookup() ClientOption {
 	return func(c *Configuration) error {
 		c.EnableSRVLookup = true
@@ -74,6 +113,12 @@ func WithEnableSRVLookup() ClientOption {
 	}
 }
 
+// WithDisableRedirects prevents the client from automatically following
+// redirects. Any redirect responses will result in `RedirectError` instead.
+//
+// Background: by default, the client follows a single redirect; disabling
+// redirects could cause issues with certain requests, e.g. raft-related
+// calls will fail to redirect to the primary node.
 func WithDisableRedirects() ClientOption {
 	return func(c *Configuration) error {
 		c.DisableRedirects = true
@@ -81,6 +126,10 @@ func WithDisableRedirects() ClientOption {
 	}
 }
 
+// WithConfiguration overwrites the default configuration object with the given
+// one. It is recommended to start with DefaultConfiguration() and modify it as
+// necessary. If only an individual configuration field needs to be modified,
+// consider using other ClientOption functions
 func WithConfiguration(configuration Configuration) ClientOption {
 	return func(c *Configuration) error {
 		*c = configuration

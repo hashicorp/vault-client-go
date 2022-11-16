@@ -55,15 +55,17 @@ func main() {
 	ctx := context.Background()
 
 	// prepare a client with default configuration, except for the address
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// authenticate with a root token (not secure)
-	client.SetToken("my-token")
+	if err := client.SetToken("my-token"); err != nil {
+		log.Fatal(err)
+	}
 
 	// write a secret
 	_, err = client.Write(ctx, "/secret/data/my-secret", map[string]interface{}{
@@ -117,9 +119,9 @@ import (
 func main() {
 	ctx := context.Background()
 
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -147,11 +149,16 @@ To enable TLS, simply specify the location of the Vault server's CA certificate
 file in the configuration:
 
 ```go
-configuration := vault.DefaultConfiguration()
-configuration.BaseAddress = "https://localhost:8200"
-configuration.TLS.ServerCACertificateFile = "/tmp/vault-ca.pem"
+tls := vault.TLSConfiguration{}
+tls.ServerCertificate.FromFile = "/tmp/vault-ca.pem"
 
-client, err := vault.NewClient(configuration)
+client, err := vault.New(
+	vault.WithBaseAddress("https://localhost:8200")
+	vault.WithTLS(tls)
+)
+if err != nil {
+	log.Fatal(err)
+}
 ...
 ```
 
@@ -164,13 +171,15 @@ vault server -dev-tls -dev-root-token-id="my-token"
 ### Using TLS with client-side certificate authentication
 
 ```go
-configuration := vault.DefaultConfiguration()
-configuration.BaseAddress = "https://localhost:8200"
-configuration.TLS.ServerCACertificateFile = "/tmp/vault-ca.pem"
-configuration.TLS.ClientCertificateFile = "/tmp/client-cert.pem"
-configuration.TLS.ClientCertificateKeyFile = "/tmp/client-key.pem"
+tls := vault.TLSConfiguration{}
+tls.ServerCertificate.FromFile = "/tmp/vault-ca.pem"
+tls.ClientCertificate.FromFile = "/tmp/client-cert.pem"
+tls.ClientCertificateKey.FromFile = "/tmp/client-cert-key.pem"
 
-client, err := vault.NewClient(configuration)
+client, err := vault.New(
+	vault.WithBaseAddress("https://localhost:8200")
+	vault.WithTLS(tls)
+)
 if err != nil {
 	log.Fatal(err)
 }
@@ -183,7 +192,6 @@ if err != nil {
 }
 
 // 'resp' will contain an auth token
-...
 ```
 
 _**Note**_: this is a temporary solution using a generated endpoint. The user
@@ -199,10 +207,6 @@ resp, err := client.System.GetSysMounts(ctx)
 if err != nil {
 	log.Fatal(err)
 }
-
-// optionally clear the namespace for future calls
-client.ClearNamespace()
-...
 ```
 
 Alternatively, set the namespace for a single call with the following:
@@ -217,13 +221,9 @@ if err != nil {
 ### Loading configuration from environment variables
 
 ```go
-configuration := vault.DefaultConfiguration()
-
-if err := configuration.LoadEnvironment(); err != nil {
-	log.Fatal(err)
-}
-
-client, err := vault.NewClient(configuration)
+client, err := vault.New(
+	vault.FromEnv,
+)
 if err != nil {
 	log.Fatal(err)
 }
@@ -251,11 +251,9 @@ used to inject callbacks for individual requests.
 
 ### Enforcing read-your-writes replication semantics
 
-Detailed background information of the read-after-write consistency problem
-can be found in the
-[consistency](https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations)
-and [replication](https://www.vaultproject.io/docs/internals/replication)
-documentation.
+Detailed background information of the read-after-write consistency problem can
+be found in the [consistency][doc-consistency] and [replication][doc-replication]
+documentation pages.
 
 You can enforce read-your-writes semantics for individual requests through
 callbacks:
@@ -280,20 +278,21 @@ resp, err := client.WithRequestCallbacks(vault.RequireReplicationStates(
 ...
 ```
 
-Alternatively, enforce read-your-writes semantics for all requests:
+Alternatively, enforce read-your-writes semantics for all requests using the
+following setting:
 
 ```go
-configuration := vault.DefaultConfiguration()
-configuration.EnforceReadYourWritesConsistency = true
-
-client, err := vault.NewClient(configuration)
+client, err := vault.New(
+	vault.WithBaseAddress("https://localhost:8200"),
+	vault.WithEnforceReadYourWritesConsistency(),
+)
 ```
 
 ## Building the Library
 
 The vast majority of the code, including the client's endpoints, requests and
 responses is generated from the `OpenAPI` [specification file][openapi-spec]
-v1.12.0 using [`openapi-generator`][openapi-generator]. If you make any changes
+v1.13.0 using [`openapi-generator`][openapi-generator]. If you make any changes
 to the underlying templates (`generate/templates/*`), make sure to regenerate
 the files by running the following:
 
@@ -316,12 +315,13 @@ high-level features that have been implemented:
 - Environment variables for configuration
 - Read-your-writes semantics
 - Thread-safe cloning and client modifications
+- Response wrapping & unwrapping
+- CI/CD pipelines
 
 The following features are coming soon:
 
 - Structured responses (as part of the [specification file][openapi-spec])
 - Testing framework
-- CI/CD pipelines
 - Authentication wrappers
 - Other helpers & wrappers (KV, SSH, Monitor, Plugins, LifetimeWatcher, etc.)
 
@@ -337,3 +337,5 @@ The following features are coming soon:
 [openapi-spec]:          openapi.json
 [openapi-generator]:	 https://openapi-generator.tech/docs/generators/go
 [go-retryablehttp]:      https://github.com/hashicorp/go-retryablehttp
+[doc-consistency]:       https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
+[doc-replication]:       https://developer.hashicorp.com/vault/docs/internals/replication

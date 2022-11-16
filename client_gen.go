@@ -23,12 +23,9 @@ import (
 	"github.com/hashicorp/go-retryablehttp"
 )
 
-// version is the version of this client, populated with -ldflags
-var version = "development"
-
-// Client manages communication with the HashiCorp Vault API v1.13.0
-// In most cases there should be only one, shared, Client.
+// Client manages communication with Vault, initialize it with vault.New(...)
 type Client struct {
+	// configuration object is immutable after the client has been initialized
 	configuration Configuration
 
 	parsedBaseAddress url.URL
@@ -71,6 +68,7 @@ type requestModifiers struct {
 
 // requestHeaders contains headers that will be added to each request
 type requestHeaders struct {
+	userAgent                 string                    // 'User-Agent'
 	token                     string                    // 'X-Vault-Token'
 	namespace                 string                    // 'X-Vault-Namespace'
 	mfaCredentials            []string                  // 'X-Vault-MFA'
@@ -114,6 +112,7 @@ func newClient(configuration Configuration) (*Client, error) {
 
 		requestModifiers: requestModifiers{
 			headers: requestHeaders{
+				userAgent:                 UserAgent("0.0.1"),
 				token:                     configuration.initialToken,
 				namespace:                 configuration.initialNamespace,
 				replicationForwardingMode: ReplicationForwardNone,

@@ -66,7 +66,7 @@ func WithRetries(configuration RetryConfiguration) ClientOption {
 
 // WithRateLimiter configures how frequently requests are allowed to happen.
 // If this pointer is nil, then there will be no limit set. Note that an
-// empty struct rate.Limiter is equivalent blocking all requests.
+// empty struct rate.Limiter is equivalent to blocking all requests.
 // Default: nil
 func WithRateLimiter(limiter *rate.Limiter) ClientOption {
 	return func(c *Configuration) error {
@@ -89,7 +89,7 @@ func WithRateLimiter(limiter *rate.Limiter) ClientOption {
 //
 // Note: careful consideration should be made prior to enabling this setting
 // since there will be a performance penalty paid upon each request.
-// This feature requires enterprise server-sid
+// This feature requires enterprise server-side.
 func WithEnforceReadYourWritesConsistency() ClientOption {
 	return func(c *Configuration) error {
 		c.EnforceReadYourWritesConsistency = true
@@ -101,11 +101,10 @@ func WithEnforceReadYourWritesConsistency() ClientOption {
 // through DNS SRV lookup. The lookup will happen on each request. The base
 // address' port must be empty for this setting to be respected.
 //
-// Note: this feature is not designed for high availability, just
-// discovery.
+// Note: this feature is not designed for high availability, just discovery.
 //
-// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
-// for more information
+// See https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02 for more
+// information
 func WithEnableSRVLookup() ClientOption {
 	return func(c *Configuration) error {
 		c.EnableSRVLookup = true
@@ -129,7 +128,7 @@ func WithDisableRedirects() ClientOption {
 // WithConfiguration overwrites the default configuration object with the given
 // one. It is recommended to start with DefaultConfiguration() and modify it as
 // necessary. If only an individual configuration field needs to be modified,
-// consider using other ClientOption functions
+// consider using other ClientOption functions.
 func WithConfiguration(configuration Configuration) ClientOption {
 	return func(c *Configuration) error {
 		*c = configuration
@@ -161,7 +160,7 @@ type Configuration struct {
 
 	// RateLimiter controls how frequently requests are allowed to happen.
 	// If this pointer is nil, then there will be no limit set. Note that an
-	// empty struct rate.Limiter is equivalent blocking all requests.
+	// empty struct rate.Limiter is equivalent to blocking all requests.
 	// Default: nil
 	RateLimiter *rate.Limiter `env:"VAULT_RATE_LIMIT"`
 

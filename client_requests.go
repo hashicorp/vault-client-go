@@ -149,6 +149,10 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		return nil, m.validationError
 	}
 
+	if m.headers.userAgent != "" {
+		req.Header.Set("User-Agent", m.headers.userAgent)
+	}
+
 	if m.headers.token != "" {
 		req.Header.Set("X-Vault-Token", m.headers.token)
 	}

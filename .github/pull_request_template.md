@@ -8,7 +8,3 @@ Resolves # (issue)
 ## How has this been tested?
 
 > Please describe the tests you ran.
-
-## Don't forget to
-
-- [ ] run `make regen`

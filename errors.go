@@ -53,7 +53,7 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 		return nil
 	}
 
-	ResponseError := &ResponseError{
+	responseError := &ResponseError{
 		StatusCode:    resp.StatusCode,
 		RequestMethod: req.Method,
 		RequestURL:    req.URL.String(),
@@ -63,26 +63,38 @@ func isResponseError(req *http.Request, resp *http.Response) *ResponseError {
 	// in case in cannot be parsed
 	responseBody, err := io.ReadAll(resp.Body)
 	if err != nil {
-		ResponseError.Errors = []string{
+		responseError.Errors = []string{
 			fmt.Sprintf("received an error response from vault but could not read its body: %s", err.Error()),
 		}
-		return ResponseError
+		return responseError
 	}
 
-	// decode
-	var jsonResponseBody struct {
+	// try to decode as a list of errors
+	var jsonResponseErrors struct {
 		Errors []string `json:"errors"`
 	}
-	if err := json.Unmarshal(responseBody, &jsonResponseBody); err != nil {
-		ResponseError.Errors = []string{
-			string(responseBody),
-		}
-		return ResponseError
+	if err := json.Unmarshal(responseBody, &jsonResponseErrors); err == nil {
+		responseError.Errors = jsonResponseErrors.Errors
+		return responseError // early return
 	}
 
-	ResponseError.Errors = jsonResponseBody.Errors
+	// try to decode as a single error
+	var jsonResponseError struct {
+		Error string `json:"error"`
+	}
+	if err := json.Unmarshal(responseBody, &jsonResponseError); err == nil {
+		responseError.Errors = []string{
+			jsonResponseError.Error,
+		}
+		return responseError // early return
+	}
 
-	return ResponseError
+	// else, return the raw response body
+	responseError.Errors = []string{
+		string(responseBody),
+	}
+
+	return responseError
 }
 
 // RedirectError is the error returned when the client receives a redirect

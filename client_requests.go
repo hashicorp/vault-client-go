@@ -96,8 +96,8 @@ func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, clie
 
 // sendRequestParseResponse is a helper function to construct a request, send
 // it to Vault and parse the response
-func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values) (*Response[ResponseT], error) {
-	req, err := client.newRequest(ctx, method, path, body, parameters)
+func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values, options ...RequestOption) (*Response[ResponseT], error) {
+	req, err := client.newRequest(ctx, method, path, body, parameters, options...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 }
 
 // newRequest returns a new request with vault-specific headers
-func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader, parameters url.Values) (*http.Request, error) {
+func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader, parameters url.Values, options ...RequestOption) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
@@ -143,11 +143,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 	}
 
 	// populate request headers
-	m := c.cloneRequestModifiers()
-
-	if m.validationError != nil {
-		return nil, m.validationError
-	}
+	m := c.cloneGlobalRequestModifiers()
 
 	if m.headers.userAgent != "" {
 		req.Header.Set("User-Agent", m.headers.userAgent)
@@ -194,7 +190,7 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	}
 
 	// clone request modifiers behind a lock
-	m := c.cloneRequestModifiers()
+	m := c.cloneGlobalRequestModifiers()
 
 	// invoke request callbacks
 	for _, callback := range m.requestCallbacks {

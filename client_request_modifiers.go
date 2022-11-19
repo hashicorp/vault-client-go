@@ -288,6 +288,102 @@ func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOpt
 	}
 }
 
+func mergeRequestModifiers(global, local requestModifiers) requestModifiers {
+	merged := global
+
+	if local.headers.userAgent != "" {
+		merged.headers.userAgent = local.headers.userAgent
+	}
+
+	if local.headers.token != "" {
+		merged.headers.token = local.headers.token
+	}
+
+	if local.headers.namespace != "" {
+		merged.headers.namespace = local.headers.namespace
+	}
+
+	if len(local.headers.mfaCredentials) != 0 {
+		merged.headers.mfaCredentials = local.headers.mfaCredentials
+	}
+
+	if local.headers.responseWrappingTTL != 0 {
+		merged.headers.responseWrappingTTL = local.headers.responseWrappingTTL
+	}
+
+	if local.headers.replicationForwardingMode != ReplicationForwardNone {
+		merged.headers.replicationForwardingMode = local.headers.replicationForwardingMode
+	}
+
+	if len(local.headers.customHeaders) != 0 {
+		merged.headers.customHeaders = local.headers.customHeaders
+	}
+
+	if len(local.requestCallbacks) != 0 {
+		merged.requestCallbacks = local.requestCallbacks
+	}
+
+	if len(local.responseCallbacks) != 0 {
+		merged.responseCallbacks = local.responseCallbacks
+	}
+
+	return merged
+}
+
+func toRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
+	var modifiers requestModifiers
+
+	for _, option := range options {
+		if err := option(&modifiers); err != nil {
+			errs = multierror.Append(errs, err)
+		}
+	}
+
+	if errs != nil {
+		return requestModifiers{}, errs
+	}
+
+	return modifiers, nil
+}
+
+func validateToken(token string) error {
+	if !printable(token) {
+		return fmt.Errorf("vault token contains non-printable characters")
+	}
+
+	return nil
+}
+
+func validateNamespace(namespace string) error {
+	if !printable(namespace) {
+		return fmt.Errorf("vault namespace %q contains non-printable characters", namespace)
+	}
+
+	return nil
+}
+
+func validateCustomHeaders(headers http.Header) (errs error) {
+	for key := range headers {
+		if strings.HasPrefix(strings.ToLower(key), "x-vault-") {
+			errs = multierror.Append(
+				errs,
+				fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key),
+			)
+		}
+	}
+
+	return errs
+}
+
+// printable returns true if the given string has no non-printable characters
+func printable(str string) bool {
+	idx := strings.IndexFunc(str, func(c rune) bool {
+		return !unicode.IsPrint(c)
+	})
+
+	return idx == -1
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 /////////////////////////// REPLICATION CONSISTENCY ///////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -352,11 +448,11 @@ func (c *Client) ClearReplicationForwardingMode() {
 //	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
-func (c *Client) WithReplicationForwardingMode(mode ReplicationForwardingMode) *Client {
-	clone := c.Clone()
-	clone.requestModifiers.headers.replicationForwardingMode = mode
-
-	return clone
+func (c *Client) WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption {
+	return func(m *requestModifiers) error {
+		m.headers.replicationForwardingMode = mode
+		return nil
+	}
 }
 
 // RecordReplicationState returns a response callback that will record the
@@ -554,42 +650,4 @@ func (c *replicationStateCache) clone() replicationStateCache {
 		statesLock: sync.RWMutex{},
 		states:     cloned,
 	}
-}
-
-func validateToken(token string) error {
-	if !printable(token) {
-		return fmt.Errorf("vault token contains non-printable characters")
-	}
-
-	return nil
-}
-
-func validateNamespace(namespace string) error {
-	if !printable(namespace) {
-		return fmt.Errorf("vault namespace %q contains non-printable characters", namespace)
-	}
-
-	return nil
-}
-
-func validateCustomHeaders(headers http.Header) (errs error) {
-	for key := range headers {
-		if strings.HasPrefix(strings.ToLower(key), "x-vault-") {
-			errs = multierror.Append(
-				errs,
-				fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key),
-			)
-		}
-	}
-
-	return errs
-}
-
-// printable returns true if the given string has no non-printable characters
-func printable(str string) bool {
-	idx := strings.IndexFunc(str, func(c rune) bool {
-		return !unicode.IsPrint(c)
-	})
-
-	return idx == -1
 }

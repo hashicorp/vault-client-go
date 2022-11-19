@@ -25,7 +25,7 @@ func FromEnv(configuration *Configuration) error {
 	return configuration.LoadEnvironment()
 }
 
-// BaseAddress specifies the Vault server base address in the form of
+// WithBaseAddress specifies the Vault server base address in the form of
 // scheme://host:port
 // Default: https://127.0.0.1:8200
 func WithBaseAddress(address string) ClientOption {

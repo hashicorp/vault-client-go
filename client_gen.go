@@ -46,11 +46,6 @@ type Client struct {
 	System   System
 }
 
-type (
-	RequestCallback  func(*http.Request)
-	ResponseCallback func(*http.Request, *http.Response)
-)
-
 // New returns a new client decorated with the given configuration options
 func New(options ...ClientOption) (*Client, error) {
 	configuration := DefaultConfiguration()
@@ -175,7 +170,7 @@ func (c *Client) Clone() *Client {
 		clone.replicationStates = c.replicationStates.clone()
 	}
 
-	clone.globalRequestModifiers = c.cloneRequestModifiers()
+	clone.globalRequestModifiers = c.cloneGlobalRequestModifiers()
 
 	clone.Auth = Auth{
 		client: &clone,
@@ -193,9 +188,9 @@ func (c *Client) Clone() *Client {
 	return &clone
 }
 
-// cloneRequestModifiers returns a copy of the request modifiers behind a mutex;
+// cloneGlobalRequestModifiers returns a copy of the request modifiers behind a mutex;
 // the replication states will point to the same cache
-func (c *Client) cloneRequestModifiers() requestModifiers {
+func (c *Client) cloneGlobalRequestModifiers() globalRequestModifiers {
 	/* */ c.globalRequestModifiersLock.RLock()
 	defer c.globalRequestModifiersLock.RUnlock()
 

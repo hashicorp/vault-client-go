@@ -20,6 +20,11 @@ import (
 // RequestOption is a functional parameter used to modify a request
 type RequestOption func(*requestModifiers) error
 
+type (
+	RequestCallback  func(*http.Request)
+	ResponseCallback func(*http.Request, *http.Response)
+)
+
 // requestModifiers contains headers, callbacks, etc. that will be added to
 // each request
 type requestModifiers struct {

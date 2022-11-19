@@ -188,9 +188,9 @@ func (c *Client) Clone() *Client {
 	return &clone
 }
 
-// cloneGlobalRequestModifiers returns a copy of the request modifiers behind a mutex;
-// the replication states will point to the same cache
-func (c *Client) cloneGlobalRequestModifiers() globalRequestModifiers {
+// cloneGlobalRequestModifiers returns a copy of the request modifiers behind
+// a mutex; the replication states will point to the same cache
+func (c *Client) cloneGlobalRequestModifiers() requestModifiers {
 	/* */ c.globalRequestModifiersLock.RLock()
 	defer c.globalRequestModifiersLock.RUnlock()
 

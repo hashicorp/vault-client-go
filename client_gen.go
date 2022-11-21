@@ -32,9 +32,9 @@ type Client struct {
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
 
-	// headers, callbacks, etc. that will be applied to each request
-	globalRequestModifiers     requestModifiers
-	globalRequestModifiersLock sync.RWMutex
+	// headers & callbacks that will be applied to each request
+	clientRequestModifiers     requestModifiers
+	clientRequestModifiersLock sync.RWMutex
 
 	// replication state cache used to ensure read-after-write semantics
 	replicationStates replicationStateCache
@@ -79,7 +79,7 @@ func newClient(configuration Configuration) (*Client, error) {
 			ErrorHandler: configuration.Retries.ErrorHandler,
 		},
 
-		globalRequestModifiers: requestModifiers{
+		clientRequestModifiers: requestModifiers{
 			headers: requestHeaders{
 				userAgent:                 UserAgent("0.0.1"),
 				token:                     configuration.initialToken,
@@ -87,7 +87,7 @@ func newClient(configuration Configuration) (*Client, error) {
 				replicationForwardingMode: ReplicationForwardNone,
 			},
 		},
-		globalRequestModifiersLock: sync.RWMutex{},
+		clientRequestModifiersLock: sync.RWMutex{},
 	}
 
 	address, err := parseAddress(configuration.BaseAddress)
@@ -170,7 +170,7 @@ func (c *Client) Clone() *Client {
 		clone.replicationStates = c.replicationStates.clone()
 	}
 
-	clone.globalRequestModifiers = c.cloneGlobalRequestModifiers()
+	clone.clientRequestModifiers = c.cloneClientRequestModifiers()
 
 	clone.Auth = Auth{
 		client: &clone,
@@ -188,26 +188,25 @@ func (c *Client) Clone() *Client {
 	return &clone
 }
 
-// cloneGlobalRequestModifiers returns a copy of the request modifiers behind
-// a mutex; the replication states will point to the same cache
-func (c *Client) cloneGlobalRequestModifiers() requestModifiers {
-	/* */ c.globalRequestModifiersLock.RLock()
-	defer c.globalRequestModifiersLock.RUnlock()
+// cloneClientRequestModifiers returns a copy of the modifiers behind a mutex
+func (c *Client) cloneClientRequestModifiers() requestModifiers {
+	/* */ c.clientRequestModifiersLock.RLock()
+	defer c.clientRequestModifiersLock.RUnlock()
 
 	var clone requestModifiers
 
-	copy(clone.requestCallbacks, c.globalRequestModifiers.requestCallbacks)
-	copy(clone.responseCallbacks, c.globalRequestModifiers.responseCallbacks)
+	copy(clone.requestCallbacks, c.clientRequestModifiers.requestCallbacks)
+	copy(clone.responseCallbacks, c.clientRequestModifiers.responseCallbacks)
 
 	clone.headers = requestHeaders{
-		token:                     c.globalRequestModifiers.headers.token,
-		namespace:                 c.globalRequestModifiers.headers.namespace,
-		responseWrappingTTL:       c.globalRequestModifiers.headers.responseWrappingTTL,
-		replicationForwardingMode: c.globalRequestModifiers.headers.replicationForwardingMode,
-		customHeaders:             c.globalRequestModifiers.headers.customHeaders.Clone(),
+		token:                     c.clientRequestModifiers.headers.token,
+		namespace:                 c.clientRequestModifiers.headers.namespace,
+		responseWrappingTTL:       c.clientRequestModifiers.headers.responseWrappingTTL,
+		replicationForwardingMode: c.clientRequestModifiers.headers.replicationForwardingMode,
+		customHeaders:             c.clientRequestModifiers.headers.customHeaders.Clone(),
 	}
 
-	copy(clone.headers.mfaCredentials, c.globalRequestModifiers.headers.mfaCredentials)
+	copy(clone.headers.mfaCredentials, c.clientRequestModifiers.headers.mfaCredentials)
 
 	return clone
 }

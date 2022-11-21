@@ -288,7 +288,7 @@ func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOpt
 	}
 }
 
-// mergeRequestModifiers merges the two modifiers objects, preferring local
+// mergeRequestModifiers merges the two objects, preferring the local modifiers
 func mergeRequestModifiers(global, local requestModifiers) requestModifiers {
 	merged := global
 
@@ -331,8 +331,8 @@ func mergeRequestModifiers(global, local requestModifiers) requestModifiers {
 	return merged
 }
 
-// toRequestModifiers constructs `requestModifiers` & propagates the errors
-func toRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
+// requestOptionsToRequestModifiers constructs `requestModifiers` & propagates the errors
+func requestOptionsToRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
 	var modifiers requestModifiers
 
 	for _, option := range options {

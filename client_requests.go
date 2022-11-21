@@ -21,7 +21,7 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 }
 
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := toRequestModifiers(options)
+	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -33,7 +33,7 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 		v1Path(path),
 		nil,        // request body
 		parameters, // request query parameters
-		modifiers,  // request modifiers
+		modifiers,  // request modifiers (headers & callbacks)
 	)
 }
 
@@ -52,7 +52,7 @@ func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte, o
 }
 
 func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reader, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := toRequestModifiers(options)
+	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -64,12 +64,12 @@ func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reade
 		v1Path(path),
 		body,      // request body
 		nil,       // request query parameters
-		modifiers, // request modifiers
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 func (c *Client) List(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := toRequestModifiers(options)
+	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 		v1Path(path),
 		nil,                                   // request body
 		map[string][]string{"list": {"true"}}, // request query parameters
-		modifiers,                             // request modifiers
+		modifiers,                             // request modifiers (headers & callbacks)
 	)
 }
 
@@ -90,7 +90,7 @@ func (c *Client) Delete(ctx context.Context, path string, options ...RequestOpti
 }
 
 func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := toRequestModifiers(options)
+	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -102,7 +102,7 @@ func (c *Client) DeleteWithParameters(ctx context.Context, path string, paramete
 		v1Path(path),
 		nil,        // request body
 		parameters, // request query parameters
-		modifiers,  // request modifiers
+		modifiers,  // request modifiers (headers & callbacks)
 	)
 }
 
@@ -135,7 +135,7 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 		return nil, err
 	}
 
-	resp, err := client.do(ctx, req, true, modifiers.requestCallbacks, modifiers.responseCallbacks)
+	resp, err := client.send(ctx, req, true, modifiers.requestCallbacks, modifiers.responseCallbacks)
 	if err != nil || resp == nil {
 		return nil, err
 	}
@@ -156,10 +156,10 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
 	}
 
-	// if configured, look up the SRV record and take the highest match
+	// if configured, look up the service record (SRV) and take the highest match
 	if c.configuration.EnableSRVLookup {
 		_, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
-		// don't return the error to the user, address might not have an SRV record
+		// don't return the error: address might not have a service record
 		if err == nil && len(addrs) > 0 {
 			url.Host = fmt.Sprintf("%s:%d", addrs[0].Target, addrs[0].Port)
 		}
@@ -209,8 +209,8 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 	return req, nil
 }
 
-// do sends the given request to Vault, handling retries, redirects, and rate limiting
-func (c *Client) do(ctx context.Context, req *http.Request, retry bool, requestCallbacks []RequestCallback, responseCallbacks []ResponseCallback) (*http.Response, error) {
+// send sends the given request to Vault, handling retries, redirects, and rate limiting
+func (c *Client) send(ctx context.Context, req *http.Request, retry bool, requestCallbacks []RequestCallback, responseCallbacks []ResponseCallback) (*http.Response, error) {
 	// block on the rate limiter, if set
 	if c.configuration.RateLimiter != nil {
 		c.configuration.RateLimiter.Wait(ctx)
@@ -234,7 +234,7 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool, requestC
 	redirectCount := 1
 
 	for {
-		resp, err = c.doWithRetries(req, retry)
+		resp, err = c.do(req, retry)
 		if err != nil {
 			return resp, err
 		}
@@ -260,8 +260,8 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool, requestC
 	return resp, nil
 }
 
-// doWithRetries is a helper function that wraps http.client.Do / retryablehttp.client.Do
-func (c *Client) doWithRetries(req *http.Request, retry bool) (*http.Response, error) {
+// do is a helper function that wraps http.client.Do / retryablehttp.client.Do
+func (c *Client) do(req *http.Request, retry bool) (*http.Response, error) {
 	if !retry {
 		return c.client.Do(req)
 	}

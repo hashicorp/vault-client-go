@@ -113,7 +113,7 @@ func UnwrapToken[T any](ctx context.Context, client *Client, wrappingToken strin
 	// set the wrapping token
 	options = append(options, WithToken(wrappingToken))
 
-	modifiers, err := toRequestModifiers(options)
+	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func UnwrapToken[T any](ctx context.Context, client *Client, wrappingToken strin
 		"/v1/sys/wrapping/unwrap",
 		nil,       // request body
 		nil,       // request query parameters
-		modifiers, // request modifiers
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 

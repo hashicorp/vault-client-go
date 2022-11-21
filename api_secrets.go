@@ -23,2701 +23,3763 @@ type Secrets struct {
 }
 
 // DeleteAdConfig Configure the AD server to connect to, along with password options.
-func (a *Secrets) DeleteAdConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAdConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteAdLibraryName Delete a library set.
 // name: Name of the set.
-func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *Secrets) DeleteAlicloudConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAlicloudConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteAzureConfig
-func (a *Secrets) DeleteAzureConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteConsulRolesName
 // name: Name of the role.
-func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteCubbyholePath Deletes the secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/cubbyhole/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteGcpRolesetName
 // name: Required. Name of the role.
-func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/deregister/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/trim/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteKubernetesConfig
-func (a *Secrets) DeleteKubernetesConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteKubernetesConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteKubernetesRolesName
 // name: Name of the role
-func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-func (a *Secrets) DeleteKvPath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteKvPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kv/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteLdapConfig
-func (a *Secrets) DeleteLdapConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteLdapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteLdapLibraryName Delete a library set.
 // name: Name of the set.
-func (a *Secrets) DeleteLdapLibraryName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteLdapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteLdapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) DeleteLdapRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteLdapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteLdapStaticRoleName
 // name: Name of the role
-func (a *Secrets) DeleteLdapStaticRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteLdapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteNomadConfigAccess
-func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/access"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteNomadConfigLease Configure the lease parameters for generated tokens
-func (a *Secrets) DeleteNomadConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteNomadConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/lease"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteNomadRoleName
 // name: Name of the role
-func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteOpenldapConfig
-func (a *Secrets) DeleteOpenldapConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteOpenldapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteOpenldapLibraryName Delete a library set.
 // name: Name of the set.
-func (a *Secrets) DeleteOpenldapLibraryName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteOpenldapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteOpenldapStaticRoleName
 // name: Name of the role
-func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeletePkiIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/{issuer_ref}/der|/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeletePkiJson
-func (a *Secrets) DeletePkiJson(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeletePkiJson(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//json"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeletePkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeletePkiRolesName
 // name: Name of the role
-func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeletePkiRoot
-func (a *Secrets) DeletePkiRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeletePkiRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteSshConfigCa Set the SSH private key used for signing certificates.
-func (a *Secrets) DeleteSshConfigCa(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteSshConfigCa(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/ca"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/zeroaddress"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteSshKeysKeyName Register a shared private key with Vault.
 // keyName: [Required] Name of the key
-func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/keys/{key_name}"
 	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteTerraformConfig
-func (a *Secrets) DeleteTerraformConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteTerraformConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteTerraformRoleName
 // name: Name of the role
-func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/totp/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // DeleteTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodDelete,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdConfig Configure the AD server to connect to, along with password options.
-func (a *Secrets) GetAdConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdCredsName
 // name: Name of the role
-func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdLibrary
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAdLibrary(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdLibrary(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdLibraryName Read a library set.
 // name: Name of the set.
-func (a *Secrets) GetAdLibraryName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdLibraryNameStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library/{name}/status"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdRoles List the name of each role currently stored.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAdRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *Secrets) GetAdRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAdRotateRoot
-func (a *Secrets) GetAdRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAdRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/rotate-root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *Secrets) GetAlicloudConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAlicloudConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAlicloudCredsName Generate an API key or STS credential using the given role's configuration.'
 // name: The name of the role.
-func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAlicloudRole List the existing roles in this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAlicloudRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAlicloudRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/role"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAwsConfigLease Configure the default lease information for generated credentials.
-func (a *Secrets) GetAwsConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAwsConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/lease"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
-func (a *Secrets) GetAwsConfigRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAwsConfigRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAwsCreds Generate AWS credentials from a specific Vault role.
-func (a *Secrets) GetAwsCreds(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAwsCreds(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/creds"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAwsRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAwsRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAwsRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *Secrets) GetAwsRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAwsRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAwsStsName Generate AWS credentials from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) GetAwsStsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAwsStsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/sts/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAzureConfig
-func (a *Secrets) GetAzureConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAzureCredsRole
 // role: Name of the Vault role
-func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/creds/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAzureRoles List existing roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAzureRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAzureRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *Secrets) GetAzureRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetAzureRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetConsulConfigAccess
-func (a *Secrets) GetConsulConfigAccess(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetConsulConfigAccess(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/config/access"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetConsulCredsRole
 // role: Name of the role.
-func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/creds/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetConsulRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetConsulRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetConsulRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetConsulRolesName
 // name: Name of the role.
-func (a *Secrets) GetConsulRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetConsulRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetCubbyholePath Retrieve the secret at the specified location.
 // path: Specifies the path of the secret.
 // list: Return a list if &#x60;true&#x60;
-func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/cubbyhole/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpConfig
-func (a *Secrets) GetGcpConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpKeyRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/key/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpRolesetName
 // name: Required. Name of the role.
-func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpRolesetRolesetKey
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{roleset}/key"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpRolesetRolesetToken
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{roleset}/token"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpRolesets
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetGcpRolesets(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpRolesets(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/rolesets"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpStaticAccountNameKey
 // name: Required. Name of the static account.
-func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}/key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpStaticAccountNameToken
 // name: Required. Name of the static account.
-func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}/token"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpStaticAccounts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-accounts"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpTokenRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/token/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpkmsConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpkmsKeys List named keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpkmsKeysConfigKey Configure the key in Vault
 // key: Name of the key in Vault.
-func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/config/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
 // key: Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
-func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/pubkey/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetKubernetesConfig
-func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetKubernetesConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetKubernetesRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetKubernetesRolesName
 // name: Name of the role
-func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
 // list: Return a list if &#x60;true&#x60;
-func (a *Secrets) GetKvPath(ctx context.Context, path string, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetKvPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kv/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapConfig
-func (a *Secrets) GetLdapConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapCredsName
 // name: Name of the dynamic role.
-func (a *Secrets) GetLdapCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapLibrary
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetLdapLibrary(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapLibrary(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapLibraryName Read a library set.
 // name: Name of the set.
-func (a *Secrets) GetLdapLibraryName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapLibraryNameStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-func (a *Secrets) GetLdapLibraryNameStatus(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapLibraryNameStatus(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library/{name}/status"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetLdapRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/role"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) GetLdapRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapStaticCredName
 // name: Name of the static role.
-func (a *Secrets) GetLdapStaticCredName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapStaticCredName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/static-cred/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapStaticRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetLdapStaticRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapStaticRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/static-role"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetLdapStaticRoleName
 // name: Name of the role
-func (a *Secrets) GetLdapStaticRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetLdapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-func (a *Secrets) GetMongodbatlasConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetMongodbatlasConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetMongodbatlasRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetNomadConfigAccess
-func (a *Secrets) GetNomadConfigAccess(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetNomadConfigAccess(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/access"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetNomadConfigLease Configure the lease parameters for generated tokens
-func (a *Secrets) GetNomadConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetNomadConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/lease"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetNomadCredsName
 // name: Name of the role
-func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetNomadCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetNomadRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetNomadRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetNomadRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/role"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetNomadRoleName
 // name: Name of the role
-func (a *Secrets) GetNomadRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetNomadRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapConfig
-func (a *Secrets) GetOpenldapConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapCredsName
 // name: Name of the dynamic role.
-func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapLibrary
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetOpenldapLibrary(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapLibrary(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapLibraryName Read a library set.
 // name: Name of the set.
-func (a *Secrets) GetOpenldapLibraryName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapLibraryNameStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-func (a *Secrets) GetOpenldapLibraryNameStatus(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapLibraryNameStatus(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library/{name}/status"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetOpenldapRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/role"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapStaticCredName
 // name: Name of the static role.
-func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/static-cred/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapStaticRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/static-role"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetOpenldapStaticRoleName
 // name: Name of the role
-func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCa
-func (a *Secrets) GetPkiCa(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCa(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ca"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCaChain
-func (a *Secrets) GetPkiCaChain(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCaChain(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ca_chain"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCaPem
-func (a *Secrets) GetPkiCaPem(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCaPem(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ca/pem"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCertCaChain
-func (a *Secrets) GetPkiCertCaChain(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCertCaChain(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert/ca_chain"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCertSerial
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert/{serial}"
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCertSerialRaw
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert/{serial}/raw"
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCertSerialRawPem
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert/{serial}/raw/pem"
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCerts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiCerts(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCerts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/certs"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiConfigAutoTidy
-func (a *Secrets) GetPkiConfigAutoTidy(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiConfigAutoTidy(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/auto-tidy"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiConfigCrl
-func (a *Secrets) GetPkiConfigCrl(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiConfigCrl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/crl"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiConfigIssuers
-func (a *Secrets) GetPkiConfigIssuers(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiConfigIssuers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/issuers"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiConfigKeys
-func (a *Secrets) GetPkiConfigKeys(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiConfigKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/keys"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiConfigUrls
-func (a *Secrets) GetPkiConfigUrls(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiConfigUrls(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/urls"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCrl
-func (a *Secrets) GetPkiCrl(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCrl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/crl"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCrlRotate
-func (a *Secrets) GetPkiCrlRotate(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCrlRotate(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/crl/rotate"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiCrlRotateDelta
-func (a *Secrets) GetPkiCrlRotateDelta(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiCrlRotateDelta(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/crl/rotate-delta"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiDelta
-func (a *Secrets) GetPkiDelta(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiDelta(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//delta"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiDeltaCrl
-func (a *Secrets) GetPkiDeltaCrl(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiDeltaCrl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/delta-crl"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiDeltaPem
-func (a *Secrets) GetPkiDeltaPem(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiDeltaPem(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//delta/pem"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiDer
-func (a *Secrets) GetPkiDer(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiDer(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//der"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiIssuerRefCrlPemDerDeltaPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) GetPkiIssuerRefCrlPemDerDeltaPem(ctx context.Context, issuerRef string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiIssuerRefCrlPemDerDeltaPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/{issuer_ref}/crl/pem|/der|/delta/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/{issuer_ref}/der|/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiIssuers
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiIssuers(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiIssuers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuers"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiJson
-func (a *Secrets) GetPkiJson(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiJson(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//json"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiKeys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/keys"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiOcspReq
 // req: base-64 encoded ocsp request
-func (a *Secrets) GetPkiOcspReq(ctx context.Context, req string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiOcspReq(ctx context.Context, req string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ocsp/{req}"
 	requestPath = strings.Replace(requestPath, "{"+"req"+"}", url.PathEscape(req), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiPem
-func (a *Secrets) GetPkiPem(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiPem(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//pem"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiRolesName
 // name: Name of the role
-func (a *Secrets) GetPkiRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetPkiTidyStatus
-func (a *Secrets) GetPkiTidyStatus(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetPkiTidyStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/tidy-status"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetRabbitmqConfigLease Configure the lease parameters for generated credentials
-func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/config/lease"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
 // name: Name of the role.
-func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetRabbitmqRoles Manage the roles that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSecretConfig Read the backend level settings.
-func (a *Secrets) GetSecretConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSecretConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *Secrets) GetSecretDataPath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSecretDataPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
 // list: Return a list if &#x60;true&#x60;
-func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value store with the values removed.
 // path: Location of the secret.
-func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/subkeys/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSshConfigCa Set the SSH private key used for signing certificates.
-func (a *Secrets) GetSshConfigCa(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSshConfigCa(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/ca"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/zeroaddress"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSshPublicKey Retrieve the public key.
-func (a *Secrets) GetSshPublicKey(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSshPublicKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/public_key"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSshRoles Manage the 'roles' that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetSshRoles(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSshRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/roles"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *Secrets) GetSshRolesRole(ctx context.Context, role string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetSshRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTerraformConfig
-func (a *Secrets) GetTerraformConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTerraformConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTerraformRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetTerraformRole(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTerraformRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/role"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTerraformRoleName
 // name: Name of the role
-func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTotpCodeName Request time-based one-time use password or validate a password for a certain key .
 // name: Name of the key.
-func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTotpCodeName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/totp/code/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTotpKeys Manage the keys that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetTotpKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTotpKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/totp/keys"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *Secrets) GetTotpKeysName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTotpKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/totp/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTransitBackupName Backup the named key
 // name: Name of the key
-func (a *Secrets) GetTransitBackupName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTransitBackupName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/backup/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTransitCacheConfig Returns the size of the active cache
-func (a *Secrets) GetTransitCacheConfig(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTransitCacheConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/cache-config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTransitExportTypeName Export named encryption or signing key
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
-func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, type_ string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/export/{type}/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
@@ -2725,70 +3787,99 @@ func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, typ
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
 // version: Version of the key
-func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name string, type_ string, version string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name string, type_ string, version string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/export/{type}/{name}/{version}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 	requestPath = strings.Replace(requestPath, "{"+"version"+"}", url.PathEscape(version), -1)
 
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTransitKeys Managed named encryption keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetTransitKeys(ctx context.Context, list string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTransitKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *Secrets) GetTransitKeysName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTransitKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GetTransitWrappingKey Returns the public key to use for wrapping imported keys
-func (a *Secrets) GetTransitWrappingKey(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GetTransitWrappingKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/wrapping_key"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodGet,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdConfig Configure the AD server to connect to, along with password options.
-func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2796,15 +3887,21 @@ func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequ
 		http.MethodPost,
 		requestPath,
 		adConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdLibraryManageNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name string, adLibraryManageCheckInRequest AdLibraryManageCheckInRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name string, adLibraryManageCheckInRequest AdLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library/manage/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2812,15 +3909,21 @@ func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name strin
 		http.MethodPost,
 		requestPath,
 		adLibraryManageCheckInRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdLibraryName Update a library set.
 // name: Name of the set.
-func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryRequest AdLibraryRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryRequest AdLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2828,15 +3931,21 @@ func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryR
 		http.MethodPost,
 		requestPath,
 		adLibraryRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdLibraryNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adLibraryCheckInRequest AdLibraryCheckInRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adLibraryCheckInRequest AdLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2844,15 +3953,21 @@ func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adL
 		http.MethodPost,
 		requestPath,
 		adLibraryCheckInRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdLibraryNameCheckOut Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, adLibraryCheckOutRequest AdLibraryCheckOutRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, adLibraryCheckOutRequest AdLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/library/{name}/check-out"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2860,15 +3975,21 @@ func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, ad
 		http.MethodPost,
 		requestPath,
 		adLibraryCheckOutRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesRequest AdRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesRequest AdRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2876,43 +3997,61 @@ func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesReque
 		http.MethodPost,
 		requestPath,
 		adRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdRotateRoleName
 // name: Name of the static role
-func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAdRotateRoot
-func (a *Secrets) PostAdRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAdRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ad/rotate-root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2920,15 +4059,21 @@ func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest 
 		http.MethodPost,
 		requestPath,
 		alicloudConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, alicloudRoleRequest AlicloudRoleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, alicloudRoleRequest AlicloudRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/alicloud/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2936,13 +4081,19 @@ func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, aliclou
 		http.MethodPost,
 		requestPath,
 		alicloudRoleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAwsConfigLease Configure the default lease information for generated credentials.
-func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/lease"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2950,13 +4101,19 @@ func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest 
 		http.MethodPost,
 		requestPath,
 		awsConfigLeaseRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
-func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2964,27 +4121,39 @@ func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest Aw
 		http.MethodPost,
 		requestPath,
 		awsConfigRootRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAwsConfigRotateRoot
-func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/config/rotate-root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAwsCreds Generate AWS credentials from a specific Vault role.
-func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/creds"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2992,15 +4161,21 @@ func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequ
 		http.MethodPost,
 		requestPath,
 		awsCredsRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesRequest AwsRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesRequest AwsRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3008,15 +4183,21 @@ func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesReq
 		http.MethodPost,
 		requestPath,
 		awsRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAwsStsName Generate AWS credentials from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest AwsStsRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest AwsStsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/aws/sts/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3024,13 +4205,19 @@ func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest
 		http.MethodPost,
 		requestPath,
 		awsStsRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAzureConfig
-func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3038,15 +4225,21 @@ func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureC
 		http.MethodPost,
 		requestPath,
 		azureConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRolesRequest AzureRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRolesRequest AzureRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3054,27 +4247,39 @@ func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRole
 		http.MethodPost,
 		requestPath,
 		azureRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostAzureRotateRoot
-func (a *Secrets) PostAzureRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostAzureRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/azure/rotate-root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostConsulConfigAccess
-func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/config/access"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3082,15 +4287,21 @@ func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccess
 		http.MethodPost,
 		requestPath,
 		consulConfigAccessRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostConsulRolesName
 // name: Name of the role.
-func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRolesRequest ConsulRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRolesRequest ConsulRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/consul/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3098,29 +4309,41 @@ func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRo
 		http.MethodPost,
 		requestPath,
 		consulRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostCubbyholePath Store a secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *Secrets) PostCubbyholePath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostCubbyholePath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/cubbyhole/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpConfig
-func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3128,29 +4351,41 @@ func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigR
 		http.MethodPost,
 		requestPath,
 		gcpConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpConfigRotateRoot
-func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/config/rotate-root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpKeyRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyRequest GcpKeyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyRequest GcpKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/key/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3158,15 +4393,21 @@ func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyR
 		http.MethodPost,
 		requestPath,
 		gcpKeyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpRolesetName
 // name: Required. Name of the role.
-func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolesetRequest GcpRolesetRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolesetRequest GcpRolesetRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3174,47 +4415,65 @@ func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolese
 		http.MethodPost,
 		requestPath,
 		gcpRolesetRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpRolesetNameRotate
 // name: Name of the role.
-func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{name}/rotate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpRolesetNameRotateKey
 // name: Name of the role.
-func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{name}/rotate-key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpRolesetRolesetKey
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, gcpRolesetKeyRequest GcpRolesetKeyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, gcpRolesetKeyRequest GcpRolesetKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{roleset}/key"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3222,31 +4481,43 @@ func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, 
 		http.MethodPost,
 		requestPath,
 		gcpRolesetKeyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpRolesetRolesetToken
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/roleset/{roleset}/token"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcpStaticAccountRequest GcpStaticAccountRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcpStaticAccountRequest GcpStaticAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3254,15 +4525,21 @@ func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcp
 		http.MethodPost,
 		requestPath,
 		gcpStaticAccountRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpStaticAccountNameKey
 // name: Required. Name of the static account.
-func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, gcpStaticAccountKeyRequest GcpStaticAccountKeyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, gcpStaticAccountKeyRequest GcpStaticAccountKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}/key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3270,61 +4547,85 @@ func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, 
 		http.MethodPost,
 		requestPath,
 		gcpStaticAccountKeyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpStaticAccountNameRotateKey
 // name: Name of the account.
-func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}/rotate-key"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpStaticAccountNameToken
 // name: Required. Name of the static account.
-func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/static-account/{name}/token"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpTokenRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcp/token/{roleset}"
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3332,15 +4633,21 @@ func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest Gcpk
 		http.MethodPost,
 		requestPath,
 		gcpkmsConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
 // key: Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDecryptRequest GcpkmsDecryptRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDecryptRequest GcpkmsDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/decrypt/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3348,15 +4655,21 @@ func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDe
 		http.MethodPost,
 		requestPath,
 		gcpkmsDecryptRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
 // key: Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEncryptRequest GcpkmsEncryptRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEncryptRequest GcpkmsEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/encrypt/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3364,15 +4677,21 @@ func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEn
 		http.MethodPost,
 		requestPath,
 		gcpkmsEncryptRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsKeysConfigKey Configure the key in Vault
 // key: Name of the key in Vault.
-func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkmsKeysConfigRequest GcpkmsKeysConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkmsKeysConfigRequest GcpkmsKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/config/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3380,31 +4699,43 @@ func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkm
 		http.MethodPost,
 		requestPath,
 		gcpkmsKeysConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/deregister/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysRequest GcpkmsKeysRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysRequest GcpkmsKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3412,15 +4743,21 @@ func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysR
 		http.MethodPost,
 		requestPath,
 		gcpkmsKeysRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
 // key: Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcpkmsKeysRegisterRequest GcpkmsKeysRegisterRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcpkmsKeysRegisterRequest GcpkmsKeysRegisterRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/register/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3428,47 +4765,65 @@ func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcp
 		http.MethodPost,
 		requestPath,
 		gcpkmsKeysRegisterRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
 // key: Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
-func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/rotate/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/keys/trim/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
 // key: Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkmsReencryptRequest GcpkmsReencryptRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkmsReencryptRequest GcpkmsReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/reencrypt/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3476,15 +4831,21 @@ func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkms
 		http.MethodPost,
 		requestPath,
 		gcpkmsReencryptRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsSignKey Signs a message or digest using a named key
 // key: Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignRequest GcpkmsSignRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignRequest GcpkmsSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/sign/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3492,15 +4853,21 @@ func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignR
 		http.MethodPost,
 		requestPath,
 		gcpkmsSignRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostGcpkmsVerifyKey Verify a signature using a named key
 // key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVerifyRequest GcpkmsVerifyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVerifyRequest GcpkmsVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/gcpkms/verify/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3508,13 +4875,19 @@ func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVer
 		http.MethodPost,
 		requestPath,
 		gcpkmsVerifyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostKubernetesConfig
-func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3522,15 +4895,21 @@ func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequ
 		http.MethodPost,
 		requestPath,
 		kubernetesConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostKubernetesCredsName
 // name: Name of the Vault role
-func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kubernetesCredsRequest KubernetesCredsRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kubernetesCredsRequest KubernetesCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3538,15 +4917,21 @@ func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kube
 		http.MethodPost,
 		requestPath,
 		kubernetesCredsRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostKubernetesRolesName
 // name: Name of the role
-func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kubernetesRolesRequest KubernetesRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kubernetesRolesRequest KubernetesRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kubernetes/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3554,29 +4939,41 @@ func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kube
 		http.MethodPost,
 		requestPath,
 		kubernetesRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-func (a *Secrets) PostKvPath(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostKvPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/kv/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapConfig
-func (a *Secrets) PostLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3584,15 +4981,21 @@ func (a *Secrets) PostLdapConfig(ctx context.Context, ldapConfigRequest LdapConf
 		http.MethodPost,
 		requestPath,
 		ldapConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapLibraryManageNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostLdapLibraryManageNameCheckIn(ctx context.Context, name string, ldapLibraryManageCheckInRequest LdapLibraryManageCheckInRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapLibraryManageNameCheckIn(ctx context.Context, name string, ldapLibraryManageCheckInRequest LdapLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library/manage/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3600,15 +5003,21 @@ func (a *Secrets) PostLdapLibraryManageNameCheckIn(ctx context.Context, name str
 		http.MethodPost,
 		requestPath,
 		ldapLibraryManageCheckInRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapLibraryName Update a library set.
 // name: Name of the set.
-func (a *Secrets) PostLdapLibraryName(ctx context.Context, name string, ldapLibraryRequest LdapLibraryRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapLibraryName(ctx context.Context, name string, ldapLibraryRequest LdapLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3616,15 +5025,21 @@ func (a *Secrets) PostLdapLibraryName(ctx context.Context, name string, ldapLibr
 		http.MethodPost,
 		requestPath,
 		ldapLibraryRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapLibraryNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostLdapLibraryNameCheckIn(ctx context.Context, name string, ldapLibraryCheckInRequest LdapLibraryCheckInRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapLibraryNameCheckIn(ctx context.Context, name string, ldapLibraryCheckInRequest LdapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3632,15 +5047,21 @@ func (a *Secrets) PostLdapLibraryNameCheckIn(ctx context.Context, name string, l
 		http.MethodPost,
 		requestPath,
 		ldapLibraryCheckInRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapLibraryNameCheckOut Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) PostLdapLibraryNameCheckOut(ctx context.Context, name string, ldapLibraryCheckOutRequest LdapLibraryCheckOutRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapLibraryNameCheckOut(ctx context.Context, name string, ldapLibraryCheckOutRequest LdapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/library/{name}/check-out"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3648,15 +5069,21 @@ func (a *Secrets) PostLdapLibraryNameCheckOut(ctx context.Context, name string, 
 		http.MethodPost,
 		requestPath,
 		ldapLibraryCheckOutRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) PostLdapRoleName(ctx context.Context, name string, ldapRoleRequest LdapRoleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapRoleName(ctx context.Context, name string, ldapRoleRequest LdapRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3664,45 +5091,63 @@ func (a *Secrets) PostLdapRoleName(ctx context.Context, name string, ldapRoleReq
 		http.MethodPost,
 		requestPath,
 		ldapRoleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapRotateRoleName
 // name: Name of the static role
-func (a *Secrets) PostLdapRotateRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapRotateRoot
-func (a *Secrets) PostLdapRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/rotate-root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostLdapStaticRoleName
 // name: Name of the role
-func (a *Secrets) PostLdapStaticRoleName(ctx context.Context, name string, ldapStaticRoleRequest LdapStaticRoleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostLdapStaticRoleName(ctx context.Context, name string, ldapStaticRoleRequest LdapStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3710,13 +5155,19 @@ func (a *Secrets) PostLdapStaticRoleName(ctx context.Context, name string, ldapS
 		http.MethodPost,
 		requestPath,
 		ldapStaticRoleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3724,31 +5175,43 @@ func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfig
 		http.MethodPost,
 		requestPath,
 		mongodbatlasConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mongodbatlasRolesRequest MongodbatlasRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mongodbatlasRolesRequest MongodbatlasRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/mongodbatlas/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3756,13 +5219,19 @@ func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mo
 		http.MethodPost,
 		requestPath,
 		mongodbatlasRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostNomadConfigAccess
-func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/access"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3770,13 +5239,19 @@ func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRe
 		http.MethodPost,
 		requestPath,
 		nomadConfigAccessRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostNomadConfigLease Configure the lease parameters for generated tokens
-func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/config/lease"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3784,15 +5259,21 @@ func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequ
 		http.MethodPost,
 		requestPath,
 		nomadConfigLeaseRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostNomadRoleName
 // name: Name of the role
-func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleRequest NomadRoleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleRequest NomadRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/nomad/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3800,13 +5281,19 @@ func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleR
 		http.MethodPost,
 		requestPath,
 		nomadRoleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapConfig
-func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3814,15 +5301,21 @@ func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest 
 		http.MethodPost,
 		requestPath,
 		openldapConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapLibraryManageNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostOpenldapLibraryManageNameCheckIn(ctx context.Context, name string, openldapLibraryManageCheckInRequest OpenldapLibraryManageCheckInRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapLibraryManageNameCheckIn(ctx context.Context, name string, openldapLibraryManageCheckInRequest OpenldapLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library/manage/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3830,15 +5323,21 @@ func (a *Secrets) PostOpenldapLibraryManageNameCheckIn(ctx context.Context, name
 		http.MethodPost,
 		requestPath,
 		openldapLibraryManageCheckInRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapLibraryName Update a library set.
 // name: Name of the set.
-func (a *Secrets) PostOpenldapLibraryName(ctx context.Context, name string, openldapLibraryRequest OpenldapLibraryRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapLibraryName(ctx context.Context, name string, openldapLibraryRequest OpenldapLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3846,15 +5345,21 @@ func (a *Secrets) PostOpenldapLibraryName(ctx context.Context, name string, open
 		http.MethodPost,
 		requestPath,
 		openldapLibraryRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapLibraryNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostOpenldapLibraryNameCheckIn(ctx context.Context, name string, openldapLibraryCheckInRequest OpenldapLibraryCheckInRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapLibraryNameCheckIn(ctx context.Context, name string, openldapLibraryCheckInRequest OpenldapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3862,15 +5367,21 @@ func (a *Secrets) PostOpenldapLibraryNameCheckIn(ctx context.Context, name strin
 		http.MethodPost,
 		requestPath,
 		openldapLibraryCheckInRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapLibraryNameCheckOut Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) PostOpenldapLibraryNameCheckOut(ctx context.Context, name string, openldapLibraryCheckOutRequest OpenldapLibraryCheckOutRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapLibraryNameCheckOut(ctx context.Context, name string, openldapLibraryCheckOutRequest OpenldapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/library/{name}/check-out"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3878,15 +5389,21 @@ func (a *Secrets) PostOpenldapLibraryNameCheckOut(ctx context.Context, name stri
 		http.MethodPost,
 		requestPath,
 		openldapLibraryCheckOutRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openldapRoleRequest OpenldapRoleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openldapRoleRequest OpenldapRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3894,45 +5411,63 @@ func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openlda
 		http.MethodPost,
 		requestPath,
 		openldapRoleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapRotateRoleName
 // name: Name of the static role
-func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapRotateRoot
-func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/rotate-root"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostOpenldapStaticRoleName
 // name: Name of the role
-func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, openldapStaticRoleRequest OpenldapStaticRoleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, openldapStaticRoleRequest OpenldapStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/openldap/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3940,13 +5475,19 @@ func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, o
 		http.MethodPost,
 		requestPath,
 		openldapStaticRoleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiBundle
-func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/bundle"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3954,13 +5495,19 @@ func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleR
 		http.MethodPost,
 		requestPath,
 		pkiBundleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiCert
-func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/cert"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3968,13 +5515,19 @@ func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest
 		http.MethodPost,
 		requestPath,
 		pkiCertRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiConfigAutoTidy
-func (a *Secrets) PostPkiConfigAutoTidy(ctx context.Context, pkiConfigAutoTidyRequest PkiConfigAutoTidyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiConfigAutoTidy(ctx context.Context, pkiConfigAutoTidyRequest PkiConfigAutoTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/auto-tidy"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3982,13 +5535,19 @@ func (a *Secrets) PostPkiConfigAutoTidy(ctx context.Context, pkiConfigAutoTidyRe
 		http.MethodPost,
 		requestPath,
 		pkiConfigAutoTidyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiConfigCa
-func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/ca"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3996,13 +5555,19 @@ func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiCon
 		http.MethodPost,
 		requestPath,
 		pkiConfigCaRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiConfigCrl
-func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/crl"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4010,13 +5575,19 @@ func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiC
 		http.MethodPost,
 		requestPath,
 		pkiConfigCrlRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiConfigIssuers
-func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/issuers"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4024,13 +5595,19 @@ func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequ
 		http.MethodPost,
 		requestPath,
 		pkiConfigIssuersRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiConfigKeys
-func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/keys"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4038,13 +5615,19 @@ func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest Pk
 		http.MethodPost,
 		requestPath,
 		pkiConfigKeysRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiConfigUrls
-func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/config/urls"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4052,13 +5635,19 @@ func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest Pk
 		http.MethodPost,
 		requestPath,
 		pkiConfigUrlsRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIntermediateCrossSign
-func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/intermediate/cross-sign"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4066,15 +5655,21 @@ func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermedi
 		http.MethodPost,
 		requestPath,
 		pkiIntermediateCrossSignRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIntermediateGenerateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, exported string, pkiIntermediateGenerateRequest PkiIntermediateGenerateRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, exported string, pkiIntermediateGenerateRequest PkiIntermediateGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/intermediate/generate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4082,13 +5677,19 @@ func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, expor
 		http.MethodPost,
 		requestPath,
 		pkiIntermediateGenerateRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIntermediateSetSigned
-func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/intermediate/set-signed"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4096,15 +5697,21 @@ func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermedi
 		http.MethodPost,
 		requestPath,
 		pkiIntermediateSetSignedRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssueRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueRequest PkiIssueRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueRequest PkiIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issue/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4112,17 +5719,23 @@ func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueReq
 		http.MethodPost,
 		requestPath,
 		pkiIssueRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuerIssuerRefIssueRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, role string, pkiIssuerIssueRequest PkiIssuerIssueRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, role string, pkiIssuerIssueRequest PkiIssuerIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuer/{issuer_ref}/issue/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4130,31 +5743,43 @@ func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef
 		http.MethodPost,
 		requestPath,
 		pkiIssuerIssueRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuerIssuerRefRevoke
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefRevoke(ctx context.Context, issuerRef string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuerIssuerRefRevoke(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuer/{issuer_ref}/revoke"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuerIssuerRefSignIntermediate
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string, pkiIssuerSignIntermediateRequest PkiIssuerSignIntermediateRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string, pkiIssuerSignIntermediateRequest PkiIssuerSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-intermediate"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4162,17 +5787,23 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, is
 		http.MethodPost,
 		requestPath,
 		pkiIssuerSignIntermediateRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuerIssuerRefSignRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignRequest PkiIssuerSignRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignRequest PkiIssuerSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4180,15 +5811,21 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef 
 		http.MethodPost,
 		requestPath,
 		pkiIssuerSignRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuerIssuerRefSignSelfIssued
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string, pkiIssuerSignSelfIssuedRequest PkiIssuerSignSelfIssuedRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string, pkiIssuerSignSelfIssuedRequest PkiIssuerSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-self-issued"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4196,15 +5833,21 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issu
 		http.MethodPost,
 		requestPath,
 		pkiIssuerSignSelfIssuedRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuerIssuerRefSignVerbatim
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-verbatim"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4212,17 +5855,23 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuer
 		http.MethodPost,
 		requestPath,
 		pkiIssuerSignVerbatimRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuerIssuerRefSignVerbatimRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-verbatim/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4230,15 +5879,21 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, is
 		http.MethodPost,
 		requestPath,
 		pkiIssuerSignVerbatimRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuersGenerateIntermediateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string, pkiIssuersGenerateIntermediateRequest PkiIssuersGenerateIntermediateRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string, pkiIssuersGenerateIntermediateRequest PkiIssuersGenerateIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuers/generate/intermediate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4246,15 +5901,21 @@ func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context
 		http.MethodPost,
 		requestPath,
 		pkiIssuersGenerateIntermediateRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiIssuersGenerateRootExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string, pkiIssuersGenerateRootRequest PkiIssuersGenerateRootRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string, pkiIssuersGenerateRootRequest PkiIssuersGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/issuers/generate/root/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4262,13 +5923,19 @@ func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, export
 		http.MethodPost,
 		requestPath,
 		pkiIssuersGenerateRootRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiJson
-func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki//json"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4276,15 +5943,21 @@ func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest
 		http.MethodPost,
 		requestPath,
 		pkiJsonRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyRequest PkiKeyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyRequest PkiKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4292,13 +5965,19 @@ func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyReq
 		http.MethodPost,
 		requestPath,
 		pkiKeyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiKeysImport
-func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/keys/import"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4306,13 +5985,19 @@ func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest Pk
 		http.MethodPost,
 		requestPath,
 		pkiKeysImportRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiKms
-func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/kms"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4320,27 +6005,39 @@ func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (
 		http.MethodPost,
 		requestPath,
 		pkiKmsRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiOcsp
-func (a *Secrets) PostPkiOcsp(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiOcsp(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/ocsp"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRevoke
-func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/revoke"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4348,13 +6045,19 @@ func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeR
 		http.MethodPost,
 		requestPath,
 		pkiRevokeRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRevokeWithKey
-func (a *Secrets) PostPkiRevokeWithKey(ctx context.Context, pkiRevokeWithKeyRequest PkiRevokeWithKeyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRevokeWithKey(ctx context.Context, pkiRevokeWithKeyRequest PkiRevokeWithKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/revoke-with-key"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4362,15 +6065,21 @@ func (a *Secrets) PostPkiRevokeWithKey(ctx context.Context, pkiRevokeWithKeyRequ
 		http.MethodPost,
 		requestPath,
 		pkiRevokeWithKeyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRolesName
 // name: Name of the role
-func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesRequest PkiRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesRequest PkiRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4378,15 +6087,21 @@ func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesReq
 		http.MethodPost,
 		requestPath,
 		pkiRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRootGenerateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported string, pkiRootGenerateRequest PkiRootGenerateRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported string, pkiRootGenerateRequest PkiRootGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/generate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4394,13 +6109,19 @@ func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported stri
 		http.MethodPost,
 		requestPath,
 		pkiRootGenerateRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRootReplace
-func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/replace"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4408,15 +6129,21 @@ func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest 
 		http.MethodPost,
 		requestPath,
 		pkiRootReplaceRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRootRotateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string, pkiRootRotateRequest PkiRootRotateRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string, pkiRootRotateRequest PkiRootRotateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/rotate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4424,13 +6151,19 @@ func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string
 		http.MethodPost,
 		requestPath,
 		pkiRootRotateRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRootSignIntermediate
-func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/sign-intermediate"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4438,13 +6171,19 @@ func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIn
 		http.MethodPost,
 		requestPath,
 		pkiRootSignIntermediateRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiRootSignSelfIssued
-func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/root/sign-self-issued"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4452,15 +6191,21 @@ func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelf
 		http.MethodPost,
 		requestPath,
 		pkiRootSignSelfIssuedRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiSignRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignRequest PkiSignRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignRequest PkiSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/sign/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4468,13 +6213,19 @@ func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignReque
 		http.MethodPost,
 		requestPath,
 		pkiSignRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiSignVerbatim
-func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/sign-verbatim"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4482,15 +6233,21 @@ func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimReques
 		http.MethodPost,
 		requestPath,
 		pkiSignVerbatimRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiSignVerbatimRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiSignVerbatimRequest PkiSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/sign-verbatim/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4498,13 +6255,19 @@ func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiS
 		http.MethodPost,
 		requestPath,
 		pkiSignVerbatimRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiTidy
-func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/tidy"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4512,27 +6275,39 @@ func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest
 		http.MethodPost,
 		requestPath,
 		pkiTidyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostPkiTidyCancel
-func (a *Secrets) PostPkiTidyCancel(ctx context.Context) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostPkiTidyCancel(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/pki/tidy-cancel"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostRabbitmqConfigConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
-func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/config/connection"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4540,13 +6315,19 @@ func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConf
 		http.MethodPost,
 		requestPath,
 		rabbitmqConfigConnectionRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostRabbitmqConfigLease Configure the lease parameters for generated credentials
-func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/config/lease"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4554,15 +6335,21 @@ func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLea
 		http.MethodPost,
 		requestPath,
 		rabbitmqConfigLeaseRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbitmqRolesRequest RabbitmqRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbitmqRolesRequest RabbitmqRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/rabbitmq/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4570,13 +6357,19 @@ func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbit
 		http.MethodPost,
 		requestPath,
 		rabbitmqRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSecretConfig Configure backend level settings that are applied to every key in the key-value store.
-func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4584,15 +6377,21 @@ func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfig
 		http.MethodPost,
 		requestPath,
 		kvConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataRequest KvDataRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataRequest KvDataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4600,15 +6399,21 @@ func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataReq
 		http.MethodPost,
 		requestPath,
 		kvDataRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSecretDeletePath Marks one or more versions as deleted in the KV store.
 // path: Location of the secret.
-func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDeleteRequest KvDeleteRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDeleteRequest KvDeleteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/delete/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4616,15 +6421,21 @@ func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDelet
 		http.MethodPost,
 		requestPath,
 		kvDeleteRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSecretDestroyPath Permanently removes one or more versions in the KV store
 // path: Location of the secret.
-func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDestroyRequest KvDestroyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDestroyRequest KvDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/destroy/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4632,15 +6443,21 @@ func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDest
 		http.MethodPost,
 		requestPath,
 		kvDestroyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMetadataRequest KvMetadataRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMetadataRequest KvMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4648,15 +6465,21 @@ func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMet
 		http.MethodPost,
 		requestPath,
 		kvMetadataRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSecretUndeletePath Undeletes one or more versions from the KV store.
 // path: Location of the secret.
-func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUndeleteRequest KvUndeleteRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUndeleteRequest KvUndeleteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/secret/undelete/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4664,13 +6487,19 @@ func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUnd
 		http.MethodPost,
 		requestPath,
 		kvUndeleteRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshConfigCa Set the SSH private key used for signing certificates.
-func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/ca"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4678,13 +6507,19 @@ func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshCon
 		http.MethodPost,
 		requestPath,
 		sshConfigCaRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/config/zeroaddress"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4692,15 +6527,21 @@ func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroadd
 		http.MethodPost,
 		requestPath,
 		sshConfigZeroaddressRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshCredsRole Creates a credential for establishing SSH connection with the remote host.
 // role: [Required] Name of the role
-func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsRequest SshCredsRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsRequest SshCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/creds/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4708,15 +6549,21 @@ func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsReq
 		http.MethodPost,
 		requestPath,
 		sshCredsRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshIssueRole
 // role: The desired role with configuration for this request.
-func (a *Secrets) PostSshIssueRole(ctx context.Context, role string, sshIssueRequest SshIssueRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshIssueRole(ctx context.Context, role string, sshIssueRequest SshIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/issue/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4724,15 +6571,21 @@ func (a *Secrets) PostSshIssueRole(ctx context.Context, role string, sshIssueReq
 		http.MethodPost,
 		requestPath,
 		sshIssueRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshKeysKeyName Register a shared private key with Vault.
 // keyName: [Required] Name of the key
-func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKeysRequest SshKeysRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKeysRequest SshKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/keys/{key_name}"
 	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4740,13 +6593,19 @@ func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKey
 		http.MethodPost,
 		requestPath,
 		sshKeysRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshLookup List all the roles associated with the given IP address.
-func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/lookup"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4754,15 +6613,21 @@ func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupR
 		http.MethodPost,
 		requestPath,
 		sshLookupRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesRequest SshRolesRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesRequest SshRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4770,15 +6635,21 @@ func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesReq
 		http.MethodPost,
 		requestPath,
 		sshRolesRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshSignRole Request signing an SSH key using a certain role with the provided details.
 // role: The desired role with configuration for this request.
-func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignRequest SshSignRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignRequest SshSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/sign/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4786,13 +6657,19 @@ func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignReque
 		http.MethodPost,
 		requestPath,
 		sshSignRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostSshVerify Validate the OTP provided by Vault SSH Agent.
-func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/ssh/verify"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4800,13 +6677,19 @@ func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyR
 		http.MethodPost,
 		requestPath,
 		sshVerifyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTerraformConfig
-func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4814,31 +6697,43 @@ func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigReques
 		http.MethodPost,
 		requestPath,
 		terraformConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTerraformRoleName
 // name: Name of the role
-func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraformRoleRequest TerraformRoleRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraformRoleRequest TerraformRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4846,31 +6741,43 @@ func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraf
 		http.MethodPost,
 		requestPath,
 		terraformRoleRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTerraformRotateRoleName
 // name: Name of the team or organization role
-func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/terraform/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTotpCodeName Request time-based one-time use password or validate a password for a certain key .
 // name: Name of the key.
-func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeRequest TotpCodeRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeRequest TotpCodeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/totp/code/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4878,15 +6785,21 @@ func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeReq
 		http.MethodPost,
 		requestPath,
 		totpCodeRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysRequest TotpKeysRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysRequest TotpKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/totp/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4894,13 +6807,19 @@ func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysReq
 		http.MethodPost,
 		requestPath,
 		totpKeysRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitCacheConfig Configures a new cache of the specified size
-func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/cache-config"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4908,17 +6827,23 @@ func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfig
 		http.MethodPost,
 		requestPath,
 		transitCacheConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitDatakeyPlaintextName Generate a data key
 // name: The backend key used for encrypting the data key
 // plaintext: \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only.
-func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string, transitDatakeyRequest TransitDatakeyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string, transitDatakeyRequest TransitDatakeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/datakey/{plaintext}/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"plaintext"+"}", url.PathEscape(plaintext), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4926,15 +6851,21 @@ func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name stri
 		http.MethodPost,
 		requestPath,
 		transitDatakeyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitDecryptName Decrypt a ciphertext value using a named key
 // name: Name of the key
-func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, transitDecryptRequest TransitDecryptRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, transitDecryptRequest TransitDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/decrypt/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4942,15 +6873,21 @@ func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, trans
 		http.MethodPost,
 		requestPath,
 		transitDecryptRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks using a named key
 // name: Name of the key
-func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/encrypt/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4958,13 +6895,19 @@ func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, trans
 		http.MethodPost,
 		requestPath,
 		transitEncryptRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitHash Generate a hash sum for input data
-func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/hash"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4972,15 +6915,21 @@ func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest Transi
 		http.MethodPost,
 		requestPath,
 		transitHashRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitHashUrlalgorithm Generate a hash sum for input data
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm string, transitHashRequest TransitHashRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm string, transitHashRequest TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/hash/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4988,15 +6937,21 @@ func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm 
 		http.MethodPost,
 		requestPath,
 		transitHashRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitHmacName Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
-func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitHmacRequest TransitHmacRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitHmacRequest TransitHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/hmac/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5004,17 +6959,23 @@ func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitH
 		http.MethodPost,
 		requestPath,
 		transitHmacRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitHmacRequest TransitHmacRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitHmacRequest TransitHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/hmac/{name}/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5022,15 +6983,21 @@ func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name stri
 		http.MethodPost,
 		requestPath,
 		transitHmacRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitKeysRequest TransitKeysRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitKeysRequest TransitKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5038,15 +7005,21 @@ func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitK
 		http.MethodPost,
 		requestPath,
 		transitKeysRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitKeysNameConfig Configure a named encryption key
 // name: Name of the key
-func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, transitKeysConfigRequest TransitKeysConfigRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, transitKeysConfigRequest TransitKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}/config"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5054,15 +7027,21 @@ func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, tr
 		http.MethodPost,
 		requestPath,
 		transitKeysConfigRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitKeysNameImport Imports an externally-generated key into a new transit key
 // name: The name of the key
-func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, transitKeysImportRequest TransitKeysImportRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, transitKeysImportRequest TransitKeysImportRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}/import"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5070,15 +7049,21 @@ func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, tr
 		http.MethodPost,
 		requestPath,
 		transitKeysImportRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitKeysNameImportVersion Imports an externally-generated key into an existing imported key
 // name: The name of the key
-func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name string, transitKeysImportVersionRequest TransitKeysImportVersionRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name string, transitKeysImportVersionRequest TransitKeysImportVersionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}/import_version"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5086,31 +7071,43 @@ func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name str
 		http.MethodPost,
 		requestPath,
 		transitKeysImportVersionRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitKeysNameRotate Rotate named encryption key
 // name: Name of the key
-func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}/rotate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitKeysNameTrim Trim key versions of a named key
 // name: Name of the key
-func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, transitKeysTrimRequest TransitKeysTrimRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, transitKeysTrimRequest TransitKeysTrimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/keys/{name}/trim"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5118,13 +7115,19 @@ func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, tran
 		http.MethodPost,
 		requestPath,
 		transitKeysTrimRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitRandom Generate random bytes
-func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/random"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5132,15 +7135,21 @@ func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest Tr
 		http.MethodPost,
 		requestPath,
 		transitRandomRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitRandomSource Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, transitRandomRequest TransitRandomRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/random/{source}"
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5148,17 +7157,23 @@ func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, tr
 		http.MethodPost,
 		requestPath,
 		transitRandomRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitRandomSourceUrlbytes Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, transitRandomRequest TransitRandomRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/random/{source}/{urlbytes}"
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5166,15 +7181,21 @@ func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source st
 		http.MethodPost,
 		requestPath,
 		transitRandomRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitRandomUrlbytes Generate random bytes
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string, transitRandomRequest TransitRandomRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/random/{urlbytes}"
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5182,13 +7203,19 @@ func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string
 		http.MethodPost,
 		requestPath,
 		transitRandomRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitRestore Restore the named key
-func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/restore"
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5196,15 +7223,21 @@ func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest 
 		http.MethodPost,
 		requestPath,
 		transitRestoreRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitRestoreName Restore the named key
 // name: If set, this will be the name of the restored key.
-func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, transitRestoreRequest TransitRestoreRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, transitRestoreRequest TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/restore/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5212,15 +7245,21 @@ func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, trans
 		http.MethodPost,
 		requestPath,
 		transitRestoreRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitRewrapName Rewrap ciphertext
 // name: Name of the key
-func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transitRewrapRequest TransitRewrapRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transitRewrapRequest TransitRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/rewrap/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5228,15 +7267,21 @@ func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transi
 		http.MethodPost,
 		requestPath,
 		transitRewrapRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitSignName Generate a signature for input data using the named key
 // name: The key to use
-func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitSignRequest TransitSignRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitSignRequest TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/sign/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5244,17 +7289,23 @@ func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitS
 		http.MethodPost,
 		requestPath,
 		transitSignRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitSignNameUrlalgorithm Generate a signature for input data using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitSignRequest TransitSignRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitSignRequest TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/sign/{name}/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5262,15 +7313,21 @@ func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name stri
 		http.MethodPost,
 		requestPath,
 		transitSignRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitVerifyName Verify a signature or HMAC for input data created using the named key
 // name: The key to use
-func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transitVerifyRequest TransitVerifyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transitVerifyRequest TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/verify/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5278,17 +7335,23 @@ func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transi
 		http.MethodPost,
 		requestPath,
 		transitVerifyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data created using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitVerifyRequest TransitVerifyRequest) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitVerifyRequest TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/transit/verify/{name}/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5296,6 +7359,7 @@ func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name st
 		http.MethodPost,
 		requestPath,
 		transitVerifyRequest,
-		nil, // request query parameters
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
 	)
 }

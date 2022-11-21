@@ -106,8 +106,7 @@ func (c *Client) DeleteWithParameters(ctx context.Context, path string, paramete
 	)
 }
 
-// sendStructuredRequestParseResponse is a helper function to construct a
-// json.Marshaler encoded request, send it to Vault and parse the response
+// sendStructuredRequestParseResponse constructs a structured request, sends it, and parses the response
 func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body json.Marshaler, parameters url.Values, requestModifiersLocal requestModifiers) (*Response[ResponseT], error) {
 	var buf bytes.Buffer
 
@@ -118,8 +117,7 @@ func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, clie
 	return sendRequestParseResponse[ResponseT](ctx, client, method, path, &buf, parameters, requestModifiersLocal)
 }
 
-// sendRequestParseResponse is a helper function to construct a request, send
-// it to Vault and parse the response
+// sendRequestParseResponse constructs a request, sends it, and parses the response
 func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values, requestModifiersLocal requestModifiers) (*Response[ResponseT], error) {
 	// clone the client-level request modifiers to prevent race conditions
 	requestModifiersClient := client.cloneClientRequestModifiers()

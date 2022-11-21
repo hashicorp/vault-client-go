@@ -16,11 +16,16 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-func (c *Client) Read(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
-	return c.ReadWithParameters(ctx, path, nil)
+func (c *Client) Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	return c.ReadWithParameters(ctx, path, nil, options...)
 }
 
-func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values) (*Response[map[string]interface{}], error) {
+func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := toRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		c,
@@ -28,35 +33,47 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 		v1Path(path),
 		nil,        // request body
 		parameters, // request query parameters
+		modifiers,  // request modifiers
 	)
 }
 
-func (c *Client) Write(ctx context.Context, path string, body map[string]interface{}) (*Response[map[string]interface{}], error) {
+func (c *Client) Write(ctx context.Context, path string, body map[string]interface{}, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	var buf bytes.Buffer
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return c.WriteFromReader(ctx, path, &buf)
+	return c.WriteFromReader(ctx, path, &buf, options...)
 }
 
-func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte) (*Response[map[string]interface{}], error) {
-	return c.WriteFromReader(ctx, path, bytes.NewReader(body))
+func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	return c.WriteFromReader(ctx, path, bytes.NewReader(body), options...)
 }
 
-func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reader) (*Response[map[string]interface{}], error) {
+func (c *Client) WriteFromReader(ctx context.Context, path string, body io.Reader, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := toRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		c,
 		http.MethodPost,
 		v1Path(path),
-		body, // request body
-		nil,  // request query parameters
+		body,      // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers
 	)
 }
 
-func (c *Client) List(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
+func (c *Client) List(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := toRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		c,
@@ -64,14 +81,20 @@ func (c *Client) List(ctx context.Context, path string) (*Response[map[string]in
 		v1Path(path),
 		nil,                                   // request body
 		map[string][]string{"list": {"true"}}, // request query parameters
+		modifiers,                             // request modifiers
 	)
 }
 
-func (c *Client) Delete(ctx context.Context, path string) (*Response[map[string]interface{}], error) {
-	return c.DeleteWithParameters(ctx, path, nil)
+func (c *Client) Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	return c.DeleteWithParameters(ctx, path, nil, options...)
 }
 
-func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values) (*Response[map[string]interface{}], error) {
+func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := toRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		c,
@@ -79,30 +102,27 @@ func (c *Client) DeleteWithParameters(ctx context.Context, path string, paramete
 		v1Path(path),
 		nil,        // request body
 		parameters, // request query parameters
+		modifiers,  // request modifiers
 	)
 }
 
 // sendStructuredRequestParseResponse is a helper function to construct a
 // json.Marshaler encoded request, send it to Vault and parse the response
-func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body json.Marshaler, parameters url.Values) (*Response[ResponseT], error) {
+func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body json.Marshaler, parameters url.Values, requestModifiersLocal requestModifiers) (*Response[ResponseT], error) {
 	var buf bytes.Buffer
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return sendRequestParseResponse[ResponseT](ctx, client, method, path, &buf, parameters)
+	return sendRequestParseResponse[ResponseT](ctx, client, method, path, &buf, parameters, requestModifiersLocal)
 }
 
 // sendRequestParseResponse is a helper function to construct a request, send
 // it to Vault and parse the response
-func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values, options ...RequestOption) (*Response[ResponseT], error) {
+func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values, requestModifiersLocal requestModifiers) (*Response[ResponseT], error) {
 	// clone the client-level request modifiers to prevent race conditions
 	requestModifiersClient := client.cloneClientRequestModifiers()
-	requestModifiersLocal, err := toRequestModifiers(options)
-	if err != nil {
-		return nil, fmt.Errorf("request options: %w", err)
-	}
 
 	// merge the client-level & request-level modifiers, preferring the later
 	modifiers := mergeRequestModifiers(
@@ -115,7 +135,7 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 		return nil, err
 	}
 
-	resp, err := client.do(ctx, req, true, modifiers)
+	resp, err := client.do(ctx, req, true, modifiers.requestCallbacks, modifiers.responseCallbacks)
 	if err != nil || resp == nil {
 		return nil, err
 	}
@@ -190,7 +210,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 }
 
 // do sends the given request to Vault, handling retries, redirects, and rate limiting
-func (c *Client) do(ctx context.Context, req *http.Request, retry bool, modifiers requestModifiers) (*http.Response, error) {
+func (c *Client) do(ctx context.Context, req *http.Request, retry bool, requestCallbacks []RequestCallback, responseCallbacks []ResponseCallback) (*http.Response, error) {
 	// block on the rate limiter, if set
 	if c.configuration.RateLimiter != nil {
 		c.configuration.RateLimiter.Wait(ctx)
@@ -200,11 +220,8 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool, modifier
 		c.replicationStates.requireReplicationStates(req)
 	}
 
-	// clone request modifiers behind a lock
-	m := c.cloneClientRequestModifiers()
-
 	// invoke request callbacks
-	for _, callback := range m.requestCallbacks {
+	for _, callback := range requestCallbacks {
 		callback(req)
 	}
 
@@ -232,7 +249,7 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool, modifier
 	}
 
 	// invoke response callbacks
-	for _, callback := range m.responseCallbacks {
+	for _, callback := range responseCallbacks {
 		callback(req, resp)
 	}
 

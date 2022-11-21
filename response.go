@@ -109,20 +109,23 @@ func (r *Response[T]) Unwrap(ctx context.Context, client *Client) (*Response[T],
 //
 // See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
 // for more information on response wrapping
-func UnwrapToken[T any](ctx context.Context, client *Client, wrappingToken string) (*Response[T], error) {
-	clientWithWrappingToken := client.Clone()
+func UnwrapToken[T any](ctx context.Context, client *Client, wrappingToken string, options ...RequestOption) (*Response[T], error) {
+	// set the wrapping token
+	options = append(options, WithToken(wrappingToken))
 
-	if err := clientWithWrappingToken.SetToken(wrappingToken); err != nil {
-		return nil, fmt.Errorf("could not set wrapping token: %w", err)
+	modifiers, err := toRequestModifiers(options)
+	if err != nil {
+		return nil, err
 	}
 
 	return sendRequestParseResponse[T](
 		ctx,
-		clientWithWrappingToken,
+		client,
 		http.MethodPut,
 		"/v1/sys/wrapping/unwrap",
-		nil, // request body
-		nil, // request query parameters
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers
 	)
 }
 

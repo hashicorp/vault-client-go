@@ -53,9 +53,9 @@ func (c *Client) SetToken(token string) error {
 		return err
 	}
 
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.token = token
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.token = token
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
@@ -64,9 +64,9 @@ func (c *Client) SetToken(token string) error {
 //
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on tokens.
 func (c *Client) ClearToken() {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.token = ""
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.token = ""
+	c.clientRequestModifiersLock.Unlock()
 }
 
 // WithToken sets the token for the next request; it takes precedence over the
@@ -93,9 +93,9 @@ func (c *Client) SetNamespace(namespace string) error {
 		return err
 	}
 
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.namespace = namespace
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.namespace = namespace
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
@@ -105,9 +105,9 @@ func (c *Client) SetNamespace(namespace string) error {
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) ClearNamespace() {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.namespace = ""
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.namespace = ""
+	c.clientRequestModifiersLock.Unlock()
 }
 
 // WithNamespace sets the namespace for the next request; it takes precedence
@@ -132,9 +132,9 @@ func (c *Client) WithNamespace(namespace string) RequestOption {
 // See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
 // for more information on multi-factor authentication.
 func (c *Client) SetMFACredentials(credentials ...string) error {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.mfaCredentials = credentials
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.mfaCredentials = credentials
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
@@ -145,9 +145,9 @@ func (c *Client) SetMFACredentials(credentials ...string) error {
 // See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
 // for more information on multi-factor authentication.
 func (c *Client) ClearMFACredentials() {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.mfaCredentials = nil
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.mfaCredentials = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
 // WithMFACredentials sets the multi-factor authentication credentials for the
@@ -169,9 +169,9 @@ func (c *Client) WithMFACredentials(credentials ...string) RequestOption {
 // See https://www.vaultproject.io/docs/concepts/response-wrapping for more
 // information on response wrapping.
 func (c *Client) SetResponseWrapping(ttl time.Duration) error {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.responseWrappingTTL = ttl
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.responseWrappingTTL = ttl
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
@@ -182,9 +182,9 @@ func (c *Client) SetResponseWrapping(ttl time.Duration) error {
 // See https://www.vaultproject.io/docs/concepts/response-wrapping for more
 // information on response wrapping.
 func (c *Client) ClearResponseWrapping() {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.responseWrappingTTL = 0
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.responseWrappingTTL = 0
+	c.clientRequestModifiersLock.Unlock()
 }
 
 // WithResponseWrapping sets the response-wrapping TTL to the given duration
@@ -209,18 +209,18 @@ func (c *Client) SetCustomHeaders(headers http.Header) error {
 		return err
 	}
 
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.customHeaders = headers.Clone()
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.customHeaders = headers.Clone()
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
 
 // ClearsCustomHeaders clears all custom headers from the subsequent requests.
 func (c *Client) ClearCustomHeaders() {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.headers.customHeaders = nil
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.customHeaders = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
 // WithCustomHeaders sets custom headers for the next request; these headers
@@ -238,18 +238,18 @@ func (c *Client) WithCustomHeaders(headers http.Header) RequestOption {
 
 // SetRequestCallbacks sets callbacks which will be invoked before each request.
 func (c *Client) SetRequestCallbacks(callbacks ...RequestCallback) error {
-	c.globalRequestModifiersLock.Lock()
-	copy(c.globalRequestModifiers.requestCallbacks, callbacks)
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	copy(c.clientRequestModifiers.requestCallbacks, callbacks)
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
 
 // ClearRequestCallbacks clears all request callbacks.
 func (c *Client) ClearRequestCallbacks() {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.requestCallbacks = nil
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.requestCallbacks = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
 // WithRequestCallbacks sets callbacks which will be invoked before the next
@@ -264,18 +264,18 @@ func (c *Client) WithRequestCallbacks(callbacks ...RequestCallback) RequestOptio
 // SetResponseCallbacks sets callbacks which will be invoked after each
 // successful response.
 func (c *Client) SetResponseCallbacks(callbacks ...ResponseCallback) error {
-	c.globalRequestModifiersLock.Lock()
-	copy(c.globalRequestModifiers.responseCallbacks, callbacks)
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	copy(c.clientRequestModifiers.responseCallbacks, callbacks)
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
 
 // ClearResponseCallbacks clears all response callbacks.
 func (c *Client) ClearResponseCallbacks() {
-	c.globalRequestModifiersLock.Lock()
-	c.globalRequestModifiers.responseCallbacks = nil
-	c.globalRequestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.responseCallbacks = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
 // WithResponseCallbacks sets callbacks which will be invoked after a
@@ -288,6 +288,7 @@ func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOpt
 	}
 }
 
+// mergeRequestModifiers merges the two modifiers objects, preferring local
 func mergeRequestModifiers(global, local requestModifiers) requestModifiers {
 	merged := global
 
@@ -330,6 +331,7 @@ func mergeRequestModifiers(global, local requestModifiers) requestModifiers {
 	return merged
 }
 
+// toRequestModifiers constructs `requestModifiers` & propagates the errors
 func toRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
 	var modifiers requestModifiers
 
@@ -422,10 +424,10 @@ const (
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
-	/* */ c.globalRequestModifiersLock.Lock()
-	defer c.globalRequestModifiersLock.Unlock()
+	/* */ c.clientRequestModifiersLock.Lock()
+	defer c.clientRequestModifiersLock.Unlock()
 
-	c.globalRequestModifiers.headers.replicationForwardingMode = mode
+	c.clientRequestModifiers.headers.replicationForwardingMode = mode
 }
 
 // ReplicationForwardingMode clears the X-Vault-Forward / X-Vault-Inconsistent
@@ -433,10 +435,10 @@ func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func (c *Client) ClearReplicationForwardingMode() {
-	/* */ c.globalRequestModifiersLock.Lock()
-	defer c.globalRequestModifiersLock.Unlock()
+	/* */ c.clientRequestModifiersLock.Lock()
+	defer c.clientRequestModifiersLock.Unlock()
 
-	c.globalRequestModifiers.headers.replicationForwardingMode = ReplicationForwardNone
+	c.clientRequestModifiers.headers.replicationForwardingMode = ReplicationForwardNone
 }
 
 // WithReplicationForwardingMode sets a replication forwarding header to the

@@ -97,12 +97,25 @@ func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, clie
 // sendRequestParseResponse is a helper function to construct a request, send
 // it to Vault and parse the response
 func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values, options ...RequestOption) (*Response[ResponseT], error) {
-	req, err := client.newRequest(ctx, method, path, body, parameters, options...)
+	// clone the client-level request modifiers to prevent race conditions
+	requestModifiersClient := client.cloneClientRequestModifiers()
+	requestModifiersLocal, err := toRequestModifiers(options)
+	if err != nil {
+		return nil, fmt.Errorf("request options: %w", err)
+	}
+
+	// merge the client-level & request-level modifiers, preferring the later
+	modifiers := mergeRequestModifiers(
+		requestModifiersClient,
+		requestModifiersLocal,
+	)
+
+	req, err := client.newRequest(ctx, method, path, body, parameters, modifiers.headers)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := client.do(ctx, req, true)
+	resp, err := client.do(ctx, req, true, modifiers)
 	if err != nil || resp == nil {
 		return nil, err
 	}
@@ -116,7 +129,7 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 }
 
 // newRequest returns a new request with vault-specific headers
-func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader, parameters url.Values, options ...RequestOption) (*http.Request, error) {
+func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader, parameters url.Values, headers requestHeaders) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
@@ -143,29 +156,27 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 	}
 
 	// populate request headers
-	m := c.cloneGlobalRequestModifiers()
-
-	if m.headers.userAgent != "" {
-		req.Header.Set("User-Agent", m.headers.userAgent)
+	if headers.userAgent != "" {
+		req.Header.Set("User-Agent", headers.userAgent)
 	}
 
-	if m.headers.token != "" {
-		req.Header.Set("X-Vault-Token", m.headers.token)
+	if headers.token != "" {
+		req.Header.Set("X-Vault-Token", headers.token)
 	}
 
-	if m.headers.namespace != "" {
-		req.Header.Set("X-Vault-Namespace", m.headers.namespace)
+	if headers.namespace != "" {
+		req.Header.Set("X-Vault-Namespace", headers.namespace)
 	}
 
-	for _, credentials := range m.headers.mfaCredentials {
+	for _, credentials := range headers.mfaCredentials {
 		req.Header.Add("X-Vault-MFA", credentials)
 	}
 
-	if m.headers.responseWrappingTTL != 0 {
-		req.Header.Set("X-Vault-Wrap-TTL", m.headers.responseWrappingTTL.String())
+	if headers.responseWrappingTTL != 0 {
+		req.Header.Set("X-Vault-Wrap-TTL", headers.responseWrappingTTL.String())
 	}
 
-	switch m.headers.replicationForwardingMode {
+	switch headers.replicationForwardingMode {
 	// unconditional forwarding (see 'ReplicationForwardAlways' docs)
 	case ReplicationForwardAlways:
 		req.Header.Set("X-Vault-Forward", "active-node")
@@ -179,7 +190,7 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 }
 
 // do sends the given request to Vault, handling retries, redirects, and rate limiting
-func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
+func (c *Client) do(ctx context.Context, req *http.Request, retry bool, modifiers requestModifiers) (*http.Response, error) {
 	// block on the rate limiter, if set
 	if c.configuration.RateLimiter != nil {
 		c.configuration.RateLimiter.Wait(ctx)
@@ -190,7 +201,7 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	}
 
 	// clone request modifiers behind a lock
-	m := c.cloneGlobalRequestModifiers()
+	m := c.cloneClientRequestModifiers()
 
 	// invoke request callbacks
 	for _, callback := range m.requestCallbacks {

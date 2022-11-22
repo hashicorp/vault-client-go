@@ -17,51 +17,74 @@ import (
 	"github.com/hashicorp/go-secure-stdlib/strutil"
 )
 
+// RequestOption is a functional parameter used to modify a request
+type RequestOption func(*requestModifiers) error
+
+type (
+	RequestCallback  func(*http.Request)
+	ResponseCallback func(*http.Request, *http.Response)
+)
+
+// requestModifiers contains headers, callbacks, etc. that will be added to
+// each request
+type requestModifiers struct {
+	headers requestHeaders
+
+	requestCallbacks  []RequestCallback
+	responseCallbacks []ResponseCallback
+}
+
+// requestHeaders contains headers that will be added to each request
+type requestHeaders struct {
+	userAgent                 string                    // 'User-Agent'
+	token                     string                    // 'X-Vault-Token'
+	namespace                 string                    // 'X-Vault-Namespace'
+	mfaCredentials            []string                  // 'X-Vault-MFA'
+	responseWrappingTTL       time.Duration             // 'X-Vault-Wrap-TTL'
+	replicationForwardingMode ReplicationForwardingMode // 'X-Vault-Forward' or 'X-Vault-Inconsistent'
+	customHeaders             http.Header
+}
+
 // SetToken sets the token to be used with all subsequent requests.
 //
-// See https://www.vaultproject.io/docs/concepts/tokens for more info on
-// tokens.
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on tokens.
 func (c *Client) SetToken(token string) error {
 	if err := validateToken(token); err != nil {
 		return err
 	}
 
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.token = token
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.token = token
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
 
 // ClearToken clears the token for all subsequent requests.
 //
-// See https://www.vaultproject.io/docs/concepts/tokens for more info on
-// tokens.
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on tokens.
 func (c *Client) ClearToken() {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.token = ""
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.token = ""
+	c.clientRequestModifiersLock.Unlock()
 }
 
-// WithToken returns a shallow copy of the client with the token set to the
-// given value.
+// WithToken sets the token for the next request; it takes precedence over the
+// client-level token.
 //
-// See https://www.vaultproject.io/docs/concepts/tokens for more info on
-// tokens.
-func (c *Client) WithToken(token string) *Client {
-	clone := c.Clone()
-
-	if err := validateToken(token); err != nil {
-		clone.requestModifiers.validationError = multierror.Append(clone.requestModifiers.validationError, err)
-	} else {
-		clone.requestModifiers.headers.token = token
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on tokens.
+func WithToken(token string) RequestOption {
+	return func(m *requestModifiers) error {
+		if err := validateToken(token); err != nil {
+			return err
+		}
+		m.headers.token = token
+		return nil
 	}
-
-	return clone
 }
 
-// SetNamespace sets the namespace to be used with all subsequent requests,
-// set to "" to clear the namespace.
+// SetNamespace sets the namespace to be used with all subsequent requests.
+// Use an empty string to clear the namespace.
 //
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
@@ -70,9 +93,9 @@ func (c *Client) SetNamespace(namespace string) error {
 		return err
 	}
 
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.namespace = namespace
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.namespace = namespace
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
@@ -82,26 +105,25 @@ func (c *Client) SetNamespace(namespace string) error {
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) ClearNamespace() {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.namespace = ""
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.namespace = ""
+	c.clientRequestModifiersLock.Unlock()
 }
 
-// WithNamespace returns a shallow copy of the client with the namespace set to
-// the given value, use "" to clear the namespace.
+// WithNamespace sets the namespace for the next request; it takes precedence
+// over the client-level namespace. Use an empty string to clear the namespace
+// from the next request.
 //
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
-func (c *Client) WithNamespace(namespace string) *Client {
-	clone := c.Clone()
-
-	if err := validateNamespace(namespace); err != nil {
-		clone.requestModifiers.validationError = multierror.Append(clone.requestModifiers.validationError, err)
-	} else {
-		clone.requestModifiers.headers.namespace = namespace
+func (c *Client) WithNamespace(namespace string) RequestOption {
+	return func(m *requestModifiers) error {
+		if err := validateNamespace(namespace); err != nil {
+			return err
+		}
+		m.headers.namespace = namespace
+		return nil
 	}
-
-	return clone
 }
 
 // SetMFACredentials sets multi-factor authentication credentials to be used
@@ -110,9 +132,9 @@ func (c *Client) WithNamespace(namespace string) *Client {
 // See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
 // for more information on multi-factor authentication.
 func (c *Client) SetMFACredentials(credentials ...string) error {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.mfaCredentials = credentials
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.mfaCredentials = credentials
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
@@ -123,22 +145,21 @@ func (c *Client) SetMFACredentials(credentials ...string) error {
 // See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
 // for more information on multi-factor authentication.
 func (c *Client) ClearMFACredentials() {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.mfaCredentials = nil
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.mfaCredentials = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
-// WithMFACredentials returns a shallow copy of the client with multi-factor
-// authentication credentials set to the given value(s); passing no parameters
-// is equivalent to clearing the list.
+// WithMFACredentials sets the multi-factor authentication credentials for the
+// next request, it takes precedence over the client-level MFA credentials.
 //
 // See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
 // for more information on multi-factor authentication.
-func (c *Client) WithMFACredentials(credentials ...string) *Client {
-	clone := c.Clone()
-	clone.requestModifiers.headers.mfaCredentials = credentials
-
-	return clone
+func (c *Client) WithMFACredentials(credentials ...string) RequestOption {
+	return func(m *requestModifiers) error {
+		m.headers.mfaCredentials = credentials
+		return nil
+	}
 }
 
 // SetResponseWrapping sets the response-wrapping TTL to the given duration for
@@ -148,9 +169,9 @@ func (c *Client) WithMFACredentials(credentials ...string) *Client {
 // See https://www.vaultproject.io/docs/concepts/response-wrapping for more
 // information on response wrapping.
 func (c *Client) SetResponseWrapping(ttl time.Duration) error {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.responseWrappingTTL = ttl
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.responseWrappingTTL = ttl
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
@@ -161,23 +182,24 @@ func (c *Client) SetResponseWrapping(ttl time.Duration) error {
 // See https://www.vaultproject.io/docs/concepts/response-wrapping for more
 // information on response wrapping.
 func (c *Client) ClearResponseWrapping() {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.responseWrappingTTL = 0
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.responseWrappingTTL = 0
+	c.clientRequestModifiersLock.Unlock()
 }
 
-// WithResponseWrapping returns a shallow copy of the client with the
-// response-wrapping TTL set to the given duration. A non-zero duration will
-// tell Vault to wrap the response and return a response-wrapping token
-// instead. Set `ttl` to zero to clear the response-wrapping header.
+// WithResponseWrapping sets the response-wrapping TTL to the given duration
+// for the next request; it takes precedence over the client-level
+// response-wrapping TTL. A non-zero duration will tell Vault to wrap the
+// response and return a response-wrapping token instead. Set `ttl` to zero
+// to clear the response-wrapping header from the next request.
 //
 // See https://www.vaultproject.io/docs/concepts/response-wrapping for more
 // information on response wrapping.
-func (c *Client) WithResponseWrapping(ttl time.Duration) *Client {
-	clone := c.Clone()
-	clone.requestModifiers.headers.responseWrappingTTL = ttl
-
-	return clone
+func (c *Client) WithResponseWrapping(ttl time.Duration) RequestOption {
+	return func(m *requestModifiers) error {
+		m.headers.responseWrappingTTL = ttl
+		return nil
+	}
 }
 
 // SetCustomHeaders sets custom headers to be used in all subsequent requests.
@@ -187,83 +209,181 @@ func (c *Client) SetCustomHeaders(headers http.Header) error {
 		return err
 	}
 
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.customHeaders = headers.Clone()
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.customHeaders = headers.Clone()
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
 
 // ClearsCustomHeaders clears all custom headers from the subsequent requests.
 func (c *Client) ClearCustomHeaders() {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.headers.customHeaders = nil
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.customHeaders = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
-// WithCustomHeaders returns a shallow copy of the client with custom headers
-// set to the given value, use nil to clear out the headers.
-func (c *Client) WithCustomHeaders(headers http.Header) *Client {
-	clone := c.Clone()
-
-	if err := validateCustomHeaders(headers); err != nil {
-		clone.requestModifiers.validationError = multierror.Append(clone.requestModifiers.validationError, err)
-	} else {
-		clone.requestModifiers.headers.customHeaders = headers.Clone()
+// WithCustomHeaders sets custom headers for the next request; these headers
+// take precedence over the client-level custom headers. The internal prefix
+// 'X-Vault-' is not permitted for the header keys.
+func (c *Client) WithCustomHeaders(headers http.Header) RequestOption {
+	return func(m *requestModifiers) error {
+		if err := validateCustomHeaders(headers); err != nil {
+			return err
+		}
+		m.headers.customHeaders = headers
+		return nil
 	}
-
-	return clone
 }
 
 // SetRequestCallbacks sets callbacks which will be invoked before each request.
 func (c *Client) SetRequestCallbacks(callbacks ...RequestCallback) error {
-	c.requestModifiersLock.Lock()
-	copy(c.requestModifiers.requestCallbacks, callbacks)
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	copy(c.clientRequestModifiers.requestCallbacks, callbacks)
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
 
 // ClearRequestCallbacks clears all request callbacks.
 func (c *Client) ClearRequestCallbacks() {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.requestCallbacks = nil
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.requestCallbacks = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
-// WithRequestCallbacks returns a shallow copy of the client with request
-// callbacks set to the given value, use nil to clear out the callbacks.
-func (c *Client) WithRequestCallbacks(callbacks ...RequestCallback) *Client {
-	clone := c.Clone()
-	copy(clone.requestModifiers.requestCallbacks, callbacks)
-
-	return clone
+// WithRequestCallbacks sets callbacks which will be invoked before the next
+// request; these take precedence over the client-level request callbacks.
+func (c *Client) WithRequestCallbacks(callbacks ...RequestCallback) RequestOption {
+	return func(m *requestModifiers) error {
+		m.requestCallbacks = callbacks
+		return nil
+	}
 }
 
 // SetResponseCallbacks sets callbacks which will be invoked after each
 // successful response.
 func (c *Client) SetResponseCallbacks(callbacks ...ResponseCallback) error {
-	c.requestModifiersLock.Lock()
-	copy(c.requestModifiers.responseCallbacks, callbacks)
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	copy(c.clientRequestModifiers.responseCallbacks, callbacks)
+	c.clientRequestModifiersLock.Unlock()
 
 	return nil
 }
 
 // ClearResponseCallbacks clears all response callbacks.
 func (c *Client) ClearResponseCallbacks() {
-	c.requestModifiersLock.Lock()
-	c.requestModifiers.responseCallbacks = nil
-	c.requestModifiersLock.Unlock()
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.responseCallbacks = nil
+	c.clientRequestModifiersLock.Unlock()
 }
 
-// WithResponseCallbacks returns a shallow copy of the client with response
-// callbacks set to the given value, use nil to clear out the callbacks.
-func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) *Client {
-	clone := c.Clone()
-	copy(clone.requestModifiers.responseCallbacks, callbacks)
+// WithResponseCallbacks sets callbacks which will be invoked after a
+// successful response within the next request; these take precedence over the
+// client-level response callbacks.
+func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOption {
+	return func(m *requestModifiers) error {
+		m.responseCallbacks = callbacks
+		return nil
+	}
+}
 
-	return clone
+// mergeRequestModifiers merges the two objects, preferring the local modifiers
+func mergeRequestModifiers(global, local requestModifiers) requestModifiers {
+	merged := global
+
+	if local.headers.userAgent != "" {
+		merged.headers.userAgent = local.headers.userAgent
+	}
+
+	if local.headers.token != "" {
+		merged.headers.token = local.headers.token
+	}
+
+	if local.headers.namespace != "" {
+		merged.headers.namespace = local.headers.namespace
+	}
+
+	if len(local.headers.mfaCredentials) != 0 {
+		merged.headers.mfaCredentials = local.headers.mfaCredentials
+	}
+
+	if local.headers.responseWrappingTTL != 0 {
+		merged.headers.responseWrappingTTL = local.headers.responseWrappingTTL
+	}
+
+	if local.headers.replicationForwardingMode != ReplicationForwardNone {
+		merged.headers.replicationForwardingMode = local.headers.replicationForwardingMode
+	}
+
+	if len(local.headers.customHeaders) != 0 {
+		merged.headers.customHeaders = local.headers.customHeaders
+	}
+
+	if len(local.requestCallbacks) != 0 {
+		merged.requestCallbacks = local.requestCallbacks
+	}
+
+	if len(local.responseCallbacks) != 0 {
+		merged.responseCallbacks = local.responseCallbacks
+	}
+
+	return merged
+}
+
+// requestOptionsToRequestModifiers constructs `requestModifiers` & propagates the errors
+func requestOptionsToRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
+	var modifiers requestModifiers
+
+	for _, option := range options {
+		if err := option(&modifiers); err != nil {
+			errs = multierror.Append(errs, err)
+		}
+	}
+
+	if errs != nil {
+		return requestModifiers{}, errs
+	}
+
+	return modifiers, nil
+}
+
+func validateToken(token string) error {
+	if !printable(token) {
+		return fmt.Errorf("vault token contains non-printable characters")
+	}
+
+	return nil
+}
+
+func validateNamespace(namespace string) error {
+	if !printable(namespace) {
+		return fmt.Errorf("vault namespace %q contains non-printable characters", namespace)
+	}
+
+	return nil
+}
+
+func validateCustomHeaders(headers http.Header) (errs error) {
+	for key := range headers {
+		if strings.HasPrefix(strings.ToLower(key), "x-vault-") {
+			errs = multierror.Append(
+				errs,
+				fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key),
+			)
+		}
+	}
+
+	return errs
+}
+
+// printable returns true if the given string has no non-printable characters
+func printable(str string) bool {
+	idx := strings.IndexFunc(str, func(c rune) bool {
+		return !unicode.IsPrint(c)
+	})
+
+	return idx == -1
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -293,10 +413,10 @@ const (
 	ReplicationForwardInconsistent
 )
 
-// SetReplicationForwardingMode will add a forwarding header to all subsequent
-// requests:
+// SetReplicationForwardingMode sets a replication forwarding header for all
+// subsequent requests:
 //
-//	ReplicationForwardNone         - no forwarding headers
+//	ReplicationForwardNone         - no forwarding header
 //	ReplicationForwardAlways       - 'X-Vault-Forward'
 //	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
 //
@@ -304,10 +424,10 @@ const (
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
-	/* */ c.requestModifiersLock.Lock()
-	defer c.requestModifiersLock.Unlock()
+	/* */ c.clientRequestModifiersLock.Lock()
+	defer c.clientRequestModifiersLock.Unlock()
 
-	c.requestModifiers.headers.replicationForwardingMode = mode
+	c.clientRequestModifiers.headers.replicationForwardingMode = mode
 }
 
 // ReplicationForwardingMode clears the X-Vault-Forward / X-Vault-Inconsistent
@@ -315,25 +435,26 @@ func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func (c *Client) ClearReplicationForwardingMode() {
-	/* */ c.requestModifiersLock.Lock()
-	defer c.requestModifiersLock.Unlock()
+	/* */ c.clientRequestModifiersLock.Lock()
+	defer c.clientRequestModifiersLock.Unlock()
 
-	c.requestModifiers.headers.replicationForwardingMode = ReplicationForwardNone
+	c.clientRequestModifiers.headers.replicationForwardingMode = ReplicationForwardNone
 }
 
-// WithReplicationForwardingMode returns a shallow copy of the client with
-// a replication header set to the given value for subsequent requests:
+// WithReplicationForwardingMode sets a replication forwarding header to the
+// given value for the next request; it takes precedence over the client-level
+// replication forwarding header.
 //
 //	ReplicationForwardNone         - no forwarding headers
 //	ReplicationForwardAlways       - 'X-Vault-Forward'
 //	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
-func (c *Client) WithReplicationForwardingMode(mode ReplicationForwardingMode) *Client {
-	clone := c.Clone()
-	clone.requestModifiers.headers.replicationForwardingMode = mode
-
-	return clone
+func (c *Client) WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption {
+	return func(m *requestModifiers) error {
+		m.headers.replicationForwardingMode = mode
+		return nil
+	}
 }
 
 // RecordReplicationState returns a response callback that will record the
@@ -531,42 +652,4 @@ func (c *replicationStateCache) clone() replicationStateCache {
 		statesLock: sync.RWMutex{},
 		states:     cloned,
 	}
-}
-
-func validateToken(token string) error {
-	if !printable(token) {
-		return fmt.Errorf("vault token contains non-printable characters")
-	}
-
-	return nil
-}
-
-func validateNamespace(namespace string) error {
-	if !printable(namespace) {
-		return fmt.Errorf("vault namespace %q contains non-printable characters", namespace)
-	}
-
-	return nil
-}
-
-func validateCustomHeaders(headers http.Header) (errs error) {
-	for key := range headers {
-		if strings.HasPrefix(strings.ToLower(key), "x-vault-") {
-			errs = multierror.Append(
-				errs,
-				fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key),
-			)
-		}
-	}
-
-	return errs
-}
-
-// printable returns true if the given string has no non-printable characters
-func printable(str string) bool {
-	idx := strings.IndexFunc(str, func(c rune) bool {
-		return !unicode.IsPrint(c)
-	})
-
-	return idx == -1
 }

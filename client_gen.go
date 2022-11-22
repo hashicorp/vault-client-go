@@ -18,7 +18,6 @@ import (
 	"net/url"
 	"strings"
 	"sync"
-	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
 )
@@ -33,9 +32,9 @@ type Client struct {
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
 
-	// headers, callbacks, etc. that will be added to each request
-	requestModifiers     requestModifiers
-	requestModifiersLock sync.RWMutex
+	// headers & callbacks that will be applied to each request
+	clientRequestModifiers     requestModifiers
+	clientRequestModifiersLock sync.RWMutex
 
 	// replication state cache used to ensure read-after-write semantics
 	replicationStates replicationStateCache
@@ -45,36 +44,6 @@ type Client struct {
 	Identity Identity
 	Secrets  Secrets
 	System   System
-}
-
-type (
-	RequestCallback  func(*http.Request)
-	ResponseCallback func(*http.Request, *http.Response)
-)
-
-// requestModifiers contains headers, callbacks, etc. that will be added to
-// each request
-type requestModifiers struct {
-	headers requestHeaders
-
-	requestCallbacks  []RequestCallback
-	responseCallbacks []ResponseCallback
-
-	// This error is set in client.WithX methods and checked in client.newRequest.
-	// Since client.WithX methods are used for method chaining, they cannot
-	// return errors.
-	validationError error
-}
-
-// requestHeaders contains headers that will be added to each request
-type requestHeaders struct {
-	userAgent                 string                    // 'User-Agent'
-	token                     string                    // 'X-Vault-Token'
-	namespace                 string                    // 'X-Vault-Namespace'
-	mfaCredentials            []string                  // 'X-Vault-MFA'
-	responseWrappingTTL       time.Duration             // 'X-Vault-Wrap-TTL'
-	replicationForwardingMode ReplicationForwardingMode // 'X-Vault-Forward' or 'X-Vault-Inconsistent'
-	customHeaders             http.Header
 }
 
 // New returns a new client decorated with the given configuration options
@@ -110,16 +79,15 @@ func newClient(configuration Configuration) (*Client, error) {
 			ErrorHandler: configuration.Retries.ErrorHandler,
 		},
 
-		requestModifiers: requestModifiers{
+		clientRequestModifiers: requestModifiers{
 			headers: requestHeaders{
 				userAgent:                 UserAgent("0.0.1"),
 				token:                     configuration.initialToken,
 				namespace:                 configuration.initialNamespace,
 				replicationForwardingMode: ReplicationForwardNone,
 			},
-			validationError: nil,
 		},
-		requestModifiersLock: sync.RWMutex{},
+		clientRequestModifiersLock: sync.RWMutex{},
 	}
 
 	address, err := parseAddress(configuration.BaseAddress)
@@ -187,9 +155,9 @@ func parseAddress(address string) (*url.URL, error) {
 	return parsed, nil
 }
 
-// Clone creates a new Vault client with the same configuration as the original
-// client. Note that the cloned Vault client will point to the same base
-// http.Client and retryablehttp.Client objects.
+// Clone creates a new client with the same configuration, request modifiers,
+// and replication states as the original client. Note that the cloned client
+// will point to the same base http.Client and retryablehttp.Client objects.
 func (c *Client) Clone() *Client {
 	clone := Client{
 		configuration:     c.configuration,
@@ -202,7 +170,7 @@ func (c *Client) Clone() *Client {
 		clone.replicationStates = c.replicationStates.clone()
 	}
 
-	clone.requestModifiers = c.cloneRequestModifiers()
+	clone.clientRequestModifiers = c.cloneClientRequestModifiers()
 
 	clone.Auth = Auth{
 		client: &clone,
@@ -220,26 +188,25 @@ func (c *Client) Clone() *Client {
 	return &clone
 }
 
-// cloneRequestModifiers returns a copy of the request modifiers behind a mutex;
-// the replication states will point to the same cache
-func (c *Client) cloneRequestModifiers() requestModifiers {
-	/* */ c.requestModifiersLock.RLock()
-	defer c.requestModifiersLock.RUnlock()
+// cloneClientRequestModifiers returns a copy of the modifiers behind a mutex
+func (c *Client) cloneClientRequestModifiers() requestModifiers {
+	/* */ c.clientRequestModifiersLock.RLock()
+	defer c.clientRequestModifiersLock.RUnlock()
 
 	var clone requestModifiers
 
-	copy(clone.requestCallbacks, c.requestModifiers.requestCallbacks)
-	copy(clone.responseCallbacks, c.requestModifiers.responseCallbacks)
+	copy(clone.requestCallbacks, c.clientRequestModifiers.requestCallbacks)
+	copy(clone.responseCallbacks, c.clientRequestModifiers.responseCallbacks)
 
 	clone.headers = requestHeaders{
-		token:                     c.requestModifiers.headers.token,
-		namespace:                 c.requestModifiers.headers.namespace,
-		responseWrappingTTL:       c.requestModifiers.headers.responseWrappingTTL,
-		replicationForwardingMode: c.requestModifiers.headers.replicationForwardingMode,
-		customHeaders:             c.requestModifiers.headers.customHeaders.Clone(),
+		token:                     c.clientRequestModifiers.headers.token,
+		namespace:                 c.clientRequestModifiers.headers.namespace,
+		responseWrappingTTL:       c.clientRequestModifiers.headers.responseWrappingTTL,
+		replicationForwardingMode: c.clientRequestModifiers.headers.replicationForwardingMode,
+		customHeaders:             c.clientRequestModifiers.headers.customHeaders.Clone(),
 	}
 
-	copy(clone.headers.mfaCredentials, c.requestModifiers.headers.mfaCredentials)
+	copy(clone.headers.mfaCredentials, c.clientRequestModifiers.headers.mfaCredentials)
 
 	return clone
 }

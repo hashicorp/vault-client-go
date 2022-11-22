@@ -146,7 +146,7 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 	return parseResponse[ResponseT](resp.Body)
 }
 
-// newRequest returns a new request with vault-specific headers
+// newRequest constructs a new request with Vault-specific headers
 func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader, parameters url.Values, headers requestHeaders) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)

@@ -260,6 +260,11 @@ func (c *Client) send(ctx context.Context, req *http.Request, retry bool, reques
 
 // do is a helper function that wraps http.client.Do / retryablehttp.client.Do
 func (c *Client) do(req *http.Request, retry bool) (*http.Response, error) {
+	// In the vast majority of cases, the retryablehttp client will be used.
+	// However, the retryablehttp client reads the entire request's body into
+	// an internal byte array, which could cause particularly large requests
+	// (e.g. raft snapshot requests) to run out of memory. For such requests,
+	// a regular http client is used instead.
 	if !retry {
 		return c.client.Do(req)
 	}

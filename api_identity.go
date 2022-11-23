@@ -1150,7 +1150,6 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string, opti
 
 // GetIdentityOidcProvider
 // list: Must be set to &#x60;true&#x60;
-// allowedClientId: Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.
 func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string, allowedClientId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/identity/oidc/provider"
 

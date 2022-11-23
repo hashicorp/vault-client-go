@@ -1251,7 +1251,6 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 }
 
 // GetSysMetrics Export the metrics aggregated for telemetry purpose.
-// format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
 func (a *System) GetSysMetrics(ctx context.Context, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/metrics"
 
@@ -1272,8 +1271,6 @@ func (a *System) GetSysMetrics(ctx context.Context, format string, options ...Re
 }
 
 // GetSysMonitor
-// logFormat: Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
-// logLevel: Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
 func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/monitor"
 
@@ -1555,7 +1552,6 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 }
 
 // GetSysPolicy List the configured access control policies.
-// list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysPolicy(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/policy"
 
@@ -1892,7 +1888,6 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string, opt
 }
 
 // GetSysRaw Read the value of the key at the given path.
-// list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysRaw(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/raw"
 
@@ -1913,7 +1908,6 @@ func (a *System) GetSysRaw(ctx context.Context, list string, options ...RequestO
 }
 
 // GetSysRawPath Read the value of the key at the given path.
-// list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysRawPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/raw/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)

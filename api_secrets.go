@@ -52,8 +52,8 @@ func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string, options 
 	}
 
 	requestPath := "/v1/{ad_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -75,8 +75,8 @@ func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string, options ..
 	}
 
 	requestPath := "/v1/{ad_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -119,8 +119,8 @@ func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string, optio
 	}
 
 	requestPath := "/v1/{alicloud_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -142,8 +142,8 @@ func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string, options .
 	}
 
 	requestPath := "/v1/{aws_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -186,8 +186,8 @@ func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{azure_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -209,8 +209,8 @@ func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string, option
 	}
 
 	requestPath := "/v1/{consul_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("consul")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -232,8 +232,8 @@ func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string, options 
 	}
 
 	requestPath := "/v1/{cubbyhole_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cubbyhole_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cubbyhole")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -255,8 +255,8 @@ func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -278,8 +278,8 @@ func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string, o
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -322,8 +322,8 @@ func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string,
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/deregister/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -345,8 +345,8 @@ func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string, options .
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -368,8 +368,8 @@ func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string, optio
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/trim/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -412,8 +412,8 @@ func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string, op
 	}
 
 	requestPath := "/v1/{kubernetes_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -456,8 +456,8 @@ func (a *Secrets) DeleteLdapLibraryName(ctx context.Context, name string, option
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -479,8 +479,8 @@ func (a *Secrets) DeleteLdapRoleName(ctx context.Context, name string, options .
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -502,8 +502,8 @@ func (a *Secrets) DeleteLdapStaticRoleName(ctx context.Context, name string, opt
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/static-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -525,8 +525,8 @@ func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string, 
 	}
 
 	requestPath := "/v1/{mongodbatlas_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("mongodbatlas")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -590,8 +590,8 @@ func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string, options 
 	}
 
 	requestPath := "/v1/{nomad_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("nomad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -634,8 +634,8 @@ func (a *Secrets) DeleteOpenldapLibraryName(ctx context.Context, name string, op
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -657,8 +657,8 @@ func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string, optio
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -680,8 +680,8 @@ func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string,
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/static-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -703,8 +703,8 @@ func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string
 	}
 
 	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/der|/pem"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -747,8 +747,8 @@ func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string, options
 	}
 
 	requestPath := "/v1/{pki_mount_path}/key/{key_ref}"
-	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -770,8 +770,8 @@ func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string, options .
 	}
 
 	requestPath := "/v1/{pki_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -814,8 +814,8 @@ func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string, opti
 	}
 
 	requestPath := "/v1/{rabbitmq_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("rabbitmq")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -837,8 +837,8 @@ func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string, options
 	}
 
 	requestPath := "/v1/{secret_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -860,8 +860,8 @@ func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string, opt
 	}
 
 	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -883,8 +883,8 @@ func (a *Secrets) DeleteSecretPath(ctx context.Context, path string, options ...
 	}
 
 	requestPath := "/v1/{secret_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -948,8 +948,8 @@ func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string, opti
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/keys/{key_name}"
-	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -971,8 +971,8 @@ func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string, options .
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/roles/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1015,8 +1015,8 @@ func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string, opti
 	}
 
 	requestPath := "/v1/{terraform_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("terraform")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1038,8 +1038,8 @@ func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string, options .
 	}
 
 	requestPath := "/v1/{totp_mount_path}/keys/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("totp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1061,8 +1061,8 @@ func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string, option
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1105,8 +1105,8 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string, options ...Re
 	}
 
 	requestPath := "/v1/{ad_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1150,8 +1150,8 @@ func (a *Secrets) GetAdLibraryName(ctx context.Context, name string, options ...
 	}
 
 	requestPath := "/v1/{ad_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1173,8 +1173,8 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string, optio
 	}
 
 	requestPath := "/v1/{ad_mount_path}/library/{name}/status"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1218,8 +1218,8 @@ func (a *Secrets) GetAdRolesName(ctx context.Context, name string, options ...Re
 	}
 
 	requestPath := "/v1/{ad_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1283,8 +1283,8 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{alicloud_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1328,8 +1328,8 @@ func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string, options 
 	}
 
 	requestPath := "/v1/{alicloud_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1436,8 +1436,8 @@ func (a *Secrets) GetAwsRolesName(ctx context.Context, name string, options ...R
 	}
 
 	requestPath := "/v1/{aws_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1459,8 +1459,8 @@ func (a *Secrets) GetAwsStsName(ctx context.Context, name string, options ...Req
 	}
 
 	requestPath := "/v1/{aws_mount_path}/sts/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1503,8 +1503,8 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string, options ..
 	}
 
 	requestPath := "/v1/{azure_mount_path}/creds/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1548,8 +1548,8 @@ func (a *Secrets) GetAzureRolesName(ctx context.Context, name string, options ..
 	}
 
 	requestPath := "/v1/{azure_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1592,8 +1592,8 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string, options .
 	}
 
 	requestPath := "/v1/{consul_mount_path}/creds/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("consul")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1637,8 +1637,8 @@ func (a *Secrets) GetConsulRolesName(ctx context.Context, name string, options .
 	}
 
 	requestPath := "/v1/{consul_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("consul")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1660,8 +1660,8 @@ func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string
 	}
 
 	requestPath := "/v1/{cubbyhole_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cubbyhole_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cubbyhole")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1704,8 +1704,8 @@ func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string, options 
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/key/{roleset}"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1727,8 +1727,8 @@ func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string, options ..
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1750,8 +1750,8 @@ func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string, o
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/key"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1773,8 +1773,8 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string,
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/token"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1818,8 +1818,8 @@ func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string, opti
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1841,8 +1841,8 @@ func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string, o
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/key"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1864,8 +1864,8 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string,
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/token"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1909,8 +1909,8 @@ func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string, option
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/token/{roleset}"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1975,8 +1975,8 @@ func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string, option
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/config/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1998,8 +1998,8 @@ func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string, options ...R
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2021,8 +2021,8 @@ func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string, options ..
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/pubkey/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2087,8 +2087,8 @@ func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string, optio
 	}
 
 	requestPath := "/v1/{kubernetes_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2131,8 +2131,8 @@ func (a *Secrets) GetLdapCredsName(ctx context.Context, name string, options ...
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2176,8 +2176,8 @@ func (a *Secrets) GetLdapLibraryName(ctx context.Context, name string, options .
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2199,8 +2199,8 @@ func (a *Secrets) GetLdapLibraryNameStatus(ctx context.Context, name string, opt
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/library/{name}/status"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2244,8 +2244,8 @@ func (a *Secrets) GetLdapRoleName(ctx context.Context, name string, options ...R
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2267,8 +2267,8 @@ func (a *Secrets) GetLdapStaticCredName(ctx context.Context, name string, option
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/static-cred/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2312,8 +2312,8 @@ func (a *Secrets) GetLdapStaticRoleName(ctx context.Context, name string, option
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/static-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2356,8 +2356,8 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string, opt
 	}
 
 	requestPath := "/v1/{mongodbatlas_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("mongodbatlas")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2401,8 +2401,8 @@ func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string, opt
 	}
 
 	requestPath := "/v1/{mongodbatlas_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("mongodbatlas")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2466,8 +2466,8 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string, options ..
 	}
 
 	requestPath := "/v1/{nomad_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("nomad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2511,8 +2511,8 @@ func (a *Secrets) GetNomadRoleName(ctx context.Context, name string, options ...
 	}
 
 	requestPath := "/v1/{nomad_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("nomad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2555,8 +2555,8 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2600,8 +2600,8 @@ func (a *Secrets) GetOpenldapLibraryName(ctx context.Context, name string, optio
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2623,8 +2623,8 @@ func (a *Secrets) GetOpenldapLibraryNameStatus(ctx context.Context, name string,
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/library/{name}/status"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2668,8 +2668,8 @@ func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string, options 
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2691,8 +2691,8 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string, op
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/static-cred/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2736,8 +2736,8 @@ func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string, op
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/static-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2843,8 +2843,8 @@ func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string, options .
 	}
 
 	requestPath := "/v1/{pki_mount_path}/cert/{serial}"
-	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2866,8 +2866,8 @@ func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string, option
 	}
 
 	requestPath := "/v1/{pki_mount_path}/cert/{serial}/raw"
-	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2889,8 +2889,8 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string, opt
 	}
 
 	requestPath := "/v1/{pki_mount_path}/cert/{serial}/raw/pem"
-	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3208,8 +3208,8 @@ func (a *Secrets) GetPkiIssuerRefCrlPemDerDeltaPem(ctx context.Context, issuerRe
 	}
 
 	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/crl/pem|/der|/delta/pem"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3231,8 +3231,8 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string, o
 	}
 
 	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/der|/pem"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3297,8 +3297,8 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string, options ..
 	}
 
 	requestPath := "/v1/{pki_mount_path}/key/{key_ref}"
-	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3342,8 +3342,8 @@ func (a *Secrets) GetPkiOcspReq(ctx context.Context, req string, options ...Requ
 	}
 
 	requestPath := "/v1/{pki_mount_path}/ocsp/{req}"
-	requestPath = strings.Replace(requestPath, "{"+"req"+"}", url.PathEscape(req), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"req"+"}", url.PathEscape(req), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3408,8 +3408,8 @@ func (a *Secrets) GetPkiRolesName(ctx context.Context, name string, options ...R
 	}
 
 	requestPath := "/v1/{pki_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3473,8 +3473,8 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{rabbitmq_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("rabbitmq")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3518,8 +3518,8 @@ func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{rabbitmq_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("rabbitmq")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3562,8 +3562,8 @@ func (a *Secrets) GetSecretDataPath(ctx context.Context, path string, options ..
 	}
 
 	requestPath := "/v1/{secret_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3585,8 +3585,8 @@ func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list s
 	}
 
 	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3608,8 +3608,8 @@ func (a *Secrets) GetSecretPath(ctx context.Context, path string, list string, o
 	}
 
 	requestPath := "/v1/{secret_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3631,8 +3631,8 @@ func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string, options
 	}
 
 	requestPath := "/v1/{secret_mount_path}/subkeys/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3739,8 +3739,8 @@ func (a *Secrets) GetSshRolesRole(ctx context.Context, role string, options ...R
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/roles/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3783,8 +3783,8 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string, option
 	}
 
 	requestPath := "/v1/{terraform_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("terraform")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3828,8 +3828,8 @@ func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{terraform_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("terraform")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3851,8 +3851,8 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string, options ...R
 	}
 
 	requestPath := "/v1/{totp_mount_path}/code/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("totp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3896,8 +3896,8 @@ func (a *Secrets) GetTotpKeysName(ctx context.Context, name string, options ...R
 	}
 
 	requestPath := "/v1/{totp_mount_path}/keys/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("totp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3919,8 +3919,8 @@ func (a *Secrets) GetTransitBackupName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{transit_mount_path}/backup/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3964,9 +3964,9 @@ func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, typ
 	}
 
 	requestPath := "/v1/{transit_mount_path}/export/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3990,10 +3990,10 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 	}
 
 	requestPath := "/v1/{transit_mount_path}/export/{type}/{name}/{version}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 	requestPath = strings.Replace(requestPath, "{"+"version"+"}", url.PathEscape(version), -1)
-	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4037,8 +4037,8 @@ func (a *Secrets) GetTransitKeysName(ctx context.Context, name string, options .
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4102,8 +4102,8 @@ func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name strin
 	}
 
 	requestPath := "/v1/{ad_mount_path}/library/manage/{name}/check-in"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4125,8 +4125,8 @@ func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryR
 	}
 
 	requestPath := "/v1/{ad_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4148,8 +4148,8 @@ func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adL
 	}
 
 	requestPath := "/v1/{ad_mount_path}/library/{name}/check-in"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4171,8 +4171,8 @@ func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, ad
 	}
 
 	requestPath := "/v1/{ad_mount_path}/library/{name}/check-out"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4194,8 +4194,8 @@ func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesReque
 	}
 
 	requestPath := "/v1/{ad_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4217,8 +4217,8 @@ func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string, options
 	}
 
 	requestPath := "/v1/{ad_mount_path}/rotate-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4282,8 +4282,8 @@ func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, aliclou
 	}
 
 	requestPath := "/v1/{alicloud_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4389,8 +4389,8 @@ func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesReq
 	}
 
 	requestPath := "/v1/{aws_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4412,8 +4412,8 @@ func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest
 	}
 
 	requestPath := "/v1/{aws_mount_path}/sts/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4456,8 +4456,8 @@ func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRole
 	}
 
 	requestPath := "/v1/{azure_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4521,8 +4521,8 @@ func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRo
 	}
 
 	requestPath := "/v1/{consul_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("consul")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4544,8 +4544,8 @@ func (a *Secrets) PostCubbyholePath(ctx context.Context, path string, options ..
 	}
 
 	requestPath := "/v1/{cubbyhole_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cubbyhole_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cubbyhole")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4609,8 +4609,8 @@ func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyR
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/key/{roleset}"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4632,8 +4632,8 @@ func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolese
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4655,8 +4655,8 @@ func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string, opt
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{name}/rotate"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4678,8 +4678,8 @@ func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string, 
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{name}/rotate-key"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4701,8 +4701,8 @@ func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, 
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/key"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4724,8 +4724,8 @@ func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/token"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4747,8 +4747,8 @@ func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcp
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4770,8 +4770,8 @@ func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, 
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/key"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4793,8 +4793,8 @@ func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name st
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/rotate-key"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4816,8 +4816,8 @@ func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/token"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4839,8 +4839,8 @@ func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string, optio
 	}
 
 	requestPath := "/v1/{gcp_mount_path}/token/{roleset}"
-	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4883,8 +4883,8 @@ func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDe
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/decrypt/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4906,8 +4906,8 @@ func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEn
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/encrypt/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4929,8 +4929,8 @@ func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkm
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/config/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4952,8 +4952,8 @@ func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string, o
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/deregister/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4975,8 +4975,8 @@ func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysR
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4998,8 +4998,8 @@ func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcp
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/register/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5021,8 +5021,8 @@ func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string, optio
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/rotate/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5044,8 +5044,8 @@ func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string, options
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/keys/trim/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5067,8 +5067,8 @@ func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkms
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/reencrypt/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5090,8 +5090,8 @@ func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignR
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/sign/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5113,8 +5113,8 @@ func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVer
 	}
 
 	requestPath := "/v1/{gcpkms_mount_path}/verify/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5157,8 +5157,8 @@ func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kube
 	}
 
 	requestPath := "/v1/{kubernetes_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5180,8 +5180,8 @@ func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kube
 	}
 
 	requestPath := "/v1/{kubernetes_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5224,8 +5224,8 @@ func (a *Secrets) PostLdapLibraryManageNameCheckIn(ctx context.Context, name str
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/library/manage/{name}/check-in"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5247,8 +5247,8 @@ func (a *Secrets) PostLdapLibraryName(ctx context.Context, name string, ldapLibr
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5270,8 +5270,8 @@ func (a *Secrets) PostLdapLibraryNameCheckIn(ctx context.Context, name string, l
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/library/{name}/check-in"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5293,8 +5293,8 @@ func (a *Secrets) PostLdapLibraryNameCheckOut(ctx context.Context, name string, 
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/library/{name}/check-out"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5316,8 +5316,8 @@ func (a *Secrets) PostLdapRoleName(ctx context.Context, name string, ldapRoleReq
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5339,8 +5339,8 @@ func (a *Secrets) PostLdapRotateRoleName(ctx context.Context, name string, optio
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/rotate-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5383,8 +5383,8 @@ func (a *Secrets) PostLdapStaticRoleName(ctx context.Context, name string, ldapS
 	}
 
 	requestPath := "/v1/{ldap_mount_path}/static-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5427,8 +5427,8 @@ func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string, op
 	}
 
 	requestPath := "/v1/{mongodbatlas_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("mongodbatlas")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5450,8 +5450,8 @@ func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mo
 	}
 
 	requestPath := "/v1/{mongodbatlas_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("mongodbatlas")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5515,8 +5515,8 @@ func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleR
 	}
 
 	requestPath := "/v1/{nomad_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("nomad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5559,8 +5559,8 @@ func (a *Secrets) PostOpenldapLibraryManageNameCheckIn(ctx context.Context, name
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/library/manage/{name}/check-in"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5582,8 +5582,8 @@ func (a *Secrets) PostOpenldapLibraryName(ctx context.Context, name string, open
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/library/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5605,8 +5605,8 @@ func (a *Secrets) PostOpenldapLibraryNameCheckIn(ctx context.Context, name strin
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/library/{name}/check-in"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5628,8 +5628,8 @@ func (a *Secrets) PostOpenldapLibraryNameCheckOut(ctx context.Context, name stri
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/library/{name}/check-out"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5651,8 +5651,8 @@ func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openlda
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5674,8 +5674,8 @@ func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string, o
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/rotate-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5718,8 +5718,8 @@ func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, o
 	}
 
 	requestPath := "/v1/{openldap_mount_path}/static-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("openldap")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5930,8 +5930,8 @@ func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, expor
 	}
 
 	requestPath := "/v1/{pki_mount_path}/intermediate/generate/{exported}"
-	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5995,8 +5995,8 @@ func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueReq
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issue/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6019,9 +6019,9 @@ func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/issue/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6043,8 +6043,8 @@ func (a *Secrets) PostPkiIssuerIssuerRefRevoke(ctx context.Context, issuerRef st
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/revoke"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6066,8 +6066,8 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, is
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-intermediate"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6090,9 +6090,9 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef 
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6114,8 +6114,8 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issu
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-self-issued"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6137,8 +6137,8 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuer
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6161,9 +6161,9 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, is
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6185,8 +6185,8 @@ func (a *Secrets) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, 
 	}
 
 	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/der|/pem"
-	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6208,8 +6208,8 @@ func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuers/generate/intermediate/{exported}"
-	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6231,8 +6231,8 @@ func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, export
 	}
 
 	requestPath := "/v1/{pki_mount_path}/issuers/generate/root/{exported}"
-	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6275,8 +6275,8 @@ func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyReq
 	}
 
 	requestPath := "/v1/{pki_mount_path}/key/{key_ref}"
-	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6403,8 +6403,8 @@ func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesReq
 	}
 
 	requestPath := "/v1/{pki_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6426,8 +6426,8 @@ func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported stri
 	}
 
 	requestPath := "/v1/{pki_mount_path}/root/generate/{exported}"
-	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6470,8 +6470,8 @@ func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string
 	}
 
 	requestPath := "/v1/{pki_mount_path}/root/rotate/{exported}"
-	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6535,8 +6535,8 @@ func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignReque
 	}
 
 	requestPath := "/v1/{pki_mount_path}/sign/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6579,8 +6579,8 @@ func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiS
 	}
 
 	requestPath := "/v1/{pki_mount_path}/sign-verbatim/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6686,8 +6686,8 @@ func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbit
 	}
 
 	requestPath := "/v1/{rabbitmq_mount_path}/roles/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("rabbitmq")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6730,8 +6730,8 @@ func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataReq
 	}
 
 	requestPath := "/v1/{secret_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6753,8 +6753,8 @@ func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDelet
 	}
 
 	requestPath := "/v1/{secret_mount_path}/delete/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6776,8 +6776,8 @@ func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDest
 	}
 
 	requestPath := "/v1/{secret_mount_path}/destroy/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6799,8 +6799,8 @@ func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMet
 	}
 
 	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6822,8 +6822,8 @@ func (a *Secrets) PostSecretPath(ctx context.Context, path string, options ...Re
 	}
 
 	requestPath := "/v1/{secret_mount_path}/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6845,8 +6845,8 @@ func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUnd
 	}
 
 	requestPath := "/v1/{secret_mount_path}/undelete/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6910,8 +6910,8 @@ func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsReq
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/creds/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6933,8 +6933,8 @@ func (a *Secrets) PostSshIssueRole(ctx context.Context, role string, sshIssueReq
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/issue/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6956,8 +6956,8 @@ func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKey
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/keys/{key_name}"
-	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7000,8 +7000,8 @@ func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesReq
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/roles/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7023,8 +7023,8 @@ func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignReque
 	}
 
 	requestPath := "/v1/{ssh_mount_path}/sign/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ssh")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7088,8 +7088,8 @@ func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string, optio
 	}
 
 	requestPath := "/v1/{terraform_mount_path}/creds/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("terraform")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7111,8 +7111,8 @@ func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraf
 	}
 
 	requestPath := "/v1/{terraform_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("terraform")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7134,8 +7134,8 @@ func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string, 
 	}
 
 	requestPath := "/v1/{terraform_mount_path}/rotate-role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("terraform")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7157,8 +7157,8 @@ func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeReq
 	}
 
 	requestPath := "/v1/{totp_mount_path}/code/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("totp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7180,8 +7180,8 @@ func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysReq
 	}
 
 	requestPath := "/v1/{totp_mount_path}/keys/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("totp")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7225,9 +7225,9 @@ func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name stri
 	}
 
 	requestPath := "/v1/{transit_mount_path}/datakey/{plaintext}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"plaintext"+"}", url.PathEscape(plaintext), -1)
-	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7249,8 +7249,8 @@ func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, trans
 	}
 
 	requestPath := "/v1/{transit_mount_path}/decrypt/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7272,8 +7272,8 @@ func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, trans
 	}
 
 	requestPath := "/v1/{transit_mount_path}/encrypt/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7316,8 +7316,8 @@ func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm 
 	}
 
 	requestPath := "/v1/{transit_mount_path}/hash/{urlalgorithm}"
-	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7339,8 +7339,8 @@ func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitH
 	}
 
 	requestPath := "/v1/{transit_mount_path}/hmac/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7363,9 +7363,9 @@ func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name stri
 	}
 
 	requestPath := "/v1/{transit_mount_path}/hmac/{name}/{urlalgorithm}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
-	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7387,8 +7387,8 @@ func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitK
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7410,8 +7410,8 @@ func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, tr
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}/config"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7433,8 +7433,8 @@ func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, tr
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}/import"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7456,8 +7456,8 @@ func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name str
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}/import_version"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7479,8 +7479,8 @@ func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string, op
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}/rotate"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7502,8 +7502,8 @@ func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, tran
 	}
 
 	requestPath := "/v1/{transit_mount_path}/keys/{name}/trim"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7546,8 +7546,8 @@ func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, tr
 	}
 
 	requestPath := "/v1/{transit_mount_path}/random/{source}"
-	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7570,9 +7570,9 @@ func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source st
 	}
 
 	requestPath := "/v1/{transit_mount_path}/random/{source}/{urlbytes}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
-	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7594,8 +7594,8 @@ func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string
 	}
 
 	requestPath := "/v1/{transit_mount_path}/random/{urlbytes}"
-	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7638,8 +7638,8 @@ func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, trans
 	}
 
 	requestPath := "/v1/{transit_mount_path}/restore/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7661,8 +7661,8 @@ func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transi
 	}
 
 	requestPath := "/v1/{transit_mount_path}/rewrap/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7684,8 +7684,8 @@ func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitS
 	}
 
 	requestPath := "/v1/{transit_mount_path}/sign/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7708,9 +7708,9 @@ func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name stri
 	}
 
 	requestPath := "/v1/{transit_mount_path}/sign/{name}/{urlalgorithm}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
-	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7732,8 +7732,8 @@ func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transi
 	}
 
 	requestPath := "/v1/{transit_mount_path}/verify/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -7756,9 +7756,9 @@ func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name st
 	}
 
 	requestPath := "/v1/{transit_mount_path}/verify/{name}/{urlalgorithm}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
-	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,

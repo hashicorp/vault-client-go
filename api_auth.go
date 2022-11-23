@@ -25,13 +25,14 @@ type Auth struct {
 // DeleteAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
 func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -47,13 +48,14 @@ func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string, opti
 // DeleteAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -69,13 +71,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName strin
 // DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -91,13 +94,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, ro
 // DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -113,13 +117,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, r
 // DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -135,13 +140,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName
 // DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -157,13 +163,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleNa
 // DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -179,13 +186,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.
 // DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -201,13 +209,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Conte
 // DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -223,13 +232,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context,
 // DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -245,13 +255,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context,
 // DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -267,13 +278,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, rol
 // DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -289,13 +301,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context,
 // DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -311,13 +324,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, rol
 // DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -333,13 +347,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, ro
 // DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -355,13 +370,14 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleNa
 // DeleteAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
 func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
-	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
+	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -376,12 +392,13 @@ func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certN
 
 // DeleteAuthAwsConfigClient
 func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/client"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/client"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -397,13 +414,14 @@ func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context, options ...Request
 // DeleteAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
-	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
+	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -418,12 +436,13 @@ func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId st
 
 // DeleteAuthAwsConfigTidyIdentityAccesslist
 func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -438,12 +457,13 @@ func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, op
 
 // DeleteAuthAwsConfigTidyIdentityWhitelist
 func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -458,12 +478,13 @@ func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, opt
 
 // DeleteAuthAwsConfigTidyRoletagBlacklist
 func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -478,12 +499,13 @@ func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, opti
 
 // DeleteAuthAwsConfigTidyRoletagDenylist
 func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -499,13 +521,14 @@ func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context, optio
 // DeleteAuthAwsIdentityAccesslistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist/{instance_id}"
-	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist/{instance_id}"
+	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -521,13 +544,14 @@ func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, in
 // DeleteAuthAwsIdentityWhitelistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist/{instance_id}"
-	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist/{instance_id}"
+	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -543,13 +567,14 @@ func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, ins
 // DeleteAuthAwsRoleRole
 // role: Name of the role.
 func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -565,13 +590,14 @@ func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string, options .
 // DeleteAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
-	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
+	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -587,13 +613,14 @@ func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag
 // DeleteAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
-	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
+	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -608,12 +635,13 @@ func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag 
 
 // DeleteAuthAzureConfig
 func (a *Auth) DeleteAuthAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -629,13 +657,14 @@ func (a *Auth) DeleteAuthAzureConfig(ctx context.Context, options ...RequestOpti
 // DeleteAuthAzureRoleName
 // name: Name of the role.
 func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -651,13 +680,14 @@ func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string, options
 // DeleteAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
 func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -673,13 +703,14 @@ func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string, options
 // DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
 func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -694,12 +725,13 @@ func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string, options 
 
 // DeleteAuthCfConfig
 func (a *Auth) DeleteAuthCfConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -715,13 +747,14 @@ func (a *Auth) DeleteAuthCfConfig(ctx context.Context, options ...RequestOption)
 // DeleteAuthCfRolesRole
 // role: The name of the role.
 func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -737,13 +770,14 @@ func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string, options .
 // DeleteAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
 func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -759,13 +793,14 @@ func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string, options .
 // DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
 func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -781,13 +816,14 @@ func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string, opti
 // DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
 func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -803,13 +839,14 @@ func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string, opti
 // DeleteAuthJwtRoleName Delete an existing role.
 // name: Name of the role.
 func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -825,13 +862,14 @@ func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string, options .
 // DeleteAuthKerberosGroupsName
 // name: Name of the LDAP group.
 func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -847,13 +885,14 @@ func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string, op
 // DeleteAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
 func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -869,13 +908,14 @@ func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string, op
 // DeleteAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
 func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -891,13 +931,14 @@ func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string, option
 // DeleteAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
 func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -912,12 +953,13 @@ func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string, options
 
 // DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *Auth) DeleteAuthOciConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -933,13 +975,14 @@ func (a *Auth) DeleteAuthOciConfig(ctx context.Context, options ...RequestOption
 // DeleteAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
 func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -955,13 +998,14 @@ func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string, options .
 // DeleteAuthOidcRoleName Delete an existing role.
 // name: Name of the role.
 func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -977,13 +1021,14 @@ func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string, options 
 // DeleteAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
 func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -999,13 +1044,14 @@ func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string, option
 // DeleteAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
 func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1021,13 +1067,14 @@ func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string, options
 // DeleteAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
 func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1043,13 +1090,14 @@ func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string, optio
 // DeleteAuthTokenRolesRoleName
 // roleName: Name of the role
 func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1065,13 +1113,14 @@ func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string
 // DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
 func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("userpass")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1087,12 +1136,13 @@ func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username str
 // GetAuthAlicloudRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{alicloud_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{alicloud_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1108,13 +1158,14 @@ func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string, options ...
 // GetAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
 func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1130,12 +1181,13 @@ func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string, options
 // GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{alicloud_mount_path}/roles"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{alicloud_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1151,12 +1203,13 @@ func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string, options ..
 // GetAuthApproleRole Lists all the roles registered with the backend.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1172,13 +1225,14 @@ func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...R
 // GetAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1194,13 +1248,14 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, 
 // GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1216,13 +1271,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleN
 // GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1238,13 +1294,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, role
 // GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/local-secret-ids"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/local-secret-ids"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1260,13 +1317,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, rol
 // GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1282,13 +1340,14 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName st
 // GetAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1304,13 +1363,14 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName 
 // GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/role-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/role-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1327,13 +1387,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 // roleName: Name of the role. Must be less than 4096 bytes.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1349,13 +1410,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName 
 // GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1371,13 +1433,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 // GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1393,13 +1456,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ro
 // GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1415,13 +1479,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleNa
 // GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1437,13 +1502,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ro
 // GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1459,13 +1525,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleNa
 // GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1481,13 +1548,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleN
 // GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1503,13 +1571,14 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName 
 // GetAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
 func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
-	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
+	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1525,12 +1594,13 @@ func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName
 // GetAuthAwsConfigCertificates
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/certificates"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/certificates"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1545,12 +1615,13 @@ func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string, op
 
 // GetAuthAwsConfigClient
 func (a *Auth) GetAuthAwsConfigClient(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/client"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/client"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1565,12 +1636,13 @@ func (a *Auth) GetAuthAwsConfigClient(ctx context.Context, options ...RequestOpt
 
 // GetAuthAwsConfigIdentity
 func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1586,12 +1658,13 @@ func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context, options ...RequestO
 // GetAuthAwsConfigSts
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/sts"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/sts"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1607,13 +1680,14 @@ func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string, options ...
 // GetAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
-	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
+	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1628,12 +1702,13 @@ func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId strin
 
 // GetAuthAwsConfigTidyIdentityAccesslist
 func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1648,12 +1723,13 @@ func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, optio
 
 // GetAuthAwsConfigTidyIdentityWhitelist
 func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1668,12 +1744,13 @@ func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, option
 
 // GetAuthAwsConfigTidyRoletagBlacklist
 func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1688,12 +1765,13 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, options
 
 // GetAuthAwsConfigTidyRoletagDenylist
 func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1709,12 +1787,13 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context, options 
 // GetAuthAwsIdentityAccesslist
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1730,13 +1809,14 @@ func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string, op
 // GetAuthAwsIdentityAccesslistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist/{instance_id}"
-	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist/{instance_id}"
+	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1752,12 +1832,13 @@ func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, insta
 // GetAuthAwsIdentityWhitelist
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1773,13 +1854,14 @@ func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string, opt
 // GetAuthAwsIdentityWhitelistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist/{instance_id}"
-	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist/{instance_id}"
+	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1795,12 +1877,13 @@ func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instan
 // GetAuthAwsRole
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1816,13 +1899,14 @@ func (a *Auth) GetAuthAwsRole(ctx context.Context, list string, options ...Reque
 // GetAuthAwsRoleRole
 // role: Name of the role.
 func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1838,12 +1922,13 @@ func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string, options ...R
 // GetAuthAwsRoles
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roles"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1859,12 +1944,13 @@ func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string, options ...Requ
 // GetAuthAwsRoletagBlacklist
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1880,13 +1966,14 @@ func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string, opti
 // GetAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
-	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
+	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1902,12 +1989,13 @@ func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag st
 // GetAuthAwsRoletagDenylist
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1923,13 +2011,14 @@ func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string, optio
 // GetAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
-	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
+	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1944,12 +2033,13 @@ func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag str
 
 // GetAuthAzureConfig
 func (a *Auth) GetAuthAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1965,12 +2055,13 @@ func (a *Auth) GetAuthAzureConfig(ctx context.Context, options ...RequestOption)
 // GetAuthAzureRole
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAzureRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1986,13 +2077,14 @@ func (a *Auth) GetAuthAzureRole(ctx context.Context, list string, options ...Req
 // GetAuthAzureRoleName
 // name: Name of the role.
 func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2007,12 +2099,13 @@ func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string, options ..
 
 // GetAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 func (a *Auth) GetAuthCentrifyConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{centrify_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{centrify_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("centrify")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2028,12 +2121,13 @@ func (a *Auth) GetAuthCentrifyConfig(ctx context.Context, options ...RequestOpti
 // GetAuthCertCerts Manage trusted certificates used for authentication.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthCertCerts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/certs"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/certs"
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2049,13 +2143,14 @@ func (a *Auth) GetAuthCertCerts(ctx context.Context, list string, options ...Req
 // GetAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
 func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2070,12 +2165,13 @@ func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string, options ..
 
 // GetAuthCertConfig
 func (a *Auth) GetAuthCertConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2091,13 +2187,14 @@ func (a *Auth) GetAuthCertConfig(ctx context.Context, options ...RequestOption) 
 // GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
 func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2112,12 +2209,13 @@ func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string, options ...
 
 // GetAuthCfConfig
 func (a *Auth) GetAuthCfConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2133,12 +2231,13 @@ func (a *Auth) GetAuthCfConfig(ctx context.Context, options ...RequestOption) (*
 // GetAuthCfRoles
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthCfRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/roles"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2154,13 +2253,14 @@ func (a *Auth) GetAuthCfRoles(ctx context.Context, list string, options ...Reque
 // GetAuthCfRolesRole
 // role: The name of the role.
 func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2175,12 +2275,13 @@ func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string, options ...R
 
 // GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 func (a *Auth) GetAuthGcpConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2196,12 +2297,13 @@ func (a *Auth) GetAuthGcpConfig(ctx context.Context, options ...RequestOption) (
 // GetAuthGcpRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthGcpRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2217,13 +2319,14 @@ func (a *Auth) GetAuthGcpRole(ctx context.Context, list string, options ...Reque
 // GetAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
 func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2239,12 +2342,13 @@ func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string, options ...R
 // GetAuthGcpRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/roles"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2259,12 +2363,13 @@ func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string, options ...Requ
 
 // GetAuthGithubConfig
 func (a *Auth) GetAuthGithubConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2279,12 +2384,13 @@ func (a *Auth) GetAuthGithubConfig(ctx context.Context, options ...RequestOption
 
 // GetAuthGithubMapTeams Read mappings for teams
 func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/teams"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/teams"
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2300,13 +2406,14 @@ func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string, options .
 // GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
 func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2321,12 +2428,13 @@ func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string, options
 
 // GetAuthGithubMapUsers Read mappings for users
 func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/users"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/users"
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2342,13 +2450,14 @@ func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string, options .
 // GetAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
 func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2363,12 +2472,13 @@ func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string, options
 
 // GetAuthJwtConfig Read the current JWT authentication backend configuration.
 func (a *Auth) GetAuthJwtConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2383,12 +2493,13 @@ func (a *Auth) GetAuthJwtConfig(ctx context.Context, options ...RequestOption) (
 
 // GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
 func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2405,12 +2516,13 @@ func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context, options ...RequestOpt
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthJwtRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2426,13 +2538,14 @@ func (a *Auth) GetAuthJwtRole(ctx context.Context, list string, options ...Reque
 // GetAuthJwtRoleName Read an existing role.
 // name: Name of the role.
 func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2447,12 +2560,13 @@ func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string, options ...R
 
 // GetAuthKerberosConfig
 func (a *Auth) GetAuthKerberosConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2467,12 +2581,13 @@ func (a *Auth) GetAuthKerberosConfig(ctx context.Context, options ...RequestOpti
 
 // GetAuthKerberosConfigLdap
 func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2488,12 +2603,13 @@ func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context, options ...Request
 // GetAuthKerberosGroups
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/groups"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/groups"
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2509,13 +2625,14 @@ func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string, options .
 // GetAuthKerberosGroupsName
 // name: Name of the LDAP group.
 func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2530,12 +2647,13 @@ func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string, optio
 
 // GetAuthKerberosLogin
 func (a *Auth) GetAuthKerberosLogin(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2550,12 +2668,13 @@ func (a *Auth) GetAuthKerberosLogin(ctx context.Context, options ...RequestOptio
 
 // GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 func (a *Auth) GetAuthKubernetesConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2571,12 +2690,13 @@ func (a *Auth) GetAuthKubernetesConfig(ctx context.Context, options ...RequestOp
 // GetAuthKubernetesRole Lists all the roles registered with the backend.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kubernetes_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kubernetes_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2592,13 +2712,14 @@ func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string, options .
 // GetAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
 func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2613,12 +2734,13 @@ func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string, optio
 
 // GetAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 func (a *Auth) GetAuthLdapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2634,12 +2756,13 @@ func (a *Auth) GetAuthLdapConfig(ctx context.Context, options ...RequestOption) 
 // GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/groups"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/groups"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2655,13 +2778,14 @@ func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string, options ...Re
 // GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
 func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2677,12 +2801,13 @@ func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string, options .
 // GetAuthLdapUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/users"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/users"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2698,13 +2823,14 @@ func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string, options ...Req
 // GetAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
 func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2719,12 +2845,13 @@ func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string, options ..
 
 // GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *Auth) GetAuthOciConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2740,12 +2867,13 @@ func (a *Auth) GetAuthOciConfig(ctx context.Context, options ...RequestOption) (
 // GetAuthOciRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthOciRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2761,13 +2889,14 @@ func (a *Auth) GetAuthOciRole(ctx context.Context, list string, options ...Reque
 // GetAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
 func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2782,12 +2911,13 @@ func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string, options ...R
 
 // GetAuthOidcConfig Read the current JWT authentication backend configuration.
 func (a *Auth) GetAuthOidcConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2802,12 +2932,13 @@ func (a *Auth) GetAuthOidcConfig(ctx context.Context, options ...RequestOption) 
 
 // GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
 func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/oidc/callback"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/oidc/callback"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2824,12 +2955,13 @@ func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context, options ...RequestOp
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthOidcRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2845,13 +2977,14 @@ func (a *Auth) GetAuthOidcRole(ctx context.Context, list string, options ...Requ
 // GetAuthOidcRoleName Read an existing role.
 // name: Name of the role.
 func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2866,12 +2999,13 @@ func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string, options ...
 
 // GetAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 func (a *Auth) GetAuthOktaConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2887,12 +3021,13 @@ func (a *Auth) GetAuthOktaConfig(ctx context.Context, options ...RequestOption) 
 // GetAuthOktaGroups Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/groups"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/groups"
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2908,13 +3043,14 @@ func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string, options ...Re
 // GetAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
 func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2930,12 +3066,13 @@ func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string, options .
 // GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/users"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/users"
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2951,13 +3088,14 @@ func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string, options ...Req
 // GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
 func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2973,13 +3111,14 @@ func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string, options ..
 // GetAuthOktaVerifyNonce
 // nonce: Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/verify/{nonce}"
-	requestPath = strings.Replace(requestPath, "{"+"nonce"+"}", url.PathEscape(nonce), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/verify/{nonce}"
+	requestPath = strings.Replace(requestPath, "{"+"nonce"+"}", url.PathEscape(nonce), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2994,12 +3133,13 @@ func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string, options
 
 // GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 func (a *Auth) GetAuthRadiusConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3015,12 +3155,13 @@ func (a *Auth) GetAuthRadiusConfig(ctx context.Context, options ...RequestOption
 // GetAuthRadiusUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/users"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/users"
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3036,13 +3177,14 @@ func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string, options ...R
 // GetAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
 func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3058,12 +3200,13 @@ func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string, options 
 // GetAuthTokenAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/accessors/"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/accessors/"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3078,12 +3221,13 @@ func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string, options .
 
 // GetAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *Auth) GetAuthTokenLookup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/lookup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/lookup"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3098,12 +3242,13 @@ func (a *Auth) GetAuthTokenLookup(ctx context.Context, options ...RequestOption)
 
 // GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/lookup-self"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/lookup-self"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3119,12 +3264,13 @@ func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context, options ...RequestOpt
 // GetAuthTokenRoles This endpoint lists configured roles.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/roles"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3140,13 +3286,14 @@ func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string, options ...Re
 // GetAuthTokenRolesRoleName
 // roleName: Name of the role
 func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3162,12 +3309,13 @@ func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string, o
 // GetAuthUserpassUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{userpass_mount_path}/users"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{userpass_mount_path}/users"
+	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("userpass")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3183,13 +3331,14 @@ func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string, options ..
 // GetAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
 func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("userpass")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3204,12 +3353,13 @@ func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string
 
 // PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
 func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{alicloud_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{alicloud_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3225,13 +3375,14 @@ func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest A
 // PostAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
 func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("alicloud")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3246,12 +3397,13 @@ func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, role string, aliclo
 
 // PostAuthApproleLogin
 func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest ApproleLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3267,13 +3419,14 @@ func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest App
 // PostAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3289,13 +3442,14 @@ func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string,
 // PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3311,13 +3465,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, role
 // PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3333,13 +3488,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, rol
 // PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/custom-secret-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/custom-secret-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3355,13 +3511,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, ro
 // PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3377,13 +3534,14 @@ func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName s
 // PostAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3399,13 +3557,14 @@ func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName
 // PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/role-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/role-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3421,13 +3580,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName s
 // PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3443,13 +3603,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName
 // PostAuthApproleRoleRoleNameSecretIdAccessorDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3465,13 +3626,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Co
 // PostAuthApproleRoleRoleNameSecretIdAccessorLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3487,13 +3649,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Con
 // PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3509,13 +3672,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context
 // PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3531,13 +3695,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, r
 // PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secret_id
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/lookup"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/lookup"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3553,13 +3718,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, ro
 // PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3575,13 +3741,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, r
 // PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3597,13 +3764,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleN
 // PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3619,13 +3787,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, r
 // PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3641,13 +3810,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleN
 // PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3663,13 +3833,14 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, role
 // PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3684,12 +3855,13 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName
 
 // PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
 func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{approle_mount_path}/tidy/secret-id"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{approle_mount_path}/tidy/secret-id"
+	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3705,13 +3877,14 @@ func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context, options ...Reque
 // PostAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
 func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
-	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
+	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3726,12 +3899,13 @@ func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, certNam
 
 // PostAuthAwsConfigClient
 func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/client"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/client"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3746,12 +3920,13 @@ func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientReque
 
 // PostAuthAwsConfigIdentity
 func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3766,12 +3941,13 @@ func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityR
 
 // PostAuthAwsConfigRotateRoot
 func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/rotate-root"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3787,13 +3963,14 @@ func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context, options ...Reque
 // PostAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
-	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
+	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3808,12 +3985,13 @@ func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId stri
 
 // PostAuthAwsConfigTidyIdentityAccesslist
 func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3828,12 +4006,13 @@ func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsC
 
 // PostAuthAwsConfigTidyIdentityWhitelist
 func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3848,12 +4027,13 @@ func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsCo
 
 // PostAuthAwsConfigTidyRoletagBlacklist
 func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3868,12 +4048,13 @@ func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsCon
 
 // PostAuthAwsConfigTidyRoletagDenylist
 func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3888,12 +4069,13 @@ func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConf
 
 // PostAuthAwsLogin
 func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3909,13 +4091,14 @@ func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginReq
 // PostAuthAwsRoleRole
 // role: Name of the role.
 func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequest AwsRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3931,13 +4114,14 @@ func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequ
 // PostAuthAwsRoleRoleTag
 // role: Name of the role.
 func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/role/{role}/tag"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/role/{role}/tag"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3953,13 +4137,14 @@ func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleT
 // PostAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
-	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
+	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3975,13 +4160,14 @@ func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag s
 // PostAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
-	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
+	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3996,12 +4182,13 @@ func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag st
 
 // PostAuthAwsTidyIdentityAccesslist
 func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-accesslist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-accesslist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4016,12 +4203,13 @@ func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIde
 
 // PostAuthAwsTidyIdentityWhitelist
 func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-whitelist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-whitelist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4036,12 +4224,13 @@ func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIden
 
 // PostAuthAwsTidyRoletagBlacklist
 func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-blacklist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-blacklist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4056,12 +4245,13 @@ func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRolet
 
 // PostAuthAwsTidyRoletagDenylist
 func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-denylist"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-denylist"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4076,12 +4266,13 @@ func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoleta
 
 // PostAuthAzureConfig
 func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4096,12 +4287,13 @@ func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureConfigRequest Azure
 
 // PostAuthAzureLogin
 func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4117,13 +4309,14 @@ func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLo
 // PostAuthAzureRoleName
 // name: Name of the role.
 func (a *Auth) PostAuthAzureRoleName(ctx context.Context, name string, azureRoleRequest AzureRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("azure")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4138,12 +4331,13 @@ func (a *Auth) PostAuthAzureRoleName(ctx context.Context, name string, azureRole
 
 // PostAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{centrify_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{centrify_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("centrify")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4158,12 +4352,13 @@ func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest
 
 // PostAuthCentrifyLogin Log in with a username and password.
 func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{centrify_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{centrify_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("centrify")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4179,13 +4374,14 @@ func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest C
 // PostAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
 func (a *Auth) PostAuthCertCertsName(ctx context.Context, name string, certCertsRequest CertCertsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4200,12 +4396,13 @@ func (a *Auth) PostAuthCertCertsName(ctx context.Context, name string, certCerts
 
 // PostAuthCertConfig
 func (a *Auth) PostAuthCertConfig(ctx context.Context, certConfigRequest CertConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4221,13 +4418,14 @@ func (a *Auth) PostAuthCertConfig(ctx context.Context, certConfigRequest CertCon
 // PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
 func (a *Auth) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRequest CertCrlsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4242,12 +4440,13 @@ func (a *Auth) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRe
 
 // PostAuthCertLogin
 func (a *Auth) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cert_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4262,12 +4461,13 @@ func (a *Auth) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLogin
 
 // PostAuthCfConfig
 func (a *Auth) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4282,12 +4482,13 @@ func (a *Auth) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigReq
 
 // PostAuthCfLogin
 func (a *Auth) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4303,13 +4504,14 @@ func (a *Auth) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginReques
 // PostAuthCfRolesRole
 // role: The name of the role.
 func (a *Auth) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequest CfRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cf")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4324,12 +4526,13 @@ func (a *Auth) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequ
 
 // PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4344,12 +4547,13 @@ func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfig
 
 // PostAuthGcpLogin
 func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4365,13 +4569,14 @@ func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginReq
 // PostAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
 func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4387,13 +4592,14 @@ func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequ
 // PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
 // name: Name of the role.
 func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}/labels"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}/labels"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4409,13 +4615,14 @@ func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRo
 // PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existing `iam` role
 // name: Name of the role.
 func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}/service-accounts"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}/service-accounts"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcp")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4430,12 +4637,13 @@ func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name stri
 
 // PostAuthGithubConfig
 func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubConfigRequest GithubConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4450,12 +4658,13 @@ func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubConfigRequest Git
 
 // PostAuthGithubLogin
 func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubLoginRequest GithubLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4471,13 +4680,14 @@ func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubLoginRequest Githu
 // PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
 func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4493,13 +4703,14 @@ func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, github
 // PostAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
 func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
-	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("github")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4515,12 +4726,13 @@ func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, github
 // PostAuthJwtConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
 func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4535,12 +4747,13 @@ func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfig
 
 // PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4555,12 +4768,13 @@ func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginReq
 
 // PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/oidc/auth_url"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/oidc/auth_url"
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4575,12 +4789,13 @@ func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest
 
 // PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
 func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4597,13 +4812,14 @@ func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackReque
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
 func (a *Auth) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("jwt")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4618,12 +4834,13 @@ func (a *Auth) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequ
 
 // PostAuthKerberosConfig
 func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest KerberosConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4638,12 +4855,13 @@ func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest
 
 // PostAuthKerberosConfigLdap
 func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4659,13 +4877,14 @@ func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLda
 // PostAuthKerberosGroupsName
 // name: Name of the LDAP group.
 func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4680,12 +4899,13 @@ func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, name string, kerb
 
 // PostAuthKerberosLogin
 func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kerberos_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kerberos_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kerberos")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4700,12 +4920,13 @@ func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest K
 
 // PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4720,12 +4941,13 @@ func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigReq
 
 // PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
 func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kubernetes_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kubernetes_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4741,13 +4963,14 @@ func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginReque
 // PostAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
 func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kubernetes")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4762,12 +4985,13 @@ func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, name string, kube
 
 // PostAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4783,13 +5007,14 @@ func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapCon
 // PostAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
 func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4805,13 +5030,14 @@ func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGrou
 // PostAuthLdapLoginUsername Log in with a username and password.
 // username: DN (distinguished name) to be used for login.
 func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/login/{username}"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/login/{username}"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4827,13 +5053,14 @@ func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, l
 // PostAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
 func (a *Auth) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ldap")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4848,12 +5075,13 @@ func (a *Auth) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsers
 
 // PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *Auth) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4869,13 +5097,14 @@ func (a *Auth) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfig
 // PostAuthOciLoginRole Authenticates to Vault using OCI credentials
 // role: Name of the role.
 func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRequest OciLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/login/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/login/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4891,13 +5120,14 @@ func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRe
 // PostAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
 func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequest OciRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
-	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oci")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4913,12 +5143,13 @@ func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequ
 // PostAuthOidcConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
 func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4933,12 +5164,13 @@ func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcCon
 
 // PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4953,12 +5185,13 @@ func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLogin
 
 // PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/oidc/auth_url"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/oidc/auth_url"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4973,12 +5206,13 @@ func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlReque
 
 // PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
 func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/oidc/callback"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/oidc/callback"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -4995,13 +5229,14 @@ func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackReq
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
 func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5016,12 +5251,13 @@ func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRe
 
 // PostAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5037,13 +5273,14 @@ func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaCon
 // PostAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
 func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5059,13 +5296,14 @@ func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGrou
 // PostAuthOktaLoginUsername Log in with a username and password.
 // username: Username to be used for login.
 func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/login/{username}"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/login/{username}"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5081,13 +5319,14 @@ func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, o
 // PostAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
 func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("okta")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5102,12 +5341,13 @@ func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsers
 
 // PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest RadiusConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5122,12 +5362,13 @@ func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest Rad
 
 // PostAuthRadiusLogin Log in with a username and password.
 func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/login"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5143,13 +5384,14 @@ func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest Radiu
 // PostAuthRadiusLoginUrlusername Log in with a username and password.
 // urlusername: Username to be used for login. (URL parameter)
 func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/login/{urlusername}"
-	requestPath = strings.Replace(requestPath, "{"+"urlusername"+"}", url.PathEscape(urlusername), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/login/{urlusername}"
+	requestPath = strings.Replace(requestPath, "{"+"urlusername"+"}", url.PathEscape(urlusername), -1)
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5165,13 +5407,14 @@ func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername s
 // PostAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
 func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("radius")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5186,12 +5429,13 @@ func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusU
 
 // PostAuthTokenCreate The token create path is used to create new tokens.
 func (a *Auth) PostAuthTokenCreate(ctx context.Context, tokenCreateRequest TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/create"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/create"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5206,12 +5450,13 @@ func (a *Auth) PostAuthTokenCreate(ctx context.Context, tokenCreateRequest Token
 
 // PostAuthTokenCreateOrphan The token create path is used to create new orphan tokens.
 func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context, tokenCreateOrphanRequest TokenCreateOrphanRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/create-orphan"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/create-orphan"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5227,13 +5472,14 @@ func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context, tokenCreateOrphanR
 // PostAuthTokenCreateRoleName This token create path is used to create new tokens adhering to the given role.
 // roleName: Name of the role
 func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string, tokenCreateRequest TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/create/{role_name}"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/create/{role_name}"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5248,12 +5494,13 @@ func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string,
 
 // PostAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest TokenLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/lookup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/lookup"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5268,12 +5515,13 @@ func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest Token
 
 // PostAuthTokenLookupAccessor This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
 func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/lookup-accessor"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/lookup-accessor"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5288,12 +5536,13 @@ func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAcces
 
 // PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/lookup-self"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/lookup-self"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5308,12 +5557,13 @@ func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfReque
 
 // PostAuthTokenRenew This endpoint will renew the given token and prevent expiration.
 func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/renew"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/renew"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5328,12 +5578,13 @@ func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRe
 
 // PostAuthTokenRenewAccessor This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
 func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/renew-accessor"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/renew-accessor"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5348,12 +5599,13 @@ func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccesso
 
 // PostAuthTokenRenewSelf This endpoint will renew the token used to call it and prevent expiration.
 func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/renew-self"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/renew-self"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5368,12 +5620,13 @@ func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest
 
 // PostAuthTokenRevoke This endpoint will delete the given token and all of its child tokens.
 func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/revoke"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/revoke"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5388,12 +5641,13 @@ func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest Token
 
 // PostAuthTokenRevokeAccessor This endpoint will delete the token associated with the accessor and all of its child tokens.
 func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/revoke-accessor"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/revoke-accessor"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5408,12 +5662,13 @@ func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAcces
 
 // PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its child tokens.
 func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/revoke-orphan"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/revoke-orphan"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5428,12 +5683,13 @@ func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanR
 
 // PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and all of its child tokens.
 func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/revoke-self"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/revoke-self"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5449,13 +5705,14 @@ func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context, options ...RequestOp
 // PostAuthTokenRolesRoleName
 // roleName: Name of the role
 func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
-	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
+	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5470,12 +5727,13 @@ func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, 
 
 // PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 func (a *Auth) PostAuthTokenTidy(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{token_mount_path}/tidy"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{token_mount_path}/tidy"
+	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("token")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5491,13 +5749,14 @@ func (a *Auth) PostAuthTokenTidy(ctx context.Context, options ...RequestOption) 
 // PostAuthUserpassLoginUsername Log in with a username and password.
 // username: Username of the user.
 func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{userpass_mount_path}/login/{username}"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{userpass_mount_path}/login/{username}"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("userpass")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5513,13 +5772,14 @@ func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username strin
 // PostAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
 func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("userpass")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5535,13 +5795,14 @@ func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username strin
 // PostAuthUserpassUsersUsernamePassword Reset user's password.
 // username: Username for this user.
 func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}/password"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}/password"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("userpass")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -5557,13 +5818,14 @@ func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, userna
 // PostAuthUserpassUsersUsernamePolicies Update the policies associated with the username.
 // username: Username for this user.
 func (a *Auth) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}/policies"
-	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}/policies"
+	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
+	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("userpass")), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,

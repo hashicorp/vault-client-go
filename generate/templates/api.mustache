@@ -31,13 +31,14 @@ type {{classname}} struct {
 {{/required}}
 {{/allParams}}
 func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}, options ...RequestOption) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*Response[map[string]interface{}], error) {
-	requestPath := "/v1{{{path}}}"{{#pathParams}}{{#required}}
-	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/required}}{{/pathParams}}
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1{{{path}}}"{{#pathParams}}{{#required}}
+	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/required}}{{/pathParams}}{{#pathParams}}{{^required}}
+	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(modifiers.mountPathOr({{#defaultValue}}{{{.}}}{{/defaultValue}})), -1){{/required}}{{/pathParams}}
 
 {{#bodyParams}}
 	return sendStructuredRequestParseResponse[map[string]interface{}](

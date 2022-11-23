@@ -36,9 +36,9 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#requ
 		return nil, err
 	}
 
-	requestPath := "/v1{{{path}}}"{{#pathParams}}{{#required}}
-	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/required}}{{/pathParams}}{{#pathParams}}{{^required}}
-	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(modifiers.mountPathOr({{#defaultValue}}{{{.}}}{{/defaultValue}})), -1){{/required}}{{/pathParams}}
+	requestPath := "/v1{{{path}}}"{{#pathParams}}{{^required}}
+	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(modifiers.mountPathOr({{#defaultValue}}{{{.}}}{{/defaultValue}})), -1){{/required}}{{/pathParams}}{{#pathParams}}{{#required}}
+	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/required}}{{/pathParams}}
 
 {{#bodyParams}}
 	return sendStructuredRequestParseResponse[map[string]interface{}](

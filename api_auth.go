@@ -25,7 +25,7 @@ type Auth struct {
 // DeleteAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
 // alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, alicloudMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -49,7 +49,7 @@ func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, alicloudMountPath
 // DeleteAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -73,7 +73,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, approleMountPa
 // DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -97,7 +97,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, ap
 // DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -121,7 +121,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, a
 // DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -145,7 +145,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, approleM
 // DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -169,7 +169,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, approl
 // DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -193,7 +193,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.
 // DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -217,7 +217,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Conte
 // DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -241,7 +241,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context,
 // DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -265,7 +265,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context,
 // DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -289,7 +289,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, app
 // DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -313,7 +313,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context,
 // DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -337,7 +337,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, app
 // DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -361,7 +361,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, ap
 // DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -385,7 +385,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, approl
 // DeleteAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, awsMountPath string, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
@@ -408,7 +408,7 @@ func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, awsMo
 
 // DeleteAuthAwsConfigClient
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/client"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -431,7 +431,7 @@ func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context, awsMountPath strin
 // DeleteAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
@@ -454,7 +454,7 @@ func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId st
 
 // DeleteAuthAwsConfigTidyIdentityAccesslist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -476,7 +476,7 @@ func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, aw
 
 // DeleteAuthAwsConfigTidyIdentityWhitelist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -498,7 +498,7 @@ func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, aws
 
 // DeleteAuthAwsConfigTidyRoletagBlacklist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -520,7 +520,7 @@ func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsM
 
 // DeleteAuthAwsConfigTidyRoletagDenylist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -543,7 +543,7 @@ func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsMo
 // DeleteAuthAwsIdentityAccesslistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, awsMountPath string, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
@@ -567,7 +567,7 @@ func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, aw
 // DeleteAuthAwsIdentityWhitelistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, awsMountPath string, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
@@ -591,7 +591,7 @@ func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, aws
 // DeleteAuthAwsRoleRole
 // role: Name of the role.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, awsMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -615,7 +615,7 @@ func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, awsMountPath string, r
 // DeleteAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, awsMountPath string, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
@@ -639,7 +639,7 @@ func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, awsMoun
 // DeleteAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, awsMountPath string, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
@@ -662,7 +662,7 @@ func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, awsMount
 
 // DeleteAuthAzureConfig
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAzureConfig(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
@@ -685,7 +685,7 @@ func (a *Auth) DeleteAuthAzureConfig(ctx context.Context, azureMountPath string,
 // DeleteAuthAzureRoleName
 // name: Name of the role.
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, azureMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -709,7 +709,7 @@ func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, azureMountPath strin
 // DeleteAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, certMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -733,7 +733,7 @@ func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, certMountPath string
 // DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, certMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -756,7 +756,7 @@ func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, certMountPath string,
 
 // DeleteAuthCfConfig
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthCfConfig(ctx context.Context, cfMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthCfConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 
@@ -779,7 +779,7 @@ func (a *Auth) DeleteAuthCfConfig(ctx context.Context, cfMountPath string, optio
 // DeleteAuthCfRolesRole
 // role: The name of the role.
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, cfMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -803,7 +803,7 @@ func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, cfMountPath string, ro
 // DeleteAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -827,7 +827,7 @@ func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, gcpMountPath string, n
 // DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, githubMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
@@ -851,7 +851,7 @@ func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, githubMountPath 
 // DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, githubMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
@@ -875,7 +875,7 @@ func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, githubMountPath 
 // DeleteAuthJwtRoleName Delete an existing role.
 // name: Name of the role.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, jwtMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -899,7 +899,7 @@ func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, jwtMountPath string, n
 // DeleteAuthKerberosGroupsName
 // name: Name of the LDAP group.
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, kerberosMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -923,7 +923,7 @@ func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, kerberosMountPa
 // DeleteAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
 // kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, kubernetesMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -947,7 +947,7 @@ func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, kubernetesMount
 // DeleteAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -971,7 +971,7 @@ func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, ldapMountPath strin
 // DeleteAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -994,7 +994,7 @@ func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, ldapMountPath string
 
 // DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthOciConfig(ctx context.Context, ociMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthOciConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 
@@ -1017,7 +1017,7 @@ func (a *Auth) DeleteAuthOciConfig(ctx context.Context, ociMountPath string, opt
 // DeleteAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, ociMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -1041,7 +1041,7 @@ func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, ociMountPath string, r
 // DeleteAuthOidcRoleName Delete an existing role.
 // name: Name of the role.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string, oidcMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
@@ -1065,7 +1065,7 @@ func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string, oidcMoun
 // DeleteAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
@@ -1089,7 +1089,7 @@ func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string, oktaMo
 // DeleteAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
@@ -1113,7 +1113,7 @@ func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string, oktaMou
 // DeleteAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string, radiusMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
@@ -1137,7 +1137,7 @@ func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string, radiu
 // DeleteAuthTokenRolesRoleName
 // roleName: Name of the role
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
@@ -1161,7 +1161,7 @@ func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string
 // DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
 // userpassMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username string, userpassMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(userpassMountPath), -1)
@@ -1185,7 +1185,7 @@ func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username str
 // GetAuthAlicloudRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 // alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAlicloudRole(ctx context.Context, alicloudMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{alicloud_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 
@@ -1208,7 +1208,7 @@ func (a *Auth) GetAuthAlicloudRole(ctx context.Context, alicloudMountPath string
 // GetAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
 // alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, alicloudMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -1232,7 +1232,7 @@ func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, alicloudMountPath st
 // GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 // alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, alicloudMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{alicloud_mount_path}/roles"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 
@@ -1255,7 +1255,7 @@ func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, alicloudMountPath strin
 // GetAuthApproleRole Lists all the roles registered with the backend.
 // list: Must be set to &#x60;true&#x60;
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRole(ctx context.Context, approleMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 
@@ -1278,7 +1278,7 @@ func (a *Auth) GetAuthApproleRole(ctx context.Context, approleMountPath string, 
 // GetAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1302,7 +1302,7 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, approleMountPath 
 // GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1326,7 +1326,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, appro
 // GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1350,7 +1350,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, appr
 // GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/local-secret-ids"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1374,7 +1374,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, app
 // GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1398,7 +1398,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, approleMoun
 // GetAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1422,7 +1422,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, approleMo
 // GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/role-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1447,7 +1447,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, approleMoun
 // roleName: Name of the role. Must be less than 4096 bytes.
 // list: Must be set to &#x60;true&#x60;
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, approleMountPath string, roleName string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1471,7 +1471,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, approleMo
 // GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1495,7 +1495,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 // GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1519,7 +1519,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ap
 // GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1543,7 +1543,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, approl
 // GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1567,7 +1567,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ap
 // GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1591,7 +1591,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, approl
 // GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1615,7 +1615,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, appro
 // GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, approleMountPath string, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -1639,7 +1639,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, approleMo
 // GetAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, awsMountPath string, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
@@ -1663,7 +1663,7 @@ func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, awsMount
 // GetAuthAwsConfigCertificates
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/certificates"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1685,7 +1685,7 @@ func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, awsMountPath st
 
 // GetAuthAwsConfigClient
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigClient(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigClient(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/client"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1707,7 +1707,7 @@ func (a *Auth) GetAuthAwsConfigClient(ctx context.Context, awsMountPath string, 
 
 // GetAuthAwsConfigIdentity
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1730,7 +1730,7 @@ func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context, awsMountPath string
 // GetAuthAwsConfigSts
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/sts"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1753,7 +1753,7 @@ func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, awsMountPath string, lis
 // GetAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
@@ -1776,7 +1776,7 @@ func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId strin
 
 // GetAuthAwsConfigTidyIdentityAccesslist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1798,7 +1798,7 @@ func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsMo
 
 // GetAuthAwsConfigTidyIdentityWhitelist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1820,7 +1820,7 @@ func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsMou
 
 // GetAuthAwsConfigTidyRoletagBlacklist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1842,7 +1842,7 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsMoun
 
 // GetAuthAwsConfigTidyRoletagDenylist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1865,7 +1865,7 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsMount
 // GetAuthAwsIdentityAccesslist
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1888,7 +1888,7 @@ func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, awsMountPath st
 // GetAuthAwsIdentityAccesslistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, awsMountPath string, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/identity-accesslist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
@@ -1912,7 +1912,7 @@ func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, awsMo
 // GetAuthAwsIdentityWhitelist
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1935,7 +1935,7 @@ func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, awsMountPath str
 // GetAuthAwsIdentityWhitelistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, awsMountPath string, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/identity-whitelist/{instance_id}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
@@ -1959,7 +1959,7 @@ func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, awsMou
 // GetAuthAwsRole
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsRole(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -1982,7 +1982,7 @@ func (a *Auth) GetAuthAwsRole(ctx context.Context, awsMountPath string, list str
 // GetAuthAwsRoleRole
 // role: Name of the role.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, awsMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -2006,7 +2006,7 @@ func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, awsMountPath string, role
 // GetAuthAwsRoles
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsRoles(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roles"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -2029,7 +2029,7 @@ func (a *Auth) GetAuthAwsRoles(ctx context.Context, awsMountPath string, list st
 // GetAuthAwsRoletagBlacklist
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -2052,7 +2052,7 @@ func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, awsMountPath stri
 // GetAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, awsMountPath string, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
@@ -2076,7 +2076,7 @@ func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, awsMountPa
 // GetAuthAwsRoletagDenylist
 // list: Must be set to &#x60;true&#x60;
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -2099,7 +2099,7 @@ func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, awsMountPath strin
 // GetAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, awsMountPath string, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
@@ -2122,7 +2122,7 @@ func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, awsMountPat
 
 // GetAuthAzureConfig
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAzureConfig(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
@@ -2145,7 +2145,7 @@ func (a *Auth) GetAuthAzureConfig(ctx context.Context, azureMountPath string, op
 // GetAuthAzureRole
 // list: Must be set to &#x60;true&#x60;
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAzureRole(ctx context.Context, azureMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAzureRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
@@ -2168,7 +2168,7 @@ func (a *Auth) GetAuthAzureRole(ctx context.Context, azureMountPath string, list
 // GetAuthAzureRoleName
 // name: Name of the role.
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthAzureRoleName(ctx context.Context, azureMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2191,7 +2191,7 @@ func (a *Auth) GetAuthAzureRoleName(ctx context.Context, azureMountPath string, 
 
 // GetAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 // centrifyMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCentrifyConfig(ctx context.Context, centrifyMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCentrifyConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{centrify_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(centrifyMountPath), -1)
 
@@ -2214,7 +2214,7 @@ func (a *Auth) GetAuthCentrifyConfig(ctx context.Context, centrifyMountPath stri
 // GetAuthCertCerts Manage trusted certificates used for authentication.
 // list: Must be set to &#x60;true&#x60;
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCertCerts(ctx context.Context, certMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCertCerts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/certs"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 
@@ -2237,7 +2237,7 @@ func (a *Auth) GetAuthCertCerts(ctx context.Context, certMountPath string, list 
 // GetAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCertCertsName(ctx context.Context, certMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2260,7 +2260,7 @@ func (a *Auth) GetAuthCertCertsName(ctx context.Context, certMountPath string, n
 
 // GetAuthCertConfig
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCertConfig(ctx context.Context, certMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCertConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 
@@ -2283,7 +2283,7 @@ func (a *Auth) GetAuthCertConfig(ctx context.Context, certMountPath string, opti
 // GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCertCrlsName(ctx context.Context, certMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2306,7 +2306,7 @@ func (a *Auth) GetAuthCertCrlsName(ctx context.Context, certMountPath string, na
 
 // GetAuthCfConfig
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCfConfig(ctx context.Context, cfMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCfConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 
@@ -2329,7 +2329,7 @@ func (a *Auth) GetAuthCfConfig(ctx context.Context, cfMountPath string, options 
 // GetAuthCfRoles
 // list: Must be set to &#x60;true&#x60;
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCfRoles(ctx context.Context, cfMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCfRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/roles"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 
@@ -2352,7 +2352,7 @@ func (a *Auth) GetAuthCfRoles(ctx context.Context, cfMountPath string, list stri
 // GetAuthCfRolesRole
 // role: The name of the role.
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthCfRolesRole(ctx context.Context, cfMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -2375,7 +2375,7 @@ func (a *Auth) GetAuthCfRolesRole(ctx context.Context, cfMountPath string, role 
 
 // GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthGcpConfig(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGcpConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
@@ -2398,7 +2398,7 @@ func (a *Auth) GetAuthGcpConfig(ctx context.Context, gcpMountPath string, option
 // GetAuthGcpRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthGcpRole(ctx context.Context, gcpMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGcpRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
@@ -2421,7 +2421,7 @@ func (a *Auth) GetAuthGcpRole(ctx context.Context, gcpMountPath string, list str
 // GetAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthGcpRoleName(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2445,7 +2445,7 @@ func (a *Auth) GetAuthGcpRoleName(ctx context.Context, gcpMountPath string, name
 // GetAuthGcpRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthGcpRoles(ctx context.Context, gcpMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/roles"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
@@ -2467,7 +2467,7 @@ func (a *Auth) GetAuthGcpRoles(ctx context.Context, gcpMountPath string, list st
 
 // GetAuthGithubConfig
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthGithubConfig(ctx context.Context, githubMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGithubConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 
@@ -2490,7 +2490,7 @@ func (a *Auth) GetAuthGithubConfig(ctx context.Context, githubMountPath string, 
 // GetAuthGithubMapTeams Read mappings for teams
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
 // list: Return a list if &#x60;true&#x60;
-func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, githubMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/teams"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 
@@ -2513,7 +2513,7 @@ func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, githubMountPath string
 // GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, githubMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
@@ -2537,7 +2537,7 @@ func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, githubMountPath str
 // GetAuthGithubMapUsers Read mappings for users
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
 // list: Return a list if &#x60;true&#x60;
-func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, githubMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/users"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 
@@ -2560,7 +2560,7 @@ func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, githubMountPath string
 // GetAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, githubMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
@@ -2583,7 +2583,7 @@ func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, githubMountPath str
 
 // GetAuthJwtConfig Read the current JWT authentication backend configuration.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthJwtConfig(ctx context.Context, jwtMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthJwtConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 
@@ -2605,7 +2605,7 @@ func (a *Auth) GetAuthJwtConfig(ctx context.Context, jwtMountPath string, option
 
 // GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context, jwtMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 
@@ -2629,7 +2629,7 @@ func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context, jwtMountPath string, 
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthJwtRole(ctx context.Context, jwtMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthJwtRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 
@@ -2652,7 +2652,7 @@ func (a *Auth) GetAuthJwtRole(ctx context.Context, jwtMountPath string, list str
 // GetAuthJwtRoleName Read an existing role.
 // name: Name of the role.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthJwtRoleName(ctx context.Context, jwtMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2675,7 +2675,7 @@ func (a *Auth) GetAuthJwtRoleName(ctx context.Context, jwtMountPath string, name
 
 // GetAuthKerberosConfig
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKerberosConfig(ctx context.Context, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKerberosConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 
@@ -2697,7 +2697,7 @@ func (a *Auth) GetAuthKerberosConfig(ctx context.Context, kerberosMountPath stri
 
 // GetAuthKerberosConfigLdap
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 
@@ -2720,7 +2720,7 @@ func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context, kerberosMountPath 
 // GetAuthKerberosGroups
 // list: Must be set to &#x60;true&#x60;
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKerberosGroups(ctx context.Context, kerberosMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/groups"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 
@@ -2743,7 +2743,7 @@ func (a *Auth) GetAuthKerberosGroups(ctx context.Context, kerberosMountPath stri
 // GetAuthKerberosGroupsName
 // name: Name of the LDAP group.
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, kerberosMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2766,7 +2766,7 @@ func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, kerberosMountPath 
 
 // GetAuthKerberosLogin
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKerberosLogin(ctx context.Context, kerberosMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKerberosLogin(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 
@@ -2788,7 +2788,7 @@ func (a *Auth) GetAuthKerberosLogin(ctx context.Context, kerberosMountPath strin
 
 // GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 // kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKubernetesConfig(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKubernetesConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
@@ -2811,7 +2811,7 @@ func (a *Auth) GetAuthKubernetesConfig(ctx context.Context, kubernetesMountPath 
 // GetAuthKubernetesRole Lists all the roles registered with the backend.
 // list: Must be set to &#x60;true&#x60;
 // kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKubernetesRole(ctx context.Context, kubernetesMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kubernetes_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
@@ -2834,7 +2834,7 @@ func (a *Auth) GetAuthKubernetesRole(ctx context.Context, kubernetesMountPath st
 // GetAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
 // kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, kubernetesMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2857,7 +2857,7 @@ func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, kubernetesMountPat
 
 // GetAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthLdapConfig(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthLdapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
@@ -2880,7 +2880,7 @@ func (a *Auth) GetAuthLdapConfig(ctx context.Context, ldapMountPath string, opti
 // GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthLdapGroups(ctx context.Context, ldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/groups"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
@@ -2903,7 +2903,7 @@ func (a *Auth) GetAuthLdapGroups(ctx context.Context, ldapMountPath string, list
 // GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2927,7 +2927,7 @@ func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, ldapMountPath string, 
 // GetAuthLdapUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthLdapUsers(ctx context.Context, ldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/users"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
@@ -2950,7 +2950,7 @@ func (a *Auth) GetAuthLdapUsers(ctx context.Context, ldapMountPath string, list 
 // GetAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthLdapUsersName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -2973,7 +2973,7 @@ func (a *Auth) GetAuthLdapUsersName(ctx context.Context, ldapMountPath string, n
 
 // GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOciConfig(ctx context.Context, ociMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOciConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 
@@ -2996,7 +2996,7 @@ func (a *Auth) GetAuthOciConfig(ctx context.Context, ociMountPath string, option
 // GetAuthOciRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOciRole(ctx context.Context, ociMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOciRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 
@@ -3019,7 +3019,7 @@ func (a *Auth) GetAuthOciRole(ctx context.Context, ociMountPath string, list str
 // GetAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOciRoleRole(ctx context.Context, ociMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -3042,7 +3042,7 @@ func (a *Auth) GetAuthOciRoleRole(ctx context.Context, ociMountPath string, role
 
 // GetAuthOidcConfig Read the current JWT authentication backend configuration.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOidcConfig(ctx context.Context, oidcMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOidcConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
 
@@ -3064,7 +3064,7 @@ func (a *Auth) GetAuthOidcConfig(ctx context.Context, oidcMountPath string, opti
 
 // GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context, oidcMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/oidc/callback"
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
 
@@ -3088,7 +3088,7 @@ func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context, oidcMountPath string
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOidcRole(ctx context.Context, oidcMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOidcRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
 
@@ -3111,7 +3111,7 @@ func (a *Auth) GetAuthOidcRole(ctx context.Context, oidcMountPath string, list s
 // GetAuthOidcRoleName Read an existing role.
 // name: Name of the role.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string, oidcMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
@@ -3134,7 +3134,7 @@ func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string, oidcMountPa
 
 // GetAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOktaConfig(ctx context.Context, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOktaConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
 
@@ -3157,7 +3157,7 @@ func (a *Auth) GetAuthOktaConfig(ctx context.Context, oktaMountPath string, opti
 // GetAuthOktaGroups Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOktaGroups(ctx context.Context, oktaMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/groups"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
 
@@ -3180,7 +3180,7 @@ func (a *Auth) GetAuthOktaGroups(ctx context.Context, oktaMountPath string, list
 // GetAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
@@ -3204,7 +3204,7 @@ func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string, oktaMount
 // GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOktaUsers(ctx context.Context, oktaMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/users"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
 
@@ -3227,7 +3227,7 @@ func (a *Auth) GetAuthOktaUsers(ctx context.Context, oktaMountPath string, list 
 // GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
@@ -3251,7 +3251,7 @@ func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string, oktaMountP
 // GetAuthOktaVerifyNonce
 // nonce: Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string, oktaMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/verify/{nonce}"
 	requestPath = strings.Replace(requestPath, "{"+"nonce"+"}", url.PathEscape(nonce), -1)
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
@@ -3274,7 +3274,7 @@ func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string, oktaMou
 
 // GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthRadiusConfig(ctx context.Context, radiusMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthRadiusConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
 
@@ -3297,7 +3297,7 @@ func (a *Auth) GetAuthRadiusConfig(ctx context.Context, radiusMountPath string, 
 // GetAuthRadiusUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthRadiusUsers(ctx context.Context, radiusMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/users"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
 
@@ -3320,7 +3320,7 @@ func (a *Auth) GetAuthRadiusUsers(ctx context.Context, radiusMountPath string, l
 // GetAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string, radiusMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
@@ -3344,7 +3344,7 @@ func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string, radiusMo
 // GetAuthTokenAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
 // list: Must be set to &#x60;true&#x60;
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthTokenAccessors(ctx context.Context, tokenMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/accessors/"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -3366,7 +3366,7 @@ func (a *Auth) GetAuthTokenAccessors(ctx context.Context, tokenMountPath string,
 
 // GetAuthTokenLookup This endpoint will lookup a token and its properties.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthTokenLookup(ctx context.Context, tokenMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthTokenLookup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/lookup"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -3388,7 +3388,7 @@ func (a *Auth) GetAuthTokenLookup(ctx context.Context, tokenMountPath string, op
 
 // GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context, tokenMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/lookup-self"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -3411,7 +3411,7 @@ func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context, tokenMountPath string
 // GetAuthTokenRoles This endpoint lists configured roles.
 // list: Must be set to &#x60;true&#x60;
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthTokenRoles(ctx context.Context, tokenMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/roles"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -3434,7 +3434,7 @@ func (a *Auth) GetAuthTokenRoles(ctx context.Context, tokenMountPath string, lis
 // GetAuthTokenRolesRoleName
 // roleName: Name of the role
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
@@ -3458,7 +3458,7 @@ func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string, t
 // GetAuthUserpassUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
 // userpassMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthUserpassUsers(ctx context.Context, userpassMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{userpass_mount_path}/users"
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(userpassMountPath), -1)
 
@@ -3481,7 +3481,7 @@ func (a *Auth) GetAuthUserpassUsers(ctx context.Context, userpassMountPath strin
 // GetAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
 // userpassMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string, userpassMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(userpassMountPath), -1)
@@ -3504,7 +3504,7 @@ func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string
 
 // PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
 // alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudMountPath string, alicloudLoginRequest AlicloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{alicloud_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 
@@ -3527,7 +3527,7 @@ func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudMountPath stri
 // PostAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
 // alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, alicloudMountPath string, role string, alicloudRoleRequest AlicloudRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{alicloud_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -3550,7 +3550,7 @@ func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, alicloudMountPath s
 
 // PostAuthApproleLogin
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleMountPath string, approleLoginRequest ApproleLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest ApproleLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 
@@ -3573,7 +3573,7 @@ func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleMountPath string
 // PostAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, approleMountPath string, roleName string, approleRoleRequest ApproleRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3597,7 +3597,7 @@ func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, approleMountPath
 // PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, approleMountPath string, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bind-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3621,7 +3621,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, appr
 // PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, approleMountPath string, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3645,7 +3645,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, app
 // PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, approleMountPath string, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/custom-secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3669,7 +3669,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, ap
 // PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, approleMountPath string, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/period"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3693,7 +3693,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, approleMou
 // PostAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, approleMountPath string, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3717,7 +3717,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, approleM
 // PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, approleMountPath string, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/role-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3741,7 +3741,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, approleMou
 // PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3765,7 +3765,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, approleM
 // PostAuthApproleRoleRoleNameSecretIdAccessorDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3789,7 +3789,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Co
 // PostAuthApproleRoleRoleNameSecretIdAccessorLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3813,7 +3813,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Con
 // PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3837,7 +3837,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context
 // PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3861,7 +3861,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, a
 // PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secret_id
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id/lookup"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3885,7 +3885,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, ap
 // PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3909,7 +3909,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, a
 // PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, approleMountPath string, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3933,7 +3933,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, appro
 // PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, approleMountPath string, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3957,7 +3957,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, a
 // PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, approleMountPath string, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-max-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -3981,7 +3981,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, appro
 // PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, approleMountPath string, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-num-uses"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -4005,7 +4005,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, appr
 // PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role. Must be less than 4096 bytes.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, approleMountPath string, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/role/{role_name}/token-ttl"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
@@ -4028,7 +4028,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, approleM
 
 // PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
 // approleMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context, approleMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{approle_mount_path}/tidy/secret-id"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(approleMountPath), -1)
 
@@ -4051,7 +4051,7 @@ func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context, approleMountPath
 // PostAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, awsMountPath string, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/certificate/{cert_name}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
@@ -4074,7 +4074,7 @@ func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, awsMoun
 
 // PostAuthAwsConfigClient
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsMountPath string, awsConfigClientRequest AwsConfigClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/client"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4096,7 +4096,7 @@ func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsMountPath string,
 
 // PostAuthAwsConfigIdentity
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsMountPath string, awsConfigIdentityRequest AwsConfigIdentityRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/identity"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4118,7 +4118,7 @@ func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsMountPath strin
 
 // PostAuthAwsConfigRotateRoot
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/rotate-root"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4141,7 +4141,7 @@ func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context, awsMountPath str
 // PostAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsMountPath string, awsConfigStsRequest AwsConfigStsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/sts/{account_id}"
 	requestPath = strings.Replace(requestPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
@@ -4164,7 +4164,7 @@ func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId stri
 
 // PostAuthAwsConfigTidyIdentityAccesslist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsMountPath string, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4186,7 +4186,7 @@ func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsM
 
 // PostAuthAwsConfigTidyIdentityWhitelist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsMountPath string, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4208,7 +4208,7 @@ func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsMo
 
 // PostAuthAwsConfigTidyRoletagBlacklist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsMountPath string, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4230,7 +4230,7 @@ func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsMou
 
 // PostAuthAwsConfigTidyRoletagDenylist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsMountPath string, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/config/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4252,7 +4252,7 @@ func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsMoun
 
 // PostAuthAwsLogin
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsMountPath string, awsLoginRequest AwsLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4275,7 +4275,7 @@ func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsMountPath string, awsLog
 // PostAuthAwsRoleRole
 // role: Name of the role.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, awsMountPath string, role string, awsRoleRequest AwsRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequest AwsRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -4299,7 +4299,7 @@ func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, awsMountPath string, rol
 // PostAuthAwsRoleRoleTag
 // role: Name of the role.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, awsMountPath string, role string, awsRoleTagRequest AwsRoleTagRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/role/{role}/tag"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -4323,7 +4323,7 @@ func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, awsMountPath string, 
 // PostAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, awsMountPath string, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-blacklist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
@@ -4347,7 +4347,7 @@ func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, awsMountP
 // PostAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, awsMountPath string, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/roletag-denylist/{role_tag}"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
@@ -4370,7 +4370,7 @@ func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, awsMountPa
 
 // PostAuthAwsTidyIdentityAccesslist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsMountPath string, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-accesslist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4392,7 +4392,7 @@ func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsMountPa
 
 // PostAuthAwsTidyIdentityWhitelist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsMountPath string, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/identity-whitelist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4414,7 +4414,7 @@ func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsMountPat
 
 // PostAuthAwsTidyRoletagBlacklist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsMountPath string, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-blacklist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4436,7 +4436,7 @@ func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsMountPath
 
 // PostAuthAwsTidyRoletagDenylist
 // awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsMountPath string, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{aws_mount_path}/tidy/roletag-denylist"
 	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
@@ -4458,7 +4458,7 @@ func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsMountPath 
 
 // PostAuthAzureConfig
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureMountPath string, azureConfigRequest AzureConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
@@ -4480,7 +4480,7 @@ func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureMountPath string, a
 
 // PostAuthAzureLogin
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureMountPath string, azureLoginRequest AzureLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
@@ -4503,7 +4503,7 @@ func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureMountPath string, az
 // PostAuthAzureRoleName
 // name: Name of the role.
 // azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthAzureRoleName(ctx context.Context, azureMountPath string, name string, azureRoleRequest AzureRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthAzureRoleName(ctx context.Context, name string, azureRoleRequest AzureRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{azure_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -4526,7 +4526,7 @@ func (a *Auth) PostAuthAzureRoleName(ctx context.Context, azureMountPath string,
 
 // PostAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 // centrifyMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyMountPath string, centrifyConfigRequest CentrifyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{centrify_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(centrifyMountPath), -1)
 
@@ -4548,7 +4548,7 @@ func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyMountPath str
 
 // PostAuthCentrifyLogin Log in with a username and password.
 // centrifyMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyMountPath string, centrifyLoginRequest CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{centrify_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(centrifyMountPath), -1)
 
@@ -4571,7 +4571,7 @@ func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyMountPath stri
 // PostAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCertCertsName(ctx context.Context, certMountPath string, name string, certCertsRequest CertCertsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCertCertsName(ctx context.Context, name string, certCertsRequest CertCertsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/certs/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -4594,7 +4594,7 @@ func (a *Auth) PostAuthCertCertsName(ctx context.Context, certMountPath string, 
 
 // PostAuthCertConfig
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCertConfig(ctx context.Context, certMountPath string, certConfigRequest CertConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCertConfig(ctx context.Context, certConfigRequest CertConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 
@@ -4617,7 +4617,7 @@ func (a *Auth) PostAuthCertConfig(ctx context.Context, certMountPath string, cer
 // PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCertCrlsName(ctx context.Context, certMountPath string, name string, certCrlsRequest CertCrlsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRequest CertCrlsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/crls/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -4640,7 +4640,7 @@ func (a *Auth) PostAuthCertCrlsName(ctx context.Context, certMountPath string, n
 
 // PostAuthCertLogin
 // certMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCertLogin(ctx context.Context, certMountPath string, certLoginRequest CertLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cert_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(certMountPath), -1)
 
@@ -4662,7 +4662,7 @@ func (a *Auth) PostAuthCertLogin(ctx context.Context, certMountPath string, cert
 
 // PostAuthCfConfig
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCfConfig(ctx context.Context, cfMountPath string, cfConfigRequest CfConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 
@@ -4684,7 +4684,7 @@ func (a *Auth) PostAuthCfConfig(ctx context.Context, cfMountPath string, cfConfi
 
 // PostAuthCfLogin
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCfLogin(ctx context.Context, cfMountPath string, cfLoginRequest CfLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 
@@ -4707,7 +4707,7 @@ func (a *Auth) PostAuthCfLogin(ctx context.Context, cfMountPath string, cfLoginR
 // PostAuthCfRolesRole
 // role: The name of the role.
 // cfMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthCfRolesRole(ctx context.Context, cfMountPath string, role string, cfRolesRequest CfRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequest CfRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{cf_mount_path}/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"cf_mount_path"+"}", url.PathEscape(cfMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -4730,7 +4730,7 @@ func (a *Auth) PostAuthCfRolesRole(ctx context.Context, cfMountPath string, role
 
 // PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpMountPath string, gcpConfigRequest GcpConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
@@ -4752,7 +4752,7 @@ func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpMountPath string, gcpCo
 
 // PostAuthGcpLogin
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpMountPath string, gcpLoginRequest GcpLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
@@ -4775,7 +4775,7 @@ func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpMountPath string, gcpLog
 // PostAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGcpRoleName(ctx context.Context, gcpMountPath string, name string, gcpRoleRequest GcpRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -4799,7 +4799,7 @@ func (a *Auth) PostAuthGcpRoleName(ctx context.Context, gcpMountPath string, nam
 // PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
 // name: Name of the role.
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, gcpMountPath string, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}/labels"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -4823,7 +4823,7 @@ func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, gcpMountPath strin
 // PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existing `iam` role
 // name: Name of the role.
 // gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, gcpMountPath string, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{gcp_mount_path}/role/{name}/service-accounts"
 	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -4846,7 +4846,7 @@ func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, gcpMountP
 
 // PostAuthGithubConfig
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubMountPath string, githubConfigRequest GithubConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubConfigRequest GithubConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 
@@ -4868,7 +4868,7 @@ func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubMountPath string,
 
 // PostAuthGithubLogin
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubMountPath string, githubLoginRequest GithubLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubLoginRequest GithubLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 
@@ -4891,7 +4891,7 @@ func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubMountPath string, 
 // PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, githubMountPath string, key string, githubMapTeamsRequest GithubMapTeamsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/teams/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
@@ -4915,7 +4915,7 @@ func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, githubMountPath st
 // PostAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
 // githubMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, githubMountPath string, key string, githubMapUsersRequest GithubMapUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{github_mount_path}/map/users/{key}"
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(githubMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
@@ -4939,7 +4939,7 @@ func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, githubMountPath st
 // PostAuthJwtConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtMountPath string, jwtConfigRequest JwtConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 
@@ -4961,7 +4961,7 @@ func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtMountPath string, jwtCo
 
 // PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtMountPath string, jwtLoginRequest JwtLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 
@@ -4983,7 +4983,7 @@ func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtMountPath string, jwtLog
 
 // PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtMountPath string, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/oidc/auth_url"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 
@@ -5005,7 +5005,7 @@ func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtMountPath string, 
 
 // PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtMountPath string, jwtOidcCallbackRequest JwtOidcCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/oidc/callback"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 
@@ -5029,7 +5029,7 @@ func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtMountPath string,
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
 // jwtMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthJwtRoleName(ctx context.Context, jwtMountPath string, name string, jwtRoleRequest JwtRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{jwt_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"jwt_mount_path"+"}", url.PathEscape(jwtMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -5052,7 +5052,7 @@ func (a *Auth) PostAuthJwtRoleName(ctx context.Context, jwtMountPath string, nam
 
 // PostAuthKerberosConfig
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosMountPath string, kerberosConfigRequest KerberosConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest KerberosConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 
@@ -5074,7 +5074,7 @@ func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosMountPath str
 
 // PostAuthKerberosConfigLdap
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosMountPath string, kerberosConfigLdapRequest KerberosConfigLdapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/config/ldap"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 
@@ -5097,7 +5097,7 @@ func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosMountPath
 // PostAuthKerberosGroupsName
 // name: Name of the LDAP group.
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, kerberosMountPath string, name string, kerberosGroupsRequest KerberosGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -5120,7 +5120,7 @@ func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, kerberosMountPath
 
 // PostAuthKerberosLogin
 // kerberosMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosMountPath string, kerberosLoginRequest KerberosLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kerberos_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"kerberos_mount_path"+"}", url.PathEscape(kerberosMountPath), -1)
 
@@ -5142,7 +5142,7 @@ func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosMountPath stri
 
 // PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 // kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesMountPath string, kubernetesConfigRequest KubernetesConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kubernetes_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
@@ -5164,7 +5164,7 @@ func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesMountPath
 
 // PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
 // kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesMountPath string, kubernetesLoginRequest KubernetesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kubernetes_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
@@ -5187,7 +5187,7 @@ func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesMountPath 
 // PostAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
 // kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, kubernetesMountPath string, name string, kubernetesRoleRequest KubernetesRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{kubernetes_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -5210,7 +5210,7 @@ func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, kubernetesMountPa
 
 // PostAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapMountPath string, ldapConfigRequest LdapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
@@ -5233,7 +5233,7 @@ func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapMountPath string, lda
 // PostAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, ldapMountPath string, name string, ldapGroupsRequest LdapGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -5257,7 +5257,7 @@ func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, ldapMountPath string,
 // PostAuthLdapLoginUsername Log in with a username and password.
 // username: DN (distinguished name) to be used for login.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, ldapMountPath string, username string, ldapLoginRequest LdapLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/login/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
@@ -5281,7 +5281,7 @@ func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, ldapMountPath stri
 // PostAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
 // ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthLdapUsersName(ctx context.Context, ldapMountPath string, name string, ldapUsersRequest LdapUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{ldap_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
@@ -5304,7 +5304,7 @@ func (a *Auth) PostAuthLdapUsersName(ctx context.Context, ldapMountPath string, 
 
 // PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOciConfig(ctx context.Context, ociMountPath string, ociConfigRequest OciConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 
@@ -5327,7 +5327,7 @@ func (a *Auth) PostAuthOciConfig(ctx context.Context, ociMountPath string, ociCo
 // PostAuthOciLoginRole Authenticates to Vault using OCI credentials
 // role: Name of the role.
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOciLoginRole(ctx context.Context, ociMountPath string, role string, ociLoginRequest OciLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRequest OciLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/login/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -5351,7 +5351,7 @@ func (a *Auth) PostAuthOciLoginRole(ctx context.Context, ociMountPath string, ro
 // PostAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
 // ociMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOciRoleRole(ctx context.Context, ociMountPath string, role string, ociRoleRequest OciRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequest OciRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oci_mount_path}/role/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"oci_mount_path"+"}", url.PathEscape(ociMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
@@ -5375,7 +5375,7 @@ func (a *Auth) PostAuthOciRoleRole(ctx context.Context, ociMountPath string, rol
 // PostAuthOidcConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcMountPath string, oidcConfigRequest OidcConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
 
@@ -5397,7 +5397,7 @@ func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcMountPath string, oid
 
 // PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcMountPath string, oidcLoginRequest OidcLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
 
@@ -5419,7 +5419,7 @@ func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcMountPath string, oidc
 
 // PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcMountPath string, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/oidc/auth_url"
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
 
@@ -5441,7 +5441,7 @@ func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcMountPath string
 
 // PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcMountPath string, oidcOidcCallbackRequest OidcOidcCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/oidc/callback"
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
 
@@ -5465,7 +5465,7 @@ func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcMountPath strin
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
 // oidcMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcMountPath string, oidcRoleRequest OidcRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{oidc_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(oidcMountPath), -1)
@@ -5488,7 +5488,7 @@ func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcMountP
 
 // PostAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaMountPath string, oktaConfigRequest OktaConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
 
@@ -5511,7 +5511,7 @@ func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaMountPath string, okt
 // PostAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaMountPath string, oktaGroupsRequest OktaGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/groups/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
@@ -5535,7 +5535,7 @@ func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaMoun
 // PostAuthOktaLoginUsername Log in with a username and password.
 // username: Username to be used for login.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, oktaMountPath string, username string, oktaLoginRequest OktaLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/login/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
@@ -5559,7 +5559,7 @@ func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, oktaMountPath stri
 // PostAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
 // oktaMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaMountPath string, oktaUsersRequest OktaUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{okta_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"okta_mount_path"+"}", url.PathEscape(oktaMountPath), -1)
@@ -5582,7 +5582,7 @@ func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaMount
 
 // PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusMountPath string, radiusConfigRequest RadiusConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest RadiusConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/config"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
 
@@ -5604,7 +5604,7 @@ func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusMountPath string,
 
 // PostAuthRadiusLogin Log in with a username and password.
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusMountPath string, radiusLoginRequest RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/login"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
 
@@ -5627,7 +5627,7 @@ func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusMountPath string, 
 // PostAuthRadiusLoginUrlusername Log in with a username and password.
 // urlusername: Username to be used for login. (URL parameter)
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, radiusMountPath string, urlusername string, radiusLoginRequest RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/login/{urlusername}"
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlusername"+"}", url.PathEscape(urlusername), -1)
@@ -5651,7 +5651,7 @@ func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, radiusMountPa
 // PostAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
 // radiusMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusMountPath string, radiusUsersRequest RadiusUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{radius_mount_path}/users/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"radius_mount_path"+"}", url.PathEscape(radiusMountPath), -1)
@@ -5675,7 +5675,7 @@ func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusM
 // PostAuthTokenCreate The token create path is used to create new tokens.
 // format: Return json formatted output
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenCreate(ctx context.Context, tokenMountPath string, tokenCreateRequest TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenCreate(ctx context.Context, tokenCreateRequest TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/create"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5698,7 +5698,7 @@ func (a *Auth) PostAuthTokenCreate(ctx context.Context, tokenMountPath string, t
 // PostAuthTokenCreateOrphan The token create path is used to create new orphan tokens.
 // format: Return json formatted output
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context, tokenMountPath string, tokenCreateOrphanRequest TokenCreateOrphanRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context, tokenCreateOrphanRequest TokenCreateOrphanRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/create-orphan"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5722,7 +5722,7 @@ func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context, tokenMountPath str
 // roleName: Name of the role
 // format: Return json formatted output
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string, tokenMountPath string, tokenCreateRequest TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string, tokenCreateRequest TokenCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/create/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
@@ -5745,7 +5745,7 @@ func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string,
 
 // PostAuthTokenLookup This endpoint will lookup a token and its properties.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenMountPath string, tokenLookupRequest TokenLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest TokenLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/lookup"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5767,7 +5767,7 @@ func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenMountPath string, t
 
 // PostAuthTokenLookupAccessor This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenMountPath string, tokenLookupAccessorRequest TokenLookupAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/lookup-accessor"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5789,7 +5789,7 @@ func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenMountPath s
 
 // PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenMountPath string, tokenLookupSelfRequest TokenLookupSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/lookup-self"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5811,7 +5811,7 @@ func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenMountPath strin
 
 // PostAuthTokenRenew This endpoint will renew the given token and prevent expiration.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenMountPath string, tokenRenewRequest TokenRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/renew"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5833,7 +5833,7 @@ func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenMountPath string, to
 
 // PostAuthTokenRenewAccessor This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenMountPath string, tokenRenewAccessorRequest TokenRenewAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/renew-accessor"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5855,7 +5855,7 @@ func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenMountPath st
 
 // PostAuthTokenRenewSelf This endpoint will renew the token used to call it and prevent expiration.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenMountPath string, tokenRenewSelfRequest TokenRenewSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/renew-self"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5877,7 +5877,7 @@ func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenMountPath string
 
 // PostAuthTokenRevoke This endpoint will delete the given token and all of its child tokens.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenMountPath string, tokenRevokeRequest TokenRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/revoke"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5899,7 +5899,7 @@ func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenMountPath string, t
 
 // PostAuthTokenRevokeAccessor This endpoint will delete the token associated with the accessor and all of its child tokens.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenMountPath string, tokenRevokeAccessorRequest TokenRevokeAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/revoke-accessor"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5921,7 +5921,7 @@ func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenMountPath s
 
 // PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its child tokens.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenMountPath string, tokenRevokeOrphanRequest TokenRevokeOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/revoke-orphan"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5943,7 +5943,7 @@ func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenMountPath str
 
 // PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and all of its child tokens.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context, tokenMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/revoke-self"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -5966,7 +5966,7 @@ func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context, tokenMountPath strin
 // PostAuthTokenRolesRoleName
 // roleName: Name of the role
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenMountPath string, tokenRolesRequest TokenRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/roles/{role_name}"
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
@@ -5989,7 +5989,7 @@ func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, 
 
 // PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 // tokenMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthTokenTidy(ctx context.Context, tokenMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthTokenTidy(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{token_mount_path}/tidy"
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(tokenMountPath), -1)
 
@@ -6012,7 +6012,7 @@ func (a *Auth) PostAuthTokenTidy(ctx context.Context, tokenMountPath string, opt
 // PostAuthUserpassLoginUsername Log in with a username and password.
 // username: Username of the user.
 // userpassMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassMountPath string, userpassLoginRequest UserpassLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{userpass_mount_path}/login/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(userpassMountPath), -1)
@@ -6036,7 +6036,7 @@ func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username strin
 // PostAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
 // userpassMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassMountPath string, userpassUsersRequest UserpassUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(userpassMountPath), -1)
@@ -6060,7 +6060,7 @@ func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username strin
 // PostAuthUserpassUsersUsernamePassword Reset user's password.
 // username: Username for this user.
 // userpassMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassMountPath string, userpassUsersPasswordRequest UserpassUsersPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}/password"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(userpassMountPath), -1)
@@ -6084,7 +6084,7 @@ func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, userna
 // PostAuthUserpassUsersUsernamePolicies Update the policies associated with the username.
 // username: Username for this user.
 // userpassMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
-func (a *Auth) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassMountPath string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/auth/{userpass_mount_path}/users/{username}/policies"
 	requestPath = strings.Replace(requestPath, "{"+"username"+"}", url.PathEscape(username), -1)
 	requestPath = strings.Replace(requestPath, "{"+"userpass_mount_path"+"}", url.PathEscape(userpassMountPath), -1)

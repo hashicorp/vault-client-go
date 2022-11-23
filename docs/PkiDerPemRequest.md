@@ -4,10 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CrlDistributionPoints** | Pointer to **[]string** | Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13. | [optional] 
 **IssuerName** | Pointer to **string** | Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value &#39;default&#39; | [optional] 
+**IssuingCertificates** | Pointer to **[]string** | Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
 **LeafNotAfterBehavior** | Pointer to **string** | Behavior of leaf&#39;s NotAfter fields: \&quot;err\&quot; to error if the computed NotAfter date exceeds that of this issuer; \&quot;truncate\&quot; to silently truncate to that of this issuer; or \&quot;permit\&quot; to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use \&quot;truncate\&quot; for intermediate CAs and \&quot;permit\&quot; only for root CAs. | [optional] [default to "err"]
 **ManualChain** | Pointer to **[]string** | Chain of issuer references to use to build this issuer&#39;s computed CAChain field, when non-empty. | [optional] 
-**Usage** | Pointer to **[]string** | Comma-separated list (or string slice) of usages for this issuer; valid values are \&quot;read-only\&quot;, \&quot;issuing-certificates\&quot;, and \&quot;crl-signing\&quot;. Multiple values may be specified. Read-only is implicit and always set. | [optional] [default to ["read-only","issuing-certificates","crl-signing"]]
+**OcspServers** | Pointer to **[]string** | Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
+**RevocationSignatureAlgorithm** | Pointer to **string** | Which x509.SignatureAlgorithm name to use for signing CRLs. This parameter allows differentiation between PKCS#1v1.5 and PSS keys and choice of signature hash algorithm. The default (empty string) value is for Go to select the signature algorithm. This can fail if the underlying key does not support the requested signature algorithm, which may not be known at modification time (such as with PKCS#11 managed RSA keys). | [optional] [default to ""]
+**Usage** | Pointer to **[]string** | Comma-separated list (or string slice) of usages for this issuer; valid values are \&quot;read-only\&quot;, \&quot;issuing-certificates\&quot;, \&quot;crl-signing\&quot;, and \&quot;ocsp-signing\&quot;. Multiple values may be specified. Read-only is implicit and always set. | [optional] [default to ["read-only","issuing-certificates","crl-signing","ocsp-signing"]]
 
 ## Methods
 
@@ -27,6 +31,31 @@ will change when the set of required properties is changed
 NewPkiDerPemRequestWithDefaults instantiates a new PkiDerPemRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCrlDistributionPoints
+
+`func (o *PkiDerPemRequest) GetCrlDistributionPoints() []string`
+
+GetCrlDistributionPoints returns the CrlDistributionPoints field if non-nil, zero value otherwise.
+
+### GetCrlDistributionPointsOk
+
+`func (o *PkiDerPemRequest) GetCrlDistributionPointsOk() (*[]string, bool)`
+
+GetCrlDistributionPointsOk returns a tuple with the CrlDistributionPoints field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrlDistributionPoints
+
+`func (o *PkiDerPemRequest) SetCrlDistributionPoints(v []string)`
+
+SetCrlDistributionPoints sets CrlDistributionPoints field to given value.
+
+### HasCrlDistributionPoints
+
+`func (o *PkiDerPemRequest) HasCrlDistributionPoints() bool`
+
+HasCrlDistributionPoints returns a boolean if a field has been set.
 
 ### GetIssuerName
 
@@ -52,6 +81,31 @@ SetIssuerName sets IssuerName field to given value.
 `func (o *PkiDerPemRequest) HasIssuerName() bool`
 
 HasIssuerName returns a boolean if a field has been set.
+
+### GetIssuingCertificates
+
+`func (o *PkiDerPemRequest) GetIssuingCertificates() []string`
+
+GetIssuingCertificates returns the IssuingCertificates field if non-nil, zero value otherwise.
+
+### GetIssuingCertificatesOk
+
+`func (o *PkiDerPemRequest) GetIssuingCertificatesOk() (*[]string, bool)`
+
+GetIssuingCertificatesOk returns a tuple with the IssuingCertificates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuingCertificates
+
+`func (o *PkiDerPemRequest) SetIssuingCertificates(v []string)`
+
+SetIssuingCertificates sets IssuingCertificates field to given value.
+
+### HasIssuingCertificates
+
+`func (o *PkiDerPemRequest) HasIssuingCertificates() bool`
+
+HasIssuingCertificates returns a boolean if a field has been set.
 
 ### GetLeafNotAfterBehavior
 
@@ -102,6 +156,56 @@ SetManualChain sets ManualChain field to given value.
 `func (o *PkiDerPemRequest) HasManualChain() bool`
 
 HasManualChain returns a boolean if a field has been set.
+
+### GetOcspServers
+
+`func (o *PkiDerPemRequest) GetOcspServers() []string`
+
+GetOcspServers returns the OcspServers field if non-nil, zero value otherwise.
+
+### GetOcspServersOk
+
+`func (o *PkiDerPemRequest) GetOcspServersOk() (*[]string, bool)`
+
+GetOcspServersOk returns a tuple with the OcspServers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOcspServers
+
+`func (o *PkiDerPemRequest) SetOcspServers(v []string)`
+
+SetOcspServers sets OcspServers field to given value.
+
+### HasOcspServers
+
+`func (o *PkiDerPemRequest) HasOcspServers() bool`
+
+HasOcspServers returns a boolean if a field has been set.
+
+### GetRevocationSignatureAlgorithm
+
+`func (o *PkiDerPemRequest) GetRevocationSignatureAlgorithm() string`
+
+GetRevocationSignatureAlgorithm returns the RevocationSignatureAlgorithm field if non-nil, zero value otherwise.
+
+### GetRevocationSignatureAlgorithmOk
+
+`func (o *PkiDerPemRequest) GetRevocationSignatureAlgorithmOk() (*string, bool)`
+
+GetRevocationSignatureAlgorithmOk returns a tuple with the RevocationSignatureAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRevocationSignatureAlgorithm
+
+`func (o *PkiDerPemRequest) SetRevocationSignatureAlgorithm(v string)`
+
+SetRevocationSignatureAlgorithm sets RevocationSignatureAlgorithm field to given value.
+
+### HasRevocationSignatureAlgorithm
+
+`func (o *PkiDerPemRequest) HasRevocationSignatureAlgorithm() bool`
+
+HasRevocationSignatureAlgorithm returns a boolean if a field has been set.
 
 ### GetUsage
 

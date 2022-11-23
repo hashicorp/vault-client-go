@@ -982,6 +982,28 @@ func (a *System) GetSysInternalCountersTokens(ctx context.Context, options ...Re
 	)
 }
 
+// GetSysInternalInspectRouterTag Expose the route entry and mount entry tables present in the router
+// tag: Name of subtree being observed
+func (a *System) GetSysInternalInspectRouterTag(ctx context.Context, tag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/sys/internal/inspect/router/{tag}"
+	requestPath = strings.Replace(requestPath, "{"+"tag"+"}", url.PathEscape(tag), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
 func (a *System) GetSysInternalSpecsOpenapi(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestPath := "/v1/sys/internal/specs/openapi"

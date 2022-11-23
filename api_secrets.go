@@ -23,8 +23,10 @@ type Secrets struct {
 }
 
 // DeleteAdConfig Configure the AD server to connect to, along with password options.
-func (a *Secrets) DeleteAdConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/config"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAdConfig(ctx context.Context, adMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -44,8 +46,10 @@ func (a *Secrets) DeleteAdConfig(ctx context.Context, options ...RequestOption) 
 
 // DeleteAdLibraryName Delete a library set.
 // name: Name of the set.
-func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAdLibraryName(ctx context.Context, adMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -66,8 +70,10 @@ func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string, options 
 
 // DeleteAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/roles/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAdRolesName(ctx context.Context, adMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -87,8 +93,10 @@ func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string, options ..
 }
 
 // DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *Secrets) DeleteAlicloudConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/config"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAlicloudConfig(ctx context.Context, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -108,8 +116,10 @@ func (a *Secrets) DeleteAlicloudConfig(ctx context.Context, options ...RequestOp
 
 // DeleteAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/role/{name}"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, alicloudMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -130,8 +140,10 @@ func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string, optio
 
 // DeleteAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/roles/{name}"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAwsRolesName(ctx context.Context, awsMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -151,8 +163,10 @@ func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string, options .
 }
 
 // DeleteAzureConfig
-func (a *Secrets) DeleteAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/config"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAzureConfig(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -172,8 +186,10 @@ func (a *Secrets) DeleteAzureConfig(ctx context.Context, options ...RequestOptio
 
 // DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/roles/{name}"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteAzureRolesName(ctx context.Context, azureMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -194,8 +210,10 @@ func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string, options
 
 // DeleteConsulRolesName
 // name: Name of the role.
-func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/consul/roles/{name}"
+// consulMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteConsulRolesName(ctx context.Context, consulMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{consul_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(consulMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -216,8 +234,10 @@ func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string, option
 
 // DeleteCubbyholePath Deletes the secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/cubbyhole/{path}"
+// cubbyholeMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteCubbyholePath(ctx context.Context, cubbyholeMountPath string, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{cubbyhole_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"cubbyhole_mount_path"+"}", url.PathEscape(cubbyholeMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -238,8 +258,10 @@ func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string, options 
 
 // DeleteGcpRolesetName
 // name: Required. Name of the role.
-func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{name}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -260,8 +282,10 @@ func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string, options
 
 // DeleteGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -281,8 +305,10 @@ func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string, o
 }
 
 // DeleteGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/config"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -302,8 +328,10 @@ func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context, options ...RequestOpti
 
 // DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/deregister/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/deregister/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -324,8 +352,10 @@ func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string,
 
 // DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -346,8 +376,10 @@ func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string, options .
 
 // DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/trim/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/trim/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -367,8 +399,10 @@ func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string, optio
 }
 
 // DeleteKubernetesConfig
-func (a *Secrets) DeleteKubernetesConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/config"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteKubernetesConfig(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -388,8 +422,10 @@ func (a *Secrets) DeleteKubernetesConfig(ctx context.Context, options ...Request
 
 // DeleteKubernetesRolesName
 // name: Name of the role
-func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/roles/{name}"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, kubernetesMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -408,31 +444,11 @@ func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string, op
 	)
 }
 
-// DeleteKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-// path: Location of the secret.
-func (a *Secrets) DeleteKvPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kv/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodDelete,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
 // DeleteLdapConfig
-func (a *Secrets) DeleteLdapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/config"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteLdapConfig(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -452,8 +468,10 @@ func (a *Secrets) DeleteLdapConfig(ctx context.Context, options ...RequestOption
 
 // DeleteLdapLibraryName Delete a library set.
 // name: Name of the set.
-func (a *Secrets) DeleteLdapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteLdapLibraryName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -474,8 +492,10 @@ func (a *Secrets) DeleteLdapLibraryName(ctx context.Context, name string, option
 
 // DeleteLdapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) DeleteLdapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/role/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteLdapRoleName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -496,8 +516,10 @@ func (a *Secrets) DeleteLdapRoleName(ctx context.Context, name string, options .
 
 // DeleteLdapStaticRoleName
 // name: Name of the role
-func (a *Secrets) DeleteLdapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/static-role/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteLdapStaticRoleName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/static-role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -518,8 +540,10 @@ func (a *Secrets) DeleteLdapStaticRoleName(ctx context.Context, name string, opt
 
 // DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/roles/{name}"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, mongodbatlasMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -539,8 +563,10 @@ func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string, 
 }
 
 // DeleteNomadConfigAccess
-func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/config/access"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/config/access"
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -559,8 +585,10 @@ func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context, options ...Reques
 }
 
 // DeleteNomadConfigLease Configure the lease parameters for generated tokens
-func (a *Secrets) DeleteNomadConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/config/lease"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteNomadConfigLease(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/config/lease"
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -580,9 +608,11 @@ func (a *Secrets) DeleteNomadConfigLease(ctx context.Context, options ...Request
 
 // DeleteNomadRoleName
 // name: Name of the role
-func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/role/{name}"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -601,8 +631,10 @@ func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string, options 
 }
 
 // DeleteOpenldapConfig
-func (a *Secrets) DeleteOpenldapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/config"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteOpenldapConfig(ctx context.Context, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -622,9 +654,11 @@ func (a *Secrets) DeleteOpenldapConfig(ctx context.Context, options ...RequestOp
 
 // DeleteOpenldapLibraryName Delete a library set.
 // name: Name of the set.
-func (a *Secrets) DeleteOpenldapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteOpenldapLibraryName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -644,9 +678,11 @@ func (a *Secrets) DeleteOpenldapLibraryName(ctx context.Context, name string, op
 
 // DeleteOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/role/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -666,9 +702,11 @@ func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string, optio
 
 // DeleteOpenldapStaticRoleName
 // name: Name of the role
-func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/static-role/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -688,9 +726,11 @@ func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string,
 
 // DeletePkiIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/{issuer_ref}/der|/pem"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/der|/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -709,8 +749,10 @@ func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string
 }
 
 // DeletePkiJson
-func (a *Secrets) DeletePkiJson(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki//json"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeletePkiJson(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}//json"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -730,9 +772,11 @@ func (a *Secrets) DeletePkiJson(ctx context.Context, options ...RequestOption) (
 
 // DeletePkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/key/{key_ref}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -752,9 +796,11 @@ func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string, options
 
 // DeletePkiRolesName
 // name: Name of the role
-func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/roles/{name}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -773,8 +819,10 @@ func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string, options .
 }
 
 // DeletePkiRoot
-func (a *Secrets) DeletePkiRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/root"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeletePkiRoot(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/root"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -794,9 +842,11 @@ func (a *Secrets) DeletePkiRoot(ctx context.Context, options ...RequestOption) (
 
 // DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/roles/{name}"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -816,9 +866,11 @@ func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string, opti
 
 // DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/data/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string, secretMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -838,9 +890,35 @@ func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string, options
 
 // DeleteSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/metadata/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string, secretMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// DeleteSecretPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteSecretPath(ctx context.Context, path string, secretMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -859,8 +937,10 @@ func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string, opt
 }
 
 // DeleteSshConfigCa Set the SSH private key used for signing certificates.
-func (a *Secrets) DeleteSshConfigCa(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/config/ca"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteSshConfigCa(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/config/ca"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -879,8 +959,10 @@ func (a *Secrets) DeleteSshConfigCa(ctx context.Context, options ...RequestOptio
 }
 
 // DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/config/zeroaddress"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/config/zeroaddress"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -900,9 +982,11 @@ func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context, options ...Req
 
 // DeleteSshKeysKeyName Register a shared private key with Vault.
 // keyName: [Required] Name of the key
-func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/keys/{key_name}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/keys/{key_name}"
 	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -922,9 +1006,11 @@ func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string, opti
 
 // DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/roles/{role}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -943,8 +1029,10 @@ func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string, options .
 }
 
 // DeleteTerraformConfig
-func (a *Secrets) DeleteTerraformConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/config"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteTerraformConfig(ctx context.Context, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -964,9 +1052,11 @@ func (a *Secrets) DeleteTerraformConfig(ctx context.Context, options ...RequestO
 
 // DeleteTerraformRoleName
 // name: Name of the role
-func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/role/{name}"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -986,9 +1076,11 @@ func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string, opti
 
 // DeleteTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/totp/keys/{name}"
+// totpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string, totpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{totp_mount_path}/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(totpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1008,9 +1100,11 @@ func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string, options .
 
 // DeleteTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1029,8 +1123,10 @@ func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string, option
 }
 
 // GetAdConfig Configure the AD server to connect to, along with password options.
-func (a *Secrets) GetAdConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/config"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdConfig(ctx context.Context, adMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1050,8 +1146,10 @@ func (a *Secrets) GetAdConfig(ctx context.Context, options ...RequestOption) (*R
 
 // GetAdCredsName
 // name: Name of the role
-func (a *Secrets) GetAdCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/creds/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdCredsName(ctx context.Context, adMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1072,8 +1170,10 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string, options ...Re
 
 // GetAdLibrary
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAdLibrary(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdLibrary(ctx context.Context, adMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1093,8 +1193,10 @@ func (a *Secrets) GetAdLibrary(ctx context.Context, list string, options ...Requ
 
 // GetAdLibraryName Read a library set.
 // name: Name of the set.
-func (a *Secrets) GetAdLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdLibraryName(ctx context.Context, adMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1115,8 +1217,10 @@ func (a *Secrets) GetAdLibraryName(ctx context.Context, name string, options ...
 
 // GetAdLibraryNameStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library/{name}/status"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, adMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library/{name}/status"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1137,8 +1241,10 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string, optio
 
 // GetAdRoles List the name of each role currently stored.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAdRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/roles"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdRoles(ctx context.Context, adMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1158,8 +1264,10 @@ func (a *Secrets) GetAdRoles(ctx context.Context, list string, options ...Reques
 
 // GetAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *Secrets) GetAdRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/roles/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdRolesName(ctx context.Context, adMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1179,8 +1287,10 @@ func (a *Secrets) GetAdRolesName(ctx context.Context, name string, options ...Re
 }
 
 // GetAdRotateRoot
-func (a *Secrets) GetAdRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/rotate-root"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAdRotateRoot(ctx context.Context, adMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1199,8 +1309,10 @@ func (a *Secrets) GetAdRotateRoot(ctx context.Context, options ...RequestOption)
 }
 
 // GetAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *Secrets) GetAlicloudConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/config"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAlicloudConfig(ctx context.Context, alicloudMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1220,8 +1332,10 @@ func (a *Secrets) GetAlicloudConfig(ctx context.Context, options ...RequestOptio
 
 // GetAlicloudCredsName Generate an API key or STS credential using the given role's configuration.'
 // name: The name of the role.
-func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/creds/{name}"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAlicloudCredsName(ctx context.Context, alicloudMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1242,8 +1356,10 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string, options
 
 // GetAlicloudRole List the existing roles in this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAlicloudRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/role"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAlicloudRole(ctx context.Context, alicloudMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1263,8 +1379,10 @@ func (a *Secrets) GetAlicloudRole(ctx context.Context, list string, options ...R
 
 // GetAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/role/{name}"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAlicloudRoleName(ctx context.Context, alicloudMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1284,8 +1402,10 @@ func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string, options 
 }
 
 // GetAwsConfigLease Configure the default lease information for generated credentials.
-func (a *Secrets) GetAwsConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/config/lease"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAwsConfigLease(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/config/lease"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1304,8 +1424,10 @@ func (a *Secrets) GetAwsConfigLease(ctx context.Context, options ...RequestOptio
 }
 
 // GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
-func (a *Secrets) GetAwsConfigRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/config/root"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAwsConfigRoot(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/config/root"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1324,8 +1446,10 @@ func (a *Secrets) GetAwsConfigRoot(ctx context.Context, options ...RequestOption
 }
 
 // GetAwsCreds Generate AWS credentials from a specific Vault role.
-func (a *Secrets) GetAwsCreds(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/creds"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAwsCreds(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/creds"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1345,8 +1469,10 @@ func (a *Secrets) GetAwsCreds(ctx context.Context, options ...RequestOption) (*R
 
 // GetAwsRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAwsRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/roles"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAwsRoles(ctx context.Context, awsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1366,8 +1492,10 @@ func (a *Secrets) GetAwsRoles(ctx context.Context, list string, options ...Reque
 
 // GetAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *Secrets) GetAwsRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/roles/{name}"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAwsRolesName(ctx context.Context, awsMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1388,8 +1516,10 @@ func (a *Secrets) GetAwsRolesName(ctx context.Context, name string, options ...R
 
 // GetAwsStsName Generate AWS credentials from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) GetAwsStsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/sts/{name}"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAwsStsName(ctx context.Context, awsMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/sts/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1409,8 +1539,10 @@ func (a *Secrets) GetAwsStsName(ctx context.Context, name string, options ...Req
 }
 
 // GetAzureConfig
-func (a *Secrets) GetAzureConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/config"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAzureConfig(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1430,8 +1562,10 @@ func (a *Secrets) GetAzureConfig(ctx context.Context, options ...RequestOption) 
 
 // GetAzureCredsRole
 // role: Name of the Vault role
-func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/creds/{role}"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAzureCredsRole(ctx context.Context, azureMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/creds/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1452,8 +1586,10 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string, options ..
 
 // GetAzureRoles List existing roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetAzureRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/roles"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAzureRoles(ctx context.Context, azureMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1473,8 +1609,10 @@ func (a *Secrets) GetAzureRoles(ctx context.Context, list string, options ...Req
 
 // GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *Secrets) GetAzureRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/roles/{name}"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetAzureRolesName(ctx context.Context, azureMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1494,8 +1632,10 @@ func (a *Secrets) GetAzureRolesName(ctx context.Context, name string, options ..
 }
 
 // GetConsulConfigAccess
-func (a *Secrets) GetConsulConfigAccess(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/consul/config/access"
+// consulMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetConsulConfigAccess(ctx context.Context, consulMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{consul_mount_path}/config/access"
+	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(consulMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1515,8 +1655,10 @@ func (a *Secrets) GetConsulConfigAccess(ctx context.Context, options ...RequestO
 
 // GetConsulCredsRole
 // role: Name of the role.
-func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/consul/creds/{role}"
+// consulMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetConsulCredsRole(ctx context.Context, consulMountPath string, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{consul_mount_path}/creds/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(consulMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1537,8 +1679,10 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string, options .
 
 // GetConsulRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetConsulRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/consul/roles"
+// consulMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetConsulRoles(ctx context.Context, consulMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{consul_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(consulMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1558,8 +1702,10 @@ func (a *Secrets) GetConsulRoles(ctx context.Context, list string, options ...Re
 
 // GetConsulRolesName
 // name: Name of the role.
-func (a *Secrets) GetConsulRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/consul/roles/{name}"
+// consulMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetConsulRolesName(ctx context.Context, consulMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{consul_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(consulMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1580,9 +1726,11 @@ func (a *Secrets) GetConsulRolesName(ctx context.Context, name string, options .
 
 // GetCubbyholePath Retrieve the secret at the specified location.
 // path: Specifies the path of the secret.
+// cubbyholeMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
 // list: Return a list if &#x60;true&#x60;
-func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/cubbyhole/{path}"
+func (a *Secrets) GetCubbyholePath(ctx context.Context, cubbyholeMountPath string, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{cubbyhole_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"cubbyhole_mount_path"+"}", url.PathEscape(cubbyholeMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1602,8 +1750,10 @@ func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string
 }
 
 // GetGcpConfig
-func (a *Secrets) GetGcpConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/config"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpConfig(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1623,8 +1773,10 @@ func (a *Secrets) GetGcpConfig(ctx context.Context, options ...RequestOption) (*
 
 // GetGcpKeyRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/key/{roleset}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, gcpMountPath string, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/key/{roleset}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1645,8 +1797,10 @@ func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string, options 
 
 // GetGcpRolesetName
 // name: Required. Name of the role.
-func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{name}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpRolesetName(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1667,8 +1821,10 @@ func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string, options ..
 
 // GetGcpRolesetRolesetKey
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{roleset}/key"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, gcpMountPath string, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/key"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1689,8 +1845,10 @@ func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string, o
 
 // GetGcpRolesetRolesetToken
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{roleset}/token"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, gcpMountPath string, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/token"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1711,8 +1869,10 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string,
 
 // GetGcpRolesets
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetGcpRolesets(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/rolesets"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpRolesets(ctx context.Context, gcpMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/rolesets"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1732,8 +1892,10 @@ func (a *Secrets) GetGcpRolesets(ctx context.Context, list string, options ...Re
 
 // GetGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1754,8 +1916,10 @@ func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string, opti
 
 // GetGcpStaticAccountNameKey
 // name: Required. Name of the static account.
-func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}/key"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/key"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1776,8 +1940,10 @@ func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string, o
 
 // GetGcpStaticAccountNameToken
 // name: Required. Name of the static account.
-func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}/token"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/token"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1798,8 +1964,10 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string,
 
 // GetGcpStaticAccounts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-accounts"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, gcpMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-accounts"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1819,8 +1987,10 @@ func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string, options
 
 // GetGcpTokenRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/token/{roleset}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, gcpMountPath string, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/token/{roleset}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1840,8 +2010,10 @@ func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string, option
 }
 
 // GetGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *Secrets) GetGcpkmsConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/config"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpkmsConfig(ctx context.Context, gcpkmsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1861,8 +2033,10 @@ func (a *Secrets) GetGcpkmsConfig(ctx context.Context, options ...RequestOption)
 
 // GetGcpkmsKeys List named keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpkmsKeys(ctx context.Context, gcpkmsMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1882,8 +2056,10 @@ func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string, options ...Req
 
 // GetGcpkmsKeysConfigKey Configure the key in Vault
 // key: Name of the key in Vault.
-func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/config/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/config/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1904,8 +2080,10 @@ func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string, option
 
 // GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1926,8 +2104,10 @@ func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string, options ...R
 
 // GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
 // key: Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
-func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/pubkey/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/pubkey/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1947,8 +2127,10 @@ func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string, options ..
 }
 
 // GetKubernetesConfig
-func (a *Secrets) GetKubernetesConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/config"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetKubernetesConfig(ctx context.Context, kubernetesMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1968,8 +2150,10 @@ func (a *Secrets) GetKubernetesConfig(ctx context.Context, options ...RequestOpt
 
 // GetKubernetesRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/roles"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetKubernetesRoles(ctx context.Context, kubernetesMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1989,8 +2173,10 @@ func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string, options .
 
 // GetKubernetesRolesName
 // name: Name of the role
-func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/roles/{name}"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetKubernetesRolesName(ctx context.Context, kubernetesMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2009,32 +2195,11 @@ func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string, optio
 	)
 }
 
-// GetKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-// path: Location of the secret.
-// list: Return a list if &#x60;true&#x60;
-func (a *Secrets) GetKvPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kv/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
 // GetLdapConfig
-func (a *Secrets) GetLdapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/config"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapConfig(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2054,8 +2219,10 @@ func (a *Secrets) GetLdapConfig(ctx context.Context, options ...RequestOption) (
 
 // GetLdapCredsName
 // name: Name of the dynamic role.
-func (a *Secrets) GetLdapCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/creds/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapCredsName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2076,8 +2243,10 @@ func (a *Secrets) GetLdapCredsName(ctx context.Context, name string, options ...
 
 // GetLdapLibrary
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetLdapLibrary(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapLibrary(ctx context.Context, ldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2097,8 +2266,10 @@ func (a *Secrets) GetLdapLibrary(ctx context.Context, list string, options ...Re
 
 // GetLdapLibraryName Read a library set.
 // name: Name of the set.
-func (a *Secrets) GetLdapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapLibraryName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2119,8 +2290,10 @@ func (a *Secrets) GetLdapLibraryName(ctx context.Context, name string, options .
 
 // GetLdapLibraryNameStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-func (a *Secrets) GetLdapLibraryNameStatus(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library/{name}/status"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapLibraryNameStatus(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library/{name}/status"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2141,8 +2314,10 @@ func (a *Secrets) GetLdapLibraryNameStatus(ctx context.Context, name string, opt
 
 // GetLdapRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetLdapRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/role"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapRole(ctx context.Context, ldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2162,8 +2337,10 @@ func (a *Secrets) GetLdapRole(ctx context.Context, list string, options ...Reque
 
 // GetLdapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) GetLdapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/role/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapRoleName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2184,8 +2361,10 @@ func (a *Secrets) GetLdapRoleName(ctx context.Context, name string, options ...R
 
 // GetLdapStaticCredName
 // name: Name of the static role.
-func (a *Secrets) GetLdapStaticCredName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/static-cred/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapStaticCredName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/static-cred/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2206,8 +2385,10 @@ func (a *Secrets) GetLdapStaticCredName(ctx context.Context, name string, option
 
 // GetLdapStaticRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetLdapStaticRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/static-role"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapStaticRole(ctx context.Context, ldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/static-role"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2227,8 +2408,10 @@ func (a *Secrets) GetLdapStaticRole(ctx context.Context, list string, options ..
 
 // GetLdapStaticRoleName
 // name: Name of the role
-func (a *Secrets) GetLdapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/static-role/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetLdapStaticRoleName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/static-role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2248,8 +2431,10 @@ func (a *Secrets) GetLdapStaticRoleName(ctx context.Context, name string, option
 }
 
 // GetMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-func (a *Secrets) GetMongodbatlasConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/config"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetMongodbatlasConfig(ctx context.Context, mongodbatlasMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2269,8 +2454,10 @@ func (a *Secrets) GetMongodbatlasConfig(ctx context.Context, options ...RequestO
 
 // GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/creds/{name}"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, mongodbatlasMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2291,8 +2478,10 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string, opt
 
 // GetMongodbatlasRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/roles"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, mongodbatlasMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2312,8 +2501,10 @@ func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string, options
 
 // GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/roles/{name}"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, mongodbatlasMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2333,8 +2524,10 @@ func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string, opt
 }
 
 // GetNomadConfigAccess
-func (a *Secrets) GetNomadConfigAccess(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/config/access"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetNomadConfigAccess(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/config/access"
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2353,8 +2546,10 @@ func (a *Secrets) GetNomadConfigAccess(ctx context.Context, options ...RequestOp
 }
 
 // GetNomadConfigLease Configure the lease parameters for generated tokens
-func (a *Secrets) GetNomadConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/config/lease"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetNomadConfigLease(ctx context.Context, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/config/lease"
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2374,9 +2569,11 @@ func (a *Secrets) GetNomadConfigLease(ctx context.Context, options ...RequestOpt
 
 // GetNomadCredsName
 // name: Name of the role
-func (a *Secrets) GetNomadCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/creds/{name}"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetNomadCredsName(ctx context.Context, name string, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2396,8 +2593,10 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string, options ..
 
 // GetNomadRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetNomadRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/role"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetNomadRole(ctx context.Context, nomadMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2417,9 +2616,11 @@ func (a *Secrets) GetNomadRole(ctx context.Context, list string, options ...Requ
 
 // GetNomadRoleName
 // name: Name of the role
-func (a *Secrets) GetNomadRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/role/{name}"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetNomadRoleName(ctx context.Context, name string, nomadMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2438,8 +2639,10 @@ func (a *Secrets) GetNomadRoleName(ctx context.Context, name string, options ...
 }
 
 // GetOpenldapConfig
-func (a *Secrets) GetOpenldapConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/config"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapConfig(ctx context.Context, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2459,9 +2662,11 @@ func (a *Secrets) GetOpenldapConfig(ctx context.Context, options ...RequestOptio
 
 // GetOpenldapCredsName
 // name: Name of the dynamic role.
-func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/creds/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2481,8 +2686,10 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string, options
 
 // GetOpenldapLibrary
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetOpenldapLibrary(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapLibrary(ctx context.Context, openldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library"
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2502,9 +2709,11 @@ func (a *Secrets) GetOpenldapLibrary(ctx context.Context, list string, options .
 
 // GetOpenldapLibraryName Read a library set.
 // name: Name of the set.
-func (a *Secrets) GetOpenldapLibraryName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapLibraryName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2524,9 +2733,11 @@ func (a *Secrets) GetOpenldapLibraryName(ctx context.Context, name string, optio
 
 // GetOpenldapLibraryNameStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-func (a *Secrets) GetOpenldapLibraryNameStatus(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library/{name}/status"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapLibraryNameStatus(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library/{name}/status"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2546,8 +2757,10 @@ func (a *Secrets) GetOpenldapLibraryNameStatus(ctx context.Context, name string,
 
 // GetOpenldapRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetOpenldapRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/role"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapRole(ctx context.Context, openldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2567,9 +2780,11 @@ func (a *Secrets) GetOpenldapRole(ctx context.Context, list string, options ...R
 
 // GetOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/role/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2589,9 +2804,11 @@ func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string, options 
 
 // GetOpenldapStaticCredName
 // name: Name of the static role.
-func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/static-cred/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/static-cred/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2611,8 +2828,10 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string, op
 
 // GetOpenldapStaticRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/static-role"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, openldapMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/static-role"
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2632,9 +2851,11 @@ func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string, option
 
 // GetOpenldapStaticRoleName
 // name: Name of the role
-func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/static-role/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2653,8 +2874,10 @@ func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string, op
 }
 
 // GetPkiCa
-func (a *Secrets) GetPkiCa(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/ca"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCa(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/ca"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2673,8 +2896,10 @@ func (a *Secrets) GetPkiCa(ctx context.Context, options ...RequestOption) (*Resp
 }
 
 // GetPkiCaChain
-func (a *Secrets) GetPkiCaChain(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/ca_chain"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCaChain(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/ca_chain"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2693,8 +2918,10 @@ func (a *Secrets) GetPkiCaChain(ctx context.Context, options ...RequestOption) (
 }
 
 // GetPkiCaPem
-func (a *Secrets) GetPkiCaPem(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/ca/pem"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCaPem(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/ca/pem"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2713,8 +2940,10 @@ func (a *Secrets) GetPkiCaPem(ctx context.Context, options ...RequestOption) (*R
 }
 
 // GetPkiCertCaChain
-func (a *Secrets) GetPkiCertCaChain(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/cert/ca_chain"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCertCaChain(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/cert/ca_chain"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2734,8 +2963,10 @@ func (a *Secrets) GetPkiCertCaChain(ctx context.Context, options ...RequestOptio
 
 // GetPkiCertSerial
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/cert/{serial}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCertSerial(ctx context.Context, pkiMountPath string, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/cert/{serial}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2756,8 +2987,10 @@ func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string, options .
 
 // GetPkiCertSerialRaw
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/cert/{serial}/raw"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, pkiMountPath string, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/cert/{serial}/raw"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2778,8 +3011,10 @@ func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string, option
 
 // GetPkiCertSerialRawPem
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/cert/{serial}/raw/pem"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, pkiMountPath string, serial string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/cert/{serial}/raw/pem"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"serial"+"}", url.PathEscape(serial), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -2800,8 +3035,33 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string, opt
 
 // GetPkiCerts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiCerts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/certs"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCerts(ctx context.Context, pkiMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/certs"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GetPkiCertsRevoked
+// list: Must be set to &#x60;true&#x60;
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCertsRevoked(ctx context.Context, pkiMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/certs/revoked"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2820,8 +3080,10 @@ func (a *Secrets) GetPkiCerts(ctx context.Context, list string, options ...Reque
 }
 
 // GetPkiConfigAutoTidy
-func (a *Secrets) GetPkiConfigAutoTidy(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/auto-tidy"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiConfigAutoTidy(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/auto-tidy"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2840,8 +3102,10 @@ func (a *Secrets) GetPkiConfigAutoTidy(ctx context.Context, options ...RequestOp
 }
 
 // GetPkiConfigCrl
-func (a *Secrets) GetPkiConfigCrl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/crl"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiConfigCrl(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/crl"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2860,8 +3124,10 @@ func (a *Secrets) GetPkiConfigCrl(ctx context.Context, options ...RequestOption)
 }
 
 // GetPkiConfigIssuers
-func (a *Secrets) GetPkiConfigIssuers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/issuers"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiConfigIssuers(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/issuers"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2880,8 +3146,10 @@ func (a *Secrets) GetPkiConfigIssuers(ctx context.Context, options ...RequestOpt
 }
 
 // GetPkiConfigKeys
-func (a *Secrets) GetPkiConfigKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/keys"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiConfigKeys(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/keys"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2900,8 +3168,10 @@ func (a *Secrets) GetPkiConfigKeys(ctx context.Context, options ...RequestOption
 }
 
 // GetPkiConfigUrls
-func (a *Secrets) GetPkiConfigUrls(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/urls"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiConfigUrls(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/urls"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2920,8 +3190,10 @@ func (a *Secrets) GetPkiConfigUrls(ctx context.Context, options ...RequestOption
 }
 
 // GetPkiCrl
-func (a *Secrets) GetPkiCrl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/crl"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCrl(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/crl"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2940,8 +3212,10 @@ func (a *Secrets) GetPkiCrl(ctx context.Context, options ...RequestOption) (*Res
 }
 
 // GetPkiCrlRotate
-func (a *Secrets) GetPkiCrlRotate(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/crl/rotate"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCrlRotate(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/crl/rotate"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2960,8 +3234,10 @@ func (a *Secrets) GetPkiCrlRotate(ctx context.Context, options ...RequestOption)
 }
 
 // GetPkiCrlRotateDelta
-func (a *Secrets) GetPkiCrlRotateDelta(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/crl/rotate-delta"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiCrlRotateDelta(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/crl/rotate-delta"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2980,8 +3256,10 @@ func (a *Secrets) GetPkiCrlRotateDelta(ctx context.Context, options ...RequestOp
 }
 
 // GetPkiDelta
-func (a *Secrets) GetPkiDelta(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki//delta"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiDelta(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}//delta"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3000,8 +3278,10 @@ func (a *Secrets) GetPkiDelta(ctx context.Context, options ...RequestOption) (*R
 }
 
 // GetPkiDeltaCrl
-func (a *Secrets) GetPkiDeltaCrl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/delta-crl"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiDeltaCrl(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/delta-crl"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3020,8 +3300,10 @@ func (a *Secrets) GetPkiDeltaCrl(ctx context.Context, options ...RequestOption) 
 }
 
 // GetPkiDeltaPem
-func (a *Secrets) GetPkiDeltaPem(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki//delta/pem"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiDeltaPem(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}//delta/pem"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3040,8 +3322,10 @@ func (a *Secrets) GetPkiDeltaPem(ctx context.Context, options ...RequestOption) 
 }
 
 // GetPkiDer
-func (a *Secrets) GetPkiDer(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki//der"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiDer(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}//der"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3061,9 +3345,11 @@ func (a *Secrets) GetPkiDer(ctx context.Context, options ...RequestOption) (*Res
 
 // GetPkiIssuerRefCrlPemDerDeltaPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) GetPkiIssuerRefCrlPemDerDeltaPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/{issuer_ref}/crl/pem|/der|/delta/pem"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiIssuerRefCrlPemDerDeltaPem(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/crl/pem|/der|/delta/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3083,9 +3369,11 @@ func (a *Secrets) GetPkiIssuerRefCrlPemDerDeltaPem(ctx context.Context, issuerRe
 
 // GetPkiIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/{issuer_ref}/der|/pem"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/der|/pem"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3105,8 +3393,10 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string, o
 
 // GetPkiIssuers
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiIssuers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuers"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiIssuers(ctx context.Context, pkiMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuers"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3125,8 +3415,10 @@ func (a *Secrets) GetPkiIssuers(ctx context.Context, list string, options ...Req
 }
 
 // GetPkiJson
-func (a *Secrets) GetPkiJson(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki//json"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiJson(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}//json"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3146,9 +3438,11 @@ func (a *Secrets) GetPkiJson(ctx context.Context, options ...RequestOption) (*Re
 
 // GetPkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/key/{key_ref}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3168,8 +3462,10 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string, options ..
 
 // GetPkiKeys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/keys"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiKeys(ctx context.Context, pkiMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/keys"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3189,8 +3485,10 @@ func (a *Secrets) GetPkiKeys(ctx context.Context, list string, options ...Reques
 
 // GetPkiOcspReq
 // req: base-64 encoded ocsp request
-func (a *Secrets) GetPkiOcspReq(ctx context.Context, req string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/ocsp/{req}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiOcspReq(ctx context.Context, pkiMountPath string, req string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/ocsp/{req}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"req"+"}", url.PathEscape(req), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3210,8 +3508,10 @@ func (a *Secrets) GetPkiOcspReq(ctx context.Context, req string, options ...Requ
 }
 
 // GetPkiPem
-func (a *Secrets) GetPkiPem(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki//pem"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiPem(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}//pem"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3231,8 +3531,10 @@ func (a *Secrets) GetPkiPem(ctx context.Context, options ...RequestOption) (*Res
 
 // GetPkiRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetPkiRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/roles"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiRoles(ctx context.Context, pkiMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3252,9 +3554,11 @@ func (a *Secrets) GetPkiRoles(ctx context.Context, list string, options ...Reque
 
 // GetPkiRolesName
 // name: Name of the role
-func (a *Secrets) GetPkiRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/roles/{name}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiRolesName(ctx context.Context, name string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3273,8 +3577,10 @@ func (a *Secrets) GetPkiRolesName(ctx context.Context, name string, options ...R
 }
 
 // GetPkiTidyStatus
-func (a *Secrets) GetPkiTidyStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/tidy-status"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetPkiTidyStatus(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/tidy-status"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3293,8 +3599,10 @@ func (a *Secrets) GetPkiTidyStatus(ctx context.Context, options ...RequestOption
 }
 
 // GetRabbitmqConfigLease Configure the lease parameters for generated credentials
-func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/config/lease"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/config/lease"
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3314,9 +3622,11 @@ func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context, options ...Request
 
 // GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
 // name: Name of the role.
-func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/creds/{name}"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3336,8 +3646,10 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string, options
 
 // GetRabbitmqRoles Manage the roles that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/roles"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetRabbitmqRoles(ctx context.Context, rabbitmqMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3357,9 +3669,11 @@ func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string, options ...
 
 // GetRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/roles/{name}"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string, rabbitmqMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3378,8 +3692,10 @@ func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string, options
 }
 
 // GetSecretConfig Read the backend level settings.
-func (a *Secrets) GetSecretConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/config"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSecretConfig(ctx context.Context, secretMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3399,9 +3715,11 @@ func (a *Secrets) GetSecretConfig(ctx context.Context, options ...RequestOption)
 
 // GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *Secrets) GetSecretDataPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/data/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSecretDataPath(ctx context.Context, path string, secretMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3421,10 +3739,37 @@ func (a *Secrets) GetSecretDataPath(ctx context.Context, path string, options ..
 
 // GetSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
 // list: Return a list if &#x60;true&#x60;
-func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/metadata/{path}"
+func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, secretMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GetSecretPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+// list: Return a list if &#x60;true&#x60;
+func (a *Secrets) GetSecretPath(ctx context.Context, path string, secretMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3444,9 +3789,11 @@ func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list s
 
 // GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value store with the values removed.
 // path: Location of the secret.
-func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/subkeys/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string, secretMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/subkeys/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3465,8 +3812,10 @@ func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string, options
 }
 
 // GetSshConfigCa Set the SSH private key used for signing certificates.
-func (a *Secrets) GetSshConfigCa(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/config/ca"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSshConfigCa(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/config/ca"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3485,8 +3834,10 @@ func (a *Secrets) GetSshConfigCa(ctx context.Context, options ...RequestOption) 
 }
 
 // GetSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/config/zeroaddress"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/config/zeroaddress"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3505,8 +3856,10 @@ func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context, options ...Reques
 }
 
 // GetSshPublicKey Retrieve the public key.
-func (a *Secrets) GetSshPublicKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/public_key"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSshPublicKey(ctx context.Context, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/public_key"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3526,8 +3879,10 @@ func (a *Secrets) GetSshPublicKey(ctx context.Context, options ...RequestOption)
 
 // GetSshRoles Manage the 'roles' that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetSshRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/roles"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSshRoles(ctx context.Context, sshMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3547,9 +3902,11 @@ func (a *Secrets) GetSshRoles(ctx context.Context, list string, options ...Reque
 
 // GetSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *Secrets) GetSshRolesRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/roles/{role}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetSshRolesRole(ctx context.Context, role string, sshMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3568,8 +3925,10 @@ func (a *Secrets) GetSshRolesRole(ctx context.Context, role string, options ...R
 }
 
 // GetTerraformConfig
-func (a *Secrets) GetTerraformConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/config"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTerraformConfig(ctx context.Context, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3589,9 +3948,11 @@ func (a *Secrets) GetTerraformConfig(ctx context.Context, options ...RequestOpti
 
 // GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/creds/{name}"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3611,8 +3972,10 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string, option
 
 // GetTerraformRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetTerraformRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/role"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTerraformRole(ctx context.Context, terraformMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/role"
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3632,9 +3995,11 @@ func (a *Secrets) GetTerraformRole(ctx context.Context, list string, options ...
 
 // GetTerraformRoleName
 // name: Name of the role
-func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/role/{name}"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3654,9 +4019,11 @@ func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string, options
 
 // GetTotpCodeName Request time-based one-time use password or validate a password for a certain key .
 // name: Name of the key.
-func (a *Secrets) GetTotpCodeName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/totp/code/{name}"
+// totpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTotpCodeName(ctx context.Context, name string, totpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{totp_mount_path}/code/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(totpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3676,8 +4043,10 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string, options ...R
 
 // GetTotpKeys Manage the keys that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetTotpKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/totp/keys"
+// totpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTotpKeys(ctx context.Context, totpMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{totp_mount_path}/keys"
+	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(totpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3697,9 +4066,11 @@ func (a *Secrets) GetTotpKeys(ctx context.Context, list string, options ...Reque
 
 // GetTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *Secrets) GetTotpKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/totp/keys/{name}"
+// totpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTotpKeysName(ctx context.Context, name string, totpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{totp_mount_path}/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(totpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3719,9 +4090,11 @@ func (a *Secrets) GetTotpKeysName(ctx context.Context, name string, options ...R
 
 // GetTransitBackupName Backup the named key
 // name: Name of the key
-func (a *Secrets) GetTransitBackupName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/backup/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTransitBackupName(ctx context.Context, name string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/backup/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3740,8 +4113,10 @@ func (a *Secrets) GetTransitBackupName(ctx context.Context, name string, options
 }
 
 // GetTransitCacheConfig Returns the size of the active cache
-func (a *Secrets) GetTransitCacheConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/cache-config"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTransitCacheConfig(ctx context.Context, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/cache-config"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3762,9 +4137,11 @@ func (a *Secrets) GetTransitCacheConfig(ctx context.Context, options ...RequestO
 // GetTransitExportTypeName Export named encryption or signing key
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
-func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/export/{type}/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, transitMountPath string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/export/{type}/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3787,9 +4164,11 @@ func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, typ
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
 // version: Version of the key
-func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name string, type_ string, version string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/export/{type}/{name}/{version}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name string, transitMountPath string, type_ string, version string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/export/{type}/{name}/{version}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 	requestPath = strings.Replace(requestPath, "{"+"version"+"}", url.PathEscape(version), -1)
 
@@ -3811,8 +4190,10 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 
 // GetTransitKeys Managed named encryption keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GetTransitKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTransitKeys(ctx context.Context, transitMountPath string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3832,9 +4213,11 @@ func (a *Secrets) GetTransitKeys(ctx context.Context, list string, options ...Re
 
 // GetTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *Secrets) GetTransitKeysName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTransitKeysName(ctx context.Context, name string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3853,8 +4236,10 @@ func (a *Secrets) GetTransitKeysName(ctx context.Context, name string, options .
 }
 
 // GetTransitWrappingKey Returns the public key to use for wrapping imported keys
-func (a *Secrets) GetTransitWrappingKey(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/wrapping_key"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) GetTransitWrappingKey(ctx context.Context, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/wrapping_key"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3873,8 +4258,10 @@ func (a *Secrets) GetTransitWrappingKey(ctx context.Context, options ...RequestO
 }
 
 // PostAdConfig Configure the AD server to connect to, along with password options.
-func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/config"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdConfig(ctx context.Context, adMountPath string, adConfigRequest AdConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3894,8 +4281,10 @@ func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequ
 
 // PostAdLibraryManageNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name string, adLibraryManageCheckInRequest AdLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library/manage/{name}/check-in"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, adMountPath string, name string, adLibraryManageCheckInRequest AdLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library/manage/{name}/check-in"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3916,8 +4305,10 @@ func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name strin
 
 // PostAdLibraryName Update a library set.
 // name: Name of the set.
-func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryRequest AdLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdLibraryName(ctx context.Context, adMountPath string, name string, adLibraryRequest AdLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3938,8 +4329,10 @@ func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryR
 
 // PostAdLibraryNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adLibraryCheckInRequest AdLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library/{name}/check-in"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, adMountPath string, name string, adLibraryCheckInRequest AdLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library/{name}/check-in"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3960,8 +4353,10 @@ func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adL
 
 // PostAdLibraryNameCheckOut Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, adLibraryCheckOutRequest AdLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/library/{name}/check-out"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, adMountPath string, name string, adLibraryCheckOutRequest AdLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/library/{name}/check-out"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3982,8 +4377,10 @@ func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, ad
 
 // PostAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesRequest AdRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/roles/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdRolesName(ctx context.Context, adMountPath string, name string, adRolesRequest AdRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4004,8 +4401,10 @@ func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesReque
 
 // PostAdRotateRoleName
 // name: Name of the static role
-func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/rotate-role/{name}"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdRotateRoleName(ctx context.Context, adMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/rotate-role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4025,8 +4424,10 @@ func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string, options
 }
 
 // PostAdRotateRoot
-func (a *Secrets) PostAdRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ad/rotate-root"
+// adMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAdRotateRoot(ctx context.Context, adMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ad_mount_path}/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(adMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4045,8 +4446,10 @@ func (a *Secrets) PostAdRotateRoot(ctx context.Context, options ...RequestOption
 }
 
 // PostAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/config"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudMountPath string, alicloudConfigRequest AlicloudConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4066,8 +4469,10 @@ func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest 
 
 // PostAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, alicloudRoleRequest AlicloudRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/alicloud/role/{name}"
+// alicloudMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAlicloudRoleName(ctx context.Context, alicloudMountPath string, name string, alicloudRoleRequest AlicloudRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{alicloud_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"alicloud_mount_path"+"}", url.PathEscape(alicloudMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4087,8 +4492,10 @@ func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, aliclou
 }
 
 // PostAwsConfigLease Configure the default lease information for generated credentials.
-func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/config/lease"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsMountPath string, awsConfigLeaseRequest AwsConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/config/lease"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4107,8 +4514,10 @@ func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest 
 }
 
 // PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
-func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/config/root"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsMountPath string, awsConfigRootRequest AwsConfigRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/config/root"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4127,8 +4536,10 @@ func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest Aw
 }
 
 // PostAwsConfigRotateRoot
-func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/config/rotate-root"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context, awsMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/config/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4147,8 +4558,10 @@ func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context, options ...Reques
 }
 
 // PostAwsCreds Generate AWS credentials from a specific Vault role.
-func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/creds"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAwsCreds(ctx context.Context, awsMountPath string, awsCredsRequest AwsCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/creds"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4168,8 +4581,10 @@ func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequ
 
 // PostAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesRequest AwsRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/roles/{name}"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAwsRolesName(ctx context.Context, awsMountPath string, name string, awsRolesRequest AwsRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4190,8 +4605,10 @@ func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesReq
 
 // PostAwsStsName Generate AWS credentials from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest AwsStsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/aws/sts/{name}"
+// awsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAwsStsName(ctx context.Context, awsMountPath string, name string, awsStsRequest AwsStsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{aws_mount_path}/sts/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(awsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4211,8 +4628,10 @@ func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest
 }
 
 // PostAzureConfig
-func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/config"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAzureConfig(ctx context.Context, azureMountPath string, azureConfigRequest AzureConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4232,8 +4651,10 @@ func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureC
 
 // PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRolesRequest AzureRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/roles/{name}"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAzureRolesName(ctx context.Context, azureMountPath string, name string, azureRolesRequest AzureRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4253,8 +4674,10 @@ func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRole
 }
 
 // PostAzureRotateRoot
-func (a *Secrets) PostAzureRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/azure/rotate-root"
+// azureMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostAzureRotateRoot(ctx context.Context, azureMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{azure_mount_path}/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"azure_mount_path"+"}", url.PathEscape(azureMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4273,8 +4696,10 @@ func (a *Secrets) PostAzureRotateRoot(ctx context.Context, options ...RequestOpt
 }
 
 // PostConsulConfigAccess
-func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/consul/config/access"
+// consulMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulMountPath string, consulConfigAccessRequest ConsulConfigAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{consul_mount_path}/config/access"
+	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(consulMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4294,8 +4719,10 @@ func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccess
 
 // PostConsulRolesName
 // name: Name of the role.
-func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRolesRequest ConsulRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/consul/roles/{name}"
+// consulMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostConsulRolesName(ctx context.Context, consulMountPath string, name string, consulRolesRequest ConsulRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{consul_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"consul_mount_path"+"}", url.PathEscape(consulMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4316,8 +4743,10 @@ func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRo
 
 // PostCubbyholePath Store a secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *Secrets) PostCubbyholePath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/cubbyhole/{path}"
+// cubbyholeMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostCubbyholePath(ctx context.Context, cubbyholeMountPath string, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{cubbyhole_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"cubbyhole_mount_path"+"}", url.PathEscape(cubbyholeMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4337,8 +4766,10 @@ func (a *Secrets) PostCubbyholePath(ctx context.Context, path string, options ..
 }
 
 // PostGcpConfig
-func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/config"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpConfig(ctx context.Context, gcpMountPath string, gcpConfigRequest GcpConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4357,8 +4788,10 @@ func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigR
 }
 
 // PostGcpConfigRotateRoot
-func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/config/rotate-root"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context, gcpMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/config/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4378,8 +4811,10 @@ func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context, options ...Reques
 
 // PostGcpKeyRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyRequest GcpKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/key/{roleset}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, gcpMountPath string, roleset string, gcpKeyRequest GcpKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/key/{roleset}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4400,8 +4835,10 @@ func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyR
 
 // PostGcpRolesetName
 // name: Required. Name of the role.
-func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolesetRequest GcpRolesetRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{name}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpRolesetName(ctx context.Context, gcpMountPath string, name string, gcpRolesetRequest GcpRolesetRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4422,8 +4859,10 @@ func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolese
 
 // PostGcpRolesetNameRotate
 // name: Name of the role.
-func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{name}/rotate"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{name}/rotate"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4444,8 +4883,10 @@ func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string, opt
 
 // PostGcpRolesetNameRotateKey
 // name: Name of the role.
-func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{name}/rotate-key"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{name}/rotate-key"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4466,8 +4907,10 @@ func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string, 
 
 // PostGcpRolesetRolesetKey
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, gcpRolesetKeyRequest GcpRolesetKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{roleset}/key"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, gcpMountPath string, roleset string, gcpRolesetKeyRequest GcpRolesetKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/key"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4488,8 +4931,10 @@ func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, 
 
 // PostGcpRolesetRolesetToken
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/roleset/{roleset}/token"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, gcpMountPath string, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/roleset/{roleset}/token"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4510,8 +4955,10 @@ func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string
 
 // PostGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcpStaticAccountRequest GcpStaticAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, gcpMountPath string, name string, gcpStaticAccountRequest GcpStaticAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4532,8 +4979,10 @@ func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcp
 
 // PostGcpStaticAccountNameKey
 // name: Required. Name of the static account.
-func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, gcpStaticAccountKeyRequest GcpStaticAccountKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}/key"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, gcpMountPath string, name string, gcpStaticAccountKeyRequest GcpStaticAccountKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/key"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4554,8 +5003,10 @@ func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, 
 
 // PostGcpStaticAccountNameRotateKey
 // name: Name of the account.
-func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}/rotate-key"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/rotate-key"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4576,8 +5027,10 @@ func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name st
 
 // PostGcpStaticAccountNameToken
 // name: Required. Name of the static account.
-func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/static-account/{name}/token"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, gcpMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/static-account/{name}/token"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4598,8 +5051,10 @@ func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string
 
 // PostGcpTokenRoleset
 // roleset: Required. Name of the role set.
-func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcp/token/{roleset}"
+// gcpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, gcpMountPath string, roleset string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcp_mount_path}/token/{roleset}"
+	requestPath = strings.Replace(requestPath, "{"+"gcp_mount_path"+"}", url.PathEscape(gcpMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"roleset"+"}", url.PathEscape(roleset), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4619,8 +5074,10 @@ func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string, optio
 }
 
 // PostGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/config"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsMountPath string, gcpkmsConfigRequest GcpkmsConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4640,8 +5097,10 @@ func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest Gcpk
 
 // PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
 // key: Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDecryptRequest GcpkmsDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/decrypt/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsDecryptRequest GcpkmsDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/decrypt/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4662,8 +5121,10 @@ func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDe
 
 // PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
 // key: Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEncryptRequest GcpkmsEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/encrypt/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsEncryptRequest GcpkmsEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/encrypt/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4684,8 +5145,10 @@ func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEn
 
 // PostGcpkmsKeysConfigKey Configure the key in Vault
 // key: Name of the key in Vault.
-func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkmsKeysConfigRequest GcpkmsKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/config/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsKeysConfigRequest GcpkmsKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/config/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4706,8 +5169,10 @@ func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkm
 
 // PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/deregister/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/deregister/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4728,8 +5193,10 @@ func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string, o
 
 // PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysRequest GcpkmsKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsKeysRequest GcpkmsKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4750,8 +5217,10 @@ func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysR
 
 // PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
 // key: Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcpkmsKeysRegisterRequest GcpkmsKeysRegisterRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/register/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsKeysRegisterRequest GcpkmsKeysRegisterRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/register/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4772,8 +5241,10 @@ func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcp
 
 // PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
 // key: Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
-func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/rotate/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/rotate/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4794,8 +5265,10 @@ func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string, optio
 
 // PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/keys/trim/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, gcpkmsMountPath string, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/keys/trim/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4816,8 +5289,10 @@ func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string, options
 
 // PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
 // key: Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkmsReencryptRequest GcpkmsReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/reencrypt/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsReencryptRequest GcpkmsReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/reencrypt/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4838,8 +5313,10 @@ func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkms
 
 // PostGcpkmsSignKey Signs a message or digest using a named key
 // key: Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignRequest GcpkmsSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/sign/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsSignRequest GcpkmsSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/sign/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4860,8 +5337,10 @@ func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignR
 
 // PostGcpkmsVerifyKey Verify a signature using a named key
 // key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVerifyRequest GcpkmsVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/gcpkms/verify/{key}"
+// gcpkmsMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, gcpkmsMountPath string, key string, gcpkmsVerifyRequest GcpkmsVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{gcpkms_mount_path}/verify/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(gcpkmsMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4881,8 +5360,10 @@ func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVer
 }
 
 // PostKubernetesConfig
-func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/config"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesMountPath string, kubernetesConfigRequest KubernetesConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4902,8 +5383,10 @@ func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequ
 
 // PostKubernetesCredsName
 // name: Name of the Vault role
-func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kubernetesCredsRequest KubernetesCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/creds/{name}"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostKubernetesCredsName(ctx context.Context, kubernetesMountPath string, name string, kubernetesCredsRequest KubernetesCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4924,8 +5407,10 @@ func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kube
 
 // PostKubernetesRolesName
 // name: Name of the role
-func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kubernetesRolesRequest KubernetesRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kubernetes/roles/{name}"
+// kubernetesMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostKubernetesRolesName(ctx context.Context, kubernetesMountPath string, name string, kubernetesRolesRequest KubernetesRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{kubernetes_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"kubernetes_mount_path"+"}", url.PathEscape(kubernetesMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -4944,31 +5429,11 @@ func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kube
 	)
 }
 
-// PostKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-// path: Location of the secret.
-func (a *Secrets) PostKvPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/kv/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodPost,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
 // PostLdapConfig
-func (a *Secrets) PostLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/config"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapConfig(ctx context.Context, ldapMountPath string, ldapConfigRequest LdapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4988,8 +5453,10 @@ func (a *Secrets) PostLdapConfig(ctx context.Context, ldapConfigRequest LdapConf
 
 // PostLdapLibraryManageNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostLdapLibraryManageNameCheckIn(ctx context.Context, name string, ldapLibraryManageCheckInRequest LdapLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library/manage/{name}/check-in"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapLibraryManageNameCheckIn(ctx context.Context, ldapMountPath string, name string, ldapLibraryManageCheckInRequest LdapLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library/manage/{name}/check-in"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5010,8 +5477,10 @@ func (a *Secrets) PostLdapLibraryManageNameCheckIn(ctx context.Context, name str
 
 // PostLdapLibraryName Update a library set.
 // name: Name of the set.
-func (a *Secrets) PostLdapLibraryName(ctx context.Context, name string, ldapLibraryRequest LdapLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapLibraryName(ctx context.Context, ldapMountPath string, name string, ldapLibraryRequest LdapLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5032,8 +5501,10 @@ func (a *Secrets) PostLdapLibraryName(ctx context.Context, name string, ldapLibr
 
 // PostLdapLibraryNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostLdapLibraryNameCheckIn(ctx context.Context, name string, ldapLibraryCheckInRequest LdapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library/{name}/check-in"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapLibraryNameCheckIn(ctx context.Context, ldapMountPath string, name string, ldapLibraryCheckInRequest LdapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library/{name}/check-in"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5054,8 +5525,10 @@ func (a *Secrets) PostLdapLibraryNameCheckIn(ctx context.Context, name string, l
 
 // PostLdapLibraryNameCheckOut Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) PostLdapLibraryNameCheckOut(ctx context.Context, name string, ldapLibraryCheckOutRequest LdapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/library/{name}/check-out"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapLibraryNameCheckOut(ctx context.Context, ldapMountPath string, name string, ldapLibraryCheckOutRequest LdapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/library/{name}/check-out"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5076,8 +5549,10 @@ func (a *Secrets) PostLdapLibraryNameCheckOut(ctx context.Context, name string, 
 
 // PostLdapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) PostLdapRoleName(ctx context.Context, name string, ldapRoleRequest LdapRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/role/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapRoleName(ctx context.Context, ldapMountPath string, name string, ldapRoleRequest LdapRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5098,8 +5573,10 @@ func (a *Secrets) PostLdapRoleName(ctx context.Context, name string, ldapRoleReq
 
 // PostLdapRotateRoleName
 // name: Name of the static role
-func (a *Secrets) PostLdapRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/rotate-role/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapRotateRoleName(ctx context.Context, ldapMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/rotate-role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5119,8 +5596,10 @@ func (a *Secrets) PostLdapRotateRoleName(ctx context.Context, name string, optio
 }
 
 // PostLdapRotateRoot
-func (a *Secrets) PostLdapRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/rotate-root"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapRotateRoot(ctx context.Context, ldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5140,8 +5619,10 @@ func (a *Secrets) PostLdapRotateRoot(ctx context.Context, options ...RequestOpti
 
 // PostLdapStaticRoleName
 // name: Name of the role
-func (a *Secrets) PostLdapStaticRoleName(ctx context.Context, name string, ldapStaticRoleRequest LdapStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ldap/static-role/{name}"
+// ldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostLdapStaticRoleName(ctx context.Context, ldapMountPath string, name string, ldapStaticRoleRequest LdapStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ldap_mount_path}/static-role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ldap_mount_path"+"}", url.PathEscape(ldapMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5161,8 +5642,10 @@ func (a *Secrets) PostLdapStaticRoleName(ctx context.Context, name string, ldapS
 }
 
 // PostMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/config"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasMountPath string, mongodbatlasConfigRequest MongodbatlasConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5182,8 +5665,10 @@ func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfig
 
 // PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/creds/{name}"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, mongodbatlasMountPath string, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5204,8 +5689,10 @@ func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string, op
 
 // PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mongodbatlasRolesRequest MongodbatlasRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/mongodbatlas/roles/{name}"
+// mongodbatlasMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, mongodbatlasMountPath string, name string, mongodbatlasRolesRequest MongodbatlasRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{mongodbatlas_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"mongodbatlas_mount_path"+"}", url.PathEscape(mongodbatlasMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5225,8 +5712,10 @@ func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mo
 }
 
 // PostNomadConfigAccess
-func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/config/access"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadMountPath string, nomadConfigAccessRequest NomadConfigAccessRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/config/access"
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5245,8 +5734,10 @@ func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRe
 }
 
 // PostNomadConfigLease Configure the lease parameters for generated tokens
-func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/config/lease"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadMountPath string, nomadConfigLeaseRequest NomadConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/config/lease"
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5266,9 +5757,11 @@ func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequ
 
 // PostNomadRoleName
 // name: Name of the role
-func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleRequest NomadRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/nomad/role/{name}"
+// nomadMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadMountPath string, nomadRoleRequest NomadRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{nomad_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"nomad_mount_path"+"}", url.PathEscape(nomadMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5287,8 +5780,10 @@ func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleR
 }
 
 // PostOpenldapConfig
-func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/config"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapMountPath string, openldapConfigRequest OpenldapConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5308,9 +5803,11 @@ func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest 
 
 // PostOpenldapLibraryManageNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostOpenldapLibraryManageNameCheckIn(ctx context.Context, name string, openldapLibraryManageCheckInRequest OpenldapLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library/manage/{name}/check-in"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapLibraryManageNameCheckIn(ctx context.Context, name string, openldapMountPath string, openldapLibraryManageCheckInRequest OpenldapLibraryManageCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library/manage/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5330,9 +5827,11 @@ func (a *Secrets) PostOpenldapLibraryManageNameCheckIn(ctx context.Context, name
 
 // PostOpenldapLibraryName Update a library set.
 // name: Name of the set.
-func (a *Secrets) PostOpenldapLibraryName(ctx context.Context, name string, openldapLibraryRequest OpenldapLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapLibraryName(ctx context.Context, name string, openldapMountPath string, openldapLibraryRequest OpenldapLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5352,9 +5851,11 @@ func (a *Secrets) PostOpenldapLibraryName(ctx context.Context, name string, open
 
 // PostOpenldapLibraryNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) PostOpenldapLibraryNameCheckIn(ctx context.Context, name string, openldapLibraryCheckInRequest OpenldapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library/{name}/check-in"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapLibraryNameCheckIn(ctx context.Context, name string, openldapMountPath string, openldapLibraryCheckInRequest OpenldapLibraryCheckInRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library/{name}/check-in"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5374,9 +5875,11 @@ func (a *Secrets) PostOpenldapLibraryNameCheckIn(ctx context.Context, name strin
 
 // PostOpenldapLibraryNameCheckOut Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) PostOpenldapLibraryNameCheckOut(ctx context.Context, name string, openldapLibraryCheckOutRequest OpenldapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/library/{name}/check-out"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapLibraryNameCheckOut(ctx context.Context, name string, openldapMountPath string, openldapLibraryCheckOutRequest OpenldapLibraryCheckOutRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/library/{name}/check-out"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5396,9 +5899,11 @@ func (a *Secrets) PostOpenldapLibraryNameCheckOut(ctx context.Context, name stri
 
 // PostOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openldapRoleRequest OpenldapRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/role/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openldapMountPath string, openldapRoleRequest OpenldapRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5418,9 +5923,11 @@ func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openlda
 
 // PostOpenldapRotateRoleName
 // name: Name of the static role
-func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/rotate-role/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5439,8 +5946,10 @@ func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string, o
 }
 
 // PostOpenldapRotateRoot
-func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/rotate-root"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context, openldapMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/rotate-root"
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5460,9 +5969,11 @@ func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context, options ...Request
 
 // PostOpenldapStaticRoleName
 // name: Name of the role
-func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, openldapStaticRoleRequest OpenldapStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/openldap/static-role/{name}"
+// openldapMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, openldapMountPath string, openldapStaticRoleRequest OpenldapStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{openldap_mount_path}/static-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"openldap_mount_path"+"}", url.PathEscape(openldapMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5481,8 +5992,10 @@ func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, o
 }
 
 // PostPkiBundle
-func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/bundle"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiBundle(ctx context.Context, pkiMountPath string, pkiBundleRequest PkiBundleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/bundle"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5501,8 +6014,10 @@ func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleR
 }
 
 // PostPkiCert
-func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/cert"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiCert(ctx context.Context, pkiMountPath string, pkiCertRequest PkiCertRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/cert"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5521,8 +6036,10 @@ func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest
 }
 
 // PostPkiConfigAutoTidy
-func (a *Secrets) PostPkiConfigAutoTidy(ctx context.Context, pkiConfigAutoTidyRequest PkiConfigAutoTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/auto-tidy"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiConfigAutoTidy(ctx context.Context, pkiMountPath string, pkiConfigAutoTidyRequest PkiConfigAutoTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/auto-tidy"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5541,8 +6058,10 @@ func (a *Secrets) PostPkiConfigAutoTidy(ctx context.Context, pkiConfigAutoTidyRe
 }
 
 // PostPkiConfigCa
-func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/ca"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiMountPath string, pkiConfigCaRequest PkiConfigCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/ca"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5561,8 +6080,10 @@ func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiCon
 }
 
 // PostPkiConfigCrl
-func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/crl"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiMountPath string, pkiConfigCrlRequest PkiConfigCrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/crl"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5581,8 +6102,10 @@ func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiC
 }
 
 // PostPkiConfigIssuers
-func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/issuers"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiMountPath string, pkiConfigIssuersRequest PkiConfigIssuersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/issuers"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5601,8 +6124,10 @@ func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequ
 }
 
 // PostPkiConfigKeys
-func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/keys"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiMountPath string, pkiConfigKeysRequest PkiConfigKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/keys"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5621,8 +6146,10 @@ func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest Pk
 }
 
 // PostPkiConfigUrls
-func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/config/urls"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiMountPath string, pkiConfigUrlsRequest PkiConfigUrlsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/config/urls"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5641,8 +6168,10 @@ func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest Pk
 }
 
 // PostPkiIntermediateCrossSign
-func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/intermediate/cross-sign"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiMountPath string, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/intermediate/cross-sign"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5662,9 +6191,11 @@ func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermedi
 
 // PostPkiIntermediateGenerateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, exported string, pkiIntermediateGenerateRequest PkiIntermediateGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/intermediate/generate/{exported}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, exported string, pkiMountPath string, pkiIntermediateGenerateRequest PkiIntermediateGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/intermediate/generate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5683,8 +6214,10 @@ func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, expor
 }
 
 // PostPkiIntermediateSetSigned
-func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/intermediate/set-signed"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiMountPath string, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/intermediate/set-signed"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5702,10 +6235,34 @@ func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermedi
 	)
 }
 
+// PostPkiInternalExported
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiInternalExported(ctx context.Context, pkiMountPath string, pkiInternalExportedRequest PkiInternalExportedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/internal|exported"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiInternalExportedRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // PostPkiIssueRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueRequest PkiIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issue/{role}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssueRole(ctx context.Context, pkiMountPath string, role string, pkiIssueRequest PkiIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issue/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5727,9 +6284,11 @@ func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueReq
 // PostPkiIssuerIssuerRefIssueRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, role string, pkiIssuerIssueRequest PkiIssuerIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuer/{issuer_ref}/issue/{role}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, pkiMountPath string, role string, pkiIssuerIssueRequest PkiIssuerIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/issue/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5750,9 +6309,11 @@ func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef
 
 // PostPkiIssuerIssuerRefRevoke
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefRevoke(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuer/{issuer_ref}/revoke"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerIssuerRefRevoke(ctx context.Context, issuerRef string, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/revoke"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5772,9 +6333,11 @@ func (a *Secrets) PostPkiIssuerIssuerRefRevoke(ctx context.Context, issuerRef st
 
 // PostPkiIssuerIssuerRefSignIntermediate
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string, pkiIssuerSignIntermediateRequest PkiIssuerSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-intermediate"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string, pkiMountPath string, pkiIssuerSignIntermediateRequest PkiIssuerSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-intermediate"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5795,9 +6358,11 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, is
 // PostPkiIssuerIssuerRefSignRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignRequest PkiIssuerSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuer/{issuer_ref}/sign/{role}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, pkiMountPath string, role string, pkiIssuerSignRequest PkiIssuerSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5818,9 +6383,11 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef 
 
 // PostPkiIssuerIssuerRefSignSelfIssued
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string, pkiIssuerSignSelfIssuedRequest PkiIssuerSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-self-issued"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string, pkiMountPath string, pkiIssuerSignSelfIssuedRequest PkiIssuerSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-self-issued"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5840,9 +6407,11 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issu
 
 // PostPkiIssuerIssuerRefSignVerbatim
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-verbatim"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string, pkiMountPath string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5863,9 +6432,11 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuer
 // PostPkiIssuerIssuerRefSignVerbatimRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuer/{issuer_ref}/sign-verbatim/{role}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, pkiMountPath string, role string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5884,11 +6455,37 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, is
 	)
 }
 
+// PostPkiIssuerRefDerPem
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, pkiMountPath string, pkiDerPemRequest PkiDerPemRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/{issuer_ref}/der|/pem"
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiDerPemRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // PostPkiIssuersGenerateIntermediateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string, pkiIssuersGenerateIntermediateRequest PkiIssuersGenerateIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuers/generate/intermediate/{exported}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string, pkiMountPath string, pkiIssuersGenerateIntermediateRequest PkiIssuersGenerateIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuers/generate/intermediate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5908,9 +6505,11 @@ func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context
 
 // PostPkiIssuersGenerateRootExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string, pkiIssuersGenerateRootRequest PkiIssuersGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/issuers/generate/root/{exported}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string, pkiMountPath string, pkiIssuersGenerateRootRequest PkiIssuersGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/issuers/generate/root/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5929,8 +6528,10 @@ func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, export
 }
 
 // PostPkiJson
-func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki//json"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiJson(ctx context.Context, pkiMountPath string, pkiJsonRequest PkiJsonRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}//json"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5950,9 +6551,11 @@ func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest
 
 // PostPkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyRequest PkiKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/key/{key_ref}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiMountPath string, pkiKeyRequest PkiKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/key/{key_ref}"
 	requestPath = strings.Replace(requestPath, "{"+"key_ref"+"}", url.PathEscape(keyRef), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5971,8 +6574,10 @@ func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyReq
 }
 
 // PostPkiKeysImport
-func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/keys/import"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiMountPath string, pkiKeysImportRequest PkiKeysImportRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/keys/import"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5991,8 +6596,10 @@ func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest Pk
 }
 
 // PostPkiKms
-func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/kms"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiKms(ctx context.Context, pkiMountPath string, pkiKmsRequest PkiKmsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/kms"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6011,8 +6618,10 @@ func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest, o
 }
 
 // PostPkiOcsp
-func (a *Secrets) PostPkiOcsp(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/ocsp"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiOcsp(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/ocsp"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6031,8 +6640,10 @@ func (a *Secrets) PostPkiOcsp(ctx context.Context, options ...RequestOption) (*R
 }
 
 // PostPkiRevoke
-func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/revoke"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiMountPath string, pkiRevokeRequest PkiRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/revoke"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6051,8 +6662,10 @@ func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeR
 }
 
 // PostPkiRevokeWithKey
-func (a *Secrets) PostPkiRevokeWithKey(ctx context.Context, pkiRevokeWithKeyRequest PkiRevokeWithKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/revoke-with-key"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRevokeWithKey(ctx context.Context, pkiMountPath string, pkiRevokeWithKeyRequest PkiRevokeWithKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/revoke-with-key"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6072,9 +6685,11 @@ func (a *Secrets) PostPkiRevokeWithKey(ctx context.Context, pkiRevokeWithKeyRequ
 
 // PostPkiRolesName
 // name: Name of the role
-func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesRequest PkiRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/roles/{name}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiMountPath string, pkiRolesRequest PkiRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6094,9 +6709,11 @@ func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesReq
 
 // PostPkiRootGenerateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported string, pkiRootGenerateRequest PkiRootGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/root/generate/{exported}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported string, pkiMountPath string, pkiRootGenerateRequest PkiRootGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/root/generate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6115,8 +6732,10 @@ func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported stri
 }
 
 // PostPkiRootReplace
-func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/root/replace"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiMountPath string, pkiRootReplaceRequest PkiRootReplaceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/root/replace"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6136,9 +6755,11 @@ func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest 
 
 // PostPkiRootRotateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string, pkiRootRotateRequest PkiRootRotateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/root/rotate/{exported}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string, pkiMountPath string, pkiRootRotateRequest PkiRootRotateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/root/rotate/{exported}"
 	requestPath = strings.Replace(requestPath, "{"+"exported"+"}", url.PathEscape(exported), -1)
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6157,8 +6778,10 @@ func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string
 }
 
 // PostPkiRootSignIntermediate
-func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/root/sign-intermediate"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiMountPath string, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/root/sign-intermediate"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6177,8 +6800,10 @@ func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIn
 }
 
 // PostPkiRootSignSelfIssued
-func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/root/sign-self-issued"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiMountPath string, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/root/sign-self-issued"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6198,8 +6823,10 @@ func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelf
 
 // PostPkiSignRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignRequest PkiSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/sign/{role}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiSignRole(ctx context.Context, pkiMountPath string, role string, pkiSignRequest PkiSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/sign/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -6219,8 +6846,10 @@ func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignReque
 }
 
 // PostPkiSignVerbatim
-func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/sign-verbatim"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiMountPath string, pkiSignVerbatimRequest PkiSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/sign-verbatim"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6240,8 +6869,10 @@ func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimReques
 
 // PostPkiSignVerbatimRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiSignVerbatimRequest PkiSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/sign-verbatim/{role}"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, pkiMountPath string, role string, pkiSignVerbatimRequest PkiSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/sign-verbatim/{role}"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -6261,8 +6892,10 @@ func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiS
 }
 
 // PostPkiTidy
-func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/tidy"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiTidy(ctx context.Context, pkiMountPath string, pkiTidyRequest PkiTidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/tidy"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6281,8 +6914,10 @@ func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest
 }
 
 // PostPkiTidyCancel
-func (a *Secrets) PostPkiTidyCancel(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/pki/tidy-cancel"
+// pkiMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostPkiTidyCancel(ctx context.Context, pkiMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{pki_mount_path}/tidy-cancel"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(pkiMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6301,8 +6936,10 @@ func (a *Secrets) PostPkiTidyCancel(ctx context.Context, options ...RequestOptio
 }
 
 // PostRabbitmqConfigConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
-func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/config/connection"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqMountPath string, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/config/connection"
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6321,8 +6958,10 @@ func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConf
 }
 
 // PostRabbitmqConfigLease Configure the lease parameters for generated credentials
-func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/config/lease"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqMountPath string, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/config/lease"
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6342,9 +6981,11 @@ func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLea
 
 // PostRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbitmqRolesRequest RabbitmqRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/rabbitmq/roles/{name}"
+// rabbitmqMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbitmqMountPath string, rabbitmqRolesRequest RabbitmqRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{rabbitmq_mount_path}/roles/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"rabbitmq_mount_path"+"}", url.PathEscape(rabbitmqMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6363,8 +7004,10 @@ func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbit
 }
 
 // PostSecretConfig Configure backend level settings that are applied to every key in the key-value store.
-func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/config"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSecretConfig(ctx context.Context, secretMountPath string, kvConfigRequest KvConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6384,9 +7027,11 @@ func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfig
 
 // PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataRequest KvDataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/data/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, secretMountPath string, kvDataRequest KvDataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6406,9 +7051,11 @@ func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataReq
 
 // PostSecretDeletePath Marks one or more versions as deleted in the KV store.
 // path: Location of the secret.
-func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDeleteRequest KvDeleteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/delete/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, secretMountPath string, kvDeleteRequest KvDeleteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/delete/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6428,9 +7075,11 @@ func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDelet
 
 // PostSecretDestroyPath Permanently removes one or more versions in the KV store
 // path: Location of the secret.
-func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDestroyRequest KvDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/destroy/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, secretMountPath string, kvDestroyRequest KvDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/destroy/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6450,9 +7099,11 @@ func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDest
 
 // PostSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMetadataRequest KvMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/metadata/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, secretMountPath string, kvMetadataRequest KvMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6470,11 +7121,37 @@ func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMet
 	)
 }
 
+// PostSecretPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSecretPath(ctx context.Context, path string, secretMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
+
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // PostSecretUndeletePath Undeletes one or more versions from the KV store.
 // path: Location of the secret.
-func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUndeleteRequest KvUndeleteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/secret/undelete/{path}"
+// secretMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, secretMountPath string, kvUndeleteRequest KvUndeleteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{secret_mount_path}/undelete/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(secretMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6493,8 +7170,10 @@ func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUnd
 }
 
 // PostSshConfigCa Set the SSH private key used for signing certificates.
-func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/config/ca"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshConfigCa(ctx context.Context, sshMountPath string, sshConfigCaRequest SshConfigCaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/config/ca"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6513,8 +7192,10 @@ func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshCon
 }
 
 // PostSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/config/zeroaddress"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshMountPath string, sshConfigZeroaddressRequest SshConfigZeroaddressRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/config/zeroaddress"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6534,9 +7215,11 @@ func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroadd
 
 // PostSshCredsRole Creates a credential for establishing SSH connection with the remote host.
 // role: [Required] Name of the role
-func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsRequest SshCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/creds/{role}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshMountPath string, sshCredsRequest SshCredsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/creds/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6556,9 +7239,11 @@ func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsReq
 
 // PostSshIssueRole
 // role: The desired role with configuration for this request.
-func (a *Secrets) PostSshIssueRole(ctx context.Context, role string, sshIssueRequest SshIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/issue/{role}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshIssueRole(ctx context.Context, role string, sshMountPath string, sshIssueRequest SshIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/issue/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6578,9 +7263,11 @@ func (a *Secrets) PostSshIssueRole(ctx context.Context, role string, sshIssueReq
 
 // PostSshKeysKeyName Register a shared private key with Vault.
 // keyName: [Required] Name of the key
-func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKeysRequest SshKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/keys/{key_name}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshMountPath string, sshKeysRequest SshKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/keys/{key_name}"
 	requestPath = strings.Replace(requestPath, "{"+"key_name"+"}", url.PathEscape(keyName), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6599,8 +7286,10 @@ func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKey
 }
 
 // PostSshLookup List all the roles associated with the given IP address.
-func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/lookup"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshLookup(ctx context.Context, sshMountPath string, sshLookupRequest SshLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/lookup"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6620,9 +7309,11 @@ func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupR
 
 // PostSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesRequest SshRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/roles/{role}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshMountPath string, sshRolesRequest SshRolesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/roles/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6642,9 +7333,11 @@ func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesReq
 
 // PostSshSignRole Request signing an SSH key using a certain role with the provided details.
 // role: The desired role with configuration for this request.
-func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignRequest SshSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/sign/{role}"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshMountPath string, sshSignRequest SshSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/sign/{role}"
 	requestPath = strings.Replace(requestPath, "{"+"role"+"}", url.PathEscape(role), -1)
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6663,8 +7356,10 @@ func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignReque
 }
 
 // PostSshVerify Validate the OTP provided by Vault SSH Agent.
-func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/ssh/verify"
+// sshMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostSshVerify(ctx context.Context, sshMountPath string, sshVerifyRequest SshVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{ssh_mount_path}/verify"
+	requestPath = strings.Replace(requestPath, "{"+"ssh_mount_path"+"}", url.PathEscape(sshMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6683,8 +7378,10 @@ func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyR
 }
 
 // PostTerraformConfig
-func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/config"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformMountPath string, terraformConfigRequest TerraformConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6704,9 +7401,11 @@ func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigReques
 
 // PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/creds/{name}"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/creds/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6726,9 +7425,11 @@ func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string, optio
 
 // PostTerraformRoleName
 // name: Name of the role
-func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraformRoleRequest TerraformRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/role/{name}"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraformMountPath string, terraformRoleRequest TerraformRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6748,9 +7449,11 @@ func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraf
 
 // PostTerraformRotateRoleName
 // name: Name of the team or organization role
-func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/terraform/rotate-role/{name}"
+// terraformMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string, terraformMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{terraform_mount_path}/rotate-role/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"terraform_mount_path"+"}", url.PathEscape(terraformMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6770,9 +7473,11 @@ func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string, 
 
 // PostTotpCodeName Request time-based one-time use password or validate a password for a certain key .
 // name: Name of the key.
-func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeRequest TotpCodeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/totp/code/{name}"
+// totpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpMountPath string, totpCodeRequest TotpCodeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{totp_mount_path}/code/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(totpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6792,9 +7497,11 @@ func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeReq
 
 // PostTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysRequest TotpKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/totp/keys/{name}"
+// totpMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpMountPath string, totpKeysRequest TotpKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{totp_mount_path}/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"totp_mount_path"+"}", url.PathEscape(totpMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6813,8 +7520,10 @@ func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysReq
 }
 
 // PostTransitCacheConfig Configures a new cache of the specified size
-func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/cache-config"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitMountPath string, transitCacheConfigRequest TransitCacheConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/cache-config"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6835,10 +7544,12 @@ func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfig
 // PostTransitDatakeyPlaintextName Generate a data key
 // name: The backend key used for encrypting the data key
 // plaintext: \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only.
-func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string, transitDatakeyRequest TransitDatakeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/datakey/{plaintext}/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string, transitMountPath string, transitDatakeyRequest TransitDatakeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/datakey/{plaintext}/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 	requestPath = strings.Replace(requestPath, "{"+"plaintext"+"}", url.PathEscape(plaintext), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6858,9 +7569,11 @@ func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name stri
 
 // PostTransitDecryptName Decrypt a ciphertext value using a named key
 // name: Name of the key
-func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, transitDecryptRequest TransitDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/decrypt/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, transitMountPath string, transitDecryptRequest TransitDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/decrypt/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6880,9 +7593,11 @@ func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, trans
 
 // PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks using a named key
 // name: Name of the key
-func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/encrypt/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, transitMountPath string, transitEncryptRequest TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/encrypt/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6901,8 +7616,10 @@ func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, trans
 }
 
 // PostTransitHash Generate a hash sum for input data
-func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/hash"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitHash(ctx context.Context, transitMountPath string, transitHashRequest TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/hash"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6922,8 +7639,10 @@ func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest Transi
 
 // PostTransitHashUrlalgorithm Generate a hash sum for input data
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm string, transitHashRequest TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/hash/{urlalgorithm}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, transitMountPath string, urlalgorithm string, transitHashRequest TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/hash/{urlalgorithm}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -6944,9 +7663,11 @@ func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm 
 
 // PostTransitHmacName Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
-func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitHmacRequest TransitHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/hmac/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitMountPath string, transitHmacRequest TransitHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/hmac/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6967,9 +7688,11 @@ func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitH
 // PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitHmacRequest TransitHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/hmac/{name}/{urlalgorithm}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, transitMountPath string, urlalgorithm string, transitHmacRequest TransitHmacRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/hmac/{name}/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -6990,9 +7713,11 @@ func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name stri
 
 // PostTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitKeysRequest TransitKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitMountPath string, transitKeysRequest TransitKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7012,9 +7737,11 @@ func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitK
 
 // PostTransitKeysNameConfig Configure a named encryption key
 // name: Name of the key
-func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, transitKeysConfigRequest TransitKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}/config"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, transitMountPath string, transitKeysConfigRequest TransitKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}/config"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7034,9 +7761,11 @@ func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, tr
 
 // PostTransitKeysNameImport Imports an externally-generated key into a new transit key
 // name: The name of the key
-func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, transitKeysImportRequest TransitKeysImportRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}/import"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, transitMountPath string, transitKeysImportRequest TransitKeysImportRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}/import"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7056,9 +7785,11 @@ func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, tr
 
 // PostTransitKeysNameImportVersion Imports an externally-generated key into an existing imported key
 // name: The name of the key
-func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name string, transitKeysImportVersionRequest TransitKeysImportVersionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}/import_version"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name string, transitMountPath string, transitKeysImportVersionRequest TransitKeysImportVersionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}/import_version"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7078,9 +7809,11 @@ func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name str
 
 // PostTransitKeysNameRotate Rotate named encryption key
 // name: Name of the key
-func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}/rotate"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string, transitMountPath string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}/rotate"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7100,9 +7833,11 @@ func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string, op
 
 // PostTransitKeysNameTrim Trim key versions of a named key
 // name: Name of the key
-func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, transitKeysTrimRequest TransitKeysTrimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/keys/{name}/trim"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, transitMountPath string, transitKeysTrimRequest TransitKeysTrimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/keys/{name}/trim"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7121,8 +7856,10 @@ func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, tran
 }
 
 // PostTransitRandom Generate random bytes
-func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/random"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitRandom(ctx context.Context, transitMountPath string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/random"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7142,9 +7879,11 @@ func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest Tr
 
 // PostTransitRandomSource Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/random/{source}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, transitMountPath string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/random/{source}"
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7165,9 +7904,11 @@ func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, tr
 // PostTransitRandomSourceUrlbytes Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/random/{source}/{urlbytes}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, transitMountPath string, urlbytes string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/random/{source}/{urlbytes}"
 	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -7188,8 +7929,10 @@ func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source st
 
 // PostTransitRandomUrlbytes Generate random bytes
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/random/{urlbytes}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, transitMountPath string, urlbytes string, transitRandomRequest TransitRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/random/{urlbytes}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -7209,8 +7952,10 @@ func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string
 }
 
 // PostTransitRestore Restore the named key
-func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/restore"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitRestore(ctx context.Context, transitMountPath string, transitRestoreRequest TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/restore"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7230,9 +7975,11 @@ func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest 
 
 // PostTransitRestoreName Restore the named key
 // name: If set, this will be the name of the restored key.
-func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, transitRestoreRequest TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/restore/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, transitMountPath string, transitRestoreRequest TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/restore/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7252,9 +7999,11 @@ func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, trans
 
 // PostTransitRewrapName Rewrap ciphertext
 // name: Name of the key
-func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transitRewrapRequest TransitRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/rewrap/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transitMountPath string, transitRewrapRequest TransitRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/rewrap/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7274,9 +8023,11 @@ func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transi
 
 // PostTransitSignName Generate a signature for input data using the named key
 // name: The key to use
-func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitSignRequest TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/sign/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitMountPath string, transitSignRequest TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/sign/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7297,9 +8048,11 @@ func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitS
 // PostTransitSignNameUrlalgorithm Generate a signature for input data using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitSignRequest TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/sign/{name}/{urlalgorithm}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, transitMountPath string, urlalgorithm string, transitSignRequest TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/sign/{name}/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -7320,9 +8073,11 @@ func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name stri
 
 // PostTransitVerifyName Verify a signature or HMAC for input data created using the named key
 // name: The key to use
-func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transitVerifyRequest TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/verify/{name}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transitMountPath string, transitVerifyRequest TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/verify/{name}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -7343,9 +8098,11 @@ func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transi
 // PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data created using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitVerifyRequest TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/transit/verify/{name}/{urlalgorithm}"
+// transitMountPath: Path where the backend was mounted; the endpoint path will be offset by the mount path
+func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, transitMountPath string, urlalgorithm string, transitVerifyRequest TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestPath := "/v1/{transit_mount_path}/verify/{name}/{urlalgorithm}"
 	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(transitMountPath), -1)
 	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
 	modifiers, err := requestOptionsToRequestModifiers(options)

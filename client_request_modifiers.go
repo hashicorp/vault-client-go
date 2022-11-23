@@ -293,9 +293,11 @@ func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOpt
 }
 
 // WithMountPath overwrites the default mount path in client.Auth and
-// client.Secrets requests.
+// client.Secrets requests with the given mount path string.
 func (c *Client) WithMountPath(path string) RequestOption {
 	return func(m *requestModifiers) error {
+		path = strings.TrimPrefix(path, "/")
+		path = strings.TrimSuffix(path, "/")
 		m.mountPath = path
 		return nil
 	}

@@ -296,9 +296,8 @@ func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOpt
 // client.Secrets requests with the given mount path string.
 func (c *Client) WithMountPath(path string) RequestOption {
 	return func(m *requestModifiers) error {
-		path = strings.TrimPrefix(path, "/")
-		path = strings.TrimSuffix(path, "/")
-		m.mountPath = path
+		// the mount path is expected to have no leading/trailing "/" characters
+		m.mountPath = strings.Trim(path, "/")
 		return nil
 	}
 }

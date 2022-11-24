@@ -10,11 +10,14 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 
 1. [Installation](#installation)
 1. [Examples](#examples)
-   - [Getting Started](#getting-started)
-   - [Accessing a Generated Endpoint](#accessing-a-generated-endpoint)
+   - [Getting started](#getting-started)
+   - [Authentication](#authentication)
+   - [Accessing generated methods](#accessing-generated-methods)
+   - [Modifying requests](#modifying-requests)
+   - [Error handling](#error-handling)
+   - [Response wrapping \& unwrapping](#response-wrapping--unwrapping)
    - [Using TLS](#using-tls)
    - [Using TLS with client-side certificate authentication](#using-tls-with-client-side-certificate-authentication)
-   - [Using enterprise namespaces](#using-enterprise-namespaces)
    - [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
    - [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
    - [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
@@ -31,7 +34,7 @@ go get github.com/hashicorp/vault-client-go
 
 ## Examples
 
-## Getting Started
+## Getting started
 
 Here is a simple example of using the library to read and write your first
 secret. For the sake of simplicity, we are authenticating with a root token.
@@ -62,7 +65,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// authenticate with a root token (not secure)
+	// authenticate with a root token (insecure)
 	if err := client.SetToken("my-token"); err != nil {
 		log.Fatal(err)
 	}
@@ -71,7 +74,7 @@ func main() {
 	_, err = client.Write(ctx, "/secret/data/my-secret", map[string]interface{}{
 		"data": map[string]interface{}{
 			"password1": "abc123",
-			"password2": "trustno1",
+			"password2": "correct horse battery staple",
 		},
 	})
 	if err != nil {
@@ -90,58 +93,137 @@ func main() {
 
 _**Note**_: we are using the simple `Read` and `Write` methods to demonstrate
 the most generic way of accessing any data in Vault. A more specialized
-approach for reading and writing `KVv2` secrets is to use the generated
+approach for reading and writing `kv-v2` secrets is to use the generated
 `client.Secrets.GetSecretDataPath` / `client.Secrets.PostSecretDataPath`
-endpoints.
+methods.
 
-## Accessing a Generated Endpoint
+## Authentication
 
-Below is another copy-pastable example of accessing a generated `GetSysMounts`
-method (equivalent to `vault secrets list` or `GET /v1/sys/mounts`) and
-printing the list of the currently-enabled secrets engines. In general, the
-generated endpoint are organized in four categories:
-
-- `client.Auth` - authentication-related endpoints
-- `client.Secrets` - endpoints dealing with secrets engines
-- `client.Identity` - identity-related endpoints
-- `client.System` - various system-wide calls
+In the previous example we used an insecure (root token) authentication method.
+For production applications, it is recommended to use [approle][doc-approle] or
+one of the platform-specific authentication methods instead (e.g.
+[kubernetes][doc-kubernetes], [AWS][doc-aws], [Azure][doc-azure], etc.). The
+functions to access these authentication methods are automatically generated
+under `client.Auth`. Below is an example of how to authenticate using `approle`
+authentication method. Please refer to the [approle documentation][doc-approle]
+for more details.
 
 ```go
-package main
-
-import (
-	"context"
-	"log"
-
-	vault "github.com/hashicorp/vault-client-go"
+resp, err := client.Auth.PostAuthApproleLogin(
+	ctx,
+	vault.ApproleLoginRequest{
+		RoleId:   os.Getenv("MY_APPROLE_ROLE_ID"),
+		SecretId: os.Getenv("MY_APPROLE_SECRET_ID"),
+	},
+	vault.WithMountPath("my/mount/path"), // optional, defaults to "approle"
 )
+if err != nil {
+	log.Fatal(err)
+}
 
-func main() {
-	ctx := context.Background()
-
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// send a request with "my-token" to get the current mounts (i.e. vault secrets list)
-	resp, err := client.WithToken("my-token").System.GetSysMounts(ctx)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// print the list of engines
-	log.Println("Currently-mounted secrets engines:")
-	for engine := range resp.Data {
-		log.Println(engine)
-	}
+if err := client.SetToken(resp.Auth.ClientToken); err != nil {
+	log.Fatal(err)
 }
 ```
 
-_**Note**_: the response data is currently stored in simple
-`map[string]interface{}`. Structured responses are coming soon!
+The secret identifier is often delivered as a wrapped token. In this case, you
+should unwrap it first using the following:
+
+```go
+unwrapped, err := vault.Unwrap<map[string]interface{}>(
+	ctx,
+	client,
+	os.Getenv("MY_APPROLE_SECRET_ID"),
+)
+if err != nil {
+	log.Fatal(err)
+}
+secret := unwrapped.Data["secret_id"]
+```
+
+## Accessing generated methods
+
+The library has a number of generated methods corresponding to the known Vault
+API endpoints. They are organized in four catagories:
+
+- `client.Auth` - authentication-related methods
+- `client.Secrets` - methods dealing with secrets engines
+- `client.Identity` - identity-related methods
+- `client.System` - various system-wide calls
+
+Below is an example of accessing a generated `GetSysMounts` method (equivalent
+to `vault secrets list` or `GET /v1/sys/mounts`):
+
+```go
+resp, err := client.System.GetSysMounts(ctx)
+if err != nil {
+	log.Fatal(err)
+}
+
+for engine := range resp.Data {
+	log.Println(engine)
+}
+```
+
+_**Note**_: the response data is currently returned as simple
+`map[string]interface{}` maps. Structured (strongly typed) responses are coming
+soon!
+
+### Modifying requests
+
+You can modify the requests in one of two ways, either at the client level or
+by decorating individual requests:
+
+```go
+// all subsequent requests will use the given token & namespace
+_ = client.SetToken("my-token")
+_ = client.SetNamespace("my-namespace")
+
+// per-request decorators take precedence over the client-level settings
+resp, _ = client.Read(
+	ctx,
+	"/secret/data/my-secret",
+	vault.WithToken("another-token"),
+	vault.WithNamespace("another-namespace"),
+)
+```
+
+### Error handling
+
+There are a couple specialized error types that the client can return:
+
+- `ResponseError` is the error returned when Vault responds with a status code
+  outside of the 200 - 399 range.
+- `RedirectError` is the error returned when the client fails to process a
+  redirect response.
+
+The client also provides a convenience function `vault.IsErrorStatus(...)` to
+simplify error handling:
+
+```go
+r, err := client.Read(ctx, "/secret/data/my-secret")
+if err != nil && !vault.IsErrorStatus(err, http.StatusNotFound) { // ignore 404 errors
+	log.Fatal(err)
+}
+```
+
+### Response wrapping & unwrapping
+
+Please refer to the [response-wrapping documentation][doc-response-wrapping]
+for more background information.
+
+```go
+// wrap the response with a 5 minute TTL
+resp, _ := client.Read(
+	ctx,
+	"/secret/data/my-secret",
+	vault.WithResponseWrapping(5*time.Minute)
+)
+wrapped := resp.WrapInfo.Token
+
+// unwrap the response (usually done elsewhere)
+unwrapped, _ := vault.Unwrap<map[string]interface{}>(ctx, client, wrapped)
+```
 
 ### Using TLS
 
@@ -191,32 +273,13 @@ if err != nil {
 	log.Fatal(err)
 }
 
-// 'resp' will contain an auth token
+if err := client.SetToken(resp.Auth.ClientToken); err != nil {
+	log.Fatal(err)
+}
 ```
 
 _**Note**_: this is a temporary solution using a generated endpoint. The user
 experience will be improved with the introduction of auth wrappers.
-
-### Using enterprise namespaces
-
-```go
-if err := client.SetNamespace("my-namespace"); err != nil {
-	log.Fatal(err)
-}
-resp, err := client.System.GetSysMounts(ctx)
-if err != nil {
-	log.Fatal(err)
-}
-```
-
-Alternatively, set the namespace for a single call with the following:
-
-```go
-resp, err := client.WithNamespace("my-namespace").System.GetSysMounts(ctx)
-if err != nil {
-	log.Fatal(err)
-}
-```
 
 ### Loading configuration from environment variables
 
@@ -246,8 +309,8 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 })
 ```
 
-Alternatively, `WithRequestCallbacks(..)` / `WithResponseCallbacks(..)` may be
-used to inject callbacks for individual requests.
+Alternatively, `vault.WithRequestCallbacks(..)` / `vault.WithResponseCallbacks(..)`
+may be used to inject callbacks for individual requests.
 
 ### Enforcing read-your-writes replication semantics
 
@@ -262,20 +325,35 @@ callbacks:
 var state string
 
 // write
-_, err := client.WithResponseCallbacks(vault.RecordReplicationState(
-	&state,
-)).Secrets.PostSecretDataPath(ctx, "my-secret", vault.KvDataRequest{
-	Data: map[string]interface{}{
-		"password": "abc123",
+_, err := client.Write(
+	ctx,
+	"/secret/data/my-secret",
+	map[string]interface{}{
+		"data": map[string]interface{}{
+			"password1": "abc123",
+			"password2": "correct horse battery staple",
+		},
 	},
-})
-...
+	vault.WithResponseCallbacks(
+		vault.RecordReplicationState(
+			&state,
+		),
+	),
+)
 
 // read
-resp, err := client.WithRequestCallbacks(vault.RequireReplicationStates(
-	state,
-)).Secrets.GetSecretDataPath(ctx, "my-secret")
-...
+r, err := client.Read(
+	ctx,
+	"/secret/data/my-secret",
+	vault.WithRequestCallbacks(
+		vault.RequireReplicationStates(
+			&state,
+		),
+	),
+)
+if err != nil {
+	log.Fatal(err)
+}
 ```
 
 Alternatively, enforce read-your-writes semantics for all requests using the
@@ -339,3 +417,8 @@ The following features are coming soon:
 [go-retryablehttp]:      https://github.com/hashicorp/go-retryablehttp
 [doc-consistency]:       https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
 [doc-replication]:       https://developer.hashicorp.com/vault/docs/internals/replication
+[doc-approle]:           https://developer.hashicorp.com/vault/docs/auth/approle
+[doc-kubernetes]:        https://developer.hashicorp.com/vault/docs/auth/kubernetes
+[doc-aws]:               https://developer.hashicorp.com/vault/docs/auth/aws
+[doc-azure]:             https://developer.hashicorp.com/vault/docs/auth/azure
+[doc-response-wrapping]: https://www.vaultproject.io/docs/concepts/response-wrapping 

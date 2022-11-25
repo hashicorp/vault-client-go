@@ -91,11 +91,11 @@ func main() {
 }
 ```
 
-_**Note**_: we are using the simple `Read` and `Write` methods to demonstrate
-the most generic way of accessing any data in Vault. A more specialized
-approach for reading and writing `kv-v2` secrets is to use the generated
-`client.Secrets.GetSecretDataPath` / `client.Secrets.PostSecretDataPath`
-methods.
+> _**Note**_: we are using the simple `Read` and `Write` methods to demonstrate
+> the most generic way of accessing any data in Vault. A more specialized
+> approach for reading and writing `kv-v2` secrets is to use the generated
+> `client.Secrets.GetSecretDataPath` / `client.Secrets.PostSecretDataPath`
+> methods.
 
 ## Authentication
 
@@ -141,6 +141,9 @@ if err != nil {
 secret := unwrapped.Data["secret_id"]
 ```
 
+> _**Note**_: this is a temporary solution using a generated method. The user
+> experience will be improved with the introduction of auth wrappers.
+
 ## Accessing generated methods
 
 The library has a number of generated methods corresponding to the known Vault
@@ -165,9 +168,9 @@ for engine := range resp.Data {
 }
 ```
 
-_**Note**_: the response data is currently returned as simple
-`map[string]interface{}` maps. Structured (strongly typed) responses are coming
-soon!
+> _**Note**_: the response data is currently returned as simple
+> `map[string]interface{}` maps. Structured (strongly typed) responses are coming
+> soon!
 
 ### Modifying requests
 
@@ -278,8 +281,8 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 }
 ```
 
-_**Note**_: this is a temporary solution using a generated endpoint. The user
-experience will be improved with the introduction of auth wrappers.
+> _**Note**_: this is a temporary solution using a generated method. The user
+> experience will be improved with the introduction of auth wrappers.
 
 ### Loading configuration from environment variables
 

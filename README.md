@@ -138,7 +138,7 @@ unwrapped, err := vault.Unwrap<map[string]interface{}>(
 if err != nil {
 	log.Fatal(err)
 }
-secret := unwrapped.Data["secret_id"]
+secretID := unwrapped.Data["secret_id"]
 ```
 
 > _**Note**_: this is a temporary solution using a generated method. The user

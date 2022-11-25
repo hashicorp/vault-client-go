@@ -190,16 +190,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysAuditPath(context.Background(), path)
+	resp, err := client.System.DeleteSysAuditPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -249,16 +253,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysAuthPath(context.Background(), path)
+	resp, err := client.System.DeleteSysAuthPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -308,16 +316,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	header := "header_example" // string | 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysConfigAuditingRequestHeadersHeader(context.Background(), header)
+	resp, err := client.System.DeleteSysConfigAuditingRequestHeadersHeader(
+		context.Background(),
+		header,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -367,15 +379,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysConfigCors(context.Background())
+	resp, err := client.System.DeleteSysConfigCors(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -418,16 +433,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	header := "header_example" // string | The name of the header.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysConfigUiHeadersHeader(context.Background(), header)
+	resp, err := client.System.DeleteSysConfigUiHeadersHeader(
+		context.Background(),
+		header,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -477,15 +496,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysGenerateRoot(context.Background())
+	resp, err := client.System.DeleteSysGenerateRoot(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -528,15 +550,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysGenerateRootAttempt(context.Background())
+	resp, err := client.System.DeleteSysGenerateRootAttempt(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -579,15 +604,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysLoggers(context.Background())
+	resp, err := client.System.DeleteSysLoggers(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -630,16 +658,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysLoggersName(context.Background(), name)
+	resp, err := client.System.DeleteSysLoggersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -689,16 +721,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysMountsPath(context.Background(), path)
+	resp, err := client.System.DeleteSysMountsPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -748,16 +784,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the plugin
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPluginsCatalogName(context.Background(), name)
+	resp, err := client.System.DeleteSysPluginsCatalogName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -807,9 +847,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -817,7 +857,12 @@ func main() {
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPluginsCatalogTypeName(context.Background(), name, type_)
+	resp, err := client.System.DeleteSysPluginsCatalogTypeName(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -869,16 +914,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPoliciesAclName(context.Background(), name)
+	resp, err := client.System.DeleteSysPoliciesAclName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -928,16 +977,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the password policy.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPoliciesPasswordName(context.Background(), name)
+	resp, err := client.System.DeleteSysPoliciesPasswordName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -987,16 +1040,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.DeleteSysPolicyName(context.Background(), name)
+	resp, err := client.System.DeleteSysPolicyName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1046,16 +1103,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the quota rule.
 
-	resp, err := client.WithToken("my-token").System.DeleteSysQuotasRateLimitName(context.Background(), name)
+	resp, err := client.System.DeleteSysQuotasRateLimitName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1105,15 +1166,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRaw(context.Background())
+	resp, err := client.System.DeleteSysRaw(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1156,16 +1220,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRawPath(context.Background(), path)
+	resp, err := client.System.DeleteSysRawPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1215,15 +1283,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyBackup(context.Background())
+	resp, err := client.System.DeleteSysRekeyBackup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1268,15 +1339,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyInit(context.Background())
+	resp, err := client.System.DeleteSysRekeyInit(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1319,15 +1393,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyRecoveryKeyBackup(context.Background())
+	resp, err := client.System.DeleteSysRekeyRecoveryKeyBackup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1372,15 +1449,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.DeleteSysRekeyVerify(context.Background())
+	resp, err := client.System.DeleteSysRekeyVerify(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1423,15 +1503,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysAudit(context.Background())
+	resp, err := client.System.GetSysAudit(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1474,15 +1557,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysAuth(context.Background())
+	resp, err := client.System.GetSysAuth(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1525,16 +1611,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 
-	resp, err := client.WithToken("my-token").System.GetSysAuthPath(context.Background(), path)
+	resp, err := client.System.GetSysAuthPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1586,16 +1676,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 
-	resp, err := client.WithToken("my-token").System.GetSysAuthPathTune(context.Background(), path)
+	resp, err := client.System.GetSysAuthPathTune(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1645,15 +1739,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysConfigAuditingRequestHeaders(context.Background())
+	resp, err := client.System.GetSysConfigAuditingRequestHeaders(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1696,16 +1793,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	header := "header_example" // string | 
 
-	resp, err := client.WithToken("my-token").System.GetSysConfigAuditingRequestHeadersHeader(context.Background(), header)
+	resp, err := client.System.GetSysConfigAuditingRequestHeadersHeader(
+		context.Background(),
+		header,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1755,15 +1856,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysConfigCors(context.Background())
+	resp, err := client.System.GetSysConfigCors(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1808,15 +1912,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysConfigStateSanitized(context.Background())
+	resp, err := client.System.GetSysConfigStateSanitized(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1859,16 +1966,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysConfigUiHeaders(context.Background(), list)
+	resp, err := client.System.GetSysConfigUiHeaders(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1914,16 +2025,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	header := "header_example" // string | The name of the header.
 
-	resp, err := client.WithToken("my-token").System.GetSysConfigUiHeadersHeader(context.Background(), header)
+	resp, err := client.System.GetSysConfigUiHeadersHeader(
+		context.Background(),
+		header,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1973,15 +2088,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysGenerateRoot(context.Background())
+	resp, err := client.System.GetSysGenerateRoot(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2024,15 +2142,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysGenerateRootAttempt(context.Background())
+	resp, err := client.System.GetSysGenerateRootAttempt(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2075,15 +2196,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysHaStatus(context.Background())
+	resp, err := client.System.GetSysHaStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2126,15 +2250,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysHealth(context.Background())
+	resp, err := client.System.GetSysHealth(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2179,15 +2306,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysHostInfo(context.Background())
+	resp, err := client.System.GetSysHostInfo(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2232,15 +2362,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInFlightReq(context.Background())
+	resp, err := client.System.GetSysInFlightReq(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2283,15 +2416,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInit(context.Background())
+	resp, err := client.System.GetSysInit(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2334,15 +2470,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersActivity(context.Background())
+	resp, err := client.System.GetSysInternalCountersActivity(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2385,15 +2524,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersActivityExport(context.Background())
+	resp, err := client.System.GetSysInternalCountersActivityExport(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2436,15 +2578,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersActivityMonthly(context.Background())
+	resp, err := client.System.GetSysInternalCountersActivityMonthly(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2487,15 +2632,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersConfig(context.Background())
+	resp, err := client.System.GetSysInternalCountersConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2538,15 +2686,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersEntities(context.Background())
+	resp, err := client.System.GetSysInternalCountersEntities(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2589,15 +2740,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersRequests(context.Background())
+	resp, err := client.System.GetSysInternalCountersRequests(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2640,15 +2794,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalCountersTokens(context.Background())
+	resp, err := client.System.GetSysInternalCountersTokens(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2691,16 +2848,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	tag := "tag_example" // string | Name of subtree being observed
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalInspectRouterTag(context.Background(), tag)
+	resp, err := client.System.GetSysInternalInspectRouterTag(
+		context.Background(),
+		tag,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2750,15 +2911,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalSpecsOpenapi(context.Background())
+	resp, err := client.System.GetSysInternalSpecsOpenapi(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2801,15 +2965,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiFeatureFlags(context.Background())
+	resp, err := client.System.GetSysInternalUiFeatureFlags(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2852,15 +3019,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiMounts(context.Background())
+	resp, err := client.System.GetSysInternalUiMounts(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2903,16 +3073,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | The path of the mount.
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiMountsPath(context.Background(), path)
+	resp, err := client.System.GetSysInternalUiMountsPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2962,15 +3136,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiNamespaces(context.Background())
+	resp, err := client.System.GetSysInternalUiNamespaces(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3013,15 +3190,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysInternalUiResultantAcl(context.Background())
+	resp, err := client.System.GetSysInternalUiResultantAcl(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3064,15 +3244,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysKeyStatus(context.Background())
+	resp, err := client.System.GetSysKeyStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3115,15 +3298,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysLeader(context.Background())
+	resp, err := client.System.GetSysLeader(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3166,15 +3352,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysLeases(context.Background())
+	resp, err := client.System.GetSysLeases(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3217,15 +3406,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysLeasesCount(context.Background())
+	resp, err := client.System.GetSysLeasesCount(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3268,16 +3460,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysLeasesLookup(context.Background(), list)
+	resp, err := client.System.GetSysLeasesLookup(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3323,9 +3519,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3333,7 +3529,12 @@ func main() {
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysLeasesLookupPrefix(context.Background(), prefix, list)
+	resp, err := client.System.GetSysLeasesLookupPrefix(
+		context.Background(),
+		prefix,
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3384,16 +3585,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	format := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysMetrics(context.Background(), format)
+	resp, err := client.System.GetSysMetrics(
+		context.Background(),
+		format,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3439,9 +3644,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3449,7 +3654,12 @@ func main() {
 
 	logFormat := NewstringWithDefaults()
 	logLevel := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysMonitor(context.Background(), logFormat, logLevel)
+	resp, err := client.System.GetSysMonitor(
+		context.Background(),
+		logFormat,
+		logLevel,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3496,15 +3706,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysMounts(context.Background())
+	resp, err := client.System.GetSysMounts(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3547,16 +3760,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
-	resp, err := client.WithToken("my-token").System.GetSysMountsPath(context.Background(), path)
+	resp, err := client.System.GetSysMountsPath(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3606,16 +3823,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
-	resp, err := client.WithToken("my-token").System.GetSysMountsPathTune(context.Background(), path)
+	resp, err := client.System.GetSysMountsPathTune(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3665,15 +3886,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalog(context.Background())
+	resp, err := client.System.GetSysPluginsCatalog(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3716,16 +3940,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the plugin
 
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalogName(context.Background(), name)
+	resp, err := client.System.GetSysPluginsCatalogName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3775,9 +4003,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3785,7 +4013,12 @@ func main() {
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalogType(context.Background(), type_, list)
+	resp, err := client.System.GetSysPluginsCatalogType(
+		context.Background(),
+		type_,
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3836,9 +4069,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3846,7 +4079,12 @@ func main() {
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
-	resp, err := client.WithToken("my-token").System.GetSysPluginsCatalogTypeName(context.Background(), name, type_)
+	resp, err := client.System.GetSysPluginsCatalogTypeName(
+		context.Background(),
+		name,
+		type_,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3898,16 +4136,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesAcl(context.Background(), list)
+	resp, err := client.System.GetSysPoliciesAcl(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3953,16 +4195,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesAclName(context.Background(), name)
+	resp, err := client.System.GetSysPoliciesAclName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4012,16 +4258,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesPassword(context.Background(), list)
+	resp, err := client.System.GetSysPoliciesPassword(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4067,16 +4317,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the password policy.
 
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesPasswordName(context.Background(), name)
+	resp, err := client.System.GetSysPoliciesPasswordName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4126,16 +4380,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the password policy.
 
-	resp, err := client.WithToken("my-token").System.GetSysPoliciesPasswordNameGenerate(context.Background(), name)
+	resp, err := client.System.GetSysPoliciesPasswordNameGenerate(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4185,16 +4443,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysPolicy(context.Background(), list)
+	resp, err := client.System.GetSysPolicy(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4240,16 +4502,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-	resp, err := client.WithToken("my-token").System.GetSysPolicyName(context.Background(), name)
+	resp, err := client.System.GetSysPolicyName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4301,15 +4567,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprof(context.Background())
+	resp, err := client.System.GetSysPprof(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4354,15 +4623,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofAllocs(context.Background())
+	resp, err := client.System.GetSysPprofAllocs(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4407,15 +4679,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofBlock(context.Background())
+	resp, err := client.System.GetSysPprofBlock(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4460,15 +4735,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofCmdline(context.Background())
+	resp, err := client.System.GetSysPprofCmdline(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4513,15 +4791,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofGoroutine(context.Background())
+	resp, err := client.System.GetSysPprofGoroutine(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4566,15 +4847,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofHeap(context.Background())
+	resp, err := client.System.GetSysPprofHeap(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4619,15 +4903,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofMutex(context.Background())
+	resp, err := client.System.GetSysPprofMutex(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4672,15 +4959,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofProfile(context.Background())
+	resp, err := client.System.GetSysPprofProfile(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4725,15 +5015,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofSymbol(context.Background())
+	resp, err := client.System.GetSysPprofSymbol(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4778,15 +5071,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofThreadcreate(context.Background())
+	resp, err := client.System.GetSysPprofThreadcreate(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4831,15 +5127,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysPprofTrace(context.Background())
+	resp, err := client.System.GetSysPprofTrace(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4882,15 +5181,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysQuotasConfig(context.Background())
+	resp, err := client.System.GetSysQuotasConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4933,16 +5235,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysQuotasRateLimit(context.Background(), list)
+	resp, err := client.System.GetSysQuotasRateLimit(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4988,16 +5294,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the quota rule.
 
-	resp, err := client.WithToken("my-token").System.GetSysQuotasRateLimitName(context.Background(), name)
+	resp, err := client.System.GetSysQuotasRateLimitName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5047,16 +5357,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysRaw(context.Background(), list)
+	resp, err := client.System.GetSysRaw(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5102,9 +5416,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5112,7 +5426,12 @@ func main() {
 	path := "path_example" // string | 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysRawPath(context.Background(), path, list)
+	resp, err := client.System.GetSysRawPath(
+		context.Background(),
+		path,
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5163,15 +5482,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyBackup(context.Background())
+	resp, err := client.System.GetSysRekeyBackup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5214,15 +5536,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyInit(context.Background())
+	resp, err := client.System.GetSysRekeyInit(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5265,15 +5590,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyRecoveryKeyBackup(context.Background())
+	resp, err := client.System.GetSysRekeyRecoveryKeyBackup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5316,15 +5644,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRekeyVerify(context.Background())
+	resp, err := client.System.GetSysRekeyVerify(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5367,16 +5698,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	migrationId := "migrationId_example" // string | The ID of the migration operation
 
-	resp, err := client.WithToken("my-token").System.GetSysRemountStatusMigrationId(context.Background(), migrationId)
+	resp, err := client.System.GetSysRemountStatusMigrationId(
+		context.Background(),
+		migrationId,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5426,15 +5761,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysReplicationStatus(context.Background())
+	resp, err := client.System.GetSysReplicationStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5477,15 +5815,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysRotateConfig(context.Background())
+	resp, err := client.System.GetSysRotateConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5528,15 +5869,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysSealStatus(context.Background())
+	resp, err := client.System.GetSysSealStatus(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5579,16 +5923,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").System.GetSysVersionHistory(context.Background(), list)
+	resp, err := client.System.GetSysVersionHistory(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5634,15 +5982,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.GetSysWrappingLookup(context.Background())
+	resp, err := client.System.GetSysWrappingLookup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5685,9 +6036,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5695,7 +6046,12 @@ func main() {
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 
 	systemAuditHashRequest := NewSystemAuditHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuditHashPath(context.Background(), path, systemAuditHashRequest)
+	resp, err := client.System.PostSysAuditHashPath(
+		context.Background(),
+		path,
+		systemAuditHashRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5746,9 +6102,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5756,7 +6112,12 @@ func main() {
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 
 	systemAuditRequest := NewSystemAuditRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuditPath(context.Background(), path, systemAuditRequest)
+	resp, err := client.System.PostSysAuditPath(
+		context.Background(),
+		path,
+		systemAuditRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5809,9 +6170,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5819,7 +6180,12 @@ func main() {
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 
 	systemAuthRequest := NewSystemAuthRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuthPath(context.Background(), path, systemAuthRequest)
+	resp, err := client.System.PostSysAuthPath(
+		context.Background(),
+		path,
+		systemAuthRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5872,9 +6238,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5882,7 +6248,12 @@ func main() {
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 
 	systemAuthTuneRequest := NewSystemAuthTuneRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysAuthPathTune(context.Background(), path, systemAuthTuneRequest)
+	resp, err := client.System.PostSysAuthPathTune(
+		context.Background(),
+		path,
+		systemAuthTuneRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5933,16 +6304,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemCapabilitiesRequest := NewSystemCapabilitiesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysCapabilities(context.Background(), systemCapabilitiesRequest)
+	resp, err := client.System.PostSysCapabilities(
+		context.Background(),
+		systemCapabilitiesRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5988,16 +6363,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemCapabilitiesAccessorRequest := NewSystemCapabilitiesAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysCapabilitiesAccessor(context.Background(), systemCapabilitiesAccessorRequest)
+	resp, err := client.System.PostSysCapabilitiesAccessor(
+		context.Background(),
+		systemCapabilitiesAccessorRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6043,16 +6422,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemCapabilitiesSelfRequest := NewSystemCapabilitiesSelfRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysCapabilitiesSelf(context.Background(), systemCapabilitiesSelfRequest)
+	resp, err := client.System.PostSysCapabilitiesSelf(
+		context.Background(),
+		systemCapabilitiesSelfRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6098,9 +6481,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6108,7 +6491,12 @@ func main() {
 	header := "header_example" // string | 
 
 	systemConfigAuditingRequestHeadersRequest := NewSystemConfigAuditingRequestHeadersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysConfigAuditingRequestHeadersHeader(context.Background(), header, systemConfigAuditingRequestHeadersRequest)
+	resp, err := client.System.PostSysConfigAuditingRequestHeadersHeader(
+		context.Background(),
+		header,
+		systemConfigAuditingRequestHeadersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6159,16 +6547,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemConfigCorsRequest := NewSystemConfigCorsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysConfigCors(context.Background(), systemConfigCorsRequest)
+	resp, err := client.System.PostSysConfigCors(
+		context.Background(),
+		systemConfigCorsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6214,16 +6606,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	subsystem := "subsystem_example" // string | 
 
-	resp, err := client.WithToken("my-token").System.PostSysConfigReloadSubsystem(context.Background(), subsystem)
+	resp, err := client.System.PostSysConfigReloadSubsystem(
+		context.Background(),
+		subsystem,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6273,9 +6669,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6283,7 +6679,12 @@ func main() {
 	header := "header_example" // string | The name of the header.
 
 	systemConfigUiHeadersRequest := NewSystemConfigUiHeadersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysConfigUiHeadersHeader(context.Background(), header, systemConfigUiHeadersRequest)
+	resp, err := client.System.PostSysConfigUiHeadersHeader(
+		context.Background(),
+		header,
+		systemConfigUiHeadersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6336,16 +6737,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemGenerateRootRequest := NewSystemGenerateRootRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysGenerateRoot(context.Background(), systemGenerateRootRequest)
+	resp, err := client.System.PostSysGenerateRoot(
+		context.Background(),
+		systemGenerateRootRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6393,16 +6798,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemGenerateRootAttemptRequest := NewSystemGenerateRootAttemptRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysGenerateRootAttempt(context.Background(), systemGenerateRootAttemptRequest)
+	resp, err := client.System.PostSysGenerateRootAttempt(
+		context.Background(),
+		systemGenerateRootAttemptRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6450,16 +6859,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemGenerateRootUpdateRequest := NewSystemGenerateRootUpdateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysGenerateRootUpdate(context.Background(), systemGenerateRootUpdateRequest)
+	resp, err := client.System.PostSysGenerateRootUpdate(
+		context.Background(),
+		systemGenerateRootUpdateRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6507,16 +6920,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemInitRequest := NewSystemInitRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysInit(context.Background(), systemInitRequest)
+	resp, err := client.System.PostSysInit(
+		context.Background(),
+		systemInitRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6562,16 +6979,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemInternalCountersConfigRequest := NewSystemInternalCountersConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysInternalCountersConfig(context.Background(), systemInternalCountersConfigRequest)
+	resp, err := client.System.PostSysInternalCountersConfig(
+		context.Background(),
+		systemInternalCountersConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6617,16 +7038,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemLeasesLookupRequest := NewSystemLeasesLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesLookup(context.Background(), systemLeasesLookupRequest)
+	resp, err := client.System.PostSysLeasesLookup(
+		context.Background(),
+		systemLeasesLookupRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6672,16 +7097,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemLeasesRenewRequest := NewSystemLeasesRenewRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRenew(context.Background(), systemLeasesRenewRequest)
+	resp, err := client.System.PostSysLeasesRenew(
+		context.Background(),
+		systemLeasesRenewRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6727,9 +7156,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6737,7 +7166,12 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemLeasesRenewLeaseRequest := NewSystemLeasesRenewLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRenewUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRenewLeaseRequest)
+	resp, err := client.System.PostSysLeasesRenewUrlLeaseId(
+		context.Background(),
+		urlLeaseId,
+		systemLeasesRenewLeaseRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6788,16 +7222,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemLeasesRevokeRequest := NewSystemLeasesRevokeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevoke(context.Background(), systemLeasesRevokeRequest)
+	resp, err := client.System.PostSysLeasesRevoke(
+		context.Background(),
+		systemLeasesRevokeRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6845,16 +7283,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevokeForcePrefix(context.Background(), prefix)
+	resp, err := client.System.PostSysLeasesRevokeForcePrefix(
+		context.Background(),
+		prefix,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6904,9 +7346,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6914,7 +7356,12 @@ func main() {
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
 	systemLeasesRevokePrefixRequest := NewSystemLeasesRevokePrefixRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevokePrefixPrefix(context.Background(), prefix, systemLeasesRevokePrefixRequest)
+	resp, err := client.System.PostSysLeasesRevokePrefixPrefix(
+		context.Background(),
+		prefix,
+		systemLeasesRevokePrefixRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6965,9 +7412,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6975,7 +7422,12 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemLeasesRevokeLeaseRequest := NewSystemLeasesRevokeLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId, systemLeasesRevokeLeaseRequest)
+	resp, err := client.System.PostSysLeasesRevokeUrlLeaseId(
+		context.Background(),
+		urlLeaseId,
+		systemLeasesRevokeLeaseRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7026,15 +7478,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysLeasesTidy(context.Background())
+	resp, err := client.System.PostSysLeasesTidy(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7077,16 +7532,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemLoggersRequest := NewSystemLoggersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLoggers(context.Background(), systemLoggersRequest)
+	resp, err := client.System.PostSysLoggers(
+		context.Background(),
+		systemLoggersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7132,9 +7591,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7142,7 +7601,12 @@ func main() {
 	name := "name_example" // string | The name of the logger to be modified.
 
 	systemLoggersRequest := NewSystemLoggersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysLoggersName(context.Background(), name, systemLoggersRequest)
+	resp, err := client.System.PostSysLoggersName(
+		context.Background(),
+		name,
+		systemLoggersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7193,16 +7657,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemMfaValidateRequest := NewSystemMfaValidateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysMfaValidate(context.Background(), systemMfaValidateRequest)
+	resp, err := client.System.PostSysMfaValidate(
+		context.Background(),
+		systemMfaValidateRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7248,9 +7716,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7258,7 +7726,12 @@ func main() {
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
 	systemMountsRequest := NewSystemMountsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysMountsPath(context.Background(), path, systemMountsRequest)
+	resp, err := client.System.PostSysMountsPath(
+		context.Background(),
+		path,
+		systemMountsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7309,9 +7782,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7319,7 +7792,12 @@ func main() {
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
 	systemMountsTuneRequest := NewSystemMountsTuneRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysMountsPathTune(context.Background(), path, systemMountsTuneRequest)
+	resp, err := client.System.PostSysMountsPathTune(
+		context.Background(),
+		path,
+		systemMountsTuneRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7370,9 +7848,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7380,7 +7858,12 @@ func main() {
 	name := "name_example" // string | The name of the plugin
 
 	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPluginsCatalogName(context.Background(), name, systemPluginsCatalogRequest)
+	resp, err := client.System.PostSysPluginsCatalogName(
+		context.Background(),
+		name,
+		systemPluginsCatalogRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7431,9 +7914,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7442,7 +7925,13 @@ func main() {
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
 	systemPluginsCatalogRequest := NewSystemPluginsCatalogRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPluginsCatalogTypeName(context.Background(), name, type_, systemPluginsCatalogRequest)
+	resp, err := client.System.PostSysPluginsCatalogTypeName(
+		context.Background(),
+		name,
+		type_,
+		systemPluginsCatalogRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7497,16 +7986,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemPluginsReloadBackendRequest := NewSystemPluginsReloadBackendRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPluginsReloadBackend(context.Background(), systemPluginsReloadBackendRequest)
+	resp, err := client.System.PostSysPluginsReloadBackend(
+		context.Background(),
+		systemPluginsReloadBackendRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7552,9 +8045,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7562,7 +8055,12 @@ func main() {
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
 	systemPoliciesAclRequest := NewSystemPoliciesAclRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPoliciesAclName(context.Background(), name, systemPoliciesAclRequest)
+	resp, err := client.System.PostSysPoliciesAclName(
+		context.Background(),
+		name,
+		systemPoliciesAclRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7613,9 +8111,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7623,7 +8121,12 @@ func main() {
 	name := "name_example" // string | The name of the password policy.
 
 	systemPoliciesPasswordRequest := NewSystemPoliciesPasswordRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPoliciesPasswordName(context.Background(), name, systemPoliciesPasswordRequest)
+	resp, err := client.System.PostSysPoliciesPasswordName(
+		context.Background(),
+		name,
+		systemPoliciesPasswordRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7674,9 +8177,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7684,7 +8187,12 @@ func main() {
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 
 	systemPolicyRequest := NewSystemPolicyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysPolicyName(context.Background(), name, systemPolicyRequest)
+	resp, err := client.System.PostSysPolicyName(
+		context.Background(),
+		name,
+		systemPolicyRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7735,16 +8243,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemQuotasConfigRequest := NewSystemQuotasConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysQuotasConfig(context.Background(), systemQuotasConfigRequest)
+	resp, err := client.System.PostSysQuotasConfig(
+		context.Background(),
+		systemQuotasConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7790,9 +8302,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7800,7 +8312,12 @@ func main() {
 	name := "name_example" // string | Name of the quota rule.
 
 	systemQuotasRateLimitRequest := NewSystemQuotasRateLimitRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysQuotasRateLimitName(context.Background(), name, systemQuotasRateLimitRequest)
+	resp, err := client.System.PostSysQuotasRateLimitName(
+		context.Background(),
+		name,
+		systemQuotasRateLimitRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7851,16 +8368,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRawRequest := NewSystemRawRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRaw(context.Background(), systemRawRequest)
+	resp, err := client.System.PostSysRaw(
+		context.Background(),
+		systemRawRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7906,9 +8427,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7916,7 +8437,12 @@ func main() {
 	path := "path_example" // string | 
 
 	systemRawRequest := NewSystemRawRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRawPath(context.Background(), path, systemRawRequest)
+	resp, err := client.System.PostSysRawPath(
+		context.Background(),
+		path,
+		systemRawRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7969,16 +8495,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRekeyInitRequest := NewSystemRekeyInitRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRekeyInit(context.Background(), systemRekeyInitRequest)
+	resp, err := client.System.PostSysRekeyInit(
+		context.Background(),
+		systemRekeyInitRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8024,16 +8554,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRekeyUpdateRequest := NewSystemRekeyUpdateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRekeyUpdate(context.Background(), systemRekeyUpdateRequest)
+	resp, err := client.System.PostSysRekeyUpdate(
+		context.Background(),
+		systemRekeyUpdateRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8079,16 +8613,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRekeyVerifyRequest := NewSystemRekeyVerifyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRekeyVerify(context.Background(), systemRekeyVerifyRequest)
+	resp, err := client.System.PostSysRekeyVerify(
+		context.Background(),
+		systemRekeyVerifyRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8134,16 +8672,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRemountRequest := NewSystemRemountRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRemount(context.Background(), systemRemountRequest)
+	resp, err := client.System.PostSysRemount(
+		context.Background(),
+		systemRemountRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8189,16 +8731,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRenewRequest := NewSystemRenewRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRenew(context.Background(), systemRenewRequest)
+	resp, err := client.System.PostSysRenew(
+		context.Background(),
+		systemRenewRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8244,9 +8790,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8254,7 +8800,12 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemRenewLeaseRequest := NewSystemRenewLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRenewUrlLeaseId(context.Background(), urlLeaseId, systemRenewLeaseRequest)
+	resp, err := client.System.PostSysRenewUrlLeaseId(
+		context.Background(),
+		urlLeaseId,
+		systemRenewLeaseRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8305,16 +8856,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRevokeRequest := NewSystemRevokeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRevoke(context.Background(), systemRevokeRequest)
+	resp, err := client.System.PostSysRevoke(
+		context.Background(),
+		systemRevokeRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8362,16 +8917,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
-	resp, err := client.WithToken("my-token").System.PostSysRevokeForcePrefix(context.Background(), prefix)
+	resp, err := client.System.PostSysRevokeForcePrefix(
+		context.Background(),
+		prefix,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8421,9 +8980,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8431,7 +8990,12 @@ func main() {
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
 	systemRevokePrefixRequest := NewSystemRevokePrefixRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRevokePrefixPrefix(context.Background(), prefix, systemRevokePrefixRequest)
+	resp, err := client.System.PostSysRevokePrefixPrefix(
+		context.Background(),
+		prefix,
+		systemRevokePrefixRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8482,9 +9046,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8492,7 +9056,12 @@ func main() {
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 
 	systemRevokeLeaseRequest := NewSystemRevokeLeaseRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRevokeUrlLeaseId(context.Background(), urlLeaseId, systemRevokeLeaseRequest)
+	resp, err := client.System.PostSysRevokeUrlLeaseId(
+		context.Background(),
+		urlLeaseId,
+		systemRevokeLeaseRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8543,15 +9112,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysRotate(context.Background())
+	resp, err := client.System.PostSysRotate(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8594,16 +9166,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemRotateConfigRequest := NewSystemRotateConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysRotateConfig(context.Background(), systemRotateConfigRequest)
+	resp, err := client.System.PostSysRotateConfig(
+		context.Background(),
+		systemRotateConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8649,15 +9225,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysSeal(context.Background())
+	resp, err := client.System.PostSysSeal(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8702,15 +9281,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysStepDown(context.Background())
+	resp, err := client.System.PostSysStepDown(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8753,16 +9335,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsHash(context.Background(), systemToolsHashRequest)
+	resp, err := client.System.PostSysToolsHash(
+		context.Background(),
+		systemToolsHashRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8808,9 +9394,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8818,7 +9404,12 @@ func main() {
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 
 	systemToolsHashRequest := NewSystemToolsHashRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsHashUrlalgorithm(context.Background(), urlalgorithm, systemToolsHashRequest)
+	resp, err := client.System.PostSysToolsHashUrlalgorithm(
+		context.Background(),
+		urlalgorithm,
+		systemToolsHashRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8869,16 +9460,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandom(context.Background(), systemToolsRandomRequest)
+	resp, err := client.System.PostSysToolsRandom(
+		context.Background(),
+		systemToolsRandomRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8924,9 +9519,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8934,7 +9529,12 @@ func main() {
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandomSource(context.Background(), source, systemToolsRandomRequest)
+	resp, err := client.System.PostSysToolsRandomSource(
+		context.Background(),
+		source,
+		systemToolsRandomRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8985,9 +9585,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8996,7 +9596,13 @@ func main() {
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes, systemToolsRandomRequest)
+	resp, err := client.System.PostSysToolsRandomSourceUrlbytes(
+		context.Background(),
+		source,
+		urlbytes,
+		systemToolsRandomRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9049,9 +9655,9 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9059,7 +9665,12 @@ func main() {
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 
 	systemToolsRandomRequest := NewSystemToolsRandomRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysToolsRandomUrlbytes(context.Background(), urlbytes, systemToolsRandomRequest)
+	resp, err := client.System.PostSysToolsRandomUrlbytes(
+		context.Background(),
+		urlbytes,
+		systemToolsRandomRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9110,16 +9721,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemUnsealRequest := NewSystemUnsealRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysUnseal(context.Background(), systemUnsealRequest)
+	resp, err := client.System.PostSysUnseal(
+		context.Background(),
+		systemUnsealRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9165,16 +9780,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemWrappingLookupRequest := NewSystemWrappingLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysWrappingLookup(context.Background(), systemWrappingLookupRequest)
+	resp, err := client.System.PostSysWrappingLookup(
+		context.Background(),
+		systemWrappingLookupRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9220,16 +9839,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemWrappingRewrapRequest := NewSystemWrappingRewrapRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysWrappingRewrap(context.Background(), systemWrappingRewrapRequest)
+	resp, err := client.System.PostSysWrappingRewrap(
+		context.Background(),
+		systemWrappingRewrapRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9275,16 +9898,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
 	systemWrappingUnwrapRequest := NewSystemWrappingUnwrapRequestWithDefaults()
-	resp, err := client.WithToken("my-token").System.PostSysWrappingUnwrap(context.Background(), systemWrappingUnwrapRequest)
+	resp, err := client.System.PostSysWrappingUnwrap(
+		context.Background(),
+		systemWrappingUnwrapRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9330,15 +9957,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 
-	resp, err := client.WithToken("my-token").System.PostSysWrappingWrap(context.Background())
+	resp, err := client.System.PostSysWrappingWrap(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}

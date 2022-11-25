@@ -32,17 +32,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
-{{#allParams}}{{#isPathParam}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/isPathParam}}{{/allParams}}
+{{#allParams}}{{#isPathParam}}{{#required}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}{{/isPathParam}}{{/allParams}}
 {{#allParams}}{{^isPathParam}}
 	{{paramName}} := New{{{dataType}}}WithDefaults(){{/isPathParam}}{{/allParams}}
-	resp, err := client.WithToken("my-token").{{classname}}.{{operationId}}(context.Background(){{#pathParams}}, {{paramName}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}}{{/isPathParam}}{{/allParams}})
+	resp, err := client.{{classname}}.{{operationId}}(
+		context.Background(),{{#pathParams}}{{#required}}
+		{{paramName}},{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}
+		{{paramName}},{{/isPathParam}}{{/allParams}}
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}

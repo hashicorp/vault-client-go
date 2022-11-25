@@ -205,8 +205,14 @@ simplify error handling:
 
 ```go
 r, err := client.Read(ctx, "/secret/data/my-secret")
-if err != nil && !vault.IsErrorStatus(err, http.StatusNotFound) { // ignore 404 errors
-	log.Fatal(err)
+if err != nil {
+	if vault.IsErrorStatus(err, http.StatusForbidden) {
+		// special handling for 403 errors
+	}
+	if vault.IsErrorStatus(err, http.StatusNotFound) {
+		// special handling for 404 errors
+	}
+	return err
 }
 ```
 

@@ -127,19 +127,7 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 ```
 
 The secret identifier is often delivered as a wrapped token. In this case, you
-should unwrap it first using the following:
-
-```go
-unwrapped, err := vault.Unwrap<map[string]interface{}>(
-	ctx,
-	client,
-	os.Getenv("MY_APPROLE_SECRET_ID"),
-)
-if err != nil {
-	log.Fatal(err)
-}
-secretID := unwrapped.Data["secret_id"]
-```
+should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 
 > _**Note**_: this is a temporary solution using a generated method. The user
 > experience will be improved with the introduction of auth wrappers.
@@ -186,8 +174,8 @@ _ = client.SetNamespace("my-namespace")
 resp, _ = client.Read(
 	ctx,
 	"/secret/data/my-secret",
-	vault.WithToken("another-token"),
-	vault.WithNamespace("another-namespace"),
+	vault.WithToken("request-specific-token"),
+	vault.WithNamespace("request-specific-namespace"),
 )
 ```
 

@@ -214,7 +214,7 @@ for more background information.
 resp, _ := client.Read(
 	ctx,
 	"/secret/data/my-secret",
-	vault.WithResponseWrapping(5*time.Minute)
+	vault.WithResponseWrapping(5*time.Minute),
 )
 wrapped := resp.WrapInfo.Token
 

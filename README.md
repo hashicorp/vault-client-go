@@ -219,7 +219,7 @@ resp, _ := client.Read(
 wrapped := resp.WrapInfo.Token
 
 // unwrap the response (usually done elsewhere)
-unwrapped, _ := vault.Unwrap<map[string]interface{}>(ctx, client, wrapped)
+unwrapped, _ := vault.Unwrap[map[string]any](ctx, client, wrapped)
 ```
 
 ### Using TLS

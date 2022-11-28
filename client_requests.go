@@ -292,16 +292,15 @@ func (c *Client) handleRedirect(req *http.Request, resp *http.Response, redirect
 
 	// a helper function to form a redirect error
 	redirectError := func(redirectTo *url.URL, message string, args ...any) *RedirectError {
-		var redirectURL string
+		var redirectLocation string
 		if redirectTo != nil {
-			redirectURL = redirectTo.String()
+			redirectLocation = redirectTo.String()
 		}
 		return &RedirectError{
-			StatusCode:    resp.StatusCode,
-			Message:       fmt.Sprintf(message, args...),
-			RedirectURL:   redirectURL,
-			RequestMethod: req.Method,
-			RequestURL:    req.URL.String(),
+			StatusCode:       resp.StatusCode,
+			Message:          fmt.Sprintf(message, args...),
+			RedirectLocation: redirectLocation,
+			OriginalRequest:  req,
 		}
 	}
 

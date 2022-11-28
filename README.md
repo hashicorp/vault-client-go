@@ -57,7 +57,7 @@ import (
 func main() {
 	ctx := context.Background()
 
-	// prepare a client with default configuration, except for the address
+	// prepare a client with the given base address
 	client, err := vault.New(
 		vault.WithBaseAddress("http://127.0.0.1:8200"),
 	)
@@ -71,8 +71,8 @@ func main() {
 	}
 
 	// write a secret
-	_, err = client.Write(ctx, "/secret/data/my-secret", map[string]interface{}{
-		"data": map[string]interface{}{
+	_, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
+		"data": map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
 		},
@@ -157,7 +157,7 @@ for engine := range resp.Data {
 ```
 
 > _**Note**_: the response data is currently returned as simple
-> `map[string]interface{}` maps. Structured (strongly typed) responses are coming
+> `map[string]any` maps. Structured (strongly typed) responses are coming
 > soon!
 
 ### Modifying requests
@@ -232,8 +232,8 @@ tls := vault.TLSConfiguration{}
 tls.ServerCertificate.FromFile = "/tmp/vault-ca.pem"
 
 client, err := vault.New(
-	vault.WithBaseAddress("https://localhost:8200")
-	vault.WithTLS(tls)
+	vault.WithBaseAddress("https://localhost:8200"),
+	vault.WithTLS(tls),
 )
 if err != nil {
 	log.Fatal(err)
@@ -256,8 +256,8 @@ tls.ClientCertificate.FromFile = "/tmp/client-cert.pem"
 tls.ClientCertificateKey.FromFile = "/tmp/client-cert-key.pem"
 
 client, err := vault.New(
-	vault.WithBaseAddress("https://localhost:8200")
-	vault.WithTLS(tls)
+	vault.WithBaseAddress("https://localhost:8200"),
+	vault.WithTLS(tls),
 )
 if err != nil {
 	log.Fatal(err)

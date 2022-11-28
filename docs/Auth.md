@@ -315,7 +315,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**alicloudMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;alicloud&quot;]
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
@@ -380,7 +379,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -445,7 +443,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -510,7 +507,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -575,7 +571,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -640,7 +635,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -705,7 +699,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -770,7 +763,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -835,7 +827,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -900,7 +891,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -965,7 +955,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -1030,7 +1019,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -1095,7 +1083,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -1160,7 +1147,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -1225,7 +1211,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -1290,7 +1275,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
@@ -1353,7 +1337,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1417,7 +1400,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1479,7 +1461,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1540,7 +1521,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1601,7 +1581,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1662,7 +1641,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -1725,7 +1703,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
@@ -1790,7 +1767,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
@@ -1855,7 +1831,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -1920,7 +1895,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -1985,7 +1959,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -2048,7 +2021,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 
 ### Other Parameters
 
@@ -2111,7 +2083,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -2176,7 +2147,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -2241,7 +2211,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -2304,7 +2273,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 
 ### Other Parameters
 
@@ -2367,7 +2335,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
@@ -2432,7 +2399,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -2497,7 +2463,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
@@ -2562,7 +2527,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
@@ -2627,7 +2591,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -2692,7 +2655,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -2757,7 +2719,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kubernetesMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kubernetes&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -2822,7 +2783,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -2887,7 +2847,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
@@ -2950,7 +2909,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 
 ### Other Parameters
 
@@ -3013,7 +2971,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -3079,7 +3036,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -3144,7 +3100,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -3209,7 +3164,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -3274,7 +3228,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 
 ### Other Parameters
 
@@ -3339,7 +3292,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -3404,7 +3356,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
-**userpassMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 
 ### Other Parameters
 
@@ -3468,7 +3419,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**alicloudMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;alicloud&quot;]
 
 ### Other Parameters
 
@@ -3532,7 +3482,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**alicloudMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;alicloud&quot;]
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
@@ -3597,7 +3546,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**alicloudMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;alicloud&quot;]
 
 ### Other Parameters
 
@@ -3661,7 +3609,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 
 ### Other Parameters
 
@@ -3725,7 +3672,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -3790,7 +3736,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -3855,7 +3800,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -3920,7 +3864,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -3985,7 +3928,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4050,7 +3992,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4115,7 +4056,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4182,7 +4122,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4248,7 +4187,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4313,7 +4251,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4378,7 +4315,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4443,7 +4379,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4508,7 +4443,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4573,7 +4507,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4638,7 +4571,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -4703,7 +4635,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
@@ -4768,7 +4699,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -4830,7 +4760,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -4891,7 +4820,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -4954,7 +4882,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5019,7 +4946,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5081,7 +5007,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5142,7 +5067,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5203,7 +5127,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5264,7 +5187,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5327,7 +5249,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5391,7 +5312,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
@@ -5456,7 +5376,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5520,7 +5439,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **instanceId** | **string** | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID. | 
 
 ### Other Parameters
@@ -5585,7 +5503,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5649,7 +5566,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -5714,7 +5630,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5778,7 +5693,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5842,7 +5756,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -5907,7 +5820,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -5971,7 +5883,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -6034,7 +5945,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 
 ### Other Parameters
 
@@ -6097,7 +6007,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 
 ### Other Parameters
 
@@ -6161,7 +6070,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -6224,7 +6132,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**centrifyMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;centrify&quot;]
 
 ### Other Parameters
 
@@ -6287,7 +6194,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 
 ### Other Parameters
 
@@ -6351,7 +6257,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -6414,7 +6319,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 
 ### Other Parameters
 
@@ -6477,7 +6381,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -6540,7 +6443,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 
 ### Other Parameters
 
@@ -6603,7 +6505,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 
 ### Other Parameters
 
@@ -6667,7 +6568,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
@@ -6730,7 +6630,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
@@ -6793,7 +6692,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
@@ -6857,7 +6755,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -6922,7 +6819,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
@@ -6984,7 +6880,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -7047,7 +6942,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -7111,7 +7005,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
@@ -7176,7 +7069,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -7240,7 +7132,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
@@ -7303,7 +7194,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 
 ### Other Parameters
 
@@ -7364,7 +7254,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 
 ### Other Parameters
 
@@ -7429,7 +7318,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 
 ### Other Parameters
 
@@ -7493,7 +7381,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -7556,7 +7443,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -7617,7 +7503,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -7680,7 +7565,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -7744,7 +7628,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -7807,7 +7690,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -7868,7 +7750,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kubernetesMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kubernetes&quot;]
 
 ### Other Parameters
 
@@ -7931,7 +7812,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kubernetesMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kubernetes&quot;]
 
 ### Other Parameters
 
@@ -7995,7 +7875,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kubernetesMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kubernetes&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -8058,7 +7937,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 
 ### Other Parameters
 
@@ -8121,7 +7999,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 
 ### Other Parameters
 
@@ -8185,7 +8062,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -8250,7 +8126,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 
 ### Other Parameters
 
@@ -8314,7 +8189,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
@@ -8377,7 +8251,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 
 ### Other Parameters
 
@@ -8440,7 +8313,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 
 ### Other Parameters
 
@@ -8504,7 +8376,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -8567,7 +8438,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -8628,7 +8498,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -8693,7 +8562,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -8758,7 +8626,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -8820,7 +8687,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -8883,7 +8749,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -8948,7 +8813,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -9012,7 +8876,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -9077,7 +8940,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -9142,7 +9004,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **nonce** | **string** | Nonce provided during a login request to retrieve the number verification challenge for the matching request. | 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -9204,7 +9065,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 
 ### Other Parameters
 
@@ -9267,7 +9127,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 
 ### Other Parameters
 
@@ -9332,7 +9191,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 
 ### Other Parameters
 
@@ -9396,7 +9254,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -9458,7 +9315,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -9519,7 +9375,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -9582,7 +9437,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -9647,7 +9501,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -9711,7 +9564,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**userpassMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 
 ### Other Parameters
 
@@ -9776,7 +9628,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
-**userpassMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 
 ### Other Parameters
 
@@ -9840,7 +9691,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**alicloudMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;alicloud&quot;]
 
 ### Other Parameters
 
@@ -9906,7 +9756,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**alicloudMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;alicloud&quot;]
 **role** | **string** | The name of the role as it should appear in Vault. | 
 
 ### Other Parameters
@@ -9972,7 +9821,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 
 ### Other Parameters
 
@@ -10038,7 +9886,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10106,7 +9953,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10174,7 +10020,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10242,7 +10087,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10310,7 +10154,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10378,7 +10221,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10446,7 +10288,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10514,7 +10355,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10582,7 +10422,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10650,7 +10489,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10718,7 +10556,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10786,7 +10623,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10854,7 +10690,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10922,7 +10757,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -10990,7 +10824,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -11058,7 +10891,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -11126,7 +10958,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -11194,7 +11025,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -11262,7 +11092,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 **roleName** | **string** | Name of the role. Must be less than 4096 bytes. | 
 
 ### Other Parameters
@@ -11326,7 +11155,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**approleMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;approle&quot;]
 
 ### Other Parameters
 
@@ -11391,7 +11219,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **certName** | **string** | Name of the certificate. | 
 
 ### Other Parameters
@@ -11457,7 +11284,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11521,7 +11347,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11583,7 +11408,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11649,7 +11473,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **accountId** | **string** | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account. | 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11714,7 +11537,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11778,7 +11600,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11842,7 +11663,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11906,7 +11726,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -11970,7 +11789,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -12036,7 +11854,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -12104,7 +11921,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -12170,7 +11986,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -12235,7 +12050,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 **roleTag** | **string** | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded. | 
 
 ### Other Parameters
@@ -12300,7 +12114,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -12364,7 +12177,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -12428,7 +12240,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -12492,7 +12303,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**awsMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;aws&quot;]
 
 ### Other Parameters
 
@@ -12556,7 +12366,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 
 ### Other Parameters
 
@@ -12620,7 +12429,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 
 ### Other Parameters
 
@@ -12686,7 +12494,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**azureMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;azure&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -12752,7 +12559,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**centrifyMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;centrify&quot;]
 
 ### Other Parameters
 
@@ -12816,7 +12622,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**centrifyMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;centrify&quot;]
 
 ### Other Parameters
 
@@ -12882,7 +12687,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -12948,7 +12752,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 
 ### Other Parameters
 
@@ -13014,7 +12817,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 **name** | **string** | The name of the certificate | 
 
 ### Other Parameters
@@ -13080,7 +12882,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**certMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cert&quot;]
 
 ### Other Parameters
 
@@ -13144,7 +12945,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 
 ### Other Parameters
 
@@ -13208,7 +13008,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 
 ### Other Parameters
 
@@ -13274,7 +13073,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**cfMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;cf&quot;]
 **role** | **string** | The name of the role. | 
 
 ### Other Parameters
@@ -13340,7 +13138,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
@@ -13404,7 +13201,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 
 ### Other Parameters
 
@@ -13470,7 +13266,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -13538,7 +13333,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -13606,7 +13400,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**gcpMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;gcp&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -13672,7 +13465,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -13736,7 +13528,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 
 ### Other Parameters
 
@@ -13802,7 +13593,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 **key** | **string** | Key for the teams mapping | 
 
 ### Other Parameters
@@ -13870,7 +13660,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**githubMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;github&quot;]
 **key** | **string** | Key for the users mapping | 
 
 ### Other Parameters
@@ -13938,7 +13727,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 
 ### Other Parameters
 
@@ -14002,7 +13790,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 
 ### Other Parameters
 
@@ -14066,7 +13853,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 
 ### Other Parameters
 
@@ -14130,7 +13916,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 
 ### Other Parameters
 
@@ -14198,7 +13983,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**jwtMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;jwt&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -14264,7 +14048,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -14328,7 +14111,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -14394,7 +14176,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -14460,7 +14241,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kerberosMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kerberos&quot;]
 
 ### Other Parameters
 
@@ -14524,7 +14304,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kubernetesMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kubernetes&quot;]
 
 ### Other Parameters
 
@@ -14588,7 +14367,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kubernetesMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kubernetes&quot;]
 
 ### Other Parameters
 
@@ -14654,7 +14432,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**kubernetesMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;kubernetes&quot;]
 **name** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -14720,7 +14497,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 
 ### Other Parameters
 
@@ -14786,7 +14562,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the LDAP group. | 
 
 ### Other Parameters
@@ -14854,7 +14629,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **username** | **string** | DN (distinguished name) to be used for login. | 
 
 ### Other Parameters
@@ -14922,7 +14696,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ldapMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;ldap&quot;]
 **name** | **string** | Name of the LDAP user. | 
 
 ### Other Parameters
@@ -14988,7 +14761,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 
 ### Other Parameters
 
@@ -15054,7 +14826,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -15122,7 +14893,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**ociMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oci&quot;]
 **role** | **string** | Name of the role. | 
 
 ### Other Parameters
@@ -15190,7 +14960,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -15254,7 +15023,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -15318,7 +15086,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -15382,7 +15149,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -15451,7 +15217,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role. | 
-**oidcMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;oidc&quot;]
 
 ### Other Parameters
 
@@ -15516,7 +15281,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -15583,7 +15347,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the Okta group. | 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -15650,7 +15413,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 **username** | **string** | Username to be used for login. | 
 
 ### Other Parameters
@@ -15719,7 +15481,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the user. | 
-**oktaMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;okta&quot;]
 
 ### Other Parameters
 
@@ -15784,7 +15545,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 
 ### Other Parameters
 
@@ -15848,7 +15608,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 
 ### Other Parameters
 
@@ -15914,7 +15673,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 **urlusername** | **string** | Username to be used for login. (URL parameter) | 
 
 ### Other Parameters
@@ -15983,7 +15741,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the RADIUS user. | 
-**radiusMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;radius&quot;]
 
 ### Other Parameters
 
@@ -16050,7 +15807,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16117,7 +15873,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16187,7 +15942,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16253,7 +16007,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16317,7 +16070,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16381,7 +16133,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16445,7 +16196,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16509,7 +16259,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16573,7 +16322,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16637,7 +16385,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16701,7 +16448,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16765,7 +16511,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16827,7 +16572,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16893,7 +16637,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **roleName** | **string** | Name of the role | 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -16956,7 +16699,6 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
-**tokenMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;token&quot;]
 
 ### Other Parameters
 
@@ -17022,7 +16764,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username of the user. | 
-**userpassMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 
 ### Other Parameters
 
@@ -17090,7 +16831,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
-**userpassMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 
 ### Other Parameters
 
@@ -17158,7 +16898,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
-**userpassMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 
 ### Other Parameters
 
@@ -17226,7 +16965,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **username** | **string** | Username for this user. | 
-**userpassMountPath** | **string** | Path where the backend was mounted; the endpoint path will be offset by the mount path | [default to &quot;userpass&quot;]
 
 ### Other Parameters
 

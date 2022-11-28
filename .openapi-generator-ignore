@@ -1,5 +1,7 @@
 # Use this file to prevent files from being overwritten by the generator.
 
+api/openapi.yaml
+
 README.md
 
 configuration.go

@@ -326,7 +326,7 @@ _, err := client.Write(
 	ctx,
 	"/secret/data/my-secret",
 	map[string]any{
-		"data": map[string]interface{}{
+		"data": map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
 		},

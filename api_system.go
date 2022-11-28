@@ -25,13 +25,13 @@ type System struct {
 // DeleteSysAuditPath Disable the audit device at the given path.
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *System) DeleteSysAuditPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/audit/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/audit/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -47,13 +47,13 @@ func (a *System) DeleteSysAuditPath(ctx context.Context, path string, options ..
 // DeleteSysAuthPath Disable the auth method at the given auth path
 // path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *System) DeleteSysAuthPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/auth/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/auth/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -68,13 +68,13 @@ func (a *System) DeleteSysAuthPath(ctx context.Context, path string, options ...
 
 // DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
 func (a *System) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -89,12 +89,12 @@ func (a *System) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context
 
 // DeleteSysConfigCors Remove any CORS settings.
 func (a *System) DeleteSysConfigCors(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/cors"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/cors"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -110,13 +110,13 @@ func (a *System) DeleteSysConfigCors(ctx context.Context, options ...RequestOpti
 // DeleteSysConfigUiHeadersHeader Remove a UI header.
 // header: The name of the header.
 func (a *System) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/ui/headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/ui/headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -131,12 +131,12 @@ func (a *System) DeleteSysConfigUiHeadersHeader(ctx context.Context, header stri
 
 // DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
 func (a *System) DeleteSysGenerateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/generate-root"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/generate-root"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -151,12 +151,12 @@ func (a *System) DeleteSysGenerateRoot(ctx context.Context, options ...RequestOp
 
 // DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
 func (a *System) DeleteSysGenerateRootAttempt(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/generate-root/attempt"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/generate-root/attempt"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -171,12 +171,12 @@ func (a *System) DeleteSysGenerateRootAttempt(ctx context.Context, options ...Re
 
 // DeleteSysLoggers Revert the all loggers to use log level provided in config.
 func (a *System) DeleteSysLoggers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/loggers"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/loggers"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -192,13 +192,13 @@ func (a *System) DeleteSysLoggers(ctx context.Context, options ...RequestOption)
 // DeleteSysLoggersName Revert a single logger to use log level provided in config.
 // name: The name of the logger to be modified.
 func (a *System) DeleteSysLoggersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/loggers/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/loggers/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -214,13 +214,13 @@ func (a *System) DeleteSysLoggersName(ctx context.Context, name string, options 
 // DeleteSysMountsPath Disable the mount point specified at the given path.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) DeleteSysMountsPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/mounts/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/mounts/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -236,13 +236,13 @@ func (a *System) DeleteSysMountsPath(ctx context.Context, path string, options .
 // DeleteSysPluginsCatalogName Remove the plugin with the given name.
 // name: The name of the plugin
 func (a *System) DeleteSysPluginsCatalogName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -259,14 +259,14 @@ func (a *System) DeleteSysPluginsCatalogName(ctx context.Context, name string, o
 // name: The name of the plugin
 // type_: The type of the plugin, may be auth, secret, or database
 func (a *System) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -282,13 +282,13 @@ func (a *System) DeleteSysPluginsCatalogTypeName(ctx context.Context, name strin
 // DeleteSysPoliciesAclName Delete the ACL policy with the given name.
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) DeleteSysPoliciesAclName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/acl/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/acl/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -304,13 +304,13 @@ func (a *System) DeleteSysPoliciesAclName(ctx context.Context, name string, opti
 // DeleteSysPoliciesPasswordName Delete a password policy.
 // name: The name of the password policy.
 func (a *System) DeleteSysPoliciesPasswordName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/password/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/password/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -326,13 +326,13 @@ func (a *System) DeleteSysPoliciesPasswordName(ctx context.Context, name string,
 // DeleteSysPolicyName Delete the policy with the given name.
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) DeleteSysPolicyName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policy/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policy/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -348,13 +348,13 @@ func (a *System) DeleteSysPolicyName(ctx context.Context, name string, options .
 // DeleteSysQuotasRateLimitName
 // name: Name of the quota rule.
 func (a *System) DeleteSysQuotasRateLimitName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/quotas/rate-limit/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/quotas/rate-limit/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -369,12 +369,12 @@ func (a *System) DeleteSysQuotasRateLimitName(ctx context.Context, name string, 
 
 // DeleteSysRaw Delete the key with given path.
 func (a *System) DeleteSysRaw(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/raw"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/raw"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -389,13 +389,13 @@ func (a *System) DeleteSysRaw(ctx context.Context, options ...RequestOption) (*R
 
 // DeleteSysRawPath Delete the key with given path.
 func (a *System) DeleteSysRawPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/raw/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/raw/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -410,12 +410,12 @@ func (a *System) DeleteSysRawPath(ctx context.Context, path string, options ...R
 
 // DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
 func (a *System) DeleteSysRekeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/backup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/backup"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -431,12 +431,12 @@ func (a *System) DeleteSysRekeyBackup(ctx context.Context, options ...RequestOpt
 // DeleteSysRekeyInit Cancels any in-progress rekey.
 // This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
 func (a *System) DeleteSysRekeyInit(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/init"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/init"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -451,12 +451,12 @@ func (a *System) DeleteSysRekeyInit(ctx context.Context, options ...RequestOptio
 
 // DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 func (a *System) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/recovery-key-backup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/recovery-key-backup"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -472,12 +472,12 @@ func (a *System) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context, options ..
 // DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
 // This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
 func (a *System) DeleteSysRekeyVerify(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/verify"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/verify"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -492,12 +492,12 @@ func (a *System) DeleteSysRekeyVerify(ctx context.Context, options ...RequestOpt
 
 // GetSysAudit List the enabled audit devices.
 func (a *System) GetSysAudit(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/audit"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/audit"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -512,12 +512,12 @@ func (a *System) GetSysAudit(ctx context.Context, options ...RequestOption) (*Re
 
 // GetSysAuth List the currently enabled credential backends.
 func (a *System) GetSysAuth(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/auth"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/auth"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -533,13 +533,13 @@ func (a *System) GetSysAuth(ctx context.Context, options ...RequestOption) (*Res
 // GetSysAuthPath Read the configuration of the auth engine at the given path.
 // path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *System) GetSysAuthPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/auth/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/auth/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -556,13 +556,13 @@ func (a *System) GetSysAuthPath(ctx context.Context, path string, options ...Req
 // This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
 // path: Tune the configuration parameters for an auth path.
 func (a *System) GetSysAuthPathTune(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/auth/{path}/tune"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/auth/{path}/tune"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -577,12 +577,12 @@ func (a *System) GetSysAuthPathTune(ctx context.Context, path string, options ..
 
 // GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
 func (a *System) GetSysConfigAuditingRequestHeaders(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/auditing/request-headers"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/auditing/request-headers"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -597,13 +597,13 @@ func (a *System) GetSysConfigAuditingRequestHeaders(ctx context.Context, options
 
 // GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
 func (a *System) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -618,12 +618,12 @@ func (a *System) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, h
 
 // GetSysConfigCors Return the current CORS settings.
 func (a *System) GetSysConfigCors(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/cors"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/cors"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -639,12 +639,12 @@ func (a *System) GetSysConfigCors(ctx context.Context, options ...RequestOption)
 // GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
 // The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
 func (a *System) GetSysConfigStateSanitized(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/state/sanitized"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/state/sanitized"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -660,12 +660,12 @@ func (a *System) GetSysConfigStateSanitized(ctx context.Context, options ...Requ
 // GetSysConfigUiHeaders Return a list of configured UI headers.
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysConfigUiHeaders(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/ui/headers/"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/ui/headers/"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -681,13 +681,13 @@ func (a *System) GetSysConfigUiHeaders(ctx context.Context, list string, options
 // GetSysConfigUiHeadersHeader Return the given UI header's configuration
 // header: The name of the header.
 func (a *System) GetSysConfigUiHeadersHeader(ctx context.Context, header string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/ui/headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/ui/headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -702,12 +702,12 @@ func (a *System) GetSysConfigUiHeadersHeader(ctx context.Context, header string,
 
 // GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
 func (a *System) GetSysGenerateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/generate-root"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/generate-root"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -722,12 +722,12 @@ func (a *System) GetSysGenerateRoot(ctx context.Context, options ...RequestOptio
 
 // GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
 func (a *System) GetSysGenerateRootAttempt(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/generate-root/attempt"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/generate-root/attempt"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -742,12 +742,12 @@ func (a *System) GetSysGenerateRootAttempt(ctx context.Context, options ...Reque
 
 // GetSysHaStatus Check the HA status of a Vault cluster
 func (a *System) GetSysHaStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/ha-status"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/ha-status"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -762,12 +762,12 @@ func (a *System) GetSysHaStatus(ctx context.Context, options ...RequestOption) (
 
 // GetSysHealth Returns the health status of Vault.
 func (a *System) GetSysHealth(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/health"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/health"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -783,12 +783,12 @@ func (a *System) GetSysHealth(ctx context.Context, options ...RequestOption) (*R
 // GetSysHostInfo Information about the host instance that this Vault server is running on.
 // Information about the host instance that this Vault server is running on.   The information that gets collected includes host hardware information, and CPU,   disk, and memory utilization
 func (a *System) GetSysHostInfo(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/host-info"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/host-info"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -804,12 +804,12 @@ func (a *System) GetSysHostInfo(ctx context.Context, options ...RequestOption) (
 // GetSysInFlightReq reports in-flight requests
 // This path responds to the following HTTP methods.   GET /    Returns a map of in-flight requests.
 func (a *System) GetSysInFlightReq(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/in-flight-req"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/in-flight-req"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -824,12 +824,12 @@ func (a *System) GetSysInFlightReq(ctx context.Context, options ...RequestOption
 
 // GetSysInit Returns the initialization status of Vault.
 func (a *System) GetSysInit(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/init"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/init"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -844,12 +844,12 @@ func (a *System) GetSysInit(ctx context.Context, options ...RequestOption) (*Res
 
 // GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
 func (a *System) GetSysInternalCountersActivity(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/activity"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/activity"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -864,12 +864,12 @@ func (a *System) GetSysInternalCountersActivity(ctx context.Context, options ...
 
 // GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
 func (a *System) GetSysInternalCountersActivityExport(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/activity/export"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/activity/export"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -884,12 +884,12 @@ func (a *System) GetSysInternalCountersActivityExport(ctx context.Context, optio
 
 // GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
 func (a *System) GetSysInternalCountersActivityMonthly(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/activity/monthly"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/activity/monthly"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -904,12 +904,12 @@ func (a *System) GetSysInternalCountersActivityMonthly(ctx context.Context, opti
 
 // GetSysInternalCountersConfig Read the client count tracking configuration.
 func (a *System) GetSysInternalCountersConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/config"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -924,12 +924,12 @@ func (a *System) GetSysInternalCountersConfig(ctx context.Context, options ...Re
 
 // GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalCountersEntities(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/entities"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/entities"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -944,12 +944,12 @@ func (a *System) GetSysInternalCountersEntities(ctx context.Context, options ...
 
 // GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalCountersRequests(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/requests"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/requests"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -964,12 +964,34 @@ func (a *System) GetSysInternalCountersRequests(ctx context.Context, options ...
 
 // GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalCountersTokens(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/tokens"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/tokens"
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GetSysInternalInspectRouterTag Expose the route entry and mount entry tables present in the router
+// tag: Name of subtree being observed
+func (a *System) GetSysInternalInspectRouterTag(ctx context.Context, tag string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/internal/inspect/router/{tag}"
+	requestPath = strings.Replace(requestPath, "{"+"tag"+"}", url.PathEscape(tag), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -984,12 +1006,12 @@ func (a *System) GetSysInternalCountersTokens(ctx context.Context, options ...Re
 
 // GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
 func (a *System) GetSysInternalSpecsOpenapi(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/specs/openapi"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/specs/openapi"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1004,12 +1026,12 @@ func (a *System) GetSysInternalSpecsOpenapi(ctx context.Context, options ...Requ
 
 // GetSysInternalUiFeatureFlags Lists enabled feature flags.
 func (a *System) GetSysInternalUiFeatureFlags(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/ui/feature-flags"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/ui/feature-flags"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1024,12 +1046,12 @@ func (a *System) GetSysInternalUiFeatureFlags(ctx context.Context, options ...Re
 
 // GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
 func (a *System) GetSysInternalUiMounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/ui/mounts"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/ui/mounts"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1045,13 +1067,13 @@ func (a *System) GetSysInternalUiMounts(ctx context.Context, options ...RequestO
 // GetSysInternalUiMountsPath Return information about the given mount.
 // path: The path of the mount.
 func (a *System) GetSysInternalUiMountsPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/ui/mounts/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/ui/mounts/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1066,12 +1088,12 @@ func (a *System) GetSysInternalUiMountsPath(ctx context.Context, path string, op
 
 // GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalUiNamespaces(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/ui/namespaces"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/ui/namespaces"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1086,12 +1108,12 @@ func (a *System) GetSysInternalUiNamespaces(ctx context.Context, options ...Requ
 
 // GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
 func (a *System) GetSysInternalUiResultantAcl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/ui/resultant-acl"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/ui/resultant-acl"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1106,12 +1128,12 @@ func (a *System) GetSysInternalUiResultantAcl(ctx context.Context, options ...Re
 
 // GetSysKeyStatus Provides information about the backend encryption key.
 func (a *System) GetSysKeyStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/key-status"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/key-status"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1126,12 +1148,12 @@ func (a *System) GetSysKeyStatus(ctx context.Context, options ...RequestOption) 
 
 // GetSysLeader Returns the high availability status and current leader instance of Vault.
 func (a *System) GetSysLeader(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leader"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leader"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1146,12 +1168,12 @@ func (a *System) GetSysLeader(ctx context.Context, options ...RequestOption) (*R
 
 // GetSysLeases List leases associated with this Vault cluster
 func (a *System) GetSysLeases(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1166,12 +1188,12 @@ func (a *System) GetSysLeases(ctx context.Context, options ...RequestOption) (*R
 
 // GetSysLeasesCount Count of leases associated with this Vault cluster
 func (a *System) GetSysLeasesCount(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/count"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/count"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1187,12 +1209,12 @@ func (a *System) GetSysLeasesCount(ctx context.Context, options ...RequestOption
 // GetSysLeasesLookup Returns a list of lease ids.
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysLeasesLookup(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/lookup/"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/lookup/"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1209,13 +1231,13 @@ func (a *System) GetSysLeasesLookup(ctx context.Context, list string, options ..
 // prefix: The path to list leases under. Example: \&quot;aws/creds/deploy\&quot;
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/lookup/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/lookup/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1229,14 +1251,13 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 }
 
 // GetSysMetrics Export the metrics aggregated for telemetry purpose.
-// format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
 func (a *System) GetSysMetrics(ctx context.Context, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/metrics"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/metrics"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1250,15 +1271,13 @@ func (a *System) GetSysMetrics(ctx context.Context, format string, options ...Re
 }
 
 // GetSysMonitor
-// logFormat: Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
-// logLevel: Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
 func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/monitor"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/monitor"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1273,12 +1292,12 @@ func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel s
 
 // GetSysMounts List the currently mounted backends.
 func (a *System) GetSysMounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/mounts"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/mounts"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1294,13 +1313,13 @@ func (a *System) GetSysMounts(ctx context.Context, options ...RequestOption) (*R
 // GetSysMountsPath Read the configuration of the secret engine at the given path.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) GetSysMountsPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/mounts/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/mounts/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1316,13 +1335,13 @@ func (a *System) GetSysMountsPath(ctx context.Context, path string, options ...R
 // GetSysMountsPathTune Tune backend configuration parameters for this mount.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) GetSysMountsPathTune(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/mounts/{path}/tune"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/mounts/{path}/tune"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1337,12 +1356,12 @@ func (a *System) GetSysMountsPathTune(ctx context.Context, path string, options 
 
 // GetSysPluginsCatalog Lists all the plugins known to Vault
 func (a *System) GetSysPluginsCatalog(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1358,13 +1377,13 @@ func (a *System) GetSysPluginsCatalog(ctx context.Context, options ...RequestOpt
 // GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
 // name: The name of the plugin
 func (a *System) GetSysPluginsCatalogName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1381,13 +1400,13 @@ func (a *System) GetSysPluginsCatalogName(ctx context.Context, name string, opti
 // type_: The type of the plugin, may be auth, secret, or database
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog/{type}"
-	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog/{type}"
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1404,14 +1423,14 @@ func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, lis
 // name: The name of the plugin
 // type_: The type of the plugin, may be auth, secret, or database
 func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1427,12 +1446,12 @@ func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, 
 // GetSysPoliciesAcl List the configured access control policies.
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysPoliciesAcl(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/acl"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/acl"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1448,13 +1467,13 @@ func (a *System) GetSysPoliciesAcl(ctx context.Context, list string, options ...
 // GetSysPoliciesAclName Retrieve information about the named ACL policy.
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) GetSysPoliciesAclName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/acl/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/acl/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1470,12 +1489,12 @@ func (a *System) GetSysPoliciesAclName(ctx context.Context, name string, options
 // GetSysPoliciesPassword List the existing password policies.
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysPoliciesPassword(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/password"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/password"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1491,13 +1510,13 @@ func (a *System) GetSysPoliciesPassword(ctx context.Context, list string, option
 // GetSysPoliciesPasswordName Retrieve an existing password policy.
 // name: The name of the password policy.
 func (a *System) GetSysPoliciesPasswordName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/password/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/password/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1513,13 +1532,13 @@ func (a *System) GetSysPoliciesPasswordName(ctx context.Context, name string, op
 // GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
 // name: The name of the password policy.
 func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/password/{name}/generate"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/password/{name}/generate"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1533,14 +1552,13 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 }
 
 // GetSysPolicy List the configured access control policies.
-// list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysPolicy(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policy"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policy"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1556,13 +1574,13 @@ func (a *System) GetSysPolicy(ctx context.Context, list string, options ...Reque
 // GetSysPolicyName Retrieve the policy body for the named policy.
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) GetSysPolicyName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policy/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policy/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1578,12 +1596,12 @@ func (a *System) GetSysPolicyName(ctx context.Context, name string, options ...R
 // GetSysPprof Returns an HTML page listing the available profiles.
 // Returns an HTML page listing the available  profiles. This should be mainly accessed via browsers or applications that can  render pages.
 func (a *System) GetSysPprof(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1599,12 +1617,12 @@ func (a *System) GetSysPprof(ctx context.Context, options ...RequestOption) (*Re
 // GetSysPprofAllocs Returns a sampling of all past memory allocations.
 // Returns a sampling of all past memory allocations.
 func (a *System) GetSysPprofAllocs(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/allocs"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/allocs"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1620,12 +1638,12 @@ func (a *System) GetSysPprofAllocs(ctx context.Context, options ...RequestOption
 // GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
 // Returns stack traces that led to blocking on synchronization primitives
 func (a *System) GetSysPprofBlock(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/block"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/block"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1641,12 +1659,12 @@ func (a *System) GetSysPprofBlock(ctx context.Context, options ...RequestOption)
 // GetSysPprofCmdline Returns the running program's command line.
 // Returns the running program's command line, with arguments separated by NUL bytes.
 func (a *System) GetSysPprofCmdline(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/cmdline"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/cmdline"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1662,12 +1680,12 @@ func (a *System) GetSysPprofCmdline(ctx context.Context, options ...RequestOptio
 // GetSysPprofGoroutine Returns stack traces of all current goroutines.
 // Returns stack traces of all current goroutines.
 func (a *System) GetSysPprofGoroutine(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/goroutine"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/goroutine"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1683,12 +1701,12 @@ func (a *System) GetSysPprofGoroutine(ctx context.Context, options ...RequestOpt
 // GetSysPprofHeap Returns a sampling of memory allocations of live object.
 // Returns a sampling of memory allocations of live object.
 func (a *System) GetSysPprofHeap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/heap"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/heap"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1704,12 +1722,12 @@ func (a *System) GetSysPprofHeap(ctx context.Context, options ...RequestOption) 
 // GetSysPprofMutex Returns stack traces of holders of contended mutexes
 // Returns stack traces of holders of contended mutexes
 func (a *System) GetSysPprofMutex(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/mutex"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/mutex"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1725,12 +1743,12 @@ func (a *System) GetSysPprofMutex(ctx context.Context, options ...RequestOption)
 // GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
 // Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
 func (a *System) GetSysPprofProfile(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/profile"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/profile"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1746,12 +1764,12 @@ func (a *System) GetSysPprofProfile(ctx context.Context, options ...RequestOptio
 // GetSysPprofSymbol Returns the program counters listed in the request.
 // Returns the program counters listed in the request.
 func (a *System) GetSysPprofSymbol(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/symbol"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/symbol"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1767,12 +1785,12 @@ func (a *System) GetSysPprofSymbol(ctx context.Context, options ...RequestOption
 // GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
 // Returns stack traces that led to the creation of new OS threads
 func (a *System) GetSysPprofThreadcreate(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/threadcreate"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/threadcreate"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1788,12 +1806,12 @@ func (a *System) GetSysPprofThreadcreate(ctx context.Context, options ...Request
 // GetSysPprofTrace Returns the execution trace in binary form.
 // Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
 func (a *System) GetSysPprofTrace(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/pprof/trace"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/pprof/trace"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1808,12 +1826,12 @@ func (a *System) GetSysPprofTrace(ctx context.Context, options ...RequestOption)
 
 // GetSysQuotasConfig
 func (a *System) GetSysQuotasConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/quotas/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/quotas/config"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1829,12 +1847,12 @@ func (a *System) GetSysQuotasConfig(ctx context.Context, options ...RequestOptio
 // GetSysQuotasRateLimit
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysQuotasRateLimit(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/quotas/rate-limit"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/quotas/rate-limit"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1850,13 +1868,13 @@ func (a *System) GetSysQuotasRateLimit(ctx context.Context, list string, options
 // GetSysQuotasRateLimitName
 // name: Name of the quota rule.
 func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/quotas/rate-limit/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/quotas/rate-limit/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1870,14 +1888,13 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string, opt
 }
 
 // GetSysRaw Read the value of the key at the given path.
-// list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysRaw(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/raw"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/raw"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1891,15 +1908,14 @@ func (a *System) GetSysRaw(ctx context.Context, list string, options ...RequestO
 }
 
 // GetSysRawPath Read the value of the key at the given path.
-// list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysRawPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/raw/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/raw/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1914,12 +1930,12 @@ func (a *System) GetSysRawPath(ctx context.Context, path string, list string, op
 
 // GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
 func (a *System) GetSysRekeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/backup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/backup"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1934,12 +1950,12 @@ func (a *System) GetSysRekeyBackup(ctx context.Context, options ...RequestOption
 
 // GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
 func (a *System) GetSysRekeyInit(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/init"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/init"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1954,12 +1970,12 @@ func (a *System) GetSysRekeyInit(ctx context.Context, options ...RequestOption) 
 
 // GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 func (a *System) GetSysRekeyRecoveryKeyBackup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/recovery-key-backup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/recovery-key-backup"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1974,12 +1990,12 @@ func (a *System) GetSysRekeyRecoveryKeyBackup(ctx context.Context, options ...Re
 
 // GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
 func (a *System) GetSysRekeyVerify(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/verify"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/verify"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1995,13 +2011,13 @@ func (a *System) GetSysRekeyVerify(ctx context.Context, options ...RequestOption
 // GetSysRemountStatusMigrationId Check status of a mount migration
 // migrationId: The ID of the migration operation
 func (a *System) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/remount/status/{migration_id}"
-	requestPath = strings.Replace(requestPath, "{"+"migration_id"+"}", url.PathEscape(migrationId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/remount/status/{migration_id}"
+	requestPath = strings.Replace(requestPath, "{"+"migration_id"+"}", url.PathEscape(migrationId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2016,12 +2032,12 @@ func (a *System) GetSysRemountStatusMigrationId(ctx context.Context, migrationId
 
 // GetSysReplicationStatus
 func (a *System) GetSysReplicationStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/replication/status"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/replication/status"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2036,12 +2052,12 @@ func (a *System) GetSysReplicationStatus(ctx context.Context, options ...Request
 
 // GetSysRotateConfig
 func (a *System) GetSysRotateConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rotate/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rotate/config"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2056,12 +2072,12 @@ func (a *System) GetSysRotateConfig(ctx context.Context, options ...RequestOptio
 
 // GetSysSealStatus Check the seal status of a Vault.
 func (a *System) GetSysSealStatus(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/seal-status"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/seal-status"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2077,12 +2093,12 @@ func (a *System) GetSysSealStatus(ctx context.Context, options ...RequestOption)
 // GetSysVersionHistory Returns map of historical version change entries
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysVersionHistory(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/version-history/"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/version-history/"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2097,12 +2113,12 @@ func (a *System) GetSysVersionHistory(ctx context.Context, list string, options 
 
 // GetSysWrappingLookup Look up wrapping properties for the requester's token.
 func (a *System) GetSysWrappingLookup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/wrapping/lookup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/wrapping/lookup"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2118,13 +2134,13 @@ func (a *System) GetSysWrappingLookup(ctx context.Context, options ...RequestOpt
 // PostSysAuditHashPath The hash of the given string via the given audit backend
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *System) PostSysAuditHashPath(ctx context.Context, path string, systemAuditHashRequest SystemAuditHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/audit-hash/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/audit-hash/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2140,13 +2156,13 @@ func (a *System) PostSysAuditHashPath(ctx context.Context, path string, systemAu
 // PostSysAuditPath Enable a new audit device at the supplied path.
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *System) PostSysAuditPath(ctx context.Context, path string, systemAuditRequest SystemAuditRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/audit/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/audit/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2163,13 +2179,13 @@ func (a *System) PostSysAuditPath(ctx context.Context, path string, systemAuditR
 // After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.  For example, enable the \"foo\" auth method will make it accessible at /auth/foo.
 // path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *System) PostSysAuthPath(ctx context.Context, path string, systemAuthRequest SystemAuthRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/auth/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/auth/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2186,13 +2202,13 @@ func (a *System) PostSysAuthPath(ctx context.Context, path string, systemAuthReq
 // This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
 // path: Tune the configuration parameters for an auth path.
 func (a *System) PostSysAuthPathTune(ctx context.Context, path string, systemAuthTuneRequest SystemAuthTuneRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/auth/{path}/tune"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/auth/{path}/tune"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2207,12 +2223,12 @@ func (a *System) PostSysAuthPathTune(ctx context.Context, path string, systemAut
 
 // PostSysCapabilities Fetches the capabilities of the given token on the given path.
 func (a *System) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/capabilities"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/capabilities"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2227,12 +2243,12 @@ func (a *System) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequ
 
 // PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
 func (a *System) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/capabilities-accessor"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/capabilities-accessor"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2247,12 +2263,12 @@ func (a *System) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabili
 
 // PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
 func (a *System) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/capabilities-self"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/capabilities-self"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2267,13 +2283,13 @@ func (a *System) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilities
 
 // PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
 func (a *System) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string, systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/auditing/request-headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2288,12 +2304,12 @@ func (a *System) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, 
 
 // PostSysConfigCors Configure the CORS settings.
 func (a *System) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/cors"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/cors"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2308,13 +2324,13 @@ func (a *System) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest 
 
 // PostSysConfigReloadSubsystem Reload the given subsystem
 func (a *System) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/reload/{subsystem}"
-	requestPath = strings.Replace(requestPath, "{"+"subsystem"+"}", url.PathEscape(subsystem), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/reload/{subsystem}"
+	requestPath = strings.Replace(requestPath, "{"+"subsystem"+"}", url.PathEscape(subsystem), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2330,13 +2346,13 @@ func (a *System) PostSysConfigReloadSubsystem(ctx context.Context, subsystem str
 // PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
 // header: The name of the header.
 func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string, systemConfigUiHeadersRequest SystemConfigUiHeadersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/config/ui/headers/{header}"
-	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/config/ui/headers/{header}"
+	requestPath = strings.Replace(requestPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2352,12 +2368,12 @@ func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string
 // PostSysGenerateRoot Initializes a new root generation attempt.
 // Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
 func (a *System) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/generate-root"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/generate-root"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2373,12 +2389,12 @@ func (a *System) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequ
 // PostSysGenerateRootAttempt Initializes a new root generation attempt.
 // Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
 func (a *System) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/generate-root/attempt"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/generate-root/attempt"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2394,12 +2410,12 @@ func (a *System) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateR
 // PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
 // If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
 func (a *System) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/generate-root/update"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/generate-root/update"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2415,12 +2431,12 @@ func (a *System) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRo
 // PostSysInit Initialize a new Vault.
 // The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
 func (a *System) PostSysInit(ctx context.Context, systemInitRequest SystemInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/init"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/init"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2435,12 +2451,12 @@ func (a *System) PostSysInit(ctx context.Context, systemInitRequest SystemInitRe
 
 // PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
 func (a *System) PostSysInternalCountersConfig(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/internal/counters/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/internal/counters/config"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2455,12 +2471,12 @@ func (a *System) PostSysInternalCountersConfig(ctx context.Context, systemIntern
 
 // PostSysLeasesLookup Retrieve lease metadata.
 func (a *System) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/lookup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/lookup"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2475,12 +2491,12 @@ func (a *System) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequ
 
 // PostSysLeasesRenew Renews a lease, requesting to extend the lease.
 func (a *System) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/renew"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/renew"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2496,13 +2512,13 @@ func (a *System) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewReques
 // PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/renew/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/renew/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2517,12 +2533,12 @@ func (a *System) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId st
 
 // PostSysLeasesRevoke Revokes a lease immediately.
 func (a *System) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/revoke"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/revoke"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2539,13 +2555,13 @@ func (a *System) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequ
 // Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/revoke-force/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/revoke-force/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2561,13 +2577,13 @@ func (a *System) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix stri
 // PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string, systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/revoke-prefix/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/revoke-prefix/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2583,13 +2599,13 @@ func (a *System) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix str
 // PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/revoke/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/revoke/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2604,12 +2620,12 @@ func (a *System) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId s
 
 // PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 func (a *System) PostSysLeasesTidy(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/leases/tidy"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/leases/tidy"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2624,12 +2640,12 @@ func (a *System) PostSysLeasesTidy(ctx context.Context, options ...RequestOption
 
 // PostSysLoggers Modify the log level for all existing loggers.
 func (a *System) PostSysLoggers(ctx context.Context, systemLoggersRequest SystemLoggersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/loggers"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/loggers"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2645,13 +2661,13 @@ func (a *System) PostSysLoggers(ctx context.Context, systemLoggersRequest System
 // PostSysLoggersName Modify the log level of a single logger.
 // name: The name of the logger to be modified.
 func (a *System) PostSysLoggersName(ctx context.Context, name string, systemLoggersRequest SystemLoggersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/loggers/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/loggers/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2666,12 +2682,12 @@ func (a *System) PostSysLoggersName(ctx context.Context, name string, systemLogg
 
 // PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
 func (a *System) PostSysMfaValidate(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/mfa/validate"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/mfa/validate"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2687,13 +2703,13 @@ func (a *System) PostSysMfaValidate(ctx context.Context, systemMfaValidateReques
 // PostSysMountsPath Enable a new secrets engine at the given path.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) PostSysMountsPath(ctx context.Context, path string, systemMountsRequest SystemMountsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/mounts/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/mounts/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2709,13 +2725,13 @@ func (a *System) PostSysMountsPath(ctx context.Context, path string, systemMount
 // PostSysMountsPathTune Tune backend configuration parameters for this mount.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) PostSysMountsPathTune(ctx context.Context, path string, systemMountsTuneRequest SystemMountsTuneRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/mounts/{path}/tune"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/mounts/{path}/tune"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2731,13 +2747,13 @@ func (a *System) PostSysMountsPathTune(ctx context.Context, path string, systemM
 // PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
 // name: The name of the plugin
 func (a *System) PostSysPluginsCatalogName(ctx context.Context, name string, systemPluginsCatalogRequest SystemPluginsCatalogRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2754,14 +2770,14 @@ func (a *System) PostSysPluginsCatalogName(ctx context.Context, name string, sys
 // name: The name of the plugin
 // type_: The type of the plugin, may be auth, secret, or database
 func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string, systemPluginsCatalogRequest SystemPluginsCatalogRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/catalog/{type}/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath = strings.Replace(requestPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2777,12 +2793,12 @@ func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string,
 // PostSysPluginsReloadBackend Reload mounted plugin backends.
 // Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
 func (a *System) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/plugins/reload/backend"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/plugins/reload/backend"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2798,13 +2814,13 @@ func (a *System) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsR
 // PostSysPoliciesAclName Add a new or update an existing ACL policy.
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) PostSysPoliciesAclName(ctx context.Context, name string, systemPoliciesAclRequest SystemPoliciesAclRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/acl/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/acl/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2820,13 +2836,13 @@ func (a *System) PostSysPoliciesAclName(ctx context.Context, name string, system
 // PostSysPoliciesPasswordName Add a new or update an existing password policy.
 // name: The name of the password policy.
 func (a *System) PostSysPoliciesPasswordName(ctx context.Context, name string, systemPoliciesPasswordRequest SystemPoliciesPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policies/password/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policies/password/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2842,13 +2858,13 @@ func (a *System) PostSysPoliciesPasswordName(ctx context.Context, name string, s
 // PostSysPolicyName Add a new or update an existing policy.
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) PostSysPolicyName(ctx context.Context, name string, systemPolicyRequest SystemPolicyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/policy/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/policy/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2863,12 +2879,12 @@ func (a *System) PostSysPolicyName(ctx context.Context, name string, systemPolic
 
 // PostSysQuotasConfig
 func (a *System) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/quotas/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/quotas/config"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2884,13 +2900,13 @@ func (a *System) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequ
 // PostSysQuotasRateLimitName
 // name: Name of the quota rule.
 func (a *System) PostSysQuotasRateLimitName(ctx context.Context, name string, systemQuotasRateLimitRequest SystemQuotasRateLimitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/quotas/rate-limit/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/quotas/rate-limit/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2905,12 +2921,12 @@ func (a *System) PostSysQuotasRateLimitName(ctx context.Context, name string, sy
 
 // PostSysRaw Update the value of the key at the given path.
 func (a *System) PostSysRaw(ctx context.Context, systemRawRequest SystemRawRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/raw"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/raw"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2925,13 +2941,13 @@ func (a *System) PostSysRaw(ctx context.Context, systemRawRequest SystemRawReque
 
 // PostSysRawPath Update the value of the key at the given path.
 func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawRequest SystemRawRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/raw/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/raw/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2947,12 +2963,12 @@ func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawReque
 // PostSysRekeyInit Initializes a new rekey attempt.
 // Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
 func (a *System) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/init"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/init"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2967,12 +2983,12 @@ func (a *System) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest Sy
 
 // PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
 func (a *System) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/update"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/update"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2987,12 +3003,12 @@ func (a *System) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateReques
 
 // PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
 func (a *System) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rekey/verify"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rekey/verify"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3007,12 +3023,12 @@ func (a *System) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyReques
 
 // PostSysRemount Initiate a mount migration
 func (a *System) PostSysRemount(ctx context.Context, systemRemountRequest SystemRemountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/remount"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/remount"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3027,12 +3043,12 @@ func (a *System) PostSysRemount(ctx context.Context, systemRemountRequest System
 
 // PostSysRenew Renews a lease, requesting to extend the lease.
 func (a *System) PostSysRenew(ctx context.Context, systemRenewRequest SystemRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/renew"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/renew"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3048,13 +3064,13 @@ func (a *System) PostSysRenew(ctx context.Context, systemRenewRequest SystemRene
 // PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemRenewLeaseRequest SystemRenewLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/renew/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/renew/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3069,12 +3085,12 @@ func (a *System) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, 
 
 // PostSysRevoke Revokes a lease immediately.
 func (a *System) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/revoke"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/revoke"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3091,13 +3107,13 @@ func (a *System) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRe
 // Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysRevokeForcePrefix(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/revoke-force/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/revoke-force/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3113,13 +3129,13 @@ func (a *System) PostSysRevokeForcePrefix(ctx context.Context, prefix string, op
 // PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, systemRevokePrefixRequest SystemRevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/revoke-prefix/{prefix}"
-	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/revoke-prefix/{prefix}"
+	requestPath = strings.Replace(requestPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3135,13 +3151,13 @@ func (a *System) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, s
 // PostSysRevokeUrlLeaseId Revokes a lease immediately.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemRevokeLeaseRequest SystemRevokeLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/revoke/{url_lease_id}"
-	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/revoke/{url_lease_id}"
+	requestPath = strings.Replace(requestPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3156,12 +3172,12 @@ func (a *System) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string,
 
 // PostSysRotate Rotates the backend encryption key used to persist data.
 func (a *System) PostSysRotate(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rotate"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rotate"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3176,12 +3192,12 @@ func (a *System) PostSysRotate(ctx context.Context, options ...RequestOption) (*
 
 // PostSysRotateConfig
 func (a *System) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/rotate/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/rotate/config"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3196,12 +3212,12 @@ func (a *System) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequ
 
 // PostSysSeal Seal the Vault.
 func (a *System) PostSysSeal(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/seal"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/seal"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3217,12 +3233,12 @@ func (a *System) PostSysSeal(ctx context.Context, options ...RequestOption) (*Re
 // PostSysStepDown Cause the node to give up active status.
 // This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.
 func (a *System) PostSysStepDown(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/step-down"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/step-down"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3237,12 +3253,12 @@ func (a *System) PostSysStepDown(ctx context.Context, options ...RequestOption) 
 
 // PostSysToolsHash Generate a hash sum for input data
 func (a *System) PostSysToolsHash(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/tools/hash"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/tools/hash"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3258,13 +3274,13 @@ func (a *System) PostSysToolsHash(ctx context.Context, systemToolsHashRequest Sy
 // PostSysToolsHashUrlalgorithm Generate a hash sum for input data
 // urlalgorithm: Algorithm to use (POST URL parameter)
 func (a *System) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string, systemToolsHashRequest SystemToolsHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/tools/hash/{urlalgorithm}"
-	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/tools/hash/{urlalgorithm}"
+	requestPath = strings.Replace(requestPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3279,12 +3295,12 @@ func (a *System) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm 
 
 // PostSysToolsRandom Generate random bytes
 func (a *System) PostSysToolsRandom(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/tools/random"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/tools/random"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3300,13 +3316,13 @@ func (a *System) PostSysToolsRandom(ctx context.Context, systemToolsRandomReques
 // PostSysToolsRandomSource Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 func (a *System) PostSysToolsRandomSource(ctx context.Context, source string, systemToolsRandomRequest SystemToolsRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/tools/random/{source}"
-	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/tools/random/{source}"
+	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3323,14 +3339,14 @@ func (a *System) PostSysToolsRandomSource(ctx context.Context, source string, sy
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 // urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *System) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/tools/random/{source}/{urlbytes}"
-	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
-	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/tools/random/{source}/{urlbytes}"
+	requestPath = strings.Replace(requestPath, "{"+"source"+"}", url.PathEscape(source), -1)
+	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3346,13 +3362,13 @@ func (a *System) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source st
 // PostSysToolsRandomUrlbytes Generate random bytes
 // urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *System) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/tools/random/{urlbytes}"
-	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/tools/random/{urlbytes}"
+	requestPath = strings.Replace(requestPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3367,12 +3383,12 @@ func (a *System) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string
 
 // PostSysUnseal Unseal the Vault.
 func (a *System) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUnsealRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/unseal"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/unseal"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3387,12 +3403,12 @@ func (a *System) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUn
 
 // PostSysWrappingLookup Look up wrapping properties for the given token.
 func (a *System) PostSysWrappingLookup(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/wrapping/lookup"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/wrapping/lookup"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3407,12 +3423,12 @@ func (a *System) PostSysWrappingLookup(ctx context.Context, systemWrappingLookup
 
 // PostSysWrappingRewrap Rotates a response-wrapped token.
 func (a *System) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/wrapping/rewrap"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/wrapping/rewrap"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3427,12 +3443,12 @@ func (a *System) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrap
 
 // PostSysWrappingUnwrap Unwraps a response-wrapped token.
 func (a *System) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/wrapping/unwrap"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/wrapping/unwrap"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3447,12 +3463,12 @@ func (a *System) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrap
 
 // PostSysWrappingWrap Response-wraps an arbitrary JSON object.
 func (a *System) PostSysWrappingWrap(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/sys/wrapping/wrap"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/sys/wrapping/wrap"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

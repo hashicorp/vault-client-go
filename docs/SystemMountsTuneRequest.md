@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **PassthroughRequestHeaders** | Pointer to **[]string** | A list of headers to whitelist and pass from the request to the plugin. | [optional] 
 **PluginVersion** | Pointer to **string** | The semantic version of the plugin to use. | [optional] 
 **TokenType** | Pointer to **string** | The type of token to issue (service or batch). | [optional] 
+**UserLockoutConfig** | Pointer to **map[string]interface{}** | The user lockout configuration to pass into the backend. Should be a json object with string keys and values. | [optional] 
 
 ## Methods
 
@@ -335,6 +336,31 @@ SetTokenType sets TokenType field to given value.
 `func (o *SystemMountsTuneRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+### GetUserLockoutConfig
+
+`func (o *SystemMountsTuneRequest) GetUserLockoutConfig() map[string]interface{}`
+
+GetUserLockoutConfig returns the UserLockoutConfig field if non-nil, zero value otherwise.
+
+### GetUserLockoutConfigOk
+
+`func (o *SystemMountsTuneRequest) GetUserLockoutConfigOk() (*map[string]interface{}, bool)`
+
+GetUserLockoutConfigOk returns a tuple with the UserLockoutConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserLockoutConfig
+
+`func (o *SystemMountsTuneRequest) SetUserLockoutConfig(v map[string]interface{})`
+
+SetUserLockoutConfig sets UserLockoutConfig field to given value.
+
+### HasUserLockoutConfig
+
+`func (o *SystemMountsTuneRequest) HasUserLockoutConfig() bool`
+
+HasUserLockoutConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

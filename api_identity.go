@@ -25,13 +25,13 @@ type Identity struct {
 // DeleteIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -47,13 +47,13 @@ func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string, optio
 // DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity-alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -69,13 +69,13 @@ func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string,
 // DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -91,13 +91,13 @@ func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string, opti
 // DeleteIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
 func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/name/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -113,13 +113,13 @@ func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string
 // DeleteIdentityGroupAliasIdId
 // id: ID of the group alias.
 func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group-alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -135,13 +135,13 @@ func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string, 
 // DeleteIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
 func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -157,13 +157,13 @@ func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string, optio
 // DeleteIdentityGroupNameName
 // name: Name of the group.
 func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/name/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -179,13 +179,13 @@ func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string,
 // DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
 // name: Name for this login enforcement configuration
 func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -201,13 +201,13 @@ func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, na
 // DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -223,13 +223,13 @@ func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, metho
 // DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -245,13 +245,13 @@ func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, meth
 // DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -267,13 +267,13 @@ func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, me
 // DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -289,13 +289,13 @@ func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, meth
 // DeleteIdentityOidcAssignmentName
 // name: Name of the assignment
 func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/assignment/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -311,13 +311,13 @@ func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name st
 // DeleteIdentityOidcClientName
 // name: Name of the client.
 func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/client/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -333,13 +333,13 @@ func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string
 // DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
 func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/key/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -355,13 +355,13 @@ func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string, o
 // DeleteIdentityOidcProviderName
 // name: Name of the provider
 func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -377,13 +377,13 @@ func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name stri
 // DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
 func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -399,13 +399,13 @@ func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string, 
 // DeleteIdentityOidcScopeName
 // name: Name of the scope
 func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/scope/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/scope/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -421,13 +421,13 @@ func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string,
 // DeleteIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
 func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/persona/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -443,12 +443,12 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string, opt
 // GetIdentityAliasId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityAliasId(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/alias/id"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/alias/id"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -464,13 +464,13 @@ func (a *Identity) GetIdentityAliasId(ctx context.Context, list string, options 
 // GetIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -486,12 +486,12 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string, options 
 // GetIdentityEntityAliasId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity-alias/id"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity-alias/id"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -507,13 +507,13 @@ func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string, op
 // GetIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity-alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -529,12 +529,12 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string, op
 // GetIdentityEntityId List all the entity IDs
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityId(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/id"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/id"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -550,13 +550,13 @@ func (a *Identity) GetIdentityEntityId(ctx context.Context, list string, options
 // GetIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -572,12 +572,12 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string, options
 // GetIdentityEntityName List all the entity names
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityName(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/name"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/name"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -593,13 +593,13 @@ func (a *Identity) GetIdentityEntityName(ctx context.Context, list string, optio
 // GetIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
 func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/name/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -615,12 +615,12 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string, o
 // GetIdentityGroupAliasId List all the group alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group-alias/id"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group-alias/id"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -636,13 +636,13 @@ func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string, opt
 // GetIdentityGroupAliasIdId
 // id: ID of the group alias.
 func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group-alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -658,12 +658,12 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string, opt
 // GetIdentityGroupId List all the group IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityGroupId(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/id"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/id"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -679,13 +679,13 @@ func (a *Identity) GetIdentityGroupId(ctx context.Context, list string, options 
 // GetIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
 func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -701,12 +701,12 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string, options 
 // GetIdentityGroupName
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityGroupName(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/name"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/name"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -722,13 +722,13 @@ func (a *Identity) GetIdentityGroupName(ctx context.Context, list string, option
 // GetIdentityGroupNameName
 // name: Name of the group.
 func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/name/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -744,12 +744,12 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string, op
 // GetIdentityMfaLoginEnforcement List login enforcements
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/login-enforcement"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/login-enforcement"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -765,13 +765,13 @@ func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list stri
 // GetIdentityMfaLoginEnforcementName Read the current login enforcement
 // name: Name for this login enforcement configuration
 func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -787,12 +787,12 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 // GetIdentityMfaMethod List MFA method configurations for all MFA methods
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -808,12 +808,12 @@ func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string, option
 // GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/duo"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/duo"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -829,13 +829,13 @@ func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string, opt
 // GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -851,13 +851,13 @@ func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId
 // GetIdentityMfaMethodMethodId Read the current configuration for the given ID regardless of the MFA method type
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -873,12 +873,12 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 // GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/okta"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/okta"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -894,13 +894,13 @@ func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string, op
 // GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -916,12 +916,12 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 // GetIdentityMfaMethodPingid List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/pingid"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/pingid"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -937,13 +937,13 @@ func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string, 
 // GetIdentityMfaMethodPingidMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -959,12 +959,12 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 // GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/totp"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/totp"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -980,13 +980,13 @@ func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string, op
 // GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1002,12 +1002,12 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 // GetIdentityOidcAssignment
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/assignment"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/assignment"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1023,13 +1023,13 @@ func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string, o
 // GetIdentityOidcAssignmentName
 // name: Name of the assignment
 func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/assignment/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1045,12 +1045,12 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 // GetIdentityOidcClient
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/client"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/client"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1066,13 +1066,13 @@ func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string, optio
 // GetIdentityOidcClientName
 // name: Name of the client.
 func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/client/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1087,12 +1087,12 @@ func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string, o
 
 // GetIdentityOidcConfig OIDC configuration
 func (a *Identity) GetIdentityOidcConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/config"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1108,12 +1108,12 @@ func (a *Identity) GetIdentityOidcConfig(ctx context.Context, options ...Request
 // GetIdentityOidcKey List OIDC keys
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/key"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/key"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1129,13 +1129,13 @@ func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string, options 
 // GetIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
 func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/key/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1150,14 +1150,13 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string, opti
 
 // GetIdentityOidcProvider
 // list: Must be set to &#x60;true&#x60;
-// allowedClientId: Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids.
 func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string, allowedClientId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1173,13 +1172,13 @@ func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string, all
 // GetIdentityOidcProviderName
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1195,13 +1194,13 @@ func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string,
 // GetIdentityOidcProviderNameAuthorize
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1217,13 +1216,13 @@ func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, nam
 // GetIdentityOidcProviderNameUserinfo
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1239,13 +1238,13 @@ func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name
 // GetIdentityOidcProviderNameWellKnownKeys
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1261,13 +1260,13 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context,
 // GetIdentityOidcProviderNameWellKnownOpenidConfiguration
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1283,12 +1282,12 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 // GetIdentityOidcRole List configured OIDC roles
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/role"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/role"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1304,13 +1303,13 @@ func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string, options
 // GetIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
 func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1326,12 +1325,12 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string, opt
 // GetIdentityOidcScope
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/scope"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/scope"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1347,13 +1346,13 @@ func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string, option
 // GetIdentityOidcScopeName
 // name: Name of the scope
 func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/scope/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/scope/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1369,13 +1368,13 @@ func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string, op
 // GetIdentityOidcTokenName Generate an OIDC token
 // name: Name of the role
 func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/token/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/token/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1390,12 +1389,12 @@ func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string, op
 
 // GetIdentityOidcWellKnownKeys Retrieve public keys
 func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/.well-known/keys"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/.well-known/keys"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1410,12 +1409,12 @@ func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context, options ...
 
 // GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
 func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/.well-known/openid-configuration"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/.well-known/openid-configuration"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1431,12 +1430,12 @@ func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Conte
 // GetIdentityPersonaId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/persona/id"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/persona/id"
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1452,13 +1451,13 @@ func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string, option
 // GetIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
 func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/persona/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1473,12 +1472,12 @@ func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string, option
 
 // PostIdentityAlias Create a new alias.
 func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest IdentityAliasRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/alias"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/alias"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1494,13 +1493,13 @@ func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest I
 // PostIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identityAliasIdRequest IdentityAliasIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1515,12 +1514,12 @@ func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identit
 
 // PostIdentityEntity Create a new entity
 func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest IdentityEntityRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1535,12 +1534,12 @@ func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest
 
 // PostIdentityEntityAlias Create a new alias.
 func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity-alias"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity-alias"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1556,13 +1555,13 @@ func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAl
 // PostIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, identityEntityAliasIdRequest IdentityEntityAliasIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity-alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1577,12 +1576,12 @@ func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, i
 
 // PostIdentityEntityBatchDelete Delete all of the entities provided
 func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/batch-delete"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/batch-delete"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1598,13 +1597,13 @@ func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEn
 // PostIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identityEntityIdRequest IdentityEntityIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1619,12 +1618,12 @@ func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identi
 
 // PostIdentityEntityMerge Merge two or more entities together
 func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/merge"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/merge"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1640,13 +1639,13 @@ func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMe
 // PostIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
 func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, identityEntityNameRequest IdentityEntityNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/entity/name/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/entity/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1661,12 +1660,12 @@ func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, 
 
 // PostIdentityGroup Create a new group.
 func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest IdentityGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1681,12 +1680,12 @@ func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest I
 
 // PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
 func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group-alias"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group-alias"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1702,13 +1701,13 @@ func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAlia
 // PostIdentityGroupAliasIdId
 // id: ID of the group alias.
 func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, identityGroupAliasIdRequest IdentityGroupAliasIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group-alias/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1724,13 +1723,13 @@ func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, id
 // PostIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
 func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identityGroupIdRequest IdentityGroupIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1746,13 +1745,13 @@ func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identit
 // PostIdentityGroupNameName
 // name: Name of the group.
 func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, identityGroupNameRequest IdentityGroupNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/group/name/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/group/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1767,12 +1766,12 @@ func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, i
 
 // PostIdentityLookupEntity Query entities based on various properties.
 func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/lookup/entity"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/lookup/entity"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1787,12 +1786,12 @@ func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupE
 
 // PostIdentityLookupGroup Query groups based on various properties.
 func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/lookup/group"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/lookup/group"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1808,13 +1807,13 @@ func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGr
 // PostIdentityMfaLoginEnforcementName Create or update a login enforcement
 // name: Name for this login enforcement configuration
 func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name string, identityMfaLoginEnforcementRequest IdentityMfaLoginEnforcementRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1830,13 +1829,13 @@ func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name
 // PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string, identityMfaMethodDuoRequest IdentityMfaMethodDuoRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1852,13 +1851,13 @@ func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodI
 // PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string, identityMfaMethodOktaRequest IdentityMfaMethodOktaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1874,13 +1873,13 @@ func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, method
 // PostIdentityMfaMethodPingidMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string, identityMfaMethodPingidRequest IdentityMfaMethodPingidRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1895,12 +1894,12 @@ func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, meth
 
 // PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA method ID on the given entity
 func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/totp/admin-destroy"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/totp/admin-destroy"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1915,12 +1914,12 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, id
 
 // PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/totp/admin-generate"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/totp/admin-generate"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1935,12 +1934,12 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, i
 
 // PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/totp/generate"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/totp/generate"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1956,13 +1955,13 @@ func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identi
 // PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string, identityMfaMethodTotpRequest IdentityMfaMethodTotpRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
-	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -1978,13 +1977,13 @@ func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, method
 // PostIdentityOidcAssignmentName
 // name: Name of the assignment
 func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name string, identityOidcAssignmentRequest IdentityOidcAssignmentRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/assignment/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2000,13 +1999,13 @@ func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name stri
 // PostIdentityOidcClientName
 // name: Name of the client.
 func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, identityOidcClientRequest IdentityOidcClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/client/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2021,12 +2020,12 @@ func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, 
 
 // PostIdentityOidcConfig OIDC configuration
 func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/config"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/config"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2041,12 +2040,12 @@ func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfi
 
 // PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
 func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/introspect"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/introspect"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2062,13 +2061,13 @@ func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcI
 // PostIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
 func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, identityOidcKeyRequest IdentityOidcKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/key/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2084,13 +2083,13 @@ func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, ide
 // PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
 // name: Name of the key
 func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name string, identityOidcKeyRotateRequest IdentityOidcKeyRotateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/key/{name}/rotate"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/key/{name}/rotate"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2106,13 +2105,13 @@ func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name strin
 // PostIdentityOidcProviderName
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string, identityOidcProviderRequest IdentityOidcProviderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2128,13 +2127,13 @@ func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string
 // PostIdentityOidcProviderNameAuthorize
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, name string, identityOidcProviderAuthorizeRequest IdentityOidcProviderAuthorizeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2150,13 +2149,13 @@ func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, na
 // PostIdentityOidcProviderNameToken
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name string, identityOidcProviderTokenRequest IdentityOidcProviderTokenRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}/token"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/token"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2172,13 +2171,13 @@ func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name s
 // PostIdentityOidcProviderNameUserinfo
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2194,13 +2193,13 @@ func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, nam
 // PostIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
 func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, identityOidcRoleRequest IdentityOidcRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/role/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2216,13 +2215,13 @@ func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, id
 // PostIdentityOidcScopeName
 // name: Name of the scope
 func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, identityOidcScopeRequest IdentityOidcScopeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/oidc/scope/{name}"
-	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/oidc/scope/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2237,12 +2236,12 @@ func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, i
 
 // PostIdentityPersona Create a new alias.
 func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaRequest IdentityPersonaRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/persona"
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/persona"
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2258,13 +2257,13 @@ func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaReque
 // PostIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
 func (a *Identity) PostIdentityPersonaIdId(ctx context.Context, id string, identityPersonaIdRequest IdentityPersonaIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	requestPath := "/v1/identity/persona/id/{id}"
-	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
-
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
+
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,

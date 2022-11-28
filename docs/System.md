@@ -48,6 +48,7 @@ Method | HTTP request | Description
 [**GetSysInternalCountersEntities**](System.md#GetSysInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
 [**GetSysInternalCountersRequests**](System.md#GetSysInternalCountersRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
 [**GetSysInternalCountersTokens**](System.md#GetSysInternalCountersTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
+[**GetSysInternalInspectRouterTag**](System.md#GetSysInternalInspectRouterTag) | **Get** /sys/internal/inspect/router/{tag} | Expose the route entry and mount entry tables present in the router
 [**GetSysInternalSpecsOpenapi**](System.md#GetSysInternalSpecsOpenapi) | **Get** /sys/internal/specs/openapi | Generate an OpenAPI 3 document of all mounted paths.
 [**GetSysInternalUiFeatureFlags**](System.md#GetSysInternalUiFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
 [**GetSysInternalUiMounts**](System.md#GetSysInternalUiMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
@@ -2670,6 +2671,65 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+## GetSysInternalInspectRouterTag
+
+> GetSysInternalInspectRouterTag(ctx, tag).Execute()
+
+Expose the route entry and mount entry tables present in the router
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	tag := "tag_example" // string | Name of subtree being observed
+
+	resp, err := client.WithToken("my-token").System.GetSysInternalInspectRouterTag(context.Background(), tag)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**tag** | **string** | Name of subtree being observed | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GetSysInternalSpecsOpenapi
 
 > GetSysInternalSpecsOpenapi(ctx).Execute()
@@ -3351,7 +3411,7 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | 
+ **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | [default to &quot;json&quot;]
 
  (empty response body)
 
@@ -3408,7 +3468,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
- **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
+ **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | [default to &quot;info&quot;]
 
  (empty response body)
 
@@ -4152,7 +4212,7 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | 
+ **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
 
  (empty response body)
 
@@ -5014,7 +5074,7 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | 
+ **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
 
  (empty response body)
 
@@ -5075,7 +5135,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **list** | **string** | Return a list if &#x60;true&#x60; | 
+ **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
 
  (empty response body)
 

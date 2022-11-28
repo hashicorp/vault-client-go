@@ -32,9 +32,13 @@ type requestModifiers struct {
 
 	requestCallbacks  []RequestCallback
 	responseCallbacks []ResponseCallback
+
+	// mountPath, if specified, will overwrite the default mount path used in
+	// client.Auth & client.Secrets requests
+	mountPath string
 }
 
-// requestHeaders contains headers that will be added to each request
+// requestHeaders contains headers that will be added to requests
 type requestHeaders struct {
 	userAgent                 string                    // 'User-Agent'
 	token                     string                    // 'X-Vault-Token'
@@ -286,6 +290,23 @@ func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOpt
 		m.responseCallbacks = callbacks
 		return nil
 	}
+}
+
+// WithMountPath overwrites the default mount path in client.Auth and
+// client.Secrets requests with the given mount path string.
+func (c *Client) WithMountPath(path string) RequestOption {
+	return func(m *requestModifiers) error {
+		// the mount path is expected to have no leading/trailing "/" characters
+		m.mountPath = strings.Trim(path, "/")
+		return nil
+	}
+}
+
+func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
+	if m.mountPath == "" {
+		return defaultMountPath
+	}
+	return m.mountPath
 }
 
 // mergeRequestModifiers merges the two objects, preferring the local modifiers

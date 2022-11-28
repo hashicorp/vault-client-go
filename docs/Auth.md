@@ -287,17 +287,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "alicloud")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAlicloudRoleRole(context.Background(), alicloudMountPath, role)
+	resp, err := client.Auth.DeleteAuthAlicloudRoleRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -349,17 +352,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleName(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleName(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -411,17 +417,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -473,17 +482,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -535,17 +547,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePeriod(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -597,17 +612,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePolicies(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -659,17 +677,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -721,17 +742,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -783,17 +807,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -845,17 +872,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -907,17 +937,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -969,17 +1002,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1031,17 +1067,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1093,17 +1132,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1155,17 +1197,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1217,17 +1262,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), awsMountPath, certName)
+	resp, err := client.Auth.DeleteAuthAwsConfigCertificateCertName(
+		context.Background(),
+		certName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1279,16 +1327,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigClient(context.Background(), awsMountPath)
+	resp, err := client.Auth.DeleteAuthAwsConfigClient(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1338,17 +1388,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId, awsMountPath)
+	resp, err := client.Auth.DeleteAuthAwsConfigStsAccountId(
+		context.Background(),
+		accountId,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1400,16 +1453,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background(), awsMountPath)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1459,16 +1514,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background(), awsMountPath)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1518,16 +1575,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background(), awsMountPath)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1577,16 +1636,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background(), awsMountPath)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1636,17 +1697,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), awsMountPath, instanceId)
+	resp, err := client.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(
+		context.Background(),
+		instanceId,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1698,17 +1762,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), awsMountPath, instanceId)
+	resp, err := client.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(
+		context.Background(),
+		instanceId,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1760,17 +1827,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsRoleRole(context.Background(), awsMountPath, role)
+	resp, err := client.Auth.DeleteAuthAwsRoleRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1822,17 +1892,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), awsMountPath, roleTag)
+	resp, err := client.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(
+		context.Background(),
+		roleTag,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1884,17 +1957,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), awsMountPath, roleTag)
+	resp, err := client.Auth.DeleteAuthAwsRoletagDenylistRoleTag(
+		context.Background(),
+		roleTag,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1946,16 +2022,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAzureConfig(context.Background(), azureMountPath)
+	resp, err := client.Auth.DeleteAuthAzureConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2005,17 +2083,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthAzureRoleName(context.Background(), azureMountPath, name)
+	resp, err := client.Auth.DeleteAuthAzureRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2067,17 +2148,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCertCertsName(context.Background(), certMountPath, name)
+	resp, err := client.Auth.DeleteAuthCertCertsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2129,17 +2213,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCertCrlsName(context.Background(), certMountPath, name)
+	resp, err := client.Auth.DeleteAuthCertCrlsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2191,16 +2278,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCfConfig(context.Background(), cfMountPath)
+	resp, err := client.Auth.DeleteAuthCfConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2250,17 +2339,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | The name of the role.
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthCfRolesRole(context.Background(), cfMountPath, role)
+	resp, err := client.Auth.DeleteAuthCfRolesRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2312,17 +2404,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthGcpRoleName(context.Background(), gcpMountPath, name)
+	resp, err := client.Auth.DeleteAuthGcpRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2374,17 +2469,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthGithubMapTeamsKey(context.Background(), githubMountPath, key)
+	resp, err := client.Auth.DeleteAuthGithubMapTeamsKey(
+		context.Background(),
+		key,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2436,17 +2534,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	key := "key_example" // string | Key for the users mapping
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthGithubMapUsersKey(context.Background(), githubMountPath, key)
+	resp, err := client.Auth.DeleteAuthGithubMapUsersKey(
+		context.Background(),
+		key,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2498,17 +2599,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthJwtRoleName(context.Background(), jwtMountPath, name)
+	resp, err := client.Auth.DeleteAuthJwtRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2560,17 +2664,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthKerberosGroupsName(context.Background(), kerberosMountPath, name)
+	resp, err := client.Auth.DeleteAuthKerberosGroupsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2622,17 +2729,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kubernetes")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthKubernetesRoleName(context.Background(), kubernetesMountPath, name)
+	resp, err := client.Auth.DeleteAuthKubernetesRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2684,17 +2794,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthLdapGroupsName(context.Background(), ldapMountPath, name)
+	resp, err := client.Auth.DeleteAuthLdapGroupsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2746,17 +2859,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthLdapUsersName(context.Background(), ldapMountPath, name)
+	resp, err := client.Auth.DeleteAuthLdapUsersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2808,16 +2924,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOciConfig(context.Background(), ociMountPath)
+	resp, err := client.Auth.DeleteAuthOciConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2867,17 +2985,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOciRoleRole(context.Background(), ociMountPath, role)
+	resp, err := client.Auth.DeleteAuthOciRoleRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2929,17 +3050,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOidcRoleName(context.Background(), name, oidcMountPath)
+	resp, err := client.Auth.DeleteAuthOidcRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -2991,17 +3115,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOktaGroupsName(context.Background(), name, oktaMountPath)
+	resp, err := client.Auth.DeleteAuthOktaGroupsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3053,17 +3180,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the user.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthOktaUsersName(context.Background(), name, oktaMountPath)
+	resp, err := client.Auth.DeleteAuthOktaUsersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3115,17 +3245,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthRadiusUsersName(context.Background(), name, radiusMountPath)
+	resp, err := client.Auth.DeleteAuthRadiusUsersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3177,17 +3310,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName, tokenMountPath)
+	resp, err := client.Auth.DeleteAuthTokenRolesRoleName(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3239,17 +3375,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
-	resp, err := client.WithToken("my-token").Auth.DeleteAuthUserpassUsersUsername(context.Background(), username, userpassMountPath)
+	resp, err := client.Auth.DeleteAuthUserpassUsersUsername(
+		context.Background(),
+		username,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3301,17 +3440,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "alicloud")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAlicloudRole(context.Background(), alicloudMountPath, list)
+	resp, err := client.Auth.GetAuthAlicloudRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3362,17 +3504,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "alicloud")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAlicloudRoleRole(context.Background(), alicloudMountPath, role)
+	resp, err := client.Auth.GetAuthAlicloudRoleRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3424,17 +3569,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "alicloud")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAlicloudRoles(context.Background(), alicloudMountPath, list)
+	resp, err := client.Auth.GetAuthAlicloudRoles(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3485,17 +3633,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRole(context.Background(), approleMountPath, list)
+	resp, err := client.Auth.GetAuthApproleRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3546,17 +3697,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleName(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleName(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3608,17 +3762,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameBindSecretId(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3670,17 +3827,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameBoundCidrList(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3732,17 +3892,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3794,17 +3957,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNamePeriod(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3856,17 +4022,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNamePolicies(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3918,17 +4087,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameRoleId(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -3980,18 +4152,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), approleMountPath, roleName, list)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(
+		context.Background(),
+		roleName,
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4044,17 +4220,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4106,17 +4285,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4168,17 +4350,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4230,17 +4415,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4292,17 +4480,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4354,17 +4545,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenNumUses(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4416,17 +4610,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), approleMountPath, roleName)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenTtl(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4478,17 +4675,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigCertificateCertName(context.Background(), awsMountPath, certName)
+	resp, err := client.Auth.GetAuthAwsConfigCertificateCertName(
+		context.Background(),
+		certName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4540,17 +4740,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigCertificates(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsConfigCertificates(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4601,16 +4804,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigClient(context.Background(), awsMountPath)
+	resp, err := client.Auth.GetAuthAwsConfigClient(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4660,16 +4865,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigIdentity(context.Background(), awsMountPath)
+	resp, err := client.Auth.GetAuthAwsConfigIdentity(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4719,17 +4926,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigSts(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsConfigSts(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4780,17 +4990,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId, awsMountPath)
+	resp, err := client.Auth.GetAuthAwsConfigStsAccountId(
+		context.Background(),
+		accountId,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4842,16 +5055,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background(), awsMountPath)
+	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityAccesslist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4901,16 +5116,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background(), awsMountPath)
+	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityWhitelist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -4960,16 +5177,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background(), awsMountPath)
+	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagBlacklist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5019,16 +5238,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background(), awsMountPath)
+	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagDenylist(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5078,17 +5299,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityAccesslist(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsIdentityAccesslist(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5139,17 +5363,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), awsMountPath, instanceId)
+	resp, err := client.Auth.GetAuthAwsIdentityAccesslistInstanceId(
+		context.Background(),
+		instanceId,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5201,17 +5428,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityWhitelist(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsIdentityWhitelist(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5262,17 +5492,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), awsMountPath, instanceId)
+	resp, err := client.Auth.GetAuthAwsIdentityWhitelistInstanceId(
+		context.Background(),
+		instanceId,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5324,17 +5557,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRole(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5385,17 +5621,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoleRole(context.Background(), awsMountPath, role)
+	resp, err := client.Auth.GetAuthAwsRoleRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5447,17 +5686,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoles(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsRoles(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5508,17 +5750,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagBlacklist(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsRoletagBlacklist(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5569,17 +5814,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), awsMountPath, roleTag)
+	resp, err := client.Auth.GetAuthAwsRoletagBlacklistRoleTag(
+		context.Background(),
+		roleTag,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5631,17 +5879,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagDenylist(context.Background(), awsMountPath, list)
+	resp, err := client.Auth.GetAuthAwsRoletagDenylist(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5692,17 +5943,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), awsMountPath, roleTag)
+	resp, err := client.Auth.GetAuthAwsRoletagDenylistRoleTag(
+		context.Background(),
+		roleTag,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5754,16 +6008,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAzureConfig(context.Background(), azureMountPath)
+	resp, err := client.Auth.GetAuthAzureConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5813,17 +6069,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthAzureRole(context.Background(), azureMountPath, list)
+	resp, err := client.Auth.GetAuthAzureRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5874,17 +6133,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthAzureRoleName(context.Background(), azureMountPath, name)
+	resp, err := client.Auth.GetAuthAzureRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5936,16 +6198,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	centrifyMountPath := "centrifyMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "centrify")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCentrifyConfig(context.Background(), centrifyMountPath)
+	resp, err := client.Auth.GetAuthCentrifyConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -5995,17 +6259,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertCerts(context.Background(), certMountPath, list)
+	resp, err := client.Auth.GetAuthCertCerts(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6056,17 +6323,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertCertsName(context.Background(), certMountPath, name)
+	resp, err := client.Auth.GetAuthCertCertsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6118,16 +6388,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertConfig(context.Background(), certMountPath)
+	resp, err := client.Auth.GetAuthCertConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6177,17 +6449,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCertCrlsName(context.Background(), certMountPath, name)
+	resp, err := client.Auth.GetAuthCertCrlsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6239,16 +6514,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCfConfig(context.Background(), cfMountPath)
+	resp, err := client.Auth.GetAuthCfConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6298,17 +6575,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthCfRoles(context.Background(), cfMountPath, list)
+	resp, err := client.Auth.GetAuthCfRoles(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6359,17 +6639,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | The name of the role.
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthCfRolesRole(context.Background(), cfMountPath, role)
+	resp, err := client.Auth.GetAuthCfRolesRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6421,16 +6704,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpConfig(context.Background(), gcpMountPath)
+	resp, err := client.Auth.GetAuthGcpConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6480,17 +6765,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpRole(context.Background(), gcpMountPath, list)
+	resp, err := client.Auth.GetAuthGcpRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6541,17 +6829,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpRoleName(context.Background(), gcpMountPath, name)
+	resp, err := client.Auth.GetAuthGcpRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6603,17 +6894,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGcpRoles(context.Background(), gcpMountPath, list)
+	resp, err := client.Auth.GetAuthGcpRoles(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6664,16 +6958,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubConfig(context.Background(), githubMountPath)
+	resp, err := client.Auth.GetAuthGithubConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6723,17 +7019,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapTeams(context.Background(), githubMountPath, list)
+	resp, err := client.Auth.GetAuthGithubMapTeams(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6784,17 +7083,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapTeamsKey(context.Background(), githubMountPath, key)
+	resp, err := client.Auth.GetAuthGithubMapTeamsKey(
+		context.Background(),
+		key,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6846,17 +7148,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapUsers(context.Background(), githubMountPath, list)
+	resp, err := client.Auth.GetAuthGithubMapUsers(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6907,17 +7212,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	key := "key_example" // string | Key for the users mapping
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthGithubMapUsersKey(context.Background(), githubMountPath, key)
+	resp, err := client.Auth.GetAuthGithubMapUsersKey(
+		context.Background(),
+		key,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -6969,16 +7277,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtConfig(context.Background(), jwtMountPath)
+	resp, err := client.Auth.GetAuthJwtConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7028,16 +7338,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtOidcCallback(context.Background(), jwtMountPath)
+	resp, err := client.Auth.GetAuthJwtOidcCallback(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7089,17 +7401,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtRole(context.Background(), jwtMountPath, list)
+	resp, err := client.Auth.GetAuthJwtRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7150,17 +7465,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthJwtRoleName(context.Background(), jwtMountPath, name)
+	resp, err := client.Auth.GetAuthJwtRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7212,16 +7530,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosConfig(context.Background(), kerberosMountPath)
+	resp, err := client.Auth.GetAuthKerberosConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7271,16 +7591,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosConfigLdap(context.Background(), kerberosMountPath)
+	resp, err := client.Auth.GetAuthKerberosConfigLdap(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7330,17 +7652,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosGroups(context.Background(), kerberosMountPath, list)
+	resp, err := client.Auth.GetAuthKerberosGroups(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7391,17 +7716,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosGroupsName(context.Background(), kerberosMountPath, name)
+	resp, err := client.Auth.GetAuthKerberosGroupsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7453,16 +7781,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthKerberosLogin(context.Background(), kerberosMountPath)
+	resp, err := client.Auth.GetAuthKerberosLogin(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7512,16 +7842,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kubernetes")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthKubernetesConfig(context.Background(), kubernetesMountPath)
+	resp, err := client.Auth.GetAuthKubernetesConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7571,17 +7903,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kubernetes")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthKubernetesRole(context.Background(), kubernetesMountPath, list)
+	resp, err := client.Auth.GetAuthKubernetesRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7632,17 +7967,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kubernetes")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthKubernetesRoleName(context.Background(), kubernetesMountPath, name)
+	resp, err := client.Auth.GetAuthKubernetesRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7694,16 +8032,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapConfig(context.Background(), ldapMountPath)
+	resp, err := client.Auth.GetAuthLdapConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7753,17 +8093,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapGroups(context.Background(), ldapMountPath, list)
+	resp, err := client.Auth.GetAuthLdapGroups(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7814,17 +8157,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapGroupsName(context.Background(), ldapMountPath, name)
+	resp, err := client.Auth.GetAuthLdapGroupsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7876,17 +8222,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapUsers(context.Background(), ldapMountPath, list)
+	resp, err := client.Auth.GetAuthLdapUsers(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7937,17 +8286,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthLdapUsersName(context.Background(), ldapMountPath, name)
+	resp, err := client.Auth.GetAuthLdapUsersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -7999,16 +8351,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOciConfig(context.Background(), ociMountPath)
+	resp, err := client.Auth.GetAuthOciConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8058,17 +8412,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOciRole(context.Background(), ociMountPath, list)
+	resp, err := client.Auth.GetAuthOciRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8119,17 +8476,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOciRoleRole(context.Background(), ociMountPath, role)
+	resp, err := client.Auth.GetAuthOciRoleRole(
+		context.Background(),
+		role,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8181,16 +8541,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcConfig(context.Background(), oidcMountPath)
+	resp, err := client.Auth.GetAuthOidcConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8240,16 +8602,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcOidcCallback(context.Background(), oidcMountPath)
+	resp, err := client.Auth.GetAuthOidcOidcCallback(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8301,17 +8665,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcRole(context.Background(), oidcMountPath, list)
+	resp, err := client.Auth.GetAuthOidcRole(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8362,17 +8729,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOidcRoleName(context.Background(), name, oidcMountPath)
+	resp, err := client.Auth.GetAuthOidcRoleName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8424,16 +8794,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaConfig(context.Background(), oktaMountPath)
+	resp, err := client.Auth.GetAuthOktaConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8483,17 +8855,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaGroups(context.Background(), oktaMountPath, list)
+	resp, err := client.Auth.GetAuthOktaGroups(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8544,17 +8919,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaGroupsName(context.Background(), name, oktaMountPath)
+	resp, err := client.Auth.GetAuthOktaGroupsName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8606,17 +8984,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaUsers(context.Background(), oktaMountPath, list)
+	resp, err := client.Auth.GetAuthOktaUsers(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8667,17 +9048,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the user.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaUsersName(context.Background(), name, oktaMountPath)
+	resp, err := client.Auth.GetAuthOktaUsersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8729,17 +9113,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthOktaVerifyNonce(context.Background(), nonce, oktaMountPath)
+	resp, err := client.Auth.GetAuthOktaVerifyNonce(
+		context.Background(),
+		nonce,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8791,16 +9178,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthRadiusConfig(context.Background(), radiusMountPath)
+	resp, err := client.Auth.GetAuthRadiusConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8850,17 +9239,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthRadiusUsers(context.Background(), radiusMountPath, list)
+	resp, err := client.Auth.GetAuthRadiusUsers(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8911,17 +9303,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthRadiusUsersName(context.Background(), name, radiusMountPath)
+	resp, err := client.Auth.GetAuthRadiusUsersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -8973,17 +9368,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenAccessors(context.Background(), tokenMountPath, list)
+	resp, err := client.Auth.GetAuthTokenAccessors(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9034,16 +9432,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenLookup(context.Background(), tokenMountPath)
+	resp, err := client.Auth.GetAuthTokenLookup(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9093,16 +9493,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenLookupSelf(context.Background(), tokenMountPath)
+	resp, err := client.Auth.GetAuthTokenLookupSelf(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9152,17 +9554,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenRoles(context.Background(), tokenMountPath, list)
+	resp, err := client.Auth.GetAuthTokenRoles(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9213,17 +9618,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthTokenRolesRoleName(context.Background(), roleName, tokenMountPath)
+	resp, err := client.Auth.GetAuthTokenRolesRoleName(
+		context.Background(),
+		roleName,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9275,17 +9683,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	userpassMountPath := "userpassMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	list := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.GetAuthUserpassUsers(context.Background(), userpassMountPath, list)
+	resp, err := client.Auth.GetAuthUserpassUsers(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9336,17 +9747,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
-	resp, err := client.WithToken("my-token").Auth.GetAuthUserpassUsersUsername(context.Background(), username, userpassMountPath)
+	resp, err := client.Auth.GetAuthUserpassUsersUsername(
+		context.Background(),
+		username,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9398,17 +9812,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	alicloudMountPath := "alicloudMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "alicloud")
 
 	alicloudLoginRequest := NewAlicloudLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAlicloudLogin(context.Background(), alicloudMountPath, alicloudLoginRequest)
+	resp, err := client.Auth.PostAuthAlicloudLogin(
+		context.Background(),
+		alicloudLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9459,18 +9876,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-	alicloudMountPath := "alicloudMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "alicloud")
 
 	alicloudRoleRequest := NewAlicloudRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAlicloudRoleRole(context.Background(), alicloudMountPath, role, alicloudRoleRequest)
+	resp, err := client.Auth.PostAuthAlicloudRoleRole(
+		context.Background(),
+		role,
+		alicloudRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9523,17 +9944,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleLoginRequest := NewApproleLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleLogin(context.Background(), approleMountPath, approleLoginRequest)
+	resp, err := client.Auth.PostAuthApproleLogin(
+		context.Background(),
+		approleLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9584,18 +10008,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleRequest := NewApproleRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleName(context.Background(), approleMountPath, roleName, approleRoleRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleName(
+		context.Background(),
+		roleName,
+		approleRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9648,18 +10076,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleBindSecretIdRequest := NewApproleRoleBindSecretIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), approleMountPath, roleName, approleRoleBindSecretIdRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(
+		context.Background(),
+		roleName,
+		approleRoleBindSecretIdRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9712,18 +10144,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleBoundCidrListRequest := NewApproleRoleBoundCidrListRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), approleMountPath, roleName, approleRoleBoundCidrListRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(
+		context.Background(),
+		roleName,
+		approleRoleBoundCidrListRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9776,18 +10212,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleCustomSecretIdRequest := NewApproleRoleCustomSecretIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), approleMountPath, roleName, approleRoleCustomSecretIdRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(
+		context.Background(),
+		roleName,
+		approleRoleCustomSecretIdRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9840,18 +10280,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRolePeriodRequest := NewApproleRolePeriodRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), approleMountPath, roleName, approleRolePeriodRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(
+		context.Background(),
+		roleName,
+		approleRolePeriodRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9904,18 +10348,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRolePoliciesRequest := NewApproleRolePoliciesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), approleMountPath, roleName, approleRolePoliciesRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(
+		context.Background(),
+		roleName,
+		approleRolePoliciesRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -9968,18 +10416,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleRoleIdRequest := NewApproleRoleRoleIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), approleMountPath, roleName, approleRoleRoleIdRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(
+		context.Background(),
+		roleName,
+		approleRoleRoleIdRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10032,18 +10484,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdRequest := NewApproleRoleSecretIdRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), approleMountPath, roleName, approleRoleSecretIdRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10096,18 +10552,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdAccessorDestroyRequest := NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), approleMountPath, roleName, approleRoleSecretIdAccessorDestroyRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdAccessorDestroyRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10160,18 +10620,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdAccessorLookupRequest := NewApproleRoleSecretIdAccessorLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), approleMountPath, roleName, approleRoleSecretIdAccessorLookupRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdAccessorLookupRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10224,18 +10688,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdBoundCidrsRequest := NewApproleRoleSecretIdBoundCidrsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), approleMountPath, roleName, approleRoleSecretIdBoundCidrsRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdBoundCidrsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10288,18 +10756,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdDestroyRequest := NewApproleRoleSecretIdDestroyRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), approleMountPath, roleName, approleRoleSecretIdDestroyRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdDestroyRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10352,18 +10824,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdLookupRequest := NewApproleRoleSecretIdLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), approleMountPath, roleName, approleRoleSecretIdLookupRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdLookupRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10416,18 +10892,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdNumUsesRequest := NewApproleRoleSecretIdNumUsesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), approleMountPath, roleName, approleRoleSecretIdNumUsesRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdNumUsesRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10480,18 +10960,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleSecretIdTtlRequest := NewApproleRoleSecretIdTtlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), approleMountPath, roleName, approleRoleSecretIdTtlRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(
+		context.Background(),
+		roleName,
+		approleRoleSecretIdTtlRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10544,18 +11028,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenBoundCidrsRequest := NewApproleRoleTokenBoundCidrsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), approleMountPath, roleName, approleRoleTokenBoundCidrsRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(
+		context.Background(),
+		roleName,
+		approleRoleTokenBoundCidrsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10608,18 +11096,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenMaxTtlRequest := NewApproleRoleTokenMaxTtlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), approleMountPath, roleName, approleRoleTokenMaxTtlRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(
+		context.Background(),
+		roleName,
+		approleRoleTokenMaxTtlRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10672,18 +11164,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenNumUsesRequest := NewApproleRoleTokenNumUsesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), approleMountPath, roleName, approleRoleTokenNumUsesRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(
+		context.Background(),
+		roleName,
+		approleRoleTokenNumUsesRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10736,18 +11232,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
 	approleRoleTokenTtlRequest := NewApproleRoleTokenTtlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), approleMountPath, roleName, approleRoleTokenTtlRequest)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(
+		context.Background(),
+		roleName,
+		approleRoleTokenTtlRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10800,16 +11300,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	approleMountPath := "approleMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "approle")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthApproleTidySecretId(context.Background(), approleMountPath)
+	resp, err := client.Auth.PostAuthApproleTidySecretId(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10859,18 +11361,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigCertificateRequest := NewAwsConfigCertificateRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigCertificateCertName(context.Background(), awsMountPath, certName, awsConfigCertificateRequest)
+	resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(
+		context.Background(),
+		certName,
+		awsConfigCertificateRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10923,17 +11429,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigClientRequest := NewAwsConfigClientRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigClient(context.Background(), awsMountPath, awsConfigClientRequest)
+	resp, err := client.Auth.PostAuthAwsConfigClient(
+		context.Background(),
+		awsConfigClientRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -10984,17 +11493,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigIdentityRequest := NewAwsConfigIdentityRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigIdentity(context.Background(), awsMountPath, awsConfigIdentityRequest)
+	resp, err := client.Auth.PostAuthAwsConfigIdentity(
+		context.Background(),
+		awsConfigIdentityRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11045,16 +11557,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigRotateRoot(context.Background(), awsMountPath)
+	resp, err := client.Auth.PostAuthAwsConfigRotateRoot(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11104,18 +11618,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigStsRequest := NewAwsConfigStsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId, awsMountPath, awsConfigStsRequest)
+	resp, err := client.Auth.PostAuthAwsConfigStsAccountId(
+		context.Background(),
+		accountId,
+		awsConfigStsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11168,17 +11686,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyIdentityAccesslistRequest := NewAwsConfigTidyIdentityAccesslistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background(), awsMountPath, awsConfigTidyIdentityAccesslistRequest)
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(
+		context.Background(),
+		awsConfigTidyIdentityAccesslistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11229,17 +11750,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyIdentityWhitelistRequest := NewAwsConfigTidyIdentityWhitelistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background(), awsMountPath, awsConfigTidyIdentityWhitelistRequest)
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(
+		context.Background(),
+		awsConfigTidyIdentityWhitelistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11290,17 +11814,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyRoletagBlacklistRequest := NewAwsConfigTidyRoletagBlacklistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background(), awsMountPath, awsConfigTidyRoletagBlacklistRequest)
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(
+		context.Background(),
+		awsConfigTidyRoletagBlacklistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11351,17 +11878,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsConfigTidyRoletagDenylistRequest := NewAwsConfigTidyRoletagDenylistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background(), awsMountPath, awsConfigTidyRoletagDenylistRequest)
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(
+		context.Background(),
+		awsConfigTidyRoletagDenylistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11412,17 +11942,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsLoginRequest := NewAwsLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsLogin(context.Background(), awsMountPath, awsLoginRequest)
+	resp, err := client.Auth.PostAuthAwsLogin(
+		context.Background(),
+		awsLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11473,18 +12006,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsRoleRequest := NewAwsRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoleRole(context.Background(), awsMountPath, role, awsRoleRequest)
+	resp, err := client.Auth.PostAuthAwsRoleRole(
+		context.Background(),
+		role,
+		awsRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11537,18 +12074,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsRoleTagRequest := NewAwsRoleTagRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoleRoleTag(context.Background(), awsMountPath, role, awsRoleTagRequest)
+	resp, err := client.Auth.PostAuthAwsRoleRoleTag(
+		context.Background(),
+		role,
+		awsRoleTagRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11601,17 +12142,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), awsMountPath, roleTag)
+	resp, err := client.Auth.PostAuthAwsRoletagBlacklistRoleTag(
+		context.Background(),
+		roleTag,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11663,17 +12207,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), awsMountPath, roleTag)
+	resp, err := client.Auth.PostAuthAwsRoletagDenylistRoleTag(
+		context.Background(),
+		roleTag,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11725,17 +12272,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsTidyIdentityAccesslistRequest := NewAwsTidyIdentityAccesslistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyIdentityAccesslist(context.Background(), awsMountPath, awsTidyIdentityAccesslistRequest)
+	resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(
+		context.Background(),
+		awsTidyIdentityAccesslistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11786,17 +12336,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsTidyIdentityWhitelistRequest := NewAwsTidyIdentityWhitelistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyIdentityWhitelist(context.Background(), awsMountPath, awsTidyIdentityWhitelistRequest)
+	resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(
+		context.Background(),
+		awsTidyIdentityWhitelistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11847,17 +12400,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsTidyRoletagBlacklistRequest := NewAwsTidyRoletagBlacklistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyRoletagBlacklist(context.Background(), awsMountPath, awsTidyRoletagBlacklistRequest)
+	resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(
+		context.Background(),
+		awsTidyRoletagBlacklistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11908,17 +12464,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	awsMountPath := "awsMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "aws")
 
 	awsTidyRoletagDenylistRequest := NewAwsTidyRoletagDenylistRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAwsTidyRoletagDenylist(context.Background(), awsMountPath, awsTidyRoletagDenylistRequest)
+	resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(
+		context.Background(),
+		awsTidyRoletagDenylistRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -11969,17 +12528,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
 	azureConfigRequest := NewAzureConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAzureConfig(context.Background(), azureMountPath, azureConfigRequest)
+	resp, err := client.Auth.PostAuthAzureConfig(
+		context.Background(),
+		azureConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12030,17 +12592,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
 	azureLoginRequest := NewAzureLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAzureLogin(context.Background(), azureMountPath, azureLoginRequest)
+	resp, err := client.Auth.PostAuthAzureLogin(
+		context.Background(),
+		azureLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12091,18 +12656,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	azureMountPath := "azureMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "azure")
 
 	azureRoleRequest := NewAzureRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthAzureRoleName(context.Background(), azureMountPath, name, azureRoleRequest)
+	resp, err := client.Auth.PostAuthAzureRoleName(
+		context.Background(),
+		name,
+		azureRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12155,17 +12724,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	centrifyMountPath := "centrifyMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "centrify")
 
 	centrifyConfigRequest := NewCentrifyConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCentrifyConfig(context.Background(), centrifyMountPath, centrifyConfigRequest)
+	resp, err := client.Auth.PostAuthCentrifyConfig(
+		context.Background(),
+		centrifyConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12216,17 +12788,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	centrifyMountPath := "centrifyMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "centrify")
 
 	centrifyLoginRequest := NewCentrifyLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCentrifyLogin(context.Background(), centrifyMountPath, centrifyLoginRequest)
+	resp, err := client.Auth.PostAuthCentrifyLogin(
+		context.Background(),
+		centrifyLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12277,18 +12852,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
 	certCertsRequest := NewCertCertsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertCertsName(context.Background(), certMountPath, name, certCertsRequest)
+	resp, err := client.Auth.PostAuthCertCertsName(
+		context.Background(),
+		name,
+		certCertsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12341,17 +12920,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
 	certConfigRequest := NewCertConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertConfig(context.Background(), certMountPath, certConfigRequest)
+	resp, err := client.Auth.PostAuthCertConfig(
+		context.Background(),
+		certConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12402,18 +12984,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | The name of the certificate
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
 	certCrlsRequest := NewCertCrlsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertCrlsName(context.Background(), certMountPath, name, certCrlsRequest)
+	resp, err := client.Auth.PostAuthCertCrlsName(
+		context.Background(),
+		name,
+		certCrlsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12466,17 +13052,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	certMountPath := "certMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cert")
 
 	certLoginRequest := NewCertLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCertLogin(context.Background(), certMountPath, certLoginRequest)
+	resp, err := client.Auth.PostAuthCertLogin(
+		context.Background(),
+		certLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12527,17 +13116,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
 	cfConfigRequest := NewCfConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCfConfig(context.Background(), cfMountPath, cfConfigRequest)
+	resp, err := client.Auth.PostAuthCfConfig(
+		context.Background(),
+		cfConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12588,17 +13180,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
 	cfLoginRequest := NewCfLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCfLogin(context.Background(), cfMountPath, cfLoginRequest)
+	resp, err := client.Auth.PostAuthCfLogin(
+		context.Background(),
+		cfLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12649,18 +13244,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | The name of the role.
-	cfMountPath := "cfMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "cf")
 
 	cfRolesRequest := NewCfRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthCfRolesRole(context.Background(), cfMountPath, role, cfRolesRequest)
+	resp, err := client.Auth.PostAuthCfRolesRole(
+		context.Background(),
+		role,
+		cfRolesRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12713,17 +13312,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpConfigRequest := NewGcpConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpConfig(context.Background(), gcpMountPath, gcpConfigRequest)
+	resp, err := client.Auth.PostAuthGcpConfig(
+		context.Background(),
+		gcpConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12774,17 +13376,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpLoginRequest := NewGcpLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpLogin(context.Background(), gcpMountPath, gcpLoginRequest)
+	resp, err := client.Auth.PostAuthGcpLogin(
+		context.Background(),
+		gcpLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12835,18 +13440,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpRoleRequest := NewGcpRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpRoleName(context.Background(), gcpMountPath, name, gcpRoleRequest)
+	resp, err := client.Auth.PostAuthGcpRoleName(
+		context.Background(),
+		name,
+		gcpRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12899,18 +13508,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpRoleLabelsRequest := NewGcpRoleLabelsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpRoleNameLabels(context.Background(), gcpMountPath, name, gcpRoleLabelsRequest)
+	resp, err := client.Auth.PostAuthGcpRoleNameLabels(
+		context.Background(),
+		name,
+		gcpRoleLabelsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -12963,18 +13576,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	gcpMountPath := "gcpMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "gcp")
 
 	gcpRoleServiceAccountsRequest := NewGcpRoleServiceAccountsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), gcpMountPath, name, gcpRoleServiceAccountsRequest)
+	resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(
+		context.Background(),
+		name,
+		gcpRoleServiceAccountsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13027,17 +13644,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	githubConfigRequest := NewGithubConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubConfig(context.Background(), githubMountPath, githubConfigRequest)
+	resp, err := client.Auth.PostAuthGithubConfig(
+		context.Background(),
+		githubConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13088,17 +13708,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	githubLoginRequest := NewGithubLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubLogin(context.Background(), githubMountPath, githubLoginRequest)
+	resp, err := client.Auth.PostAuthGithubLogin(
+		context.Background(),
+		githubLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13149,18 +13772,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	githubMapTeamsRequest := NewGithubMapTeamsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubMapTeamsKey(context.Background(), githubMountPath, key, githubMapTeamsRequest)
+	resp, err := client.Auth.PostAuthGithubMapTeamsKey(
+		context.Background(),
+		key,
+		githubMapTeamsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13213,18 +13840,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	key := "key_example" // string | Key for the users mapping
-	githubMountPath := "githubMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "github")
 
 	githubMapUsersRequest := NewGithubMapUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthGithubMapUsersKey(context.Background(), githubMountPath, key, githubMapUsersRequest)
+	resp, err := client.Auth.PostAuthGithubMapUsersKey(
+		context.Background(),
+		key,
+		githubMapUsersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13279,17 +13910,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
 	jwtConfigRequest := NewJwtConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtConfig(context.Background(), jwtMountPath, jwtConfigRequest)
+	resp, err := client.Auth.PostAuthJwtConfig(
+		context.Background(),
+		jwtConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13340,17 +13974,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
 	jwtLoginRequest := NewJwtLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtLogin(context.Background(), jwtMountPath, jwtLoginRequest)
+	resp, err := client.Auth.PostAuthJwtLogin(
+		context.Background(),
+		jwtLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13401,17 +14038,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
 	jwtOidcAuthUrlRequest := NewJwtOidcAuthUrlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtOidcAuthUrl(context.Background(), jwtMountPath, jwtOidcAuthUrlRequest)
+	resp, err := client.Auth.PostAuthJwtOidcAuthUrl(
+		context.Background(),
+		jwtOidcAuthUrlRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13462,17 +14102,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
 	jwtOidcCallbackRequest := NewJwtOidcCallbackRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtOidcCallback(context.Background(), jwtMountPath, jwtOidcCallbackRequest)
+	resp, err := client.Auth.PostAuthJwtOidcCallback(
+		context.Background(),
+		jwtOidcCallbackRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13525,18 +14168,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	jwtMountPath := "jwtMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "jwt")
 
 	jwtRoleRequest := NewJwtRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthJwtRoleName(context.Background(), jwtMountPath, name, jwtRoleRequest)
+	resp, err := client.Auth.PostAuthJwtRoleName(
+		context.Background(),
+		name,
+		jwtRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13589,17 +14236,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
 	kerberosConfigRequest := NewKerberosConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosConfig(context.Background(), kerberosMountPath, kerberosConfigRequest)
+	resp, err := client.Auth.PostAuthKerberosConfig(
+		context.Background(),
+		kerberosConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13650,17 +14300,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
 	kerberosConfigLdapRequest := NewKerberosConfigLdapRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosConfigLdap(context.Background(), kerberosMountPath, kerberosConfigLdapRequest)
+	resp, err := client.Auth.PostAuthKerberosConfigLdap(
+		context.Background(),
+		kerberosConfigLdapRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13711,18 +14364,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
 	kerberosGroupsRequest := NewKerberosGroupsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosGroupsName(context.Background(), kerberosMountPath, name, kerberosGroupsRequest)
+	resp, err := client.Auth.PostAuthKerberosGroupsName(
+		context.Background(),
+		name,
+		kerberosGroupsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13775,17 +14432,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kerberosMountPath := "kerberosMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kerberos")
 
 	kerberosLoginRequest := NewKerberosLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKerberosLogin(context.Background(), kerberosMountPath, kerberosLoginRequest)
+	resp, err := client.Auth.PostAuthKerberosLogin(
+		context.Background(),
+		kerberosLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13836,17 +14496,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kubernetes")
 
 	kubernetesConfigRequest := NewKubernetesConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKubernetesConfig(context.Background(), kubernetesMountPath, kubernetesConfigRequest)
+	resp, err := client.Auth.PostAuthKubernetesConfig(
+		context.Background(),
+		kubernetesConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13897,17 +14560,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kubernetes")
 
 	kubernetesLoginRequest := NewKubernetesLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKubernetesLogin(context.Background(), kubernetesMountPath, kubernetesLoginRequest)
+	resp, err := client.Auth.PostAuthKubernetesLogin(
+		context.Background(),
+		kubernetesLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -13958,18 +14624,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	kubernetesMountPath := "kubernetesMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "kubernetes")
 
 	kubernetesRoleRequest := NewKubernetesRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthKubernetesRoleName(context.Background(), kubernetesMountPath, name, kubernetesRoleRequest)
+	resp, err := client.Auth.PostAuthKubernetesRoleName(
+		context.Background(),
+		name,
+		kubernetesRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14022,17 +14692,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapConfigRequest := NewLdapConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapConfig(context.Background(), ldapMountPath, ldapConfigRequest)
+	resp, err := client.Auth.PostAuthLdapConfig(
+		context.Background(),
+		ldapConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14083,18 +14756,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapGroupsRequest := NewLdapGroupsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapGroupsName(context.Background(), ldapMountPath, name, ldapGroupsRequest)
+	resp, err := client.Auth.PostAuthLdapGroupsName(
+		context.Background(),
+		name,
+		ldapGroupsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14147,18 +14824,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | DN (distinguished name) to be used for login.
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapLoginRequest := NewLdapLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapLoginUsername(context.Background(), ldapMountPath, username, ldapLoginRequest)
+	resp, err := client.Auth.PostAuthLdapLoginUsername(
+		context.Background(),
+		username,
+		ldapLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14211,18 +14892,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-	ldapMountPath := "ldapMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "ldap")
 
 	ldapUsersRequest := NewLdapUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthLdapUsersName(context.Background(), ldapMountPath, name, ldapUsersRequest)
+	resp, err := client.Auth.PostAuthLdapUsersName(
+		context.Background(),
+		name,
+		ldapUsersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14275,17 +14960,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
 	ociConfigRequest := NewOciConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOciConfig(context.Background(), ociMountPath, ociConfigRequest)
+	resp, err := client.Auth.PostAuthOciConfig(
+		context.Background(),
+		ociConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14336,18 +15024,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
 	ociLoginRequest := NewOciLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOciLoginRole(context.Background(), ociMountPath, role, ociLoginRequest)
+	resp, err := client.Auth.PostAuthOciLoginRole(
+		context.Background(),
+		role,
+		ociLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14400,18 +15092,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	role := "role_example" // string | Name of the role.
-	ociMountPath := "ociMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oci")
 
 	ociRoleRequest := NewOciRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOciRoleRole(context.Background(), ociMountPath, role, ociRoleRequest)
+	resp, err := client.Auth.PostAuthOciRoleRole(
+		context.Background(),
+		role,
+		ociRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14466,17 +15162,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcConfigRequest := NewOidcConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcConfig(context.Background(), oidcMountPath, oidcConfigRequest)
+	resp, err := client.Auth.PostAuthOidcConfig(
+		context.Background(),
+		oidcConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14527,17 +15226,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcLoginRequest := NewOidcLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcLogin(context.Background(), oidcMountPath, oidcLoginRequest)
+	resp, err := client.Auth.PostAuthOidcLogin(
+		context.Background(),
+		oidcLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14588,17 +15290,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcOidcAuthUrlRequest := NewOidcOidcAuthUrlRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcOidcAuthUrl(context.Background(), oidcMountPath, oidcOidcAuthUrlRequest)
+	resp, err := client.Auth.PostAuthOidcOidcAuthUrl(
+		context.Background(),
+		oidcOidcAuthUrlRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14649,17 +15354,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcOidcCallbackRequest := NewOidcOidcCallbackRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcOidcCallback(context.Background(), oidcMountPath, oidcOidcCallbackRequest)
+	resp, err := client.Auth.PostAuthOidcOidcCallback(
+		context.Background(),
+		oidcOidcCallbackRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14712,18 +15420,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the role.
-	oidcMountPath := "oidcMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "oidc")
 
 	oidcRoleRequest := NewOidcRoleRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOidcRoleName(context.Background(), name, oidcMountPath, oidcRoleRequest)
+	resp, err := client.Auth.PostAuthOidcRoleName(
+		context.Background(),
+		name,
+		oidcRoleRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14776,17 +15488,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
 	oktaConfigRequest := NewOktaConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaConfig(context.Background(), oktaMountPath, oktaConfigRequest)
+	resp, err := client.Auth.PostAuthOktaConfig(
+		context.Background(),
+		oktaConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14837,18 +15552,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
 	oktaGroupsRequest := NewOktaGroupsRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaGroupsName(context.Background(), name, oktaMountPath, oktaGroupsRequest)
+	resp, err := client.Auth.PostAuthOktaGroupsName(
+		context.Background(),
+		name,
+		oktaGroupsRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14901,18 +15620,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | Username to be used for login.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
 	oktaLoginRequest := NewOktaLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaLoginUsername(context.Background(), oktaMountPath, username, oktaLoginRequest)
+	resp, err := client.Auth.PostAuthOktaLoginUsername(
+		context.Background(),
+		username,
+		oktaLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -14965,18 +15688,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the user.
-	oktaMountPath := "oktaMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "okta")
 
 	oktaUsersRequest := NewOktaUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthOktaUsersName(context.Background(), name, oktaMountPath, oktaUsersRequest)
+	resp, err := client.Auth.PostAuthOktaUsersName(
+		context.Background(),
+		name,
+		oktaUsersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15029,17 +15756,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
 	radiusConfigRequest := NewRadiusConfigRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusConfig(context.Background(), radiusMountPath, radiusConfigRequest)
+	resp, err := client.Auth.PostAuthRadiusConfig(
+		context.Background(),
+		radiusConfigRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15090,17 +15820,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
 	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusLogin(context.Background(), radiusMountPath, radiusLoginRequest)
+	resp, err := client.Auth.PostAuthRadiusLogin(
+		context.Background(),
+		radiusLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15151,18 +15884,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
 	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusLoginUrlusername(context.Background(), radiusMountPath, urlusername, radiusLoginRequest)
+	resp, err := client.Auth.PostAuthRadiusLoginUrlusername(
+		context.Background(),
+		urlusername,
+		radiusLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15215,18 +15952,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-	radiusMountPath := "radiusMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "radius")
 
 	radiusUsersRequest := NewRadiusUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthRadiusUsersName(context.Background(), name, radiusMountPath, radiusUsersRequest)
+	resp, err := client.Auth.PostAuthRadiusUsersName(
+		context.Background(),
+		name,
+		radiusUsersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15279,18 +16020,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenCreateRequest := NewTokenCreateRequestWithDefaults()
 	format := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreate(context.Background(), tokenMountPath, tokenCreateRequest, format)
+	resp, err := client.Auth.PostAuthTokenCreate(
+		context.Background(),
+		tokenCreateRequest,
+		format,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15342,18 +16087,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenCreateOrphanRequest := NewTokenCreateOrphanRequestWithDefaults()
 	format := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateOrphan(context.Background(), tokenMountPath, tokenCreateOrphanRequest, format)
+	resp, err := client.Auth.PostAuthTokenCreateOrphan(
+		context.Background(),
+		tokenCreateOrphanRequest,
+		format,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15405,19 +16154,24 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenCreateRequest := NewTokenCreateRequestWithDefaults()
 	format := NewstringWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenCreateRoleName(context.Background(), roleName, tokenMountPath, tokenCreateRequest, format)
+	resp, err := client.Auth.PostAuthTokenCreateRoleName(
+		context.Background(),
+		roleName,
+		tokenCreateRequest,
+		format,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15471,17 +16225,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenLookupRequest := NewTokenLookupRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenLookup(context.Background(), tokenMountPath, tokenLookupRequest)
+	resp, err := client.Auth.PostAuthTokenLookup(
+		context.Background(),
+		tokenLookupRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15532,17 +16289,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenLookupAccessorRequest := NewTokenLookupAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenLookupAccessor(context.Background(), tokenMountPath, tokenLookupAccessorRequest)
+	resp, err := client.Auth.PostAuthTokenLookupAccessor(
+		context.Background(),
+		tokenLookupAccessorRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15593,17 +16353,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenLookupSelfRequest := NewTokenLookupSelfRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenLookupSelf(context.Background(), tokenMountPath, tokenLookupSelfRequest)
+	resp, err := client.Auth.PostAuthTokenLookupSelf(
+		context.Background(),
+		tokenLookupSelfRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15654,17 +16417,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRenewRequest := NewTokenRenewRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRenew(context.Background(), tokenMountPath, tokenRenewRequest)
+	resp, err := client.Auth.PostAuthTokenRenew(
+		context.Background(),
+		tokenRenewRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15715,17 +16481,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRenewAccessorRequest := NewTokenRenewAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRenewAccessor(context.Background(), tokenMountPath, tokenRenewAccessorRequest)
+	resp, err := client.Auth.PostAuthTokenRenewAccessor(
+		context.Background(),
+		tokenRenewAccessorRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15776,17 +16545,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRenewSelfRequest := NewTokenRenewSelfRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRenewSelf(context.Background(), tokenMountPath, tokenRenewSelfRequest)
+	resp, err := client.Auth.PostAuthTokenRenewSelf(
+		context.Background(),
+		tokenRenewSelfRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15837,17 +16609,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRevokeRequest := NewTokenRevokeRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevoke(context.Background(), tokenMountPath, tokenRevokeRequest)
+	resp, err := client.Auth.PostAuthTokenRevoke(
+		context.Background(),
+		tokenRevokeRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15898,17 +16673,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRevokeAccessorRequest := NewTokenRevokeAccessorRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevokeAccessor(context.Background(), tokenMountPath, tokenRevokeAccessorRequest)
+	resp, err := client.Auth.PostAuthTokenRevokeAccessor(
+		context.Background(),
+		tokenRevokeAccessorRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -15959,17 +16737,20 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRevokeOrphanRequest := NewTokenRevokeOrphanRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevokeOrphan(context.Background(), tokenMountPath, tokenRevokeOrphanRequest)
+	resp, err := client.Auth.PostAuthTokenRevokeOrphan(
+		context.Background(),
+		tokenRevokeOrphanRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16020,16 +16801,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRevokeSelf(context.Background(), tokenMountPath)
+	resp, err := client.Auth.PostAuthTokenRevokeSelf(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16079,18 +16862,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
 	tokenRolesRequest := NewTokenRolesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenRolesRoleName(context.Background(), roleName, tokenMountPath, tokenRolesRequest)
+	resp, err := client.Auth.PostAuthTokenRolesRoleName(
+		context.Background(),
+		roleName,
+		tokenRolesRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16143,16 +16930,18 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenMountPath := "tokenMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "token")
 
-	resp, err := client.WithToken("my-token").Auth.PostAuthTokenTidy(context.Background(), tokenMountPath)
+	resp, err := client.Auth.PostAuthTokenTidy(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16202,18 +16991,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | Username of the user.
-	userpassMountPath := "userpassMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassLoginRequest := NewUserpassLoginRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassLoginUsername(context.Background(), username, userpassMountPath, userpassLoginRequest)
+	resp, err := client.Auth.PostAuthUserpassLoginUsername(
+		context.Background(),
+		username,
+		userpassLoginRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16266,18 +17059,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassUsersRequest := NewUserpassUsersRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassUsersUsername(context.Background(), username, userpassMountPath, userpassUsersRequest)
+	resp, err := client.Auth.PostAuthUserpassUsersUsername(
+		context.Background(),
+		username,
+		userpassUsersRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16330,18 +17127,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassUsersPasswordRequest := NewUserpassUsersPasswordRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username, userpassMountPath, userpassUsersPasswordRequest)
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(
+		context.Background(),
+		username,
+		userpassUsersPasswordRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -16394,18 +17195,22 @@ import (
 )
 
 func main() {
-	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
-	})
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	username := "username_example" // string | Username for this user.
-	userpassMountPath := "userpassMountPath_example" // string | Path where the backend was mounted; the endpoint path will be offset by the mount path (defaults to "userpass")
 
 	userpassUsersPoliciesRequest := NewUserpassUsersPoliciesRequestWithDefaults()
-	resp, err := client.WithToken("my-token").Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username, userpassMountPath, userpassUsersPoliciesRequest)
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(
+		context.Background(),
+		username,
+		userpassUsersPoliciesRequest,
+		vault.WithToken("my-token"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}

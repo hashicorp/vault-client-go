@@ -107,7 +107,9 @@ func Unwrap[T any](ctx context.Context, client *Client, wrappingToken string, op
 }
 
 // parseResponse fully consumes the given response body without closing it and
-// parses the data into a generic response structure
+// parses the data into a generic Response[T] structure. If the response body
+// does not have a "data" element, the entire response will be parsed and
+// assigned to response.Data
 func parseResponse[T any](responseBody io.Reader) (*Response[T], error) {
 	// First, read the data into a buffer. This is not super efficient but we
 	// want to know if we actually have a body or not.
@@ -122,6 +124,16 @@ func parseResponse[T any](responseBody io.Reader) (*Response[T], error) {
 		return nil, nil
 	}
 
+	// check if the response has a "data" element
+	var jsonResponse struct {
+		Data json.RawMessage `json:"data"`
+	}
+	if err := json.Unmarshal(buf.Bytes(), &jsonResponse); err != nil {
+		return nil, err
+	}
+
+	hasDataElement := len(jsonResponse.Data) != 0
+
 	// decode
 	decoder := json.NewDecoder(&buf)
 
@@ -130,8 +142,20 @@ func parseResponse[T any](responseBody io.Reader) (*Response[T], error) {
 
 	var response Response[T]
 
-	if err := decoder.Decode(&response); err != nil {
-		return nil, err
+	if hasDataElement {
+		if err := decoder.Decode(&response); err != nil {
+			return nil, err
+		}
+	} else {
+		// A few known responses (e.g. sys/health, sys/leader, and sys/seal-status)
+		// do not conform to the standard Response[T] structure returned by this
+		// function. To keep things simple and consistent, we parse the contents
+		// and assign it to response.Data.
+		var nonstandardResponse T
+		if err := decoder.Decode(&nonstandardResponse); err != nil {
+			return nil, err
+		}
+		response.Data = nonstandardResponse
 	}
 
 	return &response, nil

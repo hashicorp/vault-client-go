@@ -18,7 +18,7 @@ func TestParseResponseGeneric(t *testing.T) {
 		body:     "",
 		expected: nil,
 	}, {
-		name: "empty object",
+		name: "empty-object",
 		body: `{}`,
 		expected: &Response[map[string]interface{}]{
 			Data: map[string]interface{}{},
@@ -66,6 +66,12 @@ func TestParseResponseStructured(t *testing.T) {
 		name:     "empty",
 		body:     "",
 		expected: nil,
+	}, {
+		name: "empty-object",
+		body: `{}`,
+		expected: &Response[testStruct]{
+			Data: testStruct{},
+		},
 	}, {
 		name: "with-data",
 		body: `{"data":{"test_string":"test","test_bool":true}}`,

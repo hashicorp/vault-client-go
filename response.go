@@ -125,14 +125,12 @@ func parseResponse[T any](responseBody io.Reader) (*Response[T], error) {
 	}
 
 	// check if the response has a "data" element
-	var jsonResponse struct {
+	var jsonResponseWithData struct {
 		Data json.RawMessage `json:"data"`
 	}
-	if err := json.Unmarshal(buf.Bytes(), &jsonResponse); err != nil {
+	if err := json.Unmarshal(buf.Bytes(), &jsonResponseWithData); err != nil {
 		return nil, err
 	}
-
-	hasDataElement := len(jsonResponse.Data) != 0
 
 	// decode
 	decoder := json.NewDecoder(&buf)
@@ -142,7 +140,7 @@ func parseResponse[T any](responseBody io.Reader) (*Response[T], error) {
 
 	var response Response[T]
 
-	if hasDataElement {
+	if len(jsonResponseWithData.Data) != 0 {
 		if err := decoder.Decode(&response); err != nil {
 			return nil, err
 		}

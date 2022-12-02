@@ -18,6 +18,12 @@ func TestParseResponseGeneric(t *testing.T) {
 		body:     "",
 		expected: nil,
 	}, {
+		name: "empty object",
+		body: `{}`,
+		expected: &Response[map[string]interface{}]{
+			Data: map[string]interface{}{},
+		},
+	}, {
 		name: "with-data",
 		body: `{"data":{"key1":"value1","key2":"value2"}}`,
 		expected: &Response[map[string]interface{}]{

@@ -120,7 +120,7 @@ func (c *Client) ClearNamespace() {
 //
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
-func (c *Client) WithNamespace(namespace string) RequestOption {
+func WithNamespace(namespace string) RequestOption {
 	return func(m *requestModifiers) error {
 		if err := validateNamespace(namespace); err != nil {
 			return err
@@ -159,7 +159,7 @@ func (c *Client) ClearMFACredentials() {
 //
 // See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
 // for more information on multi-factor authentication.
-func (c *Client) WithMFACredentials(credentials ...string) RequestOption {
+func WithMFACredentials(credentials ...string) RequestOption {
 	return func(m *requestModifiers) error {
 		m.headers.mfaCredentials = credentials
 		return nil
@@ -199,7 +199,7 @@ func (c *Client) ClearResponseWrapping() {
 //
 // See https://www.vaultproject.io/docs/concepts/response-wrapping for more
 // information on response wrapping.
-func (c *Client) WithResponseWrapping(ttl time.Duration) RequestOption {
+func WithResponseWrapping(ttl time.Duration) RequestOption {
 	return func(m *requestModifiers) error {
 		m.headers.responseWrappingTTL = ttl
 		return nil
@@ -230,7 +230,7 @@ func (c *Client) ClearCustomHeaders() {
 // WithCustomHeaders sets custom headers for the next request; these headers
 // take precedence over the client-level custom headers. The internal prefix
 // 'X-Vault-' is not permitted for the header keys.
-func (c *Client) WithCustomHeaders(headers http.Header) RequestOption {
+func WithCustomHeaders(headers http.Header) RequestOption {
 	return func(m *requestModifiers) error {
 		if err := validateCustomHeaders(headers); err != nil {
 			return err
@@ -258,7 +258,7 @@ func (c *Client) ClearRequestCallbacks() {
 
 // WithRequestCallbacks sets callbacks which will be invoked before the next
 // request; these take precedence over the client-level request callbacks.
-func (c *Client) WithRequestCallbacks(callbacks ...RequestCallback) RequestOption {
+func WithRequestCallbacks(callbacks ...RequestCallback) RequestOption {
 	return func(m *requestModifiers) error {
 		m.requestCallbacks = callbacks
 		return nil
@@ -285,7 +285,7 @@ func (c *Client) ClearResponseCallbacks() {
 // WithResponseCallbacks sets callbacks which will be invoked after a
 // successful response within the next request; these take precedence over the
 // client-level response callbacks.
-func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOption {
+func WithResponseCallbacks(callbacks ...ResponseCallback) RequestOption {
 	return func(m *requestModifiers) error {
 		m.responseCallbacks = callbacks
 		return nil
@@ -294,7 +294,7 @@ func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) RequestOpt
 
 // WithMountPath overwrites the default mount path in client.Auth and
 // client.Secrets requests with the given mount path string.
-func (c *Client) WithMountPath(path string) RequestOption {
+func WithMountPath(path string) RequestOption {
 	return func(m *requestModifiers) error {
 		// the mount path is expected to have no leading/trailing "/" characters
 		m.mountPath = strings.Trim(path, "/")
@@ -471,7 +471,7 @@ func (c *Client) ClearReplicationForwardingMode() {
 //	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
 //
 // See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
-func (c *Client) WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption {
+func WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption {
 	return func(m *requestModifiers) error {
 		m.headers.replicationForwardingMode = mode
 		return nil

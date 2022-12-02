@@ -120,7 +120,7 @@ func (c *Client) ClearNamespace() {
 //
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
-func (c *Client) WithNamespace(namespace string) RequestOption {
+func WithNamespace(namespace string) RequestOption {
 	return func(m *requestModifiers) error {
 		if err := validateNamespace(namespace); err != nil {
 			return err
@@ -159,7 +159,7 @@ func (c *Client) ClearMFACredentials() {
 //
 // See https://learn.hashicorp.com/tutorials/vault/multi-factor-authentication
 // for more information on multi-factor authentication.
-func (c *Client) WithMFACredentials(credentials ...string) RequestOption {
+func WithMFACredentials(credentials ...string) RequestOption {
 	return func(m *requestModifiers) error {
 		m.headers.mfaCredentials = credentials
 		return nil
@@ -199,7 +199,7 @@ func (c *Client) ClearResponseWrapping() {
 //
 // See https://www.vaultproject.io/docs/concepts/response-wrapping for more
 // information on response wrapping.
-func (c *Client) WithResponseWrapping(ttl time.Duration) RequestOption {
+func WithResponseWrapping(ttl time.Duration) RequestOption {
 	return func(m *requestModifiers) error {
 		m.headers.responseWrappingTTL = ttl
 		return nil

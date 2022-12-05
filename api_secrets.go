@@ -2968,6 +2968,27 @@ func (a *Secrets) GetPkiConfigAutoTidy(ctx context.Context, options ...RequestOp
 	)
 }
 
+// GetPkiConfigCluster
+func (a *Secrets) GetPkiConfigCluster(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/config/cluster"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // GetPkiConfigCrl
 func (a *Secrets) GetPkiConfigCrl(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -5816,6 +5837,27 @@ func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiCon
 	)
 }
 
+// PostPkiConfigCluster
+func (a *Secrets) PostPkiConfigCluster(ctx context.Context, pkiConfigClusterRequest PkiConfigClusterRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/config/cluster"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiConfigClusterRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // PostPkiConfigCrl
 func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -6034,6 +6076,29 @@ func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef
 	)
 }
 
+// PostPkiIssuerIssuerRefResignCrls
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
+func (a *Secrets) PostPkiIssuerIssuerRefResignCrls(ctx context.Context, issuerRef string, pkiIssuerResignCrlsRequest PkiIssuerResignCrlsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/resign-crls"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerResignCrlsRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // PostPkiIssuerIssuerRefRevoke
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *Secrets) PostPkiIssuerIssuerRefRevoke(ctx context.Context, issuerRef string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -6075,6 +6140,29 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, is
 		http.MethodPost,
 		requestPath,
 		pkiIssuerSignIntermediateRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// PostPkiIssuerIssuerRefSignRevocationList
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
+func (a *Secrets) PostPkiIssuerIssuerRefSignRevocationList(ctx context.Context, issuerRef string, pkiIssuerSignRevocationListRequest PkiIssuerSignRevocationListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{pki_mount_path}/issuer/{issuer_ref}/sign-revocation-list"
+	requestPath = strings.Replace(requestPath, "{"+"pki_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("pki")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"issuer_ref"+"}", url.PathEscape(issuerRef), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		pkiIssuerSignRevocationListRequest,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)

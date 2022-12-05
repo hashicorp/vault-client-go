@@ -3,20 +3,20 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteAuthAlicloudRoleRole**](Auth.md#DeleteAuthAlicloudRoleRole) | **Delete** /auth/{alicloud_mount_path}/role/{role} | Create a role and associate policies to it.
-[**DeleteAuthApproleRoleRoleName**](Auth.md#DeleteAuthApproleRoleRoleName) | **Delete** /auth/{approle_mount_path}/role/{role_name} | Register an role with the backend.
-[**DeleteAuthApproleRoleRoleNameBindSecretId**](Auth.md#DeleteAuthApproleRoleRoleNameBindSecretId) | **Delete** /auth/{approle_mount_path}/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**DeleteAuthApproleRoleRoleNameBoundCidrList**](Auth.md#DeleteAuthApproleRoleRoleNameBoundCidrList) | **Delete** /auth/{approle_mount_path}/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**DeleteAuthApproleRoleRoleNamePeriod**](Auth.md#DeleteAuthApproleRoleRoleNamePeriod) | **Delete** /auth/{approle_mount_path}/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**DeleteAuthApproleRoleRoleNamePolicies**](Auth.md#DeleteAuthApproleRoleRoleNamePolicies) | **Delete** /auth/{approle_mount_path}/role/{role_name}/policies | Policies of the role.
+[**DeleteAuthApproleRoleRoleName**](Auth.md#DeleteAuthApproleRoleRoleName) | **Delete** /auth/{approle_mount_path}/role/{role_name} | 
+[**DeleteAuthApproleRoleRoleNameBindSecretId**](Auth.md#DeleteAuthApproleRoleRoleNameBindSecretId) | **Delete** /auth/{approle_mount_path}/role/{role_name}/bind-secret-id | 
+[**DeleteAuthApproleRoleRoleNameBoundCidrList**](Auth.md#DeleteAuthApproleRoleRoleNameBoundCidrList) | **Delete** /auth/{approle_mount_path}/role/{role_name}/bound-cidr-list | 
+[**DeleteAuthApproleRoleRoleNamePeriod**](Auth.md#DeleteAuthApproleRoleRoleNamePeriod) | **Delete** /auth/{approle_mount_path}/role/{role_name}/period | 
+[**DeleteAuthApproleRoleRoleNamePolicies**](Auth.md#DeleteAuthApproleRoleRoleNamePolicies) | **Delete** /auth/{approle_mount_path}/role/{role_name}/policies | 
 [**DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy | 
-[**DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**DeleteAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdDestroy) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
-[**DeleteAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdNumUses) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**DeleteAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
-[**DeleteAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameTokenBoundCidrs) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**DeleteAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenMaxTtl) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**DeleteAuthApproleRoleRoleNameTokenNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameTokenNumUses) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**DeleteAuthApproleRoleRoleNameTokenTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenTtl) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs | 
+[**DeleteAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdDestroy) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id/destroy | 
+[**DeleteAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdNumUses) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses | 
+[**DeleteAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/{approle_mount_path}/role/{role_name}/secret-id-ttl | 
+[**DeleteAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameTokenBoundCidrs) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs | 
+[**DeleteAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenMaxTtl) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-max-ttl | 
+[**DeleteAuthApproleRoleRoleNameTokenNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameTokenNumUses) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-num-uses | 
+[**DeleteAuthApproleRoleRoleNameTokenTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenTtl) | **Delete** /auth/{approle_mount_path}/role/{role_name}/token-ttl | 
 [**DeleteAuthAwsConfigCertificateCertName**](Auth.md#DeleteAuthAwsConfigCertificateCertName) | **Delete** /auth/{aws_mount_path}/config/certificate/{cert_name} | 
 [**DeleteAuthAwsConfigClient**](Auth.md#DeleteAuthAwsConfigClient) | **Delete** /auth/{aws_mount_path}/config/client | 
 [**DeleteAuthAwsConfigStsAccountId**](Auth.md#DeleteAuthAwsConfigStsAccountId) | **Delete** /auth/{aws_mount_path}/config/sts/{account_id} | 
@@ -54,22 +54,22 @@ Method | HTTP request | Description
 [**GetAuthAlicloudRole**](Auth.md#GetAuthAlicloudRole) | **Get** /auth/{alicloud_mount_path}/role | Lists all the roles that are registered with Vault.
 [**GetAuthAlicloudRoleRole**](Auth.md#GetAuthAlicloudRoleRole) | **Get** /auth/{alicloud_mount_path}/role/{role} | Create a role and associate policies to it.
 [**GetAuthAlicloudRoles**](Auth.md#GetAuthAlicloudRoles) | **Get** /auth/{alicloud_mount_path}/roles | Lists all the roles that are registered with Vault.
-[**GetAuthApproleRole**](Auth.md#GetAuthApproleRole) | **Get** /auth/{approle_mount_path}/role | Lists all the roles registered with the backend.
-[**GetAuthApproleRoleRoleName**](Auth.md#GetAuthApproleRoleRoleName) | **Get** /auth/{approle_mount_path}/role/{role_name} | Register an role with the backend.
-[**GetAuthApproleRoleRoleNameBindSecretId**](Auth.md#GetAuthApproleRoleRoleNameBindSecretId) | **Get** /auth/{approle_mount_path}/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**GetAuthApproleRoleRoleNameBoundCidrList**](Auth.md#GetAuthApproleRoleRoleNameBoundCidrList) | **Get** /auth/{approle_mount_path}/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**GetAuthApproleRoleRoleNameLocalSecretIds**](Auth.md#GetAuthApproleRoleRoleNameLocalSecretIds) | **Get** /auth/{approle_mount_path}/role/{role_name}/local-secret-ids | Enables cluster local secret IDs
-[**GetAuthApproleRoleRoleNamePeriod**](Auth.md#GetAuthApproleRoleRoleNamePeriod) | **Get** /auth/{approle_mount_path}/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**GetAuthApproleRoleRoleNamePolicies**](Auth.md#GetAuthApproleRoleRoleNamePolicies) | **Get** /auth/{approle_mount_path}/role/{role_name}/policies | Policies of the role.
-[**GetAuthApproleRoleRoleNameRoleId**](Auth.md#GetAuthApproleRoleRoleNameRoleId) | **Get** /auth/{approle_mount_path}/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
-[**GetAuthApproleRoleRoleNameSecretId**](Auth.md#GetAuthApproleRoleRoleNameSecretId) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id | Generate a SecretID against this role.
-[**GetAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**GetAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#GetAuthApproleRoleRoleNameSecretIdNumUses) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**GetAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#GetAuthApproleRoleRoleNameSecretIdTtl) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
-[**GetAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameTokenBoundCidrs) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**GetAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenMaxTtl) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**GetAuthApproleRoleRoleNameTokenNumUses**](Auth.md#GetAuthApproleRoleRoleNameTokenNumUses) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**GetAuthApproleRoleRoleNameTokenTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenTtl) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**GetAuthApproleRole**](Auth.md#GetAuthApproleRole) | **Get** /auth/{approle_mount_path}/role | 
+[**GetAuthApproleRoleRoleName**](Auth.md#GetAuthApproleRoleRoleName) | **Get** /auth/{approle_mount_path}/role/{role_name} | 
+[**GetAuthApproleRoleRoleNameBindSecretId**](Auth.md#GetAuthApproleRoleRoleNameBindSecretId) | **Get** /auth/{approle_mount_path}/role/{role_name}/bind-secret-id | 
+[**GetAuthApproleRoleRoleNameBoundCidrList**](Auth.md#GetAuthApproleRoleRoleNameBoundCidrList) | **Get** /auth/{approle_mount_path}/role/{role_name}/bound-cidr-list | 
+[**GetAuthApproleRoleRoleNameLocalSecretIds**](Auth.md#GetAuthApproleRoleRoleNameLocalSecretIds) | **Get** /auth/{approle_mount_path}/role/{role_name}/local-secret-ids | 
+[**GetAuthApproleRoleRoleNamePeriod**](Auth.md#GetAuthApproleRoleRoleNamePeriod) | **Get** /auth/{approle_mount_path}/role/{role_name}/period | 
+[**GetAuthApproleRoleRoleNamePolicies**](Auth.md#GetAuthApproleRoleRoleNamePolicies) | **Get** /auth/{approle_mount_path}/role/{role_name}/policies | 
+[**GetAuthApproleRoleRoleNameRoleId**](Auth.md#GetAuthApproleRoleRoleNameRoleId) | **Get** /auth/{approle_mount_path}/role/{role_name}/role-id | 
+[**GetAuthApproleRoleRoleNameSecretId**](Auth.md#GetAuthApproleRoleRoleNameSecretId) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id | 
+[**GetAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs | 
+[**GetAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#GetAuthApproleRoleRoleNameSecretIdNumUses) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses | 
+[**GetAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#GetAuthApproleRoleRoleNameSecretIdTtl) | **Get** /auth/{approle_mount_path}/role/{role_name}/secret-id-ttl | 
+[**GetAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameTokenBoundCidrs) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs | 
+[**GetAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenMaxTtl) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-max-ttl | 
+[**GetAuthApproleRoleRoleNameTokenNumUses**](Auth.md#GetAuthApproleRoleRoleNameTokenNumUses) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-num-uses | 
+[**GetAuthApproleRoleRoleNameTokenTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenTtl) | **Get** /auth/{approle_mount_path}/role/{role_name}/token-ttl | 
 [**GetAuthAwsConfigCertificateCertName**](Auth.md#GetAuthAwsConfigCertificateCertName) | **Get** /auth/{aws_mount_path}/config/certificate/{cert_name} | 
 [**GetAuthAwsConfigCertificates**](Auth.md#GetAuthAwsConfigCertificates) | **Get** /auth/{aws_mount_path}/config/certificates | 
 [**GetAuthAwsConfigClient**](Auth.md#GetAuthAwsConfigClient) | **Get** /auth/{aws_mount_path}/config/client | 
@@ -98,6 +98,7 @@ Method | HTTP request | Description
 [**GetAuthCertCerts**](Auth.md#GetAuthCertCerts) | **Get** /auth/{cert_mount_path}/certs | Manage trusted certificates used for authentication.
 [**GetAuthCertCertsName**](Auth.md#GetAuthCertCertsName) | **Get** /auth/{cert_mount_path}/certs/{name} | Manage trusted certificates used for authentication.
 [**GetAuthCertConfig**](Auth.md#GetAuthCertConfig) | **Get** /auth/{cert_mount_path}/config | 
+[**GetAuthCertCrls**](Auth.md#GetAuthCertCrls) | **Get** /auth/{cert_mount_path}/crls | 
 [**GetAuthCertCrlsName**](Auth.md#GetAuthCertCrlsName) | **Get** /auth/{cert_mount_path}/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
 [**GetAuthCfConfig**](Auth.md#GetAuthCfConfig) | **Get** /auth/{cf_mount_path}/config | 
 [**GetAuthCfRoles**](Auth.md#GetAuthCfRoles) | **Get** /auth/{cf_mount_path}/roles | 
@@ -154,25 +155,25 @@ Method | HTTP request | Description
 [**PostAuthAlicloudLogin**](Auth.md#PostAuthAlicloudLogin) | **Post** /auth/{alicloud_mount_path}/login | Authenticates an RAM entity with Vault.
 [**PostAuthAlicloudRoleRole**](Auth.md#PostAuthAlicloudRoleRole) | **Post** /auth/{alicloud_mount_path}/role/{role} | Create a role and associate policies to it.
 [**PostAuthApproleLogin**](Auth.md#PostAuthApproleLogin) | **Post** /auth/{approle_mount_path}/login | 
-[**PostAuthApproleRoleRoleName**](Auth.md#PostAuthApproleRoleRoleName) | **Post** /auth/{approle_mount_path}/role/{role_name} | Register an role with the backend.
-[**PostAuthApproleRoleRoleNameBindSecretId**](Auth.md#PostAuthApproleRoleRoleNameBindSecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**PostAuthApproleRoleRoleNameBoundCidrList**](Auth.md#PostAuthApproleRoleRoleNameBoundCidrList) | **Post** /auth/{approle_mount_path}/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**PostAuthApproleRoleRoleNameCustomSecretId**](Auth.md#PostAuthApproleRoleRoleNameCustomSecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/custom-secret-id | Assign a SecretID of choice against the role.
-[**PostAuthApproleRoleRoleNamePeriod**](Auth.md#PostAuthApproleRoleRoleNamePeriod) | **Post** /auth/{approle_mount_path}/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**PostAuthApproleRoleRoleNamePolicies**](Auth.md#PostAuthApproleRoleRoleNamePolicies) | **Post** /auth/{approle_mount_path}/role/{role_name}/policies | Policies of the role.
-[**PostAuthApproleRoleRoleNameRoleId**](Auth.md#PostAuthApproleRoleRoleNameRoleId) | **Post** /auth/{approle_mount_path}/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
-[**PostAuthApproleRoleRoleNameSecretId**](Auth.md#PostAuthApproleRoleRoleNameSecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id | Generate a SecretID against this role.
+[**PostAuthApproleRoleRoleName**](Auth.md#PostAuthApproleRoleRoleName) | **Post** /auth/{approle_mount_path}/role/{role_name} | 
+[**PostAuthApproleRoleRoleNameBindSecretId**](Auth.md#PostAuthApproleRoleRoleNameBindSecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/bind-secret-id | 
+[**PostAuthApproleRoleRoleNameBoundCidrList**](Auth.md#PostAuthApproleRoleRoleNameBoundCidrList) | **Post** /auth/{approle_mount_path}/role/{role_name}/bound-cidr-list | 
+[**PostAuthApproleRoleRoleNameCustomSecretId**](Auth.md#PostAuthApproleRoleRoleNameCustomSecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/custom-secret-id | 
+[**PostAuthApproleRoleRoleNamePeriod**](Auth.md#PostAuthApproleRoleRoleNamePeriod) | **Post** /auth/{approle_mount_path}/role/{role_name}/period | 
+[**PostAuthApproleRoleRoleNamePolicies**](Auth.md#PostAuthApproleRoleRoleNamePolicies) | **Post** /auth/{approle_mount_path}/role/{role_name}/policies | 
+[**PostAuthApproleRoleRoleNameRoleId**](Auth.md#PostAuthApproleRoleRoleNameRoleId) | **Post** /auth/{approle_mount_path}/role/{role_name}/role-id | 
+[**PostAuthApproleRoleRoleNameSecretId**](Auth.md#PostAuthApproleRoleRoleNameSecretId) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id | 
 [**PostAuthApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy | 
 [**PostAuthApproleRoleRoleNameSecretIdAccessorLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdAccessorLookup) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup | 
-[**PostAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**PostAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdDestroy) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
-[**PostAuthApproleRoleRoleNameSecretIdLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdLookup) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id/lookup | Read the properties of an issued secret_id
-[**PostAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#PostAuthApproleRoleRoleNameSecretIdNumUses) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**PostAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#PostAuthApproleRoleRoleNameSecretIdTtl) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-ttl | Duration in seconds of the SecretID generated against the role.
-[**PostAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameTokenBoundCidrs) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**PostAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenMaxTtl) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**PostAuthApproleRoleRoleNameTokenNumUses**](Auth.md#PostAuthApproleRoleRoleNameTokenNumUses) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**PostAuthApproleRoleRoleNameTokenTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenTtl) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**PostAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs | 
+[**PostAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdDestroy) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id/destroy | 
+[**PostAuthApproleRoleRoleNameSecretIdLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdLookup) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id/lookup | 
+[**PostAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#PostAuthApproleRoleRoleNameSecretIdNumUses) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses | 
+[**PostAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#PostAuthApproleRoleRoleNameSecretIdTtl) | **Post** /auth/{approle_mount_path}/role/{role_name}/secret-id-ttl | 
+[**PostAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameTokenBoundCidrs) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs | 
+[**PostAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenMaxTtl) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-max-ttl | 
+[**PostAuthApproleRoleRoleNameTokenNumUses**](Auth.md#PostAuthApproleRoleRoleNameTokenNumUses) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-num-uses | 
+[**PostAuthApproleRoleRoleNameTokenTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenTtl) | **Post** /auth/{approle_mount_path}/role/{role_name}/token-ttl | 
 [**PostAuthApproleTidySecretId**](Auth.md#PostAuthApproleTidySecretId) | **Post** /auth/{approle_mount_path}/tidy/secret-id | Trigger the clean-up of expired SecretID entries.
 [**PostAuthAwsConfigCertificateCertName**](Auth.md#PostAuthAwsConfigCertificateCertName) | **Post** /auth/{aws_mount_path}/config/certificate/{cert_name} | 
 [**PostAuthAwsConfigClient**](Auth.md#PostAuthAwsConfigClient) | **Post** /auth/{aws_mount_path}/config/client | 
@@ -335,7 +336,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleName(ctx, approleMountPath, roleName).Execute()
 
-Register an role with the backend.
+
 
 ### Example
 
@@ -399,7 +400,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameBindSecretId(ctx, approleMountPath, roleName).Execute()
 
-Impose secret_id to be presented during login using this role.
+
 
 ### Example
 
@@ -463,7 +464,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameBoundCidrList(ctx, approleMountPath, roleName).Execute()
 
-Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+
 
 ### Example
 
@@ -527,7 +528,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNamePeriod(ctx, approleMountPath, roleName).Execute()
 
-Updates the value of 'period' on the role
+
 
 ### Example
 
@@ -591,7 +592,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNamePolicies(ctx, approleMountPath, roleName).Execute()
 
-Policies of the role.
+
 
 ### Example
 
@@ -719,7 +720,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx, approleMountPath, roleName).Execute()
 
-Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+
 
 ### Example
 
@@ -783,7 +784,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx, approleMountPath, roleName).Execute()
 
-Invalidate an issued secret_id
+
 
 ### Example
 
@@ -847,7 +848,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx, approleMountPath, roleName).Execute()
 
-Use limit of the SecretID generated against the role.
+
 
 ### Example
 
@@ -911,7 +912,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx, approleMountPath, roleName).Execute()
 
-Duration in seconds of the SecretID generated against the role.
+
 
 ### Example
 
@@ -975,7 +976,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx, approleMountPath, roleName).Execute()
 
-Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+
 
 ### Example
 
@@ -1039,7 +1040,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx, approleMountPath, roleName).Execute()
 
-Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+
 
 ### Example
 
@@ -1103,7 +1104,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameTokenNumUses(ctx, approleMountPath, roleName).Execute()
 
-Number of times issued tokens can be used
+
 
 ### Example
 
@@ -1167,7 +1168,7 @@ Name | Type | Description  | Notes
 
 > DeleteAuthApproleRoleRoleNameTokenTtl(ctx, approleMountPath, roleName).Execute()
 
-Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+
 
 ### Example
 
@@ -3563,9 +3564,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRole
 
-> GetAuthApproleRole(ctx, approleMountPath).List(list).Execute()
+> ApproleRoleResponse GetAuthApproleRole(ctx, approleMountPath).List(list).Execute()
 
-Lists all the roles registered with the backend.
+
 
 ### Example
 
@@ -3618,7 +3619,7 @@ Name | Type | Description  | Notes
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
 
- (empty response body)
+[**ApproleRoleResponse**](ApproleRoleResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3626,9 +3627,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleName
 
-> GetAuthApproleRoleRoleName(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleResponse GetAuthApproleRoleRoleName(ctx, approleMountPath, roleName).Execute()
 
-Register an role with the backend.
+
 
 ### Example
 
@@ -3682,7 +3683,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleResponse**](ApproleRoleResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3690,9 +3691,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameBindSecretId
 
-> GetAuthApproleRoleRoleNameBindSecretId(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleBindSecretIdResponse GetAuthApproleRoleRoleNameBindSecretId(ctx, approleMountPath, roleName).Execute()
 
-Impose secret_id to be presented during login using this role.
+
 
 ### Example
 
@@ -3746,7 +3747,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleBindSecretIdResponse**](ApproleRoleBindSecretIdResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3754,9 +3755,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameBoundCidrList
 
-> GetAuthApproleRoleRoleNameBoundCidrList(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleBoundCidrListResponse GetAuthApproleRoleRoleNameBoundCidrList(ctx, approleMountPath, roleName).Execute()
 
-Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+
 
 ### Example
 
@@ -3810,7 +3811,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleBoundCidrListResponse**](ApproleRoleBoundCidrListResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3818,9 +3819,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameLocalSecretIds
 
-> GetAuthApproleRoleRoleNameLocalSecretIds(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleLocalSecretIdsResponse GetAuthApproleRoleRoleNameLocalSecretIds(ctx, approleMountPath, roleName).Execute()
 
-Enables cluster local secret IDs
+
 
 ### Example
 
@@ -3874,7 +3875,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleLocalSecretIdsResponse**](ApproleRoleLocalSecretIdsResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3882,9 +3883,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNamePeriod
 
-> GetAuthApproleRoleRoleNamePeriod(ctx, approleMountPath, roleName).Execute()
+> ApproleRolePeriodResponse GetAuthApproleRoleRoleNamePeriod(ctx, approleMountPath, roleName).Execute()
 
-Updates the value of 'period' on the role
+
 
 ### Example
 
@@ -3938,7 +3939,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRolePeriodResponse**](ApproleRolePeriodResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -3946,9 +3947,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNamePolicies
 
-> GetAuthApproleRoleRoleNamePolicies(ctx, approleMountPath, roleName).Execute()
+> ApproleRolePoliciesResponse GetAuthApproleRoleRoleNamePolicies(ctx, approleMountPath, roleName).Execute()
 
-Policies of the role.
+
 
 ### Example
 
@@ -4002,7 +4003,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRolePoliciesResponse**](ApproleRolePoliciesResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4010,9 +4011,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameRoleId
 
-> GetAuthApproleRoleRoleNameRoleId(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleRoleIdResponse GetAuthApproleRoleRoleNameRoleId(ctx, approleMountPath, roleName).Execute()
 
-Returns the 'role_id' of the role.
+
 
 ### Example
 
@@ -4066,7 +4067,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleRoleIdResponse**](ApproleRoleRoleIdResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4074,9 +4075,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameSecretId
 
-> GetAuthApproleRoleRoleNameSecretId(ctx, approleMountPath, roleName).List(list).Execute()
+> ApproleRoleSecretIdResponse GetAuthApproleRoleRoleNameSecretId(ctx, approleMountPath, roleName).List(list).Execute()
 
-Generate a SecretID against this role.
+
 
 ### Example
 
@@ -4133,7 +4134,7 @@ Name | Type | Description  | Notes
  **list** | **string** | Must be set to &#x60;true&#x60; | 
 
 
- (empty response body)
+[**ApproleRoleSecretIdResponse**](ApproleRoleSecretIdResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4141,9 +4142,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameSecretIdBoundCidrs
 
-> GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleSecretIdBoundCidrsResponse GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx, approleMountPath, roleName).Execute()
 
-Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+
 
 ### Example
 
@@ -4197,7 +4198,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleSecretIdBoundCidrsResponse**](ApproleRoleSecretIdBoundCidrsResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4205,9 +4206,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameSecretIdNumUses
 
-> GetAuthApproleRoleRoleNameSecretIdNumUses(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleSecretIdNumUsesResponse GetAuthApproleRoleRoleNameSecretIdNumUses(ctx, approleMountPath, roleName).Execute()
 
-Use limit of the SecretID generated against the role.
+
 
 ### Example
 
@@ -4261,7 +4262,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleSecretIdNumUsesResponse**](ApproleRoleSecretIdNumUsesResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4269,9 +4270,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameSecretIdTtl
 
-> GetAuthApproleRoleRoleNameSecretIdTtl(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleSecretIdTtlResponse GetAuthApproleRoleRoleNameSecretIdTtl(ctx, approleMountPath, roleName).Execute()
 
-Duration in seconds of the SecretID generated against the role.
+
 
 ### Example
 
@@ -4325,7 +4326,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleSecretIdTtlResponse**](ApproleRoleSecretIdTtlResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4333,9 +4334,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameTokenBoundCidrs
 
-> GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleTokenBoundCidrsResponse GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx, approleMountPath, roleName).Execute()
 
-Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+
 
 ### Example
 
@@ -4389,7 +4390,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleTokenBoundCidrsResponse**](ApproleRoleTokenBoundCidrsResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4397,9 +4398,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameTokenMaxTtl
 
-> GetAuthApproleRoleRoleNameTokenMaxTtl(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleTokenMaxTtlResponse GetAuthApproleRoleRoleNameTokenMaxTtl(ctx, approleMountPath, roleName).Execute()
 
-Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+
 
 ### Example
 
@@ -4453,7 +4454,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleTokenMaxTtlResponse**](ApproleRoleTokenMaxTtlResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4461,9 +4462,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameTokenNumUses
 
-> GetAuthApproleRoleRoleNameTokenNumUses(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleTokenNumUsesResponse GetAuthApproleRoleRoleNameTokenNumUses(ctx, approleMountPath, roleName).Execute()
 
-Number of times issued tokens can be used
+
 
 ### Example
 
@@ -4517,7 +4518,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleTokenNumUsesResponse**](ApproleRoleTokenNumUsesResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -4525,9 +4526,9 @@ Name | Type | Description  | Notes
 
 ## GetAuthApproleRoleRoleNameTokenTtl
 
-> GetAuthApproleRoleRoleNameTokenTtl(ctx, approleMountPath, roleName).Execute()
+> ApproleRoleTokenTtlResponse GetAuthApproleRoleRoleNameTokenTtl(ctx, approleMountPath, roleName).Execute()
 
-Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+
 
 ### Example
 
@@ -4581,7 +4582,7 @@ Name | Type | Description  | Notes
 
 
 
- (empty response body)
+[**ApproleRoleTokenTtlResponse**](ApproleRoleTokenTtlResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -6333,6 +6334,69 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetAuthCertCrls
+
+> GetAuthCertCrls(ctx, certMountPath).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Auth.GetAuthCertCrls(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GetAuthCertCrlsName
 
 > GetAuthCertCrlsName(ctx, certMountPath, name).Execute()
@@ -6949,7 +7013,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -7076,7 +7140,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -9840,7 +9904,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleName(ctx, approleMountPath, roleName).ApproleRoleRequest(approleRoleRequest).Execute()
 
-Register an role with the backend.
+
 
 ### Example
 
@@ -9907,7 +9971,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameBindSecretId(ctx, approleMountPath, roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
 
-Impose secret_id to be presented during login using this role.
+
 
 ### Example
 
@@ -9974,7 +10038,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameBoundCidrList(ctx, approleMountPath, roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
 
-Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+
 
 ### Example
 
@@ -10039,9 +10103,9 @@ Name | Type | Description  | Notes
 
 ## PostAuthApproleRoleRoleNameCustomSecretId
 
-> PostAuthApproleRoleRoleNameCustomSecretId(ctx, approleMountPath, roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
+> ApproleRoleCustomSecretIdResponse PostAuthApproleRoleRoleNameCustomSecretId(ctx, approleMountPath, roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
 
-Assign a SecretID of choice against the role.
+
 
 ### Example
 
@@ -10098,7 +10162,7 @@ Name | Type | Description  | Notes
  **approleRoleCustomSecretIdRequest** | [**ApproleRoleCustomSecretIdRequest**](ApproleRoleCustomSecretIdRequest.md) |  | 
 
 
- (empty response body)
+[**ApproleRoleCustomSecretIdResponse**](ApproleRoleCustomSecretIdResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -10108,7 +10172,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNamePeriod(ctx, approleMountPath, roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
 
-Updates the value of 'period' on the role
+
 
 ### Example
 
@@ -10175,7 +10239,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNamePolicies(ctx, approleMountPath, roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
 
-Policies of the role.
+
 
 ### Example
 
@@ -10242,7 +10306,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameRoleId(ctx, approleMountPath, roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
 
-Returns the 'role_id' of the role.
+
 
 ### Example
 
@@ -10307,9 +10371,9 @@ Name | Type | Description  | Notes
 
 ## PostAuthApproleRoleRoleNameSecretId
 
-> PostAuthApproleRoleRoleNameSecretId(ctx, approleMountPath, roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
+> ApproleRoleSecretIdResponse PostAuthApproleRoleRoleNameSecretId(ctx, approleMountPath, roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
 
-Generate a SecretID against this role.
+
 
 ### Example
 
@@ -10366,7 +10430,7 @@ Name | Type | Description  | Notes
  **approleRoleSecretIdRequest** | [**ApproleRoleSecretIdRequest**](ApproleRoleSecretIdRequest.md) |  | 
 
 
- (empty response body)
+[**ApproleRoleSecretIdResponse**](ApproleRoleSecretIdResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -10441,7 +10505,7 @@ Name | Type | Description  | Notes
 
 ## PostAuthApproleRoleRoleNameSecretIdAccessorLookup
 
-> PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx, approleMountPath, roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
+> ApproleRoleSecretIdAccessorLookupResponse PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx, approleMountPath, roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
 
 
 
@@ -10500,7 +10564,7 @@ Name | Type | Description  | Notes
  **approleRoleSecretIdAccessorLookupRequest** | [**ApproleRoleSecretIdAccessorLookupRequest**](ApproleRoleSecretIdAccessorLookupRequest.md) |  | 
 
 
- (empty response body)
+[**ApproleRoleSecretIdAccessorLookupResponse**](ApproleRoleSecretIdAccessorLookupResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -10510,7 +10574,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx, approleMountPath, roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
 
-Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+
 
 ### Example
 
@@ -10577,7 +10641,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameSecretIdDestroy(ctx, approleMountPath, roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
 
-Invalidate an issued secret_id
+
 
 ### Example
 
@@ -10642,9 +10706,9 @@ Name | Type | Description  | Notes
 
 ## PostAuthApproleRoleRoleNameSecretIdLookup
 
-> PostAuthApproleRoleRoleNameSecretIdLookup(ctx, approleMountPath, roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
+> ApproleRoleSecretIdLookupResponse PostAuthApproleRoleRoleNameSecretIdLookup(ctx, approleMountPath, roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
 
-Read the properties of an issued secret_id
+
 
 ### Example
 
@@ -10701,7 +10765,7 @@ Name | Type | Description  | Notes
  **approleRoleSecretIdLookupRequest** | [**ApproleRoleSecretIdLookupRequest**](ApproleRoleSecretIdLookupRequest.md) |  | 
 
 
- (empty response body)
+[**ApproleRoleSecretIdLookupResponse**](ApproleRoleSecretIdLookupResponse.md)
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
@@ -10711,7 +10775,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameSecretIdNumUses(ctx, approleMountPath, roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
 
-Use limit of the SecretID generated against the role.
+
 
 ### Example
 
@@ -10778,7 +10842,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameSecretIdTtl(ctx, approleMountPath, roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
 
-Duration in seconds of the SecretID generated against the role.
+
 
 ### Example
 
@@ -10845,7 +10909,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx, approleMountPath, roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
 
-Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+
 
 ### Example
 
@@ -10912,7 +10976,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameTokenMaxTtl(ctx, approleMountPath, roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
 
-Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+
 
 ### Example
 
@@ -10979,7 +11043,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameTokenNumUses(ctx, approleMountPath, roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
 
-Number of times issued tokens can be used
+
 
 ### Example
 
@@ -11046,7 +11110,7 @@ Name | Type | Description  | Notes
 
 > PostAuthApproleRoleRoleNameTokenTtl(ctx, approleMountPath, roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
 
-Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+
 
 ### Example
 
@@ -15814,7 +15878,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
- **format** | **string** | Return json formatted output | [default to &quot;json&quot;]
+ **format** | **string** | Return json formatted output | 
 
 
  (empty response body)
@@ -15880,7 +15944,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenCreateOrphanRequest** | [**TokenCreateOrphanRequest**](TokenCreateOrphanRequest.md) |  | 
- **format** | **string** | Return json formatted output | [default to &quot;json&quot;]
+ **format** | **string** | Return json formatted output | 
 
 
  (empty response body)
@@ -15950,7 +16014,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **tokenCreateRequest** | [**TokenCreateRequest**](TokenCreateRequest.md) |  | 
- **format** | **string** | Return json formatted output | [default to &quot;json&quot;]
+ **format** | **string** | Return json formatted output | 
 
 
  (empty response body)

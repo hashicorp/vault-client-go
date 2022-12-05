@@ -16,6 +16,11 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | The display name to use for clients using this certificate. | [optional] 
 **Lease** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 **MaxTtl** | Pointer to **int32** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
+**OcspCaCertificates** | Pointer to **string** | Any additional CA certificates needed to communicate with OCSP servers | [optional] 
+**OcspEnabled** | Pointer to **bool** | Whether to attempt OCSP verification of certificates at login | [optional] 
+**OcspFailOpen** | Pointer to **bool** | If set to true, if an OCSP revocation cannot be made successfully, login will proceed rather than failing. If false, failing to get an OCSP status fails the request. | [optional] [default to false]
+**OcspQueryAllServers** | Pointer to **bool** | If set to true, rather than accepting the first successful OCSP response, query all servers and consider the certificate valid only if all servers agree. | [optional] [default to false]
+**OcspServersOverride** | Pointer to **[]string** | A comma-separated list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected. | [optional] 
 **Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
 **RequiredExtensions** | Pointer to **[]string** | A comma-separated string or array of extensions formatted as \&quot;oid:value\&quot;. Expects the extension value to be some type of ASN1 encoded string. All values much match. Supports globbing on \&quot;value\&quot;. | [optional] 
@@ -348,6 +353,131 @@ SetMaxTtl sets MaxTtl field to given value.
 `func (o *CertCertsRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+### GetOcspCaCertificates
+
+`func (o *CertCertsRequest) GetOcspCaCertificates() string`
+
+GetOcspCaCertificates returns the OcspCaCertificates field if non-nil, zero value otherwise.
+
+### GetOcspCaCertificatesOk
+
+`func (o *CertCertsRequest) GetOcspCaCertificatesOk() (*string, bool)`
+
+GetOcspCaCertificatesOk returns a tuple with the OcspCaCertificates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOcspCaCertificates
+
+`func (o *CertCertsRequest) SetOcspCaCertificates(v string)`
+
+SetOcspCaCertificates sets OcspCaCertificates field to given value.
+
+### HasOcspCaCertificates
+
+`func (o *CertCertsRequest) HasOcspCaCertificates() bool`
+
+HasOcspCaCertificates returns a boolean if a field has been set.
+
+### GetOcspEnabled
+
+`func (o *CertCertsRequest) GetOcspEnabled() bool`
+
+GetOcspEnabled returns the OcspEnabled field if non-nil, zero value otherwise.
+
+### GetOcspEnabledOk
+
+`func (o *CertCertsRequest) GetOcspEnabledOk() (*bool, bool)`
+
+GetOcspEnabledOk returns a tuple with the OcspEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOcspEnabled
+
+`func (o *CertCertsRequest) SetOcspEnabled(v bool)`
+
+SetOcspEnabled sets OcspEnabled field to given value.
+
+### HasOcspEnabled
+
+`func (o *CertCertsRequest) HasOcspEnabled() bool`
+
+HasOcspEnabled returns a boolean if a field has been set.
+
+### GetOcspFailOpen
+
+`func (o *CertCertsRequest) GetOcspFailOpen() bool`
+
+GetOcspFailOpen returns the OcspFailOpen field if non-nil, zero value otherwise.
+
+### GetOcspFailOpenOk
+
+`func (o *CertCertsRequest) GetOcspFailOpenOk() (*bool, bool)`
+
+GetOcspFailOpenOk returns a tuple with the OcspFailOpen field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOcspFailOpen
+
+`func (o *CertCertsRequest) SetOcspFailOpen(v bool)`
+
+SetOcspFailOpen sets OcspFailOpen field to given value.
+
+### HasOcspFailOpen
+
+`func (o *CertCertsRequest) HasOcspFailOpen() bool`
+
+HasOcspFailOpen returns a boolean if a field has been set.
+
+### GetOcspQueryAllServers
+
+`func (o *CertCertsRequest) GetOcspQueryAllServers() bool`
+
+GetOcspQueryAllServers returns the OcspQueryAllServers field if non-nil, zero value otherwise.
+
+### GetOcspQueryAllServersOk
+
+`func (o *CertCertsRequest) GetOcspQueryAllServersOk() (*bool, bool)`
+
+GetOcspQueryAllServersOk returns a tuple with the OcspQueryAllServers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOcspQueryAllServers
+
+`func (o *CertCertsRequest) SetOcspQueryAllServers(v bool)`
+
+SetOcspQueryAllServers sets OcspQueryAllServers field to given value.
+
+### HasOcspQueryAllServers
+
+`func (o *CertCertsRequest) HasOcspQueryAllServers() bool`
+
+HasOcspQueryAllServers returns a boolean if a field has been set.
+
+### GetOcspServersOverride
+
+`func (o *CertCertsRequest) GetOcspServersOverride() []string`
+
+GetOcspServersOverride returns the OcspServersOverride field if non-nil, zero value otherwise.
+
+### GetOcspServersOverrideOk
+
+`func (o *CertCertsRequest) GetOcspServersOverrideOk() (*[]string, bool)`
+
+GetOcspServersOverrideOk returns a tuple with the OcspServersOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOcspServersOverride
+
+`func (o *CertCertsRequest) SetOcspServersOverride(v []string)`
+
+SetOcspServersOverride sets OcspServersOverride field to given value.
+
+### HasOcspServersOverride
+
+`func (o *CertCertsRequest) HasOcspServersOverride() bool`
+
+HasOcspServersOverride returns a boolean if a field has been set.
 
 ### GetPeriod
 

@@ -247,7 +247,6 @@
         }
       ],
       "get": {
-        "summary": "Lists all the roles registered with the backend.",
         "operationId": "getAuthApproleRole",
         "tags": [
           "auth"
@@ -268,7 +267,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -297,19 +303,24 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "summary": "Register an role with the backend.",
         "operationId": "getAuthApproleRoleRoleName",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Register an role with the backend.",
         "operationId": "postAuthApproleRoleRoleName",
         "tags": [
           "auth"
@@ -331,14 +342,13 @@
         }
       },
       "delete": {
-        "summary": "Register an role with the backend.",
         "operationId": "deleteAuthApproleRoleRoleName",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -366,19 +376,24 @@
         }
       ],
       "get": {
-        "summary": "Impose secret_id to be presented during login using this role.",
         "operationId": "getAuthApproleRoleRoleNameBindSecretId",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleBindSecretIdResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Impose secret_id to be presented during login using this role.",
         "operationId": "postAuthApproleRoleRoleNameBindSecretId",
         "tags": [
           "auth"
@@ -394,20 +409,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Impose secret_id to be presented during login using this role.",
         "operationId": "deleteAuthApproleRoleRoleNameBindSecretId",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -435,19 +449,24 @@
         }
       ],
       "get": {
-        "summary": "Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP\naddresses which can perform the login operation",
         "operationId": "getAuthApproleRoleRoleNameBoundCidrList",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleBoundCidrListResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP\naddresses which can perform the login operation",
         "operationId": "postAuthApproleRoleRoleNameBoundCidrList",
         "tags": [
           "auth"
@@ -463,20 +482,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP\naddresses which can perform the login operation",
         "operationId": "deleteAuthApproleRoleRoleNameBoundCidrList",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -504,7 +522,6 @@
         }
       ],
       "post": {
-        "summary": "Assign a SecretID of choice against the role.",
         "operationId": "postAuthApproleRoleRoleNameCustomSecretId",
         "tags": [
           "auth"
@@ -521,7 +538,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleCustomSecretIdResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -549,14 +573,20 @@
         }
       ],
       "get": {
-        "summary": "Enables cluster local secret IDs",
         "operationId": "getAuthApproleRoleRoleNameLocalSecretIds",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleLocalSecretIdsResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -584,19 +614,24 @@
         }
       ],
       "get": {
-        "summary": "Updates the value of 'period' on the role",
         "operationId": "getAuthApproleRoleRoleNamePeriod",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRolePeriodResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Updates the value of 'period' on the role",
         "operationId": "postAuthApproleRoleRoleNamePeriod",
         "tags": [
           "auth"
@@ -612,20 +647,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Updates the value of 'period' on the role",
         "operationId": "deleteAuthApproleRoleRoleNamePeriod",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -653,19 +687,24 @@
         }
       ],
       "get": {
-        "summary": "Policies of the role.",
         "operationId": "getAuthApproleRoleRoleNamePolicies",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRolePoliciesResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Policies of the role.",
         "operationId": "postAuthApproleRoleRoleNamePolicies",
         "tags": [
           "auth"
@@ -681,20 +720,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Policies of the role.",
         "operationId": "deleteAuthApproleRoleRoleNamePolicies",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -722,19 +760,24 @@
         }
       ],
       "get": {
-        "summary": "Returns the 'role_id' of the role.",
         "operationId": "getAuthApproleRoleRoleNameRoleId",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleRoleIdResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Returns the 'role_id' of the role.",
         "operationId": "postAuthApproleRoleRoleNameRoleId",
         "tags": [
           "auth"
@@ -750,8 +793,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -779,7 +822,6 @@
         }
       ],
       "get": {
-        "summary": "Generate a SecretID against this role.",
         "operationId": "getAuthApproleRoleRoleNameSecretId",
         "tags": [
           "auth"
@@ -800,12 +842,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleSecretIdResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Generate a SecretID against this role.",
         "operationId": "postAuthApproleRoleRoleNameSecretId",
         "tags": [
           "auth"
@@ -822,7 +870,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleSecretIdResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -864,8 +919,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
@@ -876,7 +931,7 @@
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -919,7 +974,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleSecretIdAccessorLookupResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -947,19 +1009,24 @@
         }
       ],
       "get": {
-        "summary": "Comma separated list of CIDR blocks, if set, specifies blocks of IP\naddresses which can perform the login operation",
         "operationId": "getAuthApproleRoleRoleNameSecretIdBoundCidrs",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleSecretIdBoundCidrsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Comma separated list of CIDR blocks, if set, specifies blocks of IP\naddresses which can perform the login operation",
         "operationId": "postAuthApproleRoleRoleNameSecretIdBoundCidrs",
         "tags": [
           "auth"
@@ -975,20 +1042,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Comma separated list of CIDR blocks, if set, specifies blocks of IP\naddresses which can perform the login operation",
         "operationId": "deleteAuthApproleRoleRoleNameSecretIdBoundCidrs",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -1016,19 +1082,24 @@
         }
       ],
       "get": {
-        "summary": "Use limit of the SecretID generated against the role.",
         "operationId": "getAuthApproleRoleRoleNameSecretIdNumUses",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleSecretIdNumUsesResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Use limit of the SecretID generated against the role.",
         "operationId": "postAuthApproleRoleRoleNameSecretIdNumUses",
         "tags": [
           "auth"
@@ -1044,20 +1115,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Use limit of the SecretID generated against the role.",
         "operationId": "deleteAuthApproleRoleRoleNameSecretIdNumUses",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -1085,19 +1155,24 @@
         }
       ],
       "get": {
-        "summary": "Duration in seconds of the SecretID generated against the role.",
         "operationId": "getAuthApproleRoleRoleNameSecretIdTtl",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleSecretIdTtlResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Duration in seconds of the SecretID generated against the role.",
         "operationId": "postAuthApproleRoleRoleNameSecretIdTtl",
         "tags": [
           "auth"
@@ -1113,20 +1188,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Duration in seconds of the SecretID generated against the role.",
         "operationId": "deleteAuthApproleRoleRoleNameSecretIdTtl",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -1154,7 +1228,6 @@
         }
       ],
       "post": {
-        "summary": "Invalidate an issued secret_id",
         "operationId": "postAuthApproleRoleRoleNameSecretIdDestroy",
         "tags": [
           "auth"
@@ -1170,20 +1243,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Invalidate an issued secret_id",
         "operationId": "deleteAuthApproleRoleRoleNameSecretIdDestroy",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -1211,7 +1283,6 @@
         }
       ],
       "post": {
-        "summary": "Read the properties of an issued secret_id",
         "operationId": "postAuthApproleRoleRoleNameSecretIdLookup",
         "tags": [
           "auth"
@@ -1228,7 +1299,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleSecretIdLookupResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -1256,19 +1334,24 @@
         }
       ],
       "get": {
-        "summary": "Comma separated string or list of CIDR blocks. If set, specifies the blocks of\nIP addresses which can use the returned token.",
         "operationId": "getAuthApproleRoleRoleNameTokenBoundCidrs",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleTokenBoundCidrsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Comma separated string or list of CIDR blocks. If set, specifies the blocks of\nIP addresses which can use the returned token.",
         "operationId": "postAuthApproleRoleRoleNameTokenBoundCidrs",
         "tags": [
           "auth"
@@ -1284,20 +1367,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Comma separated string or list of CIDR blocks. If set, specifies the blocks of\nIP addresses which can use the returned token.",
         "operationId": "deleteAuthApproleRoleRoleNameTokenBoundCidrs",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -1325,19 +1407,24 @@
         }
       ],
       "get": {
-        "summary": "Duration in seconds, the maximum lifetime of the tokens issued by using\nthe SecretIDs that were generated against this role, after which the\ntokens are not allowed to be renewed.",
         "operationId": "getAuthApproleRoleRoleNameTokenMaxTtl",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleTokenMaxTtlResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Duration in seconds, the maximum lifetime of the tokens issued by using\nthe SecretIDs that were generated against this role, after which the\ntokens are not allowed to be renewed.",
         "operationId": "postAuthApproleRoleRoleNameTokenMaxTtl",
         "tags": [
           "auth"
@@ -1353,20 +1440,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Duration in seconds, the maximum lifetime of the tokens issued by using\nthe SecretIDs that were generated against this role, after which the\ntokens are not allowed to be renewed.",
         "operationId": "deleteAuthApproleRoleRoleNameTokenMaxTtl",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -1394,19 +1480,24 @@
         }
       ],
       "get": {
-        "summary": "Number of times issued tokens can be used",
         "operationId": "getAuthApproleRoleRoleNameTokenNumUses",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleTokenNumUsesResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Number of times issued tokens can be used",
         "operationId": "postAuthApproleRoleRoleNameTokenNumUses",
         "tags": [
           "auth"
@@ -1422,20 +1513,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Number of times issued tokens can be used",
         "operationId": "deleteAuthApproleRoleRoleNameTokenNumUses",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -1463,19 +1553,24 @@
         }
       ],
       "get": {
-        "summary": "Duration in seconds, the lifetime of the token issued by using the SecretID that\nis generated against this role, before which the token needs to be renewed.",
         "operationId": "getAuthApproleRoleRoleNameTokenTtl",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproleRoleTokenTtlResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Duration in seconds, the lifetime of the token issued by using the SecretID that\nis generated against this role, before which the token needs to be renewed.",
         "operationId": "postAuthApproleRoleRoleNameTokenTtl",
         "tags": [
           "auth"
@@ -1491,20 +1586,19 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Duration in seconds, the lifetime of the token issued by using the SecretID that\nis generated against this role, before which the token needs to be renewed.",
         "operationId": "deleteAuthApproleRoleRoleNameTokenTtl",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -3279,6 +3373,45 @@
         }
       }
     },
+    "/auth/{cert_mount_path}/crls": {
+      "description": "Manage Certificate Revocation Lists checked during authentication.",
+      "parameters": [
+        {
+          "name": "cert_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "cert"
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getAuthCertCrls",
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auth/{cert_mount_path}/crls/{name}": {
       "description": "Manage Certificate Revocation Lists checked during authentication.",
       "parameters": [
@@ -4012,8 +4145,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -4119,8 +4251,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -6443,8 +6574,7 @@
           "description": "Return json formatted output",
           "in": "query",
           "schema": {
-            "type": "string",
-            "default": "json"
+            "type": "string"
           }
         },
         {
@@ -6488,8 +6618,7 @@
           "description": "Return json formatted output",
           "in": "query",
           "schema": {
-            "type": "string",
-            "default": "json"
+            "type": "string"
           }
         },
         {
@@ -6533,8 +6662,7 @@
           "description": "Return json formatted output",
           "in": "query",
           "schema": {
-            "type": "string",
-            "default": "json"
+            "type": "string"
           }
         },
         {
@@ -11129,6 +11257,18 @@
       }
     },
     "/sys/loggers": {
+      "get": {
+        "summary": "Read the log level for all existing loggers.",
+        "operationId": "getSysLoggers",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "summary": "Modify the log level for all existing loggers.",
         "operationId": "postSysLoggers",
@@ -11176,6 +11316,18 @@
           "required": true
         }
       ],
+      "get": {
+        "summary": "Read the log level for a single logger.",
+        "operationId": "getSysLoggersName",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "summary": "Modify the log level of a single logger.",
         "operationId": "postSysLoggersName",
@@ -11219,8 +11371,7 @@
           "description": "Format to export metrics into. Currently accepts only \"prometheus\".",
           "in": "query",
           "schema": {
-            "type": "string",
-            "default": "json"
+            "type": "string"
           }
         }
       ],
@@ -11278,8 +11429,7 @@
           "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
           "in": "query",
           "schema": {
-            "type": "string",
-            "default": "info"
+            "type": "string"
           }
         }
       ],
@@ -11848,8 +11998,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -12221,8 +12370,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -12293,8 +12441,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -14772,8 +14919,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -18782,6 +18928,52 @@
         }
       }
     },
+    "/{pki_mount_path}/config/cluster": {
+      "description": "Set cluster-local configuration, including address to this PR cluster.",
+      "parameters": [
+        {
+          "name": "pki_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getPkiConfigCluster",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postPkiConfigCluster",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiConfigClusterRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{pki_mount_path}/config/crl": {
       "description": "Configure the CRL expiration.",
       "parameters": [
@@ -19319,6 +19511,51 @@
         }
       }
     },
+    "/{pki_mount_path}/issuer/{issuer_ref}/resign-crls": {
+      "description": "Combine and sign with the provided issuer different CRLs",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          }
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuerRefResignCrls",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerResignCrlsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{pki_mount_path}/issuer/{issuer_ref}/revoke": {
       "description": "Revoke the specified issuer certificate.",
       "parameters": [
@@ -19388,6 +19625,51 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PkiIssuerSignIntermediateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/issuer/{issuer_ref}/sign-revocation-list": {
+      "description": "Generate and sign a CRL based on the provided parameters.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          }
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuerRefSignRevocationList",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerSignRevocationListRequest"
               }
             }
           }
@@ -21173,8 +21455,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -21335,8 +21616,7 @@
             "description": "Return a list if `true`",
             "in": "query",
             "schema": {
-              "type": "string",
-              "default": "false"
+              "type": "string"
             }
           }
         ],
@@ -24150,6 +24430,15 @@
           }
         }
       },
+      "ApproleRoleBindSecretIdResponse": {
+        "type": "object",
+        "properties": {
+          "bind_secret_id": {
+            "type": "boolean",
+            "description": "Impose secret_id to be presented when logging in using this role. Defaults to 'true'."
+          }
+        }
+      },
       "ApproleRoleBoundCidrListRequest": {
         "type": "object",
         "properties": {
@@ -24159,6 +24448,19 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "ApproleRoleBoundCidrListResponse": {
+        "type": "object",
+        "properties": {
+          "bound_cidr_list": {
+            "type": "array",
+            "description": "Deprecated: Please use \"secret_id_bound_cidrs\" instead. Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.",
+            "items": {
+              "type": "string"
+            },
+            "deprecated": true
           }
         }
       },
@@ -24198,6 +24500,37 @@
           }
         }
       },
+      "ApproleRoleCustomSecretIdResponse": {
+        "type": "object",
+        "properties": {
+          "secret_id": {
+            "type": "string",
+            "description": "Secret ID attached to the role."
+          },
+          "secret_id_accessor": {
+            "type": "string",
+            "description": "Accessor of the secret ID"
+          },
+          "secret_id_num_uses": {
+            "type": "integer",
+            "description": "Number of times a secret ID can access the role, after which the secret ID will expire."
+          },
+          "secret_id_ttl": {
+            "type": "integer",
+            "description": "Duration in seconds after which the issued secret ID expires.",
+            "format": "seconds"
+          }
+        }
+      },
+      "ApproleRoleLocalSecretIdsResponse": {
+        "type": "object",
+        "properties": {
+          "local_secret_ids": {
+            "type": "boolean",
+            "description": "If true, the secret identifiers generated using this role will be cluster local. This can only be set during role creation and once set, it can't be reset later"
+          }
+        }
+      },
       "ApproleRolePeriodRequest": {
         "type": "object",
         "properties": {
@@ -24214,7 +24547,43 @@
           }
         }
       },
+      "ApproleRolePeriodResponse": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "integer",
+            "description": "Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.",
+            "format": "seconds",
+            "deprecated": true
+          },
+          "token_period": {
+            "type": "integer",
+            "description": "If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").",
+            "format": "seconds"
+          }
+        }
+      },
       "ApproleRolePoliciesRequest": {
+        "type": "object",
+        "properties": {
+          "policies": {
+            "type": "array",
+            "description": "Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.",
+            "items": {
+              "type": "string"
+            },
+            "deprecated": true
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "Comma-separated list of policies",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ApproleRolePoliciesResponse": {
         "type": "object",
         "properties": {
           "policies": {
@@ -24373,7 +24742,27 @@
           }
         }
       },
+      "ApproleRoleResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ApproleRoleRoleIdRequest": {
+        "type": "object",
+        "properties": {
+          "role_id": {
+            "type": "string",
+            "description": "Identifier of the role. Defaults to a UUID."
+          }
+        }
+      },
+      "ApproleRoleRoleIdResponse": {
         "type": "object",
         "properties": {
           "role_id": {
@@ -24400,7 +24789,67 @@
           }
         }
       },
+      "ApproleRoleSecretIdAccessorLookupResponse": {
+        "type": "object",
+        "properties": {
+          "cidr_list": {
+            "type": "array",
+            "description": "List of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If 'bound_cidr_list' is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "creation_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiration_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_updated_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "metadata": {
+            "type": "object",
+            "format": "map"
+          },
+          "secret_id_accessor": {
+            "type": "string",
+            "description": "Accessor of the secret ID"
+          },
+          "secret_id_num_uses": {
+            "type": "integer",
+            "description": "Number of times a secret ID can access the role, after which the secret ID will expire."
+          },
+          "secret_id_ttl": {
+            "type": "integer",
+            "description": "Duration in seconds after which the issued secret ID expires.",
+            "format": "seconds"
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "List of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ApproleRoleSecretIdBoundCidrsRequest": {
+        "type": "object",
+        "properties": {
+          "secret_id_bound_cidrs": {
+            "type": "array",
+            "description": "Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ApproleRoleSecretIdBoundCidrsResponse": {
         "type": "object",
         "properties": {
           "secret_id_bound_cidrs": {
@@ -24430,12 +24879,69 @@
           }
         }
       },
+      "ApproleRoleSecretIdLookupResponse": {
+        "type": "object",
+        "properties": {
+          "cidr_list": {
+            "type": "array",
+            "description": "List of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If 'bound_cidr_list' is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "creation_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiration_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_updated_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "metadata": {
+            "type": "object",
+            "format": "map"
+          },
+          "secret_id_accessor": {
+            "type": "string",
+            "description": "Accessor of the secret ID"
+          },
+          "secret_id_num_uses": {
+            "type": "integer",
+            "description": "Number of times a secret ID can access the role, after which the secret ID will expire."
+          },
+          "secret_id_ttl": {
+            "type": "integer",
+            "description": "Duration in seconds after which the issued secret ID expires.",
+            "format": "seconds"
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "List of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ApproleRoleSecretIdNumUsesRequest": {
         "type": "object",
         "properties": {
           "secret_id_num_uses": {
             "type": "integer",
             "description": "Number of times a SecretID can access the role, after which the SecretID will expire."
+          }
+        }
+      },
+      "ApproleRoleSecretIdNumUsesResponse": {
+        "type": "object",
+        "properties": {
+          "secret_id_num_uses": {
+            "type": "integer",
+            "description": "Number of times a secret ID can access the role, after which the SecretID will expire. Defaults to 0 meaning that the secret ID is of unlimited use."
           }
         }
       },
@@ -24471,12 +24977,33 @@
           }
         }
       },
+      "ApproleRoleSecretIdResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ApproleRoleSecretIdTtlRequest": {
         "type": "object",
         "properties": {
           "secret_id_ttl": {
             "type": "integer",
             "description": "Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.",
+            "format": "seconds"
+          }
+        }
+      },
+      "ApproleRoleSecretIdTtlResponse": {
+        "type": "object",
+        "properties": {
+          "secret_id_ttl": {
+            "type": "integer",
+            "description": "Duration in seconds after which the issued secret ID should expire. Defaults to 0, meaning no expiration.",
             "format": "seconds"
           }
         }
@@ -24493,7 +25020,29 @@
           }
         }
       },
+      "ApproleRoleTokenBoundCidrsResponse": {
+        "type": "object",
+        "properties": {
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ApproleRoleTokenMaxTtlRequest": {
+        "type": "object",
+        "properties": {
+          "token_max_ttl": {
+            "type": "integer",
+            "description": "The maximum lifetime of the generated token",
+            "format": "seconds"
+          }
+        }
+      },
+      "ApproleRoleTokenMaxTtlResponse": {
         "type": "object",
         "properties": {
           "token_max_ttl": {
@@ -24512,7 +25061,26 @@
           }
         }
       },
+      "ApproleRoleTokenNumUsesResponse": {
+        "type": "object",
+        "properties": {
+          "token_num_uses": {
+            "type": "integer",
+            "description": "The maximum number of times a token may be used, a value of zero means unlimited"
+          }
+        }
+      },
       "ApproleRoleTokenTtlRequest": {
+        "type": "object",
+        "properties": {
+          "token_ttl": {
+            "type": "integer",
+            "description": "The initial ttl of the token to generate",
+            "format": "seconds"
+          }
+        }
+      },
+      "ApproleRoleTokenTtlResponse": {
         "type": "object",
         "properties": {
           "token_ttl": {
@@ -25679,6 +26247,34 @@
             "format": "seconds",
             "deprecated": true
           },
+          "ocsp_ca_certificates": {
+            "type": "string",
+            "description": "Any additional CA certificates needed to communicate with OCSP servers",
+            "x-vault-displayAttrs": {
+              "editType": "file"
+            }
+          },
+          "ocsp_enabled": {
+            "type": "boolean",
+            "description": "Whether to attempt OCSP verification of certificates at login"
+          },
+          "ocsp_fail_open": {
+            "type": "boolean",
+            "description": "If set to true, if an OCSP revocation cannot be made successfully, login will proceed rather than failing. If false, failing to get an OCSP status fails the request.",
+            "default": false
+          },
+          "ocsp_query_all_servers": {
+            "type": "boolean",
+            "description": "If set to true, rather than accepting the first successful OCSP response, query all servers and consider the certificate valid only if all servers agree.",
+            "default": false
+          },
+          "ocsp_servers_override": {
+            "type": "array",
+            "description": "A comma-separated list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected.",
+            "items": {
+              "type": "string"
+            }
+          },
           "period": {
             "type": "integer",
             "description": "Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.",
@@ -25803,6 +26399,11 @@
             "type": "boolean",
             "description": "If set, metadata of the certificate including the metadata corresponding to allowed_metadata_extensions will be stored in the alias. Defaults to false.",
             "default": false
+          },
+          "ocsp_cache_size": {
+            "type": "integer",
+            "description": "The size of the in memory OCSP response cache, shared by all configured certs",
+            "default": 100
           }
         }
       },
@@ -26004,10 +26605,10 @@
           }
         },
         "required": [
+          "signature",
           "role",
           "cf_instance_cert",
-          "signing_time",
-          "signature"
+          "signing_time"
         ]
       },
       "CfRolesRequest": {
@@ -27833,9 +28434,9 @@
           }
         },
         "required": [
-          "client_id",
           "scope",
           "redirect_uri",
+          "client_id",
           "response_type"
         ]
       },
@@ -27891,9 +28492,9 @@
           }
         },
         "required": [
-          "redirect_uri",
           "code",
-          "grant_type"
+          "grant_type",
+          "redirect_uri"
         ]
       },
       "IdentityOidcRoleRequest": {
@@ -29486,8 +30087,8 @@
           }
         },
         "required": [
-          "public_key",
-          "private_key"
+          "private_key",
+          "public_key"
         ]
       },
       "MongodbatlasRolesRequest": {
@@ -30669,6 +31270,15 @@
           }
         }
       },
+      "PkiConfigClusterRequest": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Canonical URI to this mount on this performance replication cluster's external address. This is for resolving AIA URLs and providing the {{cluster_path}} template parameter but might be used for other purposes in the future. This should only point back to this particular PR replica and should not ever point to another PR cluster. It may point to any node in the PR replica, including standby nodes, and need not always point to the active node. For example: https://pr1.vault.example.com:8200/v1/pki"
+          }
+        }
+      },
       "PkiConfigCrlRequest": {
         "type": "object",
         "properties": {
@@ -30743,6 +31353,11 @@
               "type": "string"
             }
           },
+          "enable_templating": {
+            "type": "boolean",
+            "description": "Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}' and '{{cluster_path}}' are available, but the addresses are not checked for URI validity until issuance time. This requires /config/cluster's path to be set on all PR Secondary clusters.",
+            "default": false
+          },
           "issuing_certificates": {
             "type": "array",
             "description": "Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1.",
@@ -30768,6 +31383,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "enable_aia_url_templating": {
+            "type": "boolean",
+            "description": "Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}' and '{{cluster_path}}' are available, but the addresses are not checked for URL validity until issuance time. This requires /config/cluster's path to be set on all PR Secondary clusters.",
+            "default": false
           },
           "issuer_name": {
             "type": "string",
@@ -31521,6 +32141,37 @@
           }
         }
       },
+      "PkiIssuerResignCrlsRequest": {
+        "type": "object",
+        "properties": {
+          "crl_number": {
+            "type": "integer",
+            "description": "The sequence number to be written within the CRL Number extension."
+          },
+          "crls": {
+            "type": "array",
+            "description": "A list of PEM encoded CRLs to combine, originally signed by the requested issuer.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delta_crl_base_number": {
+            "type": "integer",
+            "description": "Using a zero or greater value specifies the base CRL revision number to encode within a Delta CRL indicator extension, otherwise the extension will not be added.",
+            "default": -1
+          },
+          "format": {
+            "type": "string",
+            "description": "The format of the combined CRL, can be \"pem\" or \"der\". If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "default": "pem"
+          },
+          "next_update": {
+            "type": "string",
+            "description": "The amount of time the generated CRL should be valid; defaults to 72 hours.",
+            "default": "72h"
+          }
+        }
+      },
       "PkiIssuerSignIntermediateRequest": {
         "type": "object",
         "properties": {
@@ -31844,6 +32495,44 @@
             },
             "x-vault-displayAttrs": {
               "name": "URI Subject Alternative Names (SANs)"
+            }
+          }
+        }
+      },
+      "PkiIssuerSignRevocationListRequest": {
+        "type": "object",
+        "properties": {
+          "crl_number": {
+            "type": "integer",
+            "description": "The sequence number to be written within the CRL Number extension."
+          },
+          "delta_crl_base_number": {
+            "type": "integer",
+            "description": "Using a zero or greater value specifies the base CRL revision number to encode within a Delta CRL indicator extension, otherwise the extension will not be added.",
+            "default": -1
+          },
+          "extensions": {
+            "type": "array",
+            "description": "A list of maps containing extensions with keys id (string), critical (bool), value (string)",
+            "items": {
+              "type": "object"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "The format of the combined CRL, can be \"pem\" or \"der\". If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "default": "pem"
+          },
+          "next_update": {
+            "type": "string",
+            "description": "The amount of time the generated CRL should be valid; defaults to 72 hours.",
+            "default": "72h"
+          },
+          "revoked_certs": {
+            "type": "array",
+            "description": "A list of maps containing the keys serial_number (string), revocation_time (string), and extensions (map with keys id (string), critical (bool), value (string))",
+            "items": {
+              "type": "object"
             }
           }
         }
@@ -32482,6 +33171,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "enable_aia_url_templating": {
+            "type": "boolean",
+            "description": "Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}' and '{{cluster_path}}' are available, but the addresses are not checked for URL validity until issuance time. This requires /config/cluster's path to be set on all PR Secondary clusters.",
+            "default": false
           },
           "issuer_name": {
             "type": "string",

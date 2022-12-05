@@ -45,7 +45,7 @@ func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string, opti
 	)
 }
 
-// DeleteAuthApproleRoleRoleName Register an role with the backend.
+// DeleteAuthApproleRoleRoleName
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -68,7 +68,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName strin
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
+// DeleteAuthApproleRoleRoleNameBindSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -91,7 +91,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, ro
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// DeleteAuthApproleRoleRoleNameBoundCidrList
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -114,7 +114,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, r
 	)
 }
 
-// DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
+// DeleteAuthApproleRoleRoleNamePeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -137,7 +137,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName
 	)
 }
 
-// DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
+// DeleteAuthApproleRoleRoleNamePolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -183,7 +183,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -206,7 +206,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Conte
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
+// DeleteAuthApproleRoleRoleNameSecretIdDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -229,7 +229,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context,
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
+// DeleteAuthApproleRoleRoleNameSecretIdNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -252,7 +252,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context,
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
+// DeleteAuthApproleRoleRoleNameSecretIdTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -275,7 +275,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, rol
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+// DeleteAuthApproleRoleRoleNameTokenBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -298,7 +298,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context,
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+// DeleteAuthApproleRoleRoleNameTokenMaxTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -321,7 +321,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, rol
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
+// DeleteAuthApproleRoleRoleNameTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -344,7 +344,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, ro
 	)
 }
 
-// DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+// DeleteAuthApproleRoleRoleNameTokenTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1200,9 +1200,9 @@ func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string, options ..
 	)
 }
 
-// GetAuthApproleRole Lists all the roles registered with the backend.
+// GetAuthApproleRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...RequestOption) (*ApproleRoleResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1222,9 +1222,9 @@ func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...R
 	)
 }
 
-// GetAuthApproleRoleRoleName Register an role with the backend.
+// GetAuthApproleRoleRoleName
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1245,9 +1245,9 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, 
 	)
 }
 
-// GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
+// GetAuthApproleRoleRoleNameBindSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleBindSecretIdResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1268,9 +1268,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleN
 	)
 }
 
-// GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// GetAuthApproleRoleRoleNameBoundCidrList
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleBoundCidrListResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1291,9 +1291,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, role
 	)
 }
 
-// GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
+// GetAuthApproleRoleRoleNameLocalSecretIds
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleLocalSecretIdsResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1314,9 +1314,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, rol
 	)
 }
 
-// GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
+// GetAuthApproleRoleRoleNamePeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRolePeriodResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1337,9 +1337,9 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName st
 	)
 }
 
-// GetAuthApproleRoleRoleNamePolicies Policies of the role.
+// GetAuthApproleRoleRoleNamePolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRolePoliciesResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1360,9 +1360,9 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName 
 	)
 }
 
-// GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
+// GetAuthApproleRoleRoleNameRoleId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleRoleIdResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1383,10 +1383,10 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 	)
 }
 
-// GetAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
+// GetAuthApproleRoleRoleNameSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string, options ...RequestOption) (*ApproleRoleSecretIdResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1407,9 +1407,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName 
 	)
 }
 
-// GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// GetAuthApproleRoleRoleNameSecretIdBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleSecretIdBoundCidrsResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1430,9 +1430,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 	)
 }
 
-// GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
+// GetAuthApproleRoleRoleNameSecretIdNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleSecretIdNumUsesResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1453,9 +1453,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ro
 	)
 }
 
-// GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
+// GetAuthApproleRoleRoleNameSecretIdTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleSecretIdTtlResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1476,9 +1476,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleNa
 	)
 }
 
-// GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+// GetAuthApproleRoleRoleNameTokenBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenBoundCidrsResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1499,9 +1499,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ro
 	)
 }
 
-// GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+// GetAuthApproleRoleRoleNameTokenMaxTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenMaxTtlResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1522,9 +1522,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleNa
 	)
 }
 
-// GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
+// GetAuthApproleRoleRoleNameTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenNumUsesResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1545,9 +1545,9 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleN
 	)
 }
 
-// GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+// GetAuthApproleRoleRoleNameTokenTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenTtlResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2171,6 +2171,28 @@ func (a *Auth) GetAuthCertConfig(ctx context.Context, options ...RequestOption) 
 	}
 
 	requestPath := "/v1/auth/{cert_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GetAuthCertCrls
+// list: Must be set to &#x60;true&#x60;
+func (a *Auth) GetAuthCertCrls(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/auth/{cert_mount_path}/crls"
 	requestPath = strings.Replace(requestPath, "{"+"cert_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("cert")), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
@@ -3416,7 +3438,7 @@ func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest App
 	)
 }
 
-// PostAuthApproleRoleRoleName Register an role with the backend.
+// PostAuthApproleRoleRoleName
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3439,7 +3461,7 @@ func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string,
 	)
 }
 
-// PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
+// PostAuthApproleRoleRoleNameBindSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3462,7 +3484,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, role
 	)
 }
 
-// PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// PostAuthApproleRoleRoleNameBoundCidrList
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3485,9 +3507,9 @@ func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, rol
 	)
 }
 
-// PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against the role.
+// PostAuthApproleRoleRoleNameCustomSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest, options ...RequestOption) (*ApproleRoleCustomSecretIdResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3508,7 +3530,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, ro
 	)
 }
 
-// PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
+// PostAuthApproleRoleRoleNamePeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3531,7 +3553,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName s
 	)
 }
 
-// PostAuthApproleRoleRoleNamePolicies Policies of the role.
+// PostAuthApproleRoleRoleNamePolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3554,7 +3576,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName
 	)
 }
 
-// PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
+// PostAuthApproleRoleRoleNameRoleId
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3577,9 +3599,9 @@ func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName s
 	)
 }
 
-// PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
+// PostAuthApproleRoleRoleNameSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest, options ...RequestOption) (*ApproleRoleSecretIdResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3625,7 +3647,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Co
 
 // PostAuthApproleRoleRoleNameSecretIdAccessorLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest, options ...RequestOption) (*ApproleRoleSecretIdAccessorLookupResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3646,7 +3668,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Con
 	)
 }
 
-// PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// PostAuthApproleRoleRoleNameSecretIdBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3669,7 +3691,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context
 	)
 }
 
-// PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
+// PostAuthApproleRoleRoleNameSecretIdDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3692,9 +3714,9 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, r
 	)
 }
 
-// PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secret_id
+// PostAuthApproleRoleRoleNameSecretIdLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest, options ...RequestOption) (*ApproleRoleSecretIdLookupResponse, *Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3715,7 +3737,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, ro
 	)
 }
 
-// PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
+// PostAuthApproleRoleRoleNameSecretIdNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3738,7 +3760,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, r
 	)
 }
 
-// PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds of the SecretID generated against the role.
+// PostAuthApproleRoleRoleNameSecretIdTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3761,7 +3783,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleN
 	)
 }
 
-// PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+// PostAuthApproleRoleRoleNameTokenBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3784,7 +3806,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, r
 	)
 }
 
-// PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+// PostAuthApproleRoleRoleNameTokenMaxTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3807,7 +3829,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleN
 	)
 }
 
-// PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
+// PostAuthApproleRoleRoleNameTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -3830,7 +3852,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, role
 	)
 }
 
-// PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+// PostAuthApproleRoleRoleNameTokenTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)

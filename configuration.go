@@ -356,8 +356,9 @@ func DefaultConfiguration() Configuration {
 	}
 
 	return Configuration{
-		BaseAddress: "https://127.0.0.1:8200",
-		BaseClient:  defaultClient,
+		BaseAddress:    "https://127.0.0.1:8200",
+		BaseClient:     defaultClient,
+		RequestTimeout: 60 * time.Second,
 		Retries: RetryConfiguration{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,

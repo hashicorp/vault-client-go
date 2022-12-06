@@ -47,6 +47,20 @@ func WithBaseClient(client *http.Client) ClientOption {
 	}
 }
 
+// WithRequestTimeout, given a non-negative value, will apply the timeout to
+// each request function unless an earlier deadline is passed to the request
+// function through context.Context.
+// Default: 60s
+func WithRequestTimeout(timeout time.Duration) ClientOption {
+	return func(c *Configuration) error {
+		if timeout < 0 {
+			return fmt.Errorf("request timeout must not be negative")
+		}
+		c.RequestTimeout = timeout
+		return nil
+	}
+}
+
 // WithTLS configures the TLS settings in the base http.Client.
 func WithTLS(configuration TLSConfiguration) ClientOption {
 	return func(c *Configuration) error {
@@ -149,6 +163,12 @@ type Configuration struct {
 	// is suggested that you start with that client and modify it as needed
 	// rather than starting with an empty client or http.DefaultClient.
 	BaseClient *http.Client
+
+	// RequestTimeout, given a non-negative value, will apply the timeout to
+	// each request function unless an earlier deadline is passed to the
+	// request function through context.Context.
+	// Default: 60s
+	RequestTimeout time.Duration `env:"VAULT_CLIENT_TIMEOUT"`
 
 	// TLS is a collection of TLS settings used to configure the internal
 	// http.Client.
@@ -336,8 +356,9 @@ func DefaultConfiguration() Configuration {
 	}
 
 	return Configuration{
-		BaseAddress: "https://127.0.0.1:8200",
-		BaseClient:  defaultClient,
+		BaseAddress:    "https://127.0.0.1:8200",
+		BaseClient:     defaultClient,
+		RequestTimeout: 60 * time.Second,
 		Retries: RetryConfiguration{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,

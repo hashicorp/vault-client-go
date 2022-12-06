@@ -81,7 +81,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println("secret written succesffully")
+	log.Println("secret written successfully")
 
 	// read a secret
 	r, err := client.Read(ctx, "/secret/data/my-secret")

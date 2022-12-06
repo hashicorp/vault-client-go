@@ -60,6 +60,7 @@ func main() {
 	// prepare a client with the given base address
 	client, err := vault.New(
 		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithRequestTimeout(30*time.Second),
 	)
 	if err != nil {
 		log.Fatal(err)

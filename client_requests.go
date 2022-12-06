@@ -119,6 +119,13 @@ func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, clie
 
 // sendRequestParseResponse constructs a request, sends it, and parses the response
 func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values, requestModifiersLocal requestModifiers) (*Response[ResponseT], error) {
+	// apply the global request timeout, if set
+	if client.configuration.RequestTimeout > 0 {
+		var cancelContextFunc context.CancelFunc
+		ctx, cancelContextFunc = context.WithTimeout(ctx, client.configuration.RequestTimeout)
+		defer cancelContextFunc()
+	}
+
 	// clone the client-level request modifiers to prevent race conditions
 	requestModifiersClient := client.cloneClientRequestModifiers()
 

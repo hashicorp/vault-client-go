@@ -1202,7 +1202,7 @@ func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string, options ..
 
 // GetAuthApproleRole
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...RequestOption) (*ApproleRoleResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...RequestOption) (*Response[ApproleRoleResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1211,7 +1211,7 @@ func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...R
 	requestPath := "/v1/auth/{approle_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1224,7 +1224,7 @@ func (a *Auth) GetAuthApproleRole(ctx context.Context, list string, options ...R
 
 // GetAuthApproleRoleRoleName
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1234,7 +1234,7 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1247,7 +1247,7 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string, 
 
 // GetAuthApproleRoleRoleNameBindSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleBindSecretIdResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleBindSecretIdResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1257,7 +1257,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleN
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleBindSecretIdResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1270,7 +1270,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleN
 
 // GetAuthApproleRoleRoleNameBoundCidrList
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleBoundCidrListResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleBoundCidrListResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1280,7 +1280,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, role
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleBoundCidrListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1293,7 +1293,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, role
 
 // GetAuthApproleRoleRoleNameLocalSecretIds
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleLocalSecretIdsResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleLocalSecretIdsResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1303,7 +1303,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, rol
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleLocalSecretIdsResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1316,7 +1316,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, rol
 
 // GetAuthApproleRoleRoleNamePeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRolePeriodResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRolePeriodResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1326,7 +1326,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName st
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRolePeriodResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1339,7 +1339,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName st
 
 // GetAuthApproleRoleRoleNamePolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRolePoliciesResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRolePoliciesResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1349,7 +1349,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRolePoliciesResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1362,7 +1362,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName 
 
 // GetAuthApproleRoleRoleNameRoleId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleRoleIdResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleRoleIdResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1372,7 +1372,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleRoleIdResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1386,7 +1386,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 // GetAuthApproleRoleRoleNameSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string, options ...RequestOption) (*ApproleRoleSecretIdResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string, options ...RequestOption) (*Response[ApproleRoleSecretIdResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1396,7 +1396,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleSecretIdResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1409,7 +1409,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName 
 
 // GetAuthApproleRoleRoleNameSecretIdBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleSecretIdBoundCidrsResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleSecretIdBoundCidrsResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1419,7 +1419,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleSecretIdBoundCidrsResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1432,7 +1432,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 
 // GetAuthApproleRoleRoleNameSecretIdNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleSecretIdNumUsesResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleSecretIdNumUsesResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1442,7 +1442,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ro
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleSecretIdNumUsesResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1455,7 +1455,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ro
 
 // GetAuthApproleRoleRoleNameSecretIdTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleSecretIdTtlResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleSecretIdTtlResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1465,7 +1465,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleNa
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleSecretIdTtlResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1478,7 +1478,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleNa
 
 // GetAuthApproleRoleRoleNameTokenBoundCidrs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenBoundCidrsResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleTokenBoundCidrsResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1488,7 +1488,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ro
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleTokenBoundCidrsResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1501,7 +1501,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ro
 
 // GetAuthApproleRoleRoleNameTokenMaxTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenMaxTtlResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleTokenMaxTtlResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1511,7 +1511,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleNa
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleTokenMaxTtlResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1524,7 +1524,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleNa
 
 // GetAuthApproleRoleRoleNameTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenNumUsesResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleTokenNumUsesResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1534,7 +1534,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleN
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleTokenNumUsesResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1547,7 +1547,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleN
 
 // GetAuthApproleRoleRoleNameTokenTtl
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*ApproleRoleTokenTtlResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, options ...RequestOption) (*Response[ApproleRoleTokenTtlResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1557,7 +1557,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[ApproleRoleTokenTtlResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -3509,7 +3509,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, rol
 
 // PostAuthApproleRoleRoleNameCustomSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest, options ...RequestOption) (*ApproleRoleCustomSecretIdResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest, options ...RequestOption) (*Response[ApproleRoleCustomSecretIdResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3519,7 +3519,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, ro
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[ApproleRoleCustomSecretIdResponse](
 		ctx,
 		a.client,
 		http.MethodPost,
@@ -3601,7 +3601,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName s
 
 // PostAuthApproleRoleRoleNameSecretId
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest, options ...RequestOption) (*ApproleRoleSecretIdResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest, options ...RequestOption) (*Response[ApproleRoleSecretIdResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3611,7 +3611,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[ApproleRoleSecretIdResponse](
 		ctx,
 		a.client,
 		http.MethodPost,
@@ -3647,7 +3647,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Co
 
 // PostAuthApproleRoleRoleNameSecretIdAccessorLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest, options ...RequestOption) (*ApproleRoleSecretIdAccessorLookupResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest, options ...RequestOption) (*Response[ApproleRoleSecretIdAccessorLookupResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3657,7 +3657,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Con
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[ApproleRoleSecretIdAccessorLookupResponse](
 		ctx,
 		a.client,
 		http.MethodPost,
@@ -3716,7 +3716,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, r
 
 // PostAuthApproleRoleRoleNameSecretIdLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest, options ...RequestOption) (*ApproleRoleSecretIdLookupResponse, *Response[map[string]interface{}], error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest, options ...RequestOption) (*Response[ApproleRoleSecretIdLookupResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3726,7 +3726,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, ro
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[ApproleRoleSecretIdLookupResponse](
 		ctx,
 		a.client,
 		http.MethodPost,

@@ -30,7 +30,7 @@ type {{classname}} struct {
 {{/description}}
 {{/required}}
 {{/allParams}}
-func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}, options ...RequestOption) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*Response[map[string]interface{}], error) {
+func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}, options ...RequestOption) (*Response[{{#returnType}}{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -41,7 +41,7 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#requ
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/required}}{{/pathParams}}
 
 {{#bodyParams}}
-	return sendStructuredRequestParseResponse[map[string]interface{}](
+	return sendStructuredRequestParseResponse[{{#returnType}}{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}](
 		ctx,
 		a.client,
 		http.Method{{httpMethod}},
@@ -52,7 +52,7 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#requ
 	)
 {{/bodyParams}}
 {{^bodyParams}}
-	return sendRequestParseResponse[map[string]interface{}](
+	return sendRequestParseResponse[{{#returnType}}{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}](
 		ctx,
 		a.client,
 		http.Method{{httpMethod}},

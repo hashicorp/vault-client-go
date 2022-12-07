@@ -134,6 +134,7 @@ Method | HTTP request | Description
 [**GetPkiCerts**](Secrets.md#GetPkiCerts) | **Get** /{pki_mount_path}/certs | 
 [**GetPkiCertsRevoked**](Secrets.md#GetPkiCertsRevoked) | **Get** /{pki_mount_path}/certs/revoked | 
 [**GetPkiConfigAutoTidy**](Secrets.md#GetPkiConfigAutoTidy) | **Get** /{pki_mount_path}/config/auto-tidy | 
+[**GetPkiConfigCluster**](Secrets.md#GetPkiConfigCluster) | **Get** /{pki_mount_path}/config/cluster | 
 [**GetPkiConfigCrl**](Secrets.md#GetPkiConfigCrl) | **Get** /{pki_mount_path}/config/crl | 
 [**GetPkiConfigIssuers**](Secrets.md#GetPkiConfigIssuers) | **Get** /{pki_mount_path}/config/issuers | 
 [**GetPkiConfigKeys**](Secrets.md#GetPkiConfigKeys) | **Get** /{pki_mount_path}/config/keys | 
@@ -262,6 +263,7 @@ Method | HTTP request | Description
 [**PostPkiCert**](Secrets.md#PostPkiCert) | **Post** /{pki_mount_path}/cert | 
 [**PostPkiConfigAutoTidy**](Secrets.md#PostPkiConfigAutoTidy) | **Post** /{pki_mount_path}/config/auto-tidy | 
 [**PostPkiConfigCa**](Secrets.md#PostPkiConfigCa) | **Post** /{pki_mount_path}/config/ca | 
+[**PostPkiConfigCluster**](Secrets.md#PostPkiConfigCluster) | **Post** /{pki_mount_path}/config/cluster | 
 [**PostPkiConfigCrl**](Secrets.md#PostPkiConfigCrl) | **Post** /{pki_mount_path}/config/crl | 
 [**PostPkiConfigIssuers**](Secrets.md#PostPkiConfigIssuers) | **Post** /{pki_mount_path}/config/issuers | 
 [**PostPkiConfigKeys**](Secrets.md#PostPkiConfigKeys) | **Post** /{pki_mount_path}/config/keys | 
@@ -272,8 +274,10 @@ Method | HTTP request | Description
 [**PostPkiInternalExported**](Secrets.md#PostPkiInternalExported) | **Post** /{pki_mount_path}/internal|exported | 
 [**PostPkiIssueRole**](Secrets.md#PostPkiIssueRole) | **Post** /{pki_mount_path}/issue/{role} | 
 [**PostPkiIssuerIssuerRefIssueRole**](Secrets.md#PostPkiIssuerIssuerRefIssueRole) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/issue/{role} | 
+[**PostPkiIssuerIssuerRefResignCrls**](Secrets.md#PostPkiIssuerIssuerRefResignCrls) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/resign-crls | 
 [**PostPkiIssuerIssuerRefRevoke**](Secrets.md#PostPkiIssuerIssuerRefRevoke) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/revoke | 
 [**PostPkiIssuerIssuerRefSignIntermediate**](Secrets.md#PostPkiIssuerIssuerRefSignIntermediate) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/sign-intermediate | 
+[**PostPkiIssuerIssuerRefSignRevocationList**](Secrets.md#PostPkiIssuerIssuerRefSignRevocationList) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/sign-revocation-list | 
 [**PostPkiIssuerIssuerRefSignRole**](Secrets.md#PostPkiIssuerIssuerRefSignRole) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/sign/{role} | 
 [**PostPkiIssuerIssuerRefSignSelfIssued**](Secrets.md#PostPkiIssuerIssuerRefSignSelfIssued) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/sign-self-issued | 
 [**PostPkiIssuerIssuerRefSignVerbatim**](Secrets.md#PostPkiIssuerIssuerRefSignVerbatim) | **Post** /{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim | 
@@ -4989,7 +4993,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -8643,6 +8647,66 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetPkiConfigCluster
+
+> GetPkiConfigCluster(ctx, pkiMountPath).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.Secrets.GetPkiConfigCluster(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GetPkiConfigCrl
 
 > GetPkiConfigCrl(ctx, pkiMountPath).Execute()
@@ -10426,7 +10490,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -10493,7 +10557,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -16831,6 +16895,69 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## PostPkiConfigCluster
+
+> PostPkiConfigCluster(ctx, pkiMountPath).PkiConfigClusterRequest(pkiConfigClusterRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	pkiConfigClusterRequest := NewPkiConfigClusterRequestWithDefaults()
+	resp, err := client.Secrets.PostPkiConfigCluster(
+		context.Background(),
+		pkiConfigClusterRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiConfigClusterRequest** | [**PkiConfigClusterRequest**](PkiConfigClusterRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## PostPkiConfigCrl
 
 > PostPkiConfigCrl(ctx, pkiMountPath).PkiConfigCrlRequest(pkiConfigCrlRequest).Execute()
@@ -17477,6 +17604,73 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## PostPkiIssuerIssuerRefResignCrls
+
+> PostPkiIssuerIssuerRefResignCrls(ctx, issuerRef, pkiMountPath).PkiIssuerResignCrlsRequest(pkiIssuerResignCrlsRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+
+	pkiIssuerResignCrlsRequest := NewPkiIssuerResignCrlsRequestWithDefaults()
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefResignCrls(
+		context.Background(),
+		issuerRef,
+		pkiIssuerResignCrlsRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiIssuerResignCrlsRequest** | [**PkiIssuerResignCrlsRequest**](PkiIssuerResignCrlsRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## PostPkiIssuerIssuerRefRevoke
 
 > PostPkiIssuerIssuerRefRevoke(ctx, issuerRef, pkiMountPath).Execute()
@@ -17600,6 +17794,73 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **pkiIssuerSignIntermediateRequest** | [**PkiIssuerSignIntermediateRequest**](PkiIssuerSignIntermediateRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerIssuerRefSignRevocationList
+
+> PostPkiIssuerIssuerRefSignRevocationList(ctx, issuerRef, pkiMountPath).PkiIssuerSignRevocationListRequest(pkiIssuerSignRevocationListRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+
+	pkiIssuerSignRevocationListRequest := NewPkiIssuerSignRevocationListRequestWithDefaults()
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignRevocationList(
+		context.Background(),
+		issuerRef,
+		pkiIssuerSignRevocationListRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiIssuerSignRevocationListRequest** | [**PkiIssuerSignRevocationListRequest**](PkiIssuerSignRevocationListRequest.md) |  | 
 
 
  (empty response body)

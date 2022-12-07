@@ -1250,6 +1250,48 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 	)
 }
 
+// GetSysLoggers Read the log level for all existing loggers.
+func (a *System) GetSysLoggers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/loggers"
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GetSysLoggersName Read the log level for a single logger.
+// name: The name of the logger to be modified.
+func (a *System) GetSysLoggersName(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/sys/loggers/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // GetSysMetrics Export the metrics aggregated for telemetry purpose.
 func (a *System) GetSysMetrics(ctx context.Context, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)

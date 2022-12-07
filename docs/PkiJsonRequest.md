@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CrlDistributionPoints** | Pointer to **[]string** | Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13. | [optional] 
+**EnableAiaUrlTemplating** | Pointer to **bool** | Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values &#39;{{issuer_id}}&#39; and &#39;{{cluster_path}}&#39; are available, but the addresses are not checked for URL validity until issuance time. This requires /config/cluster&#39;s path to be set on all PR Secondary clusters. | [optional] [default to false]
 **IssuerName** | Pointer to **string** | Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value &#39;default&#39; | [optional] 
 **IssuerRef** | Pointer to **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [optional] [default to "default"]
 **IssuingCertificates** | Pointer to **[]string** | Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
@@ -57,6 +58,31 @@ SetCrlDistributionPoints sets CrlDistributionPoints field to given value.
 `func (o *PkiJsonRequest) HasCrlDistributionPoints() bool`
 
 HasCrlDistributionPoints returns a boolean if a field has been set.
+
+### GetEnableAiaUrlTemplating
+
+`func (o *PkiJsonRequest) GetEnableAiaUrlTemplating() bool`
+
+GetEnableAiaUrlTemplating returns the EnableAiaUrlTemplating field if non-nil, zero value otherwise.
+
+### GetEnableAiaUrlTemplatingOk
+
+`func (o *PkiJsonRequest) GetEnableAiaUrlTemplatingOk() (*bool, bool)`
+
+GetEnableAiaUrlTemplatingOk returns a tuple with the EnableAiaUrlTemplating field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableAiaUrlTemplating
+
+`func (o *PkiJsonRequest) SetEnableAiaUrlTemplating(v bool)`
+
+SetEnableAiaUrlTemplating sets EnableAiaUrlTemplating field to given value.
+
+### HasEnableAiaUrlTemplating
+
+`func (o *PkiJsonRequest) HasEnableAiaUrlTemplating() bool`
+
+HasEnableAiaUrlTemplating returns a boolean if a field has been set.
 
 ### GetIssuerName
 

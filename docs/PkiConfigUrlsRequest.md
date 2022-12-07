@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CrlDistributionPoints** | Pointer to **[]string** | Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13. | [optional] 
+**EnableTemplating** | Pointer to **bool** | Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values &#39;{{issuer_id}}&#39; and &#39;{{cluster_path}}&#39; are available, but the addresses are not checked for URI validity until issuance time. This requires /config/cluster&#39;s path to be set on all PR Secondary clusters. | [optional] [default to false]
 **IssuingCertificates** | Pointer to **[]string** | Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
 **OcspServers** | Pointer to **[]string** | Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
 
@@ -51,6 +52,31 @@ SetCrlDistributionPoints sets CrlDistributionPoints field to given value.
 `func (o *PkiConfigUrlsRequest) HasCrlDistributionPoints() bool`
 
 HasCrlDistributionPoints returns a boolean if a field has been set.
+
+### GetEnableTemplating
+
+`func (o *PkiConfigUrlsRequest) GetEnableTemplating() bool`
+
+GetEnableTemplating returns the EnableTemplating field if non-nil, zero value otherwise.
+
+### GetEnableTemplatingOk
+
+`func (o *PkiConfigUrlsRequest) GetEnableTemplatingOk() (*bool, bool)`
+
+GetEnableTemplatingOk returns a tuple with the EnableTemplating field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableTemplating
+
+`func (o *PkiConfigUrlsRequest) SetEnableTemplating(v bool)`
+
+SetEnableTemplating sets EnableTemplating field to given value.
+
+### HasEnableTemplating
+
+`func (o *PkiConfigUrlsRequest) HasEnableTemplating() bool`
+
+HasEnableTemplating returns a boolean if a field has been set.
 
 ### GetIssuingCertificates
 

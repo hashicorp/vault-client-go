@@ -61,6 +61,8 @@ Method | HTTP request | Description
 [**GetSysLeasesCount**](System.md#GetSysLeasesCount) | **Get** /sys/leases/count | Count of leases associated with this Vault cluster
 [**GetSysLeasesLookup**](System.md#GetSysLeasesLookup) | **Get** /sys/leases/lookup/ | Returns a list of lease ids.
 [**GetSysLeasesLookupPrefix**](System.md#GetSysLeasesLookupPrefix) | **Get** /sys/leases/lookup/{prefix} | Returns a list of lease ids.
+[**GetSysLoggers**](System.md#GetSysLoggers) | **Get** /sys/loggers | Read the log level for all existing loggers.
+[**GetSysLoggersName**](System.md#GetSysLoggersName) | **Get** /sys/loggers/{name} | Read the log level for a single logger.
 [**GetSysMetrics**](System.md#GetSysMetrics) | **Get** /sys/metrics | Export the metrics aggregated for telemetry purpose.
 [**GetSysMonitor**](System.md#GetSysMonitor) | **Get** /sys/monitor | 
 [**GetSysMounts**](System.md#GetSysMounts) | **Get** /sys/mounts | List the currently mounted backends.
@@ -3565,6 +3567,123 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetSysLoggers
+
+> GetSysLoggers(ctx).Execute()
+
+Read the log level for all existing loggers.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.System.GetSysLoggers(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GetSysLoggersName
+
+> GetSysLoggersName(ctx, name).Execute()
+
+Read the log level for a single logger.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | The name of the logger to be modified.
+
+	resp, err := client.System.GetSysLoggersName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | The name of the logger to be modified. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GetSysMetrics
 
 > GetSysMetrics(ctx).Format(format).Execute()
@@ -3616,7 +3735,7 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | [default to &quot;json&quot;]
+ **format** | **string** | Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;. | 
 
  (empty response body)
 
@@ -3678,7 +3797,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
- **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | [default to &quot;info&quot;]
+ **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
 
  (empty response body)
 
@@ -4474,7 +4593,7 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5388,7 +5507,7 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 
@@ -5454,7 +5573,7 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **list** | **string** | Return a list if &#x60;true&#x60; | [default to &quot;false&quot;]
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
 
  (empty response body)
 

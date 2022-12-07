@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CrlDistributionPoints** | Pointer to **[]string** | Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13. | [optional] 
+**EnableAiaUrlTemplating** | Pointer to **bool** | Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values &#39;{{issuer_id}}&#39; and &#39;{{cluster_path}}&#39; are available, but the addresses are not checked for URL validity until issuance time. This requires /config/cluster&#39;s path to be set on all PR Secondary clusters. | [optional] [default to false]
 **IssuerName** | Pointer to **string** | Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value &#39;default&#39; | [optional] 
 **IssuingCertificates** | Pointer to **[]string** | Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
 **LeafNotAfterBehavior** | Pointer to **string** | Behavior of leaf&#39;s NotAfter fields: \&quot;err\&quot; to error if the computed NotAfter date exceeds that of this issuer; \&quot;truncate\&quot; to silently truncate to that of this issuer; or \&quot;permit\&quot; to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use \&quot;truncate\&quot; for intermediate CAs and \&quot;permit\&quot; only for root CAs. | [optional] [default to "err"]
@@ -56,6 +57,31 @@ SetCrlDistributionPoints sets CrlDistributionPoints field to given value.
 `func (o *PkiDerPemRequest) HasCrlDistributionPoints() bool`
 
 HasCrlDistributionPoints returns a boolean if a field has been set.
+
+### GetEnableAiaUrlTemplating
+
+`func (o *PkiDerPemRequest) GetEnableAiaUrlTemplating() bool`
+
+GetEnableAiaUrlTemplating returns the EnableAiaUrlTemplating field if non-nil, zero value otherwise.
+
+### GetEnableAiaUrlTemplatingOk
+
+`func (o *PkiDerPemRequest) GetEnableAiaUrlTemplatingOk() (*bool, bool)`
+
+GetEnableAiaUrlTemplatingOk returns a tuple with the EnableAiaUrlTemplating field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableAiaUrlTemplating
+
+`func (o *PkiDerPemRequest) SetEnableAiaUrlTemplating(v bool)`
+
+SetEnableAiaUrlTemplating sets EnableAiaUrlTemplating field to given value.
+
+### HasEnableAiaUrlTemplating
+
+`func (o *PkiDerPemRequest) HasEnableAiaUrlTemplating() bool`
+
+HasEnableAiaUrlTemplating returns a boolean if a field has been set.
 
 ### GetIssuerName
 

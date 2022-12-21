@@ -1,4 +1,4 @@
-# PkiIssuersGenerateRootRequest
+# PKIIssuersGenerateRootRequest
 
 ## Properties
 
@@ -37,770 +37,770 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewPkiIssuersGenerateRootRequest
+### NewPKIIssuersGenerateRootRequest
 
-`func NewPkiIssuersGenerateRootRequest() *PkiIssuersGenerateRootRequest`
+`func NewPKIIssuersGenerateRootRequest() *PKIIssuersGenerateRootRequest`
 
-NewPkiIssuersGenerateRootRequest instantiates a new PkiIssuersGenerateRootRequest object
+NewPKIIssuersGenerateRootRequest instantiates a new PKIIssuersGenerateRootRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPkiIssuersGenerateRootRequestWithDefaults
+### NewPKIIssuersGenerateRootRequestWithDefaults
 
-`func NewPkiIssuersGenerateRootRequestWithDefaults() *PkiIssuersGenerateRootRequest`
+`func NewPKIIssuersGenerateRootRequestWithDefaults() *PKIIssuersGenerateRootRequest`
 
-NewPkiIssuersGenerateRootRequestWithDefaults instantiates a new PkiIssuersGenerateRootRequest object
+NewPKIIssuersGenerateRootRequestWithDefaults instantiates a new PKIIssuersGenerateRootRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAltNames
 
-`func (o *PkiIssuersGenerateRootRequest) GetAltNames() string`
+`func (o *PKIIssuersGenerateRootRequest) GetAltNames() string`
 
 GetAltNames returns the AltNames field if non-nil, zero value otherwise.
 
 ### GetAltNamesOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetAltNamesOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetAltNamesOk() (*string, bool)`
 
 GetAltNamesOk returns a tuple with the AltNames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAltNames
 
-`func (o *PkiIssuersGenerateRootRequest) SetAltNames(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetAltNames(v string)`
 
 SetAltNames sets AltNames field to given value.
 
 ### HasAltNames
 
-`func (o *PkiIssuersGenerateRootRequest) HasAltNames() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasAltNames() bool`
 
 HasAltNames returns a boolean if a field has been set.
 
 ### GetCommonName
 
-`func (o *PkiIssuersGenerateRootRequest) GetCommonName() string`
+`func (o *PKIIssuersGenerateRootRequest) GetCommonName() string`
 
 GetCommonName returns the CommonName field if non-nil, zero value otherwise.
 
 ### GetCommonNameOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetCommonNameOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetCommonNameOk() (*string, bool)`
 
 GetCommonNameOk returns a tuple with the CommonName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCommonName
 
-`func (o *PkiIssuersGenerateRootRequest) SetCommonName(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetCommonName(v string)`
 
 SetCommonName sets CommonName field to given value.
 
 ### HasCommonName
 
-`func (o *PkiIssuersGenerateRootRequest) HasCommonName() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasCommonName() bool`
 
 HasCommonName returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *PkiIssuersGenerateRootRequest) GetCountry() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetCountry() []string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetCountryOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetCountryOk() (*[]string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *PkiIssuersGenerateRootRequest) SetCountry(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetCountry(v []string)`
 
 SetCountry sets Country field to given value.
 
 ### HasCountry
 
-`func (o *PkiIssuersGenerateRootRequest) HasCountry() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
 ### GetExcludeCnFromSans
 
-`func (o *PkiIssuersGenerateRootRequest) GetExcludeCnFromSans() bool`
+`func (o *PKIIssuersGenerateRootRequest) GetExcludeCnFromSans() bool`
 
 GetExcludeCnFromSans returns the ExcludeCnFromSans field if non-nil, zero value otherwise.
 
 ### GetExcludeCnFromSansOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetExcludeCnFromSansOk() (*bool, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetExcludeCnFromSansOk() (*bool, bool)`
 
 GetExcludeCnFromSansOk returns a tuple with the ExcludeCnFromSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExcludeCnFromSans
 
-`func (o *PkiIssuersGenerateRootRequest) SetExcludeCnFromSans(v bool)`
+`func (o *PKIIssuersGenerateRootRequest) SetExcludeCnFromSans(v bool)`
 
 SetExcludeCnFromSans sets ExcludeCnFromSans field to given value.
 
 ### HasExcludeCnFromSans
 
-`func (o *PkiIssuersGenerateRootRequest) HasExcludeCnFromSans() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasExcludeCnFromSans() bool`
 
 HasExcludeCnFromSans returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *PkiIssuersGenerateRootRequest) GetFormat() string`
+`func (o *PKIIssuersGenerateRootRequest) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetFormatOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *PkiIssuersGenerateRootRequest) SetFormat(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 ### HasFormat
 
-`func (o *PkiIssuersGenerateRootRequest) HasFormat() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
 ### GetIpSans
 
-`func (o *PkiIssuersGenerateRootRequest) GetIpSans() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetIpSans() []string`
 
 GetIpSans returns the IpSans field if non-nil, zero value otherwise.
 
 ### GetIpSansOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetIpSansOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetIpSansOk() (*[]string, bool)`
 
 GetIpSansOk returns a tuple with the IpSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpSans
 
-`func (o *PkiIssuersGenerateRootRequest) SetIpSans(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetIpSans(v []string)`
 
 SetIpSans sets IpSans field to given value.
 
 ### HasIpSans
 
-`func (o *PkiIssuersGenerateRootRequest) HasIpSans() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
 
 ### GetIssuerName
 
-`func (o *PkiIssuersGenerateRootRequest) GetIssuerName() string`
+`func (o *PKIIssuersGenerateRootRequest) GetIssuerName() string`
 
 GetIssuerName returns the IssuerName field if non-nil, zero value otherwise.
 
 ### GetIssuerNameOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetIssuerNameOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetIssuerNameOk() (*string, bool)`
 
 GetIssuerNameOk returns a tuple with the IssuerName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerName
 
-`func (o *PkiIssuersGenerateRootRequest) SetIssuerName(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetIssuerName(v string)`
 
 SetIssuerName sets IssuerName field to given value.
 
 ### HasIssuerName
 
-`func (o *PkiIssuersGenerateRootRequest) HasIssuerName() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasIssuerName() bool`
 
 HasIssuerName returns a boolean if a field has been set.
 
 ### GetKeyBits
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyBits() int32`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyBits() int32`
 
 GetKeyBits returns the KeyBits field if non-nil, zero value otherwise.
 
 ### GetKeyBitsOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyBitsOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyBitsOk() (*int32, bool)`
 
 GetKeyBitsOk returns a tuple with the KeyBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyBits
 
-`func (o *PkiIssuersGenerateRootRequest) SetKeyBits(v int32)`
+`func (o *PKIIssuersGenerateRootRequest) SetKeyBits(v int32)`
 
 SetKeyBits sets KeyBits field to given value.
 
 ### HasKeyBits
 
-`func (o *PkiIssuersGenerateRootRequest) HasKeyBits() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
 
 ### GetKeyName
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyName() string`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyName() string`
 
 GetKeyName returns the KeyName field if non-nil, zero value otherwise.
 
 ### GetKeyNameOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyNameOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyNameOk() (*string, bool)`
 
 GetKeyNameOk returns a tuple with the KeyName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyName
 
-`func (o *PkiIssuersGenerateRootRequest) SetKeyName(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetKeyName(v string)`
 
 SetKeyName sets KeyName field to given value.
 
 ### HasKeyName
 
-`func (o *PkiIssuersGenerateRootRequest) HasKeyName() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasKeyName() bool`
 
 HasKeyName returns a boolean if a field has been set.
 
 ### GetKeyRef
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyRef() string`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyRef() string`
 
 GetKeyRef returns the KeyRef field if non-nil, zero value otherwise.
 
 ### GetKeyRefOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyRefOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyRefOk() (*string, bool)`
 
 GetKeyRefOk returns a tuple with the KeyRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRef
 
-`func (o *PkiIssuersGenerateRootRequest) SetKeyRef(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetKeyRef(v string)`
 
 SetKeyRef sets KeyRef field to given value.
 
 ### HasKeyRef
 
-`func (o *PkiIssuersGenerateRootRequest) HasKeyRef() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasKeyRef() bool`
 
 HasKeyRef returns a boolean if a field has been set.
 
 ### GetKeyType
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyType() string`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyType() string`
 
 GetKeyType returns the KeyType field if non-nil, zero value otherwise.
 
 ### GetKeyTypeOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetKeyTypeOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetKeyTypeOk() (*string, bool)`
 
 GetKeyTypeOk returns a tuple with the KeyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyType
 
-`func (o *PkiIssuersGenerateRootRequest) SetKeyType(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetKeyType(v string)`
 
 SetKeyType sets KeyType field to given value.
 
 ### HasKeyType
 
-`func (o *PkiIssuersGenerateRootRequest) HasKeyType() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
 
 ### GetLocality
 
-`func (o *PkiIssuersGenerateRootRequest) GetLocality() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetLocality() []string`
 
 GetLocality returns the Locality field if non-nil, zero value otherwise.
 
 ### GetLocalityOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetLocalityOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetLocalityOk() (*[]string, bool)`
 
 GetLocalityOk returns a tuple with the Locality field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocality
 
-`func (o *PkiIssuersGenerateRootRequest) SetLocality(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetLocality(v []string)`
 
 SetLocality sets Locality field to given value.
 
 ### HasLocality
 
-`func (o *PkiIssuersGenerateRootRequest) HasLocality() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasLocality() bool`
 
 HasLocality returns a boolean if a field has been set.
 
 ### GetManagedKeyId
 
-`func (o *PkiIssuersGenerateRootRequest) GetManagedKeyId() string`
+`func (o *PKIIssuersGenerateRootRequest) GetManagedKeyId() string`
 
 GetManagedKeyId returns the ManagedKeyId field if non-nil, zero value otherwise.
 
 ### GetManagedKeyIdOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetManagedKeyIdOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetManagedKeyIdOk() (*string, bool)`
 
 GetManagedKeyIdOk returns a tuple with the ManagedKeyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedKeyId
 
-`func (o *PkiIssuersGenerateRootRequest) SetManagedKeyId(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetManagedKeyId(v string)`
 
 SetManagedKeyId sets ManagedKeyId field to given value.
 
 ### HasManagedKeyId
 
-`func (o *PkiIssuersGenerateRootRequest) HasManagedKeyId() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasManagedKeyId() bool`
 
 HasManagedKeyId returns a boolean if a field has been set.
 
 ### GetManagedKeyName
 
-`func (o *PkiIssuersGenerateRootRequest) GetManagedKeyName() string`
+`func (o *PKIIssuersGenerateRootRequest) GetManagedKeyName() string`
 
 GetManagedKeyName returns the ManagedKeyName field if non-nil, zero value otherwise.
 
 ### GetManagedKeyNameOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetManagedKeyNameOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetManagedKeyNameOk() (*string, bool)`
 
 GetManagedKeyNameOk returns a tuple with the ManagedKeyName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedKeyName
 
-`func (o *PkiIssuersGenerateRootRequest) SetManagedKeyName(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetManagedKeyName(v string)`
 
 SetManagedKeyName sets ManagedKeyName field to given value.
 
 ### HasManagedKeyName
 
-`func (o *PkiIssuersGenerateRootRequest) HasManagedKeyName() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasManagedKeyName() bool`
 
 HasManagedKeyName returns a boolean if a field has been set.
 
 ### GetMaxPathLength
 
-`func (o *PkiIssuersGenerateRootRequest) GetMaxPathLength() int32`
+`func (o *PKIIssuersGenerateRootRequest) GetMaxPathLength() int32`
 
 GetMaxPathLength returns the MaxPathLength field if non-nil, zero value otherwise.
 
 ### GetMaxPathLengthOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetMaxPathLengthOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetMaxPathLengthOk() (*int32, bool)`
 
 GetMaxPathLengthOk returns a tuple with the MaxPathLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPathLength
 
-`func (o *PkiIssuersGenerateRootRequest) SetMaxPathLength(v int32)`
+`func (o *PKIIssuersGenerateRootRequest) SetMaxPathLength(v int32)`
 
 SetMaxPathLength sets MaxPathLength field to given value.
 
 ### HasMaxPathLength
 
-`func (o *PkiIssuersGenerateRootRequest) HasMaxPathLength() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasMaxPathLength() bool`
 
 HasMaxPathLength returns a boolean if a field has been set.
 
 ### GetNotAfter
 
-`func (o *PkiIssuersGenerateRootRequest) GetNotAfter() string`
+`func (o *PKIIssuersGenerateRootRequest) GetNotAfter() string`
 
 GetNotAfter returns the NotAfter field if non-nil, zero value otherwise.
 
 ### GetNotAfterOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetNotAfterOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetNotAfterOk() (*string, bool)`
 
 GetNotAfterOk returns a tuple with the NotAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotAfter
 
-`func (o *PkiIssuersGenerateRootRequest) SetNotAfter(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetNotAfter(v string)`
 
 SetNotAfter sets NotAfter field to given value.
 
 ### HasNotAfter
 
-`func (o *PkiIssuersGenerateRootRequest) HasNotAfter() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *PkiIssuersGenerateRootRequest) GetNotBeforeDuration() int32`
+`func (o *PKIIssuersGenerateRootRequest) GetNotBeforeDuration() int32`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetNotBeforeDurationOk() (*int32, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *PkiIssuersGenerateRootRequest) SetNotBeforeDuration(v int32)`
+`func (o *PKIIssuersGenerateRootRequest) SetNotBeforeDuration(v int32)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
 ### HasNotBeforeDuration
 
-`func (o *PkiIssuersGenerateRootRequest) HasNotBeforeDuration() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasNotBeforeDuration() bool`
 
 HasNotBeforeDuration returns a boolean if a field has been set.
 
 ### GetOrganization
 
-`func (o *PkiIssuersGenerateRootRequest) GetOrganization() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetOrganization() []string`
 
 GetOrganization returns the Organization field if non-nil, zero value otherwise.
 
 ### GetOrganizationOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetOrganizationOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetOrganizationOk() (*[]string, bool)`
 
 GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganization
 
-`func (o *PkiIssuersGenerateRootRequest) SetOrganization(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetOrganization(v []string)`
 
 SetOrganization sets Organization field to given value.
 
 ### HasOrganization
 
-`func (o *PkiIssuersGenerateRootRequest) HasOrganization() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
 
 ### GetOtherSans
 
-`func (o *PkiIssuersGenerateRootRequest) GetOtherSans() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetOtherSans() []string`
 
 GetOtherSans returns the OtherSans field if non-nil, zero value otherwise.
 
 ### GetOtherSansOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetOtherSansOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetOtherSansOk() (*[]string, bool)`
 
 GetOtherSansOk returns a tuple with the OtherSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOtherSans
 
-`func (o *PkiIssuersGenerateRootRequest) SetOtherSans(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetOtherSans(v []string)`
 
 SetOtherSans sets OtherSans field to given value.
 
 ### HasOtherSans
 
-`func (o *PkiIssuersGenerateRootRequest) HasOtherSans() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasOtherSans() bool`
 
 HasOtherSans returns a boolean if a field has been set.
 
 ### GetOu
 
-`func (o *PkiIssuersGenerateRootRequest) GetOu() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetOu() []string`
 
 GetOu returns the Ou field if non-nil, zero value otherwise.
 
 ### GetOuOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetOuOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetOuOk() (*[]string, bool)`
 
 GetOuOk returns a tuple with the Ou field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOu
 
-`func (o *PkiIssuersGenerateRootRequest) SetOu(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetOu(v []string)`
 
 SetOu sets Ou field to given value.
 
 ### HasOu
 
-`func (o *PkiIssuersGenerateRootRequest) HasOu() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasOu() bool`
 
 HasOu returns a boolean if a field has been set.
 
 ### GetPermittedDnsDomains
 
-`func (o *PkiIssuersGenerateRootRequest) GetPermittedDnsDomains() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetPermittedDnsDomains() []string`
 
 GetPermittedDnsDomains returns the PermittedDnsDomains field if non-nil, zero value otherwise.
 
 ### GetPermittedDnsDomainsOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetPermittedDnsDomainsOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetPermittedDnsDomainsOk() (*[]string, bool)`
 
 GetPermittedDnsDomainsOk returns a tuple with the PermittedDnsDomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermittedDnsDomains
 
-`func (o *PkiIssuersGenerateRootRequest) SetPermittedDnsDomains(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetPermittedDnsDomains(v []string)`
 
 SetPermittedDnsDomains sets PermittedDnsDomains field to given value.
 
 ### HasPermittedDnsDomains
 
-`func (o *PkiIssuersGenerateRootRequest) HasPermittedDnsDomains() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasPermittedDnsDomains() bool`
 
 HasPermittedDnsDomains returns a boolean if a field has been set.
 
 ### GetPostalCode
 
-`func (o *PkiIssuersGenerateRootRequest) GetPostalCode() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetPostalCode() []string`
 
 GetPostalCode returns the PostalCode field if non-nil, zero value otherwise.
 
 ### GetPostalCodeOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetPostalCodeOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetPostalCodeOk() (*[]string, bool)`
 
 GetPostalCodeOk returns a tuple with the PostalCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostalCode
 
-`func (o *PkiIssuersGenerateRootRequest) SetPostalCode(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetPostalCode(v []string)`
 
 SetPostalCode sets PostalCode field to given value.
 
 ### HasPostalCode
 
-`func (o *PkiIssuersGenerateRootRequest) HasPostalCode() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
 
 ### GetPrivateKeyFormat
 
-`func (o *PkiIssuersGenerateRootRequest) GetPrivateKeyFormat() string`
+`func (o *PKIIssuersGenerateRootRequest) GetPrivateKeyFormat() string`
 
 GetPrivateKeyFormat returns the PrivateKeyFormat field if non-nil, zero value otherwise.
 
 ### GetPrivateKeyFormatOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetPrivateKeyFormatOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetPrivateKeyFormatOk() (*string, bool)`
 
 GetPrivateKeyFormatOk returns a tuple with the PrivateKeyFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrivateKeyFormat
 
-`func (o *PkiIssuersGenerateRootRequest) SetPrivateKeyFormat(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetPrivateKeyFormat(v string)`
 
 SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
 ### HasPrivateKeyFormat
 
-`func (o *PkiIssuersGenerateRootRequest) HasPrivateKeyFormat() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasPrivateKeyFormat() bool`
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
 
 ### GetProvince
 
-`func (o *PkiIssuersGenerateRootRequest) GetProvince() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetProvince() []string`
 
 GetProvince returns the Province field if non-nil, zero value otherwise.
 
 ### GetProvinceOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetProvinceOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetProvinceOk() (*[]string, bool)`
 
 GetProvinceOk returns a tuple with the Province field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvince
 
-`func (o *PkiIssuersGenerateRootRequest) SetProvince(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetProvince(v []string)`
 
 SetProvince sets Province field to given value.
 
 ### HasProvince
 
-`func (o *PkiIssuersGenerateRootRequest) HasProvince() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasProvince() bool`
 
 HasProvince returns a boolean if a field has been set.
 
 ### GetSerialNumber
 
-`func (o *PkiIssuersGenerateRootRequest) GetSerialNumber() string`
+`func (o *PKIIssuersGenerateRootRequest) GetSerialNumber() string`
 
 GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
 
 ### GetSerialNumberOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetSerialNumberOk() (*string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetSerialNumberOk() (*string, bool)`
 
 GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSerialNumber
 
-`func (o *PkiIssuersGenerateRootRequest) SetSerialNumber(v string)`
+`func (o *PKIIssuersGenerateRootRequest) SetSerialNumber(v string)`
 
 SetSerialNumber sets SerialNumber field to given value.
 
 ### HasSerialNumber
 
-`func (o *PkiIssuersGenerateRootRequest) HasSerialNumber() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
 
 ### GetSignatureBits
 
-`func (o *PkiIssuersGenerateRootRequest) GetSignatureBits() int32`
+`func (o *PKIIssuersGenerateRootRequest) GetSignatureBits() int32`
 
 GetSignatureBits returns the SignatureBits field if non-nil, zero value otherwise.
 
 ### GetSignatureBitsOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetSignatureBitsOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetSignatureBitsOk() (*int32, bool)`
 
 GetSignatureBitsOk returns a tuple with the SignatureBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignatureBits
 
-`func (o *PkiIssuersGenerateRootRequest) SetSignatureBits(v int32)`
+`func (o *PKIIssuersGenerateRootRequest) SetSignatureBits(v int32)`
 
 SetSignatureBits sets SignatureBits field to given value.
 
 ### HasSignatureBits
 
-`func (o *PkiIssuersGenerateRootRequest) HasSignatureBits() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
 
 ### GetStreetAddress
 
-`func (o *PkiIssuersGenerateRootRequest) GetStreetAddress() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetStreetAddress() []string`
 
 GetStreetAddress returns the StreetAddress field if non-nil, zero value otherwise.
 
 ### GetStreetAddressOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetStreetAddressOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetStreetAddressOk() (*[]string, bool)`
 
 GetStreetAddressOk returns a tuple with the StreetAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStreetAddress
 
-`func (o *PkiIssuersGenerateRootRequest) SetStreetAddress(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetStreetAddress(v []string)`
 
 SetStreetAddress sets StreetAddress field to given value.
 
 ### HasStreetAddress
 
-`func (o *PkiIssuersGenerateRootRequest) HasStreetAddress() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PkiIssuersGenerateRootRequest) GetTtl() int32`
+`func (o *PKIIssuersGenerateRootRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetTtlOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PkiIssuersGenerateRootRequest) SetTtl(v int32)`
+`func (o *PKIIssuersGenerateRootRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 ### HasTtl
 
-`func (o *PkiIssuersGenerateRootRequest) HasTtl() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 
 ### GetUriSans
 
-`func (o *PkiIssuersGenerateRootRequest) GetUriSans() []string`
+`func (o *PKIIssuersGenerateRootRequest) GetUriSans() []string`
 
 GetUriSans returns the UriSans field if non-nil, zero value otherwise.
 
 ### GetUriSansOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetUriSansOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetUriSansOk() (*[]string, bool)`
 
 GetUriSansOk returns a tuple with the UriSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUriSans
 
-`func (o *PkiIssuersGenerateRootRequest) SetUriSans(v []string)`
+`func (o *PKIIssuersGenerateRootRequest) SetUriSans(v []string)`
 
 SetUriSans sets UriSans field to given value.
 
 ### HasUriSans
 
-`func (o *PkiIssuersGenerateRootRequest) HasUriSans() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
 
 ### GetUsePss
 
-`func (o *PkiIssuersGenerateRootRequest) GetUsePss() bool`
+`func (o *PKIIssuersGenerateRootRequest) GetUsePss() bool`
 
 GetUsePss returns the UsePss field if non-nil, zero value otherwise.
 
 ### GetUsePssOk
 
-`func (o *PkiIssuersGenerateRootRequest) GetUsePssOk() (*bool, bool)`
+`func (o *PKIIssuersGenerateRootRequest) GetUsePssOk() (*bool, bool)`
 
 GetUsePssOk returns a tuple with the UsePss field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsePss
 
-`func (o *PkiIssuersGenerateRootRequest) SetUsePss(v bool)`
+`func (o *PKIIssuersGenerateRootRequest) SetUsePss(v bool)`
 
 SetUsePss sets UsePss field to given value.
 
 ### HasUsePss
 
-`func (o *PkiIssuersGenerateRootRequest) HasUsePss() bool`
+`func (o *PKIIssuersGenerateRootRequest) HasUsePss() bool`
 
 HasUsePss returns a boolean if a field has been set.
 

@@ -1,4 +1,4 @@
-# SshSignRequest
+# SSHSignRequest
 
 ## Properties
 
@@ -14,195 +14,195 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewSshSignRequest
+### NewSSHSignRequest
 
-`func NewSshSignRequest() *SshSignRequest`
+`func NewSSHSignRequest() *SSHSignRequest`
 
-NewSshSignRequest instantiates a new SshSignRequest object
+NewSSHSignRequest instantiates a new SSHSignRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSshSignRequestWithDefaults
+### NewSSHSignRequestWithDefaults
 
-`func NewSshSignRequestWithDefaults() *SshSignRequest`
+`func NewSSHSignRequestWithDefaults() *SSHSignRequest`
 
-NewSshSignRequestWithDefaults instantiates a new SshSignRequest object
+NewSSHSignRequestWithDefaults instantiates a new SSHSignRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCertType
 
-`func (o *SshSignRequest) GetCertType() string`
+`func (o *SSHSignRequest) GetCertType() string`
 
 GetCertType returns the CertType field if non-nil, zero value otherwise.
 
 ### GetCertTypeOk
 
-`func (o *SshSignRequest) GetCertTypeOk() (*string, bool)`
+`func (o *SSHSignRequest) GetCertTypeOk() (*string, bool)`
 
 GetCertTypeOk returns a tuple with the CertType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertType
 
-`func (o *SshSignRequest) SetCertType(v string)`
+`func (o *SSHSignRequest) SetCertType(v string)`
 
 SetCertType sets CertType field to given value.
 
 ### HasCertType
 
-`func (o *SshSignRequest) HasCertType() bool`
+`func (o *SSHSignRequest) HasCertType() bool`
 
 HasCertType returns a boolean if a field has been set.
 
 ### GetCriticalOptions
 
-`func (o *SshSignRequest) GetCriticalOptions() map[string]interface{}`
+`func (o *SSHSignRequest) GetCriticalOptions() map[string]interface{}`
 
 GetCriticalOptions returns the CriticalOptions field if non-nil, zero value otherwise.
 
 ### GetCriticalOptionsOk
 
-`func (o *SshSignRequest) GetCriticalOptionsOk() (*map[string]interface{}, bool)`
+`func (o *SSHSignRequest) GetCriticalOptionsOk() (*map[string]interface{}, bool)`
 
 GetCriticalOptionsOk returns a tuple with the CriticalOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCriticalOptions
 
-`func (o *SshSignRequest) SetCriticalOptions(v map[string]interface{})`
+`func (o *SSHSignRequest) SetCriticalOptions(v map[string]interface{})`
 
 SetCriticalOptions sets CriticalOptions field to given value.
 
 ### HasCriticalOptions
 
-`func (o *SshSignRequest) HasCriticalOptions() bool`
+`func (o *SSHSignRequest) HasCriticalOptions() bool`
 
 HasCriticalOptions returns a boolean if a field has been set.
 
 ### GetExtensions
 
-`func (o *SshSignRequest) GetExtensions() map[string]interface{}`
+`func (o *SSHSignRequest) GetExtensions() map[string]interface{}`
 
 GetExtensions returns the Extensions field if non-nil, zero value otherwise.
 
 ### GetExtensionsOk
 
-`func (o *SshSignRequest) GetExtensionsOk() (*map[string]interface{}, bool)`
+`func (o *SSHSignRequest) GetExtensionsOk() (*map[string]interface{}, bool)`
 
 GetExtensionsOk returns a tuple with the Extensions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtensions
 
-`func (o *SshSignRequest) SetExtensions(v map[string]interface{})`
+`func (o *SSHSignRequest) SetExtensions(v map[string]interface{})`
 
 SetExtensions sets Extensions field to given value.
 
 ### HasExtensions
 
-`func (o *SshSignRequest) HasExtensions() bool`
+`func (o *SSHSignRequest) HasExtensions() bool`
 
 HasExtensions returns a boolean if a field has been set.
 
 ### GetKeyId
 
-`func (o *SshSignRequest) GetKeyId() string`
+`func (o *SSHSignRequest) GetKeyId() string`
 
 GetKeyId returns the KeyId field if non-nil, zero value otherwise.
 
 ### GetKeyIdOk
 
-`func (o *SshSignRequest) GetKeyIdOk() (*string, bool)`
+`func (o *SSHSignRequest) GetKeyIdOk() (*string, bool)`
 
 GetKeyIdOk returns a tuple with the KeyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyId
 
-`func (o *SshSignRequest) SetKeyId(v string)`
+`func (o *SSHSignRequest) SetKeyId(v string)`
 
 SetKeyId sets KeyId field to given value.
 
 ### HasKeyId
 
-`func (o *SshSignRequest) HasKeyId() bool`
+`func (o *SSHSignRequest) HasKeyId() bool`
 
 HasKeyId returns a boolean if a field has been set.
 
 ### GetPublicKey
 
-`func (o *SshSignRequest) GetPublicKey() string`
+`func (o *SSHSignRequest) GetPublicKey() string`
 
 GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
 
 ### GetPublicKeyOk
 
-`func (o *SshSignRequest) GetPublicKeyOk() (*string, bool)`
+`func (o *SSHSignRequest) GetPublicKeyOk() (*string, bool)`
 
 GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPublicKey
 
-`func (o *SshSignRequest) SetPublicKey(v string)`
+`func (o *SSHSignRequest) SetPublicKey(v string)`
 
 SetPublicKey sets PublicKey field to given value.
 
 ### HasPublicKey
 
-`func (o *SshSignRequest) HasPublicKey() bool`
+`func (o *SSHSignRequest) HasPublicKey() bool`
 
 HasPublicKey returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *SshSignRequest) GetTtl() int32`
+`func (o *SSHSignRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *SshSignRequest) GetTtlOk() (*int32, bool)`
+`func (o *SSHSignRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *SshSignRequest) SetTtl(v int32)`
+`func (o *SSHSignRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 ### HasTtl
 
-`func (o *SshSignRequest) HasTtl() bool`
+`func (o *SSHSignRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 
 ### GetValidPrincipals
 
-`func (o *SshSignRequest) GetValidPrincipals() string`
+`func (o *SSHSignRequest) GetValidPrincipals() string`
 
 GetValidPrincipals returns the ValidPrincipals field if non-nil, zero value otherwise.
 
 ### GetValidPrincipalsOk
 
-`func (o *SshSignRequest) GetValidPrincipalsOk() (*string, bool)`
+`func (o *SSHSignRequest) GetValidPrincipalsOk() (*string, bool)`
 
 GetValidPrincipalsOk returns a tuple with the ValidPrincipals field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValidPrincipals
 
-`func (o *SshSignRequest) SetValidPrincipals(v string)`
+`func (o *SSHSignRequest) SetValidPrincipals(v string)`
 
 SetValidPrincipals sets ValidPrincipals field to given value.
 
 ### HasValidPrincipals
 
-`func (o *SshSignRequest) HasValidPrincipals() bool`
+`func (o *SSHSignRequest) HasValidPrincipals() bool`
 
 HasValidPrincipals returns a boolean if a field has been set.
 

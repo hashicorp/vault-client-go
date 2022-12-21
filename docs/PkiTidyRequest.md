@@ -1,4 +1,4 @@
-# PkiTidyRequest
+# PKITidyRequest
 
 ## Properties
 
@@ -15,220 +15,220 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewPkiTidyRequest
+### NewPKITidyRequest
 
-`func NewPkiTidyRequest() *PkiTidyRequest`
+`func NewPKITidyRequest() *PKITidyRequest`
 
-NewPkiTidyRequest instantiates a new PkiTidyRequest object
+NewPKITidyRequest instantiates a new PKITidyRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPkiTidyRequestWithDefaults
+### NewPKITidyRequestWithDefaults
 
-`func NewPkiTidyRequestWithDefaults() *PkiTidyRequest`
+`func NewPKITidyRequestWithDefaults() *PKITidyRequest`
 
-NewPkiTidyRequestWithDefaults instantiates a new PkiTidyRequest object
+NewPKITidyRequestWithDefaults instantiates a new PKITidyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetIssuerSafetyBuffer
 
-`func (o *PkiTidyRequest) GetIssuerSafetyBuffer() int32`
+`func (o *PKITidyRequest) GetIssuerSafetyBuffer() int32`
 
 GetIssuerSafetyBuffer returns the IssuerSafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetIssuerSafetyBufferOk
 
-`func (o *PkiTidyRequest) GetIssuerSafetyBufferOk() (*int32, bool)`
+`func (o *PKITidyRequest) GetIssuerSafetyBufferOk() (*int32, bool)`
 
 GetIssuerSafetyBufferOk returns a tuple with the IssuerSafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerSafetyBuffer
 
-`func (o *PkiTidyRequest) SetIssuerSafetyBuffer(v int32)`
+`func (o *PKITidyRequest) SetIssuerSafetyBuffer(v int32)`
 
 SetIssuerSafetyBuffer sets IssuerSafetyBuffer field to given value.
 
 ### HasIssuerSafetyBuffer
 
-`func (o *PkiTidyRequest) HasIssuerSafetyBuffer() bool`
+`func (o *PKITidyRequest) HasIssuerSafetyBuffer() bool`
 
 HasIssuerSafetyBuffer returns a boolean if a field has been set.
 
 ### GetPauseDuration
 
-`func (o *PkiTidyRequest) GetPauseDuration() string`
+`func (o *PKITidyRequest) GetPauseDuration() string`
 
 GetPauseDuration returns the PauseDuration field if non-nil, zero value otherwise.
 
 ### GetPauseDurationOk
 
-`func (o *PkiTidyRequest) GetPauseDurationOk() (*string, bool)`
+`func (o *PKITidyRequest) GetPauseDurationOk() (*string, bool)`
 
 GetPauseDurationOk returns a tuple with the PauseDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPauseDuration
 
-`func (o *PkiTidyRequest) SetPauseDuration(v string)`
+`func (o *PKITidyRequest) SetPauseDuration(v string)`
 
 SetPauseDuration sets PauseDuration field to given value.
 
 ### HasPauseDuration
 
-`func (o *PkiTidyRequest) HasPauseDuration() bool`
+`func (o *PKITidyRequest) HasPauseDuration() bool`
 
 HasPauseDuration returns a boolean if a field has been set.
 
 ### GetSafetyBuffer
 
-`func (o *PkiTidyRequest) GetSafetyBuffer() int32`
+`func (o *PKITidyRequest) GetSafetyBuffer() int32`
 
 GetSafetyBuffer returns the SafetyBuffer field if non-nil, zero value otherwise.
 
 ### GetSafetyBufferOk
 
-`func (o *PkiTidyRequest) GetSafetyBufferOk() (*int32, bool)`
+`func (o *PKITidyRequest) GetSafetyBufferOk() (*int32, bool)`
 
 GetSafetyBufferOk returns a tuple with the SafetyBuffer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSafetyBuffer
 
-`func (o *PkiTidyRequest) SetSafetyBuffer(v int32)`
+`func (o *PKITidyRequest) SetSafetyBuffer(v int32)`
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 
 ### HasSafetyBuffer
 
-`func (o *PkiTidyRequest) HasSafetyBuffer() bool`
+`func (o *PKITidyRequest) HasSafetyBuffer() bool`
 
 HasSafetyBuffer returns a boolean if a field has been set.
 
 ### GetTidyCertStore
 
-`func (o *PkiTidyRequest) GetTidyCertStore() bool`
+`func (o *PKITidyRequest) GetTidyCertStore() bool`
 
 GetTidyCertStore returns the TidyCertStore field if non-nil, zero value otherwise.
 
 ### GetTidyCertStoreOk
 
-`func (o *PkiTidyRequest) GetTidyCertStoreOk() (*bool, bool)`
+`func (o *PKITidyRequest) GetTidyCertStoreOk() (*bool, bool)`
 
 GetTidyCertStoreOk returns a tuple with the TidyCertStore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTidyCertStore
 
-`func (o *PkiTidyRequest) SetTidyCertStore(v bool)`
+`func (o *PKITidyRequest) SetTidyCertStore(v bool)`
 
 SetTidyCertStore sets TidyCertStore field to given value.
 
 ### HasTidyCertStore
 
-`func (o *PkiTidyRequest) HasTidyCertStore() bool`
+`func (o *PKITidyRequest) HasTidyCertStore() bool`
 
 HasTidyCertStore returns a boolean if a field has been set.
 
 ### GetTidyExpiredIssuers
 
-`func (o *PkiTidyRequest) GetTidyExpiredIssuers() bool`
+`func (o *PKITidyRequest) GetTidyExpiredIssuers() bool`
 
 GetTidyExpiredIssuers returns the TidyExpiredIssuers field if non-nil, zero value otherwise.
 
 ### GetTidyExpiredIssuersOk
 
-`func (o *PkiTidyRequest) GetTidyExpiredIssuersOk() (*bool, bool)`
+`func (o *PKITidyRequest) GetTidyExpiredIssuersOk() (*bool, bool)`
 
 GetTidyExpiredIssuersOk returns a tuple with the TidyExpiredIssuers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTidyExpiredIssuers
 
-`func (o *PkiTidyRequest) SetTidyExpiredIssuers(v bool)`
+`func (o *PKITidyRequest) SetTidyExpiredIssuers(v bool)`
 
 SetTidyExpiredIssuers sets TidyExpiredIssuers field to given value.
 
 ### HasTidyExpiredIssuers
 
-`func (o *PkiTidyRequest) HasTidyExpiredIssuers() bool`
+`func (o *PKITidyRequest) HasTidyExpiredIssuers() bool`
 
 HasTidyExpiredIssuers returns a boolean if a field has been set.
 
 ### GetTidyRevocationList
 
-`func (o *PkiTidyRequest) GetTidyRevocationList() bool`
+`func (o *PKITidyRequest) GetTidyRevocationList() bool`
 
 GetTidyRevocationList returns the TidyRevocationList field if non-nil, zero value otherwise.
 
 ### GetTidyRevocationListOk
 
-`func (o *PkiTidyRequest) GetTidyRevocationListOk() (*bool, bool)`
+`func (o *PKITidyRequest) GetTidyRevocationListOk() (*bool, bool)`
 
 GetTidyRevocationListOk returns a tuple with the TidyRevocationList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTidyRevocationList
 
-`func (o *PkiTidyRequest) SetTidyRevocationList(v bool)`
+`func (o *PKITidyRequest) SetTidyRevocationList(v bool)`
 
 SetTidyRevocationList sets TidyRevocationList field to given value.
 
 ### HasTidyRevocationList
 
-`func (o *PkiTidyRequest) HasTidyRevocationList() bool`
+`func (o *PKITidyRequest) HasTidyRevocationList() bool`
 
 HasTidyRevocationList returns a boolean if a field has been set.
 
 ### GetTidyRevokedCertIssuerAssociations
 
-`func (o *PkiTidyRequest) GetTidyRevokedCertIssuerAssociations() bool`
+`func (o *PKITidyRequest) GetTidyRevokedCertIssuerAssociations() bool`
 
 GetTidyRevokedCertIssuerAssociations returns the TidyRevokedCertIssuerAssociations field if non-nil, zero value otherwise.
 
 ### GetTidyRevokedCertIssuerAssociationsOk
 
-`func (o *PkiTidyRequest) GetTidyRevokedCertIssuerAssociationsOk() (*bool, bool)`
+`func (o *PKITidyRequest) GetTidyRevokedCertIssuerAssociationsOk() (*bool, bool)`
 
 GetTidyRevokedCertIssuerAssociationsOk returns a tuple with the TidyRevokedCertIssuerAssociations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTidyRevokedCertIssuerAssociations
 
-`func (o *PkiTidyRequest) SetTidyRevokedCertIssuerAssociations(v bool)`
+`func (o *PKITidyRequest) SetTidyRevokedCertIssuerAssociations(v bool)`
 
 SetTidyRevokedCertIssuerAssociations sets TidyRevokedCertIssuerAssociations field to given value.
 
 ### HasTidyRevokedCertIssuerAssociations
 
-`func (o *PkiTidyRequest) HasTidyRevokedCertIssuerAssociations() bool`
+`func (o *PKITidyRequest) HasTidyRevokedCertIssuerAssociations() bool`
 
 HasTidyRevokedCertIssuerAssociations returns a boolean if a field has been set.
 
 ### GetTidyRevokedCerts
 
-`func (o *PkiTidyRequest) GetTidyRevokedCerts() bool`
+`func (o *PKITidyRequest) GetTidyRevokedCerts() bool`
 
 GetTidyRevokedCerts returns the TidyRevokedCerts field if non-nil, zero value otherwise.
 
 ### GetTidyRevokedCertsOk
 
-`func (o *PkiTidyRequest) GetTidyRevokedCertsOk() (*bool, bool)`
+`func (o *PKITidyRequest) GetTidyRevokedCertsOk() (*bool, bool)`
 
 GetTidyRevokedCertsOk returns a tuple with the TidyRevokedCerts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTidyRevokedCerts
 
-`func (o *PkiTidyRequest) SetTidyRevokedCerts(v bool)`
+`func (o *PKITidyRequest) SetTidyRevokedCerts(v bool)`
 
 SetTidyRevokedCerts sets TidyRevokedCerts field to given value.
 
 ### HasTidyRevokedCerts
 
-`func (o *PkiTidyRequest) HasTidyRevokedCerts() bool`
+`func (o *PKITidyRequest) HasTidyRevokedCerts() bool`
 
 HasTidyRevokedCerts returns a boolean if a field has been set.
 

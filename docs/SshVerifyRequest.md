@@ -1,4 +1,4 @@
-# SshVerifyRequest
+# SSHVerifyRequest
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewSshVerifyRequest
+### NewSSHVerifyRequest
 
-`func NewSshVerifyRequest() *SshVerifyRequest`
+`func NewSSHVerifyRequest() *SSHVerifyRequest`
 
-NewSshVerifyRequest instantiates a new SshVerifyRequest object
+NewSSHVerifyRequest instantiates a new SSHVerifyRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSshVerifyRequestWithDefaults
+### NewSSHVerifyRequestWithDefaults
 
-`func NewSshVerifyRequestWithDefaults() *SshVerifyRequest`
+`func NewSSHVerifyRequestWithDefaults() *SSHVerifyRequest`
 
-NewSshVerifyRequestWithDefaults instantiates a new SshVerifyRequest object
+NewSSHVerifyRequestWithDefaults instantiates a new SSHVerifyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetOtp
 
-`func (o *SshVerifyRequest) GetOtp() string`
+`func (o *SSHVerifyRequest) GetOtp() string`
 
 GetOtp returns the Otp field if non-nil, zero value otherwise.
 
 ### GetOtpOk
 
-`func (o *SshVerifyRequest) GetOtpOk() (*string, bool)`
+`func (o *SSHVerifyRequest) GetOtpOk() (*string, bool)`
 
 GetOtpOk returns a tuple with the Otp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOtp
 
-`func (o *SshVerifyRequest) SetOtp(v string)`
+`func (o *SSHVerifyRequest) SetOtp(v string)`
 
 SetOtp sets Otp field to given value.
 
 ### HasOtp
 
-`func (o *SshVerifyRequest) HasOtp() bool`
+`func (o *SSHVerifyRequest) HasOtp() bool`
 
 HasOtp returns a boolean if a field has been set.
 

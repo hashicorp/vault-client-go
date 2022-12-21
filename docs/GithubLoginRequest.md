@@ -1,4 +1,4 @@
-# GithubLoginRequest
+# GitHubLoginRequest
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewGithubLoginRequest
+### NewGitHubLoginRequest
 
-`func NewGithubLoginRequest() *GithubLoginRequest`
+`func NewGitHubLoginRequest() *GitHubLoginRequest`
 
-NewGithubLoginRequest instantiates a new GithubLoginRequest object
+NewGitHubLoginRequest instantiates a new GitHubLoginRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGithubLoginRequestWithDefaults
+### NewGitHubLoginRequestWithDefaults
 
-`func NewGithubLoginRequestWithDefaults() *GithubLoginRequest`
+`func NewGitHubLoginRequestWithDefaults() *GitHubLoginRequest`
 
-NewGithubLoginRequestWithDefaults instantiates a new GithubLoginRequest object
+NewGitHubLoginRequestWithDefaults instantiates a new GitHubLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetToken
 
-`func (o *GithubLoginRequest) GetToken() string`
+`func (o *GitHubLoginRequest) GetToken() string`
 
 GetToken returns the Token field if non-nil, zero value otherwise.
 
 ### GetTokenOk
 
-`func (o *GithubLoginRequest) GetTokenOk() (*string, bool)`
+`func (o *GitHubLoginRequest) GetTokenOk() (*string, bool)`
 
 GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetToken
 
-`func (o *GithubLoginRequest) SetToken(v string)`
+`func (o *GitHubLoginRequest) SetToken(v string)`
 
 SetToken sets Token field to given value.
 
 ### HasToken
 
-`func (o *GithubLoginRequest) HasToken() bool`
+`func (o *GitHubLoginRequest) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
 

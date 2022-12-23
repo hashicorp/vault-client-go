@@ -10,18 +10,18 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 
 1. [Installation](#installation)
 1. [Examples](#examples)
-	- [Getting Started](#getting-started)
-	- [Authentication](#authentication)
-	- [Using Generic Accessors](#using-generic-accessors)
-	- [Modifying Requests](#modifying-requests)
-		- [Overriding Default Mount Path](#overriding-default-mount-path)
-		- [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
-	- [Error Handling](#error-handling)
-	- [Using TLS](#using-tls)
-	- [Using TLS with Client-side Certificate Authentication](#using-tls-with-client-side-certificate-authentication)
-	- [Loading Configuration from Environment Variables](#loading-configuration-from-environment-variables)
-	- [Logging Requests \& Responses with Request/Response Callbacks](#logging-requests--responses-with-requestresponse-callbacks)
-	- [Enforcing Read-your-writes Replication Semantics](#enforcing-read-your-writes-replication-semantics)
+   - [Getting Started](#getting-started)
+   - [Authentication](#authentication)
+   - [Using Generic Accessors](#using-generic-accessors)
+   - [Modifying Requests](#modifying-requests)
+      - [Overriding Default Mount Path](#overriding-default-mount-path)
+      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
+   - [Error Handling](#error-handling)
+   - [Using TLS](#using-tls)
+   - [Using TLS with Client-side Certificate Authentication](#using-tls-with-client-side-certificate-authentication)
+   - [Loading Configuration from Environment Variables](#loading-configuration-from-environment-variables)
+   - [Logging Requests \& Responses with Request/Response Callbacks](#logging-requests--responses-with-requestresponse-callbacks)
+   - [Enforcing Read-your-writes Replication Semantics](#enforcing-read-your-writes-replication-semantics)
 1. [Building the Library](#building-the-library)
 1. [Under Development](#under-development)
 1. [Documentation for API Endpoints](#documentation-for-api-endpoints)
@@ -51,6 +51,7 @@ package main
 import (
 	"context"
 	"log"
+	"time"
 
 	vault "github.com/hashicorp/vault-client-go"
 )
@@ -73,7 +74,7 @@ func main() {
 	}
 
 	// write a secret
-	_, err = client.Secrets.WriteSecret(ctx, "my-secret", WriteSecretRequest{
+	_, err = client.Secrets.WriteSecret(ctx, "my-secret", vault.WriteSecretRequest{
 		Data: map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
@@ -98,7 +99,7 @@ func main() {
 In the previous example we used an insecure (root token) authentication method.
 For production applications, it is recommended to use [approle][doc-approle] or
 one of the platform-specific authentication methods instead (e.g.
-[kubernetes][doc-kubernetes], [AWS][doc-aws], [Azure][doc-azure], etc.). The
+[Kubernetes][doc-kubernetes], [AWS][doc-aws], [Azure][doc-azure], etc.). The
 functions to access these authentication methods are automatically generated
 under `client.Auth`. Below is an example of how to authenticate using `approle`
 authentication method. Please refer to the [approle documentation][doc-approle]
@@ -282,7 +283,7 @@ if err != nil {
 	log.Fatal(err)
 }
 
-resp, err := client.Auth.PostAuthCertLogin(ctx, vault.CertLoginRequest{
+resp, err := client.Auth.CertLogin(ctx, vault.CertLoginRequest{
 	Name: "my-cert",
 })
 if err != nil {

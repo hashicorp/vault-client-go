@@ -107,18 +107,42 @@ func (c *Client) DeleteWithParameters(ctx context.Context, path string, paramete
 }
 
 // sendStructuredRequestParseResponse constructs a structured request, sends it, and parses the response
-func sendStructuredRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body json.Marshaler, parameters url.Values, requestModifiersLocal requestModifiers) (*Response[ResponseT], error) {
+func sendStructuredRequestParseResponse[ResponseT any](
+	ctx context.Context,
+	client *Client,
+	method string,
+	path string,
+	body json.Marshaler,
+	parameters url.Values,
+	requestModifiersPerRequest requestModifiers,
+) (*Response[ResponseT], error) {
 	var buf bytes.Buffer
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return sendRequestParseResponse[ResponseT](ctx, client, method, path, &buf, parameters, requestModifiersLocal)
+	return sendRequestParseResponse[ResponseT](
+		ctx,
+		client,
+		method,
+		path,
+		&buf,
+		parameters,
+		requestModifiersPerRequest,
+	)
 }
 
 // sendRequestParseResponse constructs a request, sends it, and parses the response
-func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client, method, path string, body io.Reader, parameters url.Values, requestModifiersLocal requestModifiers) (*Response[ResponseT], error) {
+func sendRequestParseResponse[ResponseT any](
+	ctx context.Context,
+	client *Client,
+	method string,
+	path string,
+	body io.Reader,
+	parameters url.Values,
+	requestModifiersPerRequest requestModifiers,
+) (*Response[ResponseT], error) {
 	// apply the global request timeout, if set
 	if client.configuration.RequestTimeout > 0 {
 		var cancelContextFunc context.CancelFunc
@@ -132,7 +156,7 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 	// merge the client-level & request-level modifiers, preferring the later
 	modifiers := mergeRequestModifiers(
 		requestModifiersClient,
-		requestModifiersLocal,
+		requestModifiersPerRequest,
 	)
 
 	req, err := client.newRequest(ctx, method, path, body, parameters, modifiers.headers)
@@ -154,14 +178,21 @@ func sendRequestParseResponse[ResponseT any](ctx context.Context, client *Client
 }
 
 // newRequest constructs a new request with Vault-specific headers
-func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader, parameters url.Values, headers requestHeaders) (*http.Request, error) {
+func (c *Client) newRequest(
+	ctx context.Context,
+	method string,
+	path string,
+	body io.Reader,
+	parameters url.Values,
+	headers requestHeaders,
+) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
 		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
 	}
 
-	// if configured, look up the service record (SRV) and take the highest match
+	// if configured, look up the DNS service record (SRV) and take the highest match
 	if c.configuration.EnableSRVLookup {
 		_, addrs, err := net.LookupSRV("http", "tcp", url.Hostname())
 		// don't return the error: address might not have a service record
@@ -215,7 +246,13 @@ func (c *Client) newRequest(ctx context.Context, method, path string, body io.Re
 }
 
 // send sends the given request to Vault, handling retries, redirects, and rate limiting
-func (c *Client) send(ctx context.Context, req *http.Request, retry bool, requestCallbacks []RequestCallback, responseCallbacks []ResponseCallback) (*http.Response, error) {
+func (c *Client) send(
+	ctx context.Context,
+	req *http.Request,
+	retry bool,
+	requestCallbacks []RequestCallback,
+	responseCallbacks []ResponseCallback,
+) (*http.Response, error) {
 	// block on the rate limiter, if set
 	if c.configuration.RateLimiter != nil {
 		c.configuration.RateLimiter.Wait(ctx)

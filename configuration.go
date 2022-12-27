@@ -222,12 +222,13 @@ type Configuration struct {
 
 	// initialToken is populated from environment variable VAULT_TOKEN and will
 	// be used as the initial token in client requests; to programmatically
-	// modify the token, use client.Set/With/ClearToken
+	// modify the token, use client.Set/ClearToken of WithToken(...) option
 	initialToken string `env:"VAULT_TOKEN"`
 
 	// initialNamespace is populated from environment variable VAULT_NAMESPACE
 	// and will be used as the initial namespace in client requests; to
-	// programmatically modify the namespace use client.Set/With/ClearNamespace
+	// programmatically modify the namespace use client.Set/ClearNamespace
+	// or WithNamespace(...) option
 	initialNamespace string `env:"VAULT_NAMESPACE"`
 }
 

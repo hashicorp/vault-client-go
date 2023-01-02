@@ -74,7 +74,7 @@ func main() {
 	}
 
 	// write a secret
-	_, err = client.Secrets.WriteSecret(ctx, "my-secret", vault.WriteSecretRequest{
+	_, err = client.Secrets.KVv2Write(ctx, "my-secret", vault.KVv2WriteRequest{
 		Data: map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
@@ -86,7 +86,7 @@ func main() {
 	log.Println("secret written successfully")
 
 	// read a secret
-	s, err := client.Secrets.ReadSecret(ctx, "my-secret")
+	s, err := client.Secrets.KVv2Read(ctx, "my-secret")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -145,7 +145,7 @@ client.Delete(...)
 client.DeleteWithParameters(...)
 ```
 
-For example, `client.Secrets.WriteSecret(...)` from
+For example, `client.Secrets.KVv2Write(...)` from
 [Getting Started](#getting-started) section could be rewritten using a generic
 `client.Write(...)` like so:
 
@@ -169,7 +169,7 @@ _ = client.SetToken("my-token")
 _ = client.SetNamespace("my-namespace")
 
 // per-request decorators take precedence over the client-level settings
-resp, _ = client.Secrets.ReadSecret(
+resp, _ = client.Secrets.KVv2Read(
 	ctx,
 	"my-secret",
 	vault.WithToken("request-specific-token"),
@@ -192,7 +192,7 @@ syntax:
 
 ```go
 // Equivalent to client.Read(ctx, "my/mount/path/data/my-secret")
-secret, err := client.Secrets.ReadSecret(
+secret, err := client.Secrets.KVv2Read(
 	ctx,
 	"my-secret",
 	vault.WithMountPath("my/mount/path"),
@@ -206,7 +206,7 @@ for more background information.
 
 ```go
 // wrap the response with a 5 minute TTL
-resp, _ := .Secrets.ReadSecret(
+resp, _ := .Secrets.KVv2Read(
 	ctx,
 	"my-secret",
 	vault.WithResponseWrapping(5*time.Minute),
@@ -230,7 +230,7 @@ The client also provides a convenience function `vault.IsErrorStatus(...)` to
 simplify error handling:
 
 ```go
-s, err := client.Secrets.ReadSecret(ctx, "my-secret")
+s, err := client.Secrets.KVv2Read(ctx, "my-secret")
 if err != nil {
 	if vault.IsErrorStatus(err, http.StatusForbidden) {
 		// special handling for 403 errors
@@ -342,7 +342,7 @@ callbacks:
 var state string
 
 // write
-_, err := client.Secrets.WriteSecret(
+_, err := client.Secrets.KVv2Write(
 	ctx,
 	"my-secret",
 	Data: map[string]any{
@@ -357,7 +357,7 @@ _, err := client.Secrets.WriteSecret(
 )
 
 // read
-secret, err := client.Secrets.ReadSecret(
+secret, err := client.Secrets.KVv2Read(
 	ctx,
 	"my-secret",
 	vault.WithRequestCallbacks(

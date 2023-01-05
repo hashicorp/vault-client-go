@@ -309,50 +309,50 @@ func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
 	return m.mountPath
 }
 
-// mergeRequestModifiers merges the two objects, preferring the local modifiers
-func mergeRequestModifiers(global, local requestModifiers) requestModifiers {
-	merged := global
+// mergeRequestModifiers merges the two objects, preferring the per-request modifiers
+func mergeRequestModifiers(perClient, perRequest requestModifiers) requestModifiers {
+	merged := perClient
 
-	if local.headers.userAgent != "" {
-		merged.headers.userAgent = local.headers.userAgent
+	if perRequest.headers.userAgent != "" {
+		merged.headers.userAgent = perRequest.headers.userAgent
 	}
 
-	if local.headers.token != "" {
-		merged.headers.token = local.headers.token
+	if perRequest.headers.token != "" {
+		merged.headers.token = perRequest.headers.token
 	}
 
-	if local.headers.namespace != "" {
-		merged.headers.namespace = local.headers.namespace
+	if perRequest.headers.namespace != "" {
+		merged.headers.namespace = perRequest.headers.namespace
 	}
 
-	if len(local.headers.mfaCredentials) != 0 {
-		merged.headers.mfaCredentials = local.headers.mfaCredentials
+	if len(perRequest.headers.mfaCredentials) != 0 {
+		merged.headers.mfaCredentials = perRequest.headers.mfaCredentials
 	}
 
-	if local.headers.responseWrappingTTL != 0 {
-		merged.headers.responseWrappingTTL = local.headers.responseWrappingTTL
+	if perRequest.headers.responseWrappingTTL != 0 {
+		merged.headers.responseWrappingTTL = perRequest.headers.responseWrappingTTL
 	}
 
-	if local.headers.replicationForwardingMode != ReplicationForwardNone {
-		merged.headers.replicationForwardingMode = local.headers.replicationForwardingMode
+	if perRequest.headers.replicationForwardingMode != ReplicationForwardNone {
+		merged.headers.replicationForwardingMode = perRequest.headers.replicationForwardingMode
 	}
 
-	if len(local.headers.customHeaders) != 0 {
-		merged.headers.customHeaders = local.headers.customHeaders
+	if len(perRequest.headers.customHeaders) != 0 {
+		merged.headers.customHeaders = perRequest.headers.customHeaders
 	}
 
-	if len(local.requestCallbacks) != 0 {
-		merged.requestCallbacks = local.requestCallbacks
+	if len(perRequest.requestCallbacks) != 0 {
+		merged.requestCallbacks = perRequest.requestCallbacks
 	}
 
-	if len(local.responseCallbacks) != 0 {
-		merged.responseCallbacks = local.responseCallbacks
+	if len(perRequest.responseCallbacks) != 0 {
+		merged.responseCallbacks = perRequest.responseCallbacks
 	}
 
 	return merged
 }
 
-// requestOptionsToRequestModifiers constructs `requestModifiers` & propagates the errors
+// requestOptionsToRequestModifiers constructs `requestModifiers` propagating the errors, if any
 func requestOptionsToRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
 	var modifiers requestModifiers
 

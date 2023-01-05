@@ -4,7 +4,7 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 [specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
 [Vault][vault].
 
-## :warning: _Stability Warning: Under Development!_ :warning:
+### ***Note: This library is now available in beta. Please try it out and give us feedback! Please do not use in production***
 
 ## Contents
 

@@ -39,6 +39,7 @@ Method | HTTP request | Description
 [**AWSListIdentityWhiteList**](Auth.md#AWSListIdentityWhiteList) | **Get** /auth/{aws_mount_path}/identity-whitelist | 
 [**AWSListRoleTagBlackList**](Auth.md#AWSListRoleTagBlackList) | **Get** /auth/{aws_mount_path}/roletag-blacklist | 
 [**AWSListRoleTagDenyList**](Auth.md#AWSListRoleTagDenyList) | **Get** /auth/{aws_mount_path}/roletag-denylist | 
+[**AWSLogin**](Auth.md#AWSLogin) | **Post** /auth/{aws_mount_path}/login | 
 [**AWSReadAuthRole**](Auth.md#AWSReadAuthRole) | **Get** /auth/{aws_mount_path}/role/{role} | 
 [**AWSReadIdentityAccessListFor**](Auth.md#AWSReadIdentityAccessListFor) | **Get** /auth/{aws_mount_path}/identity-accesslist/{instance_id} | 
 [**AWSReadIdentityWhiteListFor**](Auth.md#AWSReadIdentityWhiteListFor) | **Get** /auth/{aws_mount_path}/identity-whitelist/{instance_id} | 
@@ -117,6 +118,7 @@ Method | HTTP request | Description
 [**AzureReadAuthRole**](Auth.md#AzureReadAuthRole) | **Get** /auth/{azure_mount_path}/role/{name} | 
 [**AzureWriteAuthConfig**](Auth.md#AzureWriteAuthConfig) | **Post** /auth/{azure_mount_path}/config | 
 [**AzureWriteAuthRole**](Auth.md#AzureWriteAuthRole) | **Post** /auth/{azure_mount_path}/role/{name} | 
+[**CentrifyLogin**](Auth.md#CentrifyLogin) | **Post** /auth/{centrify_mount_path}/login | Log in with a username and password.
 [**CentrifyReadConfig**](Auth.md#CentrifyReadConfig) | **Get** /auth/{centrify_mount_path}/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 [**CentrifyWriteConfig**](Auth.md#CentrifyWriteConfig) | **Post** /auth/{centrify_mount_path}/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 [**CertificatesDelete**](Auth.md#CertificatesDelete) | **Delete** /auth/{cert_mount_path}/certs/{name} | Manage trusted certificates used for authentication.
@@ -206,6 +208,7 @@ Method | HTTP request | Description
 [**OCIWriteRole**](Auth.md#OCIWriteRole) | **Post** /auth/{oci_mount_path}/role/{role} | Create a role and associate policies to it.
 [**OIDCDeleteAuthRole**](Auth.md#OIDCDeleteAuthRole) | **Delete** /auth/{oidc_mount_path}/role/{name} | Delete an existing role.
 [**OIDCListAuthRoles**](Auth.md#OIDCListAuthRoles) | **Get** /auth/{oidc_mount_path}/role | Lists all the roles registered with the backend.
+[**OIDCLogin**](Auth.md#OIDCLogin) | **Post** /auth/{oidc_mount_path}/login | Authenticates to Vault using a JWT (or OIDC) token.
 [**OIDCReadAuthConfig**](Auth.md#OIDCReadAuthConfig) | **Get** /auth/{oidc_mount_path}/config | Read the current JWT authentication backend configuration.
 [**OIDCReadAuthRole**](Auth.md#OIDCReadAuthRole) | **Get** /auth/{oidc_mount_path}/role/{name} | Read an existing role.
 [**OIDCReadCallback**](Auth.md#OIDCReadCallback) | **Get** /auth/{oidc_mount_path}/oidc/callback | Callback endpoint to complete an OIDC login.
@@ -2568,6 +2571,69 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## AWSLogin
+
+> AWSLogin(ctx, awsMountPath).AWSLoginRequest(aWSLoginRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	aWSLoginRequest := NewAWSLoginRequestWithDefaults()
+	resp, err := client.Auth.AWSLogin(
+		context.Background(),
+		aWSLoginRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aWSLoginRequest** | [**AWSLoginRequest**](AWSLoginRequest.md) |  | 
 
 
  (empty response body)
@@ -7608,6 +7674,69 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **azureWriteAuthRoleRequest** | [**AzureWriteAuthRoleRequest**](AzureWriteAuthRoleRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## CentrifyLogin
+
+> CentrifyLogin(ctx, centrifyMountPath).CentrifyLoginRequest(centrifyLoginRequest).Execute()
+
+Log in with a username and password.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	centrifyLoginRequest := NewCentrifyLoginRequestWithDefaults()
+	resp, err := client.Auth.CentrifyLogin(
+		context.Background(),
+		centrifyLoginRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **centrifyLoginRequest** | [**CentrifyLoginRequest**](CentrifyLoginRequest.md) |  | 
 
 
  (empty response body)
@@ -13270,6 +13399,69 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCLogin
+
+> OIDCLogin(ctx, oidcMountPath).OIDCLoginRequest(oIDCLoginRequest).Execute()
+
+Authenticates to Vault using a JWT (or OIDC) token.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	oIDCLoginRequest := NewOIDCLoginRequestWithDefaults()
+	resp, err := client.Auth.OIDCLogin(
+		context.Background(),
+		oIDCLoginRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oIDCLoginRequest** | [**OIDCLoginRequest**](OIDCLoginRequest.md) |  | 
 
 
  (empty response body)

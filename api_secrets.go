@@ -599,6 +599,29 @@ func (a *Secrets) ActiveDirectoryReadRole(ctx context.Context, name string, opti
 	)
 }
 
+// ActiveDirectoryRotateRole
+// name: Name of the static role
+func (a *Secrets) ActiveDirectoryRotateRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{ad_mount_path}/rotate-role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"ad_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("ad")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // ActiveDirectoryRotateRoot
 func (a *Secrets) ActiveDirectoryRotateRoot(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -612,7 +635,7 @@ func (a *Secrets) ActiveDirectoryRotateRoot(ctx context.Context, options ...Requ
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
-		http.MethodGet,
+		http.MethodPost,
 		requestPath,
 		nil,       // request body
 		nil,       // request query parameters
@@ -1287,75 +1310,6 @@ func (a *Secrets) CubbyholeWrite(ctx context.Context, path string, options ...Re
 	)
 }
 
-// DeleteSecret Write, Patch, Read, and Delete data in the Key-Value Store.
-// path: Location of the secret.
-func (a *Secrets) DeleteSecret(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodDelete,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// DeleteSecretMetadata Configures settings for the KV store
-// path: Location of the secret.
-func (a *Secrets) DeleteSecretMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodDelete,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// DestroySecretVersions Permanently removes one or more versions in the KV store
-// path: Location of the secret.
-func (a *Secrets) DestroySecretVersions(ctx context.Context, path string, destroySecretVersionsRequest DestroySecretVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/destroy/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodPost,
-		requestPath,
-		destroySecretVersionsRequest,
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
 // GoogleCloudDeleteRoleset
 // name: Required. Name of the role.
 func (a *Secrets) GoogleCloudDeleteRoleset(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1402,6 +1356,29 @@ func (a *Secrets) GoogleCloudDeleteStaticAccount(ctx context.Context, name strin
 	)
 }
 
+// GoogleCloudKMSDecrypt Decrypt a ciphertext value using a named key
+// key: Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+func (a *Secrets) GoogleCloudKMSDecrypt(ctx context.Context, key string, googleCloudKMSDecryptRequest GoogleCloudKMSDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/decrypt/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		googleCloudKMSDecryptRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // GoogleCloudKMSDeleteConfig Configure the GCP KMS secrets engine
 func (a *Secrets) GoogleCloudKMSDeleteConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -1441,6 +1418,52 @@ func (a *Secrets) GoogleCloudKMSDeleteKey(ctx context.Context, key string, optio
 		http.MethodDelete,
 		requestPath,
 		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GoogleCloudKMSDeregisterKey Deregister an existing key in Vault
+// key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
+func (a *Secrets) GoogleCloudKMSDeregisterKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/keys/deregister/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GoogleCloudKMSEncrypt Encrypt a plaintext value using a named key
+// key: Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+func (a *Secrets) GoogleCloudKMSEncrypt(ctx context.Context, key string, googleCloudKMSEncryptRequest GoogleCloudKMSEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/encrypt/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		googleCloudKMSEncryptRequest,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1558,6 +1581,52 @@ func (a *Secrets) GoogleCloudKMSReadPubkey(ctx context.Context, key string, opti
 	)
 }
 
+// GoogleCloudKMSReencrypt Re-encrypt existing ciphertext data to a new version
+// key: Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
+func (a *Secrets) GoogleCloudKMSReencrypt(ctx context.Context, key string, googleCloudKMSReencryptRequest GoogleCloudKMSReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/reencrypt/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		googleCloudKMSReencryptRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GoogleCloudKMSRegisterKey Register an existing crypto key in Google Cloud KMS
+// key: Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
+func (a *Secrets) GoogleCloudKMSRegisterKey(ctx context.Context, key string, googleCloudKMSRegisterKeyRequest GoogleCloudKMSRegisterKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/keys/register/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		googleCloudKMSRegisterKeyRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // GoogleCloudKMSRotateKey Rotate a crypto key to a new primary version
 // key: Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
 func (a *Secrets) GoogleCloudKMSRotateKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -1576,6 +1645,75 @@ func (a *Secrets) GoogleCloudKMSRotateKey(ctx context.Context, key string, optio
 		http.MethodPost,
 		requestPath,
 		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GoogleCloudKMSSign Signs a message or digest using a named key
+// key: Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+func (a *Secrets) GoogleCloudKMSSign(ctx context.Context, key string, googleCloudKMSSignRequest GoogleCloudKMSSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/sign/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		googleCloudKMSSignRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GoogleCloudKMSTrimKey Delete old crypto key versions from Google Cloud KMS
+// key: Name of the key in Vault.
+func (a *Secrets) GoogleCloudKMSTrimKey(ctx context.Context, key string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/keys/trim/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// GoogleCloudKMSVerify Verify a signature using a named key
+// key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+func (a *Secrets) GoogleCloudKMSVerify(ctx context.Context, key string, googleCloudKMSVerifyRequest GoogleCloudKMSVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{gcpkms_mount_path}/verify/{key}"
+	requestPath = strings.Replace(requestPath, "{"+"gcpkms_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("gcpkms")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"key"+"}", url.PathEscape(key), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		googleCloudKMSVerifyRequest,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2192,15 +2330,84 @@ func (a *Secrets) GoogleCloudWriteToken(ctx context.Context, roleset string, opt
 	)
 }
 
-// KVv1DeleteSecret Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// KVv1Delete Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-func (a *Secrets) KVv1DeleteSecret(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv1Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/{secret_mount_path}/{path}"
+	requestPath := "/v1/{kv_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kv")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv1Read Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
+func (a *Secrets) KVv1Read(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{kv_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kv")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv1Write Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
+func (a *Secrets) KVv1Write(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{kv_mount_path}/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"kv_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("kv")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2Delete Write, Patch, Read, and Delete data in the Key-Value Store.
+// path: Location of the secret.
+func (a *Secrets) KVv2Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
@@ -2215,15 +2422,84 @@ func (a *Secrets) KVv1DeleteSecret(ctx context.Context, path string, options ...
 	)
 }
 
-// KVv1ReadSecret Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// KVv2DeleteMetadata Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) KVv1ReadSecret(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2DeleteMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/{secret_mount_path}/{path}"
+	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodDelete,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2DeleteVersions Marks one or more versions as deleted in the KV store.
+// path: Location of the secret.
+func (a *Secrets) KVv2DeleteVersions(ctx context.Context, path string, kVv2DeleteVersionsRequest KVv2DeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/delete/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kVv2DeleteVersionsRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2DestroyVersions Permanently removes one or more versions in the KV store
+// path: Location of the secret.
+func (a *Secrets) KVv2DestroyVersions(ctx context.Context, path string, kVv2DestroyVersionsRequest KVv2DestroyVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/destroy/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kVv2DestroyVersionsRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2Read Write, Patch, Read, and Delete data in the Key-Value Store.
+// path: Location of the secret.
+func (a *Secrets) KVv2Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/data/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
@@ -2238,24 +2514,158 @@ func (a *Secrets) KVv1ReadSecret(ctx context.Context, path string, list string, 
 	)
 }
 
-// KVv1WriteSecret Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-// path: Location of the secret.
-func (a *Secrets) KVv1WriteSecret(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+// KVv2ReadConfig Read the backend level settings.
+func (a *Secrets) KVv2ReadConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
-	requestPath := "/v1/{secret_mount_path}/{path}"
+	requestPath := "/v1/{secret_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2ReadMetadata Configures settings for the KV store
+// path: Location of the secret.
+func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
 	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
 		a.client,
-		http.MethodPost,
+		http.MethodGet,
 		requestPath,
 		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2ReadSubkeys Read the structure of a secret entry from the Key-Value store with the values removed.
+// path: Location of the secret.
+func (a *Secrets) KVv2ReadSubkeys(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/subkeys/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodGet,
+		requestPath,
+		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2UndeleteVersions Undeletes one or more versions from the KV store.
+// path: Location of the secret.
+func (a *Secrets) KVv2UndeleteVersions(ctx context.Context, path string, kVv2UndeleteVersionsRequest KVv2UndeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/undelete/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kVv2UndeleteVersionsRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2Write Write, Patch, Read, and Delete data in the Key-Value Store.
+// path: Location of the secret.
+func (a *Secrets) KVv2Write(ctx context.Context, path string, kVv2WriteRequest KVv2WriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/data/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kVv2WriteRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2WriteConfig Configure backend level settings that are applied to every key in the key-value store.
+func (a *Secrets) KVv2WriteConfig(ctx context.Context, kVv2WriteConfigRequest KVv2WriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kVv2WriteConfigRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// KVv2WriteMetadata Configures settings for the KV store
+// path: Location of the secret.
+func (a *Secrets) KVv2WriteMetadata(ctx context.Context, path string, kVv2WriteMetadataRequest KVv2WriteMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
+	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		kVv2WriteMetadataRequest,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5865,96 +6275,6 @@ func (a *Secrets) RabbitMQWriteRole(ctx context.Context, name string, rabbitMQWr
 	)
 }
 
-// ReadSecret Write, Patch, Read, and Delete data in the Key-Value Store.
-// path: Location of the secret.
-func (a *Secrets) ReadSecret(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// ReadSecretConfig Read the backend level settings.
-func (a *Secrets) ReadSecretConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/config"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// ReadSecretMetadata Configures settings for the KV store
-// path: Location of the secret.
-func (a *Secrets) ReadSecretMetadata(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// ReadSecretSubkeys Read the structure of a secret entry from the Key-Value store with the values removed.
-// path: Location of the secret.
-func (a *Secrets) ReadSecretSubkeys(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/subkeys/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodGet,
-		requestPath,
-		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
 // SSHDeleteCAConfig Set the SSH private key used for signing certificates.
 func (a *Secrets) SSHDeleteCAConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
@@ -6779,6 +7099,29 @@ func (a *Secrets) TransitDeleteKey(ctx context.Context, name string, options ...
 	)
 }
 
+// TransitEncrypt Encrypt a plaintext value or a batch of plaintext blocks using a named key
+// name: Name of the key
+func (a *Secrets) TransitEncrypt(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{transit_mount_path}/encrypt/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"transit_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("transit")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		transitEncryptRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // TransitExport Export named encryption or signing key
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
@@ -7486,73 +7829,6 @@ func (a *Secrets) TransitWriteRandomUrlbytes(ctx context.Context, urlbytes strin
 		http.MethodPost,
 		requestPath,
 		transitWriteRandomUrlbytesRequest,
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// WriteSecret Write, Patch, Read, and Delete data in the Key-Value Store.
-// path: Location of the secret.
-func (a *Secrets) WriteSecret(ctx context.Context, path string, writeSecretRequest WriteSecretRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/data/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodPost,
-		requestPath,
-		writeSecretRequest,
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// WriteSecretConfig Configure backend level settings that are applied to every key in the key-value store.
-func (a *Secrets) WriteSecretConfig(ctx context.Context, writeSecretConfigRequest WriteSecretConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/config"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodPost,
-		requestPath,
-		writeSecretConfigRequest,
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
-	)
-}
-
-// WriteSecretMetadata Configures settings for the KV store
-// path: Location of the secret.
-func (a *Secrets) WriteSecretMetadata(ctx context.Context, path string, writeSecretMetadataRequest WriteSecretMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
-	if err != nil {
-		return nil, err
-	}
-
-	requestPath := "/v1/{secret_mount_path}/metadata/{path}"
-	requestPath = strings.Replace(requestPath, "{"+"secret_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("secret")), -1)
-	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
-
-	return sendStructuredRequestParseResponse[map[string]interface{}](
-		ctx,
-		a.client,
-		http.MethodPost,
-		requestPath,
-		writeSecretMetadataRequest,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)

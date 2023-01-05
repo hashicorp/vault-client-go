@@ -28,7 +28,8 @@ Method | HTTP request | Description
 [**ActiveDirectoryReadLibrary**](Secrets.md#ActiveDirectoryReadLibrary) | **Get** /{ad_mount_path}/library/{name} | Read a library set.
 [**ActiveDirectoryReadLibraryStatus**](Secrets.md#ActiveDirectoryReadLibraryStatus) | **Get** /{ad_mount_path}/library/{name}/status | Check the status of the service accounts in a library set.
 [**ActiveDirectoryReadRole**](Secrets.md#ActiveDirectoryReadRole) | **Get** /{ad_mount_path}/roles/{name} | Manage roles to build links between Vault and Active Directory service accounts.
-[**ActiveDirectoryRotateRoot**](Secrets.md#ActiveDirectoryRotateRoot) | **Get** /{ad_mount_path}/rotate-root | 
+[**ActiveDirectoryRotateRole**](Secrets.md#ActiveDirectoryRotateRole) | **Post** /{ad_mount_path}/rotate-role/{name} | 
+[**ActiveDirectoryRotateRoot**](Secrets.md#ActiveDirectoryRotateRoot) | **Post** /{ad_mount_path}/rotate-root | 
 [**ActiveDirectoryWriteConfig**](Secrets.md#ActiveDirectoryWriteConfig) | **Post** /{ad_mount_path}/config | Configure the AD server to connect to, along with password options.
 [**ActiveDirectoryWriteLibrary**](Secrets.md#ActiveDirectoryWriteLibrary) | **Post** /{ad_mount_path}/library/{name} | Update a library set.
 [**ActiveDirectoryWriteRole**](Secrets.md#ActiveDirectoryWriteRole) | **Post** /{ad_mount_path}/roles/{name} | Manage roles to build links between Vault and Active Directory service accounts.
@@ -59,19 +60,24 @@ Method | HTTP request | Description
 [**CubbyholeDelete**](Secrets.md#CubbyholeDelete) | **Delete** /{cubbyhole_mount_path}/{path} | Deletes the secret at the specified location.
 [**CubbyholeRead**](Secrets.md#CubbyholeRead) | **Get** /{cubbyhole_mount_path}/{path} | Retrieve the secret at the specified location.
 [**CubbyholeWrite**](Secrets.md#CubbyholeWrite) | **Post** /{cubbyhole_mount_path}/{path} | Store a secret at the specified location.
-[**DeleteSecret**](Secrets.md#DeleteSecret) | **Delete** /{secret_mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
-[**DeleteSecretMetadata**](Secrets.md#DeleteSecretMetadata) | **Delete** /{secret_mount_path}/metadata/{path} | Configures settings for the KV store
-[**DestroySecretVersions**](Secrets.md#DestroySecretVersions) | **Post** /{secret_mount_path}/destroy/{path} | Permanently removes one or more versions in the KV store
 [**GoogleCloudDeleteRoleset**](Secrets.md#GoogleCloudDeleteRoleset) | **Delete** /{gcp_mount_path}/roleset/{name} | 
 [**GoogleCloudDeleteStaticAccount**](Secrets.md#GoogleCloudDeleteStaticAccount) | **Delete** /{gcp_mount_path}/static-account/{name} | 
+[**GoogleCloudKMSDecrypt**](Secrets.md#GoogleCloudKMSDecrypt) | **Post** /{gcpkms_mount_path}/decrypt/{key} | Decrypt a ciphertext value using a named key
 [**GoogleCloudKMSDeleteConfig**](Secrets.md#GoogleCloudKMSDeleteConfig) | **Delete** /{gcpkms_mount_path}/config | Configure the GCP KMS secrets engine
 [**GoogleCloudKMSDeleteKey**](Secrets.md#GoogleCloudKMSDeleteKey) | **Delete** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
+[**GoogleCloudKMSDeregisterKey**](Secrets.md#GoogleCloudKMSDeregisterKey) | **Post** /{gcpkms_mount_path}/keys/deregister/{key} | Deregister an existing key in Vault
+[**GoogleCloudKMSEncrypt**](Secrets.md#GoogleCloudKMSEncrypt) | **Post** /{gcpkms_mount_path}/encrypt/{key} | Encrypt a plaintext value using a named key
 [**GoogleCloudKMSListKeys**](Secrets.md#GoogleCloudKMSListKeys) | **Get** /{gcpkms_mount_path}/keys | List named keys
 [**GoogleCloudKMSReadConfig**](Secrets.md#GoogleCloudKMSReadConfig) | **Get** /{gcpkms_mount_path}/config | Configure the GCP KMS secrets engine
 [**GoogleCloudKMSReadKey**](Secrets.md#GoogleCloudKMSReadKey) | **Get** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudKMSReadKeyConfig**](Secrets.md#GoogleCloudKMSReadKeyConfig) | **Get** /{gcpkms_mount_path}/keys/config/{key} | Configure the key in Vault
 [**GoogleCloudKMSReadPubkey**](Secrets.md#GoogleCloudKMSReadPubkey) | **Get** /{gcpkms_mount_path}/pubkey/{key} | Retrieve the public key associated with the named key
+[**GoogleCloudKMSReencrypt**](Secrets.md#GoogleCloudKMSReencrypt) | **Post** /{gcpkms_mount_path}/reencrypt/{key} | Re-encrypt existing ciphertext data to a new version
+[**GoogleCloudKMSRegisterKey**](Secrets.md#GoogleCloudKMSRegisterKey) | **Post** /{gcpkms_mount_path}/keys/register/{key} | Register an existing crypto key in Google Cloud KMS
 [**GoogleCloudKMSRotateKey**](Secrets.md#GoogleCloudKMSRotateKey) | **Post** /{gcpkms_mount_path}/keys/rotate/{key} | Rotate a crypto key to a new primary version
+[**GoogleCloudKMSSign**](Secrets.md#GoogleCloudKMSSign) | **Post** /{gcpkms_mount_path}/sign/{key} | Signs a message or digest using a named key
+[**GoogleCloudKMSTrimKey**](Secrets.md#GoogleCloudKMSTrimKey) | **Post** /{gcpkms_mount_path}/keys/trim/{key} | Delete old crypto key versions from Google Cloud KMS
+[**GoogleCloudKMSVerify**](Secrets.md#GoogleCloudKMSVerify) | **Post** /{gcpkms_mount_path}/verify/{key} | Verify a signature using a named key
 [**GoogleCloudKMSWriteConfig**](Secrets.md#GoogleCloudKMSWriteConfig) | **Post** /{gcpkms_mount_path}/config | Configure the GCP KMS secrets engine
 [**GoogleCloudKMSWriteKey**](Secrets.md#GoogleCloudKMSWriteKey) | **Post** /{gcpkms_mount_path}/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GoogleCloudKMSWriteKeyConfig**](Secrets.md#GoogleCloudKMSWriteKeyConfig) | **Post** /{gcpkms_mount_path}/keys/config/{key} | Configure the key in Vault
@@ -99,9 +105,21 @@ Method | HTTP request | Description
 [**GoogleCloudWriteStaticAccountKey**](Secrets.md#GoogleCloudWriteStaticAccountKey) | **Post** /{gcp_mount_path}/static-account/{name}/key | 
 [**GoogleCloudWriteStaticAccountToken**](Secrets.md#GoogleCloudWriteStaticAccountToken) | **Post** /{gcp_mount_path}/static-account/{name}/token | 
 [**GoogleCloudWriteToken**](Secrets.md#GoogleCloudWriteToken) | **Post** /{gcp_mount_path}/token/{roleset} | 
-[**KVv1DeleteSecret**](Secrets.md#KVv1DeleteSecret) | **Delete** /{secret_mount_path}/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-[**KVv1ReadSecret**](Secrets.md#KVv1ReadSecret) | **Get** /{secret_mount_path}/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-[**KVv1WriteSecret**](Secrets.md#KVv1WriteSecret) | **Post** /{secret_mount_path}/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+[**KVv1Delete**](Secrets.md#KVv1Delete) | **Delete** /{kv_mount_path}/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+[**KVv1Read**](Secrets.md#KVv1Read) | **Get** /{kv_mount_path}/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+[**KVv1Write**](Secrets.md#KVv1Write) | **Post** /{kv_mount_path}/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+[**KVv2Delete**](Secrets.md#KVv2Delete) | **Delete** /{secret_mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
+[**KVv2DeleteMetadata**](Secrets.md#KVv2DeleteMetadata) | **Delete** /{secret_mount_path}/metadata/{path} | Configures settings for the KV store
+[**KVv2DeleteVersions**](Secrets.md#KVv2DeleteVersions) | **Post** /{secret_mount_path}/delete/{path} | Marks one or more versions as deleted in the KV store.
+[**KVv2DestroyVersions**](Secrets.md#KVv2DestroyVersions) | **Post** /{secret_mount_path}/destroy/{path} | Permanently removes one or more versions in the KV store
+[**KVv2Read**](Secrets.md#KVv2Read) | **Get** /{secret_mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
+[**KVv2ReadConfig**](Secrets.md#KVv2ReadConfig) | **Get** /{secret_mount_path}/config | Read the backend level settings.
+[**KVv2ReadMetadata**](Secrets.md#KVv2ReadMetadata) | **Get** /{secret_mount_path}/metadata/{path} | Configures settings for the KV store
+[**KVv2ReadSubkeys**](Secrets.md#KVv2ReadSubkeys) | **Get** /{secret_mount_path}/subkeys/{path} | Read the structure of a secret entry from the Key-Value store with the values removed.
+[**KVv2UndeleteVersions**](Secrets.md#KVv2UndeleteVersions) | **Post** /{secret_mount_path}/undelete/{path} | Undeletes one or more versions from the KV store.
+[**KVv2Write**](Secrets.md#KVv2Write) | **Post** /{secret_mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
+[**KVv2WriteConfig**](Secrets.md#KVv2WriteConfig) | **Post** /{secret_mount_path}/config | Configure backend level settings that are applied to every key in the key-value store.
+[**KVv2WriteMetadata**](Secrets.md#KVv2WriteMetadata) | **Post** /{secret_mount_path}/metadata/{path} | Configures settings for the KV store
 [**KubernetesDeleteConfig**](Secrets.md#KubernetesDeleteConfig) | **Delete** /{kubernetes_mount_path}/config | 
 [**KubernetesDeleteRole**](Secrets.md#KubernetesDeleteRole) | **Delete** /{kubernetes_mount_path}/roles/{name} | 
 [**KubernetesListRoles**](Secrets.md#KubernetesListRoles) | **Get** /{kubernetes_mount_path}/roles | 
@@ -265,10 +283,6 @@ Method | HTTP request | Description
 [**RabbitMQWriteConnectionConfig**](Secrets.md#RabbitMQWriteConnectionConfig) | **Post** /{rabbitmq_mount_path}/config/connection | Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 [**RabbitMQWriteLeaseConfig**](Secrets.md#RabbitMQWriteLeaseConfig) | **Post** /{rabbitmq_mount_path}/config/lease | Configure the lease parameters for generated credentials
 [**RabbitMQWriteRole**](Secrets.md#RabbitMQWriteRole) | **Post** /{rabbitmq_mount_path}/roles/{name} | Manage the roles that can be created with this backend.
-[**ReadSecret**](Secrets.md#ReadSecret) | **Get** /{secret_mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
-[**ReadSecretConfig**](Secrets.md#ReadSecretConfig) | **Get** /{secret_mount_path}/config | Read the backend level settings.
-[**ReadSecretMetadata**](Secrets.md#ReadSecretMetadata) | **Get** /{secret_mount_path}/metadata/{path} | Configures settings for the KV store
-[**ReadSecretSubkeys**](Secrets.md#ReadSecretSubkeys) | **Get** /{secret_mount_path}/subkeys/{path} | Read the structure of a secret entry from the Key-Value store with the values removed.
 [**SSHDeleteCAConfig**](Secrets.md#SSHDeleteCAConfig) | **Delete** /{ssh_mount_path}/config/ca | Set the SSH private key used for signing certificates.
 [**SSHDeleteKeys**](Secrets.md#SSHDeleteKeys) | **Delete** /{ssh_mount_path}/keys/{key_name} | Register a shared private key with Vault.
 [**SSHDeleteRole**](Secrets.md#SSHDeleteRole) | **Delete** /{ssh_mount_path}/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
@@ -306,6 +320,7 @@ Method | HTTP request | Description
 [**TransitBackup**](Secrets.md#TransitBackup) | **Get** /{transit_mount_path}/backup/{name} | Backup the named key
 [**TransitDecrypt**](Secrets.md#TransitDecrypt) | **Post** /{transit_mount_path}/decrypt/{name} | Decrypt a ciphertext value using a named key
 [**TransitDeleteKey**](Secrets.md#TransitDeleteKey) | **Delete** /{transit_mount_path}/keys/{name} | Managed named encryption keys
+[**TransitEncrypt**](Secrets.md#TransitEncrypt) | **Post** /{transit_mount_path}/encrypt/{name} | Encrypt a plaintext value or a batch of plaintext blocks using a named key
 [**TransitExport**](Secrets.md#TransitExport) | **Get** /{transit_mount_path}/export/{type}/{name} | Export named encryption or signing key
 [**TransitExportVersion**](Secrets.md#TransitExportVersion) | **Get** /{transit_mount_path}/export/{type}/{name}/{version} | Export named encryption or signing key
 [**TransitGenerateDataKey**](Secrets.md#TransitGenerateDataKey) | **Post** /{transit_mount_path}/datakey/{plaintext}/{name} | Generate a data key
@@ -337,9 +352,6 @@ Method | HTTP request | Description
 [**TransitWriteKey**](Secrets.md#TransitWriteKey) | **Post** /{transit_mount_path}/keys/{name} | Managed named encryption keys
 [**TransitWriteKeyConfig**](Secrets.md#TransitWriteKeyConfig) | **Post** /{transit_mount_path}/keys/{name}/config | Configure a named encryption key
 [**TransitWriteRandomUrlbytes**](Secrets.md#TransitWriteRandomUrlbytes) | **Post** /{transit_mount_path}/random/{urlbytes} | Generate random bytes
-[**WriteSecret**](Secrets.md#WriteSecret) | **Post** /{secret_mount_path}/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
-[**WriteSecretConfig**](Secrets.md#WriteSecretConfig) | **Post** /{secret_mount_path}/config | Configure backend level settings that are applied to every key in the key-value store.
-[**WriteSecretMetadata**](Secrets.md#WriteSecretMetadata) | **Post** /{secret_mount_path}/metadata/{path} | Configures settings for the KV store
 
 
 
@@ -1977,6 +1989,70 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for request cancellation 
 **name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## ActiveDirectoryRotateRole
+
+> ActiveDirectoryRotateRole(ctx, adMountPath, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the static role
+
+	resp, err := client.Secrets.ActiveDirectoryRotateRole(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the static role | 
 
 ### Other Parameters
 
@@ -3959,201 +4035,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSecret
-
-> DeleteSecret(ctx, path, secretMountPath).Execute()
-
-Write, Patch, Read, and Delete data in the Key-Value Store.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	resp, err := client.Secrets.DeleteSecret(
-		context.Background(),
-		path,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DeleteSecretMetadata
-
-> DeleteSecretMetadata(ctx, path, secretMountPath).Execute()
-
-Configures settings for the KV store
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	resp, err := client.Secrets.DeleteSecretMetadata(
-		context.Background(),
-		path,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## DestroySecretVersions
-
-> DestroySecretVersions(ctx, path, secretMountPath).DestroySecretVersionsRequest(destroySecretVersionsRequest).Execute()
-
-Permanently removes one or more versions in the KV store
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	destroySecretVersionsRequest := NewDestroySecretVersionsRequestWithDefaults()
-	resp, err := client.Secrets.DestroySecretVersions(
-		context.Background(),
-		path,
-		destroySecretVersionsRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **destroySecretVersionsRequest** | [**DestroySecretVersionsRequest**](DestroySecretVersionsRequest.md) |  | 
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
 ## GoogleCloudDeleteRoleset
 
 > GoogleCloudDeleteRoleset(ctx, gcpMountPath, name).Execute()
@@ -4282,6 +4163,73 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GoogleCloudKMSDecrypt
+
+> GoogleCloudKMSDecrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSDecryptRequest(googleCloudKMSDecryptRequest).Execute()
+
+Decrypt a ciphertext value using a named key
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+
+	googleCloudKMSDecryptRequest := NewGoogleCloudKMSDecryptRequestWithDefaults()
+	resp, err := client.Secrets.GoogleCloudKMSDecrypt(
+		context.Background(),
+		key,
+		googleCloudKMSDecryptRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **googleCloudKMSDecryptRequest** | [**GoogleCloudKMSDecryptRequest**](GoogleCloudKMSDecryptRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GoogleCloudKMSDeleteConfig
 
 > GoogleCloudKMSDeleteConfig(ctx, gcpkmsMountPath).Execute()
@@ -4398,6 +4346,137 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GoogleCloudKMSDeregisterKey
+
+> GoogleCloudKMSDeregisterKey(ctx, gcpkmsMountPath, key).Execute()
+
+Deregister an existing key in Vault
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
+
+	resp, err := client.Secrets.GoogleCloudKMSDeregisterKey(
+		context.Background(),
+		key,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GoogleCloudKMSEncrypt
+
+> GoogleCloudKMSEncrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSEncryptRequest(googleCloudKMSEncryptRequest).Execute()
+
+Encrypt a plaintext value using a named key
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+
+	googleCloudKMSEncryptRequest := NewGoogleCloudKMSEncryptRequestWithDefaults()
+	resp, err := client.Secrets.GoogleCloudKMSEncrypt(
+		context.Background(),
+		key,
+		googleCloudKMSEncryptRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **googleCloudKMSEncryptRequest** | [**GoogleCloudKMSEncryptRequest**](GoogleCloudKMSEncryptRequest.md) |  | 
 
 
  (empty response body)
@@ -4721,6 +4800,140 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GoogleCloudKMSReencrypt
+
+> GoogleCloudKMSReencrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSReencryptRequest(googleCloudKMSReencryptRequest).Execute()
+
+Re-encrypt existing ciphertext data to a new version
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
+
+	googleCloudKMSReencryptRequest := NewGoogleCloudKMSReencryptRequestWithDefaults()
+	resp, err := client.Secrets.GoogleCloudKMSReencrypt(
+		context.Background(),
+		key,
+		googleCloudKMSReencryptRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **googleCloudKMSReencryptRequest** | [**GoogleCloudKMSReencryptRequest**](GoogleCloudKMSReencryptRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GoogleCloudKMSRegisterKey
+
+> GoogleCloudKMSRegisterKey(ctx, gcpkmsMountPath, key).GoogleCloudKMSRegisterKeyRequest(googleCloudKMSRegisterKeyRequest).Execute()
+
+Register an existing crypto key in Google Cloud KMS
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
+
+	googleCloudKMSRegisterKeyRequest := NewGoogleCloudKMSRegisterKeyRequestWithDefaults()
+	resp, err := client.Secrets.GoogleCloudKMSRegisterKey(
+		context.Background(),
+		key,
+		googleCloudKMSRegisterKeyRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **googleCloudKMSRegisterKeyRequest** | [**GoogleCloudKMSRegisterKeyRequest**](GoogleCloudKMSRegisterKeyRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## GoogleCloudKMSRotateKey
 
 > GoogleCloudKMSRotateKey(ctx, gcpkmsMountPath, key).Execute()
@@ -4777,6 +4990,204 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GoogleCloudKMSSign
+
+> GoogleCloudKMSSign(ctx, gcpkmsMountPath, key).GoogleCloudKMSSignRequest(googleCloudKMSSignRequest).Execute()
+
+Signs a message or digest using a named key
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+
+	googleCloudKMSSignRequest := NewGoogleCloudKMSSignRequestWithDefaults()
+	resp, err := client.Secrets.GoogleCloudKMSSign(
+		context.Background(),
+		key,
+		googleCloudKMSSignRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **googleCloudKMSSignRequest** | [**GoogleCloudKMSSignRequest**](GoogleCloudKMSSignRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GoogleCloudKMSTrimKey
+
+> GoogleCloudKMSTrimKey(ctx, gcpkmsMountPath, key).Execute()
+
+Delete old crypto key versions from Google Cloud KMS
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key in Vault.
+
+	resp, err := client.Secrets.GoogleCloudKMSTrimKey(
+		context.Background(),
+		key,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key in Vault. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GoogleCloudKMSVerify
+
+> GoogleCloudKMSVerify(ctx, gcpkmsMountPath, key).GoogleCloudKMSVerifyRequest(googleCloudKMSVerifyRequest).Execute()
+
+Verify a signature using a named key
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+
+	googleCloudKMSVerifyRequest := NewGoogleCloudKMSVerifyRequestWithDefaults()
+	resp, err := client.Secrets.GoogleCloudKMSVerify(
+		context.Background(),
+		key,
+		googleCloudKMSVerifyRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**key** | **string** | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **googleCloudKMSVerifyRequest** | [**GoogleCloudKMSVerifyRequest**](GoogleCloudKMSVerifyRequest.md) |  | 
 
 
  (empty response body)
@@ -6522,9 +6933,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## KVv1DeleteSecret
+## KVv1Delete
 
-> KVv1DeleteSecret(ctx, path, secretMountPath).Execute()
+> KVv1Delete(ctx, kvMountPath, path).Execute()
 
 Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 
@@ -6551,7 +6962,7 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.KVv1DeleteSecret(
+	resp, err := client.Secrets.KVv1Delete(
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
@@ -6586,9 +6997,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## KVv1ReadSecret
+## KVv1Read
 
-> KVv1ReadSecret(ctx, path, secretMountPath).List(list).Execute()
+> KVv1Read(ctx, kvMountPath, path).List(list).Execute()
 
 Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 
@@ -6616,7 +7027,7 @@ func main() {
 	path := "path_example" // string | Location of the secret.
 
 	list := NewstringWithDefaults()
-	resp, err := client.Secrets.KVv1ReadSecret(
+	resp, err := client.Secrets.KVv1Read(
 		context.Background(),
 		path,
 		list,
@@ -6653,9 +7064,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## KVv1WriteSecret
+## KVv1Write
 
-> KVv1WriteSecret(ctx, path, secretMountPath).Execute()
+> KVv1Write(ctx, kvMountPath, path).Execute()
 
 Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 
@@ -6682,7 +7093,7 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 
-	resp, err := client.Secrets.KVv1WriteSecret(
+	resp, err := client.Secrets.KVv1Write(
 		context.Background(),
 		path,
 		vault.WithToken("my-token"),
@@ -6709,6 +7120,787 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2Delete
+
+> KVv2Delete(ctx, path, secretMountPath).Execute()
+
+Write, Patch, Read, and Delete data in the Key-Value Store.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	resp, err := client.Secrets.KVv2Delete(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2DeleteMetadata
+
+> KVv2DeleteMetadata(ctx, path, secretMountPath).Execute()
+
+Configures settings for the KV store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	resp, err := client.Secrets.KVv2DeleteMetadata(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2DeleteVersions
+
+> KVv2DeleteVersions(ctx, path, secretMountPath).KVv2DeleteVersionsRequest(kVv2DeleteVersionsRequest).Execute()
+
+Marks one or more versions as deleted in the KV store.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	kVv2DeleteVersionsRequest := NewKVv2DeleteVersionsRequestWithDefaults()
+	resp, err := client.Secrets.KVv2DeleteVersions(
+		context.Background(),
+		path,
+		kVv2DeleteVersionsRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **kVv2DeleteVersionsRequest** | [**KVv2DeleteVersionsRequest**](KVv2DeleteVersionsRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2DestroyVersions
+
+> KVv2DestroyVersions(ctx, path, secretMountPath).KVv2DestroyVersionsRequest(kVv2DestroyVersionsRequest).Execute()
+
+Permanently removes one or more versions in the KV store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	kVv2DestroyVersionsRequest := NewKVv2DestroyVersionsRequestWithDefaults()
+	resp, err := client.Secrets.KVv2DestroyVersions(
+		context.Background(),
+		path,
+		kVv2DestroyVersionsRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **kVv2DestroyVersionsRequest** | [**KVv2DestroyVersionsRequest**](KVv2DestroyVersionsRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2Read
+
+> KVv2Read(ctx, path, secretMountPath).Execute()
+
+Write, Patch, Read, and Delete data in the Key-Value Store.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	resp, err := client.Secrets.KVv2Read(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2ReadConfig
+
+> KVv2ReadConfig(ctx, secretMountPath).Execute()
+
+Read the backend level settings.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.Secrets.KVv2ReadConfig(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2ReadMetadata
+
+> KVv2ReadMetadata(ctx, path, secretMountPath).List(list).Execute()
+
+Configures settings for the KV store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	list := NewstringWithDefaults()
+	resp, err := client.Secrets.KVv2ReadMetadata(
+		context.Background(),
+		path,
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **list** | **string** | Return a list if &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2ReadSubkeys
+
+> KVv2ReadSubkeys(ctx, path, secretMountPath).Execute()
+
+Read the structure of a secret entry from the Key-Value store with the values removed.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	resp, err := client.Secrets.KVv2ReadSubkeys(
+		context.Background(),
+		path,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2UndeleteVersions
+
+> KVv2UndeleteVersions(ctx, path, secretMountPath).KVv2UndeleteVersionsRequest(kVv2UndeleteVersionsRequest).Execute()
+
+Undeletes one or more versions from the KV store.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	kVv2UndeleteVersionsRequest := NewKVv2UndeleteVersionsRequestWithDefaults()
+	resp, err := client.Secrets.KVv2UndeleteVersions(
+		context.Background(),
+		path,
+		kVv2UndeleteVersionsRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **kVv2UndeleteVersionsRequest** | [**KVv2UndeleteVersionsRequest**](KVv2UndeleteVersionsRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2Write
+
+> KVv2Write(ctx, path, secretMountPath).KVv2WriteRequest(kVv2WriteRequest).Execute()
+
+Write, Patch, Read, and Delete data in the Key-Value Store.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	kVv2WriteRequest := NewKVv2WriteRequestWithDefaults()
+	resp, err := client.Secrets.KVv2Write(
+		context.Background(),
+		path,
+		kVv2WriteRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **kVv2WriteRequest** | [**KVv2WriteRequest**](KVv2WriteRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2WriteConfig
+
+> KVv2WriteConfig(ctx, secretMountPath).KVv2WriteConfigRequest(kVv2WriteConfigRequest).Execute()
+
+Configure backend level settings that are applied to every key in the key-value store.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	kVv2WriteConfigRequest := NewKVv2WriteConfigRequestWithDefaults()
+	resp, err := client.Secrets.KVv2WriteConfig(
+		context.Background(),
+		kVv2WriteConfigRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kVv2WriteConfigRequest** | [**KVv2WriteConfigRequest**](KVv2WriteConfigRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## KVv2WriteMetadata
+
+> KVv2WriteMetadata(ctx, path, secretMountPath).KVv2WriteMetadataRequest(kVv2WriteMetadataRequest).Execute()
+
+Configures settings for the KV store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	path := "path_example" // string | Location of the secret.
+
+	kVv2WriteMetadataRequest := NewKVv2WriteMetadataRequestWithDefaults()
+	resp, err := client.Secrets.KVv2WriteMetadata(
+		context.Background(),
+		path,
+		kVv2WriteMetadataRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**path** | **string** | Location of the secret. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **kVv2WriteMetadataRequest** | [**KVv2WriteMetadataRequest**](KVv2WriteMetadataRequest.md) |  | 
 
 
  (empty response body)
@@ -17072,261 +18264,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ReadSecret
-
-> ReadSecret(ctx, path, secretMountPath).Execute()
-
-Write, Patch, Read, and Delete data in the Key-Value Store.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	resp, err := client.Secrets.ReadSecret(
-		context.Background(),
-		path,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## ReadSecretConfig
-
-> ReadSecretConfig(ctx, secretMountPath).Execute()
-
-Read the backend level settings.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.Secrets.ReadSecretConfig(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## ReadSecretMetadata
-
-> ReadSecretMetadata(ctx, path, secretMountPath).List(list).Execute()
-
-Configures settings for the KV store
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	list := NewstringWithDefaults()
-	resp, err := client.Secrets.ReadSecretMetadata(
-		context.Background(),
-		path,
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **list** | **string** | Return a list if &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## ReadSecretSubkeys
-
-> ReadSecretSubkeys(ctx, path, secretMountPath).Execute()
-
-Read the structure of a secret entry from the Key-Value store with the values removed.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	resp, err := client.Secrets.ReadSecretSubkeys(
-		context.Background(),
-		path,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
 ## SSHDeleteCAConfig
 
 > SSHDeleteCAConfig(ctx, sshMountPath).Execute()
@@ -19686,6 +20623,73 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## TransitEncrypt
+
+> TransitEncrypt(ctx, name, transitMountPath).TransitEncryptRequest(transitEncryptRequest).Execute()
+
+Encrypt a plaintext value or a batch of plaintext blocks using a named key
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the key
+
+	transitEncryptRequest := NewTransitEncryptRequestWithDefaults()
+	resp, err := client.Secrets.TransitEncrypt(
+		context.Background(),
+		name,
+		transitEncryptRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the key | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **transitEncryptRequest** | [**TransitEncryptRequest**](TransitEncryptRequest.md) |  | 
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
 ## TransitExport
 
 > TransitExport(ctx, name, transitMountPath, type_).Execute()
@@ -21730,203 +22734,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **transitWriteRandomUrlbytesRequest** | [**TransitWriteRandomUrlbytesRequest**](TransitWriteRandomUrlbytesRequest.md) |  | 
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## WriteSecret
-
-> WriteSecret(ctx, path, secretMountPath).WriteSecretRequest(writeSecretRequest).Execute()
-
-Write, Patch, Read, and Delete data in the Key-Value Store.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	writeSecretRequest := NewWriteSecretRequestWithDefaults()
-	resp, err := client.Secrets.WriteSecret(
-		context.Background(),
-		path,
-		writeSecretRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **writeSecretRequest** | [**WriteSecretRequest**](WriteSecretRequest.md) |  | 
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## WriteSecretConfig
-
-> WriteSecretConfig(ctx, secretMountPath).WriteSecretConfigRequest(writeSecretConfigRequest).Execute()
-
-Configure backend level settings that are applied to every key in the key-value store.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	writeSecretConfigRequest := NewWriteSecretConfigRequestWithDefaults()
-	resp, err := client.Secrets.WriteSecretConfig(
-		context.Background(),
-		writeSecretConfigRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **writeSecretConfigRequest** | [**WriteSecretConfigRequest**](WriteSecretConfigRequest.md) |  | 
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## WriteSecretMetadata
-
-> WriteSecretMetadata(ctx, path, secretMountPath).WriteSecretMetadataRequest(writeSecretMetadataRequest).Execute()
-
-Configures settings for the KV store
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	path := "path_example" // string | Location of the secret.
-
-	writeSecretMetadataRequest := NewWriteSecretMetadataRequestWithDefaults()
-	resp, err := client.Secrets.WriteSecretMetadata(
-		context.Background(),
-		path,
-		writeSecretMetadataRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**path** | **string** | Location of the secret. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **writeSecretMetadataRequest** | [**WriteSecretMetadataRequest**](WriteSecretMetadataRequest.md) |  | 
 
 
  (empty response body)

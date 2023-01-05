@@ -2383,7 +2383,28 @@
           }
         }
       ],
-      "x-vault-unauthenticated": true
+      "x-vault-unauthenticated": true,
+      "post": {
+        "operationId": "AWSLogin",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AWSLoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/auth/{aws_mount_path}/role": {
       "description": "Lists all the roles that are registered with Vault.",
@@ -3166,7 +3187,29 @@
           }
         }
       ],
-      "x-vault-unauthenticated": true
+      "x-vault-unauthenticated": true,
+      "post": {
+        "summary": "Log in with a username and password.",
+        "operationId": "CentrifyLogin",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CentrifyLoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/auth/{cert_mount_path}/certs": {
       "description": "Manage trusted certificates used for authentication.",
@@ -5632,7 +5675,29 @@
           }
         }
       ],
-      "x-vault-unauthenticated": true
+      "x-vault-unauthenticated": true,
+      "post": {
+        "summary": "Authenticates to Vault using a JWT (or OIDC) token.",
+        "operationId": "OIDCLogin",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OIDCLoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/auth/{oidc_mount_path}/oidc/auth_url": {
       "parameters": [
@@ -13842,7 +13907,18 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "operationId": "ActiveDirectoryRotateRole",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{ad_mount_path}/rotate-root": {
       "description": "Request to rotate the role's credentials.",
@@ -13857,7 +13933,7 @@
           }
         }
       ],
-      "get": {
+      "post": {
         "operationId": "ActiveDirectoryRotateRoot",
         "tags": [
           "secrets"
@@ -15658,7 +15734,29 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "summary": "Decrypt a ciphertext value using a named key",
+        "operationId": "GoogleCloudKMSDecrypt",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKMSDecryptRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{gcpkms_mount_path}/encrypt/{key}": {
       "description": "Encrypt a plaintext value using a named key",
@@ -15682,7 +15780,29 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "summary": "Encrypt a plaintext value using a named key",
+        "operationId": "GoogleCloudKMSEncrypt",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKMSEncryptRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{gcpkms_mount_path}/keys": {
       "description": "List named keys",
@@ -15804,7 +15924,18 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "post": {
+        "summary": "Deregister an existing key in Vault",
+        "operationId": "GoogleCloudKMSDeregisterKey",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{gcpkms_mount_path}/keys/register/{key}": {
       "description": "Register an existing crypto key in Google Cloud KMS",
@@ -15828,7 +15959,28 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "post": {
+        "summary": "Register an existing crypto key in Google Cloud KMS",
+        "operationId": "GoogleCloudKMSRegisterKey",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKMSRegisterKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{gcpkms_mount_path}/keys/rotate/{key}": {
       "description": "Rotate a crypto key to a new primary version",
@@ -15887,7 +16039,18 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "post": {
+        "summary": "Delete old crypto key versions from Google Cloud KMS",
+        "operationId": "GoogleCloudKMSTrimKey",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{gcpkms_mount_path}/keys/{key}": {
       "description": "Interact with crypto keys in Vault and Google Cloud KMS",
@@ -16016,7 +16179,29 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "summary": "Re-encrypt existing ciphertext data to a new version",
+        "operationId": "GoogleCloudKMSReencrypt",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKMSReencryptRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{gcpkms_mount_path}/sign/{key}": {
       "description": "Signs a message or digest using a named key",
@@ -16040,7 +16225,29 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "summary": "Signs a message or digest using a named key",
+        "operationId": "GoogleCloudKMSSign",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKMSSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{gcpkms_mount_path}/verify/{key}": {
       "description": "Verify a signature using a named key",
@@ -16064,7 +16271,29 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "summary": "Verify a signature using a named key",
+        "operationId": "GoogleCloudKMSVerify",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKMSVerifyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{kubernetes_mount_path}/config": {
       "description": "Configure the Kubernetes secret engine plugin.",
@@ -16264,6 +16493,76 @@
       },
       "delete": {
         "operationId": "KubernetesDeleteRole",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{kv_mount_path}/{path}": {
+      "description": "Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.",
+      "parameters": [
+        {
+          "name": "kv_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "kv"
+          }
+        },
+        {
+          "name": "path",
+          "description": "Location of the secret.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "summary": "Pass-through secret storage to the storage backend, allowing you to\nread/write arbitrary data into secret storage.",
+        "operationId": "KVv1Read",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Return a list if `true`",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Pass-through secret storage to the storage backend, allowing you to\nread/write arbitrary data into secret storage.",
+        "operationId": "KVv1Write",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Pass-through secret storage to the storage backend, allowing you to\nread/write arbitrary data into secret storage.",
+        "operationId": "KVv1Delete",
         "tags": [
           "secrets"
         ],
@@ -16773,6 +17072,7 @@
           "required": true
         }
       ],
+      "x-vault-createSupported": true,
       "post": {
         "operationId": "LDAPRotateRole",
         "tags": [
@@ -16798,6 +17098,7 @@
           }
         }
       ],
+      "x-vault-createSupported": true,
       "post": {
         "operationId": "LDAPRotateRoot",
         "tags": [
@@ -17907,6 +18208,7 @@
           }
         }
       ],
+      "x-vault-createSupported": true,
       "post": {
         "operationId": "OpenLDAPRotateRole",
         "tags": [
@@ -17932,6 +18234,7 @@
           }
         }
       ],
+      "x-vault-createSupported": true,
       "post": {
         "operationId": "OpenLDAPRotateRoot",
         "tags": [
@@ -20976,7 +21279,7 @@
       "x-vault-createSupported": true,
       "get": {
         "summary": "Read the backend level settings.",
-        "operationId": "ReadSecretConfig",
+        "operationId": "KVv2ReadConfig",
         "tags": [
           "secrets"
         ],
@@ -20988,7 +21291,7 @@
       },
       "post": {
         "summary": "Configure backend level settings that are applied to every key in the key-value store.",
-        "operationId": "WriteSecretConfig",
+        "operationId": "KVv2WriteConfig",
         "tags": [
           "secrets"
         ],
@@ -20997,7 +21300,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WriteSecretConfigRequest"
+                "$ref": "#/components/schemas/KVv2WriteConfigRequest"
               }
             }
           }
@@ -21034,7 +21337,7 @@
       "x-vault-createSupported": true,
       "get": {
         "summary": "Write, Patch, Read, and Delete data in the Key-Value Store.",
-        "operationId": "ReadSecret",
+        "operationId": "KVv2Read",
         "tags": [
           "secrets"
         ],
@@ -21046,7 +21349,7 @@
       },
       "post": {
         "summary": "Write, Patch, Read, and Delete data in the Key-Value Store.",
-        "operationId": "WriteSecret",
+        "operationId": "KVv2Write",
         "tags": [
           "secrets"
         ],
@@ -21055,7 +21358,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WriteSecretRequest"
+                "$ref": "#/components/schemas/KVv2WriteRequest"
               }
             }
           }
@@ -21068,7 +21371,7 @@
       },
       "delete": {
         "summary": "Write, Patch, Read, and Delete data in the Key-Value Store.",
-        "operationId": "DeleteSecret",
+        "operationId": "KVv2Delete",
         "tags": [
           "secrets"
         ],
@@ -21101,7 +21404,29 @@
           }
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "summary": "Marks one or more versions as deleted in the KV store.",
+        "operationId": "KVv2DeleteVersions",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KVv2DeleteVersionsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{secret_mount_path}/destroy/{path}": {
       "description": "Permanently removes one or more versions in the KV store",
@@ -21125,9 +21450,10 @@
           }
         }
       ],
+      "x-vault-createSupported": true,
       "post": {
         "summary": "Permanently removes one or more versions in the KV store",
-        "operationId": "DestroySecretVersions",
+        "operationId": "KVv2DestroyVersions",
         "tags": [
           "secrets"
         ],
@@ -21136,7 +21462,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DestroySecretVersionsRequest"
+                "$ref": "#/components/schemas/KVv2DestroyVersionsRequest"
               }
             }
           }
@@ -21173,7 +21499,7 @@
       "x-vault-createSupported": true,
       "get": {
         "summary": "Configures settings for the KV store",
-        "operationId": "ReadSecretMetadata",
+        "operationId": "KVv2ReadMetadata",
         "tags": [
           "secrets"
         ],
@@ -21195,7 +21521,7 @@
       },
       "post": {
         "summary": "Configures settings for the KV store",
-        "operationId": "WriteSecretMetadata",
+        "operationId": "KVv2WriteMetadata",
         "tags": [
           "secrets"
         ],
@@ -21204,7 +21530,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WriteSecretMetadataRequest"
+                "$ref": "#/components/schemas/KVv2WriteMetadataRequest"
               }
             }
           }
@@ -21217,7 +21543,7 @@
       },
       "delete": {
         "summary": "Configures settings for the KV store",
-        "operationId": "DeleteSecretMetadata",
+        "operationId": "KVv2DeleteMetadata",
         "tags": [
           "secrets"
         ],
@@ -21252,7 +21578,7 @@
       ],
       "get": {
         "summary": "Read the structure of a secret entry from the Key-Value store with the values removed.",
-        "operationId": "ReadSecretSubkeys",
+        "operationId": "KVv2ReadSubkeys",
         "tags": [
           "secrets"
         ],
@@ -21285,74 +21611,26 @@
           }
         }
       ],
-      "x-vault-createSupported": true
-    },
-    "/{secret_mount_path}/{path}": {
-      "description": "Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.",
-      "parameters": [
-        {
-          "name": "path",
-          "description": "Location of the secret.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "secret_mount_path",
-          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "secret"
-          }
-        }
-      ],
       "x-vault-createSupported": true,
-      "get": {
-        "summary": "Pass-through secret storage to the storage backend, allowing you to\nread/write arbitrary data into secret storage.",
-        "operationId": "KVv1ReadSecret",
+      "post": {
+        "summary": "Undeletes one or more versions from the KV store.",
+        "operationId": "KVv2UndeleteVersions",
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Return a list if `true`",
-            "in": "query",
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KVv2UndeleteVersionsRequest"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Pass-through secret storage to the storage backend, allowing you to\nread/write arbitrary data into secret storage.",
-        "operationId": "KVv1WriteSecret",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Pass-through secret storage to the storage backend, allowing you to\nread/write arbitrary data into secret storage.",
-        "operationId": "KVv1DeleteSecret",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
           }
         }
       }
@@ -22541,7 +22819,29 @@
           }
         }
       ],
-      "x-vault-createSupported": true
+      "x-vault-createSupported": true,
+      "post": {
+        "summary": "Encrypt a plaintext value or a batch of plaintext\nblocks using a named key",
+        "operationId": "TransitEncrypt",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitEncryptRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
     "/{transit_mount_path}/export/{type}/{name}": {
       "description": "Export named encryption or signing key",
@@ -23905,6 +24205,47 @@
           "sts_role": {
             "type": "string",
             "description": "AWS ARN for STS role to be assumed when interacting with the account specified. The Vault server must have permissions to assume this role."
+          }
+        }
+      },
+      "AWSLoginRequest": {
+        "type": "object",
+        "properties": {
+          "iam_http_request_method": {
+            "type": "string",
+            "description": "HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value"
+          },
+          "iam_request_body": {
+            "type": "string",
+            "description": "Base64-encoded request body when auth_type is iam. This must match the request body included in the signature."
+          },
+          "iam_request_headers": {
+            "type": "string",
+            "description": "Key/value pairs of headers for use in the sts:GetCallerIdentity HTTP requests headers when auth_type is iam. Can be either a Base64-encoded, JSON-serialized string, or a JSON object of key/value pairs. This must at a minimum include the headers over which AWS has included a signature."
+          },
+          "iam_request_url": {
+            "type": "string",
+            "description": "Base64-encoded full URL against which to make the AWS request when using iam auth_type."
+          },
+          "identity": {
+            "type": "string",
+            "description": "Base64 encoded EC2 instance identity document. This needs to be supplied along with the 'signature' parameter. If using 'curl' for fetching the identity document, consider using the option '-w 0' while piping the output to 'base64' binary."
+          },
+          "nonce": {
+            "type": "string",
+            "description": "The nonce to be used for subsequent login requests when auth_type is ec2. If this parameter is not specified at all and if reauthentication is allowed, then the backend will generate a random nonce, attaches it to the instance's identity access list entry and returns the nonce back as part of auth metadata. This value should be used with further login requests, to establish client authenticity. Clients can choose to set a custom nonce if preferred, in which case, it is recommended that clients provide a strong nonce. If a nonce is provided but with an empty value, it indicates intent to disable reauthentication. Note that, when 'disallow_reauthentication' option is enabled on either the role or the role tag, the 'nonce' holds no significance."
+          },
+          "pkcs7": {
+            "type": "string",
+            "description": "PKCS7 signature of the identity document when using an auth_type of ec2."
+          },
+          "role": {
+            "type": "string",
+            "description": "Name of the role against which the login is being attempted. If 'role' is not specified, then the login endpoint looks for a role bearing the name of the AMI ID of the EC2 instance that is trying to login. If a matching role is not found, login fails."
+          },
+          "signature": {
+            "type": "string",
+            "description": "Base64 encoded SHA256 RSA signature of the instance identity document. This needs to be supplied along with 'identity' parameter."
           }
         }
       },
@@ -25957,6 +26298,24 @@
           }
         }
       },
+      "CentrifyLoginRequest": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "description": "Auth mode ('ro' for resource owner, 'cc' for credential client).",
+            "default": "ro"
+          },
+          "password": {
+            "type": "string",
+            "description": "Password for this user."
+          },
+          "username": {
+            "type": "string",
+            "description": "Username of the user."
+          }
+        }
+      },
       "CentrifyWriteConfigRequest": {
         "type": "object",
         "properties": {
@@ -26368,10 +26727,10 @@
           }
         },
         "required": [
-          "signing_time",
-          "signature",
           "role",
-          "cf_instance_cert"
+          "cf_instance_cert",
+          "signing_time",
+          "signature"
         ]
       },
       "CloudFoundryWriteConfigRequest": {
@@ -26800,18 +27159,6 @@
           }
         }
       },
-      "DestroySecretVersionsRequest": {
-        "type": "object",
-        "properties": {
-          "versions": {
-            "type": "array",
-            "description": "The versions to destroy. Their data will be permanently deleted.",
-            "items": {
-              "type": "integer"
-            }
-          }
-        }
-      },
       "EntityBatchDeleteRequest": {
         "type": "object",
         "properties": {
@@ -27155,6 +27502,101 @@
           "value": {
             "type": "string",
             "description": "Value for users mapping"
+          }
+        }
+      },
+      "GoogleCloudKMSDecryptRequest": {
+        "type": "object",
+        "properties": {
+          "additional_authenticated_data": {
+            "type": "string",
+            "description": "Optional data that was specified during encryption of this payload."
+          },
+          "ciphertext": {
+            "type": "string",
+            "description": "Ciphertext to decrypt as previously returned from an encrypt operation. This must be base64-encoded ciphertext as previously returned from an encrypt operation."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Integer version of the crypto key version to use for decryption. This is required for asymmetric keys. For symmetric keys, Cloud KMS will choose the correct version automatically."
+          }
+        }
+      },
+      "GoogleCloudKMSEncryptRequest": {
+        "type": "object",
+        "properties": {
+          "additional_authenticated_data": {
+            "type": "string",
+            "description": "Optional base64-encoded data that, if specified, must also be provided to decrypt this payload."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Integer version of the crypto key version to use for encryption. If unspecified, this defaults to the latest active crypto key version."
+          },
+          "plaintext": {
+            "type": "string",
+            "description": "Plaintext value to be encrypted. This can be a string or binary, but the size is limited. See the Google Cloud KMS documentation for information on size limitations by key types."
+          }
+        }
+      },
+      "GoogleCloudKMSReencryptRequest": {
+        "type": "object",
+        "properties": {
+          "additional_authenticated_data": {
+            "type": "string",
+            "description": "Optional data that, if specified, must also be provided during decryption."
+          },
+          "ciphertext": {
+            "type": "string",
+            "description": "Ciphertext to be re-encrypted to the latest key version. This must be ciphertext that Vault previously generated for this named key."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Integer version of the crypto key version to use for the new encryption. If unspecified, this defaults to the latest active crypto key version."
+          }
+        }
+      },
+      "GoogleCloudKMSRegisterKeyRequest": {
+        "type": "object",
+        "properties": {
+          "crypto_key": {
+            "type": "string",
+            "description": "Full resource ID of the crypto key including the project, location, key ring, and crypto key like \"projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s\". This crypto key must already exist in Google Cloud KMS unless verify is set to \"false\"."
+          },
+          "verify": {
+            "type": "boolean",
+            "description": "Verify that the given Google Cloud KMS crypto key exists and is accessible before creating the storage entry in Vault. Set this to \"false\" if the key will not exist at creation time.",
+            "default": true
+          }
+        }
+      },
+      "GoogleCloudKMSSignRequest": {
+        "type": "object",
+        "properties": {
+          "digest": {
+            "type": "string",
+            "description": "Digest to sign. This digest must use the same SHA algorithm as the underlying Cloud KMS key. The digest must be the base64-encoded binary value. This field is required."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Integer version of the crypto key version to use for signing. This field is required."
+          }
+        }
+      },
+      "GoogleCloudKMSVerifyRequest": {
+        "type": "object",
+        "properties": {
+          "digest": {
+            "type": "string",
+            "description": "Digest to verify. This digest must use the same SHA algorithm as the underlying Cloud KMS key. The digest must be the base64-encoded binary value. This field is required."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Integer version of the crypto key version to use for verification. This field is required."
+          },
+          "signature": {
+            "type": "string",
+            "description": "Base64-encoded signature to use for verification. This field is required."
           }
         }
       },
@@ -28183,6 +28625,102 @@
           "verbose_oidc_logging": {
             "type": "boolean",
             "description": "Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses."
+          }
+        }
+      },
+      "KVv2DeleteVersionsRequest": {
+        "type": "object",
+        "properties": {
+          "versions": {
+            "type": "array",
+            "description": "The versions to be archived. The versioned data will not be deleted, but it will no longer be returned in normal get requests.",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "KVv2DestroyVersionsRequest": {
+        "type": "object",
+        "properties": {
+          "versions": {
+            "type": "array",
+            "description": "The versions to destroy. Their data will be permanently deleted.",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "KVv2UndeleteVersionsRequest": {
+        "type": "object",
+        "properties": {
+          "versions": {
+            "type": "array",
+            "description": "The versions to unarchive. The versions will be restored and their data will be returned on normal get requests.",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "KVv2WriteConfigRequest": {
+        "type": "object",
+        "properties": {
+          "cas_required": {
+            "type": "boolean",
+            "description": "If true, the backend will require the cas parameter to be set for each write"
+          },
+          "delete_version_after": {
+            "type": "integer",
+            "description": "If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string.",
+            "format": "seconds"
+          },
+          "max_versions": {
+            "type": "integer",
+            "description": "The number of versions to keep for each key. Defaults to 10"
+          }
+        }
+      },
+      "KVv2WriteMetadataRequest": {
+        "type": "object",
+        "properties": {
+          "cas_required": {
+            "type": "boolean",
+            "description": "If true the key will require the cas parameter to be set on all write requests. If false, the backend’s configuration will be used."
+          },
+          "custom_metadata": {
+            "type": "object",
+            "description": "User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret.",
+            "format": "map"
+          },
+          "delete_version_after": {
+            "type": "integer",
+            "description": "The length of time before a version is deleted. If not set, the backend's configured delete_version_after is used. Cannot be greater than the backend's delete_version_after. A zero duration clears the current setting. A negative duration will cause an error.",
+            "format": "seconds"
+          },
+          "max_versions": {
+            "type": "integer",
+            "description": "The number of versions to keep. If not set, the backend’s configured max version is used."
+          }
+        }
+      },
+      "KVv2WriteRequest": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The contents of the data map will be stored and returned on read.",
+            "format": "map"
+          },
+          "options": {
+            "type": "object",
+            "description": "Options for writing a KV entry. Set the \"cas\" value to use a Check-And-Set operation. If not set the write will be allowed. If set to 0 a write will only be allowed if the key doesn’t exist. If the index is non-zero the write will only be allowed if the key’s current version matches the version specified in the cas parameter.",
+            "format": "map"
+          },
+          "version": {
+            "type": "integer",
+            "description": "If provided during a read, the value at the version number will be returned"
           }
         }
       },
@@ -29989,6 +30527,20 @@
           }
         }
       },
+      "OIDCLoginRequest": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "description": "The signed JWT to validate."
+          },
+          "role": {
+            "type": "string",
+            "description": "The role to log in against.",
+            "format": "lowercase"
+          }
+        }
+      },
       "OIDCRotateKeyRequest": {
         "type": "object",
         "properties": {
@@ -30468,8 +31020,8 @@
         "required": [
           "response_type",
           "client_id",
-          "scope",
-          "redirect_uri"
+          "redirect_uri",
+          "scope"
         ]
       },
       "OIDCWriteProviderRequest": {
@@ -36363,6 +36915,44 @@
           }
         }
       },
+      "TransitEncryptRequest": {
+        "type": "object",
+        "properties": {
+          "associated_data": {
+            "type": "string",
+            "description": "When using an AEAD cipher mode, such as AES-GCM, this parameter allows passing associated data (AD/AAD) into the encryption function; this data must be passed on subsequent decryption requests but can be transited in plaintext. On successful decryption, both the ciphertext and the associated data are attested not to have been tampered with."
+          },
+          "context": {
+            "type": "string",
+            "description": "Base64 encoded context for key derivation. Required if key derivation is enabled"
+          },
+          "convergent_encryption": {
+            "type": "boolean",
+            "description": "This parameter will only be used when a key is expected to be created. Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext's security."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key."
+          },
+          "nonce": {
+            "type": "string",
+            "description": "Base64 encoded nonce value. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+. The value must be exactly 96 bits (12 bytes) long and the user must ensure that for any given context (and thus, any given encryption key) this nonce value is **never reused**."
+          },
+          "partial_failure_response_code": {
+            "type": "integer",
+            "description": "Ordinarily, if a batch item fails to encrypt due to a bad input, but other batch items succeed, the HTTP response code is 400 (Bad Request). Some applications may want to treat partial failures differently. Providing the parameter returns the given response code integer instead of a 400 in this case. If all values fail HTTP 400 is still returned."
+          },
+          "plaintext": {
+            "type": "string",
+            "description": "Base64 encoded plaintext value to be encrypted"
+          },
+          "type": {
+            "type": "string",
+            "description": "This parameter is required when encryption key is expected to be created. When performing an upsert operation, the type of key to create. Currently, \"aes128-gcm96\" (symmetric) and \"aes256-gcm96\" (symmetric) are the only types supported. Defaults to \"aes256-gcm96\".",
+            "default": "aes256-gcm96"
+          }
+        }
+      },
       "TransitGenerateDataKeyRequest": {
         "type": "object",
         "properties": {
@@ -37969,66 +38559,6 @@
             "type": "integer",
             "description": "The number of encryption operations performed before the barrier key is automatically rotated.",
             "format": "int64"
-          }
-        }
-      },
-      "WriteSecretConfigRequest": {
-        "type": "object",
-        "properties": {
-          "cas_required": {
-            "type": "boolean",
-            "description": "If true, the backend will require the cas parameter to be set for each write"
-          },
-          "delete_version_after": {
-            "type": "integer",
-            "description": "If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string.",
-            "format": "seconds"
-          },
-          "max_versions": {
-            "type": "integer",
-            "description": "The number of versions to keep for each key. Defaults to 10"
-          }
-        }
-      },
-      "WriteSecretMetadataRequest": {
-        "type": "object",
-        "properties": {
-          "cas_required": {
-            "type": "boolean",
-            "description": "If true the key will require the cas parameter to be set on all write requests. If false, the backend’s configuration will be used."
-          },
-          "custom_metadata": {
-            "type": "object",
-            "description": "User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret.",
-            "format": "map"
-          },
-          "delete_version_after": {
-            "type": "integer",
-            "description": "The length of time before a version is deleted. If not set, the backend's configured delete_version_after is used. Cannot be greater than the backend's delete_version_after. A zero duration clears the current setting. A negative duration will cause an error.",
-            "format": "seconds"
-          },
-          "max_versions": {
-            "type": "integer",
-            "description": "The number of versions to keep. If not set, the backend’s configured max version is used."
-          }
-        }
-      },
-      "WriteSecretRequest": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "object",
-            "description": "The contents of the data map will be stored and returned on read.",
-            "format": "map"
-          },
-          "options": {
-            "type": "object",
-            "description": "Options for writing a KV entry. Set the \"cas\" value to use a Check-And-Set operation. If not set the write will be allowed. If set to 0 a write will only be allowed if the key doesn’t exist. If the index is non-zero the write will only be allowed if the key’s current version matches the version specified in the cas parameter.",
-            "format": "map"
-          },
-          "version": {
-            "type": "integer",
-            "description": "If provided during a read, the value at the version number will be returned"
           }
         }
       }

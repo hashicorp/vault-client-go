@@ -829,6 +829,27 @@ func (a *Auth) AWSListRoleTagDenyList(ctx context.Context, list string, options 
 	)
 }
 
+// AWSLogin
+func (a *Auth) AWSLogin(ctx context.Context, aWSLoginRequest AWSLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/auth/{aws_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"aws_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("aws")), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		aWSLoginRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
 // AWSReadAuthRole
 // role: Name of the role.
 func (a *Auth) AWSReadAuthRole(ctx context.Context, role string, options ...RequestOption) (*Response[map[string]interface{}], error) {
@@ -2593,6 +2614,27 @@ func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, azureWriteAu
 		http.MethodPost,
 		requestPath,
 		azureWriteAuthRoleRequest,
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// CentrifyLogin Log in with a username and password.
+func (a *Auth) CentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/auth/{centrify_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"centrify_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("centrify")), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		centrifyLoginRequest,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4560,6 +4602,27 @@ func (a *Auth) OIDCListAuthRoles(ctx context.Context, list string, options ...Re
 		http.MethodGet,
 		requestPath,
 		nil,       // request body
+		nil,       // request query parameters
+		modifiers, // request modifiers (headers & callbacks)
+	)
+}
+
+// OIDCLogin Authenticates to Vault using a JWT (or OIDC) token.
+func (a *Auth) OIDCLogin(ctx context.Context, oIDCLoginRequest OIDCLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/auth/{oidc_mount_path}/login"
+	requestPath = strings.Replace(requestPath, "{"+"oidc_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("oidc")), -1)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		a.client,
+		http.MethodPost,
+		requestPath,
+		oIDCLoginRequest,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)

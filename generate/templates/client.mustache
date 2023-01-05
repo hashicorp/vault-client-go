@@ -93,7 +93,7 @@ func newClient(configuration Configuration) (*Client, error) {
 	// Internet draft https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
 	// specifies that the port must be empty
 	if configuration.EnableSRVLookup && address.Port() != "" {
-		return nil, fmt.Errorf("cannot enable service record (SRV) lookup since the base address port (%q) is not empty", address.Port())
+		return nil, fmt.Errorf("cannot enable DNS service record (SRV) lookup since the base address port (%q) is not empty", address.Port())
 	}
 
 	transport, ok := c.client.Transport.(*http.Transport);

@@ -2,117 +2,117 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteIdentityAliasIdId**](Identity.md#DeleteIdentityAliasIdId) | **Delete** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**DeleteIdentityEntityAliasIdId**](Identity.md#DeleteIdentityEntityAliasIdId) | **Delete** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**DeleteIdentityEntityIdId**](Identity.md#DeleteIdentityEntityIdId) | **Delete** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**DeleteIdentityEntityNameName**](Identity.md#DeleteIdentityEntityNameName) | **Delete** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**DeleteIdentityGroupAliasIdId**](Identity.md#DeleteIdentityGroupAliasIdId) | **Delete** /identity/group-alias/id/{id} | 
-[**DeleteIdentityGroupIdId**](Identity.md#DeleteIdentityGroupIdId) | **Delete** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**DeleteIdentityGroupNameName**](Identity.md#DeleteIdentityGroupNameName) | **Delete** /identity/group/name/{name} | 
-[**DeleteIdentityMfaLoginEnforcementName**](Identity.md#DeleteIdentityMfaLoginEnforcementName) | **Delete** /identity/mfa/login-enforcement/{name} | Delete a login enforcement
-[**DeleteIdentityMfaMethodDuoMethodId**](Identity.md#DeleteIdentityMfaMethodDuoMethodId) | **Delete** /identity/mfa/method/duo/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityMfaMethodOktaMethodId**](Identity.md#DeleteIdentityMfaMethodOktaMethodId) | **Delete** /identity/mfa/method/okta/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityMfaMethodPingidMethodId**](Identity.md#DeleteIdentityMfaMethodPingidMethodId) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityMfaMethodTotpMethodId**](Identity.md#DeleteIdentityMfaMethodTotpMethodId) | **Delete** /identity/mfa/method/totp/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityOidcAssignmentName**](Identity.md#DeleteIdentityOidcAssignmentName) | **Delete** /identity/oidc/assignment/{name} | 
-[**DeleteIdentityOidcClientName**](Identity.md#DeleteIdentityOidcClientName) | **Delete** /identity/oidc/client/{name} | 
-[**DeleteIdentityOidcKeyName**](Identity.md#DeleteIdentityOidcKeyName) | **Delete** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**DeleteIdentityOidcProviderName**](Identity.md#DeleteIdentityOidcProviderName) | **Delete** /identity/oidc/provider/{name} | 
-[**DeleteIdentityOidcRoleName**](Identity.md#DeleteIdentityOidcRoleName) | **Delete** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**DeleteIdentityOidcScopeName**](Identity.md#DeleteIdentityOidcScopeName) | **Delete** /identity/oidc/scope/{name} | 
-[**DeleteIdentityPersonaIdId**](Identity.md#DeleteIdentityPersonaIdId) | **Delete** /identity/persona/id/{id} | Update, read or delete an alias ID.
-[**GetIdentityAliasId**](Identity.md#GetIdentityAliasId) | **Get** /identity/alias/id | List all the alias IDs.
-[**GetIdentityAliasIdId**](Identity.md#GetIdentityAliasIdId) | **Get** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**GetIdentityEntityAliasId**](Identity.md#GetIdentityEntityAliasId) | **Get** /identity/entity-alias/id | List all the alias IDs.
-[**GetIdentityEntityAliasIdId**](Identity.md#GetIdentityEntityAliasIdId) | **Get** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**GetIdentityEntityId**](Identity.md#GetIdentityEntityId) | **Get** /identity/entity/id | List all the entity IDs
-[**GetIdentityEntityIdId**](Identity.md#GetIdentityEntityIdId) | **Get** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**GetIdentityEntityName**](Identity.md#GetIdentityEntityName) | **Get** /identity/entity/name | List all the entity names
-[**GetIdentityEntityNameName**](Identity.md#GetIdentityEntityNameName) | **Get** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**GetIdentityGroupAliasId**](Identity.md#GetIdentityGroupAliasId) | **Get** /identity/group-alias/id | List all the group alias IDs.
-[**GetIdentityGroupAliasIdId**](Identity.md#GetIdentityGroupAliasIdId) | **Get** /identity/group-alias/id/{id} | 
-[**GetIdentityGroupId**](Identity.md#GetIdentityGroupId) | **Get** /identity/group/id | List all the group IDs.
-[**GetIdentityGroupIdId**](Identity.md#GetIdentityGroupIdId) | **Get** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**GetIdentityGroupName**](Identity.md#GetIdentityGroupName) | **Get** /identity/group/name | 
-[**GetIdentityGroupNameName**](Identity.md#GetIdentityGroupNameName) | **Get** /identity/group/name/{name} | 
-[**GetIdentityMfaLoginEnforcement**](Identity.md#GetIdentityMfaLoginEnforcement) | **Get** /identity/mfa/login-enforcement | List login enforcements
-[**GetIdentityMfaLoginEnforcementName**](Identity.md#GetIdentityMfaLoginEnforcementName) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
-[**GetIdentityMfaMethod**](Identity.md#GetIdentityMfaMethod) | **Get** /identity/mfa/method | List MFA method configurations for all MFA methods
-[**GetIdentityMfaMethodDuo**](Identity.md#GetIdentityMfaMethodDuo) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodDuoMethodId**](Identity.md#GetIdentityMfaMethodDuoMethodId) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityMfaMethodMethodId**](Identity.md#GetIdentityMfaMethodMethodId) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
-[**GetIdentityMfaMethodOkta**](Identity.md#GetIdentityMfaMethodOkta) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodOktaMethodId**](Identity.md#GetIdentityMfaMethodOktaMethodId) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityMfaMethodPingid**](Identity.md#GetIdentityMfaMethodPingid) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodPingidMethodId**](Identity.md#GetIdentityMfaMethodPingidMethodId) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityMfaMethodTotp**](Identity.md#GetIdentityMfaMethodTotp) | **Get** /identity/mfa/method/totp | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodTotpMethodId**](Identity.md#GetIdentityMfaMethodTotpMethodId) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityOidcAssignment**](Identity.md#GetIdentityOidcAssignment) | **Get** /identity/oidc/assignment | 
-[**GetIdentityOidcAssignmentName**](Identity.md#GetIdentityOidcAssignmentName) | **Get** /identity/oidc/assignment/{name} | 
-[**GetIdentityOidcClient**](Identity.md#GetIdentityOidcClient) | **Get** /identity/oidc/client | 
-[**GetIdentityOidcClientName**](Identity.md#GetIdentityOidcClientName) | **Get** /identity/oidc/client/{name} | 
-[**GetIdentityOidcConfig**](Identity.md#GetIdentityOidcConfig) | **Get** /identity/oidc/config | OIDC configuration
-[**GetIdentityOidcKey**](Identity.md#GetIdentityOidcKey) | **Get** /identity/oidc/key | List OIDC keys
-[**GetIdentityOidcKeyName**](Identity.md#GetIdentityOidcKeyName) | **Get** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**GetIdentityOidcProvider**](Identity.md#GetIdentityOidcProvider) | **Get** /identity/oidc/provider | 
-[**GetIdentityOidcProviderName**](Identity.md#GetIdentityOidcProviderName) | **Get** /identity/oidc/provider/{name} | 
-[**GetIdentityOidcProviderNameAuthorize**](Identity.md#GetIdentityOidcProviderNameAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
-[**GetIdentityOidcProviderNameUserinfo**](Identity.md#GetIdentityOidcProviderNameUserinfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
-[**GetIdentityOidcProviderNameWellKnownKeys**](Identity.md#GetIdentityOidcProviderNameWellKnownKeys) | **Get** /identity/oidc/provider/{name}/.well-known/keys | 
-[**GetIdentityOidcProviderNameWellKnownOpenidConfiguration**](Identity.md#GetIdentityOidcProviderNameWellKnownOpenidConfiguration) | **Get** /identity/oidc/provider/{name}/.well-known/openid-configuration | 
-[**GetIdentityOidcRole**](Identity.md#GetIdentityOidcRole) | **Get** /identity/oidc/role | List configured OIDC roles
-[**GetIdentityOidcRoleName**](Identity.md#GetIdentityOidcRoleName) | **Get** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**GetIdentityOidcScope**](Identity.md#GetIdentityOidcScope) | **Get** /identity/oidc/scope | 
-[**GetIdentityOidcScopeName**](Identity.md#GetIdentityOidcScopeName) | **Get** /identity/oidc/scope/{name} | 
-[**GetIdentityOidcTokenName**](Identity.md#GetIdentityOidcTokenName) | **Get** /identity/oidc/token/{name} | Generate an OIDC token
-[**GetIdentityOidcWellKnownKeys**](Identity.md#GetIdentityOidcWellKnownKeys) | **Get** /identity/oidc/.well-known/keys | Retrieve public keys
-[**GetIdentityOidcWellKnownOpenidConfiguration**](Identity.md#GetIdentityOidcWellKnownOpenidConfiguration) | **Get** /identity/oidc/.well-known/openid-configuration | Query OIDC configurations
-[**GetIdentityPersonaId**](Identity.md#GetIdentityPersonaId) | **Get** /identity/persona/id | List all the alias IDs.
-[**GetIdentityPersonaIdId**](Identity.md#GetIdentityPersonaIdId) | **Get** /identity/persona/id/{id} | Update, read or delete an alias ID.
-[**PostIdentityAlias**](Identity.md#PostIdentityAlias) | **Post** /identity/alias | Create a new alias.
-[**PostIdentityAliasIdId**](Identity.md#PostIdentityAliasIdId) | **Post** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**PostIdentityEntity**](Identity.md#PostIdentityEntity) | **Post** /identity/entity | Create a new entity
-[**PostIdentityEntityAlias**](Identity.md#PostIdentityEntityAlias) | **Post** /identity/entity-alias | Create a new alias.
-[**PostIdentityEntityAliasIdId**](Identity.md#PostIdentityEntityAliasIdId) | **Post** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**PostIdentityEntityBatchDelete**](Identity.md#PostIdentityEntityBatchDelete) | **Post** /identity/entity/batch-delete | Delete all of the entities provided
-[**PostIdentityEntityIdId**](Identity.md#PostIdentityEntityIdId) | **Post** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**PostIdentityEntityMerge**](Identity.md#PostIdentityEntityMerge) | **Post** /identity/entity/merge | Merge two or more entities together
-[**PostIdentityEntityNameName**](Identity.md#PostIdentityEntityNameName) | **Post** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**PostIdentityGroup**](Identity.md#PostIdentityGroup) | **Post** /identity/group | Create a new group.
-[**PostIdentityGroupAlias**](Identity.md#PostIdentityGroupAlias) | **Post** /identity/group-alias | Creates a new group alias, or updates an existing one.
-[**PostIdentityGroupAliasIdId**](Identity.md#PostIdentityGroupAliasIdId) | **Post** /identity/group-alias/id/{id} | 
-[**PostIdentityGroupIdId**](Identity.md#PostIdentityGroupIdId) | **Post** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**PostIdentityGroupNameName**](Identity.md#PostIdentityGroupNameName) | **Post** /identity/group/name/{name} | 
-[**PostIdentityLookupEntity**](Identity.md#PostIdentityLookupEntity) | **Post** /identity/lookup/entity | Query entities based on various properties.
-[**PostIdentityLookupGroup**](Identity.md#PostIdentityLookupGroup) | **Post** /identity/lookup/group | Query groups based on various properties.
-[**PostIdentityMfaLoginEnforcementName**](Identity.md#PostIdentityMfaLoginEnforcementName) | **Post** /identity/mfa/login-enforcement/{name} | Create or update a login enforcement
-[**PostIdentityMfaMethodDuoMethodId**](Identity.md#PostIdentityMfaMethodDuoMethodId) | **Post** /identity/mfa/method/duo/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityMfaMethodOktaMethodId**](Identity.md#PostIdentityMfaMethodOktaMethodId) | **Post** /identity/mfa/method/okta/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityMfaMethodPingidMethodId**](Identity.md#PostIdentityMfaMethodPingidMethodId) | **Post** /identity/mfa/method/pingid/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityMfaMethodTotpAdminDestroy**](Identity.md#PostIdentityMfaMethodTotpAdminDestroy) | **Post** /identity/mfa/method/totp/admin-destroy | Destroys a TOTP secret for the given MFA method ID on the given entity
-[**PostIdentityMfaMethodTotpAdminGenerate**](Identity.md#PostIdentityMfaMethodTotpAdminGenerate) | **Post** /identity/mfa/method/totp/admin-generate | Update or create TOTP secret for the given method ID on the given entity.
-[**PostIdentityMfaMethodTotpGenerate**](Identity.md#PostIdentityMfaMethodTotpGenerate) | **Post** /identity/mfa/method/totp/generate | Update or create TOTP secret for the given method ID on the given entity.
-[**PostIdentityMfaMethodTotpMethodId**](Identity.md#PostIdentityMfaMethodTotpMethodId) | **Post** /identity/mfa/method/totp/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityOidcAssignmentName**](Identity.md#PostIdentityOidcAssignmentName) | **Post** /identity/oidc/assignment/{name} | 
-[**PostIdentityOidcClientName**](Identity.md#PostIdentityOidcClientName) | **Post** /identity/oidc/client/{name} | 
-[**PostIdentityOidcConfig**](Identity.md#PostIdentityOidcConfig) | **Post** /identity/oidc/config | OIDC configuration
-[**PostIdentityOidcIntrospect**](Identity.md#PostIdentityOidcIntrospect) | **Post** /identity/oidc/introspect | Verify the authenticity of an OIDC token
-[**PostIdentityOidcKeyName**](Identity.md#PostIdentityOidcKeyName) | **Post** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**PostIdentityOidcKeyNameRotate**](Identity.md#PostIdentityOidcKeyNameRotate) | **Post** /identity/oidc/key/{name}/rotate | Rotate a named OIDC key.
-[**PostIdentityOidcProviderName**](Identity.md#PostIdentityOidcProviderName) | **Post** /identity/oidc/provider/{name} | 
-[**PostIdentityOidcProviderNameAuthorize**](Identity.md#PostIdentityOidcProviderNameAuthorize) | **Post** /identity/oidc/provider/{name}/authorize | 
-[**PostIdentityOidcProviderNameToken**](Identity.md#PostIdentityOidcProviderNameToken) | **Post** /identity/oidc/provider/{name}/token | 
-[**PostIdentityOidcProviderNameUserinfo**](Identity.md#PostIdentityOidcProviderNameUserinfo) | **Post** /identity/oidc/provider/{name}/userinfo | 
-[**PostIdentityOidcRoleName**](Identity.md#PostIdentityOidcRoleName) | **Post** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**PostIdentityOidcScopeName**](Identity.md#PostIdentityOidcScopeName) | **Post** /identity/oidc/scope/{name} | 
-[**PostIdentityPersona**](Identity.md#PostIdentityPersona) | **Post** /identity/persona | Create a new alias.
-[**PostIdentityPersonaIdId**](Identity.md#PostIdentityPersonaIdId) | **Post** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**AliasDeleteByID**](Identity.md#AliasDeleteByID) | **Delete** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**AliasListByID**](Identity.md#AliasListByID) | **Get** /identity/alias/id | List all the alias IDs.
+[**AliasReadByID**](Identity.md#AliasReadByID) | **Get** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**AliasWrite**](Identity.md#AliasWrite) | **Post** /identity/alias | Create a new alias.
+[**AliasWriteByID**](Identity.md#AliasWriteByID) | **Post** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**EntityBatchDelete**](Identity.md#EntityBatchDelete) | **Post** /identity/entity/batch-delete | Delete all of the entities provided
+[**EntityDeleteAliasByID**](Identity.md#EntityDeleteAliasByID) | **Delete** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**EntityDeleteByID**](Identity.md#EntityDeleteByID) | **Delete** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**EntityDeleteByName**](Identity.md#EntityDeleteByName) | **Delete** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**EntityListAliasesByID**](Identity.md#EntityListAliasesByID) | **Get** /identity/entity-alias/id | List all the alias IDs.
+[**EntityListByID**](Identity.md#EntityListByID) | **Get** /identity/entity/id | List all the entity IDs
+[**EntityListByName**](Identity.md#EntityListByName) | **Get** /identity/entity/name | List all the entity names
+[**EntityLookup**](Identity.md#EntityLookup) | **Post** /identity/lookup/entity | Query entities based on various properties.
+[**EntityMerge**](Identity.md#EntityMerge) | **Post** /identity/entity/merge | Merge two or more entities together
+[**EntityReadAliasByID**](Identity.md#EntityReadAliasByID) | **Get** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**EntityReadByID**](Identity.md#EntityReadByID) | **Get** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**EntityReadByName**](Identity.md#EntityReadByName) | **Get** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**EntityWrite**](Identity.md#EntityWrite) | **Post** /identity/entity | Create a new entity
+[**EntityWriteAlias**](Identity.md#EntityWriteAlias) | **Post** /identity/entity-alias | Create a new alias.
+[**EntityWriteAliasByID**](Identity.md#EntityWriteAliasByID) | **Post** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**EntityWriteByID**](Identity.md#EntityWriteByID) | **Post** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**EntityWriteByName**](Identity.md#EntityWriteByName) | **Post** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**GroupDeleteAliasByID**](Identity.md#GroupDeleteAliasByID) | **Delete** /identity/group-alias/id/{id} | 
+[**GroupDeleteByID**](Identity.md#GroupDeleteByID) | **Delete** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**GroupDeleteByName**](Identity.md#GroupDeleteByName) | **Delete** /identity/group/name/{name} | 
+[**GroupListAliasesByID**](Identity.md#GroupListAliasesByID) | **Get** /identity/group-alias/id | List all the group alias IDs.
+[**GroupListByID**](Identity.md#GroupListByID) | **Get** /identity/group/id | List all the group IDs.
+[**GroupListByName**](Identity.md#GroupListByName) | **Get** /identity/group/name | 
+[**GroupLookup**](Identity.md#GroupLookup) | **Post** /identity/lookup/group | Query groups based on various properties.
+[**GroupReadAliasByID**](Identity.md#GroupReadAliasByID) | **Get** /identity/group-alias/id/{id} | 
+[**GroupReadByID**](Identity.md#GroupReadByID) | **Get** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**GroupReadByName**](Identity.md#GroupReadByName) | **Get** /identity/group/name/{name} | 
+[**GroupWrite**](Identity.md#GroupWrite) | **Post** /identity/group | Create a new group.
+[**GroupWriteAlias**](Identity.md#GroupWriteAlias) | **Post** /identity/group-alias | Creates a new group alias, or updates an existing one.
+[**GroupWriteAliasByID**](Identity.md#GroupWriteAliasByID) | **Post** /identity/group-alias/id/{id} | 
+[**GroupWriteByID**](Identity.md#GroupWriteByID) | **Post** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**GroupWriteByName**](Identity.md#GroupWriteByName) | **Post** /identity/group/name/{name} | 
+[**MFADeleteLoginEnforcement**](Identity.md#MFADeleteLoginEnforcement) | **Delete** /identity/mfa/login-enforcement/{name} | Delete a login enforcement
+[**MFAListLoginEnforcements**](Identity.md#MFAListLoginEnforcements) | **Get** /identity/mfa/login-enforcement | List login enforcements
+[**MFAMethodAdminDestroyTOTP**](Identity.md#MFAMethodAdminDestroyTOTP) | **Post** /identity/mfa/method/totp/admin-destroy | Destroys a TOTP secret for the given MFA method ID on the given entity
+[**MFAMethodAdminGenerateTOTP**](Identity.md#MFAMethodAdminGenerateTOTP) | **Post** /identity/mfa/method/totp/admin-generate | Update or create TOTP secret for the given method ID on the given entity.
+[**MFAMethodDeleteDuo**](Identity.md#MFAMethodDeleteDuo) | **Delete** /identity/mfa/method/duo/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodDeleteOkta**](Identity.md#MFAMethodDeleteOkta) | **Delete** /identity/mfa/method/okta/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodDeletePingID**](Identity.md#MFAMethodDeletePingID) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodDeleteTOTP**](Identity.md#MFAMethodDeleteTOTP) | **Delete** /identity/mfa/method/totp/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodGenerateTOTP**](Identity.md#MFAMethodGenerateTOTP) | **Post** /identity/mfa/method/totp/generate | Update or create TOTP secret for the given method ID on the given entity.
+[**MFAMethodList**](Identity.md#MFAMethodList) | **Get** /identity/mfa/method | List MFA method configurations for all MFA methods
+[**MFAMethodListDuo**](Identity.md#MFAMethodListDuo) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
+[**MFAMethodListOkta**](Identity.md#MFAMethodListOkta) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
+[**MFAMethodListPingID**](Identity.md#MFAMethodListPingID) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
+[**MFAMethodListTOTP**](Identity.md#MFAMethodListTOTP) | **Get** /identity/mfa/method/totp | List MFA method configurations for the given MFA method
+[**MFAMethodRead**](Identity.md#MFAMethodRead) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
+[**MFAMethodReadDuo**](Identity.md#MFAMethodReadDuo) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodReadOkta**](Identity.md#MFAMethodReadOkta) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodReadPingID**](Identity.md#MFAMethodReadPingID) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodReadTOTP**](Identity.md#MFAMethodReadTOTP) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodWriteDuo**](Identity.md#MFAMethodWriteDuo) | **Post** /identity/mfa/method/duo/{method_id} | Update or create a configuration for the given MFA method
+[**MFAMethodWriteOkta**](Identity.md#MFAMethodWriteOkta) | **Post** /identity/mfa/method/okta/{method_id} | Update or create a configuration for the given MFA method
+[**MFAMethodWritePingID**](Identity.md#MFAMethodWritePingID) | **Post** /identity/mfa/method/pingid/{method_id} | Update or create a configuration for the given MFA method
+[**MFAMethodWriteTOTP**](Identity.md#MFAMethodWriteTOTP) | **Post** /identity/mfa/method/totp/{method_id} | Update or create a configuration for the given MFA method
+[**MFAReadLoginEnforcement**](Identity.md#MFAReadLoginEnforcement) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
+[**MFAWriteLoginEnforcement**](Identity.md#MFAWriteLoginEnforcement) | **Post** /identity/mfa/login-enforcement/{name} | Create or update a login enforcement
+[**OIDCDeleteAssignment**](Identity.md#OIDCDeleteAssignment) | **Delete** /identity/oidc/assignment/{name} | 
+[**OIDCDeleteClient**](Identity.md#OIDCDeleteClient) | **Delete** /identity/oidc/client/{name} | 
+[**OIDCDeleteKey**](Identity.md#OIDCDeleteKey) | **Delete** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**OIDCDeleteProvider**](Identity.md#OIDCDeleteProvider) | **Delete** /identity/oidc/provider/{name} | 
+[**OIDCDeleteRole**](Identity.md#OIDCDeleteRole) | **Delete** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**OIDCDeleteScope**](Identity.md#OIDCDeleteScope) | **Delete** /identity/oidc/scope/{name} | 
+[**OIDCIntrospect**](Identity.md#OIDCIntrospect) | **Post** /identity/oidc/introspect | Verify the authenticity of an OIDC token
+[**OIDCListAssignments**](Identity.md#OIDCListAssignments) | **Get** /identity/oidc/assignment | 
+[**OIDCListClients**](Identity.md#OIDCListClients) | **Get** /identity/oidc/client | 
+[**OIDCListKeys**](Identity.md#OIDCListKeys) | **Get** /identity/oidc/key | List OIDC keys
+[**OIDCListProviders**](Identity.md#OIDCListProviders) | **Get** /identity/oidc/provider | 
+[**OIDCListRoles**](Identity.md#OIDCListRoles) | **Get** /identity/oidc/role | List configured OIDC roles
+[**OIDCListScopes**](Identity.md#OIDCListScopes) | **Get** /identity/oidc/scope | 
+[**OIDCReadAssignment**](Identity.md#OIDCReadAssignment) | **Get** /identity/oidc/assignment/{name} | 
+[**OIDCReadClient**](Identity.md#OIDCReadClient) | **Get** /identity/oidc/client/{name} | 
+[**OIDCReadConfig**](Identity.md#OIDCReadConfig) | **Get** /identity/oidc/config | OIDC configuration
+[**OIDCReadKey**](Identity.md#OIDCReadKey) | **Get** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**OIDCReadProvider**](Identity.md#OIDCReadProvider) | **Get** /identity/oidc/provider/{name} | 
+[**OIDCReadProviderAuthorize**](Identity.md#OIDCReadProviderAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
+[**OIDCReadProviderUserInfo**](Identity.md#OIDCReadProviderUserInfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
+[**OIDCReadProviderWellKnownKeys**](Identity.md#OIDCReadProviderWellKnownKeys) | **Get** /identity/oidc/provider/{name}/.well-known/keys | 
+[**OIDCReadProviderWellKnownOpenIDConfiguration**](Identity.md#OIDCReadProviderWellKnownOpenIDConfiguration) | **Get** /identity/oidc/provider/{name}/.well-known/openid-configuration | 
+[**OIDCReadRole**](Identity.md#OIDCReadRole) | **Get** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**OIDCReadScope**](Identity.md#OIDCReadScope) | **Get** /identity/oidc/scope/{name} | 
+[**OIDCReadToken**](Identity.md#OIDCReadToken) | **Get** /identity/oidc/token/{name} | Generate an OIDC token
+[**OIDCReadWellKnownKeys**](Identity.md#OIDCReadWellKnownKeys) | **Get** /identity/oidc/.well-known/keys | Retrieve public keys
+[**OIDCReadWellKnownOpenIDConfiguration**](Identity.md#OIDCReadWellKnownOpenIDConfiguration) | **Get** /identity/oidc/.well-known/openid-configuration | Query OIDC configurations
+[**OIDCRotateKey**](Identity.md#OIDCRotateKey) | **Post** /identity/oidc/key/{name}/rotate | Rotate a named OIDC key.
+[**OIDCWriteAssignment**](Identity.md#OIDCWriteAssignment) | **Post** /identity/oidc/assignment/{name} | 
+[**OIDCWriteClient**](Identity.md#OIDCWriteClient) | **Post** /identity/oidc/client/{name} | 
+[**OIDCWriteConfig**](Identity.md#OIDCWriteConfig) | **Post** /identity/oidc/config | OIDC configuration
+[**OIDCWriteKey**](Identity.md#OIDCWriteKey) | **Post** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**OIDCWriteProvider**](Identity.md#OIDCWriteProvider) | **Post** /identity/oidc/provider/{name} | 
+[**OIDCWriteProviderAuthorize**](Identity.md#OIDCWriteProviderAuthorize) | **Post** /identity/oidc/provider/{name}/authorize | 
+[**OIDCWriteProviderToken**](Identity.md#OIDCWriteProviderToken) | **Post** /identity/oidc/provider/{name}/token | 
+[**OIDCWriteProviderUserInfo**](Identity.md#OIDCWriteProviderUserInfo) | **Post** /identity/oidc/provider/{name}/userinfo | 
+[**OIDCWriteRole**](Identity.md#OIDCWriteRole) | **Post** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**OIDCWriteScope**](Identity.md#OIDCWriteScope) | **Post** /identity/oidc/scope/{name} | 
+[**PersonaIDDeleteByID**](Identity.md#PersonaIDDeleteByID) | **Delete** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**PersonaIDReadByID**](Identity.md#PersonaIDReadByID) | **Get** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**PersonaIDWriteByID**](Identity.md#PersonaIDWriteByID) | **Post** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**PersonaListByID**](Identity.md#PersonaListByID) | **Get** /identity/persona/id | List all the alias IDs.
+[**PersonaWrite**](Identity.md#PersonaWrite) | **Post** /identity/persona | Create a new alias.
 
 
 
-## DeleteIdentityAliasIdId
+## AliasDeleteByID
 
-> DeleteIdentityAliasIdId(ctx, id).Execute()
+> AliasDeleteByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -139,7 +139,7 @@ func main() {
 
 	id := "id_example" // string | ID of the alias
 
-	resp, err := client.Identity.DeleteIdentityAliasIdId(
+	resp, err := client.Identity.AliasDeleteByID(
 		context.Background(),
 		id,
 		vault.WithToken("my-token"),
@@ -173,9 +173,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityEntityAliasIdId
+## AliasListByID
 
-> DeleteIdentityEntityAliasIdId(ctx, id).Execute()
+> AliasListByID(ctx).List(list).Execute()
+
+List all the alias IDs.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.AliasListByID(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## AliasReadByID
+
+> AliasReadByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -202,7 +261,7 @@ func main() {
 
 	id := "id_example" // string | ID of the alias
 
-	resp, err := client.Identity.DeleteIdentityEntityAliasIdId(
+	resp, err := client.Identity.AliasReadByID(
 		context.Background(),
 		id,
 		vault.WithToken("my-token"),
@@ -236,9 +295,256 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityEntityIdId
+## AliasWrite
 
-> DeleteIdentityEntityIdId(ctx, id).Execute()
+> AliasWrite(ctx).AliasWriteRequest(aliasWriteRequest).Execute()
+
+Create a new alias.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	aliasWriteRequest := NewAliasWriteRequestWithDefaults()
+	resp, err := client.Identity.AliasWrite(
+		context.Background(),
+		aliasWriteRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aliasWriteRequest** | [**AliasWriteRequest**](AliasWriteRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## AliasWriteByID
+
+> AliasWriteByID(ctx, id).AliasWriteByIDRequest(aliasWriteByIDRequest).Execute()
+
+Update, read or delete an alias ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the alias
+
+	aliasWriteByIDRequest := NewAliasWriteByIDRequestWithDefaults()
+	resp, err := client.Identity.AliasWriteByID(
+		context.Background(),
+		id,
+		aliasWriteByIDRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the alias | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **aliasWriteByIDRequest** | [**AliasWriteByIDRequest**](AliasWriteByIDRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityBatchDelete
+
+> EntityBatchDelete(ctx).EntityBatchDeleteRequest(entityBatchDeleteRequest).Execute()
+
+Delete all of the entities provided
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	entityBatchDeleteRequest := NewEntityBatchDeleteRequestWithDefaults()
+	resp, err := client.Identity.EntityBatchDelete(
+		context.Background(),
+		entityBatchDeleteRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entityBatchDeleteRequest** | [**EntityBatchDeleteRequest**](EntityBatchDeleteRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityDeleteAliasByID
+
+> EntityDeleteAliasByID(ctx, id).Execute()
+
+Update, read or delete an alias ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the alias
+
+	resp, err := client.Identity.EntityDeleteAliasByID(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the alias | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityDeleteByID
+
+> EntityDeleteByID(ctx, id).Execute()
 
 Update, read or delete an entity using entity ID
 
@@ -265,7 +571,7 @@ func main() {
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 
-	resp, err := client.Identity.DeleteIdentityEntityIdId(
+	resp, err := client.Identity.EntityDeleteByID(
 		context.Background(),
 		id,
 		vault.WithToken("my-token"),
@@ -299,9 +605,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityEntityNameName
+## EntityDeleteByName
 
-> DeleteIdentityEntityNameName(ctx, name).Execute()
+> EntityDeleteByName(ctx, name).Execute()
 
 Update, read or delete an entity using entity name
 
@@ -328,7 +634,7 @@ func main() {
 
 	name := "name_example" // string | Name of the entity
 
-	resp, err := client.Identity.DeleteIdentityEntityNameName(
+	resp, err := client.Identity.EntityDeleteByName(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -362,9 +668,809 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityGroupAliasIdId
+## EntityListAliasesByID
 
-> DeleteIdentityGroupAliasIdId(ctx, id).Execute()
+> EntityListAliasesByID(ctx).List(list).Execute()
+
+List all the alias IDs.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.EntityListAliasesByID(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityListByID
+
+> EntityListByID(ctx).List(list).Execute()
+
+List all the entity IDs
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.EntityListByID(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityListByName
+
+> EntityListByName(ctx).List(list).Execute()
+
+List all the entity names
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.EntityListByName(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityLookup
+
+> EntityLookup(ctx).EntityLookupRequest(entityLookupRequest).Execute()
+
+Query entities based on various properties.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	entityLookupRequest := NewEntityLookupRequestWithDefaults()
+	resp, err := client.Identity.EntityLookup(
+		context.Background(),
+		entityLookupRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entityLookupRequest** | [**EntityLookupRequest**](EntityLookupRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityMerge
+
+> EntityMerge(ctx).EntityMergeRequest(entityMergeRequest).Execute()
+
+Merge two or more entities together
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	entityMergeRequest := NewEntityMergeRequestWithDefaults()
+	resp, err := client.Identity.EntityMerge(
+		context.Background(),
+		entityMergeRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entityMergeRequest** | [**EntityMergeRequest**](EntityMergeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityReadAliasByID
+
+> EntityReadAliasByID(ctx, id).Execute()
+
+Update, read or delete an alias ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the alias
+
+	resp, err := client.Identity.EntityReadAliasByID(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the alias | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityReadByID
+
+> EntityReadByID(ctx, id).Execute()
+
+Update, read or delete an entity using entity ID
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+
+	resp, err := client.Identity.EntityReadByID(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the entity. If set, updates the corresponding existing entity. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityReadByName
+
+> EntityReadByName(ctx, name).Execute()
+
+Update, read or delete an entity using entity name
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the entity
+
+	resp, err := client.Identity.EntityReadByName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the entity | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityWrite
+
+> EntityWrite(ctx).EntityWriteRequest(entityWriteRequest).Execute()
+
+Create a new entity
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	entityWriteRequest := NewEntityWriteRequestWithDefaults()
+	resp, err := client.Identity.EntityWrite(
+		context.Background(),
+		entityWriteRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entityWriteRequest** | [**EntityWriteRequest**](EntityWriteRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityWriteAlias
+
+> EntityWriteAlias(ctx).EntityWriteAliasRequest(entityWriteAliasRequest).Execute()
+
+Create a new alias.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	entityWriteAliasRequest := NewEntityWriteAliasRequestWithDefaults()
+	resp, err := client.Identity.EntityWriteAlias(
+		context.Background(),
+		entityWriteAliasRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entityWriteAliasRequest** | [**EntityWriteAliasRequest**](EntityWriteAliasRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityWriteAliasByID
+
+> EntityWriteAliasByID(ctx, id).EntityWriteAliasByIDRequest(entityWriteAliasByIDRequest).Execute()
+
+Update, read or delete an alias ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the alias
+
+	entityWriteAliasByIDRequest := NewEntityWriteAliasByIDRequestWithDefaults()
+	resp, err := client.Identity.EntityWriteAliasByID(
+		context.Background(),
+		id,
+		entityWriteAliasByIDRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the alias | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **entityWriteAliasByIDRequest** | [**EntityWriteAliasByIDRequest**](EntityWriteAliasByIDRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityWriteByID
+
+> EntityWriteByID(ctx, id).EntityWriteByIDRequest(entityWriteByIDRequest).Execute()
+
+Update, read or delete an entity using entity ID
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+
+	entityWriteByIDRequest := NewEntityWriteByIDRequestWithDefaults()
+	resp, err := client.Identity.EntityWriteByID(
+		context.Background(),
+		id,
+		entityWriteByIDRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the entity. If set, updates the corresponding existing entity. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **entityWriteByIDRequest** | [**EntityWriteByIDRequest**](EntityWriteByIDRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## EntityWriteByName
+
+> EntityWriteByName(ctx, name).EntityWriteByNameRequest(entityWriteByNameRequest).Execute()
+
+Update, read or delete an entity using entity name
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the entity
+
+	entityWriteByNameRequest := NewEntityWriteByNameRequestWithDefaults()
+	resp, err := client.Identity.EntityWriteByName(
+		context.Background(),
+		name,
+		entityWriteByNameRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the entity | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **entityWriteByNameRequest** | [**EntityWriteByNameRequest**](EntityWriteByNameRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupDeleteAliasByID
+
+> GroupDeleteAliasByID(ctx, id).Execute()
 
 
 
@@ -391,7 +1497,7 @@ func main() {
 
 	id := "id_example" // string | ID of the group alias.
 
-	resp, err := client.Identity.DeleteIdentityGroupAliasIdId(
+	resp, err := client.Identity.GroupDeleteAliasByID(
 		context.Background(),
 		id,
 		vault.WithToken("my-token"),
@@ -425,9 +1531,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityGroupIdId
+## GroupDeleteByID
 
-> DeleteIdentityGroupIdId(ctx, id).Execute()
+> GroupDeleteByID(ctx, id).Execute()
 
 Update or delete an existing group using its ID.
 
@@ -454,7 +1560,7 @@ func main() {
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 
-	resp, err := client.Identity.DeleteIdentityGroupIdId(
+	resp, err := client.Identity.GroupDeleteByID(
 		context.Background(),
 		id,
 		vault.WithToken("my-token"),
@@ -488,9 +1594,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityGroupNameName
+## GroupDeleteByName
 
-> DeleteIdentityGroupNameName(ctx, name).Execute()
+> GroupDeleteByName(ctx, name).Execute()
 
 
 
@@ -517,7 +1623,7 @@ func main() {
 
 	name := "name_example" // string | Name of the group.
 
-	resp, err := client.Identity.DeleteIdentityGroupNameName(
+	resp, err := client.Identity.GroupDeleteByName(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -551,9 +1657,750 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityMfaLoginEnforcementName
+## GroupListAliasesByID
 
-> DeleteIdentityMfaLoginEnforcementName(ctx, name).Execute()
+> GroupListAliasesByID(ctx).List(list).Execute()
+
+List all the group alias IDs.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.GroupListAliasesByID(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupListByID
+
+> GroupListByID(ctx).List(list).Execute()
+
+List all the group IDs.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.GroupListByID(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupListByName
+
+> GroupListByName(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.GroupListByName(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupLookup
+
+> GroupLookup(ctx).GroupLookupRequest(groupLookupRequest).Execute()
+
+Query groups based on various properties.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	groupLookupRequest := NewGroupLookupRequestWithDefaults()
+	resp, err := client.Identity.GroupLookup(
+		context.Background(),
+		groupLookupRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupLookupRequest** | [**GroupLookupRequest**](GroupLookupRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupReadAliasByID
+
+> GroupReadAliasByID(ctx, id).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the group alias.
+
+	resp, err := client.Identity.GroupReadAliasByID(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the group alias. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupReadByID
+
+> GroupReadByID(ctx, id).Execute()
+
+Update or delete an existing group using its ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+
+	resp, err := client.Identity.GroupReadByID(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the group. If set, updates the corresponding existing group. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupReadByName
+
+> GroupReadByName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the group.
+
+	resp, err := client.Identity.GroupReadByName(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the group. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupWrite
+
+> GroupWrite(ctx).GroupWriteRequest(groupWriteRequest).Execute()
+
+Create a new group.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	groupWriteRequest := NewGroupWriteRequestWithDefaults()
+	resp, err := client.Identity.GroupWrite(
+		context.Background(),
+		groupWriteRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupWriteRequest** | [**GroupWriteRequest**](GroupWriteRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupWriteAlias
+
+> GroupWriteAlias(ctx).GroupWriteAliasRequest(groupWriteAliasRequest).Execute()
+
+Creates a new group alias, or updates an existing one.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	groupWriteAliasRequest := NewGroupWriteAliasRequestWithDefaults()
+	resp, err := client.Identity.GroupWriteAlias(
+		context.Background(),
+		groupWriteAliasRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupWriteAliasRequest** | [**GroupWriteAliasRequest**](GroupWriteAliasRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupWriteAliasByID
+
+> GroupWriteAliasByID(ctx, id).GroupWriteAliasByIDRequest(groupWriteAliasByIDRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the group alias.
+
+	groupWriteAliasByIDRequest := NewGroupWriteAliasByIDRequestWithDefaults()
+	resp, err := client.Identity.GroupWriteAliasByID(
+		context.Background(),
+		id,
+		groupWriteAliasByIDRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the group alias. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **groupWriteAliasByIDRequest** | [**GroupWriteAliasByIDRequest**](GroupWriteAliasByIDRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupWriteByID
+
+> GroupWriteByID(ctx, id).GroupWriteByIDRequest(groupWriteByIDRequest).Execute()
+
+Update or delete an existing group using its ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+
+	groupWriteByIDRequest := NewGroupWriteByIDRequestWithDefaults()
+	resp, err := client.Identity.GroupWriteByID(
+		context.Background(),
+		id,
+		groupWriteByIDRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the group. If set, updates the corresponding existing group. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **groupWriteByIDRequest** | [**GroupWriteByIDRequest**](GroupWriteByIDRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## GroupWriteByName
+
+> GroupWriteByName(ctx, name).GroupWriteByNameRequest(groupWriteByNameRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the group.
+
+	groupWriteByNameRequest := NewGroupWriteByNameRequestWithDefaults()
+	resp, err := client.Identity.GroupWriteByName(
+		context.Background(),
+		name,
+		groupWriteByNameRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the group. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **groupWriteByNameRequest** | [**GroupWriteByNameRequest**](GroupWriteByNameRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFADeleteLoginEnforcement
+
+> MFADeleteLoginEnforcement(ctx, name).Execute()
 
 Delete a login enforcement
 
@@ -580,7 +2427,7 @@ func main() {
 
 	name := "name_example" // string | Name for this login enforcement configuration
 
-	resp, err := client.Identity.DeleteIdentityMfaLoginEnforcementName(
+	resp, err := client.Identity.MFADeleteLoginEnforcement(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -614,9 +2461,186 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityMfaMethodDuoMethodId
+## MFAListLoginEnforcements
 
-> DeleteIdentityMfaMethodDuoMethodId(ctx, methodId).Execute()
+> MFAListLoginEnforcements(ctx).List(list).Execute()
+
+List login enforcements
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.MFAListLoginEnforcements(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodAdminDestroyTOTP
+
+> MFAMethodAdminDestroyTOTP(ctx).MFAMethodAdminDestroyTOTPRequest(mFAMethodAdminDestroyTOTPRequest).Execute()
+
+Destroys a TOTP secret for the given MFA method ID on the given entity
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	mFAMethodAdminDestroyTOTPRequest := NewMFAMethodAdminDestroyTOTPRequestWithDefaults()
+	resp, err := client.Identity.MFAMethodAdminDestroyTOTP(
+		context.Background(),
+		mFAMethodAdminDestroyTOTPRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mFAMethodAdminDestroyTOTPRequest** | [**MFAMethodAdminDestroyTOTPRequest**](MFAMethodAdminDestroyTOTPRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodAdminGenerateTOTP
+
+> MFAMethodAdminGenerateTOTP(ctx).MFAMethodAdminGenerateTOTPRequest(mFAMethodAdminGenerateTOTPRequest).Execute()
+
+Update or create TOTP secret for the given method ID on the given entity.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	mFAMethodAdminGenerateTOTPRequest := NewMFAMethodAdminGenerateTOTPRequestWithDefaults()
+	resp, err := client.Identity.MFAMethodAdminGenerateTOTP(
+		context.Background(),
+		mFAMethodAdminGenerateTOTPRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mFAMethodAdminGenerateTOTPRequest** | [**MFAMethodAdminGenerateTOTPRequest**](MFAMethodAdminGenerateTOTPRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodDeleteDuo
+
+> MFAMethodDeleteDuo(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -643,7 +2667,7 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodDuoMethodId(
+	resp, err := client.Identity.MFAMethodDeleteDuo(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -677,9 +2701,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityMfaMethodOktaMethodId
+## MFAMethodDeleteOkta
 
-> DeleteIdentityMfaMethodOktaMethodId(ctx, methodId).Execute()
+> MFAMethodDeleteOkta(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -706,7 +2730,7 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodOktaMethodId(
+	resp, err := client.Identity.MFAMethodDeleteOkta(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -740,9 +2764,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityMfaMethodPingidMethodId
+## MFAMethodDeletePingID
 
-> DeleteIdentityMfaMethodPingidMethodId(ctx, methodId).Execute()
+> MFAMethodDeletePingID(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -769,7 +2793,7 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodPingidMethodId(
+	resp, err := client.Identity.MFAMethodDeletePingID(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -803,9 +2827,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityMfaMethodTotpMethodId
+## MFAMethodDeleteTOTP
 
-> DeleteIdentityMfaMethodTotpMethodId(ctx, methodId).Execute()
+> MFAMethodDeleteTOTP(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -832,7 +2856,7 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-	resp, err := client.Identity.DeleteIdentityMfaMethodTotpMethodId(
+	resp, err := client.Identity.MFAMethodDeleteTOTP(
 		context.Background(),
 		methodId,
 		vault.WithToken("my-token"),
@@ -866,9 +2890,1071 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityOidcAssignmentName
+## MFAMethodGenerateTOTP
 
-> DeleteIdentityOidcAssignmentName(ctx, name).Execute()
+> MFAMethodGenerateTOTP(ctx).MFAMethodGenerateTOTPRequest(mFAMethodGenerateTOTPRequest).Execute()
+
+Update or create TOTP secret for the given method ID on the given entity.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	mFAMethodGenerateTOTPRequest := NewMFAMethodGenerateTOTPRequestWithDefaults()
+	resp, err := client.Identity.MFAMethodGenerateTOTP(
+		context.Background(),
+		mFAMethodGenerateTOTPRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mFAMethodGenerateTOTPRequest** | [**MFAMethodGenerateTOTPRequest**](MFAMethodGenerateTOTPRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodList
+
+> MFAMethodList(ctx).List(list).Execute()
+
+List MFA method configurations for all MFA methods
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.MFAMethodList(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodListDuo
+
+> MFAMethodListDuo(ctx).List(list).Execute()
+
+List MFA method configurations for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.MFAMethodListDuo(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodListOkta
+
+> MFAMethodListOkta(ctx).List(list).Execute()
+
+List MFA method configurations for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.MFAMethodListOkta(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodListPingID
+
+> MFAMethodListPingID(ctx).List(list).Execute()
+
+List MFA method configurations for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.MFAMethodListPingID(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodListTOTP
+
+> MFAMethodListTOTP(ctx).List(list).Execute()
+
+List MFA method configurations for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.MFAMethodListTOTP(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodRead
+
+> MFAMethodRead(ctx, methodId).Execute()
+
+Read the current configuration for the given ID regardless of the MFA method type
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	resp, err := client.Identity.MFAMethodRead(
+		context.Background(),
+		methodId,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodReadDuo
+
+> MFAMethodReadDuo(ctx, methodId).Execute()
+
+Read the current configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	resp, err := client.Identity.MFAMethodReadDuo(
+		context.Background(),
+		methodId,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodReadOkta
+
+> MFAMethodReadOkta(ctx, methodId).Execute()
+
+Read the current configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	resp, err := client.Identity.MFAMethodReadOkta(
+		context.Background(),
+		methodId,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodReadPingID
+
+> MFAMethodReadPingID(ctx, methodId).Execute()
+
+Read the current configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	resp, err := client.Identity.MFAMethodReadPingID(
+		context.Background(),
+		methodId,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodReadTOTP
+
+> MFAMethodReadTOTP(ctx, methodId).Execute()
+
+Read the current configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	resp, err := client.Identity.MFAMethodReadTOTP(
+		context.Background(),
+		methodId,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodWriteDuo
+
+> MFAMethodWriteDuo(ctx, methodId).MFAMethodWriteDuoRequest(mFAMethodWriteDuoRequest).Execute()
+
+Update or create a configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	mFAMethodWriteDuoRequest := NewMFAMethodWriteDuoRequestWithDefaults()
+	resp, err := client.Identity.MFAMethodWriteDuo(
+		context.Background(),
+		methodId,
+		mFAMethodWriteDuoRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mFAMethodWriteDuoRequest** | [**MFAMethodWriteDuoRequest**](MFAMethodWriteDuoRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodWriteOkta
+
+> MFAMethodWriteOkta(ctx, methodId).MFAMethodWriteOktaRequest(mFAMethodWriteOktaRequest).Execute()
+
+Update or create a configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	mFAMethodWriteOktaRequest := NewMFAMethodWriteOktaRequestWithDefaults()
+	resp, err := client.Identity.MFAMethodWriteOkta(
+		context.Background(),
+		methodId,
+		mFAMethodWriteOktaRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mFAMethodWriteOktaRequest** | [**MFAMethodWriteOktaRequest**](MFAMethodWriteOktaRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodWritePingID
+
+> MFAMethodWritePingID(ctx, methodId).MFAMethodWritePingIDRequest(mFAMethodWritePingIDRequest).Execute()
+
+Update or create a configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	mFAMethodWritePingIDRequest := NewMFAMethodWritePingIDRequestWithDefaults()
+	resp, err := client.Identity.MFAMethodWritePingID(
+		context.Background(),
+		methodId,
+		mFAMethodWritePingIDRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mFAMethodWritePingIDRequest** | [**MFAMethodWritePingIDRequest**](MFAMethodWritePingIDRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAMethodWriteTOTP
+
+> MFAMethodWriteTOTP(ctx, methodId).MFAMethodWriteTOTPRequest(mFAMethodWriteTOTPRequest).Execute()
+
+Update or create a configuration for the given MFA method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+	mFAMethodWriteTOTPRequest := NewMFAMethodWriteTOTPRequestWithDefaults()
+	resp, err := client.Identity.MFAMethodWriteTOTP(
+		context.Background(),
+		methodId,
+		mFAMethodWriteTOTPRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mFAMethodWriteTOTPRequest** | [**MFAMethodWriteTOTPRequest**](MFAMethodWriteTOTPRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAReadLoginEnforcement
+
+> MFAReadLoginEnforcement(ctx, name).Execute()
+
+Read the current login enforcement
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name for this login enforcement configuration
+
+	resp, err := client.Identity.MFAReadLoginEnforcement(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name for this login enforcement configuration | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## MFAWriteLoginEnforcement
+
+> MFAWriteLoginEnforcement(ctx, name).MFAWriteLoginEnforcementRequest(mFAWriteLoginEnforcementRequest).Execute()
+
+Create or update a login enforcement
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name for this login enforcement configuration
+
+	mFAWriteLoginEnforcementRequest := NewMFAWriteLoginEnforcementRequestWithDefaults()
+	resp, err := client.Identity.MFAWriteLoginEnforcement(
+		context.Background(),
+		name,
+		mFAWriteLoginEnforcementRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name for this login enforcement configuration | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mFAWriteLoginEnforcementRequest** | [**MFAWriteLoginEnforcementRequest**](MFAWriteLoginEnforcementRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCDeleteAssignment
+
+> OIDCDeleteAssignment(ctx, name).Execute()
 
 
 
@@ -895,7 +3981,7 @@ func main() {
 
 	name := "name_example" // string | Name of the assignment
 
-	resp, err := client.Identity.DeleteIdentityOidcAssignmentName(
+	resp, err := client.Identity.OIDCDeleteAssignment(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -929,9 +4015,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityOidcClientName
+## OIDCDeleteClient
 
-> DeleteIdentityOidcClientName(ctx, name).Execute()
+> OIDCDeleteClient(ctx, name).Execute()
 
 
 
@@ -958,7 +4044,7 @@ func main() {
 
 	name := "name_example" // string | Name of the client.
 
-	resp, err := client.Identity.DeleteIdentityOidcClientName(
+	resp, err := client.Identity.OIDCDeleteClient(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -992,9 +4078,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityOidcKeyName
+## OIDCDeleteKey
 
-> DeleteIdentityOidcKeyName(ctx, name).Execute()
+> OIDCDeleteKey(ctx, name).Execute()
 
 CRUD operations for OIDC keys.
 
@@ -1021,7 +4107,7 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 
-	resp, err := client.Identity.DeleteIdentityOidcKeyName(
+	resp, err := client.Identity.OIDCDeleteKey(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -1055,9 +4141,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityOidcProviderName
+## OIDCDeleteProvider
 
-> DeleteIdentityOidcProviderName(ctx, name).Execute()
+> OIDCDeleteProvider(ctx, name).Execute()
 
 
 
@@ -1084,7 +4170,7 @@ func main() {
 
 	name := "name_example" // string | Name of the provider
 
-	resp, err := client.Identity.DeleteIdentityOidcProviderName(
+	resp, err := client.Identity.OIDCDeleteProvider(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -1118,9 +4204,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityOidcRoleName
+## OIDCDeleteRole
 
-> DeleteIdentityOidcRoleName(ctx, name).Execute()
+> OIDCDeleteRole(ctx, name).Execute()
 
 CRUD operations on OIDC Roles
 
@@ -1147,7 +4233,7 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 
-	resp, err := client.Identity.DeleteIdentityOidcRoleName(
+	resp, err := client.Identity.OIDCDeleteRole(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -1181,9 +4267,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityOidcScopeName
+## OIDCDeleteScope
 
-> DeleteIdentityOidcScopeName(ctx, name).Execute()
+> OIDCDeleteScope(ctx, name).Execute()
 
 
 
@@ -1210,7 +4296,7 @@ func main() {
 
 	name := "name_example" // string | Name of the scope
 
-	resp, err := client.Identity.DeleteIdentityOidcScopeName(
+	resp, err := client.Identity.OIDCDeleteScope(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -1244,11 +4330,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteIdentityPersonaIdId
+## OIDCIntrospect
 
-> DeleteIdentityPersonaIdId(ctx, id).Execute()
+> OIDCIntrospect(ctx).OIDCIntrospectRequest(oIDCIntrospectRequest).Execute()
 
-Update, read or delete an alias ID.
+Verify the authenticity of an OIDC token
 
 ### Example
 
@@ -1271,11 +4357,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	id := "id_example" // string | ID of the persona
 
-	resp, err := client.Identity.DeleteIdentityPersonaIdId(
+	oIDCIntrospectRequest := NewOIDCIntrospectRequestWithDefaults()
+	resp, err := client.Identity.OIDCIntrospect(
 		context.Background(),
-		id,
+		oIDCIntrospectRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1289,17 +4375,13 @@ func main() {
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the persona | 
 
 ### Other Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **oIDCIntrospectRequest** | [**OIDCIntrospectRequest**](OIDCIntrospectRequest.md) |  | 
 
  (empty response body)
 
@@ -1307,11 +4389,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetIdentityAliasId
+## OIDCListAssignments
 
-> GetIdentityAliasId(ctx).List(list).Execute()
+> OIDCListAssignments(ctx).List(list).Execute()
 
-List all the alias IDs.
+
 
 ### Example
 
@@ -1336,7 +4418,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityAliasId(
+	resp, err := client.Identity.OIDCListAssignments(
 		context.Background(),
 		list,
 		vault.WithToken("my-token"),
@@ -1366,74 +4448,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetIdentityAliasIdId
+## OIDCListClients
 
-> GetIdentityAliasIdId(ctx, id).Execute()
-
-Update, read or delete an alias ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the alias
-
-	resp, err := client.Identity.GetIdentityAliasIdId(
-		context.Background(),
-		id,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
+> OIDCListClients(ctx).List(list).Execute()
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the alias | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityEntityAliasId
-
-> GetIdentityEntityAliasId(ctx).List(list).Execute()
-
-List all the alias IDs.
 
 ### Example
 
@@ -1458,7 +4477,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityEntityAliasId(
+	resp, err := client.Identity.OIDCListClients(
 		context.Background(),
 		list,
 		vault.WithToken("my-token"),
@@ -1488,1712 +4507,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetIdentityEntityAliasIdId
+## OIDCListKeys
 
-> GetIdentityEntityAliasIdId(ctx, id).Execute()
-
-Update, read or delete an alias ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the alias
-
-	resp, err := client.Identity.GetIdentityEntityAliasIdId(
-		context.Background(),
-		id,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the alias | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityEntityId
-
-> GetIdentityEntityId(ctx).List(list).Execute()
-
-List all the entity IDs
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityEntityId(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityEntityIdId
-
-> GetIdentityEntityIdId(ctx, id).Execute()
-
-Update, read or delete an entity using entity ID
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
-	resp, err := client.Identity.GetIdentityEntityIdId(
-		context.Background(),
-		id,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the entity. If set, updates the corresponding existing entity. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityEntityName
-
-> GetIdentityEntityName(ctx).List(list).Execute()
-
-List all the entity names
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityEntityName(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityEntityNameName
-
-> GetIdentityEntityNameName(ctx, name).Execute()
-
-Update, read or delete an entity using entity name
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the entity
-
-	resp, err := client.Identity.GetIdentityEntityNameName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the entity | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityGroupAliasId
-
-> GetIdentityGroupAliasId(ctx).List(list).Execute()
-
-List all the group alias IDs.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityGroupAliasId(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityGroupAliasIdId
-
-> GetIdentityGroupAliasIdId(ctx, id).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the group alias.
-
-	resp, err := client.Identity.GetIdentityGroupAliasIdId(
-		context.Background(),
-		id,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the group alias. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityGroupId
-
-> GetIdentityGroupId(ctx).List(list).Execute()
-
-List all the group IDs.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityGroupId(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityGroupIdId
-
-> GetIdentityGroupIdId(ctx, id).Execute()
-
-Update or delete an existing group using its ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
-	resp, err := client.Identity.GetIdentityGroupIdId(
-		context.Background(),
-		id,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the group. If set, updates the corresponding existing group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityGroupName
-
-> GetIdentityGroupName(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityGroupName(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityGroupNameName
-
-> GetIdentityGroupNameName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the group.
-
-	resp, err := client.Identity.GetIdentityGroupNameName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaLoginEnforcement
-
-> GetIdentityMfaLoginEnforcement(ctx).List(list).Execute()
-
-List login enforcements
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaLoginEnforcement(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaLoginEnforcementName
-
-> GetIdentityMfaLoginEnforcementName(ctx, name).Execute()
-
-Read the current login enforcement
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name for this login enforcement configuration
-
-	resp, err := client.Identity.GetIdentityMfaLoginEnforcementName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name for this login enforcement configuration | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethod
-
-> GetIdentityMfaMethod(ctx).List(list).Execute()
-
-List MFA method configurations for all MFA methods
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethod(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodDuo
-
-> GetIdentityMfaMethodDuo(ctx).List(list).Execute()
-
-List MFA method configurations for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodDuo(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodDuoMethodId
-
-> GetIdentityMfaMethodDuoMethodId(ctx, methodId).Execute()
-
-Read the current configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	resp, err := client.Identity.GetIdentityMfaMethodDuoMethodId(
-		context.Background(),
-		methodId,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodMethodId
-
-> GetIdentityMfaMethodMethodId(ctx, methodId).Execute()
-
-Read the current configuration for the given ID regardless of the MFA method type
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	resp, err := client.Identity.GetIdentityMfaMethodMethodId(
-		context.Background(),
-		methodId,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodOkta
-
-> GetIdentityMfaMethodOkta(ctx).List(list).Execute()
-
-List MFA method configurations for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodOkta(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodOktaMethodId
-
-> GetIdentityMfaMethodOktaMethodId(ctx, methodId).Execute()
-
-Read the current configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	resp, err := client.Identity.GetIdentityMfaMethodOktaMethodId(
-		context.Background(),
-		methodId,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodPingid
-
-> GetIdentityMfaMethodPingid(ctx).List(list).Execute()
-
-List MFA method configurations for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodPingid(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodPingidMethodId
-
-> GetIdentityMfaMethodPingidMethodId(ctx, methodId).Execute()
-
-Read the current configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	resp, err := client.Identity.GetIdentityMfaMethodPingidMethodId(
-		context.Background(),
-		methodId,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodTotp
-
-> GetIdentityMfaMethodTotp(ctx).List(list).Execute()
-
-List MFA method configurations for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityMfaMethodTotp(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityMfaMethodTotpMethodId
-
-> GetIdentityMfaMethodTotpMethodId(ctx, methodId).Execute()
-
-Read the current configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	resp, err := client.Identity.GetIdentityMfaMethodTotpMethodId(
-		context.Background(),
-		methodId,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcAssignment
-
-> GetIdentityOidcAssignment(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcAssignment(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcAssignmentName
-
-> GetIdentityOidcAssignmentName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the assignment
-
-	resp, err := client.Identity.GetIdentityOidcAssignmentName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the assignment | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcClient
-
-> GetIdentityOidcClient(ctx).List(list).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcClient(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcClientName
-
-> GetIdentityOidcClientName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the client.
-
-	resp, err := client.Identity.GetIdentityOidcClientName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the client. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcConfig
-
-> GetIdentityOidcConfig(ctx).Execute()
-
-OIDC configuration
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.Identity.GetIdentityOidcConfig(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcKey
-
-> GetIdentityOidcKey(ctx).List(list).Execute()
+> OIDCListKeys(ctx).List(list).Execute()
 
 List OIDC keys
 
@@ -3220,7 +4536,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcKey(
+	resp, err := client.Identity.OIDCListKeys(
 		context.Background(),
 		list,
 		vault.WithToken("my-token"),
@@ -3250,72 +4566,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetIdentityOidcKeyName
+## OIDCListProviders
 
-> GetIdentityOidcKeyName(ctx, name).Execute()
-
-CRUD operations for OIDC keys.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the key
-
-	resp, err := client.Identity.GetIdentityOidcKeyName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the key | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcProvider
-
-> GetIdentityOidcProvider(ctx).List(list).AllowedClientId(allowedClientId).Execute()
+> OIDCListProviders(ctx).List(list).AllowedClientId(allowedClientId).Execute()
 
 
 
@@ -3343,7 +4596,7 @@ func main() {
 
 	list := NewstringWithDefaults()
 	allowedClientId := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcProvider(
+	resp, err := client.Identity.OIDCListProviders(
 		context.Background(),
 		list,
 		allowedClientId,
@@ -3375,324 +4628,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetIdentityOidcProviderName
+## OIDCListRoles
 
-> GetIdentityOidcProviderName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	resp, err := client.Identity.GetIdentityOidcProviderName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcProviderNameAuthorize
-
-> GetIdentityOidcProviderNameAuthorize(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	resp, err := client.Identity.GetIdentityOidcProviderNameAuthorize(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcProviderNameUserinfo
-
-> GetIdentityOidcProviderNameUserinfo(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	resp, err := client.Identity.GetIdentityOidcProviderNameUserinfo(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcProviderNameWellKnownKeys
-
-> GetIdentityOidcProviderNameWellKnownKeys(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownKeys(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcProviderNameWellKnownOpenidConfiguration
-
-> GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcRole
-
-> GetIdentityOidcRole(ctx).List(list).Execute()
+> OIDCListRoles(ctx).List(list).Execute()
 
 List configured OIDC roles
 
@@ -3719,7 +4657,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcRole(
+	resp, err := client.Identity.OIDCListRoles(
 		context.Background(),
 		list,
 		vault.WithToken("my-token"),
@@ -3749,72 +4687,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetIdentityOidcRoleName
+## OIDCListScopes
 
-> GetIdentityOidcRoleName(ctx, name).Execute()
-
-CRUD operations on OIDC Roles
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.Identity.GetIdentityOidcRoleName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcScope
-
-> GetIdentityOidcScope(ctx).List(list).Execute()
+> OIDCListScopes(ctx).List(list).Execute()
 
 
 
@@ -3841,7 +4716,7 @@ func main() {
 
 
 	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityOidcScope(
+	resp, err := client.Identity.OIDCListScopes(
 		context.Background(),
 		list,
 		vault.WithToken("my-token"),
@@ -3871,1865 +4746,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetIdentityOidcScopeName
+## OIDCReadAssignment
 
-> GetIdentityOidcScopeName(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the scope
-
-	resp, err := client.Identity.GetIdentityOidcScopeName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the scope | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcTokenName
-
-> GetIdentityOidcTokenName(ctx, name).Execute()
-
-Generate an OIDC token
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the role
-
-	resp, err := client.Identity.GetIdentityOidcTokenName(
-		context.Background(),
-		name,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the role | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcWellKnownKeys
-
-> GetIdentityOidcWellKnownKeys(ctx).Execute()
-
-Retrieve public keys
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.Identity.GetIdentityOidcWellKnownKeys(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityOidcWellKnownOpenidConfiguration
-
-> GetIdentityOidcWellKnownOpenidConfiguration(ctx).Execute()
-
-Query OIDC configurations
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	resp, err := client.Identity.GetIdentityOidcWellKnownOpenidConfiguration(
-		context.Background(),
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-This endpoint does not require any parameters.
-
-### Other Parameters
-
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityPersonaId
-
-> GetIdentityPersonaId(ctx).List(list).Execute()
-
-List all the alias IDs.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	list := NewstringWithDefaults()
-	resp, err := client.Identity.GetIdentityPersonaId(
-		context.Background(),
-		list,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list** | **string** | Must be set to &#x60;true&#x60; | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## GetIdentityPersonaIdId
-
-> GetIdentityPersonaIdId(ctx, id).Execute()
-
-Update, read or delete an alias ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the persona
-
-	resp, err := client.Identity.GetIdentityPersonaIdId(
-		context.Background(),
-		id,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the persona | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityAlias
-
-> PostIdentityAlias(ctx).IdentityAliasRequest(identityAliasRequest).Execute()
-
-Create a new alias.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityAliasRequest := NewIdentityAliasRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityAlias(
-		context.Background(),
-		identityAliasRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityAliasRequest** | [**IdentityAliasRequest**](IdentityAliasRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityAliasIdId
-
-> PostIdentityAliasIdId(ctx, id).IdentityAliasIdRequest(identityAliasIdRequest).Execute()
-
-Update, read or delete an alias ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the alias
-
-	identityAliasIdRequest := NewIdentityAliasIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityAliasIdId(
-		context.Background(),
-		id,
-		identityAliasIdRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the alias | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityAliasIdRequest** | [**IdentityAliasIdRequest**](IdentityAliasIdRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityEntity
-
-> PostIdentityEntity(ctx).IdentityEntityRequest(identityEntityRequest).Execute()
-
-Create a new entity
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityEntityRequest := NewIdentityEntityRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntity(
-		context.Background(),
-		identityEntityRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityEntityRequest** | [**IdentityEntityRequest**](IdentityEntityRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityEntityAlias
-
-> PostIdentityEntityAlias(ctx).IdentityEntityAliasRequest(identityEntityAliasRequest).Execute()
-
-Create a new alias.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityEntityAliasRequest := NewIdentityEntityAliasRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityAlias(
-		context.Background(),
-		identityEntityAliasRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityEntityAliasRequest** | [**IdentityEntityAliasRequest**](IdentityEntityAliasRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityEntityAliasIdId
-
-> PostIdentityEntityAliasIdId(ctx, id).IdentityEntityAliasIdRequest(identityEntityAliasIdRequest).Execute()
-
-Update, read or delete an alias ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the alias
-
-	identityEntityAliasIdRequest := NewIdentityEntityAliasIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityAliasIdId(
-		context.Background(),
-		id,
-		identityEntityAliasIdRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the alias | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityEntityAliasIdRequest** | [**IdentityEntityAliasIdRequest**](IdentityEntityAliasIdRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityEntityBatchDelete
-
-> PostIdentityEntityBatchDelete(ctx).IdentityEntityBatchDeleteRequest(identityEntityBatchDeleteRequest).Execute()
-
-Delete all of the entities provided
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityEntityBatchDeleteRequest := NewIdentityEntityBatchDeleteRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityBatchDelete(
-		context.Background(),
-		identityEntityBatchDeleteRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityEntityBatchDeleteRequest** | [**IdentityEntityBatchDeleteRequest**](IdentityEntityBatchDeleteRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityEntityIdId
-
-> PostIdentityEntityIdId(ctx, id).IdentityEntityIdRequest(identityEntityIdRequest).Execute()
-
-Update, read or delete an entity using entity ID
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
-	identityEntityIdRequest := NewIdentityEntityIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityIdId(
-		context.Background(),
-		id,
-		identityEntityIdRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the entity. If set, updates the corresponding existing entity. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityEntityIdRequest** | [**IdentityEntityIdRequest**](IdentityEntityIdRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityEntityMerge
-
-> PostIdentityEntityMerge(ctx).IdentityEntityMergeRequest(identityEntityMergeRequest).Execute()
-
-Merge two or more entities together
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityEntityMergeRequest := NewIdentityEntityMergeRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityMerge(
-		context.Background(),
-		identityEntityMergeRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityEntityMergeRequest** | [**IdentityEntityMergeRequest**](IdentityEntityMergeRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityEntityNameName
-
-> PostIdentityEntityNameName(ctx, name).IdentityEntityNameRequest(identityEntityNameRequest).Execute()
-
-Update, read or delete an entity using entity name
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the entity
-
-	identityEntityNameRequest := NewIdentityEntityNameRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityEntityNameName(
-		context.Background(),
-		name,
-		identityEntityNameRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the entity | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityEntityNameRequest** | [**IdentityEntityNameRequest**](IdentityEntityNameRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityGroup
-
-> PostIdentityGroup(ctx).IdentityGroupRequest(identityGroupRequest).Execute()
-
-Create a new group.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityGroupRequest := NewIdentityGroupRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroup(
-		context.Background(),
-		identityGroupRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityGroupRequest** | [**IdentityGroupRequest**](IdentityGroupRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityGroupAlias
-
-> PostIdentityGroupAlias(ctx).IdentityGroupAliasRequest(identityGroupAliasRequest).Execute()
-
-Creates a new group alias, or updates an existing one.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityGroupAliasRequest := NewIdentityGroupAliasRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupAlias(
-		context.Background(),
-		identityGroupAliasRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityGroupAliasRequest** | [**IdentityGroupAliasRequest**](IdentityGroupAliasRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityGroupAliasIdId
-
-> PostIdentityGroupAliasIdId(ctx, id).IdentityGroupAliasIdRequest(identityGroupAliasIdRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the group alias.
-
-	identityGroupAliasIdRequest := NewIdentityGroupAliasIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupAliasIdId(
-		context.Background(),
-		id,
-		identityGroupAliasIdRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the group alias. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityGroupAliasIdRequest** | [**IdentityGroupAliasIdRequest**](IdentityGroupAliasIdRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityGroupIdId
-
-> PostIdentityGroupIdId(ctx, id).IdentityGroupIdRequest(identityGroupIdRequest).Execute()
-
-Update or delete an existing group using its ID.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
-	identityGroupIdRequest := NewIdentityGroupIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupIdId(
-		context.Background(),
-		id,
-		identityGroupIdRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**id** | **string** | ID of the group. If set, updates the corresponding existing group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityGroupIdRequest** | [**IdentityGroupIdRequest**](IdentityGroupIdRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityGroupNameName
-
-> PostIdentityGroupNameName(ctx, name).IdentityGroupNameRequest(identityGroupNameRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the group.
-
-	identityGroupNameRequest := NewIdentityGroupNameRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityGroupNameName(
-		context.Background(),
-		name,
-		identityGroupNameRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the group. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityGroupNameRequest** | [**IdentityGroupNameRequest**](IdentityGroupNameRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityLookupEntity
-
-> PostIdentityLookupEntity(ctx).IdentityLookupEntityRequest(identityLookupEntityRequest).Execute()
-
-Query entities based on various properties.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityLookupEntityRequest := NewIdentityLookupEntityRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityLookupEntity(
-		context.Background(),
-		identityLookupEntityRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityLookupEntityRequest** | [**IdentityLookupEntityRequest**](IdentityLookupEntityRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityLookupGroup
-
-> PostIdentityLookupGroup(ctx).IdentityLookupGroupRequest(identityLookupGroupRequest).Execute()
-
-Query groups based on various properties.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityLookupGroupRequest := NewIdentityLookupGroupRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityLookupGroup(
-		context.Background(),
-		identityLookupGroupRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityLookupGroupRequest** | [**IdentityLookupGroupRequest**](IdentityLookupGroupRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaLoginEnforcementName
-
-> PostIdentityMfaLoginEnforcementName(ctx, name).IdentityMfaLoginEnforcementRequest(identityMfaLoginEnforcementRequest).Execute()
-
-Create or update a login enforcement
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name for this login enforcement configuration
-
-	identityMfaLoginEnforcementRequest := NewIdentityMfaLoginEnforcementRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaLoginEnforcementName(
-		context.Background(),
-		name,
-		identityMfaLoginEnforcementRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name for this login enforcement configuration | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityMfaLoginEnforcementRequest** | [**IdentityMfaLoginEnforcementRequest**](IdentityMfaLoginEnforcementRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaMethodDuoMethodId
-
-> PostIdentityMfaMethodDuoMethodId(ctx, methodId).IdentityMfaMethodDuoRequest(identityMfaMethodDuoRequest).Execute()
-
-Update or create a configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	identityMfaMethodDuoRequest := NewIdentityMfaMethodDuoRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodDuoMethodId(
-		context.Background(),
-		methodId,
-		identityMfaMethodDuoRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityMfaMethodDuoRequest** | [**IdentityMfaMethodDuoRequest**](IdentityMfaMethodDuoRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaMethodOktaMethodId
-
-> PostIdentityMfaMethodOktaMethodId(ctx, methodId).IdentityMfaMethodOktaRequest(identityMfaMethodOktaRequest).Execute()
-
-Update or create a configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	identityMfaMethodOktaRequest := NewIdentityMfaMethodOktaRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodOktaMethodId(
-		context.Background(),
-		methodId,
-		identityMfaMethodOktaRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityMfaMethodOktaRequest** | [**IdentityMfaMethodOktaRequest**](IdentityMfaMethodOktaRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaMethodPingidMethodId
-
-> PostIdentityMfaMethodPingidMethodId(ctx, methodId).IdentityMfaMethodPingidRequest(identityMfaMethodPingidRequest).Execute()
-
-Update or create a configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	identityMfaMethodPingidRequest := NewIdentityMfaMethodPingidRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodPingidMethodId(
-		context.Background(),
-		methodId,
-		identityMfaMethodPingidRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityMfaMethodPingidRequest** | [**IdentityMfaMethodPingidRequest**](IdentityMfaMethodPingidRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaMethodTotpAdminDestroy
-
-> PostIdentityMfaMethodTotpAdminDestroy(ctx).IdentityMfaMethodTotpAdminDestroyRequest(identityMfaMethodTotpAdminDestroyRequest).Execute()
-
-Destroys a TOTP secret for the given MFA method ID on the given entity
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityMfaMethodTotpAdminDestroyRequest := NewIdentityMfaMethodTotpAdminDestroyRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminDestroy(
-		context.Background(),
-		identityMfaMethodTotpAdminDestroyRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityMfaMethodTotpAdminDestroyRequest** | [**IdentityMfaMethodTotpAdminDestroyRequest**](IdentityMfaMethodTotpAdminDestroyRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaMethodTotpAdminGenerate
-
-> PostIdentityMfaMethodTotpAdminGenerate(ctx).IdentityMfaMethodTotpAdminGenerateRequest(identityMfaMethodTotpAdminGenerateRequest).Execute()
-
-Update or create TOTP secret for the given method ID on the given entity.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityMfaMethodTotpAdminGenerateRequest := NewIdentityMfaMethodTotpAdminGenerateRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminGenerate(
-		context.Background(),
-		identityMfaMethodTotpAdminGenerateRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityMfaMethodTotpAdminGenerateRequest** | [**IdentityMfaMethodTotpAdminGenerateRequest**](IdentityMfaMethodTotpAdminGenerateRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaMethodTotpGenerate
-
-> PostIdentityMfaMethodTotpGenerate(ctx).IdentityMfaMethodTotpGenerateRequest(identityMfaMethodTotpGenerateRequest).Execute()
-
-Update or create TOTP secret for the given method ID on the given entity.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityMfaMethodTotpGenerateRequest := NewIdentityMfaMethodTotpGenerateRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpGenerate(
-		context.Background(),
-		identityMfaMethodTotpGenerateRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityMfaMethodTotpGenerateRequest** | [**IdentityMfaMethodTotpGenerateRequest**](IdentityMfaMethodTotpGenerateRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityMfaMethodTotpMethodId
-
-> PostIdentityMfaMethodTotpMethodId(ctx, methodId).IdentityMfaMethodTotpRequest(identityMfaMethodTotpRequest).Execute()
-
-Update or create a configuration for the given MFA method
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-	identityMfaMethodTotpRequest := NewIdentityMfaMethodTotpRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityMfaMethodTotpMethodId(
-		context.Background(),
-		methodId,
-		identityMfaMethodTotpRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**methodId** | **string** | The unique identifier for this MFA method. | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityMfaMethodTotpRequest** | [**IdentityMfaMethodTotpRequest**](IdentityMfaMethodTotpRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityOidcAssignmentName
-
-> PostIdentityOidcAssignmentName(ctx, name).IdentityOidcAssignmentRequest(identityOidcAssignmentRequest).Execute()
+> OIDCReadAssignment(ctx, name).Execute()
 
 
 
@@ -5756,11 +4775,9 @@ func main() {
 
 	name := "name_example" // string | Name of the assignment
 
-	identityOidcAssignmentRequest := NewIdentityOidcAssignmentRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcAssignmentName(
+	resp, err := client.Identity.OIDCReadAssignment(
 		context.Background(),
 		name,
-		identityOidcAssignmentRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5785,7 +4802,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **identityOidcAssignmentRequest** | [**IdentityOidcAssignmentRequest**](IdentityOidcAssignmentRequest.md) |  | 
 
  (empty response body)
 
@@ -5793,9 +4809,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityOidcClientName
+## OIDCReadClient
 
-> PostIdentityOidcClientName(ctx, name).IdentityOidcClientRequest(identityOidcClientRequest).Execute()
+> OIDCReadClient(ctx, name).Execute()
 
 
 
@@ -5822,11 +4838,9 @@ func main() {
 
 	name := "name_example" // string | Name of the client.
 
-	identityOidcClientRequest := NewIdentityOidcClientRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcClientName(
+	resp, err := client.Identity.OIDCReadClient(
 		context.Background(),
 		name,
-		identityOidcClientRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5851,7 +4865,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **identityOidcClientRequest** | [**IdentityOidcClientRequest**](IdentityOidcClientRequest.md) |  | 
 
  (empty response body)
 
@@ -5859,9 +4872,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityOidcConfig
+## OIDCReadConfig
 
-> PostIdentityOidcConfig(ctx).IdentityOidcConfigRequest(identityOidcConfigRequest).Execute()
+> OIDCReadConfig(ctx).Execute()
 
 OIDC configuration
 
@@ -5887,10 +4900,8 @@ func main() {
 	}
 
 
-	identityOidcConfigRequest := NewIdentityOidcConfigRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcConfig(
+	resp, err := client.Identity.OIDCReadConfig(
 		context.Background(),
-		identityOidcConfigRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5903,14 +4914,11 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not require any parameters.
 
 ### Other Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityOidcConfigRequest** | [**IdentityOidcConfigRequest**](IdentityOidcConfigRequest.md) |  | 
 
  (empty response body)
 
@@ -5918,68 +4926,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityOidcIntrospect
+## OIDCReadKey
 
-> PostIdentityOidcIntrospect(ctx).IdentityOidcIntrospectRequest(identityOidcIntrospectRequest).Execute()
-
-Verify the authenticity of an OIDC token
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	identityOidcIntrospectRequest := NewIdentityOidcIntrospectRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcIntrospect(
-		context.Background(),
-		identityOidcIntrospectRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identityOidcIntrospectRequest** | [**IdentityOidcIntrospectRequest**](IdentityOidcIntrospectRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityOidcKeyName
-
-> PostIdentityOidcKeyName(ctx, name).IdentityOidcKeyRequest(identityOidcKeyRequest).Execute()
+> OIDCReadKey(ctx, name).Execute()
 
 CRUD operations for OIDC keys.
 
@@ -6006,11 +4955,9 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 
-	identityOidcKeyRequest := NewIdentityOidcKeyRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcKeyName(
+	resp, err := client.Identity.OIDCReadKey(
 		context.Background(),
 		name,
-		identityOidcKeyRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6035,7 +4982,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **identityOidcKeyRequest** | [**IdentityOidcKeyRequest**](IdentityOidcKeyRequest.md) |  | 
 
  (empty response body)
 
@@ -6043,75 +4989,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityOidcKeyNameRotate
+## OIDCReadProvider
 
-> PostIdentityOidcKeyNameRotate(ctx, name).IdentityOidcKeyRotateRequest(identityOidcKeyRotateRequest).Execute()
-
-Rotate a named OIDC key.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the key
-
-	identityOidcKeyRotateRequest := NewIdentityOidcKeyRotateRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcKeyNameRotate(
-		context.Background(),
-		name,
-		identityOidcKeyRotateRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the key | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityOidcKeyRotateRequest** | [**IdentityOidcKeyRotateRequest**](IdentityOidcKeyRotateRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityOidcProviderName
-
-> PostIdentityOidcProviderName(ctx, name).IdentityOidcProviderRequest(identityOidcProviderRequest).Execute()
+> OIDCReadProvider(ctx, name).Execute()
 
 
 
@@ -6138,205 +5018,7 @@ func main() {
 
 	name := "name_example" // string | Name of the provider
 
-	identityOidcProviderRequest := NewIdentityOidcProviderRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcProviderName(
-		context.Background(),
-		name,
-		identityOidcProviderRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityOidcProviderRequest** | [**IdentityOidcProviderRequest**](IdentityOidcProviderRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityOidcProviderNameAuthorize
-
-> PostIdentityOidcProviderNameAuthorize(ctx, name).IdentityOidcProviderAuthorizeRequest(identityOidcProviderAuthorizeRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	identityOidcProviderAuthorizeRequest := NewIdentityOidcProviderAuthorizeRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcProviderNameAuthorize(
-		context.Background(),
-		name,
-		identityOidcProviderAuthorizeRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityOidcProviderAuthorizeRequest** | [**IdentityOidcProviderAuthorizeRequest**](IdentityOidcProviderAuthorizeRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityOidcProviderNameToken
-
-> PostIdentityOidcProviderNameToken(ctx, name).IdentityOidcProviderTokenRequest(identityOidcProviderTokenRequest).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	identityOidcProviderTokenRequest := NewIdentityOidcProviderTokenRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcProviderNameToken(
-		context.Background(),
-		name,
-		identityOidcProviderTokenRequest,
-		vault.WithToken("my-token"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp.Data)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for request cancellation 
-**name** | **string** | Name of the provider | 
-
-### Other Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **identityOidcProviderTokenRequest** | [**IdentityOidcProviderTokenRequest**](IdentityOidcProviderTokenRequest.md) |  | 
-
- (empty response body)
-
-[[Back to top]](#)
-[[Back to README]](../README.md)
-
-
-## PostIdentityOidcProviderNameUserinfo
-
-> PostIdentityOidcProviderNameUserinfo(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"log"
-	"os"
-
-	vault "github.com/hashicorp/vault-client-go"
-)
-
-func main() {
-	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
-	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	name := "name_example" // string | Name of the provider
-
-	resp, err := client.Identity.PostIdentityOidcProviderNameUserinfo(
+	resp, err := client.Identity.OIDCReadProvider(
 		context.Background(),
 		name,
 		vault.WithToken("my-token"),
@@ -6370,9 +5052,261 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityOidcRoleName
+## OIDCReadProviderAuthorize
 
-> PostIdentityOidcRoleName(ctx, name).IdentityOidcRoleRequest(identityOidcRoleRequest).Execute()
+> OIDCReadProviderAuthorize(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	resp, err := client.Identity.OIDCReadProviderAuthorize(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCReadProviderUserInfo
+
+> OIDCReadProviderUserInfo(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	resp, err := client.Identity.OIDCReadProviderUserInfo(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCReadProviderWellKnownKeys
+
+> OIDCReadProviderWellKnownKeys(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	resp, err := client.Identity.OIDCReadProviderWellKnownKeys(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCReadProviderWellKnownOpenIDConfiguration
+
+> OIDCReadProviderWellKnownOpenIDConfiguration(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	resp, err := client.Identity.OIDCReadProviderWellKnownOpenIDConfiguration(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCReadRole
+
+> OIDCReadRole(ctx, name).Execute()
 
 CRUD operations on OIDC Roles
 
@@ -6399,11 +5333,9 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 
-	identityOidcRoleRequest := NewIdentityOidcRoleRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcRoleName(
+	resp, err := client.Identity.OIDCReadRole(
 		context.Background(),
 		name,
-		identityOidcRoleRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6428,7 +5360,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **identityOidcRoleRequest** | [**IdentityOidcRoleRequest**](IdentityOidcRoleRequest.md) |  | 
 
  (empty response body)
 
@@ -6436,9 +5367,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityOidcScopeName
+## OIDCReadScope
 
-> PostIdentityOidcScopeName(ctx, name).IdentityOidcScopeRequest(identityOidcScopeRequest).Execute()
+> OIDCReadScope(ctx, name).Execute()
 
 
 
@@ -6465,11 +5396,9 @@ func main() {
 
 	name := "name_example" // string | Name of the scope
 
-	identityOidcScopeRequest := NewIdentityOidcScopeRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityOidcScopeName(
+	resp, err := client.Identity.OIDCReadScope(
 		context.Background(),
 		name,
-		identityOidcScopeRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6494,7 +5423,6 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **identityOidcScopeRequest** | [**IdentityOidcScopeRequest**](IdentityOidcScopeRequest.md) |  | 
 
  (empty response body)
 
@@ -6502,11 +5430,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityPersona
+## OIDCReadToken
 
-> PostIdentityPersona(ctx).IdentityPersonaRequest(identityPersonaRequest).Execute()
+> OIDCReadToken(ctx, name).Execute()
 
-Create a new alias.
+Generate an OIDC token
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role
+
+	resp, err := client.Identity.OIDCReadToken(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCReadWellKnownKeys
+
+> OIDCReadWellKnownKeys(ctx).Execute()
+
+Retrieve public keys
 
 ### Example
 
@@ -6530,10 +5521,316 @@ func main() {
 	}
 
 
-	identityPersonaRequest := NewIdentityPersonaRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityPersona(
+	resp, err := client.Identity.OIDCReadWellKnownKeys(
 		context.Background(),
-		identityPersonaRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCReadWellKnownOpenIDConfiguration
+
+> OIDCReadWellKnownOpenIDConfiguration(ctx).Execute()
+
+Query OIDC configurations
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	resp, err := client.Identity.OIDCReadWellKnownOpenIDConfiguration(
+		context.Background(),
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+This endpoint does not require any parameters.
+
+### Other Parameters
+
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCRotateKey
+
+> OIDCRotateKey(ctx, name).OIDCRotateKeyRequest(oIDCRotateKeyRequest).Execute()
+
+Rotate a named OIDC key.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the key
+
+	oIDCRotateKeyRequest := NewOIDCRotateKeyRequestWithDefaults()
+	resp, err := client.Identity.OIDCRotateKey(
+		context.Background(),
+		name,
+		oIDCRotateKeyRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the key | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCRotateKeyRequest** | [**OIDCRotateKeyRequest**](OIDCRotateKeyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteAssignment
+
+> OIDCWriteAssignment(ctx, name).OIDCWriteAssignmentRequest(oIDCWriteAssignmentRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the assignment
+
+	oIDCWriteAssignmentRequest := NewOIDCWriteAssignmentRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteAssignment(
+		context.Background(),
+		name,
+		oIDCWriteAssignmentRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the assignment | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteAssignmentRequest** | [**OIDCWriteAssignmentRequest**](OIDCWriteAssignmentRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteClient
+
+> OIDCWriteClient(ctx, name).OIDCWriteClientRequest(oIDCWriteClientRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the client.
+
+	oIDCWriteClientRequest := NewOIDCWriteClientRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteClient(
+		context.Background(),
+		name,
+		oIDCWriteClientRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the client. | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteClientRequest** | [**OIDCWriteClientRequest**](OIDCWriteClientRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteConfig
+
+> OIDCWriteConfig(ctx).OIDCWriteConfigRequest(oIDCWriteConfigRequest).Execute()
+
+OIDC configuration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	oIDCWriteConfigRequest := NewOIDCWriteConfigRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteConfig(
+		context.Background(),
+		oIDCWriteConfigRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6553,7 +5850,7 @@ func main() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identityPersonaRequest** | [**IdentityPersonaRequest**](IdentityPersonaRequest.md) |  | 
+ **oIDCWriteConfigRequest** | [**OIDCWriteConfigRequest**](OIDCWriteConfigRequest.md) |  | 
 
  (empty response body)
 
@@ -6561,9 +5858,468 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostIdentityPersonaIdId
+## OIDCWriteKey
 
-> PostIdentityPersonaIdId(ctx, id).IdentityPersonaIdRequest(identityPersonaIdRequest).Execute()
+> OIDCWriteKey(ctx, name).OIDCWriteKeyRequest(oIDCWriteKeyRequest).Execute()
+
+CRUD operations for OIDC keys.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the key
+
+	oIDCWriteKeyRequest := NewOIDCWriteKeyRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteKey(
+		context.Background(),
+		name,
+		oIDCWriteKeyRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the key | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteKeyRequest** | [**OIDCWriteKeyRequest**](OIDCWriteKeyRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteProvider
+
+> OIDCWriteProvider(ctx, name).OIDCWriteProviderRequest(oIDCWriteProviderRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	oIDCWriteProviderRequest := NewOIDCWriteProviderRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteProvider(
+		context.Background(),
+		name,
+		oIDCWriteProviderRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteProviderRequest** | [**OIDCWriteProviderRequest**](OIDCWriteProviderRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteProviderAuthorize
+
+> OIDCWriteProviderAuthorize(ctx, name).OIDCWriteProviderAuthorizeRequest(oIDCWriteProviderAuthorizeRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	oIDCWriteProviderAuthorizeRequest := NewOIDCWriteProviderAuthorizeRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteProviderAuthorize(
+		context.Background(),
+		name,
+		oIDCWriteProviderAuthorizeRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteProviderAuthorizeRequest** | [**OIDCWriteProviderAuthorizeRequest**](OIDCWriteProviderAuthorizeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteProviderToken
+
+> OIDCWriteProviderToken(ctx, name).OIDCWriteProviderTokenRequest(oIDCWriteProviderTokenRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	oIDCWriteProviderTokenRequest := NewOIDCWriteProviderTokenRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteProviderToken(
+		context.Background(),
+		name,
+		oIDCWriteProviderTokenRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteProviderTokenRequest** | [**OIDCWriteProviderTokenRequest**](OIDCWriteProviderTokenRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteProviderUserInfo
+
+> OIDCWriteProviderUserInfo(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the provider
+
+	resp, err := client.Identity.OIDCWriteProviderUserInfo(
+		context.Background(),
+		name,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the provider | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteRole
+
+> OIDCWriteRole(ctx, name).OIDCWriteRoleRequest(oIDCWriteRoleRequest).Execute()
+
+CRUD operations on OIDC Roles
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the role
+
+	oIDCWriteRoleRequest := NewOIDCWriteRoleRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteRole(
+		context.Background(),
+		name,
+		oIDCWriteRoleRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteRoleRequest** | [**OIDCWriteRoleRequest**](OIDCWriteRoleRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## OIDCWriteScope
+
+> OIDCWriteScope(ctx, name).OIDCWriteScopeRequest(oIDCWriteScopeRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := "name_example" // string | Name of the scope
+
+	oIDCWriteScopeRequest := NewOIDCWriteScopeRequestWithDefaults()
+	resp, err := client.Identity.OIDCWriteScope(
+		context.Background(),
+		name,
+		oIDCWriteScopeRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**name** | **string** | Name of the scope | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **oIDCWriteScopeRequest** | [**OIDCWriteScopeRequest**](OIDCWriteScopeRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PersonaIDDeleteByID
+
+> PersonaIDDeleteByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -6590,11 +6346,9 @@ func main() {
 
 	id := "id_example" // string | ID of the persona
 
-	identityPersonaIdRequest := NewIdentityPersonaIdRequestWithDefaults()
-	resp, err := client.Identity.PostIdentityPersonaIdId(
+	resp, err := client.Identity.PersonaIDDeleteByID(
 		context.Background(),
 		id,
-		identityPersonaIdRequest,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6619,7 +6373,253 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **identityPersonaIdRequest** | [**IdentityPersonaIdRequest**](IdentityPersonaIdRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PersonaIDReadByID
+
+> PersonaIDReadByID(ctx, id).Execute()
+
+Update, read or delete an alias ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the persona
+
+	resp, err := client.Identity.PersonaIDReadByID(
+		context.Background(),
+		id,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the persona | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PersonaIDWriteByID
+
+> PersonaIDWriteByID(ctx, id).PersonaIDWriteByIDRequest(personaIDWriteByIDRequest).Execute()
+
+Update, read or delete an alias ID.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	id := "id_example" // string | ID of the persona
+
+	personaIDWriteByIDRequest := NewPersonaIDWriteByIDRequestWithDefaults()
+	resp, err := client.Identity.PersonaIDWriteByID(
+		context.Background(),
+		id,
+		personaIDWriteByIDRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation 
+**id** | **string** | ID of the persona | 
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **personaIDWriteByIDRequest** | [**PersonaIDWriteByIDRequest**](PersonaIDWriteByIDRequest.md) |  | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PersonaListByID
+
+> PersonaListByID(ctx).List(list).Execute()
+
+List all the alias IDs.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	list := NewstringWithDefaults()
+	resp, err := client.Identity.PersonaListByID(
+		context.Background(),
+		list,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+ (empty response body)
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+
+## PersonaWrite
+
+> PersonaWrite(ctx).PersonaWriteRequest(personaWriteRequest).Execute()
+
+Create a new alias.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	vault "github.com/hashicorp/vault-client-go"
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	personaWriteRequest := NewPersonaWriteRequestWithDefaults()
+	resp, err := client.Identity.PersonaWrite(
+		context.Background(),
+		personaWriteRequest,
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **personaWriteRequest** | [**PersonaWriteRequest**](PersonaWriteRequest.md) |  | 
 
  (empty response body)
 

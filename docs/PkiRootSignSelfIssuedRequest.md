@@ -1,4 +1,4 @@
-# PkiRootSignSelfIssuedRequest
+# PKIRootSignSelfIssuedRequest
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewPkiRootSignSelfIssuedRequest
+### NewPKIRootSignSelfIssuedRequest
 
-`func NewPkiRootSignSelfIssuedRequest() *PkiRootSignSelfIssuedRequest`
+`func NewPKIRootSignSelfIssuedRequest() *PKIRootSignSelfIssuedRequest`
 
-NewPkiRootSignSelfIssuedRequest instantiates a new PkiRootSignSelfIssuedRequest object
+NewPKIRootSignSelfIssuedRequest instantiates a new PKIRootSignSelfIssuedRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPkiRootSignSelfIssuedRequestWithDefaults
+### NewPKIRootSignSelfIssuedRequestWithDefaults
 
-`func NewPkiRootSignSelfIssuedRequestWithDefaults() *PkiRootSignSelfIssuedRequest`
+`func NewPKIRootSignSelfIssuedRequestWithDefaults() *PKIRootSignSelfIssuedRequest`
 
-NewPkiRootSignSelfIssuedRequestWithDefaults instantiates a new PkiRootSignSelfIssuedRequest object
+NewPKIRootSignSelfIssuedRequestWithDefaults instantiates a new PKIRootSignSelfIssuedRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCertificate
 
-`func (o *PkiRootSignSelfIssuedRequest) GetCertificate() string`
+`func (o *PKIRootSignSelfIssuedRequest) GetCertificate() string`
 
 GetCertificate returns the Certificate field if non-nil, zero value otherwise.
 
 ### GetCertificateOk
 
-`func (o *PkiRootSignSelfIssuedRequest) GetCertificateOk() (*string, bool)`
+`func (o *PKIRootSignSelfIssuedRequest) GetCertificateOk() (*string, bool)`
 
 GetCertificateOk returns a tuple with the Certificate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificate
 
-`func (o *PkiRootSignSelfIssuedRequest) SetCertificate(v string)`
+`func (o *PKIRootSignSelfIssuedRequest) SetCertificate(v string)`
 
 SetCertificate sets Certificate field to given value.
 
 ### HasCertificate
 
-`func (o *PkiRootSignSelfIssuedRequest) HasCertificate() bool`
+`func (o *PKIRootSignSelfIssuedRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
 
 ### GetIssuerRef
 
-`func (o *PkiRootSignSelfIssuedRequest) GetIssuerRef() string`
+`func (o *PKIRootSignSelfIssuedRequest) GetIssuerRef() string`
 
 GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
 
 ### GetIssuerRefOk
 
-`func (o *PkiRootSignSelfIssuedRequest) GetIssuerRefOk() (*string, bool)`
+`func (o *PKIRootSignSelfIssuedRequest) GetIssuerRefOk() (*string, bool)`
 
 GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerRef
 
-`func (o *PkiRootSignSelfIssuedRequest) SetIssuerRef(v string)`
+`func (o *PKIRootSignSelfIssuedRequest) SetIssuerRef(v string)`
 
 SetIssuerRef sets IssuerRef field to given value.
 
 ### HasIssuerRef
 
-`func (o *PkiRootSignSelfIssuedRequest) HasIssuerRef() bool`
+`func (o *PKIRootSignSelfIssuedRequest) HasIssuerRef() bool`
 
 HasIssuerRef returns a boolean if a field has been set.
 
 ### GetRequireMatchingCertificateAlgorithms
 
-`func (o *PkiRootSignSelfIssuedRequest) GetRequireMatchingCertificateAlgorithms() bool`
+`func (o *PKIRootSignSelfIssuedRequest) GetRequireMatchingCertificateAlgorithms() bool`
 
 GetRequireMatchingCertificateAlgorithms returns the RequireMatchingCertificateAlgorithms field if non-nil, zero value otherwise.
 
 ### GetRequireMatchingCertificateAlgorithmsOk
 
-`func (o *PkiRootSignSelfIssuedRequest) GetRequireMatchingCertificateAlgorithmsOk() (*bool, bool)`
+`func (o *PKIRootSignSelfIssuedRequest) GetRequireMatchingCertificateAlgorithmsOk() (*bool, bool)`
 
 GetRequireMatchingCertificateAlgorithmsOk returns a tuple with the RequireMatchingCertificateAlgorithms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequireMatchingCertificateAlgorithms
 
-`func (o *PkiRootSignSelfIssuedRequest) SetRequireMatchingCertificateAlgorithms(v bool)`
+`func (o *PKIRootSignSelfIssuedRequest) SetRequireMatchingCertificateAlgorithms(v bool)`
 
 SetRequireMatchingCertificateAlgorithms sets RequireMatchingCertificateAlgorithms field to given value.
 
 ### HasRequireMatchingCertificateAlgorithms
 
-`func (o *PkiRootSignSelfIssuedRequest) HasRequireMatchingCertificateAlgorithms() bool`
+`func (o *PKIRootSignSelfIssuedRequest) HasRequireMatchingCertificateAlgorithms() bool`
 
 HasRequireMatchingCertificateAlgorithms returns a boolean if a field has been set.
 

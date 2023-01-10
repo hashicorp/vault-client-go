@@ -1,4 +1,4 @@
-# PkiSignVerbatimRequest
+# PKISignVerbatimRequest
 
 ## Properties
 
@@ -27,520 +27,520 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewPkiSignVerbatimRequest
+### NewPKISignVerbatimRequest
 
-`func NewPkiSignVerbatimRequest() *PkiSignVerbatimRequest`
+`func NewPKISignVerbatimRequest() *PKISignVerbatimRequest`
 
-NewPkiSignVerbatimRequest instantiates a new PkiSignVerbatimRequest object
+NewPKISignVerbatimRequest instantiates a new PKISignVerbatimRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPkiSignVerbatimRequestWithDefaults
+### NewPKISignVerbatimRequestWithDefaults
 
-`func NewPkiSignVerbatimRequestWithDefaults() *PkiSignVerbatimRequest`
+`func NewPKISignVerbatimRequestWithDefaults() *PKISignVerbatimRequest`
 
-NewPkiSignVerbatimRequestWithDefaults instantiates a new PkiSignVerbatimRequest object
+NewPKISignVerbatimRequestWithDefaults instantiates a new PKISignVerbatimRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAltNames
 
-`func (o *PkiSignVerbatimRequest) GetAltNames() string`
+`func (o *PKISignVerbatimRequest) GetAltNames() string`
 
 GetAltNames returns the AltNames field if non-nil, zero value otherwise.
 
 ### GetAltNamesOk
 
-`func (o *PkiSignVerbatimRequest) GetAltNamesOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetAltNamesOk() (*string, bool)`
 
 GetAltNamesOk returns a tuple with the AltNames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAltNames
 
-`func (o *PkiSignVerbatimRequest) SetAltNames(v string)`
+`func (o *PKISignVerbatimRequest) SetAltNames(v string)`
 
 SetAltNames sets AltNames field to given value.
 
 ### HasAltNames
 
-`func (o *PkiSignVerbatimRequest) HasAltNames() bool`
+`func (o *PKISignVerbatimRequest) HasAltNames() bool`
 
 HasAltNames returns a boolean if a field has been set.
 
 ### GetCommonName
 
-`func (o *PkiSignVerbatimRequest) GetCommonName() string`
+`func (o *PKISignVerbatimRequest) GetCommonName() string`
 
 GetCommonName returns the CommonName field if non-nil, zero value otherwise.
 
 ### GetCommonNameOk
 
-`func (o *PkiSignVerbatimRequest) GetCommonNameOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetCommonNameOk() (*string, bool)`
 
 GetCommonNameOk returns a tuple with the CommonName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCommonName
 
-`func (o *PkiSignVerbatimRequest) SetCommonName(v string)`
+`func (o *PKISignVerbatimRequest) SetCommonName(v string)`
 
 SetCommonName sets CommonName field to given value.
 
 ### HasCommonName
 
-`func (o *PkiSignVerbatimRequest) HasCommonName() bool`
+`func (o *PKISignVerbatimRequest) HasCommonName() bool`
 
 HasCommonName returns a boolean if a field has been set.
 
 ### GetCsr
 
-`func (o *PkiSignVerbatimRequest) GetCsr() string`
+`func (o *PKISignVerbatimRequest) GetCsr() string`
 
 GetCsr returns the Csr field if non-nil, zero value otherwise.
 
 ### GetCsrOk
 
-`func (o *PkiSignVerbatimRequest) GetCsrOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetCsrOk() (*string, bool)`
 
 GetCsrOk returns a tuple with the Csr field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCsr
 
-`func (o *PkiSignVerbatimRequest) SetCsr(v string)`
+`func (o *PKISignVerbatimRequest) SetCsr(v string)`
 
 SetCsr sets Csr field to given value.
 
 ### HasCsr
 
-`func (o *PkiSignVerbatimRequest) HasCsr() bool`
+`func (o *PKISignVerbatimRequest) HasCsr() bool`
 
 HasCsr returns a boolean if a field has been set.
 
 ### GetExcludeCnFromSans
 
-`func (o *PkiSignVerbatimRequest) GetExcludeCnFromSans() bool`
+`func (o *PKISignVerbatimRequest) GetExcludeCnFromSans() bool`
 
 GetExcludeCnFromSans returns the ExcludeCnFromSans field if non-nil, zero value otherwise.
 
 ### GetExcludeCnFromSansOk
 
-`func (o *PkiSignVerbatimRequest) GetExcludeCnFromSansOk() (*bool, bool)`
+`func (o *PKISignVerbatimRequest) GetExcludeCnFromSansOk() (*bool, bool)`
 
 GetExcludeCnFromSansOk returns a tuple with the ExcludeCnFromSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExcludeCnFromSans
 
-`func (o *PkiSignVerbatimRequest) SetExcludeCnFromSans(v bool)`
+`func (o *PKISignVerbatimRequest) SetExcludeCnFromSans(v bool)`
 
 SetExcludeCnFromSans sets ExcludeCnFromSans field to given value.
 
 ### HasExcludeCnFromSans
 
-`func (o *PkiSignVerbatimRequest) HasExcludeCnFromSans() bool`
+`func (o *PKISignVerbatimRequest) HasExcludeCnFromSans() bool`
 
 HasExcludeCnFromSans returns a boolean if a field has been set.
 
 ### GetExtKeyUsage
 
-`func (o *PkiSignVerbatimRequest) GetExtKeyUsage() []string`
+`func (o *PKISignVerbatimRequest) GetExtKeyUsage() []string`
 
 GetExtKeyUsage returns the ExtKeyUsage field if non-nil, zero value otherwise.
 
 ### GetExtKeyUsageOk
 
-`func (o *PkiSignVerbatimRequest) GetExtKeyUsageOk() (*[]string, bool)`
+`func (o *PKISignVerbatimRequest) GetExtKeyUsageOk() (*[]string, bool)`
 
 GetExtKeyUsageOk returns a tuple with the ExtKeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtKeyUsage
 
-`func (o *PkiSignVerbatimRequest) SetExtKeyUsage(v []string)`
+`func (o *PKISignVerbatimRequest) SetExtKeyUsage(v []string)`
 
 SetExtKeyUsage sets ExtKeyUsage field to given value.
 
 ### HasExtKeyUsage
 
-`func (o *PkiSignVerbatimRequest) HasExtKeyUsage() bool`
+`func (o *PKISignVerbatimRequest) HasExtKeyUsage() bool`
 
 HasExtKeyUsage returns a boolean if a field has been set.
 
 ### GetExtKeyUsageOids
 
-`func (o *PkiSignVerbatimRequest) GetExtKeyUsageOids() []string`
+`func (o *PKISignVerbatimRequest) GetExtKeyUsageOids() []string`
 
 GetExtKeyUsageOids returns the ExtKeyUsageOids field if non-nil, zero value otherwise.
 
 ### GetExtKeyUsageOidsOk
 
-`func (o *PkiSignVerbatimRequest) GetExtKeyUsageOidsOk() (*[]string, bool)`
+`func (o *PKISignVerbatimRequest) GetExtKeyUsageOidsOk() (*[]string, bool)`
 
 GetExtKeyUsageOidsOk returns a tuple with the ExtKeyUsageOids field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtKeyUsageOids
 
-`func (o *PkiSignVerbatimRequest) SetExtKeyUsageOids(v []string)`
+`func (o *PKISignVerbatimRequest) SetExtKeyUsageOids(v []string)`
 
 SetExtKeyUsageOids sets ExtKeyUsageOids field to given value.
 
 ### HasExtKeyUsageOids
 
-`func (o *PkiSignVerbatimRequest) HasExtKeyUsageOids() bool`
+`func (o *PKISignVerbatimRequest) HasExtKeyUsageOids() bool`
 
 HasExtKeyUsageOids returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *PkiSignVerbatimRequest) GetFormat() string`
+`func (o *PKISignVerbatimRequest) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *PkiSignVerbatimRequest) GetFormatOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *PkiSignVerbatimRequest) SetFormat(v string)`
+`func (o *PKISignVerbatimRequest) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 ### HasFormat
 
-`func (o *PkiSignVerbatimRequest) HasFormat() bool`
+`func (o *PKISignVerbatimRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
 ### GetIpSans
 
-`func (o *PkiSignVerbatimRequest) GetIpSans() []string`
+`func (o *PKISignVerbatimRequest) GetIpSans() []string`
 
 GetIpSans returns the IpSans field if non-nil, zero value otherwise.
 
 ### GetIpSansOk
 
-`func (o *PkiSignVerbatimRequest) GetIpSansOk() (*[]string, bool)`
+`func (o *PKISignVerbatimRequest) GetIpSansOk() (*[]string, bool)`
 
 GetIpSansOk returns a tuple with the IpSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpSans
 
-`func (o *PkiSignVerbatimRequest) SetIpSans(v []string)`
+`func (o *PKISignVerbatimRequest) SetIpSans(v []string)`
 
 SetIpSans sets IpSans field to given value.
 
 ### HasIpSans
 
-`func (o *PkiSignVerbatimRequest) HasIpSans() bool`
+`func (o *PKISignVerbatimRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
 
 ### GetIssuerRef
 
-`func (o *PkiSignVerbatimRequest) GetIssuerRef() string`
+`func (o *PKISignVerbatimRequest) GetIssuerRef() string`
 
 GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
 
 ### GetIssuerRefOk
 
-`func (o *PkiSignVerbatimRequest) GetIssuerRefOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetIssuerRefOk() (*string, bool)`
 
 GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuerRef
 
-`func (o *PkiSignVerbatimRequest) SetIssuerRef(v string)`
+`func (o *PKISignVerbatimRequest) SetIssuerRef(v string)`
 
 SetIssuerRef sets IssuerRef field to given value.
 
 ### HasIssuerRef
 
-`func (o *PkiSignVerbatimRequest) HasIssuerRef() bool`
+`func (o *PKISignVerbatimRequest) HasIssuerRef() bool`
 
 HasIssuerRef returns a boolean if a field has been set.
 
 ### GetKeyUsage
 
-`func (o *PkiSignVerbatimRequest) GetKeyUsage() []string`
+`func (o *PKISignVerbatimRequest) GetKeyUsage() []string`
 
 GetKeyUsage returns the KeyUsage field if non-nil, zero value otherwise.
 
 ### GetKeyUsageOk
 
-`func (o *PkiSignVerbatimRequest) GetKeyUsageOk() (*[]string, bool)`
+`func (o *PKISignVerbatimRequest) GetKeyUsageOk() (*[]string, bool)`
 
 GetKeyUsageOk returns a tuple with the KeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyUsage
 
-`func (o *PkiSignVerbatimRequest) SetKeyUsage(v []string)`
+`func (o *PKISignVerbatimRequest) SetKeyUsage(v []string)`
 
 SetKeyUsage sets KeyUsage field to given value.
 
 ### HasKeyUsage
 
-`func (o *PkiSignVerbatimRequest) HasKeyUsage() bool`
+`func (o *PKISignVerbatimRequest) HasKeyUsage() bool`
 
 HasKeyUsage returns a boolean if a field has been set.
 
 ### GetNotAfter
 
-`func (o *PkiSignVerbatimRequest) GetNotAfter() string`
+`func (o *PKISignVerbatimRequest) GetNotAfter() string`
 
 GetNotAfter returns the NotAfter field if non-nil, zero value otherwise.
 
 ### GetNotAfterOk
 
-`func (o *PkiSignVerbatimRequest) GetNotAfterOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetNotAfterOk() (*string, bool)`
 
 GetNotAfterOk returns a tuple with the NotAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotAfter
 
-`func (o *PkiSignVerbatimRequest) SetNotAfter(v string)`
+`func (o *PKISignVerbatimRequest) SetNotAfter(v string)`
 
 SetNotAfter sets NotAfter field to given value.
 
 ### HasNotAfter
 
-`func (o *PkiSignVerbatimRequest) HasNotAfter() bool`
+`func (o *PKISignVerbatimRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
 
 ### GetOtherSans
 
-`func (o *PkiSignVerbatimRequest) GetOtherSans() []string`
+`func (o *PKISignVerbatimRequest) GetOtherSans() []string`
 
 GetOtherSans returns the OtherSans field if non-nil, zero value otherwise.
 
 ### GetOtherSansOk
 
-`func (o *PkiSignVerbatimRequest) GetOtherSansOk() (*[]string, bool)`
+`func (o *PKISignVerbatimRequest) GetOtherSansOk() (*[]string, bool)`
 
 GetOtherSansOk returns a tuple with the OtherSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOtherSans
 
-`func (o *PkiSignVerbatimRequest) SetOtherSans(v []string)`
+`func (o *PKISignVerbatimRequest) SetOtherSans(v []string)`
 
 SetOtherSans sets OtherSans field to given value.
 
 ### HasOtherSans
 
-`func (o *PkiSignVerbatimRequest) HasOtherSans() bool`
+`func (o *PKISignVerbatimRequest) HasOtherSans() bool`
 
 HasOtherSans returns a boolean if a field has been set.
 
 ### GetPrivateKeyFormat
 
-`func (o *PkiSignVerbatimRequest) GetPrivateKeyFormat() string`
+`func (o *PKISignVerbatimRequest) GetPrivateKeyFormat() string`
 
 GetPrivateKeyFormat returns the PrivateKeyFormat field if non-nil, zero value otherwise.
 
 ### GetPrivateKeyFormatOk
 
-`func (o *PkiSignVerbatimRequest) GetPrivateKeyFormatOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetPrivateKeyFormatOk() (*string, bool)`
 
 GetPrivateKeyFormatOk returns a tuple with the PrivateKeyFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrivateKeyFormat
 
-`func (o *PkiSignVerbatimRequest) SetPrivateKeyFormat(v string)`
+`func (o *PKISignVerbatimRequest) SetPrivateKeyFormat(v string)`
 
 SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
 ### HasPrivateKeyFormat
 
-`func (o *PkiSignVerbatimRequest) HasPrivateKeyFormat() bool`
+`func (o *PKISignVerbatimRequest) HasPrivateKeyFormat() bool`
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
 
 ### GetRemoveRootsFromChain
 
-`func (o *PkiSignVerbatimRequest) GetRemoveRootsFromChain() bool`
+`func (o *PKISignVerbatimRequest) GetRemoveRootsFromChain() bool`
 
 GetRemoveRootsFromChain returns the RemoveRootsFromChain field if non-nil, zero value otherwise.
 
 ### GetRemoveRootsFromChainOk
 
-`func (o *PkiSignVerbatimRequest) GetRemoveRootsFromChainOk() (*bool, bool)`
+`func (o *PKISignVerbatimRequest) GetRemoveRootsFromChainOk() (*bool, bool)`
 
 GetRemoveRootsFromChainOk returns a tuple with the RemoveRootsFromChain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRemoveRootsFromChain
 
-`func (o *PkiSignVerbatimRequest) SetRemoveRootsFromChain(v bool)`
+`func (o *PKISignVerbatimRequest) SetRemoveRootsFromChain(v bool)`
 
 SetRemoveRootsFromChain sets RemoveRootsFromChain field to given value.
 
 ### HasRemoveRootsFromChain
 
-`func (o *PkiSignVerbatimRequest) HasRemoveRootsFromChain() bool`
+`func (o *PKISignVerbatimRequest) HasRemoveRootsFromChain() bool`
 
 HasRemoveRootsFromChain returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PkiSignVerbatimRequest) GetRole() string`
+`func (o *PKISignVerbatimRequest) GetRole() string`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PkiSignVerbatimRequest) GetRoleOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetRoleOk() (*string, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PkiSignVerbatimRequest) SetRole(v string)`
+`func (o *PKISignVerbatimRequest) SetRole(v string)`
 
 SetRole sets Role field to given value.
 
 ### HasRole
 
-`func (o *PkiSignVerbatimRequest) HasRole() bool`
+`func (o *PKISignVerbatimRequest) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
 
 ### GetSerialNumber
 
-`func (o *PkiSignVerbatimRequest) GetSerialNumber() string`
+`func (o *PKISignVerbatimRequest) GetSerialNumber() string`
 
 GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
 
 ### GetSerialNumberOk
 
-`func (o *PkiSignVerbatimRequest) GetSerialNumberOk() (*string, bool)`
+`func (o *PKISignVerbatimRequest) GetSerialNumberOk() (*string, bool)`
 
 GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSerialNumber
 
-`func (o *PkiSignVerbatimRequest) SetSerialNumber(v string)`
+`func (o *PKISignVerbatimRequest) SetSerialNumber(v string)`
 
 SetSerialNumber sets SerialNumber field to given value.
 
 ### HasSerialNumber
 
-`func (o *PkiSignVerbatimRequest) HasSerialNumber() bool`
+`func (o *PKISignVerbatimRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
 
 ### GetSignatureBits
 
-`func (o *PkiSignVerbatimRequest) GetSignatureBits() int32`
+`func (o *PKISignVerbatimRequest) GetSignatureBits() int32`
 
 GetSignatureBits returns the SignatureBits field if non-nil, zero value otherwise.
 
 ### GetSignatureBitsOk
 
-`func (o *PkiSignVerbatimRequest) GetSignatureBitsOk() (*int32, bool)`
+`func (o *PKISignVerbatimRequest) GetSignatureBitsOk() (*int32, bool)`
 
 GetSignatureBitsOk returns a tuple with the SignatureBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignatureBits
 
-`func (o *PkiSignVerbatimRequest) SetSignatureBits(v int32)`
+`func (o *PKISignVerbatimRequest) SetSignatureBits(v int32)`
 
 SetSignatureBits sets SignatureBits field to given value.
 
 ### HasSignatureBits
 
-`func (o *PkiSignVerbatimRequest) HasSignatureBits() bool`
+`func (o *PKISignVerbatimRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PkiSignVerbatimRequest) GetTtl() int32`
+`func (o *PKISignVerbatimRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PkiSignVerbatimRequest) GetTtlOk() (*int32, bool)`
+`func (o *PKISignVerbatimRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PkiSignVerbatimRequest) SetTtl(v int32)`
+`func (o *PKISignVerbatimRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 ### HasTtl
 
-`func (o *PkiSignVerbatimRequest) HasTtl() bool`
+`func (o *PKISignVerbatimRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 
 ### GetUriSans
 
-`func (o *PkiSignVerbatimRequest) GetUriSans() []string`
+`func (o *PKISignVerbatimRequest) GetUriSans() []string`
 
 GetUriSans returns the UriSans field if non-nil, zero value otherwise.
 
 ### GetUriSansOk
 
-`func (o *PkiSignVerbatimRequest) GetUriSansOk() (*[]string, bool)`
+`func (o *PKISignVerbatimRequest) GetUriSansOk() (*[]string, bool)`
 
 GetUriSansOk returns a tuple with the UriSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUriSans
 
-`func (o *PkiSignVerbatimRequest) SetUriSans(v []string)`
+`func (o *PKISignVerbatimRequest) SetUriSans(v []string)`
 
 SetUriSans sets UriSans field to given value.
 
 ### HasUriSans
 
-`func (o *PkiSignVerbatimRequest) HasUriSans() bool`
+`func (o *PKISignVerbatimRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
 
 ### GetUsePss
 
-`func (o *PkiSignVerbatimRequest) GetUsePss() bool`
+`func (o *PKISignVerbatimRequest) GetUsePss() bool`
 
 GetUsePss returns the UsePss field if non-nil, zero value otherwise.
 
 ### GetUsePssOk
 
-`func (o *PkiSignVerbatimRequest) GetUsePssOk() (*bool, bool)`
+`func (o *PKISignVerbatimRequest) GetUsePssOk() (*bool, bool)`
 
 GetUsePssOk returns a tuple with the UsePss field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsePss
 
-`func (o *PkiSignVerbatimRequest) SetUsePss(v bool)`
+`func (o *PKISignVerbatimRequest) SetUsePss(v bool)`
 
 SetUsePss sets UsePss field to given value.
 
 ### HasUsePss
 
-`func (o *PkiSignVerbatimRequest) HasUsePss() bool`
+`func (o *PKISignVerbatimRequest) HasUsePss() bool`
 
 HasUsePss returns a boolean if a field has been set.
 

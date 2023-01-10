@@ -1,4 +1,4 @@
-# PkiIssuersGenerateIntermediateRequest
+# PKIIssuersGenerateIntermediateRequest
 
 ## Properties
 
@@ -34,695 +34,695 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewPkiIssuersGenerateIntermediateRequest
+### NewPKIIssuersGenerateIntermediateRequest
 
-`func NewPkiIssuersGenerateIntermediateRequest() *PkiIssuersGenerateIntermediateRequest`
+`func NewPKIIssuersGenerateIntermediateRequest() *PKIIssuersGenerateIntermediateRequest`
 
-NewPkiIssuersGenerateIntermediateRequest instantiates a new PkiIssuersGenerateIntermediateRequest object
+NewPKIIssuersGenerateIntermediateRequest instantiates a new PKIIssuersGenerateIntermediateRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPkiIssuersGenerateIntermediateRequestWithDefaults
+### NewPKIIssuersGenerateIntermediateRequestWithDefaults
 
-`func NewPkiIssuersGenerateIntermediateRequestWithDefaults() *PkiIssuersGenerateIntermediateRequest`
+`func NewPKIIssuersGenerateIntermediateRequestWithDefaults() *PKIIssuersGenerateIntermediateRequest`
 
-NewPkiIssuersGenerateIntermediateRequestWithDefaults instantiates a new PkiIssuersGenerateIntermediateRequest object
+NewPKIIssuersGenerateIntermediateRequestWithDefaults instantiates a new PKIIssuersGenerateIntermediateRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAddBasicConstraints
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetAddBasicConstraints() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetAddBasicConstraints() bool`
 
 GetAddBasicConstraints returns the AddBasicConstraints field if non-nil, zero value otherwise.
 
 ### GetAddBasicConstraintsOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetAddBasicConstraintsOk() (*bool, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetAddBasicConstraintsOk() (*bool, bool)`
 
 GetAddBasicConstraintsOk returns a tuple with the AddBasicConstraints field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddBasicConstraints
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetAddBasicConstraints(v bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetAddBasicConstraints(v bool)`
 
 SetAddBasicConstraints sets AddBasicConstraints field to given value.
 
 ### HasAddBasicConstraints
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasAddBasicConstraints() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasAddBasicConstraints() bool`
 
 HasAddBasicConstraints returns a boolean if a field has been set.
 
 ### GetAltNames
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetAltNames() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetAltNames() string`
 
 GetAltNames returns the AltNames field if non-nil, zero value otherwise.
 
 ### GetAltNamesOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetAltNamesOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetAltNamesOk() (*string, bool)`
 
 GetAltNamesOk returns a tuple with the AltNames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAltNames
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetAltNames(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetAltNames(v string)`
 
 SetAltNames sets AltNames field to given value.
 
 ### HasAltNames
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasAltNames() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasAltNames() bool`
 
 HasAltNames returns a boolean if a field has been set.
 
 ### GetCommonName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetCommonName() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetCommonName() string`
 
 GetCommonName returns the CommonName field if non-nil, zero value otherwise.
 
 ### GetCommonNameOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetCommonNameOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetCommonNameOk() (*string, bool)`
 
 GetCommonNameOk returns a tuple with the CommonName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCommonName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetCommonName(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetCommonName(v string)`
 
 SetCommonName sets CommonName field to given value.
 
 ### HasCommonName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasCommonName() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasCommonName() bool`
 
 HasCommonName returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetCountry() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetCountry() []string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetCountryOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetCountryOk() (*[]string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetCountry(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetCountry(v []string)`
 
 SetCountry sets Country field to given value.
 
 ### HasCountry
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasCountry() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
 ### GetExcludeCnFromSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetExcludeCnFromSans() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetExcludeCnFromSans() bool`
 
 GetExcludeCnFromSans returns the ExcludeCnFromSans field if non-nil, zero value otherwise.
 
 ### GetExcludeCnFromSansOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetExcludeCnFromSansOk() (*bool, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetExcludeCnFromSansOk() (*bool, bool)`
 
 GetExcludeCnFromSansOk returns a tuple with the ExcludeCnFromSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExcludeCnFromSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetExcludeCnFromSans(v bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetExcludeCnFromSans(v bool)`
 
 SetExcludeCnFromSans sets ExcludeCnFromSans field to given value.
 
 ### HasExcludeCnFromSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasExcludeCnFromSans() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasExcludeCnFromSans() bool`
 
 HasExcludeCnFromSans returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetFormat() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetFormatOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetFormat(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 ### HasFormat
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasFormat() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
 ### GetIpSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetIpSans() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetIpSans() []string`
 
 GetIpSans returns the IpSans field if non-nil, zero value otherwise.
 
 ### GetIpSansOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetIpSansOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetIpSansOk() (*[]string, bool)`
 
 GetIpSansOk returns a tuple with the IpSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetIpSans(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetIpSans(v []string)`
 
 SetIpSans sets IpSans field to given value.
 
 ### HasIpSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasIpSans() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
 
 ### GetKeyBits
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyBits() int32`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyBits() int32`
 
 GetKeyBits returns the KeyBits field if non-nil, zero value otherwise.
 
 ### GetKeyBitsOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyBitsOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyBitsOk() (*int32, bool)`
 
 GetKeyBitsOk returns a tuple with the KeyBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyBits
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetKeyBits(v int32)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetKeyBits(v int32)`
 
 SetKeyBits sets KeyBits field to given value.
 
 ### HasKeyBits
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasKeyBits() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
 
 ### GetKeyName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyName() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyName() string`
 
 GetKeyName returns the KeyName field if non-nil, zero value otherwise.
 
 ### GetKeyNameOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyNameOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyNameOk() (*string, bool)`
 
 GetKeyNameOk returns a tuple with the KeyName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetKeyName(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetKeyName(v string)`
 
 SetKeyName sets KeyName field to given value.
 
 ### HasKeyName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasKeyName() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasKeyName() bool`
 
 HasKeyName returns a boolean if a field has been set.
 
 ### GetKeyRef
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyRef() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyRef() string`
 
 GetKeyRef returns the KeyRef field if non-nil, zero value otherwise.
 
 ### GetKeyRefOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyRefOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyRefOk() (*string, bool)`
 
 GetKeyRefOk returns a tuple with the KeyRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRef
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetKeyRef(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetKeyRef(v string)`
 
 SetKeyRef sets KeyRef field to given value.
 
 ### HasKeyRef
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasKeyRef() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasKeyRef() bool`
 
 HasKeyRef returns a boolean if a field has been set.
 
 ### GetKeyType
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyType() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyType() string`
 
 GetKeyType returns the KeyType field if non-nil, zero value otherwise.
 
 ### GetKeyTypeOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetKeyTypeOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetKeyTypeOk() (*string, bool)`
 
 GetKeyTypeOk returns a tuple with the KeyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyType
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetKeyType(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetKeyType(v string)`
 
 SetKeyType sets KeyType field to given value.
 
 ### HasKeyType
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasKeyType() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
 
 ### GetLocality
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetLocality() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetLocality() []string`
 
 GetLocality returns the Locality field if non-nil, zero value otherwise.
 
 ### GetLocalityOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetLocalityOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetLocalityOk() (*[]string, bool)`
 
 GetLocalityOk returns a tuple with the Locality field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocality
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetLocality(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetLocality(v []string)`
 
 SetLocality sets Locality field to given value.
 
 ### HasLocality
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasLocality() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasLocality() bool`
 
 HasLocality returns a boolean if a field has been set.
 
 ### GetManagedKeyId
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetManagedKeyId() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetManagedKeyId() string`
 
 GetManagedKeyId returns the ManagedKeyId field if non-nil, zero value otherwise.
 
 ### GetManagedKeyIdOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetManagedKeyIdOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetManagedKeyIdOk() (*string, bool)`
 
 GetManagedKeyIdOk returns a tuple with the ManagedKeyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedKeyId
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetManagedKeyId(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetManagedKeyId(v string)`
 
 SetManagedKeyId sets ManagedKeyId field to given value.
 
 ### HasManagedKeyId
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasManagedKeyId() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasManagedKeyId() bool`
 
 HasManagedKeyId returns a boolean if a field has been set.
 
 ### GetManagedKeyName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetManagedKeyName() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetManagedKeyName() string`
 
 GetManagedKeyName returns the ManagedKeyName field if non-nil, zero value otherwise.
 
 ### GetManagedKeyNameOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetManagedKeyNameOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetManagedKeyNameOk() (*string, bool)`
 
 GetManagedKeyNameOk returns a tuple with the ManagedKeyName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedKeyName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetManagedKeyName(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetManagedKeyName(v string)`
 
 SetManagedKeyName sets ManagedKeyName field to given value.
 
 ### HasManagedKeyName
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasManagedKeyName() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasManagedKeyName() bool`
 
 HasManagedKeyName returns a boolean if a field has been set.
 
 ### GetNotAfter
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetNotAfter() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetNotAfter() string`
 
 GetNotAfter returns the NotAfter field if non-nil, zero value otherwise.
 
 ### GetNotAfterOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetNotAfterOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetNotAfterOk() (*string, bool)`
 
 GetNotAfterOk returns a tuple with the NotAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotAfter
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetNotAfter(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetNotAfter(v string)`
 
 SetNotAfter sets NotAfter field to given value.
 
 ### HasNotAfter
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasNotAfter() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
 
 ### GetNotBeforeDuration
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetNotBeforeDuration() int32`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetNotBeforeDuration() int32`
 
 GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
 
 ### GetNotBeforeDurationOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetNotBeforeDurationOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetNotBeforeDurationOk() (*int32, bool)`
 
 GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBeforeDuration
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetNotBeforeDuration(v int32)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetNotBeforeDuration(v int32)`
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
 ### HasNotBeforeDuration
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasNotBeforeDuration() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasNotBeforeDuration() bool`
 
 HasNotBeforeDuration returns a boolean if a field has been set.
 
 ### GetOrganization
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetOrganization() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetOrganization() []string`
 
 GetOrganization returns the Organization field if non-nil, zero value otherwise.
 
 ### GetOrganizationOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetOrganizationOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetOrganizationOk() (*[]string, bool)`
 
 GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganization
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetOrganization(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetOrganization(v []string)`
 
 SetOrganization sets Organization field to given value.
 
 ### HasOrganization
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasOrganization() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
 
 ### GetOtherSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetOtherSans() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetOtherSans() []string`
 
 GetOtherSans returns the OtherSans field if non-nil, zero value otherwise.
 
 ### GetOtherSansOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetOtherSansOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetOtherSansOk() (*[]string, bool)`
 
 GetOtherSansOk returns a tuple with the OtherSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOtherSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetOtherSans(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetOtherSans(v []string)`
 
 SetOtherSans sets OtherSans field to given value.
 
 ### HasOtherSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasOtherSans() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasOtherSans() bool`
 
 HasOtherSans returns a boolean if a field has been set.
 
 ### GetOu
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetOu() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetOu() []string`
 
 GetOu returns the Ou field if non-nil, zero value otherwise.
 
 ### GetOuOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetOuOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetOuOk() (*[]string, bool)`
 
 GetOuOk returns a tuple with the Ou field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOu
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetOu(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetOu(v []string)`
 
 SetOu sets Ou field to given value.
 
 ### HasOu
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasOu() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasOu() bool`
 
 HasOu returns a boolean if a field has been set.
 
 ### GetPostalCode
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetPostalCode() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetPostalCode() []string`
 
 GetPostalCode returns the PostalCode field if non-nil, zero value otherwise.
 
 ### GetPostalCodeOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetPostalCodeOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetPostalCodeOk() (*[]string, bool)`
 
 GetPostalCodeOk returns a tuple with the PostalCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostalCode
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetPostalCode(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetPostalCode(v []string)`
 
 SetPostalCode sets PostalCode field to given value.
 
 ### HasPostalCode
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasPostalCode() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
 
 ### GetPrivateKeyFormat
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetPrivateKeyFormat() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetPrivateKeyFormat() string`
 
 GetPrivateKeyFormat returns the PrivateKeyFormat field if non-nil, zero value otherwise.
 
 ### GetPrivateKeyFormatOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetPrivateKeyFormatOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetPrivateKeyFormatOk() (*string, bool)`
 
 GetPrivateKeyFormatOk returns a tuple with the PrivateKeyFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrivateKeyFormat
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetPrivateKeyFormat(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetPrivateKeyFormat(v string)`
 
 SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
 ### HasPrivateKeyFormat
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasPrivateKeyFormat() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasPrivateKeyFormat() bool`
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
 
 ### GetProvince
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetProvince() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetProvince() []string`
 
 GetProvince returns the Province field if non-nil, zero value otherwise.
 
 ### GetProvinceOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetProvinceOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetProvinceOk() (*[]string, bool)`
 
 GetProvinceOk returns a tuple with the Province field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvince
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetProvince(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetProvince(v []string)`
 
 SetProvince sets Province field to given value.
 
 ### HasProvince
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasProvince() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasProvince() bool`
 
 HasProvince returns a boolean if a field has been set.
 
 ### GetSerialNumber
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetSerialNumber() string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetSerialNumber() string`
 
 GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
 
 ### GetSerialNumberOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetSerialNumberOk() (*string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetSerialNumberOk() (*string, bool)`
 
 GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSerialNumber
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetSerialNumber(v string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetSerialNumber(v string)`
 
 SetSerialNumber sets SerialNumber field to given value.
 
 ### HasSerialNumber
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasSerialNumber() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
 
 ### GetSignatureBits
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetSignatureBits() int32`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetSignatureBits() int32`
 
 GetSignatureBits returns the SignatureBits field if non-nil, zero value otherwise.
 
 ### GetSignatureBitsOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetSignatureBitsOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetSignatureBitsOk() (*int32, bool)`
 
 GetSignatureBitsOk returns a tuple with the SignatureBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignatureBits
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetSignatureBits(v int32)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetSignatureBits(v int32)`
 
 SetSignatureBits sets SignatureBits field to given value.
 
 ### HasSignatureBits
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasSignatureBits() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
 
 ### GetStreetAddress
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetStreetAddress() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetStreetAddress() []string`
 
 GetStreetAddress returns the StreetAddress field if non-nil, zero value otherwise.
 
 ### GetStreetAddressOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetStreetAddressOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetStreetAddressOk() (*[]string, bool)`
 
 GetStreetAddressOk returns a tuple with the StreetAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStreetAddress
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetStreetAddress(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetStreetAddress(v []string)`
 
 SetStreetAddress sets StreetAddress field to given value.
 
 ### HasStreetAddress
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasStreetAddress() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetTtl() int32`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetTtlOk() (*int32, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetTtl(v int32)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 ### HasTtl
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasTtl() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 
 ### GetUriSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetUriSans() []string`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetUriSans() []string`
 
 GetUriSans returns the UriSans field if non-nil, zero value otherwise.
 
 ### GetUriSansOk
 
-`func (o *PkiIssuersGenerateIntermediateRequest) GetUriSansOk() (*[]string, bool)`
+`func (o *PKIIssuersGenerateIntermediateRequest) GetUriSansOk() (*[]string, bool)`
 
 GetUriSansOk returns a tuple with the UriSans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUriSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) SetUriSans(v []string)`
+`func (o *PKIIssuersGenerateIntermediateRequest) SetUriSans(v []string)`
 
 SetUriSans sets UriSans field to given value.
 
 ### HasUriSans
 
-`func (o *PkiIssuersGenerateIntermediateRequest) HasUriSans() bool`
+`func (o *PKIIssuersGenerateIntermediateRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
 

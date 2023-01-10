@@ -10,17 +10,18 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 
 1. [Installation](#installation)
 1. [Examples](#examples)
-   - [Getting started](#getting-started)
+   - [Getting Started](#getting-started)
    - [Authentication](#authentication)
-   - [Accessing generated methods](#accessing-generated-methods)
-   - [Modifying requests](#modifying-requests)
-   - [Error handling](#error-handling)
-   - [Response wrapping \& unwrapping](#response-wrapping--unwrapping)
+   - [Using Generic Accessors](#using-generic-accessors)
+   - [Modifying Requests](#modifying-requests)
+      - [Overriding Default Mount Path](#overriding-default-mount-path)
+      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
+   - [Error Handling](#error-handling)
    - [Using TLS](#using-tls)
-   - [Using TLS with client-side certificate authentication](#using-tls-with-client-side-certificate-authentication)
-   - [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
-   - [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
-   - [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
+   - [Using TLS with Client-side Certificate Authentication](#using-tls-with-client-side-certificate-authentication)
+   - [Loading Configuration from Environment Variables](#loading-configuration-from-environment-variables)
+   - [Logging Requests \& Responses with Request/Response Callbacks](#logging-requests--responses-with-requestresponse-callbacks)
+   - [Enforcing Read-your-writes Replication Semantics](#enforcing-read-your-writes-replication-semantics)
 1. [Building the Library](#building-the-library)
 1. [Under Development](#under-development)
 1. [Documentation for API Endpoints](#documentation-for-api-endpoints)
@@ -34,7 +35,7 @@ go get github.com/hashicorp/vault-client-go
 
 ## Examples
 
-## Getting started
+### Getting Started
 
 Here is a simple example of using the library to read and write your first
 secret. For the sake of simplicity, we are authenticating with a root token.
@@ -50,6 +51,7 @@ package main
 import (
 	"context"
 	"log"
+	"time"
 
 	vault "github.com/hashicorp/vault-client-go"
 )
@@ -72,8 +74,8 @@ func main() {
 	}
 
 	// write a secret
-	_, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
-		"data": map[string]any{
+	_, err = client.Secrets.KVv2Write(ctx, "my-secret", vault.KVv2WriteRequest{
+		Data: map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
 		},
@@ -84,39 +86,33 @@ func main() {
 	log.Println("secret written successfully")
 
 	// read a secret
-	r, err := client.Read(ctx, "/secret/data/my-secret")
+	s, err := client.Secrets.KVv2Read(ctx, "my-secret")
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println("secret retrieved:", r.Data["data"])
+	log.Println("secret retrieved:", s.Data.Data)
 }
 ```
 
-> _**Note**_: we are using the simple `Read` and `Write` methods to demonstrate
-> the most generic way of accessing any data in Vault. A more specialized
-> approach for reading and writing `kv-v2` secrets is to use the generated
-> `client.Secrets.GetSecretDataPath` / `client.Secrets.PostSecretDataPath`
-> methods.
-
-## Authentication
+### Authentication
 
 In the previous example we used an insecure (root token) authentication method.
 For production applications, it is recommended to use [approle][doc-approle] or
 one of the platform-specific authentication methods instead (e.g.
-[kubernetes][doc-kubernetes], [AWS][doc-aws], [Azure][doc-azure], etc.). The
+[Kubernetes][doc-kubernetes], [AWS][doc-aws], [Azure][doc-azure], etc.). The
 functions to access these authentication methods are automatically generated
 under `client.Auth`. Below is an example of how to authenticate using `approle`
 authentication method. Please refer to the [approle documentation][doc-approle]
 for more details.
 
 ```go
-resp, err := client.Auth.PostAuthApproleLogin(
+resp, err := client.Auth.AppRoleLogin(
 	ctx,
-	vault.ApproleLoginRequest{
+	vault.AppRoleLoginRequest{
 		RoleId:   os.Getenv("MY_APPROLE_ROLE_ID"),
 		SecretId: os.Getenv("MY_APPROLE_SECRET_ID"),
 	},
-	vault.WithMountPath("my/mount/path"), // optional, defaults to "approle"
+	vault.WithMountPath("my/approle/path"), // optional, defaults to "approle"
 )
 if err != nil {
 	log.Fatal(err)
@@ -130,38 +126,39 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 The secret identifier is often delivered as a wrapped token. In this case, you
 should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 
-> _**Note**_: this is a temporary solution using a generated method. The user
-> experience will be improved with the introduction of auth wrappers.
+### Using Generic Accessors
 
-## Accessing generated methods
-
-The library has a number of generated methods corresponding to the known Vault
-API endpoints. They are organized in four catagories:
-
-- `client.Auth` - authentication-related methods
-- `client.Secrets` - methods dealing with secrets engines
-- `client.Identity` - identity-related methods
-- `client.System` - various system-wide calls
-
-Below is an example of accessing a generated `GetSysMounts` method (equivalent
-to `vault secrets list` or `GET /v1/sys/mounts`):
+The library provides the following generic accessors which let you read,
+modify, and delete an arbitrary path within Vault:
 
 ```go
-resp, err := client.System.GetSysMounts(ctx)
-if err != nil {
-	log.Fatal(err)
-}
+client.Read(...)
+client.ReadWithParameters(...)
 
-for engine := range resp.Data {
-	log.Println(engine)
-}
+client.Write(...)
+client.WriteFromBytes(...)
+client.WriteFromReader(...)
+
+client.List(...)
+
+client.Delete(...)
+client.DeleteWithParameters(...)
 ```
 
-> _**Note**_: the response data is currently returned as simple
-> `map[string]any` maps. Structured (strongly typed) responses are coming
-> soon!
+For example, `client.Secrets.KVv2Write(...)` from
+[Getting Started](#getting-started) section could be rewritten using a generic
+`client.Write(...)` like so:
 
-### Modifying requests
+```go
+_, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
+	"data": map[string]any{
+		"password1": "abc123",
+		"password2": "correct horse battery staple",
+	},
+})
+```
+
+### Modifying Requests
 
 You can modify the requests in one of two ways, either at the client level or
 by decorating individual requests:
@@ -172,15 +169,55 @@ _ = client.SetToken("my-token")
 _ = client.SetNamespace("my-namespace")
 
 // per-request decorators take precedence over the client-level settings
-resp, _ = client.Read(
+resp, _ = client.Secrets.KVv2Read(
 	ctx,
-	"/secret/data/my-secret",
+	"my-secret",
 	vault.WithToken("request-specific-token"),
 	vault.WithNamespace("request-specific-namespace"),
 )
 ```
 
-### Error handling
+#### Overriding Default Mount Path
+
+Vault [plugins][doc-plugins] can be mounted at arbitrary mount paths using
+`-path` command-line argument:
+
+```shell-session
+vault secrets enable -path=my/mount/path kv-v2
+```
+
+To accomodate this behavior, the requests defined under `client.Auth` and
+`client.Secrets` can be offset with mount path overrides using the following
+syntax:
+
+```go
+// Equivalent to client.Read(ctx, "my/mount/path/data/my-secret")
+secret, err := client.Secrets.KVv2Read(
+	ctx,
+	"my-secret",
+	vault.WithMountPath("my/mount/path"),
+)
+```
+
+#### Response Wrapping & Unwrapping
+
+Please refer to the [response-wrapping documentation][doc-response-wrapping]
+for more background information.
+
+```go
+// wrap the response with a 5 minute TTL
+resp, _ := .Secrets.KVv2Read(
+	ctx,
+	"my-secret",
+	vault.WithResponseWrapping(5*time.Minute),
+)
+wrapped := resp.WrapInfo.Token
+
+// unwrap the response (usually done elsewhere)
+unwrapped, _ := vault.Unwrap[map[string]any](ctx, client, wrapped)
+```
+
+### Error Handling
 
 There are a couple specialized error types that the client can return:
 
@@ -193,7 +230,7 @@ The client also provides a convenience function `vault.IsErrorStatus(...)` to
 simplify error handling:
 
 ```go
-r, err := client.Read(ctx, "/secret/data/my-secret")
+s, err := client.Secrets.KVv2Read(ctx, "my-secret")
 if err != nil {
 	if vault.IsErrorStatus(err, http.StatusForbidden) {
 		// special handling for 403 errors
@@ -203,24 +240,6 @@ if err != nil {
 	}
 	return err
 }
-```
-
-### Response wrapping & unwrapping
-
-Please refer to the [response-wrapping documentation][doc-response-wrapping]
-for more background information.
-
-```go
-// wrap the response with a 5 minute TTL
-resp, _ := client.Read(
-	ctx,
-	"/secret/data/my-secret",
-	vault.WithResponseWrapping(5*time.Minute),
-)
-wrapped := resp.WrapInfo.Token
-
-// unwrap the response (usually done elsewhere)
-unwrapped, _ := vault.Unwrap[map[string]any](ctx, client, wrapped)
 ```
 
 ### Using TLS
@@ -248,7 +267,7 @@ You can test this with a `-dev-tls` Vault server:
 vault server -dev-tls -dev-root-token-id="my-token"
 ```
 
-### Using TLS with client-side certificate authentication
+### Using TLS with Client-side Certificate Authentication
 
 ```go
 tls := vault.TLSConfiguration{}
@@ -264,7 +283,7 @@ if err != nil {
 	log.Fatal(err)
 }
 
-resp, err := client.Auth.PostAuthCertLogin(ctx, vault.CertLoginRequest{
+resp, err := client.Auth.CertLogin(ctx, vault.CertLoginRequest{
 	Name: "my-cert",
 })
 if err != nil {
@@ -279,7 +298,7 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 > _**Note**_: this is a temporary solution using a generated method. The user
 > experience will be improved with the introduction of auth wrappers.
 
-### Loading configuration from environment variables
+### Loading Configuration from Environment Variables
 
 ```go
 client, err := vault.New(
@@ -296,7 +315,7 @@ export VAULT_TOKEN=my-token
 go run main.go
 ```
 
-### Logging requests & responses with request/response callbacks
+### Logging Requests & Responses with Request/Response Callbacks
 
 ```go
 client.SetRequestCallbacks(func(req *http.Request) {
@@ -310,7 +329,7 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 Alternatively, `vault.WithRequestCallbacks(..)` / `vault.WithResponseCallbacks(..)`
 may be used to inject callbacks for individual requests.
 
-### Enforcing read-your-writes replication semantics
+### Enforcing Read-your-writes Replication Semantics
 
 Detailed background information of the read-after-write consistency problem can
 be found in the [consistency][doc-consistency] and [replication][doc-replication]
@@ -323,14 +342,12 @@ callbacks:
 var state string
 
 // write
-_, err := client.Write(
+_, err := client.Secrets.KVv2Write(
 	ctx,
-	"/secret/data/my-secret",
-	map[string]any{
-		"data": map[string]any{
-			"password1": "abc123",
-			"password2": "correct horse battery staple",
-		},
+	"my-secret",
+	Data: map[string]any{
+		"password1": "abc123",
+		"password2": "correct horse battery staple",
 	},
 	vault.WithResponseCallbacks(
 		vault.RecordReplicationState(
@@ -340,18 +357,15 @@ _, err := client.Write(
 )
 
 // read
-r, err := client.Read(
+secret, err := client.Secrets.KVv2Read(
 	ctx,
-	"/secret/data/my-secret",
+	"my-secret",
 	vault.WithRequestCallbacks(
 		vault.RequireReplicationStates(
 			&state,
 		),
 	),
 )
-if err != nil {
-	log.Fatal(err)
-}
 ```
 
 Alternatively, enforce read-your-writes semantics for all requests using the
@@ -419,4 +433,5 @@ The following features are coming soon:
 [doc-kubernetes]:        https://developer.hashicorp.com/vault/docs/auth/kubernetes
 [doc-aws]:               https://developer.hashicorp.com/vault/docs/auth/aws
 [doc-azure]:             https://developer.hashicorp.com/vault/docs/auth/azure
-[doc-response-wrapping]: https://www.vaultproject.io/docs/concepts/response-wrapping 
+[doc-response-wrapping]: https://www.vaultproject.io/docs/concepts/response-wrapping
+[doc-plugins]:           https://developer.hashicorp.com/vault/docs/plugins

@@ -164,10 +164,12 @@ _, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
 The library has a number of generated methods corresponding to the known Vault
 API endpoints. They are organized in four catagories:
 
-- `client.Auth` - authentication-related methods
-- `client.Secrets` - methods dealing with secrets engines
-- `client.Identity` - identity-related methods
-- `client.System` - various system-wide calls
+```go
+client.Auth     // authentication-related methods
+client.Secrets  // methods dealing with secrets engines
+client.Identity // identity-related methods
+client.System   // various system-wide calls
+```
 
 Below is an example of accessing a generated `System.ReadMounts` method
 (equivalent to `vault secrets list` or `GET /v1/sys/mounts`):

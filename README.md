@@ -234,7 +234,7 @@ for more background information.
 
 ```go
 // wrap the response with a 5 minute TTL
-resp, _ := .Secrets.KVv2Read(
+resp, _ := client.Secrets.KVv2Read(
 	ctx,
 	"my-secret",
 	vault.WithResponseWrapping(5*time.Minute),

@@ -4,7 +4,7 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 [specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
 [Vault][vault].
 
-### ***Note: This library is now available in beta. Please try it out and give us feedback! Please do not use in production***
+> _**Note**_: **This library is now available in BETA. Please try it out and give us feedback! Please do not use it in production.**
 
 ## Contents
 
@@ -13,6 +13,7 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
    - [Getting Started](#getting-started)
    - [Authentication](#authentication)
    - [Using Generic Accessors](#using-generic-accessors)
+   - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
       - [Overriding Default Mount Path](#overriding-default-mount-path)
       - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
@@ -90,7 +91,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println("secret retrieved:", s.Data.Data)
+	log.Println("secret retrieved:", s.Data)
 }
 ```
 
@@ -158,6 +159,33 @@ _, err = client.Write(ctx, "/secret/data/my-secret", map[string]any{
 })
 ```
 
+### Using Generated Methods
+
+The library has a number of generated methods corresponding to the known Vault
+API endpoints. They are organized in four catagories:
+
+- `client.Auth` - authentication-related methods
+- `client.Secrets` - methods dealing with secrets engines
+- `client.Identity` - identity-related methods
+- `client.System` - various system-wide calls
+
+Below is an example of accessing a generated `System.ReadMounts` method
+(equivalent to `vault secrets list` or `GET /v1/sys/mounts`):
+
+```go
+resp, err := client.System.ReadMounts(ctx)
+if err != nil {
+	log.Fatal(err)
+}
+
+for engine := range resp.Data {
+	log.Println(engine)
+}
+```
+
+> _**Note**_: the `response.Data` is currently returned as simple
+> `map[string]any` maps. Structured (strongly typed) responses are coming soon!
+
 ### Modifying Requests
 
 You can modify the requests in one of two ways, either at the client level or
@@ -206,7 +234,7 @@ for more background information.
 
 ```go
 // wrap the response with a 5 minute TTL
-resp, _ := .Secrets.KVv2Read(
+resp, _ := client.Secrets.KVv2Read(
 	ctx,
 	"my-secret",
 	vault.WithResponseWrapping(5*time.Minute),

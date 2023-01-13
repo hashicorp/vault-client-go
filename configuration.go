@@ -49,7 +49,8 @@ func WithBaseClient(client *http.Client) ClientOption {
 
 // WithRequestTimeout, given a non-negative value, will apply the timeout to
 // each request function unless an earlier deadline is passed to the request
-// function through context.Context.
+// function through context.Context. Note that this timeout is not applicable
+// to client.ReadRaw(...) or client.ReadRawWithParameters(...).
 // Default: 60s
 func WithRequestTimeout(timeout time.Duration) ClientOption {
 	return func(c *Configuration) error {
@@ -166,7 +167,8 @@ type Configuration struct {
 
 	// RequestTimeout, given a non-negative value, will apply the timeout to
 	// each request function unless an earlier deadline is passed to the
-	// request function through context.Context.
+	// request function through context.Context. Note that this timeout is
+	// not applicable to client.ReadRaw or client.ReadRawWithParameters.
 	// Default: 60s
 	RequestTimeout time.Duration `env:"VAULT_CLIENT_TIMEOUT"`
 

@@ -21,8 +21,8 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 	return c.ReadWithParameters(ctx, path, nil, options...)
 }
 
-// ReadWithParameters attempts to read the data stored at the given Vault path,
-// adding the given query parameters to the request.
+// ReadWithParameters attempts to read the value stored at the given Vault
+// path, adding the given query parameters to the request.
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -40,8 +40,8 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 	)
 }
 
-// ReadRaw attempts to read the data from the given Vault path and returns a
-// raw *http.Response. Compared to Read, this function:
+// ReadRaw attempts to read the value stored at the given Vault path and returns
+// a raw *http.Response. Compared to Read, this function:
 //
 //   - does not parse the response
 //   - does not check the response for errors
@@ -50,9 +50,9 @@ func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOpt
 	return c.ReadRawWithParameters(ctx, path, nil, options...)
 }
 
-// ReadRawWithParameters attempts to read the data from the given Vault path
-// and returns a raw *http.Response. Compared to ReadRawWithParameters, this
-// function:
+// ReadRawWithParameters attempts to read the value stored at the given Vault
+// path (adding the given query parameters to the request) and returns a raw
+// *http.Response. Compared to ReadRawWithParameters, this function:
 //
 //   - does not parse the response
 //   - does not check the response for errors
@@ -126,13 +126,14 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 	)
 }
 
-// Delete attempts to permanently delete the data stored at the given Vault path.
+// Delete attempts to permanently delete the value stored at the given Vault
+// path.
 func (c *Client) Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	return c.DeleteWithParameters(ctx, path, nil, options...)
 }
 
-// Delete attempts to permanently delete the data stored at the given Vault path,
-// adding the given query parameters to the request.
+// Delete attempts to permanently delete the value stored at the given Vault
+// path, adding the given query parameters to the request.
 func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {

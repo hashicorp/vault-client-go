@@ -16,12 +16,12 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-// Read attempts to read the data from the given Vault path.
+// Read attempts to read the stored at the given Vault path.
 func (c *Client) Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	return c.ReadWithParameters(ctx, path, nil, options...)
 }
 
-// ReadWithParameters attempts to read the data from the given Vault path,
+// ReadWithParameters attempts to read the data stored at the given Vault path,
 // adding the given query parameters to the request.
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)

@@ -15,6 +15,8 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 // System is a simple wrapper around the client for System requests
@@ -24,7 +26,7 @@ type System struct {
 
 // CalculateAuditHash The hash of the given string via the given audit backend
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
-func (a *System) CalculateAuditHash(ctx context.Context, path string, calculateAuditHashRequest CalculateAuditHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) CalculateAuditHash(ctx context.Context, path string, request schema.CalculateAuditHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -38,7 +40,7 @@ func (a *System) CalculateAuditHash(ctx context.Context, path string, calculateA
 		a.client,
 		http.MethodPost,
 		requestPath,
-		calculateAuditHashRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -642,7 +644,7 @@ func (a *System) ListVersionHistory(ctx context.Context, list string, options ..
 }
 
 // MFAValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
-func (a *System) MFAValidate(ctx context.Context, mFAValidateRequest MFAValidateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) MFAValidate(ctx context.Context, request schema.MFAValidateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -655,7 +657,7 @@ func (a *System) MFAValidate(ctx context.Context, mFAValidateRequest MFAValidate
 		a.client,
 		http.MethodPost,
 		requestPath,
-		mFAValidateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2131,7 +2133,7 @@ func (a *System) ReadSealStatus(ctx context.Context, options ...RequestOption) (
 }
 
 // Remount Initiate a mount migration
-func (a *System) Remount(ctx context.Context, remountRequest RemountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) Remount(ctx context.Context, request schema.RemountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2144,14 +2146,14 @@ func (a *System) Remount(ctx context.Context, remountRequest RemountRequest, opt
 		a.client,
 		http.MethodPost,
 		requestPath,
-		remountRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // Renew Renews a lease, requesting to extend the lease.
-func (a *System) Renew(ctx context.Context, renewRequest RenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) Renew(ctx context.Context, request schema.RenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2164,7 +2166,7 @@ func (a *System) Renew(ctx context.Context, renewRequest RenewRequest, options .
 		a.client,
 		http.MethodPost,
 		requestPath,
-		renewRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2172,7 +2174,7 @@ func (a *System) Renew(ctx context.Context, renewRequest RenewRequest, options .
 
 // RenewFor Renews a lease, requesting to extend the lease.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (a *System) RenewFor(ctx context.Context, urlLeaseId string, renewForRequest RenewForRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) RenewFor(ctx context.Context, urlLeaseId string, request schema.RenewForRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2186,14 +2188,14 @@ func (a *System) RenewFor(ctx context.Context, urlLeaseId string, renewForReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		renewForRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // Revoke Revokes a lease immediately.
-func (a *System) Revoke(ctx context.Context, revokeRequest RevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) Revoke(ctx context.Context, request schema.RevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2206,7 +2208,7 @@ func (a *System) Revoke(ctx context.Context, revokeRequest RevokeRequest, option
 		a.client,
 		http.MethodPost,
 		requestPath,
-		revokeRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2237,7 +2239,7 @@ func (a *System) RevokeForce(ctx context.Context, prefix string, options ...Requ
 
 // RevokeLease Revokes a lease immediately.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (a *System) RevokeLease(ctx context.Context, urlLeaseId string, revokeLeaseRequest RevokeLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) RevokeLease(ctx context.Context, urlLeaseId string, request schema.RevokeLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2251,7 +2253,7 @@ func (a *System) RevokeLease(ctx context.Context, urlLeaseId string, revokeLease
 		a.client,
 		http.MethodPost,
 		requestPath,
-		revokeLeaseRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2259,7 +2261,7 @@ func (a *System) RevokeLease(ctx context.Context, urlLeaseId string, revokeLease
 
 // RevokePrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (a *System) RevokePrefix(ctx context.Context, prefix string, revokePrefixRequest RevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) RevokePrefix(ctx context.Context, prefix string, request schema.RevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2273,7 +2275,7 @@ func (a *System) RevokePrefix(ctx context.Context, prefix string, revokePrefixRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		revokePrefixRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2431,7 +2433,7 @@ func (a *System) SysWriteLockedusersMountAccessorUnlockAliasIdentifier(ctx conte
 
 // SysWritePluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
 // name: The name of the plugin
-func (a *System) SysWritePluginsCatalogName(ctx context.Context, name string, sysWritePluginsCatalogNameRequest SysWritePluginsCatalogNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) SysWritePluginsCatalogName(ctx context.Context, name string, request schema.SysWritePluginsCatalogNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2445,7 +2447,7 @@ func (a *System) SysWritePluginsCatalogName(ctx context.Context, name string, sy
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sysWritePluginsCatalogNameRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2453,7 +2455,7 @@ func (a *System) SysWritePluginsCatalogName(ctx context.Context, name string, sy
 
 // SysWriteToolsRandomUrlbytes Generate random bytes
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *System) SysWriteToolsRandomUrlbytes(ctx context.Context, urlbytes string, sysWriteToolsRandomUrlbytesRequest SysWriteToolsRandomUrlbytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) SysWriteToolsRandomUrlbytes(ctx context.Context, urlbytes string, request schema.SysWriteToolsRandomUrlbytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2467,14 +2469,14 @@ func (a *System) SysWriteToolsRandomUrlbytes(ctx context.Context, urlbytes strin
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sysWriteToolsRandomUrlbytesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // ToolsGenerateRandom Generate random bytes
-func (a *System) ToolsGenerateRandom(ctx context.Context, toolsGenerateRandomRequest ToolsGenerateRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ToolsGenerateRandom(ctx context.Context, request schema.ToolsGenerateRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2487,7 +2489,7 @@ func (a *System) ToolsGenerateRandom(ctx context.Context, toolsGenerateRandomReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		toolsGenerateRandomRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2495,7 +2497,7 @@ func (a *System) ToolsGenerateRandom(ctx context.Context, toolsGenerateRandomReq
 
 // ToolsGenerateRandomSource Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-func (a *System) ToolsGenerateRandomSource(ctx context.Context, source string, toolsGenerateRandomSourceRequest ToolsGenerateRandomSourceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ToolsGenerateRandomSource(ctx context.Context, source string, request schema.ToolsGenerateRandomSourceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2509,7 +2511,7 @@ func (a *System) ToolsGenerateRandomSource(ctx context.Context, source string, t
 		a.client,
 		http.MethodPost,
 		requestPath,
-		toolsGenerateRandomSourceRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2518,7 +2520,7 @@ func (a *System) ToolsGenerateRandomSource(ctx context.Context, source string, t
 // ToolsGenerateRandomSourceBytes Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *System) ToolsGenerateRandomSourceBytes(ctx context.Context, source string, urlbytes string, toolsGenerateRandomSourceBytesRequest ToolsGenerateRandomSourceBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ToolsGenerateRandomSourceBytes(ctx context.Context, source string, urlbytes string, request schema.ToolsGenerateRandomSourceBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2533,14 +2535,14 @@ func (a *System) ToolsGenerateRandomSourceBytes(ctx context.Context, source stri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		toolsGenerateRandomSourceBytesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // ToolsHash Generate a hash sum for input data
-func (a *System) ToolsHash(ctx context.Context, toolsHashRequest ToolsHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ToolsHash(ctx context.Context, request schema.ToolsHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2553,7 +2555,7 @@ func (a *System) ToolsHash(ctx context.Context, toolsHashRequest ToolsHashReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		toolsHashRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2561,7 +2563,7 @@ func (a *System) ToolsHash(ctx context.Context, toolsHashRequest ToolsHashReques
 
 // ToolsHashWith Generate a hash sum for input data
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *System) ToolsHashWith(ctx context.Context, urlalgorithm string, toolsHashWithRequest ToolsHashWithRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ToolsHashWith(ctx context.Context, urlalgorithm string, request schema.ToolsHashWithRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2575,14 +2577,14 @@ func (a *System) ToolsHashWith(ctx context.Context, urlalgorithm string, toolsHa
 		a.client,
 		http.MethodPost,
 		requestPath,
-		toolsHashWithRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // Unseal Unseal the Vault.
-func (a *System) Unseal(ctx context.Context, unsealRequest UnsealRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) Unseal(ctx context.Context, request schema.UnsealRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2595,7 +2597,7 @@ func (a *System) Unseal(ctx context.Context, unsealRequest UnsealRequest, option
 		a.client,
 		http.MethodPost,
 		requestPath,
-		unsealRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2622,7 +2624,7 @@ func (a *System) WrappingReadLookup(ctx context.Context, options ...RequestOptio
 }
 
 // WrappingRewrap Rotates a response-wrapped token.
-func (a *System) WrappingRewrap(ctx context.Context, wrappingRewrapRequest WrappingRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WrappingRewrap(ctx context.Context, request schema.WrappingRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2635,14 +2637,14 @@ func (a *System) WrappingRewrap(ctx context.Context, wrappingRewrapRequest Wrapp
 		a.client,
 		http.MethodPost,
 		requestPath,
-		wrappingRewrapRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WrappingUnwrap Unwraps a response-wrapped token.
-func (a *System) WrappingUnwrap(ctx context.Context, wrappingUnwrapRequest WrappingUnwrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WrappingUnwrap(ctx context.Context, request schema.WrappingUnwrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2655,7 +2657,7 @@ func (a *System) WrappingUnwrap(ctx context.Context, wrappingUnwrapRequest Wrapp
 		a.client,
 		http.MethodPost,
 		requestPath,
-		wrappingUnwrapRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2682,7 +2684,7 @@ func (a *System) WrappingWrap(ctx context.Context, options ...RequestOption) (*R
 }
 
 // WrappingWriteLookup Look up wrapping properties for the given token.
-func (a *System) WrappingWriteLookup(ctx context.Context, wrappingWriteLookupRequest WrappingWriteLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WrappingWriteLookup(ctx context.Context, request schema.WrappingWriteLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2695,7 +2697,7 @@ func (a *System) WrappingWriteLookup(ctx context.Context, wrappingWriteLookupReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		wrappingWriteLookupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2703,7 +2705,7 @@ func (a *System) WrappingWriteLookup(ctx context.Context, wrappingWriteLookupReq
 
 // WriteAuditDevice Enable a new audit device at the supplied path.
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
-func (a *System) WriteAuditDevice(ctx context.Context, path string, writeAuditDeviceRequest WriteAuditDeviceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteAuditDevice(ctx context.Context, path string, request schema.WriteAuditDeviceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2717,7 +2719,7 @@ func (a *System) WriteAuditDevice(ctx context.Context, path string, writeAuditDe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeAuditDeviceRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2726,7 +2728,7 @@ func (a *System) WriteAuditDevice(ctx context.Context, path string, writeAuditDe
 // WriteAuthMethod Enables a new auth method.
 // After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.  For example, enable the \"foo\" auth method will make it accessible at /auth/foo.
 // path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
-func (a *System) WriteAuthMethod(ctx context.Context, path string, writeAuthMethodRequest WriteAuthMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteAuthMethod(ctx context.Context, path string, request schema.WriteAuthMethodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2740,7 +2742,7 @@ func (a *System) WriteAuthMethod(ctx context.Context, path string, writeAuthMeth
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeAuthMethodRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2749,7 +2751,7 @@ func (a *System) WriteAuthMethod(ctx context.Context, path string, writeAuthMeth
 // WriteAuthMethodTune Tune configuration parameters for a given auth path.
 // This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
 // path: Tune the configuration parameters for an auth path.
-func (a *System) WriteAuthMethodTune(ctx context.Context, path string, writeAuthMethodTuneRequest WriteAuthMethodTuneRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteAuthMethodTune(ctx context.Context, path string, request schema.WriteAuthMethodTuneRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2763,14 +2765,14 @@ func (a *System) WriteAuthMethodTune(ctx context.Context, path string, writeAuth
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeAuthMethodTuneRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteCapabilities Fetches the capabilities of the given token on the given path.
-func (a *System) WriteCapabilities(ctx context.Context, writeCapabilitiesRequest WriteCapabilitiesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteCapabilities(ctx context.Context, request schema.WriteCapabilitiesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2783,14 +2785,14 @@ func (a *System) WriteCapabilities(ctx context.Context, writeCapabilitiesRequest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeCapabilitiesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
-func (a *System) WriteCapabilitiesAccessor(ctx context.Context, writeCapabilitiesAccessorRequest WriteCapabilitiesAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteCapabilitiesAccessor(ctx context.Context, request schema.WriteCapabilitiesAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2803,14 +2805,14 @@ func (a *System) WriteCapabilitiesAccessor(ctx context.Context, writeCapabilitie
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeCapabilitiesAccessorRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteCapabilitiesSelf Fetches the capabilities of the given token on the given path.
-func (a *System) WriteCapabilitiesSelf(ctx context.Context, writeCapabilitiesSelfRequest WriteCapabilitiesSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteCapabilitiesSelf(ctx context.Context, request schema.WriteCapabilitiesSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2823,14 +2825,14 @@ func (a *System) WriteCapabilitiesSelf(ctx context.Context, writeCapabilitiesSel
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeCapabilitiesSelfRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteConfigAuditingRequestHeader Enable auditing of a header.
-func (a *System) WriteConfigAuditingRequestHeader(ctx context.Context, header string, writeConfigAuditingRequestHeaderRequest WriteConfigAuditingRequestHeaderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteConfigAuditingRequestHeader(ctx context.Context, header string, request schema.WriteConfigAuditingRequestHeaderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2844,14 +2846,14 @@ func (a *System) WriteConfigAuditingRequestHeader(ctx context.Context, header st
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeConfigAuditingRequestHeaderRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteConfigCORS Configure the CORS settings.
-func (a *System) WriteConfigCORS(ctx context.Context, writeConfigCORSRequest WriteConfigCORSRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteConfigCORS(ctx context.Context, request schema.WriteConfigCORSRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2864,7 +2866,7 @@ func (a *System) WriteConfigCORS(ctx context.Context, writeConfigCORSRequest Wri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeConfigCORSRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2893,7 +2895,7 @@ func (a *System) WriteConfigReloadSubsystem(ctx context.Context, subsystem strin
 
 // WriteConfigUIHeader Configure the values to be returned for the UI header.
 // header: The name of the header.
-func (a *System) WriteConfigUIHeader(ctx context.Context, header string, writeConfigUIHeaderRequest WriteConfigUIHeaderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteConfigUIHeader(ctx context.Context, header string, request schema.WriteConfigUIHeaderRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2907,7 +2909,7 @@ func (a *System) WriteConfigUIHeader(ctx context.Context, header string, writeCo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeConfigUIHeaderRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2915,7 +2917,7 @@ func (a *System) WriteConfigUIHeader(ctx context.Context, header string, writeCo
 
 // WriteGenerateRoot Initializes a new root generation attempt.
 // Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-func (a *System) WriteGenerateRoot(ctx context.Context, writeGenerateRootRequest WriteGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteGenerateRoot(ctx context.Context, request schema.WriteGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2928,7 +2930,7 @@ func (a *System) WriteGenerateRoot(ctx context.Context, writeGenerateRootRequest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeGenerateRootRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2936,7 +2938,7 @@ func (a *System) WriteGenerateRoot(ctx context.Context, writeGenerateRootRequest
 
 // WriteGenerateRootAttempt Initializes a new root generation attempt.
 // Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-func (a *System) WriteGenerateRootAttempt(ctx context.Context, writeGenerateRootAttemptRequest WriteGenerateRootAttemptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteGenerateRootAttempt(ctx context.Context, request schema.WriteGenerateRootAttemptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2949,7 +2951,7 @@ func (a *System) WriteGenerateRootAttempt(ctx context.Context, writeGenerateRoot
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeGenerateRootAttemptRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2957,7 +2959,7 @@ func (a *System) WriteGenerateRootAttempt(ctx context.Context, writeGenerateRoot
 
 // WriteGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
 // If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
-func (a *System) WriteGenerateRootUpdate(ctx context.Context, writeGenerateRootUpdateRequest WriteGenerateRootUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteGenerateRootUpdate(ctx context.Context, request schema.WriteGenerateRootUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2970,7 +2972,7 @@ func (a *System) WriteGenerateRootUpdate(ctx context.Context, writeGenerateRootU
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeGenerateRootUpdateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2978,7 +2980,7 @@ func (a *System) WriteGenerateRootUpdate(ctx context.Context, writeGenerateRootU
 
 // WriteInit Initialize a new Vault.
 // The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
-func (a *System) WriteInit(ctx context.Context, writeInitRequest WriteInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteInit(ctx context.Context, request schema.WriteInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2991,14 +2993,14 @@ func (a *System) WriteInit(ctx context.Context, writeInitRequest WriteInitReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeInitRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
-func (a *System) WriteInternalCountersConfig(ctx context.Context, writeInternalCountersConfigRequest WriteInternalCountersConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteInternalCountersConfig(ctx context.Context, request schema.WriteInternalCountersConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3011,14 +3013,14 @@ func (a *System) WriteInternalCountersConfig(ctx context.Context, writeInternalC
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeInternalCountersConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteLeasesLookup Retrieve lease metadata.
-func (a *System) WriteLeasesLookup(ctx context.Context, writeLeasesLookupRequest WriteLeasesLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLeasesLookup(ctx context.Context, request schema.WriteLeasesLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3031,14 +3033,14 @@ func (a *System) WriteLeasesLookup(ctx context.Context, writeLeasesLookupRequest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLeasesLookupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteLeasesRenew Renews a lease, requesting to extend the lease.
-func (a *System) WriteLeasesRenew(ctx context.Context, writeLeasesRenewRequest WriteLeasesRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLeasesRenew(ctx context.Context, request schema.WriteLeasesRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3051,7 +3053,7 @@ func (a *System) WriteLeasesRenew(ctx context.Context, writeLeasesRenewRequest W
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLeasesRenewRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3059,7 +3061,7 @@ func (a *System) WriteLeasesRenew(ctx context.Context, writeLeasesRenewRequest W
 
 // WriteLeasesRenew2 Renews a lease, requesting to extend the lease.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (a *System) WriteLeasesRenew2(ctx context.Context, urlLeaseId string, writeLeasesRenew2Request WriteLeasesRenew2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLeasesRenew2(ctx context.Context, urlLeaseId string, request schema.WriteLeasesRenew2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3073,14 +3075,14 @@ func (a *System) WriteLeasesRenew2(ctx context.Context, urlLeaseId string, write
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLeasesRenew2Request,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteLeasesRevoke Revokes a lease immediately.
-func (a *System) WriteLeasesRevoke(ctx context.Context, writeLeasesRevokeRequest WriteLeasesRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLeasesRevoke(ctx context.Context, request schema.WriteLeasesRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3093,7 +3095,7 @@ func (a *System) WriteLeasesRevoke(ctx context.Context, writeLeasesRevokeRequest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLeasesRevokeRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3101,7 +3103,7 @@ func (a *System) WriteLeasesRevoke(ctx context.Context, writeLeasesRevokeRequest
 
 // WriteLeasesRevoke2 Revokes a lease immediately.
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
-func (a *System) WriteLeasesRevoke2(ctx context.Context, urlLeaseId string, writeLeasesRevoke2Request WriteLeasesRevoke2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLeasesRevoke2(ctx context.Context, urlLeaseId string, request schema.WriteLeasesRevoke2Request, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3115,7 +3117,7 @@ func (a *System) WriteLeasesRevoke2(ctx context.Context, urlLeaseId string, writ
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLeasesRevoke2Request,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3146,7 +3148,7 @@ func (a *System) WriteLeasesRevokeForce(ctx context.Context, prefix string, opti
 
 // WriteLeasesRevokePrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
-func (a *System) WriteLeasesRevokePrefix(ctx context.Context, prefix string, writeLeasesRevokePrefixRequest WriteLeasesRevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLeasesRevokePrefix(ctx context.Context, prefix string, request schema.WriteLeasesRevokePrefixRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3160,7 +3162,7 @@ func (a *System) WriteLeasesRevokePrefix(ctx context.Context, prefix string, wri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLeasesRevokePrefixRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3188,7 +3190,7 @@ func (a *System) WriteLeasesTidy(ctx context.Context, options ...RequestOption) 
 
 // WriteLogger Modify the log level of a single logger.
 // name: The name of the logger to be modified.
-func (a *System) WriteLogger(ctx context.Context, name string, writeLoggerRequest WriteLoggerRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLogger(ctx context.Context, name string, request schema.WriteLoggerRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3202,14 +3204,14 @@ func (a *System) WriteLogger(ctx context.Context, name string, writeLoggerReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLoggerRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteLoggers Modify the log level for all existing loggers.
-func (a *System) WriteLoggers(ctx context.Context, writeLoggersRequest WriteLoggersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteLoggers(ctx context.Context, request schema.WriteLoggersRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3222,7 +3224,7 @@ func (a *System) WriteLoggers(ctx context.Context, writeLoggersRequest WriteLogg
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeLoggersRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3230,7 +3232,7 @@ func (a *System) WriteLoggers(ctx context.Context, writeLoggersRequest WriteLogg
 
 // WriteMount Enable a new secrets engine at the given path.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
-func (a *System) WriteMount(ctx context.Context, path string, writeMountRequest WriteMountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteMount(ctx context.Context, path string, request schema.WriteMountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3244,7 +3246,7 @@ func (a *System) WriteMount(ctx context.Context, path string, writeMountRequest 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeMountRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3252,7 +3254,7 @@ func (a *System) WriteMount(ctx context.Context, path string, writeMountRequest 
 
 // WriteMountsConfig Tune backend configuration parameters for this mount.
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
-func (a *System) WriteMountsConfig(ctx context.Context, path string, writeMountsConfigRequest WriteMountsConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteMountsConfig(ctx context.Context, path string, request schema.WriteMountsConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3266,7 +3268,7 @@ func (a *System) WriteMountsConfig(ctx context.Context, path string, writeMounts
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeMountsConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3275,7 +3277,7 @@ func (a *System) WriteMountsConfig(ctx context.Context, path string, writeMounts
 // WritePluginsCatalogByTypeByName Register a new plugin, or updates an existing one with the supplied name.
 // name: The name of the plugin
 // type_: The type of the plugin, may be auth, secret, or database
-func (a *System) WritePluginsCatalogByTypeByName(ctx context.Context, name string, type_ string, writePluginsCatalogByTypeByNameRequest WritePluginsCatalogByTypeByNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WritePluginsCatalogByTypeByName(ctx context.Context, name string, type_ string, request schema.WritePluginsCatalogByTypeByNameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3290,7 +3292,7 @@ func (a *System) WritePluginsCatalogByTypeByName(ctx context.Context, name strin
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writePluginsCatalogByTypeByNameRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3298,7 +3300,7 @@ func (a *System) WritePluginsCatalogByTypeByName(ctx context.Context, name strin
 
 // WritePluginsReloadBackend Reload mounted plugin backends.
 // Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
-func (a *System) WritePluginsReloadBackend(ctx context.Context, writePluginsReloadBackendRequest WritePluginsReloadBackendRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WritePluginsReloadBackend(ctx context.Context, request schema.WritePluginsReloadBackendRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3311,7 +3313,7 @@ func (a *System) WritePluginsReloadBackend(ctx context.Context, writePluginsRelo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writePluginsReloadBackendRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3319,7 +3321,7 @@ func (a *System) WritePluginsReloadBackend(ctx context.Context, writePluginsRelo
 
 // WritePoliciesACL Add a new or update an existing ACL policy.
 // name: The name of the policy. Example: \&quot;ops\&quot;
-func (a *System) WritePoliciesACL(ctx context.Context, name string, writePoliciesACLRequest WritePoliciesACLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WritePoliciesACL(ctx context.Context, name string, request schema.WritePoliciesACLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3333,7 +3335,7 @@ func (a *System) WritePoliciesACL(ctx context.Context, name string, writePolicie
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writePoliciesACLRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3341,7 +3343,7 @@ func (a *System) WritePoliciesACL(ctx context.Context, name string, writePolicie
 
 // WritePoliciesPassword Add a new or update an existing password policy.
 // name: The name of the password policy.
-func (a *System) WritePoliciesPassword(ctx context.Context, name string, writePoliciesPasswordRequest WritePoliciesPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WritePoliciesPassword(ctx context.Context, name string, request schema.WritePoliciesPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3355,7 +3357,7 @@ func (a *System) WritePoliciesPassword(ctx context.Context, name string, writePo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writePoliciesPasswordRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3363,7 +3365,7 @@ func (a *System) WritePoliciesPassword(ctx context.Context, name string, writePo
 
 // WritePolicy Add a new or update an existing policy.
 // name: The name of the policy. Example: \&quot;ops\&quot;
-func (a *System) WritePolicy(ctx context.Context, name string, writePolicyRequest WritePolicyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WritePolicy(ctx context.Context, name string, request schema.WritePolicyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3377,14 +3379,14 @@ func (a *System) WritePolicy(ctx context.Context, name string, writePolicyReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writePolicyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteQuotasConfig
-func (a *System) WriteQuotasConfig(ctx context.Context, writeQuotasConfigRequest WriteQuotasConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteQuotasConfig(ctx context.Context, request schema.WriteQuotasConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3397,7 +3399,7 @@ func (a *System) WriteQuotasConfig(ctx context.Context, writeQuotasConfigRequest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeQuotasConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3405,7 +3407,7 @@ func (a *System) WriteQuotasConfig(ctx context.Context, writeQuotasConfigRequest
 
 // WriteQuotasRateLimit
 // name: Name of the quota rule.
-func (a *System) WriteQuotasRateLimit(ctx context.Context, name string, writeQuotasRateLimitRequest WriteQuotasRateLimitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteQuotasRateLimit(ctx context.Context, name string, request schema.WriteQuotasRateLimitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3419,14 +3421,14 @@ func (a *System) WriteQuotasRateLimit(ctx context.Context, name string, writeQuo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeQuotasRateLimitRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteRaw Update the value of the key at the given path.
-func (a *System) WriteRaw(ctx context.Context, writeRawRequest WriteRawRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteRaw(ctx context.Context, request schema.WriteRawRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3439,14 +3441,14 @@ func (a *System) WriteRaw(ctx context.Context, writeRawRequest WriteRawRequest, 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeRawRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteRawPath Update the value of the key at the given path.
-func (a *System) WriteRawPath(ctx context.Context, path string, writeRawPathRequest WriteRawPathRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteRawPath(ctx context.Context, path string, request schema.WriteRawPathRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3460,7 +3462,7 @@ func (a *System) WriteRawPath(ctx context.Context, path string, writeRawPathRequ
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeRawPathRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3468,7 +3470,7 @@ func (a *System) WriteRawPath(ctx context.Context, path string, writeRawPathRequ
 
 // WriteRekeyInit Initializes a new rekey attempt.
 // Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
-func (a *System) WriteRekeyInit(ctx context.Context, writeRekeyInitRequest WriteRekeyInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteRekeyInit(ctx context.Context, request schema.WriteRekeyInitRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3481,14 +3483,14 @@ func (a *System) WriteRekeyInit(ctx context.Context, writeRekeyInitRequest Write
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeRekeyInitRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
-func (a *System) WriteRekeyUpdate(ctx context.Context, writeRekeyUpdateRequest WriteRekeyUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteRekeyUpdate(ctx context.Context, request schema.WriteRekeyUpdateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3501,14 +3503,14 @@ func (a *System) WriteRekeyUpdate(ctx context.Context, writeRekeyUpdateRequest W
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeRekeyUpdateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteRekeyVerify Enter a single new key share to progress the rekey verification operation.
-func (a *System) WriteRekeyVerify(ctx context.Context, writeRekeyVerifyRequest WriteRekeyVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteRekeyVerify(ctx context.Context, request schema.WriteRekeyVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3521,14 +3523,14 @@ func (a *System) WriteRekeyVerify(ctx context.Context, writeRekeyVerifyRequest W
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeRekeyVerifyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // WriteRotateConfig
-func (a *System) WriteRotateConfig(ctx context.Context, writeRotateConfigRequest WriteRotateConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) WriteRotateConfig(ctx context.Context, request schema.WriteRotateConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3541,7 +3543,7 @@ func (a *System) WriteRotateConfig(ctx context.Context, writeRotateConfigRequest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		writeRotateConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)

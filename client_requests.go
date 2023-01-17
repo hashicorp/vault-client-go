@@ -21,8 +21,8 @@ func (c *Client) Read(ctx context.Context, path string, options ...RequestOption
 	return c.ReadWithParameters(ctx, path, nil, options...)
 }
 
-// ReadWithParameters attempts to read the data stored at the given Vault path,
-// adding the given query parameters to the request.
+// ReadWithParameters attempts to read the value stored at the given Vault
+// path, adding the given query parameters to the request.
 func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -30,6 +30,40 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 	}
 
 	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		c,
+		http.MethodGet,
+		v1Path(path),
+		nil,        // request body
+		parameters, // request query parameters
+		modifiers,  // request modifiers (headers & callbacks)
+	)
+}
+
+// ReadRaw attempts to read the value stored at the given Vault path and returns
+// a raw *http.Response. Compared to Read, this function:
+//
+//   - does not parse the response
+//   - does not check the response for errors
+//   - does not apply the client-level request timeout
+func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOption) (*http.Response, error) {
+	return c.ReadRawWithParameters(ctx, path, nil, options...)
+}
+
+// ReadRawWithParameters attempts to read the value stored at the given Vault
+// path (adding the given query parameters to the request) and returns a raw
+// *http.Response. Compared to ReadRawWithParameters, this function:
+//
+//   - does not parse the response
+//   - does not check the response for errors
+//   - does not apply the client-level request timeout
+func (c *Client) ReadRawWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*http.Response, error) {
+	modifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	return sendRequestReturnRawResponse(
 		ctx,
 		c,
 		http.MethodGet,
@@ -92,13 +126,14 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 	)
 }
 
-// Delete attempts to permanently delete the data stored at the given Vault path.
+// Delete attempts to permanently delete the value stored at the given Vault
+// path.
 func (c *Client) Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	return c.DeleteWithParameters(ctx, path, nil, options...)
 }
 
-// Delete attempts to permanently delete the data stored at the given Vault path,
-// adding the given query parameters to the request.
+// Delete attempts to permanently delete the value stored at the given Vault
+// path, adding the given query parameters to the request.
 func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -153,7 +188,7 @@ func sendRequestParseResponse[ResponseT any](
 	parameters url.Values,
 	requestModifiersPerRequest requestModifiers,
 ) (*Response[ResponseT], error) {
-	// apply the global request timeout, if set
+	// apply the client-level request timeout, if set
 	if client.configuration.RequestTimeout > 0 {
 		var cancelContextFunc context.CancelFunc
 		ctx, cancelContextFunc = context.WithTimeout(ctx, client.configuration.RequestTimeout)
@@ -185,6 +220,38 @@ func sendRequestParseResponse[ResponseT any](
 	}
 
 	return parseResponse[ResponseT](resp.Body)
+}
+
+// sendRequestReturnRawResponse constructs a request, sends it and returns a raw
+// *http.Response. Compared to sendRequestParseResponse, this function:
+//
+//   - does not parse the response
+//   - does not check the response for errors
+//   - does not apply the client-level request timeout
+func sendRequestReturnRawResponse(
+	ctx context.Context,
+	client *Client,
+	method string,
+	path string,
+	body io.Reader,
+	parameters url.Values,
+	requestModifiersPerRequest requestModifiers,
+) (*http.Response, error) {
+	// clone the client-level request modifiers to prevent race conditions
+	requestModifiersClient := client.cloneClientRequestModifiers()
+
+	// merge the client-level & request-level modifiers, preferring the later
+	modifiers := mergeRequestModifiers(
+		requestModifiersClient,
+		requestModifiersPerRequest,
+	)
+
+	req, err := client.newRequest(ctx, method, path, body, parameters, modifiers.headers)
+	if err != nil {
+		return nil, err
+	}
+
+	return client.send(ctx, req, true, modifiers.requestCallbacks, modifiers.responseCallbacks)
 }
 
 // newRequest constructs a new request with Vault-specific headers

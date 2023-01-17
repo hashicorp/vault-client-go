@@ -15,6 +15,8 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 // Secrets is a simple wrapper around the client for Secrets requests
@@ -86,7 +88,7 @@ func (a *Secrets) AWSConfigRotateRootIAMCredentials(ctx context.Context, options
 }
 
 // AWSConfigWriteLease Configure the default lease information for generated credentials.
-func (a *Secrets) AWSConfigWriteLease(ctx context.Context, aWSConfigWriteLeaseRequest AWSConfigWriteLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AWSConfigWriteLease(ctx context.Context, request schema.AWSConfigWriteLeaseRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -100,14 +102,14 @@ func (a *Secrets) AWSConfigWriteLease(ctx context.Context, aWSConfigWriteLeaseRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteLeaseRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSConfigWriteRootIAMCredentials Configure the root credentials that are used to manage IAM.
-func (a *Secrets) AWSConfigWriteRootIAMCredentials(ctx context.Context, aWSConfigWriteRootIAMCredentialsRequest AWSConfigWriteRootIAMCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AWSConfigWriteRootIAMCredentials(ctx context.Context, request schema.AWSConfigWriteRootIAMCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -121,7 +123,7 @@ func (a *Secrets) AWSConfigWriteRootIAMCredentials(ctx context.Context, aWSConfi
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteRootIAMCredentialsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -152,7 +154,7 @@ func (a *Secrets) AWSDeleteRole(ctx context.Context, name string, options ...Req
 
 // AWSListRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) AWSListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AWSListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -240,7 +242,7 @@ func (a *Secrets) AWSReadSecurityTokenService(ctx context.Context, name string, 
 }
 
 // AWSWriteCredentials Generate AWS credentials from a specific Vault role.
-func (a *Secrets) AWSWriteCredentials(ctx context.Context, aWSWriteCredentialsRequest AWSWriteCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AWSWriteCredentials(ctx context.Context, request schema.AWSWriteCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -254,7 +256,7 @@ func (a *Secrets) AWSWriteCredentials(ctx context.Context, aWSWriteCredentialsRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteCredentialsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -262,7 +264,7 @@ func (a *Secrets) AWSWriteCredentials(ctx context.Context, aWSWriteCredentialsRe
 
 // AWSWriteRole Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *Secrets) AWSWriteRole(ctx context.Context, name string, aWSWriteRoleRequest AWSWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AWSWriteRole(ctx context.Context, name string, request schema.AWSWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -277,7 +279,7 @@ func (a *Secrets) AWSWriteRole(ctx context.Context, name string, aWSWriteRoleReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -285,7 +287,7 @@ func (a *Secrets) AWSWriteRole(ctx context.Context, name string, aWSWriteRoleReq
 
 // AWSWriteSecurityTokenService Generate AWS credentials from a specific Vault role.
 // name: Name of the role
-func (a *Secrets) AWSWriteSecurityTokenService(ctx context.Context, name string, aWSWriteSecurityTokenServiceRequest AWSWriteSecurityTokenServiceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AWSWriteSecurityTokenService(ctx context.Context, name string, request schema.AWSWriteSecurityTokenServiceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -300,7 +302,7 @@ func (a *Secrets) AWSWriteSecurityTokenService(ctx context.Context, name string,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteSecurityTokenServiceRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -308,7 +310,7 @@ func (a *Secrets) AWSWriteSecurityTokenService(ctx context.Context, name string,
 
 // ActiveDirectoryCheckInLibrary Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) ActiveDirectoryCheckInLibrary(ctx context.Context, name string, activeDirectoryCheckInLibraryRequest ActiveDirectoryCheckInLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryCheckInLibrary(ctx context.Context, name string, request schema.ActiveDirectoryCheckInLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -323,7 +325,7 @@ func (a *Secrets) ActiveDirectoryCheckInLibrary(ctx context.Context, name string
 		a.client,
 		http.MethodPost,
 		requestPath,
-		activeDirectoryCheckInLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -331,7 +333,7 @@ func (a *Secrets) ActiveDirectoryCheckInLibrary(ctx context.Context, name string
 
 // ActiveDirectoryCheckInManageLibrary Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) ActiveDirectoryCheckInManageLibrary(ctx context.Context, name string, activeDirectoryCheckInManageLibraryRequest ActiveDirectoryCheckInManageLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryCheckInManageLibrary(ctx context.Context, name string, request schema.ActiveDirectoryCheckInManageLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -346,7 +348,7 @@ func (a *Secrets) ActiveDirectoryCheckInManageLibrary(ctx context.Context, name 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		activeDirectoryCheckInManageLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -354,7 +356,7 @@ func (a *Secrets) ActiveDirectoryCheckInManageLibrary(ctx context.Context, name 
 
 // ActiveDirectoryCheckOutLibrary Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) ActiveDirectoryCheckOutLibrary(ctx context.Context, name string, activeDirectoryCheckOutLibraryRequest ActiveDirectoryCheckOutLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryCheckOutLibrary(ctx context.Context, name string, request schema.ActiveDirectoryCheckOutLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -369,7 +371,7 @@ func (a *Secrets) ActiveDirectoryCheckOutLibrary(ctx context.Context, name strin
 		a.client,
 		http.MethodPost,
 		requestPath,
-		activeDirectoryCheckOutLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -444,7 +446,7 @@ func (a *Secrets) ActiveDirectoryDeleteRole(ctx context.Context, name string, op
 
 // ActiveDirectoryListLibraries
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) ActiveDirectoryListLibraries(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryListLibraries(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -466,7 +468,7 @@ func (a *Secrets) ActiveDirectoryListLibraries(ctx context.Context, list string,
 
 // ActiveDirectoryListRoles List the name of each role currently stored.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) ActiveDirectoryListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -644,7 +646,7 @@ func (a *Secrets) ActiveDirectoryRotateRoot(ctx context.Context, options ...Requ
 }
 
 // ActiveDirectoryWriteConfig Configure the AD server to connect to, along with password options.
-func (a *Secrets) ActiveDirectoryWriteConfig(ctx context.Context, activeDirectoryWriteConfigRequest ActiveDirectoryWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryWriteConfig(ctx context.Context, request schema.ActiveDirectoryWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -658,7 +660,7 @@ func (a *Secrets) ActiveDirectoryWriteConfig(ctx context.Context, activeDirector
 		a.client,
 		http.MethodPost,
 		requestPath,
-		activeDirectoryWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -666,7 +668,7 @@ func (a *Secrets) ActiveDirectoryWriteConfig(ctx context.Context, activeDirector
 
 // ActiveDirectoryWriteLibrary Update a library set.
 // name: Name of the set.
-func (a *Secrets) ActiveDirectoryWriteLibrary(ctx context.Context, name string, activeDirectoryWriteLibraryRequest ActiveDirectoryWriteLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryWriteLibrary(ctx context.Context, name string, request schema.ActiveDirectoryWriteLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -681,7 +683,7 @@ func (a *Secrets) ActiveDirectoryWriteLibrary(ctx context.Context, name string, 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		activeDirectoryWriteLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -689,7 +691,7 @@ func (a *Secrets) ActiveDirectoryWriteLibrary(ctx context.Context, name string, 
 
 // ActiveDirectoryWriteRole Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *Secrets) ActiveDirectoryWriteRole(ctx context.Context, name string, activeDirectoryWriteRoleRequest ActiveDirectoryWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryWriteRole(ctx context.Context, name string, request schema.ActiveDirectoryWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -704,7 +706,7 @@ func (a *Secrets) ActiveDirectoryWriteRole(ctx context.Context, name string, act
 		a.client,
 		http.MethodPost,
 		requestPath,
-		activeDirectoryWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -756,7 +758,7 @@ func (a *Secrets) AliCloudDeleteRole(ctx context.Context, name string, options .
 
 // AliCloudListRoles List the existing roles in this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) AliCloudListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AliCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -844,7 +846,7 @@ func (a *Secrets) AliCloudReadRole(ctx context.Context, name string, options ...
 }
 
 // AliCloudWriteConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *Secrets) AliCloudWriteConfig(ctx context.Context, aliCloudWriteConfigRequest AliCloudWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AliCloudWriteConfig(ctx context.Context, request schema.AliCloudWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -858,7 +860,7 @@ func (a *Secrets) AliCloudWriteConfig(ctx context.Context, aliCloudWriteConfigRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aliCloudWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -866,7 +868,7 @@ func (a *Secrets) AliCloudWriteConfig(ctx context.Context, aliCloudWriteConfigRe
 
 // AliCloudWriteRole Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *Secrets) AliCloudWriteRole(ctx context.Context, name string, aliCloudWriteRoleRequest AliCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AliCloudWriteRole(ctx context.Context, name string, request schema.AliCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -881,7 +883,7 @@ func (a *Secrets) AliCloudWriteRole(ctx context.Context, name string, aliCloudWr
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aliCloudWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -933,7 +935,7 @@ func (a *Secrets) AzureDeleteRole(ctx context.Context, name string, options ...R
 
 // AzureListRoles List existing roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) AzureListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AzureListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1042,7 +1044,7 @@ func (a *Secrets) AzureRotateRoot(ctx context.Context, options ...RequestOption)
 }
 
 // AzureWriteConfig
-func (a *Secrets) AzureWriteConfig(ctx context.Context, azureWriteConfigRequest AzureWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AzureWriteConfig(ctx context.Context, request schema.AzureWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1056,7 +1058,7 @@ func (a *Secrets) AzureWriteConfig(ctx context.Context, azureWriteConfigRequest 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		azureWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1064,7 +1066,7 @@ func (a *Secrets) AzureWriteConfig(ctx context.Context, azureWriteConfigRequest 
 
 // AzureWriteRole Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *Secrets) AzureWriteRole(ctx context.Context, name string, azureWriteRoleRequest AzureWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AzureWriteRole(ctx context.Context, name string, request schema.AzureWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1079,7 +1081,7 @@ func (a *Secrets) AzureWriteRole(ctx context.Context, name string, azureWriteRol
 		a.client,
 		http.MethodPost,
 		requestPath,
-		azureWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1110,7 +1112,7 @@ func (a *Secrets) ConsulDeleteRole(ctx context.Context, name string, options ...
 
 // ConsulListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) ConsulListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ConsulListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1198,7 +1200,7 @@ func (a *Secrets) ConsulReadRole(ctx context.Context, name string, options ...Re
 }
 
 // ConsulWriteAccessConfig
-func (a *Secrets) ConsulWriteAccessConfig(ctx context.Context, consulWriteAccessConfigRequest ConsulWriteAccessConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ConsulWriteAccessConfig(ctx context.Context, request schema.ConsulWriteAccessConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1212,7 +1214,7 @@ func (a *Secrets) ConsulWriteAccessConfig(ctx context.Context, consulWriteAccess
 		a.client,
 		http.MethodPost,
 		requestPath,
-		consulWriteAccessConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1220,7 +1222,7 @@ func (a *Secrets) ConsulWriteAccessConfig(ctx context.Context, consulWriteAccess
 
 // ConsulWriteRole
 // name: Name of the role.
-func (a *Secrets) ConsulWriteRole(ctx context.Context, name string, consulWriteRoleRequest ConsulWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ConsulWriteRole(ctx context.Context, name string, request schema.ConsulWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1235,7 +1237,7 @@ func (a *Secrets) ConsulWriteRole(ctx context.Context, name string, consulWriteR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		consulWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1266,7 +1268,7 @@ func (a *Secrets) CubbyholeDelete(ctx context.Context, path string, options ...R
 
 // CubbyholeRead Retrieve the secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *Secrets) CubbyholeRead(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) CubbyholeRead(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1358,7 +1360,7 @@ func (a *Secrets) GoogleCloudDeleteStaticAccount(ctx context.Context, name strin
 
 // GoogleCloudKMSDecrypt Decrypt a ciphertext value using a named key
 // key: Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) GoogleCloudKMSDecrypt(ctx context.Context, key string, googleCloudKMSDecryptRequest GoogleCloudKMSDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSDecrypt(ctx context.Context, key string, request schema.GoogleCloudKMSDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1373,7 +1375,7 @@ func (a *Secrets) GoogleCloudKMSDecrypt(ctx context.Context, key string, googleC
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSDecryptRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1448,7 +1450,7 @@ func (a *Secrets) GoogleCloudKMSDeregisterKey(ctx context.Context, key string, o
 
 // GoogleCloudKMSEncrypt Encrypt a plaintext value using a named key
 // key: Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) GoogleCloudKMSEncrypt(ctx context.Context, key string, googleCloudKMSEncryptRequest GoogleCloudKMSEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSEncrypt(ctx context.Context, key string, request schema.GoogleCloudKMSEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1463,7 +1465,7 @@ func (a *Secrets) GoogleCloudKMSEncrypt(ctx context.Context, key string, googleC
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSEncryptRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1471,7 +1473,7 @@ func (a *Secrets) GoogleCloudKMSEncrypt(ctx context.Context, key string, googleC
 
 // GoogleCloudKMSListKeys List named keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GoogleCloudKMSListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1583,7 +1585,7 @@ func (a *Secrets) GoogleCloudKMSReadPubkey(ctx context.Context, key string, opti
 
 // GoogleCloudKMSReencrypt Re-encrypt existing ciphertext data to a new version
 // key: Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-func (a *Secrets) GoogleCloudKMSReencrypt(ctx context.Context, key string, googleCloudKMSReencryptRequest GoogleCloudKMSReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSReencrypt(ctx context.Context, key string, request schema.GoogleCloudKMSReencryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1598,7 +1600,7 @@ func (a *Secrets) GoogleCloudKMSReencrypt(ctx context.Context, key string, googl
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSReencryptRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1606,7 +1608,7 @@ func (a *Secrets) GoogleCloudKMSReencrypt(ctx context.Context, key string, googl
 
 // GoogleCloudKMSRegisterKey Register an existing crypto key in Google Cloud KMS
 // key: Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-func (a *Secrets) GoogleCloudKMSRegisterKey(ctx context.Context, key string, googleCloudKMSRegisterKeyRequest GoogleCloudKMSRegisterKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSRegisterKey(ctx context.Context, key string, request schema.GoogleCloudKMSRegisterKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1621,7 +1623,7 @@ func (a *Secrets) GoogleCloudKMSRegisterKey(ctx context.Context, key string, goo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSRegisterKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1652,7 +1654,7 @@ func (a *Secrets) GoogleCloudKMSRotateKey(ctx context.Context, key string, optio
 
 // GoogleCloudKMSSign Signs a message or digest using a named key
 // key: Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) GoogleCloudKMSSign(ctx context.Context, key string, googleCloudKMSSignRequest GoogleCloudKMSSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSSign(ctx context.Context, key string, request schema.GoogleCloudKMSSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1667,7 +1669,7 @@ func (a *Secrets) GoogleCloudKMSSign(ctx context.Context, key string, googleClou
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSSignRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1698,7 +1700,7 @@ func (a *Secrets) GoogleCloudKMSTrimKey(ctx context.Context, key string, options
 
 // GoogleCloudKMSVerify Verify a signature using a named key
 // key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *Secrets) GoogleCloudKMSVerify(ctx context.Context, key string, googleCloudKMSVerifyRequest GoogleCloudKMSVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSVerify(ctx context.Context, key string, request schema.GoogleCloudKMSVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1713,14 +1715,14 @@ func (a *Secrets) GoogleCloudKMSVerify(ctx context.Context, key string, googleCl
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSVerifyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // GoogleCloudKMSWriteConfig Configure the GCP KMS secrets engine
-func (a *Secrets) GoogleCloudKMSWriteConfig(ctx context.Context, googleCloudKMSWriteConfigRequest GoogleCloudKMSWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSWriteConfig(ctx context.Context, request schema.GoogleCloudKMSWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1734,7 +1736,7 @@ func (a *Secrets) GoogleCloudKMSWriteConfig(ctx context.Context, googleCloudKMSW
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1742,7 +1744,7 @@ func (a *Secrets) GoogleCloudKMSWriteConfig(ctx context.Context, googleCloudKMSW
 
 // GoogleCloudKMSWriteKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *Secrets) GoogleCloudKMSWriteKey(ctx context.Context, key string, googleCloudKMSWriteKeyRequest GoogleCloudKMSWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSWriteKey(ctx context.Context, key string, request schema.GoogleCloudKMSWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1757,7 +1759,7 @@ func (a *Secrets) GoogleCloudKMSWriteKey(ctx context.Context, key string, google
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSWriteKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1765,7 +1767,7 @@ func (a *Secrets) GoogleCloudKMSWriteKey(ctx context.Context, key string, google
 
 // GoogleCloudKMSWriteKeyConfig Configure the key in Vault
 // key: Name of the key in Vault.
-func (a *Secrets) GoogleCloudKMSWriteKeyConfig(ctx context.Context, key string, googleCloudKMSWriteKeyConfigRequest GoogleCloudKMSWriteKeyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSWriteKeyConfig(ctx context.Context, key string, request schema.GoogleCloudKMSWriteKeyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1780,7 +1782,7 @@ func (a *Secrets) GoogleCloudKMSWriteKeyConfig(ctx context.Context, key string, 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudKMSWriteKeyConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1788,7 +1790,7 @@ func (a *Secrets) GoogleCloudKMSWriteKeyConfig(ctx context.Context, key string, 
 
 // GoogleCloudListRolesets
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GoogleCloudListRolesets(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1810,7 +1812,7 @@ func (a *Secrets) GoogleCloudListRolesets(ctx context.Context, list string, opti
 
 // GoogleCloudListStaticAccounts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2126,7 +2128,7 @@ func (a *Secrets) GoogleCloudRotateStaticAccountKey(ctx context.Context, name st
 }
 
 // GoogleCloudWriteConfig
-func (a *Secrets) GoogleCloudWriteConfig(ctx context.Context, googleCloudWriteConfigRequest GoogleCloudWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudWriteConfig(ctx context.Context, request schema.GoogleCloudWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2140,7 +2142,7 @@ func (a *Secrets) GoogleCloudWriteConfig(ctx context.Context, googleCloudWriteCo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2148,7 +2150,7 @@ func (a *Secrets) GoogleCloudWriteConfig(ctx context.Context, googleCloudWriteCo
 
 // GoogleCloudWriteKey
 // roleset: Required. Name of the role set.
-func (a *Secrets) GoogleCloudWriteKey(ctx context.Context, roleset string, googleCloudWriteKeyRequest GoogleCloudWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudWriteKey(ctx context.Context, roleset string, request schema.GoogleCloudWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2163,7 +2165,7 @@ func (a *Secrets) GoogleCloudWriteKey(ctx context.Context, roleset string, googl
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2171,7 +2173,7 @@ func (a *Secrets) GoogleCloudWriteKey(ctx context.Context, roleset string, googl
 
 // GoogleCloudWriteRoleset
 // name: Required. Name of the role.
-func (a *Secrets) GoogleCloudWriteRoleset(ctx context.Context, name string, googleCloudWriteRolesetRequest GoogleCloudWriteRolesetRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudWriteRoleset(ctx context.Context, name string, request schema.GoogleCloudWriteRolesetRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2186,7 +2188,7 @@ func (a *Secrets) GoogleCloudWriteRoleset(ctx context.Context, name string, goog
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteRolesetRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2194,7 +2196,7 @@ func (a *Secrets) GoogleCloudWriteRoleset(ctx context.Context, name string, goog
 
 // GoogleCloudWriteRolesetKey
 // roleset: Required. Name of the role set.
-func (a *Secrets) GoogleCloudWriteRolesetKey(ctx context.Context, roleset string, googleCloudWriteRolesetKeyRequest GoogleCloudWriteRolesetKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudWriteRolesetKey(ctx context.Context, roleset string, request schema.GoogleCloudWriteRolesetKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2209,7 +2211,7 @@ func (a *Secrets) GoogleCloudWriteRolesetKey(ctx context.Context, roleset string
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteRolesetKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2240,7 +2242,7 @@ func (a *Secrets) GoogleCloudWriteRolesetToken(ctx context.Context, roleset stri
 
 // GoogleCloudWriteStaticAccount
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *Secrets) GoogleCloudWriteStaticAccount(ctx context.Context, name string, googleCloudWriteStaticAccountRequest GoogleCloudWriteStaticAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudWriteStaticAccount(ctx context.Context, name string, request schema.GoogleCloudWriteStaticAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2255,7 +2257,7 @@ func (a *Secrets) GoogleCloudWriteStaticAccount(ctx context.Context, name string
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteStaticAccountRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2263,7 +2265,7 @@ func (a *Secrets) GoogleCloudWriteStaticAccount(ctx context.Context, name string
 
 // GoogleCloudWriteStaticAccountKey
 // name: Required. Name of the static account.
-func (a *Secrets) GoogleCloudWriteStaticAccountKey(ctx context.Context, name string, googleCloudWriteStaticAccountKeyRequest GoogleCloudWriteStaticAccountKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudWriteStaticAccountKey(ctx context.Context, name string, request schema.GoogleCloudWriteStaticAccountKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2278,7 +2280,7 @@ func (a *Secrets) GoogleCloudWriteStaticAccountKey(ctx context.Context, name str
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteStaticAccountKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2355,7 +2357,7 @@ func (a *Secrets) KVv1Delete(ctx context.Context, path string, options ...Reques
 
 // KVv1Read Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-func (a *Secrets) KVv1Read(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv1Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2447,7 +2449,7 @@ func (a *Secrets) KVv2DeleteMetadata(ctx context.Context, path string, options .
 
 // KVv2DeleteVersions Marks one or more versions as deleted in the KV store.
 // path: Location of the secret.
-func (a *Secrets) KVv2DeleteVersions(ctx context.Context, path string, kVv2DeleteVersionsRequest KVv2DeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2DeleteVersions(ctx context.Context, path string, request schema.KVv2DeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2462,7 +2464,7 @@ func (a *Secrets) KVv2DeleteVersions(ctx context.Context, path string, kVv2Delet
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kVv2DeleteVersionsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2470,7 +2472,7 @@ func (a *Secrets) KVv2DeleteVersions(ctx context.Context, path string, kVv2Delet
 
 // KVv2DestroyVersions Permanently removes one or more versions in the KV store
 // path: Location of the secret.
-func (a *Secrets) KVv2DestroyVersions(ctx context.Context, path string, kVv2DestroyVersionsRequest KVv2DestroyVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2DestroyVersions(ctx context.Context, path string, request schema.KVv2DestroyVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2485,7 +2487,7 @@ func (a *Secrets) KVv2DestroyVersions(ctx context.Context, path string, kVv2Dest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kVv2DestroyVersionsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2537,7 +2539,7 @@ func (a *Secrets) KVv2ReadConfig(ctx context.Context, options ...RequestOption) 
 
 // KVv2ReadMetadata Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2583,7 +2585,7 @@ func (a *Secrets) KVv2ReadSubkeys(ctx context.Context, path string, options ...R
 
 // KVv2UndeleteVersions Undeletes one or more versions from the KV store.
 // path: Location of the secret.
-func (a *Secrets) KVv2UndeleteVersions(ctx context.Context, path string, kVv2UndeleteVersionsRequest KVv2UndeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2UndeleteVersions(ctx context.Context, path string, request schema.KVv2UndeleteVersionsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2598,7 +2600,7 @@ func (a *Secrets) KVv2UndeleteVersions(ctx context.Context, path string, kVv2Und
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kVv2UndeleteVersionsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2606,7 +2608,7 @@ func (a *Secrets) KVv2UndeleteVersions(ctx context.Context, path string, kVv2Und
 
 // KVv2Write Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *Secrets) KVv2Write(ctx context.Context, path string, kVv2WriteRequest KVv2WriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2Write(ctx context.Context, path string, request schema.KVv2WriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2621,14 +2623,14 @@ func (a *Secrets) KVv2Write(ctx context.Context, path string, kVv2WriteRequest K
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kVv2WriteRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // KVv2WriteConfig Configure backend level settings that are applied to every key in the key-value store.
-func (a *Secrets) KVv2WriteConfig(ctx context.Context, kVv2WriteConfigRequest KVv2WriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2WriteConfig(ctx context.Context, request schema.KVv2WriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2642,7 +2644,7 @@ func (a *Secrets) KVv2WriteConfig(ctx context.Context, kVv2WriteConfigRequest KV
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kVv2WriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2650,7 +2652,7 @@ func (a *Secrets) KVv2WriteConfig(ctx context.Context, kVv2WriteConfigRequest KV
 
 // KVv2WriteMetadata Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) KVv2WriteMetadata(ctx context.Context, path string, kVv2WriteMetadataRequest KVv2WriteMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2WriteMetadata(ctx context.Context, path string, request schema.KVv2WriteMetadataRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2665,7 +2667,7 @@ func (a *Secrets) KVv2WriteMetadata(ctx context.Context, path string, kVv2WriteM
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kVv2WriteMetadataRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2717,7 +2719,7 @@ func (a *Secrets) KubernetesDeleteRole(ctx context.Context, name string, options
 
 // KubernetesListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) KubernetesListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KubernetesListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2782,7 +2784,7 @@ func (a *Secrets) KubernetesReadRole(ctx context.Context, name string, options .
 }
 
 // KubernetesWriteConfig
-func (a *Secrets) KubernetesWriteConfig(ctx context.Context, kubernetesWriteConfigRequest KubernetesWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KubernetesWriteConfig(ctx context.Context, request schema.KubernetesWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2796,7 +2798,7 @@ func (a *Secrets) KubernetesWriteConfig(ctx context.Context, kubernetesWriteConf
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kubernetesWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2804,7 +2806,7 @@ func (a *Secrets) KubernetesWriteConfig(ctx context.Context, kubernetesWriteConf
 
 // KubernetesWriteCredentials
 // name: Name of the Vault role
-func (a *Secrets) KubernetesWriteCredentials(ctx context.Context, name string, kubernetesWriteCredentialsRequest KubernetesWriteCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KubernetesWriteCredentials(ctx context.Context, name string, request schema.KubernetesWriteCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2819,7 +2821,7 @@ func (a *Secrets) KubernetesWriteCredentials(ctx context.Context, name string, k
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kubernetesWriteCredentialsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2827,7 +2829,7 @@ func (a *Secrets) KubernetesWriteCredentials(ctx context.Context, name string, k
 
 // KubernetesWriteRole
 // name: Name of the role
-func (a *Secrets) KubernetesWriteRole(ctx context.Context, name string, kubernetesWriteRoleRequest KubernetesWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KubernetesWriteRole(ctx context.Context, name string, request schema.KubernetesWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2842,7 +2844,7 @@ func (a *Secrets) KubernetesWriteRole(ctx context.Context, name string, kubernet
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kubernetesWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2850,7 +2852,7 @@ func (a *Secrets) KubernetesWriteRole(ctx context.Context, name string, kubernet
 
 // LDAPCheckInLibrary Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) LDAPCheckInLibrary(ctx context.Context, name string, lDAPCheckInLibraryRequest LDAPCheckInLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPCheckInLibrary(ctx context.Context, name string, request schema.LDAPCheckInLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2865,7 +2867,7 @@ func (a *Secrets) LDAPCheckInLibrary(ctx context.Context, name string, lDAPCheck
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPCheckInLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2873,7 +2875,7 @@ func (a *Secrets) LDAPCheckInLibrary(ctx context.Context, name string, lDAPCheck
 
 // LDAPCheckInManageLibrary Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) LDAPCheckInManageLibrary(ctx context.Context, name string, lDAPCheckInManageLibraryRequest LDAPCheckInManageLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPCheckInManageLibrary(ctx context.Context, name string, request schema.LDAPCheckInManageLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2888,7 +2890,7 @@ func (a *Secrets) LDAPCheckInManageLibrary(ctx context.Context, name string, lDA
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPCheckInManageLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2896,7 +2898,7 @@ func (a *Secrets) LDAPCheckInManageLibrary(ctx context.Context, name string, lDA
 
 // LDAPCheckOutLibrary Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) LDAPCheckOutLibrary(ctx context.Context, name string, lDAPCheckOutLibraryRequest LDAPCheckOutLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPCheckOutLibrary(ctx context.Context, name string, request schema.LDAPCheckOutLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2911,7 +2913,7 @@ func (a *Secrets) LDAPCheckOutLibrary(ctx context.Context, name string, lDAPChec
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPCheckOutLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3009,7 +3011,7 @@ func (a *Secrets) LDAPDeleteStaticRole(ctx context.Context, name string, options
 
 // LDAPListLibraries
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) LDAPListLibraries(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPListLibraries(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3031,7 +3033,7 @@ func (a *Secrets) LDAPListLibraries(ctx context.Context, list string, options ..
 
 // LDAPListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) LDAPListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3053,7 +3055,7 @@ func (a *Secrets) LDAPListRoles(ctx context.Context, list string, options ...Req
 
 // LDAPListStaticRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) LDAPListStaticRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3277,7 +3279,7 @@ func (a *Secrets) LDAPRotateRoot(ctx context.Context, options ...RequestOption) 
 }
 
 // LDAPWriteConfig
-func (a *Secrets) LDAPWriteConfig(ctx context.Context, lDAPWriteConfigRequest LDAPWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPWriteConfig(ctx context.Context, request schema.LDAPWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3291,7 +3293,7 @@ func (a *Secrets) LDAPWriteConfig(ctx context.Context, lDAPWriteConfigRequest LD
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3299,7 +3301,7 @@ func (a *Secrets) LDAPWriteConfig(ctx context.Context, lDAPWriteConfigRequest LD
 
 // LDAPWriteLibrary Update a library set.
 // name: Name of the set.
-func (a *Secrets) LDAPWriteLibrary(ctx context.Context, name string, lDAPWriteLibraryRequest LDAPWriteLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPWriteLibrary(ctx context.Context, name string, request schema.LDAPWriteLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3314,7 +3316,7 @@ func (a *Secrets) LDAPWriteLibrary(ctx context.Context, name string, lDAPWriteLi
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPWriteLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3322,7 +3324,7 @@ func (a *Secrets) LDAPWriteLibrary(ctx context.Context, name string, lDAPWriteLi
 
 // LDAPWriteRole
 // name: Name of the role (lowercase)
-func (a *Secrets) LDAPWriteRole(ctx context.Context, name string, lDAPWriteRoleRequest LDAPWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPWriteRole(ctx context.Context, name string, request schema.LDAPWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3337,7 +3339,7 @@ func (a *Secrets) LDAPWriteRole(ctx context.Context, name string, lDAPWriteRoleR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3345,7 +3347,7 @@ func (a *Secrets) LDAPWriteRole(ctx context.Context, name string, lDAPWriteRoleR
 
 // LDAPWriteStaticRole
 // name: Name of the role
-func (a *Secrets) LDAPWriteStaticRole(ctx context.Context, name string, lDAPWriteStaticRoleRequest LDAPWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPWriteStaticRole(ctx context.Context, name string, request schema.LDAPWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3360,7 +3362,7 @@ func (a *Secrets) LDAPWriteStaticRole(ctx context.Context, name string, lDAPWrit
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPWriteStaticRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3391,7 +3393,7 @@ func (a *Secrets) MongoDBAtlasDeleteRole(ctx context.Context, name string, optio
 
 // MongoDBAtlasListRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) MongoDBAtlasListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) MongoDBAtlasListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3479,7 +3481,7 @@ func (a *Secrets) MongoDBAtlasReadRole(ctx context.Context, name string, options
 }
 
 // MongoDBAtlasWriteConfig Configure the  credentials that are used to manage Database Users.
-func (a *Secrets) MongoDBAtlasWriteConfig(ctx context.Context, mongoDBAtlasWriteConfigRequest MongoDBAtlasWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) MongoDBAtlasWriteConfig(ctx context.Context, request schema.MongoDBAtlasWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3493,7 +3495,7 @@ func (a *Secrets) MongoDBAtlasWriteConfig(ctx context.Context, mongoDBAtlasWrite
 		a.client,
 		http.MethodPost,
 		requestPath,
-		mongoDBAtlasWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3524,7 +3526,7 @@ func (a *Secrets) MongoDBAtlasWriteCredentials(ctx context.Context, name string,
 
 // MongoDBAtlasWriteRole Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *Secrets) MongoDBAtlasWriteRole(ctx context.Context, name string, mongoDBAtlasWriteRoleRequest MongoDBAtlasWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) MongoDBAtlasWriteRole(ctx context.Context, name string, request schema.MongoDBAtlasWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3539,7 +3541,7 @@ func (a *Secrets) MongoDBAtlasWriteRole(ctx context.Context, name string, mongoD
 		a.client,
 		http.MethodPost,
 		requestPath,
-		mongoDBAtlasWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3612,7 +3614,7 @@ func (a *Secrets) NomadDeleteRole(ctx context.Context, name string, options ...R
 
 // NomadListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) NomadListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) NomadListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3721,7 +3723,7 @@ func (a *Secrets) NomadReadRole(ctx context.Context, name string, options ...Req
 }
 
 // NomadWriteAccessConfig
-func (a *Secrets) NomadWriteAccessConfig(ctx context.Context, nomadWriteAccessConfigRequest NomadWriteAccessConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) NomadWriteAccessConfig(ctx context.Context, request schema.NomadWriteAccessConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3735,14 +3737,14 @@ func (a *Secrets) NomadWriteAccessConfig(ctx context.Context, nomadWriteAccessCo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nomadWriteAccessConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // NomadWriteLeaseConfig Configure the lease parameters for generated tokens
-func (a *Secrets) NomadWriteLeaseConfig(ctx context.Context, nomadWriteLeaseConfigRequest NomadWriteLeaseConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) NomadWriteLeaseConfig(ctx context.Context, request schema.NomadWriteLeaseConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3756,7 +3758,7 @@ func (a *Secrets) NomadWriteLeaseConfig(ctx context.Context, nomadWriteLeaseConf
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nomadWriteLeaseConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3764,7 +3766,7 @@ func (a *Secrets) NomadWriteLeaseConfig(ctx context.Context, nomadWriteLeaseConf
 
 // NomadWriteRole
 // name: Name of the role
-func (a *Secrets) NomadWriteRole(ctx context.Context, name string, nomadWriteRoleRequest NomadWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) NomadWriteRole(ctx context.Context, name string, request schema.NomadWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3779,7 +3781,7 @@ func (a *Secrets) NomadWriteRole(ctx context.Context, name string, nomadWriteRol
 		a.client,
 		http.MethodPost,
 		requestPath,
-		nomadWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3787,7 +3789,7 @@ func (a *Secrets) NomadWriteRole(ctx context.Context, name string, nomadWriteRol
 
 // OpenLDAPCheckInLibrary Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) OpenLDAPCheckInLibrary(ctx context.Context, name string, openLDAPCheckInLibraryRequest OpenLDAPCheckInLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPCheckInLibrary(ctx context.Context, name string, request schema.OpenLDAPCheckInLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3802,7 +3804,7 @@ func (a *Secrets) OpenLDAPCheckInLibrary(ctx context.Context, name string, openL
 		a.client,
 		http.MethodPost,
 		requestPath,
-		openLDAPCheckInLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3810,7 +3812,7 @@ func (a *Secrets) OpenLDAPCheckInLibrary(ctx context.Context, name string, openL
 
 // OpenLDAPCheckInManageLibrary Check service accounts in to the library.
 // name: Name of the set.
-func (a *Secrets) OpenLDAPCheckInManageLibrary(ctx context.Context, name string, openLDAPCheckInManageLibraryRequest OpenLDAPCheckInManageLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPCheckInManageLibrary(ctx context.Context, name string, request schema.OpenLDAPCheckInManageLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3825,7 +3827,7 @@ func (a *Secrets) OpenLDAPCheckInManageLibrary(ctx context.Context, name string,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		openLDAPCheckInManageLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3833,7 +3835,7 @@ func (a *Secrets) OpenLDAPCheckInManageLibrary(ctx context.Context, name string,
 
 // OpenLDAPCheckOutLibrary Check a service account out from the library.
 // name: Name of the set
-func (a *Secrets) OpenLDAPCheckOutLibrary(ctx context.Context, name string, openLDAPCheckOutLibraryRequest OpenLDAPCheckOutLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPCheckOutLibrary(ctx context.Context, name string, request schema.OpenLDAPCheckOutLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3848,7 +3850,7 @@ func (a *Secrets) OpenLDAPCheckOutLibrary(ctx context.Context, name string, open
 		a.client,
 		http.MethodPost,
 		requestPath,
-		openLDAPCheckOutLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3946,7 +3948,7 @@ func (a *Secrets) OpenLDAPDeleteStaticRole(ctx context.Context, name string, opt
 
 // OpenLDAPListLibraries
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) OpenLDAPListLibraries(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPListLibraries(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3968,7 +3970,7 @@ func (a *Secrets) OpenLDAPListLibraries(ctx context.Context, list string, option
 
 // OpenLDAPListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) OpenLDAPListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3990,7 +3992,7 @@ func (a *Secrets) OpenLDAPListRoles(ctx context.Context, list string, options ..
 
 // OpenLDAPListStaticRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) OpenLDAPListStaticRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4214,7 +4216,7 @@ func (a *Secrets) OpenLDAPRotateRoot(ctx context.Context, options ...RequestOpti
 }
 
 // OpenLDAPWriteConfig
-func (a *Secrets) OpenLDAPWriteConfig(ctx context.Context, openLDAPWriteConfigRequest OpenLDAPWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPWriteConfig(ctx context.Context, request schema.OpenLDAPWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4228,7 +4230,7 @@ func (a *Secrets) OpenLDAPWriteConfig(ctx context.Context, openLDAPWriteConfigRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		openLDAPWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4236,7 +4238,7 @@ func (a *Secrets) OpenLDAPWriteConfig(ctx context.Context, openLDAPWriteConfigRe
 
 // OpenLDAPWriteLibrary Update a library set.
 // name: Name of the set.
-func (a *Secrets) OpenLDAPWriteLibrary(ctx context.Context, name string, openLDAPWriteLibraryRequest OpenLDAPWriteLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPWriteLibrary(ctx context.Context, name string, request schema.OpenLDAPWriteLibraryRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4251,7 +4253,7 @@ func (a *Secrets) OpenLDAPWriteLibrary(ctx context.Context, name string, openLDA
 		a.client,
 		http.MethodPost,
 		requestPath,
-		openLDAPWriteLibraryRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4259,7 +4261,7 @@ func (a *Secrets) OpenLDAPWriteLibrary(ctx context.Context, name string, openLDA
 
 // OpenLDAPWriteRole
 // name: Name of the role (lowercase)
-func (a *Secrets) OpenLDAPWriteRole(ctx context.Context, name string, openLDAPWriteRoleRequest OpenLDAPWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPWriteRole(ctx context.Context, name string, request schema.OpenLDAPWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4274,7 +4276,7 @@ func (a *Secrets) OpenLDAPWriteRole(ctx context.Context, name string, openLDAPWr
 		a.client,
 		http.MethodPost,
 		requestPath,
-		openLDAPWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4282,7 +4284,7 @@ func (a *Secrets) OpenLDAPWriteRole(ctx context.Context, name string, openLDAPWr
 
 // OpenLDAPWriteStaticRole
 // name: Name of the role
-func (a *Secrets) OpenLDAPWriteStaticRole(ctx context.Context, name string, openLDAPWriteStaticRoleRequest OpenLDAPWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPWriteStaticRole(ctx context.Context, name string, request schema.OpenLDAPWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4297,14 +4299,14 @@ func (a *Secrets) OpenLDAPWriteStaticRole(ctx context.Context, name string, open
 		a.client,
 		http.MethodPost,
 		requestPath,
-		openLDAPWriteStaticRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIBundleWrite
-func (a *Secrets) PKIBundleWrite(ctx context.Context, pKIBundleWriteRequest PKIBundleWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIBundleWrite(ctx context.Context, request schema.PKIBundleWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4318,7 +4320,7 @@ func (a *Secrets) PKIBundleWrite(ctx context.Context, pKIBundleWriteRequest PKIB
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIBundleWriteRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4393,7 +4395,7 @@ func (a *Secrets) PKIDeleteRoot(ctx context.Context, options ...RequestOption) (
 
 // PKIGenerateRoot
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PKIGenerateRoot(ctx context.Context, exported string, pKIGenerateRootRequest PKIGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIGenerateRoot(ctx context.Context, exported string, request schema.PKIGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4408,14 +4410,14 @@ func (a *Secrets) PKIGenerateRoot(ctx context.Context, exported string, pKIGener
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIGenerateRootRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIImportKeys
-func (a *Secrets) PKIImportKeys(ctx context.Context, pKIImportKeysRequest PKIImportKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIImportKeys(ctx context.Context, request schema.PKIImportKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4429,7 +4431,7 @@ func (a *Secrets) PKIImportKeys(ctx context.Context, pKIImportKeysRequest PKIImp
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIImportKeysRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4438,7 +4440,7 @@ func (a *Secrets) PKIImportKeys(ctx context.Context, pKIImportKeysRequest PKIImp
 // PKIIssuerIssueRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PKIIssuerIssueRole(ctx context.Context, issuerRef string, role string, pKIIssuerIssueRoleRequest PKIIssuerIssueRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerIssueRole(ctx context.Context, issuerRef string, role string, request schema.PKIIssuerIssueRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4454,7 +4456,7 @@ func (a *Secrets) PKIIssuerIssueRole(ctx context.Context, issuerRef string, role
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerIssueRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4462,7 +4464,7 @@ func (a *Secrets) PKIIssuerIssueRole(ctx context.Context, issuerRef string, role
 
 // PKIIssuerResignCRLs
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PKIIssuerResignCRLs(ctx context.Context, issuerRef string, pKIIssuerResignCRLsRequest PKIIssuerResignCRLsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerResignCRLs(ctx context.Context, issuerRef string, request schema.PKIIssuerResignCRLsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4477,7 +4479,7 @@ func (a *Secrets) PKIIssuerResignCRLs(ctx context.Context, issuerRef string, pKI
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerResignCRLsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4508,7 +4510,7 @@ func (a *Secrets) PKIIssuerRevoke(ctx context.Context, issuerRef string, options
 
 // PKIIssuerSignIntermediate
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PKIIssuerSignIntermediate(ctx context.Context, issuerRef string, pKIIssuerSignIntermediateRequest PKIIssuerSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerSignIntermediate(ctx context.Context, issuerRef string, request schema.PKIIssuerSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4523,7 +4525,7 @@ func (a *Secrets) PKIIssuerSignIntermediate(ctx context.Context, issuerRef strin
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerSignIntermediateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4531,7 +4533,7 @@ func (a *Secrets) PKIIssuerSignIntermediate(ctx context.Context, issuerRef strin
 
 // PKIIssuerSignRevocationList
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PKIIssuerSignRevocationList(ctx context.Context, issuerRef string, pKIIssuerSignRevocationListRequest PKIIssuerSignRevocationListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerSignRevocationList(ctx context.Context, issuerRef string, request schema.PKIIssuerSignRevocationListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4546,7 +4548,7 @@ func (a *Secrets) PKIIssuerSignRevocationList(ctx context.Context, issuerRef str
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerSignRevocationListRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4555,7 +4557,7 @@ func (a *Secrets) PKIIssuerSignRevocationList(ctx context.Context, issuerRef str
 // PKIIssuerSignRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PKIIssuerSignRole(ctx context.Context, issuerRef string, role string, pKIIssuerSignRoleRequest PKIIssuerSignRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerSignRole(ctx context.Context, issuerRef string, role string, request schema.PKIIssuerSignRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4571,7 +4573,7 @@ func (a *Secrets) PKIIssuerSignRole(ctx context.Context, issuerRef string, role 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerSignRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4579,7 +4581,7 @@ func (a *Secrets) PKIIssuerSignRole(ctx context.Context, issuerRef string, role 
 
 // PKIIssuerSignSelfIssued
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PKIIssuerSignSelfIssued(ctx context.Context, issuerRef string, pKIIssuerSignSelfIssuedRequest PKIIssuerSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerSignSelfIssued(ctx context.Context, issuerRef string, request schema.PKIIssuerSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4594,7 +4596,7 @@ func (a *Secrets) PKIIssuerSignSelfIssued(ctx context.Context, issuerRef string,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerSignSelfIssuedRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4602,7 +4604,7 @@ func (a *Secrets) PKIIssuerSignSelfIssued(ctx context.Context, issuerRef string,
 
 // PKIIssuerSignVerbatim
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PKIIssuerSignVerbatim(ctx context.Context, issuerRef string, pKIIssuerSignVerbatimRequest PKIIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerSignVerbatim(ctx context.Context, issuerRef string, request schema.PKIIssuerSignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4617,7 +4619,7 @@ func (a *Secrets) PKIIssuerSignVerbatim(ctx context.Context, issuerRef string, p
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerSignVerbatimRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4626,7 +4628,7 @@ func (a *Secrets) PKIIssuerSignVerbatim(ctx context.Context, issuerRef string, p
 // PKIIssuerSignVerbatimRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *Secrets) PKIIssuerSignVerbatimRole(ctx context.Context, issuerRef string, role string, pKIIssuerSignVerbatimRoleRequest PKIIssuerSignVerbatimRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuerSignVerbatimRole(ctx context.Context, issuerRef string, role string, request schema.PKIIssuerSignVerbatimRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4642,7 +4644,7 @@ func (a *Secrets) PKIIssuerSignVerbatimRole(ctx context.Context, issuerRef strin
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuerSignVerbatimRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4650,7 +4652,7 @@ func (a *Secrets) PKIIssuerSignVerbatimRole(ctx context.Context, issuerRef strin
 
 // PKIIssuersGenerateIntermediate
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PKIIssuersGenerateIntermediate(ctx context.Context, exported string, pKIIssuersGenerateIntermediateRequest PKIIssuersGenerateIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuersGenerateIntermediate(ctx context.Context, exported string, request schema.PKIIssuersGenerateIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4665,7 +4667,7 @@ func (a *Secrets) PKIIssuersGenerateIntermediate(ctx context.Context, exported s
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuersGenerateIntermediateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4673,7 +4675,7 @@ func (a *Secrets) PKIIssuersGenerateIntermediate(ctx context.Context, exported s
 
 // PKIIssuersGenerateRoot
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PKIIssuersGenerateRoot(ctx context.Context, exported string, pKIIssuersGenerateRootRequest PKIIssuersGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuersGenerateRoot(ctx context.Context, exported string, request schema.PKIIssuersGenerateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4688,7 +4690,7 @@ func (a *Secrets) PKIIssuersGenerateRoot(ctx context.Context, exported string, p
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIIssuersGenerateRootRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4696,7 +4698,7 @@ func (a *Secrets) PKIIssuersGenerateRoot(ctx context.Context, exported string, p
 
 // PKIIssuersList
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIIssuersList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuersList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4718,7 +4720,7 @@ func (a *Secrets) PKIIssuersList(ctx context.Context, list string, options ...Re
 
 // PKIListCerts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListCerts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListCerts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4740,7 +4742,7 @@ func (a *Secrets) PKIListCerts(ctx context.Context, list string, options ...Requ
 
 // PKIListCertsRevoked
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListCertsRevoked(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListCertsRevoked(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4762,7 +4764,7 @@ func (a *Secrets) PKIListCertsRevoked(ctx context.Context, list string, options 
 
 // PKIListKeys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4784,7 +4786,7 @@ func (a *Secrets) PKIListKeys(ctx context.Context, list string, options ...Reque
 
 // PKIListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5237,7 +5239,7 @@ func (a *Secrets) PKIReadURLConfig(ctx context.Context, options ...RequestOption
 }
 
 // PKIReplaceRoot
-func (a *Secrets) PKIReplaceRoot(ctx context.Context, pKIReplaceRootRequest PKIReplaceRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIReplaceRoot(ctx context.Context, request schema.PKIReplaceRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5251,14 +5253,14 @@ func (a *Secrets) PKIReplaceRoot(ctx context.Context, pKIReplaceRootRequest PKIR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIReplaceRootRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIRevoke
-func (a *Secrets) PKIRevoke(ctx context.Context, pKIRevokeRequest PKIRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIRevoke(ctx context.Context, request schema.PKIRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5272,14 +5274,14 @@ func (a *Secrets) PKIRevoke(ctx context.Context, pKIRevokeRequest PKIRevokeReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIRevokeRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIRevokeWithKey
-func (a *Secrets) PKIRevokeWithKey(ctx context.Context, pKIRevokeWithKeyRequest PKIRevokeWithKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIRevokeWithKey(ctx context.Context, request schema.PKIRevokeWithKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5293,14 +5295,14 @@ func (a *Secrets) PKIRevokeWithKey(ctx context.Context, pKIRevokeWithKeyRequest 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIRevokeWithKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIRootSignIntermediate
-func (a *Secrets) PKIRootSignIntermediate(ctx context.Context, pKIRootSignIntermediateRequest PKIRootSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIRootSignIntermediate(ctx context.Context, request schema.PKIRootSignIntermediateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5314,14 +5316,14 @@ func (a *Secrets) PKIRootSignIntermediate(ctx context.Context, pKIRootSignInterm
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIRootSignIntermediateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIRootSignSelfIssued
-func (a *Secrets) PKIRootSignSelfIssued(ctx context.Context, pKIRootSignSelfIssuedRequest PKIRootSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIRootSignSelfIssued(ctx context.Context, request schema.PKIRootSignSelfIssuedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5335,7 +5337,7 @@ func (a *Secrets) PKIRootSignSelfIssued(ctx context.Context, pKIRootSignSelfIssu
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIRootSignSelfIssuedRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5343,7 +5345,7 @@ func (a *Secrets) PKIRootSignSelfIssued(ctx context.Context, pKIRootSignSelfIssu
 
 // PKIRotateRoot
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PKIRotateRoot(ctx context.Context, exported string, pKIRotateRootRequest PKIRotateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIRotateRoot(ctx context.Context, exported string, request schema.PKIRotateRootRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5358,7 +5360,7 @@ func (a *Secrets) PKIRotateRoot(ctx context.Context, exported string, pKIRotateR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIRotateRootRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5366,7 +5368,7 @@ func (a *Secrets) PKIRotateRoot(ctx context.Context, exported string, pKIRotateR
 
 // PKISignRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PKISignRole(ctx context.Context, role string, pKISignRoleRequest PKISignRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKISignRole(ctx context.Context, role string, request schema.PKISignRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5381,14 +5383,14 @@ func (a *Secrets) PKISignRole(ctx context.Context, role string, pKISignRoleReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKISignRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKISignVerbatim
-func (a *Secrets) PKISignVerbatim(ctx context.Context, pKISignVerbatimRequest PKISignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKISignVerbatim(ctx context.Context, request schema.PKISignVerbatimRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5402,7 +5404,7 @@ func (a *Secrets) PKISignVerbatim(ctx context.Context, pKISignVerbatimRequest PK
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKISignVerbatimRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5410,7 +5412,7 @@ func (a *Secrets) PKISignVerbatim(ctx context.Context, pKISignVerbatimRequest PK
 
 // PKISignVerbatimRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PKISignVerbatimRole(ctx context.Context, role string, pKISignVerbatimRoleRequest PKISignVerbatimRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKISignVerbatimRole(ctx context.Context, role string, request schema.PKISignVerbatimRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5425,14 +5427,14 @@ func (a *Secrets) PKISignVerbatimRole(ctx context.Context, role string, pKISignV
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKISignVerbatimRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKITidy
-func (a *Secrets) PKITidy(ctx context.Context, pKITidyRequest PKITidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKITidy(ctx context.Context, request schema.PKITidyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5446,7 +5448,7 @@ func (a *Secrets) PKITidy(ctx context.Context, pKITidyRequest PKITidyRequest, op
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKITidyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5495,7 +5497,7 @@ func (a *Secrets) PKITidyStatus(ctx context.Context, options ...RequestOption) (
 }
 
 // PKIWriteAutoTidyConfig
-func (a *Secrets) PKIWriteAutoTidyConfig(ctx context.Context, pKIWriteAutoTidyConfigRequest PKIWriteAutoTidyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteAutoTidyConfig(ctx context.Context, request schema.PKIWriteAutoTidyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5509,14 +5511,14 @@ func (a *Secrets) PKIWriteAutoTidyConfig(ctx context.Context, pKIWriteAutoTidyCo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteAutoTidyConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteCAConfig
-func (a *Secrets) PKIWriteCAConfig(ctx context.Context, pKIWriteCAConfigRequest PKIWriteCAConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteCAConfig(ctx context.Context, request schema.PKIWriteCAConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5530,14 +5532,14 @@ func (a *Secrets) PKIWriteCAConfig(ctx context.Context, pKIWriteCAConfigRequest 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteCAConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteCRLConfig
-func (a *Secrets) PKIWriteCRLConfig(ctx context.Context, pKIWriteCRLConfigRequest PKIWriteCRLConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteCRLConfig(ctx context.Context, request schema.PKIWriteCRLConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5551,14 +5553,14 @@ func (a *Secrets) PKIWriteCRLConfig(ctx context.Context, pKIWriteCRLConfigReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteCRLConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteCerts
-func (a *Secrets) PKIWriteCerts(ctx context.Context, pKIWriteCertsRequest PKIWriteCertsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteCerts(ctx context.Context, request schema.PKIWriteCertsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5572,14 +5574,14 @@ func (a *Secrets) PKIWriteCerts(ctx context.Context, pKIWriteCertsRequest PKIWri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteCertsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteClusterConfig
-func (a *Secrets) PKIWriteClusterConfig(ctx context.Context, pKIWriteClusterConfigRequest PKIWriteClusterConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteClusterConfig(ctx context.Context, request schema.PKIWriteClusterConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5593,14 +5595,14 @@ func (a *Secrets) PKIWriteClusterConfig(ctx context.Context, pKIWriteClusterConf
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteClusterConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteIntermediateCrossSign
-func (a *Secrets) PKIWriteIntermediateCrossSign(ctx context.Context, pKIWriteIntermediateCrossSignRequest PKIWriteIntermediateCrossSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteIntermediateCrossSign(ctx context.Context, request schema.PKIWriteIntermediateCrossSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5614,7 +5616,7 @@ func (a *Secrets) PKIWriteIntermediateCrossSign(ctx context.Context, pKIWriteInt
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteIntermediateCrossSignRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5622,7 +5624,7 @@ func (a *Secrets) PKIWriteIntermediateCrossSign(ctx context.Context, pKIWriteInt
 
 // PKIWriteIntermediateGenerate
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *Secrets) PKIWriteIntermediateGenerate(ctx context.Context, exported string, pKIWriteIntermediateGenerateRequest PKIWriteIntermediateGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteIntermediateGenerate(ctx context.Context, exported string, request schema.PKIWriteIntermediateGenerateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5637,14 +5639,14 @@ func (a *Secrets) PKIWriteIntermediateGenerate(ctx context.Context, exported str
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteIntermediateGenerateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteIntermediateSetSigned
-func (a *Secrets) PKIWriteIntermediateSetSigned(ctx context.Context, pKIWriteIntermediateSetSignedRequest PKIWriteIntermediateSetSignedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteIntermediateSetSigned(ctx context.Context, request schema.PKIWriteIntermediateSetSignedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5658,14 +5660,14 @@ func (a *Secrets) PKIWriteIntermediateSetSigned(ctx context.Context, pKIWriteInt
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteIntermediateSetSignedRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteInternalExported
-func (a *Secrets) PKIWriteInternalExported(ctx context.Context, pKIWriteInternalExportedRequest PKIWriteInternalExportedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteInternalExported(ctx context.Context, request schema.PKIWriteInternalExportedRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5679,7 +5681,7 @@ func (a *Secrets) PKIWriteInternalExported(ctx context.Context, pKIWriteInternal
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteInternalExportedRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5687,7 +5689,7 @@ func (a *Secrets) PKIWriteInternalExported(ctx context.Context, pKIWriteInternal
 
 // PKIWriteIssueRole
 // role: The desired role with configuration for this request
-func (a *Secrets) PKIWriteIssueRole(ctx context.Context, role string, pKIWriteIssueRoleRequest PKIWriteIssueRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteIssueRole(ctx context.Context, role string, request schema.PKIWriteIssueRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5702,14 +5704,14 @@ func (a *Secrets) PKIWriteIssueRole(ctx context.Context, role string, pKIWriteIs
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteIssueRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteIssuersConfig
-func (a *Secrets) PKIWriteIssuersConfig(ctx context.Context, pKIWriteIssuersConfigRequest PKIWriteIssuersConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteIssuersConfig(ctx context.Context, request schema.PKIWriteIssuersConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5723,14 +5725,14 @@ func (a *Secrets) PKIWriteIssuersConfig(ctx context.Context, pKIWriteIssuersConf
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteIssuersConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteKMS
-func (a *Secrets) PKIWriteKMS(ctx context.Context, pKIWriteKMSRequest PKIWriteKMSRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteKMS(ctx context.Context, request schema.PKIWriteKMSRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5744,7 +5746,7 @@ func (a *Secrets) PKIWriteKMS(ctx context.Context, pKIWriteKMSRequest PKIWriteKM
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteKMSRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5752,7 +5754,7 @@ func (a *Secrets) PKIWriteKMS(ctx context.Context, pKIWriteKMSRequest PKIWriteKM
 
 // PKIWriteKey
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *Secrets) PKIWriteKey(ctx context.Context, keyRef string, pKIWriteKeyRequest PKIWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteKey(ctx context.Context, keyRef string, request schema.PKIWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5767,14 +5769,14 @@ func (a *Secrets) PKIWriteKey(ctx context.Context, keyRef string, pKIWriteKeyReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteKeysConfig
-func (a *Secrets) PKIWriteKeysConfig(ctx context.Context, pKIWriteKeysConfigRequest PKIWriteKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteKeysConfig(ctx context.Context, request schema.PKIWriteKeysConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5788,7 +5790,7 @@ func (a *Secrets) PKIWriteKeysConfig(ctx context.Context, pKIWriteKeysConfigRequ
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteKeysConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5817,7 +5819,7 @@ func (a *Secrets) PKIWriteOCSP(ctx context.Context, options ...RequestOption) (*
 
 // PKIWriteRole
 // name: Name of the role
-func (a *Secrets) PKIWriteRole(ctx context.Context, name string, pKIWriteRoleRequest PKIWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteRole(ctx context.Context, name string, request schema.PKIWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5832,14 +5834,14 @@ func (a *Secrets) PKIWriteRole(ctx context.Context, name string, pKIWriteRoleReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PKIWriteURLConfig
-func (a *Secrets) PKIWriteURLConfig(ctx context.Context, pKIWriteURLConfigRequest PKIWriteURLConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIWriteURLConfig(ctx context.Context, request schema.PKIWriteURLConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5853,7 +5855,7 @@ func (a *Secrets) PKIWriteURLConfig(ctx context.Context, pKIWriteURLConfigReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pKIWriteURLConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6056,7 +6058,7 @@ func (a *Secrets) PkiReadPem(ctx context.Context, options ...RequestOption) (*Re
 
 // PkiWriteIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *Secrets) PkiWriteIssuerRefDerPem(ctx context.Context, issuerRef string, pkiWriteIssuerRefDerPemRequest PkiWriteIssuerRefDerPemRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PkiWriteIssuerRefDerPem(ctx context.Context, issuerRef string, request schema.PkiWriteIssuerRefDerPemRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6071,14 +6073,14 @@ func (a *Secrets) PkiWriteIssuerRefDerPem(ctx context.Context, issuerRef string,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pkiWriteIssuerRefDerPemRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // PkiWriteJson
-func (a *Secrets) PkiWriteJson(ctx context.Context, pkiWriteJsonRequest PkiWriteJsonRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PkiWriteJson(ctx context.Context, request schema.PkiWriteJsonRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6092,7 +6094,7 @@ func (a *Secrets) PkiWriteJson(ctx context.Context, pkiWriteJsonRequest PkiWrite
 		a.client,
 		http.MethodPost,
 		requestPath,
-		pkiWriteJsonRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6123,7 +6125,7 @@ func (a *Secrets) RabbitMQDeleteRole(ctx context.Context, name string, options .
 
 // RabbitMQListRoles Manage the roles that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) RabbitMQListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) RabbitMQListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6211,7 +6213,7 @@ func (a *Secrets) RabbitMQReadRole(ctx context.Context, name string, options ...
 }
 
 // RabbitMQWriteConnectionConfig Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
-func (a *Secrets) RabbitMQWriteConnectionConfig(ctx context.Context, rabbitMQWriteConnectionConfigRequest RabbitMQWriteConnectionConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) RabbitMQWriteConnectionConfig(ctx context.Context, request schema.RabbitMQWriteConnectionConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6225,14 +6227,14 @@ func (a *Secrets) RabbitMQWriteConnectionConfig(ctx context.Context, rabbitMQWri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		rabbitMQWriteConnectionConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // RabbitMQWriteLeaseConfig Configure the lease parameters for generated credentials
-func (a *Secrets) RabbitMQWriteLeaseConfig(ctx context.Context, rabbitMQWriteLeaseConfigRequest RabbitMQWriteLeaseConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) RabbitMQWriteLeaseConfig(ctx context.Context, request schema.RabbitMQWriteLeaseConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6246,7 +6248,7 @@ func (a *Secrets) RabbitMQWriteLeaseConfig(ctx context.Context, rabbitMQWriteLea
 		a.client,
 		http.MethodPost,
 		requestPath,
-		rabbitMQWriteLeaseConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6254,7 +6256,7 @@ func (a *Secrets) RabbitMQWriteLeaseConfig(ctx context.Context, rabbitMQWriteLea
 
 // RabbitMQWriteRole Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *Secrets) RabbitMQWriteRole(ctx context.Context, name string, rabbitMQWriteRoleRequest RabbitMQWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) RabbitMQWriteRole(ctx context.Context, name string, request schema.RabbitMQWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6269,7 +6271,7 @@ func (a *Secrets) RabbitMQWriteRole(ctx context.Context, name string, rabbitMQWr
 		a.client,
 		http.MethodPost,
 		requestPath,
-		rabbitMQWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6365,7 +6367,7 @@ func (a *Secrets) SSHDeleteZeroAddressConfig(ctx context.Context, options ...Req
 
 // SSHListRoles Manage the 'roles' that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) SSHListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6386,7 +6388,7 @@ func (a *Secrets) SSHListRoles(ctx context.Context, list string, options ...Requ
 }
 
 // SSHLookup List all the roles associated with the given IP address.
-func (a *Secrets) SSHLookup(ctx context.Context, sSHLookupRequest SSHLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHLookup(ctx context.Context, request schema.SSHLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6400,7 +6402,7 @@ func (a *Secrets) SSHLookup(ctx context.Context, sSHLookupRequest SSHLookupReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHLookupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6494,7 +6496,7 @@ func (a *Secrets) SSHReadZeroAddressConfig(ctx context.Context, options ...Reque
 
 // SSHSign Request signing an SSH key using a certain role with the provided details.
 // role: The desired role with configuration for this request.
-func (a *Secrets) SSHSign(ctx context.Context, role string, sSHSignRequest SSHSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHSign(ctx context.Context, role string, request schema.SSHSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6509,14 +6511,14 @@ func (a *Secrets) SSHSign(ctx context.Context, role string, sSHSignRequest SSHSi
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHSignRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // SSHVerify Validate the OTP provided by Vault SSH Agent.
-func (a *Secrets) SSHVerify(ctx context.Context, sSHVerifyRequest SSHVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHVerify(ctx context.Context, request schema.SSHVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6530,14 +6532,14 @@ func (a *Secrets) SSHVerify(ctx context.Context, sSHVerifyRequest SSHVerifyReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHVerifyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // SSHWriteCAConfig Set the SSH private key used for signing certificates.
-func (a *Secrets) SSHWriteCAConfig(ctx context.Context, sSHWriteCAConfigRequest SSHWriteCAConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHWriteCAConfig(ctx context.Context, request schema.SSHWriteCAConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6551,7 +6553,7 @@ func (a *Secrets) SSHWriteCAConfig(ctx context.Context, sSHWriteCAConfigRequest 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHWriteCAConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6559,7 +6561,7 @@ func (a *Secrets) SSHWriteCAConfig(ctx context.Context, sSHWriteCAConfigRequest 
 
 // SSHWriteCredentials Creates a credential for establishing SSH connection with the remote host.
 // role: [Required] Name of the role
-func (a *Secrets) SSHWriteCredentials(ctx context.Context, role string, sSHWriteCredentialsRequest SSHWriteCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHWriteCredentials(ctx context.Context, role string, request schema.SSHWriteCredentialsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6574,7 +6576,7 @@ func (a *Secrets) SSHWriteCredentials(ctx context.Context, role string, sSHWrite
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHWriteCredentialsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6582,7 +6584,7 @@ func (a *Secrets) SSHWriteCredentials(ctx context.Context, role string, sSHWrite
 
 // SSHWriteIssue
 // role: The desired role with configuration for this request.
-func (a *Secrets) SSHWriteIssue(ctx context.Context, role string, sSHWriteIssueRequest SSHWriteIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHWriteIssue(ctx context.Context, role string, request schema.SSHWriteIssueRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6597,7 +6599,7 @@ func (a *Secrets) SSHWriteIssue(ctx context.Context, role string, sSHWriteIssueR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHWriteIssueRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6605,7 +6607,7 @@ func (a *Secrets) SSHWriteIssue(ctx context.Context, role string, sSHWriteIssueR
 
 // SSHWriteKeys Register a shared private key with Vault.
 // keyName: [Required] Name of the key
-func (a *Secrets) SSHWriteKeys(ctx context.Context, keyName string, sSHWriteKeysRequest SSHWriteKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHWriteKeys(ctx context.Context, keyName string, request schema.SSHWriteKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6620,7 +6622,7 @@ func (a *Secrets) SSHWriteKeys(ctx context.Context, keyName string, sSHWriteKeys
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHWriteKeysRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6628,7 +6630,7 @@ func (a *Secrets) SSHWriteKeys(ctx context.Context, keyName string, sSHWriteKeys
 
 // SSHWriteRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *Secrets) SSHWriteRole(ctx context.Context, role string, sSHWriteRoleRequest SSHWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHWriteRole(ctx context.Context, role string, request schema.SSHWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6643,14 +6645,14 @@ func (a *Secrets) SSHWriteRole(ctx context.Context, role string, sSHWriteRoleReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // SSHWriteZeroAddressConfig Assign zero address as default CIDR block for select roles.
-func (a *Secrets) SSHWriteZeroAddressConfig(ctx context.Context, sSHWriteZeroAddressConfigRequest SSHWriteZeroAddressConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHWriteZeroAddressConfig(ctx context.Context, request schema.SSHWriteZeroAddressConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6664,7 +6666,7 @@ func (a *Secrets) SSHWriteZeroAddressConfig(ctx context.Context, sSHWriteZeroAdd
 		a.client,
 		http.MethodPost,
 		requestPath,
-		sSHWriteZeroAddressConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6695,7 +6697,7 @@ func (a *Secrets) TOTPDeleteKey(ctx context.Context, name string, options ...Req
 
 // TOTPListKeys Manage the keys that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) TOTPListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TOTPListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6763,7 +6765,7 @@ func (a *Secrets) TOTPReadKey(ctx context.Context, name string, options ...Reque
 
 // TOTPWriteCode Request time-based one-time use password or validate a password for a certain key .
 // name: Name of the key.
-func (a *Secrets) TOTPWriteCode(ctx context.Context, name string, tOTPWriteCodeRequest TOTPWriteCodeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TOTPWriteCode(ctx context.Context, name string, request schema.TOTPWriteCodeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6778,7 +6780,7 @@ func (a *Secrets) TOTPWriteCode(ctx context.Context, name string, tOTPWriteCodeR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tOTPWriteCodeRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6786,7 +6788,7 @@ func (a *Secrets) TOTPWriteCode(ctx context.Context, name string, tOTPWriteCodeR
 
 // TOTPWriteKey Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *Secrets) TOTPWriteKey(ctx context.Context, name string, tOTPWriteKeyRequest TOTPWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TOTPWriteKey(ctx context.Context, name string, request schema.TOTPWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6801,7 +6803,7 @@ func (a *Secrets) TOTPWriteKey(ctx context.Context, name string, tOTPWriteKeyReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tOTPWriteKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -6853,7 +6855,7 @@ func (a *Secrets) TerraformDeleteRole(ctx context.Context, name string, options 
 
 // TerraformListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) TerraformListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TerraformListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6964,7 +6966,7 @@ func (a *Secrets) TerraformRotateRole(ctx context.Context, name string, options 
 }
 
 // TerraformWriteConfig
-func (a *Secrets) TerraformWriteConfig(ctx context.Context, terraformWriteConfigRequest TerraformWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TerraformWriteConfig(ctx context.Context, request schema.TerraformWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6978,7 +6980,7 @@ func (a *Secrets) TerraformWriteConfig(ctx context.Context, terraformWriteConfig
 		a.client,
 		http.MethodPost,
 		requestPath,
-		terraformWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7009,7 +7011,7 @@ func (a *Secrets) TerraformWriteCredentials(ctx context.Context, name string, op
 
 // TerraformWriteRole
 // name: Name of the role
-func (a *Secrets) TerraformWriteRole(ctx context.Context, name string, terraformWriteRoleRequest TerraformWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TerraformWriteRole(ctx context.Context, name string, request schema.TerraformWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7024,7 +7026,7 @@ func (a *Secrets) TerraformWriteRole(ctx context.Context, name string, terraform
 		a.client,
 		http.MethodPost,
 		requestPath,
-		terraformWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7055,7 +7057,7 @@ func (a *Secrets) TransitBackup(ctx context.Context, name string, options ...Req
 
 // TransitDecrypt Decrypt a ciphertext value using a named key
 // name: Name of the key
-func (a *Secrets) TransitDecrypt(ctx context.Context, name string, transitDecryptRequest TransitDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitDecrypt(ctx context.Context, name string, request schema.TransitDecryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7070,7 +7072,7 @@ func (a *Secrets) TransitDecrypt(ctx context.Context, name string, transitDecryp
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitDecryptRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7101,7 +7103,7 @@ func (a *Secrets) TransitDeleteKey(ctx context.Context, name string, options ...
 
 // TransitEncrypt Encrypt a plaintext value or a batch of plaintext blocks using a named key
 // name: Name of the key
-func (a *Secrets) TransitEncrypt(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitEncrypt(ctx context.Context, name string, request schema.TransitEncryptRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7116,7 +7118,7 @@ func (a *Secrets) TransitEncrypt(ctx context.Context, name string, transitEncryp
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitEncryptRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7177,7 +7179,7 @@ func (a *Secrets) TransitExportVersion(ctx context.Context, name string, type_ s
 // TransitGenerateDataKey Generate a data key
 // name: The backend key used for encrypting the data key
 // plaintext: \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only.
-func (a *Secrets) TransitGenerateDataKey(ctx context.Context, name string, plaintext string, transitGenerateDataKeyRequest TransitGenerateDataKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitGenerateDataKey(ctx context.Context, name string, plaintext string, request schema.TransitGenerateDataKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7193,7 +7195,7 @@ func (a *Secrets) TransitGenerateDataKey(ctx context.Context, name string, plain
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitGenerateDataKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7201,7 +7203,7 @@ func (a *Secrets) TransitGenerateDataKey(ctx context.Context, name string, plain
 
 // TransitGenerateHMAC Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
-func (a *Secrets) TransitGenerateHMAC(ctx context.Context, name string, transitGenerateHMACRequest TransitGenerateHMACRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitGenerateHMAC(ctx context.Context, name string, request schema.TransitGenerateHMACRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7216,7 +7218,7 @@ func (a *Secrets) TransitGenerateHMAC(ctx context.Context, name string, transitG
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitGenerateHMACRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7225,7 +7227,7 @@ func (a *Secrets) TransitGenerateHMAC(ctx context.Context, name string, transitG
 // TransitGenerateHMACWithAlgorithm Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *Secrets) TransitGenerateHMACWithAlgorithm(ctx context.Context, name string, urlalgorithm string, transitGenerateHMACWithAlgorithmRequest TransitGenerateHMACWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitGenerateHMACWithAlgorithm(ctx context.Context, name string, urlalgorithm string, request schema.TransitGenerateHMACWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7241,14 +7243,14 @@ func (a *Secrets) TransitGenerateHMACWithAlgorithm(ctx context.Context, name str
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitGenerateHMACWithAlgorithmRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TransitGenerateRandom Generate random bytes
-func (a *Secrets) TransitGenerateRandom(ctx context.Context, transitGenerateRandomRequest TransitGenerateRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitGenerateRandom(ctx context.Context, request schema.TransitGenerateRandomRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7262,7 +7264,7 @@ func (a *Secrets) TransitGenerateRandom(ctx context.Context, transitGenerateRand
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitGenerateRandomRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7270,7 +7272,7 @@ func (a *Secrets) TransitGenerateRandom(ctx context.Context, transitGenerateRand
 
 // TransitGenerateRandomSource Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-func (a *Secrets) TransitGenerateRandomSource(ctx context.Context, source string, transitGenerateRandomSourceRequest TransitGenerateRandomSourceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitGenerateRandomSource(ctx context.Context, source string, request schema.TransitGenerateRandomSourceRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7285,7 +7287,7 @@ func (a *Secrets) TransitGenerateRandomSource(ctx context.Context, source string
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitGenerateRandomSourceRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7294,7 +7296,7 @@ func (a *Secrets) TransitGenerateRandomSource(ctx context.Context, source string
 // TransitGenerateRandomSourceBytes Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *Secrets) TransitGenerateRandomSourceBytes(ctx context.Context, source string, urlbytes string, transitGenerateRandomSourceBytesRequest TransitGenerateRandomSourceBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitGenerateRandomSourceBytes(ctx context.Context, source string, urlbytes string, request schema.TransitGenerateRandomSourceBytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7310,14 +7312,14 @@ func (a *Secrets) TransitGenerateRandomSourceBytes(ctx context.Context, source s
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitGenerateRandomSourceBytesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TransitHash Generate a hash sum for input data
-func (a *Secrets) TransitHash(ctx context.Context, transitHashRequest TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitHash(ctx context.Context, request schema.TransitHashRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7331,7 +7333,7 @@ func (a *Secrets) TransitHash(ctx context.Context, transitHashRequest TransitHas
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitHashRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7339,7 +7341,7 @@ func (a *Secrets) TransitHash(ctx context.Context, transitHashRequest TransitHas
 
 // TransitHashWithAlgorithm Generate a hash sum for input data
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *Secrets) TransitHashWithAlgorithm(ctx context.Context, urlalgorithm string, transitHashWithAlgorithmRequest TransitHashWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitHashWithAlgorithm(ctx context.Context, urlalgorithm string, request schema.TransitHashWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7354,7 +7356,7 @@ func (a *Secrets) TransitHashWithAlgorithm(ctx context.Context, urlalgorithm str
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitHashWithAlgorithmRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7362,7 +7364,7 @@ func (a *Secrets) TransitHashWithAlgorithm(ctx context.Context, urlalgorithm str
 
 // TransitImportKey Imports an externally-generated key into a new transit key
 // name: The name of the key
-func (a *Secrets) TransitImportKey(ctx context.Context, name string, transitImportKeyRequest TransitImportKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitImportKey(ctx context.Context, name string, request schema.TransitImportKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7377,7 +7379,7 @@ func (a *Secrets) TransitImportKey(ctx context.Context, name string, transitImpo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitImportKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7385,7 +7387,7 @@ func (a *Secrets) TransitImportKey(ctx context.Context, name string, transitImpo
 
 // TransitImportKeyVersion Imports an externally-generated key into an existing imported key
 // name: The name of the key
-func (a *Secrets) TransitImportKeyVersion(ctx context.Context, name string, transitImportKeyVersionRequest TransitImportKeyVersionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitImportKeyVersion(ctx context.Context, name string, request schema.TransitImportKeyVersionRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7400,7 +7402,7 @@ func (a *Secrets) TransitImportKeyVersion(ctx context.Context, name string, tran
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitImportKeyVersionRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7408,7 +7410,7 @@ func (a *Secrets) TransitImportKeyVersion(ctx context.Context, name string, tran
 
 // TransitListKeys Managed named encryption keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) TransitListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7515,7 +7517,7 @@ func (a *Secrets) TransitReadWrappingKey(ctx context.Context, options ...Request
 }
 
 // TransitRestore Restore the named key
-func (a *Secrets) TransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitRestore(ctx context.Context, request schema.TransitRestoreRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7529,7 +7531,7 @@ func (a *Secrets) TransitRestore(ctx context.Context, transitRestoreRequest Tran
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitRestoreRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7537,7 +7539,7 @@ func (a *Secrets) TransitRestore(ctx context.Context, transitRestoreRequest Tran
 
 // TransitRestoreKey Restore the named key
 // name: If set, this will be the name of the restored key.
-func (a *Secrets) TransitRestoreKey(ctx context.Context, name string, transitRestoreKeyRequest TransitRestoreKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitRestoreKey(ctx context.Context, name string, request schema.TransitRestoreKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7552,7 +7554,7 @@ func (a *Secrets) TransitRestoreKey(ctx context.Context, name string, transitRes
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitRestoreKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7560,7 +7562,7 @@ func (a *Secrets) TransitRestoreKey(ctx context.Context, name string, transitRes
 
 // TransitRewrap Rewrap ciphertext
 // name: Name of the key
-func (a *Secrets) TransitRewrap(ctx context.Context, name string, transitRewrapRequest TransitRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitRewrap(ctx context.Context, name string, request schema.TransitRewrapRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7575,7 +7577,7 @@ func (a *Secrets) TransitRewrap(ctx context.Context, name string, transitRewrapR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitRewrapRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7606,7 +7608,7 @@ func (a *Secrets) TransitRotateKey(ctx context.Context, name string, options ...
 
 // TransitSign Generate a signature for input data using the named key
 // name: The key to use
-func (a *Secrets) TransitSign(ctx context.Context, name string, transitSignRequest TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitSign(ctx context.Context, name string, request schema.TransitSignRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7621,7 +7623,7 @@ func (a *Secrets) TransitSign(ctx context.Context, name string, transitSignReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitSignRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7630,7 +7632,7 @@ func (a *Secrets) TransitSign(ctx context.Context, name string, transitSignReque
 // TransitSignWithAlgorithm Generate a signature for input data using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *Secrets) TransitSignWithAlgorithm(ctx context.Context, name string, urlalgorithm string, transitSignWithAlgorithmRequest TransitSignWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitSignWithAlgorithm(ctx context.Context, name string, urlalgorithm string, request schema.TransitSignWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7646,7 +7648,7 @@ func (a *Secrets) TransitSignWithAlgorithm(ctx context.Context, name string, url
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitSignWithAlgorithmRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7654,7 +7656,7 @@ func (a *Secrets) TransitSignWithAlgorithm(ctx context.Context, name string, url
 
 // TransitTrimKey Trim key versions of a named key
 // name: Name of the key
-func (a *Secrets) TransitTrimKey(ctx context.Context, name string, transitTrimKeyRequest TransitTrimKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitTrimKey(ctx context.Context, name string, request schema.TransitTrimKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7669,7 +7671,7 @@ func (a *Secrets) TransitTrimKey(ctx context.Context, name string, transitTrimKe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitTrimKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7677,7 +7679,7 @@ func (a *Secrets) TransitTrimKey(ctx context.Context, name string, transitTrimKe
 
 // TransitVerify Verify a signature or HMAC for input data created using the named key
 // name: The key to use
-func (a *Secrets) TransitVerify(ctx context.Context, name string, transitVerifyRequest TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitVerify(ctx context.Context, name string, request schema.TransitVerifyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7692,7 +7694,7 @@ func (a *Secrets) TransitVerify(ctx context.Context, name string, transitVerifyR
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitVerifyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7701,7 +7703,7 @@ func (a *Secrets) TransitVerify(ctx context.Context, name string, transitVerifyR
 // TransitVerifyWithAlgorithm Verify a signature or HMAC for input data created using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *Secrets) TransitVerifyWithAlgorithm(ctx context.Context, name string, urlalgorithm string, transitVerifyWithAlgorithmRequest TransitVerifyWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitVerifyWithAlgorithm(ctx context.Context, name string, urlalgorithm string, request schema.TransitVerifyWithAlgorithmRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7717,14 +7719,14 @@ func (a *Secrets) TransitVerifyWithAlgorithm(ctx context.Context, name string, u
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitVerifyWithAlgorithmRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TransitWriteCacheConfig Configures a new cache of the specified size
-func (a *Secrets) TransitWriteCacheConfig(ctx context.Context, transitWriteCacheConfigRequest TransitWriteCacheConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitWriteCacheConfig(ctx context.Context, request schema.TransitWriteCacheConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7738,14 +7740,14 @@ func (a *Secrets) TransitWriteCacheConfig(ctx context.Context, transitWriteCache
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitWriteCacheConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TransitWriteConfigKeys Configuration common across all keys
-func (a *Secrets) TransitWriteConfigKeys(ctx context.Context, transitWriteConfigKeysRequest TransitWriteConfigKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitWriteConfigKeys(ctx context.Context, request schema.TransitWriteConfigKeysRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7759,7 +7761,7 @@ func (a *Secrets) TransitWriteConfigKeys(ctx context.Context, transitWriteConfig
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitWriteConfigKeysRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7767,7 +7769,7 @@ func (a *Secrets) TransitWriteConfigKeys(ctx context.Context, transitWriteConfig
 
 // TransitWriteKey Managed named encryption keys
 // name: Name of the key
-func (a *Secrets) TransitWriteKey(ctx context.Context, name string, transitWriteKeyRequest TransitWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitWriteKey(ctx context.Context, name string, request schema.TransitWriteKeyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7782,7 +7784,7 @@ func (a *Secrets) TransitWriteKey(ctx context.Context, name string, transitWrite
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitWriteKeyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7790,7 +7792,7 @@ func (a *Secrets) TransitWriteKey(ctx context.Context, name string, transitWrite
 
 // TransitWriteKeyConfig Configure a named encryption key
 // name: Name of the key
-func (a *Secrets) TransitWriteKeyConfig(ctx context.Context, name string, transitWriteKeyConfigRequest TransitWriteKeyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitWriteKeyConfig(ctx context.Context, name string, request schema.TransitWriteKeyConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7805,7 +7807,7 @@ func (a *Secrets) TransitWriteKeyConfig(ctx context.Context, name string, transi
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitWriteKeyConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -7813,7 +7815,7 @@ func (a *Secrets) TransitWriteKeyConfig(ctx context.Context, name string, transi
 
 // TransitWriteRandomUrlbytes Generate random bytes
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *Secrets) TransitWriteRandomUrlbytes(ctx context.Context, urlbytes string, transitWriteRandomUrlbytesRequest TransitWriteRandomUrlbytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitWriteRandomUrlbytes(ctx context.Context, urlbytes string, request schema.TransitWriteRandomUrlbytesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7828,7 +7830,7 @@ func (a *Secrets) TransitWriteRandomUrlbytes(ctx context.Context, urlbytes strin
 		a.client,
 		http.MethodPost,
 		requestPath,
-		transitWriteRandomUrlbytesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)

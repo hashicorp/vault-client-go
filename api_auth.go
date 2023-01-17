@@ -15,6 +15,8 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 // Auth is a simple wrapper around the client for Auth requests
@@ -175,7 +177,7 @@ func (a *Auth) AWSConfigDeleteSecurityTokenServiceAccount(ctx context.Context, a
 
 // AWSConfigListCertificates
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSConfigListCertificates(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigListCertificates(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -197,7 +199,7 @@ func (a *Auth) AWSConfigListCertificates(ctx context.Context, list string, optio
 
 // AWSConfigListSecurityTokenService
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSConfigListSecurityTokenService(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigListSecurityTokenService(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -412,7 +414,7 @@ func (a *Auth) AWSConfigRotateRoot(ctx context.Context, options ...RequestOption
 
 // AWSConfigWriteCertificate
 // certName: Name of the certificate.
-func (a *Auth) AWSConfigWriteCertificate(ctx context.Context, certName string, aWSConfigWriteCertificateRequest AWSConfigWriteCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteCertificate(ctx context.Context, certName string, request schema.AWSConfigWriteCertificateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -427,14 +429,14 @@ func (a *Auth) AWSConfigWriteCertificate(ctx context.Context, certName string, a
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteCertificateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSConfigWriteClient
-func (a *Auth) AWSConfigWriteClient(ctx context.Context, aWSConfigWriteClientRequest AWSConfigWriteClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteClient(ctx context.Context, request schema.AWSConfigWriteClientRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -448,14 +450,14 @@ func (a *Auth) AWSConfigWriteClient(ctx context.Context, aWSConfigWriteClientReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteClientRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSConfigWriteIdentity
-func (a *Auth) AWSConfigWriteIdentity(ctx context.Context, aWSConfigWriteIdentityRequest AWSConfigWriteIdentityRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteIdentity(ctx context.Context, request schema.AWSConfigWriteIdentityRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -469,14 +471,14 @@ func (a *Auth) AWSConfigWriteIdentity(ctx context.Context, aWSConfigWriteIdentit
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteIdentityRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSConfigWriteIdentityAccessList
-func (a *Auth) AWSConfigWriteIdentityAccessList(ctx context.Context, aWSConfigWriteIdentityAccessListRequest AWSConfigWriteIdentityAccessListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteIdentityAccessList(ctx context.Context, request schema.AWSConfigWriteIdentityAccessListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -490,14 +492,14 @@ func (a *Auth) AWSConfigWriteIdentityAccessList(ctx context.Context, aWSConfigWr
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteIdentityAccessListRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSConfigWriteIdentityWhiteList
-func (a *Auth) AWSConfigWriteIdentityWhiteList(ctx context.Context, aWSConfigWriteIdentityWhiteListRequest AWSConfigWriteIdentityWhiteListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteIdentityWhiteList(ctx context.Context, request schema.AWSConfigWriteIdentityWhiteListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -511,14 +513,14 @@ func (a *Auth) AWSConfigWriteIdentityWhiteList(ctx context.Context, aWSConfigWri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteIdentityWhiteListRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSConfigWriteRoleTagBlackList
-func (a *Auth) AWSConfigWriteRoleTagBlackList(ctx context.Context, aWSConfigWriteRoleTagBlackListRequest AWSConfigWriteRoleTagBlackListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteRoleTagBlackList(ctx context.Context, request schema.AWSConfigWriteRoleTagBlackListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -532,14 +534,14 @@ func (a *Auth) AWSConfigWriteRoleTagBlackList(ctx context.Context, aWSConfigWrit
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteRoleTagBlackListRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSConfigWriteRoleTagDenyList
-func (a *Auth) AWSConfigWriteRoleTagDenyList(ctx context.Context, aWSConfigWriteRoleTagDenyListRequest AWSConfigWriteRoleTagDenyListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteRoleTagDenyList(ctx context.Context, request schema.AWSConfigWriteRoleTagDenyListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -553,7 +555,7 @@ func (a *Auth) AWSConfigWriteRoleTagDenyList(ctx context.Context, aWSConfigWrite
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteRoleTagDenyListRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -561,7 +563,7 @@ func (a *Auth) AWSConfigWriteRoleTagDenyList(ctx context.Context, aWSConfigWrite
 
 // AWSConfigWriteSecurityTokenServiceAccount
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-func (a *Auth) AWSConfigWriteSecurityTokenServiceAccount(ctx context.Context, accountId string, aWSConfigWriteSecurityTokenServiceAccountRequest AWSConfigWriteSecurityTokenServiceAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSConfigWriteSecurityTokenServiceAccount(ctx context.Context, accountId string, request schema.AWSConfigWriteSecurityTokenServiceAccountRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -576,7 +578,7 @@ func (a *Auth) AWSConfigWriteSecurityTokenServiceAccount(ctx context.Context, ac
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSConfigWriteSecurityTokenServiceAccountRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -699,7 +701,7 @@ func (a *Auth) AWSDeleteRoleTagDenyListFor(ctx context.Context, roleTag string, 
 
 // AWSListAuthRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSListAuthRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -721,7 +723,7 @@ func (a *Auth) AWSListAuthRoles(ctx context.Context, list string, options ...Req
 
 // AWSListAuthRoles2
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSListAuthRoles2(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSListAuthRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -743,7 +745,7 @@ func (a *Auth) AWSListAuthRoles2(ctx context.Context, list string, options ...Re
 
 // AWSListIdentityAccessList
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSListIdentityAccessList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSListIdentityAccessList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -765,7 +767,7 @@ func (a *Auth) AWSListIdentityAccessList(ctx context.Context, list string, optio
 
 // AWSListIdentityWhiteList
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSListIdentityWhiteList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSListIdentityWhiteList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -787,7 +789,7 @@ func (a *Auth) AWSListIdentityWhiteList(ctx context.Context, list string, option
 
 // AWSListRoleTagBlackList
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSListRoleTagBlackList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSListRoleTagBlackList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -809,7 +811,7 @@ func (a *Auth) AWSListRoleTagBlackList(ctx context.Context, list string, options
 
 // AWSListRoleTagDenyList
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AWSListRoleTagDenyList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSListRoleTagDenyList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -830,7 +832,7 @@ func (a *Auth) AWSListRoleTagDenyList(ctx context.Context, list string, options 
 }
 
 // AWSLogin
-func (a *Auth) AWSLogin(ctx context.Context, aWSLoginRequest AWSLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSLogin(ctx context.Context, request schema.AWSLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -844,7 +846,7 @@ func (a *Auth) AWSLogin(ctx context.Context, aWSLoginRequest AWSLoginRequest, op
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -967,7 +969,7 @@ func (a *Auth) AWSReadRoleTagDenyListFor(ctx context.Context, roleTag string, op
 
 // AWSWriteAuthRole
 // role: Name of the role.
-func (a *Auth) AWSWriteAuthRole(ctx context.Context, role string, aWSWriteAuthRoleRequest AWSWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSWriteAuthRole(ctx context.Context, role string, request schema.AWSWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -982,7 +984,7 @@ func (a *Auth) AWSWriteAuthRole(ctx context.Context, role string, aWSWriteAuthRo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteAuthRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -990,7 +992,7 @@ func (a *Auth) AWSWriteAuthRole(ctx context.Context, role string, aWSWriteAuthRo
 
 // AWSWriteAuthRoleTag
 // role: Name of the role.
-func (a *Auth) AWSWriteAuthRoleTag(ctx context.Context, role string, aWSWriteAuthRoleTagRequest AWSWriteAuthRoleTagRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSWriteAuthRoleTag(ctx context.Context, role string, request schema.AWSWriteAuthRoleTagRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1005,14 +1007,14 @@ func (a *Auth) AWSWriteAuthRoleTag(ctx context.Context, role string, aWSWriteAut
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteAuthRoleTagRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSWriteIdentityAccessListTidySettings
-func (a *Auth) AWSWriteIdentityAccessListTidySettings(ctx context.Context, aWSWriteIdentityAccessListTidySettingsRequest AWSWriteIdentityAccessListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSWriteIdentityAccessListTidySettings(ctx context.Context, request schema.AWSWriteIdentityAccessListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1026,14 +1028,14 @@ func (a *Auth) AWSWriteIdentityAccessListTidySettings(ctx context.Context, aWSWr
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteIdentityAccessListTidySettingsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // AWSWriteIdentityWhiteListTidySettings
-func (a *Auth) AWSWriteIdentityWhiteListTidySettings(ctx context.Context, aWSWriteIdentityWhiteListTidySettingsRequest AWSWriteIdentityWhiteListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSWriteIdentityWhiteListTidySettings(ctx context.Context, request schema.AWSWriteIdentityWhiteListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1047,7 +1049,7 @@ func (a *Auth) AWSWriteIdentityWhiteListTidySettings(ctx context.Context, aWSWri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteIdentityWhiteListTidySettingsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1077,7 +1079,7 @@ func (a *Auth) AWSWriteRoleTagBlackListFor(ctx context.Context, roleTag string, 
 }
 
 // AWSWriteRoleTagBlackListTidySettings
-func (a *Auth) AWSWriteRoleTagBlackListTidySettings(ctx context.Context, aWSWriteRoleTagBlackListTidySettingsRequest AWSWriteRoleTagBlackListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSWriteRoleTagBlackListTidySettings(ctx context.Context, request schema.AWSWriteRoleTagBlackListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1091,7 +1093,7 @@ func (a *Auth) AWSWriteRoleTagBlackListTidySettings(ctx context.Context, aWSWrit
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteRoleTagBlackListTidySettingsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1121,7 +1123,7 @@ func (a *Auth) AWSWriteRoleTagDenyListFor(ctx context.Context, roleTag string, o
 }
 
 // AWSWriteRoleTagDenyListTidySettings
-func (a *Auth) AWSWriteRoleTagDenyListTidySettings(ctx context.Context, aWSWriteRoleTagDenyListTidySettingsRequest AWSWriteRoleTagDenyListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AWSWriteRoleTagDenyListTidySettings(ctx context.Context, request schema.AWSWriteRoleTagDenyListTidySettingsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1135,7 +1137,7 @@ func (a *Auth) AWSWriteRoleTagDenyListTidySettings(ctx context.Context, aWSWrite
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aWSWriteRoleTagDenyListTidySettingsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1166,7 +1168,7 @@ func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, options 
 
 // AliCloudListAuthRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AliCloudListAuthRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1188,7 +1190,7 @@ func (a *Auth) AliCloudListAuthRoles(ctx context.Context, list string, options .
 
 // AliCloudListAuthRoles2 Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1209,7 +1211,7 @@ func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, list string, options 
 }
 
 // AliCloudLogin Authenticates an RAM entity with Vault.
-func (a *Auth) AliCloudLogin(ctx context.Context, aliCloudLoginRequest AliCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudLogin(ctx context.Context, request schema.AliCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1223,7 +1225,7 @@ func (a *Auth) AliCloudLogin(ctx context.Context, aliCloudLoginRequest AliCloudL
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aliCloudLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1254,7 +1256,7 @@ func (a *Auth) AliCloudReadAuthRole(ctx context.Context, role string, options ..
 
 // AliCloudWriteAuthRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
-func (a *Auth) AliCloudWriteAuthRole(ctx context.Context, role string, aliCloudWriteAuthRoleRequest AliCloudWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AliCloudWriteAuthRole(ctx context.Context, role string, request schema.AliCloudWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1269,7 +1271,7 @@ func (a *Auth) AliCloudWriteAuthRole(ctx context.Context, role string, aliCloudW
 		a.client,
 		http.MethodPost,
 		requestPath,
-		aliCloudWriteAuthRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1599,7 +1601,7 @@ func (a *Auth) AppRoleDeleteTokenTTL(ctx context.Context, roleName string, optio
 
 // AppRoleListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AppRoleListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[AppRoleListRolesResponse], error) {
+func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.AppRoleListRolesResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1608,7 +1610,7 @@ func (a *Auth) AppRoleListRoles(ctx context.Context, list string, options ...Req
 	requestPath := "/v1/auth/{approle_mount_path}/role"
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 
-	return sendRequestParseResponse[AppRoleListRolesResponse](
+	return sendRequestParseResponse[schema.AppRoleListRolesResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1622,7 +1624,7 @@ func (a *Auth) AppRoleListRoles(ctx context.Context, list string, options ...Req
 // AppRoleListSecretID
 // roleName: Name of the role. Must be less than 4096 bytes.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AppRoleListSecretID(ctx context.Context, roleName string, list string, options ...RequestOption) (*Response[AppRoleListSecretIDResponse], error) {
+func (a *Auth) AppRoleListSecretID(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleListSecretIDResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1632,7 +1634,7 @@ func (a *Auth) AppRoleListSecretID(ctx context.Context, roleName string, list st
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleListSecretIDResponse](
+	return sendRequestParseResponse[schema.AppRoleListSecretIDResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1644,7 +1646,7 @@ func (a *Auth) AppRoleListSecretID(ctx context.Context, roleName string, list st
 }
 
 // AppRoleLogin
-func (a *Auth) AppRoleLogin(ctx context.Context, appRoleLoginRequest AppRoleLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleLogin(ctx context.Context, request schema.AppRoleLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1658,7 +1660,7 @@ func (a *Auth) AppRoleLogin(ctx context.Context, appRoleLoginRequest AppRoleLogi
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -1666,7 +1668,7 @@ func (a *Auth) AppRoleLogin(ctx context.Context, appRoleLoginRequest AppRoleLogi
 
 // AppRoleReadBindSecretID
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadBindSecretID(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadBindSecretIDResponse], error) {
+func (a *Auth) AppRoleReadBindSecretID(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadBindSecretIDResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1676,7 +1678,7 @@ func (a *Auth) AppRoleReadBindSecretID(ctx context.Context, roleName string, opt
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadBindSecretIDResponse](
+	return sendRequestParseResponse[schema.AppRoleReadBindSecretIDResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1689,7 +1691,7 @@ func (a *Auth) AppRoleReadBindSecretID(ctx context.Context, roleName string, opt
 
 // AppRoleReadBoundCIDRList
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadBoundCIDRList(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadBoundCIDRListResponse], error) {
+func (a *Auth) AppRoleReadBoundCIDRList(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadBoundCIDRListResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1699,7 +1701,7 @@ func (a *Auth) AppRoleReadBoundCIDRList(ctx context.Context, roleName string, op
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadBoundCIDRListResponse](
+	return sendRequestParseResponse[schema.AppRoleReadBoundCIDRListResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1712,7 +1714,7 @@ func (a *Auth) AppRoleReadBoundCIDRList(ctx context.Context, roleName string, op
 
 // AppRoleReadLocalSecretIDs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadLocalSecretIDs(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadLocalSecretIDsResponse], error) {
+func (a *Auth) AppRoleReadLocalSecretIDs(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadLocalSecretIDsResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1722,7 +1724,7 @@ func (a *Auth) AppRoleReadLocalSecretIDs(ctx context.Context, roleName string, o
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadLocalSecretIDsResponse](
+	return sendRequestParseResponse[schema.AppRoleReadLocalSecretIDsResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1735,7 +1737,7 @@ func (a *Auth) AppRoleReadLocalSecretIDs(ctx context.Context, roleName string, o
 
 // AppRoleReadPeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadPeriodResponse], error) {
+func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadPeriodResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1745,7 +1747,7 @@ func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, options .
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadPeriodResponse](
+	return sendRequestParseResponse[schema.AppRoleReadPeriodResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1758,7 +1760,7 @@ func (a *Auth) AppRoleReadPeriod(ctx context.Context, roleName string, options .
 
 // AppRoleReadPolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadPoliciesResponse], error) {
+func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadPoliciesResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1768,7 +1770,7 @@ func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, options
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadPoliciesResponse](
+	return sendRequestParseResponse[schema.AppRoleReadPoliciesResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1781,7 +1783,7 @@ func (a *Auth) AppRoleReadPolicies(ctx context.Context, roleName string, options
 
 // AppRoleReadRole
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadRoleResponse], error) {
+func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadRoleResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1791,7 +1793,7 @@ func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, options ...
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadRoleResponse](
+	return sendRequestParseResponse[schema.AppRoleReadRoleResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1804,7 +1806,7 @@ func (a *Auth) AppRoleReadRole(ctx context.Context, roleName string, options ...
 
 // AppRoleReadRoleID
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadRoleID(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadRoleIDResponse], error) {
+func (a *Auth) AppRoleReadRoleID(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadRoleIDResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1814,7 +1816,7 @@ func (a *Auth) AppRoleReadRoleID(ctx context.Context, roleName string, options .
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadRoleIDResponse](
+	return sendRequestParseResponse[schema.AppRoleReadRoleIDResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1827,7 +1829,7 @@ func (a *Auth) AppRoleReadRoleID(ctx context.Context, roleName string, options .
 
 // AppRoleReadSecretIDBoundCIDRs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadSecretIDBoundCIDRs(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadSecretIDBoundCIDRsResponse], error) {
+func (a *Auth) AppRoleReadSecretIDBoundCIDRs(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIDBoundCIDRsResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1837,7 +1839,7 @@ func (a *Auth) AppRoleReadSecretIDBoundCIDRs(ctx context.Context, roleName strin
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadSecretIDBoundCIDRsResponse](
+	return sendRequestParseResponse[schema.AppRoleReadSecretIDBoundCIDRsResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1850,7 +1852,7 @@ func (a *Auth) AppRoleReadSecretIDBoundCIDRs(ctx context.Context, roleName strin
 
 // AppRoleReadSecretIDNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadSecretIDNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadSecretIDNumUsesResponse], error) {
+func (a *Auth) AppRoleReadSecretIDNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIDNumUsesResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1860,7 +1862,7 @@ func (a *Auth) AppRoleReadSecretIDNumUses(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadSecretIDNumUsesResponse](
+	return sendRequestParseResponse[schema.AppRoleReadSecretIDNumUsesResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1873,7 +1875,7 @@ func (a *Auth) AppRoleReadSecretIDNumUses(ctx context.Context, roleName string, 
 
 // AppRoleReadSecretIDTTL
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadSecretIDTTL(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadSecretIDTTLResponse], error) {
+func (a *Auth) AppRoleReadSecretIDTTL(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadSecretIDTTLResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1883,7 +1885,7 @@ func (a *Auth) AppRoleReadSecretIDTTL(ctx context.Context, roleName string, opti
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadSecretIDTTLResponse](
+	return sendRequestParseResponse[schema.AppRoleReadSecretIDTTLResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1896,7 +1898,7 @@ func (a *Auth) AppRoleReadSecretIDTTL(ctx context.Context, roleName string, opti
 
 // AppRoleReadTokenBoundCIDRs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadTokenBoundCIDRs(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadTokenBoundCIDRsResponse], error) {
+func (a *Auth) AppRoleReadTokenBoundCIDRs(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenBoundCIDRsResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1906,7 +1908,7 @@ func (a *Auth) AppRoleReadTokenBoundCIDRs(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadTokenBoundCIDRsResponse](
+	return sendRequestParseResponse[schema.AppRoleReadTokenBoundCIDRsResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1919,7 +1921,7 @@ func (a *Auth) AppRoleReadTokenBoundCIDRs(ctx context.Context, roleName string, 
 
 // AppRoleReadTokenMaxTTL
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadTokenMaxTTL(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadTokenMaxTTLResponse], error) {
+func (a *Auth) AppRoleReadTokenMaxTTL(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenMaxTTLResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1929,7 +1931,7 @@ func (a *Auth) AppRoleReadTokenMaxTTL(ctx context.Context, roleName string, opti
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadTokenMaxTTLResponse](
+	return sendRequestParseResponse[schema.AppRoleReadTokenMaxTTLResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1942,7 +1944,7 @@ func (a *Auth) AppRoleReadTokenMaxTTL(ctx context.Context, roleName string, opti
 
 // AppRoleReadTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadTokenNumUsesResponse], error) {
+func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenNumUsesResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1952,7 +1954,7 @@ func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, opt
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadTokenNumUsesResponse](
+	return sendRequestParseResponse[schema.AppRoleReadTokenNumUsesResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -1965,7 +1967,7 @@ func (a *Auth) AppRoleReadTokenNumUses(ctx context.Context, roleName string, opt
 
 // AppRoleReadTokenTTL
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleReadTokenTTL(ctx context.Context, roleName string, options ...RequestOption) (*Response[AppRoleReadTokenTTLResponse], error) {
+func (a *Auth) AppRoleReadTokenTTL(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleReadTokenTTLResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1975,7 +1977,7 @@ func (a *Auth) AppRoleReadTokenTTL(ctx context.Context, roleName string, options
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendRequestParseResponse[AppRoleReadTokenTTLResponse](
+	return sendRequestParseResponse[schema.AppRoleReadTokenTTLResponse](
 		ctx,
 		a.client,
 		http.MethodGet,
@@ -2009,7 +2011,7 @@ func (a *Auth) AppRoleTidySecretID(ctx context.Context, options ...RequestOption
 
 // AppRoleWriteBindSecretID
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteBindSecretID(ctx context.Context, roleName string, appRoleWriteBindSecretIDRequest AppRoleWriteBindSecretIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteBindSecretID(ctx context.Context, roleName string, request schema.AppRoleWriteBindSecretIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2024,7 +2026,7 @@ func (a *Auth) AppRoleWriteBindSecretID(ctx context.Context, roleName string, ap
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteBindSecretIDRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2032,7 +2034,7 @@ func (a *Auth) AppRoleWriteBindSecretID(ctx context.Context, roleName string, ap
 
 // AppRoleWriteBoundCIDRList
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteBoundCIDRList(ctx context.Context, roleName string, appRoleWriteBoundCIDRListRequest AppRoleWriteBoundCIDRListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteBoundCIDRList(ctx context.Context, roleName string, request schema.AppRoleWriteBoundCIDRListRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2047,7 +2049,7 @@ func (a *Auth) AppRoleWriteBoundCIDRList(ctx context.Context, roleName string, a
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteBoundCIDRListRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2055,7 +2057,7 @@ func (a *Auth) AppRoleWriteBoundCIDRList(ctx context.Context, roleName string, a
 
 // AppRoleWriteCustomSecretID
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteCustomSecretID(ctx context.Context, roleName string, appRoleWriteCustomSecretIDRequest AppRoleWriteCustomSecretIDRequest, options ...RequestOption) (*Response[AppRoleWriteCustomSecretIDResponse], error) {
+func (a *Auth) AppRoleWriteCustomSecretID(ctx context.Context, roleName string, request schema.AppRoleWriteCustomSecretIDRequest, options ...RequestOption) (*Response[schema.AppRoleWriteCustomSecretIDResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2065,12 +2067,12 @@ func (a *Auth) AppRoleWriteCustomSecretID(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[AppRoleWriteCustomSecretIDResponse](
+	return sendStructuredRequestParseResponse[schema.AppRoleWriteCustomSecretIDResponse](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteCustomSecretIDRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2078,7 +2080,7 @@ func (a *Auth) AppRoleWriteCustomSecretID(ctx context.Context, roleName string, 
 
 // AppRoleWritePeriod
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, appRoleWritePeriodRequest AppRoleWritePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, request schema.AppRoleWritePeriodRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2093,7 +2095,7 @@ func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, appRoleW
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWritePeriodRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2101,7 +2103,7 @@ func (a *Auth) AppRoleWritePeriod(ctx context.Context, roleName string, appRoleW
 
 // AppRoleWritePolicies
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, appRoleWritePoliciesRequest AppRoleWritePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, request schema.AppRoleWritePoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2116,7 +2118,7 @@ func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, appRol
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWritePoliciesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2124,7 +2126,7 @@ func (a *Auth) AppRoleWritePolicies(ctx context.Context, roleName string, appRol
 
 // AppRoleWriteRole
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, appRoleWriteRoleRequest AppRoleWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, request schema.AppRoleWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2139,7 +2141,7 @@ func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, appRoleWri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2147,7 +2149,7 @@ func (a *Auth) AppRoleWriteRole(ctx context.Context, roleName string, appRoleWri
 
 // AppRoleWriteRoleID
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteRoleID(ctx context.Context, roleName string, appRoleWriteRoleIDRequest AppRoleWriteRoleIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteRoleID(ctx context.Context, roleName string, request schema.AppRoleWriteRoleIDRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2162,7 +2164,7 @@ func (a *Auth) AppRoleWriteRoleID(ctx context.Context, roleName string, appRoleW
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteRoleIDRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2170,7 +2172,7 @@ func (a *Auth) AppRoleWriteRoleID(ctx context.Context, roleName string, appRoleW
 
 // AppRoleWriteSecretID
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretID(ctx context.Context, roleName string, appRoleWriteSecretIDRequest AppRoleWriteSecretIDRequest, options ...RequestOption) (*Response[AppRoleWriteSecretIDResponse], error) {
+func (a *Auth) AppRoleWriteSecretID(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDRequest, options ...RequestOption) (*Response[schema.AppRoleWriteSecretIDResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2180,12 +2182,12 @@ func (a *Auth) AppRoleWriteSecretID(ctx context.Context, roleName string, appRol
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[AppRoleWriteSecretIDResponse](
+	return sendStructuredRequestParseResponse[schema.AppRoleWriteSecretIDResponse](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2193,7 +2195,7 @@ func (a *Auth) AppRoleWriteSecretID(ctx context.Context, roleName string, appRol
 
 // AppRoleWriteSecretIDAccessorDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretIDAccessorDestroy(ctx context.Context, roleName string, appRoleWriteSecretIDAccessorDestroyRequest AppRoleWriteSecretIDAccessorDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIDAccessorDestroy(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDAccessorDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2208,7 +2210,7 @@ func (a *Auth) AppRoleWriteSecretIDAccessorDestroy(ctx context.Context, roleName
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDAccessorDestroyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2216,7 +2218,7 @@ func (a *Auth) AppRoleWriteSecretIDAccessorDestroy(ctx context.Context, roleName
 
 // AppRoleWriteSecretIDAccessorLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretIDAccessorLookup(ctx context.Context, roleName string, appRoleWriteSecretIDAccessorLookupRequest AppRoleWriteSecretIDAccessorLookupRequest, options ...RequestOption) (*Response[AppRoleWriteSecretIDAccessorLookupResponse], error) {
+func (a *Auth) AppRoleWriteSecretIDAccessorLookup(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDAccessorLookupRequest, options ...RequestOption) (*Response[schema.AppRoleWriteSecretIDAccessorLookupResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2226,12 +2228,12 @@ func (a *Auth) AppRoleWriteSecretIDAccessorLookup(ctx context.Context, roleName 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[AppRoleWriteSecretIDAccessorLookupResponse](
+	return sendStructuredRequestParseResponse[schema.AppRoleWriteSecretIDAccessorLookupResponse](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDAccessorLookupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2239,7 +2241,7 @@ func (a *Auth) AppRoleWriteSecretIDAccessorLookup(ctx context.Context, roleName 
 
 // AppRoleWriteSecretIDBoundCIDRs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretIDBoundCIDRs(ctx context.Context, roleName string, appRoleWriteSecretIDBoundCIDRsRequest AppRoleWriteSecretIDBoundCIDRsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIDBoundCIDRs(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDBoundCIDRsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2254,7 +2256,7 @@ func (a *Auth) AppRoleWriteSecretIDBoundCIDRs(ctx context.Context, roleName stri
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDBoundCIDRsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2262,7 +2264,7 @@ func (a *Auth) AppRoleWriteSecretIDBoundCIDRs(ctx context.Context, roleName stri
 
 // AppRoleWriteSecretIDDestroy
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretIDDestroy(ctx context.Context, roleName string, appRoleWriteSecretIDDestroyRequest AppRoleWriteSecretIDDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIDDestroy(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDDestroyRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2277,7 +2279,7 @@ func (a *Auth) AppRoleWriteSecretIDDestroy(ctx context.Context, roleName string,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDDestroyRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2285,7 +2287,7 @@ func (a *Auth) AppRoleWriteSecretIDDestroy(ctx context.Context, roleName string,
 
 // AppRoleWriteSecretIDLookup
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretIDLookup(ctx context.Context, roleName string, appRoleWriteSecretIDLookupRequest AppRoleWriteSecretIDLookupRequest, options ...RequestOption) (*Response[AppRoleWriteSecretIDLookupResponse], error) {
+func (a *Auth) AppRoleWriteSecretIDLookup(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDLookupRequest, options ...RequestOption) (*Response[schema.AppRoleWriteSecretIDLookupResponse], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2295,12 +2297,12 @@ func (a *Auth) AppRoleWriteSecretIDLookup(ctx context.Context, roleName string, 
 	requestPath = strings.Replace(requestPath, "{"+"approle_mount_path"+"}", url.PathEscape(modifiers.mountPathOr("approle")), -1)
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
-	return sendStructuredRequestParseResponse[AppRoleWriteSecretIDLookupResponse](
+	return sendStructuredRequestParseResponse[schema.AppRoleWriteSecretIDLookupResponse](
 		ctx,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDLookupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2308,7 +2310,7 @@ func (a *Auth) AppRoleWriteSecretIDLookup(ctx context.Context, roleName string, 
 
 // AppRoleWriteSecretIDNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretIDNumUses(ctx context.Context, roleName string, appRoleWriteSecretIDNumUsesRequest AppRoleWriteSecretIDNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIDNumUses(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2323,7 +2325,7 @@ func (a *Auth) AppRoleWriteSecretIDNumUses(ctx context.Context, roleName string,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDNumUsesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2331,7 +2333,7 @@ func (a *Auth) AppRoleWriteSecretIDNumUses(ctx context.Context, roleName string,
 
 // AppRoleWriteSecretIDTTL
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteSecretIDTTL(ctx context.Context, roleName string, appRoleWriteSecretIDTTLRequest AppRoleWriteSecretIDTTLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteSecretIDTTL(ctx context.Context, roleName string, request schema.AppRoleWriteSecretIDTTLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2346,7 +2348,7 @@ func (a *Auth) AppRoleWriteSecretIDTTL(ctx context.Context, roleName string, app
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteSecretIDTTLRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2354,7 +2356,7 @@ func (a *Auth) AppRoleWriteSecretIDTTL(ctx context.Context, roleName string, app
 
 // AppRoleWriteTokenBoundCIDRs
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteTokenBoundCIDRs(ctx context.Context, roleName string, appRoleWriteTokenBoundCIDRsRequest AppRoleWriteTokenBoundCIDRsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenBoundCIDRs(ctx context.Context, roleName string, request schema.AppRoleWriteTokenBoundCIDRsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2369,7 +2371,7 @@ func (a *Auth) AppRoleWriteTokenBoundCIDRs(ctx context.Context, roleName string,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteTokenBoundCIDRsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2377,7 +2379,7 @@ func (a *Auth) AppRoleWriteTokenBoundCIDRs(ctx context.Context, roleName string,
 
 // AppRoleWriteTokenMaxTTL
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteTokenMaxTTL(ctx context.Context, roleName string, appRoleWriteTokenMaxTTLRequest AppRoleWriteTokenMaxTTLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenMaxTTL(ctx context.Context, roleName string, request schema.AppRoleWriteTokenMaxTTLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2392,7 +2394,7 @@ func (a *Auth) AppRoleWriteTokenMaxTTL(ctx context.Context, roleName string, app
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteTokenMaxTTLRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2400,7 +2402,7 @@ func (a *Auth) AppRoleWriteTokenMaxTTL(ctx context.Context, roleName string, app
 
 // AppRoleWriteTokenNumUses
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, appRoleWriteTokenNumUsesRequest AppRoleWriteTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, request schema.AppRoleWriteTokenNumUsesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2415,7 +2417,7 @@ func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, ap
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteTokenNumUsesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2423,7 +2425,7 @@ func (a *Auth) AppRoleWriteTokenNumUses(ctx context.Context, roleName string, ap
 
 // AppRoleWriteTokenTTL
 // roleName: Name of the role. Must be less than 4096 bytes.
-func (a *Auth) AppRoleWriteTokenTTL(ctx context.Context, roleName string, appRoleWriteTokenTTLRequest AppRoleWriteTokenTTLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AppRoleWriteTokenTTL(ctx context.Context, roleName string, request schema.AppRoleWriteTokenTTLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2438,7 +2440,7 @@ func (a *Auth) AppRoleWriteTokenTTL(ctx context.Context, roleName string, appRol
 		a.client,
 		http.MethodPost,
 		requestPath,
-		appRoleWriteTokenTTLRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2490,7 +2492,7 @@ func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, options ...
 
 // AzureListAuthRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) AzureListAuthRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2511,7 +2513,7 @@ func (a *Auth) AzureListAuthRoles(ctx context.Context, list string, options ...R
 }
 
 // AzureLogin
-func (a *Auth) AzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureLogin(ctx context.Context, request schema.AzureLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2525,7 +2527,7 @@ func (a *Auth) AzureLogin(ctx context.Context, azureLoginRequest AzureLoginReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		azureLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2576,7 +2578,7 @@ func (a *Auth) AzureReadAuthRole(ctx context.Context, name string, options ...Re
 }
 
 // AzureWriteAuthConfig
-func (a *Auth) AzureWriteAuthConfig(ctx context.Context, azureWriteAuthConfigRequest AzureWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureWriteAuthConfig(ctx context.Context, request schema.AzureWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2590,7 +2592,7 @@ func (a *Auth) AzureWriteAuthConfig(ctx context.Context, azureWriteAuthConfigReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		azureWriteAuthConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2598,7 +2600,7 @@ func (a *Auth) AzureWriteAuthConfig(ctx context.Context, azureWriteAuthConfigReq
 
 // AzureWriteAuthRole
 // name: Name of the role.
-func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, azureWriteAuthRoleRequest AzureWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, request schema.AzureWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2613,14 +2615,14 @@ func (a *Auth) AzureWriteAuthRole(ctx context.Context, name string, azureWriteAu
 		a.client,
 		http.MethodPost,
 		requestPath,
-		azureWriteAuthRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // CentrifyLogin Log in with a username and password.
-func (a *Auth) CentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CentrifyLogin(ctx context.Context, request schema.CentrifyLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2634,7 +2636,7 @@ func (a *Auth) CentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyL
 		a.client,
 		http.MethodPost,
 		requestPath,
-		centrifyLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2662,7 +2664,7 @@ func (a *Auth) CentrifyReadConfig(ctx context.Context, options ...RequestOption)
 }
 
 // CentrifyWriteConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-func (a *Auth) CentrifyWriteConfig(ctx context.Context, centrifyWriteConfigRequest CentrifyWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CentrifyWriteConfig(ctx context.Context, request schema.CentrifyWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2676,7 +2678,7 @@ func (a *Auth) CentrifyWriteConfig(ctx context.Context, centrifyWriteConfigReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		centrifyWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2730,7 +2732,7 @@ func (a *Auth) CertificatesDeleteCRL(ctx context.Context, name string, options .
 
 // CertificatesList Manage trusted certificates used for authentication.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) CertificatesList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertificatesList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2752,7 +2754,7 @@ func (a *Auth) CertificatesList(ctx context.Context, list string, options ...Req
 
 // CertificatesListCRLs
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) CertificatesListCRLs(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertificatesListCRLs(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2773,7 +2775,7 @@ func (a *Auth) CertificatesListCRLs(ctx context.Context, list string, options ..
 }
 
 // CertificatesLogin
-func (a *Auth) CertificatesLogin(ctx context.Context, certificatesLoginRequest CertificatesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertificatesLogin(ctx context.Context, request schema.CertificatesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2787,7 +2789,7 @@ func (a *Auth) CertificatesLogin(ctx context.Context, certificatesLoginRequest C
 		a.client,
 		http.MethodPost,
 		requestPath,
-		certificatesLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2862,7 +2864,7 @@ func (a *Auth) CertificatesReadConfig(ctx context.Context, options ...RequestOpt
 
 // CertificatesWrite Manage trusted certificates used for authentication.
 // name: The name of the certificate
-func (a *Auth) CertificatesWrite(ctx context.Context, name string, certificatesWriteRequest CertificatesWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertificatesWrite(ctx context.Context, name string, request schema.CertificatesWriteRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2877,7 +2879,7 @@ func (a *Auth) CertificatesWrite(ctx context.Context, name string, certificatesW
 		a.client,
 		http.MethodPost,
 		requestPath,
-		certificatesWriteRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2885,7 +2887,7 @@ func (a *Auth) CertificatesWrite(ctx context.Context, name string, certificatesW
 
 // CertificatesWriteCRL Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
-func (a *Auth) CertificatesWriteCRL(ctx context.Context, name string, certificatesWriteCRLRequest CertificatesWriteCRLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertificatesWriteCRL(ctx context.Context, name string, request schema.CertificatesWriteCRLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2900,14 +2902,14 @@ func (a *Auth) CertificatesWriteCRL(ctx context.Context, name string, certificat
 		a.client,
 		http.MethodPost,
 		requestPath,
-		certificatesWriteCRLRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // CertificatesWriteConfig
-func (a *Auth) CertificatesWriteConfig(ctx context.Context, certificatesWriteConfigRequest CertificatesWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CertificatesWriteConfig(ctx context.Context, request schema.CertificatesWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2921,7 +2923,7 @@ func (a *Auth) CertificatesWriteConfig(ctx context.Context, certificatesWriteCon
 		a.client,
 		http.MethodPost,
 		requestPath,
-		certificatesWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -2973,7 +2975,7 @@ func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, options 
 
 // CloudFoundryListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) CloudFoundryListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2994,7 +2996,7 @@ func (a *Auth) CloudFoundryListRoles(ctx context.Context, list string, options .
 }
 
 // CloudFoundryLogin
-func (a *Auth) CloudFoundryLogin(ctx context.Context, cloudFoundryLoginRequest CloudFoundryLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryLogin(ctx context.Context, request schema.CloudFoundryLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3008,7 +3010,7 @@ func (a *Auth) CloudFoundryLogin(ctx context.Context, cloudFoundryLoginRequest C
 		a.client,
 		http.MethodPost,
 		requestPath,
-		cloudFoundryLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3059,7 +3061,7 @@ func (a *Auth) CloudFoundryReadRole(ctx context.Context, role string, options ..
 }
 
 // CloudFoundryWriteConfig
-func (a *Auth) CloudFoundryWriteConfig(ctx context.Context, cloudFoundryWriteConfigRequest CloudFoundryWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryWriteConfig(ctx context.Context, request schema.CloudFoundryWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3073,7 +3075,7 @@ func (a *Auth) CloudFoundryWriteConfig(ctx context.Context, cloudFoundryWriteCon
 		a.client,
 		http.MethodPost,
 		requestPath,
-		cloudFoundryWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3081,7 +3083,7 @@ func (a *Auth) CloudFoundryWriteConfig(ctx context.Context, cloudFoundryWriteCon
 
 // CloudFoundryWriteRole
 // role: The name of the role.
-func (a *Auth) CloudFoundryWriteRole(ctx context.Context, role string, cloudFoundryWriteRoleRequest CloudFoundryWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) CloudFoundryWriteRole(ctx context.Context, role string, request schema.CloudFoundryWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3096,7 +3098,7 @@ func (a *Auth) CloudFoundryWriteRole(ctx context.Context, role string, cloudFoun
 		a.client,
 		http.MethodPost,
 		requestPath,
-		cloudFoundryWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3149,7 +3151,7 @@ func (a *Auth) GitHubDeleteMapUser(ctx context.Context, key string, options ...R
 }
 
 // GitHubLogin
-func (a *Auth) GitHubLogin(ctx context.Context, gitHubLoginRequest GitHubLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubLogin(ctx context.Context, request schema.GitHubLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3163,7 +3165,7 @@ func (a *Auth) GitHubLogin(ctx context.Context, gitHubLoginRequest GitHubLoginRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		gitHubLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3214,7 +3216,7 @@ func (a *Auth) GitHubReadMapTeam(ctx context.Context, key string, options ...Req
 }
 
 // GitHubReadMapTeams Read mappings for teams
-func (a *Auth) GitHubReadMapTeams(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubReadMapTeams(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3258,7 +3260,7 @@ func (a *Auth) GitHubReadMapUser(ctx context.Context, key string, options ...Req
 }
 
 // GitHubReadMapUsers Read mappings for users
-func (a *Auth) GitHubReadMapUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubReadMapUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3279,7 +3281,7 @@ func (a *Auth) GitHubReadMapUsers(ctx context.Context, list string, options ...R
 }
 
 // GitHubWriteConfig
-func (a *Auth) GitHubWriteConfig(ctx context.Context, gitHubWriteConfigRequest GitHubWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubWriteConfig(ctx context.Context, request schema.GitHubWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3293,7 +3295,7 @@ func (a *Auth) GitHubWriteConfig(ctx context.Context, gitHubWriteConfigRequest G
 		a.client,
 		http.MethodPost,
 		requestPath,
-		gitHubWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3301,7 +3303,7 @@ func (a *Auth) GitHubWriteConfig(ctx context.Context, gitHubWriteConfigRequest G
 
 // GitHubWriteMapTeam Read/write/delete a single teams mapping
 // key: Key for the teams mapping
-func (a *Auth) GitHubWriteMapTeam(ctx context.Context, key string, gitHubWriteMapTeamRequest GitHubWriteMapTeamRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubWriteMapTeam(ctx context.Context, key string, request schema.GitHubWriteMapTeamRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3316,7 +3318,7 @@ func (a *Auth) GitHubWriteMapTeam(ctx context.Context, key string, gitHubWriteMa
 		a.client,
 		http.MethodPost,
 		requestPath,
-		gitHubWriteMapTeamRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3324,7 +3326,7 @@ func (a *Auth) GitHubWriteMapTeam(ctx context.Context, key string, gitHubWriteMa
 
 // GitHubWriteMapUser Read/write/delete a single users mapping
 // key: Key for the users mapping
-func (a *Auth) GitHubWriteMapUser(ctx context.Context, key string, gitHubWriteMapUserRequest GitHubWriteMapUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubWriteMapUser(ctx context.Context, key string, request schema.GitHubWriteMapUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3339,7 +3341,7 @@ func (a *Auth) GitHubWriteMapUser(ctx context.Context, key string, gitHubWriteMa
 		a.client,
 		http.MethodPost,
 		requestPath,
-		gitHubWriteMapUserRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3370,7 +3372,7 @@ func (a *Auth) GoogleCloudDeleteRole(ctx context.Context, name string, options .
 
 // GoogleCloudListRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) GoogleCloudListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3392,7 +3394,7 @@ func (a *Auth) GoogleCloudListRoles(ctx context.Context, list string, options ..
 
 // GoogleCloudListRoles2 Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) GoogleCloudListRoles2(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudListRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3413,7 +3415,7 @@ func (a *Auth) GoogleCloudListRoles2(ctx context.Context, list string, options .
 }
 
 // GoogleCloudLogin
-func (a *Auth) GoogleCloudLogin(ctx context.Context, googleCloudLoginRequest GoogleCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudLogin(ctx context.Context, request schema.GoogleCloudLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3427,7 +3429,7 @@ func (a *Auth) GoogleCloudLogin(ctx context.Context, googleCloudLoginRequest Goo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3478,7 +3480,7 @@ func (a *Auth) GoogleCloudReadRole(ctx context.Context, name string, options ...
 }
 
 // GoogleCloudWriteAuthConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-func (a *Auth) GoogleCloudWriteAuthConfig(ctx context.Context, googleCloudWriteAuthConfigRequest GoogleCloudWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudWriteAuthConfig(ctx context.Context, request schema.GoogleCloudWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3492,7 +3494,7 @@ func (a *Auth) GoogleCloudWriteAuthConfig(ctx context.Context, googleCloudWriteA
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteAuthConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3500,7 +3502,7 @@ func (a *Auth) GoogleCloudWriteAuthConfig(ctx context.Context, googleCloudWriteA
 
 // GoogleCloudWriteRole Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
-func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, googleCloudWriteRoleRequest GoogleCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, request schema.GoogleCloudWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3515,7 +3517,7 @@ func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, googleClou
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3523,7 +3525,7 @@ func (a *Auth) GoogleCloudWriteRole(ctx context.Context, name string, googleClou
 
 // GoogleCloudWriteRoleLabels Add or remove labels for an existing 'gce' role
 // name: Name of the role.
-func (a *Auth) GoogleCloudWriteRoleLabels(ctx context.Context, name string, googleCloudWriteRoleLabelsRequest GoogleCloudWriteRoleLabelsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudWriteRoleLabels(ctx context.Context, name string, request schema.GoogleCloudWriteRoleLabelsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3538,7 +3540,7 @@ func (a *Auth) GoogleCloudWriteRoleLabels(ctx context.Context, name string, goog
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteRoleLabelsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3546,7 +3548,7 @@ func (a *Auth) GoogleCloudWriteRoleLabels(ctx context.Context, name string, goog
 
 // GoogleCloudWriteRoleServiceAccounts Add or remove service accounts for an existing `iam` role
 // name: Name of the role.
-func (a *Auth) GoogleCloudWriteRoleServiceAccounts(ctx context.Context, name string, googleCloudWriteRoleServiceAccountsRequest GoogleCloudWriteRoleServiceAccountsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GoogleCloudWriteRoleServiceAccounts(ctx context.Context, name string, request schema.GoogleCloudWriteRoleServiceAccountsRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3561,7 +3563,7 @@ func (a *Auth) GoogleCloudWriteRoleServiceAccounts(ctx context.Context, name str
 		a.client,
 		http.MethodPost,
 		requestPath,
-		googleCloudWriteRoleServiceAccountsRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3593,7 +3595,7 @@ func (a *Auth) JWTDeleteRole(ctx context.Context, name string, options ...Reques
 // JWTListRoles Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) JWTListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JWTListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3614,7 +3616,7 @@ func (a *Auth) JWTListRoles(ctx context.Context, list string, options ...Request
 }
 
 // JWTLogin Authenticates to Vault using a JWT (or OIDC) token.
-func (a *Auth) JWTLogin(ctx context.Context, jWTLoginRequest JWTLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JWTLogin(ctx context.Context, request schema.JWTLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3628,7 +3630,7 @@ func (a *Auth) JWTLogin(ctx context.Context, jWTLoginRequest JWTLoginRequest, op
 		a.client,
 		http.MethodPost,
 		requestPath,
-		jWTLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3701,7 +3703,7 @@ func (a *Auth) JWTReadRole(ctx context.Context, name string, options ...RequestO
 
 // JWTWriteConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
-func (a *Auth) JWTWriteConfig(ctx context.Context, jWTWriteConfigRequest JWTWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JWTWriteConfig(ctx context.Context, request schema.JWTWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3715,14 +3717,14 @@ func (a *Auth) JWTWriteConfig(ctx context.Context, jWTWriteConfigRequest JWTWrit
 		a.client,
 		http.MethodPost,
 		requestPath,
-		jWTWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // JWTWriteOIDCAuthURL Request an authorization URL to start an OIDC login flow.
-func (a *Auth) JWTWriteOIDCAuthURL(ctx context.Context, jWTWriteOIDCAuthURLRequest JWTWriteOIDCAuthURLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JWTWriteOIDCAuthURL(ctx context.Context, request schema.JWTWriteOIDCAuthURLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3736,14 +3738,14 @@ func (a *Auth) JWTWriteOIDCAuthURL(ctx context.Context, jWTWriteOIDCAuthURLReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		jWTWriteOIDCAuthURLRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // JWTWriteOIDCCallback Callback endpoint to handle form_posts.
-func (a *Auth) JWTWriteOIDCCallback(ctx context.Context, jWTWriteOIDCCallbackRequest JWTWriteOIDCCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JWTWriteOIDCCallback(ctx context.Context, request schema.JWTWriteOIDCCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3757,7 +3759,7 @@ func (a *Auth) JWTWriteOIDCCallback(ctx context.Context, jWTWriteOIDCCallbackReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		jWTWriteOIDCCallbackRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3766,7 +3768,7 @@ func (a *Auth) JWTWriteOIDCCallback(ctx context.Context, jWTWriteOIDCCallbackReq
 // JWTWriteRole Register an role with the backend.
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
-func (a *Auth) JWTWriteRole(ctx context.Context, name string, jWTWriteRoleRequest JWTWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) JWTWriteRole(ctx context.Context, name string, request schema.JWTWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3781,7 +3783,7 @@ func (a *Auth) JWTWriteRole(ctx context.Context, name string, jWTWriteRoleReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		jWTWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3812,7 +3814,7 @@ func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, options ...
 
 // KerberosListGroups
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) KerberosListGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3833,7 +3835,7 @@ func (a *Auth) KerberosListGroups(ctx context.Context, list string, options ...R
 }
 
 // KerberosLogin
-func (a *Auth) KerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosLogin(ctx context.Context, request schema.KerberosLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3847,7 +3849,7 @@ func (a *Auth) KerberosLogin(ctx context.Context, kerberosLoginRequest KerberosL
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kerberosLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3919,7 +3921,7 @@ func (a *Auth) KerberosReadLDAPConfig(ctx context.Context, options ...RequestOpt
 }
 
 // KerberosWriteConfig
-func (a *Auth) KerberosWriteConfig(ctx context.Context, kerberosWriteConfigRequest KerberosWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosWriteConfig(ctx context.Context, request schema.KerberosWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3933,7 +3935,7 @@ func (a *Auth) KerberosWriteConfig(ctx context.Context, kerberosWriteConfigReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kerberosWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -3941,7 +3943,7 @@ func (a *Auth) KerberosWriteConfig(ctx context.Context, kerberosWriteConfigReque
 
 // KerberosWriteGroup
 // name: Name of the LDAP group.
-func (a *Auth) KerberosWriteGroup(ctx context.Context, name string, kerberosWriteGroupRequest KerberosWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosWriteGroup(ctx context.Context, name string, request schema.KerberosWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3956,14 +3958,14 @@ func (a *Auth) KerberosWriteGroup(ctx context.Context, name string, kerberosWrit
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kerberosWriteGroupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // KerberosWriteLDAPConfig
-func (a *Auth) KerberosWriteLDAPConfig(ctx context.Context, kerberosWriteLDAPConfigRequest KerberosWriteLDAPConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KerberosWriteLDAPConfig(ctx context.Context, request schema.KerberosWriteLDAPConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3977,7 +3979,7 @@ func (a *Auth) KerberosWriteLDAPConfig(ctx context.Context, kerberosWriteLDAPCon
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kerberosWriteLDAPConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4008,7 +4010,7 @@ func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, option
 
 // KubernetesListAuthRoles Lists all the roles registered with the backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) KubernetesListAuthRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4029,7 +4031,7 @@ func (a *Auth) KubernetesListAuthRoles(ctx context.Context, list string, options
 }
 
 // KubernetesLogin Authenticates Kubernetes service accounts with Vault.
-func (a *Auth) KubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesLogin(ctx context.Context, request schema.KubernetesLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4043,7 +4045,7 @@ func (a *Auth) KubernetesLogin(ctx context.Context, kubernetesLoginRequest Kuber
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kubernetesLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4094,7 +4096,7 @@ func (a *Auth) KubernetesReadAuthRole(ctx context.Context, name string, options 
 }
 
 // KubernetesWriteAuthConfig Configures the JWT Public Key and Kubernetes API information.
-func (a *Auth) KubernetesWriteAuthConfig(ctx context.Context, kubernetesWriteAuthConfigRequest KubernetesWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesWriteAuthConfig(ctx context.Context, request schema.KubernetesWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4108,7 +4110,7 @@ func (a *Auth) KubernetesWriteAuthConfig(ctx context.Context, kubernetesWriteAut
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kubernetesWriteAuthConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4116,7 +4118,7 @@ func (a *Auth) KubernetesWriteAuthConfig(ctx context.Context, kubernetesWriteAut
 
 // KubernetesWriteAuthRole Register an role with the backend.
 // name: Name of the role.
-func (a *Auth) KubernetesWriteAuthRole(ctx context.Context, name string, kubernetesWriteAuthRoleRequest KubernetesWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) KubernetesWriteAuthRole(ctx context.Context, name string, request schema.KubernetesWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4131,7 +4133,7 @@ func (a *Auth) KubernetesWriteAuthRole(ctx context.Context, name string, kuberne
 		a.client,
 		http.MethodPost,
 		requestPath,
-		kubernetesWriteAuthRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4185,7 +4187,7 @@ func (a *Auth) LDAPDeleteUser(ctx context.Context, name string, options ...Reque
 
 // LDAPListGroups Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) LDAPListGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LDAPListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4207,7 +4209,7 @@ func (a *Auth) LDAPListGroups(ctx context.Context, list string, options ...Reque
 
 // LDAPListUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) LDAPListUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LDAPListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4229,7 +4231,7 @@ func (a *Auth) LDAPListUsers(ctx context.Context, list string, options ...Reques
 
 // LDAPLogin Log in with a username and password.
 // username: DN (distinguished name) to be used for login.
-func (a *Auth) LDAPLogin(ctx context.Context, username string, lDAPLoginRequest LDAPLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LDAPLogin(ctx context.Context, username string, request schema.LDAPLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4244,7 +4246,7 @@ func (a *Auth) LDAPLogin(ctx context.Context, username string, lDAPLoginRequest 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4318,7 +4320,7 @@ func (a *Auth) LDAPReadUser(ctx context.Context, name string, options ...Request
 }
 
 // LDAPWriteAuthConfig Configure the LDAP server to connect to, along with its options.
-func (a *Auth) LDAPWriteAuthConfig(ctx context.Context, lDAPWriteAuthConfigRequest LDAPWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LDAPWriteAuthConfig(ctx context.Context, request schema.LDAPWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4332,7 +4334,7 @@ func (a *Auth) LDAPWriteAuthConfig(ctx context.Context, lDAPWriteAuthConfigReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPWriteAuthConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4340,7 +4342,7 @@ func (a *Auth) LDAPWriteAuthConfig(ctx context.Context, lDAPWriteAuthConfigReque
 
 // LDAPWriteGroup Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
-func (a *Auth) LDAPWriteGroup(ctx context.Context, name string, lDAPWriteGroupRequest LDAPWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LDAPWriteGroup(ctx context.Context, name string, request schema.LDAPWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4355,7 +4357,7 @@ func (a *Auth) LDAPWriteGroup(ctx context.Context, name string, lDAPWriteGroupRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPWriteGroupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4363,7 +4365,7 @@ func (a *Auth) LDAPWriteGroup(ctx context.Context, name string, lDAPWriteGroupRe
 
 // LDAPWriteUser Manage users allowed to authenticate.
 // name: Name of the LDAP user.
-func (a *Auth) LDAPWriteUser(ctx context.Context, name string, lDAPWriteUserRequest LDAPWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) LDAPWriteUser(ctx context.Context, name string, request schema.LDAPWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4378,7 +4380,7 @@ func (a *Auth) LDAPWriteUser(ctx context.Context, name string, lDAPWriteUserRequ
 		a.client,
 		http.MethodPost,
 		requestPath,
-		lDAPWriteUserRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4430,7 +4432,7 @@ func (a *Auth) OCIDeleteRole(ctx context.Context, role string, options ...Reques
 
 // OCIListRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) OCIListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OCIListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4452,7 +4454,7 @@ func (a *Auth) OCIListRoles(ctx context.Context, list string, options ...Request
 
 // OCILoginWithRole Authenticates to Vault using OCI credentials
 // role: Name of the role.
-func (a *Auth) OCILoginWithRole(ctx context.Context, role string, oCILoginWithRoleRequest OCILoginWithRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OCILoginWithRole(ctx context.Context, role string, request schema.OCILoginWithRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4467,7 +4469,7 @@ func (a *Auth) OCILoginWithRole(ctx context.Context, role string, oCILoginWithRo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oCILoginWithRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4518,7 +4520,7 @@ func (a *Auth) OCIReadRole(ctx context.Context, role string, options ...RequestO
 }
 
 // OCIWriteConfig Manages the configuration for the Vault Auth Plugin.
-func (a *Auth) OCIWriteConfig(ctx context.Context, oCIWriteConfigRequest OCIWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OCIWriteConfig(ctx context.Context, request schema.OCIWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4532,7 +4534,7 @@ func (a *Auth) OCIWriteConfig(ctx context.Context, oCIWriteConfigRequest OCIWrit
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oCIWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4540,7 +4542,7 @@ func (a *Auth) OCIWriteConfig(ctx context.Context, oCIWriteConfigRequest OCIWrit
 
 // OCIWriteRole Create a role and associate policies to it.
 // role: Name of the role.
-func (a *Auth) OCIWriteRole(ctx context.Context, role string, oCIWriteRoleRequest OCIWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OCIWriteRole(ctx context.Context, role string, request schema.OCIWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4555,7 +4557,7 @@ func (a *Auth) OCIWriteRole(ctx context.Context, role string, oCIWriteRoleReques
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oCIWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4587,7 +4589,7 @@ func (a *Auth) OIDCDeleteAuthRole(ctx context.Context, name string, options ...R
 // OIDCListAuthRoles Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) OIDCListAuthRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OIDCListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4608,7 +4610,7 @@ func (a *Auth) OIDCListAuthRoles(ctx context.Context, list string, options ...Re
 }
 
 // OIDCLogin Authenticates to Vault using a JWT (or OIDC) token.
-func (a *Auth) OIDCLogin(ctx context.Context, oIDCLoginRequest OIDCLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OIDCLogin(ctx context.Context, request schema.OIDCLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4622,7 +4624,7 @@ func (a *Auth) OIDCLogin(ctx context.Context, oIDCLoginRequest OIDCLoginRequest,
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oIDCLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4695,7 +4697,7 @@ func (a *Auth) OIDCReadCallback(ctx context.Context, options ...RequestOption) (
 
 // OIDCWriteAuthConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
-func (a *Auth) OIDCWriteAuthConfig(ctx context.Context, oIDCWriteAuthConfigRequest OIDCWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OIDCWriteAuthConfig(ctx context.Context, request schema.OIDCWriteAuthConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4709,7 +4711,7 @@ func (a *Auth) OIDCWriteAuthConfig(ctx context.Context, oIDCWriteAuthConfigReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oIDCWriteAuthConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4718,7 +4720,7 @@ func (a *Auth) OIDCWriteAuthConfig(ctx context.Context, oIDCWriteAuthConfigReque
 // OIDCWriteAuthRole Register an role with the backend.
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
-func (a *Auth) OIDCWriteAuthRole(ctx context.Context, name string, oIDCWriteAuthRoleRequest OIDCWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OIDCWriteAuthRole(ctx context.Context, name string, request schema.OIDCWriteAuthRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4733,14 +4735,14 @@ func (a *Auth) OIDCWriteAuthRole(ctx context.Context, name string, oIDCWriteAuth
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oIDCWriteAuthRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // OIDCWriteAuthURL Request an authorization URL to start an OIDC login flow.
-func (a *Auth) OIDCWriteAuthURL(ctx context.Context, oIDCWriteAuthURLRequest OIDCWriteAuthURLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OIDCWriteAuthURL(ctx context.Context, request schema.OIDCWriteAuthURLRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4754,14 +4756,14 @@ func (a *Auth) OIDCWriteAuthURL(ctx context.Context, oIDCWriteAuthURLRequest OID
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oIDCWriteAuthURLRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // OIDCWriteCallback Callback endpoint to handle form_posts.
-func (a *Auth) OIDCWriteCallback(ctx context.Context, oIDCWriteCallbackRequest OIDCWriteCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OIDCWriteCallback(ctx context.Context, request schema.OIDCWriteCallbackRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4775,7 +4777,7 @@ func (a *Auth) OIDCWriteCallback(ctx context.Context, oIDCWriteCallbackRequest O
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oIDCWriteCallbackRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4829,7 +4831,7 @@ func (a *Auth) OktaDeleteUser(ctx context.Context, name string, options ...Reque
 
 // OktaListGroups Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) OktaListGroups(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4851,7 +4853,7 @@ func (a *Auth) OktaListGroups(ctx context.Context, list string, options ...Reque
 
 // OktaListUsers Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) OktaListUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4873,7 +4875,7 @@ func (a *Auth) OktaListUsers(ctx context.Context, list string, options ...Reques
 
 // OktaLogin Log in with a username and password.
 // username: Username to be used for login.
-func (a *Auth) OktaLogin(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaLogin(ctx context.Context, username string, request schema.OktaLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4888,7 +4890,7 @@ func (a *Auth) OktaLogin(ctx context.Context, username string, oktaLoginRequest 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oktaLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -4985,7 +4987,7 @@ func (a *Auth) OktaVerify(ctx context.Context, nonce string, options ...RequestO
 }
 
 // OktaWriteConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-func (a *Auth) OktaWriteConfig(ctx context.Context, oktaWriteConfigRequest OktaWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaWriteConfig(ctx context.Context, request schema.OktaWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4999,7 +5001,7 @@ func (a *Auth) OktaWriteConfig(ctx context.Context, oktaWriteConfigRequest OktaW
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oktaWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5007,7 +5009,7 @@ func (a *Auth) OktaWriteConfig(ctx context.Context, oktaWriteConfigRequest OktaW
 
 // OktaWriteGroup Manage users allowed to authenticate.
 // name: Name of the Okta group.
-func (a *Auth) OktaWriteGroup(ctx context.Context, name string, oktaWriteGroupRequest OktaWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaWriteGroup(ctx context.Context, name string, request schema.OktaWriteGroupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5022,7 +5024,7 @@ func (a *Auth) OktaWriteGroup(ctx context.Context, name string, oktaWriteGroupRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oktaWriteGroupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5030,7 +5032,7 @@ func (a *Auth) OktaWriteGroup(ctx context.Context, name string, oktaWriteGroupRe
 
 // OktaWriteUser Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
-func (a *Auth) OktaWriteUser(ctx context.Context, name string, oktaWriteUserRequest OktaWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) OktaWriteUser(ctx context.Context, name string, request schema.OktaWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5045,7 +5047,7 @@ func (a *Auth) OktaWriteUser(ctx context.Context, name string, oktaWriteUserRequ
 		a.client,
 		http.MethodPost,
 		requestPath,
-		oktaWriteUserRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5076,7 +5078,7 @@ func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, options ...Req
 
 // RadiusListUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) RadiusListUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5097,7 +5099,7 @@ func (a *Auth) RadiusListUsers(ctx context.Context, list string, options ...Requ
 }
 
 // RadiusLogin Log in with a username and password.
-func (a *Auth) RadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusLogin(ctx context.Context, request schema.RadiusLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5111,7 +5113,7 @@ func (a *Auth) RadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		radiusLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5119,7 +5121,7 @@ func (a *Auth) RadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRe
 
 // RadiusLoginWithUsername Log in with a username and password.
 // urlusername: Username to be used for login. (URL parameter)
-func (a *Auth) RadiusLoginWithUsername(ctx context.Context, urlusername string, radiusLoginWithUsernameRequest RadiusLoginWithUsernameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusLoginWithUsername(ctx context.Context, urlusername string, request schema.RadiusLoginWithUsernameRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5134,7 +5136,7 @@ func (a *Auth) RadiusLoginWithUsername(ctx context.Context, urlusername string, 
 		a.client,
 		http.MethodPost,
 		requestPath,
-		radiusLoginWithUsernameRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5185,7 +5187,7 @@ func (a *Auth) RadiusReadUser(ctx context.Context, name string, options ...Reque
 }
 
 // RadiusWriteConfig Configure the RADIUS server to connect to, along with its options.
-func (a *Auth) RadiusWriteConfig(ctx context.Context, radiusWriteConfigRequest RadiusWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusWriteConfig(ctx context.Context, request schema.RadiusWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5199,7 +5201,7 @@ func (a *Auth) RadiusWriteConfig(ctx context.Context, radiusWriteConfigRequest R
 		a.client,
 		http.MethodPost,
 		requestPath,
-		radiusWriteConfigRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5207,7 +5209,7 @@ func (a *Auth) RadiusWriteConfig(ctx context.Context, radiusWriteConfigRequest R
 
 // RadiusWriteUser Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
-func (a *Auth) RadiusWriteUser(ctx context.Context, name string, radiusWriteUserRequest RadiusWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) RadiusWriteUser(ctx context.Context, name string, request schema.RadiusWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5222,7 +5224,7 @@ func (a *Auth) RadiusWriteUser(ctx context.Context, name string, radiusWriteUser
 		a.client,
 		http.MethodPost,
 		requestPath,
-		radiusWriteUserRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5253,7 +5255,7 @@ func (a *Auth) TokenDeleteRole(ctx context.Context, roleName string, options ...
 
 // TokenListAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) TokenListAccessors(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5275,7 +5277,7 @@ func (a *Auth) TokenListAccessors(ctx context.Context, list string, options ...R
 
 // TokenListRoles This endpoint lists configured roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) TokenListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5361,7 +5363,7 @@ func (a *Auth) TokenReadRole(ctx context.Context, roleName string, options ...Re
 }
 
 // TokenRenew This endpoint will renew the given token and prevent expiration.
-func (a *Auth) TokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenRenew(ctx context.Context, request schema.TokenRenewRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5375,14 +5377,14 @@ func (a *Auth) TokenRenew(ctx context.Context, tokenRenewRequest TokenRenewReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenRenewRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenRenewAccessor This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
-func (a *Auth) TokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenRenewAccessor(ctx context.Context, request schema.TokenRenewAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5396,14 +5398,14 @@ func (a *Auth) TokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenRenewAccessorRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenRenewSelf This endpoint will renew the token used to call it and prevent expiration.
-func (a *Auth) TokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenRenewSelf(ctx context.Context, request schema.TokenRenewSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5417,14 +5419,14 @@ func (a *Auth) TokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenRenewSelfRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenRevoke This endpoint will delete the given token and all of its child tokens.
-func (a *Auth) TokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenRevoke(ctx context.Context, request schema.TokenRevokeRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5438,14 +5440,14 @@ func (a *Auth) TokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRe
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenRevokeRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenRevokeAccessor This endpoint will delete the token associated with the accessor and all of its child tokens.
-func (a *Auth) TokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenRevokeAccessor(ctx context.Context, request schema.TokenRevokeAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5459,14 +5461,14 @@ func (a *Auth) TokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorReque
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenRevokeAccessorRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenRevokeOrphan This endpoint will delete the token and orphan its child tokens.
-func (a *Auth) TokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenRevokeOrphan(ctx context.Context, request schema.TokenRevokeOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5480,7 +5482,7 @@ func (a *Auth) TokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest T
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenRevokeOrphanRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5529,7 +5531,7 @@ func (a *Auth) TokenTidy(ctx context.Context, options ...RequestOption) (*Respon
 }
 
 // TokenWriteCreate The token create path is used to create new tokens.
-func (a *Auth) TokenWriteCreate(ctx context.Context, tokenWriteCreateRequest TokenWriteCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenWriteCreate(ctx context.Context, request schema.TokenWriteCreateRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5543,14 +5545,14 @@ func (a *Auth) TokenWriteCreate(ctx context.Context, tokenWriteCreateRequest Tok
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenWriteCreateRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenWriteCreateOrphan The token create path is used to create new orphan tokens.
-func (a *Auth) TokenWriteCreateOrphan(ctx context.Context, tokenWriteCreateOrphanRequest TokenWriteCreateOrphanRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenWriteCreateOrphan(ctx context.Context, request schema.TokenWriteCreateOrphanRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5564,7 +5566,7 @@ func (a *Auth) TokenWriteCreateOrphan(ctx context.Context, tokenWriteCreateOrpha
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenWriteCreateOrphanRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5572,7 +5574,7 @@ func (a *Auth) TokenWriteCreateOrphan(ctx context.Context, tokenWriteCreateOrpha
 
 // TokenWriteCreateWithRole This token create path is used to create new tokens adhering to the given role.
 // roleName: Name of the role
-func (a *Auth) TokenWriteCreateWithRole(ctx context.Context, roleName string, tokenWriteCreateWithRoleRequest TokenWriteCreateWithRoleRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenWriteCreateWithRole(ctx context.Context, roleName string, request schema.TokenWriteCreateWithRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5587,14 +5589,14 @@ func (a *Auth) TokenWriteCreateWithRole(ctx context.Context, roleName string, to
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenWriteCreateWithRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenWriteLookup This endpoint will lookup a token and its properties.
-func (a *Auth) TokenWriteLookup(ctx context.Context, tokenWriteLookupRequest TokenWriteLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenWriteLookup(ctx context.Context, request schema.TokenWriteLookupRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5608,14 +5610,14 @@ func (a *Auth) TokenWriteLookup(ctx context.Context, tokenWriteLookupRequest Tok
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenWriteLookupRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenWriteLookupAccessor This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
-func (a *Auth) TokenWriteLookupAccessor(ctx context.Context, tokenWriteLookupAccessorRequest TokenWriteLookupAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenWriteLookupAccessor(ctx context.Context, request schema.TokenWriteLookupAccessorRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5629,14 +5631,14 @@ func (a *Auth) TokenWriteLookupAccessor(ctx context.Context, tokenWriteLookupAcc
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenWriteLookupAccessorRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 }
 
 // TokenWriteLookupSelf This endpoint will lookup a token and its properties.
-func (a *Auth) TokenWriteLookupSelf(ctx context.Context, tokenWriteLookupSelfRequest TokenWriteLookupSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenWriteLookupSelf(ctx context.Context, request schema.TokenWriteLookupSelfRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5650,7 +5652,7 @@ func (a *Auth) TokenWriteLookupSelf(ctx context.Context, tokenWriteLookupSelfReq
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenWriteLookupSelfRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5658,7 +5660,7 @@ func (a *Auth) TokenWriteLookupSelf(ctx context.Context, tokenWriteLookupSelfReq
 
 // TokenWriteRole
 // roleName: Name of the role
-func (a *Auth) TokenWriteRole(ctx context.Context, roleName string, tokenWriteRoleRequest TokenWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) TokenWriteRole(ctx context.Context, roleName string, request schema.TokenWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5673,7 +5675,7 @@ func (a *Auth) TokenWriteRole(ctx context.Context, roleName string, tokenWriteRo
 		a.client,
 		http.MethodPost,
 		requestPath,
-		tokenWriteRoleRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5704,7 +5706,7 @@ func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, options 
 
 // UserpassListUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *Auth) UserpassListUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5726,7 +5728,7 @@ func (a *Auth) UserpassListUsers(ctx context.Context, list string, options ...Re
 
 // UserpassLogin Log in with a username and password.
 // username: Username of the user.
-func (a *Auth) UserpassLogin(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassLogin(ctx context.Context, username string, request schema.UserpassLoginRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5741,7 +5743,7 @@ func (a *Auth) UserpassLogin(ctx context.Context, username string, userpassLogin
 		a.client,
 		http.MethodPost,
 		requestPath,
-		userpassLoginRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5772,7 +5774,7 @@ func (a *Auth) UserpassReadUser(ctx context.Context, username string, options ..
 
 // UserpassWriteUser Manage users allowed to authenticate.
 // username: Username for this user.
-func (a *Auth) UserpassWriteUser(ctx context.Context, username string, userpassWriteUserRequest UserpassWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassWriteUser(ctx context.Context, username string, request schema.UserpassWriteUserRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5787,7 +5789,7 @@ func (a *Auth) UserpassWriteUser(ctx context.Context, username string, userpassW
 		a.client,
 		http.MethodPost,
 		requestPath,
-		userpassWriteUserRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5795,7 +5797,7 @@ func (a *Auth) UserpassWriteUser(ctx context.Context, username string, userpassW
 
 // UserpassWriteUserPassword Reset user's password.
 // username: Username for this user.
-func (a *Auth) UserpassWriteUserPassword(ctx context.Context, username string, userpassWriteUserPasswordRequest UserpassWriteUserPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassWriteUserPassword(ctx context.Context, username string, request schema.UserpassWriteUserPasswordRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5810,7 +5812,7 @@ func (a *Auth) UserpassWriteUserPassword(ctx context.Context, username string, u
 		a.client,
 		http.MethodPost,
 		requestPath,
-		userpassWriteUserPasswordRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
@@ -5818,7 +5820,7 @@ func (a *Auth) UserpassWriteUserPassword(ctx context.Context, username string, u
 
 // UserpassWriteUserPolicies Update the policies associated with the username.
 // username: Username for this user.
-func (a *Auth) UserpassWriteUserPolicies(ctx context.Context, username string, userpassWriteUserPoliciesRequest UserpassWriteUserPoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) UserpassWriteUserPolicies(ctx context.Context, username string, request schema.UserpassWriteUserPoliciesRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -5833,7 +5835,7 @@ func (a *Auth) UserpassWriteUserPolicies(ctx context.Context, username string, u
 		a.client,
 		http.MethodPost,
 		requestPath,
-		userpassWriteUserPoliciesRequest,
+		request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)

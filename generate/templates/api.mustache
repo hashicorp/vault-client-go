@@ -32,7 +32,7 @@ type {{classname}} struct {
 {{/description}}
 {{/required}}
 {{/allParams}}
-func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}{{#bodyParams}}, request schema.{{{dataType}}}{{/bodyParams}}{{^bodyParams}}, {{paramName}} {{{dataType}}}{{/bodyParams}}{{/isPathParam}}{{/allParams}}, options ...RequestOption) (*Response[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
+func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#bodyParams}}, request schema.{{{dataType}}}{{/bodyParams}}, options ...RequestOption) (*Response[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

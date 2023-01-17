@@ -48,7 +48,7 @@ func (a *Identity) AliasDeleteByID(ctx context.Context, id string, options ...Re
 
 // AliasListByID List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) AliasListByID(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) AliasListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -219,7 +219,7 @@ func (a *Identity) EntityDeleteByName(ctx context.Context, name string, options 
 
 // EntityListAliasesByID List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) EntityListAliasesByID(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) EntityListAliasesByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -240,7 +240,7 @@ func (a *Identity) EntityListAliasesByID(ctx context.Context, list string, optio
 
 // EntityListByID List all the entity IDs
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) EntityListByID(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) EntityListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -261,7 +261,7 @@ func (a *Identity) EntityListByID(ctx context.Context, list string, options ...R
 
 // EntityListByName List all the entity names
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) EntityListByName(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) EntityListByName(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -560,7 +560,7 @@ func (a *Identity) GroupDeleteByName(ctx context.Context, name string, options .
 
 // GroupListAliasesByID List all the group alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) GroupListAliasesByID(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) GroupListAliasesByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -581,7 +581,7 @@ func (a *Identity) GroupListAliasesByID(ctx context.Context, list string, option
 
 // GroupListByID List all the group IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) GroupListByID(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) GroupListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -602,7 +602,7 @@ func (a *Identity) GroupListByID(ctx context.Context, list string, options ...Re
 
 // GroupListByName
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) GroupListByName(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) GroupListByName(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -837,7 +837,7 @@ func (a *Identity) MFADeleteLoginEnforcement(ctx context.Context, name string, o
 
 // MFAListLoginEnforcements List login enforcements
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) MFAListLoginEnforcements(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) MFAListLoginEnforcements(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1006,7 +1006,7 @@ func (a *Identity) MFAMethodGenerateTOTP(ctx context.Context, request schema.MFA
 
 // MFAMethodList List MFA method configurations for all MFA methods
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) MFAMethodList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) MFAMethodList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1027,7 +1027,7 @@ func (a *Identity) MFAMethodList(ctx context.Context, list string, options ...Re
 
 // MFAMethodListDuo List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) MFAMethodListDuo(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) MFAMethodListDuo(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1048,7 +1048,7 @@ func (a *Identity) MFAMethodListDuo(ctx context.Context, list string, options ..
 
 // MFAMethodListOkta List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) MFAMethodListOkta(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) MFAMethodListOkta(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1069,7 +1069,7 @@ func (a *Identity) MFAMethodListOkta(ctx context.Context, list string, options .
 
 // MFAMethodListPingID List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) MFAMethodListPingID(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) MFAMethodListPingID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1090,7 +1090,7 @@ func (a *Identity) MFAMethodListPingID(ctx context.Context, list string, options
 
 // MFAMethodListTOTP List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) MFAMethodListTOTP(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) MFAMethodListTOTP(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1505,7 +1505,7 @@ func (a *Identity) OIDCIntrospect(ctx context.Context, request schema.OIDCIntros
 
 // OIDCListAssignments
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) OIDCListAssignments(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) OIDCListAssignments(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1526,7 +1526,7 @@ func (a *Identity) OIDCListAssignments(ctx context.Context, list string, options
 
 // OIDCListClients
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) OIDCListClients(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) OIDCListClients(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1547,7 +1547,7 @@ func (a *Identity) OIDCListClients(ctx context.Context, list string, options ...
 
 // OIDCListKeys List OIDC keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) OIDCListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) OIDCListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1568,7 +1568,7 @@ func (a *Identity) OIDCListKeys(ctx context.Context, list string, options ...Req
 
 // OIDCListProviders
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) OIDCListProviders(ctx context.Context, list string, allowedClientId string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) OIDCListProviders(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1589,7 +1589,7 @@ func (a *Identity) OIDCListProviders(ctx context.Context, list string, allowedCl
 
 // OIDCListRoles List configured OIDC roles
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) OIDCListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) OIDCListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1610,7 +1610,7 @@ func (a *Identity) OIDCListRoles(ctx context.Context, list string, options ...Re
 
 // OIDCListScopes
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) OIDCListScopes(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) OIDCListScopes(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2239,7 +2239,7 @@ func (a *Identity) PersonaIDWriteByID(ctx context.Context, id string, request sc
 
 // PersonaListByID List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *Identity) PersonaListByID(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Identity) PersonaListByID(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

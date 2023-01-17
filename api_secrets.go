@@ -154,7 +154,7 @@ func (a *Secrets) AWSDeleteRole(ctx context.Context, name string, options ...Req
 
 // AWSListRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) AWSListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AWSListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -446,7 +446,7 @@ func (a *Secrets) ActiveDirectoryDeleteRole(ctx context.Context, name string, op
 
 // ActiveDirectoryListLibraries
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) ActiveDirectoryListLibraries(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryListLibraries(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -468,7 +468,7 @@ func (a *Secrets) ActiveDirectoryListLibraries(ctx context.Context, list string,
 
 // ActiveDirectoryListRoles List the name of each role currently stored.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) ActiveDirectoryListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ActiveDirectoryListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -758,7 +758,7 @@ func (a *Secrets) AliCloudDeleteRole(ctx context.Context, name string, options .
 
 // AliCloudListRoles List the existing roles in this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) AliCloudListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AliCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -935,7 +935,7 @@ func (a *Secrets) AzureDeleteRole(ctx context.Context, name string, options ...R
 
 // AzureListRoles List existing roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) AzureListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) AzureListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1112,7 +1112,7 @@ func (a *Secrets) ConsulDeleteRole(ctx context.Context, name string, options ...
 
 // ConsulListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) ConsulListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) ConsulListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1268,7 +1268,7 @@ func (a *Secrets) CubbyholeDelete(ctx context.Context, path string, options ...R
 
 // CubbyholeRead Retrieve the secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *Secrets) CubbyholeRead(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) CubbyholeRead(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1473,7 +1473,7 @@ func (a *Secrets) GoogleCloudKMSEncrypt(ctx context.Context, key string, request
 
 // GoogleCloudKMSListKeys List named keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GoogleCloudKMSListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudKMSListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1790,7 +1790,7 @@ func (a *Secrets) GoogleCloudKMSWriteKeyConfig(ctx context.Context, key string, 
 
 // GoogleCloudListRolesets
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GoogleCloudListRolesets(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudListRolesets(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1812,7 +1812,7 @@ func (a *Secrets) GoogleCloudListRolesets(ctx context.Context, list string, opti
 
 // GoogleCloudListStaticAccounts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) GoogleCloudListStaticAccounts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2357,7 +2357,7 @@ func (a *Secrets) KVv1Delete(ctx context.Context, path string, options ...Reques
 
 // KVv1Read Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-func (a *Secrets) KVv1Read(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv1Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2539,7 +2539,7 @@ func (a *Secrets) KVv2ReadConfig(ctx context.Context, options ...RequestOption) 
 
 // KVv2ReadMetadata Configures settings for the KV store
 // path: Location of the secret.
-func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2719,7 +2719,7 @@ func (a *Secrets) KubernetesDeleteRole(ctx context.Context, name string, options
 
 // KubernetesListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) KubernetesListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KubernetesListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3011,7 +3011,7 @@ func (a *Secrets) LDAPDeleteStaticRole(ctx context.Context, name string, options
 
 // LDAPListLibraries
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) LDAPListLibraries(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPListLibraries(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3033,7 +3033,7 @@ func (a *Secrets) LDAPListLibraries(ctx context.Context, list string, options ..
 
 // LDAPListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) LDAPListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3055,7 +3055,7 @@ func (a *Secrets) LDAPListRoles(ctx context.Context, list string, options ...Req
 
 // LDAPListStaticRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) LDAPListStaticRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) LDAPListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3393,7 +3393,7 @@ func (a *Secrets) MongoDBAtlasDeleteRole(ctx context.Context, name string, optio
 
 // MongoDBAtlasListRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) MongoDBAtlasListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) MongoDBAtlasListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3614,7 +3614,7 @@ func (a *Secrets) NomadDeleteRole(ctx context.Context, name string, options ...R
 
 // NomadListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) NomadListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) NomadListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3948,7 +3948,7 @@ func (a *Secrets) OpenLDAPDeleteStaticRole(ctx context.Context, name string, opt
 
 // OpenLDAPListLibraries
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) OpenLDAPListLibraries(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPListLibraries(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3970,7 +3970,7 @@ func (a *Secrets) OpenLDAPListLibraries(ctx context.Context, list string, option
 
 // OpenLDAPListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) OpenLDAPListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3992,7 +3992,7 @@ func (a *Secrets) OpenLDAPListRoles(ctx context.Context, list string, options ..
 
 // OpenLDAPListStaticRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) OpenLDAPListStaticRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) OpenLDAPListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4698,7 +4698,7 @@ func (a *Secrets) PKIIssuersGenerateRoot(ctx context.Context, exported string, r
 
 // PKIIssuersList
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIIssuersList(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIIssuersList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4720,7 +4720,7 @@ func (a *Secrets) PKIIssuersList(ctx context.Context, list string, options ...Re
 
 // PKIListCerts
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListCerts(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListCerts(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4742,7 +4742,7 @@ func (a *Secrets) PKIListCerts(ctx context.Context, list string, options ...Requ
 
 // PKIListCertsRevoked
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListCertsRevoked(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListCertsRevoked(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4764,7 +4764,7 @@ func (a *Secrets) PKIListCertsRevoked(ctx context.Context, list string, options 
 
 // PKIListKeys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -4786,7 +4786,7 @@ func (a *Secrets) PKIListKeys(ctx context.Context, list string, options ...Reque
 
 // PKIListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) PKIListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) PKIListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6125,7 +6125,7 @@ func (a *Secrets) RabbitMQDeleteRole(ctx context.Context, name string, options .
 
 // RabbitMQListRoles Manage the roles that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) RabbitMQListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) RabbitMQListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6367,7 +6367,7 @@ func (a *Secrets) SSHDeleteZeroAddressConfig(ctx context.Context, options ...Req
 
 // SSHListRoles Manage the 'roles' that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) SSHListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) SSHListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6697,7 +6697,7 @@ func (a *Secrets) TOTPDeleteKey(ctx context.Context, name string, options ...Req
 
 // TOTPListKeys Manage the keys that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) TOTPListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TOTPListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -6855,7 +6855,7 @@ func (a *Secrets) TerraformDeleteRole(ctx context.Context, name string, options 
 
 // TerraformListRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) TerraformListRoles(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TerraformListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -7410,7 +7410,7 @@ func (a *Secrets) TransitImportKeyVersion(ctx context.Context, name string, requ
 
 // TransitListKeys Managed named encryption keys
 // list: Must be set to &#x60;true&#x60;
-func (a *Secrets) TransitListKeys(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) TransitListKeys(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err

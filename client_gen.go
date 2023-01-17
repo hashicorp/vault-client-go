@@ -81,7 +81,7 @@ func newClient(configuration Configuration) (*Client, error) {
 
 		clientRequestModifiers: requestModifiers{
 			headers: requestHeaders{
-				userAgent:                 UserAgent("0.0.1"),
+				userAgent:                 userAgent("0.0.1"),
 				token:                     configuration.initialToken,
 				namespace:                 configuration.initialNamespace,
 				replicationForwardingMode: ReplicationForwardNone,

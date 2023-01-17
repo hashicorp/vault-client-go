@@ -8,6 +8,8 @@ import (
 	"net/url"
 {{#imports}}	"{{import}}"
 {{/imports}}
+
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 // {{classname}} is a simple wrapper around the client for {{classname}} requests
@@ -30,7 +32,7 @@ type {{classname}} struct {
 {{/description}}
 {{/required}}
 {{/allParams}}
-func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}, options ...RequestOption) (*Response[{{#returnType}}{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
+func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}{{#bodyParams}}, request schema.{{{dataType}}}{{/bodyParams}}{{^bodyParams}}, {{paramName}} {{{dataType}}}{{/bodyParams}}{{/isPathParam}}{{/allParams}}, options ...RequestOption) (*Response[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -41,18 +43,18 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#requ
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/required}}{{/pathParams}}
 
 {{#bodyParams}}
-	return sendStructuredRequestParseResponse[{{#returnType}}{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}](
+	return sendStructuredRequestParseResponse[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}](
 		ctx,
 		a.client,
 		http.Method{{httpMethod}},
 		requestPath,
-	 	{{paramName}},
+	 	request,
 		nil,       // request query parameters
 		modifiers, // request modifiers (headers & callbacks)
 	)
 {{/bodyParams}}
 {{^bodyParams}}
-	return sendRequestParseResponse[{{#returnType}}{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}](
+	return sendRequestParseResponse[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}](
 		ctx,
 		a.client,
 		http.Method{{httpMethod}},

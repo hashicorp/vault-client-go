@@ -135,6 +135,8 @@ modify, and delete an arbitrary path within Vault:
 ```go
 client.Read(...)
 client.ReadWithParameters(...)
+client.ReadRaw(...)
+client.ReadRawWithParameters(...)
 
 client.Write(...)
 client.WriteFromBytes(...)

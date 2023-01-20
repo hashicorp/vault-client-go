@@ -29,7 +29,7 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 
 ## Installation
 
-```shell-session
+```sh
 export GOPRIVATE=github.com/hashicorp/vault-client-go
 go get github.com/hashicorp/vault-client-go
 ```
@@ -42,7 +42,7 @@ Here is a simple example of using the library to read and write your first
 secret. For the sake of simplicity, we are authenticating with a root token.
 This example works with a Vault server running in `-dev` mode:
 
-```shell-session
+```sh
 vault server -dev -dev-root-token-id="my-token"
 ```
 
@@ -54,7 +54,8 @@ import (
 	"log"
 	"time"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -75,7 +76,7 @@ func main() {
 	}
 
 	// write a secret
-	_, err = client.Secrets.KVv2Write(ctx, "my-secret", vault.KVv2WriteRequest{
+	_, err = client.Secrets.KVv2Write(ctx, "my-secret", schema.KVv2WriteRequest{
 		Data: map[string]any{
 			"password1": "abc123",
 			"password2": "correct horse battery staple",
@@ -214,7 +215,7 @@ resp, _ = client.Secrets.KVv2Read(
 Vault [plugins][doc-plugins] can be mounted at arbitrary mount paths using
 `-path` command-line argument:
 
-```shell-session
+```sh
 vault secrets enable -path=my/mount/path kv-v2
 ```
 
@@ -295,7 +296,7 @@ if err != nil {
 
 You can test this with a `-dev-tls` Vault server:
 
-```shell-session
+```sh
 vault server -dev-tls -dev-root-token-id="my-token"
 ```
 
@@ -341,7 +342,7 @@ if err != nil {
 }
 ```
 
-```shell-session
+```sh
 export VAULT_ADDR=http://localhost:8200
 export VAULT_TOKEN=my-token
 go run main.go
@@ -377,10 +378,12 @@ var state string
 _, err := client.Secrets.KVv2Write(
 	ctx,
 	"my-secret",
-	Data: map[string]any{
-		"password1": "abc123",
-		"password2": "correct horse battery staple",
-	},
+	schema.KVv2WriteRequest{
+		Data: map[string]any{
+			"password1": "abc123",
+			"password2": "correct horse battery staple",
+		},
+	}
 	vault.WithResponseCallbacks(
 		vault.RecordReplicationState(
 			&state,
@@ -418,7 +421,7 @@ v1.13.0 using [`openapi-generator`][openapi-generator]. If you make any changes
 to the underlying templates (`generate/templates/*`), make sure to regenerate
 the files by running the following:
 
-```shell-session
+```sh
 make regen && go build
 ```
 

@@ -371,7 +371,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -381,6 +381,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AWSConfigReadLease(
@@ -431,7 +432,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -441,6 +442,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AWSConfigReadRootIAMCredentials(
@@ -491,7 +493,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -501,6 +503,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AWSConfigRotateRootIAMCredentials(
@@ -551,7 +554,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -562,11 +566,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewAWSConfigWriteLeaseRequestWithDefaults()
 
-	aWSConfigWriteLeaseRequest := NewAWSConfigWriteLeaseRequestWithDefaults()
 	resp, err := client.Secrets.AWSConfigWriteLease(
 		context.Background(),
-		aWSConfigWriteLeaseRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -614,7 +618,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -625,11 +630,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewAWSConfigWriteRootIAMCredentialsRequestWithDefaults()
 
-	aWSConfigWriteRootIAMCredentialsRequest := NewAWSConfigWriteRootIAMCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.AWSConfigWriteRootIAMCredentials(
 		context.Background(),
-		aWSConfigWriteRootIAMCredentialsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -677,7 +682,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -689,6 +694,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
+
 
 	resp, err := client.Secrets.AWSDeleteRole(
 		context.Background(),
@@ -741,7 +747,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -753,10 +759,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.AWSListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -804,7 +809,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -814,6 +819,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AWSReadCredentials(
@@ -864,7 +870,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -876,6 +882,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
+
 
 	resp, err := client.Secrets.AWSReadRole(
 		context.Background(),
@@ -928,7 +935,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -940,6 +947,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.AWSReadSecurityTokenService(
 		context.Background(),
@@ -992,7 +1000,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1003,11 +1012,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewAWSWriteCredentialsRequestWithDefaults()
 
-	aWSWriteCredentialsRequest := NewAWSWriteCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.AWSWriteCredentials(
 		context.Background(),
-		aWSWriteCredentialsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1055,7 +1064,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1067,12 +1077,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
+	request := schema.NewAWSWriteRoleRequestWithDefaults()
 
-	aWSWriteRoleRequest := NewAWSWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AWSWriteRole(
 		context.Background(),
 		name,
-		aWSWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1122,7 +1132,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1134,12 +1145,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewAWSWriteSecurityTokenServiceRequestWithDefaults()
 
-	aWSWriteSecurityTokenServiceRequest := NewAWSWriteSecurityTokenServiceRequestWithDefaults()
 	resp, err := client.Secrets.AWSWriteSecurityTokenService(
 		context.Background(),
 		name,
-		aWSWriteSecurityTokenServiceRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1189,7 +1200,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1201,12 +1213,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewActiveDirectoryCheckInLibraryRequestWithDefaults()
 
-	activeDirectoryCheckInLibraryRequest := NewActiveDirectoryCheckInLibraryRequestWithDefaults()
 	resp, err := client.Secrets.ActiveDirectoryCheckInLibrary(
 		context.Background(),
 		name,
-		activeDirectoryCheckInLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1256,7 +1268,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1268,12 +1281,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewActiveDirectoryCheckInManageLibraryRequestWithDefaults()
 
-	activeDirectoryCheckInManageLibraryRequest := NewActiveDirectoryCheckInManageLibraryRequestWithDefaults()
 	resp, err := client.Secrets.ActiveDirectoryCheckInManageLibrary(
 		context.Background(),
 		name,
-		activeDirectoryCheckInManageLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1323,7 +1336,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1335,12 +1349,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
+	request := schema.NewActiveDirectoryCheckOutLibraryRequestWithDefaults()
 
-	activeDirectoryCheckOutLibraryRequest := NewActiveDirectoryCheckOutLibraryRequestWithDefaults()
 	resp, err := client.Secrets.ActiveDirectoryCheckOutLibrary(
 		context.Background(),
 		name,
-		activeDirectoryCheckOutLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1390,7 +1404,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1400,6 +1414,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.ActiveDirectoryDeleteConfig(
@@ -1450,7 +1465,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1462,6 +1477,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.ActiveDirectoryDeleteLibrary(
 		context.Background(),
@@ -1514,7 +1530,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1526,6 +1542,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.ActiveDirectoryDeleteRole(
 		context.Background(),
@@ -1578,7 +1595,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1590,10 +1607,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.ActiveDirectoryListLibraries(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1641,7 +1657,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1653,10 +1669,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.ActiveDirectoryListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1704,7 +1719,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1714,6 +1729,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.ActiveDirectoryReadConfig(
@@ -1764,7 +1780,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1776,6 +1792,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.ActiveDirectoryReadCredentials(
 		context.Background(),
@@ -1828,7 +1845,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1840,6 +1857,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.ActiveDirectoryReadLibrary(
 		context.Background(),
@@ -1892,7 +1910,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1904,6 +1922,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.ActiveDirectoryReadLibraryStatus(
 		context.Background(),
@@ -1956,7 +1975,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1968,6 +1987,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.ActiveDirectoryReadRole(
 		context.Background(),
@@ -2020,7 +2040,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2032,6 +2052,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
+
 
 	resp, err := client.Secrets.ActiveDirectoryRotateRole(
 		context.Background(),
@@ -2084,7 +2105,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2094,6 +2115,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.ActiveDirectoryRotateRoot(
@@ -2144,7 +2166,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2155,11 +2178,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewActiveDirectoryWriteConfigRequestWithDefaults()
 
-	activeDirectoryWriteConfigRequest := NewActiveDirectoryWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.ActiveDirectoryWriteConfig(
 		context.Background(),
-		activeDirectoryWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2207,7 +2230,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2219,12 +2243,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewActiveDirectoryWriteLibraryRequestWithDefaults()
 
-	activeDirectoryWriteLibraryRequest := NewActiveDirectoryWriteLibraryRequestWithDefaults()
 	resp, err := client.Secrets.ActiveDirectoryWriteLibrary(
 		context.Background(),
 		name,
-		activeDirectoryWriteLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2274,7 +2298,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2286,12 +2311,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewActiveDirectoryWriteRoleRequestWithDefaults()
 
-	activeDirectoryWriteRoleRequest := NewActiveDirectoryWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.ActiveDirectoryWriteRole(
 		context.Background(),
 		name,
-		activeDirectoryWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2341,7 +2366,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2351,6 +2376,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AliCloudDeleteConfig(
@@ -2401,7 +2427,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2413,6 +2439,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
+
 
 	resp, err := client.Secrets.AliCloudDeleteRole(
 		context.Background(),
@@ -2465,7 +2492,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2477,10 +2504,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.AliCloudListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2528,7 +2554,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2538,6 +2564,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AliCloudReadConfig(
@@ -2588,7 +2615,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2600,6 +2627,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
+
 
 	resp, err := client.Secrets.AliCloudReadCredentials(
 		context.Background(),
@@ -2652,7 +2680,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2664,6 +2692,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
+
 
 	resp, err := client.Secrets.AliCloudReadRole(
 		context.Background(),
@@ -2716,7 +2745,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2727,11 +2757,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewAliCloudWriteConfigRequestWithDefaults()
 
-	aliCloudWriteConfigRequest := NewAliCloudWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.AliCloudWriteConfig(
 		context.Background(),
-		aliCloudWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2779,7 +2809,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2791,12 +2822,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
+	request := schema.NewAliCloudWriteRoleRequestWithDefaults()
 
-	aliCloudWriteRoleRequest := NewAliCloudWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AliCloudWriteRole(
 		context.Background(),
 		name,
-		aliCloudWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2846,7 +2877,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2856,6 +2887,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AzureDeleteConfig(
@@ -2906,7 +2938,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2918,6 +2950,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.AzureDeleteRole(
 		context.Background(),
@@ -2970,7 +3003,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2982,10 +3015,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.AzureListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3033,7 +3065,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3043,6 +3075,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AzureReadConfig(
@@ -3093,7 +3126,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3105,6 +3138,7 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the Vault role
+
 
 	resp, err := client.Secrets.AzureReadCredentials(
 		context.Background(),
@@ -3157,7 +3191,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3169,6 +3203,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.AzureReadRole(
 		context.Background(),
@@ -3221,7 +3256,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3231,6 +3266,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.AzureRotateRoot(
@@ -3281,7 +3317,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3292,11 +3329,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewAzureWriteConfigRequestWithDefaults()
 
-	azureWriteConfigRequest := NewAzureWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.AzureWriteConfig(
 		context.Background(),
-		azureWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3344,7 +3381,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3356,12 +3394,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	request := schema.NewAzureWriteRoleRequestWithDefaults()
 
-	azureWriteRoleRequest := NewAzureWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.AzureWriteRole(
 		context.Background(),
 		name,
-		azureWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3411,7 +3449,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3423,6 +3461,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.ConsulDeleteRole(
 		context.Background(),
@@ -3475,7 +3514,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3487,10 +3526,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.ConsulListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3538,7 +3576,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3548,6 +3586,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.ConsulReadAccessConfig(
@@ -3598,7 +3637,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3610,6 +3649,7 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.ConsulReadCredentials(
 		context.Background(),
@@ -3662,7 +3702,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3674,6 +3714,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.ConsulReadRole(
 		context.Background(),
@@ -3726,7 +3767,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3737,11 +3779,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewConsulWriteAccessConfigRequestWithDefaults()
 
-	consulWriteAccessConfigRequest := NewConsulWriteAccessConfigRequestWithDefaults()
 	resp, err := client.Secrets.ConsulWriteAccessConfig(
 		context.Background(),
-		consulWriteAccessConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3789,7 +3831,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3801,12 +3844,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	request := schema.NewConsulWriteRoleRequestWithDefaults()
 
-	consulWriteRoleRequest := NewConsulWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.ConsulWriteRole(
 		context.Background(),
 		name,
-		consulWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3856,7 +3899,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3868,6 +3911,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
+
 
 	resp, err := client.Secrets.CubbyholeDelete(
 		context.Background(),
@@ -3920,7 +3964,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3933,7 +3977,8 @@ func main() {
 
 	path := "path_example" // string | Specifies the path of the secret.
 
-	list := NewstringWithDefaults()
+
+	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.CubbyholeRead(
 		context.Background(),
 		path,
@@ -3987,7 +4032,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3999,6 +4044,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
+
 
 	resp, err := client.Secrets.CubbyholeWrite(
 		context.Background(),
@@ -4051,7 +4097,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4063,6 +4109,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
+
 
 	resp, err := client.Secrets.GoogleCloudDeleteRoleset(
 		context.Background(),
@@ -4115,7 +4162,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4127,6 +4174,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+
 
 	resp, err := client.Secrets.GoogleCloudDeleteStaticAccount(
 		context.Background(),
@@ -4179,7 +4227,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -4191,12 +4240,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	request := schema.NewGoogleCloudKMSDecryptRequestWithDefaults()
 
-	googleCloudKMSDecryptRequest := NewGoogleCloudKMSDecryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSDecrypt(
 		context.Background(),
 		key,
-		googleCloudKMSDecryptRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4246,7 +4295,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4256,6 +4305,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.GoogleCloudKMSDeleteConfig(
@@ -4306,7 +4356,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4318,6 +4368,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+
 
 	resp, err := client.Secrets.GoogleCloudKMSDeleteKey(
 		context.Background(),
@@ -4370,7 +4421,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4382,6 +4433,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
+
 
 	resp, err := client.Secrets.GoogleCloudKMSDeregisterKey(
 		context.Background(),
@@ -4434,7 +4486,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -4446,12 +4499,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	request := schema.NewGoogleCloudKMSEncryptRequestWithDefaults()
 
-	googleCloudKMSEncryptRequest := NewGoogleCloudKMSEncryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSEncrypt(
 		context.Background(),
 		key,
-		googleCloudKMSEncryptRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4501,7 +4554,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4513,10 +4566,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.GoogleCloudKMSListKeys(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4564,7 +4616,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4574,6 +4626,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.GoogleCloudKMSReadConfig(
@@ -4624,7 +4677,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4636,6 +4689,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+
 
 	resp, err := client.Secrets.GoogleCloudKMSReadKey(
 		context.Background(),
@@ -4688,7 +4742,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4700,6 +4754,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+
 
 	resp, err := client.Secrets.GoogleCloudKMSReadKeyConfig(
 		context.Background(),
@@ -4752,7 +4807,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4764,6 +4819,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
+
 
 	resp, err := client.Secrets.GoogleCloudKMSReadPubkey(
 		context.Background(),
@@ -4816,7 +4872,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -4828,12 +4885,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
+	request := schema.NewGoogleCloudKMSReencryptRequestWithDefaults()
 
-	googleCloudKMSReencryptRequest := NewGoogleCloudKMSReencryptRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSReencrypt(
 		context.Background(),
 		key,
-		googleCloudKMSReencryptRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4883,7 +4940,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -4895,12 +4953,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
+	request := schema.NewGoogleCloudKMSRegisterKeyRequestWithDefaults()
 
-	googleCloudKMSRegisterKeyRequest := NewGoogleCloudKMSRegisterKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSRegisterKey(
 		context.Background(),
 		key,
-		googleCloudKMSRegisterKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4950,7 +5008,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4962,6 +5020,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
+
 
 	resp, err := client.Secrets.GoogleCloudKMSRotateKey(
 		context.Background(),
@@ -5014,7 +5073,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5026,12 +5086,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	request := schema.NewGoogleCloudKMSSignRequestWithDefaults()
 
-	googleCloudKMSSignRequest := NewGoogleCloudKMSSignRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSSign(
 		context.Background(),
 		key,
-		googleCloudKMSSignRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5081,7 +5141,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5093,6 +5153,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+
 
 	resp, err := client.Secrets.GoogleCloudKMSTrimKey(
 		context.Background(),
@@ -5145,7 +5206,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5157,12 +5219,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	request := schema.NewGoogleCloudKMSVerifyRequestWithDefaults()
 
-	googleCloudKMSVerifyRequest := NewGoogleCloudKMSVerifyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSVerify(
 		context.Background(),
 		key,
-		googleCloudKMSVerifyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5212,7 +5274,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5223,11 +5286,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewGoogleCloudKMSWriteConfigRequestWithDefaults()
 
-	googleCloudKMSWriteConfigRequest := NewGoogleCloudKMSWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSWriteConfig(
 		context.Background(),
-		googleCloudKMSWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5275,7 +5338,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5287,12 +5351,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	request := schema.NewGoogleCloudKMSWriteKeyRequestWithDefaults()
 
-	googleCloudKMSWriteKeyRequest := NewGoogleCloudKMSWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSWriteKey(
 		context.Background(),
 		key,
-		googleCloudKMSWriteKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5342,7 +5406,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5354,12 +5419,12 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
+	request := schema.NewGoogleCloudKMSWriteKeyConfigRequestWithDefaults()
 
-	googleCloudKMSWriteKeyConfigRequest := NewGoogleCloudKMSWriteKeyConfigRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudKMSWriteKeyConfig(
 		context.Background(),
 		key,
-		googleCloudKMSWriteKeyConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5409,7 +5474,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5421,10 +5486,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.GoogleCloudListRolesets(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5472,7 +5536,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5484,10 +5548,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5535,7 +5598,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5545,6 +5608,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.GoogleCloudReadConfig(
@@ -5595,7 +5659,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5607,6 +5671,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+
 
 	resp, err := client.Secrets.GoogleCloudReadKey(
 		context.Background(),
@@ -5659,7 +5724,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5671,6 +5736,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
+
 
 	resp, err := client.Secrets.GoogleCloudReadRoleset(
 		context.Background(),
@@ -5723,7 +5789,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5735,6 +5801,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+
 
 	resp, err := client.Secrets.GoogleCloudReadRolesetKey(
 		context.Background(),
@@ -5787,7 +5854,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5799,6 +5866,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+
 
 	resp, err := client.Secrets.GoogleCloudReadRolesetToken(
 		context.Background(),
@@ -5851,7 +5919,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5863,6 +5931,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+
 
 	resp, err := client.Secrets.GoogleCloudReadStaticAccount(
 		context.Background(),
@@ -5915,7 +5984,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5927,6 +5996,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+
 
 	resp, err := client.Secrets.GoogleCloudReadStaticAccountKey(
 		context.Background(),
@@ -5979,7 +6049,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5991,6 +6061,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+
 
 	resp, err := client.Secrets.GoogleCloudReadStaticAccountToken(
 		context.Background(),
@@ -6043,7 +6114,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6055,6 +6126,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+
 
 	resp, err := client.Secrets.GoogleCloudReadToken(
 		context.Background(),
@@ -6107,7 +6179,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6119,6 +6191,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.GoogleCloudRotateRoleset(
 		context.Background(),
@@ -6171,7 +6244,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6183,6 +6256,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.GoogleCloudRotateRolesetKey(
 		context.Background(),
@@ -6235,7 +6309,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6245,6 +6319,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.GoogleCloudRotateRoot(
@@ -6295,7 +6370,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6307,6 +6382,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the account.
+
 
 	resp, err := client.Secrets.GoogleCloudRotateStaticAccountKey(
 		context.Background(),
@@ -6359,7 +6435,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6370,11 +6447,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewGoogleCloudWriteConfigRequestWithDefaults()
 
-	googleCloudWriteConfigRequest := NewGoogleCloudWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteConfig(
 		context.Background(),
-		googleCloudWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6422,7 +6499,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6434,12 +6512,12 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	request := schema.NewGoogleCloudWriteKeyRequestWithDefaults()
 
-	googleCloudWriteKeyRequest := NewGoogleCloudWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteKey(
 		context.Background(),
 		roleset,
-		googleCloudWriteKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6489,7 +6567,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6501,12 +6580,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
+	request := schema.NewGoogleCloudWriteRolesetRequestWithDefaults()
 
-	googleCloudWriteRolesetRequest := NewGoogleCloudWriteRolesetRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
 		context.Background(),
 		name,
-		googleCloudWriteRolesetRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6556,7 +6635,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6568,12 +6648,12 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+	request := schema.NewGoogleCloudWriteRolesetKeyRequestWithDefaults()
 
-	googleCloudWriteRolesetKeyRequest := NewGoogleCloudWriteRolesetKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteRolesetKey(
 		context.Background(),
 		roleset,
-		googleCloudWriteRolesetKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6623,7 +6703,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6635,6 +6715,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+
 
 	resp, err := client.Secrets.GoogleCloudWriteRolesetToken(
 		context.Background(),
@@ -6687,7 +6768,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6699,12 +6781,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+	request := schema.NewGoogleCloudWriteStaticAccountRequestWithDefaults()
 
-	googleCloudWriteStaticAccountRequest := NewGoogleCloudWriteStaticAccountRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
 		context.Background(),
 		name,
-		googleCloudWriteStaticAccountRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6754,7 +6836,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6766,12 +6849,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+	request := schema.NewGoogleCloudWriteStaticAccountKeyRequestWithDefaults()
 
-	googleCloudWriteStaticAccountKeyRequest := NewGoogleCloudWriteStaticAccountKeyRequestWithDefaults()
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccountKey(
 		context.Background(),
 		name,
-		googleCloudWriteStaticAccountKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6821,7 +6904,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6833,6 +6916,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
+
 
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccountToken(
 		context.Background(),
@@ -6885,7 +6969,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6897,6 +6981,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
+
 
 	resp, err := client.Secrets.GoogleCloudWriteToken(
 		context.Background(),
@@ -6949,7 +7034,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6961,6 +7046,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+
 
 	resp, err := client.Secrets.KVv1Delete(
 		context.Background(),
@@ -7013,7 +7099,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7026,7 +7112,8 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 
-	list := NewstringWithDefaults()
+
+	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv1Read(
 		context.Background(),
 		path,
@@ -7080,7 +7167,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7092,6 +7179,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+
 
 	resp, err := client.Secrets.KVv1Write(
 		context.Background(),
@@ -7144,7 +7232,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7156,6 +7244,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+
 
 	resp, err := client.Secrets.KVv2Delete(
 		context.Background(),
@@ -7208,7 +7297,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7220,6 +7309,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+
 
 	resp, err := client.Secrets.KVv2DeleteMetadata(
 		context.Background(),
@@ -7272,7 +7362,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7284,12 +7375,12 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	request := schema.NewKVv2DeleteVersionsRequestWithDefaults()
 
-	kVv2DeleteVersionsRequest := NewKVv2DeleteVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KVv2DeleteVersions(
 		context.Background(),
 		path,
-		kVv2DeleteVersionsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7339,7 +7430,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7351,12 +7443,12 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	request := schema.NewKVv2DestroyVersionsRequestWithDefaults()
 
-	kVv2DestroyVersionsRequest := NewKVv2DestroyVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KVv2DestroyVersions(
 		context.Background(),
 		path,
-		kVv2DestroyVersionsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7406,7 +7498,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7418,6 +7510,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+
 
 	resp, err := client.Secrets.KVv2Read(
 		context.Background(),
@@ -7470,7 +7563,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7480,6 +7573,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.KVv2ReadConfig(
@@ -7530,7 +7624,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7543,7 +7637,8 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 
-	list := NewstringWithDefaults()
+
+	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv2ReadMetadata(
 		context.Background(),
 		path,
@@ -7597,7 +7692,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7609,6 +7704,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+
 
 	resp, err := client.Secrets.KVv2ReadSubkeys(
 		context.Background(),
@@ -7661,7 +7757,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7673,12 +7770,12 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	request := schema.NewKVv2UndeleteVersionsRequestWithDefaults()
 
-	kVv2UndeleteVersionsRequest := NewKVv2UndeleteVersionsRequestWithDefaults()
 	resp, err := client.Secrets.KVv2UndeleteVersions(
 		context.Background(),
 		path,
-		kVv2UndeleteVersionsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7728,7 +7825,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7740,12 +7838,12 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	request := schema.NewKVv2WriteRequestWithDefaults()
 
-	kVv2WriteRequest := NewKVv2WriteRequestWithDefaults()
 	resp, err := client.Secrets.KVv2Write(
 		context.Background(),
 		path,
-		kVv2WriteRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7795,7 +7893,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7806,11 +7905,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewKVv2WriteConfigRequestWithDefaults()
 
-	kVv2WriteConfigRequest := NewKVv2WriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.KVv2WriteConfig(
 		context.Background(),
-		kVv2WriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7858,7 +7957,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7870,12 +7970,12 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
+	request := schema.NewKVv2WriteMetadataRequestWithDefaults()
 
-	kVv2WriteMetadataRequest := NewKVv2WriteMetadataRequestWithDefaults()
 	resp, err := client.Secrets.KVv2WriteMetadata(
 		context.Background(),
 		path,
-		kVv2WriteMetadataRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7925,7 +8025,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7935,6 +8035,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.KubernetesDeleteConfig(
@@ -7985,7 +8086,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7997,6 +8098,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.KubernetesDeleteRole(
 		context.Background(),
@@ -8049,7 +8151,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8061,10 +8163,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.KubernetesListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8112,7 +8213,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8122,6 +8223,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.KubernetesReadConfig(
@@ -8172,7 +8274,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8184,6 +8286,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.KubernetesReadRole(
 		context.Background(),
@@ -8236,7 +8339,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8247,11 +8351,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewKubernetesWriteConfigRequestWithDefaults()
 
-	kubernetesWriteConfigRequest := NewKubernetesWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesWriteConfig(
 		context.Background(),
-		kubernetesWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8299,7 +8403,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8311,12 +8416,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Vault role
+	request := schema.NewKubernetesWriteCredentialsRequestWithDefaults()
 
-	kubernetesWriteCredentialsRequest := NewKubernetesWriteCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesWriteCredentials(
 		context.Background(),
 		name,
-		kubernetesWriteCredentialsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8366,7 +8471,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8378,12 +8484,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewKubernetesWriteRoleRequestWithDefaults()
 
-	kubernetesWriteRoleRequest := NewKubernetesWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.KubernetesWriteRole(
 		context.Background(),
 		name,
-		kubernetesWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8433,7 +8539,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8445,12 +8552,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewLDAPCheckInLibraryRequestWithDefaults()
 
-	lDAPCheckInLibraryRequest := NewLDAPCheckInLibraryRequestWithDefaults()
 	resp, err := client.Secrets.LDAPCheckInLibrary(
 		context.Background(),
 		name,
-		lDAPCheckInLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8500,7 +8607,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8512,12 +8620,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewLDAPCheckInManageLibraryRequestWithDefaults()
 
-	lDAPCheckInManageLibraryRequest := NewLDAPCheckInManageLibraryRequestWithDefaults()
 	resp, err := client.Secrets.LDAPCheckInManageLibrary(
 		context.Background(),
 		name,
-		lDAPCheckInManageLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8567,7 +8675,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8579,12 +8688,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
+	request := schema.NewLDAPCheckOutLibraryRequestWithDefaults()
 
-	lDAPCheckOutLibraryRequest := NewLDAPCheckOutLibraryRequestWithDefaults()
 	resp, err := client.Secrets.LDAPCheckOutLibrary(
 		context.Background(),
 		name,
-		lDAPCheckOutLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8634,7 +8743,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8644,6 +8753,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.LDAPDeleteConfig(
@@ -8694,7 +8804,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8706,6 +8816,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.LDAPDeleteLibrary(
 		context.Background(),
@@ -8758,7 +8869,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8770,6 +8881,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+
 
 	resp, err := client.Secrets.LDAPDeleteRole(
 		context.Background(),
@@ -8822,7 +8934,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8834,6 +8946,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.LDAPDeleteStaticRole(
 		context.Background(),
@@ -8886,7 +8999,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8898,10 +9011,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.LDAPListLibraries(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8949,7 +9061,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8961,10 +9073,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.LDAPListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9012,7 +9123,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9024,10 +9135,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.LDAPListStaticRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9075,7 +9185,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9085,6 +9195,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.LDAPReadConfig(
@@ -9135,7 +9246,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9147,6 +9258,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
+
 
 	resp, err := client.Secrets.LDAPReadCredentials(
 		context.Background(),
@@ -9199,7 +9311,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9211,6 +9323,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.LDAPReadLibrary(
 		context.Background(),
@@ -9263,7 +9376,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9275,6 +9388,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.LDAPReadLibraryStatus(
 		context.Background(),
@@ -9327,7 +9441,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9339,6 +9453,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+
 
 	resp, err := client.Secrets.LDAPReadRole(
 		context.Background(),
@@ -9391,7 +9506,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9403,6 +9518,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
+
 
 	resp, err := client.Secrets.LDAPReadStaticCredentials(
 		context.Background(),
@@ -9455,7 +9571,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9467,6 +9583,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.LDAPReadStaticRole(
 		context.Background(),
@@ -9519,7 +9636,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9531,6 +9648,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
+
 
 	resp, err := client.Secrets.LDAPRotateRole(
 		context.Background(),
@@ -9583,7 +9701,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9593,6 +9711,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.LDAPRotateRoot(
@@ -9643,7 +9762,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9654,11 +9774,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewLDAPWriteConfigRequestWithDefaults()
 
-	lDAPWriteConfigRequest := NewLDAPWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.LDAPWriteConfig(
 		context.Background(),
-		lDAPWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9706,7 +9826,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9718,12 +9839,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewLDAPWriteLibraryRequestWithDefaults()
 
-	lDAPWriteLibraryRequest := NewLDAPWriteLibraryRequestWithDefaults()
 	resp, err := client.Secrets.LDAPWriteLibrary(
 		context.Background(),
 		name,
-		lDAPWriteLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9773,7 +9894,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9785,12 +9907,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+	request := schema.NewLDAPWriteRoleRequestWithDefaults()
 
-	lDAPWriteRoleRequest := NewLDAPWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.LDAPWriteRole(
 		context.Background(),
 		name,
-		lDAPWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9840,7 +9962,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9852,12 +9975,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewLDAPWriteStaticRoleRequestWithDefaults()
 
-	lDAPWriteStaticRoleRequest := NewLDAPWriteStaticRoleRequestWithDefaults()
 	resp, err := client.Secrets.LDAPWriteStaticRole(
 		context.Background(),
 		name,
-		lDAPWriteStaticRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9907,7 +10030,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9919,6 +10042,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
+
 
 	resp, err := client.Secrets.MongoDBAtlasDeleteRole(
 		context.Background(),
@@ -9971,7 +10095,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9983,10 +10107,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.MongoDBAtlasListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10034,7 +10157,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10044,6 +10167,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.MongoDBAtlasReadConfig(
@@ -10094,7 +10218,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10106,6 +10230,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.MongoDBAtlasReadCredentials(
 		context.Background(),
@@ -10158,7 +10283,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10170,6 +10295,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
+
 
 	resp, err := client.Secrets.MongoDBAtlasReadRole(
 		context.Background(),
@@ -10222,7 +10348,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -10233,11 +10360,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewMongoDBAtlasWriteConfigRequestWithDefaults()
 
-	mongoDBAtlasWriteConfigRequest := NewMongoDBAtlasWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.MongoDBAtlasWriteConfig(
 		context.Background(),
-		mongoDBAtlasWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10285,7 +10412,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10297,6 +10424,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.MongoDBAtlasWriteCredentials(
 		context.Background(),
@@ -10349,7 +10477,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -10361,12 +10490,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
+	request := schema.NewMongoDBAtlasWriteRoleRequestWithDefaults()
 
-	mongoDBAtlasWriteRoleRequest := NewMongoDBAtlasWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.MongoDBAtlasWriteRole(
 		context.Background(),
 		name,
-		mongoDBAtlasWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10416,7 +10545,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10426,6 +10555,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.NomadDeleteAccessConfig(
@@ -10476,7 +10606,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10486,6 +10616,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.NomadDeleteLeaseConfig(
@@ -10536,7 +10667,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10548,6 +10679,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.NomadDeleteRole(
 		context.Background(),
@@ -10600,7 +10732,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10612,10 +10744,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.NomadListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10663,7 +10794,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10673,6 +10804,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.NomadReadAccessConfig(
@@ -10723,7 +10855,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10735,6 +10867,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.NomadReadCredentials(
 		context.Background(),
@@ -10787,7 +10920,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10797,6 +10930,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.NomadReadLeaseConfig(
@@ -10847,7 +10981,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -10859,6 +10993,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.NomadReadRole(
 		context.Background(),
@@ -10911,7 +11046,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -10922,11 +11058,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewNomadWriteAccessConfigRequestWithDefaults()
 
-	nomadWriteAccessConfigRequest := NewNomadWriteAccessConfigRequestWithDefaults()
 	resp, err := client.Secrets.NomadWriteAccessConfig(
 		context.Background(),
-		nomadWriteAccessConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10974,7 +11110,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -10985,11 +11122,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewNomadWriteLeaseConfigRequestWithDefaults()
 
-	nomadWriteLeaseConfigRequest := NewNomadWriteLeaseConfigRequestWithDefaults()
 	resp, err := client.Secrets.NomadWriteLeaseConfig(
 		context.Background(),
-		nomadWriteLeaseConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11037,7 +11174,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -11049,12 +11187,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewNomadWriteRoleRequestWithDefaults()
 
-	nomadWriteRoleRequest := NewNomadWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.NomadWriteRole(
 		context.Background(),
 		name,
-		nomadWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11104,7 +11242,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -11116,12 +11255,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewOpenLDAPCheckInLibraryRequestWithDefaults()
 
-	openLDAPCheckInLibraryRequest := NewOpenLDAPCheckInLibraryRequestWithDefaults()
 	resp, err := client.Secrets.OpenLDAPCheckInLibrary(
 		context.Background(),
 		name,
-		openLDAPCheckInLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11171,7 +11310,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -11183,12 +11323,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewOpenLDAPCheckInManageLibraryRequestWithDefaults()
 
-	openLDAPCheckInManageLibraryRequest := NewOpenLDAPCheckInManageLibraryRequestWithDefaults()
 	resp, err := client.Secrets.OpenLDAPCheckInManageLibrary(
 		context.Background(),
 		name,
-		openLDAPCheckInManageLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11238,7 +11378,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -11250,12 +11391,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
+	request := schema.NewOpenLDAPCheckOutLibraryRequestWithDefaults()
 
-	openLDAPCheckOutLibraryRequest := NewOpenLDAPCheckOutLibraryRequestWithDefaults()
 	resp, err := client.Secrets.OpenLDAPCheckOutLibrary(
 		context.Background(),
 		name,
-		openLDAPCheckOutLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11305,7 +11446,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11315,6 +11456,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.OpenLDAPDeleteConfig(
@@ -11365,7 +11507,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11377,6 +11519,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.OpenLDAPDeleteLibrary(
 		context.Background(),
@@ -11429,7 +11572,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11441,6 +11584,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+
 
 	resp, err := client.Secrets.OpenLDAPDeleteRole(
 		context.Background(),
@@ -11493,7 +11637,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11505,6 +11649,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.OpenLDAPDeleteStaticRole(
 		context.Background(),
@@ -11557,7 +11702,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11569,10 +11714,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.OpenLDAPListLibraries(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11620,7 +11764,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11632,10 +11776,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.OpenLDAPListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11683,7 +11826,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11695,10 +11838,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.OpenLDAPListStaticRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -11746,7 +11888,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11756,6 +11898,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.OpenLDAPReadConfig(
@@ -11806,7 +11949,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11818,6 +11961,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
+
 
 	resp, err := client.Secrets.OpenLDAPReadCredentials(
 		context.Background(),
@@ -11870,7 +12014,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11882,6 +12026,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.OpenLDAPReadLibrary(
 		context.Background(),
@@ -11934,7 +12079,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -11946,6 +12091,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+
 
 	resp, err := client.Secrets.OpenLDAPReadLibraryStatus(
 		context.Background(),
@@ -11998,7 +12144,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12010,6 +12156,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+
 
 	resp, err := client.Secrets.OpenLDAPReadRole(
 		context.Background(),
@@ -12062,7 +12209,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12074,6 +12221,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
+
 
 	resp, err := client.Secrets.OpenLDAPReadStaticCredentials(
 		context.Background(),
@@ -12126,7 +12274,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12138,6 +12286,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.OpenLDAPReadStaticRole(
 		context.Background(),
@@ -12190,7 +12339,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12202,6 +12351,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
+
 
 	resp, err := client.Secrets.OpenLDAPRotateRole(
 		context.Background(),
@@ -12254,7 +12404,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12264,6 +12414,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.OpenLDAPRotateRoot(
@@ -12314,7 +12465,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12325,11 +12477,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewOpenLDAPWriteConfigRequestWithDefaults()
 
-	openLDAPWriteConfigRequest := NewOpenLDAPWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.OpenLDAPWriteConfig(
 		context.Background(),
-		openLDAPWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12377,7 +12529,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12389,12 +12542,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
+	request := schema.NewOpenLDAPWriteLibraryRequestWithDefaults()
 
-	openLDAPWriteLibraryRequest := NewOpenLDAPWriteLibraryRequestWithDefaults()
 	resp, err := client.Secrets.OpenLDAPWriteLibrary(
 		context.Background(),
 		name,
-		openLDAPWriteLibraryRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12444,7 +12597,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12456,12 +12610,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
+	request := schema.NewOpenLDAPWriteRoleRequestWithDefaults()
 
-	openLDAPWriteRoleRequest := NewOpenLDAPWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.OpenLDAPWriteRole(
 		context.Background(),
 		name,
-		openLDAPWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12511,7 +12665,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12523,12 +12678,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewOpenLDAPWriteStaticRoleRequestWithDefaults()
 
-	openLDAPWriteStaticRoleRequest := NewOpenLDAPWriteStaticRoleRequestWithDefaults()
 	resp, err := client.Secrets.OpenLDAPWriteStaticRole(
 		context.Background(),
 		name,
-		openLDAPWriteStaticRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12578,7 +12733,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12589,11 +12745,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIBundleWriteRequestWithDefaults()
 
-	pKIBundleWriteRequest := NewPKIBundleWriteRequestWithDefaults()
 	resp, err := client.Secrets.PKIBundleWrite(
 		context.Background(),
-		pKIBundleWriteRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12641,7 +12797,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12653,6 +12809,7 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
+
 
 	resp, err := client.Secrets.PKIDeleteKey(
 		context.Background(),
@@ -12705,7 +12862,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12717,6 +12874,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.PKIDeleteRole(
 		context.Background(),
@@ -12769,7 +12927,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -12779,6 +12937,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIDeleteRoot(
@@ -12829,7 +12988,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12841,12 +13001,12 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	request := schema.NewPKIGenerateRootRequestWithDefaults()
 
-	pKIGenerateRootRequest := NewPKIGenerateRootRequestWithDefaults()
 	resp, err := client.Secrets.PKIGenerateRoot(
 		context.Background(),
 		exported,
-		pKIGenerateRootRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12896,7 +13056,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12907,11 +13068,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIImportKeysRequestWithDefaults()
 
-	pKIImportKeysRequest := NewPKIImportKeysRequestWithDefaults()
 	resp, err := client.Secrets.PKIImportKeys(
 		context.Background(),
-		pKIImportKeysRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -12959,7 +13120,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -12972,13 +13134,13 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
+	request := schema.NewPKIIssuerIssueRoleRequestWithDefaults()
 
-	pKIIssuerIssueRoleRequest := NewPKIIssuerIssueRoleRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerIssueRole(
 		context.Background(),
 		issuerRef,
 		role,
-		pKIIssuerIssueRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13030,7 +13192,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13042,12 +13205,12 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	request := schema.NewPKIIssuerResignCRLsRequestWithDefaults()
 
-	pKIIssuerResignCRLsRequest := NewPKIIssuerResignCRLsRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerResignCRLs(
 		context.Background(),
 		issuerRef,
-		pKIIssuerResignCRLsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13097,7 +13260,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13109,6 +13272,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+
 
 	resp, err := client.Secrets.PKIIssuerRevoke(
 		context.Background(),
@@ -13161,7 +13325,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13173,12 +13338,12 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	request := schema.NewPKIIssuerSignIntermediateRequestWithDefaults()
 
-	pKIIssuerSignIntermediateRequest := NewPKIIssuerSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerSignIntermediate(
 		context.Background(),
 		issuerRef,
-		pKIIssuerSignIntermediateRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13228,7 +13393,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13240,12 +13406,12 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	request := schema.NewPKIIssuerSignRevocationListRequestWithDefaults()
 
-	pKIIssuerSignRevocationListRequest := NewPKIIssuerSignRevocationListRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerSignRevocationList(
 		context.Background(),
 		issuerRef,
-		pKIIssuerSignRevocationListRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13295,7 +13461,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13308,13 +13475,13 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
+	request := schema.NewPKIIssuerSignRoleRequestWithDefaults()
 
-	pKIIssuerSignRoleRequest := NewPKIIssuerSignRoleRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerSignRole(
 		context.Background(),
 		issuerRef,
 		role,
-		pKIIssuerSignRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13366,7 +13533,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13378,12 +13546,12 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	request := schema.NewPKIIssuerSignSelfIssuedRequestWithDefaults()
 
-	pKIIssuerSignSelfIssuedRequest := NewPKIIssuerSignSelfIssuedRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerSignSelfIssued(
 		context.Background(),
 		issuerRef,
-		pKIIssuerSignSelfIssuedRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13433,7 +13601,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13445,12 +13614,12 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	request := schema.NewPKIIssuerSignVerbatimRequestWithDefaults()
 
-	pKIIssuerSignVerbatimRequest := NewPKIIssuerSignVerbatimRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerSignVerbatim(
 		context.Background(),
 		issuerRef,
-		pKIIssuerSignVerbatimRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13500,7 +13669,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13513,13 +13683,13 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
+	request := schema.NewPKIIssuerSignVerbatimRoleRequestWithDefaults()
 
-	pKIIssuerSignVerbatimRoleRequest := NewPKIIssuerSignVerbatimRoleRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuerSignVerbatimRole(
 		context.Background(),
 		issuerRef,
 		role,
-		pKIIssuerSignVerbatimRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13571,7 +13741,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13583,12 +13754,12 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	request := schema.NewPKIIssuersGenerateIntermediateRequestWithDefaults()
 
-	pKIIssuersGenerateIntermediateRequest := NewPKIIssuersGenerateIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuersGenerateIntermediate(
 		context.Background(),
 		exported,
-		pKIIssuersGenerateIntermediateRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13638,7 +13809,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -13650,12 +13822,12 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	request := schema.NewPKIIssuersGenerateRootRequestWithDefaults()
 
-	pKIIssuersGenerateRootRequest := NewPKIIssuersGenerateRootRequestWithDefaults()
 	resp, err := client.Secrets.PKIIssuersGenerateRoot(
 		context.Background(),
 		exported,
-		pKIIssuersGenerateRootRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13705,7 +13877,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13717,10 +13889,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.PKIIssuersList(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13768,7 +13939,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13780,10 +13951,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.PKIListCerts(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13831,7 +14001,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13843,10 +14013,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.PKIListCertsRevoked(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13894,7 +14063,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13906,10 +14075,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.PKIListKeys(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -13957,7 +14125,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -13969,10 +14137,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.PKIListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -14020,7 +14187,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14030,6 +14197,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadAutoTidyConfig(
@@ -14080,7 +14248,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14090,6 +14258,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCA(
@@ -14140,7 +14309,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14150,6 +14319,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCAChain(
@@ -14200,7 +14370,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14210,6 +14380,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCAPem(
@@ -14260,7 +14431,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14270,6 +14441,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCRL(
@@ -14320,7 +14492,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14330,6 +14502,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCRLConfig(
@@ -14380,7 +14553,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14390,6 +14563,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCRLRotate(
@@ -14440,7 +14614,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14450,6 +14624,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCRLRotateDelta(
@@ -14500,7 +14675,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14512,6 +14687,7 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+
 
 	resp, err := client.Secrets.PKIReadCert(
 		context.Background(),
@@ -14564,7 +14740,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14574,6 +14750,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadCertCAChain(
@@ -14624,7 +14801,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14636,6 +14813,7 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+
 
 	resp, err := client.Secrets.PKIReadCertRaw(
 		context.Background(),
@@ -14688,7 +14866,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14700,6 +14878,7 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+
 
 	resp, err := client.Secrets.PKIReadCertRawPem(
 		context.Background(),
@@ -14752,7 +14931,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14762,6 +14941,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadClusterConfig(
@@ -14812,7 +14992,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14822,6 +15002,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadDeltaCRL(
@@ -14872,7 +15053,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14882,6 +15063,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadIssuersConfig(
@@ -14932,7 +15114,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -14944,6 +15126,7 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
+
 
 	resp, err := client.Secrets.PKIReadKey(
 		context.Background(),
@@ -14996,7 +15179,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15006,6 +15189,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadKeysConfig(
@@ -15056,7 +15240,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15068,6 +15252,7 @@ func main() {
 	}
 
 	req := "req_example" // string | base-64 encoded ocsp request
+
 
 	resp, err := client.Secrets.PKIReadOCSPReq(
 		context.Background(),
@@ -15120,7 +15305,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15132,6 +15317,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.PKIReadRole(
 		context.Background(),
@@ -15184,7 +15370,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15194,6 +15380,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIReadURLConfig(
@@ -15244,7 +15431,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15255,11 +15443,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIReplaceRootRequestWithDefaults()
 
-	pKIReplaceRootRequest := NewPKIReplaceRootRequestWithDefaults()
 	resp, err := client.Secrets.PKIReplaceRoot(
 		context.Background(),
-		pKIReplaceRootRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15307,7 +15495,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15318,11 +15507,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIRevokeRequestWithDefaults()
 
-	pKIRevokeRequest := NewPKIRevokeRequestWithDefaults()
 	resp, err := client.Secrets.PKIRevoke(
 		context.Background(),
-		pKIRevokeRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15370,7 +15559,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15381,11 +15571,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIRevokeWithKeyRequestWithDefaults()
 
-	pKIRevokeWithKeyRequest := NewPKIRevokeWithKeyRequestWithDefaults()
 	resp, err := client.Secrets.PKIRevokeWithKey(
 		context.Background(),
-		pKIRevokeWithKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15433,7 +15623,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15444,11 +15635,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIRootSignIntermediateRequestWithDefaults()
 
-	pKIRootSignIntermediateRequest := NewPKIRootSignIntermediateRequestWithDefaults()
 	resp, err := client.Secrets.PKIRootSignIntermediate(
 		context.Background(),
-		pKIRootSignIntermediateRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15496,7 +15687,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15507,11 +15699,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIRootSignSelfIssuedRequestWithDefaults()
 
-	pKIRootSignSelfIssuedRequest := NewPKIRootSignSelfIssuedRequestWithDefaults()
 	resp, err := client.Secrets.PKIRootSignSelfIssued(
 		context.Background(),
-		pKIRootSignSelfIssuedRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15559,7 +15751,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15571,12 +15764,12 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	request := schema.NewPKIRotateRootRequestWithDefaults()
 
-	pKIRotateRootRequest := NewPKIRotateRootRequestWithDefaults()
 	resp, err := client.Secrets.PKIRotateRoot(
 		context.Background(),
 		exported,
-		pKIRotateRootRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15626,7 +15819,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15638,12 +15832,12 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
+	request := schema.NewPKISignRoleRequestWithDefaults()
 
-	pKISignRoleRequest := NewPKISignRoleRequestWithDefaults()
 	resp, err := client.Secrets.PKISignRole(
 		context.Background(),
 		role,
-		pKISignRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15693,7 +15887,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15704,11 +15899,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKISignVerbatimRequestWithDefaults()
 
-	pKISignVerbatimRequest := NewPKISignVerbatimRequestWithDefaults()
 	resp, err := client.Secrets.PKISignVerbatim(
 		context.Background(),
-		pKISignVerbatimRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15756,7 +15951,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15768,12 +15964,12 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
+	request := schema.NewPKISignVerbatimRoleRequestWithDefaults()
 
-	pKISignVerbatimRoleRequest := NewPKISignVerbatimRoleRequestWithDefaults()
 	resp, err := client.Secrets.PKISignVerbatimRole(
 		context.Background(),
 		role,
-		pKISignVerbatimRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15823,7 +16019,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -15834,11 +16031,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKITidyRequestWithDefaults()
 
-	pKITidyRequest := NewPKITidyRequestWithDefaults()
 	resp, err := client.Secrets.PKITidy(
 		context.Background(),
-		pKITidyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -15886,7 +16083,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15896,6 +16093,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKITidyCancel(
@@ -15946,7 +16144,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -15956,6 +16154,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKITidyStatus(
@@ -16006,7 +16205,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16017,11 +16217,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteAutoTidyConfigRequestWithDefaults()
 
-	pKIWriteAutoTidyConfigRequest := NewPKIWriteAutoTidyConfigRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteAutoTidyConfig(
 		context.Background(),
-		pKIWriteAutoTidyConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16069,7 +16269,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16080,11 +16281,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteCAConfigRequestWithDefaults()
 
-	pKIWriteCAConfigRequest := NewPKIWriteCAConfigRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteCAConfig(
 		context.Background(),
-		pKIWriteCAConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16132,7 +16333,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16143,11 +16345,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteCRLConfigRequestWithDefaults()
 
-	pKIWriteCRLConfigRequest := NewPKIWriteCRLConfigRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteCRLConfig(
 		context.Background(),
-		pKIWriteCRLConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16195,7 +16397,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16206,11 +16409,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteCertsRequestWithDefaults()
 
-	pKIWriteCertsRequest := NewPKIWriteCertsRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteCerts(
 		context.Background(),
-		pKIWriteCertsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16258,7 +16461,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16269,11 +16473,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteClusterConfigRequestWithDefaults()
 
-	pKIWriteClusterConfigRequest := NewPKIWriteClusterConfigRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteClusterConfig(
 		context.Background(),
-		pKIWriteClusterConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16321,7 +16525,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16332,11 +16537,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteIntermediateCrossSignRequestWithDefaults()
 
-	pKIWriteIntermediateCrossSignRequest := NewPKIWriteIntermediateCrossSignRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteIntermediateCrossSign(
 		context.Background(),
-		pKIWriteIntermediateCrossSignRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16384,7 +16589,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16396,12 +16602,12 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	request := schema.NewPKIWriteIntermediateGenerateRequestWithDefaults()
 
-	pKIWriteIntermediateGenerateRequest := NewPKIWriteIntermediateGenerateRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteIntermediateGenerate(
 		context.Background(),
 		exported,
-		pKIWriteIntermediateGenerateRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16451,7 +16657,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16462,11 +16669,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteIntermediateSetSignedRequestWithDefaults()
 
-	pKIWriteIntermediateSetSignedRequest := NewPKIWriteIntermediateSetSignedRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteIntermediateSetSigned(
 		context.Background(),
-		pKIWriteIntermediateSetSignedRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16514,7 +16721,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16525,11 +16733,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteInternalExportedRequestWithDefaults()
 
-	pKIWriteInternalExportedRequest := NewPKIWriteInternalExportedRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteInternalExported(
 		context.Background(),
-		pKIWriteInternalExportedRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16577,7 +16785,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16589,12 +16798,12 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
+	request := schema.NewPKIWriteIssueRoleRequestWithDefaults()
 
-	pKIWriteIssueRoleRequest := NewPKIWriteIssueRoleRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteIssueRole(
 		context.Background(),
 		role,
-		pKIWriteIssueRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16644,7 +16853,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16655,11 +16865,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteIssuersConfigRequestWithDefaults()
 
-	pKIWriteIssuersConfigRequest := NewPKIWriteIssuersConfigRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteIssuersConfig(
 		context.Background(),
-		pKIWriteIssuersConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16707,7 +16917,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16718,11 +16929,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteKMSRequestWithDefaults()
 
-	pKIWriteKMSRequest := NewPKIWriteKMSRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteKMS(
 		context.Background(),
-		pKIWriteKMSRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16770,7 +16981,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16782,12 +16994,12 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
+	request := schema.NewPKIWriteKeyRequestWithDefaults()
 
-	pKIWriteKeyRequest := NewPKIWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteKey(
 		context.Background(),
 		keyRef,
-		pKIWriteKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16837,7 +17049,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16848,11 +17061,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteKeysConfigRequestWithDefaults()
 
-	pKIWriteKeysConfigRequest := NewPKIWriteKeysConfigRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteKeysConfig(
 		context.Background(),
-		pKIWriteKeysConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -16900,7 +17113,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -16910,6 +17123,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PKIWriteOCSP(
@@ -16960,7 +17174,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -16972,12 +17187,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewPKIWriteRoleRequestWithDefaults()
 
-	pKIWriteRoleRequest := NewPKIWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteRole(
 		context.Background(),
 		name,
-		pKIWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -17027,7 +17242,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -17038,11 +17254,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPKIWriteURLConfigRequestWithDefaults()
 
-	pKIWriteURLConfigRequest := NewPKIWriteURLConfigRequestWithDefaults()
 	resp, err := client.Secrets.PKIWriteURLConfig(
 		context.Background(),
-		pKIWriteURLConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -17090,7 +17306,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17102,6 +17318,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+
 
 	resp, err := client.Secrets.PkiDeleteIssuerRefDerPem(
 		context.Background(),
@@ -17154,7 +17371,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17164,6 +17381,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PkiDeleteJson(
@@ -17214,7 +17432,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17224,6 +17442,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PkiReadDelta(
@@ -17274,7 +17493,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17284,6 +17503,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PkiReadDeltaPem(
@@ -17334,7 +17554,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17344,6 +17564,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PkiReadDer(
@@ -17394,7 +17615,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17406,6 +17627,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+
 
 	resp, err := client.Secrets.PkiReadIssuerRefCrlPemDerDeltaPem(
 		context.Background(),
@@ -17458,7 +17680,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17470,6 +17692,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+
 
 	resp, err := client.Secrets.PkiReadIssuerRefDerPem(
 		context.Background(),
@@ -17522,7 +17745,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17532,6 +17755,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PkiReadJson(
@@ -17582,7 +17806,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17592,6 +17816,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.PkiReadPem(
@@ -17642,7 +17867,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -17654,12 +17880,12 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	request := schema.NewPkiWriteIssuerRefDerPemRequestWithDefaults()
 
-	pkiWriteIssuerRefDerPemRequest := NewPkiWriteIssuerRefDerPemRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteIssuerRefDerPem(
 		context.Background(),
 		issuerRef,
-		pkiWriteIssuerRefDerPemRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -17709,7 +17935,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -17720,11 +17947,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPkiWriteJsonRequestWithDefaults()
 
-	pkiWriteJsonRequest := NewPkiWriteJsonRequestWithDefaults()
 	resp, err := client.Secrets.PkiWriteJson(
 		context.Background(),
-		pkiWriteJsonRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -17772,7 +17999,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17784,6 +18011,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.RabbitMQDeleteRole(
 		context.Background(),
@@ -17836,7 +18064,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17848,10 +18076,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.RabbitMQListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -17899,7 +18126,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17911,6 +18138,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.RabbitMQReadCredentials(
 		context.Background(),
@@ -17963,7 +18191,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -17973,6 +18201,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.RabbitMQReadLeaseConfig(
@@ -18023,7 +18252,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18035,6 +18264,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+
 
 	resp, err := client.Secrets.RabbitMQReadRole(
 		context.Background(),
@@ -18087,7 +18317,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -18098,11 +18329,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewRabbitMQWriteConnectionConfigRequestWithDefaults()
 
-	rabbitMQWriteConnectionConfigRequest := NewRabbitMQWriteConnectionConfigRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMQWriteConnectionConfig(
 		context.Background(),
-		rabbitMQWriteConnectionConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -18150,7 +18381,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -18161,11 +18393,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewRabbitMQWriteLeaseConfigRequestWithDefaults()
 
-	rabbitMQWriteLeaseConfigRequest := NewRabbitMQWriteLeaseConfigRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMQWriteLeaseConfig(
 		context.Background(),
-		rabbitMQWriteLeaseConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -18213,7 +18445,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -18225,12 +18458,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
+	request := schema.NewRabbitMQWriteRoleRequestWithDefaults()
 
-	rabbitMQWriteRoleRequest := NewRabbitMQWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.RabbitMQWriteRole(
 		context.Background(),
 		name,
-		rabbitMQWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -18280,7 +18513,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18290,6 +18523,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.SSHDeleteCAConfig(
@@ -18340,7 +18574,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18352,6 +18586,7 @@ func main() {
 	}
 
 	keyName := "keyName_example" // string | [Required] Name of the key
+
 
 	resp, err := client.Secrets.SSHDeleteKeys(
 		context.Background(),
@@ -18404,7 +18639,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18416,6 +18651,7 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
+
 
 	resp, err := client.Secrets.SSHDeleteRole(
 		context.Background(),
@@ -18468,7 +18704,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18478,6 +18714,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.SSHDeleteZeroAddressConfig(
@@ -18528,7 +18765,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18540,10 +18777,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.SSHListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -18591,7 +18827,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -18602,11 +18839,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewSSHLookupRequestWithDefaults()
 
-	sSHLookupRequest := NewSSHLookupRequestWithDefaults()
 	resp, err := client.Secrets.SSHLookup(
 		context.Background(),
-		sSHLookupRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -18654,7 +18891,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18664,6 +18901,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.SSHReadCAConfig(
@@ -18714,7 +18952,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18724,6 +18962,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.SSHReadPublicKey(
@@ -18774,7 +19013,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18786,6 +19025,7 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
+
 
 	resp, err := client.Secrets.SSHReadRole(
 		context.Background(),
@@ -18838,7 +19078,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -18848,6 +19088,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.SSHReadZeroAddressConfig(
@@ -18898,7 +19139,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -18910,12 +19152,12 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
+	request := schema.NewSSHSignRequestWithDefaults()
 
-	sSHSignRequest := NewSSHSignRequestWithDefaults()
 	resp, err := client.Secrets.SSHSign(
 		context.Background(),
 		role,
-		sSHSignRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -18965,7 +19207,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -18976,11 +19219,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewSSHVerifyRequestWithDefaults()
 
-	sSHVerifyRequest := NewSSHVerifyRequestWithDefaults()
 	resp, err := client.Secrets.SSHVerify(
 		context.Background(),
-		sSHVerifyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19028,7 +19271,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19039,11 +19283,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewSSHWriteCAConfigRequestWithDefaults()
 
-	sSHWriteCAConfigRequest := NewSSHWriteCAConfigRequestWithDefaults()
 	resp, err := client.Secrets.SSHWriteCAConfig(
 		context.Background(),
-		sSHWriteCAConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19091,7 +19335,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19103,12 +19348,12 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required] Name of the role
+	request := schema.NewSSHWriteCredentialsRequestWithDefaults()
 
-	sSHWriteCredentialsRequest := NewSSHWriteCredentialsRequestWithDefaults()
 	resp, err := client.Secrets.SSHWriteCredentials(
 		context.Background(),
 		role,
-		sSHWriteCredentialsRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19158,7 +19403,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19170,12 +19416,12 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
+	request := schema.NewSSHWriteIssueRequestWithDefaults()
 
-	sSHWriteIssueRequest := NewSSHWriteIssueRequestWithDefaults()
 	resp, err := client.Secrets.SSHWriteIssue(
 		context.Background(),
 		role,
-		sSHWriteIssueRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19225,7 +19471,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19237,12 +19484,12 @@ func main() {
 	}
 
 	keyName := "keyName_example" // string | [Required] Name of the key
+	request := schema.NewSSHWriteKeysRequestWithDefaults()
 
-	sSHWriteKeysRequest := NewSSHWriteKeysRequestWithDefaults()
 	resp, err := client.Secrets.SSHWriteKeys(
 		context.Background(),
 		keyName,
-		sSHWriteKeysRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19292,7 +19539,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19304,12 +19552,12 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
+	request := schema.NewSSHWriteRoleRequestWithDefaults()
 
-	sSHWriteRoleRequest := NewSSHWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.SSHWriteRole(
 		context.Background(),
 		role,
-		sSHWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19359,7 +19607,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19370,11 +19619,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewSSHWriteZeroAddressConfigRequestWithDefaults()
 
-	sSHWriteZeroAddressConfigRequest := NewSSHWriteZeroAddressConfigRequestWithDefaults()
 	resp, err := client.Secrets.SSHWriteZeroAddressConfig(
 		context.Background(),
-		sSHWriteZeroAddressConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19422,7 +19671,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -19434,6 +19683,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+
 
 	resp, err := client.Secrets.TOTPDeleteKey(
 		context.Background(),
@@ -19486,7 +19736,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -19498,10 +19748,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.TOTPListKeys(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19549,7 +19798,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -19561,6 +19810,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+
 
 	resp, err := client.Secrets.TOTPReadCode(
 		context.Background(),
@@ -19613,7 +19863,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -19625,6 +19875,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+
 
 	resp, err := client.Secrets.TOTPReadKey(
 		context.Background(),
@@ -19677,7 +19928,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19689,12 +19941,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+	request := schema.NewTOTPWriteCodeRequestWithDefaults()
 
-	tOTPWriteCodeRequest := NewTOTPWriteCodeRequestWithDefaults()
 	resp, err := client.Secrets.TOTPWriteCode(
 		context.Background(),
 		name,
-		tOTPWriteCodeRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19744,7 +19996,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -19756,12 +20009,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
+	request := schema.NewTOTPWriteKeyRequestWithDefaults()
 
-	tOTPWriteKeyRequest := NewTOTPWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.TOTPWriteKey(
 		context.Background(),
 		name,
-		tOTPWriteKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19811,7 +20064,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -19821,6 +20074,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.TerraformDeleteConfig(
@@ -19871,7 +20125,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -19883,6 +20137,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.TerraformDeleteRole(
 		context.Background(),
@@ -19935,7 +20190,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -19947,10 +20202,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.TerraformListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -19998,7 +20252,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20008,6 +20262,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.TerraformReadConfig(
@@ -20058,7 +20313,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20070,6 +20325,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.TerraformReadCredentials(
 		context.Background(),
@@ -20122,7 +20378,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20134,6 +20390,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.TerraformReadRole(
 		context.Background(),
@@ -20186,7 +20443,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20198,6 +20455,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the team or organization role
+
 
 	resp, err := client.Secrets.TerraformRotateRole(
 		context.Background(),
@@ -20250,7 +20508,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -20261,11 +20520,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewTerraformWriteConfigRequestWithDefaults()
 
-	terraformWriteConfigRequest := NewTerraformWriteConfigRequestWithDefaults()
 	resp, err := client.Secrets.TerraformWriteConfig(
 		context.Background(),
-		terraformWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -20313,7 +20572,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20325,6 +20584,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Secrets.TerraformWriteCredentials(
 		context.Background(),
@@ -20377,7 +20637,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -20389,12 +20650,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewTerraformWriteRoleRequestWithDefaults()
 
-	terraformWriteRoleRequest := NewTerraformWriteRoleRequestWithDefaults()
 	resp, err := client.Secrets.TerraformWriteRole(
 		context.Background(),
 		name,
-		terraformWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -20444,7 +20705,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20456,6 +20717,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+
 
 	resp, err := client.Secrets.TransitBackup(
 		context.Background(),
@@ -20508,7 +20770,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -20520,12 +20783,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewTransitDecryptRequestWithDefaults()
 
-	transitDecryptRequest := NewTransitDecryptRequestWithDefaults()
 	resp, err := client.Secrets.TransitDecrypt(
 		context.Background(),
 		name,
-		transitDecryptRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -20575,7 +20838,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20587,6 +20850,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+
 
 	resp, err := client.Secrets.TransitDeleteKey(
 		context.Background(),
@@ -20639,7 +20903,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -20651,12 +20916,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewTransitEncryptRequestWithDefaults()
 
-	transitEncryptRequest := NewTransitEncryptRequestWithDefaults()
 	resp, err := client.Secrets.TransitEncrypt(
 		context.Background(),
 		name,
-		transitEncryptRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -20706,7 +20971,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20719,6 +20984,7 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
+
 
 	resp, err := client.Secrets.TransitExport(
 		context.Background(),
@@ -20774,7 +21040,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -20788,6 +21054,7 @@ func main() {
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 	version := "version_example" // string | Version of the key
+
 
 	resp, err := client.Secrets.TransitExportVersion(
 		context.Background(),
@@ -20846,7 +21113,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -20859,13 +21127,13 @@ func main() {
 
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
+	request := schema.NewTransitGenerateDataKeyRequestWithDefaults()
 
-	transitGenerateDataKeyRequest := NewTransitGenerateDataKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateDataKey(
 		context.Background(),
 		name,
 		plaintext,
-		transitGenerateDataKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -20917,7 +21185,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -20929,12 +21198,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use for the HMAC function
+	request := schema.NewTransitGenerateHMACRequestWithDefaults()
 
-	transitGenerateHMACRequest := NewTransitGenerateHMACRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateHMAC(
 		context.Background(),
 		name,
-		transitGenerateHMACRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -20984,7 +21253,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -20997,13 +21267,13 @@ func main() {
 
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+	request := schema.NewTransitGenerateHMACWithAlgorithmRequestWithDefaults()
 
-	transitGenerateHMACWithAlgorithmRequest := NewTransitGenerateHMACWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateHMACWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		transitGenerateHMACWithAlgorithmRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21055,7 +21325,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21066,11 +21337,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewTransitGenerateRandomRequestWithDefaults()
 
-	transitGenerateRandomRequest := NewTransitGenerateRandomRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
-		transitGenerateRandomRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21118,7 +21389,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21130,12 +21402,12 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	request := schema.NewTransitGenerateRandomSourceRequestWithDefaults()
 
-	transitGenerateRandomSourceRequest := NewTransitGenerateRandomSourceRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomSource(
 		context.Background(),
 		source,
-		transitGenerateRandomSourceRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21185,7 +21457,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21198,13 +21471,13 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	request := schema.NewTransitGenerateRandomSourceBytesRequestWithDefaults()
 
-	transitGenerateRandomSourceBytesRequest := NewTransitGenerateRandomSourceBytesRequestWithDefaults()
 	resp, err := client.Secrets.TransitGenerateRandomSourceBytes(
 		context.Background(),
 		source,
 		urlbytes,
-		transitGenerateRandomSourceBytesRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21256,7 +21529,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21267,11 +21541,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewTransitHashRequestWithDefaults()
 
-	transitHashRequest := NewTransitHashRequestWithDefaults()
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
-		transitHashRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21319,7 +21593,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21331,12 +21606,12 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+	request := schema.NewTransitHashWithAlgorithmRequestWithDefaults()
 
-	transitHashWithAlgorithmRequest := NewTransitHashWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
-		transitHashWithAlgorithmRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21386,7 +21661,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21398,12 +21674,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
+	request := schema.NewTransitImportKeyRequestWithDefaults()
 
-	transitImportKeyRequest := NewTransitImportKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitImportKey(
 		context.Background(),
 		name,
-		transitImportKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21453,7 +21729,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21465,12 +21742,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
+	request := schema.NewTransitImportKeyVersionRequestWithDefaults()
 
-	transitImportKeyVersionRequest := NewTransitImportKeyVersionRequestWithDefaults()
 	resp, err := client.Secrets.TransitImportKeyVersion(
 		context.Background(),
 		name,
-		transitImportKeyVersionRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21520,7 +21797,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -21532,10 +21809,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Secrets.TransitListKeys(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21583,7 +21859,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -21593,6 +21869,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.TransitReadCacheConfig(
@@ -21643,7 +21920,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -21653,6 +21930,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.TransitReadConfigKeys(
@@ -21703,7 +21981,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -21715,6 +21993,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+
 
 	resp, err := client.Secrets.TransitReadKey(
 		context.Background(),
@@ -21767,7 +22046,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -21777,6 +22056,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Secrets.TransitReadWrappingKey(
@@ -21827,7 +22107,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21838,11 +22119,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewTransitRestoreRequestWithDefaults()
 
-	transitRestoreRequest := NewTransitRestoreRequestWithDefaults()
 	resp, err := client.Secrets.TransitRestore(
 		context.Background(),
-		transitRestoreRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21890,7 +22171,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21902,12 +22184,12 @@ func main() {
 	}
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
+	request := schema.NewTransitRestoreKeyRequestWithDefaults()
 
-	transitRestoreKeyRequest := NewTransitRestoreKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
 		name,
-		transitRestoreKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -21957,7 +22239,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -21969,12 +22252,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewTransitRewrapRequestWithDefaults()
 
-	transitRewrapRequest := NewTransitRewrapRequestWithDefaults()
 	resp, err := client.Secrets.TransitRewrap(
 		context.Background(),
 		name,
-		transitRewrapRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22024,7 +22307,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -22036,6 +22319,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+
 
 	resp, err := client.Secrets.TransitRotateKey(
 		context.Background(),
@@ -22088,7 +22372,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22100,12 +22385,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
+	request := schema.NewTransitSignRequestWithDefaults()
 
-	transitSignRequest := NewTransitSignRequestWithDefaults()
 	resp, err := client.Secrets.TransitSign(
 		context.Background(),
 		name,
-		transitSignRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22155,7 +22440,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22168,13 +22454,13 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
+	request := schema.NewTransitSignWithAlgorithmRequestWithDefaults()
 
-	transitSignWithAlgorithmRequest := NewTransitSignWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitSignWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		transitSignWithAlgorithmRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22226,7 +22512,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22238,12 +22525,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewTransitTrimKeyRequestWithDefaults()
 
-	transitTrimKeyRequest := NewTransitTrimKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitTrimKey(
 		context.Background(),
 		name,
-		transitTrimKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22293,7 +22580,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22305,12 +22593,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
+	request := schema.NewTransitVerifyRequestWithDefaults()
 
-	transitVerifyRequest := NewTransitVerifyRequestWithDefaults()
 	resp, err := client.Secrets.TransitVerify(
 		context.Background(),
 		name,
-		transitVerifyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22360,7 +22648,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22373,13 +22662,13 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
+	request := schema.NewTransitVerifyWithAlgorithmRequestWithDefaults()
 
-	transitVerifyWithAlgorithmRequest := NewTransitVerifyWithAlgorithmRequestWithDefaults()
 	resp, err := client.Secrets.TransitVerifyWithAlgorithm(
 		context.Background(),
 		name,
 		urlalgorithm,
-		transitVerifyWithAlgorithmRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22431,7 +22720,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22442,11 +22732,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewTransitWriteCacheConfigRequestWithDefaults()
 
-	transitWriteCacheConfigRequest := NewTransitWriteCacheConfigRequestWithDefaults()
 	resp, err := client.Secrets.TransitWriteCacheConfig(
 		context.Background(),
-		transitWriteCacheConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22494,7 +22784,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22505,11 +22796,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewTransitWriteConfigKeysRequestWithDefaults()
 
-	transitWriteConfigKeysRequest := NewTransitWriteConfigKeysRequestWithDefaults()
 	resp, err := client.Secrets.TransitWriteConfigKeys(
 		context.Background(),
-		transitWriteConfigKeysRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22557,7 +22848,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22569,12 +22861,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewTransitWriteKeyRequestWithDefaults()
 
-	transitWriteKeyRequest := NewTransitWriteKeyRequestWithDefaults()
 	resp, err := client.Secrets.TransitWriteKey(
 		context.Background(),
 		name,
-		transitWriteKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22624,7 +22916,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22636,12 +22929,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewTransitWriteKeyConfigRequestWithDefaults()
 
-	transitWriteKeyConfigRequest := NewTransitWriteKeyConfigRequestWithDefaults()
 	resp, err := client.Secrets.TransitWriteKeyConfig(
 		context.Background(),
 		name,
-		transitWriteKeyConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -22691,7 +22984,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -22703,12 +22997,12 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	request := schema.NewTransitWriteRandomUrlbytesRequestWithDefaults()
 
-	transitWriteRandomUrlbytesRequest := NewTransitWriteRandomUrlbytesRequestWithDefaults()
 	resp, err := client.Secrets.TransitWriteRandomUrlbytes(
 		context.Background(),
 		urlbytes,
-		transitWriteRandomUrlbytesRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

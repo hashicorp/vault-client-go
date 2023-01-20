@@ -28,7 +28,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"{{#bodyParams}}{{#-first}}
+	"github.com/hashicorp/vault-client-go/schema"{{/-first}}{{/bodyParams}}
 )
 
 func main() {
@@ -40,12 +41,15 @@ func main() {
 	}
 {{#allParams}}{{#isPathParam}}{{#required}}
 	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}{{/isPathParam}}{{/allParams}}
-{{#allParams}}{{^isPathParam}}
-	{{paramName}} := New{{{dataType}}}WithDefaults(){{/isPathParam}}{{/allParams}}
+{{#bodyParams}}
+	request := schema.New{{{dataType}}}WithDefaults(){{/bodyParams}}
+{{#allParams}}{{#isQueryParam}}{{^required}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}{{/isQueryParam}}{{/allParams}}
 	resp, err := client.{{classname}}.{{operationId}}(
 		context.Background(),{{#pathParams}}{{#required}}
-		{{paramName}},{{/required}}{{/pathParams}}{{#allParams}}{{^isPathParam}}
-		{{paramName}},{{/isPathParam}}{{/allParams}}
+		{{paramName}},{{/required}}{{/pathParams}}{{#bodyParams}}
+		request,{{/bodyParams}}{{#queryParams}}{{^required}}
+		{{paramName}},{{/required}}{{/queryParams}}
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

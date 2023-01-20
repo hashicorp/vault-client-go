@@ -32,15 +32,19 @@ type {{classname}} struct {
 {{/description}}
 {{/required}}
 {{/allParams}}
-func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#bodyParams}}, request schema.{{{dataType}}}{{/bodyParams}}, options ...RequestOption) (*Response[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
-	modifiers, err := requestOptionsToRequestModifiers(options)
+func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#bodyParams}}, request schema.{{{dataType}}}{{/bodyParams}}{{#queryParams}}{{^required}}, {{paramName}} {{{dataType}}}{{/required}}{{/queryParams}}, options ...RequestOption) (*Response[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
 	}
 
 	requestPath := "/v1{{{path}}}"{{#pathParams}}{{^required}}
-	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(modifiers.mountPathOr({{#defaultValue}}{{{.}}}{{/defaultValue}})), -1){{/required}}{{/pathParams}}{{#pathParams}}{{#required}}
+	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(requestModifiers.mountPathOr({{#defaultValue}}{{{.}}}{{/defaultValue}})), -1){{/required}}{{/pathParams}}{{#pathParams}}{{#required}}
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/required}}{{/pathParams}}
+
+	requestQueryParameters := make(url.Values){{#queryParams}}{{#required}}
+	requestQueryParameters.Set("{{paramName}}", "true"){{/required}}{{^required}}
+	requestQueryParameters.Set("{{paramName}}", url.QueryEscape({{paramName}})){{/required}}{{/queryParams}}
 
 {{#bodyParams}}
 	return sendStructuredRequestParseResponse[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}](
@@ -49,8 +53,8 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#requ
 		http.Method{{httpMethod}},
 		requestPath,
 	 	request,
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
+		requestQueryParameters,
+		requestModifiers,
 	)
 {{/bodyParams}}
 {{^bodyParams}}
@@ -60,8 +64,8 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#requ
 		http.Method{{httpMethod}},
 		requestPath,
 		nil,       // request body
-		nil,       // request query parameters
-		modifiers, // request modifiers (headers & callbacks)
+		requestQueryParameters,
+		requestModifiers,
 	)
 {{/bodyParams}}
 }

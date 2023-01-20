@@ -537,7 +537,6 @@ func (a *System) DeleteRekeyVerify(ctx context.Context, options ...RequestOption
 }
 
 // ListConfigUIHeaders Return a list of configured UI headers.
-// list: Must be set to &#x60;true&#x60;
 func (a *System) ListConfigUIHeaders(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -562,7 +561,6 @@ func (a *System) ListConfigUIHeaders(ctx context.Context, options ...RequestOpti
 
 // ListLeasesLookupPrefix Returns a list of lease ids.
 // prefix: The path to list leases under. Example: \&quot;aws/creds/deploy\&quot;
-// list: Must be set to &#x60;true&#x60;
 func (a *System) ListLeasesLookupPrefix(ctx context.Context, prefix string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -588,7 +586,6 @@ func (a *System) ListLeasesLookupPrefix(ctx context.Context, prefix string, opti
 
 // ListPluginsCatalogByType List the plugins in the catalog.
 // type_: The type of the plugin, may be auth, secret, or database
-// list: Must be set to &#x60;true&#x60;
 func (a *System) ListPluginsCatalogByType(ctx context.Context, type_ string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -613,7 +610,6 @@ func (a *System) ListPluginsCatalogByType(ctx context.Context, type_ string, opt
 }
 
 // ListPoliciesACL List the configured access control policies.
-// list: Must be set to &#x60;true&#x60;
 func (a *System) ListPoliciesACL(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -637,7 +633,6 @@ func (a *System) ListPoliciesACL(ctx context.Context, options ...RequestOption) 
 }
 
 // ListPoliciesPassword List the existing password policies.
-// list: Must be set to &#x60;true&#x60;
 func (a *System) ListPoliciesPassword(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -661,7 +656,6 @@ func (a *System) ListPoliciesPassword(ctx context.Context, options ...RequestOpt
 }
 
 // ListQuotasRateLimits
-// list: Must be set to &#x60;true&#x60;
 func (a *System) ListQuotasRateLimits(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -685,7 +679,6 @@ func (a *System) ListQuotasRateLimits(ctx context.Context, options ...RequestOpt
 }
 
 // ListVersionHistory Returns map of historical version change entries
-// list: Must be set to &#x60;true&#x60;
 func (a *System) ListVersionHistory(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -731,6 +724,8 @@ func (a *System) MFAValidate(ctx context.Context, request schema.MFAValidateRequ
 }
 
 // Monitor
+// logFormat: Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
+// logLevel: Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
 func (a *System) Monitor(ctx context.Context, logFormat string, logLevel string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1817,6 +1812,7 @@ func (a *System) ReadLoggers(ctx context.Context, options ...RequestOption) (*Re
 }
 
 // ReadMetrics Export the metrics aggregated for telemetry purpose.
+// format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
 func (a *System) ReadMetrics(ctx context.Context, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1958,6 +1954,7 @@ func (a *System) ReadPluginsCatalogByTypeByName(ctx context.Context, name string
 }
 
 // ReadPolicies List the configured access control policies.
+// list: Return a list if &#x60;true&#x60;
 func (a *System) ReadPolicies(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2123,6 +2120,7 @@ func (a *System) ReadQuotasRateLimit(ctx context.Context, name string, options .
 }
 
 // ReadRaw Read the value of the key at the given path.
+// list: Return a list if &#x60;true&#x60;
 func (a *System) ReadRaw(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2146,6 +2144,7 @@ func (a *System) ReadRaw(ctx context.Context, list string, options ...RequestOpt
 }
 
 // ReadRawPath Read the value of the key at the given path.
+// list: Return a list if &#x60;true&#x60;
 func (a *System) ReadRawPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2602,7 +2601,6 @@ func (a *System) SysDeletePluginsCatalogName(ctx context.Context, name string, o
 }
 
 // SysListLeasesLookup Returns a list of lease ids.
-// list: Must be set to &#x60;true&#x60;
 func (a *System) SysListLeasesLookup(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {

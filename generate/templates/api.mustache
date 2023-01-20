@@ -25,13 +25,27 @@ type {{classname}} struct {
 {{#notes}}
 // {{{notes}}}
 {{/notes}}
-{{#allParams}}
+{{#pathParams}}
 {{#required}}
 {{#description}}
 // {{paramName}}: {{.}}
 {{/description}}
 {{/required}}
-{{/allParams}}
+{{/pathParams}}
+{{#bodyParams}}
+{{#required}}
+{{#description}}
+// {{paramName}}: {{.}}
+{{/description}}
+{{/required}}
+{{/bodyParams}}
+{{#queryParams}}
+{{^required}}
+{{#description}}
+// {{paramName}}: {{.}}
+{{/description}}
+{{/required}}
+{{/queryParams}}
 func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}{{#required}}, {{paramName}} {{{dataType}}}{{/required}}{{/pathParams}}{{#bodyParams}}, request schema.{{{dataType}}}{{/bodyParams}}{{#queryParams}}{{^required}}, {{paramName}} {{{dataType}}}{{/required}}{{/queryParams}}, options ...RequestOption) (*Response[{{#returnType}}schema.{{{.}}}{{/returnType}}{{^returnType}}map[string]interface{}{{/returnType}}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {

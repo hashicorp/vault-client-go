@@ -190,7 +190,6 @@ func (a *Auth) AWSConfigDeleteSecurityTokenServiceAccount(ctx context.Context, a
 }
 
 // AWSConfigListCertificates
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSConfigListCertificates(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -215,7 +214,6 @@ func (a *Auth) AWSConfigListCertificates(ctx context.Context, options ...Request
 }
 
 // AWSConfigListSecurityTokenService
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSConfigListSecurityTokenService(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -764,7 +762,6 @@ func (a *Auth) AWSDeleteRoleTagDenyListFor(ctx context.Context, roleTag string, 
 }
 
 // AWSListAuthRoles
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -789,7 +786,6 @@ func (a *Auth) AWSListAuthRoles(ctx context.Context, options ...RequestOption) (
 }
 
 // AWSListAuthRoles2
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSListAuthRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -814,7 +810,6 @@ func (a *Auth) AWSListAuthRoles2(ctx context.Context, options ...RequestOption) 
 }
 
 // AWSListIdentityAccessList
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSListIdentityAccessList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -839,7 +834,6 @@ func (a *Auth) AWSListIdentityAccessList(ctx context.Context, options ...Request
 }
 
 // AWSListIdentityWhiteList
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSListIdentityWhiteList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -864,7 +858,6 @@ func (a *Auth) AWSListIdentityWhiteList(ctx context.Context, options ...RequestO
 }
 
 // AWSListRoleTagBlackList
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSListRoleTagBlackList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -889,7 +882,6 @@ func (a *Auth) AWSListRoleTagBlackList(ctx context.Context, options ...RequestOp
 }
 
 // AWSListRoleTagDenyList
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AWSListRoleTagDenyList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1279,7 +1271,6 @@ func (a *Auth) AliCloudDeleteAuthRole(ctx context.Context, role string, options 
 }
 
 // AliCloudListAuthRoles Lists all the roles that are registered with Vault.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1304,7 +1295,6 @@ func (a *Auth) AliCloudListAuthRoles(ctx context.Context, options ...RequestOpti
 }
 
 // AliCloudListAuthRoles2 Lists all the roles that are registered with Vault.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AliCloudListAuthRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1752,7 +1742,6 @@ func (a *Auth) AppRoleDeleteTokenTTL(ctx context.Context, roleName string, optio
 }
 
 // AppRoleListRoles
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (*Response[schema.AppRoleListRolesResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -1778,7 +1767,6 @@ func (a *Auth) AppRoleListRoles(ctx context.Context, options ...RequestOption) (
 
 // AppRoleListSecretID
 // roleName: Name of the role. Must be less than 4096 bytes.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AppRoleListSecretID(ctx context.Context, roleName string, options ...RequestOption) (*Response[schema.AppRoleListSecretIDResponse], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2723,7 +2711,6 @@ func (a *Auth) AzureDeleteAuthRole(ctx context.Context, name string, options ...
 }
 
 // AzureListAuthRoles
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) AzureListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -2986,7 +2973,6 @@ func (a *Auth) CertificatesDeleteCRL(ctx context.Context, name string, options .
 }
 
 // CertificatesList Manage trusted certificates used for authentication.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) CertificatesList(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3011,7 +2997,6 @@ func (a *Auth) CertificatesList(ctx context.Context, options ...RequestOption) (
 }
 
 // CertificatesListCRLs
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) CertificatesListCRLs(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3253,7 +3238,6 @@ func (a *Auth) CloudFoundryDeleteRole(ctx context.Context, role string, options 
 }
 
 // CloudFoundryListRoles
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) CloudFoundryListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3518,6 +3502,7 @@ func (a *Auth) GitHubReadMapTeam(ctx context.Context, key string, options ...Req
 }
 
 // GitHubReadMapTeams Read mappings for teams
+// list: Return a list if &#x60;true&#x60;
 func (a *Auth) GitHubReadMapTeams(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3567,6 +3552,7 @@ func (a *Auth) GitHubReadMapUser(ctx context.Context, key string, options ...Req
 }
 
 // GitHubReadMapUsers Read mappings for users
+// list: Return a list if &#x60;true&#x60;
 func (a *Auth) GitHubReadMapUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3689,7 +3675,6 @@ func (a *Auth) GoogleCloudDeleteRole(ctx context.Context, name string, options .
 }
 
 // GoogleCloudListRoles Lists all the roles that are registered with Vault.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3714,7 +3699,6 @@ func (a *Auth) GoogleCloudListRoles(ctx context.Context, options ...RequestOptio
 }
 
 // GoogleCloudListRoles2 Lists all the roles that are registered with Vault.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) GoogleCloudListRoles2(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -3934,7 +3918,6 @@ func (a *Auth) JWTDeleteRole(ctx context.Context, name string, options ...Reques
 
 // JWTListRoles Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) JWTListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4174,7 +4157,6 @@ func (a *Auth) KerberosDeleteGroup(ctx context.Context, name string, options ...
 }
 
 // KerberosListGroups
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) KerberosListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4389,7 +4371,6 @@ func (a *Auth) KubernetesDeleteAuthRole(ctx context.Context, name string, option
 }
 
 // KubernetesListAuthRoles Lists all the roles registered with the backend.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) KubernetesListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4583,7 +4564,6 @@ func (a *Auth) LDAPDeleteUser(ctx context.Context, name string, options ...Reque
 }
 
 // LDAPListGroups Manage additional groups for users allowed to authenticate.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) LDAPListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4608,7 +4588,6 @@ func (a *Auth) LDAPListGroups(ctx context.Context, options ...RequestOption) (*R
 }
 
 // LDAPListUsers Manage users allowed to authenticate.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) LDAPListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -4852,7 +4831,6 @@ func (a *Auth) OCIDeleteRole(ctx context.Context, role string, options ...Reques
 }
 
 // OCIListRoles Lists all the roles that are registered with Vault.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) OCIListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5024,7 +5002,6 @@ func (a *Auth) OIDCDeleteAuthRole(ctx context.Context, name string, options ...R
 
 // OIDCListAuthRoles Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) OIDCListAuthRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5289,7 +5266,6 @@ func (a *Auth) OktaDeleteUser(ctx context.Context, name string, options ...Reque
 }
 
 // OktaListGroups Manage users allowed to authenticate.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5314,7 +5290,6 @@ func (a *Auth) OktaListGroups(ctx context.Context, options ...RequestOption) (*R
 }
 
 // OktaListUsers Manage additional groups for users allowed to authenticate.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) OktaListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5560,7 +5535,6 @@ func (a *Auth) RadiusDeleteUser(ctx context.Context, name string, options ...Req
 }
 
 // RadiusListUsers Manage users allowed to authenticate.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) RadiusListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5754,7 +5728,6 @@ func (a *Auth) TokenDeleteRole(ctx context.Context, roleName string, options ...
 }
 
 // TokenListAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -5779,7 +5752,6 @@ func (a *Auth) TokenListAccessors(ctx context.Context, options ...RequestOption)
 }
 
 // TokenListRoles This endpoint lists configured roles.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) TokenListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6059,6 +6031,7 @@ func (a *Auth) TokenTidy(ctx context.Context, options ...RequestOption) (*Respon
 }
 
 // TokenWriteCreate The token create path is used to create new tokens.
+// format: Return json formatted output
 func (a *Auth) TokenWriteCreate(ctx context.Context, request schema.TokenWriteCreateRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6083,6 +6056,7 @@ func (a *Auth) TokenWriteCreate(ctx context.Context, request schema.TokenWriteCr
 }
 
 // TokenWriteCreateOrphan The token create path is used to create new orphan tokens.
+// format: Return json formatted output
 func (a *Auth) TokenWriteCreateOrphan(ctx context.Context, request schema.TokenWriteCreateOrphanRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6108,6 +6082,7 @@ func (a *Auth) TokenWriteCreateOrphan(ctx context.Context, request schema.TokenW
 
 // TokenWriteCreateWithRole This token create path is used to create new tokens adhering to the given role.
 // roleName: Name of the role
+// format: Return json formatted output
 func (a *Auth) TokenWriteCreateWithRole(ctx context.Context, roleName string, request schema.TokenWriteCreateWithRoleRequest, format string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -6252,7 +6227,6 @@ func (a *Auth) UserpassDeleteUser(ctx context.Context, username string, options 
 }
 
 // UserpassListUsers Manage users allowed to authenticate.
-// list: Must be set to &#x60;true&#x60;
 func (a *Auth) UserpassListUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {

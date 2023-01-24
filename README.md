@@ -468,5 +468,5 @@ The following features are coming soon:
 [doc-kubernetes]:        https://developer.hashicorp.com/vault/docs/auth/kubernetes
 [doc-aws]:               https://developer.hashicorp.com/vault/docs/auth/aws
 [doc-azure]:             https://developer.hashicorp.com/vault/docs/auth/azure
-[doc-response-wrapping]: https://www.vaultproject.io/docs/concepts/response-wrapping
+[doc-response-wrapping]: https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
 [doc-plugins]:           https://developer.hashicorp.com/vault/docs/plugins

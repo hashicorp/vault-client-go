@@ -51,7 +51,8 @@ type requestHeaders struct {
 
 // SetToken sets the token to be used with all subsequent requests.
 //
-// See https://www.vaultproject.io/docs/concepts/tokens for more info on tokens.
+// See https://developer.hashicorp.com/vault/docs/concepts/tokens for more info
+// on tokens.
 func (c *Client) SetToken(token string) error {
 	if err := validateToken(token); err != nil {
 		return err
@@ -66,7 +67,8 @@ func (c *Client) SetToken(token string) error {
 
 // ClearToken clears the token for all subsequent requests.
 //
-// See https://www.vaultproject.io/docs/concepts/tokens for more info on tokens.
+// See https://developer.hashicorp.com/vault/docs/concepts/tokens for more info
+// on tokens.
 func (c *Client) ClearToken() {
 	c.clientRequestModifiersLock.Lock()
 	c.clientRequestModifiers.headers.token = ""
@@ -76,7 +78,8 @@ func (c *Client) ClearToken() {
 // WithToken sets the token for the next request; it takes precedence over the
 // client-level token.
 //
-// See https://www.vaultproject.io/docs/concepts/tokens for more info on tokens.
+// See https://developer.hashicorp.com/vault/docs/concepts/tokens for more info
+// on tokens.
 func WithToken(token string) RequestOption {
 	return func(m *requestModifiers) error {
 		if err := validateToken(token); err != nil {
@@ -90,8 +93,8 @@ func WithToken(token string) RequestOption {
 // SetNamespace sets the namespace to be used with all subsequent requests.
 // Use an empty string to clear the namespace.
 //
-// See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
-// namespaces.
+// See https://developer.hashicorp.com/vault/docs/enterprise/namespaces for
+// more info on namespaces.
 func (c *Client) SetNamespace(namespace string) error {
 	if err := validateNamespace(namespace); err != nil {
 		return err
@@ -106,8 +109,8 @@ func (c *Client) SetNamespace(namespace string) error {
 
 // ClearNamespace clears the namespace from all subsequent requests.
 //
-// See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
-// namespaces.
+// See https://developer.hashicorp.com/vault/docs/enterprise/namespaces for
+// more info on namespaces.
 func (c *Client) ClearNamespace() {
 	c.clientRequestModifiersLock.Lock()
 	c.clientRequestModifiers.headers.namespace = ""
@@ -118,8 +121,8 @@ func (c *Client) ClearNamespace() {
 // over the client-level namespace. Use an empty string to clear the namespace
 // from the next request.
 //
-// See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
-// namespaces.
+// See https://developer.hashicorp.com/vault/docs/enterprise/namespaces for
+// more info on namespaces.
 func WithNamespace(namespace string) RequestOption {
 	return func(m *requestModifiers) error {
 		if err := validateNamespace(namespace); err != nil {
@@ -170,8 +173,8 @@ func WithMFACredentials(credentials ...string) RequestOption {
 // all subsequent requests, telling Vault to wrap responses and return
 // response-wrapping tokens instead.
 //
-// See https://www.vaultproject.io/docs/concepts/response-wrapping for more
-// information on response wrapping.
+// See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
+// for more information on response wrapping.
 func (c *Client) SetResponseWrapping(ttl time.Duration) error {
 	c.clientRequestModifiersLock.Lock()
 	c.clientRequestModifiers.headers.responseWrappingTTL = ttl
@@ -183,8 +186,8 @@ func (c *Client) SetResponseWrapping(ttl time.Duration) error {
 // ClearResponseWrapping clears the response-wrapping header from all
 // subsequent requests.
 //
-// See https://www.vaultproject.io/docs/concepts/response-wrapping for more
-// information on response wrapping.
+// See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
+// for more information on response wrapping.
 func (c *Client) ClearResponseWrapping() {
 	c.clientRequestModifiersLock.Lock()
 	c.clientRequestModifiers.headers.responseWrappingTTL = 0
@@ -197,8 +200,8 @@ func (c *Client) ClearResponseWrapping() {
 // response and return a response-wrapping token instead. Set `ttl` to zero
 // to clear the response-wrapping header from the next request.
 //
-// See https://www.vaultproject.io/docs/concepts/response-wrapping for more
-// information on response wrapping.
+// See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
+// for more information on response wrapping.
 func WithResponseWrapping(ttl time.Duration) RequestOption {
 	return func(m *requestModifiers) error {
 		m.headers.responseWrappingTTL = ttl
@@ -421,7 +424,7 @@ const (
 	// requests, telling any performance standbys handling the requests to
 	// forward them to the active node.
 	//
-	// https://www.vaultproject.io/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
+	// https://developer.hashicorp.com/vault/docs/enterprise/consistency#unconditional-forwarding-performance-standbys-only
 	ReplicationForwardAlways
 
 	// Setting this mode will add 'X-Vault-Inconsistent' header to  all
@@ -430,7 +433,7 @@ const (
 	// isn't present on the node receiving this request. This should be used
 	// in conjunction with RequireReplicationState(...).
 	//
-	// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+	// https://developer.hashicorp.com/vault/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 	ReplicationForwardInconsistent
 )
 
@@ -443,7 +446,7 @@ const (
 //
 // Note: this feature must be enabled in Vault's configuration.
 //
-// See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
 func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
 	/* */ c.clientRequestModifiersLock.Lock()
 	defer c.clientRequestModifiersLock.Unlock()
@@ -454,7 +457,7 @@ func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
 // ReplicationForwardingMode clears the X-Vault-Forward / X-Vault-Inconsistent
 // headers from all subsequent requests.
 //
-// See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
 func (c *Client) ClearReplicationForwardingMode() {
 	/* */ c.clientRequestModifiersLock.Lock()
 	defer c.clientRequestModifiersLock.Unlock()
@@ -470,7 +473,7 @@ func (c *Client) ClearReplicationForwardingMode() {
 //	ReplicationForwardAlways       - 'X-Vault-Forward'
 //	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
 //
-// See https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
 func WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption {
 	return func(m *requestModifiers) error {
 		m.headers.replicationForwardingMode = mode
@@ -481,7 +484,7 @@ func WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption
 // RecordReplicationState returns a response callback that will record the
 // replication state returned by Vault in a response header.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://developer.hashicorp.com/vault/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func RecordReplicationState(state *string) ResponseCallback {
 	return func(req *http.Request, resp *http.Response) {
 		*state = resp.Header.Get("X-Vault-Index")
@@ -493,7 +496,7 @@ func RecordReplicationState(state *string) ResponseCallback {
 // were obtained from the previously-seen response headers captured with
 // RecordReplicationState(...).
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://developer.hashicorp.com/vault/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func RequireReplicationStates(states ...string) RequestCallback {
 	return func(req *http.Request) {
 		for _, state := range states {
@@ -598,7 +601,7 @@ func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error)
 // older, and 0 if neither s1 nor s2 is strictly greater. An error is returned
 // if s1 or s2 are invalid or from different clusters.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://developer.hashicorp.com/vault/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func compareReplicationStates(s1, s2 string) (int, error) {
 	r1, err := ParseReplicationState(s1, nil)
 	if err != nil {
@@ -637,7 +640,7 @@ type replicationStateCache struct {
 // recordReplicationState merges the state from the given response into the
 // existing cached replication states.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://developer.hashicorp.com/vault/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
 	/* */ c.statesLock.Lock()
 	defer c.statesLock.Unlock()
@@ -651,7 +654,7 @@ func (c *replicationStateCache) recordReplicationState(resp *http.Response) {
 // require of Vault. These states were obtained from the previously-seen
 // response headers captured with replicationStateCache.recordReplicationState.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://developer.hashicorp.com/vault/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func (c *replicationStateCache) requireReplicationStates(req *http.Request) {
 	/* */ c.statesLock.RLock()
 	defer c.statesLock.RUnlock()

@@ -189,7 +189,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -201,12 +202,12 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+	request := schema.NewCalculateAuditHashRequestWithDefaults()
 
-	calculateAuditHashRequest := NewCalculateAuditHashRequestWithDefaults()
 	resp, err := client.System.CalculateAuditHash(
 		context.Background(),
 		path,
-		calculateAuditHashRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -255,7 +256,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -267,6 +268,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+
 
 	resp, err := client.System.DeleteAuditDevice(
 		context.Background(),
@@ -318,7 +320,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -330,6 +332,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+
 
 	resp, err := client.System.DeleteAuthMethod(
 		context.Background(),
@@ -381,7 +384,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -393,6 +396,7 @@ func main() {
 	}
 
 	header := "header_example" // string | 
+
 
 	resp, err := client.System.DeleteConfigAuditingRequestHeader(
 		context.Background(),
@@ -444,7 +448,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -454,6 +458,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteConfigCORS(
@@ -498,7 +503,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -510,6 +515,7 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
+
 
 	resp, err := client.System.DeleteConfigUIHeader(
 		context.Background(),
@@ -561,7 +567,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -571,6 +577,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteGenerateRoot(
@@ -615,7 +622,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -625,6 +632,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteGenerateRootAttempt(
@@ -669,7 +677,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -681,6 +689,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
+
 
 	resp, err := client.System.DeleteLogger(
 		context.Background(),
@@ -732,7 +741,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -742,6 +751,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteLoggers(
@@ -786,7 +796,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -798,6 +808,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 
 	resp, err := client.System.DeleteMount(
 		context.Background(),
@@ -849,7 +860,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -862,6 +873,7 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+
 
 	resp, err := client.System.DeletePluginsCatalogByTypeByName(
 		context.Background(),
@@ -916,7 +928,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -928,6 +940,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 
 	resp, err := client.System.DeletePoliciesACL(
 		context.Background(),
@@ -979,7 +992,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -991,6 +1004,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
+
 
 	resp, err := client.System.DeletePoliciesPassword(
 		context.Background(),
@@ -1042,7 +1056,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1054,6 +1068,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 
 	resp, err := client.System.DeletePolicy(
 		context.Background(),
@@ -1105,7 +1120,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1117,6 +1132,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
+
 
 	resp, err := client.System.DeleteQuotasRateLimit(
 		context.Background(),
@@ -1168,7 +1184,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1178,6 +1194,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteRaw(
@@ -1222,7 +1239,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1234,6 +1251,7 @@ func main() {
 	}
 
 	path := "path_example" // string | 
+
 
 	resp, err := client.System.DeleteRawPath(
 		context.Background(),
@@ -1285,7 +1303,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1295,6 +1313,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteRekeyBackup(
@@ -1341,7 +1360,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1351,6 +1370,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteRekeyInit(
@@ -1395,7 +1415,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1405,6 +1425,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteRekeyRecoveryKeyBackup(
@@ -1451,7 +1472,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1461,6 +1482,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.DeleteRekeyVerify(
@@ -1505,7 +1527,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1517,10 +1539,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.ListConfigUIHeaders(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1564,7 +1585,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1577,11 +1598,10 @@ func main() {
 
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.ListLeasesLookupPrefix(
 		context.Background(),
 		prefix,
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1630,7 +1650,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1643,11 +1663,10 @@ func main() {
 
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.ListPluginsCatalogByType(
 		context.Background(),
 		type_,
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1696,7 +1715,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1708,10 +1727,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.ListPoliciesACL(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1755,7 +1773,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1767,10 +1785,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.ListPoliciesPassword(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1814,7 +1831,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1826,10 +1843,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.ListQuotasRateLimits(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1873,7 +1889,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1885,10 +1901,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.ListVersionHistory(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1932,7 +1947,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1943,11 +1959,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewMFAValidateRequestWithDefaults()
 
-	mFAValidateRequest := NewMFAValidateRequestWithDefaults()
 	resp, err := client.System.MFAValidate(
 		context.Background(),
-		mFAValidateRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1991,7 +2007,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2003,8 +2019,9 @@ func main() {
 	}
 
 
-	logFormat := NewstringWithDefaults()
-	logLevel := NewstringWithDefaults()
+
+	logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (defaults to "standard")
+	logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".
 	resp, err := client.System.Monitor(
 		context.Background(),
 		logFormat,
@@ -2055,7 +2072,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2065,6 +2082,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofRead(
@@ -2111,7 +2129,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2121,6 +2139,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadAllocs(
@@ -2167,7 +2186,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2177,6 +2196,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadBlock(
@@ -2223,7 +2243,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2233,6 +2253,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadCmdline(
@@ -2279,7 +2300,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2289,6 +2310,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadGoroutine(
@@ -2335,7 +2357,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2345,6 +2367,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadHeap(
@@ -2391,7 +2414,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2401,6 +2424,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadMutex(
@@ -2447,7 +2471,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2457,6 +2481,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadProfile(
@@ -2503,7 +2528,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2513,6 +2538,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadSymbol(
@@ -2559,7 +2585,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2569,6 +2595,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadThreadcreate(
@@ -2615,7 +2642,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2625,6 +2652,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.PprofReadTrace(
@@ -2669,7 +2697,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2679,6 +2707,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadAuditDevices(
@@ -2723,7 +2752,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2735,6 +2764,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+
 
 	resp, err := client.System.ReadAuthMethod(
 		context.Background(),
@@ -2788,7 +2818,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2800,6 +2830,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
+
 
 	resp, err := client.System.ReadAuthMethodTune(
 		context.Background(),
@@ -2851,7 +2882,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2861,6 +2892,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadAuthMethods(
@@ -2905,7 +2937,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2917,6 +2949,7 @@ func main() {
 	}
 
 	header := "header_example" // string | 
+
 
 	resp, err := client.System.ReadConfigAuditingRequestHeader(
 		context.Background(),
@@ -2968,7 +3001,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2978,6 +3011,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadConfigAuditingRequestHeaders(
@@ -3022,7 +3056,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3032,6 +3066,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadConfigCORS(
@@ -3078,7 +3113,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3088,6 +3123,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadConfigStateSanitized(
@@ -3132,7 +3168,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3144,6 +3180,7 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
+
 
 	resp, err := client.System.ReadConfigUIHeader(
 		context.Background(),
@@ -3195,7 +3232,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3205,6 +3242,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadGenerateRoot(
@@ -3249,7 +3287,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3259,6 +3297,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadGenerateRootAttempt(
@@ -3303,7 +3342,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3313,6 +3352,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadHAStatus(
@@ -3357,7 +3397,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3367,6 +3407,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadHealth(
@@ -3413,7 +3454,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3423,6 +3464,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadHostInfo(
@@ -3469,7 +3511,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3479,6 +3521,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInFlightRequests(
@@ -3523,7 +3566,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3533,6 +3576,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInit(
@@ -3577,7 +3621,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3587,6 +3631,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalCountersActivity(
@@ -3631,7 +3676,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3641,6 +3686,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalCountersActivityExport(
@@ -3685,7 +3731,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3695,6 +3741,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalCountersActivityMonthly(
@@ -3739,7 +3786,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3749,6 +3796,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalCountersConfig(
@@ -3793,7 +3841,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3803,6 +3851,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalCountersEntities(
@@ -3847,7 +3896,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3857,6 +3906,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalCountersRequests(
@@ -3901,7 +3951,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3911,6 +3961,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalCountersTokens(
@@ -3955,7 +4006,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3967,6 +4018,7 @@ func main() {
 	}
 
 	tag := "tag_example" // string | Name of subtree being observed
+
 
 	resp, err := client.System.ReadInternalInspectRouter(
 		context.Background(),
@@ -4018,7 +4070,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4028,6 +4080,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalSpecsOpenAPI(
@@ -4072,7 +4125,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4082,6 +4135,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalUIFeatureFlags(
@@ -4126,7 +4180,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4138,6 +4192,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path of the mount.
+
 
 	resp, err := client.System.ReadInternalUIMount(
 		context.Background(),
@@ -4189,7 +4244,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4199,6 +4254,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalUIMounts(
@@ -4243,7 +4299,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4253,6 +4309,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalUINamespaces(
@@ -4297,7 +4354,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4307,6 +4364,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadInternalUIResultantACL(
@@ -4351,7 +4409,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4361,6 +4419,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadKeyStatus(
@@ -4405,7 +4464,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4415,6 +4474,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadLeader(
@@ -4459,7 +4519,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4469,6 +4529,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadLeases(
@@ -4513,7 +4574,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4523,6 +4584,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadLeasesCount(
@@ -4567,7 +4629,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4579,6 +4641,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
+
 
 	resp, err := client.System.ReadLogger(
 		context.Background(),
@@ -4630,7 +4693,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4640,6 +4703,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadLoggers(
@@ -4684,7 +4748,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4696,7 +4760,8 @@ func main() {
 	}
 
 
-	format := NewstringWithDefaults()
+
+	format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\".
 	resp, err := client.System.ReadMetrics(
 		context.Background(),
 		format,
@@ -4743,7 +4808,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4755,6 +4820,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 
 	resp, err := client.System.ReadMount(
 		context.Background(),
@@ -4806,7 +4872,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4816,6 +4882,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadMounts(
@@ -4860,7 +4927,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4872,6 +4939,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 
 	resp, err := client.System.ReadMountsConfig(
 		context.Background(),
@@ -4923,7 +4991,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4933,6 +5001,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadPluginsCatalog(
@@ -4977,7 +5046,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4990,6 +5059,7 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+
 
 	resp, err := client.System.ReadPluginsCatalogByTypeByName(
 		context.Background(),
@@ -5044,7 +5114,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5056,7 +5126,8 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
+	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadPolicies(
 		context.Background(),
 		list,
@@ -5103,7 +5174,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5115,6 +5186,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 
 	resp, err := client.System.ReadPoliciesACL(
 		context.Background(),
@@ -5166,7 +5238,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5178,6 +5250,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
+
 
 	resp, err := client.System.ReadPoliciesPassword(
 		context.Background(),
@@ -5229,7 +5302,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5241,6 +5314,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
+
 
 	resp, err := client.System.ReadPoliciesPasswordGenerate(
 		context.Background(),
@@ -5292,7 +5366,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5304,6 +5378,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 
 	resp, err := client.System.ReadPolicy(
 		context.Background(),
@@ -5355,7 +5430,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5365,6 +5440,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadQuotasConfig(
@@ -5409,7 +5485,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5421,6 +5497,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
+
 
 	resp, err := client.System.ReadQuotasRateLimit(
 		context.Background(),
@@ -5472,7 +5549,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5484,7 +5561,8 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
+	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRaw(
 		context.Background(),
 		list,
@@ -5531,7 +5609,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5544,7 +5622,8 @@ func main() {
 
 	path := "path_example" // string | 
 
-	list := NewstringWithDefaults()
+
+	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRawPath(
 		context.Background(),
 		path,
@@ -5597,7 +5676,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5607,6 +5686,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadRekeyBackup(
@@ -5651,7 +5731,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5661,6 +5741,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadRekeyInit(
@@ -5705,7 +5786,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5715,6 +5796,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadRekeyRecoveryKeyBackup(
@@ -5759,7 +5841,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5769,6 +5851,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadRekeyVerify(
@@ -5813,7 +5896,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5825,6 +5908,7 @@ func main() {
 	}
 
 	migrationId := "migrationId_example" // string | The ID of the migration operation
+
 
 	resp, err := client.System.ReadRemountStatus(
 		context.Background(),
@@ -5876,7 +5960,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5886,6 +5970,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadReplicationStatus(
@@ -5930,7 +6015,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5940,6 +6025,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadRotateConfig(
@@ -5984,7 +6070,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5994,6 +6080,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.ReadSealStatus(
@@ -6038,7 +6125,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6049,11 +6137,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewRemountRequestWithDefaults()
 
-	remountRequest := NewRemountRequestWithDefaults()
 	resp, err := client.System.Remount(
 		context.Background(),
-		remountRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6097,7 +6185,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6108,11 +6197,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewRenewRequestWithDefaults()
 
-	renewRequest := NewRenewRequestWithDefaults()
 	resp, err := client.System.Renew(
 		context.Background(),
-		renewRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6156,7 +6245,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6168,12 +6258,12 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+	request := schema.NewRenewForRequestWithDefaults()
 
-	renewForRequest := NewRenewForRequestWithDefaults()
 	resp, err := client.System.RenewFor(
 		context.Background(),
 		urlLeaseId,
-		renewForRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6222,7 +6312,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6233,11 +6324,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewRevokeRequestWithDefaults()
 
-	revokeRequest := NewRevokeRequestWithDefaults()
 	resp, err := client.System.Revoke(
 		context.Background(),
-		revokeRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6283,7 +6374,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6295,6 +6386,7 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 
 	resp, err := client.System.RevokeForce(
 		context.Background(),
@@ -6346,7 +6438,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6358,12 +6451,12 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+	request := schema.NewRevokeLeaseRequestWithDefaults()
 
-	revokeLeaseRequest := NewRevokeLeaseRequestWithDefaults()
 	resp, err := client.System.RevokeLease(
 		context.Background(),
 		urlLeaseId,
-		revokeLeaseRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6412,7 +6505,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6424,12 +6518,12 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	request := schema.NewRevokePrefixRequestWithDefaults()
 
-	revokePrefixRequest := NewRevokePrefixRequestWithDefaults()
 	resp, err := client.System.RevokePrefix(
 		context.Background(),
 		prefix,
-		revokePrefixRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6478,7 +6572,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6488,6 +6582,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.Rotate(
@@ -6532,7 +6627,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6542,6 +6637,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.Seal(
@@ -6588,7 +6684,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6598,6 +6694,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.StepDownLeader(
@@ -6642,7 +6739,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6654,6 +6751,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
+
 
 	resp, err := client.System.SysDeletePluginsCatalogName(
 		context.Background(),
@@ -6705,7 +6803,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6717,10 +6815,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.System.SysListLeasesLookup(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6764,7 +6861,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6776,6 +6873,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
+
 
 	resp, err := client.System.SysReadPluginsCatalogName(
 		context.Background(),
@@ -6827,7 +6925,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6840,6 +6938,7 @@ func main() {
 
 	aliasIdentifier := "aliasIdentifier_example" // string | It is the name of the alias (user). For example, if the alias belongs to userpass backend, the name should be a valid username within userpass auth method. If the alias belongs to an approle auth method, the name should be a valid RoleID
 	mountAccessor := "mountAccessor_example" // string | MountAccessor is the identifier of the mount entry to which the user belongs
+
 
 	resp, err := client.System.SysWriteLockedusersMountAccessorUnlockAliasIdentifier(
 		context.Background(),
@@ -6894,7 +6993,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6906,12 +7006,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
+	request := schema.NewSysWritePluginsCatalogNameRequestWithDefaults()
 
-	sysWritePluginsCatalogNameRequest := NewSysWritePluginsCatalogNameRequestWithDefaults()
 	resp, err := client.System.SysWritePluginsCatalogName(
 		context.Background(),
 		name,
-		sysWritePluginsCatalogNameRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6960,7 +7060,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6972,12 +7073,12 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	request := schema.NewSysWriteToolsRandomUrlbytesRequestWithDefaults()
 
-	sysWriteToolsRandomUrlbytesRequest := NewSysWriteToolsRandomUrlbytesRequestWithDefaults()
 	resp, err := client.System.SysWriteToolsRandomUrlbytes(
 		context.Background(),
 		urlbytes,
-		sysWriteToolsRandomUrlbytesRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7026,7 +7127,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7037,11 +7139,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewToolsGenerateRandomRequestWithDefaults()
 
-	toolsGenerateRandomRequest := NewToolsGenerateRandomRequestWithDefaults()
 	resp, err := client.System.ToolsGenerateRandom(
 		context.Background(),
-		toolsGenerateRandomRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7085,7 +7187,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7097,12 +7200,12 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	request := schema.NewToolsGenerateRandomSourceRequestWithDefaults()
 
-	toolsGenerateRandomSourceRequest := NewToolsGenerateRandomSourceRequestWithDefaults()
 	resp, err := client.System.ToolsGenerateRandomSource(
 		context.Background(),
 		source,
-		toolsGenerateRandomSourceRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7151,7 +7254,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7164,13 +7268,13 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	request := schema.NewToolsGenerateRandomSourceBytesRequestWithDefaults()
 
-	toolsGenerateRandomSourceBytesRequest := NewToolsGenerateRandomSourceBytesRequestWithDefaults()
 	resp, err := client.System.ToolsGenerateRandomSourceBytes(
 		context.Background(),
 		source,
 		urlbytes,
-		toolsGenerateRandomSourceBytesRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7221,7 +7325,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7232,11 +7337,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewToolsHashRequestWithDefaults()
 
-	toolsHashRequest := NewToolsHashRequestWithDefaults()
 	resp, err := client.System.ToolsHash(
 		context.Background(),
-		toolsHashRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7280,7 +7385,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7292,12 +7398,12 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+	request := schema.NewToolsHashWithRequestWithDefaults()
 
-	toolsHashWithRequest := NewToolsHashWithRequestWithDefaults()
 	resp, err := client.System.ToolsHashWith(
 		context.Background(),
 		urlalgorithm,
-		toolsHashWithRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7346,7 +7452,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7357,11 +7464,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewUnsealRequestWithDefaults()
 
-	unsealRequest := NewUnsealRequestWithDefaults()
 	resp, err := client.System.Unseal(
 		context.Background(),
-		unsealRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7405,7 +7512,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7415,6 +7522,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.WrappingReadLookup(
@@ -7459,7 +7567,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7470,11 +7579,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWrappingRewrapRequestWithDefaults()
 
-	wrappingRewrapRequest := NewWrappingRewrapRequestWithDefaults()
 	resp, err := client.System.WrappingRewrap(
 		context.Background(),
-		wrappingRewrapRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7518,7 +7627,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7529,11 +7639,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWrappingUnwrapRequestWithDefaults()
 
-	wrappingUnwrapRequest := NewWrappingUnwrapRequestWithDefaults()
 	resp, err := client.System.WrappingUnwrap(
 		context.Background(),
-		wrappingUnwrapRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7577,7 +7687,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -7587,6 +7697,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.WrappingWrap(
@@ -7631,7 +7742,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7642,11 +7754,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWrappingWriteLookupRequestWithDefaults()
 
-	wrappingWriteLookupRequest := NewWrappingWriteLookupRequestWithDefaults()
 	resp, err := client.System.WrappingWriteLookup(
 		context.Background(),
-		wrappingWriteLookupRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7690,7 +7802,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7702,12 +7815,12 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+	request := schema.NewWriteAuditDeviceRequestWithDefaults()
 
-	writeAuditDeviceRequest := NewWriteAuditDeviceRequestWithDefaults()
 	resp, err := client.System.WriteAuditDevice(
 		context.Background(),
 		path,
-		writeAuditDeviceRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7758,7 +7871,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7770,12 +7884,12 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+	request := schema.NewWriteAuthMethodRequestWithDefaults()
 
-	writeAuthMethodRequest := NewWriteAuthMethodRequestWithDefaults()
 	resp, err := client.System.WriteAuthMethod(
 		context.Background(),
 		path,
-		writeAuthMethodRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7826,7 +7940,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7838,12 +7953,12 @@ func main() {
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
+	request := schema.NewWriteAuthMethodTuneRequestWithDefaults()
 
-	writeAuthMethodTuneRequest := NewWriteAuthMethodTuneRequestWithDefaults()
 	resp, err := client.System.WriteAuthMethodTune(
 		context.Background(),
 		path,
-		writeAuthMethodTuneRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7892,7 +8007,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7903,11 +8019,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteCapabilitiesRequestWithDefaults()
 
-	writeCapabilitiesRequest := NewWriteCapabilitiesRequestWithDefaults()
 	resp, err := client.System.WriteCapabilities(
 		context.Background(),
-		writeCapabilitiesRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7951,7 +8067,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -7962,11 +8079,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteCapabilitiesAccessorRequestWithDefaults()
 
-	writeCapabilitiesAccessorRequest := NewWriteCapabilitiesAccessorRequestWithDefaults()
 	resp, err := client.System.WriteCapabilitiesAccessor(
 		context.Background(),
-		writeCapabilitiesAccessorRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8010,7 +8127,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8021,11 +8139,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteCapabilitiesSelfRequestWithDefaults()
 
-	writeCapabilitiesSelfRequest := NewWriteCapabilitiesSelfRequestWithDefaults()
 	resp, err := client.System.WriteCapabilitiesSelf(
 		context.Background(),
-		writeCapabilitiesSelfRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8069,7 +8187,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8081,12 +8200,12 @@ func main() {
 	}
 
 	header := "header_example" // string | 
+	request := schema.NewWriteConfigAuditingRequestHeaderRequestWithDefaults()
 
-	writeConfigAuditingRequestHeaderRequest := NewWriteConfigAuditingRequestHeaderRequestWithDefaults()
 	resp, err := client.System.WriteConfigAuditingRequestHeader(
 		context.Background(),
 		header,
-		writeConfigAuditingRequestHeaderRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8135,7 +8254,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8146,11 +8266,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteConfigCORSRequestWithDefaults()
 
-	writeConfigCORSRequest := NewWriteConfigCORSRequestWithDefaults()
 	resp, err := client.System.WriteConfigCORS(
 		context.Background(),
-		writeConfigCORSRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8194,7 +8314,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8206,6 +8326,7 @@ func main() {
 	}
 
 	subsystem := "subsystem_example" // string | 
+
 
 	resp, err := client.System.WriteConfigReloadSubsystem(
 		context.Background(),
@@ -8257,7 +8378,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8269,12 +8391,12 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
+	request := schema.NewWriteConfigUIHeaderRequestWithDefaults()
 
-	writeConfigUIHeaderRequest := NewWriteConfigUIHeaderRequestWithDefaults()
 	resp, err := client.System.WriteConfigUIHeader(
 		context.Background(),
 		header,
-		writeConfigUIHeaderRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8325,7 +8447,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8336,11 +8459,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteGenerateRootRequestWithDefaults()
 
-	writeGenerateRootRequest := NewWriteGenerateRootRequestWithDefaults()
 	resp, err := client.System.WriteGenerateRoot(
 		context.Background(),
-		writeGenerateRootRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8386,7 +8509,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8397,11 +8521,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteGenerateRootAttemptRequestWithDefaults()
 
-	writeGenerateRootAttemptRequest := NewWriteGenerateRootAttemptRequestWithDefaults()
 	resp, err := client.System.WriteGenerateRootAttempt(
 		context.Background(),
-		writeGenerateRootAttemptRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8447,7 +8571,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8458,11 +8583,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteGenerateRootUpdateRequestWithDefaults()
 
-	writeGenerateRootUpdateRequest := NewWriteGenerateRootUpdateRequestWithDefaults()
 	resp, err := client.System.WriteGenerateRootUpdate(
 		context.Background(),
-		writeGenerateRootUpdateRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8508,7 +8633,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8519,11 +8645,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteInitRequestWithDefaults()
 
-	writeInitRequest := NewWriteInitRequestWithDefaults()
 	resp, err := client.System.WriteInit(
 		context.Background(),
-		writeInitRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8567,7 +8693,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8578,11 +8705,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteInternalCountersConfigRequestWithDefaults()
 
-	writeInternalCountersConfigRequest := NewWriteInternalCountersConfigRequestWithDefaults()
 	resp, err := client.System.WriteInternalCountersConfig(
 		context.Background(),
-		writeInternalCountersConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8626,7 +8753,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8637,11 +8765,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteLeasesLookupRequestWithDefaults()
 
-	writeLeasesLookupRequest := NewWriteLeasesLookupRequestWithDefaults()
 	resp, err := client.System.WriteLeasesLookup(
 		context.Background(),
-		writeLeasesLookupRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8685,7 +8813,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8696,11 +8825,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteLeasesRenewRequestWithDefaults()
 
-	writeLeasesRenewRequest := NewWriteLeasesRenewRequestWithDefaults()
 	resp, err := client.System.WriteLeasesRenew(
 		context.Background(),
-		writeLeasesRenewRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8744,7 +8873,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8756,12 +8886,12 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+	request := schema.NewWriteLeasesRenew2RequestWithDefaults()
 
-	writeLeasesRenew2Request := NewWriteLeasesRenew2RequestWithDefaults()
 	resp, err := client.System.WriteLeasesRenew2(
 		context.Background(),
 		urlLeaseId,
-		writeLeasesRenew2Request,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8810,7 +8940,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8821,11 +8952,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteLeasesRevokeRequestWithDefaults()
 
-	writeLeasesRevokeRequest := NewWriteLeasesRevokeRequestWithDefaults()
 	resp, err := client.System.WriteLeasesRevoke(
 		context.Background(),
-		writeLeasesRevokeRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8869,7 +9000,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -8881,12 +9013,12 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+	request := schema.NewWriteLeasesRevoke2RequestWithDefaults()
 
-	writeLeasesRevoke2Request := NewWriteLeasesRevoke2RequestWithDefaults()
 	resp, err := client.System.WriteLeasesRevoke2(
 		context.Background(),
 		urlLeaseId,
-		writeLeasesRevoke2Request,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -8937,7 +9069,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -8949,6 +9081,7 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 
 	resp, err := client.System.WriteLeasesRevokeForce(
 		context.Background(),
@@ -9000,7 +9133,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9012,12 +9146,12 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+	request := schema.NewWriteLeasesRevokePrefixRequestWithDefaults()
 
-	writeLeasesRevokePrefixRequest := NewWriteLeasesRevokePrefixRequestWithDefaults()
 	resp, err := client.System.WriteLeasesRevokePrefix(
 		context.Background(),
 		prefix,
-		writeLeasesRevokePrefixRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9066,7 +9200,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -9076,6 +9210,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.System.WriteLeasesTidy(
@@ -9120,7 +9255,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9132,12 +9268,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
+	request := schema.NewWriteLoggerRequestWithDefaults()
 
-	writeLoggerRequest := NewWriteLoggerRequestWithDefaults()
 	resp, err := client.System.WriteLogger(
 		context.Background(),
 		name,
-		writeLoggerRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9186,7 +9322,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9197,11 +9334,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteLoggersRequestWithDefaults()
 
-	writeLoggersRequest := NewWriteLoggersRequestWithDefaults()
 	resp, err := client.System.WriteLoggers(
 		context.Background(),
-		writeLoggersRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9245,7 +9382,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9257,12 +9395,12 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+	request := schema.NewWriteMountRequestWithDefaults()
 
-	writeMountRequest := NewWriteMountRequestWithDefaults()
 	resp, err := client.System.WriteMount(
 		context.Background(),
 		path,
-		writeMountRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9311,7 +9449,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9323,12 +9462,12 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+	request := schema.NewWriteMountsConfigRequestWithDefaults()
 
-	writeMountsConfigRequest := NewWriteMountsConfigRequestWithDefaults()
 	resp, err := client.System.WriteMountsConfig(
 		context.Background(),
 		path,
-		writeMountsConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9377,7 +9516,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9390,13 +9530,13 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+	request := schema.NewWritePluginsCatalogByTypeByNameRequestWithDefaults()
 
-	writePluginsCatalogByTypeByNameRequest := NewWritePluginsCatalogByTypeByNameRequestWithDefaults()
 	resp, err := client.System.WritePluginsCatalogByTypeByName(
 		context.Background(),
 		name,
 		type_,
-		writePluginsCatalogByTypeByNameRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9449,7 +9589,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9460,11 +9601,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWritePluginsReloadBackendRequestWithDefaults()
 
-	writePluginsReloadBackendRequest := NewWritePluginsReloadBackendRequestWithDefaults()
 	resp, err := client.System.WritePluginsReloadBackend(
 		context.Background(),
-		writePluginsReloadBackendRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9508,7 +9649,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9520,12 +9662,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+	request := schema.NewWritePoliciesACLRequestWithDefaults()
 
-	writePoliciesACLRequest := NewWritePoliciesACLRequestWithDefaults()
 	resp, err := client.System.WritePoliciesACL(
 		context.Background(),
 		name,
-		writePoliciesACLRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9574,7 +9716,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9586,12 +9729,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
+	request := schema.NewWritePoliciesPasswordRequestWithDefaults()
 
-	writePoliciesPasswordRequest := NewWritePoliciesPasswordRequestWithDefaults()
 	resp, err := client.System.WritePoliciesPassword(
 		context.Background(),
 		name,
-		writePoliciesPasswordRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9640,7 +9783,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9652,12 +9796,12 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+	request := schema.NewWritePolicyRequestWithDefaults()
 
-	writePolicyRequest := NewWritePolicyRequestWithDefaults()
 	resp, err := client.System.WritePolicy(
 		context.Background(),
 		name,
-		writePolicyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9706,7 +9850,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9717,11 +9862,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteQuotasConfigRequestWithDefaults()
 
-	writeQuotasConfigRequest := NewWriteQuotasConfigRequestWithDefaults()
 	resp, err := client.System.WriteQuotasConfig(
 		context.Background(),
-		writeQuotasConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9765,7 +9910,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9777,12 +9923,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
+	request := schema.NewWriteQuotasRateLimitRequestWithDefaults()
 
-	writeQuotasRateLimitRequest := NewWriteQuotasRateLimitRequestWithDefaults()
 	resp, err := client.System.WriteQuotasRateLimit(
 		context.Background(),
 		name,
-		writeQuotasRateLimitRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9831,7 +9977,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9842,11 +9989,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteRawRequestWithDefaults()
 
-	writeRawRequest := NewWriteRawRequestWithDefaults()
 	resp, err := client.System.WriteRaw(
 		context.Background(),
-		writeRawRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9890,7 +10037,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9902,12 +10050,12 @@ func main() {
 	}
 
 	path := "path_example" // string | 
+	request := schema.NewWriteRawPathRequestWithDefaults()
 
-	writeRawPathRequest := NewWriteRawPathRequestWithDefaults()
 	resp, err := client.System.WriteRawPath(
 		context.Background(),
 		path,
-		writeRawPathRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9958,7 +10106,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -9969,11 +10118,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteRekeyInitRequestWithDefaults()
 
-	writeRekeyInitRequest := NewWriteRekeyInitRequestWithDefaults()
 	resp, err := client.System.WriteRekeyInit(
 		context.Background(),
-		writeRekeyInitRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10017,7 +10166,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -10028,11 +10178,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteRekeyUpdateRequestWithDefaults()
 
-	writeRekeyUpdateRequest := NewWriteRekeyUpdateRequestWithDefaults()
 	resp, err := client.System.WriteRekeyUpdate(
 		context.Background(),
-		writeRekeyUpdateRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10076,7 +10226,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -10087,11 +10238,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteRekeyVerifyRequestWithDefaults()
 
-	writeRekeyVerifyRequest := NewWriteRekeyVerifyRequestWithDefaults()
 	resp, err := client.System.WriteRekeyVerify(
 		context.Background(),
-		writeRekeyVerifyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -10135,7 +10286,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -10146,11 +10298,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewWriteRotateConfigRequestWithDefaults()
 
-	writeRotateConfigRequest := NewWriteRotateConfigRequestWithDefaults()
 	resp, err := client.System.WriteRotateConfig(
 		context.Background(),
-		writeRotateConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

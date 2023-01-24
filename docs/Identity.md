@@ -126,7 +126,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -138,6 +138,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
+
 
 	resp, err := client.Identity.AliasDeleteByID(
 		context.Background(),
@@ -189,7 +190,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -201,10 +202,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.AliasListByID(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -248,7 +248,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -260,6 +260,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
+
 
 	resp, err := client.Identity.AliasReadByID(
 		context.Background(),
@@ -311,7 +312,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -322,11 +324,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewAliasWriteRequestWithDefaults()
 
-	aliasWriteRequest := NewAliasWriteRequestWithDefaults()
 	resp, err := client.Identity.AliasWrite(
 		context.Background(),
-		aliasWriteRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -370,7 +372,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -382,12 +385,12 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
+	request := schema.NewAliasWriteByIDRequestWithDefaults()
 
-	aliasWriteByIDRequest := NewAliasWriteByIDRequestWithDefaults()
 	resp, err := client.Identity.AliasWriteByID(
 		context.Background(),
 		id,
-		aliasWriteByIDRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -436,7 +439,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -447,11 +451,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewEntityBatchDeleteRequestWithDefaults()
 
-	entityBatchDeleteRequest := NewEntityBatchDeleteRequestWithDefaults()
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
-		entityBatchDeleteRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -495,7 +499,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -507,6 +511,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
+
 
 	resp, err := client.Identity.EntityDeleteAliasByID(
 		context.Background(),
@@ -558,7 +563,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -570,6 +575,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+
 
 	resp, err := client.Identity.EntityDeleteByID(
 		context.Background(),
@@ -621,7 +627,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -633,6 +639,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
+
 
 	resp, err := client.Identity.EntityDeleteByName(
 		context.Background(),
@@ -684,7 +691,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -696,10 +703,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.EntityListAliasesByID(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -743,7 +749,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -755,10 +761,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.EntityListByID(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -802,7 +807,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -814,10 +819,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.EntityListByName(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -861,7 +865,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -872,11 +877,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewEntityLookupRequestWithDefaults()
 
-	entityLookupRequest := NewEntityLookupRequestWithDefaults()
 	resp, err := client.Identity.EntityLookup(
 		context.Background(),
-		entityLookupRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -920,7 +925,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -931,11 +937,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewEntityMergeRequestWithDefaults()
 
-	entityMergeRequest := NewEntityMergeRequestWithDefaults()
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
-		entityMergeRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -979,7 +985,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -991,6 +997,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
+
 
 	resp, err := client.Identity.EntityReadAliasByID(
 		context.Background(),
@@ -1042,7 +1049,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1054,6 +1061,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+
 
 	resp, err := client.Identity.EntityReadByID(
 		context.Background(),
@@ -1105,7 +1113,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1117,6 +1125,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
+
 
 	resp, err := client.Identity.EntityReadByName(
 		context.Background(),
@@ -1168,7 +1177,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1179,11 +1189,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewEntityWriteRequestWithDefaults()
 
-	entityWriteRequest := NewEntityWriteRequestWithDefaults()
 	resp, err := client.Identity.EntityWrite(
 		context.Background(),
-		entityWriteRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1227,7 +1237,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1238,11 +1249,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewEntityWriteAliasRequestWithDefaults()
 
-	entityWriteAliasRequest := NewEntityWriteAliasRequestWithDefaults()
 	resp, err := client.Identity.EntityWriteAlias(
 		context.Background(),
-		entityWriteAliasRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1286,7 +1297,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1298,12 +1310,12 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
+	request := schema.NewEntityWriteAliasByIDRequestWithDefaults()
 
-	entityWriteAliasByIDRequest := NewEntityWriteAliasByIDRequestWithDefaults()
 	resp, err := client.Identity.EntityWriteAliasByID(
 		context.Background(),
 		id,
-		entityWriteAliasByIDRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1352,7 +1364,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1364,12 +1377,12 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+	request := schema.NewEntityWriteByIDRequestWithDefaults()
 
-	entityWriteByIDRequest := NewEntityWriteByIDRequestWithDefaults()
 	resp, err := client.Identity.EntityWriteByID(
 		context.Background(),
 		id,
-		entityWriteByIDRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1418,7 +1431,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1430,12 +1444,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
+	request := schema.NewEntityWriteByNameRequestWithDefaults()
 
-	entityWriteByNameRequest := NewEntityWriteByNameRequestWithDefaults()
 	resp, err := client.Identity.EntityWriteByName(
 		context.Background(),
 		name,
-		entityWriteByNameRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1484,7 +1498,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1496,6 +1510,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
+
 
 	resp, err := client.Identity.GroupDeleteAliasByID(
 		context.Background(),
@@ -1547,7 +1562,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1559,6 +1574,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+
 
 	resp, err := client.Identity.GroupDeleteByID(
 		context.Background(),
@@ -1610,7 +1626,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1622,6 +1638,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
+
 
 	resp, err := client.Identity.GroupDeleteByName(
 		context.Background(),
@@ -1673,7 +1690,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1685,10 +1702,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.GroupListAliasesByID(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1732,7 +1748,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1744,10 +1760,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.GroupListByID(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1791,7 +1806,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1803,10 +1818,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.GroupListByName(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1850,7 +1864,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -1861,11 +1876,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewGroupLookupRequestWithDefaults()
 
-	groupLookupRequest := NewGroupLookupRequestWithDefaults()
 	resp, err := client.Identity.GroupLookup(
 		context.Background(),
-		groupLookupRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -1909,7 +1924,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1921,6 +1936,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
+
 
 	resp, err := client.Identity.GroupReadAliasByID(
 		context.Background(),
@@ -1972,7 +1988,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -1984,6 +2000,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+
 
 	resp, err := client.Identity.GroupReadByID(
 		context.Background(),
@@ -2035,7 +2052,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2047,6 +2064,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
+
 
 	resp, err := client.Identity.GroupReadByName(
 		context.Background(),
@@ -2098,7 +2116,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2109,11 +2128,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewGroupWriteRequestWithDefaults()
 
-	groupWriteRequest := NewGroupWriteRequestWithDefaults()
 	resp, err := client.Identity.GroupWrite(
 		context.Background(),
-		groupWriteRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2157,7 +2176,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2168,11 +2188,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewGroupWriteAliasRequestWithDefaults()
 
-	groupWriteAliasRequest := NewGroupWriteAliasRequestWithDefaults()
 	resp, err := client.Identity.GroupWriteAlias(
 		context.Background(),
-		groupWriteAliasRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2216,7 +2236,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2228,12 +2249,12 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
+	request := schema.NewGroupWriteAliasByIDRequestWithDefaults()
 
-	groupWriteAliasByIDRequest := NewGroupWriteAliasByIDRequestWithDefaults()
 	resp, err := client.Identity.GroupWriteAliasByID(
 		context.Background(),
 		id,
-		groupWriteAliasByIDRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2282,7 +2303,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2294,12 +2316,12 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+	request := schema.NewGroupWriteByIDRequestWithDefaults()
 
-	groupWriteByIDRequest := NewGroupWriteByIDRequestWithDefaults()
 	resp, err := client.Identity.GroupWriteByID(
 		context.Background(),
 		id,
-		groupWriteByIDRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2348,7 +2370,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2360,12 +2383,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
+	request := schema.NewGroupWriteByNameRequestWithDefaults()
 
-	groupWriteByNameRequest := NewGroupWriteByNameRequestWithDefaults()
 	resp, err := client.Identity.GroupWriteByName(
 		context.Background(),
 		name,
-		groupWriteByNameRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2414,7 +2437,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2426,6 +2449,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
+
 
 	resp, err := client.Identity.MFADeleteLoginEnforcement(
 		context.Background(),
@@ -2477,7 +2501,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2489,10 +2513,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.MFAListLoginEnforcements(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2536,7 +2559,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2547,11 +2571,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewMFAMethodAdminDestroyTOTPRequestWithDefaults()
 
-	mFAMethodAdminDestroyTOTPRequest := NewMFAMethodAdminDestroyTOTPRequestWithDefaults()
 	resp, err := client.Identity.MFAMethodAdminDestroyTOTP(
 		context.Background(),
-		mFAMethodAdminDestroyTOTPRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2595,7 +2619,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2606,11 +2631,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewMFAMethodAdminGenerateTOTPRequestWithDefaults()
 
-	mFAMethodAdminGenerateTOTPRequest := NewMFAMethodAdminGenerateTOTPRequestWithDefaults()
 	resp, err := client.Identity.MFAMethodAdminGenerateTOTP(
 		context.Background(),
-		mFAMethodAdminGenerateTOTPRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2654,7 +2679,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2666,6 +2691,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodDeleteDuo(
 		context.Background(),
@@ -2717,7 +2743,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2729,6 +2755,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodDeleteOkta(
 		context.Background(),
@@ -2780,7 +2807,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2792,6 +2819,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodDeletePingID(
 		context.Background(),
@@ -2843,7 +2871,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2855,6 +2883,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodDeleteTOTP(
 		context.Background(),
@@ -2906,7 +2935,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -2917,11 +2947,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewMFAMethodGenerateTOTPRequestWithDefaults()
 
-	mFAMethodGenerateTOTPRequest := NewMFAMethodGenerateTOTPRequestWithDefaults()
 	resp, err := client.Identity.MFAMethodGenerateTOTP(
 		context.Background(),
-		mFAMethodGenerateTOTPRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -2965,7 +2995,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -2977,10 +3007,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.MFAMethodList(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3024,7 +3053,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3036,10 +3065,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.MFAMethodListDuo(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3083,7 +3111,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3095,10 +3123,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.MFAMethodListOkta(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3142,7 +3169,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3154,10 +3181,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.MFAMethodListPingID(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3201,7 +3227,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3213,10 +3239,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.MFAMethodListTOTP(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3260,7 +3285,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3272,6 +3297,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodRead(
 		context.Background(),
@@ -3323,7 +3349,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3335,6 +3361,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodReadDuo(
 		context.Background(),
@@ -3386,7 +3413,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3398,6 +3425,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodReadOkta(
 		context.Background(),
@@ -3449,7 +3477,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3461,6 +3489,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodReadPingID(
 		context.Background(),
@@ -3512,7 +3541,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3524,6 +3553,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
 
 	resp, err := client.Identity.MFAMethodReadTOTP(
 		context.Background(),
@@ -3575,7 +3605,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3587,12 +3618,12 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMFAMethodWriteDuoRequestWithDefaults()
 
-	mFAMethodWriteDuoRequest := NewMFAMethodWriteDuoRequestWithDefaults()
 	resp, err := client.Identity.MFAMethodWriteDuo(
 		context.Background(),
 		methodId,
-		mFAMethodWriteDuoRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3641,7 +3672,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3653,12 +3685,12 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMFAMethodWriteOktaRequestWithDefaults()
 
-	mFAMethodWriteOktaRequest := NewMFAMethodWriteOktaRequestWithDefaults()
 	resp, err := client.Identity.MFAMethodWriteOkta(
 		context.Background(),
 		methodId,
-		mFAMethodWriteOktaRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3707,7 +3739,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3719,12 +3752,12 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMFAMethodWritePingIDRequestWithDefaults()
 
-	mFAMethodWritePingIDRequest := NewMFAMethodWritePingIDRequestWithDefaults()
 	resp, err := client.Identity.MFAMethodWritePingID(
 		context.Background(),
 		methodId,
-		mFAMethodWritePingIDRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3773,7 +3806,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3785,12 +3819,12 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	request := schema.NewMFAMethodWriteTOTPRequestWithDefaults()
 
-	mFAMethodWriteTOTPRequest := NewMFAMethodWriteTOTPRequestWithDefaults()
 	resp, err := client.Identity.MFAMethodWriteTOTP(
 		context.Background(),
 		methodId,
-		mFAMethodWriteTOTPRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3839,7 +3873,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3851,6 +3885,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
+
 
 	resp, err := client.Identity.MFAReadLoginEnforcement(
 		context.Background(),
@@ -3902,7 +3937,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -3914,12 +3950,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
+	request := schema.NewMFAWriteLoginEnforcementRequestWithDefaults()
 
-	mFAWriteLoginEnforcementRequest := NewMFAWriteLoginEnforcementRequestWithDefaults()
 	resp, err := client.Identity.MFAWriteLoginEnforcement(
 		context.Background(),
 		name,
-		mFAWriteLoginEnforcementRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -3968,7 +4004,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -3980,6 +4016,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
+
 
 	resp, err := client.Identity.OIDCDeleteAssignment(
 		context.Background(),
@@ -4031,7 +4068,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4043,6 +4080,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
+
 
 	resp, err := client.Identity.OIDCDeleteClient(
 		context.Background(),
@@ -4094,7 +4132,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4106,6 +4144,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+
 
 	resp, err := client.Identity.OIDCDeleteKey(
 		context.Background(),
@@ -4157,7 +4196,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4169,6 +4208,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+
 
 	resp, err := client.Identity.OIDCDeleteProvider(
 		context.Background(),
@@ -4220,7 +4260,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4232,6 +4272,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Identity.OIDCDeleteRole(
 		context.Background(),
@@ -4283,7 +4324,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4295,6 +4336,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
+
 
 	resp, err := client.Identity.OIDCDeleteScope(
 		context.Background(),
@@ -4346,7 +4388,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -4357,11 +4400,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewOIDCIntrospectRequestWithDefaults()
 
-	oIDCIntrospectRequest := NewOIDCIntrospectRequestWithDefaults()
 	resp, err := client.Identity.OIDCIntrospect(
 		context.Background(),
-		oIDCIntrospectRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4405,7 +4448,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4417,10 +4460,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.OIDCListAssignments(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4464,7 +4506,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4476,10 +4518,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.OIDCListClients(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4523,7 +4564,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4535,10 +4576,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.OIDCListKeys(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4582,7 +4622,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4594,11 +4634,10 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
-	allowedClientId := NewstringWithDefaults()
+
+	allowedClientId := "allowedClientId_example" // string | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. (defaults to "")
 	resp, err := client.Identity.OIDCListProviders(
 		context.Background(),
-		list,
 		allowedClientId,
 		vault.WithToken("my-token"),
 	)
@@ -4644,7 +4683,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4656,10 +4695,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.OIDCListRoles(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4703,7 +4741,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4715,10 +4753,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.OIDCListScopes(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -4762,7 +4799,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4774,6 +4811,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
+
 
 	resp, err := client.Identity.OIDCReadAssignment(
 		context.Background(),
@@ -4825,7 +4863,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4837,6 +4875,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
+
 
 	resp, err := client.Identity.OIDCReadClient(
 		context.Background(),
@@ -4888,7 +4927,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4898,6 +4937,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Identity.OIDCReadConfig(
@@ -4942,7 +4982,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -4954,6 +4994,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+
 
 	resp, err := client.Identity.OIDCReadKey(
 		context.Background(),
@@ -5005,7 +5046,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5017,6 +5058,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+
 
 	resp, err := client.Identity.OIDCReadProvider(
 		context.Background(),
@@ -5068,7 +5110,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5080,6 +5122,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+
 
 	resp, err := client.Identity.OIDCReadProviderAuthorize(
 		context.Background(),
@@ -5131,7 +5174,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5143,6 +5186,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+
 
 	resp, err := client.Identity.OIDCReadProviderUserInfo(
 		context.Background(),
@@ -5194,7 +5238,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5206,6 +5250,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+
 
 	resp, err := client.Identity.OIDCReadProviderWellKnownKeys(
 		context.Background(),
@@ -5257,7 +5302,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5269,6 +5314,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+
 
 	resp, err := client.Identity.OIDCReadProviderWellKnownOpenIDConfiguration(
 		context.Background(),
@@ -5320,7 +5366,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5332,6 +5378,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Identity.OIDCReadRole(
 		context.Background(),
@@ -5383,7 +5430,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5395,6 +5442,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
+
 
 	resp, err := client.Identity.OIDCReadScope(
 		context.Background(),
@@ -5446,7 +5494,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5458,6 +5506,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+
 
 	resp, err := client.Identity.OIDCReadToken(
 		context.Background(),
@@ -5509,7 +5558,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5519,6 +5568,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Identity.OIDCReadWellKnownKeys(
@@ -5563,7 +5613,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -5573,6 +5623,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 
 	resp, err := client.Identity.OIDCReadWellKnownOpenIDConfiguration(
@@ -5617,7 +5668,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5629,12 +5681,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewOIDCRotateKeyRequestWithDefaults()
 
-	oIDCRotateKeyRequest := NewOIDCRotateKeyRequestWithDefaults()
 	resp, err := client.Identity.OIDCRotateKey(
 		context.Background(),
 		name,
-		oIDCRotateKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5683,7 +5735,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5695,12 +5748,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
+	request := schema.NewOIDCWriteAssignmentRequestWithDefaults()
 
-	oIDCWriteAssignmentRequest := NewOIDCWriteAssignmentRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteAssignment(
 		context.Background(),
 		name,
-		oIDCWriteAssignmentRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5749,7 +5802,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5761,12 +5815,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
+	request := schema.NewOIDCWriteClientRequestWithDefaults()
 
-	oIDCWriteClientRequest := NewOIDCWriteClientRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteClient(
 		context.Background(),
 		name,
-		oIDCWriteClientRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5815,7 +5869,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5826,11 +5881,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewOIDCWriteConfigRequestWithDefaults()
 
-	oIDCWriteConfigRequest := NewOIDCWriteConfigRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteConfig(
 		context.Background(),
-		oIDCWriteConfigRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5874,7 +5929,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5886,12 +5942,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
+	request := schema.NewOIDCWriteKeyRequestWithDefaults()
 
-	oIDCWriteKeyRequest := NewOIDCWriteKeyRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteKey(
 		context.Background(),
 		name,
-		oIDCWriteKeyRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5940,7 +5996,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -5952,12 +6009,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+	request := schema.NewOIDCWriteProviderRequestWithDefaults()
 
-	oIDCWriteProviderRequest := NewOIDCWriteProviderRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteProvider(
 		context.Background(),
 		name,
-		oIDCWriteProviderRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6006,7 +6063,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6018,12 +6076,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+	request := schema.NewOIDCWriteProviderAuthorizeRequestWithDefaults()
 
-	oIDCWriteProviderAuthorizeRequest := NewOIDCWriteProviderAuthorizeRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteProviderAuthorize(
 		context.Background(),
 		name,
-		oIDCWriteProviderAuthorizeRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6072,7 +6130,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6084,12 +6143,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+	request := schema.NewOIDCWriteProviderTokenRequestWithDefaults()
 
-	oIDCWriteProviderTokenRequest := NewOIDCWriteProviderTokenRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteProviderToken(
 		context.Background(),
 		name,
-		oIDCWriteProviderTokenRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6138,7 +6197,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6150,6 +6209,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
+
 
 	resp, err := client.Identity.OIDCWriteProviderUserInfo(
 		context.Background(),
@@ -6201,7 +6261,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6213,12 +6274,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
+	request := schema.NewOIDCWriteRoleRequestWithDefaults()
 
-	oIDCWriteRoleRequest := NewOIDCWriteRoleRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteRole(
 		context.Background(),
 		name,
-		oIDCWriteRoleRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6267,7 +6328,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6279,12 +6341,12 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
+	request := schema.NewOIDCWriteScopeRequestWithDefaults()
 
-	oIDCWriteScopeRequest := NewOIDCWriteScopeRequestWithDefaults()
 	resp, err := client.Identity.OIDCWriteScope(
 		context.Background(),
 		name,
-		oIDCWriteScopeRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6333,7 +6395,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6345,6 +6407,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
+
 
 	resp, err := client.Identity.PersonaIDDeleteByID(
 		context.Background(),
@@ -6396,7 +6459,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6408,6 +6471,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
+
 
 	resp, err := client.Identity.PersonaIDReadByID(
 		context.Background(),
@@ -6459,7 +6523,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6471,12 +6536,12 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
+	request := schema.NewPersonaIDWriteByIDRequestWithDefaults()
 
-	personaIDWriteByIDRequest := NewPersonaIDWriteByIDRequestWithDefaults()
 	resp, err := client.Identity.PersonaIDWriteByID(
 		context.Background(),
 		id,
-		personaIDWriteByIDRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6525,7 +6590,7 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
@@ -6537,10 +6602,9 @@ func main() {
 	}
 
 
-	list := NewstringWithDefaults()
+
 	resp, err := client.Identity.PersonaListByID(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -6584,7 +6648,8 @@ import (
 	"log"
 	"os"
 
-	vault "github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go"
+	"github.com/hashicorp/vault-client-go/schema"
 )
 
 func main() {
@@ -6595,11 +6660,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	request := schema.NewPersonaWriteRequestWithDefaults()
 
-	personaWriteRequest := NewPersonaWriteRequestWithDefaults()
 	resp, err := client.Identity.PersonaWrite(
 		context.Background(),
-		personaWriteRequest,
+		request,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

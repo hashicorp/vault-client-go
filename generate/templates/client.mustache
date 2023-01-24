@@ -18,7 +18,7 @@ type Client struct {
 	// configuration object is immutable after the client has been initialized
 	configuration Configuration
 
-	parsedBaseAddress url.URL
+	parsedBaseAddress *url.URL
 
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
@@ -88,7 +88,7 @@ func newClient(configuration Configuration) (*Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	c.parsedBaseAddress = *address
+	c.parsedBaseAddress = address
 
 	// Internet draft https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
 	// specifies that the port must be empty

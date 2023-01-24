@@ -100,7 +100,7 @@ func WithRateLimiter(limiter *rate.Limiter) ClientOption {
 // writing foo=1, a subsequent read of foo should return 1.
 //
 // Setting this to true will enable "Conditional Forwarding" as described in
-// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+// https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
 //
 // Note: careful consideration should be made prior to enabling this setting
 // since there will be a performance penalty paid upon each request.
@@ -196,7 +196,7 @@ type Configuration struct {
 	// writing foo=1, a subsequent read of foo should return 1.
 	//
 	// Setting this to true will enable "Conditional Forwarding" as described in
-	// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
+	// https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
 	//
 	// Note: careful consideration should be made prior to enabling this setting
 	// since there will be a performance penalty paid upon each request.
@@ -244,12 +244,12 @@ type TLSConfiguration struct {
 
 	// ClientCertificate is a PEM-encoded client certificate (signed by a CA or
 	// self-signed), which is used to authenticate with Vault via the cert auth
-	// method (see https://www.vaultproject.io/docs/auth/cert)
+	// method (see https://developer.hashicorp.com/vault/docs/auth/cert)
 	ClientCertificate ClientCertificateEntry
 
 	// ClientCertificateKey is a private key, which is used together with
 	// ClientCertificate to authenticate with Vault via the cert auth method
-	// (see https://www.vaultproject.io/docs/auth/cert)
+	// (see https://developer.hashicorp.com/vault/docs/auth/cert)
 	// Default: ""
 	ClientCertificateKey ClientCertificateKeyEntry
 

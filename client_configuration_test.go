@@ -30,7 +30,6 @@ func TestWalkConfigurationFields(t *testing.T) {
 			"VAULT_DISABLE_REDIRECTS",
 		}
 	)
-
 	var configuration ClientConfiguration
 
 	require.NoError(t, walkConfigurationFields(
@@ -41,5 +40,5 @@ func TestWalkConfigurationFields(t *testing.T) {
 		},
 	))
 
-	assert.Contains(t, actual, expected)
+	assert.Subset(t, actual, expected)
 }

@@ -469,7 +469,13 @@ func walkConfigurationFields(structPtr any, f func(field reflect.Value, environm
 			}
 
 		default:
-			if err := f(fieldV, strings.Split(fieldT.Tag.Get("env"), ",")); err != nil {
+			tags := fieldT.Tag.Get("env")
+
+			if tags == "" {
+				continue // no 'env' tags found
+			}
+
+			if err := f(fieldV, strings.Split(tags, ",")); err != nil {
 				return fmt.Errorf("could not configure %q: %w", fieldT.Name, err)
 			}
 		}

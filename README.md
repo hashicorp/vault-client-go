@@ -335,7 +335,7 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 
 ```go
 client, err := vault.New(
-	vault.FromEnv,
+	vault.WithEnvironment(),
 )
 if err != nil {
 	log.Fatal(err)

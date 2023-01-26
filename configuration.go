@@ -450,14 +450,14 @@ func (c *Configuration) LoadEnvironment() error {
 	}
 
 	// assign initial token & namespace manually since they are not exported
-	if env := os.Getenv("VAULT_TOKEN"); env == "" {
+	if env := os.Getenv("VAULT_TOKEN"); env != "" {
 		if err := validateToken(env); err != nil {
 			return fmt.Errorf("configuration error: VAULT_TOKEN: %w", err)
 		}
 		copy.initialToken = env
 	}
 
-	if env := os.Getenv("VAULT_NAMESPACE"); env == "" {
+	if env := os.Getenv("VAULT_NAMESPACE"); env != "" {
 		if err := validateNamespace(env); err != nil {
 			return fmt.Errorf("configuration error: VAULT_NAMESPACE: %w", err)
 		}

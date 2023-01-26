@@ -1,7 +1,6 @@
 package vault
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 
@@ -37,9 +36,6 @@ func TestWalkConfigurationFields(t *testing.T) {
 	require.NoError(t, walkConfigurationFields(
 		&configuration,
 		func(_ reflect.Value, tags []string) error {
-			for _, t := range tags {
-				fmt.Printf("%q,\n", t)
-			}
 			actual = append(actual, tags...)
 			return nil
 		},

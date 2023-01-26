@@ -37,49 +37,6 @@ const (
 	ReplicationForwardInconsistent
 )
 
-// SetReplicationForwardingMode sets a replication forwarding header for all
-// subsequent requests:
-//
-//	ReplicationForwardNone         - no forwarding header
-//	ReplicationForwardAlways       - 'X-Vault-Forward'
-//	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
-//
-// Note: this feature must be enabled in Vault's configuration.
-//
-// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
-func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
-	/* */ c.clientRequestModifiersLock.Lock()
-	defer c.clientRequestModifiersLock.Unlock()
-
-	c.clientRequestModifiers.headers.replicationForwardingMode = mode
-}
-
-// ReplicationForwardingMode clears the X-Vault-Forward / X-Vault-Inconsistent
-// headers from all subsequent requests.
-//
-// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
-func (c *Client) ClearReplicationForwardingMode() {
-	/* */ c.clientRequestModifiersLock.Lock()
-	defer c.clientRequestModifiersLock.Unlock()
-
-	c.clientRequestModifiers.headers.replicationForwardingMode = ReplicationForwardNone
-}
-
-// WithReplicationForwardingMode sets a replication forwarding header to the
-// given value for the next request; it takes precedence over the client-level
-// replication forwarding header.
-//
-//	ReplicationForwardNone         - no forwarding headers
-//	ReplicationForwardAlways       - 'X-Vault-Forward'
-//	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
-//
-// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
-func WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption {
-	return func(m *requestModifiers) error {
-		m.headers.replicationForwardingMode = mode
-		return nil
-	}
-}
 
 // RecordReplicationState returns a response callback that will record the
 // replication state returned by Vault in a response header.

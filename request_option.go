@@ -111,6 +111,22 @@ func WithMountPath(path string) RequestOption {
 	}
 }
 
+// WithReplicationForwardingMode sets a replication forwarding header to the
+// given value for the next request; it takes precedence over the client-level
+// replication forwarding header.
+//
+//	ReplicationForwardNone         - no forwarding headers
+//	ReplicationForwardAlways       - 'X-Vault-Forward'
+//	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
+//
+// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
+func WithReplicationForwardingMode(mode ReplicationForwardingMode) RequestOption {
+	return func(m *requestModifiers) error {
+		m.headers.replicationForwardingMode = mode
+		return nil
+	}
+}
+
 // requestOptionsToRequestModifiers constructs `requestModifiers` propagating the errors, if any
 func requestOptionsToRequestModifiers(options []RequestOption) (_ requestModifiers, errs error) {
 	var modifiers requestModifiers

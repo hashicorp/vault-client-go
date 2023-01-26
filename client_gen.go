@@ -25,7 +25,7 @@ import (
 // Client manages communication with Vault, initialize it with vault.New(...)
 type Client struct {
 	// configuration object is immutable after the client has been initialized
-	configuration Configuration
+	configuration ClientConfiguration
 
 	parsedBaseAddress *url.URL
 
@@ -60,7 +60,7 @@ func New(options ...ClientOption) (*Client, error) {
 }
 
 // newClient returns a new Vault client with a copy of the given configuration
-func newClient(configuration Configuration) (*Client, error) {
+func newClient(configuration ClientConfiguration) (*Client, error) {
 	c := Client{
 		configuration: configuration,
 
@@ -213,6 +213,6 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 
 // Configuration returns a copy of the configuration object used to initialize
 // this client
-func (c *Client) Configuration() Configuration {
+func (c *Client) Configuration() ClientConfiguration {
 	return c.configuration
 }

@@ -16,7 +16,7 @@ import (
 // Client manages communication with Vault, initialize it with vault.New(...)
 type Client struct {
 	// configuration object is immutable after the client has been initialized
-	configuration Configuration
+	configuration ClientConfiguration
 
 	parsedBaseAddress *url.URL
 

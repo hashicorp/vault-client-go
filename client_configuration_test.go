@@ -4,7 +4,6 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
@@ -40,5 +39,5 @@ func TestWalkConfigurationFields(t *testing.T) {
 		},
 	))
 
-	assert.Subset(t, actual, expected)
+	require.Subset(t, actual, expected)
 }

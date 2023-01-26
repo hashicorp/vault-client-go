@@ -195,6 +195,33 @@ func (c *Client) ClearResponseCallbacks() {
 	c.clientRequestModifiersLock.Unlock()
 }
 
+// SetReplicationForwardingMode sets a replication forwarding header for all
+// subsequent requests:
+//
+//	ReplicationForwardNone         - no forwarding header
+//	ReplicationForwardAlways       - 'X-Vault-Forward'
+//	ReplicationForwardInconsistent - 'X-Vault-Inconsistent'
+//
+// Note: this feature must be enabled in Vault's configuration.
+//
+// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
+func (c *Client) SetReplicationForwardingMode(mode ReplicationForwardingMode) {
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.replicationForwardingMode = mode
+	c.clientRequestModifiersLock.Unlock()
+}
+
+// ReplicationForwardingMode clears the X-Vault-Forward / X-Vault-Inconsistent
+// headers from all subsequent requests.
+//
+// See https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations
+func (c *Client) ClearReplicationForwardingMode() {
+	c.clientRequestModifiersLock.Lock()
+	c.clientRequestModifiers.headers.replicationForwardingMode = ReplicationForwardNone
+	c.clientRequestModifiersLock.Unlock()
+}
+
+// mountPathOr returns object's mount path or the given default value
 func (m *requestModifiers) mountPathOr(defaultMountPath string) string {
 	if m.mountPath == "" {
 		return defaultMountPath

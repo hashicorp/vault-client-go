@@ -147,7 +147,7 @@ func WithConfiguration(configuration Configuration) ClientOption {
 	}
 }
 
-// WithEnvironment populate the configuration object with values from
+// WithEnvironment populates the client's configuration object with values from
 // environment values. The following environment variables are currently
 // supported:
 //

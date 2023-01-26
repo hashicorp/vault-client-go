@@ -8,7 +8,7 @@ import (
 	"golang.org/x/time/rate"
 )
 
-// ClientOption is a configuration option to initialize a client. 
+// ClientOption is a configuration option to initialize a client.
 type ClientOption func(*ClientConfiguration) error
 
 // WithBaseAddress specifies the Vault server base address in the form of

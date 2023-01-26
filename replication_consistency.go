@@ -37,7 +37,6 @@ const (
 	ReplicationForwardInconsistent
 )
 
-
 // RecordReplicationState returns a response callback that will record the
 // replication state returned by Vault in a response header.
 //

@@ -166,4 +166,3 @@ func WithEnvironment() ClientOption {
 		return c.populateFromEnvironment()
 	}
 }
-

@@ -127,4 +127,3 @@ func requestOptionsToRequestModifiers(options []RequestOption) (_ requestModifie
 
 	return modifiers, nil
 }
-

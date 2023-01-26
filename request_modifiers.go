@@ -92,7 +92,6 @@ func (c *Client) ClearNamespace() {
 	c.clientRequestModifiersLock.Unlock()
 }
 
-
 // SetMFACredentials sets multi-factor authentication credentials to be used
 // with all subsequent requests.
 //
@@ -162,7 +161,6 @@ func (c *Client) ClearCustomHeaders() {
 	c.clientRequestModifiers.headers.customHeaders = nil
 	c.clientRequestModifiersLock.Unlock()
 }
-
 
 // SetRequestCallbacks sets callbacks which will be invoked before each request.
 func (c *Client) SetRequestCallbacks(callbacks ...RequestCallback) error {
@@ -284,4 +282,3 @@ func printable(str string) bool {
 
 	return idx == -1
 }
-

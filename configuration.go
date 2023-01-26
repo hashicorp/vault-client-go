@@ -21,10 +21,6 @@ import (
 
 type ClientOption func(*Configuration) error
 
-func FromEnv(configuration *Configuration) error {
-	return configuration.LoadEnvironment()
-}
-
 // WithBaseAddress specifies the Vault server base address in the form of
 // scheme://host:port
 // Default: https://127.0.0.1:8200
@@ -148,6 +144,33 @@ func WithConfiguration(configuration Configuration) ClientOption {
 	return func(c *Configuration) error {
 		*c = configuration
 		return nil
+	}
+}
+
+// WithEnvironment populate the configuration object with values from
+// environment values. The following environment variables are currently
+// supported:
+//
+//	VAULT_ADDR, VAULT_AGENT_ADDR (vault's address, e.g. https://127.0.0.1:8200/)
+//	VAULT_CLIENT_TIMEOUT         (request timeout)
+//	VAULT_RATE_LIMIT             (rate[:burst] in operations per second)
+//	VAULT_SRV_LOOKUP             (enable DNS SRV lookup)
+//	VAULT_DISABLE_REDIRECTS      (prevents vault client from following redirects)
+//	VAULT_TOKEN                  (the initial authentication token)
+//	VAULT_NAMESPACE              (the initial namespace to use)
+//	VAULT_SKIP_VERIFY            (do not veirfy vault's presented certificate)
+//	VAULT_CACERT                 (PEM-encoded CA certificate file path)
+//	VAULT_CACERT_BYTES           (PEM-encoded CA certificate bytes)
+//	VAULT_CAPATH                 (PEM-encoded CA certificate directory path)
+//	VAULT_CLIENT_CERT            (PEM-encoded client certificate file path)
+//	VAULT_CLIENT_KEY             (PEM-encoded client certificate key file path)
+//	VAULT_TLS_SERVER_NAME        (used to verify the hostname on returned certificates)
+//	VAULT_RETRY_WAIT_MIN         (minimum time to wait before retrying)
+//	VAULT_RETRY_WAIT_MAX         (maximum time to wait before retrying)
+//	VAULT_MAX_RETRIES            (maximum number of retries for certain error codes)
+func WithEnvironment() ClientOption {
+	return func(c *Configuration) error {
+		return c.PopulateFromEnvironment()
 	}
 }
 
@@ -374,14 +397,30 @@ func DefaultConfiguration() Configuration {
 	}
 }
 
-// LoadEnvironment loads vault-specific environment variables and applies them
-// to the given configuration object. The environment varialbes are specified
-// in the 'env' tags defined next to each configuration field. In case of
-// multiple environment variables defined for a field, the later ones take
-// precedence.
-func (c *Configuration) LoadEnvironment() error {
+// PopulateFromEnvironment populates the configuration object with values from
+// environment values. The following environment variables are currently
+// supported:
+//
+//	VAULT_ADDR, VAULT_AGENT_ADDR (vault's address, e.g. https://127.0.0.1:8200/)
+//	VAULT_CLIENT_TIMEOUT         (request timeout)
+//	VAULT_RATE_LIMIT             (rate[:burst] in operations per second)
+//	VAULT_SRV_LOOKUP             (enable DNS SRV lookup)
+//	VAULT_DISABLE_REDIRECTS      (prevents vault client from following redirects)
+//	VAULT_TOKEN                  (the initial authentication token)
+//	VAULT_NAMESPACE              (the initial namespace to use)
+//	VAULT_SKIP_VERIFY            (do not veirfy vault's presented certificate)
+//	VAULT_CACERT                 (PEM-encoded CA certificate file path)
+//	VAULT_CACERT_BYTES           (PEM-encoded CA certificate bytes)
+//	VAULT_CAPATH                 (PEM-encoded CA certificate directory path)
+//	VAULT_CLIENT_CERT            (PEM-encoded client certificate file path)
+//	VAULT_CLIENT_KEY             (PEM-encoded client certificate key file path)
+//	VAULT_TLS_SERVER_NAME        (used to verify the hostname on returned certificates)
+//	VAULT_RETRY_WAIT_MIN         (minimum time to wait before retrying)
+//	VAULT_RETRY_WAIT_MAX         (maximum time to wait before retrying)
+//	VAULT_MAX_RETRIES            (maximum number of retries for certain error codes)
+func (c *Configuration) PopulateFromEnvironment() error {
 	// this function will be recursively applied to each field within the configuration object
-	assignFieldFromEnv := func(field reflect.Value, environmentTags []string) error {
+	assignFieldFromEnvironment := func(field reflect.Value, environmentTags []string) error {
 		// for each 'env' tag ...
 		for _, tag := range environmentTags {
 			// try to fetch the environment variable
@@ -445,19 +484,19 @@ func (c *Configuration) LoadEnvironment() error {
 	// work on a copy of the configuration object to prevent modfications on errors
 	copy := *c
 
-	if err := walkConfigurationFields(&copy, assignFieldFromEnv); err != nil {
+	if err := walkConfigurationFields(&copy, assignFieldFromEnvironment); err != nil {
 		return fmt.Errorf("configuration error: %w", err)
 	}
 
 	// assign initial token & namespace manually since they are not exported
-	if env := os.Getenv("VAULT_TOKEN"); env == "" {
+	if env := os.Getenv("VAULT_TOKEN"); env != "" {
 		if err := validateToken(env); err != nil {
 			return fmt.Errorf("configuration error: VAULT_TOKEN: %w", err)
 		}
 		copy.initialToken = env
 	}
 
-	if env := os.Getenv("VAULT_NAMESPACE"); env == "" {
+	if env := os.Getenv("VAULT_NAMESPACE"); env != "" {
 		if err := validateNamespace(env); err != nil {
 			return fmt.Errorf("configuration error: VAULT_NAMESPACE: %w", err)
 		}

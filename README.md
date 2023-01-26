@@ -335,7 +335,8 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 
 ```go
 client, err := vault.New(
-	vault.FromEnv,
+	vault.WithBaseAddress("http://not-an-address"),
+	vault.WithEnvironment(),
 )
 if err != nil {
 	log.Fatal(err)

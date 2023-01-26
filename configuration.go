@@ -170,7 +170,7 @@ func WithConfiguration(configuration Configuration) ClientOption {
 //	VAULT_MAX_RETRIES            (maximum number of retries for certain error codes)
 func WithEnvironment() ClientOption {
 	return func(c *Configuration) error {
-		return c.PopulateFromEnvironment()
+		return c.populateFromEnvironment()
 	}
 }
 
@@ -397,7 +397,7 @@ func DefaultConfiguration() Configuration {
 	}
 }
 
-// PopulateFromEnvironment populates the configuration object with values from
+// populateFromEnvironment populates the configuration object with values from
 // environment values. The following environment variables are currently
 // supported:
 //
@@ -418,7 +418,7 @@ func DefaultConfiguration() Configuration {
 //	VAULT_RETRY_WAIT_MIN         (minimum time to wait before retrying)
 //	VAULT_RETRY_WAIT_MAX         (maximum time to wait before retrying)
 //	VAULT_MAX_RETRIES            (maximum number of retries for certain error codes)
-func (c *Configuration) PopulateFromEnvironment() error {
+func (c *Configuration) populateFromEnvironment() error {
 	// this function will be recursively applied to each field within the configuration object
 	assignFieldFromEnvironment := func(field reflect.Value, environmentTags []string) error {
 		// for each 'env' tag ...

@@ -335,7 +335,6 @@ if err := client.SetToken(resp.Auth.ClientToken); err != nil {
 
 ```go
 client, err := vault.New(
-	vault.WithBaseAddress("http://not-an-address"),
 	vault.WithEnvironment(),
 )
 if err != nil {
@@ -347,7 +346,6 @@ if err != nil {
 export VAULT_ADDR=http://localhost:8200
 export VAULT_TOKEN=my-token
 go run main.go
-# the client will be initialized with 'http://localhost:8200' base address
 ```
 
 ### Logging Requests & Responses with Request/Response Callbacks

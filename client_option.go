@@ -58,11 +58,11 @@ func WithTLS(configuration TLSConfiguration) ClientOption {
 	}
 }
 
-// WithRetries configures the internal go-retryablehttp client.
+// WithRetryConfiguration configures the internal go-retryablehttp client.
 // The library sets reasonable defaults for this setting.
-func WithRetries(configuration RetryConfiguration) ClientOption {
+func WithRetryConfiguraation(configuration RetryConfiguration) ClientOption {
 	return func(c *ClientConfiguration) error {
-		c.Retries = configuration
+		c.RetryConfiguration = configuration
 		return nil
 	}
 }

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestWalkConfigurationFields(t *testing.T) {
+func Test_walkconfigurationfields(t *testing.T) {
 	var (
 		actual   = []string{}
 		expected = []string{
@@ -29,6 +29,7 @@ func TestWalkConfigurationFields(t *testing.T) {
 			"VAULT_DISABLE_REDIRECTS",
 		}
 	)
+
 	var configuration ClientConfiguration
 
 	require.NoError(t, walkConfigurationFields(

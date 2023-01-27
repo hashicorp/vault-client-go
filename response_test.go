@@ -4,50 +4,49 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
-func TestParseResponseGeneric(t *testing.T) {
-	tests := []struct {
-		name     string
+func Test_parseResponse_generic(t *testing.T) {
+	cases := map[string]struct {
 		body     string
 		expected *Response[map[string]interface{}]
-	}{{
-		name:     "empty",
-		body:     "",
-		expected: nil,
-	}, {
-		name: "empty-object",
-		body: `{}`,
-		expected: &Response[map[string]interface{}]{
-			Data: map[string]interface{}{},
+	}{
+		"empty": {
+			body:     "",
+			expected: nil,
 		},
-	}, {
-		name: "with-data",
-		body: `{"data":{"key1":"value1","key2":"value2"}}`,
-		expected: &Response[map[string]interface{}]{
-			Data: map[string]interface{}{
-				"key1": "value1",
-				"key2": "value2",
+		"empty-object": {
+			body: `{}`,
+			expected: &Response[map[string]interface{}]{
+				Data: map[string]interface{}{},
 			},
 		},
-	}, {
-		name: "with-no-data",
-		body: `{"key1":"value1","key2":"value2"}`,
-		expected: &Response[map[string]interface{}]{
-			Data: map[string]interface{}{
-				"key1": "value1",
-				"key2": "value2",
+		"with-data": {
+			body: `{"data":{"key1":"value1","key2":"value2"}}`,
+			expected: &Response[map[string]interface{}]{
+				Data: map[string]interface{}{
+					"key1": "value1",
+					"key2": "value2",
+				},
 			},
 		},
-	}}
+		"with-no-data": {
+			body: `{"key1":"value1","key2":"value2"}`,
+			expected: &Response[map[string]interface{}]{
+				Data: map[string]interface{}{
+					"key1": "value1",
+					"key2": "value2",
+				},
+			},
+		},
+	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			actual, err := parseResponse[map[string]interface{}](strings.NewReader(tt.body))
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			actual, err := parseResponse[map[string]interface{}](strings.NewReader(tc.body))
 			require.NoError(t, err)
-			assert.Equal(t, tt.expected, actual)
+			require.Equal(t, tc.expected, actual)
 		})
 	}
 }
@@ -57,46 +56,46 @@ type testStruct struct {
 	TestBool   bool   `json:"test_bool"`
 }
 
-func TestParseResponseStructured(t *testing.T) {
-	tests := []struct {
-		name     string
+func Test_parseResponse_structured(t *testing.T) {
+	cases := map[string]struct {
 		body     string
 		expected *Response[testStruct]
-	}{{
-		name:     "empty",
-		body:     "",
-		expected: nil,
-	}, {
-		name: "empty-object",
-		body: `{}`,
-		expected: &Response[testStruct]{
-			Data: testStruct{},
+	}{
+		"empty": {
+			body:     "",
+			expected: nil,
 		},
-	}, {
-		name: "with-data",
-		body: `{"data":{"test_string":"test","test_bool":true}}`,
-		expected: &Response[testStruct]{
-			Data: testStruct{
-				TestString: "test",
-				TestBool:   true,
+		"empty-object": {
+			body: `{}`,
+			expected: &Response[testStruct]{
+				Data: testStruct{},
 			},
 		},
-	}, {
-		name: "with-no-data",
-		body: `{"test_string":"test","test_bool":false}`,
-		expected: &Response[testStruct]{
-			Data: testStruct{
-				TestString: "test",
-				TestBool:   false,
+		"with-data": {
+			body: `{"data":{"test_string":"test","test_bool":true}}`,
+			expected: &Response[testStruct]{
+				Data: testStruct{
+					TestString: "test",
+					TestBool:   true,
+				},
 			},
 		},
-	}}
+		"with-no-data": {
+			body: `{"test_string":"test","test_bool":false}`,
+			expected: &Response[testStruct]{
+				Data: testStruct{
+					TestString: "test",
+					TestBool:   false,
+				},
+			},
+		},
+	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			actual, err := parseResponse[testStruct](strings.NewReader(tt.body))
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			actual, err := parseResponse[testStruct](strings.NewReader(tc.body))
 			require.NoError(t, err)
-			assert.Equal(t, tt.expected, actual)
+			require.Equal(t, tc.expected, actual)
 		})
 	}
 }

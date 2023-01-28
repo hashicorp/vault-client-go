@@ -10,7 +10,6 @@ import (
 )
 
 func Test_Client_New(t *testing.T) {
-
 	cases := map[string]struct {
 		options []ClientOption
 	}{

@@ -187,6 +187,7 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 	copy(clone.responseCallbacks, c.clientRequestModifiers.responseCallbacks)
 
 	clone.headers = requestHeaders{
+		userAgent:                 c.clientRequestModifiers.headers.userAgent,
 		token:                     c.clientRequestModifiers.headers.token,
 		namespace:                 c.clientRequestModifiers.headers.namespace,
 		responseWrappingTTL:       c.clientRequestModifiers.headers.responseWrappingTTL,

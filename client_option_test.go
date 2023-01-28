@@ -25,10 +25,12 @@ func Test_New(t *testing.T) {
 			options: []ClientOption{WithEnforceReadYourWritesConsistency()},
 		},
 		"with-retry-configuration": {
-			options: []ClientOption{WithRetryConfiguration(RetryConfiguration{
-				RetryWaitMin: 200 * time.Millisecond,
-				RetryWaitMax: 900 * time.Millisecond,
-			})},
+			options: []ClientOption{WithRetryConfiguration(
+				RetryConfiguration{
+					RetryWaitMin: 200 * time.Millisecond,
+					RetryWaitMax: 900 * time.Millisecond,
+				},
+			)},
 		},
 	}
 

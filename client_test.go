@@ -12,10 +12,12 @@ func Test_Client_Clone(t *testing.T) {
 	client, err := New(
 		WithBaseAddress("http://test"),
 		WithRequestTimeout(30*time.Second),
-		WithRetryConfiguration(RetryConfiguration{
-			RetryWaitMin: 200 * time.Millisecond,
-			RetryWaitMax: 900 * time.Millisecond,
-		}),
+		WithRetryConfiguration(
+			RetryConfiguration{
+				RetryWaitMin: 200 * time.Millisecond,
+				RetryWaitMax: 900 * time.Millisecond,
+			},
+		),
 	)
 	require.NoError(t, err)
 

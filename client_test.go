@@ -46,7 +46,7 @@ func Test_Client_New(t *testing.T) {
 			configurationClient := client.Configuration()
 			configurationClient.BaseClient = nil
 
-			// check if the configuration was modified
+			// check if the configurations were modified
 			if len(tc.options) == 0 {
 				require.Equal(
 					t,

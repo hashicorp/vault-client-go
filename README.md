@@ -4,11 +4,11 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 [specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
 [Vault][vault].
 
-> _**Warning**_: This library is currently marked as **EXPERIMENTAL**. :warning:
-> The API may change! :warning: Please try it out and give us feedback! **
+> _**Warning**_: This library is currently marked as **EXPERIMENTAL**. Please
+> try it out and give us feedback! **
 
 > _**Warning**_: The `OpenAPI` [specification file][openapi-spec] included in
-> this repository is **NOT** the official Vault `OpenAPI`.
+> this repository is **NOT** the official Vault `OpenAPI` specification.
 
 ## Contents
 

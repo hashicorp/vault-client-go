@@ -30,7 +30,6 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 ## Installation
 
 ```sh
-export GOPRIVATE=github.com/hashicorp/vault-client-go
 go get github.com/hashicorp/vault-client-go
 ```
 

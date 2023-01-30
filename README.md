@@ -7,8 +7,8 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 > _**Warning**_: This library is currently marked as **EXPERIMENTAL**. Please
 > try it out and give us feedback! **
 
-> _**Warning**_: The `OpenAPI` [specification file][openapi-spec] included in
-> this repository is **NOT** the official Vault `OpenAPI` specification.
+> _**Warning**_: The [openapi.json][openapi-spec] file included in this
+> repository is **NOT** the official Vault `OpenAPI` specification.
 
 ## Contents
 

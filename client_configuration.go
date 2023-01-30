@@ -44,9 +44,9 @@ type ClientConfiguration struct {
 	// http.Client.
 	TLS TLSConfiguration
 
-	// Retries is a collection of settings used to configure the internal
-	// go-retryablehttp client.
-	Retries RetryConfiguration
+	// RetryConfiguration is a collection of settings used to configure the
+	// internal go-retryablehttp client.
+	RetryConfiguration RetryConfiguration
 
 	// RateLimiter controls how frequently requests are allowed to happen.
 	// If this pointer is nil, then there will be no limit set. Note that an
@@ -230,7 +230,7 @@ func DefaultConfiguration() ClientConfiguration {
 		BaseAddress:    "https://127.0.0.1:8200",
 		BaseClient:     defaultClient,
 		RequestTimeout: 60 * time.Second,
-		Retries: RetryConfiguration{
+		RetryConfiguration: RetryConfiguration{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,
 			RetryMax:     2,

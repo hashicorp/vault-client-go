@@ -64,13 +64,13 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
 			HTTPClient:   configuration.BaseClient,
-			Logger:       configuration.Retries.Logger,
-			RetryWaitMin: configuration.Retries.RetryWaitMin,
-			RetryWaitMax: configuration.Retries.RetryWaitMax,
-			RetryMax:     configuration.Retries.RetryMax,
-			CheckRetry:   configuration.Retries.CheckRetry,
-			Backoff:      configuration.Retries.Backoff,
-			ErrorHandler: configuration.Retries.ErrorHandler,
+			Logger:       configuration.RetryConfiguration.Logger,
+			RetryWaitMin: configuration.RetryConfiguration.RetryWaitMin,
+			RetryWaitMax: configuration.RetryConfiguration.RetryWaitMax,
+			RetryMax:     configuration.RetryConfiguration.RetryMax,
+			CheckRetry:   configuration.RetryConfiguration.CheckRetry,
+			Backoff:      configuration.RetryConfiguration.Backoff,
+			ErrorHandler: configuration.RetryConfiguration.ErrorHandler,
 		},
 
 		clientRequestModifiers: requestModifiers{
@@ -187,6 +187,7 @@ func (c *Client) cloneClientRequestModifiers() requestModifiers {
 	copy(clone.responseCallbacks, c.clientRequestModifiers.responseCallbacks)
 
 	clone.headers = requestHeaders{
+		userAgent:                 c.clientRequestModifiers.headers.userAgent,
 		token:                     c.clientRequestModifiers.headers.token,
 		namespace:                 c.clientRequestModifiers.headers.namespace,
 		responseWrappingTTL:       c.clientRequestModifiers.headers.responseWrappingTTL,

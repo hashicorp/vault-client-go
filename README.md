@@ -1,10 +1,14 @@
-# Go Client for HashiCorp Vault
+# [EXPERIMENTAL] Go Client for HashiCorp Vault
 
 A simple client library [generated][openapi-generator] from `OpenAPI`
 [specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
 [Vault][vault].
 
-> _**Note**_: **This library is now available in BETA. Please try it out and give us feedback! Please do not use it in production.**
+> _**Warning**_: This library is currently marked as **EXPERIMENTAL**. :warning:
+> The API may change! :warning: Please try it out and give us feedback! **
+
+> _**Warning**_: The `OpenAPI` [specification file][openapi-spec] included in
+> this repository is **NOT** the official Vault `OpenAPI`.
 
 ## Contents
 

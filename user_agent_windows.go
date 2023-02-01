@@ -9,8 +9,8 @@ import (
 	"golang.org/x/sys/windows"
 )
 
-// userAgent returns a user agent string [executable/version (os version; go version)]
-func userAgent(clientVersion string) string {
+// constructUserAgent returns a user agent string [executable/version (os version; go version)]
+func constructUserAgent(clientVersion string) string {
 	windowsVersion, err := windows.GetVersion()
 	if err != nil {
 		return fmt.Sprintf(

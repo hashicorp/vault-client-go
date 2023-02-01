@@ -13,6 +13,8 @@ import (
 	"github.com/hashicorp/go-retryablehttp"
 )
 
+const ClientVersion = "{{packageVersion}}"
+
 // Client manages communication with Vault, initialize it with vault.New(...)
 type Client struct {
 	// configuration object is immutable after the client has been initialized
@@ -75,7 +77,7 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 
 		clientRequestModifiers: requestModifiers{
 			headers: requestHeaders{
-				userAgent:                 userAgent("{{packageVersion}}"),
+				userAgent:                 constructUserAgent(ClientVersion),
 				token:                     configuration.initialToken,
 				namespace:                 configuration.initialNamespace,
 				replicationForwardingMode: ReplicationForwardNone,

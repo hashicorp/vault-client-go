@@ -10,8 +10,8 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-// userAgent returns a user agent string [executable/version (os version; go version)]
-func userAgent(clientVersion string) string {
+// constructUserAgent returns a user agent string [executable/version (os version; go version)]
+func constructUserAgent(clientVersion string) string {
 	var uname unix.Utsname
 	if err := unix.Uname(&uname); err != nil {
 		return fmt.Sprintf(

@@ -1,12 +1,18 @@
 # PKIWriteIntermediateSetSignedRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Certificate** | Pointer to **string** | PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint. Additional parent CAs may be optionally appended to the bundle. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKIWriteIntermediateSetSignedRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewPKIWriteIntermediateSetSignedRequestWithDefaults instantiates a new PKIWriteIntermediateSetSignedRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCertificate
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetCertificate sets Certificate field to given value.
 
+
 ### HasCertificate
 
 `func (o *PKIWriteIntermediateSetSignedRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

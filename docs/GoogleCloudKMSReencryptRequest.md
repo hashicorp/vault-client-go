@@ -1,14 +1,20 @@
 # GoogleCloudKMSReencryptRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AdditionalAuthenticatedData** | Pointer to **string** | Optional data that, if specified, must also be provided during decryption. | [optional] 
 **Ciphertext** | Pointer to **string** | Ciphertext to be re-encrypted to the latest key version. This must be ciphertext that Vault previously generated for this named key. | [optional] 
 **KeyVersion** | Pointer to **int32** | Integer version of the crypto key version to use for the new encryption. If unspecified, this defaults to the latest active crypto key version. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudKMSReencryptRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewGoogleCloudKMSReencryptRequestWithDefaults instantiates a new GoogleCloudKMSReencryptRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAdditionalAuthenticatedData
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetAdditionalAuthenticatedData sets AdditionalAuthenticatedData field to given value.
 
+
 ### HasAdditionalAuthenticatedData
 
 `func (o *GoogleCloudKMSReencryptRequest) HasAdditionalAuthenticatedData() bool`
 
 HasAdditionalAuthenticatedData returns a boolean if a field has been set.
+
+
+
 
 ### GetCiphertext
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetCiphertext sets Ciphertext field to given value.
 
+
 ### HasCiphertext
 
 `func (o *GoogleCloudKMSReencryptRequest) HasCiphertext() bool`
 
 HasCiphertext returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyVersion
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetKeyVersion sets KeyVersion field to given value.
 
+
 ### HasKeyVersion
 
 `func (o *GoogleCloudKMSReencryptRequest) HasKeyVersion() bool`
 
 HasKeyVersion returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,13 +1,19 @@
 # OIDCWriteAssignmentRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **EntityIds** | Pointer to **[]string** | Comma separated string or array of identity entity IDs | [optional] 
 **GroupIds** | Pointer to **[]string** | Comma separated string or array of identity group IDs | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOIDCWriteAssignmentRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewOIDCWriteAssignmentRequestWithDefaults instantiates a new OIDCWriteAssignmentRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetEntityIds
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetEntityIds sets EntityIds field to given value.
 
+
 ### HasEntityIds
 
 `func (o *OIDCWriteAssignmentRequest) HasEntityIds() bool`
 
 HasEntityIds returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupIds
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetGroupIds sets GroupIds field to given value.
 
+
 ### HasGroupIds
 
 `func (o *OIDCWriteAssignmentRequest) HasGroupIds() bool`
 
 HasGroupIds returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

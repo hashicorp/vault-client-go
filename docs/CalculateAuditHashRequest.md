@@ -1,12 +1,18 @@
 # CalculateAuditHashRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Input** | Pointer to **string** |  | [optional] 
 
+
+
 ## Methods
+
 
 ### NewCalculateAuditHashRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewCalculateAuditHashRequestWithDefaults instantiates a new CalculateAuditHashRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetInput
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetInput sets Input field to given value.
 
+
 ### HasInput
 
 `func (o *CalculateAuditHashRequest) HasInput() bool`
 
 HasInput returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

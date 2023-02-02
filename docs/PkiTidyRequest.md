@@ -1,19 +1,25 @@
 # PKITidyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IssuerSafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond issuer&#39;s expiration before it is removed from the backend storage. Defaults to 8760 hours (1 year). | [optional] [default to 31536000]
+
+
+**IssuerSafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond issuer&#x27;s expiration before it is removed from the backend storage. Defaults to 8760 hours (1 year). | [optional] [default to 31536000]
 **PauseDuration** | Pointer to **string** | The amount of time to wait between processing certificates. This allows operators to change the execution profile of tidy to take consume less resources by slowing down how long it takes to run. Note that the entire list of certificates will be stored in memory during the entire tidy operation, but resources to read/process/update existing entries will be spread out over a greater period of time. By default this is zero seconds. | [optional] [default to "0s"]
 **SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond certificate expiration before it is removed from the backend storage and/or revocation list. Defaults to 72 hours. | [optional] [default to 259200]
 **TidyCertStore** | Pointer to **bool** | Set to true to enable tidying up the certificate store | [optional] 
 **TidyExpiredIssuers** | Pointer to **bool** | Set to true to automatically remove expired issuers past the issuer_safety_buffer. No keys will be removed as part of this operation. | [optional] 
-**TidyRevocationList** | Pointer to **bool** | Deprecated; synonym for &#39;tidy_revoked_certs | [optional] 
+**TidyRevocationList** | Pointer to **bool** | Deprecated; synonym for &#x27;tidy_revoked_certs | [optional] 
 **TidyRevokedCertIssuerAssociations** | Pointer to **bool** | Set to true to validate issuer associations on revocation entries. This helps increase the performance of CRL building and OCSP responses. | [optional] 
 **TidyRevokedCerts** | Pointer to **bool** | Set to true to expire all revoked and expired certificates, removing them both from the CRL and from storage. The CRL will be rotated if this causes any values to be removed. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKITidyRequest
 
@@ -31,6 +37,7 @@ will change when the set of required properties is changed
 NewPKITidyRequestWithDefaults instantiates a new PKITidyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetIssuerSafetyBuffer
 
@@ -51,11 +58,15 @@ and a boolean to check if the value has been set.
 
 SetIssuerSafetyBuffer sets IssuerSafetyBuffer field to given value.
 
+
 ### HasIssuerSafetyBuffer
 
 `func (o *PKITidyRequest) HasIssuerSafetyBuffer() bool`
 
 HasIssuerSafetyBuffer returns a boolean if a field has been set.
+
+
+
 
 ### GetPauseDuration
 
@@ -76,11 +87,15 @@ and a boolean to check if the value has been set.
 
 SetPauseDuration sets PauseDuration field to given value.
 
+
 ### HasPauseDuration
 
 `func (o *PKITidyRequest) HasPauseDuration() bool`
 
 HasPauseDuration returns a boolean if a field has been set.
+
+
+
 
 ### GetSafetyBuffer
 
@@ -101,11 +116,15 @@ and a boolean to check if the value has been set.
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 
+
 ### HasSafetyBuffer
 
 `func (o *PKITidyRequest) HasSafetyBuffer() bool`
 
 HasSafetyBuffer returns a boolean if a field has been set.
+
+
+
 
 ### GetTidyCertStore
 
@@ -126,11 +145,15 @@ and a boolean to check if the value has been set.
 
 SetTidyCertStore sets TidyCertStore field to given value.
 
+
 ### HasTidyCertStore
 
 `func (o *PKITidyRequest) HasTidyCertStore() bool`
 
 HasTidyCertStore returns a boolean if a field has been set.
+
+
+
 
 ### GetTidyExpiredIssuers
 
@@ -151,11 +174,15 @@ and a boolean to check if the value has been set.
 
 SetTidyExpiredIssuers sets TidyExpiredIssuers field to given value.
 
+
 ### HasTidyExpiredIssuers
 
 `func (o *PKITidyRequest) HasTidyExpiredIssuers() bool`
 
 HasTidyExpiredIssuers returns a boolean if a field has been set.
+
+
+
 
 ### GetTidyRevocationList
 
@@ -176,11 +203,15 @@ and a boolean to check if the value has been set.
 
 SetTidyRevocationList sets TidyRevocationList field to given value.
 
+
 ### HasTidyRevocationList
 
 `func (o *PKITidyRequest) HasTidyRevocationList() bool`
 
 HasTidyRevocationList returns a boolean if a field has been set.
+
+
+
 
 ### GetTidyRevokedCertIssuerAssociations
 
@@ -201,11 +232,15 @@ and a boolean to check if the value has been set.
 
 SetTidyRevokedCertIssuerAssociations sets TidyRevokedCertIssuerAssociations field to given value.
 
+
 ### HasTidyRevokedCertIssuerAssociations
 
 `func (o *PKITidyRequest) HasTidyRevokedCertIssuerAssociations() bool`
 
 HasTidyRevokedCertIssuerAssociations returns a boolean if a field has been set.
+
+
+
 
 ### GetTidyRevokedCerts
 
@@ -226,11 +261,19 @@ and a boolean to check if the value has been set.
 
 SetTidyRevokedCerts sets TidyRevokedCerts field to given value.
 
+
 ### HasTidyRevokedCerts
 
 `func (o *PKITidyRequest) HasTidyRevokedCerts() bool`
 
 HasTidyRevokedCerts returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

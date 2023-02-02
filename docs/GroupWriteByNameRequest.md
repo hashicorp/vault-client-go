@@ -1,17 +1,23 @@
 # GroupWriteByNameRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Id** | Pointer to **string** | ID of the group. If set, updates the corresponding existing group. | [optional] 
 **MemberEntityIds** | Pointer to **[]string** | Entity IDs to be assigned as group members. | [optional] 
 **MemberGroupIds** | Pointer to **[]string** | Group IDs to be assigned as group members. | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault &lt;command&gt; &lt;path&gt; metadata&#x3D;key1&#x3D;value1 metadata&#x3D;key2&#x3D;value2 | [optional] 
 **Policies** | Pointer to **[]string** | Policies to be tied to the group. | [optional] 
-**Type** | Pointer to **string** | Type of the group, &#39;internal&#39; or &#39;external&#39;. Defaults to &#39;internal&#39; | [optional] 
+**Type** | Pointer to **string** | Type of the group, &#x27;internal&#x27; or &#x27;external&#x27;. Defaults to &#x27;internal&#x27; | [optional] 
+
+
 
 ## Methods
+
 
 ### NewGroupWriteByNameRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewGroupWriteByNameRequestWithDefaults instantiates a new GroupWriteByNameRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetId
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+
 ### HasId
 
 `func (o *GroupWriteByNameRequest) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+
+
 
 ### GetMemberEntityIds
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetMemberEntityIds sets MemberEntityIds field to given value.
 
+
 ### HasMemberEntityIds
 
 `func (o *GroupWriteByNameRequest) HasMemberEntityIds() bool`
 
 HasMemberEntityIds returns a boolean if a field has been set.
+
+
+
 
 ### GetMemberGroupIds
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetMemberGroupIds sets MemberGroupIds field to given value.
 
+
 ### HasMemberGroupIds
 
 `func (o *GroupWriteByNameRequest) HasMemberGroupIds() bool`
 
 HasMemberGroupIds returns a boolean if a field has been set.
+
+
+
 
 ### GetMetadata
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetMetadata sets Metadata field to given value.
 
+
 ### HasMetadata
 
 `func (o *GroupWriteByNameRequest) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *GroupWriteByNameRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *GroupWriteByNameRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

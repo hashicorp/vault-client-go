@@ -1,12 +1,18 @@
 # AppRoleWriteBoundCIDRListRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **BoundCidrList** | Pointer to **[]string** | Deprecated: Please use \&quot;secret_id_bound_cidrs\&quot; instead. Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteBoundCIDRListRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteBoundCIDRListRequestWithDefaults instantiates a new AppRoleWriteBoundCIDRListRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBoundCidrList
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetBoundCidrList sets BoundCidrList field to given value.
 
+
 ### HasBoundCidrList
 
 `func (o *AppRoleWriteBoundCIDRListRequest) HasBoundCidrList() bool`
 
 HasBoundCidrList returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

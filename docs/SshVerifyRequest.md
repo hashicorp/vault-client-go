@@ -1,12 +1,18 @@
 # SSHVerifyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Otp** | Pointer to **string** | [Required] One-Time-Key that needs to be validated | [optional] 
 
+
+
 ## Methods
+
 
 ### NewSSHVerifyRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewSSHVerifyRequestWithDefaults instantiates a new SSHVerifyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetOtp
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetOtp sets Otp field to given value.
 
+
 ### HasOtp
 
 `func (o *SSHVerifyRequest) HasOtp() bool`
 
 HasOtp returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

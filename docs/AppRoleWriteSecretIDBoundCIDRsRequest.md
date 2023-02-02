@@ -1,12 +1,18 @@
 # AppRoleWriteSecretIDBoundCIDRsRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **SecretIdBoundCidrs** | Pointer to **[]string** | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteSecretIDBoundCIDRsRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults instantiates a new AppRoleWriteSecretIDBoundCIDRsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetSecretIdBoundCidrs
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetSecretIdBoundCidrs sets SecretIdBoundCidrs field to given value.
 
+
 ### HasSecretIdBoundCidrs
 
 `func (o *AppRoleWriteSecretIDBoundCIDRsRequest) HasSecretIdBoundCidrs() bool`
 
 HasSecretIdBoundCidrs returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

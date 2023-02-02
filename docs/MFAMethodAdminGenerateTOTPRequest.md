@@ -1,13 +1,19 @@
 # MFAMethodAdminGenerateTOTPRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **EntityId** | **string** | Entity ID on which the generated secret needs to get stored. | 
 **MethodId** | **string** | The unique identifier for this MFA method. | 
 
+
+
 ## Methods
+
 
 ### NewMFAMethodAdminGenerateTOTPRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewMFAMethodAdminGenerateTOTPRequestWithDefaults instantiates a new MFAMethodAdminGenerateTOTPRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetEntityId
 
@@ -46,6 +53,9 @@ and a boolean to check if the value has been set.
 SetEntityId sets EntityId field to given value.
 
 
+
+
+
 ### GetMethodId
 
 `func (o *MFAMethodAdminGenerateTOTPRequest) GetMethodId() string`
@@ -64,6 +74,13 @@ and a boolean to check if the value has been set.
 `func (o *MFAMethodAdminGenerateTOTPRequest) SetMethodId(v string)`
 
 SetMethodId sets MethodId field to given value.
+
+
+
+
+
+
+
 
 
 

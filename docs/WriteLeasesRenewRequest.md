@@ -1,14 +1,20 @@
 # WriteLeasesRenewRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Increment** | Pointer to **int32** | The desired increment in seconds to the lease | [optional] 
 **LeaseId** | Pointer to **string** | The lease identifier to renew. This is included with a lease. | [optional] 
 **UrlLeaseId** | Pointer to **string** | The lease identifier to renew. This is included with a lease. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteLeasesRenewRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewWriteLeasesRenewRequestWithDefaults instantiates a new WriteLeasesRenewRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetIncrement
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetIncrement sets Increment field to given value.
 
+
 ### HasIncrement
 
 `func (o *WriteLeasesRenewRequest) HasIncrement() bool`
 
 HasIncrement returns a boolean if a field has been set.
+
+
+
 
 ### GetLeaseId
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetLeaseId sets LeaseId field to given value.
 
+
 ### HasLeaseId
 
 `func (o *WriteLeasesRenewRequest) HasLeaseId() bool`
 
 HasLeaseId returns a boolean if a field has been set.
+
+
+
 
 ### GetUrlLeaseId
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetUrlLeaseId sets UrlLeaseId field to given value.
 
+
 ### HasUrlLeaseId
 
 `func (o *WriteLeasesRenewRequest) HasUrlLeaseId() bool`
 
 HasUrlLeaseId returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

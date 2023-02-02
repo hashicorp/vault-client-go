@@ -1,13 +1,19 @@
 # NomadWriteLeaseConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **MaxTtl** | Pointer to **int32** | Duration after which the issued token should not be allowed to be renewed | [optional] 
 **Ttl** | Pointer to **int32** | Duration before which the issued token needs renewal | [optional] 
 
+
+
 ## Methods
+
 
 ### NewNomadWriteLeaseConfigRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewNomadWriteLeaseConfigRequestWithDefaults instantiates a new NomadWriteLeaseConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMaxTtl
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *NomadWriteLeaseConfigRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *NomadWriteLeaseConfigRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

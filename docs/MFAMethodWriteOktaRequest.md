@@ -1,18 +1,24 @@
 # MFAMethodWriteOktaRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ApiToken** | Pointer to **string** | Okta API key. | [optional] 
 **BaseUrl** | Pointer to **string** | The base domain to use for the Okta API. When not specified in the configuration, \&quot;okta.com\&quot; is used. | [optional] 
 **MethodId** | Pointer to **string** | The unique identifier for this MFA method. | [optional] 
 **OrgName** | Pointer to **string** | Name of the organization to be used in the Okta API. | [optional] 
 **PrimaryEmail** | Pointer to **bool** | If true, the username will only match the primary email for the account. Defaults to false. | [optional] 
 **Production** | Pointer to **bool** | (DEPRECATED) Use base_url instead. | [optional] 
-**UsernameFormat** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to substitute should be placed in {{}}. For example, \&quot;{{entity.name}}@example.com\&quot;. If blank, the Entity&#39;s name field will be used as-is. | [optional] 
+**UsernameFormat** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to substitute should be placed in {{}}. For example, \&quot;{{entity.name}}@example.com\&quot;. If blank, the Entity&#x27;s name field will be used as-is. | [optional] 
+
+
 
 ## Methods
+
 
 ### NewMFAMethodWriteOktaRequest
 
@@ -30,6 +36,7 @@ will change when the set of required properties is changed
 NewMFAMethodWriteOktaRequestWithDefaults instantiates a new MFAMethodWriteOktaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetApiToken
 
@@ -50,11 +57,15 @@ and a boolean to check if the value has been set.
 
 SetApiToken sets ApiToken field to given value.
 
+
 ### HasApiToken
 
 `func (o *MFAMethodWriteOktaRequest) HasApiToken() bool`
 
 HasApiToken returns a boolean if a field has been set.
+
+
+
 
 ### GetBaseUrl
 
@@ -75,11 +86,15 @@ and a boolean to check if the value has been set.
 
 SetBaseUrl sets BaseUrl field to given value.
 
+
 ### HasBaseUrl
 
 `func (o *MFAMethodWriteOktaRequest) HasBaseUrl() bool`
 
 HasBaseUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetMethodId
 
@@ -100,11 +115,15 @@ and a boolean to check if the value has been set.
 
 SetMethodId sets MethodId field to given value.
 
+
 ### HasMethodId
 
 `func (o *MFAMethodWriteOktaRequest) HasMethodId() bool`
 
 HasMethodId returns a boolean if a field has been set.
+
+
+
 
 ### GetOrgName
 
@@ -125,11 +144,15 @@ and a boolean to check if the value has been set.
 
 SetOrgName sets OrgName field to given value.
 
+
 ### HasOrgName
 
 `func (o *MFAMethodWriteOktaRequest) HasOrgName() bool`
 
 HasOrgName returns a boolean if a field has been set.
+
+
+
 
 ### GetPrimaryEmail
 
@@ -150,11 +173,15 @@ and a boolean to check if the value has been set.
 
 SetPrimaryEmail sets PrimaryEmail field to given value.
 
+
 ### HasPrimaryEmail
 
 `func (o *MFAMethodWriteOktaRequest) HasPrimaryEmail() bool`
 
 HasPrimaryEmail returns a boolean if a field has been set.
+
+
+
 
 ### GetProduction
 
@@ -175,11 +202,15 @@ and a boolean to check if the value has been set.
 
 SetProduction sets Production field to given value.
 
+
 ### HasProduction
 
 `func (o *MFAMethodWriteOktaRequest) HasProduction() bool`
 
 HasProduction returns a boolean if a field has been set.
+
+
+
 
 ### GetUsernameFormat
 
@@ -200,11 +231,19 @@ and a boolean to check if the value has been set.
 
 SetUsernameFormat sets UsernameFormat field to given value.
 
+
 ### HasUsernameFormat
 
 `func (o *MFAMethodWriteOktaRequest) HasUsernameFormat() bool`
 
 HasUsernameFormat returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

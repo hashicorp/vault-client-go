@@ -1,9 +1,12 @@
 # KubernetesWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowedKubernetesNamespaceSelector** | Pointer to **string** | A label selector for Kubernetes namespaces in which credentials can be generated. Accepts either a JSON or YAML object. If set with allowed_kubernetes_namespaces, the conditions are conjuncted. | [optional] 
 **AllowedKubernetesNamespaces** | Pointer to **[]string** | A list of the Kubernetes namespaces in which credentials can be generated. If set to \&quot;*\&quot; all namespaces are allowed. | [optional] 
 **ExtraAnnotations** | Pointer to **map[string]interface{}** | Additional annotations to apply to all generated Kubernetes objects. | [optional] 
@@ -16,7 +19,10 @@ Name | Type | Description | Notes
 **TokenDefaultTtl** | Pointer to **int32** | The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKubernetesWriteRoleRequest
 
@@ -34,6 +40,7 @@ will change when the set of required properties is changed
 NewKubernetesWriteRoleRequestWithDefaults instantiates a new KubernetesWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowedKubernetesNamespaceSelector
 
@@ -54,11 +61,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedKubernetesNamespaceSelector sets AllowedKubernetesNamespaceSelector field to given value.
 
+
 ### HasAllowedKubernetesNamespaceSelector
 
 `func (o *KubernetesWriteRoleRequest) HasAllowedKubernetesNamespaceSelector() bool`
 
 HasAllowedKubernetesNamespaceSelector returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedKubernetesNamespaces
 
@@ -79,11 +90,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedKubernetesNamespaces sets AllowedKubernetesNamespaces field to given value.
 
+
 ### HasAllowedKubernetesNamespaces
 
 `func (o *KubernetesWriteRoleRequest) HasAllowedKubernetesNamespaces() bool`
 
 HasAllowedKubernetesNamespaces returns a boolean if a field has been set.
+
+
+
 
 ### GetExtraAnnotations
 
@@ -104,11 +119,15 @@ and a boolean to check if the value has been set.
 
 SetExtraAnnotations sets ExtraAnnotations field to given value.
 
+
 ### HasExtraAnnotations
 
 `func (o *KubernetesWriteRoleRequest) HasExtraAnnotations() bool`
 
 HasExtraAnnotations returns a boolean if a field has been set.
+
+
+
 
 ### GetExtraLabels
 
@@ -129,11 +148,15 @@ and a boolean to check if the value has been set.
 
 SetExtraLabels sets ExtraLabels field to given value.
 
+
 ### HasExtraLabels
 
 `func (o *KubernetesWriteRoleRequest) HasExtraLabels() bool`
 
 HasExtraLabels returns a boolean if a field has been set.
+
+
+
 
 ### GetGeneratedRoleRules
 
@@ -154,11 +177,15 @@ and a boolean to check if the value has been set.
 
 SetGeneratedRoleRules sets GeneratedRoleRules field to given value.
 
+
 ### HasGeneratedRoleRules
 
 `func (o *KubernetesWriteRoleRequest) HasGeneratedRoleRules() bool`
 
 HasGeneratedRoleRules returns a boolean if a field has been set.
+
+
+
 
 ### GetKubernetesRoleName
 
@@ -179,11 +206,15 @@ and a boolean to check if the value has been set.
 
 SetKubernetesRoleName sets KubernetesRoleName field to given value.
 
+
 ### HasKubernetesRoleName
 
 `func (o *KubernetesWriteRoleRequest) HasKubernetesRoleName() bool`
 
 HasKubernetesRoleName returns a boolean if a field has been set.
+
+
+
 
 ### GetKubernetesRoleType
 
@@ -204,11 +235,15 @@ and a boolean to check if the value has been set.
 
 SetKubernetesRoleType sets KubernetesRoleType field to given value.
 
+
 ### HasKubernetesRoleType
 
 `func (o *KubernetesWriteRoleRequest) HasKubernetesRoleType() bool`
 
 HasKubernetesRoleType returns a boolean if a field has been set.
+
+
+
 
 ### GetNameTemplate
 
@@ -229,11 +264,15 @@ and a boolean to check if the value has been set.
 
 SetNameTemplate sets NameTemplate field to given value.
 
+
 ### HasNameTemplate
 
 `func (o *KubernetesWriteRoleRequest) HasNameTemplate() bool`
 
 HasNameTemplate returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceAccountName
 
@@ -254,11 +293,15 @@ and a boolean to check if the value has been set.
 
 SetServiceAccountName sets ServiceAccountName field to given value.
 
+
 ### HasServiceAccountName
 
 `func (o *KubernetesWriteRoleRequest) HasServiceAccountName() bool`
 
 HasServiceAccountName returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenDefaultTtl
 
@@ -279,11 +322,15 @@ and a boolean to check if the value has been set.
 
 SetTokenDefaultTtl sets TokenDefaultTtl field to given value.
 
+
 ### HasTokenDefaultTtl
 
 `func (o *KubernetesWriteRoleRequest) HasTokenDefaultTtl() bool`
 
 HasTokenDefaultTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenMaxTtl
 
@@ -304,11 +351,19 @@ and a boolean to check if the value has been set.
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
+
 ### HasTokenMaxTtl
 
 `func (o *KubernetesWriteRoleRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,13 +1,19 @@
 # KubernetesLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Jwt** | Pointer to **string** | A signed JWT for authenticating a service account. This field is required. | [optional] 
 **Role** | Pointer to **string** | Name of the role against which the login is being attempted. This field is required | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKubernetesLoginRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewKubernetesLoginRequestWithDefaults instantiates a new KubernetesLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetJwt
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetJwt sets Jwt field to given value.
 
+
 ### HasJwt
 
 `func (o *KubernetesLoginRequest) HasJwt() bool`
 
 HasJwt returns a boolean if a field has been set.
+
+
+
 
 ### GetRole
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
+
 ### HasRole
 
 `func (o *KubernetesLoginRequest) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

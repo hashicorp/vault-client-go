@@ -1,13 +1,19 @@
 # GoogleCloudKMSWriteKeyConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **MaxVersion** | Pointer to **int32** | Maximum allowed crypto key version. If set to a positive value, key versions greater than the given value are not permitted to be used. If set to 0 or a negative value, there is no maximum key version. | [optional] 
 **MinVersion** | Pointer to **int32** | Minimum allowed crypto key version. If set to a positive value, key versions less than the given value are not permitted to be used. If set to 0 or a negative value, there is no minimum key version. This value only affects encryption/re-encryption, not decryption. To restrict old values from being decrypted, increase this value and then perform a trim operation. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudKMSWriteKeyConfigRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewGoogleCloudKMSWriteKeyConfigRequestWithDefaults instantiates a new GoogleCloudKMSWriteKeyConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMaxVersion
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetMaxVersion sets MaxVersion field to given value.
 
+
 ### HasMaxVersion
 
 `func (o *GoogleCloudKMSWriteKeyConfigRequest) HasMaxVersion() bool`
 
 HasMaxVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetMinVersion
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetMinVersion sets MinVersion field to given value.
 
+
 ### HasMinVersion
 
 `func (o *GoogleCloudKMSWriteKeyConfigRequest) HasMinVersion() bool`
 
 HasMinVersion returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

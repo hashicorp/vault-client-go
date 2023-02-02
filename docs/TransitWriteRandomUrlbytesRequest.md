@@ -1,14 +1,20 @@
 # TransitWriteRandomUrlbytesRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Bytes** | Pointer to **int32** | The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits). | [optional] [default to 32]
 **Format** | Pointer to **string** | Encoding format to use. Can be \&quot;hex\&quot; or \&quot;base64\&quot;. Defaults to \&quot;base64\&quot;. | [optional] [default to "base64"]
 **Source** | Pointer to **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [optional] [default to "platform"]
 
+
+
 ## Methods
+
 
 ### NewTransitWriteRandomUrlbytesRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewTransitWriteRandomUrlbytesRequestWithDefaults instantiates a new TransitWriteRandomUrlbytesRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBytes
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetBytes sets Bytes field to given value.
 
+
 ### HasBytes
 
 `func (o *TransitWriteRandomUrlbytesRequest) HasBytes() bool`
 
 HasBytes returns a boolean if a field has been set.
+
+
+
 
 ### GetFormat
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
+
 ### HasFormat
 
 `func (o *TransitWriteRandomUrlbytesRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+
+
 
 ### GetSource
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetSource sets Source field to given value.
 
+
 ### HasSource
 
 `func (o *TransitWriteRandomUrlbytesRequest) HasSource() bool`
 
 HasSource returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

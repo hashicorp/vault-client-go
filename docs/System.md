@@ -36,7 +36,7 @@ Method | HTTP request | Description
 [**PprofRead**](System.md#PprofRead) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
 [**PprofReadAllocs**](System.md#PprofReadAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
 [**PprofReadBlock**](System.md#PprofReadBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
-[**PprofReadCmdline**](System.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#39;s command line.
+[**PprofReadCmdline**](System.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#x27;s command line.
 [**PprofReadGoroutine**](System.md#PprofReadGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
 [**PprofReadHeap**](System.md#PprofReadHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
 [**PprofReadMutex**](System.md#PprofReadMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
@@ -46,13 +46,13 @@ Method | HTTP request | Description
 [**PprofReadTrace**](System.md#PprofReadTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
 [**ReadAuditDevices**](System.md#ReadAuditDevices) | **Get** /sys/audit | List the enabled audit devices.
 [**ReadAuthMethod**](System.md#ReadAuthMethod) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
-[**ReadAuthMethodTune**](System.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#39;s configuration.
+[**ReadAuthMethodTune**](System.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#x27;s configuration.
 [**ReadAuthMethods**](System.md#ReadAuthMethods) | **Get** /sys/auth | List the currently enabled credential backends.
 [**ReadConfigAuditingRequestHeader**](System.md#ReadConfigAuditingRequestHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
 [**ReadConfigAuditingRequestHeaders**](System.md#ReadConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
 [**ReadConfigCORS**](System.md#ReadConfigCORS) | **Get** /sys/config/cors | Return the current CORS settings.
 [**ReadConfigStateSanitized**](System.md#ReadConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
-[**ReadConfigUIHeader**](System.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#39;s configuration
+[**ReadConfigUIHeader**](System.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
 [**ReadGenerateRoot**](System.md#ReadGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
 [**ReadGenerateRootAttempt**](System.md#ReadGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
 [**ReadHAStatus**](System.md#ReadHAStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
@@ -109,7 +109,7 @@ Method | HTTP request | Description
 [**Revoke**](System.md#Revoke) | **Post** /sys/revoke | Revokes a lease immediately.
 [**RevokeForce**](System.md#RevokeForce) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
 [**RevokeLease**](System.md#RevokeLease) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
-[**RevokePrefix**](System.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
+[**RevokePrefix**](System.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
 [**Rotate**](System.md#Rotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
 [**Seal**](System.md#Seal) | **Post** /sys/seal | Seal the Vault.
 [**StepDownLeader**](System.md#StepDownLeader) | **Post** /sys/step-down | Cause the node to give up active status.
@@ -125,7 +125,7 @@ Method | HTTP request | Description
 [**ToolsHash**](System.md#ToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
 [**ToolsHashWith**](System.md#ToolsHashWith) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
 [**Unseal**](System.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
-[**WrappingReadLookup**](System.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#39;s token.
+[**WrappingReadLookup**](System.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#x27;s token.
 [**WrappingRewrap**](System.md#WrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
 [**WrappingUnwrap**](System.md#WrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
 [**WrappingWrap**](System.md#WrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
@@ -151,7 +151,7 @@ Method | HTTP request | Description
 [**WriteLeasesRevoke**](System.md#WriteLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
 [**WriteLeasesRevoke2**](System.md#WriteLeasesRevoke2) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
 [**WriteLeasesRevokeForce**](System.md#WriteLeasesRevokeForce) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**WriteLeasesRevokePrefix**](System.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
+[**WriteLeasesRevokePrefix**](System.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
 [**WriteLeasesTidy**](System.md#WriteLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 [**WriteLogger**](System.md#WriteLogger) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
 [**WriteLoggers**](System.md#WriteLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
@@ -170,6 +170,8 @@ Method | HTTP request | Description
 [**WriteRekeyUpdate**](System.md#WriteRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
 [**WriteRekeyVerify**](System.md#WriteRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
 [**WriteRotateConfig**](System.md#WriteRotateConfig) | **Post** /sys/rotate/config | 
+
+
 
 
 
@@ -202,6 +204,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+
 	request := schema.NewCalculateAuditHashRequestWithDefaults()
 
 	resp, err := client.System.CalculateAuditHash(
@@ -238,6 +241,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteAuditDevice
@@ -304,6 +308,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteAuthMethod
 
 > DeleteAuthMethod(ctx, path).Execute()
@@ -366,6 +371,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteConfigAuditingRequestHeader
@@ -432,6 +438,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteConfigCORS
 
 > DeleteConfigCORS(ctx).Execute()
@@ -485,6 +492,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteConfigUIHeader
@@ -551,6 +559,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteGenerateRoot
 
 > DeleteGenerateRoot(ctx).Execute()
@@ -606,6 +615,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## DeleteGenerateRootAttempt
 
 > DeleteGenerateRootAttempt(ctx).Execute()
@@ -659,6 +669,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteLogger
@@ -725,6 +736,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteLoggers
 
 > DeleteLoggers(ctx).Execute()
@@ -778,6 +790,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteMount
@@ -842,6 +855,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeletePluginsCatalogByTypeByName
@@ -912,6 +926,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeletePoliciesACL
 
 > DeletePoliciesACL(ctx, name).Execute()
@@ -974,6 +989,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeletePoliciesPassword
@@ -1040,6 +1056,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeletePolicy
 
 > DeletePolicy(ctx, name).Execute()
@@ -1102,6 +1119,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteQuotasRateLimit
@@ -1168,6 +1186,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteRaw
 
 > DeleteRaw(ctx).Execute()
@@ -1221,6 +1240,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteRawPath
@@ -1287,6 +1307,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteRekeyBackup
 
 > DeleteRekeyBackup(ctx).Execute()
@@ -1340,6 +1361,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteRekeyInit
@@ -1399,6 +1421,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## DeleteRekeyRecoveryKeyBackup
 
 > DeleteRekeyRecoveryKeyBackup(ctx).Execute()
@@ -1452,6 +1475,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteRekeyVerify
@@ -1511,6 +1535,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ListConfigUIHeaders
 
 > ListConfigUIHeaders(ctx).List(list).Execute()
@@ -1567,6 +1592,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ListLeasesLookupPrefix
@@ -1634,6 +1660,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListPluginsCatalogByType
 
 > ListPluginsCatalogByType(ctx, type_).List(list).Execute()
@@ -1699,6 +1726,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListPoliciesACL
 
 > ListPoliciesACL(ctx).List(list).Execute()
@@ -1755,6 +1783,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ListPoliciesPassword
@@ -1815,6 +1844,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListQuotasRateLimits
 
 > ListQuotasRateLimits(ctx).List(list).Execute()
@@ -1871,6 +1901,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ListVersionHistory
@@ -1931,6 +1962,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAValidate
 
 > MFAValidate(ctx).MFAValidateRequest(mFAValidateRequest).Execute()
@@ -1958,6 +1990,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewMFAValidateRequestWithDefaults()
 
@@ -1989,6 +2022,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## Monitor
@@ -2054,6 +2088,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PprofRead
 
 > PprofRead(ctx).Execute()
@@ -2109,6 +2144,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadAllocs
@@ -2168,6 +2204,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## PprofReadBlock
 
 > PprofReadBlock(ctx).Execute()
@@ -2223,6 +2260,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadCmdline
@@ -2282,6 +2320,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## PprofReadGoroutine
 
 > PprofReadGoroutine(ctx).Execute()
@@ -2337,6 +2376,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadHeap
@@ -2396,6 +2436,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## PprofReadMutex
 
 > PprofReadMutex(ctx).Execute()
@@ -2451,6 +2492,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadProfile
@@ -2510,6 +2552,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## PprofReadSymbol
 
 > PprofReadSymbol(ctx).Execute()
@@ -2565,6 +2608,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadThreadcreate
@@ -2624,6 +2668,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## PprofReadTrace
 
 > PprofReadTrace(ctx).Execute()
@@ -2681,6 +2726,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadAuditDevices
 
 > ReadAuditDevices(ctx).Execute()
@@ -2734,6 +2780,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadAuthMethod
@@ -2798,6 +2845,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadAuthMethodTune
@@ -2866,6 +2914,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadAuthMethods
 
 > ReadAuthMethods(ctx).Execute()
@@ -2919,6 +2968,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadConfigAuditingRequestHeader
@@ -2985,6 +3035,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadConfigAuditingRequestHeaders
 
 > ReadConfigAuditingRequestHeaders(ctx).Execute()
@@ -3038,6 +3089,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadConfigCORS
@@ -3095,6 +3147,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadConfigStateSanitized
 
 > ReadConfigStateSanitized(ctx).Execute()
@@ -3150,6 +3203,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadConfigUIHeader
@@ -3216,6 +3270,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadGenerateRoot
 
 > ReadGenerateRoot(ctx).Execute()
@@ -3269,6 +3324,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadGenerateRootAttempt
@@ -3326,6 +3382,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadHAStatus
 
 > ReadHAStatus(ctx).Execute()
@@ -3381,6 +3438,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadHealth
 
 > ReadHealth(ctx).Execute()
@@ -3434,6 +3492,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadHostInfo
@@ -3493,6 +3552,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInFlightRequests
 
 > ReadInFlightRequests(ctx).Execute()
@@ -3550,6 +3610,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInit
 
 > ReadInit(ctx).Execute()
@@ -3603,6 +3664,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersActivity
@@ -3660,6 +3722,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalCountersActivityExport
 
 > ReadInternalCountersActivityExport(ctx).Execute()
@@ -3713,6 +3776,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersActivityMonthly
@@ -3770,6 +3834,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalCountersConfig
 
 > ReadInternalCountersConfig(ctx).Execute()
@@ -3823,6 +3888,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersEntities
@@ -3880,6 +3946,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalCountersRequests
 
 > ReadInternalCountersRequests(ctx).Execute()
@@ -3935,6 +4002,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalCountersTokens
 
 > ReadInternalCountersTokens(ctx).Execute()
@@ -3988,6 +4056,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalInspectRouter
@@ -4054,6 +4123,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalSpecsOpenAPI
 
 > ReadInternalSpecsOpenAPI(ctx).Execute()
@@ -4109,6 +4179,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalUIFeatureFlags
 
 > ReadInternalUIFeatureFlags(ctx).Execute()
@@ -4162,6 +4233,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalUIMount
@@ -4228,6 +4300,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalUIMounts
 
 > ReadInternalUIMounts(ctx).Execute()
@@ -4281,6 +4354,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalUINamespaces
@@ -4338,6 +4412,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalUIResultantACL
 
 > ReadInternalUIResultantACL(ctx).Execute()
@@ -4391,6 +4466,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadKeyStatus
@@ -4448,6 +4524,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadLeader
 
 > ReadLeader(ctx).Execute()
@@ -4501,6 +4578,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadLeases
@@ -4558,6 +4636,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadLeasesCount
 
 > ReadLeasesCount(ctx).Execute()
@@ -4611,6 +4690,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadLogger
@@ -4677,6 +4757,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadLoggers
 
 > ReadLoggers(ctx).Execute()
@@ -4730,6 +4811,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadMetrics
@@ -4790,6 +4872,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadMount
@@ -4856,6 +4939,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadMounts
 
 > ReadMounts(ctx).Execute()
@@ -4909,6 +4993,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadMountsConfig
@@ -4975,6 +5060,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPluginsCatalog
 
 > ReadPluginsCatalog(ctx).Execute()
@@ -5028,6 +5114,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadPluginsCatalogByTypeByName
@@ -5098,6 +5185,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPolicies
 
 > ReadPolicies(ctx).List(list).Execute()
@@ -5156,6 +5244,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadPoliciesACL
@@ -5222,6 +5311,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPoliciesPassword
 
 > ReadPoliciesPassword(ctx, name).Execute()
@@ -5284,6 +5374,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadPoliciesPasswordGenerate
@@ -5350,6 +5441,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPolicy
 
 > ReadPolicy(ctx, name).Execute()
@@ -5414,6 +5506,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadQuotasConfig
 
 > ReadQuotasConfig(ctx).Execute()
@@ -5467,6 +5560,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadQuotasRateLimit
@@ -5533,6 +5627,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadRaw
 
 > ReadRaw(ctx).List(list).Execute()
@@ -5591,6 +5686,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRawPath
@@ -5660,6 +5756,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadRekeyBackup
 
 > ReadRekeyBackup(ctx).Execute()
@@ -5713,6 +5810,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRekeyInit
@@ -5770,6 +5868,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadRekeyRecoveryKeyBackup
 
 > ReadRekeyRecoveryKeyBackup(ctx).Execute()
@@ -5825,6 +5924,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadRekeyVerify
 
 > ReadRekeyVerify(ctx).Execute()
@@ -5878,6 +5978,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRemountStatus
@@ -5944,6 +6045,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadReplicationStatus
 
 > ReadReplicationStatus(ctx).Execute()
@@ -5997,6 +6099,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRotateConfig
@@ -6054,6 +6157,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## ReadSealStatus
 
 > ReadSealStatus(ctx).Execute()
@@ -6109,6 +6213,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## Remount
 
 > Remount(ctx).RemountRequest(remountRequest).Execute()
@@ -6136,6 +6241,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewRemountRequestWithDefaults()
 
@@ -6169,6 +6275,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## Renew
 
 > Renew(ctx).RenewRequest(renewRequest).Execute()
@@ -6196,6 +6303,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewRenewRequestWithDefaults()
 
@@ -6229,6 +6337,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RenewFor
 
 > RenewFor(ctx, urlLeaseId).RenewForRequest(renewForRequest).Execute()
@@ -6258,6 +6367,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	request := schema.NewRenewForRequestWithDefaults()
 
 	resp, err := client.System.RenewFor(
@@ -6296,6 +6406,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## Revoke
 
 > Revoke(ctx).RevokeRequest(revokeRequest).Execute()
@@ -6323,6 +6434,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewRevokeRequestWithDefaults()
 
@@ -6354,6 +6466,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## RevokeForce
@@ -6422,6 +6535,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RevokeLease
 
 > RevokeLease(ctx, urlLeaseId).RevokeLeaseRequest(revokeLeaseRequest).Execute()
@@ -6451,6 +6565,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	request := schema.NewRevokeLeaseRequestWithDefaults()
 
 	resp, err := client.System.RevokeLease(
@@ -6489,6 +6604,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RevokePrefix
 
 > RevokePrefix(ctx, prefix).RevokePrefixRequest(revokePrefixRequest).Execute()
@@ -6518,6 +6634,7 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 	request := schema.NewRevokePrefixRequestWithDefaults()
 
 	resp, err := client.System.RevokePrefix(
@@ -6554,6 +6671,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## Rotate
@@ -6611,6 +6729,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## Seal
 
 > Seal(ctx).Execute()
@@ -6664,6 +6783,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## StepDownLeader
@@ -6721,6 +6841,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## SysDeletePluginsCatalogName
@@ -6787,6 +6908,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysListLeasesLookup
 
 > SysListLeasesLookup(ctx).List(list).Execute()
@@ -6843,6 +6965,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## SysReadPluginsCatalogName
@@ -6907,6 +7030,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## SysWriteLockedusersMountAccessorUnlockAliasIdentifier
@@ -6977,6 +7101,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysWritePluginsCatalogName
 
 > SysWritePluginsCatalogName(ctx, name).SysWritePluginsCatalogNameRequest(sysWritePluginsCatalogNameRequest).Execute()
@@ -7006,6 +7131,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
+
 	request := schema.NewSysWritePluginsCatalogNameRequestWithDefaults()
 
 	resp, err := client.System.SysWritePluginsCatalogName(
@@ -7044,6 +7170,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysWriteToolsRandomUrlbytes
 
 > SysWriteToolsRandomUrlbytes(ctx, urlbytes).SysWriteToolsRandomUrlbytesRequest(sysWriteToolsRandomUrlbytesRequest).Execute()
@@ -7073,6 +7200,7 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+
 	request := schema.NewSysWriteToolsRandomUrlbytesRequestWithDefaults()
 
 	resp, err := client.System.SysWriteToolsRandomUrlbytes(
@@ -7111,6 +7239,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsGenerateRandom
 
 > ToolsGenerateRandom(ctx).ToolsGenerateRandomRequest(toolsGenerateRandomRequest).Execute()
@@ -7138,6 +7267,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewToolsGenerateRandomRequestWithDefaults()
 
@@ -7171,6 +7301,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsGenerateRandomSource
 
 > ToolsGenerateRandomSource(ctx, source).ToolsGenerateRandomSourceRequest(toolsGenerateRandomSourceRequest).Execute()
@@ -7200,6 +7331,7 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+
 	request := schema.NewToolsGenerateRandomSourceRequestWithDefaults()
 
 	resp, err := client.System.ToolsGenerateRandomSource(
@@ -7238,6 +7370,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsGenerateRandomSourceBytes
 
 > ToolsGenerateRandomSourceBytes(ctx, source, urlbytes).ToolsGenerateRandomSourceBytesRequest(toolsGenerateRandomSourceBytesRequest).Execute()
@@ -7268,6 +7401,7 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+
 	request := schema.NewToolsGenerateRandomSourceBytesRequestWithDefaults()
 
 	resp, err := client.System.ToolsGenerateRandomSourceBytes(
@@ -7309,6 +7443,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsHash
 
 > ToolsHash(ctx).ToolsHashRequest(toolsHashRequest).Execute()
@@ -7336,6 +7471,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewToolsHashRequestWithDefaults()
 
@@ -7369,6 +7505,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsHashWith
 
 > ToolsHashWith(ctx, urlalgorithm).ToolsHashWithRequest(toolsHashWithRequest).Execute()
@@ -7398,6 +7535,7 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+
 	request := schema.NewToolsHashWithRequestWithDefaults()
 
 	resp, err := client.System.ToolsHashWith(
@@ -7436,6 +7574,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## Unseal
 
 > Unseal(ctx).UnsealRequest(unsealRequest).Execute()
@@ -7463,6 +7602,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewUnsealRequestWithDefaults()
 
@@ -7494,6 +7634,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WrappingReadLookup
@@ -7551,6 +7692,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## WrappingRewrap
 
 > WrappingRewrap(ctx).WrappingRewrapRequest(wrappingRewrapRequest).Execute()
@@ -7578,6 +7720,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWrappingRewrapRequestWithDefaults()
 
@@ -7611,6 +7754,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WrappingUnwrap
 
 > WrappingUnwrap(ctx).WrappingUnwrapRequest(wrappingUnwrapRequest).Execute()
@@ -7638,6 +7782,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWrappingUnwrapRequestWithDefaults()
 
@@ -7669,6 +7814,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WrappingWrap
@@ -7726,6 +7872,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## WrappingWriteLookup
 
 > WrappingWriteLookup(ctx).WrappingWriteLookupRequest(wrappingWriteLookupRequest).Execute()
@@ -7753,6 +7900,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWrappingWriteLookupRequestWithDefaults()
 
@@ -7786,6 +7934,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteAuditDevice
 
 > WriteAuditDevice(ctx, path).WriteAuditDeviceRequest(writeAuditDeviceRequest).Execute()
@@ -7815,6 +7964,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+
 	request := schema.NewWriteAuditDeviceRequestWithDefaults()
 
 	resp, err := client.System.WriteAuditDevice(
@@ -7853,6 +8003,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteAuthMethod
 
 > WriteAuthMethod(ctx, path).WriteAuthMethodRequest(writeAuthMethodRequest).Execute()
@@ -7884,6 +8035,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+
 	request := schema.NewWriteAuthMethodRequestWithDefaults()
 
 	resp, err := client.System.WriteAuthMethod(
@@ -7922,6 +8074,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteAuthMethodTune
 
 > WriteAuthMethodTune(ctx, path).WriteAuthMethodTuneRequest(writeAuthMethodTuneRequest).Execute()
@@ -7953,6 +8106,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
+
 	request := schema.NewWriteAuthMethodTuneRequestWithDefaults()
 
 	resp, err := client.System.WriteAuthMethodTune(
@@ -7991,6 +8145,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteCapabilities
 
 > WriteCapabilities(ctx).WriteCapabilitiesRequest(writeCapabilitiesRequest).Execute()
@@ -8018,6 +8173,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteCapabilitiesRequestWithDefaults()
 
@@ -8051,6 +8207,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteCapabilitiesAccessor
 
 > WriteCapabilitiesAccessor(ctx).WriteCapabilitiesAccessorRequest(writeCapabilitiesAccessorRequest).Execute()
@@ -8078,6 +8235,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteCapabilitiesAccessorRequestWithDefaults()
 
@@ -8111,6 +8269,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteCapabilitiesSelf
 
 > WriteCapabilitiesSelf(ctx).WriteCapabilitiesSelfRequest(writeCapabilitiesSelfRequest).Execute()
@@ -8138,6 +8297,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteCapabilitiesSelfRequestWithDefaults()
 
@@ -8171,6 +8331,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteConfigAuditingRequestHeader
 
 > WriteConfigAuditingRequestHeader(ctx, header).WriteConfigAuditingRequestHeaderRequest(writeConfigAuditingRequestHeaderRequest).Execute()
@@ -8200,6 +8361,7 @@ func main() {
 	}
 
 	header := "header_example" // string | 
+
 	request := schema.NewWriteConfigAuditingRequestHeaderRequestWithDefaults()
 
 	resp, err := client.System.WriteConfigAuditingRequestHeader(
@@ -8238,6 +8400,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteConfigCORS
 
 > WriteConfigCORS(ctx).WriteConfigCORSRequest(writeConfigCORSRequest).Execute()
@@ -8265,6 +8428,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteConfigCORSRequestWithDefaults()
 
@@ -8296,6 +8460,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteConfigReloadSubsystem
@@ -8362,6 +8527,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteConfigUIHeader
 
 > WriteConfigUIHeader(ctx, header).WriteConfigUIHeaderRequest(writeConfigUIHeaderRequest).Execute()
@@ -8391,6 +8557,7 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
+
 	request := schema.NewWriteConfigUIHeaderRequestWithDefaults()
 
 	resp, err := client.System.WriteConfigUIHeader(
@@ -8429,6 +8596,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteGenerateRoot
 
 > WriteGenerateRoot(ctx).WriteGenerateRootRequest(writeGenerateRootRequest).Execute()
@@ -8458,6 +8626,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteGenerateRootRequestWithDefaults()
 
@@ -8491,6 +8660,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteGenerateRootAttempt
 
 > WriteGenerateRootAttempt(ctx).WriteGenerateRootAttemptRequest(writeGenerateRootAttemptRequest).Execute()
@@ -8520,6 +8690,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteGenerateRootAttemptRequestWithDefaults()
 
@@ -8553,6 +8724,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteGenerateRootUpdate
 
 > WriteGenerateRootUpdate(ctx).WriteGenerateRootUpdateRequest(writeGenerateRootUpdateRequest).Execute()
@@ -8582,6 +8754,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteGenerateRootUpdateRequestWithDefaults()
 
@@ -8615,6 +8788,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteInit
 
 > WriteInit(ctx).WriteInitRequest(writeInitRequest).Execute()
@@ -8644,6 +8818,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteInitRequestWithDefaults()
 
@@ -8677,6 +8852,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteInternalCountersConfig
 
 > WriteInternalCountersConfig(ctx).WriteInternalCountersConfigRequest(writeInternalCountersConfigRequest).Execute()
@@ -8704,6 +8880,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteInternalCountersConfigRequestWithDefaults()
 
@@ -8737,6 +8914,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesLookup
 
 > WriteLeasesLookup(ctx).WriteLeasesLookupRequest(writeLeasesLookupRequest).Execute()
@@ -8764,6 +8942,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteLeasesLookupRequestWithDefaults()
 
@@ -8797,6 +8976,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRenew
 
 > WriteLeasesRenew(ctx).WriteLeasesRenewRequest(writeLeasesRenewRequest).Execute()
@@ -8824,6 +9004,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteLeasesRenewRequestWithDefaults()
 
@@ -8857,6 +9038,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRenew2
 
 > WriteLeasesRenew2(ctx, urlLeaseId).WriteLeasesRenew2Request(writeLeasesRenew2Request).Execute()
@@ -8886,6 +9068,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	request := schema.NewWriteLeasesRenew2RequestWithDefaults()
 
 	resp, err := client.System.WriteLeasesRenew2(
@@ -8924,6 +9107,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRevoke
 
 > WriteLeasesRevoke(ctx).WriteLeasesRevokeRequest(writeLeasesRevokeRequest).Execute()
@@ -8951,6 +9135,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteLeasesRevokeRequestWithDefaults()
 
@@ -8984,6 +9169,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRevoke2
 
 > WriteLeasesRevoke2(ctx, urlLeaseId).WriteLeasesRevoke2Request(writeLeasesRevoke2Request).Execute()
@@ -9013,6 +9199,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+
 	request := schema.NewWriteLeasesRevoke2RequestWithDefaults()
 
 	resp, err := client.System.WriteLeasesRevoke2(
@@ -9049,6 +9236,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteLeasesRevokeForce
@@ -9117,6 +9305,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRevokePrefix
 
 > WriteLeasesRevokePrefix(ctx, prefix).WriteLeasesRevokePrefixRequest(writeLeasesRevokePrefixRequest).Execute()
@@ -9146,6 +9335,7 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+
 	request := schema.NewWriteLeasesRevokePrefixRequestWithDefaults()
 
 	resp, err := client.System.WriteLeasesRevokePrefix(
@@ -9182,6 +9372,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteLeasesTidy
@@ -9239,6 +9430,7 @@ This endpoint does not require any parameters.
 [[Back to README]](../README.md)
 
 
+
 ## WriteLogger
 
 > WriteLogger(ctx, name).WriteLoggerRequest(writeLoggerRequest).Execute()
@@ -9268,6 +9460,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
+
 	request := schema.NewWriteLoggerRequestWithDefaults()
 
 	resp, err := client.System.WriteLogger(
@@ -9306,6 +9499,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLoggers
 
 > WriteLoggers(ctx).WriteLoggersRequest(writeLoggersRequest).Execute()
@@ -9333,6 +9527,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteLoggersRequestWithDefaults()
 
@@ -9366,6 +9561,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteMount
 
 > WriteMount(ctx, path).WriteMountRequest(writeMountRequest).Execute()
@@ -9395,6 +9591,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 	request := schema.NewWriteMountRequestWithDefaults()
 
 	resp, err := client.System.WriteMount(
@@ -9433,6 +9630,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteMountsConfig
 
 > WriteMountsConfig(ctx, path).WriteMountsConfigRequest(writeMountsConfigRequest).Execute()
@@ -9462,6 +9660,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+
 	request := schema.NewWriteMountsConfigRequestWithDefaults()
 
 	resp, err := client.System.WriteMountsConfig(
@@ -9500,6 +9699,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePluginsCatalogByTypeByName
 
 > WritePluginsCatalogByTypeByName(ctx, name, type_).WritePluginsCatalogByTypeByNameRequest(writePluginsCatalogByTypeByNameRequest).Execute()
@@ -9530,6 +9730,7 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
+
 	request := schema.NewWritePluginsCatalogByTypeByNameRequestWithDefaults()
 
 	resp, err := client.System.WritePluginsCatalogByTypeByName(
@@ -9571,6 +9772,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePluginsReloadBackend
 
 > WritePluginsReloadBackend(ctx).WritePluginsReloadBackendRequest(writePluginsReloadBackendRequest).Execute()
@@ -9600,6 +9802,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWritePluginsReloadBackendRequestWithDefaults()
 
@@ -9633,6 +9836,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePoliciesACL
 
 > WritePoliciesACL(ctx, name).WritePoliciesACLRequest(writePoliciesACLRequest).Execute()
@@ -9662,6 +9866,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	request := schema.NewWritePoliciesACLRequestWithDefaults()
 
 	resp, err := client.System.WritePoliciesACL(
@@ -9700,6 +9905,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePoliciesPassword
 
 > WritePoliciesPassword(ctx, name).WritePoliciesPasswordRequest(writePoliciesPasswordRequest).Execute()
@@ -9729,6 +9935,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
+
 	request := schema.NewWritePoliciesPasswordRequestWithDefaults()
 
 	resp, err := client.System.WritePoliciesPassword(
@@ -9767,6 +9974,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePolicy
 
 > WritePolicy(ctx, name).WritePolicyRequest(writePolicyRequest).Execute()
@@ -9796,6 +10004,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
+
 	request := schema.NewWritePolicyRequestWithDefaults()
 
 	resp, err := client.System.WritePolicy(
@@ -9834,6 +10043,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteQuotasConfig
 
 > WriteQuotasConfig(ctx).WriteQuotasConfigRequest(writeQuotasConfigRequest).Execute()
@@ -9861,6 +10071,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteQuotasConfigRequestWithDefaults()
 
@@ -9894,6 +10105,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteQuotasRateLimit
 
 > WriteQuotasRateLimit(ctx, name).WriteQuotasRateLimitRequest(writeQuotasRateLimitRequest).Execute()
@@ -9923,6 +10135,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
+
 	request := schema.NewWriteQuotasRateLimitRequestWithDefaults()
 
 	resp, err := client.System.WriteQuotasRateLimit(
@@ -9961,6 +10174,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRaw
 
 > WriteRaw(ctx).WriteRawRequest(writeRawRequest).Execute()
@@ -9988,6 +10202,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteRawRequestWithDefaults()
 
@@ -10021,6 +10236,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRawPath
 
 > WriteRawPath(ctx, path).WriteRawPathRequest(writeRawPathRequest).Execute()
@@ -10050,6 +10266,7 @@ func main() {
 	}
 
 	path := "path_example" // string | 
+
 	request := schema.NewWriteRawPathRequestWithDefaults()
 
 	resp, err := client.System.WriteRawPath(
@@ -10088,6 +10305,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRekeyInit
 
 > WriteRekeyInit(ctx).WriteRekeyInitRequest(writeRekeyInitRequest).Execute()
@@ -10117,6 +10335,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteRekeyInitRequestWithDefaults()
 
@@ -10150,6 +10369,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRekeyUpdate
 
 > WriteRekeyUpdate(ctx).WriteRekeyUpdateRequest(writeRekeyUpdateRequest).Execute()
@@ -10177,6 +10397,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteRekeyUpdateRequestWithDefaults()
 
@@ -10210,6 +10431,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRekeyVerify
 
 > WriteRekeyVerify(ctx).WriteRekeyVerifyRequest(writeRekeyVerifyRequest).Execute()
@@ -10237,6 +10459,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteRekeyVerifyRequestWithDefaults()
 
@@ -10270,6 +10493,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRotateConfig
 
 > WriteRotateConfig(ctx).WriteRotateConfigRequest(writeRotateConfigRequest).Execute()
@@ -10297,6 +10521,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 
 	request := schema.NewWriteRotateConfigRequestWithDefaults()
 
@@ -10328,4 +10553,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
+
 

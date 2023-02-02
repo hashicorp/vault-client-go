@@ -1,9 +1,12 @@
 # OpenLDAPWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CreationLdif** | **string** | LDIF string used to create new entities within the LDAP system. This LDIF can be templated. | 
 **DefaultTtl** | Pointer to **int32** | Default TTL for dynamic credentials | [optional] 
 **DeletionLdif** | **string** | LDIF string used to delete entities created within the LDAP system. This LDIF can be templated. | 
@@ -11,7 +14,10 @@ Name | Type | Description | Notes
 **RollbackLdif** | Pointer to **string** | LDIF string used to rollback changes in the event of a failure to create credentials. This LDIF can be templated. | [optional] 
 **UsernameTemplate** | Pointer to **string** | The template used to create a username | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOpenLDAPWriteRoleRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewOpenLDAPWriteRoleRequestWithDefaults instantiates a new OpenLDAPWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCreationLdif
 
@@ -50,6 +57,9 @@ and a boolean to check if the value has been set.
 SetCreationLdif sets CreationLdif field to given value.
 
 
+
+
+
 ### GetDefaultTtl
 
 `func (o *OpenLDAPWriteRoleRequest) GetDefaultTtl() int32`
@@ -69,11 +79,15 @@ and a boolean to check if the value has been set.
 
 SetDefaultTtl sets DefaultTtl field to given value.
 
+
 ### HasDefaultTtl
 
 `func (o *OpenLDAPWriteRoleRequest) HasDefaultTtl() bool`
 
 HasDefaultTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetDeletionLdif
 
@@ -95,6 +109,9 @@ and a boolean to check if the value has been set.
 SetDeletionLdif sets DeletionLdif field to given value.
 
 
+
+
+
 ### GetMaxTtl
 
 `func (o *OpenLDAPWriteRoleRequest) GetMaxTtl() int32`
@@ -114,11 +131,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *OpenLDAPWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetRollbackLdif
 
@@ -139,11 +160,15 @@ and a boolean to check if the value has been set.
 
 SetRollbackLdif sets RollbackLdif field to given value.
 
+
 ### HasRollbackLdif
 
 `func (o *OpenLDAPWriteRoleRequest) HasRollbackLdif() bool`
 
 HasRollbackLdif returns a boolean if a field has been set.
+
+
+
 
 ### GetUsernameTemplate
 
@@ -164,11 +189,19 @@ and a boolean to check if the value has been set.
 
 SetUsernameTemplate sets UsernameTemplate field to given value.
 
+
 ### HasUsernameTemplate
 
 `func (o *OpenLDAPWriteRoleRequest) HasUsernameTemplate() bool`
 
 HasUsernameTemplate returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

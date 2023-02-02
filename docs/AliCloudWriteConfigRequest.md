@@ -1,13 +1,19 @@
 # AliCloudWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AccessKey** | Pointer to **string** | Access key with appropriate permissions. | [optional] 
 **SecretKey** | Pointer to **string** | Secret key with appropriate permissions. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAliCloudWriteConfigRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewAliCloudWriteConfigRequestWithDefaults instantiates a new AliCloudWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAccessKey
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetAccessKey sets AccessKey field to given value.
 
+
 ### HasAccessKey
 
 `func (o *AliCloudWriteConfigRequest) HasAccessKey() bool`
 
 HasAccessKey returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretKey
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
+
 ### HasSecretKey
 
 `func (o *AliCloudWriteConfigRequest) HasSecretKey() bool`
 
 HasSecretKey returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

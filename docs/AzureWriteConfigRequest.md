@@ -1,9 +1,12 @@
 # AzureWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ClientId** | Pointer to **string** | The OAuth2 client id to connect to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable. | [optional] 
 **ClientSecret** | Pointer to **string** | The OAuth2 client secret to connect to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable. | [optional] 
 **Environment** | Pointer to **string** | The Azure environment name. If not provided, AzurePublicCloud is used. This value can also be provided with the AZURE_ENVIRONMENT environment variable. | [optional] 
@@ -12,7 +15,10 @@ Name | Type | Description | Notes
 **SubscriptionId** | Pointer to **string** | The subscription id for the Azure Active Directory. This value can also be provided with the AZURE_SUBSCRIPTION_ID environment variable. | [optional] 
 **TenantId** | Pointer to **string** | The tenant id for the Azure Active Directory. This value can also be provided with the AZURE_TENANT_ID environment variable. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAzureWriteConfigRequest
 
@@ -30,6 +36,7 @@ will change when the set of required properties is changed
 NewAzureWriteConfigRequestWithDefaults instantiates a new AzureWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetClientId
 
@@ -50,11 +57,15 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
+
 ### HasClientId
 
 `func (o *AzureWriteConfigRequest) HasClientId() bool`
 
 HasClientId returns a boolean if a field has been set.
+
+
+
 
 ### GetClientSecret
 
@@ -75,11 +86,15 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
+
 ### HasClientSecret
 
 `func (o *AzureWriteConfigRequest) HasClientSecret() bool`
 
 HasClientSecret returns a boolean if a field has been set.
+
+
+
 
 ### GetEnvironment
 
@@ -100,11 +115,15 @@ and a boolean to check if the value has been set.
 
 SetEnvironment sets Environment field to given value.
 
+
 ### HasEnvironment
 
 `func (o *AzureWriteConfigRequest) HasEnvironment() bool`
 
 HasEnvironment returns a boolean if a field has been set.
+
+
+
 
 ### GetPasswordPolicy
 
@@ -125,11 +144,15 @@ and a boolean to check if the value has been set.
 
 SetPasswordPolicy sets PasswordPolicy field to given value.
 
+
 ### HasPasswordPolicy
 
 `func (o *AzureWriteConfigRequest) HasPasswordPolicy() bool`
 
 HasPasswordPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetRootPasswordTtl
 
@@ -150,11 +173,15 @@ and a boolean to check if the value has been set.
 
 SetRootPasswordTtl sets RootPasswordTtl field to given value.
 
+
 ### HasRootPasswordTtl
 
 `func (o *AzureWriteConfigRequest) HasRootPasswordTtl() bool`
 
 HasRootPasswordTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetSubscriptionId
 
@@ -175,11 +202,15 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+
 ### HasSubscriptionId
 
 `func (o *AzureWriteConfigRequest) HasSubscriptionId() bool`
 
 HasSubscriptionId returns a boolean if a field has been set.
+
+
+
 
 ### GetTenantId
 
@@ -200,11 +231,19 @@ and a boolean to check if the value has been set.
 
 SetTenantId sets TenantId field to given value.
 
+
 ### HasTenantId
 
 `func (o *AzureWriteConfigRequest) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

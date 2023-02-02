@@ -1,10 +1,13 @@
 # JWTWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BoundIssuer** | Pointer to **string** | The value against which to match the &#39;iss&#39; claim in a JWT. Optional. | [optional] 
+
+
+**BoundIssuer** | Pointer to **string** | The value against which to match the &#x27;iss&#x27; claim in a JWT. Optional. | [optional] 
 **DefaultRole** | Pointer to **string** | The default role to use if none is provided during login. If not set, a role is required during login. | [optional] 
 **JwksCaPem** | Pointer to **string** | The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used. | [optional] 
 **JwksUrl** | Pointer to **string** | JWKS URL to use to authenticate signatures. Cannot be used with \&quot;oidc_discovery_url\&quot; or \&quot;jwt_validation_pubkeys\&quot;. | [optional] 
@@ -15,11 +18,14 @@ Name | Type | Description | Notes
 **OidcClientSecret** | Pointer to **string** | The OAuth Client Secret configured with your OIDC provider. | [optional] 
 **OidcDiscoveryCaPem** | Pointer to **string** | The CA certificate or chain of certificates, in PEM format, to use to validate connections to the OIDC Discovery URL. If not set, system certificates are used. | [optional] 
 **OidcDiscoveryUrl** | Pointer to **string** | OIDC Discovery URL, without any .well-known component (base path). Cannot be used with \&quot;jwks_url\&quot; or \&quot;jwt_validation_pubkeys\&quot;. | [optional] 
-**OidcResponseMode** | Pointer to **string** | The response mode to be used in the OAuth2 request. Allowed values are &#39;query&#39; and &#39;form_post&#39;. | [optional] 
-**OidcResponseTypes** | Pointer to **[]string** | The response types to request. Allowed values are &#39;code&#39; and &#39;id_token&#39;. Defaults to &#39;code&#39;. | [optional] 
+**OidcResponseMode** | Pointer to **string** | The response mode to be used in the OAuth2 request. Allowed values are &#x27;query&#x27; and &#x27;form_post&#x27;. | [optional] 
+**OidcResponseTypes** | Pointer to **[]string** | The response types to request. Allowed values are &#x27;code&#x27; and &#x27;id_token&#x27;. Defaults to &#x27;code&#x27;. | [optional] 
 **ProviderConfig** | Pointer to **map[string]interface{}** | Provider-specific configuration. Optional. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewJWTWriteConfigRequest
 
@@ -37,6 +43,7 @@ will change when the set of required properties is changed
 NewJWTWriteConfigRequestWithDefaults instantiates a new JWTWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBoundIssuer
 
@@ -57,11 +64,15 @@ and a boolean to check if the value has been set.
 
 SetBoundIssuer sets BoundIssuer field to given value.
 
+
 ### HasBoundIssuer
 
 `func (o *JWTWriteConfigRequest) HasBoundIssuer() bool`
 
 HasBoundIssuer returns a boolean if a field has been set.
+
+
+
 
 ### GetDefaultRole
 
@@ -82,11 +93,15 @@ and a boolean to check if the value has been set.
 
 SetDefaultRole sets DefaultRole field to given value.
 
+
 ### HasDefaultRole
 
 `func (o *JWTWriteConfigRequest) HasDefaultRole() bool`
 
 HasDefaultRole returns a boolean if a field has been set.
+
+
+
 
 ### GetJwksCaPem
 
@@ -107,11 +122,15 @@ and a boolean to check if the value has been set.
 
 SetJwksCaPem sets JwksCaPem field to given value.
 
+
 ### HasJwksCaPem
 
 `func (o *JWTWriteConfigRequest) HasJwksCaPem() bool`
 
 HasJwksCaPem returns a boolean if a field has been set.
+
+
+
 
 ### GetJwksUrl
 
@@ -132,11 +151,15 @@ and a boolean to check if the value has been set.
 
 SetJwksUrl sets JwksUrl field to given value.
 
+
 ### HasJwksUrl
 
 `func (o *JWTWriteConfigRequest) HasJwksUrl() bool`
 
 HasJwksUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetJwtSupportedAlgs
 
@@ -157,11 +180,15 @@ and a boolean to check if the value has been set.
 
 SetJwtSupportedAlgs sets JwtSupportedAlgs field to given value.
 
+
 ### HasJwtSupportedAlgs
 
 `func (o *JWTWriteConfigRequest) HasJwtSupportedAlgs() bool`
 
 HasJwtSupportedAlgs returns a boolean if a field has been set.
+
+
+
 
 ### GetJwtValidationPubkeys
 
@@ -182,11 +209,15 @@ and a boolean to check if the value has been set.
 
 SetJwtValidationPubkeys sets JwtValidationPubkeys field to given value.
 
+
 ### HasJwtValidationPubkeys
 
 `func (o *JWTWriteConfigRequest) HasJwtValidationPubkeys() bool`
 
 HasJwtValidationPubkeys returns a boolean if a field has been set.
+
+
+
 
 ### GetNamespaceInState
 
@@ -207,11 +238,15 @@ and a boolean to check if the value has been set.
 
 SetNamespaceInState sets NamespaceInState field to given value.
 
+
 ### HasNamespaceInState
 
 `func (o *JWTWriteConfigRequest) HasNamespaceInState() bool`
 
 HasNamespaceInState returns a boolean if a field has been set.
+
+
+
 
 ### GetOidcClientId
 
@@ -232,11 +267,15 @@ and a boolean to check if the value has been set.
 
 SetOidcClientId sets OidcClientId field to given value.
 
+
 ### HasOidcClientId
 
 `func (o *JWTWriteConfigRequest) HasOidcClientId() bool`
 
 HasOidcClientId returns a boolean if a field has been set.
+
+
+
 
 ### GetOidcClientSecret
 
@@ -257,11 +296,15 @@ and a boolean to check if the value has been set.
 
 SetOidcClientSecret sets OidcClientSecret field to given value.
 
+
 ### HasOidcClientSecret
 
 `func (o *JWTWriteConfigRequest) HasOidcClientSecret() bool`
 
 HasOidcClientSecret returns a boolean if a field has been set.
+
+
+
 
 ### GetOidcDiscoveryCaPem
 
@@ -282,11 +325,15 @@ and a boolean to check if the value has been set.
 
 SetOidcDiscoveryCaPem sets OidcDiscoveryCaPem field to given value.
 
+
 ### HasOidcDiscoveryCaPem
 
 `func (o *JWTWriteConfigRequest) HasOidcDiscoveryCaPem() bool`
 
 HasOidcDiscoveryCaPem returns a boolean if a field has been set.
+
+
+
 
 ### GetOidcDiscoveryUrl
 
@@ -307,11 +354,15 @@ and a boolean to check if the value has been set.
 
 SetOidcDiscoveryUrl sets OidcDiscoveryUrl field to given value.
 
+
 ### HasOidcDiscoveryUrl
 
 `func (o *JWTWriteConfigRequest) HasOidcDiscoveryUrl() bool`
 
 HasOidcDiscoveryUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetOidcResponseMode
 
@@ -332,11 +383,15 @@ and a boolean to check if the value has been set.
 
 SetOidcResponseMode sets OidcResponseMode field to given value.
 
+
 ### HasOidcResponseMode
 
 `func (o *JWTWriteConfigRequest) HasOidcResponseMode() bool`
 
 HasOidcResponseMode returns a boolean if a field has been set.
+
+
+
 
 ### GetOidcResponseTypes
 
@@ -357,11 +412,15 @@ and a boolean to check if the value has been set.
 
 SetOidcResponseTypes sets OidcResponseTypes field to given value.
 
+
 ### HasOidcResponseTypes
 
 `func (o *JWTWriteConfigRequest) HasOidcResponseTypes() bool`
 
 HasOidcResponseTypes returns a boolean if a field has been set.
+
+
+
 
 ### GetProviderConfig
 
@@ -382,11 +441,19 @@ and a boolean to check if the value has been set.
 
 SetProviderConfig sets ProviderConfig field to given value.
 
+
 ### HasProviderConfig
 
 `func (o *JWTWriteConfigRequest) HasProviderConfig() bool`
 
 HasProviderConfig returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

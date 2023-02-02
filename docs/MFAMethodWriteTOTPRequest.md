@@ -1,12 +1,15 @@
 # MFAMethodWriteTOTPRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Algorithm** | Pointer to **string** | The hashing algorithm used to generate the TOTP token. Options include SHA1, SHA256 and SHA512. | [optional] [default to "SHA1"]
 **Digits** | Pointer to **int32** | The number of digits in the generated TOTP token. This value can either be 6 or 8. | [optional] [default to 6]
-**Issuer** | Pointer to **string** | The name of the key&#39;s issuing organization. | [optional] 
+**Issuer** | Pointer to **string** | The name of the key&#x27;s issuing organization. | [optional] 
 **KeySize** | Pointer to **int32** | Determines the size in bytes of the generated key. | [optional] [default to 20]
 **MaxValidationAttempts** | Pointer to **int32** | Max number of allowed validation attempts. | [optional] 
 **MethodId** | Pointer to **string** | The unique identifier for this MFA method. | [optional] 
@@ -14,7 +17,10 @@ Name | Type | Description | Notes
 **QrSize** | Pointer to **int32** | The pixel size of the generated square QR code. | [optional] [default to 200]
 **Skew** | Pointer to **int32** | The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1. | [optional] [default to 1]
 
+
+
 ## Methods
+
 
 ### NewMFAMethodWriteTOTPRequest
 
@@ -32,6 +38,7 @@ will change when the set of required properties is changed
 NewMFAMethodWriteTOTPRequestWithDefaults instantiates a new MFAMethodWriteTOTPRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAlgorithm
 
@@ -52,11 +59,15 @@ and a boolean to check if the value has been set.
 
 SetAlgorithm sets Algorithm field to given value.
 
+
 ### HasAlgorithm
 
 `func (o *MFAMethodWriteTOTPRequest) HasAlgorithm() bool`
 
 HasAlgorithm returns a boolean if a field has been set.
+
+
+
 
 ### GetDigits
 
@@ -77,11 +88,15 @@ and a boolean to check if the value has been set.
 
 SetDigits sets Digits field to given value.
 
+
 ### HasDigits
 
 `func (o *MFAMethodWriteTOTPRequest) HasDigits() bool`
 
 HasDigits returns a boolean if a field has been set.
+
+
+
 
 ### GetIssuer
 
@@ -102,11 +117,15 @@ and a boolean to check if the value has been set.
 
 SetIssuer sets Issuer field to given value.
 
+
 ### HasIssuer
 
 `func (o *MFAMethodWriteTOTPRequest) HasIssuer() bool`
 
 HasIssuer returns a boolean if a field has been set.
+
+
+
 
 ### GetKeySize
 
@@ -127,11 +146,15 @@ and a boolean to check if the value has been set.
 
 SetKeySize sets KeySize field to given value.
 
+
 ### HasKeySize
 
 `func (o *MFAMethodWriteTOTPRequest) HasKeySize() bool`
 
 HasKeySize returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxValidationAttempts
 
@@ -152,11 +175,15 @@ and a boolean to check if the value has been set.
 
 SetMaxValidationAttempts sets MaxValidationAttempts field to given value.
 
+
 ### HasMaxValidationAttempts
 
 `func (o *MFAMethodWriteTOTPRequest) HasMaxValidationAttempts() bool`
 
 HasMaxValidationAttempts returns a boolean if a field has been set.
+
+
+
 
 ### GetMethodId
 
@@ -177,11 +204,15 @@ and a boolean to check if the value has been set.
 
 SetMethodId sets MethodId field to given value.
 
+
 ### HasMethodId
 
 `func (o *MFAMethodWriteTOTPRequest) HasMethodId() bool`
 
 HasMethodId returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -202,11 +233,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *MFAMethodWriteTOTPRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetQrSize
 
@@ -227,11 +262,15 @@ and a boolean to check if the value has been set.
 
 SetQrSize sets QrSize field to given value.
 
+
 ### HasQrSize
 
 `func (o *MFAMethodWriteTOTPRequest) HasQrSize() bool`
 
 HasQrSize returns a boolean if a field has been set.
+
+
+
 
 ### GetSkew
 
@@ -252,11 +291,19 @@ and a boolean to check if the value has been set.
 
 SetSkew sets Skew field to given value.
 
+
 ### HasSkew
 
 `func (o *MFAMethodWriteTOTPRequest) HasSkew() bool`
 
 HasSkew returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

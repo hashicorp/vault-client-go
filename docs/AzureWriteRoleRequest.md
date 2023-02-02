@@ -1,9 +1,12 @@
 # AzureWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ApplicationObjectId** | Pointer to **string** | Application Object ID to use for static service principal credentials. | [optional] 
 **AzureGroups** | Pointer to **string** | JSON list of Azure groups to add the service principal to. | [optional] 
 **AzureRoles** | Pointer to **string** | JSON list of Azure roles to assign. | [optional] 
@@ -11,7 +14,10 @@ Name | Type | Description | Notes
 **PermanentlyDelete** | Pointer to **bool** | Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted. | [optional] [default to false]
 **Ttl** | Pointer to **int32** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAzureWriteRoleRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewAzureWriteRoleRequestWithDefaults instantiates a new AzureWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetApplicationObjectId
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetApplicationObjectId sets ApplicationObjectId field to given value.
 
+
 ### HasApplicationObjectId
 
 `func (o *AzureWriteRoleRequest) HasApplicationObjectId() bool`
 
 HasApplicationObjectId returns a boolean if a field has been set.
+
+
+
 
 ### GetAzureGroups
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetAzureGroups sets AzureGroups field to given value.
 
+
 ### HasAzureGroups
 
 `func (o *AzureWriteRoleRequest) HasAzureGroups() bool`
 
 HasAzureGroups returns a boolean if a field has been set.
+
+
+
 
 ### GetAzureRoles
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetAzureRoles sets AzureRoles field to given value.
 
+
 ### HasAzureRoles
 
 `func (o *AzureWriteRoleRequest) HasAzureRoles() bool`
 
 HasAzureRoles returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *AzureWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetPermanentlyDelete
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetPermanentlyDelete sets PermanentlyDelete field to given value.
 
+
 ### HasPermanentlyDelete
 
 `func (o *AzureWriteRoleRequest) HasPermanentlyDelete() bool`
 
 HasPermanentlyDelete returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *AzureWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

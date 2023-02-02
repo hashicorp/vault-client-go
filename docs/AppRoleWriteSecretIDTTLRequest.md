@@ -1,12 +1,18 @@
 # AppRoleWriteSecretIDTTLRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **SecretIdTtl** | Pointer to **int32** | Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteSecretIDTTLRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteSecretIDTTLRequestWithDefaults instantiates a new AppRoleWriteSecretIDTTLRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetSecretIdTtl
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 
+
 ### HasSecretIdTtl
 
 `func (o *AppRoleWriteSecretIDTTLRequest) HasSecretIdTtl() bool`
 
 HasSecretIdTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

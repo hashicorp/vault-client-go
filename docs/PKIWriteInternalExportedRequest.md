@@ -1,16 +1,22 @@
 # PKIWriteInternalExportedRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **KeyBits** | Pointer to **int32** | The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519. | [optional] [default to 0]
 **KeyName** | Pointer to **string** | Optional name to be used for this key | [optional] 
 **KeyType** | Pointer to **string** | The type of key to use; defaults to RSA. \&quot;rsa\&quot; \&quot;ec\&quot; and \&quot;ed25519\&quot; are the only valid values. | [optional] [default to "rsa"]
 **ManagedKeyId** | Pointer to **string** | The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types. | [optional] 
 **ManagedKeyName** | Pointer to **string** | The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKIWriteInternalExportedRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewPKIWriteInternalExportedRequestWithDefaults instantiates a new PKIWriteInternalExportedRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetKeyBits
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetKeyBits sets KeyBits field to given value.
 
+
 ### HasKeyBits
 
 `func (o *PKIWriteInternalExportedRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyName
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetKeyName sets KeyName field to given value.
 
+
 ### HasKeyName
 
 `func (o *PKIWriteInternalExportedRequest) HasKeyName() bool`
 
 HasKeyName returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyType
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetKeyType sets KeyType field to given value.
 
+
 ### HasKeyType
 
 `func (o *PKIWriteInternalExportedRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
+
+
+
 
 ### GetManagedKeyId
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetManagedKeyId sets ManagedKeyId field to given value.
 
+
 ### HasManagedKeyId
 
 `func (o *PKIWriteInternalExportedRequest) HasManagedKeyId() bool`
 
 HasManagedKeyId returns a boolean if a field has been set.
+
+
+
 
 ### GetManagedKeyName
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetManagedKeyName sets ManagedKeyName field to given value.
 
+
 ### HasManagedKeyName
 
 `func (o *PKIWriteInternalExportedRequest) HasManagedKeyName() bool`
 
 HasManagedKeyName returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

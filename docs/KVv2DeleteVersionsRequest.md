@@ -1,12 +1,18 @@
 # KVv2DeleteVersionsRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Versions** | Pointer to **[]int32** | The versions to be archived. The versioned data will not be deleted, but it will no longer be returned in normal get requests. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKVv2DeleteVersionsRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewKVv2DeleteVersionsRequestWithDefaults instantiates a new KVv2DeleteVersionsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetVersions
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetVersions sets Versions field to given value.
 
+
 ### HasVersions
 
 `func (o *KVv2DeleteVersionsRequest) HasVersions() bool`
 
 HasVersions returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

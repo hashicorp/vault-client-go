@@ -1,16 +1,22 @@
 # EntityWriteAliasByIDRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CanonicalId** | Pointer to **string** | Entity ID to which this alias should be tied to | [optional] 
 **CustomMetadata** | Pointer to **map[string]interface{}** | User provided key-value pairs | [optional] 
 **EntityId** | Pointer to **string** | Entity ID to which this alias belongs to. This field is deprecated, use canonical_id. | [optional] 
 **MountAccessor** | Pointer to **string** | (Unused) | [optional] 
 **Name** | Pointer to **string** | (Unused) | [optional] 
 
+
+
 ## Methods
+
 
 ### NewEntityWriteAliasByIDRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewEntityWriteAliasByIDRequestWithDefaults instantiates a new EntityWriteAliasByIDRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCanonicalId
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetCanonicalId sets CanonicalId field to given value.
 
+
 ### HasCanonicalId
 
 `func (o *EntityWriteAliasByIDRequest) HasCanonicalId() bool`
 
 HasCanonicalId returns a boolean if a field has been set.
+
+
+
 
 ### GetCustomMetadata
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetCustomMetadata sets CustomMetadata field to given value.
 
+
 ### HasCustomMetadata
 
 `func (o *EntityWriteAliasByIDRequest) HasCustomMetadata() bool`
 
 HasCustomMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetEntityId
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetEntityId sets EntityId field to given value.
 
+
 ### HasEntityId
 
 `func (o *EntityWriteAliasByIDRequest) HasEntityId() bool`
 
 HasEntityId returns a boolean if a field has been set.
+
+
+
 
 ### GetMountAccessor
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetMountAccessor sets MountAccessor field to given value.
 
+
 ### HasMountAccessor
 
 `func (o *EntityWriteAliasByIDRequest) HasMountAccessor() bool`
 
 HasMountAccessor returns a boolean if a field has been set.
+
+
+
 
 ### GetName
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
 ### HasName
 
 `func (o *EntityWriteAliasByIDRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

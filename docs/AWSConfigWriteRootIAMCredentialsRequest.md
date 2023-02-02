@@ -1,9 +1,12 @@
 # AWSConfigWriteRootIAMCredentialsRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AccessKey** | Pointer to **string** | Access key with permission to create new keys. | [optional] 
 **IamEndpoint** | Pointer to **string** | Endpoint to custom IAM server URL | [optional] 
 **MaxRetries** | Pointer to **int32** | Maximum number of retries for recoverable exceptions of AWS APIs | [optional] [default to -1]
@@ -12,7 +15,10 @@ Name | Type | Description | Notes
 **StsEndpoint** | Pointer to **string** | Endpoint to custom STS server URL | [optional] 
 **UsernameTemplate** | Pointer to **string** | Template to generate custom IAM usernames | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAWSConfigWriteRootIAMCredentialsRequest
 
@@ -30,6 +36,7 @@ will change when the set of required properties is changed
 NewAWSConfigWriteRootIAMCredentialsRequestWithDefaults instantiates a new AWSConfigWriteRootIAMCredentialsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAccessKey
 
@@ -50,11 +57,15 @@ and a boolean to check if the value has been set.
 
 SetAccessKey sets AccessKey field to given value.
 
+
 ### HasAccessKey
 
 `func (o *AWSConfigWriteRootIAMCredentialsRequest) HasAccessKey() bool`
 
 HasAccessKey returns a boolean if a field has been set.
+
+
+
 
 ### GetIamEndpoint
 
@@ -75,11 +86,15 @@ and a boolean to check if the value has been set.
 
 SetIamEndpoint sets IamEndpoint field to given value.
 
+
 ### HasIamEndpoint
 
 `func (o *AWSConfigWriteRootIAMCredentialsRequest) HasIamEndpoint() bool`
 
 HasIamEndpoint returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxRetries
 
@@ -100,11 +115,15 @@ and a boolean to check if the value has been set.
 
 SetMaxRetries sets MaxRetries field to given value.
 
+
 ### HasMaxRetries
 
 `func (o *AWSConfigWriteRootIAMCredentialsRequest) HasMaxRetries() bool`
 
 HasMaxRetries returns a boolean if a field has been set.
+
+
+
 
 ### GetRegion
 
@@ -125,11 +144,15 @@ and a boolean to check if the value has been set.
 
 SetRegion sets Region field to given value.
 
+
 ### HasRegion
 
 `func (o *AWSConfigWriteRootIAMCredentialsRequest) HasRegion() bool`
 
 HasRegion returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretKey
 
@@ -150,11 +173,15 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
+
 ### HasSecretKey
 
 `func (o *AWSConfigWriteRootIAMCredentialsRequest) HasSecretKey() bool`
 
 HasSecretKey returns a boolean if a field has been set.
+
+
+
 
 ### GetStsEndpoint
 
@@ -175,11 +202,15 @@ and a boolean to check if the value has been set.
 
 SetStsEndpoint sets StsEndpoint field to given value.
 
+
 ### HasStsEndpoint
 
 `func (o *AWSConfigWriteRootIAMCredentialsRequest) HasStsEndpoint() bool`
 
 HasStsEndpoint returns a boolean if a field has been set.
+
+
+
 
 ### GetUsernameTemplate
 
@@ -200,11 +231,19 @@ and a boolean to check if the value has been set.
 
 SetUsernameTemplate sets UsernameTemplate field to given value.
 
+
 ### HasUsernameTemplate
 
 `func (o *AWSConfigWriteRootIAMCredentialsRequest) HasUsernameTemplate() bool`
 
 HasUsernameTemplate returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

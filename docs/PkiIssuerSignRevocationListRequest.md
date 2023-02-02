@@ -1,9 +1,12 @@
 # PKIIssuerSignRevocationListRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CrlNumber** | Pointer to **int32** | The sequence number to be written within the CRL Number extension. | [optional] 
 **DeltaCrlBaseNumber** | Pointer to **int32** | Using a zero or greater value specifies the base CRL revision number to encode within a Delta CRL indicator extension, otherwise the extension will not be added. | [optional] [default to -1]
 **Extensions** | Pointer to **[]map[string]interface{}** | A list of maps containing extensions with keys id (string), critical (bool), value (string) | [optional] 
@@ -11,7 +14,10 @@ Name | Type | Description | Notes
 **NextUpdate** | Pointer to **string** | The amount of time the generated CRL should be valid; defaults to 72 hours. | [optional] [default to "72h"]
 **RevokedCerts** | Pointer to **[]map[string]interface{}** | A list of maps containing the keys serial_number (string), revocation_time (string), and extensions (map with keys id (string), critical (bool), value (string)) | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKIIssuerSignRevocationListRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewPKIIssuerSignRevocationListRequestWithDefaults instantiates a new PKIIssuerSignRevocationListRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCrlNumber
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetCrlNumber sets CrlNumber field to given value.
 
+
 ### HasCrlNumber
 
 `func (o *PKIIssuerSignRevocationListRequest) HasCrlNumber() bool`
 
 HasCrlNumber returns a boolean if a field has been set.
+
+
+
 
 ### GetDeltaCrlBaseNumber
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetDeltaCrlBaseNumber sets DeltaCrlBaseNumber field to given value.
 
+
 ### HasDeltaCrlBaseNumber
 
 `func (o *PKIIssuerSignRevocationListRequest) HasDeltaCrlBaseNumber() bool`
 
 HasDeltaCrlBaseNumber returns a boolean if a field has been set.
+
+
+
 
 ### GetExtensions
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetExtensions sets Extensions field to given value.
 
+
 ### HasExtensions
 
 `func (o *PKIIssuerSignRevocationListRequest) HasExtensions() bool`
 
 HasExtensions returns a boolean if a field has been set.
+
+
+
 
 ### GetFormat
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
+
 ### HasFormat
 
 `func (o *PKIIssuerSignRevocationListRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+
+
 
 ### GetNextUpdate
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetNextUpdate sets NextUpdate field to given value.
 
+
 ### HasNextUpdate
 
 `func (o *PKIIssuerSignRevocationListRequest) HasNextUpdate() bool`
 
 HasNextUpdate returns a boolean if a field has been set.
+
+
+
 
 ### GetRevokedCerts
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetRevokedCerts sets RevokedCerts field to given value.
 
+
 ### HasRevokedCerts
 
 `func (o *PKIIssuerSignRevocationListRequest) HasRevokedCerts() bool`
 
 HasRevokedCerts returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

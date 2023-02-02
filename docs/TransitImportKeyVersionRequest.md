@@ -1,13 +1,19 @@
 # TransitImportKeyVersionRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Ciphertext** | Pointer to **string** | The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key. | [optional] 
 **HashFunction** | Pointer to **string** | The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \&quot;SHA1\&quot;, \&quot;SHA224\&quot;, \&quot;SHA256\&quot; (default), \&quot;SHA384\&quot;, or \&quot;SHA512\&quot; | [optional] [default to "SHA256"]
 
+
+
 ## Methods
+
 
 ### NewTransitImportKeyVersionRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewTransitImportKeyVersionRequestWithDefaults instantiates a new TransitImportKeyVersionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCiphertext
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetCiphertext sets Ciphertext field to given value.
 
+
 ### HasCiphertext
 
 `func (o *TransitImportKeyVersionRequest) HasCiphertext() bool`
 
 HasCiphertext returns a boolean if a field has been set.
+
+
+
 
 ### GetHashFunction
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetHashFunction sets HashFunction field to given value.
 
+
 ### HasHashFunction
 
 `func (o *TransitImportKeyVersionRequest) HasHashFunction() bool`
 
 HasHashFunction returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

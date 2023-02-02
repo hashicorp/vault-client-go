@@ -1,14 +1,20 @@
 # WriteCapabilitiesSelfRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Path** | Pointer to **[]string** | Use &#39;paths&#39; instead. | [optional] 
+
+
+**Path** | Pointer to **[]string** | Use &#x27;paths&#x27; instead. | [optional] 
 **Paths** | Pointer to **[]string** | Paths on which capabilities are being queried. | [optional] 
 **Token** | Pointer to **string** | Token for which capabilities are being queried. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteCapabilitiesSelfRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewWriteCapabilitiesSelfRequestWithDefaults instantiates a new WriteCapabilitiesSelfRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPath
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+
 ### HasPath
 
 `func (o *WriteCapabilitiesSelfRequest) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
+
+
+
 
 ### GetPaths
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetPaths sets Paths field to given value.
 
+
 ### HasPaths
 
 `func (o *WriteCapabilitiesSelfRequest) HasPaths() bool`
 
 HasPaths returns a boolean if a field has been set.
+
+
+
 
 ### GetToken
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetToken sets Token field to given value.
 
+
 ### HasToken
 
 `func (o *WriteCapabilitiesSelfRequest) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,12 +1,18 @@
 # AppRoleReadSecretIDNumUsesResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **SecretIdNumUses** | Pointer to **int32** | Number of times a secret ID can access the role, after which the SecretID will expire. Defaults to 0 meaning that the secret ID is of unlimited use. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleReadSecretIDNumUsesResponse
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleReadSecretIDNumUsesResponseWithDefaults instantiates a new AppRoleReadSecretIDNumUsesResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetSecretIdNumUses
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetSecretIdNumUses sets SecretIdNumUses field to given value.
 
+
 ### HasSecretIdNumUses
 
 `func (o *AppRoleReadSecretIDNumUsesResponse) HasSecretIdNumUses() bool`
 
 HasSecretIdNumUses returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

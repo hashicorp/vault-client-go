@@ -1,13 +1,19 @@
 # MFAMethodAdminDestroyTOTPRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **EntityId** | **string** | Identifier of the entity from which the MFA method secret needs to be removed. | 
 **MethodId** | **string** | The unique identifier for this MFA method. | 
 
+
+
 ## Methods
+
 
 ### NewMFAMethodAdminDestroyTOTPRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewMFAMethodAdminDestroyTOTPRequestWithDefaults instantiates a new MFAMethodAdminDestroyTOTPRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetEntityId
 
@@ -46,6 +53,9 @@ and a boolean to check if the value has been set.
 SetEntityId sets EntityId field to given value.
 
 
+
+
+
 ### GetMethodId
 
 `func (o *MFAMethodAdminDestroyTOTPRequest) GetMethodId() string`
@@ -64,6 +74,13 @@ and a boolean to check if the value has been set.
 `func (o *MFAMethodAdminDestroyTOTPRequest) SetMethodId(v string)`
 
 SetMethodId sets MethodId field to given value.
+
+
+
+
+
+
+
 
 
 

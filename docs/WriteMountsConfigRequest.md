@@ -1,16 +1,19 @@
 # WriteMountsConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowedManagedKeys** | Pointer to **[]string** |  | [optional] 
 **AllowedResponseHeaders** | Pointer to **[]string** | A list of headers to whitelist and allow a plugin to set on responses. | [optional] 
-**AuditNonHmacRequestKeys** | Pointer to **[]string** | The list of keys in the request data object that will not be HMAC&#39;ed by audit devices. | [optional] 
-**AuditNonHmacResponseKeys** | Pointer to **[]string** | The list of keys in the response data object that will not be HMAC&#39;ed by audit devices. | [optional] 
+**AuditNonHmacRequestKeys** | Pointer to **[]string** | The list of keys in the request data object that will not be HMAC&#x27;ed by audit devices. | [optional] 
+**AuditNonHmacResponseKeys** | Pointer to **[]string** | The list of keys in the response data object that will not be HMAC&#x27;ed by audit devices. | [optional] 
 **DefaultLeaseTtl** | Pointer to **string** | The default lease TTL for this mount. | [optional] 
 **Description** | Pointer to **string** | User-friendly description for this credential backend. | [optional] 
-**ListingVisibility** | Pointer to **string** | Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are &#39;unauth&#39; and &#39;hidden&#39;, with the empty default (&#39;&#39;) behaving like &#39;hidden&#39;. | [optional] 
+**ListingVisibility** | Pointer to **string** | Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are &#x27;unauth&#x27; and &#x27;hidden&#x27;, with the empty default (&#x27;&#x27;) behaving like &#x27;hidden&#x27;. | [optional] 
 **MaxLeaseTtl** | Pointer to **string** | The max lease TTL for this mount. | [optional] 
 **Options** | Pointer to **map[string]interface{}** | The options to pass into the backend. Should be a json object with string keys and values. | [optional] 
 **PassthroughRequestHeaders** | Pointer to **[]string** | A list of headers to whitelist and pass from the request to the plugin. | [optional] 
@@ -18,7 +21,10 @@ Name | Type | Description | Notes
 **TokenType** | Pointer to **string** | The type of token to issue (service or batch). | [optional] 
 **UserLockoutConfig** | Pointer to **map[string]interface{}** | The user lockout configuration to pass into the backend. Should be a json object with string keys and values. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteMountsConfigRequest
 
@@ -36,6 +42,7 @@ will change when the set of required properties is changed
 NewWriteMountsConfigRequestWithDefaults instantiates a new WriteMountsConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowedManagedKeys
 
@@ -56,11 +63,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedManagedKeys sets AllowedManagedKeys field to given value.
 
+
 ### HasAllowedManagedKeys
 
 `func (o *WriteMountsConfigRequest) HasAllowedManagedKeys() bool`
 
 HasAllowedManagedKeys returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedResponseHeaders
 
@@ -81,11 +92,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedResponseHeaders sets AllowedResponseHeaders field to given value.
 
+
 ### HasAllowedResponseHeaders
 
 `func (o *WriteMountsConfigRequest) HasAllowedResponseHeaders() bool`
 
 HasAllowedResponseHeaders returns a boolean if a field has been set.
+
+
+
 
 ### GetAuditNonHmacRequestKeys
 
@@ -106,11 +121,15 @@ and a boolean to check if the value has been set.
 
 SetAuditNonHmacRequestKeys sets AuditNonHmacRequestKeys field to given value.
 
+
 ### HasAuditNonHmacRequestKeys
 
 `func (o *WriteMountsConfigRequest) HasAuditNonHmacRequestKeys() bool`
 
 HasAuditNonHmacRequestKeys returns a boolean if a field has been set.
+
+
+
 
 ### GetAuditNonHmacResponseKeys
 
@@ -131,11 +150,15 @@ and a boolean to check if the value has been set.
 
 SetAuditNonHmacResponseKeys sets AuditNonHmacResponseKeys field to given value.
 
+
 ### HasAuditNonHmacResponseKeys
 
 `func (o *WriteMountsConfigRequest) HasAuditNonHmacResponseKeys() bool`
 
 HasAuditNonHmacResponseKeys returns a boolean if a field has been set.
+
+
+
 
 ### GetDefaultLeaseTtl
 
@@ -156,11 +179,15 @@ and a boolean to check if the value has been set.
 
 SetDefaultLeaseTtl sets DefaultLeaseTtl field to given value.
 
+
 ### HasDefaultLeaseTtl
 
 `func (o *WriteMountsConfigRequest) HasDefaultLeaseTtl() bool`
 
 HasDefaultLeaseTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetDescription
 
@@ -181,11 +208,15 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
+
 ### HasDescription
 
 `func (o *WriteMountsConfigRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+
+
 
 ### GetListingVisibility
 
@@ -206,11 +237,15 @@ and a boolean to check if the value has been set.
 
 SetListingVisibility sets ListingVisibility field to given value.
 
+
 ### HasListingVisibility
 
 `func (o *WriteMountsConfigRequest) HasListingVisibility() bool`
 
 HasListingVisibility returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxLeaseTtl
 
@@ -231,11 +266,15 @@ and a boolean to check if the value has been set.
 
 SetMaxLeaseTtl sets MaxLeaseTtl field to given value.
 
+
 ### HasMaxLeaseTtl
 
 `func (o *WriteMountsConfigRequest) HasMaxLeaseTtl() bool`
 
 HasMaxLeaseTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetOptions
 
@@ -256,11 +295,15 @@ and a boolean to check if the value has been set.
 
 SetOptions sets Options field to given value.
 
+
 ### HasOptions
 
 `func (o *WriteMountsConfigRequest) HasOptions() bool`
 
 HasOptions returns a boolean if a field has been set.
+
+
+
 
 ### GetPassthroughRequestHeaders
 
@@ -281,11 +324,15 @@ and a boolean to check if the value has been set.
 
 SetPassthroughRequestHeaders sets PassthroughRequestHeaders field to given value.
 
+
 ### HasPassthroughRequestHeaders
 
 `func (o *WriteMountsConfigRequest) HasPassthroughRequestHeaders() bool`
 
 HasPassthroughRequestHeaders returns a boolean if a field has been set.
+
+
+
 
 ### GetPluginVersion
 
@@ -306,11 +353,15 @@ and a boolean to check if the value has been set.
 
 SetPluginVersion sets PluginVersion field to given value.
 
+
 ### HasPluginVersion
 
 `func (o *WriteMountsConfigRequest) HasPluginVersion() bool`
 
 HasPluginVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -331,11 +382,15 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *WriteMountsConfigRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
 
 ### GetUserLockoutConfig
 
@@ -356,11 +411,19 @@ and a boolean to check if the value has been set.
 
 SetUserLockoutConfig sets UserLockoutConfig field to given value.
 
+
 ### HasUserLockoutConfig
 
 `func (o *WriteMountsConfigRequest) HasUserLockoutConfig() bool`
 
 HasUserLockoutConfig returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

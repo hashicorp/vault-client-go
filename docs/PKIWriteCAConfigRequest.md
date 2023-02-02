@@ -1,12 +1,18 @@
 # PKIWriteCAConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **PemBundle** | Pointer to **string** | PEM-format, concatenated unencrypted secret key and certificate. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKIWriteCAConfigRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewPKIWriteCAConfigRequestWithDefaults instantiates a new PKIWriteCAConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPemBundle
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetPemBundle sets PemBundle field to given value.
 
+
 ### HasPemBundle
 
 `func (o *PKIWriteCAConfigRequest) HasPemBundle() bool`
 
 HasPemBundle returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

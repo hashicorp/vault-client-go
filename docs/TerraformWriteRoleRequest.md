@@ -1,16 +1,22 @@
 # TerraformWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **MaxTtl** | Pointer to **int32** | Maximum time for role. If not set or set to 0, will use system default. | [optional] 
 **Organization** | Pointer to **string** | Name of the Terraform Cloud or Enterprise organization | [optional] 
 **TeamId** | Pointer to **string** | ID of the Terraform Cloud or Enterprise team under organization (e.g., settings/teams/team-xxxxxxxxxxxxx) | [optional] 
 **Ttl** | Pointer to **int32** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
 **UserId** | Pointer to **string** | ID of the Terraform Cloud or Enterprise user (e.g., user-xxxxxxxxxxxxxxxx) | [optional] 
 
+
+
 ## Methods
+
 
 ### NewTerraformWriteRoleRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewTerraformWriteRoleRequestWithDefaults instantiates a new TerraformWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMaxTtl
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *TerraformWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetOrganization
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetOrganization sets Organization field to given value.
 
+
 ### HasOrganization
 
 `func (o *TerraformWriteRoleRequest) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
+
+
+
 
 ### GetTeamId
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetTeamId sets TeamId field to given value.
 
+
 ### HasTeamId
 
 `func (o *TerraformWriteRoleRequest) HasTeamId() bool`
 
 HasTeamId returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *TerraformWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetUserId
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+
 ### HasUserId
 
 `func (o *TerraformWriteRoleRequest) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

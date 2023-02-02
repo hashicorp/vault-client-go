@@ -1,12 +1,18 @@
 # RevokePrefixRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Sync** | Pointer to **bool** | Whether or not to perform the revocation synchronously | [optional] [default to true]
 
+
+
 ## Methods
+
 
 ### NewRevokePrefixRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewRevokePrefixRequestWithDefaults instantiates a new RevokePrefixRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetSync
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetSync sets Sync field to given value.
 
+
 ### HasSync
 
 `func (o *RevokePrefixRequest) HasSync() bool`
 
 HasSync returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

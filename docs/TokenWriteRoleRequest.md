@@ -1,28 +1,34 @@
 # TokenWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowedEntityAliases** | Pointer to **[]string** | String or JSON list of allowed entity aliases. If set, specifies the entity aliases which are allowed to be used during token generation. This field supports globbing. | [optional] 
-**AllowedPolicies** | Pointer to **[]string** | If set, tokens can be created with any subset of the policies in this list, rather than the normal semantics of tokens being a subset of the calling token&#39;s policies. The parameter is a comma-delimited string of policy names. | [optional] 
-**AllowedPoliciesGlob** | Pointer to **[]string** | If set, tokens can be created with any subset of glob matched policies in this list, rather than the normal semantics of tokens being a subset of the calling token&#39;s policies. The parameter is a comma-delimited string of policy name globs. | [optional] 
-**BoundCidrs** | Pointer to **[]string** | Use &#39;token_bound_cidrs&#39; instead. | [optional] 
+**AllowedPolicies** | Pointer to **[]string** | If set, tokens can be created with any subset of the policies in this list, rather than the normal semantics of tokens being a subset of the calling token&#x27;s policies. The parameter is a comma-delimited string of policy names. | [optional] 
+**AllowedPoliciesGlob** | Pointer to **[]string** | If set, tokens can be created with any subset of glob matched policies in this list, rather than the normal semantics of tokens being a subset of the calling token&#x27;s policies. The parameter is a comma-delimited string of policy name globs. | [optional] 
+**BoundCidrs** | Pointer to **[]string** | Use &#x27;token_bound_cidrs&#x27; instead. | [optional] 
 **DisallowedPolicies** | Pointer to **[]string** | If set, successful token creation via this role will require that no policies in the given list are requested. The parameter is a comma-delimited string of policy names. | [optional] 
 **DisallowedPoliciesGlob** | Pointer to **[]string** | If set, successful token creation via this role will require that no requested policies glob match any of policies in this list. The parameter is a comma-delimited string of policy name globs. | [optional] 
-**ExplicitMaxTtl** | Pointer to **int32** | Use &#39;token_explicit_max_ttl&#39; instead. | [optional] 
+**ExplicitMaxTtl** | Pointer to **int32** | Use &#x27;token_explicit_max_ttl&#x27; instead. | [optional] 
 **Orphan** | Pointer to **bool** | If true, tokens created via this role will be orphan tokens (have no parent) | [optional] 
-**PathSuffix** | Pointer to **string** | If set, tokens created via this role will contain the given suffix as a part of their path. This can be used to assist use of the &#39;revoke-prefix&#39; endpoint later on. The given suffix must match the regular expression.\\w[\\w-.]+\\w | [optional] 
-**Period** | Pointer to **int32** | Use &#39;token_period&#39; instead. | [optional] 
+**PathSuffix** | Pointer to **string** | If set, tokens created via this role will contain the given suffix as a part of their path. This can be used to assist use of the &#x27;revoke-prefix&#x27; endpoint later on. The given suffix must match the regular expression.\\w[\\w-.]+\\w | [optional] 
+**Period** | Pointer to **int32** | Use &#x27;token_period&#x27; instead. | [optional] 
 **Renewable** | Pointer to **bool** | Tokens created via this role will be renewable or not according to this value. Defaults to \&quot;true\&quot;. | [optional] [default to true]
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 **TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
-**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#39;default&#39; policy will not automatically be added to generated tokens | [optional] 
+**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
 **TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 
+
+
 ## Methods
+
 
 ### NewTokenWriteRoleRequest
 
@@ -40,6 +46,7 @@ will change when the set of required properties is changed
 NewTokenWriteRoleRequestWithDefaults instantiates a new TokenWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowedEntityAliases
 
@@ -60,11 +67,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedEntityAliases sets AllowedEntityAliases field to given value.
 
+
 ### HasAllowedEntityAliases
 
 `func (o *TokenWriteRoleRequest) HasAllowedEntityAliases() bool`
 
 HasAllowedEntityAliases returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedPolicies
 
@@ -85,11 +96,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedPolicies sets AllowedPolicies field to given value.
 
+
 ### HasAllowedPolicies
 
 `func (o *TokenWriteRoleRequest) HasAllowedPolicies() bool`
 
 HasAllowedPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedPoliciesGlob
 
@@ -110,11 +125,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedPoliciesGlob sets AllowedPoliciesGlob field to given value.
 
+
 ### HasAllowedPoliciesGlob
 
 `func (o *TokenWriteRoleRequest) HasAllowedPoliciesGlob() bool`
 
 HasAllowedPoliciesGlob returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundCidrs
 
@@ -135,11 +154,15 @@ and a boolean to check if the value has been set.
 
 SetBoundCidrs sets BoundCidrs field to given value.
 
+
 ### HasBoundCidrs
 
 `func (o *TokenWriteRoleRequest) HasBoundCidrs() bool`
 
 HasBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetDisallowedPolicies
 
@@ -160,11 +183,15 @@ and a boolean to check if the value has been set.
 
 SetDisallowedPolicies sets DisallowedPolicies field to given value.
 
+
 ### HasDisallowedPolicies
 
 `func (o *TokenWriteRoleRequest) HasDisallowedPolicies() bool`
 
 HasDisallowedPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetDisallowedPoliciesGlob
 
@@ -185,11 +212,15 @@ and a boolean to check if the value has been set.
 
 SetDisallowedPoliciesGlob sets DisallowedPoliciesGlob field to given value.
 
+
 ### HasDisallowedPoliciesGlob
 
 `func (o *TokenWriteRoleRequest) HasDisallowedPoliciesGlob() bool`
 
 HasDisallowedPoliciesGlob returns a boolean if a field has been set.
+
+
+
 
 ### GetExplicitMaxTtl
 
@@ -210,11 +241,15 @@ and a boolean to check if the value has been set.
 
 SetExplicitMaxTtl sets ExplicitMaxTtl field to given value.
 
+
 ### HasExplicitMaxTtl
 
 `func (o *TokenWriteRoleRequest) HasExplicitMaxTtl() bool`
 
 HasExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetOrphan
 
@@ -235,11 +270,15 @@ and a boolean to check if the value has been set.
 
 SetOrphan sets Orphan field to given value.
 
+
 ### HasOrphan
 
 `func (o *TokenWriteRoleRequest) HasOrphan() bool`
 
 HasOrphan returns a boolean if a field has been set.
+
+
+
 
 ### GetPathSuffix
 
@@ -260,11 +299,15 @@ and a boolean to check if the value has been set.
 
 SetPathSuffix sets PathSuffix field to given value.
 
+
 ### HasPathSuffix
 
 `func (o *TokenWriteRoleRequest) HasPathSuffix() bool`
 
 HasPathSuffix returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -285,11 +328,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *TokenWriteRoleRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetRenewable
 
@@ -310,11 +357,15 @@ and a boolean to check if the value has been set.
 
 SetRenewable sets Renewable field to given value.
 
+
 ### HasRenewable
 
 `func (o *TokenWriteRoleRequest) HasRenewable() bool`
 
 HasRenewable returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -335,11 +386,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *TokenWriteRoleRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenExplicitMaxTtl
 
@@ -360,11 +415,15 @@ and a boolean to check if the value has been set.
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
+
 ### HasTokenExplicitMaxTtl
 
 `func (o *TokenWriteRoleRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNoDefaultPolicy
 
@@ -385,11 +444,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
+
 ### HasTokenNoDefaultPolicy
 
 `func (o *TokenWriteRoleRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNumUses
 
@@ -410,11 +473,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
+
 ### HasTokenNumUses
 
 `func (o *TokenWriteRoleRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPeriod
 
@@ -435,11 +502,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
+
 ### HasTokenPeriod
 
 `func (o *TokenWriteRoleRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -460,11 +531,19 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *TokenWriteRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

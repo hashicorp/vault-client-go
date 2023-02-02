@@ -1,16 +1,22 @@
 # TransitDecryptRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AssociatedData** | Pointer to **string** | When using an AEAD cipher mode, such as AES-GCM, this parameter allows passing associated data (AD/AAD) into the encryption function; this data must be passed on subsequent decryption requests but can be transited in plaintext. On successful decryption, both the ciphertext and the associated data are attested not to have been tampered with. | [optional] 
 **Ciphertext** | Pointer to **string** | The ciphertext to decrypt, provided as returned by encrypt. | [optional] 
 **Context** | Pointer to **string** | Base64 encoded context for key derivation. Required if key derivation is enabled. | [optional] 
 **Nonce** | Pointer to **string** | Base64 encoded nonce value used during encryption. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+. | [optional] 
 **PartialFailureResponseCode** | Pointer to **int32** | Ordinarily, if a batch item fails to decrypt due to a bad input, but other batch items succeed, the HTTP response code is 400 (Bad Request). Some applications may want to treat partial failures differently. Providing the parameter returns the given response code integer instead of a 400 in this case. If all values fail HTTP 400 is still returned. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewTransitDecryptRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewTransitDecryptRequestWithDefaults instantiates a new TransitDecryptRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAssociatedData
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetAssociatedData sets AssociatedData field to given value.
 
+
 ### HasAssociatedData
 
 `func (o *TransitDecryptRequest) HasAssociatedData() bool`
 
 HasAssociatedData returns a boolean if a field has been set.
+
+
+
 
 ### GetCiphertext
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetCiphertext sets Ciphertext field to given value.
 
+
 ### HasCiphertext
 
 `func (o *TransitDecryptRequest) HasCiphertext() bool`
 
 HasCiphertext returns a boolean if a field has been set.
+
+
+
 
 ### GetContext
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetContext sets Context field to given value.
 
+
 ### HasContext
 
 `func (o *TransitDecryptRequest) HasContext() bool`
 
 HasContext returns a boolean if a field has been set.
+
+
+
 
 ### GetNonce
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetNonce sets Nonce field to given value.
 
+
 ### HasNonce
 
 `func (o *TransitDecryptRequest) HasNonce() bool`
 
 HasNonce returns a boolean if a field has been set.
+
+
+
 
 ### GetPartialFailureResponseCode
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetPartialFailureResponseCode sets PartialFailureResponseCode field to given value.
 
+
 ### HasPartialFailureResponseCode
 
 `func (o *TransitDecryptRequest) HasPartialFailureResponseCode() bool`
 
 HasPartialFailureResponseCode returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

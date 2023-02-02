@@ -1,13 +1,19 @@
 # OIDCIntrospectRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ClientId** | Pointer to **string** | Optional client_id to verify | [optional] 
 **Token** | Pointer to **string** | Token to verify | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOIDCIntrospectRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewOIDCIntrospectRequestWithDefaults instantiates a new OIDCIntrospectRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetClientId
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
+
 ### HasClientId
 
 `func (o *OIDCIntrospectRequest) HasClientId() bool`
 
 HasClientId returns a boolean if a field has been set.
+
+
+
 
 ### GetToken
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetToken sets Token field to given value.
 
+
 ### HasToken
 
 `func (o *OIDCIntrospectRequest) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

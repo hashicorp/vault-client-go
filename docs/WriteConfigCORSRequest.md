@@ -1,14 +1,20 @@
 # WriteConfigCORSRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowedHeaders** | Pointer to **[]string** | A comma-separated string or array of strings indicating headers that are allowed on cross-origin requests. | [optional] 
 **AllowedOrigins** | Pointer to **[]string** | A comma-separated string or array of strings indicating origins that may make cross-origin requests. | [optional] 
 **Enable** | Pointer to **bool** | Enables or disables CORS headers on requests. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteConfigCORSRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewWriteConfigCORSRequestWithDefaults instantiates a new WriteConfigCORSRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowedHeaders
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedHeaders sets AllowedHeaders field to given value.
 
+
 ### HasAllowedHeaders
 
 `func (o *WriteConfigCORSRequest) HasAllowedHeaders() bool`
 
 HasAllowedHeaders returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedOrigins
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedOrigins sets AllowedOrigins field to given value.
 
+
 ### HasAllowedOrigins
 
 `func (o *WriteConfigCORSRequest) HasAllowedOrigins() bool`
 
 HasAllowedOrigins returns a boolean if a field has been set.
+
+
+
 
 ### GetEnable
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
+
 ### HasEnable
 
 `func (o *WriteConfigCORSRequest) HasEnable() bool`
 
 HasEnable returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

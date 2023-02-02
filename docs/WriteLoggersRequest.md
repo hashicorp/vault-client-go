@@ -1,12 +1,18 @@
 # WriteLoggersRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Level** | Pointer to **string** | Log verbosity level. Supported values (in order of detail) are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, and \&quot;error\&quot;. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteLoggersRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewWriteLoggersRequestWithDefaults instantiates a new WriteLoggersRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetLevel
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetLevel sets Level field to given value.
 
+
 ### HasLevel
 
 `func (o *WriteLoggersRequest) HasLevel() bool`
 
 HasLevel returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

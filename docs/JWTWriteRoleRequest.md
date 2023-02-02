@@ -1,15 +1,18 @@
 # JWTWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowedRedirectUris** | Pointer to **[]string** | Comma-separated list of allowed values for redirect_uri | [optional] 
-**BoundAudiences** | Pointer to **[]string** | Comma-separated list of &#39;aud&#39; claims that are valid for login; any match is sufficient | [optional] 
+**BoundAudiences** | Pointer to **[]string** | Comma-separated list of &#x27;aud&#x27; claims that are valid for login; any match is sufficient | [optional] 
 **BoundCidrs** | Pointer to **[]string** | Use \&quot;token_bound_cidrs\&quot; instead. If this and \&quot;token_bound_cidrs\&quot; are both specified, only \&quot;token_bound_cidrs\&quot; will be used. | [optional] 
 **BoundClaims** | Pointer to **map[string]interface{}** | Map of claims/values which must match for login | [optional] 
-**BoundClaimsType** | Pointer to **string** | How to interpret values in the map of claims/values (which must match for login): allowed values are &#39;string&#39; or &#39;glob&#39; | [optional] [default to "string"]
-**BoundSubject** | Pointer to **string** | The &#39;sub&#39; claim that is valid for login. Optional. | [optional] 
+**BoundClaimsType** | Pointer to **string** | How to interpret values in the map of claims/values (which must match for login): allowed values are &#x27;string&#x27; or &#x27;glob&#x27; | [optional] [default to "string"]
+**BoundSubject** | Pointer to **string** | The &#x27;sub&#x27; claim that is valid for login. Optional. | [optional] 
 **ClaimMappings** | Pointer to **map[string]interface{}** | Mappings of claims (key) that will be copied to a metadata field (value) | [optional] 
 **ClockSkewLeeway** | Pointer to **int32** | Duration in seconds of leeway when validating all claims to account for clock skew. Defaults to 60 (1 minute) if set to 0 and can be disabled if set to -1. | [optional] 
 **ExpirationLeeway** | Pointer to **int32** | Duration in seconds of leeway when validating expiration of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1. | [optional] [default to 150]
@@ -21,11 +24,11 @@ Name | Type | Description | Notes
 **OidcScopes** | Pointer to **[]string** | Comma-separated list of OIDC scopes | [optional] 
 **Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
-**RoleType** | Pointer to **string** | Type of the role, either &#39;jwt&#39; or &#39;oidc&#39;. | [optional] 
+**RoleType** | Pointer to **string** | Type of the role, either &#x27;jwt&#x27; or &#x27;oidc&#x27;. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 **TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
-**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#39;default&#39; policy will not automatically be added to generated tokens | [optional] 
+**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
 **TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
@@ -36,7 +39,10 @@ Name | Type | Description | Notes
 **UserClaimJsonPointer** | Pointer to **bool** | If true, the user_claim value will use JSON pointer syntax for referencing claims. | [optional] 
 **VerboseOidcLogging** | Pointer to **bool** | Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewJWTWriteRoleRequest
 
@@ -54,6 +60,7 @@ will change when the set of required properties is changed
 NewJWTWriteRoleRequestWithDefaults instantiates a new JWTWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowedRedirectUris
 
@@ -74,11 +81,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedRedirectUris sets AllowedRedirectUris field to given value.
 
+
 ### HasAllowedRedirectUris
 
 `func (o *JWTWriteRoleRequest) HasAllowedRedirectUris() bool`
 
 HasAllowedRedirectUris returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundAudiences
 
@@ -99,11 +110,15 @@ and a boolean to check if the value has been set.
 
 SetBoundAudiences sets BoundAudiences field to given value.
 
+
 ### HasBoundAudiences
 
 `func (o *JWTWriteRoleRequest) HasBoundAudiences() bool`
 
 HasBoundAudiences returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundCidrs
 
@@ -124,11 +139,15 @@ and a boolean to check if the value has been set.
 
 SetBoundCidrs sets BoundCidrs field to given value.
 
+
 ### HasBoundCidrs
 
 `func (o *JWTWriteRoleRequest) HasBoundCidrs() bool`
 
 HasBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundClaims
 
@@ -149,11 +168,15 @@ and a boolean to check if the value has been set.
 
 SetBoundClaims sets BoundClaims field to given value.
 
+
 ### HasBoundClaims
 
 `func (o *JWTWriteRoleRequest) HasBoundClaims() bool`
 
 HasBoundClaims returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundClaimsType
 
@@ -174,11 +197,15 @@ and a boolean to check if the value has been set.
 
 SetBoundClaimsType sets BoundClaimsType field to given value.
 
+
 ### HasBoundClaimsType
 
 `func (o *JWTWriteRoleRequest) HasBoundClaimsType() bool`
 
 HasBoundClaimsType returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundSubject
 
@@ -199,11 +226,15 @@ and a boolean to check if the value has been set.
 
 SetBoundSubject sets BoundSubject field to given value.
 
+
 ### HasBoundSubject
 
 `func (o *JWTWriteRoleRequest) HasBoundSubject() bool`
 
 HasBoundSubject returns a boolean if a field has been set.
+
+
+
 
 ### GetClaimMappings
 
@@ -224,11 +255,15 @@ and a boolean to check if the value has been set.
 
 SetClaimMappings sets ClaimMappings field to given value.
 
+
 ### HasClaimMappings
 
 `func (o *JWTWriteRoleRequest) HasClaimMappings() bool`
 
 HasClaimMappings returns a boolean if a field has been set.
+
+
+
 
 ### GetClockSkewLeeway
 
@@ -249,11 +284,15 @@ and a boolean to check if the value has been set.
 
 SetClockSkewLeeway sets ClockSkewLeeway field to given value.
 
+
 ### HasClockSkewLeeway
 
 `func (o *JWTWriteRoleRequest) HasClockSkewLeeway() bool`
 
 HasClockSkewLeeway returns a boolean if a field has been set.
+
+
+
 
 ### GetExpirationLeeway
 
@@ -274,11 +313,15 @@ and a boolean to check if the value has been set.
 
 SetExpirationLeeway sets ExpirationLeeway field to given value.
 
+
 ### HasExpirationLeeway
 
 `func (o *JWTWriteRoleRequest) HasExpirationLeeway() bool`
 
 HasExpirationLeeway returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupsClaim
 
@@ -299,11 +342,15 @@ and a boolean to check if the value has been set.
 
 SetGroupsClaim sets GroupsClaim field to given value.
 
+
 ### HasGroupsClaim
 
 `func (o *JWTWriteRoleRequest) HasGroupsClaim() bool`
 
 HasGroupsClaim returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxAge
 
@@ -324,11 +371,15 @@ and a boolean to check if the value has been set.
 
 SetMaxAge sets MaxAge field to given value.
 
+
 ### HasMaxAge
 
 `func (o *JWTWriteRoleRequest) HasMaxAge() bool`
 
 HasMaxAge returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -349,11 +400,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *JWTWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetNotBeforeLeeway
 
@@ -374,11 +429,15 @@ and a boolean to check if the value has been set.
 
 SetNotBeforeLeeway sets NotBeforeLeeway field to given value.
 
+
 ### HasNotBeforeLeeway
 
 `func (o *JWTWriteRoleRequest) HasNotBeforeLeeway() bool`
 
 HasNotBeforeLeeway returns a boolean if a field has been set.
+
+
+
 
 ### GetNumUses
 
@@ -399,11 +458,15 @@ and a boolean to check if the value has been set.
 
 SetNumUses sets NumUses field to given value.
 
+
 ### HasNumUses
 
 `func (o *JWTWriteRoleRequest) HasNumUses() bool`
 
 HasNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetOidcScopes
 
@@ -424,11 +487,15 @@ and a boolean to check if the value has been set.
 
 SetOidcScopes sets OidcScopes field to given value.
 
+
 ### HasOidcScopes
 
 `func (o *JWTWriteRoleRequest) HasOidcScopes() bool`
 
 HasOidcScopes returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -449,11 +516,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *JWTWriteRoleRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -474,11 +545,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *JWTWriteRoleRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetRoleType
 
@@ -499,11 +574,15 @@ and a boolean to check if the value has been set.
 
 SetRoleType sets RoleType field to given value.
 
+
 ### HasRoleType
 
 `func (o *JWTWriteRoleRequest) HasRoleType() bool`
 
 HasRoleType returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -524,11 +603,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *JWTWriteRoleRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenExplicitMaxTtl
 
@@ -549,11 +632,15 @@ and a boolean to check if the value has been set.
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
+
 ### HasTokenExplicitMaxTtl
 
 `func (o *JWTWriteRoleRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenMaxTtl
 
@@ -574,11 +661,15 @@ and a boolean to check if the value has been set.
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
+
 ### HasTokenMaxTtl
 
 `func (o *JWTWriteRoleRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNoDefaultPolicy
 
@@ -599,11 +690,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
+
 ### HasTokenNoDefaultPolicy
 
 `func (o *JWTWriteRoleRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNumUses
 
@@ -624,11 +719,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
+
 ### HasTokenNumUses
 
 `func (o *JWTWriteRoleRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPeriod
 
@@ -649,11 +748,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
+
 ### HasTokenPeriod
 
 `func (o *JWTWriteRoleRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPolicies
 
@@ -674,11 +777,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
+
 ### HasTokenPolicies
 
 `func (o *JWTWriteRoleRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenTtl
 
@@ -699,11 +806,15 @@ and a boolean to check if the value has been set.
 
 SetTokenTtl sets TokenTtl field to given value.
 
+
 ### HasTokenTtl
 
 `func (o *JWTWriteRoleRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -724,11 +835,15 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *JWTWriteRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -749,11 +864,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *JWTWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetUserClaim
 
@@ -774,11 +893,15 @@ and a boolean to check if the value has been set.
 
 SetUserClaim sets UserClaim field to given value.
 
+
 ### HasUserClaim
 
 `func (o *JWTWriteRoleRequest) HasUserClaim() bool`
 
 HasUserClaim returns a boolean if a field has been set.
+
+
+
 
 ### GetUserClaimJsonPointer
 
@@ -799,11 +922,15 @@ and a boolean to check if the value has been set.
 
 SetUserClaimJsonPointer sets UserClaimJsonPointer field to given value.
 
+
 ### HasUserClaimJsonPointer
 
 `func (o *JWTWriteRoleRequest) HasUserClaimJsonPointer() bool`
 
 HasUserClaimJsonPointer returns a boolean if a field has been set.
+
+
+
 
 ### GetVerboseOidcLogging
 
@@ -824,11 +951,19 @@ and a boolean to check if the value has been set.
 
 SetVerboseOidcLogging sets VerboseOidcLogging field to given value.
 
+
 ### HasVerboseOidcLogging
 
 `func (o *JWTWriteRoleRequest) HasVerboseOidcLogging() bool`
 
 HasVerboseOidcLogging returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

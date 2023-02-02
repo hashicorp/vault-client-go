@@ -1,16 +1,19 @@
 # PKIWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowAnyName** | Pointer to **bool** | If set, clients can request certificates for any domain, regardless of allowed_domains restrictions. See the documentation for more information. | [optional] 
 **AllowBareDomains** | Pointer to **bool** | If set, clients can request certificates for the base domains themselves, e.g. \&quot;example.com\&quot; of domains listed in allowed_domains. This is a separate option as in some cases this can be considered a security threat. See the documentation for more information. | [optional] 
 **AllowGlobDomains** | Pointer to **bool** | If set, domains specified in allowed_domains can include shell-style glob patterns, e.g. \&quot;ftp*.example.com\&quot;. See the documentation for more information. | [optional] 
 **AllowIpSans** | Pointer to **bool** | If set, IP Subject Alternative Names are allowed. Any valid IP is accepted and No authorization checking is performed. | [optional] [default to true]
 **AllowLocalhost** | Pointer to **bool** | Whether to allow \&quot;localhost\&quot; and \&quot;localdomain\&quot; as a valid common name in a request, independent of allowed_domains value. | [optional] [default to true]
 **AllowSubdomains** | Pointer to **bool** | If set, clients can request certificates for subdomains of domains listed in allowed_domains, including wildcard subdomains. See the documentation for more information. | [optional] 
-**AllowWildcardCertificates** | Pointer to **bool** | If set, allows certificates with wildcards in the common name to be issued, conforming to RFC 6125&#39;s Section 6.4.3; e.g., \&quot;*.example.net\&quot; or \&quot;b*z.example.net\&quot;. See the documentation for more information. | [optional] [default to true]
+**AllowWildcardCertificates** | Pointer to **bool** | If set, allows certificates with wildcards in the common name to be issued, conforming to RFC 6125&#x27;s Section 6.4.3; e.g., \&quot;*.example.net\&quot; or \&quot;b*z.example.net\&quot;. See the documentation for more information. | [optional] [default to true]
 **AllowedDomains** | Pointer to **[]string** | Specifies the domains this role is allowed to issue certificates for. This is used with the allow_bare_domains, allow_subdomains, and allow_glob_domains to determine matches for the common name, DNS-typed SAN entries, and Email-typed SAN entries of certificates. See the documentation for more information. This parameter accepts a comma-separated string or list of domains. | [optional] 
 **AllowedDomainsTemplate** | Pointer to **bool** | If set, Allowed domains can be specified using identity template policies. Non-templated domains are also permitted. | [optional] [default to false]
 **AllowedOtherSans** | Pointer to **[]string** | If set, an array of allowed other names to put in SANs. These values support globbing and must be in the format &lt;oid&gt;;&lt;type&gt;:&lt;value&gt;. Currently only \&quot;utf8\&quot; is a valid type. All values, including globbing values, must use this syntax, with the exception being a single \&quot;*\&quot; which allows any OID and any value (but type must still be utf8). | [optional] 
@@ -20,7 +23,7 @@ Name | Type | Description | Notes
 **Backend** | Pointer to **string** | Backend Type | [optional] 
 **BasicConstraintsValidForNonCa** | Pointer to **bool** | Mark Basic Constraints valid when issuing non-CA certificates. | [optional] 
 **ClientFlag** | Pointer to **bool** | If set, certificates are flagged for client auth use. Defaults to true. See also RFC 5280 Section 4.2.1.12. | [optional] [default to true]
-**CnValidations** | Pointer to **[]string** | List of allowed validations to run against the Common Name field. Values can include &#39;email&#39; to validate the CN is a email address, &#39;hostname&#39; to validate the CN is a valid hostname (potentially including wildcards). When multiple validations are specified, these take OR semantics (either email OR hostname are allowed). The special value &#39;disabled&#39; allows disabling all CN name validations, allowing for arbitrary non-Hostname, non-Email address CNs. | [optional] [default to ["email","hostname"]]
+**CnValidations** | Pointer to **[]string** | List of allowed validations to run against the Common Name field. Values can include &#x27;email&#x27; to validate the CN is a email address, &#x27;hostname&#x27; to validate the CN is a valid hostname (potentially including wildcards). When multiple validations are specified, these take OR semantics (either email OR hostname are allowed). The special value &#x27;disabled&#x27; allows disabling all CN name validations, allowing for arbitrary non-Hostname, non-Email address CNs. | [optional] [default to ["email","hostname"]]
 **CodeSigningFlag** | Pointer to **bool** | If set, certificates are flagged for code signing use. Defaults to false. See also RFC 5280 Section 4.2.1.12. | [optional] 
 **Country** | Pointer to **[]string** | If set, Country will be set to this value in certificates issued by this role. | [optional] 
 **EmailProtectionFlag** | Pointer to **bool** | If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12. | [optional] 
@@ -42,7 +45,7 @@ Name | Type | Description | Notes
 **PolicyIdentifiers** | Pointer to **[]string** | A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\&quot;oid\&quot;&#x3D;\&quot;1.3.6.1.4.1.7.8\&quot;,\&quot;notice\&quot;&#x3D;\&quot;I am a user Notice\&quot;}, {\&quot;oid\&quot;&#x3D;\&quot;1.3.6.1.4.1.44947.1.2.4 \&quot;,\&quot;cps\&quot;&#x3D;\&quot;https://example.com\&quot;}]. | [optional] 
 **PostalCode** | Pointer to **[]string** | If set, Postal Code will be set to this value in certificates issued by this role. | [optional] 
 **Province** | Pointer to **[]string** | If set, Province will be set to this value in certificates issued by this role. | [optional] 
-**RequireCn** | Pointer to **bool** | If set to false, makes the &#39;common_name&#39; field optional while generating a certificate. | [optional] [default to true]
+**RequireCn** | Pointer to **bool** | If set to false, makes the &#x27;common_name&#x27; field optional while generating a certificate. | [optional] [default to true]
 **ServerFlag** | Pointer to **bool** | If set, certificates are flagged for server auth use. Defaults to true. See also RFC 5280 Section 4.2.1.12. | [optional] [default to true]
 **SignatureBits** | Pointer to **int32** | The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves). | [optional] [default to 0]
 **StreetAddress** | Pointer to **[]string** | If set, Street Address will be set to this value in certificates issued by this role. | [optional] 
@@ -51,7 +54,10 @@ Name | Type | Description | Notes
 **UseCsrSans** | Pointer to **bool** | If set, when used with a signing profile, the SANs in the CSR will be used. This does *not* include the Common Name (cn); use use_csr_common_name for that. Defaults to true. | [optional] [default to true]
 **UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
 
+
+
 ## Methods
+
 
 ### NewPKIWriteRoleRequest
 
@@ -69,6 +75,7 @@ will change when the set of required properties is changed
 NewPKIWriteRoleRequestWithDefaults instantiates a new PKIWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowAnyName
 
@@ -89,11 +96,15 @@ and a boolean to check if the value has been set.
 
 SetAllowAnyName sets AllowAnyName field to given value.
 
+
 ### HasAllowAnyName
 
 `func (o *PKIWriteRoleRequest) HasAllowAnyName() bool`
 
 HasAllowAnyName returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowBareDomains
 
@@ -114,11 +125,15 @@ and a boolean to check if the value has been set.
 
 SetAllowBareDomains sets AllowBareDomains field to given value.
 
+
 ### HasAllowBareDomains
 
 `func (o *PKIWriteRoleRequest) HasAllowBareDomains() bool`
 
 HasAllowBareDomains returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowGlobDomains
 
@@ -139,11 +154,15 @@ and a boolean to check if the value has been set.
 
 SetAllowGlobDomains sets AllowGlobDomains field to given value.
 
+
 ### HasAllowGlobDomains
 
 `func (o *PKIWriteRoleRequest) HasAllowGlobDomains() bool`
 
 HasAllowGlobDomains returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowIpSans
 
@@ -164,11 +183,15 @@ and a boolean to check if the value has been set.
 
 SetAllowIpSans sets AllowIpSans field to given value.
 
+
 ### HasAllowIpSans
 
 `func (o *PKIWriteRoleRequest) HasAllowIpSans() bool`
 
 HasAllowIpSans returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowLocalhost
 
@@ -189,11 +212,15 @@ and a boolean to check if the value has been set.
 
 SetAllowLocalhost sets AllowLocalhost field to given value.
 
+
 ### HasAllowLocalhost
 
 `func (o *PKIWriteRoleRequest) HasAllowLocalhost() bool`
 
 HasAllowLocalhost returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowSubdomains
 
@@ -214,11 +241,15 @@ and a boolean to check if the value has been set.
 
 SetAllowSubdomains sets AllowSubdomains field to given value.
 
+
 ### HasAllowSubdomains
 
 `func (o *PKIWriteRoleRequest) HasAllowSubdomains() bool`
 
 HasAllowSubdomains returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowWildcardCertificates
 
@@ -239,11 +270,15 @@ and a boolean to check if the value has been set.
 
 SetAllowWildcardCertificates sets AllowWildcardCertificates field to given value.
 
+
 ### HasAllowWildcardCertificates
 
 `func (o *PKIWriteRoleRequest) HasAllowWildcardCertificates() bool`
 
 HasAllowWildcardCertificates returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedDomains
 
@@ -264,11 +299,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedDomains sets AllowedDomains field to given value.
 
+
 ### HasAllowedDomains
 
 `func (o *PKIWriteRoleRequest) HasAllowedDomains() bool`
 
 HasAllowedDomains returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedDomainsTemplate
 
@@ -289,11 +328,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedDomainsTemplate sets AllowedDomainsTemplate field to given value.
 
+
 ### HasAllowedDomainsTemplate
 
 `func (o *PKIWriteRoleRequest) HasAllowedDomainsTemplate() bool`
 
 HasAllowedDomainsTemplate returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedOtherSans
 
@@ -314,11 +357,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedOtherSans sets AllowedOtherSans field to given value.
 
+
 ### HasAllowedOtherSans
 
 `func (o *PKIWriteRoleRequest) HasAllowedOtherSans() bool`
 
 HasAllowedOtherSans returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedSerialNumbers
 
@@ -339,11 +386,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedSerialNumbers sets AllowedSerialNumbers field to given value.
 
+
 ### HasAllowedSerialNumbers
 
 `func (o *PKIWriteRoleRequest) HasAllowedSerialNumbers() bool`
 
 HasAllowedSerialNumbers returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedUriSans
 
@@ -364,11 +415,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedUriSans sets AllowedUriSans field to given value.
 
+
 ### HasAllowedUriSans
 
 `func (o *PKIWriteRoleRequest) HasAllowedUriSans() bool`
 
 HasAllowedUriSans returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedUriSansTemplate
 
@@ -389,11 +444,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedUriSansTemplate sets AllowedUriSansTemplate field to given value.
 
+
 ### HasAllowedUriSansTemplate
 
 `func (o *PKIWriteRoleRequest) HasAllowedUriSansTemplate() bool`
 
 HasAllowedUriSansTemplate returns a boolean if a field has been set.
+
+
+
 
 ### GetBackend
 
@@ -414,11 +473,15 @@ and a boolean to check if the value has been set.
 
 SetBackend sets Backend field to given value.
 
+
 ### HasBackend
 
 `func (o *PKIWriteRoleRequest) HasBackend() bool`
 
 HasBackend returns a boolean if a field has been set.
+
+
+
 
 ### GetBasicConstraintsValidForNonCa
 
@@ -439,11 +502,15 @@ and a boolean to check if the value has been set.
 
 SetBasicConstraintsValidForNonCa sets BasicConstraintsValidForNonCa field to given value.
 
+
 ### HasBasicConstraintsValidForNonCa
 
 `func (o *PKIWriteRoleRequest) HasBasicConstraintsValidForNonCa() bool`
 
 HasBasicConstraintsValidForNonCa returns a boolean if a field has been set.
+
+
+
 
 ### GetClientFlag
 
@@ -464,11 +531,15 @@ and a boolean to check if the value has been set.
 
 SetClientFlag sets ClientFlag field to given value.
 
+
 ### HasClientFlag
 
 `func (o *PKIWriteRoleRequest) HasClientFlag() bool`
 
 HasClientFlag returns a boolean if a field has been set.
+
+
+
 
 ### GetCnValidations
 
@@ -489,11 +560,15 @@ and a boolean to check if the value has been set.
 
 SetCnValidations sets CnValidations field to given value.
 
+
 ### HasCnValidations
 
 `func (o *PKIWriteRoleRequest) HasCnValidations() bool`
 
 HasCnValidations returns a boolean if a field has been set.
+
+
+
 
 ### GetCodeSigningFlag
 
@@ -514,11 +589,15 @@ and a boolean to check if the value has been set.
 
 SetCodeSigningFlag sets CodeSigningFlag field to given value.
 
+
 ### HasCodeSigningFlag
 
 `func (o *PKIWriteRoleRequest) HasCodeSigningFlag() bool`
 
 HasCodeSigningFlag returns a boolean if a field has been set.
+
+
+
 
 ### GetCountry
 
@@ -539,11 +618,15 @@ and a boolean to check if the value has been set.
 
 SetCountry sets Country field to given value.
 
+
 ### HasCountry
 
 `func (o *PKIWriteRoleRequest) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
+
+
+
 
 ### GetEmailProtectionFlag
 
@@ -564,11 +647,15 @@ and a boolean to check if the value has been set.
 
 SetEmailProtectionFlag sets EmailProtectionFlag field to given value.
 
+
 ### HasEmailProtectionFlag
 
 `func (o *PKIWriteRoleRequest) HasEmailProtectionFlag() bool`
 
 HasEmailProtectionFlag returns a boolean if a field has been set.
+
+
+
 
 ### GetEnforceHostnames
 
@@ -589,11 +676,15 @@ and a boolean to check if the value has been set.
 
 SetEnforceHostnames sets EnforceHostnames field to given value.
 
+
 ### HasEnforceHostnames
 
 `func (o *PKIWriteRoleRequest) HasEnforceHostnames() bool`
 
 HasEnforceHostnames returns a boolean if a field has been set.
+
+
+
 
 ### GetExtKeyUsage
 
@@ -614,11 +705,15 @@ and a boolean to check if the value has been set.
 
 SetExtKeyUsage sets ExtKeyUsage field to given value.
 
+
 ### HasExtKeyUsage
 
 `func (o *PKIWriteRoleRequest) HasExtKeyUsage() bool`
 
 HasExtKeyUsage returns a boolean if a field has been set.
+
+
+
 
 ### GetExtKeyUsageOids
 
@@ -639,11 +734,15 @@ and a boolean to check if the value has been set.
 
 SetExtKeyUsageOids sets ExtKeyUsageOids field to given value.
 
+
 ### HasExtKeyUsageOids
 
 `func (o *PKIWriteRoleRequest) HasExtKeyUsageOids() bool`
 
 HasExtKeyUsageOids returns a boolean if a field has been set.
+
+
+
 
 ### GetGenerateLease
 
@@ -664,11 +763,15 @@ and a boolean to check if the value has been set.
 
 SetGenerateLease sets GenerateLease field to given value.
 
+
 ### HasGenerateLease
 
 `func (o *PKIWriteRoleRequest) HasGenerateLease() bool`
 
 HasGenerateLease returns a boolean if a field has been set.
+
+
+
 
 ### GetIssuerRef
 
@@ -689,11 +792,15 @@ and a boolean to check if the value has been set.
 
 SetIssuerRef sets IssuerRef field to given value.
 
+
 ### HasIssuerRef
 
 `func (o *PKIWriteRoleRequest) HasIssuerRef() bool`
 
 HasIssuerRef returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyBits
 
@@ -714,11 +821,15 @@ and a boolean to check if the value has been set.
 
 SetKeyBits sets KeyBits field to given value.
 
+
 ### HasKeyBits
 
 `func (o *PKIWriteRoleRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyType
 
@@ -739,11 +850,15 @@ and a boolean to check if the value has been set.
 
 SetKeyType sets KeyType field to given value.
 
+
 ### HasKeyType
 
 `func (o *PKIWriteRoleRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyUsage
 
@@ -764,11 +879,15 @@ and a boolean to check if the value has been set.
 
 SetKeyUsage sets KeyUsage field to given value.
 
+
 ### HasKeyUsage
 
 `func (o *PKIWriteRoleRequest) HasKeyUsage() bool`
 
 HasKeyUsage returns a boolean if a field has been set.
+
+
+
 
 ### GetLocality
 
@@ -789,11 +908,15 @@ and a boolean to check if the value has been set.
 
 SetLocality sets Locality field to given value.
 
+
 ### HasLocality
 
 `func (o *PKIWriteRoleRequest) HasLocality() bool`
 
 HasLocality returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -814,11 +937,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *PKIWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetNoStore
 
@@ -839,11 +966,15 @@ and a boolean to check if the value has been set.
 
 SetNoStore sets NoStore field to given value.
 
+
 ### HasNoStore
 
 `func (o *PKIWriteRoleRequest) HasNoStore() bool`
 
 HasNoStore returns a boolean if a field has been set.
+
+
+
 
 ### GetNotAfter
 
@@ -864,11 +995,15 @@ and a boolean to check if the value has been set.
 
 SetNotAfter sets NotAfter field to given value.
 
+
 ### HasNotAfter
 
 `func (o *PKIWriteRoleRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
+
+
+
 
 ### GetNotBeforeDuration
 
@@ -889,11 +1024,15 @@ and a boolean to check if the value has been set.
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
+
 ### HasNotBeforeDuration
 
 `func (o *PKIWriteRoleRequest) HasNotBeforeDuration() bool`
 
 HasNotBeforeDuration returns a boolean if a field has been set.
+
+
+
 
 ### GetOrganization
 
@@ -914,11 +1053,15 @@ and a boolean to check if the value has been set.
 
 SetOrganization sets Organization field to given value.
 
+
 ### HasOrganization
 
 `func (o *PKIWriteRoleRequest) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
+
+
+
 
 ### GetOu
 
@@ -939,11 +1082,15 @@ and a boolean to check if the value has been set.
 
 SetOu sets Ou field to given value.
 
+
 ### HasOu
 
 `func (o *PKIWriteRoleRequest) HasOu() bool`
 
 HasOu returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicyIdentifiers
 
@@ -964,11 +1111,15 @@ and a boolean to check if the value has been set.
 
 SetPolicyIdentifiers sets PolicyIdentifiers field to given value.
 
+
 ### HasPolicyIdentifiers
 
 `func (o *PKIWriteRoleRequest) HasPolicyIdentifiers() bool`
 
 HasPolicyIdentifiers returns a boolean if a field has been set.
+
+
+
 
 ### GetPostalCode
 
@@ -989,11 +1140,15 @@ and a boolean to check if the value has been set.
 
 SetPostalCode sets PostalCode field to given value.
 
+
 ### HasPostalCode
 
 `func (o *PKIWriteRoleRequest) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
+
+
+
 
 ### GetProvince
 
@@ -1014,11 +1169,15 @@ and a boolean to check if the value has been set.
 
 SetProvince sets Province field to given value.
 
+
 ### HasProvince
 
 `func (o *PKIWriteRoleRequest) HasProvince() bool`
 
 HasProvince returns a boolean if a field has been set.
+
+
+
 
 ### GetRequireCn
 
@@ -1039,11 +1198,15 @@ and a boolean to check if the value has been set.
 
 SetRequireCn sets RequireCn field to given value.
 
+
 ### HasRequireCn
 
 `func (o *PKIWriteRoleRequest) HasRequireCn() bool`
 
 HasRequireCn returns a boolean if a field has been set.
+
+
+
 
 ### GetServerFlag
 
@@ -1064,11 +1227,15 @@ and a boolean to check if the value has been set.
 
 SetServerFlag sets ServerFlag field to given value.
 
+
 ### HasServerFlag
 
 `func (o *PKIWriteRoleRequest) HasServerFlag() bool`
 
 HasServerFlag returns a boolean if a field has been set.
+
+
+
 
 ### GetSignatureBits
 
@@ -1089,11 +1256,15 @@ and a boolean to check if the value has been set.
 
 SetSignatureBits sets SignatureBits field to given value.
 
+
 ### HasSignatureBits
 
 `func (o *PKIWriteRoleRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
+
+
+
 
 ### GetStreetAddress
 
@@ -1114,11 +1285,15 @@ and a boolean to check if the value has been set.
 
 SetStreetAddress sets StreetAddress field to given value.
 
+
 ### HasStreetAddress
 
 `func (o *PKIWriteRoleRequest) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -1139,11 +1314,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *PKIWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetUseCsrCommonName
 
@@ -1164,11 +1343,15 @@ and a boolean to check if the value has been set.
 
 SetUseCsrCommonName sets UseCsrCommonName field to given value.
 
+
 ### HasUseCsrCommonName
 
 `func (o *PKIWriteRoleRequest) HasUseCsrCommonName() bool`
 
 HasUseCsrCommonName returns a boolean if a field has been set.
+
+
+
 
 ### GetUseCsrSans
 
@@ -1189,11 +1372,15 @@ and a boolean to check if the value has been set.
 
 SetUseCsrSans sets UseCsrSans field to given value.
 
+
 ### HasUseCsrSans
 
 `func (o *PKIWriteRoleRequest) HasUseCsrSans() bool`
 
 HasUseCsrSans returns a boolean if a field has been set.
+
+
+
 
 ### GetUsePss
 
@@ -1214,11 +1401,19 @@ and a boolean to check if the value has been set.
 
 SetUsePss sets UsePss field to given value.
 
+
 ### HasUsePss
 
 `func (o *PKIWriteRoleRequest) HasUsePss() bool`
 
 HasUsePss returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,15 +1,21 @@
 # KubernetesWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **DisableLocalCaJwt** | Pointer to **bool** | Disable defaulting to the local CA certificate and service account JWT when running in a Kubernetes pod. | [optional] [default to false]
-**KubernetesCaCert** | Pointer to **string** | PEM encoded CA certificate to use to verify the Kubernetes API server certificate. Defaults to the local pod&#39;s CA if found. | [optional] 
+**KubernetesCaCert** | Pointer to **string** | PEM encoded CA certificate to use to verify the Kubernetes API server certificate. Defaults to the local pod&#x27;s CA if found. | [optional] 
 **KubernetesHost** | Pointer to **string** | Kubernetes API URL to connect to. Defaults to https://$KUBERNETES_SERVICE_HOST:KUBERNETES_SERVICE_PORT if those environment variables are set. | [optional] 
-**ServiceAccountJwt** | Pointer to **string** | The JSON web token of the service account used by the secret engine to manage Kubernetes credentials. Defaults to the local pod&#39;s JWT if found. | [optional] 
+**ServiceAccountJwt** | Pointer to **string** | The JSON web token of the service account used by the secret engine to manage Kubernetes credentials. Defaults to the local pod&#x27;s JWT if found. | [optional] 
+
+
 
 ## Methods
+
 
 ### NewKubernetesWriteConfigRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewKubernetesWriteConfigRequestWithDefaults instantiates a new KubernetesWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDisableLocalCaJwt
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetDisableLocalCaJwt sets DisableLocalCaJwt field to given value.
 
+
 ### HasDisableLocalCaJwt
 
 `func (o *KubernetesWriteConfigRequest) HasDisableLocalCaJwt() bool`
 
 HasDisableLocalCaJwt returns a boolean if a field has been set.
+
+
+
 
 ### GetKubernetesCaCert
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetKubernetesCaCert sets KubernetesCaCert field to given value.
 
+
 ### HasKubernetesCaCert
 
 `func (o *KubernetesWriteConfigRequest) HasKubernetesCaCert() bool`
 
 HasKubernetesCaCert returns a boolean if a field has been set.
+
+
+
 
 ### GetKubernetesHost
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetKubernetesHost sets KubernetesHost field to given value.
 
+
 ### HasKubernetesHost
 
 `func (o *KubernetesWriteConfigRequest) HasKubernetesHost() bool`
 
 HasKubernetesHost returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceAccountJwt
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetServiceAccountJwt sets ServiceAccountJwt field to given value.
 
+
 ### HasServiceAccountJwt
 
 `func (o *KubernetesWriteConfigRequest) HasServiceAccountJwt() bool`
 
 HasServiceAccountJwt returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

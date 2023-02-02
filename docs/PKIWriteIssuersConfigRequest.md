@@ -1,13 +1,19 @@
 # PKIWriteIssuersConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Default** | Pointer to **string** | Reference (name or identifier) to the default issuer. | [optional] 
 **DefaultFollowsLatestIssuer** | Pointer to **bool** | Whether the default issuer should automatically follow the latest generated or imported issuer. Defaults to false. | [optional] [default to false]
 
+
+
 ## Methods
+
 
 ### NewPKIWriteIssuersConfigRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewPKIWriteIssuersConfigRequestWithDefaults instantiates a new PKIWriteIssuersConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDefault
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetDefault sets Default field to given value.
 
+
 ### HasDefault
 
 `func (o *PKIWriteIssuersConfigRequest) HasDefault() bool`
 
 HasDefault returns a boolean if a field has been set.
+
+
+
 
 ### GetDefaultFollowsLatestIssuer
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetDefaultFollowsLatestIssuer sets DefaultFollowsLatestIssuer field to given value.
 
+
 ### HasDefaultFollowsLatestIssuer
 
 `func (o *PKIWriteIssuersConfigRequest) HasDefaultFollowsLatestIssuer() bool`
 
 HasDefaultFollowsLatestIssuer returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

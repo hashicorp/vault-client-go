@@ -1,12 +1,18 @@
 # MFAMethodGenerateTOTPRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **MethodId** | **string** | The unique identifier for this MFA method. | 
 
+
+
 ## Methods
+
 
 ### NewMFAMethodGenerateTOTPRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewMFAMethodGenerateTOTPRequestWithDefaults instantiates a new MFAMethodGenerateTOTPRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMethodId
 
@@ -43,6 +50,13 @@ and a boolean to check if the value has been set.
 `func (o *MFAMethodGenerateTOTPRequest) SetMethodId(v string)`
 
 SetMethodId sets MethodId field to given value.
+
+
+
+
+
+
+
 
 
 

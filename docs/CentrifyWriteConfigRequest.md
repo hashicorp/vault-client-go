@@ -1,9 +1,12 @@
 # CentrifyWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AppId** | Pointer to **string** | OAuth2 App ID | [optional] [default to "vault_io_integration"]
 **ClientId** | Pointer to **string** | OAuth2 Client ID | [optional] 
 **ClientSecret** | Pointer to **string** | OAuth2 Client Secret | [optional] 
@@ -11,13 +14,16 @@ Name | Type | Description | Notes
 **Scope** | Pointer to **string** | OAuth2 App Scope | [optional] [default to "vault_io_integration"]
 **ServiceUrl** | Pointer to **string** | Service URL (https://&lt;tenant&gt;.my.centrify.com) | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
-**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#39;default&#39; policy will not automatically be added to generated tokens | [optional] 
+**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
 **TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 
+
+
 ## Methods
+
 
 ### NewCentrifyWriteConfigRequest
 
@@ -35,6 +41,7 @@ will change when the set of required properties is changed
 NewCentrifyWriteConfigRequestWithDefaults instantiates a new CentrifyWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAppId
 
@@ -55,11 +62,15 @@ and a boolean to check if the value has been set.
 
 SetAppId sets AppId field to given value.
 
+
 ### HasAppId
 
 `func (o *CentrifyWriteConfigRequest) HasAppId() bool`
 
 HasAppId returns a boolean if a field has been set.
+
+
+
 
 ### GetClientId
 
@@ -80,11 +91,15 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
+
 ### HasClientId
 
 `func (o *CentrifyWriteConfigRequest) HasClientId() bool`
 
 HasClientId returns a boolean if a field has been set.
+
+
+
 
 ### GetClientSecret
 
@@ -105,11 +120,15 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
+
 ### HasClientSecret
 
 `func (o *CentrifyWriteConfigRequest) HasClientSecret() bool`
 
 HasClientSecret returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -130,11 +149,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *CentrifyWriteConfigRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetScope
 
@@ -155,11 +178,15 @@ and a boolean to check if the value has been set.
 
 SetScope sets Scope field to given value.
 
+
 ### HasScope
 
 `func (o *CentrifyWriteConfigRequest) HasScope() bool`
 
 HasScope returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceUrl
 
@@ -180,11 +207,15 @@ and a boolean to check if the value has been set.
 
 SetServiceUrl sets ServiceUrl field to given value.
 
+
 ### HasServiceUrl
 
 `func (o *CentrifyWriteConfigRequest) HasServiceUrl() bool`
 
 HasServiceUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -205,11 +236,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *CentrifyWriteConfigRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNoDefaultPolicy
 
@@ -230,11 +265,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
+
 ### HasTokenNoDefaultPolicy
 
 `func (o *CentrifyWriteConfigRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNumUses
 
@@ -255,11 +294,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
+
 ### HasTokenNumUses
 
 `func (o *CentrifyWriteConfigRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPolicies
 
@@ -280,11 +323,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
+
 ### HasTokenPolicies
 
 `func (o *CentrifyWriteConfigRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenTtl
 
@@ -305,11 +352,15 @@ and a boolean to check if the value has been set.
 
 SetTokenTtl sets TokenTtl field to given value.
 
+
 ### HasTokenTtl
 
 `func (o *CentrifyWriteConfigRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -330,11 +381,19 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *CentrifyWriteConfigRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

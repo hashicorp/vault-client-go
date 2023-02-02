@@ -1,9 +1,12 @@
 # ActiveDirectoryWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AnonymousGroupSearch** | Pointer to **bool** | Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test). | [optional] [default to false]
 **Binddn** | Pointer to **string** | LDAP DN for searching for the user DN (optional) | [optional] 
 **Bindpass** | Pointer to **string** | LDAP password for searching for the user DN (optional) | [optional] 
@@ -11,7 +14,7 @@ Name | Type | Description | Notes
 **Certificate** | Pointer to **string** | CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional) | [optional] 
 **ClientTlsCert** | Pointer to **string** | Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional) | [optional] 
 **ClientTlsKey** | Pointer to **string** | Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional) | [optional] 
-**DenyNullBind** | Pointer to **bool** | Denies an unauthenticated LDAP bind request if the user&#39;s password is empty; defaults to true | [optional] [default to true]
+**DenyNullBind** | Pointer to **bool** | Denies an unauthenticated LDAP bind request if the user&#x27;s password is empty; defaults to true | [optional] [default to true]
 **Discoverdn** | Pointer to **bool** | Use anonymous bind to discover the bind DN of a user (optional) | [optional] 
 **Formatter** | Pointer to **string** | Text to insert the password into, ex. \&quot;customPrefix{{PASSWORD}}customSuffix\&quot;. | [optional] 
 **Groupattr** | Pointer to **string** | LDAP attribute to follow on objects returned by &lt;groupfilter&gt; in order to enumerate user group membership. Examples: \&quot;cn\&quot; or \&quot;memberOf\&quot;, etc. Default: cn | [optional] [default to "cn"]
@@ -24,8 +27,8 @@ Name | Type | Description | Notes
 **PasswordPolicy** | Pointer to **string** | Name of the password policy to use to generate passwords. | [optional] 
 **RequestTimeout** | Pointer to **int32** | Timeout, in seconds, for the connection when making requests against the server before returning back an error. | [optional] 
 **Starttls** | Pointer to **bool** | Issue a StartTLS command after establishing unencrypted connection (optional) | [optional] 
-**TlsMaxVersion** | Pointer to **string** | Maximum TLS version to use. Accepted values are &#39;tls10&#39;, &#39;tls11&#39;, &#39;tls12&#39; or &#39;tls13&#39;. Defaults to &#39;tls12&#39; | [optional] [default to "tls12"]
-**TlsMinVersion** | Pointer to **string** | Minimum TLS version to use. Accepted values are &#39;tls10&#39;, &#39;tls11&#39;, &#39;tls12&#39; or &#39;tls13&#39;. Defaults to &#39;tls12&#39; | [optional] [default to "tls12"]
+**TlsMaxVersion** | Pointer to **string** | Maximum TLS version to use. Accepted values are &#x27;tls10&#x27;, &#x27;tls11&#x27;, &#x27;tls12&#x27; or &#x27;tls13&#x27;. Defaults to &#x27;tls12&#x27; | [optional] [default to "tls12"]
+**TlsMinVersion** | Pointer to **string** | Minimum TLS version to use. Accepted values are &#x27;tls10&#x27;, &#x27;tls11&#x27;, &#x27;tls12&#x27; or &#x27;tls13&#x27;. Defaults to &#x27;tls12&#x27; | [optional] [default to "tls12"]
 **Ttl** | Pointer to **int32** | In seconds, the default password time-to-live. | [optional] 
 **Upndomain** | Pointer to **string** | Enables userPrincipalDomain login with [username]@UPNDomain (optional) | [optional] 
 **Url** | Pointer to **string** | LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order. | [optional] [default to "ldap://127.0.0.1"]
@@ -36,7 +39,10 @@ Name | Type | Description | Notes
 **Userfilter** | Pointer to **string** | Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}&#x3D;{{.Username}}) | [optional] [default to "({{.UserAttr}}={{.Username}})"]
 **UsernameAsAlias** | Pointer to **bool** | If true, sets the alias name to the username | [optional] [default to false]
 
+
+
 ## Methods
+
 
 ### NewActiveDirectoryWriteConfigRequest
 
@@ -54,6 +60,7 @@ will change when the set of required properties is changed
 NewActiveDirectoryWriteConfigRequestWithDefaults instantiates a new ActiveDirectoryWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAnonymousGroupSearch
 
@@ -74,11 +81,15 @@ and a boolean to check if the value has been set.
 
 SetAnonymousGroupSearch sets AnonymousGroupSearch field to given value.
 
+
 ### HasAnonymousGroupSearch
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasAnonymousGroupSearch() bool`
 
 HasAnonymousGroupSearch returns a boolean if a field has been set.
+
+
+
 
 ### GetBinddn
 
@@ -99,11 +110,15 @@ and a boolean to check if the value has been set.
 
 SetBinddn sets Binddn field to given value.
 
+
 ### HasBinddn
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasBinddn() bool`
 
 HasBinddn returns a boolean if a field has been set.
+
+
+
 
 ### GetBindpass
 
@@ -124,11 +139,15 @@ and a boolean to check if the value has been set.
 
 SetBindpass sets Bindpass field to given value.
 
+
 ### HasBindpass
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasBindpass() bool`
 
 HasBindpass returns a boolean if a field has been set.
+
+
+
 
 ### GetCaseSensitiveNames
 
@@ -149,11 +168,15 @@ and a boolean to check if the value has been set.
 
 SetCaseSensitiveNames sets CaseSensitiveNames field to given value.
 
+
 ### HasCaseSensitiveNames
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasCaseSensitiveNames() bool`
 
 HasCaseSensitiveNames returns a boolean if a field has been set.
+
+
+
 
 ### GetCertificate
 
@@ -174,11 +197,15 @@ and a boolean to check if the value has been set.
 
 SetCertificate sets Certificate field to given value.
 
+
 ### HasCertificate
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
+
+
+
 
 ### GetClientTlsCert
 
@@ -199,11 +226,15 @@ and a boolean to check if the value has been set.
 
 SetClientTlsCert sets ClientTlsCert field to given value.
 
+
 ### HasClientTlsCert
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasClientTlsCert() bool`
 
 HasClientTlsCert returns a boolean if a field has been set.
+
+
+
 
 ### GetClientTlsKey
 
@@ -224,11 +255,15 @@ and a boolean to check if the value has been set.
 
 SetClientTlsKey sets ClientTlsKey field to given value.
 
+
 ### HasClientTlsKey
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasClientTlsKey() bool`
 
 HasClientTlsKey returns a boolean if a field has been set.
+
+
+
 
 ### GetDenyNullBind
 
@@ -249,11 +284,15 @@ and a boolean to check if the value has been set.
 
 SetDenyNullBind sets DenyNullBind field to given value.
 
+
 ### HasDenyNullBind
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasDenyNullBind() bool`
 
 HasDenyNullBind returns a boolean if a field has been set.
+
+
+
 
 ### GetDiscoverdn
 
@@ -274,11 +313,15 @@ and a boolean to check if the value has been set.
 
 SetDiscoverdn sets Discoverdn field to given value.
 
+
 ### HasDiscoverdn
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasDiscoverdn() bool`
 
 HasDiscoverdn returns a boolean if a field has been set.
+
+
+
 
 ### GetFormatter
 
@@ -299,11 +342,15 @@ and a boolean to check if the value has been set.
 
 SetFormatter sets Formatter field to given value.
 
+
 ### HasFormatter
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasFormatter() bool`
 
 HasFormatter returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupattr
 
@@ -324,11 +371,15 @@ and a boolean to check if the value has been set.
 
 SetGroupattr sets Groupattr field to given value.
 
+
 ### HasGroupattr
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasGroupattr() bool`
 
 HasGroupattr returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupdn
 
@@ -349,11 +400,15 @@ and a boolean to check if the value has been set.
 
 SetGroupdn sets Groupdn field to given value.
 
+
 ### HasGroupdn
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasGroupdn() bool`
 
 HasGroupdn returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupfilter
 
@@ -374,11 +429,15 @@ and a boolean to check if the value has been set.
 
 SetGroupfilter sets Groupfilter field to given value.
 
+
 ### HasGroupfilter
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasGroupfilter() bool`
 
 HasGroupfilter returns a boolean if a field has been set.
+
+
+
 
 ### GetInsecureTls
 
@@ -399,11 +458,15 @@ and a boolean to check if the value has been set.
 
 SetInsecureTls sets InsecureTls field to given value.
 
+
 ### HasInsecureTls
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasInsecureTls() bool`
 
 HasInsecureTls returns a boolean if a field has been set.
+
+
+
 
 ### GetLastRotationTolerance
 
@@ -424,11 +487,15 @@ and a boolean to check if the value has been set.
 
 SetLastRotationTolerance sets LastRotationTolerance field to given value.
 
+
 ### HasLastRotationTolerance
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasLastRotationTolerance() bool`
 
 HasLastRotationTolerance returns a boolean if a field has been set.
+
+
+
 
 ### GetLength
 
@@ -449,11 +516,15 @@ and a boolean to check if the value has been set.
 
 SetLength sets Length field to given value.
 
+
 ### HasLength
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasLength() bool`
 
 HasLength returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -474,11 +545,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetPasswordPolicy
 
@@ -499,11 +574,15 @@ and a boolean to check if the value has been set.
 
 SetPasswordPolicy sets PasswordPolicy field to given value.
 
+
 ### HasPasswordPolicy
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasPasswordPolicy() bool`
 
 HasPasswordPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetRequestTimeout
 
@@ -524,11 +603,15 @@ and a boolean to check if the value has been set.
 
 SetRequestTimeout sets RequestTimeout field to given value.
 
+
 ### HasRequestTimeout
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasRequestTimeout() bool`
 
 HasRequestTimeout returns a boolean if a field has been set.
+
+
+
 
 ### GetStarttls
 
@@ -549,11 +632,15 @@ and a boolean to check if the value has been set.
 
 SetStarttls sets Starttls field to given value.
 
+
 ### HasStarttls
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasStarttls() bool`
 
 HasStarttls returns a boolean if a field has been set.
+
+
+
 
 ### GetTlsMaxVersion
 
@@ -574,11 +661,15 @@ and a boolean to check if the value has been set.
 
 SetTlsMaxVersion sets TlsMaxVersion field to given value.
 
+
 ### HasTlsMaxVersion
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasTlsMaxVersion() bool`
 
 HasTlsMaxVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetTlsMinVersion
 
@@ -599,11 +690,15 @@ and a boolean to check if the value has been set.
 
 SetTlsMinVersion sets TlsMinVersion field to given value.
 
+
 ### HasTlsMinVersion
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasTlsMinVersion() bool`
 
 HasTlsMinVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -624,11 +719,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetUpndomain
 
@@ -649,11 +748,15 @@ and a boolean to check if the value has been set.
 
 SetUpndomain sets Upndomain field to given value.
 
+
 ### HasUpndomain
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUpndomain() bool`
 
 HasUpndomain returns a boolean if a field has been set.
+
+
+
 
 ### GetUrl
 
@@ -674,11 +777,15 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
 ### HasUrl
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUrl() bool`
 
 HasUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetUsePre111GroupCnBehavior
 
@@ -699,11 +806,15 @@ and a boolean to check if the value has been set.
 
 SetUsePre111GroupCnBehavior sets UsePre111GroupCnBehavior field to given value.
 
+
 ### HasUsePre111GroupCnBehavior
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUsePre111GroupCnBehavior() bool`
 
 HasUsePre111GroupCnBehavior returns a boolean if a field has been set.
+
+
+
 
 ### GetUseTokenGroups
 
@@ -724,11 +835,15 @@ and a boolean to check if the value has been set.
 
 SetUseTokenGroups sets UseTokenGroups field to given value.
 
+
 ### HasUseTokenGroups
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUseTokenGroups() bool`
 
 HasUseTokenGroups returns a boolean if a field has been set.
+
+
+
 
 ### GetUserattr
 
@@ -749,11 +864,15 @@ and a boolean to check if the value has been set.
 
 SetUserattr sets Userattr field to given value.
 
+
 ### HasUserattr
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUserattr() bool`
 
 HasUserattr returns a boolean if a field has been set.
+
+
+
 
 ### GetUserdn
 
@@ -774,11 +893,15 @@ and a boolean to check if the value has been set.
 
 SetUserdn sets Userdn field to given value.
 
+
 ### HasUserdn
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUserdn() bool`
 
 HasUserdn returns a boolean if a field has been set.
+
+
+
 
 ### GetUserfilter
 
@@ -799,11 +922,15 @@ and a boolean to check if the value has been set.
 
 SetUserfilter sets Userfilter field to given value.
 
+
 ### HasUserfilter
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUserfilter() bool`
 
 HasUserfilter returns a boolean if a field has been set.
+
+
+
 
 ### GetUsernameAsAlias
 
@@ -824,11 +951,19 @@ and a boolean to check if the value has been set.
 
 SetUsernameAsAlias sets UsernameAsAlias field to given value.
 
+
 ### HasUsernameAsAlias
 
 `func (o *ActiveDirectoryWriteConfigRequest) HasUsernameAsAlias() bool`
 
 HasUsernameAsAlias returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

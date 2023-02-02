@@ -1,17 +1,23 @@
 # AppRoleWriteCustomSecretIDRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CidrList** | Pointer to **[]string** | Comma separated string or list of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If &#39;bound_cidr_list&#39; is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role. | [optional] 
+
+
+**CidrList** | Pointer to **[]string** | Comma separated string or list of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If &#x27;bound_cidr_list&#x27; is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role. | [optional] 
 **Metadata** | Pointer to **string** | Metadata to be tied to the SecretID. This should be a JSON formatted string containing metadata in key value pairs. | [optional] 
-**NumUses** | Pointer to **int32** | Number of times this SecretID can be used, after which the SecretID expires. Overrides secret_id_num_uses role option when supplied. May not be higher than role&#39;s secret_id_num_uses. | [optional] 
+**NumUses** | Pointer to **int32** | Number of times this SecretID can be used, after which the SecretID expires. Overrides secret_id_num_uses role option when supplied. May not be higher than role&#x27;s secret_id_num_uses. | [optional] 
 **SecretId** | Pointer to **string** | SecretID to be attached to the role. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any. | [optional] 
-**Ttl** | Pointer to **int32** | Duration in seconds after which this SecretID expires. Overrides secret_id_ttl role option when supplied. May not be longer than role&#39;s secret_id_ttl. | [optional] 
+**Ttl** | Pointer to **int32** | Duration in seconds after which this SecretID expires. Overrides secret_id_ttl role option when supplied. May not be longer than role&#x27;s secret_id_ttl. | [optional] 
+
+
 
 ## Methods
+
 
 ### NewAppRoleWriteCustomSecretIDRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteCustomSecretIDRequestWithDefaults instantiates a new AppRoleWriteCustomSecretIDRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCidrList
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetCidrList sets CidrList field to given value.
 
+
 ### HasCidrList
 
 `func (o *AppRoleWriteCustomSecretIDRequest) HasCidrList() bool`
 
 HasCidrList returns a boolean if a field has been set.
+
+
+
 
 ### GetMetadata
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetMetadata sets Metadata field to given value.
 
+
 ### HasMetadata
 
 `func (o *AppRoleWriteCustomSecretIDRequest) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetNumUses
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetNumUses sets NumUses field to given value.
 
+
 ### HasNumUses
 
 `func (o *AppRoleWriteCustomSecretIDRequest) HasNumUses() bool`
 
 HasNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretId
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetSecretId sets SecretId field to given value.
 
+
 ### HasSecretId
 
 `func (o *AppRoleWriteCustomSecretIDRequest) HasSecretId() bool`
 
 HasSecretId returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *AppRoleWriteCustomSecretIDRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *AppRoleWriteCustomSecretIDRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

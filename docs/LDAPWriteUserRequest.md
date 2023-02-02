@@ -1,13 +1,19 @@
 # LDAPWriteUserRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Groups** | Pointer to **[]string** | Comma-separated list of additional groups associated with the user. | [optional] 
 **Policies** | Pointer to **[]string** | Comma-separated list of policies associated with the user. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewLDAPWriteUserRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewLDAPWriteUserRequestWithDefaults instantiates a new LDAPWriteUserRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetGroups
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetGroups sets Groups field to given value.
 
+
 ### HasGroups
 
 `func (o *LDAPWriteUserRequest) HasGroups() bool`
 
 HasGroups returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *LDAPWriteUserRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

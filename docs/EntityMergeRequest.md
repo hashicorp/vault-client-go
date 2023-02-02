@@ -1,15 +1,21 @@
 # EntityMergeRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ConflictingAliasIdsToKeep** | Pointer to **[]string** | Alias IDs to keep in case of conflicting aliases. Ignored if no conflicting aliases found | [optional] 
-**Force** | Pointer to **bool** | Setting this will follow the &#39;mine&#39; strategy for merging MFA secrets. If there are secrets of the same type both in entities that are merged from and in entity into which all others are getting merged, secrets in the destination will be unaltered. If not set, this API will throw an error containing all the conflicts. | [optional] 
+**Force** | Pointer to **bool** | Setting this will follow the &#x27;mine&#x27; strategy for merging MFA secrets. If there are secrets of the same type both in entities that are merged from and in entity into which all others are getting merged, secrets in the destination will be unaltered. If not set, this API will throw an error containing all the conflicts. | [optional] 
 **FromEntityIds** | Pointer to **[]string** | Entity IDs which need to get merged | [optional] 
 **ToEntityId** | Pointer to **string** | Entity ID into which all the other entities need to get merged | [optional] 
 
+
+
 ## Methods
+
 
 ### NewEntityMergeRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewEntityMergeRequestWithDefaults instantiates a new EntityMergeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetConflictingAliasIdsToKeep
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetConflictingAliasIdsToKeep sets ConflictingAliasIdsToKeep field to given value.
 
+
 ### HasConflictingAliasIdsToKeep
 
 `func (o *EntityMergeRequest) HasConflictingAliasIdsToKeep() bool`
 
 HasConflictingAliasIdsToKeep returns a boolean if a field has been set.
+
+
+
 
 ### GetForce
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetForce sets Force field to given value.
 
+
 ### HasForce
 
 `func (o *EntityMergeRequest) HasForce() bool`
 
 HasForce returns a boolean if a field has been set.
+
+
+
 
 ### GetFromEntityIds
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetFromEntityIds sets FromEntityIds field to given value.
 
+
 ### HasFromEntityIds
 
 `func (o *EntityMergeRequest) HasFromEntityIds() bool`
 
 HasFromEntityIds returns a boolean if a field has been set.
+
+
+
 
 ### GetToEntityId
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetToEntityId sets ToEntityId field to given value.
 
+
 ### HasToEntityId
 
 `func (o *EntityMergeRequest) HasToEntityId() bool`
 
 HasToEntityId returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,12 +1,18 @@
 # AppRoleWriteBindSecretIDRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **BindSecretId** | Pointer to **bool** | Impose secret_id to be presented when logging in using this role. | [optional] [default to true]
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteBindSecretIDRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteBindSecretIDRequestWithDefaults instantiates a new AppRoleWriteBindSecretIDRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBindSecretId
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetBindSecretId sets BindSecretId field to given value.
 
+
 ### HasBindSecretId
 
 `func (o *AppRoleWriteBindSecretIDRequest) HasBindSecretId() bool`
 
 HasBindSecretId returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

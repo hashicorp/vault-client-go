@@ -1,13 +1,19 @@
 # AWSConfigWriteLeaseRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Lease** | Pointer to **string** | Default lease for roles. | [optional] 
 **LeaseMax** | Pointer to **string** | Maximum time a credential is valid for. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAWSConfigWriteLeaseRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewAWSConfigWriteLeaseRequestWithDefaults instantiates a new AWSConfigWriteLeaseRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetLease
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetLease sets Lease field to given value.
 
+
 ### HasLease
 
 `func (o *AWSConfigWriteLeaseRequest) HasLease() bool`
 
 HasLease returns a boolean if a field has been set.
+
+
+
 
 ### GetLeaseMax
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetLeaseMax sets LeaseMax field to given value.
 
+
 ### HasLeaseMax
 
 `func (o *AWSConfigWriteLeaseRequest) HasLeaseMax() bool`
 
 HasLeaseMax returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

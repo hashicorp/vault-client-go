@@ -1,12 +1,18 @@
 # SSHLookupRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Ip** | Pointer to **string** | [Required] IP address of remote host | [optional] 
 
+
+
 ## Methods
+
 
 ### NewSSHLookupRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewSSHLookupRequestWithDefaults instantiates a new SSHLookupRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetIp
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetIp sets Ip field to given value.
 
+
 ### HasIp
 
 `func (o *SSHLookupRequest) HasIp() bool`
 
 HasIp returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

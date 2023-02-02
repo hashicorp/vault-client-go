@@ -1,15 +1,21 @@
 # ActiveDirectoryWriteLibraryRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **DisableCheckInEnforcement** | Pointer to **bool** | Disable the default behavior of requiring that check-ins are performed by the entity that checked them out. | [optional] [default to false]
-**MaxTtl** | Pointer to **int32** | In seconds, the max amount of time a check-out&#39;s renewals should last. Defaults to 24 hours. | [optional] [default to 86400]
+**MaxTtl** | Pointer to **int32** | In seconds, the max amount of time a check-out&#x27;s renewals should last. Defaults to 24 hours. | [optional] [default to 86400]
 **ServiceAccountNames** | Pointer to **[]string** | The username/logon name for the service accounts with which this set will be associated. | [optional] 
 **Ttl** | Pointer to **int32** | In seconds, the amount of time a check-out should last. Defaults to 24 hours. | [optional] [default to 86400]
 
+
+
 ## Methods
+
 
 ### NewActiveDirectoryWriteLibraryRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewActiveDirectoryWriteLibraryRequestWithDefaults instantiates a new ActiveDirectoryWriteLibraryRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDisableCheckInEnforcement
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetDisableCheckInEnforcement sets DisableCheckInEnforcement field to given value.
 
+
 ### HasDisableCheckInEnforcement
 
 `func (o *ActiveDirectoryWriteLibraryRequest) HasDisableCheckInEnforcement() bool`
 
 HasDisableCheckInEnforcement returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *ActiveDirectoryWriteLibraryRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceAccountNames
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetServiceAccountNames sets ServiceAccountNames field to given value.
 
+
 ### HasServiceAccountNames
 
 `func (o *ActiveDirectoryWriteLibraryRequest) HasServiceAccountNames() bool`
 
 HasServiceAccountNames returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *ActiveDirectoryWriteLibraryRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

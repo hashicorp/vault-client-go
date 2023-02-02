@@ -1,20 +1,26 @@
 # AWSLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **IamHttpRequestMethod** | Pointer to **string** | HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value | [optional] 
 **IamRequestBody** | Pointer to **string** | Base64-encoded request body when auth_type is iam. This must match the request body included in the signature. | [optional] 
 **IamRequestHeaders** | Pointer to **string** | Key/value pairs of headers for use in the sts:GetCallerIdentity HTTP requests headers when auth_type is iam. Can be either a Base64-encoded, JSON-serialized string, or a JSON object of key/value pairs. This must at a minimum include the headers over which AWS has included a signature. | [optional] 
 **IamRequestUrl** | Pointer to **string** | Base64-encoded full URL against which to make the AWS request when using iam auth_type. | [optional] 
-**Identity** | Pointer to **string** | Base64 encoded EC2 instance identity document. This needs to be supplied along with the &#39;signature&#39; parameter. If using &#39;curl&#39; for fetching the identity document, consider using the option &#39;-w 0&#39; while piping the output to &#39;base64&#39; binary. | [optional] 
-**Nonce** | Pointer to **string** | The nonce to be used for subsequent login requests when auth_type is ec2. If this parameter is not specified at all and if reauthentication is allowed, then the backend will generate a random nonce, attaches it to the instance&#39;s identity access list entry and returns the nonce back as part of auth metadata. This value should be used with further login requests, to establish client authenticity. Clients can choose to set a custom nonce if preferred, in which case, it is recommended that clients provide a strong nonce. If a nonce is provided but with an empty value, it indicates intent to disable reauthentication. Note that, when &#39;disallow_reauthentication&#39; option is enabled on either the role or the role tag, the &#39;nonce&#39; holds no significance. | [optional] 
+**Identity** | Pointer to **string** | Base64 encoded EC2 instance identity document. This needs to be supplied along with the &#x27;signature&#x27; parameter. If using &#x27;curl&#x27; for fetching the identity document, consider using the option &#x27;-w 0&#x27; while piping the output to &#x27;base64&#x27; binary. | [optional] 
+**Nonce** | Pointer to **string** | The nonce to be used for subsequent login requests when auth_type is ec2. If this parameter is not specified at all and if reauthentication is allowed, then the backend will generate a random nonce, attaches it to the instance&#x27;s identity access list entry and returns the nonce back as part of auth metadata. This value should be used with further login requests, to establish client authenticity. Clients can choose to set a custom nonce if preferred, in which case, it is recommended that clients provide a strong nonce. If a nonce is provided but with an empty value, it indicates intent to disable reauthentication. Note that, when &#x27;disallow_reauthentication&#x27; option is enabled on either the role or the role tag, the &#x27;nonce&#x27; holds no significance. | [optional] 
 **Pkcs7** | Pointer to **string** | PKCS7 signature of the identity document when using an auth_type of ec2. | [optional] 
-**Role** | Pointer to **string** | Name of the role against which the login is being attempted. If &#39;role&#39; is not specified, then the login endpoint looks for a role bearing the name of the AMI ID of the EC2 instance that is trying to login. If a matching role is not found, login fails. | [optional] 
-**Signature** | Pointer to **string** | Base64 encoded SHA256 RSA signature of the instance identity document. This needs to be supplied along with &#39;identity&#39; parameter. | [optional] 
+**Role** | Pointer to **string** | Name of the role against which the login is being attempted. If &#x27;role&#x27; is not specified, then the login endpoint looks for a role bearing the name of the AMI ID of the EC2 instance that is trying to login. If a matching role is not found, login fails. | [optional] 
+**Signature** | Pointer to **string** | Base64 encoded SHA256 RSA signature of the instance identity document. This needs to be supplied along with &#x27;identity&#x27; parameter. | [optional] 
+
+
 
 ## Methods
+
 
 ### NewAWSLoginRequest
 
@@ -32,6 +38,7 @@ will change when the set of required properties is changed
 NewAWSLoginRequestWithDefaults instantiates a new AWSLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetIamHttpRequestMethod
 
@@ -52,11 +59,15 @@ and a boolean to check if the value has been set.
 
 SetIamHttpRequestMethod sets IamHttpRequestMethod field to given value.
 
+
 ### HasIamHttpRequestMethod
 
 `func (o *AWSLoginRequest) HasIamHttpRequestMethod() bool`
 
 HasIamHttpRequestMethod returns a boolean if a field has been set.
+
+
+
 
 ### GetIamRequestBody
 
@@ -77,11 +88,15 @@ and a boolean to check if the value has been set.
 
 SetIamRequestBody sets IamRequestBody field to given value.
 
+
 ### HasIamRequestBody
 
 `func (o *AWSLoginRequest) HasIamRequestBody() bool`
 
 HasIamRequestBody returns a boolean if a field has been set.
+
+
+
 
 ### GetIamRequestHeaders
 
@@ -102,11 +117,15 @@ and a boolean to check if the value has been set.
 
 SetIamRequestHeaders sets IamRequestHeaders field to given value.
 
+
 ### HasIamRequestHeaders
 
 `func (o *AWSLoginRequest) HasIamRequestHeaders() bool`
 
 HasIamRequestHeaders returns a boolean if a field has been set.
+
+
+
 
 ### GetIamRequestUrl
 
@@ -127,11 +146,15 @@ and a boolean to check if the value has been set.
 
 SetIamRequestUrl sets IamRequestUrl field to given value.
 
+
 ### HasIamRequestUrl
 
 `func (o *AWSLoginRequest) HasIamRequestUrl() bool`
 
 HasIamRequestUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetIdentity
 
@@ -152,11 +175,15 @@ and a boolean to check if the value has been set.
 
 SetIdentity sets Identity field to given value.
 
+
 ### HasIdentity
 
 `func (o *AWSLoginRequest) HasIdentity() bool`
 
 HasIdentity returns a boolean if a field has been set.
+
+
+
 
 ### GetNonce
 
@@ -177,11 +204,15 @@ and a boolean to check if the value has been set.
 
 SetNonce sets Nonce field to given value.
 
+
 ### HasNonce
 
 `func (o *AWSLoginRequest) HasNonce() bool`
 
 HasNonce returns a boolean if a field has been set.
+
+
+
 
 ### GetPkcs7
 
@@ -202,11 +233,15 @@ and a boolean to check if the value has been set.
 
 SetPkcs7 sets Pkcs7 field to given value.
 
+
 ### HasPkcs7
 
 `func (o *AWSLoginRequest) HasPkcs7() bool`
 
 HasPkcs7 returns a boolean if a field has been set.
+
+
+
 
 ### GetRole
 
@@ -227,11 +262,15 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
+
 ### HasRole
 
 `func (o *AWSLoginRequest) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
+
+
+
 
 ### GetSignature
 
@@ -252,11 +291,19 @@ and a boolean to check if the value has been set.
 
 SetSignature sets Signature field to given value.
 
+
 ### HasSignature
 
 `func (o *AWSLoginRequest) HasSignature() bool`
 
 HasSignature returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,13 +1,19 @@
 # AppRoleWritePoliciesRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWritePoliciesRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewAppRoleWritePoliciesRequestWithDefaults instantiates a new AppRoleWritePoliciesRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPolicies
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *AppRoleWritePoliciesRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPolicies
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
+
 ### HasTokenPolicies
 
 `func (o *AppRoleWritePoliciesRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

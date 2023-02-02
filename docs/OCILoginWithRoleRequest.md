@@ -1,12 +1,18 @@
 # OCILoginWithRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **RequestHeaders** | Pointer to **string** | The signed headers of the client | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOCILoginWithRoleRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewOCILoginWithRoleRequestWithDefaults instantiates a new OCILoginWithRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetRequestHeaders
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetRequestHeaders sets RequestHeaders field to given value.
 
+
 ### HasRequestHeaders
 
 `func (o *OCILoginWithRoleRequest) HasRequestHeaders() bool`
 
 HasRequestHeaders returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

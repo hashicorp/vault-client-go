@@ -1,14 +1,20 @@
 # WritePluginsReloadBackendRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Mounts** | Pointer to **[]string** | The mount paths of the plugin backends to reload. | [optional] 
 **Plugin** | Pointer to **string** | The name of the plugin to reload, as registered in the plugin catalog. | [optional] 
 **Scope** | Pointer to **string** |  | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWritePluginsReloadBackendRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewWritePluginsReloadBackendRequestWithDefaults instantiates a new WritePluginsReloadBackendRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMounts
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetMounts sets Mounts field to given value.
 
+
 ### HasMounts
 
 `func (o *WritePluginsReloadBackendRequest) HasMounts() bool`
 
 HasMounts returns a boolean if a field has been set.
+
+
+
 
 ### GetPlugin
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetPlugin sets Plugin field to given value.
 
+
 ### HasPlugin
 
 `func (o *WritePluginsReloadBackendRequest) HasPlugin() bool`
 
 HasPlugin returns a boolean if a field has been set.
+
+
+
 
 ### GetScope
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetScope sets Scope field to given value.
 
+
 ### HasScope
 
 `func (o *WritePluginsReloadBackendRequest) HasScope() bool`
 
 HasScope returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

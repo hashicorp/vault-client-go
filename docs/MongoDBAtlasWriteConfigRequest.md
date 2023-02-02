@@ -1,13 +1,19 @@
 # MongoDBAtlasWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **PrivateKey** | **string** | MongoDB Atlas Programmatic Private Key | 
 **PublicKey** | **string** | MongoDB Atlas Programmatic Public Key | 
 
+
+
 ## Methods
+
 
 ### NewMongoDBAtlasWriteConfigRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewMongoDBAtlasWriteConfigRequestWithDefaults instantiates a new MongoDBAtlasWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPrivateKey
 
@@ -46,6 +53,9 @@ and a boolean to check if the value has been set.
 SetPrivateKey sets PrivateKey field to given value.
 
 
+
+
+
 ### GetPublicKey
 
 `func (o *MongoDBAtlasWriteConfigRequest) GetPublicKey() string`
@@ -64,6 +74,13 @@ and a boolean to check if the value has been set.
 `func (o *MongoDBAtlasWriteConfigRequest) SetPublicKey(v string)`
 
 SetPublicKey sets PublicKey field to given value.
+
+
+
+
+
+
+
 
 
 

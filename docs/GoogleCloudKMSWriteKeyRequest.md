@@ -1,9 +1,12 @@
 # GoogleCloudKMSWriteKeyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Algorithm** | Pointer to **string** | Algorithm to use for encryption, decryption, or signing. The value depends on the key purpose. The value cannot be changed after creation. For a key purpose of \&quot;encrypt_decrypt\&quot;, the valid values are: - symmetric_encryption (default) For a key purpose of \&quot;asymmetric_sign\&quot;, valid values are: - rsa_sign_pss_2048_sha256 - rsa_sign_pss_3072_sha256 - rsa_sign_pss_4096_sha256 - rsa_sign_pkcs1_2048_sha256 - rsa_sign_pkcs1_3072_sha256 - rsa_sign_pkcs1_4096_sha256 - ec_sign_p256_sha256 - ec_sign_p384_sha384 For a key purpose of \&quot;asymmetric_decrypt\&quot;, valid values are: - rsa_decrypt_oaep_2048_sha256 - rsa_decrypt_oaep_3072_sha256 - rsa_decrypt_oaep_4096_sha256 | [optional] 
 **CryptoKey** | Pointer to **string** | Name of the crypto key to use. If the given crypto key does not exist, Vault will try to create it. This defaults to the name of the key given to Vault as the parameter if unspecified. | [optional] 
 **KeyRing** | Pointer to **string** | Full Google Cloud resource ID of the key ring with the project and location (e.g. projects/my-project/locations/global/keyRings/my-keyring). If the given key ring does not exist, Vault will try to create it during a create operation. | [optional] 
@@ -12,7 +15,10 @@ Name | Type | Description | Notes
 **Purpose** | Pointer to **string** | Purpose of the key. Valid options are \&quot;asymmetric_decrypt\&quot;, \&quot;asymmetric_sign\&quot;, and \&quot;encrypt_decrypt\&quot;. The default value is \&quot;encrypt_decrypt\&quot;. The value cannot be changed after creation. | [optional] 
 **RotationPeriod** | Pointer to **int32** | Amount of time between crypto key version rotations. This is specified as a time duration value like 72h (72 hours). The smallest possible value is 24h. This value only applies to keys with a purpose of \&quot;encrypt_decrypt\&quot;. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudKMSWriteKeyRequest
 
@@ -30,6 +36,7 @@ will change when the set of required properties is changed
 NewGoogleCloudKMSWriteKeyRequestWithDefaults instantiates a new GoogleCloudKMSWriteKeyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAlgorithm
 
@@ -50,11 +57,15 @@ and a boolean to check if the value has been set.
 
 SetAlgorithm sets Algorithm field to given value.
 
+
 ### HasAlgorithm
 
 `func (o *GoogleCloudKMSWriteKeyRequest) HasAlgorithm() bool`
 
 HasAlgorithm returns a boolean if a field has been set.
+
+
+
 
 ### GetCryptoKey
 
@@ -75,11 +86,15 @@ and a boolean to check if the value has been set.
 
 SetCryptoKey sets CryptoKey field to given value.
 
+
 ### HasCryptoKey
 
 `func (o *GoogleCloudKMSWriteKeyRequest) HasCryptoKey() bool`
 
 HasCryptoKey returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyRing
 
@@ -100,11 +115,15 @@ and a boolean to check if the value has been set.
 
 SetKeyRing sets KeyRing field to given value.
 
+
 ### HasKeyRing
 
 `func (o *GoogleCloudKMSWriteKeyRequest) HasKeyRing() bool`
 
 HasKeyRing returns a boolean if a field has been set.
+
+
+
 
 ### GetLabels
 
@@ -125,11 +144,15 @@ and a boolean to check if the value has been set.
 
 SetLabels sets Labels field to given value.
 
+
 ### HasLabels
 
 `func (o *GoogleCloudKMSWriteKeyRequest) HasLabels() bool`
 
 HasLabels returns a boolean if a field has been set.
+
+
+
 
 ### GetProtectionLevel
 
@@ -150,11 +173,15 @@ and a boolean to check if the value has been set.
 
 SetProtectionLevel sets ProtectionLevel field to given value.
 
+
 ### HasProtectionLevel
 
 `func (o *GoogleCloudKMSWriteKeyRequest) HasProtectionLevel() bool`
 
 HasProtectionLevel returns a boolean if a field has been set.
+
+
+
 
 ### GetPurpose
 
@@ -175,11 +202,15 @@ and a boolean to check if the value has been set.
 
 SetPurpose sets Purpose field to given value.
 
+
 ### HasPurpose
 
 `func (o *GoogleCloudKMSWriteKeyRequest) HasPurpose() bool`
 
 HasPurpose returns a boolean if a field has been set.
+
+
+
 
 ### GetRotationPeriod
 
@@ -200,11 +231,19 @@ and a boolean to check if the value has been set.
 
 SetRotationPeriod sets RotationPeriod field to given value.
 
+
 ### HasRotationPeriod
 
 `func (o *GoogleCloudKMSWriteKeyRequest) HasRotationPeriod() bool`
 
 HasRotationPeriod returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

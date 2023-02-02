@@ -1,13 +1,19 @@
 # AWSConfigWriteCertificateRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AwsPublicCert** | Pointer to **string** | Base64 encoded AWS Public cert required to verify PKCS7 signature of the EC2 instance metadata. | [optional] 
 **Type** | Pointer to **string** | Takes the value of either \&quot;pkcs7\&quot; or \&quot;identity\&quot;, indicating the type of document which can be verified using the given certificate. The reason is that the PKCS#7 document will have a DSA digest and the identity signature will have an RSA signature, and accordingly the public certificates to verify those also vary. Defaults to \&quot;pkcs7\&quot;. | [optional] [default to "pkcs7"]
 
+
+
 ## Methods
+
 
 ### NewAWSConfigWriteCertificateRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewAWSConfigWriteCertificateRequestWithDefaults instantiates a new AWSConfigWriteCertificateRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAwsPublicCert
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetAwsPublicCert sets AwsPublicCert field to given value.
 
+
 ### HasAwsPublicCert
 
 `func (o *AWSConfigWriteCertificateRequest) HasAwsPublicCert() bool`
 
 HasAwsPublicCert returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *AWSConfigWriteCertificateRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

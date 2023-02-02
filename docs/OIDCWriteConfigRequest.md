@@ -1,12 +1,18 @@
 # OIDCWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Issuer** | Pointer to **string** | Issuer URL to be used in the iss claim of the token. If not set, Vault&#39;s app_addr will be used. | [optional] 
+
+
+**Issuer** | Pointer to **string** | Issuer URL to be used in the iss claim of the token. If not set, Vault&#x27;s app_addr will be used. | [optional] 
+
+
 
 ## Methods
+
 
 ### NewOIDCWriteConfigRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewOIDCWriteConfigRequestWithDefaults instantiates a new OIDCWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetIssuer
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetIssuer sets Issuer field to given value.
 
+
 ### HasIssuer
 
 `func (o *OIDCWriteConfigRequest) HasIssuer() bool`
 
 HasIssuer returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

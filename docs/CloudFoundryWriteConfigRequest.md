@@ -1,9 +1,12 @@
 # CloudFoundryWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CfApiAddr** | Pointer to **string** | CF’s API address. | [optional] 
 **CfApiMutualTlsCertificate** | Pointer to **string** | The PEM-format certificates that are presented for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used | [optional] 
 **CfApiMutualTlsKey** | Pointer to **string** | The PEM-format private key that are used for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used | [optional] 
@@ -20,7 +23,10 @@ Name | Type | Description | Notes
 **PcfPassword** | Pointer to **string** | Deprecated. Please use \&quot;cf_password\&quot;. | [optional] 
 **PcfUsername** | Pointer to **string** | Deprecated. Please use \&quot;cf_username\&quot;. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewCloudFoundryWriteConfigRequest
 
@@ -38,6 +44,7 @@ will change when the set of required properties is changed
 NewCloudFoundryWriteConfigRequestWithDefaults instantiates a new CloudFoundryWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCfApiAddr
 
@@ -58,11 +65,15 @@ and a boolean to check if the value has been set.
 
 SetCfApiAddr sets CfApiAddr field to given value.
 
+
 ### HasCfApiAddr
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfApiAddr() bool`
 
 HasCfApiAddr returns a boolean if a field has been set.
+
+
+
 
 ### GetCfApiMutualTlsCertificate
 
@@ -83,11 +94,15 @@ and a boolean to check if the value has been set.
 
 SetCfApiMutualTlsCertificate sets CfApiMutualTlsCertificate field to given value.
 
+
 ### HasCfApiMutualTlsCertificate
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfApiMutualTlsCertificate() bool`
 
 HasCfApiMutualTlsCertificate returns a boolean if a field has been set.
+
+
+
 
 ### GetCfApiMutualTlsKey
 
@@ -108,11 +123,15 @@ and a boolean to check if the value has been set.
 
 SetCfApiMutualTlsKey sets CfApiMutualTlsKey field to given value.
 
+
 ### HasCfApiMutualTlsKey
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfApiMutualTlsKey() bool`
 
 HasCfApiMutualTlsKey returns a boolean if a field has been set.
+
+
+
 
 ### GetCfApiTrustedCertificates
 
@@ -133,11 +152,15 @@ and a boolean to check if the value has been set.
 
 SetCfApiTrustedCertificates sets CfApiTrustedCertificates field to given value.
 
+
 ### HasCfApiTrustedCertificates
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfApiTrustedCertificates() bool`
 
 HasCfApiTrustedCertificates returns a boolean if a field has been set.
+
+
+
 
 ### GetCfClientId
 
@@ -158,11 +181,15 @@ and a boolean to check if the value has been set.
 
 SetCfClientId sets CfClientId field to given value.
 
+
 ### HasCfClientId
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfClientId() bool`
 
 HasCfClientId returns a boolean if a field has been set.
+
+
+
 
 ### GetCfClientSecret
 
@@ -183,11 +210,15 @@ and a boolean to check if the value has been set.
 
 SetCfClientSecret sets CfClientSecret field to given value.
 
+
 ### HasCfClientSecret
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfClientSecret() bool`
 
 HasCfClientSecret returns a boolean if a field has been set.
+
+
+
 
 ### GetCfPassword
 
@@ -208,11 +239,15 @@ and a boolean to check if the value has been set.
 
 SetCfPassword sets CfPassword field to given value.
 
+
 ### HasCfPassword
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfPassword() bool`
 
 HasCfPassword returns a boolean if a field has been set.
+
+
+
 
 ### GetCfUsername
 
@@ -233,11 +268,15 @@ and a boolean to check if the value has been set.
 
 SetCfUsername sets CfUsername field to given value.
 
+
 ### HasCfUsername
 
 `func (o *CloudFoundryWriteConfigRequest) HasCfUsername() bool`
 
 HasCfUsername returns a boolean if a field has been set.
+
+
+
 
 ### GetIdentityCaCertificates
 
@@ -258,11 +297,15 @@ and a boolean to check if the value has been set.
 
 SetIdentityCaCertificates sets IdentityCaCertificates field to given value.
 
+
 ### HasIdentityCaCertificates
 
 `func (o *CloudFoundryWriteConfigRequest) HasIdentityCaCertificates() bool`
 
 HasIdentityCaCertificates returns a boolean if a field has been set.
+
+
+
 
 ### GetLoginMaxSecondsNotAfter
 
@@ -283,11 +326,15 @@ and a boolean to check if the value has been set.
 
 SetLoginMaxSecondsNotAfter sets LoginMaxSecondsNotAfter field to given value.
 
+
 ### HasLoginMaxSecondsNotAfter
 
 `func (o *CloudFoundryWriteConfigRequest) HasLoginMaxSecondsNotAfter() bool`
 
 HasLoginMaxSecondsNotAfter returns a boolean if a field has been set.
+
+
+
 
 ### GetLoginMaxSecondsNotBefore
 
@@ -308,11 +355,15 @@ and a boolean to check if the value has been set.
 
 SetLoginMaxSecondsNotBefore sets LoginMaxSecondsNotBefore field to given value.
 
+
 ### HasLoginMaxSecondsNotBefore
 
 `func (o *CloudFoundryWriteConfigRequest) HasLoginMaxSecondsNotBefore() bool`
 
 HasLoginMaxSecondsNotBefore returns a boolean if a field has been set.
+
+
+
 
 ### GetPcfApiAddr
 
@@ -333,11 +384,15 @@ and a boolean to check if the value has been set.
 
 SetPcfApiAddr sets PcfApiAddr field to given value.
 
+
 ### HasPcfApiAddr
 
 `func (o *CloudFoundryWriteConfigRequest) HasPcfApiAddr() bool`
 
 HasPcfApiAddr returns a boolean if a field has been set.
+
+
+
 
 ### GetPcfApiTrustedCertificates
 
@@ -358,11 +413,15 @@ and a boolean to check if the value has been set.
 
 SetPcfApiTrustedCertificates sets PcfApiTrustedCertificates field to given value.
 
+
 ### HasPcfApiTrustedCertificates
 
 `func (o *CloudFoundryWriteConfigRequest) HasPcfApiTrustedCertificates() bool`
 
 HasPcfApiTrustedCertificates returns a boolean if a field has been set.
+
+
+
 
 ### GetPcfPassword
 
@@ -383,11 +442,15 @@ and a boolean to check if the value has been set.
 
 SetPcfPassword sets PcfPassword field to given value.
 
+
 ### HasPcfPassword
 
 `func (o *CloudFoundryWriteConfigRequest) HasPcfPassword() bool`
 
 HasPcfPassword returns a boolean if a field has been set.
+
+
+
 
 ### GetPcfUsername
 
@@ -408,11 +471,19 @@ and a boolean to check if the value has been set.
 
 SetPcfUsername sets PcfUsername field to given value.
 
+
 ### HasPcfUsername
 
 `func (o *CloudFoundryWriteConfigRequest) HasPcfUsername() bool`
 
 HasPcfUsername returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,16 +1,22 @@
 # WriteRawRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Compressed** | Pointer to **bool** |  | [optional] 
 **CompressionType** | Pointer to **string** |  | [optional] 
 **Encoding** | Pointer to **string** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteRawRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewWriteRawRequestWithDefaults instantiates a new WriteRawRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCompressed
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetCompressed sets Compressed field to given value.
 
+
 ### HasCompressed
 
 `func (o *WriteRawRequest) HasCompressed() bool`
 
 HasCompressed returns a boolean if a field has been set.
+
+
+
 
 ### GetCompressionType
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetCompressionType sets CompressionType field to given value.
 
+
 ### HasCompressionType
 
 `func (o *WriteRawRequest) HasCompressionType() bool`
 
 HasCompressionType returns a boolean if a field has been set.
+
+
+
 
 ### GetEncoding
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetEncoding sets Encoding field to given value.
 
+
 ### HasEncoding
 
 `func (o *WriteRawRequest) HasEncoding() bool`
 
 HasEncoding returns a boolean if a field has been set.
+
+
+
 
 ### GetPath
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+
 ### HasPath
 
 `func (o *WriteRawRequest) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
+
+
+
 
 ### GetValue
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetValue sets Value field to given value.
 
+
 ### HasValue
 
 `func (o *WriteRawRequest) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

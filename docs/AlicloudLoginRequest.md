@@ -1,14 +1,20 @@
 # AliCloudLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **IdentityRequestHeaders** | Pointer to **string** | The request headers. This must include the headers over which AliCloud has included a signature. | [optional] 
 **IdentityRequestUrl** | Pointer to **string** | Base64-encoded full URL against which to make the AliCloud request. | [optional] 
-**Role** | **string** | Name of the role against which the login is being attempted. If &#39;role&#39; is not specified, then the login endpoint looks for a role name in the ARN returned by the GetCallerIdentity request. If a matching role is not found, login fails. | 
+**Role** | **string** | Name of the role against which the login is being attempted. If &#x27;role&#x27; is not specified, then the login endpoint looks for a role name in the ARN returned by the GetCallerIdentity request. If a matching role is not found, login fails. | 
+
+
 
 ## Methods
+
 
 ### NewAliCloudLoginRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewAliCloudLoginRequestWithDefaults instantiates a new AliCloudLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetIdentityRequestHeaders
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetIdentityRequestHeaders sets IdentityRequestHeaders field to given value.
 
+
 ### HasIdentityRequestHeaders
 
 `func (o *AliCloudLoginRequest) HasIdentityRequestHeaders() bool`
 
 HasIdentityRequestHeaders returns a boolean if a field has been set.
+
+
+
 
 ### GetIdentityRequestUrl
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetIdentityRequestUrl sets IdentityRequestUrl field to given value.
 
+
 ### HasIdentityRequestUrl
 
 `func (o *AliCloudLoginRequest) HasIdentityRequestUrl() bool`
 
 HasIdentityRequestUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetRole
 
@@ -95,6 +110,13 @@ and a boolean to check if the value has been set.
 `func (o *AliCloudLoginRequest) SetRole(v string)`
 
 SetRole sets Role field to given value.
+
+
+
+
+
+
+
 
 
 

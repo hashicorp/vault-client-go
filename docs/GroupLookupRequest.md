@@ -1,16 +1,22 @@
 # GroupLookupRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AliasId** | Pointer to **string** | ID of the alias. | [optional] 
-**AliasMountAccessor** | Pointer to **string** | Accessor of the mount to which the alias belongs to. This should be supplied in conjunction with &#39;alias_name&#39;. | [optional] 
-**AliasName** | Pointer to **string** | Name of the alias. This should be supplied in conjunction with &#39;alias_mount_accessor&#39;. | [optional] 
+**AliasMountAccessor** | Pointer to **string** | Accessor of the mount to which the alias belongs to. This should be supplied in conjunction with &#x27;alias_name&#x27;. | [optional] 
+**AliasName** | Pointer to **string** | Name of the alias. This should be supplied in conjunction with &#x27;alias_mount_accessor&#x27;. | [optional] 
 **Id** | Pointer to **string** | ID of the group. | [optional] 
 **Name** | Pointer to **string** | Name of the group. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGroupLookupRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewGroupLookupRequestWithDefaults instantiates a new GroupLookupRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAliasId
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetAliasId sets AliasId field to given value.
 
+
 ### HasAliasId
 
 `func (o *GroupLookupRequest) HasAliasId() bool`
 
 HasAliasId returns a boolean if a field has been set.
+
+
+
 
 ### GetAliasMountAccessor
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetAliasMountAccessor sets AliasMountAccessor field to given value.
 
+
 ### HasAliasMountAccessor
 
 `func (o *GroupLookupRequest) HasAliasMountAccessor() bool`
 
 HasAliasMountAccessor returns a boolean if a field has been set.
+
+
+
 
 ### GetAliasName
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetAliasName sets AliasName field to given value.
 
+
 ### HasAliasName
 
 `func (o *GroupLookupRequest) HasAliasName() bool`
 
 HasAliasName returns a boolean if a field has been set.
+
+
+
 
 ### GetId
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+
 ### HasId
 
 `func (o *GroupLookupRequest) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+
+
 
 ### GetName
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
 ### HasName
 
 `func (o *GroupLookupRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

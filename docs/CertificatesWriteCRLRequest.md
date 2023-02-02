@@ -1,13 +1,19 @@
 # CertificatesWriteCRLRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Crl** | Pointer to **string** | The public CRL that should be trusted to attest to certificates&#39; validity statuses. May be DER or PEM encoded. Note: the expiration time is ignored; if the CRL is no longer valid, delete it using the same name as specified here. | [optional] 
-**Url** | Pointer to **string** | The URL of a CRL distribution point. Only one of &#39;crl&#39; or &#39;url&#39; parameters should be specified. | [optional] 
+
+
+**Crl** | Pointer to **string** | The public CRL that should be trusted to attest to certificates&#x27; validity statuses. May be DER or PEM encoded. Note: the expiration time is ignored; if the CRL is no longer valid, delete it using the same name as specified here. | [optional] 
+**Url** | Pointer to **string** | The URL of a CRL distribution point. Only one of &#x27;crl&#x27; or &#x27;url&#x27; parameters should be specified. | [optional] 
+
+
 
 ## Methods
+
 
 ### NewCertificatesWriteCRLRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewCertificatesWriteCRLRequestWithDefaults instantiates a new CertificatesWriteCRLRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCrl
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetCrl sets Crl field to given value.
 
+
 ### HasCrl
 
 `func (o *CertificatesWriteCRLRequest) HasCrl() bool`
 
 HasCrl returns a boolean if a field has been set.
+
+
+
 
 ### GetUrl
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
 ### HasUrl
 
 `func (o *CertificatesWriteCRLRequest) HasUrl() bool`
 
 HasUrl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

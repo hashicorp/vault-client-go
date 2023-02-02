@@ -1,13 +1,19 @@
 # AppRoleLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RoleId** | Pointer to **string** | Unique identifier of the Role. Required to be supplied when the &#39;bind_secret_id&#39; constraint is set. | [optional] 
+
+
+**RoleId** | Pointer to **string** | Unique identifier of the Role. Required to be supplied when the &#x27;bind_secret_id&#x27; constraint is set. | [optional] 
 **SecretId** | Pointer to **string** | SecretID belong to the App role | [optional] [default to ""]
 
+
+
 ## Methods
+
 
 ### NewAppRoleLoginRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewAppRoleLoginRequestWithDefaults instantiates a new AppRoleLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetRoleId
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetRoleId sets RoleId field to given value.
 
+
 ### HasRoleId
 
 `func (o *AppRoleLoginRequest) HasRoleId() bool`
 
 HasRoleId returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretId
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetSecretId sets SecretId field to given value.
 
+
 ### HasSecretId
 
 `func (o *AppRoleLoginRequest) HasSecretId() bool`
 
 HasSecretId returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

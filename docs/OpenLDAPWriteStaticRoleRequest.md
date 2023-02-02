@@ -1,14 +1,20 @@
 # OpenLDAPWriteStaticRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Dn** | Pointer to **string** | The distinguished name of the entry to manage. | [optional] 
 **RotationPeriod** | Pointer to **int32** | Period for automatic credential rotation of the given entry. | [optional] 
 **Username** | Pointer to **string** | The username/logon name for the entry with which this role will be associated. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOpenLDAPWriteStaticRoleRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewOpenLDAPWriteStaticRoleRequestWithDefaults instantiates a new OpenLDAPWriteStaticRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDn
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetDn sets Dn field to given value.
 
+
 ### HasDn
 
 `func (o *OpenLDAPWriteStaticRoleRequest) HasDn() bool`
 
 HasDn returns a boolean if a field has been set.
+
+
+
 
 ### GetRotationPeriod
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetRotationPeriod sets RotationPeriod field to given value.
 
+
 ### HasRotationPeriod
 
 `func (o *OpenLDAPWriteStaticRoleRequest) HasRotationPeriod() bool`
 
 HasRotationPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetUsername
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
+
 ### HasUsername
 
 `func (o *OpenLDAPWriteStaticRoleRequest) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

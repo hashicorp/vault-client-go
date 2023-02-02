@@ -1,14 +1,20 @@
 # WriteInternalCountersConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **DefaultReportMonths** | Pointer to **int32** | Number of months to report if no start date specified. | [optional] [default to 12]
 **Enabled** | Pointer to **string** | Enable or disable collection of client count: enable, disable, or default. | [optional] [default to "default"]
 **RetentionMonths** | Pointer to **int32** | Number of months of client data to retain. Setting to 0 will clear all existing data. | [optional] [default to 24]
 
+
+
 ## Methods
+
 
 ### NewWriteInternalCountersConfigRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewWriteInternalCountersConfigRequestWithDefaults instantiates a new WriteInternalCountersConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDefaultReportMonths
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetDefaultReportMonths sets DefaultReportMonths field to given value.
 
+
 ### HasDefaultReportMonths
 
 `func (o *WriteInternalCountersConfigRequest) HasDefaultReportMonths() bool`
 
 HasDefaultReportMonths returns a boolean if a field has been set.
+
+
+
 
 ### GetEnabled
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
 ### HasEnabled
 
 `func (o *WriteInternalCountersConfigRequest) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+
+
 
 ### GetRetentionMonths
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetRetentionMonths sets RetentionMonths field to given value.
 
+
 ### HasRetentionMonths
 
 `func (o *WriteInternalCountersConfigRequest) HasRetentionMonths() bool`
 
 HasRetentionMonths returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

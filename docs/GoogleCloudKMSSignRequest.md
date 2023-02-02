@@ -1,13 +1,19 @@
 # GoogleCloudKMSSignRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Digest** | Pointer to **string** | Digest to sign. This digest must use the same SHA algorithm as the underlying Cloud KMS key. The digest must be the base64-encoded binary value. This field is required. | [optional] 
 **KeyVersion** | Pointer to **int32** | Integer version of the crypto key version to use for signing. This field is required. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudKMSSignRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewGoogleCloudKMSSignRequestWithDefaults instantiates a new GoogleCloudKMSSignRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDigest
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetDigest sets Digest field to given value.
 
+
 ### HasDigest
 
 `func (o *GoogleCloudKMSSignRequest) HasDigest() bool`
 
 HasDigest returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyVersion
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetKeyVersion sets KeyVersion field to given value.
 
+
 ### HasKeyVersion
 
 `func (o *GoogleCloudKMSSignRequest) HasKeyVersion() bool`
 
 HasKeyVersion returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

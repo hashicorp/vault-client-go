@@ -1,14 +1,20 @@
 # PKIRevokeWithKeyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Certificate** | Pointer to **string** | Certificate to revoke in PEM format; must be signed by an issuer in this mount. | [optional] 
 **PrivateKey** | Pointer to **string** | Key to use to verify revocation permission; must be in PEM format. | [optional] 
 **SerialNumber** | Pointer to **string** | Certificate serial number, in colon- or hyphen-separated octal | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKIRevokeWithKeyRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewPKIRevokeWithKeyRequestWithDefaults instantiates a new PKIRevokeWithKeyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCertificate
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetCertificate sets Certificate field to given value.
 
+
 ### HasCertificate
 
 `func (o *PKIRevokeWithKeyRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
+
+
+
 
 ### GetPrivateKey
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetPrivateKey sets PrivateKey field to given value.
 
+
 ### HasPrivateKey
 
 `func (o *PKIRevokeWithKeyRequest) HasPrivateKey() bool`
 
 HasPrivateKey returns a boolean if a field has been set.
+
+
+
 
 ### GetSerialNumber
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetSerialNumber sets SerialNumber field to given value.
 
+
 ### HasSerialNumber
 
 `func (o *PKIRevokeWithKeyRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

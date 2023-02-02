@@ -1,9 +1,12 @@
 # RabbitMQWriteConnectionConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ConnectionUri** | Pointer to **string** | RabbitMQ Management URI | [optional] 
 **Password** | Pointer to **string** | Password of the provided RabbitMQ management user | [optional] 
 **PasswordPolicy** | Pointer to **string** | Name of the password policy to use to generate passwords for dynamic credentials. | [optional] 
@@ -11,7 +14,10 @@ Name | Type | Description | Notes
 **UsernameTemplate** | Pointer to **string** | Template describing how dynamic usernames are generated. | [optional] 
 **VerifyConnection** | Pointer to **bool** | If set, connection_uri is verified by actually connecting to the RabbitMQ management API | [optional] [default to true]
 
+
+
 ## Methods
+
 
 ### NewRabbitMQWriteConnectionConfigRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewRabbitMQWriteConnectionConfigRequestWithDefaults instantiates a new RabbitMQWriteConnectionConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetConnectionUri
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetConnectionUri sets ConnectionUri field to given value.
 
+
 ### HasConnectionUri
 
 `func (o *RabbitMQWriteConnectionConfigRequest) HasConnectionUri() bool`
 
 HasConnectionUri returns a boolean if a field has been set.
+
+
+
 
 ### GetPassword
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
+
 ### HasPassword
 
 `func (o *RabbitMQWriteConnectionConfigRequest) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+
+
 
 ### GetPasswordPolicy
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetPasswordPolicy sets PasswordPolicy field to given value.
 
+
 ### HasPasswordPolicy
 
 `func (o *RabbitMQWriteConnectionConfigRequest) HasPasswordPolicy() bool`
 
 HasPasswordPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetUsername
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
+
 ### HasUsername
 
 `func (o *RabbitMQWriteConnectionConfigRequest) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
+
+
+
 
 ### GetUsernameTemplate
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetUsernameTemplate sets UsernameTemplate field to given value.
 
+
 ### HasUsernameTemplate
 
 `func (o *RabbitMQWriteConnectionConfigRequest) HasUsernameTemplate() bool`
 
 HasUsernameTemplate returns a boolean if a field has been set.
+
+
+
 
 ### GetVerifyConnection
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetVerifyConnection sets VerifyConnection field to given value.
 
+
 ### HasVerifyConnection
 
 `func (o *RabbitMQWriteConnectionConfigRequest) HasVerifyConnection() bool`
 
 HasVerifyConnection returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,14 +1,20 @@
 # KubernetesWriteCredentialsRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ClusterRoleBinding** | Pointer to **bool** | If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole. | [optional] 
 **KubernetesNamespace** | **string** | The name of the Kubernetes namespace in which to generate the credentials | 
 **Ttl** | Pointer to **int32** | The TTL of the generated credentials | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKubernetesWriteCredentialsRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewKubernetesWriteCredentialsRequestWithDefaults instantiates a new KubernetesWriteCredentialsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetClusterRoleBinding
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetClusterRoleBinding sets ClusterRoleBinding field to given value.
 
+
 ### HasClusterRoleBinding
 
 `func (o *KubernetesWriteCredentialsRequest) HasClusterRoleBinding() bool`
 
 HasClusterRoleBinding returns a boolean if a field has been set.
+
+
+
 
 ### GetKubernetesNamespace
 
@@ -72,6 +83,9 @@ and a boolean to check if the value has been set.
 SetKubernetesNamespace sets KubernetesNamespace field to given value.
 
 
+
+
+
 ### GetTtl
 
 `func (o *KubernetesWriteCredentialsRequest) GetTtl() int32`
@@ -91,11 +105,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *KubernetesWriteCredentialsRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

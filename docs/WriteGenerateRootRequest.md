@@ -1,12 +1,18 @@
 # WriteGenerateRootRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **PgpKey** | Pointer to **string** | Specifies a base64-encoded PGP public key. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteGenerateRootRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewWriteGenerateRootRequestWithDefaults instantiates a new WriteGenerateRootRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPgpKey
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetPgpKey sets PgpKey field to given value.
 
+
 ### HasPgpKey
 
 `func (o *WriteGenerateRootRequest) HasPgpKey() bool`
 
 HasPgpKey returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,9 +1,12 @@
 # AzureWriteAuthRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **BoundGroupIds** | Pointer to **[]string** | Comma-separated list of group ids that login is restricted to. | [optional] 
 **BoundLocations** | Pointer to **[]string** | Comma-separated list of locations that login is restricted to. | [optional] 
 **BoundResourceGroups** | Pointer to **[]string** | Comma-separated list of resource groups that login is restricted to. | [optional] 
@@ -17,7 +20,7 @@ Name | Type | Description | Notes
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 **TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
-**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#39;default&#39; policy will not automatically be added to generated tokens | [optional] 
+**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
 **TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
@@ -25,7 +28,10 @@ Name | Type | Description | Notes
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 **Ttl** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAzureWriteAuthRoleRequest
 
@@ -43,6 +49,7 @@ will change when the set of required properties is changed
 NewAzureWriteAuthRoleRequestWithDefaults instantiates a new AzureWriteAuthRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBoundGroupIds
 
@@ -63,11 +70,15 @@ and a boolean to check if the value has been set.
 
 SetBoundGroupIds sets BoundGroupIds field to given value.
 
+
 ### HasBoundGroupIds
 
 `func (o *AzureWriteAuthRoleRequest) HasBoundGroupIds() bool`
 
 HasBoundGroupIds returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundLocations
 
@@ -88,11 +99,15 @@ and a boolean to check if the value has been set.
 
 SetBoundLocations sets BoundLocations field to given value.
 
+
 ### HasBoundLocations
 
 `func (o *AzureWriteAuthRoleRequest) HasBoundLocations() bool`
 
 HasBoundLocations returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundResourceGroups
 
@@ -113,11 +128,15 @@ and a boolean to check if the value has been set.
 
 SetBoundResourceGroups sets BoundResourceGroups field to given value.
 
+
 ### HasBoundResourceGroups
 
 `func (o *AzureWriteAuthRoleRequest) HasBoundResourceGroups() bool`
 
 HasBoundResourceGroups returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundScaleSets
 
@@ -138,11 +157,15 @@ and a boolean to check if the value has been set.
 
 SetBoundScaleSets sets BoundScaleSets field to given value.
 
+
 ### HasBoundScaleSets
 
 `func (o *AzureWriteAuthRoleRequest) HasBoundScaleSets() bool`
 
 HasBoundScaleSets returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundServicePrincipalIds
 
@@ -163,11 +186,15 @@ and a boolean to check if the value has been set.
 
 SetBoundServicePrincipalIds sets BoundServicePrincipalIds field to given value.
 
+
 ### HasBoundServicePrincipalIds
 
 `func (o *AzureWriteAuthRoleRequest) HasBoundServicePrincipalIds() bool`
 
 HasBoundServicePrincipalIds returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundSubscriptionIds
 
@@ -188,11 +215,15 @@ and a boolean to check if the value has been set.
 
 SetBoundSubscriptionIds sets BoundSubscriptionIds field to given value.
 
+
 ### HasBoundSubscriptionIds
 
 `func (o *AzureWriteAuthRoleRequest) HasBoundSubscriptionIds() bool`
 
 HasBoundSubscriptionIds returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -213,11 +244,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *AzureWriteAuthRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetNumUses
 
@@ -238,11 +273,15 @@ and a boolean to check if the value has been set.
 
 SetNumUses sets NumUses field to given value.
 
+
 ### HasNumUses
 
 `func (o *AzureWriteAuthRoleRequest) HasNumUses() bool`
 
 HasNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -263,11 +302,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *AzureWriteAuthRoleRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -288,11 +331,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *AzureWriteAuthRoleRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -313,11 +360,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenExplicitMaxTtl
 
@@ -338,11 +389,15 @@ and a boolean to check if the value has been set.
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
+
 ### HasTokenExplicitMaxTtl
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenMaxTtl
 
@@ -363,11 +418,15 @@ and a boolean to check if the value has been set.
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
+
 ### HasTokenMaxTtl
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNoDefaultPolicy
 
@@ -388,11 +447,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
+
 ### HasTokenNoDefaultPolicy
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNumUses
 
@@ -413,11 +476,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
+
 ### HasTokenNumUses
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPeriod
 
@@ -438,11 +505,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
+
 ### HasTokenPeriod
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPolicies
 
@@ -463,11 +534,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
+
 ### HasTokenPolicies
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenTtl
 
@@ -488,11 +563,15 @@ and a boolean to check if the value has been set.
 
 SetTokenTtl sets TokenTtl field to given value.
 
+
 ### HasTokenTtl
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -513,11 +592,15 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *AzureWriteAuthRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -538,11 +621,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *AzureWriteAuthRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

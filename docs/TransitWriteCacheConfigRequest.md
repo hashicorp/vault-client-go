@@ -1,12 +1,18 @@
 # TransitWriteCacheConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Size** | Pointer to **int32** | Size of cache, use 0 for an unlimited cache size, defaults to 0 | [optional] [default to 0]
 
+
+
 ## Methods
+
 
 ### NewTransitWriteCacheConfigRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewTransitWriteCacheConfigRequestWithDefaults instantiates a new TransitWriteCacheConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetSize
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetSize sets Size field to given value.
 
+
 ### HasSize
 
 `func (o *TransitWriteCacheConfigRequest) HasSize() bool`
 
 HasSize returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

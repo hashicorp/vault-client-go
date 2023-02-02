@@ -1,12 +1,18 @@
 # AWSWriteIdentityAccessListTidySettingsRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond the identity&#39;s expiration, before it is removed from the backend storage. | [optional] [default to 259200]
+
+
+**SafetyBuffer** | Pointer to **int32** | The amount of extra time that must have passed beyond the identity&#x27;s expiration, before it is removed from the backend storage. | [optional] [default to 259200]
+
+
 
 ## Methods
+
 
 ### NewAWSWriteIdentityAccessListTidySettingsRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAWSWriteIdentityAccessListTidySettingsRequestWithDefaults instantiates a new AWSWriteIdentityAccessListTidySettingsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetSafetyBuffer
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetSafetyBuffer sets SafetyBuffer field to given value.
 
+
 ### HasSafetyBuffer
 
 `func (o *AWSWriteIdentityAccessListTidySettingsRequest) HasSafetyBuffer() bool`
 
 HasSafetyBuffer returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

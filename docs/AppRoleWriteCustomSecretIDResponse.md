@@ -1,15 +1,21 @@
 # AppRoleWriteCustomSecretIDResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **SecretId** | Pointer to **string** | Secret ID attached to the role. | [optional] 
 **SecretIdAccessor** | Pointer to **string** | Accessor of the secret ID | [optional] 
 **SecretIdNumUses** | Pointer to **int32** | Number of times a secret ID can access the role, after which the secret ID will expire. | [optional] 
 **SecretIdTtl** | Pointer to **int32** | Duration in seconds after which the issued secret ID expires. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteCustomSecretIDResponse
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteCustomSecretIDResponseWithDefaults instantiates a new AppRoleWriteCustomSecretIDResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetSecretId
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetSecretId sets SecretId field to given value.
 
+
 ### HasSecretId
 
 `func (o *AppRoleWriteCustomSecretIDResponse) HasSecretId() bool`
 
 HasSecretId returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdAccessor
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdAccessor sets SecretIdAccessor field to given value.
 
+
 ### HasSecretIdAccessor
 
 `func (o *AppRoleWriteCustomSecretIDResponse) HasSecretIdAccessor() bool`
 
 HasSecretIdAccessor returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdNumUses
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdNumUses sets SecretIdNumUses field to given value.
 
+
 ### HasSecretIdNumUses
 
 `func (o *AppRoleWriteCustomSecretIDResponse) HasSecretIdNumUses() bool`
 
 HasSecretIdNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdTtl
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 
+
 ### HasSecretIdTtl
 
 `func (o *AppRoleWriteCustomSecretIDResponse) HasSecretIdTtl() bool`
 
 HasSecretIdTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

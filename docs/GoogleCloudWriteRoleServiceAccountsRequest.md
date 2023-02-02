@@ -1,13 +1,19 @@
 # GoogleCloudWriteRoleServiceAccountsRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Add** | Pointer to **[]string** | Service-account emails or IDs to add. | [optional] 
 **Remove** | Pointer to **[]string** | Service-account emails or IDs to remove. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudWriteRoleServiceAccountsRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewGoogleCloudWriteRoleServiceAccountsRequestWithDefaults instantiates a new GoogleCloudWriteRoleServiceAccountsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAdd
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetAdd sets Add field to given value.
 
+
 ### HasAdd
 
 `func (o *GoogleCloudWriteRoleServiceAccountsRequest) HasAdd() bool`
 
 HasAdd returns a boolean if a field has been set.
+
+
+
 
 ### GetRemove
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetRemove sets Remove field to given value.
 
+
 ### HasRemove
 
 `func (o *GoogleCloudWriteRoleServiceAccountsRequest) HasRemove() bool`
 
 HasRemove returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

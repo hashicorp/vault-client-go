@@ -1,14 +1,20 @@
 # WriteRotateConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Enabled** | Pointer to **bool** | Whether automatic rotation is enabled. | [optional] 
 **Interval** | Pointer to **int32** | How long after installation of an active key term that the key will be automatically rotated. | [optional] 
 **MaxOperations** | Pointer to **int64** | The number of encryption operations performed before the barrier key is automatically rotated. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteRotateConfigRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewWriteRotateConfigRequestWithDefaults instantiates a new WriteRotateConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetEnabled
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
 ### HasEnabled
 
 `func (o *WriteRotateConfigRequest) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+
+
 
 ### GetInterval
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetInterval sets Interval field to given value.
 
+
 ### HasInterval
 
 `func (o *WriteRotateConfigRequest) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxOperations
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetMaxOperations sets MaxOperations field to given value.
 
+
 ### HasMaxOperations
 
 `func (o *WriteRotateConfigRequest) HasMaxOperations() bool`
 
 HasMaxOperations returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

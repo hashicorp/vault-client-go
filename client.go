@@ -33,7 +33,7 @@ const ClientVersion = "0.1.0-beta"
 
 // Client manages communication with Vault, initialize it with vault.New(...)
 type Client struct {
-	// configuration object is immutable after the client has been initialized
+	// the configuration object is immutable after the client has been initialized
 	configuration ClientConfiguration
 
 	parsedBaseAddress *url.URL
@@ -48,8 +48,7 @@ type Client struct {
 	// replication state cache used to ensure read-after-write semantics
 	replicationStates replicationStateCache
 
-	// API wrappers
-
+	// generated request methods
 	Auth Auth
 
 	Identity Identity
@@ -109,8 +108,7 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 	}
 	c.parsedBaseAddress = address
 
-	// Internet draft https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
-	// specifies that the port must be empty
+	// Internet draft https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02 specifies that the port must be empty.
 	if configuration.EnableSRVLookup && address.Port() != "" {
 		return nil, fmt.Errorf("cannot enable DNS service record (SRV) lookup since the base address port (%q) is not empty", address.Port())
 	}
@@ -120,11 +118,10 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 		return nil, fmt.Errorf("the configured base client's transport (%T) is not of type *http.Transport", c.client.Transport)
 	}
 
-	// Adjust the dial contex for unix domain socket addresses
+	// Adjust the dial context for unix domain socket addresses.
 	if strings.HasPrefix(configuration.BaseAddress, "unix://") {
 		transport.DialContext = func(context.Context, string, string) (net.Conn, error) {
-			socket := strings.TrimPrefix(configuration.BaseAddress, "unix://")
-			return net.Dial("unix", socket)
+			return net.Dial("unix", strings.TrimPrefix(configuration.BaseAddress, "unix://"))
 		}
 	}
 

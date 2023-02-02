@@ -49,13 +49,10 @@ type Client struct {
 	replicationStates replicationStateCache
 
 	// generated request methods
-	Auth Auth
-
+	Auth     Auth
 	Identity Identity
-
-	Secrets Secrets
-
-	System System
+	Secrets  Secrets
+	System   System
 }
 
 // New returns a new client decorated with the given configuration options

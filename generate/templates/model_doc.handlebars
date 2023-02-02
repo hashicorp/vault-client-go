@@ -1,0 +1,97 @@
+{{#each models}}{{#with model}}# {{classname}}
+
+{{#unless isEnum}}
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+{{#with vendorExtensions.x-is-one-of-interface}}
+**{{classname}}Interface** | **interface { {{#with discriminator}}{{propertyGetter}}() {{propertyType}}{{/with}} }** | An interface that can hold any of the proper implementing types |
+{{/with}}
+{{#unless vendorExtensions.x-is-one-of-interface}}
+{{#each vars}}**{{name}}** | {{#unless required}}Pointer to {{/unless}}{{#if isContainer}}{{#if isArray}}{{#each items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**[]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{dataType}}.md){{/unless}}{{/unless}}{{/each}}{{/if}}{{#if isMap}}{{#each items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**map[string]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/each}}{{/if}}{{/if}}{{#unless isContainer}}{{#unless isPrimitiveType}}{{#unless isFile}}{{#unless isDateTime}}[{{/unless}}{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}{{#unless isDateTime}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/unless}}{{/unless}} | {{description}} | {{#unless required}}[optional] {{/unless}}{{#if isReadOnly}}[readonly] {{/if}}{{#with defaultValue}}[default to {{{.}}}]{{/with}}
+{{/each}}
+{{/unless}}
+
+## Methods
+
+{{#unless vendorExtensions.x-is-one-of-interface}}
+### New{{classname}}
+
+`func New{{classname}}({{#each vars}}{{#with required}}{{nameInCamelCase}} {{dataType}}, {{/with}}{{/each}}) *{{classname}}`
+
+New{{classname}} instantiates a new {{classname}} object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### New{{classname}}WithDefaults
+
+`func New{{classname}}WithDefaults() *{{classname}}`
+
+New{{classname}}WithDefaults instantiates a new {{classname}} object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+{{#each vars}}
+### Get{{name}}
+
+`func (o *{{classname}}) Get{{name}}() {{vendorExtensions.x-go-base-type}}`
+
+Get{{name}} returns the {{name}} field if non-nil, zero value otherwise.
+
+### Get{{name}}Ok
+
+`func (o *{{classname}}) Get{{name}}Ok() (*{{vendorExtensions.x-go-base-type}}, bool)`
+
+Get{{name}}Ok returns a tuple with the {{name}} field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### Set{{name}}
+
+`func (o *{{classname}}) Set{{name}}(v {{vendorExtensions.x-go-base-type}})`
+
+Set{{name}} sets {{name}} field to given value.
+
+{{#unless required}}
+### Has{{name}}
+
+`func (o *{{classname}}) Has{{name}}() bool`
+
+Has{{name}} returns a boolean if a field has been set.
+{{/unless}}
+
+{{#if isNullable}}
+### Set{{name}}Nil
+
+`func (o *{{classname}}) Set{{name}}Nil(b bool)`
+
+ Set{{name}}Nil sets the value for {{name}} to be an explicit nil
+
+### Unset{{name}}
+`func (o *{{classname}}) Unset{{name}}()`
+
+Unset{{name}} ensures that no value is present for {{name}}, not even an explicit nil
+{{/if}}
+{{/each}}
+{{#each vendorExtensions.x-implements}}
+
+### As{{{.}}}
+
+`func (s *{{classname}}) As{{{.}}}() {{{.}}}`
+
+Convenience method to wrap this instance of {{classname}} in {{{.}}}
+{{/each}}
+{{/unless}}
+{{/unless}}
+{{#if isEnum}}
+## Enum
+
+{{#each allowableValues}}{{#each enumVars}}
+* `{{name}}` (value: `{{{value}}}`)
+{{/each}}{{/each}}
+{{/if}}
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+{{/with}}{{/each}}

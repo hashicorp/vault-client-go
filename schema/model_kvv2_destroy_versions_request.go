@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KVv2DestroyVersionsRequest struct for KVv2DestroyVersionsRequest
 type KVv2DestroyVersionsRequest struct {
 	// The versions to destroy. Their data will be permanently deleted.

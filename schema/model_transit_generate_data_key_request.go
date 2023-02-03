@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitGenerateDataKeyRequest struct for TransitGenerateDataKeyRequest
 type TransitGenerateDataKeyRequest struct {
 	// Number of bits for the key; currently 128, 256, and 512 bits are supported. Defaults to 256.

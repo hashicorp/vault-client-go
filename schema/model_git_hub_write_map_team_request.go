@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GitHubWriteMapTeamRequest struct for GitHubWriteMapTeamRequest
 type GitHubWriteMapTeamRequest struct {
 	// Value for teams mapping

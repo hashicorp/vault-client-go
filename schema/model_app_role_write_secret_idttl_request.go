@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteSecretIDTTLRequest struct for AppRoleWriteSecretIDTTLRequest
 type AppRoleWriteSecretIDTTLRequest struct {
 	// Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.

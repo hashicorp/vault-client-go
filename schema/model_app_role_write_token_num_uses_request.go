@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteTokenNumUsesRequest struct for AppRoleWriteTokenNumUsesRequest
 type AppRoleWriteTokenNumUsesRequest struct {
 	// The maximum number of times a token may be used, a value of zero means unlimited

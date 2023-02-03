@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OIDCIntrospectRequest struct for OIDCIntrospectRequest
 type OIDCIntrospectRequest struct {
 	// Optional client_id to verify

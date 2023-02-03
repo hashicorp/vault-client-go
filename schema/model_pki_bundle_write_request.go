@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIBundleWriteRequest struct for PKIBundleWriteRequest
 type PKIBundleWriteRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.

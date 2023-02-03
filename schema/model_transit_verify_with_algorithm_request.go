@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitVerifyWithAlgorithmRequest struct for TransitVerifyWithAlgorithmRequest
 type TransitVerifyWithAlgorithmRequest struct {
 	// Deprecated: use \"hash_algorithm\" instead.

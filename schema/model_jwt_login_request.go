@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JWTLoginRequest struct for JWTLoginRequest
 type JWTLoginRequest struct {
 	// The signed JWT to validate.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteLeasesLookupRequest struct for WriteLeasesLookupRequest
 type WriteLeasesLookupRequest struct {
 	// The lease identifier to renew. This is included with a lease.

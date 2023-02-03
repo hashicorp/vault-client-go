@@ -2,13 +2,6 @@
 package schema
 
 {{#each models}}
-import (
-	"encoding/json"
-{{#each imports}}
-	"{{import}}"
-{{/each}}
-)
-
 {{#with model}}
 {{#if isEnum}}
 {{>model_enum}}

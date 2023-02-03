@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AWSWriteCredentialsRequest struct for AWSWriteCredentialsRequest
 type AWSWriteCredentialsRequest struct {
 	// Name of the role

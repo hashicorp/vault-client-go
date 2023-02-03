@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // ToolsGenerateRandomSourceBytesRequest struct for ToolsGenerateRandomSourceBytesRequest
 type ToolsGenerateRandomSourceBytesRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).

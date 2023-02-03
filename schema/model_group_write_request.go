@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GroupWriteRequest struct for GroupWriteRequest
 type GroupWriteRequest struct {
 	// ID of the group. If set, updates the corresponding existing group.

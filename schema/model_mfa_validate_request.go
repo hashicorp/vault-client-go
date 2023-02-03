@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MFAValidateRequest struct for MFAValidateRequest
 type MFAValidateRequest struct {
 	// A map from MFA method ID to a slice of passcodes or an empty slice if the method does not use passcodes

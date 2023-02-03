@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliCloudWriteConfigRequest struct for AliCloudWriteConfigRequest
 type AliCloudWriteConfigRequest struct {
 	// Access key with appropriate permissions.

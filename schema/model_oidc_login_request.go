@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OIDCLoginRequest struct for OIDCLoginRequest
 type OIDCLoginRequest struct {
 	// The signed JWT to validate.

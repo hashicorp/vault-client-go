@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // EntityMergeRequest struct for EntityMergeRequest
 type EntityMergeRequest struct {
 	// Alias IDs to keep in case of conflicting aliases. Ignored if no conflicting aliases found

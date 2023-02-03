@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteConfigUIHeaderRequest struct for WriteConfigUIHeaderRequest
 type WriteConfigUIHeaderRequest struct {
 	// Returns multiple values if true

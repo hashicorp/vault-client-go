@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenRevokeRequest struct for TokenRevokeRequest
 type TokenRevokeRequest struct {
 	// Token to revoke (request body)

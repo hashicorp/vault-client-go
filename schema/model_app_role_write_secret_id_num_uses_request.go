@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteSecretIDNumUsesRequest struct for AppRoleWriteSecretIDNumUsesRequest
 type AppRoleWriteSecretIDNumUsesRequest struct {
 	// Number of times a SecretID can access the role, after which the SecretID will expire.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GitHubLoginRequest struct for GitHubLoginRequest
 type GitHubLoginRequest struct {
 	// GitHub personal API token

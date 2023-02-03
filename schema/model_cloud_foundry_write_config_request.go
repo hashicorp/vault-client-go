@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CloudFoundryWriteConfigRequest struct for CloudFoundryWriteConfigRequest
 type CloudFoundryWriteConfigRequest struct {
 	// CF’s API address.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CloudFoundryLoginRequest struct for CloudFoundryLoginRequest
 type CloudFoundryLoginRequest struct {
 	// The full body of the file available at the CF_INSTANCE_CERT path on the CF instance.

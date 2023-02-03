@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OktaWriteConfigRequest struct for OktaWriteConfigRequest
 type OktaWriteConfigRequest struct {
 	// Okta API key.

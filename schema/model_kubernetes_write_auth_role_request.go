@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KubernetesWriteAuthRoleRequest struct for KubernetesWriteAuthRoleRequest
 type KubernetesWriteAuthRoleRequest struct {
 	// Source to use when deriving the Alias name. valid choices: \"serviceaccount_uid\" : <token.uid> e.g. 474b11b5-0f20-4f9d-8ca5-65715ab325e0 (most secure choice) \"serviceaccount_name\" : <namespace>/<serviceaccount> e.g. vault/vault-agent default: \"serviceaccount_uid\"

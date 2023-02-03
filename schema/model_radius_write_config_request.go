@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RadiusWriteConfigRequest struct for RadiusWriteConfigRequest
 type RadiusWriteConfigRequest struct {
 	// Number of seconds before connect times out (default: 10)

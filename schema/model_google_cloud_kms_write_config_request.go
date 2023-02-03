@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKMSWriteConfigRequest struct for GoogleCloudKMSWriteConfigRequest
 type GoogleCloudKMSWriteConfigRequest struct {
 	// The credentials to use for authenticating to Google Cloud. Leave this blank to use the Default Application Credentials or instance metadata authentication.

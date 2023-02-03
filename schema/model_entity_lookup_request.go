@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // EntityLookupRequest struct for EntityLookupRequest
 type EntityLookupRequest struct {
 	// ID of the alias.

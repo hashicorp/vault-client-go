@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OIDCWriteCallbackRequest struct for OIDCWriteCallbackRequest
 type OIDCWriteCallbackRequest struct {
 	ClientNonce string `json:"client_nonce"`

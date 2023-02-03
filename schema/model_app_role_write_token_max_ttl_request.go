@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteTokenMaxTTLRequest struct for AppRoleWriteTokenMaxTTLRequest
 type AppRoleWriteTokenMaxTTLRequest struct {
 	// The maximum lifetime of the generated token

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIRootSignSelfIssuedRequest struct for PKIRootSignSelfIssuedRequest
 type PKIRootSignSelfIssuedRequest struct {
 	// PEM-format self-issued certificate to be signed.

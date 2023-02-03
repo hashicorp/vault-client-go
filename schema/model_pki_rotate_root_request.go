@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIRotateRootRequest struct for PKIRotateRootRequest
 type PKIRotateRootRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.

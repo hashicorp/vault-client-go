@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKMSRegisterKeyRequest struct for GoogleCloudKMSRegisterKeyRequest
 type GoogleCloudKMSRegisterKeyRequest struct {
 	// Full resource ID of the crypto key including the project, location, key ring, and crypto key like \"projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s\". This crypto key must already exist in Google Cloud KMS unless verify is set to \"false\".

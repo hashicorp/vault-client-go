@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GroupLookupRequest struct for GroupLookupRequest
 type GroupLookupRequest struct {
 	// ID of the alias.

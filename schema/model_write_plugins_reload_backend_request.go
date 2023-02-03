@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WritePluginsReloadBackendRequest struct for WritePluginsReloadBackendRequest
 type WritePluginsReloadBackendRequest struct {
 	// The mount paths of the plugin backends to reload.

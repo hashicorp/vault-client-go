@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CentrifyLoginRequest struct for CentrifyLoginRequest
 type CentrifyLoginRequest struct {
 	// Auth mode ('ro' for resource owner, 'cc' for credential client).

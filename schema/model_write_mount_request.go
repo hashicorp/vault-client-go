@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteMountRequest struct for WriteMountRequest
 type WriteMountRequest struct {
 	// Configuration for this mount, such as default_lease_ttl and max_lease_ttl.

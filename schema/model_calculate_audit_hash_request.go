@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CalculateAuditHashRequest struct for CalculateAuditHashRequest
 type CalculateAuditHashRequest struct {
 	Input string `json:"input"`

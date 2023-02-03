@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteRoleIDRequest struct for AppRoleWriteRoleIDRequest
 type AppRoleWriteRoleIDRequest struct {
 	// Identifier of the role. Defaults to a UUID.

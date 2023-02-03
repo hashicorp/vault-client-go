@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitSignWithAlgorithmRequest struct for TransitSignWithAlgorithmRequest
 type TransitSignWithAlgorithmRequest struct {
 	// Deprecated: use \"hash_algorithm\" instead.

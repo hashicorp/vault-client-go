@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteConfigAuditingRequestHeaderRequest struct for WriteConfigAuditingRequestHeaderRequest
 type WriteConfigAuditingRequestHeaderRequest struct {
 	Hmac bool `json:"hmac"`

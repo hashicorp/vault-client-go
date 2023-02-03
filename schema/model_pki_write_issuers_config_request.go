@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIWriteIssuersConfigRequest struct for PKIWriteIssuersConfigRequest
 type PKIWriteIssuersConfigRequest struct {
 	// Reference (name or identifier) to the default issuer.

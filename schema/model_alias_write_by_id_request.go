@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliasWriteByIDRequest struct for AliasWriteByIDRequest
 type AliasWriteByIDRequest struct {
 	// Entity ID to which this alias should be tied to

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKMSWriteKeyConfigRequest struct for GoogleCloudKMSWriteKeyConfigRequest
 type GoogleCloudKMSWriteKeyConfigRequest struct {
 	// Maximum allowed crypto key version. If set to a positive value, key versions greater than the given value are not permitted to be used. If set to 0 or a negative value, there is no maximum key version.

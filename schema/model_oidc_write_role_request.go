@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OIDCWriteRoleRequest struct for OIDCWriteRoleRequest
 type OIDCWriteRoleRequest struct {
 	// Optional client_id

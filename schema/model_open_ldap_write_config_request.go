@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OpenLDAPWriteConfigRequest struct for OpenLDAPWriteConfigRequest
 type OpenLDAPWriteConfigRequest struct {
 	// Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).

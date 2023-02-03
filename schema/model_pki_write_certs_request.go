@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIWriteCertsRequest struct for PKIWriteCertsRequest
 type PKIWriteCertsRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.

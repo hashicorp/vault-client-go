@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AzureWriteRoleRequest struct for AzureWriteRoleRequest
 type AzureWriteRoleRequest struct {
 	// Application Object ID to use for static service principal credentials.

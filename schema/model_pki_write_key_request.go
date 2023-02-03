@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIWriteKeyRequest struct for PKIWriteKeyRequest
 type PKIWriteKeyRequest struct {
 	// Human-readable name for this key.

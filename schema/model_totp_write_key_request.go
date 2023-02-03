@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TOTPWriteKeyRequest struct for TOTPWriteKeyRequest
 type TOTPWriteKeyRequest struct {
 	// The name of the account associated with the key. Required if generate is true.

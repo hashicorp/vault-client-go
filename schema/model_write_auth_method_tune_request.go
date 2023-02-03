@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteAuthMethodTuneRequest struct for WriteAuthMethodTuneRequest
 type WriteAuthMethodTuneRequest struct {
 	// A list of headers to whitelist and allow a plugin to set on responses.

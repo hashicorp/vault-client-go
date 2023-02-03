@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OktaWriteGroupRequest struct for OktaWriteGroupRequest
 type OktaWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.

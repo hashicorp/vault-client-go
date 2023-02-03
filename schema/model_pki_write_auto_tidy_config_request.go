@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIWriteAutoTidyConfigRequest struct for PKIWriteAutoTidyConfigRequest
 type PKIWriteAutoTidyConfigRequest struct {
 	// Set to true to enable automatic tidy operations.

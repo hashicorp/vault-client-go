@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteLeasesRevokePrefixRequest struct for WriteLeasesRevokePrefixRequest
 type WriteLeasesRevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously

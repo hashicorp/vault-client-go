@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WritePoliciesACLRequest struct for WritePoliciesACLRequest
 type WritePoliciesACLRequest struct {
 	// The rules of the policy.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GitHubWriteMapUserRequest struct for GitHubWriteMapUserRequest
 type GitHubWriteMapUserRequest struct {
 	// Value for users mapping

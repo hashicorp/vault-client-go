@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadPoliciesResponse struct for AppRoleReadPoliciesResponse
 type AppRoleReadPoliciesResponse struct {
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.

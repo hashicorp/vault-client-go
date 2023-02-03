@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // UnsealRequest struct for UnsealRequest
 type UnsealRequest struct {
 	// Specifies a single unseal key share. This is required unless reset is true.

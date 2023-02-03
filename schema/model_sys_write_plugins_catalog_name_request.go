@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SysWritePluginsCatalogNameRequest struct for SysWritePluginsCatalogNameRequest
 type SysWritePluginsCatalogNameRequest struct {
 	// The args passed to plugin command.

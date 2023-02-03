@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SSHWriteKeysRequest struct for SSHWriteKeysRequest
 type SSHWriteKeysRequest struct {
 	// [Required] SSH private key with super user privileges in host

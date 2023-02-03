@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AWSConfigWriteLeaseRequest struct for AWSConfigWriteLeaseRequest
 type AWSConfigWriteLeaseRequest struct {
 	// Default lease for roles.

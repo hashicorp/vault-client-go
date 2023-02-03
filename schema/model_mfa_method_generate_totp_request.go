@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MFAMethodGenerateTOTPRequest struct for MFAMethodGenerateTOTPRequest
 type MFAMethodGenerateTOTPRequest struct {
 	// The unique identifier for this MFA method.

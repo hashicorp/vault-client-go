@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenWriteLookupSelfRequest struct for TokenWriteLookupSelfRequest
 type TokenWriteLookupSelfRequest struct {
 	// Token to look up (unused, does not need to be set)

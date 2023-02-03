@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KVv2WriteRequest struct for KVv2WriteRequest
 type KVv2WriteRequest struct {
 	// The contents of the data map will be stored and returned on read.

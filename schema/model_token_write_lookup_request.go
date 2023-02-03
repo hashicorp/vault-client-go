@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TokenWriteLookupRequest struct for TokenWriteLookupRequest
 type TokenWriteLookupRequest struct {
 	// Token to lookup (POST request body)

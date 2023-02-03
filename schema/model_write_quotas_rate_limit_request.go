@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteQuotasRateLimitRequest struct for WriteQuotasRateLimitRequest
 type WriteQuotasRateLimitRequest struct {
 	// If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the 'block_interval' has elapsed.

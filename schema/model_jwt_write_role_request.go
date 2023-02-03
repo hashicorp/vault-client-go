@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JWTWriteRoleRequest struct for JWTWriteRoleRequest
 type JWTWriteRoleRequest struct {
 	// Comma-separated list of allowed values for redirect_uri

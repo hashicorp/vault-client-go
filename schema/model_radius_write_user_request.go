@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RadiusWriteUserRequest struct for RadiusWriteUserRequest
 type RadiusWriteUserRequest struct {
 	// Comma-separated list of policies associated to the user.

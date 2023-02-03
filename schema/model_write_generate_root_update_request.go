@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteGenerateRootUpdateRequest struct for WriteGenerateRootUpdateRequest
 type WriteGenerateRootUpdateRequest struct {
 	// Specifies a single unseal key share.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteRawPathRequest struct for WriteRawPathRequest
 type WriteRawPathRequest struct {
 	Compressed bool `json:"compressed"`

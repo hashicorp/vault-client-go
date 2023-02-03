@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KerberosWriteGroupRequest struct for KerberosWriteGroupRequest
 type KerberosWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.

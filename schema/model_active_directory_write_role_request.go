@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // ActiveDirectoryWriteRoleRequest struct for ActiveDirectoryWriteRoleRequest
 type ActiveDirectoryWriteRoleRequest struct {
 	// The username/logon name for the service account with which this role will be associated.

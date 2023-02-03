@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KubernetesWriteAuthConfigRequest struct for KubernetesWriteAuthConfigRequest
 type KubernetesWriteAuthConfigRequest struct {
 	// Disable JWT issuer validation (Deprecated, will be removed in a future release)

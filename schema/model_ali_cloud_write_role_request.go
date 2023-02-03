@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliCloudWriteRoleRequest struct for AliCloudWriteRoleRequest
 type AliCloudWriteRoleRequest struct {
 	// JSON of policies to be dynamically applied to users of this role.

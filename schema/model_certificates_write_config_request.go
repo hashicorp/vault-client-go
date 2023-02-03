@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CertificatesWriteConfigRequest struct for CertificatesWriteConfigRequest
 type CertificatesWriteConfigRequest struct {
 	// If set, during renewal, skips the matching of presented client identity with the client identity used during login. Defaults to false.

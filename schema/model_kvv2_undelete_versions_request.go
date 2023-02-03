@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KVv2UndeleteVersionsRequest struct for KVv2UndeleteVersionsRequest
 type KVv2UndeleteVersionsRequest struct {
 	// The versions to unarchive. The versions will be restored and their data will be returned on normal get requests.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteBindSecretIDRequest struct for AppRoleWriteBindSecretIDRequest
 type AppRoleWriteBindSecretIDRequest struct {
 	// Impose secret_id to be presented when logging in using this role.

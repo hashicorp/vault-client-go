@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AWSConfigWriteIdentityRequest struct for AWSConfigWriteIdentityRequest
 type AWSConfigWriteIdentityRequest struct {
 	// Configure how the AWS auth method generates entity alias when using EC2 auth. Valid values are \"role_id\", \"instance_id\", and \"image_id\". Defaults to \"role_id\".

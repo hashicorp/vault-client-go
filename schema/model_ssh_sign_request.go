@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SSHSignRequest struct for SSHSignRequest
 type SSHSignRequest struct {
 	// Type of certificate to be created; either \"user\" or \"host\".

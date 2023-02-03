@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KubernetesLoginRequest struct for KubernetesLoginRequest
 type KubernetesLoginRequest struct {
 	// A signed JWT for authenticating a service account. This field is required.

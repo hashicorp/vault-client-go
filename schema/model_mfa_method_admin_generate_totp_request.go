@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MFAMethodAdminGenerateTOTPRequest struct for MFAMethodAdminGenerateTOTPRequest
 type MFAMethodAdminGenerateTOTPRequest struct {
 	// Entity ID on which the generated secret needs to get stored.

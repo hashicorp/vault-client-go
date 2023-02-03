@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // ActiveDirectoryCheckInManageLibraryRequest struct for ActiveDirectoryCheckInManageLibraryRequest
 type ActiveDirectoryCheckInManageLibraryRequest struct {
 	// The username/logon name for the service accounts to check in.

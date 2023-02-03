@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // NomadWriteRoleRequest struct for NomadWriteRoleRequest
 type NomadWriteRoleRequest struct {
 	// Boolean value describing if the token should be global or not. Defaults to false.

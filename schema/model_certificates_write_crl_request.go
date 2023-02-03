@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CertificatesWriteCRLRequest struct for CertificatesWriteCRLRequest
 type CertificatesWriteCRLRequest struct {
 	// The public CRL that should be trusted to attest to certificates' validity statuses. May be DER or PEM encoded. Note: the expiration time is ignored; if the CRL is no longer valid, delete it using the same name as specified here.

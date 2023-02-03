@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudWriteConfigRequest struct for GoogleCloudWriteConfigRequest
 type GoogleCloudWriteConfigRequest struct {
 	// GCP IAM service account credentials JSON with permissions to create new service accounts and set IAM policies

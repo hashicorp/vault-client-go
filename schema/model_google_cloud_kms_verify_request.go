@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudKMSVerifyRequest struct for GoogleCloudKMSVerifyRequest
 type GoogleCloudKMSVerifyRequest struct {
 	// Digest to verify. This digest must use the same SHA algorithm as the underlying Cloud KMS key. The digest must be the base64-encoded binary value. This field is required.

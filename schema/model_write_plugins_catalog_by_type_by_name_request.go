@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WritePluginsCatalogByTypeByNameRequest struct for WritePluginsCatalogByTypeByNameRequest
 type WritePluginsCatalogByTypeByNameRequest struct {
 	// The args passed to plugin command.

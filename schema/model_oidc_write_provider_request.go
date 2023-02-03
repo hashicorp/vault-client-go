@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OIDCWriteProviderRequest struct for OIDCWriteProviderRequest
 type OIDCWriteProviderRequest struct {
 	// The client IDs that are permitted to use the provider

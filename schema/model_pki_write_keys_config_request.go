@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIWriteKeysConfigRequest struct for PKIWriteKeysConfigRequest
 type PKIWriteKeysConfigRequest struct {
 	// Reference (name or identifier) of the default key.

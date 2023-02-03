@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // ConsulWriteRoleRequest struct for ConsulWriteRoleRequest
 type ConsulWriteRoleRequest struct {
 	// Indicates which namespace that the token will be created within. Defaults to 'default'. Available in Consul 1.7 and above.

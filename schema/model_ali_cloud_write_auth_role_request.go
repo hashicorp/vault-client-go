@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliCloudWriteAuthRoleRequest struct for AliCloudWriteAuthRoleRequest
 type AliCloudWriteAuthRoleRequest struct {
 	// ARN of the RAM to bind to this role.

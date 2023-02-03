@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadSecretIDTTLResponse struct for AppRoleReadSecretIDTTLResponse
 type AppRoleReadSecretIDTTLResponse struct {
 	// Duration in seconds after which the issued secret ID should expire. Defaults to 0, meaning no expiration.

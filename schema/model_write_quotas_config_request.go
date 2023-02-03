@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteQuotasConfigRequest struct for WriteQuotasConfigRequest
 type WriteQuotasConfigRequest struct {
 	// If set, starts audit logging of requests that get rejected due to rate limit quota rule violations.

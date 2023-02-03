@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MFAMethodWriteDuoRequest struct for MFAMethodWriteDuoRequest
 type MFAMethodWriteDuoRequest struct {
 	// API host name for Duo.

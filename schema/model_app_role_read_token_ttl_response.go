@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadTokenTTLResponse struct for AppRoleReadTokenTTLResponse
 type AppRoleReadTokenTTLResponse struct {
 	// The initial ttl of the token to generate

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PKIReplaceRootRequest struct for PKIReplaceRootRequest
 type PKIReplaceRootRequest struct {
 	// Reference (name or identifier) to the default issuer.

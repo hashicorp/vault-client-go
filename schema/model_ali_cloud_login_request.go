@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AliCloudLoginRequest struct for AliCloudLoginRequest
 type AliCloudLoginRequest struct {
 	// The request headers. This must include the headers over which AliCloud has included a signature.

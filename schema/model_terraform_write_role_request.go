@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TerraformWriteRoleRequest struct for TerraformWriteRoleRequest
 type TerraformWriteRoleRequest struct {
 	// Maximum time for role. If not set or set to 0, will use system default.

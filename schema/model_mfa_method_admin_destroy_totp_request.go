@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MFAMethodAdminDestroyTOTPRequest struct for MFAMethodAdminDestroyTOTPRequest
 type MFAMethodAdminDestroyTOTPRequest struct {
 	// Identifier of the entity from which the MFA method secret needs to be removed.

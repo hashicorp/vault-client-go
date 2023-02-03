@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GroupWriteAliasByIDRequest struct for GroupWriteAliasByIDRequest
 type GroupWriteAliasByIDRequest struct {
 	// ID of the group to which this is an alias.

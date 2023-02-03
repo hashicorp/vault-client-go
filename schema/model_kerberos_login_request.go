@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // KerberosLoginRequest struct for KerberosLoginRequest
 type KerberosLoginRequest struct {
 	// SPNEGO Authorization header. Required.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OCILoginWithRoleRequest struct for OCILoginWithRoleRequest
 type OCILoginWithRoleRequest struct {
 	// The signed headers of the client

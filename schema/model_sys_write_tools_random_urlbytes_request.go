@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SysWriteToolsRandomUrlbytesRequest struct for SysWriteToolsRandomUrlbytesRequest
 type SysWriteToolsRandomUrlbytesRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).

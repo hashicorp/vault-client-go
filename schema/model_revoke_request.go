@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RevokeRequest struct for RevokeRequest
 type RevokeRequest struct {
 	// The lease identifier to renew. This is included with a lease.

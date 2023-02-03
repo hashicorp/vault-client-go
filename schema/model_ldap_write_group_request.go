@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LDAPWriteGroupRequest struct for LDAPWriteGroupRequest
 type LDAPWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.

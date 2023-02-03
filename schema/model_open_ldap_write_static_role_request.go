@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OpenLDAPWriteStaticRoleRequest struct for OpenLDAPWriteStaticRoleRequest
 type OpenLDAPWriteStaticRoleRequest struct {
 	// The distinguished name of the entry to manage.

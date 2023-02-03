@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteTokenTTLRequest struct for AppRoleWriteTokenTTLRequest
 type AppRoleWriteTokenTTLRequest struct {
 	// The initial ttl of the token to generate

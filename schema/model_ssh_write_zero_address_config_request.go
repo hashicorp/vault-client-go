@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SSHWriteZeroAddressConfigRequest struct for SSHWriteZeroAddressConfigRequest
 type SSHWriteZeroAddressConfigRequest struct {
 	// [Required] Comma separated list of role names which allows credentials to be requested for any IP address. CIDR blocks previously registered under these roles will be ignored.

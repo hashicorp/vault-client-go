@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OCIWriteConfigRequest struct for OCIWriteConfigRequest
 type OCIWriteConfigRequest struct {
 	// The tenancy id of the account.

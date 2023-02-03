@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // CertificatesWriteRequest struct for CertificatesWriteRequest
 type CertificatesWriteRequest struct {
 	// A comma-separated list of names. At least one must exist in the Common Name. Supports globbing.

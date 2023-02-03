@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // LDAPWriteUserRequest struct for LDAPWriteUserRequest
 type LDAPWriteUserRequest struct {
 	// Comma-separated list of additional groups associated with the user.

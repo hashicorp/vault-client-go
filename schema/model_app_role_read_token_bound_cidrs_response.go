@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleReadTokenBoundCIDRsResponse struct for AppRoleReadTokenBoundCIDRsResponse
 type AppRoleReadTokenBoundCIDRsResponse struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.

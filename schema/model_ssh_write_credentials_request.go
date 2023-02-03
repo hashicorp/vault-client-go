@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SSHWriteCredentialsRequest struct for SSHWriteCredentialsRequest
 type SSHWriteCredentialsRequest struct {
 	// [Required] IP of the remote host

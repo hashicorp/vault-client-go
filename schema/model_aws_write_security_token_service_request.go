@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AWSWriteSecurityTokenServiceRequest struct for AWSWriteSecurityTokenServiceRequest
 type AWSWriteSecurityTokenServiceRequest struct {
 	// ARN of role to assume when credential_type is assumed_role

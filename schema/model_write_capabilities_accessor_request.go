@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteCapabilitiesAccessorRequest struct for WriteCapabilitiesAccessorRequest
 type WriteCapabilitiesAccessorRequest struct {
 	// Accessor of the token for which capabilities are being queried.

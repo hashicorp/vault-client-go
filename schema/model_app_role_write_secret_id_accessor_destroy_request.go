@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteSecretIDAccessorDestroyRequest struct for AppRoleWriteSecretIDAccessorDestroyRequest
 type AppRoleWriteSecretIDAccessorDestroyRequest struct {
 	// Accessor of the SecretID

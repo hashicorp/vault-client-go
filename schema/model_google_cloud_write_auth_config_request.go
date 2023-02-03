@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GoogleCloudWriteAuthConfigRequest struct for GoogleCloudWriteAuthConfigRequest
 type GoogleCloudWriteAuthConfigRequest struct {
 	// Google credentials JSON that Vault will use to verify users against GCP APIs. If not specified, will use application default credentials

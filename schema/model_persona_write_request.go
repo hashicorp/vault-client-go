@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // PersonaWriteRequest struct for PersonaWriteRequest
 type PersonaWriteRequest struct {
 	// Entity ID to which this persona belongs to

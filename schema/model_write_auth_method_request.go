@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // WriteAuthMethodRequest struct for WriteAuthMethodRequest
 type WriteAuthMethodRequest struct {
 	// Configuration for this mount, such as plugin_name.

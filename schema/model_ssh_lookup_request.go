@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // SSHLookupRequest struct for SSHLookupRequest
 type SSHLookupRequest struct {
 	// [Required] IP address of remote host

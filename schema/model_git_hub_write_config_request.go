@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // GitHubWriteConfigRequest struct for GitHubWriteConfigRequest
 type GitHubWriteConfigRequest struct {
 	// The API endpoint to use. Useful if you are running GitHub Enterprise or an API-compatible authentication server.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // RenewForRequest struct for RenewForRequest
 type RenewForRequest struct {
 	// The desired increment in seconds to the lease

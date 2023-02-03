@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AWSConfigWriteRootIAMCredentialsRequest struct for AWSConfigWriteRootIAMCredentialsRequest
 type AWSConfigWriteRootIAMCredentialsRequest struct {
 	// Access key with permission to create new keys.

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // AppRoleWriteSecretIDDestroyRequest struct for AppRoleWriteSecretIDDestroyRequest
 type AppRoleWriteSecretIDDestroyRequest struct {
 	// SecretID attached to the role.

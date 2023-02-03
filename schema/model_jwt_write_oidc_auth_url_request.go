@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // JWTWriteOIDCAuthURLRequest struct for JWTWriteOIDCAuthURLRequest
 type JWTWriteOIDCAuthURLRequest struct {
 	// Optional client-provided nonce that must match during callback, if present.

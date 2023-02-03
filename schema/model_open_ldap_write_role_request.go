@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // OpenLDAPWriteRoleRequest struct for OpenLDAPWriteRoleRequest
 type OpenLDAPWriteRoleRequest struct {
 	// LDIF string used to create new entities within the LDAP system. This LDIF can be templated.

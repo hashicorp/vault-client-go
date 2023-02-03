@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // TransitRewrapRequest struct for TransitRewrapRequest
 type TransitRewrapRequest struct {
 	// Ciphertext value to rewrap

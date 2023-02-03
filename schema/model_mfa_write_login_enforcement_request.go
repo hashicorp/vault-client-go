@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"encoding/json"
-)
-
 // MFAWriteLoginEnforcementRequest struct for MFAWriteLoginEnforcementRequest
 type MFAWriteLoginEnforcementRequest struct {
 	// Array of auth mount accessor IDs

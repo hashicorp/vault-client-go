@@ -17,7 +17,7 @@ const ClientVersion = "{{packageVersion}}"
 
 // Client manages communication with Vault, initialize it with vault.New(...)
 type Client struct {
-	// configuration object is immutable after the client has been initialized
+	// the configuration object is immutable after the client has been initialized
 	configuration ClientConfiguration
 
 	parsedBaseAddress *url.URL
@@ -32,14 +32,9 @@ type Client struct {
 	// replication state cache used to ensure read-after-write semantics
 	replicationStates replicationStateCache
 
-	// API wrappers
-{{#apiInfo}}
-{{#apis}}
-{{#operations}}
-	{{classname}} {{classname}}
-{{/operations}}
-{{/apis}}
-{{/apiInfo}}
+	// generated request methods
+{{#with apiInfo}}{{#each apis}}{{#with operations}}	{{classname}} {{classname}}
+{{/with}}{{/each}}{{/with}}
 }
 
 // New returns a new client decorated with the given configuration options
@@ -92,8 +87,7 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 	}
 	c.parsedBaseAddress = address
 
-	// Internet draft https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02
-	// specifies that the port must be empty
+	// Internet draft https://datatracker.ietf.org/doc/html/draft-andrews-http-srv-02 specifies that the port must be empty.
 	if configuration.EnableSRVLookup && address.Port() != "" {
 		return nil, fmt.Errorf("cannot enable DNS service record (SRV) lookup since the base address port (%q) is not empty", address.Port())
 	}
@@ -103,11 +97,10 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 		return nil, fmt.Errorf("the configured base client's transport (%T) is not of type *http.Transport", c.client.Transport)
 	}
 
-	// Adjust the dial contex for unix domain socket addresses
+	// Adjust the dial context for unix domain socket addresses.
 	if strings.HasPrefix(configuration.BaseAddress, "unix://") {
 		transport.DialContext = func(context.Context, string, string) (net.Conn, error) {
-			socket := strings.TrimPrefix(configuration.BaseAddress, "unix://")
-			return net.Dial("unix", socket)
+			return net.Dial("unix", strings.TrimPrefix(configuration.BaseAddress, "unix://"))
 		}
 	}
 
@@ -115,15 +108,12 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 		return nil, err
 	}
 
-{{#apiInfo}}
-{{#apis}}
-{{#operations}}
+{{#with apiInfo}}
+{{#each apis}}
+{{#with operations}}
 	c.{{classname}} = {{classname}}{
 		client: &c,
-	}
-{{/operations}}
-{{/apis}}
-{{/apiInfo}}
+	}{{/with}}{{/each}}{{/with}}
 
 	return &c, nil
 }
@@ -165,15 +155,12 @@ func (c *Client) Clone() *Client {
 
 	clone.clientRequestModifiers = c.cloneClientRequestModifiers()
 
-{{#apiInfo}}
-{{#apis}}
-{{#operations}}
+{{#with apiInfo}}
+{{#each apis}}
+{{#with operations}}
 	clone.{{classname}} = {{classname}} {
 		client: &clone,
-	}
-{{/operations}}
-{{/apis}}
-{{/apiInfo}}
+	}{{/with}}{{/each}}{{/with}}
 
 	return &clone
 }

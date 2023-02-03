@@ -1,9 +1,12 @@
 # TransitWriteKeyConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowPlaintextBackup** | Pointer to **bool** | Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled. | [optional] 
 **AutoRotatePeriod** | Pointer to **int32** | Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key. | [optional] 
 **DeletionAllowed** | Pointer to **bool** | Whether to allow deletion of the key | [optional] 
@@ -11,7 +14,10 @@ Name | Type | Description | Notes
 **MinDecryptionVersion** | Pointer to **int32** | If set, the minimum version of the key allowed to be decrypted. For signing keys, the minimum version allowed to be used for verification. | [optional] 
 **MinEncryptionVersion** | Pointer to **int32** | If set, the minimum version of the key allowed to be used for encryption; or for signing keys, to be used for signing. If set to zero, only the latest version of the key is allowed. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewTransitWriteKeyConfigRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewTransitWriteKeyConfigRequestWithDefaults instantiates a new TransitWriteKeyConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowPlaintextBackup
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetAllowPlaintextBackup sets AllowPlaintextBackup field to given value.
 
+
 ### HasAllowPlaintextBackup
 
 `func (o *TransitWriteKeyConfigRequest) HasAllowPlaintextBackup() bool`
 
 HasAllowPlaintextBackup returns a boolean if a field has been set.
+
+
+
 
 ### GetAutoRotatePeriod
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetAutoRotatePeriod sets AutoRotatePeriod field to given value.
 
+
 ### HasAutoRotatePeriod
 
 `func (o *TransitWriteKeyConfigRequest) HasAutoRotatePeriod() bool`
 
 HasAutoRotatePeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetDeletionAllowed
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetDeletionAllowed sets DeletionAllowed field to given value.
 
+
 ### HasDeletionAllowed
 
 `func (o *TransitWriteKeyConfigRequest) HasDeletionAllowed() bool`
 
 HasDeletionAllowed returns a boolean if a field has been set.
+
+
+
 
 ### GetExportable
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetExportable sets Exportable field to given value.
 
+
 ### HasExportable
 
 `func (o *TransitWriteKeyConfigRequest) HasExportable() bool`
 
 HasExportable returns a boolean if a field has been set.
+
+
+
 
 ### GetMinDecryptionVersion
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetMinDecryptionVersion sets MinDecryptionVersion field to given value.
 
+
 ### HasMinDecryptionVersion
 
 `func (o *TransitWriteKeyConfigRequest) HasMinDecryptionVersion() bool`
 
 HasMinDecryptionVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetMinEncryptionVersion
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetMinEncryptionVersion sets MinEncryptionVersion field to given value.
 
+
 ### HasMinEncryptionVersion
 
 `func (o *TransitWriteKeyConfigRequest) HasMinEncryptionVersion() bool`
 
 HasMinEncryptionVersion returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

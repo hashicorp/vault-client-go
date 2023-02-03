@@ -1,9 +1,12 @@
 # PKIWriteCRLConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AutoRebuild** | Pointer to **bool** | If set to true, enables automatic rebuilding of the CRL | [optional] 
 **AutoRebuildGracePeriod** | Pointer to **string** | The time before the CRL expires to automatically rebuild it, when enabled. Must be shorter than the CRL expiry. Defaults to 12h. | [optional] [default to "12h"]
 **DeltaRebuildInterval** | Pointer to **string** | The time between delta CRL rebuilds if a new revocation has occurred. Must be shorter than the CRL expiry. Defaults to 15m. | [optional] [default to "15m"]
@@ -13,7 +16,10 @@ Name | Type | Description | Notes
 **OcspDisable** | Pointer to **bool** | If set to true, ocsp unauthorized responses will be returned. | [optional] 
 **OcspExpiry** | Pointer to **string** | The amount of time an OCSP response will be valid (controls the NextUpdate field); defaults to 12 hours | [optional] [default to "1h"]
 
+
+
 ## Methods
+
 
 ### NewPKIWriteCRLConfigRequest
 
@@ -31,6 +37,7 @@ will change when the set of required properties is changed
 NewPKIWriteCRLConfigRequestWithDefaults instantiates a new PKIWriteCRLConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAutoRebuild
 
@@ -51,11 +58,15 @@ and a boolean to check if the value has been set.
 
 SetAutoRebuild sets AutoRebuild field to given value.
 
+
 ### HasAutoRebuild
 
 `func (o *PKIWriteCRLConfigRequest) HasAutoRebuild() bool`
 
 HasAutoRebuild returns a boolean if a field has been set.
+
+
+
 
 ### GetAutoRebuildGracePeriod
 
@@ -76,11 +87,15 @@ and a boolean to check if the value has been set.
 
 SetAutoRebuildGracePeriod sets AutoRebuildGracePeriod field to given value.
 
+
 ### HasAutoRebuildGracePeriod
 
 `func (o *PKIWriteCRLConfigRequest) HasAutoRebuildGracePeriod() bool`
 
 HasAutoRebuildGracePeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetDeltaRebuildInterval
 
@@ -101,11 +116,15 @@ and a boolean to check if the value has been set.
 
 SetDeltaRebuildInterval sets DeltaRebuildInterval field to given value.
 
+
 ### HasDeltaRebuildInterval
 
 `func (o *PKIWriteCRLConfigRequest) HasDeltaRebuildInterval() bool`
 
 HasDeltaRebuildInterval returns a boolean if a field has been set.
+
+
+
 
 ### GetDisable
 
@@ -126,11 +145,15 @@ and a boolean to check if the value has been set.
 
 SetDisable sets Disable field to given value.
 
+
 ### HasDisable
 
 `func (o *PKIWriteCRLConfigRequest) HasDisable() bool`
 
 HasDisable returns a boolean if a field has been set.
+
+
+
 
 ### GetEnableDelta
 
@@ -151,11 +174,15 @@ and a boolean to check if the value has been set.
 
 SetEnableDelta sets EnableDelta field to given value.
 
+
 ### HasEnableDelta
 
 `func (o *PKIWriteCRLConfigRequest) HasEnableDelta() bool`
 
 HasEnableDelta returns a boolean if a field has been set.
+
+
+
 
 ### GetExpiry
 
@@ -176,11 +203,15 @@ and a boolean to check if the value has been set.
 
 SetExpiry sets Expiry field to given value.
 
+
 ### HasExpiry
 
 `func (o *PKIWriteCRLConfigRequest) HasExpiry() bool`
 
 HasExpiry returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspDisable
 
@@ -201,11 +232,15 @@ and a boolean to check if the value has been set.
 
 SetOcspDisable sets OcspDisable field to given value.
 
+
 ### HasOcspDisable
 
 `func (o *PKIWriteCRLConfigRequest) HasOcspDisable() bool`
 
 HasOcspDisable returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspExpiry
 
@@ -226,11 +261,19 @@ and a boolean to check if the value has been set.
 
 SetOcspExpiry sets OcspExpiry field to given value.
 
+
 ### HasOcspExpiry
 
 `func (o *PKIWriteCRLConfigRequest) HasOcspExpiry() bool`
 
 HasOcspExpiry returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

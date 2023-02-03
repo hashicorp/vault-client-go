@@ -1,22 +1,28 @@
 # TransitVerifyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Algorithm** | Pointer to **string** | Deprecated: use \&quot;hash_algorithm\&quot; instead. | [optional] [default to "sha2-256"]
 **Context** | Pointer to **string** | Base64 encoded context for key derivation. Required if key derivation is enabled; currently only available with ed25519 keys. | [optional] 
 **HashAlgorithm** | Pointer to **string** | Hash algorithm to use (POST body parameter). Valid values are: * sha1 * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 * none Defaults to \&quot;sha2-256\&quot;. Not valid for all key types. See note about none on signing path. | [optional] [default to "sha2-256"]
 **Hmac** | Pointer to **string** | The HMAC, including vault header/key version | [optional] 
 **Input** | Pointer to **string** | The base64-encoded input data to verify | [optional] 
-**MarshalingAlgorithm** | Pointer to **string** | The method by which to unmarshal the signature when verifying. The default is &#39;asn1&#39; which is used by openssl and X.509; can also be set to &#39;jws&#39; which is used for JWT signatures in which case the signature is also expected to be url-safe base64 encoding instead of standard base64 encoding. Currently only valid for ECDSA P-256 key types\&quot;. | [optional] [default to "asn1"]
-**Prehashed** | Pointer to **bool** | Set to &#39;true&#39; when the input is already hashed. If the key type is &#39;rsa-2048&#39;, &#39;rsa-3072&#39; or &#39;rsa-4096&#39;, then the algorithm used to hash the input should be indicated by the &#39;algorithm&#39; parameter. | [optional] 
-**SaltLength** | Pointer to **string** | The salt length used to sign. Currently only applies to the RSA PSS signature scheme. Options are &#39;auto&#39; (the default used by Golang, causing the salt to be as large as possible when signing), &#39;hash&#39; (causes the salt length to equal the length of the hash used in the signature), or an integer between the minimum and the maximum permissible salt lengths for the given RSA key size. Defaults to &#39;auto&#39;. | [optional] [default to "auto"]
+**MarshalingAlgorithm** | Pointer to **string** | The method by which to unmarshal the signature when verifying. The default is &#x27;asn1&#x27; which is used by openssl and X.509; can also be set to &#x27;jws&#x27; which is used for JWT signatures in which case the signature is also expected to be url-safe base64 encoding instead of standard base64 encoding. Currently only valid for ECDSA P-256 key types\&quot;. | [optional] [default to "asn1"]
+**Prehashed** | Pointer to **bool** | Set to &#x27;true&#x27; when the input is already hashed. If the key type is &#x27;rsa-2048&#x27;, &#x27;rsa-3072&#x27; or &#x27;rsa-4096&#x27;, then the algorithm used to hash the input should be indicated by the &#x27;algorithm&#x27; parameter. | [optional] 
+**SaltLength** | Pointer to **string** | The salt length used to sign. Currently only applies to the RSA PSS signature scheme. Options are &#x27;auto&#x27; (the default used by Golang, causing the salt to be as large as possible when signing), &#x27;hash&#x27; (causes the salt length to equal the length of the hash used in the signature), or an integer between the minimum and the maximum permissible salt lengths for the given RSA key size. Defaults to &#x27;auto&#x27;. | [optional] [default to "auto"]
 **Signature** | Pointer to **string** | The signature, including vault header/key version | [optional] 
-**SignatureAlgorithm** | Pointer to **string** | The signature algorithm to use for signature verification. Currently only applies to RSA key types. Options are &#39;pss&#39; or &#39;pkcs1v15&#39;. Defaults to &#39;pss&#39; | [optional] 
+**SignatureAlgorithm** | Pointer to **string** | The signature algorithm to use for signature verification. Currently only applies to RSA key types. Options are &#x27;pss&#x27; or &#x27;pkcs1v15&#x27;. Defaults to &#x27;pss&#x27; | [optional] 
 **Urlalgorithm** | Pointer to **string** | Hash algorithm to use (POST URL parameter) | [optional] 
 
+
+
 ## Methods
+
 
 ### NewTransitVerifyRequest
 
@@ -34,6 +40,7 @@ will change when the set of required properties is changed
 NewTransitVerifyRequestWithDefaults instantiates a new TransitVerifyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAlgorithm
 
@@ -54,11 +61,15 @@ and a boolean to check if the value has been set.
 
 SetAlgorithm sets Algorithm field to given value.
 
+
 ### HasAlgorithm
 
 `func (o *TransitVerifyRequest) HasAlgorithm() bool`
 
 HasAlgorithm returns a boolean if a field has been set.
+
+
+
 
 ### GetContext
 
@@ -79,11 +90,15 @@ and a boolean to check if the value has been set.
 
 SetContext sets Context field to given value.
 
+
 ### HasContext
 
 `func (o *TransitVerifyRequest) HasContext() bool`
 
 HasContext returns a boolean if a field has been set.
+
+
+
 
 ### GetHashAlgorithm
 
@@ -104,11 +119,15 @@ and a boolean to check if the value has been set.
 
 SetHashAlgorithm sets HashAlgorithm field to given value.
 
+
 ### HasHashAlgorithm
 
 `func (o *TransitVerifyRequest) HasHashAlgorithm() bool`
 
 HasHashAlgorithm returns a boolean if a field has been set.
+
+
+
 
 ### GetHmac
 
@@ -129,11 +148,15 @@ and a boolean to check if the value has been set.
 
 SetHmac sets Hmac field to given value.
 
+
 ### HasHmac
 
 `func (o *TransitVerifyRequest) HasHmac() bool`
 
 HasHmac returns a boolean if a field has been set.
+
+
+
 
 ### GetInput
 
@@ -154,11 +177,15 @@ and a boolean to check if the value has been set.
 
 SetInput sets Input field to given value.
 
+
 ### HasInput
 
 `func (o *TransitVerifyRequest) HasInput() bool`
 
 HasInput returns a boolean if a field has been set.
+
+
+
 
 ### GetMarshalingAlgorithm
 
@@ -179,11 +206,15 @@ and a boolean to check if the value has been set.
 
 SetMarshalingAlgorithm sets MarshalingAlgorithm field to given value.
 
+
 ### HasMarshalingAlgorithm
 
 `func (o *TransitVerifyRequest) HasMarshalingAlgorithm() bool`
 
 HasMarshalingAlgorithm returns a boolean if a field has been set.
+
+
+
 
 ### GetPrehashed
 
@@ -204,11 +235,15 @@ and a boolean to check if the value has been set.
 
 SetPrehashed sets Prehashed field to given value.
 
+
 ### HasPrehashed
 
 `func (o *TransitVerifyRequest) HasPrehashed() bool`
 
 HasPrehashed returns a boolean if a field has been set.
+
+
+
 
 ### GetSaltLength
 
@@ -229,11 +264,15 @@ and a boolean to check if the value has been set.
 
 SetSaltLength sets SaltLength field to given value.
 
+
 ### HasSaltLength
 
 `func (o *TransitVerifyRequest) HasSaltLength() bool`
 
 HasSaltLength returns a boolean if a field has been set.
+
+
+
 
 ### GetSignature
 
@@ -254,11 +293,15 @@ and a boolean to check if the value has been set.
 
 SetSignature sets Signature field to given value.
 
+
 ### HasSignature
 
 `func (o *TransitVerifyRequest) HasSignature() bool`
 
 HasSignature returns a boolean if a field has been set.
+
+
+
 
 ### GetSignatureAlgorithm
 
@@ -279,11 +322,15 @@ and a boolean to check if the value has been set.
 
 SetSignatureAlgorithm sets SignatureAlgorithm field to given value.
 
+
 ### HasSignatureAlgorithm
 
 `func (o *TransitVerifyRequest) HasSignatureAlgorithm() bool`
 
 HasSignatureAlgorithm returns a boolean if a field has been set.
+
+
+
 
 ### GetUrlalgorithm
 
@@ -304,11 +351,19 @@ and a boolean to check if the value has been set.
 
 SetUrlalgorithm sets Urlalgorithm field to given value.
 
+
 ### HasUrlalgorithm
 
 `func (o *TransitVerifyRequest) HasUrlalgorithm() bool`
 
 HasUrlalgorithm returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

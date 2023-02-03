@@ -1,16 +1,22 @@
 # MFAWriteLoginEnforcementRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AuthMethodAccessors** | Pointer to **[]string** | Array of auth mount accessor IDs | [optional] 
 **AuthMethodTypes** | Pointer to **[]string** | Array of auth mount types | [optional] 
 **IdentityEntityIds** | Pointer to **[]string** | Array of identity entity IDs | [optional] 
 **IdentityGroupIds** | Pointer to **[]string** | Array of identity group IDs | [optional] 
 **MfaMethodIds** | **[]string** | Array of Method IDs that determine what methods will be enforced | 
 
+
+
 ## Methods
+
 
 ### NewMFAWriteLoginEnforcementRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewMFAWriteLoginEnforcementRequestWithDefaults instantiates a new MFAWriteLoginEnforcementRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAuthMethodAccessors
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetAuthMethodAccessors sets AuthMethodAccessors field to given value.
 
+
 ### HasAuthMethodAccessors
 
 `func (o *MFAWriteLoginEnforcementRequest) HasAuthMethodAccessors() bool`
 
 HasAuthMethodAccessors returns a boolean if a field has been set.
+
+
+
 
 ### GetAuthMethodTypes
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetAuthMethodTypes sets AuthMethodTypes field to given value.
 
+
 ### HasAuthMethodTypes
 
 `func (o *MFAWriteLoginEnforcementRequest) HasAuthMethodTypes() bool`
 
 HasAuthMethodTypes returns a boolean if a field has been set.
+
+
+
 
 ### GetIdentityEntityIds
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetIdentityEntityIds sets IdentityEntityIds field to given value.
 
+
 ### HasIdentityEntityIds
 
 `func (o *MFAWriteLoginEnforcementRequest) HasIdentityEntityIds() bool`
 
 HasIdentityEntityIds returns a boolean if a field has been set.
+
+
+
 
 ### GetIdentityGroupIds
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetIdentityGroupIds sets IdentityGroupIds field to given value.
 
+
 ### HasIdentityGroupIds
 
 `func (o *MFAWriteLoginEnforcementRequest) HasIdentityGroupIds() bool`
 
 HasIdentityGroupIds returns a boolean if a field has been set.
+
+
+
 
 ### GetMfaMethodIds
 
@@ -147,6 +170,13 @@ and a boolean to check if the value has been set.
 `func (o *MFAWriteLoginEnforcementRequest) SetMfaMethodIds(v []string)`
 
 SetMfaMethodIds sets MfaMethodIds field to given value.
+
+
+
+
+
+
+
 
 
 

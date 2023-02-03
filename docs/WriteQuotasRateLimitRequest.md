@@ -1,17 +1,23 @@
 # WriteQuotasRateLimitRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BlockInterval** | Pointer to **int32** | If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the &#39;block_interval&#39; has elapsed. | [optional] 
-**Interval** | Pointer to **int32** | The duration to enforce rate limiting for (default &#39;1s&#39;). | [optional] 
+
+
+**BlockInterval** | Pointer to **int32** | If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the &#x27;block_interval&#x27; has elapsed. | [optional] 
+**Interval** | Pointer to **int32** | The duration to enforce rate limiting for (default &#x27;1s&#x27;). | [optional] 
 **Path** | Pointer to **string** | Path of the mount or namespace to apply the quota. A blank path configures a global quota. For example namespace1/ adds a quota to a full namespace, namespace1/auth/userpass adds a quota to userpass in namespace1. | [optional] 
-**Rate** | Pointer to **float32** | The maximum number of requests in a given interval to be allowed by the quota rule. The &#39;rate&#39; must be positive. | [optional] 
+**Rate** | Pointer to **float32** | The maximum number of requests in a given interval to be allowed by the quota rule. The &#x27;rate&#x27; must be positive. | [optional] 
 **Role** | Pointer to **string** | Login role to apply this quota to. Note that when set, path must be configured to a valid auth method with a concept of roles. | [optional] 
 **Type** | Pointer to **string** | Type of the quota rule. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteQuotasRateLimitRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewWriteQuotasRateLimitRequestWithDefaults instantiates a new WriteQuotasRateLimitRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBlockInterval
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetBlockInterval sets BlockInterval field to given value.
 
+
 ### HasBlockInterval
 
 `func (o *WriteQuotasRateLimitRequest) HasBlockInterval() bool`
 
 HasBlockInterval returns a boolean if a field has been set.
+
+
+
 
 ### GetInterval
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetInterval sets Interval field to given value.
 
+
 ### HasInterval
 
 `func (o *WriteQuotasRateLimitRequest) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
+
+
+
 
 ### GetPath
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+
 ### HasPath
 
 `func (o *WriteQuotasRateLimitRequest) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
+
+
+
 
 ### GetRate
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetRate sets Rate field to given value.
 
+
 ### HasRate
 
 `func (o *WriteQuotasRateLimitRequest) HasRate() bool`
 
 HasRate returns a boolean if a field has been set.
+
+
+
 
 ### GetRole
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
+
 ### HasRole
 
 `func (o *WriteQuotasRateLimitRequest) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *WriteQuotasRateLimitRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

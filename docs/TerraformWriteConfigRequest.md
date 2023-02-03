@@ -1,14 +1,20 @@
 # TerraformWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Address** | Pointer to **string** | The address to access Terraform Cloud or Enterprise. Default is \&quot;https://app.terraform.io\&quot;. | [optional] [default to "https://app.terraform.io"]
 **BasePath** | Pointer to **string** | The base path for the Terraform Cloud or Enterprise API. Default is \&quot;/api/v2/\&quot;. | [optional] [default to "/api/v2/"]
 **Token** | **string** | The token to access Terraform Cloud | 
 
+
+
 ## Methods
+
 
 ### NewTerraformWriteConfigRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewTerraformWriteConfigRequestWithDefaults instantiates a new TerraformWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAddress
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetAddress sets Address field to given value.
 
+
 ### HasAddress
 
 `func (o *TerraformWriteConfigRequest) HasAddress() bool`
 
 HasAddress returns a boolean if a field has been set.
+
+
+
 
 ### GetBasePath
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetBasePath sets BasePath field to given value.
 
+
 ### HasBasePath
 
 `func (o *TerraformWriteConfigRequest) HasBasePath() bool`
 
 HasBasePath returns a boolean if a field has been set.
+
+
+
 
 ### GetToken
 
@@ -95,6 +110,13 @@ and a boolean to check if the value has been set.
 `func (o *TerraformWriteConfigRequest) SetToken(v string)`
 
 SetToken sets Token field to given value.
+
+
+
+
+
+
+
 
 
 

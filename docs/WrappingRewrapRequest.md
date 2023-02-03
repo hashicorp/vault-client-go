@@ -1,12 +1,18 @@
 # WrappingRewrapRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Token** | Pointer to **string** |  | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWrappingRewrapRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewWrappingRewrapRequestWithDefaults instantiates a new WrappingRewrapRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetToken
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetToken sets Token field to given value.
 
+
 ### HasToken
 
 `func (o *WrappingRewrapRequest) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,13 +1,19 @@
 # MFAValidateRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **MfaPayload** | **map[string]interface{}** | A map from MFA method ID to a slice of passcodes or an empty slice if the method does not use passcodes | 
 **MfaRequestId** | **string** | ID for this MFA request | 
 
+
+
 ## Methods
+
 
 ### NewMFAValidateRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewMFAValidateRequestWithDefaults instantiates a new MFAValidateRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMfaPayload
 
@@ -46,6 +53,9 @@ and a boolean to check if the value has been set.
 SetMfaPayload sets MfaPayload field to given value.
 
 
+
+
+
 ### GetMfaRequestId
 
 `func (o *MFAValidateRequest) GetMfaRequestId() string`
@@ -64,6 +74,13 @@ and a boolean to check if the value has been set.
 `func (o *MFAValidateRequest) SetMfaRequestId(v string)`
 
 SetMfaRequestId sets MfaRequestId field to given value.
+
+
+
+
+
+
+
 
 
 

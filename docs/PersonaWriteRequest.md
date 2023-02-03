@@ -1,16 +1,22 @@
 # PersonaWriteRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **EntityId** | Pointer to **string** | Entity ID to which this persona belongs to | [optional] 
 **Id** | Pointer to **string** | ID of the persona | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Metadata to be associated with the persona. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault &lt;command&gt; &lt;path&gt; metadata&#x3D;key1&#x3D;value1 metadata&#x3D;key2&#x3D;value2 | [optional] 
 **MountAccessor** | Pointer to **string** | Mount accessor to which this persona belongs to | [optional] 
 **Name** | Pointer to **string** | Name of the persona | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPersonaWriteRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewPersonaWriteRequestWithDefaults instantiates a new PersonaWriteRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetEntityId
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetEntityId sets EntityId field to given value.
 
+
 ### HasEntityId
 
 `func (o *PersonaWriteRequest) HasEntityId() bool`
 
 HasEntityId returns a boolean if a field has been set.
+
+
+
 
 ### GetId
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+
 ### HasId
 
 `func (o *PersonaWriteRequest) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+
+
 
 ### GetMetadata
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetMetadata sets Metadata field to given value.
 
+
 ### HasMetadata
 
 `func (o *PersonaWriteRequest) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetMountAccessor
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetMountAccessor sets MountAccessor field to given value.
 
+
 ### HasMountAccessor
 
 `func (o *PersonaWriteRequest) HasMountAccessor() bool`
 
 HasMountAccessor returns a boolean if a field has been set.
+
+
+
 
 ### GetName
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
 ### HasName
 
 `func (o *PersonaWriteRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

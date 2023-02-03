@@ -1,0 +1,20 @@
+{{>partial_header}}
+package schema
+
+{{#each models}}
+import (
+	"encoding/json"
+{{#each imports}}
+	"{{import}}"
+{{/each}}
+)
+
+{{#with model}}
+{{#if isEnum}}
+{{>model_enum}}
+{{/if}}
+{{#unless isEnum}}
+{{#with oneOf}}{{#if @first}}{{>model_oneof}}{{/if}}{{/with}}{{#unless oneOf}}{{#with anyOf}}{{#if @first}}{{>model_anyof}}{{/if}}{{/with}}{{#unless anyOf}}{{>model_simple}}{{/unless}}{{/unless}}
+{{/unless}}
+{{/with}}
+{{/each}}

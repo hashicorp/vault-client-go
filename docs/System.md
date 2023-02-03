@@ -36,7 +36,7 @@ Method | HTTP request | Description
 [**PprofRead**](System.md#PprofRead) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
 [**PprofReadAllocs**](System.md#PprofReadAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
 [**PprofReadBlock**](System.md#PprofReadBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
-[**PprofReadCmdline**](System.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#39;s command line.
+[**PprofReadCmdline**](System.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#x27;s command line.
 [**PprofReadGoroutine**](System.md#PprofReadGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
 [**PprofReadHeap**](System.md#PprofReadHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
 [**PprofReadMutex**](System.md#PprofReadMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
@@ -46,13 +46,13 @@ Method | HTTP request | Description
 [**PprofReadTrace**](System.md#PprofReadTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
 [**ReadAuditDevices**](System.md#ReadAuditDevices) | **Get** /sys/audit | List the enabled audit devices.
 [**ReadAuthMethod**](System.md#ReadAuthMethod) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
-[**ReadAuthMethodTune**](System.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#39;s configuration.
+[**ReadAuthMethodTune**](System.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#x27;s configuration.
 [**ReadAuthMethods**](System.md#ReadAuthMethods) | **Get** /sys/auth | List the currently enabled credential backends.
 [**ReadConfigAuditingRequestHeader**](System.md#ReadConfigAuditingRequestHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
 [**ReadConfigAuditingRequestHeaders**](System.md#ReadConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
 [**ReadConfigCORS**](System.md#ReadConfigCORS) | **Get** /sys/config/cors | Return the current CORS settings.
 [**ReadConfigStateSanitized**](System.md#ReadConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
-[**ReadConfigUIHeader**](System.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#39;s configuration
+[**ReadConfigUIHeader**](System.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
 [**ReadGenerateRoot**](System.md#ReadGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
 [**ReadGenerateRootAttempt**](System.md#ReadGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
 [**ReadHAStatus**](System.md#ReadHAStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
@@ -109,7 +109,7 @@ Method | HTTP request | Description
 [**Revoke**](System.md#Revoke) | **Post** /sys/revoke | Revokes a lease immediately.
 [**RevokeForce**](System.md#RevokeForce) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
 [**RevokeLease**](System.md#RevokeLease) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
-[**RevokePrefix**](System.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
+[**RevokePrefix**](System.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
 [**Rotate**](System.md#Rotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
 [**Seal**](System.md#Seal) | **Post** /sys/seal | Seal the Vault.
 [**StepDownLeader**](System.md#StepDownLeader) | **Post** /sys/step-down | Cause the node to give up active status.
@@ -125,7 +125,7 @@ Method | HTTP request | Description
 [**ToolsHash**](System.md#ToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
 [**ToolsHashWith**](System.md#ToolsHashWith) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
 [**Unseal**](System.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
-[**WrappingReadLookup**](System.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#39;s token.
+[**WrappingReadLookup**](System.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#x27;s token.
 [**WrappingRewrap**](System.md#WrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
 [**WrappingUnwrap**](System.md#WrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
 [**WrappingWrap**](System.md#WrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
@@ -151,7 +151,7 @@ Method | HTTP request | Description
 [**WriteLeasesRevoke**](System.md#WriteLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
 [**WriteLeasesRevoke2**](System.md#WriteLeasesRevoke2) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
 [**WriteLeasesRevokeForce**](System.md#WriteLeasesRevokeForce) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**WriteLeasesRevokePrefix**](System.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#39; path property) generated under a given prefix immediately.
+[**WriteLeasesRevokePrefix**](System.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
 [**WriteLeasesTidy**](System.md#WriteLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 [**WriteLogger**](System.md#WriteLogger) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
 [**WriteLoggers**](System.md#WriteLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
@@ -170,6 +170,8 @@ Method | HTTP request | Description
 [**WriteRekeyUpdate**](System.md#WriteRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
 [**WriteRekeyVerify**](System.md#WriteRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
 [**WriteRotateConfig**](System.md#WriteRotateConfig) | **Post** /sys/rotate/config | 
+
+
 
 
 
@@ -203,7 +205,6 @@ func main() {
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	request := schema.NewCalculateAuditHashRequestWithDefaults()
-
 	resp, err := client.System.CalculateAuditHash(
 		context.Background(),
 		path,
@@ -240,6 +241,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteAuditDevice
 
 > DeleteAuditDevice(ctx, path).Execute()
@@ -268,8 +270,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-
-
 	resp, err := client.System.DeleteAuditDevice(
 		context.Background(),
 		path,
@@ -304,6 +304,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteAuthMethod
 
 > DeleteAuthMethod(ctx, path).Execute()
@@ -332,8 +333,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-
-
 	resp, err := client.System.DeleteAuthMethod(
 		context.Background(),
 		path,
@@ -368,6 +367,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteConfigAuditingRequestHeader
 
 > DeleteConfigAuditingRequestHeader(ctx, header).Execute()
@@ -396,8 +396,6 @@ func main() {
 	}
 
 	header := "header_example" // string | 
-
-
 	resp, err := client.System.DeleteConfigAuditingRequestHeader(
 		context.Background(),
 		header,
@@ -432,6 +430,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteConfigCORS
 
 > DeleteConfigCORS(ctx).Execute()
@@ -459,8 +458,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteConfigCORS(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -485,6 +482,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteConfigUIHeader
@@ -515,8 +513,6 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
-
-
 	resp, err := client.System.DeleteConfigUIHeader(
 		context.Background(),
 		header,
@@ -551,6 +547,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteGenerateRoot
 
 > DeleteGenerateRoot(ctx).Execute()
@@ -578,8 +575,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteGenerateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -604,6 +599,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteGenerateRootAttempt
@@ -633,8 +629,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteGenerateRootAttempt(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -659,6 +653,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteLogger
@@ -689,8 +684,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
-
-
 	resp, err := client.System.DeleteLogger(
 		context.Background(),
 		name,
@@ -725,6 +718,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteLoggers
 
 > DeleteLoggers(ctx).Execute()
@@ -752,8 +746,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteLoggers(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -778,6 +770,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteMount
@@ -808,8 +801,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-
 	resp, err := client.System.DeleteMount(
 		context.Background(),
 		path,
@@ -844,6 +835,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeletePluginsCatalogByTypeByName
 
 > DeletePluginsCatalogByTypeByName(ctx, name, type_).Execute()
@@ -873,8 +865,6 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-
-
 	resp, err := client.System.DeletePluginsCatalogByTypeByName(
 		context.Background(),
 		name,
@@ -912,6 +902,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeletePoliciesACL
 
 > DeletePoliciesACL(ctx, name).Execute()
@@ -940,8 +931,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.DeletePoliciesACL(
 		context.Background(),
 		name,
@@ -976,6 +965,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeletePoliciesPassword
 
 > DeletePoliciesPassword(ctx, name).Execute()
@@ -1004,8 +994,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-
-
 	resp, err := client.System.DeletePoliciesPassword(
 		context.Background(),
 		name,
@@ -1040,6 +1028,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeletePolicy
 
 > DeletePolicy(ctx, name).Execute()
@@ -1068,8 +1057,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.DeletePolicy(
 		context.Background(),
 		name,
@@ -1104,6 +1091,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteQuotasRateLimit
 
 > DeleteQuotasRateLimit(ctx, name).Execute()
@@ -1132,8 +1120,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
-
-
 	resp, err := client.System.DeleteQuotasRateLimit(
 		context.Background(),
 		name,
@@ -1168,6 +1154,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteRaw
 
 > DeleteRaw(ctx).Execute()
@@ -1195,8 +1182,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRaw(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1221,6 +1206,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteRawPath
@@ -1251,8 +1237,6 @@ func main() {
 	}
 
 	path := "path_example" // string | 
-
-
 	resp, err := client.System.DeleteRawPath(
 		context.Background(),
 		path,
@@ -1287,6 +1271,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## DeleteRekeyBackup
 
 > DeleteRekeyBackup(ctx).Execute()
@@ -1314,8 +1299,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRekeyBackup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1340,6 +1323,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteRekeyInit
@@ -1371,8 +1355,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRekeyInit(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1397,6 +1379,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteRekeyRecoveryKeyBackup
@@ -1426,8 +1409,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRekeyRecoveryKeyBackup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1452,6 +1433,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## DeleteRekeyVerify
@@ -1483,8 +1465,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRekeyVerify(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1509,6 +1489,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ListConfigUIHeaders
@@ -1537,8 +1518,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListConfigUIHeaders(
 		context.Background(),
@@ -1569,6 +1548,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListLeasesLookupPrefix
 
 > ListLeasesLookupPrefix(ctx, prefix).List(list).Execute()
@@ -1597,8 +1577,6 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
-
-
 	resp, err := client.System.ListLeasesLookupPrefix(
 		context.Background(),
 		prefix,
@@ -1634,6 +1612,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListPluginsCatalogByType
 
 > ListPluginsCatalogByType(ctx, type_).List(list).Execute()
@@ -1662,8 +1641,6 @@ func main() {
 	}
 
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-
-
 	resp, err := client.System.ListPluginsCatalogByType(
 		context.Background(),
 		type_,
@@ -1699,6 +1676,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListPoliciesACL
 
 > ListPoliciesACL(ctx).List(list).Execute()
@@ -1725,8 +1703,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListPoliciesACL(
 		context.Background(),
@@ -1757,6 +1733,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListPoliciesPassword
 
 > ListPoliciesPassword(ctx).List(list).Execute()
@@ -1783,8 +1760,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListPoliciesPassword(
 		context.Background(),
@@ -1815,6 +1790,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListQuotasRateLimits
 
 > ListQuotasRateLimits(ctx).List(list).Execute()
@@ -1841,8 +1817,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListQuotasRateLimits(
 		context.Background(),
@@ -1873,6 +1847,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ListVersionHistory
 
 > ListVersionHistory(ctx).List(list).Execute()
@@ -1899,8 +1874,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListVersionHistory(
 		context.Background(),
@@ -1929,6 +1902,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## MFAValidate
@@ -1960,7 +1934,6 @@ func main() {
 	}
 
 	request := schema.NewMFAValidateRequestWithDefaults()
-
 	resp, err := client.System.MFAValidate(
 		context.Background(),
 		request,
@@ -1991,6 +1964,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## Monitor
 
 > Monitor(ctx).LogFormat(logFormat).LogLevel(logLevel).Execute()
@@ -2017,8 +1991,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (defaults to "standard")
 	logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".
@@ -2054,6 +2026,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PprofRead
 
 > PprofRead(ctx).Execute()
@@ -2083,8 +2056,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofRead(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2109,6 +2080,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadAllocs
@@ -2140,8 +2112,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadAllocs(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2166,6 +2136,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadBlock
@@ -2197,8 +2168,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadBlock(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2223,6 +2192,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadCmdline
@@ -2254,8 +2224,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadCmdline(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2280,6 +2248,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadGoroutine
@@ -2311,8 +2280,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadGoroutine(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2337,6 +2304,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadHeap
@@ -2368,8 +2336,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadHeap(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2394,6 +2360,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadMutex
@@ -2425,8 +2392,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadMutex(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2451,6 +2416,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadProfile
@@ -2482,8 +2448,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadProfile(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2508,6 +2472,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadSymbol
@@ -2539,8 +2504,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadSymbol(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2565,6 +2528,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadThreadcreate
@@ -2596,8 +2560,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadThreadcreate(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2622,6 +2584,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PprofReadTrace
@@ -2653,8 +2616,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadTrace(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2679,6 +2640,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadAuditDevices
@@ -2708,8 +2670,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadAuditDevices(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2734,6 +2694,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadAuthMethod
@@ -2764,8 +2725,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-
-
 	resp, err := client.System.ReadAuthMethod(
 		context.Background(),
 		path,
@@ -2800,6 +2759,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadAuthMethodTune
 
 > ReadAuthMethodTune(ctx, path).Execute()
@@ -2830,8 +2790,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
-
-
 	resp, err := client.System.ReadAuthMethodTune(
 		context.Background(),
 		path,
@@ -2866,6 +2824,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadAuthMethods
 
 > ReadAuthMethods(ctx).Execute()
@@ -2893,8 +2852,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadAuthMethods(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2919,6 +2876,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadConfigAuditingRequestHeader
@@ -2949,8 +2907,6 @@ func main() {
 	}
 
 	header := "header_example" // string | 
-
-
 	resp, err := client.System.ReadConfigAuditingRequestHeader(
 		context.Background(),
 		header,
@@ -2985,6 +2941,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadConfigAuditingRequestHeaders
 
 > ReadConfigAuditingRequestHeaders(ctx).Execute()
@@ -3012,8 +2969,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadConfigAuditingRequestHeaders(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3038,6 +2993,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadConfigCORS
@@ -3067,8 +3023,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadConfigCORS(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3093,6 +3047,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadConfigStateSanitized
@@ -3124,8 +3079,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadConfigStateSanitized(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3150,6 +3103,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadConfigUIHeader
@@ -3180,8 +3134,6 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
-
-
 	resp, err := client.System.ReadConfigUIHeader(
 		context.Background(),
 		header,
@@ -3216,6 +3168,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadGenerateRoot
 
 > ReadGenerateRoot(ctx).Execute()
@@ -3243,8 +3196,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadGenerateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3269,6 +3220,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadGenerateRootAttempt
@@ -3298,8 +3250,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadGenerateRootAttempt(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3324,6 +3274,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadHAStatus
@@ -3353,8 +3304,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadHAStatus(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3379,6 +3328,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadHealth
@@ -3408,8 +3358,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadHealth(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3434,6 +3382,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadHostInfo
@@ -3465,8 +3414,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadHostInfo(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3491,6 +3438,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInFlightRequests
@@ -3522,8 +3470,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInFlightRequests(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3548,6 +3494,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInit
@@ -3577,8 +3524,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInit(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3603,6 +3548,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersActivity
@@ -3632,8 +3578,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersActivity(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3658,6 +3602,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersActivityExport
@@ -3687,8 +3632,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersActivityExport(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3713,6 +3656,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersActivityMonthly
@@ -3742,8 +3686,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersActivityMonthly(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3768,6 +3710,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersConfig
@@ -3797,8 +3740,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3823,6 +3764,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersEntities
@@ -3852,8 +3794,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersEntities(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3878,6 +3818,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersRequests
@@ -3907,8 +3848,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersRequests(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3933,6 +3872,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalCountersTokens
@@ -3962,8 +3902,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersTokens(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3988,6 +3926,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalInspectRouter
@@ -4018,8 +3957,6 @@ func main() {
 	}
 
 	tag := "tag_example" // string | Name of subtree being observed
-
-
 	resp, err := client.System.ReadInternalInspectRouter(
 		context.Background(),
 		tag,
@@ -4054,6 +3991,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalSpecsOpenAPI
 
 > ReadInternalSpecsOpenAPI(ctx).Execute()
@@ -4081,8 +4019,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalSpecsOpenAPI(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4107,6 +4043,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalUIFeatureFlags
@@ -4136,8 +4073,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalUIFeatureFlags(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4162,6 +4097,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalUIMount
@@ -4192,8 +4128,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path of the mount.
-
-
 	resp, err := client.System.ReadInternalUIMount(
 		context.Background(),
 		path,
@@ -4228,6 +4162,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadInternalUIMounts
 
 > ReadInternalUIMounts(ctx).Execute()
@@ -4255,8 +4190,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalUIMounts(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4281,6 +4214,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalUINamespaces
@@ -4310,8 +4244,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalUINamespaces(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4336,6 +4268,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadInternalUIResultantACL
@@ -4365,8 +4298,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalUIResultantACL(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4391,6 +4322,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadKeyStatus
@@ -4420,8 +4352,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadKeyStatus(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4446,6 +4376,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadLeader
@@ -4475,8 +4406,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadLeader(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4501,6 +4430,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadLeases
@@ -4530,8 +4460,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadLeases(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4556,6 +4484,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadLeasesCount
@@ -4585,8 +4514,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadLeasesCount(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4611,6 +4538,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadLogger
@@ -4641,8 +4569,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
-
-
 	resp, err := client.System.ReadLogger(
 		context.Background(),
 		name,
@@ -4677,6 +4603,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadLoggers
 
 > ReadLoggers(ctx).Execute()
@@ -4704,8 +4631,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadLoggers(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4730,6 +4655,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadMetrics
@@ -4758,8 +4684,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\".
 	resp, err := client.System.ReadMetrics(
@@ -4792,6 +4716,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadMount
 
 > ReadMount(ctx, path).Execute()
@@ -4820,8 +4745,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-
 	resp, err := client.System.ReadMount(
 		context.Background(),
 		path,
@@ -4856,6 +4779,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadMounts
 
 > ReadMounts(ctx).Execute()
@@ -4883,8 +4807,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadMounts(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4909,6 +4831,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadMountsConfig
@@ -4939,8 +4862,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-
 	resp, err := client.System.ReadMountsConfig(
 		context.Background(),
 		path,
@@ -4975,6 +4896,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPluginsCatalog
 
 > ReadPluginsCatalog(ctx).Execute()
@@ -5002,8 +4924,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadPluginsCatalog(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5028,6 +4948,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadPluginsCatalogByTypeByName
@@ -5059,8 +4980,6 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-
-
 	resp, err := client.System.ReadPluginsCatalogByTypeByName(
 		context.Background(),
 		name,
@@ -5098,6 +5017,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPolicies
 
 > ReadPolicies(ctx).List(list).Execute()
@@ -5124,8 +5044,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadPolicies(
@@ -5158,6 +5076,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPoliciesACL
 
 > ReadPoliciesACL(ctx, name).Execute()
@@ -5186,8 +5105,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.ReadPoliciesACL(
 		context.Background(),
 		name,
@@ -5222,6 +5139,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPoliciesPassword
 
 > ReadPoliciesPassword(ctx, name).Execute()
@@ -5250,8 +5168,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-
-
 	resp, err := client.System.ReadPoliciesPassword(
 		context.Background(),
 		name,
@@ -5286,6 +5202,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPoliciesPasswordGenerate
 
 > ReadPoliciesPasswordGenerate(ctx, name).Execute()
@@ -5314,8 +5231,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-
-
 	resp, err := client.System.ReadPoliciesPasswordGenerate(
 		context.Background(),
 		name,
@@ -5350,6 +5265,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadPolicy
 
 > ReadPolicy(ctx, name).Execute()
@@ -5378,8 +5294,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.ReadPolicy(
 		context.Background(),
 		name,
@@ -5414,6 +5328,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadQuotasConfig
 
 > ReadQuotasConfig(ctx).Execute()
@@ -5441,8 +5356,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadQuotasConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5467,6 +5380,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadQuotasRateLimit
@@ -5497,8 +5411,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
-
-
 	resp, err := client.System.ReadQuotasRateLimit(
 		context.Background(),
 		name,
@@ -5533,6 +5445,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadRaw
 
 > ReadRaw(ctx).List(list).Execute()
@@ -5559,8 +5472,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRaw(
@@ -5593,6 +5504,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadRawPath
 
 > ReadRawPath(ctx, path).List(list).Execute()
@@ -5621,8 +5533,6 @@ func main() {
 	}
 
 	path := "path_example" // string | 
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRawPath(
 		context.Background(),
@@ -5660,6 +5570,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadRekeyBackup
 
 > ReadRekeyBackup(ctx).Execute()
@@ -5687,8 +5598,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRekeyBackup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5713,6 +5622,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRekeyInit
@@ -5742,8 +5652,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRekeyInit(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5768,6 +5676,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRekeyRecoveryKeyBackup
@@ -5797,8 +5706,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRekeyRecoveryKeyBackup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5823,6 +5730,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRekeyVerify
@@ -5852,8 +5760,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRekeyVerify(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5878,6 +5784,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRemountStatus
@@ -5908,8 +5815,6 @@ func main() {
 	}
 
 	migrationId := "migrationId_example" // string | The ID of the migration operation
-
-
 	resp, err := client.System.ReadRemountStatus(
 		context.Background(),
 		migrationId,
@@ -5944,6 +5849,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ReadReplicationStatus
 
 > ReadReplicationStatus(ctx).Execute()
@@ -5971,8 +5877,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadReplicationStatus(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5997,6 +5901,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadRotateConfig
@@ -6026,8 +5931,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRotateConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6052,6 +5955,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ReadSealStatus
@@ -6081,8 +5985,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadSealStatus(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6107,6 +6009,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## Remount
@@ -6138,7 +6041,6 @@ func main() {
 	}
 
 	request := schema.NewRemountRequestWithDefaults()
-
 	resp, err := client.System.Remount(
 		context.Background(),
 		request,
@@ -6167,6 +6069,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## Renew
@@ -6198,7 +6101,6 @@ func main() {
 	}
 
 	request := schema.NewRenewRequestWithDefaults()
-
 	resp, err := client.System.Renew(
 		context.Background(),
 		request,
@@ -6227,6 +6129,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## RenewFor
@@ -6259,7 +6162,6 @@ func main() {
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	request := schema.NewRenewForRequestWithDefaults()
-
 	resp, err := client.System.RenewFor(
 		context.Background(),
 		urlLeaseId,
@@ -6296,6 +6198,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## Revoke
 
 > Revoke(ctx).RevokeRequest(revokeRequest).Execute()
@@ -6325,7 +6228,6 @@ func main() {
 	}
 
 	request := schema.NewRevokeRequestWithDefaults()
-
 	resp, err := client.System.Revoke(
 		context.Background(),
 		request,
@@ -6354,6 +6256,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## RevokeForce
@@ -6386,8 +6289,6 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-
-
 	resp, err := client.System.RevokeForce(
 		context.Background(),
 		prefix,
@@ -6422,6 +6323,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RevokeLease
 
 > RevokeLease(ctx, urlLeaseId).RevokeLeaseRequest(revokeLeaseRequest).Execute()
@@ -6452,7 +6354,6 @@ func main() {
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	request := schema.NewRevokeLeaseRequestWithDefaults()
-
 	resp, err := client.System.RevokeLease(
 		context.Background(),
 		urlLeaseId,
@@ -6489,6 +6390,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RevokePrefix
 
 > RevokePrefix(ctx, prefix).RevokePrefixRequest(revokePrefixRequest).Execute()
@@ -6519,7 +6421,6 @@ func main() {
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 	request := schema.NewRevokePrefixRequestWithDefaults()
-
 	resp, err := client.System.RevokePrefix(
 		context.Background(),
 		prefix,
@@ -6556,6 +6457,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## Rotate
 
 > Rotate(ctx).Execute()
@@ -6583,8 +6485,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.Rotate(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6609,6 +6509,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## Seal
@@ -6638,8 +6539,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.Seal(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6664,6 +6563,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## StepDownLeader
@@ -6695,8 +6595,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.StepDownLeader(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6721,6 +6619,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## SysDeletePluginsCatalogName
@@ -6751,8 +6650,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
-
-
 	resp, err := client.System.SysDeletePluginsCatalogName(
 		context.Background(),
 		name,
@@ -6787,6 +6684,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysListLeasesLookup
 
 > SysListLeasesLookup(ctx).List(list).Execute()
@@ -6813,8 +6711,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.SysListLeasesLookup(
 		context.Background(),
@@ -6845,6 +6741,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysReadPluginsCatalogName
 
 > SysReadPluginsCatalogName(ctx, name).Execute()
@@ -6873,8 +6770,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
-
-
 	resp, err := client.System.SysReadPluginsCatalogName(
 		context.Background(),
 		name,
@@ -6909,6 +6804,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysWriteLockedusersMountAccessorUnlockAliasIdentifier
 
 > SysWriteLockedusersMountAccessorUnlockAliasIdentifier(ctx, aliasIdentifier, mountAccessor).Execute()
@@ -6938,8 +6834,6 @@ func main() {
 
 	aliasIdentifier := "aliasIdentifier_example" // string | It is the name of the alias (user). For example, if the alias belongs to userpass backend, the name should be a valid username within userpass auth method. If the alias belongs to an approle auth method, the name should be a valid RoleID
 	mountAccessor := "mountAccessor_example" // string | MountAccessor is the identifier of the mount entry to which the user belongs
-
-
 	resp, err := client.System.SysWriteLockedusersMountAccessorUnlockAliasIdentifier(
 		context.Background(),
 		aliasIdentifier,
@@ -6977,6 +6871,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysWritePluginsCatalogName
 
 > SysWritePluginsCatalogName(ctx, name).SysWritePluginsCatalogNameRequest(sysWritePluginsCatalogNameRequest).Execute()
@@ -7007,7 +6902,6 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	request := schema.NewSysWritePluginsCatalogNameRequestWithDefaults()
-
 	resp, err := client.System.SysWritePluginsCatalogName(
 		context.Background(),
 		name,
@@ -7044,6 +6938,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SysWriteToolsRandomUrlbytes
 
 > SysWriteToolsRandomUrlbytes(ctx, urlbytes).SysWriteToolsRandomUrlbytesRequest(sysWriteToolsRandomUrlbytesRequest).Execute()
@@ -7074,7 +6969,6 @@ func main() {
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	request := schema.NewSysWriteToolsRandomUrlbytesRequestWithDefaults()
-
 	resp, err := client.System.SysWriteToolsRandomUrlbytes(
 		context.Background(),
 		urlbytes,
@@ -7111,6 +7005,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsGenerateRandom
 
 > ToolsGenerateRandom(ctx).ToolsGenerateRandomRequest(toolsGenerateRandomRequest).Execute()
@@ -7140,7 +7035,6 @@ func main() {
 	}
 
 	request := schema.NewToolsGenerateRandomRequestWithDefaults()
-
 	resp, err := client.System.ToolsGenerateRandom(
 		context.Background(),
 		request,
@@ -7169,6 +7063,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ToolsGenerateRandomSource
@@ -7201,7 +7096,6 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	request := schema.NewToolsGenerateRandomSourceRequestWithDefaults()
-
 	resp, err := client.System.ToolsGenerateRandomSource(
 		context.Background(),
 		source,
@@ -7238,6 +7132,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsGenerateRandomSourceBytes
 
 > ToolsGenerateRandomSourceBytes(ctx, source, urlbytes).ToolsGenerateRandomSourceBytesRequest(toolsGenerateRandomSourceBytesRequest).Execute()
@@ -7269,7 +7164,6 @@ func main() {
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	request := schema.NewToolsGenerateRandomSourceBytesRequestWithDefaults()
-
 	resp, err := client.System.ToolsGenerateRandomSourceBytes(
 		context.Background(),
 		source,
@@ -7309,6 +7203,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ToolsHash
 
 > ToolsHash(ctx).ToolsHashRequest(toolsHashRequest).Execute()
@@ -7338,7 +7233,6 @@ func main() {
 	}
 
 	request := schema.NewToolsHashRequestWithDefaults()
-
 	resp, err := client.System.ToolsHash(
 		context.Background(),
 		request,
@@ -7367,6 +7261,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## ToolsHashWith
@@ -7399,7 +7294,6 @@ func main() {
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	request := schema.NewToolsHashWithRequestWithDefaults()
-
 	resp, err := client.System.ToolsHashWith(
 		context.Background(),
 		urlalgorithm,
@@ -7436,6 +7330,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## Unseal
 
 > Unseal(ctx).UnsealRequest(unsealRequest).Execute()
@@ -7465,7 +7360,6 @@ func main() {
 	}
 
 	request := schema.NewUnsealRequestWithDefaults()
-
 	resp, err := client.System.Unseal(
 		context.Background(),
 		request,
@@ -7496,6 +7390,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WrappingReadLookup
 
 > WrappingReadLookup(ctx).Execute()
@@ -7523,8 +7418,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.WrappingReadLookup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7549,6 +7442,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WrappingRewrap
@@ -7580,7 +7474,6 @@ func main() {
 	}
 
 	request := schema.NewWrappingRewrapRequestWithDefaults()
-
 	resp, err := client.System.WrappingRewrap(
 		context.Background(),
 		request,
@@ -7609,6 +7502,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WrappingUnwrap
@@ -7640,7 +7534,6 @@ func main() {
 	}
 
 	request := schema.NewWrappingUnwrapRequestWithDefaults()
-
 	resp, err := client.System.WrappingUnwrap(
 		context.Background(),
 		request,
@@ -7671,6 +7564,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WrappingWrap
 
 > WrappingWrap(ctx).Execute()
@@ -7698,8 +7592,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.WrappingWrap(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7724,6 +7616,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WrappingWriteLookup
@@ -7755,7 +7648,6 @@ func main() {
 	}
 
 	request := schema.NewWrappingWriteLookupRequestWithDefaults()
-
 	resp, err := client.System.WrappingWriteLookup(
 		context.Background(),
 		request,
@@ -7784,6 +7676,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteAuditDevice
@@ -7816,7 +7709,6 @@ func main() {
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 	request := schema.NewWriteAuditDeviceRequestWithDefaults()
-
 	resp, err := client.System.WriteAuditDevice(
 		context.Background(),
 		path,
@@ -7853,6 +7745,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteAuthMethod
 
 > WriteAuthMethod(ctx, path).WriteAuthMethodRequest(writeAuthMethodRequest).Execute()
@@ -7885,7 +7778,6 @@ func main() {
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 	request := schema.NewWriteAuthMethodRequestWithDefaults()
-
 	resp, err := client.System.WriteAuthMethod(
 		context.Background(),
 		path,
@@ -7922,6 +7814,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteAuthMethodTune
 
 > WriteAuthMethodTune(ctx, path).WriteAuthMethodTuneRequest(writeAuthMethodTuneRequest).Execute()
@@ -7954,7 +7847,6 @@ func main() {
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
 	request := schema.NewWriteAuthMethodTuneRequestWithDefaults()
-
 	resp, err := client.System.WriteAuthMethodTune(
 		context.Background(),
 		path,
@@ -7991,6 +7883,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteCapabilities
 
 > WriteCapabilities(ctx).WriteCapabilitiesRequest(writeCapabilitiesRequest).Execute()
@@ -8020,7 +7913,6 @@ func main() {
 	}
 
 	request := schema.NewWriteCapabilitiesRequestWithDefaults()
-
 	resp, err := client.System.WriteCapabilities(
 		context.Background(),
 		request,
@@ -8049,6 +7941,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteCapabilitiesAccessor
@@ -8080,7 +7973,6 @@ func main() {
 	}
 
 	request := schema.NewWriteCapabilitiesAccessorRequestWithDefaults()
-
 	resp, err := client.System.WriteCapabilitiesAccessor(
 		context.Background(),
 		request,
@@ -8109,6 +8001,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteCapabilitiesSelf
@@ -8140,7 +8033,6 @@ func main() {
 	}
 
 	request := schema.NewWriteCapabilitiesSelfRequestWithDefaults()
-
 	resp, err := client.System.WriteCapabilitiesSelf(
 		context.Background(),
 		request,
@@ -8169,6 +8061,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteConfigAuditingRequestHeader
@@ -8201,7 +8094,6 @@ func main() {
 
 	header := "header_example" // string | 
 	request := schema.NewWriteConfigAuditingRequestHeaderRequestWithDefaults()
-
 	resp, err := client.System.WriteConfigAuditingRequestHeader(
 		context.Background(),
 		header,
@@ -8238,6 +8130,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteConfigCORS
 
 > WriteConfigCORS(ctx).WriteConfigCORSRequest(writeConfigCORSRequest).Execute()
@@ -8267,7 +8160,6 @@ func main() {
 	}
 
 	request := schema.NewWriteConfigCORSRequestWithDefaults()
-
 	resp, err := client.System.WriteConfigCORS(
 		context.Background(),
 		request,
@@ -8298,6 +8190,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteConfigReloadSubsystem
 
 > WriteConfigReloadSubsystem(ctx, subsystem).Execute()
@@ -8326,8 +8219,6 @@ func main() {
 	}
 
 	subsystem := "subsystem_example" // string | 
-
-
 	resp, err := client.System.WriteConfigReloadSubsystem(
 		context.Background(),
 		subsystem,
@@ -8362,6 +8253,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteConfigUIHeader
 
 > WriteConfigUIHeader(ctx, header).WriteConfigUIHeaderRequest(writeConfigUIHeaderRequest).Execute()
@@ -8392,7 +8284,6 @@ func main() {
 
 	header := "header_example" // string | The name of the header.
 	request := schema.NewWriteConfigUIHeaderRequestWithDefaults()
-
 	resp, err := client.System.WriteConfigUIHeader(
 		context.Background(),
 		header,
@@ -8429,6 +8320,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteGenerateRoot
 
 > WriteGenerateRoot(ctx).WriteGenerateRootRequest(writeGenerateRootRequest).Execute()
@@ -8460,7 +8352,6 @@ func main() {
 	}
 
 	request := schema.NewWriteGenerateRootRequestWithDefaults()
-
 	resp, err := client.System.WriteGenerateRoot(
 		context.Background(),
 		request,
@@ -8489,6 +8380,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteGenerateRootAttempt
@@ -8522,7 +8414,6 @@ func main() {
 	}
 
 	request := schema.NewWriteGenerateRootAttemptRequestWithDefaults()
-
 	resp, err := client.System.WriteGenerateRootAttempt(
 		context.Background(),
 		request,
@@ -8551,6 +8442,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteGenerateRootUpdate
@@ -8584,7 +8476,6 @@ func main() {
 	}
 
 	request := schema.NewWriteGenerateRootUpdateRequestWithDefaults()
-
 	resp, err := client.System.WriteGenerateRootUpdate(
 		context.Background(),
 		request,
@@ -8613,6 +8504,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteInit
@@ -8646,7 +8538,6 @@ func main() {
 	}
 
 	request := schema.NewWriteInitRequestWithDefaults()
-
 	resp, err := client.System.WriteInit(
 		context.Background(),
 		request,
@@ -8675,6 +8566,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteInternalCountersConfig
@@ -8706,7 +8598,6 @@ func main() {
 	}
 
 	request := schema.NewWriteInternalCountersConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteInternalCountersConfig(
 		context.Background(),
 		request,
@@ -8735,6 +8626,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteLeasesLookup
@@ -8766,7 +8658,6 @@ func main() {
 	}
 
 	request := schema.NewWriteLeasesLookupRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesLookup(
 		context.Background(),
 		request,
@@ -8795,6 +8686,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteLeasesRenew
@@ -8826,7 +8718,6 @@ func main() {
 	}
 
 	request := schema.NewWriteLeasesRenewRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRenew(
 		context.Background(),
 		request,
@@ -8855,6 +8746,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteLeasesRenew2
@@ -8887,7 +8779,6 @@ func main() {
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	request := schema.NewWriteLeasesRenew2RequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRenew2(
 		context.Background(),
 		urlLeaseId,
@@ -8924,6 +8815,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRevoke
 
 > WriteLeasesRevoke(ctx).WriteLeasesRevokeRequest(writeLeasesRevokeRequest).Execute()
@@ -8953,7 +8845,6 @@ func main() {
 	}
 
 	request := schema.NewWriteLeasesRevokeRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRevoke(
 		context.Background(),
 		request,
@@ -8982,6 +8873,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteLeasesRevoke2
@@ -9014,7 +8906,6 @@ func main() {
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
 	request := schema.NewWriteLeasesRevoke2RequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRevoke2(
 		context.Background(),
 		urlLeaseId,
@@ -9051,6 +8942,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRevokeForce
 
 > WriteLeasesRevokeForce(ctx, prefix).Execute()
@@ -9081,8 +8973,6 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-
-
 	resp, err := client.System.WriteLeasesRevokeForce(
 		context.Background(),
 		prefix,
@@ -9117,6 +9007,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesRevokePrefix
 
 > WriteLeasesRevokePrefix(ctx, prefix).WriteLeasesRevokePrefixRequest(writeLeasesRevokePrefixRequest).Execute()
@@ -9147,7 +9038,6 @@ func main() {
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 	request := schema.NewWriteLeasesRevokePrefixRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRevokePrefix(
 		context.Background(),
 		prefix,
@@ -9184,6 +9074,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLeasesTidy
 
 > WriteLeasesTidy(ctx).Execute()
@@ -9211,8 +9102,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.WriteLeasesTidy(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9237,6 +9126,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteLogger
@@ -9269,7 +9159,6 @@ func main() {
 
 	name := "name_example" // string | The name of the logger to be modified.
 	request := schema.NewWriteLoggerRequestWithDefaults()
-
 	resp, err := client.System.WriteLogger(
 		context.Background(),
 		name,
@@ -9306,6 +9195,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteLoggers
 
 > WriteLoggers(ctx).WriteLoggersRequest(writeLoggersRequest).Execute()
@@ -9335,7 +9225,6 @@ func main() {
 	}
 
 	request := schema.NewWriteLoggersRequestWithDefaults()
-
 	resp, err := client.System.WriteLoggers(
 		context.Background(),
 		request,
@@ -9364,6 +9253,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteMount
@@ -9396,7 +9286,6 @@ func main() {
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	request := schema.NewWriteMountRequestWithDefaults()
-
 	resp, err := client.System.WriteMount(
 		context.Background(),
 		path,
@@ -9433,6 +9322,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteMountsConfig
 
 > WriteMountsConfig(ctx, path).WriteMountsConfigRequest(writeMountsConfigRequest).Execute()
@@ -9463,7 +9353,6 @@ func main() {
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 	request := schema.NewWriteMountsConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteMountsConfig(
 		context.Background(),
 		path,
@@ -9500,6 +9389,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePluginsCatalogByTypeByName
 
 > WritePluginsCatalogByTypeByName(ctx, name, type_).WritePluginsCatalogByTypeByNameRequest(writePluginsCatalogByTypeByNameRequest).Execute()
@@ -9531,7 +9421,6 @@ func main() {
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 	request := schema.NewWritePluginsCatalogByTypeByNameRequestWithDefaults()
-
 	resp, err := client.System.WritePluginsCatalogByTypeByName(
 		context.Background(),
 		name,
@@ -9571,6 +9460,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePluginsReloadBackend
 
 > WritePluginsReloadBackend(ctx).WritePluginsReloadBackendRequest(writePluginsReloadBackendRequest).Execute()
@@ -9602,7 +9492,6 @@ func main() {
 	}
 
 	request := schema.NewWritePluginsReloadBackendRequestWithDefaults()
-
 	resp, err := client.System.WritePluginsReloadBackend(
 		context.Background(),
 		request,
@@ -9631,6 +9520,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WritePoliciesACL
@@ -9663,7 +9553,6 @@ func main() {
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	request := schema.NewWritePoliciesACLRequestWithDefaults()
-
 	resp, err := client.System.WritePoliciesACL(
 		context.Background(),
 		name,
@@ -9700,6 +9589,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePoliciesPassword
 
 > WritePoliciesPassword(ctx, name).WritePoliciesPasswordRequest(writePoliciesPasswordRequest).Execute()
@@ -9730,7 +9620,6 @@ func main() {
 
 	name := "name_example" // string | The name of the password policy.
 	request := schema.NewWritePoliciesPasswordRequestWithDefaults()
-
 	resp, err := client.System.WritePoliciesPassword(
 		context.Background(),
 		name,
@@ -9767,6 +9656,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WritePolicy
 
 > WritePolicy(ctx, name).WritePolicyRequest(writePolicyRequest).Execute()
@@ -9797,7 +9687,6 @@ func main() {
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
 	request := schema.NewWritePolicyRequestWithDefaults()
-
 	resp, err := client.System.WritePolicy(
 		context.Background(),
 		name,
@@ -9834,6 +9723,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteQuotasConfig
 
 > WriteQuotasConfig(ctx).WriteQuotasConfigRequest(writeQuotasConfigRequest).Execute()
@@ -9863,7 +9753,6 @@ func main() {
 	}
 
 	request := schema.NewWriteQuotasConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteQuotasConfig(
 		context.Background(),
 		request,
@@ -9892,6 +9781,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteQuotasRateLimit
@@ -9924,7 +9814,6 @@ func main() {
 
 	name := "name_example" // string | Name of the quota rule.
 	request := schema.NewWriteQuotasRateLimitRequestWithDefaults()
-
 	resp, err := client.System.WriteQuotasRateLimit(
 		context.Background(),
 		name,
@@ -9961,6 +9850,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRaw
 
 > WriteRaw(ctx).WriteRawRequest(writeRawRequest).Execute()
@@ -9990,7 +9880,6 @@ func main() {
 	}
 
 	request := schema.NewWriteRawRequestWithDefaults()
-
 	resp, err := client.System.WriteRaw(
 		context.Background(),
 		request,
@@ -10019,6 +9908,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteRawPath
@@ -10051,7 +9941,6 @@ func main() {
 
 	path := "path_example" // string | 
 	request := schema.NewWriteRawPathRequestWithDefaults()
-
 	resp, err := client.System.WriteRawPath(
 		context.Background(),
 		path,
@@ -10088,6 +9977,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## WriteRekeyInit
 
 > WriteRekeyInit(ctx).WriteRekeyInitRequest(writeRekeyInitRequest).Execute()
@@ -10119,7 +10009,6 @@ func main() {
 	}
 
 	request := schema.NewWriteRekeyInitRequestWithDefaults()
-
 	resp, err := client.System.WriteRekeyInit(
 		context.Background(),
 		request,
@@ -10148,6 +10037,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteRekeyUpdate
@@ -10179,7 +10069,6 @@ func main() {
 	}
 
 	request := schema.NewWriteRekeyUpdateRequestWithDefaults()
-
 	resp, err := client.System.WriteRekeyUpdate(
 		context.Background(),
 		request,
@@ -10208,6 +10097,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteRekeyVerify
@@ -10239,7 +10129,6 @@ func main() {
 	}
 
 	request := schema.NewWriteRekeyVerifyRequestWithDefaults()
-
 	resp, err := client.System.WriteRekeyVerify(
 		context.Background(),
 		request,
@@ -10268,6 +10157,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## WriteRotateConfig
@@ -10299,7 +10189,6 @@ func main() {
 	}
 
 	request := schema.NewWriteRotateConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteRotateConfig(
 		context.Background(),
 		request,
@@ -10328,4 +10217,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
+
 

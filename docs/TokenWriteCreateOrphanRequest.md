@@ -1,9 +1,12 @@
 # TokenWriteCreateOrphanRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **DisplayName** | Pointer to **string** | Name to associate with this token | [optional] 
 **EntityAlias** | Pointer to **string** | Name of the entity alias to associate with this token | [optional] 
 **ExplicitMaxTtl** | Pointer to **string** | Explicit Max TTL of this token | [optional] 
@@ -19,7 +22,10 @@ Name | Type | Description | Notes
 **Ttl** | Pointer to **string** | Time to live for this token | [optional] 
 **Type** | Pointer to **string** | Token type | [optional] 
 
+
+
 ## Methods
+
 
 ### NewTokenWriteCreateOrphanRequest
 
@@ -37,6 +43,7 @@ will change when the set of required properties is changed
 NewTokenWriteCreateOrphanRequestWithDefaults instantiates a new TokenWriteCreateOrphanRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDisplayName
 
@@ -57,11 +64,15 @@ and a boolean to check if the value has been set.
 
 SetDisplayName sets DisplayName field to given value.
 
+
 ### HasDisplayName
 
 `func (o *TokenWriteCreateOrphanRequest) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
+
+
+
 
 ### GetEntityAlias
 
@@ -82,11 +93,15 @@ and a boolean to check if the value has been set.
 
 SetEntityAlias sets EntityAlias field to given value.
 
+
 ### HasEntityAlias
 
 `func (o *TokenWriteCreateOrphanRequest) HasEntityAlias() bool`
 
 HasEntityAlias returns a boolean if a field has been set.
+
+
+
 
 ### GetExplicitMaxTtl
 
@@ -107,11 +122,15 @@ and a boolean to check if the value has been set.
 
 SetExplicitMaxTtl sets ExplicitMaxTtl field to given value.
 
+
 ### HasExplicitMaxTtl
 
 `func (o *TokenWriteCreateOrphanRequest) HasExplicitMaxTtl() bool`
 
 HasExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetId
 
@@ -132,11 +151,15 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+
 ### HasId
 
 `func (o *TokenWriteCreateOrphanRequest) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+
+
 
 ### GetMetadata
 
@@ -157,11 +180,15 @@ and a boolean to check if the value has been set.
 
 SetMetadata sets Metadata field to given value.
 
+
 ### HasMetadata
 
 `func (o *TokenWriteCreateOrphanRequest) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetNoDefaultPolicy
 
@@ -182,11 +209,15 @@ and a boolean to check if the value has been set.
 
 SetNoDefaultPolicy sets NoDefaultPolicy field to given value.
 
+
 ### HasNoDefaultPolicy
 
 `func (o *TokenWriteCreateOrphanRequest) HasNoDefaultPolicy() bool`
 
 HasNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetNoParent
 
@@ -207,11 +238,15 @@ and a boolean to check if the value has been set.
 
 SetNoParent sets NoParent field to given value.
 
+
 ### HasNoParent
 
 `func (o *TokenWriteCreateOrphanRequest) HasNoParent() bool`
 
 HasNoParent returns a boolean if a field has been set.
+
+
+
 
 ### GetNumUses
 
@@ -232,11 +267,15 @@ and a boolean to check if the value has been set.
 
 SetNumUses sets NumUses field to given value.
 
+
 ### HasNumUses
 
 `func (o *TokenWriteCreateOrphanRequest) HasNumUses() bool`
 
 HasNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -257,11 +296,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *TokenWriteCreateOrphanRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -282,11 +325,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *TokenWriteCreateOrphanRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetRenewable
 
@@ -307,11 +354,15 @@ and a boolean to check if the value has been set.
 
 SetRenewable sets Renewable field to given value.
 
+
 ### HasRenewable
 
 `func (o *TokenWriteCreateOrphanRequest) HasRenewable() bool`
 
 HasRenewable returns a boolean if a field has been set.
+
+
+
 
 ### GetRoleName
 
@@ -332,11 +383,15 @@ and a boolean to check if the value has been set.
 
 SetRoleName sets RoleName field to given value.
 
+
 ### HasRoleName
 
 `func (o *TokenWriteCreateOrphanRequest) HasRoleName() bool`
 
 HasRoleName returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -357,11 +412,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *TokenWriteCreateOrphanRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -382,11 +441,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *TokenWriteCreateOrphanRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

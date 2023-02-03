@@ -1,12 +1,15 @@
 # AppRoleWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BindSecretId** | Pointer to **bool** | Impose secret_id to be presented when logging in using this role. Defaults to &#39;true&#39;. | [optional] [default to true]
+
+
+**BindSecretId** | Pointer to **bool** | Impose secret_id to be presented when logging in using this role. Defaults to &#x27;true&#x27;. | [optional] [default to true]
 **BoundCidrList** | Pointer to **[]string** | Use \&quot;secret_id_bound_cidrs\&quot; instead. | [optional] 
-**LocalSecretIds** | Pointer to **bool** | If set, the secret IDs generated using this role will be cluster local. This can only be set during role creation and once set, it can&#39;t be reset later. | [optional] 
+**LocalSecretIds** | Pointer to **bool** | If set, the secret IDs generated using this role will be cluster local. This can only be set during role creation and once set, it can&#x27;t be reset later. | [optional] 
 **Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
 **RoleId** | Pointer to **string** | Identifier of the role. Defaults to a UUID. | [optional] 
@@ -16,14 +19,17 @@ Name | Type | Description | Notes
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 **TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
-**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#39;default&#39; policy will not automatically be added to generated tokens | [optional] 
+**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
 **TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
 **TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteRoleRequest
 
@@ -41,6 +47,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteRoleRequestWithDefaults instantiates a new AppRoleWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBindSecretId
 
@@ -61,11 +68,15 @@ and a boolean to check if the value has been set.
 
 SetBindSecretId sets BindSecretId field to given value.
 
+
 ### HasBindSecretId
 
 `func (o *AppRoleWriteRoleRequest) HasBindSecretId() bool`
 
 HasBindSecretId returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundCidrList
 
@@ -86,11 +97,15 @@ and a boolean to check if the value has been set.
 
 SetBoundCidrList sets BoundCidrList field to given value.
 
+
 ### HasBoundCidrList
 
 `func (o *AppRoleWriteRoleRequest) HasBoundCidrList() bool`
 
 HasBoundCidrList returns a boolean if a field has been set.
+
+
+
 
 ### GetLocalSecretIds
 
@@ -111,11 +126,15 @@ and a boolean to check if the value has been set.
 
 SetLocalSecretIds sets LocalSecretIds field to given value.
 
+
 ### HasLocalSecretIds
 
 `func (o *AppRoleWriteRoleRequest) HasLocalSecretIds() bool`
 
 HasLocalSecretIds returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -136,11 +155,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *AppRoleWriteRoleRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -161,11 +184,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *AppRoleWriteRoleRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetRoleId
 
@@ -186,11 +213,15 @@ and a boolean to check if the value has been set.
 
 SetRoleId sets RoleId field to given value.
 
+
 ### HasRoleId
 
 `func (o *AppRoleWriteRoleRequest) HasRoleId() bool`
 
 HasRoleId returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdBoundCidrs
 
@@ -211,11 +242,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdBoundCidrs sets SecretIdBoundCidrs field to given value.
 
+
 ### HasSecretIdBoundCidrs
 
 `func (o *AppRoleWriteRoleRequest) HasSecretIdBoundCidrs() bool`
 
 HasSecretIdBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdNumUses
 
@@ -236,11 +271,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdNumUses sets SecretIdNumUses field to given value.
 
+
 ### HasSecretIdNumUses
 
 `func (o *AppRoleWriteRoleRequest) HasSecretIdNumUses() bool`
 
 HasSecretIdNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdTtl
 
@@ -261,11 +300,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 
+
 ### HasSecretIdTtl
 
 `func (o *AppRoleWriteRoleRequest) HasSecretIdTtl() bool`
 
 HasSecretIdTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -286,11 +329,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *AppRoleWriteRoleRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenExplicitMaxTtl
 
@@ -311,11 +358,15 @@ and a boolean to check if the value has been set.
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
+
 ### HasTokenExplicitMaxTtl
 
 `func (o *AppRoleWriteRoleRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenMaxTtl
 
@@ -336,11 +387,15 @@ and a boolean to check if the value has been set.
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
+
 ### HasTokenMaxTtl
 
 `func (o *AppRoleWriteRoleRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNoDefaultPolicy
 
@@ -361,11 +416,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
+
 ### HasTokenNoDefaultPolicy
 
 `func (o *AppRoleWriteRoleRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNumUses
 
@@ -386,11 +445,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
+
 ### HasTokenNumUses
 
 `func (o *AppRoleWriteRoleRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPeriod
 
@@ -411,11 +474,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
+
 ### HasTokenPeriod
 
 `func (o *AppRoleWriteRoleRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPolicies
 
@@ -436,11 +503,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
+
 ### HasTokenPolicies
 
 `func (o *AppRoleWriteRoleRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenTtl
 
@@ -461,11 +532,15 @@ and a boolean to check if the value has been set.
 
 SetTokenTtl sets TokenTtl field to given value.
 
+
 ### HasTokenTtl
 
 `func (o *AppRoleWriteRoleRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -486,11 +561,19 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *AppRoleWriteRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

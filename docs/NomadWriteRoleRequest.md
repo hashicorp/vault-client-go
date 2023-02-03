@@ -1,14 +1,20 @@
 # NomadWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Global** | Pointer to **bool** | Boolean value describing if the token should be global or not. Defaults to false. | [optional] 
-**Policies** | Pointer to **[]string** | Comma-separated string or list of policies as previously created in Nomad. Required for &#39;client&#39; token. | [optional] 
-**Type** | Pointer to **string** | Which type of token to create: &#39;client&#39; or &#39;management&#39;. If a &#39;management&#39; token, the \&quot;policies\&quot; parameter is not required. Defaults to &#39;client&#39;. | [optional] [default to "client"]
+**Policies** | Pointer to **[]string** | Comma-separated string or list of policies as previously created in Nomad. Required for &#x27;client&#x27; token. | [optional] 
+**Type** | Pointer to **string** | Which type of token to create: &#x27;client&#x27; or &#x27;management&#x27;. If a &#x27;management&#x27; token, the \&quot;policies\&quot; parameter is not required. Defaults to &#x27;client&#x27;. | [optional] [default to "client"]
+
+
 
 ## Methods
+
 
 ### NewNomadWriteRoleRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewNomadWriteRoleRequestWithDefaults instantiates a new NomadWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetGlobal
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetGlobal sets Global field to given value.
 
+
 ### HasGlobal
 
 `func (o *NomadWriteRoleRequest) HasGlobal() bool`
 
 HasGlobal returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *NomadWriteRoleRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *NomadWriteRoleRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

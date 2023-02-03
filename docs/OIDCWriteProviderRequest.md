@@ -1,14 +1,20 @@
 # OIDCWriteProviderRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowedClientIds** | Pointer to **[]string** | The client IDs that are permitted to use the provider | [optional] 
 **Issuer** | Pointer to **string** | Specifies what will be used for the iss claim of ID tokens. | [optional] 
 **ScopesSupported** | Pointer to **[]string** | The scopes supported for requesting on the provider | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOIDCWriteProviderRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewOIDCWriteProviderRequestWithDefaults instantiates a new OIDCWriteProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowedClientIds
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedClientIds sets AllowedClientIds field to given value.
 
+
 ### HasAllowedClientIds
 
 `func (o *OIDCWriteProviderRequest) HasAllowedClientIds() bool`
 
 HasAllowedClientIds returns a boolean if a field has been set.
+
+
+
 
 ### GetIssuer
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetIssuer sets Issuer field to given value.
 
+
 ### HasIssuer
 
 `func (o *OIDCWriteProviderRequest) HasIssuer() bool`
 
 HasIssuer returns a boolean if a field has been set.
+
+
+
 
 ### GetScopesSupported
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetScopesSupported sets ScopesSupported field to given value.
 
+
 ### HasScopesSupported
 
 `func (o *OIDCWriteProviderRequest) HasScopesSupported() bool`
 
 HasScopesSupported returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

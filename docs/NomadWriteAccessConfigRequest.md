@@ -1,17 +1,23 @@
 # NomadWriteAccessConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Address** | Pointer to **string** | Nomad server address | [optional] 
 **CaCert** | Pointer to **string** | CA certificate to use when verifying Nomad server certificate, must be x509 PEM encoded. | [optional] 
-**ClientCert** | Pointer to **string** | Client certificate used for Nomad&#39;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key. | [optional] 
-**ClientKey** | Pointer to **string** | Client key used for Nomad&#39;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert. | [optional] 
+**ClientCert** | Pointer to **string** | Client certificate used for Nomad&#x27;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key. | [optional] 
+**ClientKey** | Pointer to **string** | Client key used for Nomad&#x27;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert. | [optional] 
 **MaxTokenNameLength** | Pointer to **int32** | Max length for name of generated Nomad tokens | [optional] 
 **Token** | Pointer to **string** | Token for API calls | [optional] 
 
+
+
 ## Methods
+
 
 ### NewNomadWriteAccessConfigRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewNomadWriteAccessConfigRequestWithDefaults instantiates a new NomadWriteAccessConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAddress
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetAddress sets Address field to given value.
 
+
 ### HasAddress
 
 `func (o *NomadWriteAccessConfigRequest) HasAddress() bool`
 
 HasAddress returns a boolean if a field has been set.
+
+
+
 
 ### GetCaCert
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetCaCert sets CaCert field to given value.
 
+
 ### HasCaCert
 
 `func (o *NomadWriteAccessConfigRequest) HasCaCert() bool`
 
 HasCaCert returns a boolean if a field has been set.
+
+
+
 
 ### GetClientCert
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetClientCert sets ClientCert field to given value.
 
+
 ### HasClientCert
 
 `func (o *NomadWriteAccessConfigRequest) HasClientCert() bool`
 
 HasClientCert returns a boolean if a field has been set.
+
+
+
 
 ### GetClientKey
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetClientKey sets ClientKey field to given value.
 
+
 ### HasClientKey
 
 `func (o *NomadWriteAccessConfigRequest) HasClientKey() bool`
 
 HasClientKey returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTokenNameLength
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTokenNameLength sets MaxTokenNameLength field to given value.
 
+
 ### HasMaxTokenNameLength
 
 `func (o *NomadWriteAccessConfigRequest) HasMaxTokenNameLength() bool`
 
 HasMaxTokenNameLength returns a boolean if a field has been set.
+
+
+
 
 ### GetToken
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetToken sets Token field to given value.
 
+
 ### HasToken
 
 `func (o *NomadWriteAccessConfigRequest) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

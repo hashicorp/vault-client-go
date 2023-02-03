@@ -1,17 +1,23 @@
 # OIDCWriteProviderTokenRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ClientId** | Pointer to **string** | The ID of the requesting client. | [optional] 
 **ClientSecret** | Pointer to **string** | The secret of the requesting client. | [optional] 
-**Code** | **string** | The authorization code received from the provider&#39;s authorization endpoint. | 
+**Code** | **string** | The authorization code received from the provider&#x27;s authorization endpoint. | 
 **CodeVerifier** | Pointer to **string** | The code verifier associated with the authorization code. | [optional] 
-**GrantType** | **string** | The authorization grant type. The following grant types are supported: &#39;authorization_code&#39;. | 
+**GrantType** | **string** | The authorization grant type. The following grant types are supported: &#x27;authorization_code&#x27;. | 
 **RedirectUri** | **string** | The callback location where the authentication response was sent. | 
 
+
+
 ## Methods
+
 
 ### NewOIDCWriteProviderTokenRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewOIDCWriteProviderTokenRequestWithDefaults instantiates a new OIDCWriteProviderTokenRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetClientId
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
+
 ### HasClientId
 
 `func (o *OIDCWriteProviderTokenRequest) HasClientId() bool`
 
 HasClientId returns a boolean if a field has been set.
+
+
+
 
 ### GetClientSecret
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
+
 ### HasClientSecret
 
 `func (o *OIDCWriteProviderTokenRequest) HasClientSecret() bool`
 
 HasClientSecret returns a boolean if a field has been set.
+
+
+
 
 ### GetCode
 
@@ -100,6 +115,9 @@ and a boolean to check if the value has been set.
 SetCode sets Code field to given value.
 
 
+
+
+
 ### GetCodeVerifier
 
 `func (o *OIDCWriteProviderTokenRequest) GetCodeVerifier() string`
@@ -119,11 +137,15 @@ and a boolean to check if the value has been set.
 
 SetCodeVerifier sets CodeVerifier field to given value.
 
+
 ### HasCodeVerifier
 
 `func (o *OIDCWriteProviderTokenRequest) HasCodeVerifier() bool`
 
 HasCodeVerifier returns a boolean if a field has been set.
+
+
+
 
 ### GetGrantType
 
@@ -145,6 +167,9 @@ and a boolean to check if the value has been set.
 SetGrantType sets GrantType field to given value.
 
 
+
+
+
 ### GetRedirectUri
 
 `func (o *OIDCWriteProviderTokenRequest) GetRedirectUri() string`
@@ -163,6 +188,13 @@ and a boolean to check if the value has been set.
 `func (o *OIDCWriteProviderTokenRequest) SetRedirectUri(v string)`
 
 SetRedirectUri sets RedirectUri field to given value.
+
+
+
+
+
+
+
 
 
 

@@ -1,13 +1,19 @@
 # WriteRekeyVerifyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Key** | Pointer to **string** | Specifies a single unseal share key from the new set of shares. | [optional] 
 **Nonce** | Pointer to **string** | Specifies the nonce of the rekey verification operation. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteRekeyVerifyRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewWriteRekeyVerifyRequestWithDefaults instantiates a new WriteRekeyVerifyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetKey
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+
 ### HasKey
 
 `func (o *WriteRekeyVerifyRequest) HasKey() bool`
 
 HasKey returns a boolean if a field has been set.
+
+
+
 
 ### GetNonce
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetNonce sets Nonce field to given value.
 
+
 ### HasNonce
 
 `func (o *WriteRekeyVerifyRequest) HasNonce() bool`
 
 HasNonce returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

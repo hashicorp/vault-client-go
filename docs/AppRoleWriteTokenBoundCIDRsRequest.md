@@ -1,12 +1,18 @@
 # AppRoleWriteTokenBoundCIDRsRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteTokenBoundCIDRsRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteTokenBoundCIDRsRequestWithDefaults instantiates a new AppRoleWriteTokenBoundCIDRsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetTokenBoundCidrs
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *AppRoleWriteTokenBoundCIDRsRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

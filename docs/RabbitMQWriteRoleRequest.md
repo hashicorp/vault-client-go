@@ -1,14 +1,20 @@
 # RabbitMQWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Tags** | Pointer to **string** | Comma-separated list of tags for this role. | [optional] 
 **VhostTopics** | Pointer to **string** | A nested map of virtual hosts and exchanges to topic permissions. | [optional] 
 **Vhosts** | Pointer to **string** | A map of virtual hosts to permissions. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewRabbitMQWriteRoleRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewRabbitMQWriteRoleRequestWithDefaults instantiates a new RabbitMQWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetTags
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetTags sets Tags field to given value.
 
+
 ### HasTags
 
 `func (o *RabbitMQWriteRoleRequest) HasTags() bool`
 
 HasTags returns a boolean if a field has been set.
+
+
+
 
 ### GetVhostTopics
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetVhostTopics sets VhostTopics field to given value.
 
+
 ### HasVhostTopics
 
 `func (o *RabbitMQWriteRoleRequest) HasVhostTopics() bool`
 
 HasVhostTopics returns a boolean if a field has been set.
+
+
+
 
 ### GetVhosts
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetVhosts sets Vhosts field to given value.
 
+
 ### HasVhosts
 
 `func (o *RabbitMQWriteRoleRequest) HasVhosts() bool`
 
 HasVhosts returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

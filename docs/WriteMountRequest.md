@@ -1,12 +1,15 @@
 # WriteMountRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Config** | Pointer to **map[string]interface{}** | Configuration for this mount, such as default_lease_ttl and max_lease_ttl. | [optional] 
 **Description** | Pointer to **string** | User-friendly description for this mount. | [optional] 
-**ExternalEntropyAccess** | Pointer to **bool** | Whether to give the mount access to Vault&#39;s external entropy. | [optional] [default to false]
+**ExternalEntropyAccess** | Pointer to **bool** | Whether to give the mount access to Vault&#x27;s external entropy. | [optional] [default to false]
 **Local** | Pointer to **bool** | Mark the mount as a local mount, which is not replicated and is unaffected by replication. | [optional] [default to false]
 **Options** | Pointer to **map[string]interface{}** | The options to pass into the backend. Should be a json object with string keys and values. | [optional] 
 **PluginName** | Pointer to **string** | Name of the plugin to mount based from the name registered in the plugin catalog. | [optional] 
@@ -14,7 +17,10 @@ Name | Type | Description | Notes
 **SealWrap** | Pointer to **bool** | Whether to turn on seal wrapping for the mount. | [optional] [default to false]
 **Type** | Pointer to **string** | The type of the backend. Example: \&quot;passthrough\&quot; | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteMountRequest
 
@@ -32,6 +38,7 @@ will change when the set of required properties is changed
 NewWriteMountRequestWithDefaults instantiates a new WriteMountRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetConfig
 
@@ -52,11 +59,15 @@ and a boolean to check if the value has been set.
 
 SetConfig sets Config field to given value.
 
+
 ### HasConfig
 
 `func (o *WriteMountRequest) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
+
+
+
 
 ### GetDescription
 
@@ -77,11 +88,15 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
+
 ### HasDescription
 
 `func (o *WriteMountRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+
+
 
 ### GetExternalEntropyAccess
 
@@ -102,11 +117,15 @@ and a boolean to check if the value has been set.
 
 SetExternalEntropyAccess sets ExternalEntropyAccess field to given value.
 
+
 ### HasExternalEntropyAccess
 
 `func (o *WriteMountRequest) HasExternalEntropyAccess() bool`
 
 HasExternalEntropyAccess returns a boolean if a field has been set.
+
+
+
 
 ### GetLocal
 
@@ -127,11 +146,15 @@ and a boolean to check if the value has been set.
 
 SetLocal sets Local field to given value.
 
+
 ### HasLocal
 
 `func (o *WriteMountRequest) HasLocal() bool`
 
 HasLocal returns a boolean if a field has been set.
+
+
+
 
 ### GetOptions
 
@@ -152,11 +175,15 @@ and a boolean to check if the value has been set.
 
 SetOptions sets Options field to given value.
 
+
 ### HasOptions
 
 `func (o *WriteMountRequest) HasOptions() bool`
 
 HasOptions returns a boolean if a field has been set.
+
+
+
 
 ### GetPluginName
 
@@ -177,11 +204,15 @@ and a boolean to check if the value has been set.
 
 SetPluginName sets PluginName field to given value.
 
+
 ### HasPluginName
 
 `func (o *WriteMountRequest) HasPluginName() bool`
 
 HasPluginName returns a boolean if a field has been set.
+
+
+
 
 ### GetPluginVersion
 
@@ -202,11 +233,15 @@ and a boolean to check if the value has been set.
 
 SetPluginVersion sets PluginVersion field to given value.
 
+
 ### HasPluginVersion
 
 `func (o *WriteMountRequest) HasPluginVersion() bool`
 
 HasPluginVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetSealWrap
 
@@ -227,11 +262,15 @@ and a boolean to check if the value has been set.
 
 SetSealWrap sets SealWrap field to given value.
 
+
 ### HasSealWrap
 
 `func (o *WriteMountRequest) HasSealWrap() bool`
 
 HasSealWrap returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -252,11 +291,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *WriteMountRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

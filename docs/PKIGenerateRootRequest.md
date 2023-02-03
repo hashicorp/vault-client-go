@@ -1,18 +1,21 @@
 # PKIGenerateRootRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AltNames** | Pointer to **string** | The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses. | [optional] 
 **CommonName** | Pointer to **string** | The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans. | [optional] 
 **Country** | Pointer to **[]string** | If set, Country will be set to this value. | [optional] 
 **ExcludeCnFromSans** | Pointer to **bool** | If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included). | [optional] [default to false]
 **Format** | Pointer to **string** | Format for returned data. Can be \&quot;pem\&quot;, \&quot;der\&quot;, or \&quot;pem_bundle\&quot;. If \&quot;pem_bundle\&quot;, any private key and issuing cert will be appended to the certificate pem. If \&quot;der\&quot;, the value will be base64 encoded. Defaults to \&quot;pem\&quot;. | [optional] [default to "pem"]
 **IpSans** | Pointer to **[]string** | The requested IP SANs, if any, in a comma-delimited list | [optional] 
-**IssuerName** | Pointer to **string** | Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value &#39;default&#39; | [optional] 
+**IssuerName** | Pointer to **string** | Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value &#x27;default&#x27; | [optional] 
 **KeyBits** | Pointer to **int32** | The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519. | [optional] [default to 0]
-**KeyName** | Pointer to **string** | Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value &#39;default&#39; | [optional] 
+**KeyName** | Pointer to **string** | Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value &#x27;default&#x27; | [optional] 
 **KeyRef** | Pointer to **string** | Reference to a existing key; either \&quot;default\&quot; for the configured default key, an identifier or the name assigned to the key. | [optional] [default to "default"]
 **KeyType** | Pointer to **string** | The type of key to use; defaults to RSA. \&quot;rsa\&quot; \&quot;ec\&quot; and \&quot;ed25519\&quot; are the only valid values. | [optional] [default to "rsa"]
 **Locality** | Pointer to **[]string** | If set, Locality will be set to this value. | [optional] 
@@ -28,14 +31,17 @@ Name | Type | Description | Notes
 **PostalCode** | Pointer to **[]string** | If set, Postal Code will be set to this value. | [optional] 
 **PrivateKeyFormat** | Pointer to **string** | Format for the returned private key. Generally the default will be controlled by the \&quot;format\&quot; parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \&quot;pkcs8\&quot; to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \&quot;der\&quot;. | [optional] [default to "der"]
 **Province** | Pointer to **[]string** | If set, Province will be set to this value. | [optional] 
-**SerialNumber** | Pointer to **string** | The Subject&#39;s requested serial number, if any. See RFC 4519 Section 2.31 &#39;serialNumber&#39; for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate&#39;s Serial Number field. | [optional] 
+**SerialNumber** | Pointer to **string** | The Subject&#x27;s requested serial number, if any. See RFC 4519 Section 2.31 &#x27;serialNumber&#x27; for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate&#x27;s Serial Number field. | [optional] 
 **SignatureBits** | Pointer to **int32** | The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves). | [optional] [default to 0]
 **StreetAddress** | Pointer to **[]string** | If set, Street Address will be set to this value. | [optional] 
 **Ttl** | Pointer to **int32** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. | [optional] 
 **UriSans** | Pointer to **[]string** | The requested URI SANs, if any, in a comma-delimited list. | [optional] 
 **UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
 
+
+
 ## Methods
+
 
 ### NewPKIGenerateRootRequest
 
@@ -53,6 +59,7 @@ will change when the set of required properties is changed
 NewPKIGenerateRootRequestWithDefaults instantiates a new PKIGenerateRootRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAltNames
 
@@ -73,11 +80,15 @@ and a boolean to check if the value has been set.
 
 SetAltNames sets AltNames field to given value.
 
+
 ### HasAltNames
 
 `func (o *PKIGenerateRootRequest) HasAltNames() bool`
 
 HasAltNames returns a boolean if a field has been set.
+
+
+
 
 ### GetCommonName
 
@@ -98,11 +109,15 @@ and a boolean to check if the value has been set.
 
 SetCommonName sets CommonName field to given value.
 
+
 ### HasCommonName
 
 `func (o *PKIGenerateRootRequest) HasCommonName() bool`
 
 HasCommonName returns a boolean if a field has been set.
+
+
+
 
 ### GetCountry
 
@@ -123,11 +138,15 @@ and a boolean to check if the value has been set.
 
 SetCountry sets Country field to given value.
 
+
 ### HasCountry
 
 `func (o *PKIGenerateRootRequest) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
+
+
+
 
 ### GetExcludeCnFromSans
 
@@ -148,11 +167,15 @@ and a boolean to check if the value has been set.
 
 SetExcludeCnFromSans sets ExcludeCnFromSans field to given value.
 
+
 ### HasExcludeCnFromSans
 
 `func (o *PKIGenerateRootRequest) HasExcludeCnFromSans() bool`
 
 HasExcludeCnFromSans returns a boolean if a field has been set.
+
+
+
 
 ### GetFormat
 
@@ -173,11 +196,15 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
+
 ### HasFormat
 
 `func (o *PKIGenerateRootRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+
+
 
 ### GetIpSans
 
@@ -198,11 +225,15 @@ and a boolean to check if the value has been set.
 
 SetIpSans sets IpSans field to given value.
 
+
 ### HasIpSans
 
 `func (o *PKIGenerateRootRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
+
+
+
 
 ### GetIssuerName
 
@@ -223,11 +254,15 @@ and a boolean to check if the value has been set.
 
 SetIssuerName sets IssuerName field to given value.
 
+
 ### HasIssuerName
 
 `func (o *PKIGenerateRootRequest) HasIssuerName() bool`
 
 HasIssuerName returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyBits
 
@@ -248,11 +283,15 @@ and a boolean to check if the value has been set.
 
 SetKeyBits sets KeyBits field to given value.
 
+
 ### HasKeyBits
 
 `func (o *PKIGenerateRootRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyName
 
@@ -273,11 +312,15 @@ and a boolean to check if the value has been set.
 
 SetKeyName sets KeyName field to given value.
 
+
 ### HasKeyName
 
 `func (o *PKIGenerateRootRequest) HasKeyName() bool`
 
 HasKeyName returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyRef
 
@@ -298,11 +341,15 @@ and a boolean to check if the value has been set.
 
 SetKeyRef sets KeyRef field to given value.
 
+
 ### HasKeyRef
 
 `func (o *PKIGenerateRootRequest) HasKeyRef() bool`
 
 HasKeyRef returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyType
 
@@ -323,11 +370,15 @@ and a boolean to check if the value has been set.
 
 SetKeyType sets KeyType field to given value.
 
+
 ### HasKeyType
 
 `func (o *PKIGenerateRootRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
+
+
+
 
 ### GetLocality
 
@@ -348,11 +399,15 @@ and a boolean to check if the value has been set.
 
 SetLocality sets Locality field to given value.
 
+
 ### HasLocality
 
 `func (o *PKIGenerateRootRequest) HasLocality() bool`
 
 HasLocality returns a boolean if a field has been set.
+
+
+
 
 ### GetManagedKeyId
 
@@ -373,11 +428,15 @@ and a boolean to check if the value has been set.
 
 SetManagedKeyId sets ManagedKeyId field to given value.
 
+
 ### HasManagedKeyId
 
 `func (o *PKIGenerateRootRequest) HasManagedKeyId() bool`
 
 HasManagedKeyId returns a boolean if a field has been set.
+
+
+
 
 ### GetManagedKeyName
 
@@ -398,11 +457,15 @@ and a boolean to check if the value has been set.
 
 SetManagedKeyName sets ManagedKeyName field to given value.
 
+
 ### HasManagedKeyName
 
 `func (o *PKIGenerateRootRequest) HasManagedKeyName() bool`
 
 HasManagedKeyName returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxPathLength
 
@@ -423,11 +486,15 @@ and a boolean to check if the value has been set.
 
 SetMaxPathLength sets MaxPathLength field to given value.
 
+
 ### HasMaxPathLength
 
 `func (o *PKIGenerateRootRequest) HasMaxPathLength() bool`
 
 HasMaxPathLength returns a boolean if a field has been set.
+
+
+
 
 ### GetNotAfter
 
@@ -448,11 +515,15 @@ and a boolean to check if the value has been set.
 
 SetNotAfter sets NotAfter field to given value.
 
+
 ### HasNotAfter
 
 `func (o *PKIGenerateRootRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
+
+
+
 
 ### GetNotBeforeDuration
 
@@ -473,11 +544,15 @@ and a boolean to check if the value has been set.
 
 SetNotBeforeDuration sets NotBeforeDuration field to given value.
 
+
 ### HasNotBeforeDuration
 
 `func (o *PKIGenerateRootRequest) HasNotBeforeDuration() bool`
 
 HasNotBeforeDuration returns a boolean if a field has been set.
+
+
+
 
 ### GetOrganization
 
@@ -498,11 +573,15 @@ and a boolean to check if the value has been set.
 
 SetOrganization sets Organization field to given value.
 
+
 ### HasOrganization
 
 `func (o *PKIGenerateRootRequest) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
+
+
+
 
 ### GetOtherSans
 
@@ -523,11 +602,15 @@ and a boolean to check if the value has been set.
 
 SetOtherSans sets OtherSans field to given value.
 
+
 ### HasOtherSans
 
 `func (o *PKIGenerateRootRequest) HasOtherSans() bool`
 
 HasOtherSans returns a boolean if a field has been set.
+
+
+
 
 ### GetOu
 
@@ -548,11 +631,15 @@ and a boolean to check if the value has been set.
 
 SetOu sets Ou field to given value.
 
+
 ### HasOu
 
 `func (o *PKIGenerateRootRequest) HasOu() bool`
 
 HasOu returns a boolean if a field has been set.
+
+
+
 
 ### GetPermittedDnsDomains
 
@@ -573,11 +660,15 @@ and a boolean to check if the value has been set.
 
 SetPermittedDnsDomains sets PermittedDnsDomains field to given value.
 
+
 ### HasPermittedDnsDomains
 
 `func (o *PKIGenerateRootRequest) HasPermittedDnsDomains() bool`
 
 HasPermittedDnsDomains returns a boolean if a field has been set.
+
+
+
 
 ### GetPostalCode
 
@@ -598,11 +689,15 @@ and a boolean to check if the value has been set.
 
 SetPostalCode sets PostalCode field to given value.
 
+
 ### HasPostalCode
 
 `func (o *PKIGenerateRootRequest) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
+
+
+
 
 ### GetPrivateKeyFormat
 
@@ -623,11 +718,15 @@ and a boolean to check if the value has been set.
 
 SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
+
 ### HasPrivateKeyFormat
 
 `func (o *PKIGenerateRootRequest) HasPrivateKeyFormat() bool`
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
+
+
+
 
 ### GetProvince
 
@@ -648,11 +747,15 @@ and a boolean to check if the value has been set.
 
 SetProvince sets Province field to given value.
 
+
 ### HasProvince
 
 `func (o *PKIGenerateRootRequest) HasProvince() bool`
 
 HasProvince returns a boolean if a field has been set.
+
+
+
 
 ### GetSerialNumber
 
@@ -673,11 +776,15 @@ and a boolean to check if the value has been set.
 
 SetSerialNumber sets SerialNumber field to given value.
 
+
 ### HasSerialNumber
 
 `func (o *PKIGenerateRootRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
+
+
+
 
 ### GetSignatureBits
 
@@ -698,11 +805,15 @@ and a boolean to check if the value has been set.
 
 SetSignatureBits sets SignatureBits field to given value.
 
+
 ### HasSignatureBits
 
 `func (o *PKIGenerateRootRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
+
+
+
 
 ### GetStreetAddress
 
@@ -723,11 +834,15 @@ and a boolean to check if the value has been set.
 
 SetStreetAddress sets StreetAddress field to given value.
 
+
 ### HasStreetAddress
 
 `func (o *PKIGenerateRootRequest) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -748,11 +863,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *PKIGenerateRootRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetUriSans
 
@@ -773,11 +892,15 @@ and a boolean to check if the value has been set.
 
 SetUriSans sets UriSans field to given value.
 
+
 ### HasUriSans
 
 `func (o *PKIGenerateRootRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
+
+
+
 
 ### GetUsePss
 
@@ -798,11 +921,19 @@ and a boolean to check if the value has been set.
 
 SetUsePss sets UsePss field to given value.
 
+
 ### HasUsePss
 
 `func (o *PKIGenerateRootRequest) HasUsePss() bool`
 
 HasUsePss returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

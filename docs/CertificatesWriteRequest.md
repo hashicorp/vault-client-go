@@ -1,9 +1,12 @@
 # CertificatesWriteRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AllowedCommonNames** | Pointer to **[]string** | A comma-separated list of names. At least one must exist in the Common Name. Supports globbing. | [optional] 
 **AllowedDnsSans** | Pointer to **[]string** | A comma-separated list of DNS names. At least one must exist in the SANs. Supports globbing. | [optional] 
 **AllowedEmailSans** | Pointer to **[]string** | A comma-separated list of Email Addresses. At least one must exist in the SANs. Supports globbing. | [optional] 
@@ -27,7 +30,7 @@ Name | Type | Description | Notes
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 **TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
-**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#39;default&#39; policy will not automatically be added to generated tokens | [optional] 
+**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
 **TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
@@ -35,7 +38,10 @@ Name | Type | Description | Notes
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 **Ttl** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewCertificatesWriteRequest
 
@@ -53,6 +59,7 @@ will change when the set of required properties is changed
 NewCertificatesWriteRequestWithDefaults instantiates a new CertificatesWriteRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAllowedCommonNames
 
@@ -73,11 +80,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedCommonNames sets AllowedCommonNames field to given value.
 
+
 ### HasAllowedCommonNames
 
 `func (o *CertificatesWriteRequest) HasAllowedCommonNames() bool`
 
 HasAllowedCommonNames returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedDnsSans
 
@@ -98,11 +109,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedDnsSans sets AllowedDnsSans field to given value.
 
+
 ### HasAllowedDnsSans
 
 `func (o *CertificatesWriteRequest) HasAllowedDnsSans() bool`
 
 HasAllowedDnsSans returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedEmailSans
 
@@ -123,11 +138,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedEmailSans sets AllowedEmailSans field to given value.
 
+
 ### HasAllowedEmailSans
 
 `func (o *CertificatesWriteRequest) HasAllowedEmailSans() bool`
 
 HasAllowedEmailSans returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedMetadataExtensions
 
@@ -148,11 +167,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedMetadataExtensions sets AllowedMetadataExtensions field to given value.
 
+
 ### HasAllowedMetadataExtensions
 
 `func (o *CertificatesWriteRequest) HasAllowedMetadataExtensions() bool`
 
 HasAllowedMetadataExtensions returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedNames
 
@@ -173,11 +196,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedNames sets AllowedNames field to given value.
 
+
 ### HasAllowedNames
 
 `func (o *CertificatesWriteRequest) HasAllowedNames() bool`
 
 HasAllowedNames returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedOrganizationalUnits
 
@@ -198,11 +225,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedOrganizationalUnits sets AllowedOrganizationalUnits field to given value.
 
+
 ### HasAllowedOrganizationalUnits
 
 `func (o *CertificatesWriteRequest) HasAllowedOrganizationalUnits() bool`
 
 HasAllowedOrganizationalUnits returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedUriSans
 
@@ -223,11 +254,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedUriSans sets AllowedUriSans field to given value.
 
+
 ### HasAllowedUriSans
 
 `func (o *CertificatesWriteRequest) HasAllowedUriSans() bool`
 
 HasAllowedUriSans returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundCidrs
 
@@ -248,11 +283,15 @@ and a boolean to check if the value has been set.
 
 SetBoundCidrs sets BoundCidrs field to given value.
 
+
 ### HasBoundCidrs
 
 `func (o *CertificatesWriteRequest) HasBoundCidrs() bool`
 
 HasBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetCertificate
 
@@ -273,11 +312,15 @@ and a boolean to check if the value has been set.
 
 SetCertificate sets Certificate field to given value.
 
+
 ### HasCertificate
 
 `func (o *CertificatesWriteRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
+
+
+
 
 ### GetDisplayName
 
@@ -298,11 +341,15 @@ and a boolean to check if the value has been set.
 
 SetDisplayName sets DisplayName field to given value.
 
+
 ### HasDisplayName
 
 `func (o *CertificatesWriteRequest) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
+
+
+
 
 ### GetLease
 
@@ -323,11 +370,15 @@ and a boolean to check if the value has been set.
 
 SetLease sets Lease field to given value.
 
+
 ### HasLease
 
 `func (o *CertificatesWriteRequest) HasLease() bool`
 
 HasLease returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -348,11 +399,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *CertificatesWriteRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspCaCertificates
 
@@ -373,11 +428,15 @@ and a boolean to check if the value has been set.
 
 SetOcspCaCertificates sets OcspCaCertificates field to given value.
 
+
 ### HasOcspCaCertificates
 
 `func (o *CertificatesWriteRequest) HasOcspCaCertificates() bool`
 
 HasOcspCaCertificates returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspEnabled
 
@@ -398,11 +457,15 @@ and a boolean to check if the value has been set.
 
 SetOcspEnabled sets OcspEnabled field to given value.
 
+
 ### HasOcspEnabled
 
 `func (o *CertificatesWriteRequest) HasOcspEnabled() bool`
 
 HasOcspEnabled returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspFailOpen
 
@@ -423,11 +486,15 @@ and a boolean to check if the value has been set.
 
 SetOcspFailOpen sets OcspFailOpen field to given value.
 
+
 ### HasOcspFailOpen
 
 `func (o *CertificatesWriteRequest) HasOcspFailOpen() bool`
 
 HasOcspFailOpen returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspQueryAllServers
 
@@ -448,11 +515,15 @@ and a boolean to check if the value has been set.
 
 SetOcspQueryAllServers sets OcspQueryAllServers field to given value.
 
+
 ### HasOcspQueryAllServers
 
 `func (o *CertificatesWriteRequest) HasOcspQueryAllServers() bool`
 
 HasOcspQueryAllServers returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspServersOverride
 
@@ -473,11 +544,15 @@ and a boolean to check if the value has been set.
 
 SetOcspServersOverride sets OcspServersOverride field to given value.
 
+
 ### HasOcspServersOverride
 
 `func (o *CertificatesWriteRequest) HasOcspServersOverride() bool`
 
 HasOcspServersOverride returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -498,11 +573,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *CertificatesWriteRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -523,11 +602,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *CertificatesWriteRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetRequiredExtensions
 
@@ -548,11 +631,15 @@ and a boolean to check if the value has been set.
 
 SetRequiredExtensions sets RequiredExtensions field to given value.
 
+
 ### HasRequiredExtensions
 
 `func (o *CertificatesWriteRequest) HasRequiredExtensions() bool`
 
 HasRequiredExtensions returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -573,11 +660,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *CertificatesWriteRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenExplicitMaxTtl
 
@@ -598,11 +689,15 @@ and a boolean to check if the value has been set.
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
+
 ### HasTokenExplicitMaxTtl
 
 `func (o *CertificatesWriteRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenMaxTtl
 
@@ -623,11 +718,15 @@ and a boolean to check if the value has been set.
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
+
 ### HasTokenMaxTtl
 
 `func (o *CertificatesWriteRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNoDefaultPolicy
 
@@ -648,11 +747,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
+
 ### HasTokenNoDefaultPolicy
 
 `func (o *CertificatesWriteRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNumUses
 
@@ -673,11 +776,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
+
 ### HasTokenNumUses
 
 `func (o *CertificatesWriteRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPeriod
 
@@ -698,11 +805,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
+
 ### HasTokenPeriod
 
 `func (o *CertificatesWriteRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPolicies
 
@@ -723,11 +834,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
+
 ### HasTokenPolicies
 
 `func (o *CertificatesWriteRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenTtl
 
@@ -748,11 +863,15 @@ and a boolean to check if the value has been set.
 
 SetTokenTtl sets TokenTtl field to given value.
 
+
 ### HasTokenTtl
 
 `func (o *CertificatesWriteRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -773,11 +892,15 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *CertificatesWriteRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -798,11 +921,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *CertificatesWriteRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

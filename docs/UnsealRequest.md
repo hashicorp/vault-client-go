@@ -1,13 +1,19 @@
 # UnsealRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Key** | Pointer to **string** | Specifies a single unseal key share. This is required unless reset is true. | [optional] 
 **Reset** | Pointer to **bool** | Specifies if previously-provided unseal keys are discarded and the unseal process is reset. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewUnsealRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewUnsealRequestWithDefaults instantiates a new UnsealRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetKey
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+
 ### HasKey
 
 `func (o *UnsealRequest) HasKey() bool`
 
 HasKey returns a boolean if a field has been set.
+
+
+
 
 ### GetReset
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetReset sets Reset field to given value.
 
+
 ### HasReset
 
 `func (o *UnsealRequest) HasReset() bool`
 
 HasReset returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

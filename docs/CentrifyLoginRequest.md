@@ -1,14 +1,20 @@
 # CentrifyLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Mode** | Pointer to **string** | Auth mode (&#39;ro&#39; for resource owner, &#39;cc&#39; for credential client). | [optional] [default to "ro"]
+
+
+**Mode** | Pointer to **string** | Auth mode (&#x27;ro&#x27; for resource owner, &#x27;cc&#x27; for credential client). | [optional] [default to "ro"]
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 **Username** | Pointer to **string** | Username of the user. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewCentrifyLoginRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewCentrifyLoginRequestWithDefaults instantiates a new CentrifyLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMode
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetMode sets Mode field to given value.
 
+
 ### HasMode
 
 `func (o *CentrifyLoginRequest) HasMode() bool`
 
 HasMode returns a boolean if a field has been set.
+
+
+
 
 ### GetPassword
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
+
 ### HasPassword
 
 `func (o *CentrifyLoginRequest) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+
+
 
 ### GetUsername
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
+
 ### HasUsername
 
 `func (o *CentrifyLoginRequest) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

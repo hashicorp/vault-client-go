@@ -1,13 +1,19 @@
 # WriteConfigUIHeaderRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Multivalue** | Pointer to **bool** | Returns multiple values if true | [optional] 
 **Values** | Pointer to **[]string** | The values to set the header. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteConfigUIHeaderRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewWriteConfigUIHeaderRequestWithDefaults instantiates a new WriteConfigUIHeaderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetMultivalue
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetMultivalue sets Multivalue field to given value.
 
+
 ### HasMultivalue
 
 `func (o *WriteConfigUIHeaderRequest) HasMultivalue() bool`
 
 HasMultivalue returns a boolean if a field has been set.
+
+
+
 
 ### GetValues
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetValues sets Values field to given value.
 
+
 ### HasValues
 
 `func (o *WriteConfigUIHeaderRequest) HasValues() bool`
 
 HasValues returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

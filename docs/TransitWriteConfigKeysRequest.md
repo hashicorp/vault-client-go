@@ -1,12 +1,18 @@
 # TransitWriteConfigKeysRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **DisableUpsert** | Pointer to **bool** | Whether to allow automatic upserting (creation) of keys on the encrypt endpoint. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewTransitWriteConfigKeysRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewTransitWriteConfigKeysRequestWithDefaults instantiates a new TransitWriteConfigKeysRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDisableUpsert
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetDisableUpsert sets DisableUpsert field to given value.
 
+
 ### HasDisableUpsert
 
 `func (o *TransitWriteConfigKeysRequest) HasDisableUpsert() bool`
 
 HasDisableUpsert returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

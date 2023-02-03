@@ -1,15 +1,21 @@
 # JWTWriteOIDCCallbackRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ClientNonce** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **IdToken** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 
+
+
 ## Methods
+
 
 ### NewJWTWriteOIDCCallbackRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewJWTWriteOIDCCallbackRequestWithDefaults instantiates a new JWTWriteOIDCCallbackRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetClientNonce
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetClientNonce sets ClientNonce field to given value.
 
+
 ### HasClientNonce
 
 `func (o *JWTWriteOIDCCallbackRequest) HasClientNonce() bool`
 
 HasClientNonce returns a boolean if a field has been set.
+
+
+
 
 ### GetCode
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetCode sets Code field to given value.
 
+
 ### HasCode
 
 `func (o *JWTWriteOIDCCallbackRequest) HasCode() bool`
 
 HasCode returns a boolean if a field has been set.
+
+
+
 
 ### GetIdToken
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetIdToken sets IdToken field to given value.
 
+
 ### HasIdToken
 
 `func (o *JWTWriteOIDCCallbackRequest) HasIdToken() bool`
 
 HasIdToken returns a boolean if a field has been set.
+
+
+
 
 ### GetState
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+
 ### HasState
 
 `func (o *JWTWriteOIDCCallbackRequest) HasState() bool`
 
 HasState returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

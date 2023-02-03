@@ -37,7 +37,7 @@ Method | HTTP request | Description
 [**AliCloudDeleteRole**](Secrets.md#AliCloudDeleteRole) | **Delete** /{alicloud_mount_path}/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
 [**AliCloudListRoles**](Secrets.md#AliCloudListRoles) | **Get** /{alicloud_mount_path}/role | List the existing roles in this backend.
 [**AliCloudReadConfig**](Secrets.md#AliCloudReadConfig) | **Get** /{alicloud_mount_path}/config | Configure the access key and secret to use for RAM and STS calls.
-[**AliCloudReadCredentials**](Secrets.md#AliCloudReadCredentials) | **Get** /{alicloud_mount_path}/creds/{name} | Generate an API key or STS credential using the given role&#39;s configuration.&#39;
+[**AliCloudReadCredentials**](Secrets.md#AliCloudReadCredentials) | **Get** /{alicloud_mount_path}/creds/{name} | Generate an API key or STS credential using the given role&#x27;s configuration.&#x27;
 [**AliCloudReadRole**](Secrets.md#AliCloudReadRole) | **Get** /{alicloud_mount_path}/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
 [**AliCloudWriteConfig**](Secrets.md#AliCloudWriteConfig) | **Post** /{alicloud_mount_path}/config | Configure the access key and secret to use for RAM and STS calls.
 [**AliCloudWriteRole**](Secrets.md#AliCloudWriteRole) | **Post** /{alicloud_mount_path}/role/{name} | Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -285,13 +285,13 @@ Method | HTTP request | Description
 [**RabbitMQWriteRole**](Secrets.md#RabbitMQWriteRole) | **Post** /{rabbitmq_mount_path}/roles/{name} | Manage the roles that can be created with this backend.
 [**SSHDeleteCAConfig**](Secrets.md#SSHDeleteCAConfig) | **Delete** /{ssh_mount_path}/config/ca | Set the SSH private key used for signing certificates.
 [**SSHDeleteKeys**](Secrets.md#SSHDeleteKeys) | **Delete** /{ssh_mount_path}/keys/{key_name} | Register a shared private key with Vault.
-[**SSHDeleteRole**](Secrets.md#SSHDeleteRole) | **Delete** /{ssh_mount_path}/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
+[**SSHDeleteRole**](Secrets.md#SSHDeleteRole) | **Delete** /{ssh_mount_path}/roles/{role} | Manage the &#x27;roles&#x27; that can be created with this backend.
 [**SSHDeleteZeroAddressConfig**](Secrets.md#SSHDeleteZeroAddressConfig) | **Delete** /{ssh_mount_path}/config/zeroaddress | Assign zero address as default CIDR block for select roles.
-[**SSHListRoles**](Secrets.md#SSHListRoles) | **Get** /{ssh_mount_path}/roles | Manage the &#39;roles&#39; that can be created with this backend.
+[**SSHListRoles**](Secrets.md#SSHListRoles) | **Get** /{ssh_mount_path}/roles | Manage the &#x27;roles&#x27; that can be created with this backend.
 [**SSHLookup**](Secrets.md#SSHLookup) | **Post** /{ssh_mount_path}/lookup | List all the roles associated with the given IP address.
 [**SSHReadCAConfig**](Secrets.md#SSHReadCAConfig) | **Get** /{ssh_mount_path}/config/ca | Set the SSH private key used for signing certificates.
 [**SSHReadPublicKey**](Secrets.md#SSHReadPublicKey) | **Get** /{ssh_mount_path}/public_key | Retrieve the public key.
-[**SSHReadRole**](Secrets.md#SSHReadRole) | **Get** /{ssh_mount_path}/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
+[**SSHReadRole**](Secrets.md#SSHReadRole) | **Get** /{ssh_mount_path}/roles/{role} | Manage the &#x27;roles&#x27; that can be created with this backend.
 [**SSHReadZeroAddressConfig**](Secrets.md#SSHReadZeroAddressConfig) | **Get** /{ssh_mount_path}/config/zeroaddress | Assign zero address as default CIDR block for select roles.
 [**SSHSign**](Secrets.md#SSHSign) | **Post** /{ssh_mount_path}/sign/{role} | Request signing an SSH key using a certain role with the provided details.
 [**SSHVerify**](Secrets.md#SSHVerify) | **Post** /{ssh_mount_path}/verify | Validate the OTP provided by Vault SSH Agent.
@@ -299,7 +299,7 @@ Method | HTTP request | Description
 [**SSHWriteCredentials**](Secrets.md#SSHWriteCredentials) | **Post** /{ssh_mount_path}/creds/{role} | Creates a credential for establishing SSH connection with the remote host.
 [**SSHWriteIssue**](Secrets.md#SSHWriteIssue) | **Post** /{ssh_mount_path}/issue/{role} | 
 [**SSHWriteKeys**](Secrets.md#SSHWriteKeys) | **Post** /{ssh_mount_path}/keys/{key_name} | Register a shared private key with Vault.
-[**SSHWriteRole**](Secrets.md#SSHWriteRole) | **Post** /{ssh_mount_path}/roles/{role} | Manage the &#39;roles&#39; that can be created with this backend.
+[**SSHWriteRole**](Secrets.md#SSHWriteRole) | **Post** /{ssh_mount_path}/roles/{role} | Manage the &#x27;roles&#x27; that can be created with this backend.
 [**SSHWriteZeroAddressConfig**](Secrets.md#SSHWriteZeroAddressConfig) | **Post** /{ssh_mount_path}/config/zeroaddress | Assign zero address as default CIDR block for select roles.
 [**TOTPDeleteKey**](Secrets.md#TOTPDeleteKey) | **Delete** /{totp_mount_path}/keys/{name} | Manage the keys that can be created with this backend.
 [**TOTPListKeys**](Secrets.md#TOTPListKeys) | **Get** /{totp_mount_path}/keys | Manage the keys that can be created with this backend.
@@ -355,6 +355,8 @@ Method | HTTP request | Description
 
 
 
+
+
 ## AWSConfigReadLease
 
 > AWSConfigReadLease(ctx, awsMountPath).Execute()
@@ -381,8 +383,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AWSConfigReadLease(
 		context.Background(),
@@ -416,6 +416,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadRootIAMCredentials
 
 > AWSConfigReadRootIAMCredentials(ctx, awsMountPath).Execute()
@@ -442,8 +443,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AWSConfigReadRootIAMCredentials(
 		context.Background(),
@@ -477,6 +476,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigRotateRootIAMCredentials
 
 > AWSConfigRotateRootIAMCredentials(ctx, awsMountPath).Execute()
@@ -503,8 +503,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AWSConfigRotateRootIAMCredentials(
 		context.Background(),
@@ -538,6 +536,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteLease
 
 > AWSConfigWriteLease(ctx, awsMountPath).AWSConfigWriteLeaseRequest(aWSConfigWriteLeaseRequest).Execute()
@@ -567,7 +566,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteLeaseRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSConfigWriteLease(
 		context.Background(),
 		request,
@@ -602,6 +600,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteRootIAMCredentials
 
 > AWSConfigWriteRootIAMCredentials(ctx, awsMountPath).AWSConfigWriteRootIAMCredentialsRequest(aWSConfigWriteRootIAMCredentialsRequest).Execute()
@@ -631,7 +630,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteRootIAMCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSConfigWriteRootIAMCredentials(
 		context.Background(),
 		request,
@@ -666,6 +664,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSDeleteRole
 
 > AWSDeleteRole(ctx, awsMountPath, name).Execute()
@@ -694,8 +693,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-
-
 	resp, err := client.Secrets.AWSDeleteRole(
 		context.Background(),
 		name,
@@ -731,6 +728,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSListRoles
 
 > AWSListRoles(ctx, awsMountPath).List(list).Execute()
@@ -757,8 +755,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AWSListRoles(
 		context.Background(),
@@ -793,6 +789,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadCredentials
 
 > AWSReadCredentials(ctx, awsMountPath).Execute()
@@ -819,8 +816,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AWSReadCredentials(
 		context.Background(),
@@ -854,6 +849,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadRole
 
 > AWSReadRole(ctx, awsMountPath, name).Execute()
@@ -882,8 +878,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-
-
 	resp, err := client.Secrets.AWSReadRole(
 		context.Background(),
 		name,
@@ -919,6 +913,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadSecurityTokenService
 
 > AWSReadSecurityTokenService(ctx, awsMountPath, name).Execute()
@@ -947,8 +942,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.AWSReadSecurityTokenService(
 		context.Background(),
 		name,
@@ -984,6 +977,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteCredentials
 
 > AWSWriteCredentials(ctx, awsMountPath).AWSWriteCredentialsRequest(aWSWriteCredentialsRequest).Execute()
@@ -1013,7 +1007,6 @@ func main() {
 	}
 
 	request := schema.NewAWSWriteCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSWriteCredentials(
 		context.Background(),
 		request,
@@ -1048,6 +1041,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteRole
 
 > AWSWriteRole(ctx, awsMountPath, name).AWSWriteRoleRequest(aWSWriteRoleRequest).Execute()
@@ -1078,7 +1072,6 @@ func main() {
 
 	name := "name_example" // string | Name of the policy
 	request := schema.NewAWSWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSWriteRole(
 		context.Background(),
 		name,
@@ -1116,6 +1109,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteSecurityTokenService
 
 > AWSWriteSecurityTokenService(ctx, awsMountPath, name).AWSWriteSecurityTokenServiceRequest(aWSWriteSecurityTokenServiceRequest).Execute()
@@ -1146,7 +1140,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewAWSWriteSecurityTokenServiceRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSWriteSecurityTokenService(
 		context.Background(),
 		name,
@@ -1184,6 +1177,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryCheckInLibrary
 
 > ActiveDirectoryCheckInLibrary(ctx, adMountPath, name).ActiveDirectoryCheckInLibraryRequest(activeDirectoryCheckInLibraryRequest).Execute()
@@ -1214,7 +1208,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewActiveDirectoryCheckInLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryCheckInLibrary(
 		context.Background(),
 		name,
@@ -1252,6 +1245,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryCheckInManageLibrary
 
 > ActiveDirectoryCheckInManageLibrary(ctx, adMountPath, name).ActiveDirectoryCheckInManageLibraryRequest(activeDirectoryCheckInManageLibraryRequest).Execute()
@@ -1282,7 +1276,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewActiveDirectoryCheckInManageLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryCheckInManageLibrary(
 		context.Background(),
 		name,
@@ -1320,6 +1313,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryCheckOutLibrary
 
 > ActiveDirectoryCheckOutLibrary(ctx, adMountPath, name).ActiveDirectoryCheckOutLibraryRequest(activeDirectoryCheckOutLibraryRequest).Execute()
@@ -1350,7 +1344,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set
 	request := schema.NewActiveDirectoryCheckOutLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryCheckOutLibrary(
 		context.Background(),
 		name,
@@ -1388,6 +1381,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryDeleteConfig
 
 > ActiveDirectoryDeleteConfig(ctx, adMountPath).Execute()
@@ -1414,8 +1408,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ActiveDirectoryDeleteConfig(
 		context.Background(),
@@ -1449,6 +1441,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryDeleteLibrary
 
 > ActiveDirectoryDeleteLibrary(ctx, adMountPath, name).Execute()
@@ -1477,8 +1470,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.ActiveDirectoryDeleteLibrary(
 		context.Background(),
 		name,
@@ -1514,6 +1505,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryDeleteRole
 
 > ActiveDirectoryDeleteRole(ctx, adMountPath, name).Execute()
@@ -1542,8 +1534,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.ActiveDirectoryDeleteRole(
 		context.Background(),
 		name,
@@ -1579,6 +1569,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryListLibraries
 
 > ActiveDirectoryListLibraries(ctx, adMountPath).List(list).Execute()
@@ -1605,8 +1596,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ActiveDirectoryListLibraries(
 		context.Background(),
@@ -1641,6 +1630,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryListRoles
 
 > ActiveDirectoryListRoles(ctx, adMountPath).List(list).Execute()
@@ -1667,8 +1657,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ActiveDirectoryListRoles(
 		context.Background(),
@@ -1703,6 +1691,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryReadConfig
 
 > ActiveDirectoryReadConfig(ctx, adMountPath).Execute()
@@ -1729,8 +1718,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ActiveDirectoryReadConfig(
 		context.Background(),
@@ -1764,6 +1751,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryReadCredentials
 
 > ActiveDirectoryReadCredentials(ctx, adMountPath, name).Execute()
@@ -1792,8 +1780,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadCredentials(
 		context.Background(),
 		name,
@@ -1829,6 +1815,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryReadLibrary
 
 > ActiveDirectoryReadLibrary(ctx, adMountPath, name).Execute()
@@ -1857,8 +1844,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadLibrary(
 		context.Background(),
 		name,
@@ -1894,6 +1879,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryReadLibraryStatus
 
 > ActiveDirectoryReadLibraryStatus(ctx, adMountPath, name).Execute()
@@ -1922,8 +1908,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadLibraryStatus(
 		context.Background(),
 		name,
@@ -1959,6 +1943,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryReadRole
 
 > ActiveDirectoryReadRole(ctx, adMountPath, name).Execute()
@@ -1987,8 +1972,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadRole(
 		context.Background(),
 		name,
@@ -2024,6 +2007,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryRotateRole
 
 > ActiveDirectoryRotateRole(ctx, adMountPath, name).Execute()
@@ -2052,8 +2036,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-
-
 	resp, err := client.Secrets.ActiveDirectoryRotateRole(
 		context.Background(),
 		name,
@@ -2089,6 +2071,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryRotateRoot
 
 > ActiveDirectoryRotateRoot(ctx, adMountPath).Execute()
@@ -2115,8 +2098,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ActiveDirectoryRotateRoot(
 		context.Background(),
@@ -2150,6 +2131,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryWriteConfig
 
 > ActiveDirectoryWriteConfig(ctx, adMountPath).ActiveDirectoryWriteConfigRequest(activeDirectoryWriteConfigRequest).Execute()
@@ -2179,7 +2161,6 @@ func main() {
 	}
 
 	request := schema.NewActiveDirectoryWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryWriteConfig(
 		context.Background(),
 		request,
@@ -2214,6 +2195,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryWriteLibrary
 
 > ActiveDirectoryWriteLibrary(ctx, adMountPath, name).ActiveDirectoryWriteLibraryRequest(activeDirectoryWriteLibraryRequest).Execute()
@@ -2244,7 +2226,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewActiveDirectoryWriteLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryWriteLibrary(
 		context.Background(),
 		name,
@@ -2282,6 +2263,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ActiveDirectoryWriteRole
 
 > ActiveDirectoryWriteRole(ctx, adMountPath, name).ActiveDirectoryWriteRoleRequest(activeDirectoryWriteRoleRequest).Execute()
@@ -2312,7 +2294,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewActiveDirectoryWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryWriteRole(
 		context.Background(),
 		name,
@@ -2350,6 +2331,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudDeleteConfig
 
 > AliCloudDeleteConfig(ctx, alicloudMountPath).Execute()
@@ -2376,8 +2358,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AliCloudDeleteConfig(
 		context.Background(),
@@ -2411,6 +2391,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudDeleteRole
 
 > AliCloudDeleteRole(ctx, alicloudMountPath, name).Execute()
@@ -2439,8 +2420,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-
-
 	resp, err := client.Secrets.AliCloudDeleteRole(
 		context.Background(),
 		name,
@@ -2476,6 +2455,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudListRoles
 
 > AliCloudListRoles(ctx, alicloudMountPath).List(list).Execute()
@@ -2502,8 +2482,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AliCloudListRoles(
 		context.Background(),
@@ -2538,6 +2516,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudReadConfig
 
 > AliCloudReadConfig(ctx, alicloudMountPath).Execute()
@@ -2564,8 +2543,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AliCloudReadConfig(
 		context.Background(),
@@ -2599,6 +2576,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudReadCredentials
 
 > AliCloudReadCredentials(ctx, alicloudMountPath, name).Execute()
@@ -2627,8 +2605,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-
-
 	resp, err := client.Secrets.AliCloudReadCredentials(
 		context.Background(),
 		name,
@@ -2664,6 +2640,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudReadRole
 
 > AliCloudReadRole(ctx, alicloudMountPath, name).Execute()
@@ -2692,8 +2669,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-
-
 	resp, err := client.Secrets.AliCloudReadRole(
 		context.Background(),
 		name,
@@ -2729,6 +2704,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudWriteConfig
 
 > AliCloudWriteConfig(ctx, alicloudMountPath).AliCloudWriteConfigRequest(aliCloudWriteConfigRequest).Execute()
@@ -2758,7 +2734,6 @@ func main() {
 	}
 
 	request := schema.NewAliCloudWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.AliCloudWriteConfig(
 		context.Background(),
 		request,
@@ -2793,6 +2768,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudWriteRole
 
 > AliCloudWriteRole(ctx, alicloudMountPath, name).AliCloudWriteRoleRequest(aliCloudWriteRoleRequest).Execute()
@@ -2823,7 +2799,6 @@ func main() {
 
 	name := "name_example" // string | The name of the role.
 	request := schema.NewAliCloudWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.AliCloudWriteRole(
 		context.Background(),
 		name,
@@ -2861,6 +2836,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureDeleteConfig
 
 > AzureDeleteConfig(ctx, azureMountPath).Execute()
@@ -2887,8 +2863,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AzureDeleteConfig(
 		context.Background(),
@@ -2922,6 +2896,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureDeleteRole
 
 > AzureDeleteRole(ctx, azureMountPath, name).Execute()
@@ -2950,8 +2925,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.AzureDeleteRole(
 		context.Background(),
 		name,
@@ -2987,6 +2960,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureListRoles
 
 > AzureListRoles(ctx, azureMountPath).List(list).Execute()
@@ -3013,8 +2987,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AzureListRoles(
 		context.Background(),
@@ -3049,6 +3021,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureReadConfig
 
 > AzureReadConfig(ctx, azureMountPath).Execute()
@@ -3075,8 +3048,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AzureReadConfig(
 		context.Background(),
@@ -3110,6 +3081,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureReadCredentials
 
 > AzureReadCredentials(ctx, azureMountPath, role).Execute()
@@ -3138,8 +3110,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the Vault role
-
-
 	resp, err := client.Secrets.AzureReadCredentials(
 		context.Background(),
 		role,
@@ -3175,6 +3145,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureReadRole
 
 > AzureReadRole(ctx, azureMountPath, name).Execute()
@@ -3203,8 +3174,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.AzureReadRole(
 		context.Background(),
 		name,
@@ -3240,6 +3209,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureRotateRoot
 
 > AzureRotateRoot(ctx, azureMountPath).Execute()
@@ -3266,8 +3236,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AzureRotateRoot(
 		context.Background(),
@@ -3301,6 +3269,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureWriteConfig
 
 > AzureWriteConfig(ctx, azureMountPath).AzureWriteConfigRequest(azureWriteConfigRequest).Execute()
@@ -3330,7 +3299,6 @@ func main() {
 	}
 
 	request := schema.NewAzureWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.AzureWriteConfig(
 		context.Background(),
 		request,
@@ -3365,6 +3333,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureWriteRole
 
 > AzureWriteRole(ctx, azureMountPath, name).AzureWriteRoleRequest(azureWriteRoleRequest).Execute()
@@ -3395,7 +3364,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewAzureWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.AzureWriteRole(
 		context.Background(),
 		name,
@@ -3433,6 +3401,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ConsulDeleteRole
 
 > ConsulDeleteRole(ctx, consulMountPath, name).Execute()
@@ -3461,8 +3430,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.ConsulDeleteRole(
 		context.Background(),
 		name,
@@ -3498,6 +3465,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ConsulListRoles
 
 > ConsulListRoles(ctx, consulMountPath).List(list).Execute()
@@ -3524,8 +3492,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ConsulListRoles(
 		context.Background(),
@@ -3560,6 +3526,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ConsulReadAccessConfig
 
 > ConsulReadAccessConfig(ctx, consulMountPath).Execute()
@@ -3586,8 +3553,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ConsulReadAccessConfig(
 		context.Background(),
@@ -3621,6 +3586,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ConsulReadCredentials
 
 > ConsulReadCredentials(ctx, consulMountPath, role).Execute()
@@ -3649,8 +3615,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.ConsulReadCredentials(
 		context.Background(),
 		role,
@@ -3686,6 +3650,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ConsulReadRole
 
 > ConsulReadRole(ctx, consulMountPath, name).Execute()
@@ -3714,8 +3679,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.ConsulReadRole(
 		context.Background(),
 		name,
@@ -3751,6 +3714,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ConsulWriteAccessConfig
 
 > ConsulWriteAccessConfig(ctx, consulMountPath).ConsulWriteAccessConfigRequest(consulWriteAccessConfigRequest).Execute()
@@ -3780,7 +3744,6 @@ func main() {
 	}
 
 	request := schema.NewConsulWriteAccessConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.ConsulWriteAccessConfig(
 		context.Background(),
 		request,
@@ -3815,6 +3778,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## ConsulWriteRole
 
 > ConsulWriteRole(ctx, consulMountPath, name).ConsulWriteRoleRequest(consulWriteRoleRequest).Execute()
@@ -3845,7 +3809,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewConsulWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.ConsulWriteRole(
 		context.Background(),
 		name,
@@ -3883,6 +3846,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CubbyholeDelete
 
 > CubbyholeDelete(ctx, cubbyholeMountPath, path).Execute()
@@ -3911,8 +3875,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
-
-
 	resp, err := client.Secrets.CubbyholeDelete(
 		context.Background(),
 		path,
@@ -3948,6 +3910,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CubbyholeRead
 
 > CubbyholeRead(ctx, cubbyholeMountPath, path).List(list).Execute()
@@ -3976,8 +3939,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.CubbyholeRead(
 		context.Background(),
@@ -4016,6 +3977,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CubbyholeWrite
 
 > CubbyholeWrite(ctx, cubbyholeMountPath, path).Execute()
@@ -4044,8 +4006,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
-
-
 	resp, err := client.Secrets.CubbyholeWrite(
 		context.Background(),
 		path,
@@ -4081,6 +4041,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudDeleteRoleset
 
 > GoogleCloudDeleteRoleset(ctx, gcpMountPath, name).Execute()
@@ -4109,8 +4070,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudDeleteRoleset(
 		context.Background(),
 		name,
@@ -4146,6 +4105,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudDeleteStaticAccount
 
 > GoogleCloudDeleteStaticAccount(ctx, gcpMountPath, name).Execute()
@@ -4174,8 +4134,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-
-
 	resp, err := client.Secrets.GoogleCloudDeleteStaticAccount(
 		context.Background(),
 		name,
@@ -4211,6 +4169,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSDecrypt
 
 > GoogleCloudKMSDecrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSDecryptRequest(googleCloudKMSDecryptRequest).Execute()
@@ -4241,7 +4200,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	request := schema.NewGoogleCloudKMSDecryptRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSDecrypt(
 		context.Background(),
 		key,
@@ -4279,6 +4237,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSDeleteConfig
 
 > GoogleCloudKMSDeleteConfig(ctx, gcpkmsMountPath).Execute()
@@ -4305,8 +4264,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudKMSDeleteConfig(
 		context.Background(),
@@ -4340,6 +4297,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSDeleteKey
 
 > GoogleCloudKMSDeleteKey(ctx, gcpkmsMountPath, key).Execute()
@@ -4368,8 +4326,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSDeleteKey(
 		context.Background(),
 		key,
@@ -4405,6 +4361,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSDeregisterKey
 
 > GoogleCloudKMSDeregisterKey(ctx, gcpkmsMountPath, key).Execute()
@@ -4433,8 +4390,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSDeregisterKey(
 		context.Background(),
 		key,
@@ -4470,6 +4425,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSEncrypt
 
 > GoogleCloudKMSEncrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSEncryptRequest(googleCloudKMSEncryptRequest).Execute()
@@ -4500,7 +4456,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	request := schema.NewGoogleCloudKMSEncryptRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSEncrypt(
 		context.Background(),
 		key,
@@ -4538,6 +4493,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSListKeys
 
 > GoogleCloudKMSListKeys(ctx, gcpkmsMountPath).List(list).Execute()
@@ -4564,8 +4520,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudKMSListKeys(
 		context.Background(),
@@ -4600,6 +4554,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSReadConfig
 
 > GoogleCloudKMSReadConfig(ctx, gcpkmsMountPath).Execute()
@@ -4626,8 +4581,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudKMSReadConfig(
 		context.Background(),
@@ -4661,6 +4614,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSReadKey
 
 > GoogleCloudKMSReadKey(ctx, gcpkmsMountPath, key).Execute()
@@ -4689,8 +4643,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSReadKey(
 		context.Background(),
 		key,
@@ -4726,6 +4678,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSReadKeyConfig
 
 > GoogleCloudKMSReadKeyConfig(ctx, gcpkmsMountPath, key).Execute()
@@ -4754,8 +4707,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSReadKeyConfig(
 		context.Background(),
 		key,
@@ -4791,6 +4742,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSReadPubkey
 
 > GoogleCloudKMSReadPubkey(ctx, gcpkmsMountPath, key).Execute()
@@ -4819,8 +4771,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSReadPubkey(
 		context.Background(),
 		key,
@@ -4856,6 +4806,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSReencrypt
 
 > GoogleCloudKMSReencrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSReencryptRequest(googleCloudKMSReencryptRequest).Execute()
@@ -4886,7 +4837,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
 	request := schema.NewGoogleCloudKMSReencryptRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSReencrypt(
 		context.Background(),
 		key,
@@ -4924,6 +4874,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSRegisterKey
 
 > GoogleCloudKMSRegisterKey(ctx, gcpkmsMountPath, key).GoogleCloudKMSRegisterKeyRequest(googleCloudKMSRegisterKeyRequest).Execute()
@@ -4954,7 +4905,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
 	request := schema.NewGoogleCloudKMSRegisterKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSRegisterKey(
 		context.Background(),
 		key,
@@ -4992,6 +4942,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSRotateKey
 
 > GoogleCloudKMSRotateKey(ctx, gcpkmsMountPath, key).Execute()
@@ -5020,8 +4971,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSRotateKey(
 		context.Background(),
 		key,
@@ -5057,6 +5006,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSSign
 
 > GoogleCloudKMSSign(ctx, gcpkmsMountPath, key).GoogleCloudKMSSignRequest(googleCloudKMSSignRequest).Execute()
@@ -5087,7 +5037,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	request := schema.NewGoogleCloudKMSSignRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSSign(
 		context.Background(),
 		key,
@@ -5125,6 +5074,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSTrimKey
 
 > GoogleCloudKMSTrimKey(ctx, gcpkmsMountPath, key).Execute()
@@ -5153,8 +5103,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSTrimKey(
 		context.Background(),
 		key,
@@ -5190,6 +5138,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSVerify
 
 > GoogleCloudKMSVerify(ctx, gcpkmsMountPath, key).GoogleCloudKMSVerifyRequest(googleCloudKMSVerifyRequest).Execute()
@@ -5220,7 +5169,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 	request := schema.NewGoogleCloudKMSVerifyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSVerify(
 		context.Background(),
 		key,
@@ -5258,6 +5206,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSWriteConfig
 
 > GoogleCloudKMSWriteConfig(ctx, gcpkmsMountPath).GoogleCloudKMSWriteConfigRequest(googleCloudKMSWriteConfigRequest).Execute()
@@ -5287,7 +5236,6 @@ func main() {
 	}
 
 	request := schema.NewGoogleCloudKMSWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSWriteConfig(
 		context.Background(),
 		request,
@@ -5322,6 +5270,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSWriteKey
 
 > GoogleCloudKMSWriteKey(ctx, gcpkmsMountPath, key).GoogleCloudKMSWriteKeyRequest(googleCloudKMSWriteKeyRequest).Execute()
@@ -5352,7 +5301,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key in Vault.
 	request := schema.NewGoogleCloudKMSWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSWriteKey(
 		context.Background(),
 		key,
@@ -5390,6 +5338,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudKMSWriteKeyConfig
 
 > GoogleCloudKMSWriteKeyConfig(ctx, gcpkmsMountPath, key).GoogleCloudKMSWriteKeyConfigRequest(googleCloudKMSWriteKeyConfigRequest).Execute()
@@ -5420,7 +5369,6 @@ func main() {
 
 	key := "key_example" // string | Name of the key in Vault.
 	request := schema.NewGoogleCloudKMSWriteKeyConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSWriteKeyConfig(
 		context.Background(),
 		key,
@@ -5458,6 +5406,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudListRolesets
 
 > GoogleCloudListRolesets(ctx, gcpMountPath).List(list).Execute()
@@ -5484,8 +5433,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudListRolesets(
 		context.Background(),
@@ -5520,6 +5467,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudListStaticAccounts
 
 > GoogleCloudListStaticAccounts(ctx, gcpMountPath).List(list).Execute()
@@ -5546,8 +5494,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
 		context.Background(),
@@ -5582,6 +5528,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadConfig
 
 > GoogleCloudReadConfig(ctx, gcpMountPath).Execute()
@@ -5608,8 +5555,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudReadConfig(
 		context.Background(),
@@ -5643,6 +5588,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadKey
 
 > GoogleCloudReadKey(ctx, gcpMountPath, roleset).Execute()
@@ -5671,8 +5617,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadKey(
 		context.Background(),
 		roleset,
@@ -5708,6 +5652,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadRoleset
 
 > GoogleCloudReadRoleset(ctx, gcpMountPath, name).Execute()
@@ -5736,8 +5681,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudReadRoleset(
 		context.Background(),
 		name,
@@ -5773,6 +5716,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadRolesetKey
 
 > GoogleCloudReadRolesetKey(ctx, gcpMountPath, roleset).Execute()
@@ -5801,8 +5745,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadRolesetKey(
 		context.Background(),
 		roleset,
@@ -5838,6 +5780,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadRolesetToken
 
 > GoogleCloudReadRolesetToken(ctx, gcpMountPath, roleset).Execute()
@@ -5866,8 +5809,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadRolesetToken(
 		context.Background(),
 		roleset,
@@ -5903,6 +5844,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadStaticAccount
 
 > GoogleCloudReadStaticAccount(ctx, gcpMountPath, name).Execute()
@@ -5931,8 +5873,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-
-
 	resp, err := client.Secrets.GoogleCloudReadStaticAccount(
 		context.Background(),
 		name,
@@ -5968,6 +5908,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadStaticAccountKey
 
 > GoogleCloudReadStaticAccountKey(ctx, gcpMountPath, name).Execute()
@@ -5996,8 +5937,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-
-
 	resp, err := client.Secrets.GoogleCloudReadStaticAccountKey(
 		context.Background(),
 		name,
@@ -6033,6 +5972,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadStaticAccountToken
 
 > GoogleCloudReadStaticAccountToken(ctx, gcpMountPath, name).Execute()
@@ -6061,8 +6001,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-
-
 	resp, err := client.Secrets.GoogleCloudReadStaticAccountToken(
 		context.Background(),
 		name,
@@ -6098,6 +6036,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadToken
 
 > GoogleCloudReadToken(ctx, gcpMountPath, roleset).Execute()
@@ -6126,8 +6065,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadToken(
 		context.Background(),
 		roleset,
@@ -6163,6 +6100,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudRotateRoleset
 
 > GoogleCloudRotateRoleset(ctx, gcpMountPath, name).Execute()
@@ -6191,8 +6129,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudRotateRoleset(
 		context.Background(),
 		name,
@@ -6228,6 +6164,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudRotateRolesetKey
 
 > GoogleCloudRotateRolesetKey(ctx, gcpMountPath, name).Execute()
@@ -6256,8 +6193,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudRotateRolesetKey(
 		context.Background(),
 		name,
@@ -6293,6 +6228,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudRotateRoot
 
 > GoogleCloudRotateRoot(ctx, gcpMountPath).Execute()
@@ -6319,8 +6255,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudRotateRoot(
 		context.Background(),
@@ -6354,6 +6288,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudRotateStaticAccountKey
 
 > GoogleCloudRotateStaticAccountKey(ctx, gcpMountPath, name).Execute()
@@ -6382,8 +6317,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the account.
-
-
 	resp, err := client.Secrets.GoogleCloudRotateStaticAccountKey(
 		context.Background(),
 		name,
@@ -6419,6 +6352,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteConfig
 
 > GoogleCloudWriteConfig(ctx, gcpMountPath).GoogleCloudWriteConfigRequest(googleCloudWriteConfigRequest).Execute()
@@ -6448,7 +6382,6 @@ func main() {
 	}
 
 	request := schema.NewGoogleCloudWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteConfig(
 		context.Background(),
 		request,
@@ -6483,6 +6416,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteKey
 
 > GoogleCloudWriteKey(ctx, gcpMountPath, roleset).GoogleCloudWriteKeyRequest(googleCloudWriteKeyRequest).Execute()
@@ -6513,7 +6447,6 @@ func main() {
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	request := schema.NewGoogleCloudWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteKey(
 		context.Background(),
 		roleset,
@@ -6551,6 +6484,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteRoleset
 
 > GoogleCloudWriteRoleset(ctx, gcpMountPath, name).GoogleCloudWriteRolesetRequest(googleCloudWriteRolesetRequest).Execute()
@@ -6581,7 +6515,6 @@ func main() {
 
 	name := "name_example" // string | Required. Name of the role.
 	request := schema.NewGoogleCloudWriteRolesetRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
 		context.Background(),
 		name,
@@ -6619,6 +6552,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteRolesetKey
 
 > GoogleCloudWriteRolesetKey(ctx, gcpMountPath, roleset).GoogleCloudWriteRolesetKeyRequest(googleCloudWriteRolesetKeyRequest).Execute()
@@ -6649,7 +6583,6 @@ func main() {
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
 	request := schema.NewGoogleCloudWriteRolesetKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteRolesetKey(
 		context.Background(),
 		roleset,
@@ -6687,6 +6620,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteRolesetToken
 
 > GoogleCloudWriteRolesetToken(ctx, gcpMountPath, roleset).Execute()
@@ -6715,8 +6649,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudWriteRolesetToken(
 		context.Background(),
 		roleset,
@@ -6752,6 +6684,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteStaticAccount
 
 > GoogleCloudWriteStaticAccount(ctx, gcpMountPath, name).GoogleCloudWriteStaticAccountRequest(googleCloudWriteStaticAccountRequest).Execute()
@@ -6782,7 +6715,6 @@ func main() {
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 	request := schema.NewGoogleCloudWriteStaticAccountRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
 		context.Background(),
 		name,
@@ -6820,6 +6752,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteStaticAccountKey
 
 > GoogleCloudWriteStaticAccountKey(ctx, gcpMountPath, name).GoogleCloudWriteStaticAccountKeyRequest(googleCloudWriteStaticAccountKeyRequest).Execute()
@@ -6850,7 +6783,6 @@ func main() {
 
 	name := "name_example" // string | Required. Name of the static account.
 	request := schema.NewGoogleCloudWriteStaticAccountKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccountKey(
 		context.Background(),
 		name,
@@ -6888,6 +6820,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteStaticAccountToken
 
 > GoogleCloudWriteStaticAccountToken(ctx, gcpMountPath, name).Execute()
@@ -6916,8 +6849,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-
-
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccountToken(
 		context.Background(),
 		name,
@@ -6953,6 +6884,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteToken
 
 > GoogleCloudWriteToken(ctx, gcpMountPath, roleset).Execute()
@@ -6981,8 +6913,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudWriteToken(
 		context.Background(),
 		roleset,
@@ -7018,6 +6948,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv1Delete
 
 > KVv1Delete(ctx, kvMountPath, path).Execute()
@@ -7046,8 +6977,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv1Delete(
 		context.Background(),
 		path,
@@ -7083,6 +7012,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv1Read
 
 > KVv1Read(ctx, kvMountPath, path).List(list).Execute()
@@ -7111,8 +7041,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv1Read(
 		context.Background(),
@@ -7151,6 +7079,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv1Write
 
 > KVv1Write(ctx, kvMountPath, path).Execute()
@@ -7179,8 +7108,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv1Write(
 		context.Background(),
 		path,
@@ -7216,6 +7143,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2Delete
 
 > KVv2Delete(ctx, path, secretMountPath).Execute()
@@ -7244,8 +7172,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2Delete(
 		context.Background(),
 		path,
@@ -7281,6 +7207,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2DeleteMetadata
 
 > KVv2DeleteMetadata(ctx, path, secretMountPath).Execute()
@@ -7309,8 +7236,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2DeleteMetadata(
 		context.Background(),
 		path,
@@ -7346,6 +7271,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2DeleteVersions
 
 > KVv2DeleteVersions(ctx, path, secretMountPath).KVv2DeleteVersionsRequest(kVv2DeleteVersionsRequest).Execute()
@@ -7376,7 +7302,6 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 	request := schema.NewKVv2DeleteVersionsRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2DeleteVersions(
 		context.Background(),
 		path,
@@ -7414,6 +7339,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2DestroyVersions
 
 > KVv2DestroyVersions(ctx, path, secretMountPath).KVv2DestroyVersionsRequest(kVv2DestroyVersionsRequest).Execute()
@@ -7444,7 +7370,6 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 	request := schema.NewKVv2DestroyVersionsRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2DestroyVersions(
 		context.Background(),
 		path,
@@ -7482,6 +7407,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2Read
 
 > KVv2Read(ctx, path, secretMountPath).Execute()
@@ -7510,8 +7436,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2Read(
 		context.Background(),
 		path,
@@ -7547,6 +7471,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2ReadConfig
 
 > KVv2ReadConfig(ctx, secretMountPath).Execute()
@@ -7573,8 +7498,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.KVv2ReadConfig(
 		context.Background(),
@@ -7608,6 +7531,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2ReadMetadata
 
 > KVv2ReadMetadata(ctx, path, secretMountPath).List(list).Execute()
@@ -7636,8 +7560,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv2ReadMetadata(
 		context.Background(),
@@ -7676,6 +7598,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2ReadSubkeys
 
 > KVv2ReadSubkeys(ctx, path, secretMountPath).Execute()
@@ -7704,8 +7627,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2ReadSubkeys(
 		context.Background(),
 		path,
@@ -7741,6 +7662,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2UndeleteVersions
 
 > KVv2UndeleteVersions(ctx, path, secretMountPath).KVv2UndeleteVersionsRequest(kVv2UndeleteVersionsRequest).Execute()
@@ -7771,7 +7693,6 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 	request := schema.NewKVv2UndeleteVersionsRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2UndeleteVersions(
 		context.Background(),
 		path,
@@ -7809,6 +7730,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2Write
 
 > KVv2Write(ctx, path, secretMountPath).KVv2WriteRequest(kVv2WriteRequest).Execute()
@@ -7839,7 +7761,6 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 	request := schema.NewKVv2WriteRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2Write(
 		context.Background(),
 		path,
@@ -7877,6 +7798,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2WriteConfig
 
 > KVv2WriteConfig(ctx, secretMountPath).KVv2WriteConfigRequest(kVv2WriteConfigRequest).Execute()
@@ -7906,7 +7828,6 @@ func main() {
 	}
 
 	request := schema.NewKVv2WriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2WriteConfig(
 		context.Background(),
 		request,
@@ -7941,6 +7862,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KVv2WriteMetadata
 
 > KVv2WriteMetadata(ctx, path, secretMountPath).KVv2WriteMetadataRequest(kVv2WriteMetadataRequest).Execute()
@@ -7971,7 +7893,6 @@ func main() {
 
 	path := "path_example" // string | Location of the secret.
 	request := schema.NewKVv2WriteMetadataRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2WriteMetadata(
 		context.Background(),
 		path,
@@ -8009,6 +7930,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesDeleteConfig
 
 > KubernetesDeleteConfig(ctx, kubernetesMountPath).Execute()
@@ -8035,8 +7957,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.KubernetesDeleteConfig(
 		context.Background(),
@@ -8070,6 +7990,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesDeleteRole
 
 > KubernetesDeleteRole(ctx, kubernetesMountPath, name).Execute()
@@ -8098,8 +8019,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.KubernetesDeleteRole(
 		context.Background(),
 		name,
@@ -8135,6 +8054,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesListRoles
 
 > KubernetesListRoles(ctx, kubernetesMountPath).List(list).Execute()
@@ -8161,8 +8081,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.KubernetesListRoles(
 		context.Background(),
@@ -8197,6 +8115,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesReadConfig
 
 > KubernetesReadConfig(ctx, kubernetesMountPath).Execute()
@@ -8223,8 +8142,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.KubernetesReadConfig(
 		context.Background(),
@@ -8258,6 +8175,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesReadRole
 
 > KubernetesReadRole(ctx, kubernetesMountPath, name).Execute()
@@ -8286,8 +8204,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.KubernetesReadRole(
 		context.Background(),
 		name,
@@ -8323,6 +8239,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesWriteConfig
 
 > KubernetesWriteConfig(ctx, kubernetesMountPath).KubernetesWriteConfigRequest(kubernetesWriteConfigRequest).Execute()
@@ -8352,7 +8269,6 @@ func main() {
 	}
 
 	request := schema.NewKubernetesWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.KubernetesWriteConfig(
 		context.Background(),
 		request,
@@ -8387,6 +8303,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesWriteCredentials
 
 > KubernetesWriteCredentials(ctx, kubernetesMountPath, name).KubernetesWriteCredentialsRequest(kubernetesWriteCredentialsRequest).Execute()
@@ -8417,7 +8334,6 @@ func main() {
 
 	name := "name_example" // string | Name of the Vault role
 	request := schema.NewKubernetesWriteCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.KubernetesWriteCredentials(
 		context.Background(),
 		name,
@@ -8455,6 +8371,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesWriteRole
 
 > KubernetesWriteRole(ctx, kubernetesMountPath, name).KubernetesWriteRoleRequest(kubernetesWriteRoleRequest).Execute()
@@ -8485,7 +8402,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewKubernetesWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.KubernetesWriteRole(
 		context.Background(),
 		name,
@@ -8523,6 +8439,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPCheckInLibrary
 
 > LDAPCheckInLibrary(ctx, ldapMountPath, name).LDAPCheckInLibraryRequest(lDAPCheckInLibraryRequest).Execute()
@@ -8553,7 +8470,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewLDAPCheckInLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPCheckInLibrary(
 		context.Background(),
 		name,
@@ -8591,6 +8507,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPCheckInManageLibrary
 
 > LDAPCheckInManageLibrary(ctx, ldapMountPath, name).LDAPCheckInManageLibraryRequest(lDAPCheckInManageLibraryRequest).Execute()
@@ -8621,7 +8538,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewLDAPCheckInManageLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPCheckInManageLibrary(
 		context.Background(),
 		name,
@@ -8659,6 +8575,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPCheckOutLibrary
 
 > LDAPCheckOutLibrary(ctx, ldapMountPath, name).LDAPCheckOutLibraryRequest(lDAPCheckOutLibraryRequest).Execute()
@@ -8689,7 +8606,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set
 	request := schema.NewLDAPCheckOutLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPCheckOutLibrary(
 		context.Background(),
 		name,
@@ -8727,6 +8643,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPDeleteConfig
 
 > LDAPDeleteConfig(ctx, ldapMountPath).Execute()
@@ -8753,8 +8670,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPDeleteConfig(
 		context.Background(),
@@ -8788,6 +8703,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPDeleteLibrary
 
 > LDAPDeleteLibrary(ctx, ldapMountPath, name).Execute()
@@ -8816,8 +8732,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.LDAPDeleteLibrary(
 		context.Background(),
 		name,
@@ -8853,6 +8767,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPDeleteRole
 
 > LDAPDeleteRole(ctx, ldapMountPath, name).Execute()
@@ -8881,8 +8796,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.LDAPDeleteRole(
 		context.Background(),
 		name,
@@ -8918,6 +8831,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPDeleteStaticRole
 
 > LDAPDeleteStaticRole(ctx, ldapMountPath, name).Execute()
@@ -8946,8 +8860,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.LDAPDeleteStaticRole(
 		context.Background(),
 		name,
@@ -8983,6 +8895,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPListLibraries
 
 > LDAPListLibraries(ctx, ldapMountPath).List(list).Execute()
@@ -9009,8 +8922,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPListLibraries(
 		context.Background(),
@@ -9045,6 +8956,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPListRoles
 
 > LDAPListRoles(ctx, ldapMountPath).List(list).Execute()
@@ -9071,8 +8983,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPListRoles(
 		context.Background(),
@@ -9107,6 +9017,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPListStaticRoles
 
 > LDAPListStaticRoles(ctx, ldapMountPath).List(list).Execute()
@@ -9133,8 +9044,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPListStaticRoles(
 		context.Background(),
@@ -9169,6 +9078,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadConfig
 
 > LDAPReadConfig(ctx, ldapMountPath).Execute()
@@ -9195,8 +9105,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPReadConfig(
 		context.Background(),
@@ -9230,6 +9138,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadCredentials
 
 > LDAPReadCredentials(ctx, ldapMountPath, name).Execute()
@@ -9258,8 +9167,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
-
-
 	resp, err := client.Secrets.LDAPReadCredentials(
 		context.Background(),
 		name,
@@ -9295,6 +9202,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadLibrary
 
 > LDAPReadLibrary(ctx, ldapMountPath, name).Execute()
@@ -9323,8 +9231,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.LDAPReadLibrary(
 		context.Background(),
 		name,
@@ -9360,6 +9266,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadLibraryStatus
 
 > LDAPReadLibraryStatus(ctx, ldapMountPath, name).Execute()
@@ -9388,8 +9295,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.LDAPReadLibraryStatus(
 		context.Background(),
 		name,
@@ -9425,6 +9330,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadRole
 
 > LDAPReadRole(ctx, ldapMountPath, name).Execute()
@@ -9453,8 +9359,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.LDAPReadRole(
 		context.Background(),
 		name,
@@ -9490,6 +9394,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadStaticCredentials
 
 > LDAPReadStaticCredentials(ctx, ldapMountPath, name).Execute()
@@ -9518,8 +9423,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
-
-
 	resp, err := client.Secrets.LDAPReadStaticCredentials(
 		context.Background(),
 		name,
@@ -9555,6 +9458,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadStaticRole
 
 > LDAPReadStaticRole(ctx, ldapMountPath, name).Execute()
@@ -9583,8 +9487,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.LDAPReadStaticRole(
 		context.Background(),
 		name,
@@ -9620,6 +9522,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPRotateRole
 
 > LDAPRotateRole(ctx, ldapMountPath, name).Execute()
@@ -9648,8 +9551,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-
-
 	resp, err := client.Secrets.LDAPRotateRole(
 		context.Background(),
 		name,
@@ -9685,6 +9586,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPRotateRoot
 
 > LDAPRotateRoot(ctx, ldapMountPath).Execute()
@@ -9711,8 +9613,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPRotateRoot(
 		context.Background(),
@@ -9746,6 +9646,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPWriteConfig
 
 > LDAPWriteConfig(ctx, ldapMountPath).LDAPWriteConfigRequest(lDAPWriteConfigRequest).Execute()
@@ -9775,7 +9676,6 @@ func main() {
 	}
 
 	request := schema.NewLDAPWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteConfig(
 		context.Background(),
 		request,
@@ -9810,6 +9710,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPWriteLibrary
 
 > LDAPWriteLibrary(ctx, ldapMountPath, name).LDAPWriteLibraryRequest(lDAPWriteLibraryRequest).Execute()
@@ -9840,7 +9741,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewLDAPWriteLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteLibrary(
 		context.Background(),
 		name,
@@ -9878,6 +9778,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPWriteRole
 
 > LDAPWriteRole(ctx, ldapMountPath, name).LDAPWriteRoleRequest(lDAPWriteRoleRequest).Execute()
@@ -9908,7 +9809,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role (lowercase)
 	request := schema.NewLDAPWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteRole(
 		context.Background(),
 		name,
@@ -9946,6 +9846,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPWriteStaticRole
 
 > LDAPWriteStaticRole(ctx, ldapMountPath, name).LDAPWriteStaticRoleRequest(lDAPWriteStaticRoleRequest).Execute()
@@ -9976,7 +9877,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewLDAPWriteStaticRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteStaticRole(
 		context.Background(),
 		name,
@@ -10014,6 +9914,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasDeleteRole
 
 > MongoDBAtlasDeleteRole(ctx, mongodbatlasMountPath, name).Execute()
@@ -10042,8 +9943,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-
-
 	resp, err := client.Secrets.MongoDBAtlasDeleteRole(
 		context.Background(),
 		name,
@@ -10079,6 +9978,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasListRoles
 
 > MongoDBAtlasListRoles(ctx, mongodbatlasMountPath).List(list).Execute()
@@ -10105,8 +10005,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.MongoDBAtlasListRoles(
 		context.Background(),
@@ -10141,6 +10039,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasReadConfig
 
 > MongoDBAtlasReadConfig(ctx, mongodbatlasMountPath).Execute()
@@ -10167,8 +10066,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.MongoDBAtlasReadConfig(
 		context.Background(),
@@ -10202,6 +10099,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasReadCredentials
 
 > MongoDBAtlasReadCredentials(ctx, mongodbatlasMountPath, name).Execute()
@@ -10230,8 +10128,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.MongoDBAtlasReadCredentials(
 		context.Background(),
 		name,
@@ -10267,6 +10163,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasReadRole
 
 > MongoDBAtlasReadRole(ctx, mongodbatlasMountPath, name).Execute()
@@ -10295,8 +10192,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-
-
 	resp, err := client.Secrets.MongoDBAtlasReadRole(
 		context.Background(),
 		name,
@@ -10332,6 +10227,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasWriteConfig
 
 > MongoDBAtlasWriteConfig(ctx, mongodbatlasMountPath).MongoDBAtlasWriteConfigRequest(mongoDBAtlasWriteConfigRequest).Execute()
@@ -10361,7 +10257,6 @@ func main() {
 	}
 
 	request := schema.NewMongoDBAtlasWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.MongoDBAtlasWriteConfig(
 		context.Background(),
 		request,
@@ -10396,6 +10291,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasWriteCredentials
 
 > MongoDBAtlasWriteCredentials(ctx, mongodbatlasMountPath, name).Execute()
@@ -10424,8 +10320,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.MongoDBAtlasWriteCredentials(
 		context.Background(),
 		name,
@@ -10461,6 +10355,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MongoDBAtlasWriteRole
 
 > MongoDBAtlasWriteRole(ctx, mongodbatlasMountPath, name).MongoDBAtlasWriteRoleRequest(mongoDBAtlasWriteRoleRequest).Execute()
@@ -10491,7 +10386,6 @@ func main() {
 
 	name := "name_example" // string | Name of the Roles
 	request := schema.NewMongoDBAtlasWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.MongoDBAtlasWriteRole(
 		context.Background(),
 		name,
@@ -10529,6 +10423,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadDeleteAccessConfig
 
 > NomadDeleteAccessConfig(ctx, nomadMountPath).Execute()
@@ -10555,8 +10450,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.NomadDeleteAccessConfig(
 		context.Background(),
@@ -10590,6 +10483,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadDeleteLeaseConfig
 
 > NomadDeleteLeaseConfig(ctx, nomadMountPath).Execute()
@@ -10616,8 +10510,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.NomadDeleteLeaseConfig(
 		context.Background(),
@@ -10651,6 +10543,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadDeleteRole
 
 > NomadDeleteRole(ctx, name, nomadMountPath).Execute()
@@ -10679,8 +10572,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.NomadDeleteRole(
 		context.Background(),
 		name,
@@ -10716,6 +10607,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadListRoles
 
 > NomadListRoles(ctx, nomadMountPath).List(list).Execute()
@@ -10742,8 +10634,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.NomadListRoles(
 		context.Background(),
@@ -10778,6 +10668,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadReadAccessConfig
 
 > NomadReadAccessConfig(ctx, nomadMountPath).Execute()
@@ -10804,8 +10695,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.NomadReadAccessConfig(
 		context.Background(),
@@ -10839,6 +10728,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadReadCredentials
 
 > NomadReadCredentials(ctx, name, nomadMountPath).Execute()
@@ -10867,8 +10757,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.NomadReadCredentials(
 		context.Background(),
 		name,
@@ -10904,6 +10792,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadReadLeaseConfig
 
 > NomadReadLeaseConfig(ctx, nomadMountPath).Execute()
@@ -10930,8 +10819,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.NomadReadLeaseConfig(
 		context.Background(),
@@ -10965,6 +10852,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadReadRole
 
 > NomadReadRole(ctx, name, nomadMountPath).Execute()
@@ -10993,8 +10881,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.NomadReadRole(
 		context.Background(),
 		name,
@@ -11030,6 +10916,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadWriteAccessConfig
 
 > NomadWriteAccessConfig(ctx, nomadMountPath).NomadWriteAccessConfigRequest(nomadWriteAccessConfigRequest).Execute()
@@ -11059,7 +10946,6 @@ func main() {
 	}
 
 	request := schema.NewNomadWriteAccessConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.NomadWriteAccessConfig(
 		context.Background(),
 		request,
@@ -11094,6 +10980,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadWriteLeaseConfig
 
 > NomadWriteLeaseConfig(ctx, nomadMountPath).NomadWriteLeaseConfigRequest(nomadWriteLeaseConfigRequest).Execute()
@@ -11123,7 +11010,6 @@ func main() {
 	}
 
 	request := schema.NewNomadWriteLeaseConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.NomadWriteLeaseConfig(
 		context.Background(),
 		request,
@@ -11158,6 +11044,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## NomadWriteRole
 
 > NomadWriteRole(ctx, name, nomadMountPath).NomadWriteRoleRequest(nomadWriteRoleRequest).Execute()
@@ -11188,7 +11075,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewNomadWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.NomadWriteRole(
 		context.Background(),
 		name,
@@ -11226,6 +11112,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPCheckInLibrary
 
 > OpenLDAPCheckInLibrary(ctx, name, openldapMountPath).OpenLDAPCheckInLibraryRequest(openLDAPCheckInLibraryRequest).Execute()
@@ -11256,7 +11143,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewOpenLDAPCheckInLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPCheckInLibrary(
 		context.Background(),
 		name,
@@ -11294,6 +11180,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPCheckInManageLibrary
 
 > OpenLDAPCheckInManageLibrary(ctx, name, openldapMountPath).OpenLDAPCheckInManageLibraryRequest(openLDAPCheckInManageLibraryRequest).Execute()
@@ -11324,7 +11211,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewOpenLDAPCheckInManageLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPCheckInManageLibrary(
 		context.Background(),
 		name,
@@ -11362,6 +11248,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPCheckOutLibrary
 
 > OpenLDAPCheckOutLibrary(ctx, name, openldapMountPath).OpenLDAPCheckOutLibraryRequest(openLDAPCheckOutLibraryRequest).Execute()
@@ -11392,7 +11279,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set
 	request := schema.NewOpenLDAPCheckOutLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPCheckOutLibrary(
 		context.Background(),
 		name,
@@ -11430,6 +11316,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPDeleteConfig
 
 > OpenLDAPDeleteConfig(ctx, openldapMountPath).Execute()
@@ -11456,8 +11343,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPDeleteConfig(
 		context.Background(),
@@ -11491,6 +11376,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPDeleteLibrary
 
 > OpenLDAPDeleteLibrary(ctx, name, openldapMountPath).Execute()
@@ -11519,8 +11405,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.OpenLDAPDeleteLibrary(
 		context.Background(),
 		name,
@@ -11556,6 +11440,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPDeleteRole
 
 > OpenLDAPDeleteRole(ctx, name, openldapMountPath).Execute()
@@ -11584,8 +11469,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.OpenLDAPDeleteRole(
 		context.Background(),
 		name,
@@ -11621,6 +11504,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPDeleteStaticRole
 
 > OpenLDAPDeleteStaticRole(ctx, name, openldapMountPath).Execute()
@@ -11649,8 +11533,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.OpenLDAPDeleteStaticRole(
 		context.Background(),
 		name,
@@ -11686,6 +11568,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPListLibraries
 
 > OpenLDAPListLibraries(ctx, openldapMountPath).List(list).Execute()
@@ -11712,8 +11595,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPListLibraries(
 		context.Background(),
@@ -11748,6 +11629,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPListRoles
 
 > OpenLDAPListRoles(ctx, openldapMountPath).List(list).Execute()
@@ -11774,8 +11656,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPListRoles(
 		context.Background(),
@@ -11810,6 +11690,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPListStaticRoles
 
 > OpenLDAPListStaticRoles(ctx, openldapMountPath).List(list).Execute()
@@ -11836,8 +11717,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPListStaticRoles(
 		context.Background(),
@@ -11872,6 +11751,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPReadConfig
 
 > OpenLDAPReadConfig(ctx, openldapMountPath).Execute()
@@ -11898,8 +11778,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPReadConfig(
 		context.Background(),
@@ -11933,6 +11811,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPReadCredentials
 
 > OpenLDAPReadCredentials(ctx, name, openldapMountPath).Execute()
@@ -11961,8 +11840,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
-
-
 	resp, err := client.Secrets.OpenLDAPReadCredentials(
 		context.Background(),
 		name,
@@ -11998,6 +11875,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPReadLibrary
 
 > OpenLDAPReadLibrary(ctx, name, openldapMountPath).Execute()
@@ -12026,8 +11904,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.OpenLDAPReadLibrary(
 		context.Background(),
 		name,
@@ -12063,6 +11939,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPReadLibraryStatus
 
 > OpenLDAPReadLibraryStatus(ctx, name, openldapMountPath).Execute()
@@ -12091,8 +11968,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.OpenLDAPReadLibraryStatus(
 		context.Background(),
 		name,
@@ -12128,6 +12003,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPReadRole
 
 > OpenLDAPReadRole(ctx, name, openldapMountPath).Execute()
@@ -12156,8 +12032,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.OpenLDAPReadRole(
 		context.Background(),
 		name,
@@ -12193,6 +12067,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPReadStaticCredentials
 
 > OpenLDAPReadStaticCredentials(ctx, name, openldapMountPath).Execute()
@@ -12221,8 +12096,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
-
-
 	resp, err := client.Secrets.OpenLDAPReadStaticCredentials(
 		context.Background(),
 		name,
@@ -12258,6 +12131,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPReadStaticRole
 
 > OpenLDAPReadStaticRole(ctx, name, openldapMountPath).Execute()
@@ -12286,8 +12160,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.OpenLDAPReadStaticRole(
 		context.Background(),
 		name,
@@ -12323,6 +12195,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPRotateRole
 
 > OpenLDAPRotateRole(ctx, name, openldapMountPath).Execute()
@@ -12351,8 +12224,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-
-
 	resp, err := client.Secrets.OpenLDAPRotateRole(
 		context.Background(),
 		name,
@@ -12388,6 +12259,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPRotateRoot
 
 > OpenLDAPRotateRoot(ctx, openldapMountPath).Execute()
@@ -12414,8 +12286,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPRotateRoot(
 		context.Background(),
@@ -12449,6 +12319,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPWriteConfig
 
 > OpenLDAPWriteConfig(ctx, openldapMountPath).OpenLDAPWriteConfigRequest(openLDAPWriteConfigRequest).Execute()
@@ -12478,7 +12349,6 @@ func main() {
 	}
 
 	request := schema.NewOpenLDAPWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteConfig(
 		context.Background(),
 		request,
@@ -12513,6 +12383,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPWriteLibrary
 
 > OpenLDAPWriteLibrary(ctx, name, openldapMountPath).OpenLDAPWriteLibraryRequest(openLDAPWriteLibraryRequest).Execute()
@@ -12543,7 +12414,6 @@ func main() {
 
 	name := "name_example" // string | Name of the set.
 	request := schema.NewOpenLDAPWriteLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteLibrary(
 		context.Background(),
 		name,
@@ -12581,6 +12451,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPWriteRole
 
 > OpenLDAPWriteRole(ctx, name, openldapMountPath).OpenLDAPWriteRoleRequest(openLDAPWriteRoleRequest).Execute()
@@ -12611,7 +12482,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role (lowercase)
 	request := schema.NewOpenLDAPWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteRole(
 		context.Background(),
 		name,
@@ -12649,6 +12519,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OpenLDAPWriteStaticRole
 
 > OpenLDAPWriteStaticRole(ctx, name, openldapMountPath).OpenLDAPWriteStaticRoleRequest(openLDAPWriteStaticRoleRequest).Execute()
@@ -12679,7 +12550,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewOpenLDAPWriteStaticRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteStaticRole(
 		context.Background(),
 		name,
@@ -12717,6 +12587,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIBundleWrite
 
 > PKIBundleWrite(ctx, pkiMountPath).PKIBundleWriteRequest(pKIBundleWriteRequest).Execute()
@@ -12746,7 +12617,6 @@ func main() {
 	}
 
 	request := schema.NewPKIBundleWriteRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIBundleWrite(
 		context.Background(),
 		request,
@@ -12781,6 +12651,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIDeleteKey
 
 > PKIDeleteKey(ctx, keyRef, pkiMountPath).Execute()
@@ -12809,8 +12680,6 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-
-
 	resp, err := client.Secrets.PKIDeleteKey(
 		context.Background(),
 		keyRef,
@@ -12846,6 +12715,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIDeleteRole
 
 > PKIDeleteRole(ctx, name, pkiMountPath).Execute()
@@ -12874,8 +12744,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.PKIDeleteRole(
 		context.Background(),
 		name,
@@ -12911,6 +12779,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIDeleteRoot
 
 > PKIDeleteRoot(ctx, pkiMountPath).Execute()
@@ -12937,8 +12806,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIDeleteRoot(
 		context.Background(),
@@ -12972,6 +12839,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIGenerateRoot
 
 > PKIGenerateRoot(ctx, exported, pkiMountPath).PKIGenerateRootRequest(pKIGenerateRootRequest).Execute()
@@ -13002,7 +12870,6 @@ func main() {
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	request := schema.NewPKIGenerateRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIGenerateRoot(
 		context.Background(),
 		exported,
@@ -13040,6 +12907,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIImportKeys
 
 > PKIImportKeys(ctx, pkiMountPath).PKIImportKeysRequest(pKIImportKeysRequest).Execute()
@@ -13069,7 +12937,6 @@ func main() {
 	}
 
 	request := schema.NewPKIImportKeysRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIImportKeys(
 		context.Background(),
 		request,
@@ -13104,6 +12971,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerIssueRole
 
 > PKIIssuerIssueRole(ctx, issuerRef, pkiMountPath, role).PKIIssuerIssueRoleRequest(pKIIssuerIssueRoleRequest).Execute()
@@ -13135,7 +13003,6 @@ func main() {
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 	request := schema.NewPKIIssuerIssueRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerIssueRole(
 		context.Background(),
 		issuerRef,
@@ -13176,6 +13043,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerResignCRLs
 
 > PKIIssuerResignCRLs(ctx, issuerRef, pkiMountPath).PKIIssuerResignCRLsRequest(pKIIssuerResignCRLsRequest).Execute()
@@ -13206,7 +13074,6 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	request := schema.NewPKIIssuerResignCRLsRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerResignCRLs(
 		context.Background(),
 		issuerRef,
@@ -13244,6 +13111,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerRevoke
 
 > PKIIssuerRevoke(ctx, issuerRef, pkiMountPath).Execute()
@@ -13272,8 +13140,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PKIIssuerRevoke(
 		context.Background(),
 		issuerRef,
@@ -13309,6 +13175,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerSignIntermediate
 
 > PKIIssuerSignIntermediate(ctx, issuerRef, pkiMountPath).PKIIssuerSignIntermediateRequest(pKIIssuerSignIntermediateRequest).Execute()
@@ -13339,7 +13206,6 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	request := schema.NewPKIIssuerSignIntermediateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignIntermediate(
 		context.Background(),
 		issuerRef,
@@ -13377,6 +13243,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerSignRevocationList
 
 > PKIIssuerSignRevocationList(ctx, issuerRef, pkiMountPath).PKIIssuerSignRevocationListRequest(pKIIssuerSignRevocationListRequest).Execute()
@@ -13407,7 +13274,6 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	request := schema.NewPKIIssuerSignRevocationListRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignRevocationList(
 		context.Background(),
 		issuerRef,
@@ -13445,6 +13311,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerSignRole
 
 > PKIIssuerSignRole(ctx, issuerRef, pkiMountPath, role).PKIIssuerSignRoleRequest(pKIIssuerSignRoleRequest).Execute()
@@ -13476,7 +13343,6 @@ func main() {
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 	request := schema.NewPKIIssuerSignRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignRole(
 		context.Background(),
 		issuerRef,
@@ -13517,6 +13383,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerSignSelfIssued
 
 > PKIIssuerSignSelfIssued(ctx, issuerRef, pkiMountPath).PKIIssuerSignSelfIssuedRequest(pKIIssuerSignSelfIssuedRequest).Execute()
@@ -13547,7 +13414,6 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	request := schema.NewPKIIssuerSignSelfIssuedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignSelfIssued(
 		context.Background(),
 		issuerRef,
@@ -13585,6 +13451,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerSignVerbatim
 
 > PKIIssuerSignVerbatim(ctx, issuerRef, pkiMountPath).PKIIssuerSignVerbatimRequest(pKIIssuerSignVerbatimRequest).Execute()
@@ -13615,7 +13482,6 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	request := schema.NewPKIIssuerSignVerbatimRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignVerbatim(
 		context.Background(),
 		issuerRef,
@@ -13653,6 +13519,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuerSignVerbatimRole
 
 > PKIIssuerSignVerbatimRole(ctx, issuerRef, pkiMountPath, role).PKIIssuerSignVerbatimRoleRequest(pKIIssuerSignVerbatimRoleRequest).Execute()
@@ -13684,7 +13551,6 @@ func main() {
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
 	request := schema.NewPKIIssuerSignVerbatimRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignVerbatimRole(
 		context.Background(),
 		issuerRef,
@@ -13725,6 +13591,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuersGenerateIntermediate
 
 > PKIIssuersGenerateIntermediate(ctx, exported, pkiMountPath).PKIIssuersGenerateIntermediateRequest(pKIIssuersGenerateIntermediateRequest).Execute()
@@ -13755,7 +13622,6 @@ func main() {
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	request := schema.NewPKIIssuersGenerateIntermediateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuersGenerateIntermediate(
 		context.Background(),
 		exported,
@@ -13793,6 +13659,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuersGenerateRoot
 
 > PKIIssuersGenerateRoot(ctx, exported, pkiMountPath).PKIIssuersGenerateRootRequest(pKIIssuersGenerateRootRequest).Execute()
@@ -13823,7 +13690,6 @@ func main() {
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	request := schema.NewPKIIssuersGenerateRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuersGenerateRoot(
 		context.Background(),
 		exported,
@@ -13861,6 +13727,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIIssuersList
 
 > PKIIssuersList(ctx, pkiMountPath).List(list).Execute()
@@ -13887,8 +13754,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIIssuersList(
 		context.Background(),
@@ -13923,6 +13788,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIListCerts
 
 > PKIListCerts(ctx, pkiMountPath).List(list).Execute()
@@ -13949,8 +13815,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIListCerts(
 		context.Background(),
@@ -13985,6 +13849,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIListCertsRevoked
 
 > PKIListCertsRevoked(ctx, pkiMountPath).List(list).Execute()
@@ -14011,8 +13876,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIListCertsRevoked(
 		context.Background(),
@@ -14047,6 +13910,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIListKeys
 
 > PKIListKeys(ctx, pkiMountPath).List(list).Execute()
@@ -14073,8 +13937,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIListKeys(
 		context.Background(),
@@ -14109,6 +13971,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIListRoles
 
 > PKIListRoles(ctx, pkiMountPath).List(list).Execute()
@@ -14135,8 +13998,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIListRoles(
 		context.Background(),
@@ -14171,6 +14032,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadAutoTidyConfig
 
 > PKIReadAutoTidyConfig(ctx, pkiMountPath).Execute()
@@ -14197,8 +14059,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadAutoTidyConfig(
 		context.Background(),
@@ -14232,6 +14092,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCA
 
 > PKIReadCA(ctx, pkiMountPath).Execute()
@@ -14258,8 +14119,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCA(
 		context.Background(),
@@ -14293,6 +14152,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCAChain
 
 > PKIReadCAChain(ctx, pkiMountPath).Execute()
@@ -14319,8 +14179,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCAChain(
 		context.Background(),
@@ -14354,6 +14212,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCAPem
 
 > PKIReadCAPem(ctx, pkiMountPath).Execute()
@@ -14380,8 +14239,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCAPem(
 		context.Background(),
@@ -14415,6 +14272,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCRL
 
 > PKIReadCRL(ctx, pkiMountPath).Execute()
@@ -14441,8 +14299,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCRL(
 		context.Background(),
@@ -14476,6 +14332,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCRLConfig
 
 > PKIReadCRLConfig(ctx, pkiMountPath).Execute()
@@ -14502,8 +14359,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCRLConfig(
 		context.Background(),
@@ -14537,6 +14392,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCRLRotate
 
 > PKIReadCRLRotate(ctx, pkiMountPath).Execute()
@@ -14563,8 +14419,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCRLRotate(
 		context.Background(),
@@ -14598,6 +14452,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCRLRotateDelta
 
 > PKIReadCRLRotateDelta(ctx, pkiMountPath).Execute()
@@ -14624,8 +14479,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCRLRotateDelta(
 		context.Background(),
@@ -14659,6 +14512,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCert
 
 > PKIReadCert(ctx, pkiMountPath, serial).Execute()
@@ -14687,8 +14541,6 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-
-
 	resp, err := client.Secrets.PKIReadCert(
 		context.Background(),
 		serial,
@@ -14724,6 +14576,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCertCAChain
 
 > PKIReadCertCAChain(ctx, pkiMountPath).Execute()
@@ -14750,8 +14603,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCertCAChain(
 		context.Background(),
@@ -14785,6 +14636,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCertRaw
 
 > PKIReadCertRaw(ctx, pkiMountPath, serial).Execute()
@@ -14813,8 +14665,6 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-
-
 	resp, err := client.Secrets.PKIReadCertRaw(
 		context.Background(),
 		serial,
@@ -14850,6 +14700,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadCertRawPem
 
 > PKIReadCertRawPem(ctx, pkiMountPath, serial).Execute()
@@ -14878,8 +14729,6 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-
-
 	resp, err := client.Secrets.PKIReadCertRawPem(
 		context.Background(),
 		serial,
@@ -14915,6 +14764,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadClusterConfig
 
 > PKIReadClusterConfig(ctx, pkiMountPath).Execute()
@@ -14941,8 +14791,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadClusterConfig(
 		context.Background(),
@@ -14976,6 +14824,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadDeltaCRL
 
 > PKIReadDeltaCRL(ctx, pkiMountPath).Execute()
@@ -15002,8 +14851,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadDeltaCRL(
 		context.Background(),
@@ -15037,6 +14884,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadIssuersConfig
 
 > PKIReadIssuersConfig(ctx, pkiMountPath).Execute()
@@ -15063,8 +14911,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadIssuersConfig(
 		context.Background(),
@@ -15098,6 +14944,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadKey
 
 > PKIReadKey(ctx, keyRef, pkiMountPath).Execute()
@@ -15126,8 +14973,6 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-
-
 	resp, err := client.Secrets.PKIReadKey(
 		context.Background(),
 		keyRef,
@@ -15163,6 +15008,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadKeysConfig
 
 > PKIReadKeysConfig(ctx, pkiMountPath).Execute()
@@ -15189,8 +15035,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadKeysConfig(
 		context.Background(),
@@ -15224,6 +15068,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadOCSPReq
 
 > PKIReadOCSPReq(ctx, pkiMountPath, req).Execute()
@@ -15252,8 +15097,6 @@ func main() {
 	}
 
 	req := "req_example" // string | base-64 encoded ocsp request
-
-
 	resp, err := client.Secrets.PKIReadOCSPReq(
 		context.Background(),
 		req,
@@ -15289,6 +15132,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadRole
 
 > PKIReadRole(ctx, name, pkiMountPath).Execute()
@@ -15317,8 +15161,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.PKIReadRole(
 		context.Background(),
 		name,
@@ -15354,6 +15196,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReadURLConfig
 
 > PKIReadURLConfig(ctx, pkiMountPath).Execute()
@@ -15380,8 +15223,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadURLConfig(
 		context.Background(),
@@ -15415,6 +15256,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIReplaceRoot
 
 > PKIReplaceRoot(ctx, pkiMountPath).PKIReplaceRootRequest(pKIReplaceRootRequest).Execute()
@@ -15444,7 +15286,6 @@ func main() {
 	}
 
 	request := schema.NewPKIReplaceRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIReplaceRoot(
 		context.Background(),
 		request,
@@ -15479,6 +15320,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIRevoke
 
 > PKIRevoke(ctx, pkiMountPath).PKIRevokeRequest(pKIRevokeRequest).Execute()
@@ -15508,7 +15350,6 @@ func main() {
 	}
 
 	request := schema.NewPKIRevokeRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRevoke(
 		context.Background(),
 		request,
@@ -15543,6 +15384,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIRevokeWithKey
 
 > PKIRevokeWithKey(ctx, pkiMountPath).PKIRevokeWithKeyRequest(pKIRevokeWithKeyRequest).Execute()
@@ -15572,7 +15414,6 @@ func main() {
 	}
 
 	request := schema.NewPKIRevokeWithKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRevokeWithKey(
 		context.Background(),
 		request,
@@ -15607,6 +15448,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIRootSignIntermediate
 
 > PKIRootSignIntermediate(ctx, pkiMountPath).PKIRootSignIntermediateRequest(pKIRootSignIntermediateRequest).Execute()
@@ -15636,7 +15478,6 @@ func main() {
 	}
 
 	request := schema.NewPKIRootSignIntermediateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRootSignIntermediate(
 		context.Background(),
 		request,
@@ -15671,6 +15512,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIRootSignSelfIssued
 
 > PKIRootSignSelfIssued(ctx, pkiMountPath).PKIRootSignSelfIssuedRequest(pKIRootSignSelfIssuedRequest).Execute()
@@ -15700,7 +15542,6 @@ func main() {
 	}
 
 	request := schema.NewPKIRootSignSelfIssuedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRootSignSelfIssued(
 		context.Background(),
 		request,
@@ -15735,6 +15576,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIRotateRoot
 
 > PKIRotateRoot(ctx, exported, pkiMountPath).PKIRotateRootRequest(pKIRotateRootRequest).Execute()
@@ -15765,7 +15607,6 @@ func main() {
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	request := schema.NewPKIRotateRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRotateRoot(
 		context.Background(),
 		exported,
@@ -15803,6 +15644,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKISignRole
 
 > PKISignRole(ctx, pkiMountPath, role).PKISignRoleRequest(pKISignRoleRequest).Execute()
@@ -15833,7 +15675,6 @@ func main() {
 
 	role := "role_example" // string | The desired role with configuration for this request
 	request := schema.NewPKISignRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKISignRole(
 		context.Background(),
 		role,
@@ -15871,6 +15712,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKISignVerbatim
 
 > PKISignVerbatim(ctx, pkiMountPath).PKISignVerbatimRequest(pKISignVerbatimRequest).Execute()
@@ -15900,7 +15742,6 @@ func main() {
 	}
 
 	request := schema.NewPKISignVerbatimRequestWithDefaults()
-
 	resp, err := client.Secrets.PKISignVerbatim(
 		context.Background(),
 		request,
@@ -15935,6 +15776,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKISignVerbatimRole
 
 > PKISignVerbatimRole(ctx, pkiMountPath, role).PKISignVerbatimRoleRequest(pKISignVerbatimRoleRequest).Execute()
@@ -15965,7 +15807,6 @@ func main() {
 
 	role := "role_example" // string | The desired role with configuration for this request
 	request := schema.NewPKISignVerbatimRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKISignVerbatimRole(
 		context.Background(),
 		role,
@@ -16003,6 +15844,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKITidy
 
 > PKITidy(ctx, pkiMountPath).PKITidyRequest(pKITidyRequest).Execute()
@@ -16032,7 +15874,6 @@ func main() {
 	}
 
 	request := schema.NewPKITidyRequestWithDefaults()
-
 	resp, err := client.Secrets.PKITidy(
 		context.Background(),
 		request,
@@ -16067,6 +15908,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKITidyCancel
 
 > PKITidyCancel(ctx, pkiMountPath).Execute()
@@ -16093,8 +15935,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKITidyCancel(
 		context.Background(),
@@ -16128,6 +15968,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKITidyStatus
 
 > PKITidyStatus(ctx, pkiMountPath).Execute()
@@ -16154,8 +15995,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKITidyStatus(
 		context.Background(),
@@ -16189,6 +16028,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteAutoTidyConfig
 
 > PKIWriteAutoTidyConfig(ctx, pkiMountPath).PKIWriteAutoTidyConfigRequest(pKIWriteAutoTidyConfigRequest).Execute()
@@ -16218,7 +16058,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteAutoTidyConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteAutoTidyConfig(
 		context.Background(),
 		request,
@@ -16253,6 +16092,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteCAConfig
 
 > PKIWriteCAConfig(ctx, pkiMountPath).PKIWriteCAConfigRequest(pKIWriteCAConfigRequest).Execute()
@@ -16282,7 +16122,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteCAConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteCAConfig(
 		context.Background(),
 		request,
@@ -16317,6 +16156,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteCRLConfig
 
 > PKIWriteCRLConfig(ctx, pkiMountPath).PKIWriteCRLConfigRequest(pKIWriteCRLConfigRequest).Execute()
@@ -16346,7 +16186,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteCRLConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteCRLConfig(
 		context.Background(),
 		request,
@@ -16381,6 +16220,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteCerts
 
 > PKIWriteCerts(ctx, pkiMountPath).PKIWriteCertsRequest(pKIWriteCertsRequest).Execute()
@@ -16410,7 +16250,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteCertsRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteCerts(
 		context.Background(),
 		request,
@@ -16445,6 +16284,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteClusterConfig
 
 > PKIWriteClusterConfig(ctx, pkiMountPath).PKIWriteClusterConfigRequest(pKIWriteClusterConfigRequest).Execute()
@@ -16474,7 +16314,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteClusterConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteClusterConfig(
 		context.Background(),
 		request,
@@ -16509,6 +16348,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteIntermediateCrossSign
 
 > PKIWriteIntermediateCrossSign(ctx, pkiMountPath).PKIWriteIntermediateCrossSignRequest(pKIWriteIntermediateCrossSignRequest).Execute()
@@ -16538,7 +16378,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteIntermediateCrossSignRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIntermediateCrossSign(
 		context.Background(),
 		request,
@@ -16573,6 +16412,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteIntermediateGenerate
 
 > PKIWriteIntermediateGenerate(ctx, exported, pkiMountPath).PKIWriteIntermediateGenerateRequest(pKIWriteIntermediateGenerateRequest).Execute()
@@ -16603,7 +16443,6 @@ func main() {
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
 	request := schema.NewPKIWriteIntermediateGenerateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIntermediateGenerate(
 		context.Background(),
 		exported,
@@ -16641,6 +16480,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteIntermediateSetSigned
 
 > PKIWriteIntermediateSetSigned(ctx, pkiMountPath).PKIWriteIntermediateSetSignedRequest(pKIWriteIntermediateSetSignedRequest).Execute()
@@ -16670,7 +16510,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteIntermediateSetSignedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIntermediateSetSigned(
 		context.Background(),
 		request,
@@ -16705,6 +16544,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteInternalExported
 
 > PKIWriteInternalExported(ctx, pkiMountPath).PKIWriteInternalExportedRequest(pKIWriteInternalExportedRequest).Execute()
@@ -16734,7 +16574,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteInternalExportedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteInternalExported(
 		context.Background(),
 		request,
@@ -16769,6 +16608,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteIssueRole
 
 > PKIWriteIssueRole(ctx, pkiMountPath, role).PKIWriteIssueRoleRequest(pKIWriteIssueRoleRequest).Execute()
@@ -16799,7 +16639,6 @@ func main() {
 
 	role := "role_example" // string | The desired role with configuration for this request
 	request := schema.NewPKIWriteIssueRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIssueRole(
 		context.Background(),
 		role,
@@ -16837,6 +16676,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteIssuersConfig
 
 > PKIWriteIssuersConfig(ctx, pkiMountPath).PKIWriteIssuersConfigRequest(pKIWriteIssuersConfigRequest).Execute()
@@ -16866,7 +16706,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteIssuersConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIssuersConfig(
 		context.Background(),
 		request,
@@ -16901,6 +16740,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteKMS
 
 > PKIWriteKMS(ctx, pkiMountPath).PKIWriteKMSRequest(pKIWriteKMSRequest).Execute()
@@ -16930,7 +16770,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteKMSRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteKMS(
 		context.Background(),
 		request,
@@ -16965,6 +16804,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteKey
 
 > PKIWriteKey(ctx, keyRef, pkiMountPath).PKIWriteKeyRequest(pKIWriteKeyRequest).Execute()
@@ -16995,7 +16835,6 @@ func main() {
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 	request := schema.NewPKIWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteKey(
 		context.Background(),
 		keyRef,
@@ -17033,6 +16872,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteKeysConfig
 
 > PKIWriteKeysConfig(ctx, pkiMountPath).PKIWriteKeysConfigRequest(pKIWriteKeysConfigRequest).Execute()
@@ -17062,7 +16902,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteKeysConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteKeysConfig(
 		context.Background(),
 		request,
@@ -17097,6 +16936,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteOCSP
 
 > PKIWriteOCSP(ctx, pkiMountPath).Execute()
@@ -17123,8 +16963,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIWriteOCSP(
 		context.Background(),
@@ -17158,6 +16996,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteRole
 
 > PKIWriteRole(ctx, name, pkiMountPath).PKIWriteRoleRequest(pKIWriteRoleRequest).Execute()
@@ -17188,7 +17027,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewPKIWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteRole(
 		context.Background(),
 		name,
@@ -17226,6 +17064,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PKIWriteURLConfig
 
 > PKIWriteURLConfig(ctx, pkiMountPath).PKIWriteURLConfigRequest(pKIWriteURLConfigRequest).Execute()
@@ -17255,7 +17094,6 @@ func main() {
 	}
 
 	request := schema.NewPKIWriteURLConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteURLConfig(
 		context.Background(),
 		request,
@@ -17290,6 +17128,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiDeleteIssuerRefDerPem
 
 > PkiDeleteIssuerRefDerPem(ctx, issuerRef, pkiMountPath).Execute()
@@ -17318,8 +17157,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PkiDeleteIssuerRefDerPem(
 		context.Background(),
 		issuerRef,
@@ -17355,6 +17192,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiDeleteJson
 
 > PkiDeleteJson(ctx, pkiMountPath).Execute()
@@ -17381,8 +17219,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiDeleteJson(
 		context.Background(),
@@ -17416,6 +17252,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiReadDelta
 
 > PkiReadDelta(ctx, pkiMountPath).Execute()
@@ -17442,8 +17279,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadDelta(
 		context.Background(),
@@ -17477,6 +17312,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiReadDeltaPem
 
 > PkiReadDeltaPem(ctx, pkiMountPath).Execute()
@@ -17503,8 +17339,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadDeltaPem(
 		context.Background(),
@@ -17538,6 +17372,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiReadDer
 
 > PkiReadDer(ctx, pkiMountPath).Execute()
@@ -17564,8 +17399,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadDer(
 		context.Background(),
@@ -17599,6 +17432,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiReadIssuerRefCrlPemDerDeltaPem
 
 > PkiReadIssuerRefCrlPemDerDeltaPem(ctx, issuerRef, pkiMountPath).Execute()
@@ -17627,8 +17461,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PkiReadIssuerRefCrlPemDerDeltaPem(
 		context.Background(),
 		issuerRef,
@@ -17664,6 +17496,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiReadIssuerRefDerPem
 
 > PkiReadIssuerRefDerPem(ctx, issuerRef, pkiMountPath).Execute()
@@ -17692,8 +17525,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PkiReadIssuerRefDerPem(
 		context.Background(),
 		issuerRef,
@@ -17729,6 +17560,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiReadJson
 
 > PkiReadJson(ctx, pkiMountPath).Execute()
@@ -17755,8 +17587,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadJson(
 		context.Background(),
@@ -17790,6 +17620,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiReadPem
 
 > PkiReadPem(ctx, pkiMountPath).Execute()
@@ -17816,8 +17647,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadPem(
 		context.Background(),
@@ -17851,6 +17680,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiWriteIssuerRefDerPem
 
 > PkiWriteIssuerRefDerPem(ctx, issuerRef, pkiMountPath).PkiWriteIssuerRefDerPemRequest(pkiWriteIssuerRefDerPemRequest).Execute()
@@ -17881,7 +17711,6 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	request := schema.NewPkiWriteIssuerRefDerPemRequestWithDefaults()
-
 	resp, err := client.Secrets.PkiWriteIssuerRefDerPem(
 		context.Background(),
 		issuerRef,
@@ -17919,6 +17748,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PkiWriteJson
 
 > PkiWriteJson(ctx, pkiMountPath).PkiWriteJsonRequest(pkiWriteJsonRequest).Execute()
@@ -17948,7 +17778,6 @@ func main() {
 	}
 
 	request := schema.NewPkiWriteJsonRequestWithDefaults()
-
 	resp, err := client.Secrets.PkiWriteJson(
 		context.Background(),
 		request,
@@ -17983,6 +17812,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQDeleteRole
 
 > RabbitMQDeleteRole(ctx, name, rabbitmqMountPath).Execute()
@@ -18011,8 +17841,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.RabbitMQDeleteRole(
 		context.Background(),
 		name,
@@ -18048,6 +17876,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQListRoles
 
 > RabbitMQListRoles(ctx, rabbitmqMountPath).List(list).Execute()
@@ -18074,8 +17903,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.RabbitMQListRoles(
 		context.Background(),
@@ -18110,6 +17937,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQReadCredentials
 
 > RabbitMQReadCredentials(ctx, name, rabbitmqMountPath).Execute()
@@ -18138,8 +17966,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.RabbitMQReadCredentials(
 		context.Background(),
 		name,
@@ -18175,6 +18001,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQReadLeaseConfig
 
 > RabbitMQReadLeaseConfig(ctx, rabbitmqMountPath).Execute()
@@ -18201,8 +18028,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.RabbitMQReadLeaseConfig(
 		context.Background(),
@@ -18236,6 +18061,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQReadRole
 
 > RabbitMQReadRole(ctx, name, rabbitmqMountPath).Execute()
@@ -18264,8 +18090,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.RabbitMQReadRole(
 		context.Background(),
 		name,
@@ -18301,6 +18125,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQWriteConnectionConfig
 
 > RabbitMQWriteConnectionConfig(ctx, rabbitmqMountPath).RabbitMQWriteConnectionConfigRequest(rabbitMQWriteConnectionConfigRequest).Execute()
@@ -18330,7 +18155,6 @@ func main() {
 	}
 
 	request := schema.NewRabbitMQWriteConnectionConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.RabbitMQWriteConnectionConfig(
 		context.Background(),
 		request,
@@ -18365,6 +18189,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQWriteLeaseConfig
 
 > RabbitMQWriteLeaseConfig(ctx, rabbitmqMountPath).RabbitMQWriteLeaseConfigRequest(rabbitMQWriteLeaseConfigRequest).Execute()
@@ -18394,7 +18219,6 @@ func main() {
 	}
 
 	request := schema.NewRabbitMQWriteLeaseConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.RabbitMQWriteLeaseConfig(
 		context.Background(),
 		request,
@@ -18429,6 +18253,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RabbitMQWriteRole
 
 > RabbitMQWriteRole(ctx, name, rabbitmqMountPath).RabbitMQWriteRoleRequest(rabbitMQWriteRoleRequest).Execute()
@@ -18459,7 +18284,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewRabbitMQWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.RabbitMQWriteRole(
 		context.Background(),
 		name,
@@ -18497,6 +18321,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHDeleteCAConfig
 
 > SSHDeleteCAConfig(ctx, sshMountPath).Execute()
@@ -18523,8 +18348,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHDeleteCAConfig(
 		context.Background(),
@@ -18558,6 +18381,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHDeleteKeys
 
 > SSHDeleteKeys(ctx, keyName, sshMountPath).Execute()
@@ -18586,8 +18410,6 @@ func main() {
 	}
 
 	keyName := "keyName_example" // string | [Required] Name of the key
-
-
 	resp, err := client.Secrets.SSHDeleteKeys(
 		context.Background(),
 		keyName,
@@ -18623,6 +18445,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHDeleteRole
 
 > SSHDeleteRole(ctx, role, sshMountPath).Execute()
@@ -18651,8 +18474,6 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-
-
 	resp, err := client.Secrets.SSHDeleteRole(
 		context.Background(),
 		role,
@@ -18688,6 +18509,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHDeleteZeroAddressConfig
 
 > SSHDeleteZeroAddressConfig(ctx, sshMountPath).Execute()
@@ -18714,8 +18536,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHDeleteZeroAddressConfig(
 		context.Background(),
@@ -18749,6 +18569,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHListRoles
 
 > SSHListRoles(ctx, sshMountPath).List(list).Execute()
@@ -18775,8 +18596,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHListRoles(
 		context.Background(),
@@ -18811,6 +18630,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHLookup
 
 > SSHLookup(ctx, sshMountPath).SSHLookupRequest(sSHLookupRequest).Execute()
@@ -18840,7 +18660,6 @@ func main() {
 	}
 
 	request := schema.NewSSHLookupRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHLookup(
 		context.Background(),
 		request,
@@ -18875,6 +18694,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHReadCAConfig
 
 > SSHReadCAConfig(ctx, sshMountPath).Execute()
@@ -18901,8 +18721,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHReadCAConfig(
 		context.Background(),
@@ -18936,6 +18754,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHReadPublicKey
 
 > SSHReadPublicKey(ctx, sshMountPath).Execute()
@@ -18962,8 +18781,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHReadPublicKey(
 		context.Background(),
@@ -18997,6 +18814,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHReadRole
 
 > SSHReadRole(ctx, role, sshMountPath).Execute()
@@ -19025,8 +18843,6 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-
-
 	resp, err := client.Secrets.SSHReadRole(
 		context.Background(),
 		role,
@@ -19062,6 +18878,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHReadZeroAddressConfig
 
 > SSHReadZeroAddressConfig(ctx, sshMountPath).Execute()
@@ -19088,8 +18905,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHReadZeroAddressConfig(
 		context.Background(),
@@ -19123,6 +18938,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHSign
 
 > SSHSign(ctx, role, sshMountPath).SSHSignRequest(sSHSignRequest).Execute()
@@ -19153,7 +18969,6 @@ func main() {
 
 	role := "role_example" // string | The desired role with configuration for this request.
 	request := schema.NewSSHSignRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHSign(
 		context.Background(),
 		role,
@@ -19191,6 +19006,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHVerify
 
 > SSHVerify(ctx, sshMountPath).SSHVerifyRequest(sSHVerifyRequest).Execute()
@@ -19220,7 +19036,6 @@ func main() {
 	}
 
 	request := schema.NewSSHVerifyRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHVerify(
 		context.Background(),
 		request,
@@ -19255,6 +19070,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHWriteCAConfig
 
 > SSHWriteCAConfig(ctx, sshMountPath).SSHWriteCAConfigRequest(sSHWriteCAConfigRequest).Execute()
@@ -19284,7 +19100,6 @@ func main() {
 	}
 
 	request := schema.NewSSHWriteCAConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteCAConfig(
 		context.Background(),
 		request,
@@ -19319,6 +19134,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHWriteCredentials
 
 > SSHWriteCredentials(ctx, role, sshMountPath).SSHWriteCredentialsRequest(sSHWriteCredentialsRequest).Execute()
@@ -19349,7 +19165,6 @@ func main() {
 
 	role := "role_example" // string | [Required] Name of the role
 	request := schema.NewSSHWriteCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteCredentials(
 		context.Background(),
 		role,
@@ -19387,6 +19202,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHWriteIssue
 
 > SSHWriteIssue(ctx, role, sshMountPath).SSHWriteIssueRequest(sSHWriteIssueRequest).Execute()
@@ -19417,7 +19233,6 @@ func main() {
 
 	role := "role_example" // string | The desired role with configuration for this request.
 	request := schema.NewSSHWriteIssueRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteIssue(
 		context.Background(),
 		role,
@@ -19455,6 +19270,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHWriteKeys
 
 > SSHWriteKeys(ctx, keyName, sshMountPath).SSHWriteKeysRequest(sSHWriteKeysRequest).Execute()
@@ -19485,7 +19301,6 @@ func main() {
 
 	keyName := "keyName_example" // string | [Required] Name of the key
 	request := schema.NewSSHWriteKeysRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteKeys(
 		context.Background(),
 		keyName,
@@ -19523,6 +19338,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHWriteRole
 
 > SSHWriteRole(ctx, role, sshMountPath).SSHWriteRoleRequest(sSHWriteRoleRequest).Execute()
@@ -19553,7 +19369,6 @@ func main() {
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
 	request := schema.NewSSHWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteRole(
 		context.Background(),
 		role,
@@ -19591,6 +19406,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## SSHWriteZeroAddressConfig
 
 > SSHWriteZeroAddressConfig(ctx, sshMountPath).SSHWriteZeroAddressConfigRequest(sSHWriteZeroAddressConfigRequest).Execute()
@@ -19620,7 +19436,6 @@ func main() {
 	}
 
 	request := schema.NewSSHWriteZeroAddressConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteZeroAddressConfig(
 		context.Background(),
 		request,
@@ -19655,6 +19470,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TOTPDeleteKey
 
 > TOTPDeleteKey(ctx, name, totpMountPath).Execute()
@@ -19683,8 +19499,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
-
 	resp, err := client.Secrets.TOTPDeleteKey(
 		context.Background(),
 		name,
@@ -19720,6 +19534,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TOTPListKeys
 
 > TOTPListKeys(ctx, totpMountPath).List(list).Execute()
@@ -19746,8 +19561,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TOTPListKeys(
 		context.Background(),
@@ -19782,6 +19595,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TOTPReadCode
 
 > TOTPReadCode(ctx, name, totpMountPath).Execute()
@@ -19810,8 +19624,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
-
 	resp, err := client.Secrets.TOTPReadCode(
 		context.Background(),
 		name,
@@ -19847,6 +19659,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TOTPReadKey
 
 > TOTPReadKey(ctx, name, totpMountPath).Execute()
@@ -19875,8 +19688,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
-
 	resp, err := client.Secrets.TOTPReadKey(
 		context.Background(),
 		name,
@@ -19912,6 +19723,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TOTPWriteCode
 
 > TOTPWriteCode(ctx, name, totpMountPath).TOTPWriteCodeRequest(tOTPWriteCodeRequest).Execute()
@@ -19942,7 +19754,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key.
 	request := schema.NewTOTPWriteCodeRequestWithDefaults()
-
 	resp, err := client.Secrets.TOTPWriteCode(
 		context.Background(),
 		name,
@@ -19980,6 +19791,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TOTPWriteKey
 
 > TOTPWriteKey(ctx, name, totpMountPath).TOTPWriteKeyRequest(tOTPWriteKeyRequest).Execute()
@@ -20010,7 +19822,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key.
 	request := schema.NewTOTPWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TOTPWriteKey(
 		context.Background(),
 		name,
@@ -20048,6 +19859,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformDeleteConfig
 
 > TerraformDeleteConfig(ctx, terraformMountPath).Execute()
@@ -20074,8 +19886,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TerraformDeleteConfig(
 		context.Background(),
@@ -20109,6 +19919,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformDeleteRole
 
 > TerraformDeleteRole(ctx, name, terraformMountPath).Execute()
@@ -20137,8 +19948,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformDeleteRole(
 		context.Background(),
 		name,
@@ -20174,6 +19983,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformListRoles
 
 > TerraformListRoles(ctx, terraformMountPath).List(list).Execute()
@@ -20200,8 +20010,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TerraformListRoles(
 		context.Background(),
@@ -20236,6 +20044,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformReadConfig
 
 > TerraformReadConfig(ctx, terraformMountPath).Execute()
@@ -20262,8 +20071,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TerraformReadConfig(
 		context.Background(),
@@ -20297,6 +20104,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformReadCredentials
 
 > TerraformReadCredentials(ctx, name, terraformMountPath).Execute()
@@ -20325,8 +20133,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformReadCredentials(
 		context.Background(),
 		name,
@@ -20362,6 +20168,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformReadRole
 
 > TerraformReadRole(ctx, name, terraformMountPath).Execute()
@@ -20390,8 +20197,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformReadRole(
 		context.Background(),
 		name,
@@ -20427,6 +20232,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformRotateRole
 
 > TerraformRotateRole(ctx, name, terraformMountPath).Execute()
@@ -20455,8 +20261,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the team or organization role
-
-
 	resp, err := client.Secrets.TerraformRotateRole(
 		context.Background(),
 		name,
@@ -20492,6 +20296,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformWriteConfig
 
 > TerraformWriteConfig(ctx, terraformMountPath).TerraformWriteConfigRequest(terraformWriteConfigRequest).Execute()
@@ -20521,7 +20326,6 @@ func main() {
 	}
 
 	request := schema.NewTerraformWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.TerraformWriteConfig(
 		context.Background(),
 		request,
@@ -20556,6 +20360,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformWriteCredentials
 
 > TerraformWriteCredentials(ctx, name, terraformMountPath).Execute()
@@ -20584,8 +20389,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformWriteCredentials(
 		context.Background(),
 		name,
@@ -20621,6 +20424,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TerraformWriteRole
 
 > TerraformWriteRole(ctx, name, terraformMountPath).TerraformWriteRoleRequest(terraformWriteRoleRequest).Execute()
@@ -20651,7 +20455,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewTerraformWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.TerraformWriteRole(
 		context.Background(),
 		name,
@@ -20689,6 +20492,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitBackup
 
 > TransitBackup(ctx, name, transitMountPath).Execute()
@@ -20717,8 +20521,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitBackup(
 		context.Background(),
 		name,
@@ -20754,6 +20556,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitDecrypt
 
 > TransitDecrypt(ctx, name, transitMountPath).TransitDecryptRequest(transitDecryptRequest).Execute()
@@ -20784,7 +20587,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewTransitDecryptRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitDecrypt(
 		context.Background(),
 		name,
@@ -20822,6 +20624,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitDeleteKey
 
 > TransitDeleteKey(ctx, name, transitMountPath).Execute()
@@ -20850,8 +20653,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitDeleteKey(
 		context.Background(),
 		name,
@@ -20887,6 +20688,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitEncrypt
 
 > TransitEncrypt(ctx, name, transitMountPath).TransitEncryptRequest(transitEncryptRequest).Execute()
@@ -20917,7 +20719,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewTransitEncryptRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitEncrypt(
 		context.Background(),
 		name,
@@ -20955,6 +20756,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitExport
 
 > TransitExport(ctx, name, transitMountPath, type_).Execute()
@@ -20984,8 +20786,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
-
-
 	resp, err := client.Secrets.TransitExport(
 		context.Background(),
 		name,
@@ -21024,6 +20824,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitExportVersion
 
 > TransitExportVersion(ctx, name, transitMountPath, type_, version).Execute()
@@ -21054,8 +20855,6 @@ func main() {
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 	version := "version_example" // string | Version of the key
-
-
 	resp, err := client.Secrets.TransitExportVersion(
 		context.Background(),
 		name,
@@ -21097,6 +20896,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitGenerateDataKey
 
 > TransitGenerateDataKey(ctx, name, plaintext, transitMountPath).TransitGenerateDataKeyRequest(transitGenerateDataKeyRequest).Execute()
@@ -21128,7 +20928,6 @@ func main() {
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
 	request := schema.NewTransitGenerateDataKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateDataKey(
 		context.Background(),
 		name,
@@ -21169,6 +20968,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitGenerateHMAC
 
 > TransitGenerateHMAC(ctx, name, transitMountPath).TransitGenerateHMACRequest(transitGenerateHMACRequest).Execute()
@@ -21199,7 +20999,6 @@ func main() {
 
 	name := "name_example" // string | The key to use for the HMAC function
 	request := schema.NewTransitGenerateHMACRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateHMAC(
 		context.Background(),
 		name,
@@ -21237,6 +21036,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitGenerateHMACWithAlgorithm
 
 > TransitGenerateHMACWithAlgorithm(ctx, name, transitMountPath, urlalgorithm).TransitGenerateHMACWithAlgorithmRequest(transitGenerateHMACWithAlgorithmRequest).Execute()
@@ -21268,7 +21068,6 @@ func main() {
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	request := schema.NewTransitGenerateHMACWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateHMACWithAlgorithm(
 		context.Background(),
 		name,
@@ -21309,6 +21108,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitGenerateRandom
 
 > TransitGenerateRandom(ctx, transitMountPath).TransitGenerateRandomRequest(transitGenerateRandomRequest).Execute()
@@ -21338,7 +21138,6 @@ func main() {
 	}
 
 	request := schema.NewTransitGenerateRandomRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
 		request,
@@ -21373,6 +21172,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitGenerateRandomSource
 
 > TransitGenerateRandomSource(ctx, source, transitMountPath).TransitGenerateRandomSourceRequest(transitGenerateRandomSourceRequest).Execute()
@@ -21403,7 +21203,6 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	request := schema.NewTransitGenerateRandomSourceRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateRandomSource(
 		context.Background(),
 		source,
@@ -21441,6 +21240,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitGenerateRandomSourceBytes
 
 > TransitGenerateRandomSourceBytes(ctx, source, transitMountPath, urlbytes).TransitGenerateRandomSourceBytesRequest(transitGenerateRandomSourceBytesRequest).Execute()
@@ -21472,7 +21272,6 @@ func main() {
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	request := schema.NewTransitGenerateRandomSourceBytesRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateRandomSourceBytes(
 		context.Background(),
 		source,
@@ -21513,6 +21312,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitHash
 
 > TransitHash(ctx, transitMountPath).TransitHashRequest(transitHashRequest).Execute()
@@ -21542,7 +21342,6 @@ func main() {
 	}
 
 	request := schema.NewTransitHashRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
 		request,
@@ -21577,6 +21376,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitHashWithAlgorithm
 
 > TransitHashWithAlgorithm(ctx, transitMountPath, urlalgorithm).TransitHashWithAlgorithmRequest(transitHashWithAlgorithmRequest).Execute()
@@ -21607,7 +21407,6 @@ func main() {
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
 	request := schema.NewTransitHashWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
@@ -21645,6 +21444,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitImportKey
 
 > TransitImportKey(ctx, name, transitMountPath).TransitImportKeyRequest(transitImportKeyRequest).Execute()
@@ -21675,7 +21475,6 @@ func main() {
 
 	name := "name_example" // string | The name of the key
 	request := schema.NewTransitImportKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitImportKey(
 		context.Background(),
 		name,
@@ -21713,6 +21512,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitImportKeyVersion
 
 > TransitImportKeyVersion(ctx, name, transitMountPath).TransitImportKeyVersionRequest(transitImportKeyVersionRequest).Execute()
@@ -21743,7 +21543,6 @@ func main() {
 
 	name := "name_example" // string | The name of the key
 	request := schema.NewTransitImportKeyVersionRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitImportKeyVersion(
 		context.Background(),
 		name,
@@ -21781,6 +21580,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitListKeys
 
 > TransitListKeys(ctx, transitMountPath).List(list).Execute()
@@ -21807,8 +21607,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TransitListKeys(
 		context.Background(),
@@ -21843,6 +21641,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitReadCacheConfig
 
 > TransitReadCacheConfig(ctx, transitMountPath).Execute()
@@ -21869,8 +21668,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TransitReadCacheConfig(
 		context.Background(),
@@ -21904,6 +21701,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitReadConfigKeys
 
 > TransitReadConfigKeys(ctx, transitMountPath).Execute()
@@ -21930,8 +21728,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TransitReadConfigKeys(
 		context.Background(),
@@ -21965,6 +21761,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitReadKey
 
 > TransitReadKey(ctx, name, transitMountPath).Execute()
@@ -21993,8 +21790,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitReadKey(
 		context.Background(),
 		name,
@@ -22030,6 +21825,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitReadWrappingKey
 
 > TransitReadWrappingKey(ctx, transitMountPath).Execute()
@@ -22056,8 +21852,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TransitReadWrappingKey(
 		context.Background(),
@@ -22091,6 +21885,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitRestore
 
 > TransitRestore(ctx, transitMountPath).TransitRestoreRequest(transitRestoreRequest).Execute()
@@ -22120,7 +21915,6 @@ func main() {
 	}
 
 	request := schema.NewTransitRestoreRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitRestore(
 		context.Background(),
 		request,
@@ -22155,6 +21949,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitRestoreKey
 
 > TransitRestoreKey(ctx, name, transitMountPath).TransitRestoreKeyRequest(transitRestoreKeyRequest).Execute()
@@ -22185,7 +21980,6 @@ func main() {
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
 	request := schema.NewTransitRestoreKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
 		name,
@@ -22223,6 +22017,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitRewrap
 
 > TransitRewrap(ctx, name, transitMountPath).TransitRewrapRequest(transitRewrapRequest).Execute()
@@ -22253,7 +22048,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewTransitRewrapRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitRewrap(
 		context.Background(),
 		name,
@@ -22291,6 +22085,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitRotateKey
 
 > TransitRotateKey(ctx, name, transitMountPath).Execute()
@@ -22319,8 +22114,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitRotateKey(
 		context.Background(),
 		name,
@@ -22356,6 +22149,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitSign
 
 > TransitSign(ctx, name, transitMountPath).TransitSignRequest(transitSignRequest).Execute()
@@ -22386,7 +22180,6 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	request := schema.NewTransitSignRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitSign(
 		context.Background(),
 		name,
@@ -22424,6 +22217,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitSignWithAlgorithm
 
 > TransitSignWithAlgorithm(ctx, name, transitMountPath, urlalgorithm).TransitSignWithAlgorithmRequest(transitSignWithAlgorithmRequest).Execute()
@@ -22455,7 +22249,6 @@ func main() {
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
 	request := schema.NewTransitSignWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitSignWithAlgorithm(
 		context.Background(),
 		name,
@@ -22496,6 +22289,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitTrimKey
 
 > TransitTrimKey(ctx, name, transitMountPath).TransitTrimKeyRequest(transitTrimKeyRequest).Execute()
@@ -22526,7 +22320,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewTransitTrimKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitTrimKey(
 		context.Background(),
 		name,
@@ -22564,6 +22357,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitVerify
 
 > TransitVerify(ctx, name, transitMountPath).TransitVerifyRequest(transitVerifyRequest).Execute()
@@ -22594,7 +22388,6 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	request := schema.NewTransitVerifyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitVerify(
 		context.Background(),
 		name,
@@ -22632,6 +22425,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitVerifyWithAlgorithm
 
 > TransitVerifyWithAlgorithm(ctx, name, transitMountPath, urlalgorithm).TransitVerifyWithAlgorithmRequest(transitVerifyWithAlgorithmRequest).Execute()
@@ -22663,7 +22457,6 @@ func main() {
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
 	request := schema.NewTransitVerifyWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitVerifyWithAlgorithm(
 		context.Background(),
 		name,
@@ -22704,6 +22497,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitWriteCacheConfig
 
 > TransitWriteCacheConfig(ctx, transitMountPath).TransitWriteCacheConfigRequest(transitWriteCacheConfigRequest).Execute()
@@ -22733,7 +22527,6 @@ func main() {
 	}
 
 	request := schema.NewTransitWriteCacheConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteCacheConfig(
 		context.Background(),
 		request,
@@ -22768,6 +22561,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitWriteConfigKeys
 
 > TransitWriteConfigKeys(ctx, transitMountPath).TransitWriteConfigKeysRequest(transitWriteConfigKeysRequest).Execute()
@@ -22797,7 +22591,6 @@ func main() {
 	}
 
 	request := schema.NewTransitWriteConfigKeysRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteConfigKeys(
 		context.Background(),
 		request,
@@ -22832,6 +22625,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitWriteKey
 
 > TransitWriteKey(ctx, name, transitMountPath).TransitWriteKeyRequest(transitWriteKeyRequest).Execute()
@@ -22862,7 +22656,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewTransitWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteKey(
 		context.Background(),
 		name,
@@ -22900,6 +22693,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitWriteKeyConfig
 
 > TransitWriteKeyConfig(ctx, name, transitMountPath).TransitWriteKeyConfigRequest(transitWriteKeyConfigRequest).Execute()
@@ -22930,7 +22724,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewTransitWriteKeyConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteKeyConfig(
 		context.Background(),
 		name,
@@ -22968,6 +22761,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TransitWriteRandomUrlbytes
 
 > TransitWriteRandomUrlbytes(ctx, transitMountPath, urlbytes).TransitWriteRandomUrlbytesRequest(transitWriteRandomUrlbytesRequest).Execute()
@@ -22998,7 +22792,6 @@ func main() {
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
 	request := schema.NewTransitWriteRandomUrlbytesRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteRandomUrlbytes(
 		context.Background(),
 		urlbytes,
@@ -23034,4 +22827,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
+
 

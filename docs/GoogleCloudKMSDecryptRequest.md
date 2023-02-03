@@ -1,14 +1,20 @@
 # GoogleCloudKMSDecryptRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AdditionalAuthenticatedData** | Pointer to **string** | Optional data that was specified during encryption of this payload. | [optional] 
 **Ciphertext** | Pointer to **string** | Ciphertext to decrypt as previously returned from an encrypt operation. This must be base64-encoded ciphertext as previously returned from an encrypt operation. | [optional] 
 **KeyVersion** | Pointer to **int32** | Integer version of the crypto key version to use for decryption. This is required for asymmetric keys. For symmetric keys, Cloud KMS will choose the correct version automatically. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudKMSDecryptRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewGoogleCloudKMSDecryptRequestWithDefaults instantiates a new GoogleCloudKMSDecryptRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAdditionalAuthenticatedData
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetAdditionalAuthenticatedData sets AdditionalAuthenticatedData field to given value.
 
+
 ### HasAdditionalAuthenticatedData
 
 `func (o *GoogleCloudKMSDecryptRequest) HasAdditionalAuthenticatedData() bool`
 
 HasAdditionalAuthenticatedData returns a boolean if a field has been set.
+
+
+
 
 ### GetCiphertext
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetCiphertext sets Ciphertext field to given value.
 
+
 ### HasCiphertext
 
 `func (o *GoogleCloudKMSDecryptRequest) HasCiphertext() bool`
 
 HasCiphertext returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyVersion
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetKeyVersion sets KeyVersion field to given value.
 
+
 ### HasKeyVersion
 
 `func (o *GoogleCloudKMSDecryptRequest) HasKeyVersion() bool`
 
 HasKeyVersion returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

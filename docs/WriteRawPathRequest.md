@@ -1,15 +1,21 @@
 # WriteRawPathRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Compressed** | Pointer to **bool** |  | [optional] 
 **CompressionType** | Pointer to **string** |  | [optional] 
 **Encoding** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteRawPathRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewWriteRawPathRequestWithDefaults instantiates a new WriteRawPathRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCompressed
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetCompressed sets Compressed field to given value.
 
+
 ### HasCompressed
 
 `func (o *WriteRawPathRequest) HasCompressed() bool`
 
 HasCompressed returns a boolean if a field has been set.
+
+
+
 
 ### GetCompressionType
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetCompressionType sets CompressionType field to given value.
 
+
 ### HasCompressionType
 
 `func (o *WriteRawPathRequest) HasCompressionType() bool`
 
 HasCompressionType returns a boolean if a field has been set.
+
+
+
 
 ### GetEncoding
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetEncoding sets Encoding field to given value.
 
+
 ### HasEncoding
 
 `func (o *WriteRawPathRequest) HasEncoding() bool`
 
 HasEncoding returns a boolean if a field has been set.
+
+
+
 
 ### GetValue
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetValue sets Value field to given value.
 
+
 ### HasValue
 
 `func (o *WriteRawPathRequest) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

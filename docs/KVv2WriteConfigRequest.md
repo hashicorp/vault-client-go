@@ -1,14 +1,20 @@
 # KVv2WriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CasRequired** | Pointer to **bool** | If true, the backend will require the cas parameter to be set for each write | [optional] 
 **DeleteVersionAfter** | Pointer to **int32** | If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string. | [optional] 
 **MaxVersions** | Pointer to **int32** | The number of versions to keep for each key. Defaults to 10 | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKVv2WriteConfigRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewKVv2WriteConfigRequestWithDefaults instantiates a new KVv2WriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCasRequired
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetCasRequired sets CasRequired field to given value.
 
+
 ### HasCasRequired
 
 `func (o *KVv2WriteConfigRequest) HasCasRequired() bool`
 
 HasCasRequired returns a boolean if a field has been set.
+
+
+
 
 ### GetDeleteVersionAfter
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetDeleteVersionAfter sets DeleteVersionAfter field to given value.
 
+
 ### HasDeleteVersionAfter
 
 `func (o *KVv2WriteConfigRequest) HasDeleteVersionAfter() bool`
 
 HasDeleteVersionAfter returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxVersions
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetMaxVersions sets MaxVersions field to given value.
 
+
 ### HasMaxVersions
 
 `func (o *KVv2WriteConfigRequest) HasMaxVersions() bool`
 
 HasMaxVersions returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

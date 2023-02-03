@@ -1,15 +1,21 @@
 # WriteAuditDeviceRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Description** | Pointer to **string** | User-friendly description for this audit backend. | [optional] 
 **Local** | Pointer to **bool** | Mark the mount as a local mount, which is not replicated and is unaffected by replication. | [optional] [default to false]
 **Options** | Pointer to **map[string]interface{}** | Configuration options for the audit backend. | [optional] 
 **Type** | Pointer to **string** | The type of the backend. Example: \&quot;mysql\&quot; | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteAuditDeviceRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewWriteAuditDeviceRequestWithDefaults instantiates a new WriteAuditDeviceRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDescription
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
+
 ### HasDescription
 
 `func (o *WriteAuditDeviceRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+
+
 
 ### GetLocal
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetLocal sets Local field to given value.
 
+
 ### HasLocal
 
 `func (o *WriteAuditDeviceRequest) HasLocal() bool`
 
 HasLocal returns a boolean if a field has been set.
+
+
+
 
 ### GetOptions
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetOptions sets Options field to given value.
 
+
 ### HasOptions
 
 `func (o *WriteAuditDeviceRequest) HasOptions() bool`
 
 HasOptions returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *WriteAuditDeviceRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

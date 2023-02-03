@@ -1,9 +1,12 @@
 # AWSConfigWriteClientRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AccessKey** | Pointer to **string** | AWS Access Key ID for the account used to make AWS API requests. | [optional] [default to ""]
 **AllowedStsHeaderValues** | Pointer to **[]string** | List of additional headers that are allowed to be in AWS STS request headers | [optional] 
 **Endpoint** | Pointer to **string** | URL to override the default generated endpoint for making AWS EC2 API calls. | [optional] [default to ""]
@@ -14,7 +17,10 @@ Name | Type | Description | Notes
 **StsEndpoint** | Pointer to **string** | URL to override the default generated endpoint for making AWS STS API calls. | [optional] [default to ""]
 **StsRegion** | Pointer to **string** | The region ID for the sts_endpoint, if set. | [optional] [default to ""]
 
+
+
 ## Methods
+
 
 ### NewAWSConfigWriteClientRequest
 
@@ -32,6 +38,7 @@ will change when the set of required properties is changed
 NewAWSConfigWriteClientRequestWithDefaults instantiates a new AWSConfigWriteClientRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAccessKey
 
@@ -52,11 +59,15 @@ and a boolean to check if the value has been set.
 
 SetAccessKey sets AccessKey field to given value.
 
+
 ### HasAccessKey
 
 `func (o *AWSConfigWriteClientRequest) HasAccessKey() bool`
 
 HasAccessKey returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowedStsHeaderValues
 
@@ -77,11 +88,15 @@ and a boolean to check if the value has been set.
 
 SetAllowedStsHeaderValues sets AllowedStsHeaderValues field to given value.
 
+
 ### HasAllowedStsHeaderValues
 
 `func (o *AWSConfigWriteClientRequest) HasAllowedStsHeaderValues() bool`
 
 HasAllowedStsHeaderValues returns a boolean if a field has been set.
+
+
+
 
 ### GetEndpoint
 
@@ -102,11 +117,15 @@ and a boolean to check if the value has been set.
 
 SetEndpoint sets Endpoint field to given value.
 
+
 ### HasEndpoint
 
 `func (o *AWSConfigWriteClientRequest) HasEndpoint() bool`
 
 HasEndpoint returns a boolean if a field has been set.
+
+
+
 
 ### GetIamEndpoint
 
@@ -127,11 +146,15 @@ and a boolean to check if the value has been set.
 
 SetIamEndpoint sets IamEndpoint field to given value.
 
+
 ### HasIamEndpoint
 
 `func (o *AWSConfigWriteClientRequest) HasIamEndpoint() bool`
 
 HasIamEndpoint returns a boolean if a field has been set.
+
+
+
 
 ### GetIamServerIdHeaderValue
 
@@ -152,11 +175,15 @@ and a boolean to check if the value has been set.
 
 SetIamServerIdHeaderValue sets IamServerIdHeaderValue field to given value.
 
+
 ### HasIamServerIdHeaderValue
 
 `func (o *AWSConfigWriteClientRequest) HasIamServerIdHeaderValue() bool`
 
 HasIamServerIdHeaderValue returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxRetries
 
@@ -177,11 +204,15 @@ and a boolean to check if the value has been set.
 
 SetMaxRetries sets MaxRetries field to given value.
 
+
 ### HasMaxRetries
 
 `func (o *AWSConfigWriteClientRequest) HasMaxRetries() bool`
 
 HasMaxRetries returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretKey
 
@@ -202,11 +233,15 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
+
 ### HasSecretKey
 
 `func (o *AWSConfigWriteClientRequest) HasSecretKey() bool`
 
 HasSecretKey returns a boolean if a field has been set.
+
+
+
 
 ### GetStsEndpoint
 
@@ -227,11 +262,15 @@ and a boolean to check if the value has been set.
 
 SetStsEndpoint sets StsEndpoint field to given value.
 
+
 ### HasStsEndpoint
 
 `func (o *AWSConfigWriteClientRequest) HasStsEndpoint() bool`
 
 HasStsEndpoint returns a boolean if a field has been set.
+
+
+
 
 ### GetStsRegion
 
@@ -252,11 +291,19 @@ and a boolean to check if the value has been set.
 
 SetStsRegion sets StsRegion field to given value.
 
+
 ### HasStsRegion
 
 `func (o *AWSConfigWriteClientRequest) HasStsRegion() bool`
 
 HasStsRegion returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

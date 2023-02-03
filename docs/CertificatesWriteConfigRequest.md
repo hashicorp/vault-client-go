@@ -1,14 +1,20 @@
 # CertificatesWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **DisableBinding** | Pointer to **bool** | If set, during renewal, skips the matching of presented client identity with the client identity used during login. Defaults to false. | [optional] [default to false]
 **EnableIdentityAliasMetadata** | Pointer to **bool** | If set, metadata of the certificate including the metadata corresponding to allowed_metadata_extensions will be stored in the alias. Defaults to false. | [optional] [default to false]
 **OcspCacheSize** | Pointer to **int32** | The size of the in memory OCSP response cache, shared by all configured certs | [optional] [default to 100]
 
+
+
 ## Methods
+
 
 ### NewCertificatesWriteConfigRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewCertificatesWriteConfigRequestWithDefaults instantiates a new CertificatesWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDisableBinding
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetDisableBinding sets DisableBinding field to given value.
 
+
 ### HasDisableBinding
 
 `func (o *CertificatesWriteConfigRequest) HasDisableBinding() bool`
 
 HasDisableBinding returns a boolean if a field has been set.
+
+
+
 
 ### GetEnableIdentityAliasMetadata
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetEnableIdentityAliasMetadata sets EnableIdentityAliasMetadata field to given value.
 
+
 ### HasEnableIdentityAliasMetadata
 
 `func (o *CertificatesWriteConfigRequest) HasEnableIdentityAliasMetadata() bool`
 
 HasEnableIdentityAliasMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspCacheSize
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetOcspCacheSize sets OcspCacheSize field to given value.
 
+
 ### HasOcspCacheSize
 
 `func (o *CertificatesWriteConfigRequest) HasOcspCacheSize() bool`
 
 HasOcspCacheSize returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

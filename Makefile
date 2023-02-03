@@ -19,6 +19,7 @@ generate:
 		--user="$(shell id -u):$(shell id -g)" \
 			openapitools/openapi-generator-cli:$(OPENAPI_GENERATOR_VERSION) generate \
 				--generator-name   go \
+				--engine           "handlebars" \
 				--input-spec       /local/$(OPENAPI_SPEC_PATH) \
 				--config           /local/$(GENERATE_CONFIG_PATH) \
 				--template-dir     /local/$(GENERATE_TEMPLATES_PATH) \

@@ -1,12 +1,18 @@
 # RadiusWriteUserRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Policies** | Pointer to **[]string** | Comma-separated list of policies associated to the user. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewRadiusWriteUserRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewRadiusWriteUserRequestWithDefaults instantiates a new RadiusWriteUserRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPolicies
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *RadiusWriteUserRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,9 +1,12 @@
 # SSHWriteIssueRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CertType** | Pointer to **string** | Type of certificate to be created; either \&quot;user\&quot; or \&quot;host\&quot;. | [optional] [default to "user"]
 **CriticalOptions** | Pointer to **map[string]interface{}** | Critical options that the certificate should be signed for. | [optional] 
 **Extensions** | Pointer to **map[string]interface{}** | Extensions that the certificate should be signed for. | [optional] 
@@ -13,7 +16,10 @@ Name | Type | Description | Notes
 **Ttl** | Pointer to **int32** | The requested Time To Live for the SSH certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be later than the role max TTL. | [optional] 
 **ValidPrincipals** | Pointer to **string** | Valid principals, either usernames or hostnames, that the certificate should be signed for. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewSSHWriteIssueRequest
 
@@ -31,6 +37,7 @@ will change when the set of required properties is changed
 NewSSHWriteIssueRequestWithDefaults instantiates a new SSHWriteIssueRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCertType
 
@@ -51,11 +58,15 @@ and a boolean to check if the value has been set.
 
 SetCertType sets CertType field to given value.
 
+
 ### HasCertType
 
 `func (o *SSHWriteIssueRequest) HasCertType() bool`
 
 HasCertType returns a boolean if a field has been set.
+
+
+
 
 ### GetCriticalOptions
 
@@ -76,11 +87,15 @@ and a boolean to check if the value has been set.
 
 SetCriticalOptions sets CriticalOptions field to given value.
 
+
 ### HasCriticalOptions
 
 `func (o *SSHWriteIssueRequest) HasCriticalOptions() bool`
 
 HasCriticalOptions returns a boolean if a field has been set.
+
+
+
 
 ### GetExtensions
 
@@ -101,11 +116,15 @@ and a boolean to check if the value has been set.
 
 SetExtensions sets Extensions field to given value.
 
+
 ### HasExtensions
 
 `func (o *SSHWriteIssueRequest) HasExtensions() bool`
 
 HasExtensions returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyBits
 
@@ -126,11 +145,15 @@ and a boolean to check if the value has been set.
 
 SetKeyBits sets KeyBits field to given value.
 
+
 ### HasKeyBits
 
 `func (o *SSHWriteIssueRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyId
 
@@ -151,11 +174,15 @@ and a boolean to check if the value has been set.
 
 SetKeyId sets KeyId field to given value.
 
+
 ### HasKeyId
 
 `func (o *SSHWriteIssueRequest) HasKeyId() bool`
 
 HasKeyId returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyType
 
@@ -176,11 +203,15 @@ and a boolean to check if the value has been set.
 
 SetKeyType sets KeyType field to given value.
 
+
 ### HasKeyType
 
 `func (o *SSHWriteIssueRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -201,11 +232,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *SSHWriteIssueRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetValidPrincipals
 
@@ -226,11 +261,19 @@ and a boolean to check if the value has been set.
 
 SetValidPrincipals sets ValidPrincipals field to given value.
 
+
 ### HasValidPrincipals
 
 `func (o *SSHWriteIssueRequest) HasValidPrincipals() bool`
 
 HasValidPrincipals returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

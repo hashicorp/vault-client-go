@@ -1,12 +1,18 @@
 # OpenLDAPCheckOutLibraryRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Ttl** | Pointer to **int32** | The length of time before the check-out will expire, in seconds. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOpenLDAPCheckOutLibraryRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewOpenLDAPCheckOutLibraryRequestWithDefaults instantiates a new OpenLDAPCheckOutLibraryRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetTtl
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *OpenLDAPCheckOutLibraryRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

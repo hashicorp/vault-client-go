@@ -1,9 +1,12 @@
 # AWSWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Arn** | Pointer to **string** | Use role_arns or policy_arns instead. | [optional] 
 **CredentialType** | Pointer to **string** | Type of credential to retrieve. Must be one of assumed_role, iam_user, or federation_token | [optional] 
 **DefaultStsTtl** | Pointer to **int32** | Default TTL for assumed_role and federation_token credential types when no TTL is explicitly requested with the credentials | [optional] 
@@ -17,7 +20,10 @@ Name | Type | Description | Notes
 **RoleArns** | Pointer to **[]string** | ARNs of AWS roles allowed to be assumed. Only valid when credential_type is assumed_role | [optional] 
 **UserPath** | Pointer to **string** | Path for IAM User. Only valid when credential_type is iam_user | [optional] [default to "/"]
 
+
+
 ## Methods
+
 
 ### NewAWSWriteRoleRequest
 
@@ -35,6 +41,7 @@ will change when the set of required properties is changed
 NewAWSWriteRoleRequestWithDefaults instantiates a new AWSWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetArn
 
@@ -55,11 +62,15 @@ and a boolean to check if the value has been set.
 
 SetArn sets Arn field to given value.
 
+
 ### HasArn
 
 `func (o *AWSWriteRoleRequest) HasArn() bool`
 
 HasArn returns a boolean if a field has been set.
+
+
+
 
 ### GetCredentialType
 
@@ -80,11 +91,15 @@ and a boolean to check if the value has been set.
 
 SetCredentialType sets CredentialType field to given value.
 
+
 ### HasCredentialType
 
 `func (o *AWSWriteRoleRequest) HasCredentialType() bool`
 
 HasCredentialType returns a boolean if a field has been set.
+
+
+
 
 ### GetDefaultStsTtl
 
@@ -105,11 +120,15 @@ and a boolean to check if the value has been set.
 
 SetDefaultStsTtl sets DefaultStsTtl field to given value.
 
+
 ### HasDefaultStsTtl
 
 `func (o *AWSWriteRoleRequest) HasDefaultStsTtl() bool`
 
 HasDefaultStsTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetIamGroups
 
@@ -130,11 +149,15 @@ and a boolean to check if the value has been set.
 
 SetIamGroups sets IamGroups field to given value.
 
+
 ### HasIamGroups
 
 `func (o *AWSWriteRoleRequest) HasIamGroups() bool`
 
 HasIamGroups returns a boolean if a field has been set.
+
+
+
 
 ### GetIamTags
 
@@ -155,11 +178,15 @@ and a boolean to check if the value has been set.
 
 SetIamTags sets IamTags field to given value.
 
+
 ### HasIamTags
 
 `func (o *AWSWriteRoleRequest) HasIamTags() bool`
 
 HasIamTags returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxStsTtl
 
@@ -180,11 +207,15 @@ and a boolean to check if the value has been set.
 
 SetMaxStsTtl sets MaxStsTtl field to given value.
 
+
 ### HasMaxStsTtl
 
 `func (o *AWSWriteRoleRequest) HasMaxStsTtl() bool`
 
 HasMaxStsTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetPermissionsBoundaryArn
 
@@ -205,11 +236,15 @@ and a boolean to check if the value has been set.
 
 SetPermissionsBoundaryArn sets PermissionsBoundaryArn field to given value.
 
+
 ### HasPermissionsBoundaryArn
 
 `func (o *AWSWriteRoleRequest) HasPermissionsBoundaryArn() bool`
 
 HasPermissionsBoundaryArn returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicy
 
@@ -230,11 +265,15 @@ and a boolean to check if the value has been set.
 
 SetPolicy sets Policy field to given value.
 
+
 ### HasPolicy
 
 `func (o *AWSWriteRoleRequest) HasPolicy() bool`
 
 HasPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicyArns
 
@@ -255,11 +294,15 @@ and a boolean to check if the value has been set.
 
 SetPolicyArns sets PolicyArns field to given value.
 
+
 ### HasPolicyArns
 
 `func (o *AWSWriteRoleRequest) HasPolicyArns() bool`
 
 HasPolicyArns returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicyDocument
 
@@ -280,11 +323,15 @@ and a boolean to check if the value has been set.
 
 SetPolicyDocument sets PolicyDocument field to given value.
 
+
 ### HasPolicyDocument
 
 `func (o *AWSWriteRoleRequest) HasPolicyDocument() bool`
 
 HasPolicyDocument returns a boolean if a field has been set.
+
+
+
 
 ### GetRoleArns
 
@@ -305,11 +352,15 @@ and a boolean to check if the value has been set.
 
 SetRoleArns sets RoleArns field to given value.
 
+
 ### HasRoleArns
 
 `func (o *AWSWriteRoleRequest) HasRoleArns() bool`
 
 HasRoleArns returns a boolean if a field has been set.
+
+
+
 
 ### GetUserPath
 
@@ -330,11 +381,19 @@ and a boolean to check if the value has been set.
 
 SetUserPath sets UserPath field to given value.
 
+
 ### HasUserPath
 
 `func (o *AWSWriteRoleRequest) HasUserPath() bool`
 
 HasUserPath returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

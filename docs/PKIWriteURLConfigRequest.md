@@ -1,15 +1,21 @@
 # PKIWriteURLConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CrlDistributionPoints** | Pointer to **[]string** | Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13. | [optional] 
-**EnableTemplating** | Pointer to **bool** | Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values &#39;{{issuer_id}}&#39; and &#39;{{cluster_path}}&#39; are available, but the addresses are not checked for URI validity until issuance time. This requires /config/cluster&#39;s path to be set on all PR Secondary clusters. | [optional] [default to false]
+**EnableTemplating** | Pointer to **bool** | Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values &#x27;{{issuer_id}}&#x27; and &#x27;{{cluster_path}}&#x27; are available, but the addresses are not checked for URI validity until issuance time. This requires /config/cluster&#x27;s path to be set on all PR Secondary clusters. | [optional] [default to false]
 **IssuingCertificates** | Pointer to **[]string** | Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
 **OcspServers** | Pointer to **[]string** | Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKIWriteURLConfigRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewPKIWriteURLConfigRequestWithDefaults instantiates a new PKIWriteURLConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCrlDistributionPoints
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetCrlDistributionPoints sets CrlDistributionPoints field to given value.
 
+
 ### HasCrlDistributionPoints
 
 `func (o *PKIWriteURLConfigRequest) HasCrlDistributionPoints() bool`
 
 HasCrlDistributionPoints returns a boolean if a field has been set.
+
+
+
 
 ### GetEnableTemplating
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetEnableTemplating sets EnableTemplating field to given value.
 
+
 ### HasEnableTemplating
 
 `func (o *PKIWriteURLConfigRequest) HasEnableTemplating() bool`
 
 HasEnableTemplating returns a boolean if a field has been set.
+
+
+
 
 ### GetIssuingCertificates
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetIssuingCertificates sets IssuingCertificates field to given value.
 
+
 ### HasIssuingCertificates
 
 `func (o *PKIWriteURLConfigRequest) HasIssuingCertificates() bool`
 
 HasIssuingCertificates returns a boolean if a field has been set.
+
+
+
 
 ### GetOcspServers
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetOcspServers sets OcspServers field to given value.
 
+
 ### HasOcspServers
 
 `func (o *PKIWriteURLConfigRequest) HasOcspServers() bool`
 
 HasOcspServers returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

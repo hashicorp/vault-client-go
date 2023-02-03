@@ -1,13 +1,19 @@
 # WritePolicyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Policy** | Pointer to **string** | The rules of the policy. | [optional] 
 **Rules** | Pointer to **string** | The rules of the policy. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWritePolicyRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewWritePolicyRequestWithDefaults instantiates a new WritePolicyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPolicy
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetPolicy sets Policy field to given value.
 
+
 ### HasPolicy
 
 `func (o *WritePolicyRequest) HasPolicy() bool`
 
 HasPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetRules
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetRules sets Rules field to given value.
 
+
 ### HasRules
 
 `func (o *WritePolicyRequest) HasRules() bool`
 
 HasRules returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

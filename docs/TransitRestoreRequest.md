@@ -1,14 +1,20 @@
 # TransitRestoreRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Backup** | Pointer to **string** | Backed up key data to be restored. This should be the output from the &#39;backup/&#39; endpoint. | [optional] 
+
+
+**Backup** | Pointer to **string** | Backed up key data to be restored. This should be the output from the &#x27;backup/&#x27; endpoint. | [optional] 
 **Force** | Pointer to **bool** | If set and a key by the given name exists, force the restore operation and override the key. | [optional] [default to false]
 **Name** | Pointer to **string** | If set, this will be the name of the restored key. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewTransitRestoreRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewTransitRestoreRequestWithDefaults instantiates a new TransitRestoreRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBackup
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetBackup sets Backup field to given value.
 
+
 ### HasBackup
 
 `func (o *TransitRestoreRequest) HasBackup() bool`
 
 HasBackup returns a boolean if a field has been set.
+
+
+
 
 ### GetForce
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetForce sets Force field to given value.
 
+
 ### HasForce
 
 `func (o *TransitRestoreRequest) HasForce() bool`
 
 HasForce returns a boolean if a field has been set.
+
+
+
 
 ### GetName
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
 ### HasName
 
 `func (o *TransitRestoreRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

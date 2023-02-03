@@ -1,14 +1,20 @@
 # GoogleCloudWriteKeyRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **KeyAlgorithm** | Pointer to **string** | Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\&quot; | [optional] [default to "KEY_ALG_RSA_2048"]
 **KeyType** | Pointer to **string** | Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\&quot; | [optional] [default to "TYPE_GOOGLE_CREDENTIALS_FILE"]
 **Ttl** | Pointer to **int32** | Lifetime of the service account key | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudWriteKeyRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewGoogleCloudWriteKeyRequestWithDefaults instantiates a new GoogleCloudWriteKeyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetKeyAlgorithm
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetKeyAlgorithm sets KeyAlgorithm field to given value.
 
+
 ### HasKeyAlgorithm
 
 `func (o *GoogleCloudWriteKeyRequest) HasKeyAlgorithm() bool`
 
 HasKeyAlgorithm returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyType
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetKeyType sets KeyType field to given value.
 
+
 ### HasKeyType
 
 `func (o *GoogleCloudWriteKeyRequest) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *GoogleCloudWriteKeyRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

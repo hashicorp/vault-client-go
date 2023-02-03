@@ -1,9 +1,12 @@
 # MongoDBAtlasWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CidrBlocks** | Pointer to **[]string** | Access list entry in CIDR notation to be added for the API key. Optional for organization and project keys. | [optional] 
 **IpAddresses** | Pointer to **[]string** | IP address to be added to the access list for the API key. Optional for organization and project keys. | [optional] 
 **MaxTtl** | Pointer to **int32** | The maximum allowed lifetime of credentials issued using this role. | [optional] 
@@ -13,7 +16,10 @@ Name | Type | Description | Notes
 **Roles** | **[]string** | List of roles that the API Key should be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project, required for organization and project keys. | 
 **Ttl** | Pointer to **int32** | Duration in seconds after which the issued credential should expire. Defaults to 0, in which case the value will fallback to the system/mount defaults. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewMongoDBAtlasWriteRoleRequest
 
@@ -31,6 +37,7 @@ will change when the set of required properties is changed
 NewMongoDBAtlasWriteRoleRequestWithDefaults instantiates a new MongoDBAtlasWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCidrBlocks
 
@@ -51,11 +58,15 @@ and a boolean to check if the value has been set.
 
 SetCidrBlocks sets CidrBlocks field to given value.
 
+
 ### HasCidrBlocks
 
 `func (o *MongoDBAtlasWriteRoleRequest) HasCidrBlocks() bool`
 
 HasCidrBlocks returns a boolean if a field has been set.
+
+
+
 
 ### GetIpAddresses
 
@@ -76,11 +87,15 @@ and a boolean to check if the value has been set.
 
 SetIpAddresses sets IpAddresses field to given value.
 
+
 ### HasIpAddresses
 
 `func (o *MongoDBAtlasWriteRoleRequest) HasIpAddresses() bool`
 
 HasIpAddresses returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -101,11 +116,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *MongoDBAtlasWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetOrganizationId
 
@@ -126,11 +145,15 @@ and a boolean to check if the value has been set.
 
 SetOrganizationId sets OrganizationId field to given value.
 
+
 ### HasOrganizationId
 
 `func (o *MongoDBAtlasWriteRoleRequest) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+
+
 
 ### GetProjectId
 
@@ -151,11 +174,15 @@ and a boolean to check if the value has been set.
 
 SetProjectId sets ProjectId field to given value.
 
+
 ### HasProjectId
 
 `func (o *MongoDBAtlasWriteRoleRequest) HasProjectId() bool`
 
 HasProjectId returns a boolean if a field has been set.
+
+
+
 
 ### GetProjectRoles
 
@@ -176,11 +203,15 @@ and a boolean to check if the value has been set.
 
 SetProjectRoles sets ProjectRoles field to given value.
 
+
 ### HasProjectRoles
 
 `func (o *MongoDBAtlasWriteRoleRequest) HasProjectRoles() bool`
 
 HasProjectRoles returns a boolean if a field has been set.
+
+
+
 
 ### GetRoles
 
@@ -202,6 +233,9 @@ and a boolean to check if the value has been set.
 SetRoles sets Roles field to given value.
 
 
+
+
+
 ### GetTtl
 
 `func (o *MongoDBAtlasWriteRoleRequest) GetTtl() int32`
@@ -221,11 +255,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *MongoDBAtlasWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,21 +1,24 @@
 # GoogleCloudWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddGroupAliases** | Pointer to **bool** | If true, will add group aliases to auth tokens generated under this role. This will add the full list of ancestors (projects, folders, organizations) for the given entity&#39;s project. Requires IAM permission &#x60;resourcemanager.projects.get&#x60; on this project. | [optional] [default to false]
-**AllowGceInference** | Pointer to **bool** | &#39;iam&#39; roles only. If false, Vault will not not allow GCE instances to login in against this role | [optional] [default to true]
+
+
+**AddGroupAliases** | Pointer to **bool** | If true, will add group aliases to auth tokens generated under this role. This will add the full list of ancestors (projects, folders, organizations) for the given entity&#x27;s project. Requires IAM permission &#x60;resourcemanager.projects.get&#x60; on this project. | [optional] [default to false]
+**AllowGceInference** | Pointer to **bool** | &#x27;iam&#x27; roles only. If false, Vault will not not allow GCE instances to login in against this role | [optional] [default to true]
 **BoundInstanceGroup** | Pointer to **string** | Deprecated: use \&quot;bound_instance_groups\&quot; instead. | [optional] 
 **BoundInstanceGroups** | Pointer to **[]string** | Comma-separated list of permitted instance groups to which the GCE instance must belong. This option only applies to \&quot;gce\&quot; roles. | [optional] 
 **BoundLabels** | Pointer to **[]string** | Comma-separated list of GCP labels formatted as\&quot;key:value\&quot; strings that must be present on the GCE instance in order to authenticate. This option only applies to \&quot;gce\&quot; roles. | [optional] 
 **BoundProjects** | Pointer to **[]string** | GCP Projects that authenticating entities must belong to. | [optional] 
 **BoundRegion** | Pointer to **string** | Deprecated: use \&quot;bound_regions\&quot; instead. | [optional] 
 **BoundRegions** | Pointer to **[]string** | Comma-separated list of permitted regions to which the GCE instance must belong. If a group is provided, it is assumed to be a regional group. If \&quot;zone\&quot; is provided, this option is ignored. This can be a self-link or region name. This option only applies to \&quot;gce\&quot; roles. | [optional] 
-**BoundServiceAccounts** | Pointer to **[]string** | Can be set for both &#39;iam&#39; and &#39;gce&#39; roles (required for &#39;iam&#39;). A comma-seperated list of authorized service accounts. If the single value \&quot;*\&quot; is given, this is assumed to be all service accounts under the role&#39;s project. If this is set on a GCE role, the inferred service account from the instance metadata token will be used. | [optional] 
+**BoundServiceAccounts** | Pointer to **[]string** | Can be set for both &#x27;iam&#x27; and &#x27;gce&#x27; roles (required for &#x27;iam&#x27;). A comma-seperated list of authorized service accounts. If the single value \&quot;*\&quot; is given, this is assumed to be all service accounts under the role&#x27;s project. If this is set on a GCE role, the inferred service account from the instance metadata token will be used. | [optional] 
 **BoundZone** | Pointer to **string** | Deprecated: use \&quot;bound_zones\&quot; instead. | [optional] 
 **BoundZones** | Pointer to **[]string** | Comma-separated list of permitted zones to which the GCE instance must belong. If a group is provided, it is assumed to be a zonal group. This can be a self-link or zone name. This option only applies to \&quot;gce\&quot; roles. | [optional] 
-**MaxJwtExp** | Pointer to **int32** | Currently enabled for &#39;iam&#39; only. Duration in seconds from time of validation that a JWT must expire within. | [optional] [default to 900]
+**MaxJwtExp** | Pointer to **int32** | Currently enabled for &#x27;iam&#x27; only. Duration in seconds from time of validation that a JWT must expire within. | [optional] [default to 900]
 **MaxTtl** | Pointer to **int32** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
 **Period** | Pointer to **int32** | Use \&quot;token_period\&quot; instead. If this and \&quot;token_period\&quot; are both specified, only \&quot;token_period\&quot; will be used. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;token_policies\&quot; instead. If this and \&quot;token_policies\&quot; are both specified, only \&quot;token_policies\&quot; will be used. | [optional] 
@@ -24,7 +27,7 @@ Name | Type | Description | Notes
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 **TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
-**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#39;default&#39; policy will not automatically be added to generated tokens | [optional] 
+**TokenNoDefaultPolicy** | Pointer to **bool** | If true, the &#x27;default&#x27; policy will not automatically be added to generated tokens | [optional] 
 **TokenNumUses** | Pointer to **int32** | The maximum number of times a token may be used, a value of zero means unlimited | [optional] 
 **TokenPeriod** | Pointer to **int32** | If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \&quot;24h\&quot;). | [optional] 
 **TokenPolicies** | Pointer to **[]string** | Comma-separated list of policies | [optional] 
@@ -33,7 +36,10 @@ Name | Type | Description | Notes
 **Ttl** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 **Type** | Pointer to **string** | Type of the role. Currently supported: iam, gce | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudWriteRoleRequest
 
@@ -51,6 +57,7 @@ will change when the set of required properties is changed
 NewGoogleCloudWriteRoleRequestWithDefaults instantiates a new GoogleCloudWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAddGroupAliases
 
@@ -71,11 +78,15 @@ and a boolean to check if the value has been set.
 
 SetAddGroupAliases sets AddGroupAliases field to given value.
 
+
 ### HasAddGroupAliases
 
 `func (o *GoogleCloudWriteRoleRequest) HasAddGroupAliases() bool`
 
 HasAddGroupAliases returns a boolean if a field has been set.
+
+
+
 
 ### GetAllowGceInference
 
@@ -96,11 +107,15 @@ and a boolean to check if the value has been set.
 
 SetAllowGceInference sets AllowGceInference field to given value.
 
+
 ### HasAllowGceInference
 
 `func (o *GoogleCloudWriteRoleRequest) HasAllowGceInference() bool`
 
 HasAllowGceInference returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundInstanceGroup
 
@@ -121,11 +136,15 @@ and a boolean to check if the value has been set.
 
 SetBoundInstanceGroup sets BoundInstanceGroup field to given value.
 
+
 ### HasBoundInstanceGroup
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundInstanceGroup() bool`
 
 HasBoundInstanceGroup returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundInstanceGroups
 
@@ -146,11 +165,15 @@ and a boolean to check if the value has been set.
 
 SetBoundInstanceGroups sets BoundInstanceGroups field to given value.
 
+
 ### HasBoundInstanceGroups
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundInstanceGroups() bool`
 
 HasBoundInstanceGroups returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundLabels
 
@@ -171,11 +194,15 @@ and a boolean to check if the value has been set.
 
 SetBoundLabels sets BoundLabels field to given value.
 
+
 ### HasBoundLabels
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundLabels() bool`
 
 HasBoundLabels returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundProjects
 
@@ -196,11 +223,15 @@ and a boolean to check if the value has been set.
 
 SetBoundProjects sets BoundProjects field to given value.
 
+
 ### HasBoundProjects
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundProjects() bool`
 
 HasBoundProjects returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundRegion
 
@@ -221,11 +252,15 @@ and a boolean to check if the value has been set.
 
 SetBoundRegion sets BoundRegion field to given value.
 
+
 ### HasBoundRegion
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundRegion() bool`
 
 HasBoundRegion returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundRegions
 
@@ -246,11 +281,15 @@ and a boolean to check if the value has been set.
 
 SetBoundRegions sets BoundRegions field to given value.
 
+
 ### HasBoundRegions
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundRegions() bool`
 
 HasBoundRegions returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundServiceAccounts
 
@@ -271,11 +310,15 @@ and a boolean to check if the value has been set.
 
 SetBoundServiceAccounts sets BoundServiceAccounts field to given value.
 
+
 ### HasBoundServiceAccounts
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundServiceAccounts() bool`
 
 HasBoundServiceAccounts returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundZone
 
@@ -296,11 +339,15 @@ and a boolean to check if the value has been set.
 
 SetBoundZone sets BoundZone field to given value.
 
+
 ### HasBoundZone
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundZone() bool`
 
 HasBoundZone returns a boolean if a field has been set.
+
+
+
 
 ### GetBoundZones
 
@@ -321,11 +368,15 @@ and a boolean to check if the value has been set.
 
 SetBoundZones sets BoundZones field to given value.
 
+
 ### HasBoundZones
 
 `func (o *GoogleCloudWriteRoleRequest) HasBoundZones() bool`
 
 HasBoundZones returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxJwtExp
 
@@ -346,11 +397,15 @@ and a boolean to check if the value has been set.
 
 SetMaxJwtExp sets MaxJwtExp field to given value.
 
+
 ### HasMaxJwtExp
 
 `func (o *GoogleCloudWriteRoleRequest) HasMaxJwtExp() bool`
 
 HasMaxJwtExp returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -371,11 +426,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *GoogleCloudWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetPeriod
 
@@ -396,11 +455,15 @@ and a boolean to check if the value has been set.
 
 SetPeriod sets Period field to given value.
 
+
 ### HasPeriod
 
 `func (o *GoogleCloudWriteRoleRequest) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -421,11 +484,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *GoogleCloudWriteRoleRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetProjectId
 
@@ -446,11 +513,15 @@ and a boolean to check if the value has been set.
 
 SetProjectId sets ProjectId field to given value.
 
+
 ### HasProjectId
 
 `func (o *GoogleCloudWriteRoleRequest) HasProjectId() bool`
 
 HasProjectId returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceAccounts
 
@@ -471,11 +542,15 @@ and a boolean to check if the value has been set.
 
 SetServiceAccounts sets ServiceAccounts field to given value.
 
+
 ### HasServiceAccounts
 
 `func (o *GoogleCloudWriteRoleRequest) HasServiceAccounts() bool`
 
 HasServiceAccounts returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -496,11 +571,15 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenExplicitMaxTtl
 
@@ -521,11 +600,15 @@ and a boolean to check if the value has been set.
 
 SetTokenExplicitMaxTtl sets TokenExplicitMaxTtl field to given value.
 
+
 ### HasTokenExplicitMaxTtl
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenExplicitMaxTtl() bool`
 
 HasTokenExplicitMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenMaxTtl
 
@@ -546,11 +629,15 @@ and a boolean to check if the value has been set.
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
+
 ### HasTokenMaxTtl
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNoDefaultPolicy
 
@@ -571,11 +658,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNoDefaultPolicy sets TokenNoDefaultPolicy field to given value.
 
+
 ### HasTokenNoDefaultPolicy
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenNoDefaultPolicy() bool`
 
 HasTokenNoDefaultPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenNumUses
 
@@ -596,11 +687,15 @@ and a boolean to check if the value has been set.
 
 SetTokenNumUses sets TokenNumUses field to given value.
 
+
 ### HasTokenNumUses
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenNumUses() bool`
 
 HasTokenNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPeriod
 
@@ -621,11 +716,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPeriod sets TokenPeriod field to given value.
 
+
 ### HasTokenPeriod
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenPeriod() bool`
 
 HasTokenPeriod returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenPolicies
 
@@ -646,11 +745,15 @@ and a boolean to check if the value has been set.
 
 SetTokenPolicies sets TokenPolicies field to given value.
 
+
 ### HasTokenPolicies
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenPolicies() bool`
 
 HasTokenPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenTtl
 
@@ -671,11 +774,15 @@ and a boolean to check if the value has been set.
 
 SetTokenTtl sets TokenTtl field to given value.
 
+
 ### HasTokenTtl
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -696,11 +803,15 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *GoogleCloudWriteRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -721,11 +832,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *GoogleCloudWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetType
 
@@ -746,11 +861,19 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+
 ### HasType
 
 `func (o *GoogleCloudWriteRoleRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

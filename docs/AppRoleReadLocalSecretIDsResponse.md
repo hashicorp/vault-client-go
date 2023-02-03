@@ -1,12 +1,18 @@
 # AppRoleReadLocalSecretIDsResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LocalSecretIds** | Pointer to **bool** | If true, the secret identifiers generated using this role will be cluster local. This can only be set during role creation and once set, it can&#39;t be reset later | [optional] 
+
+
+**LocalSecretIds** | Pointer to **bool** | If true, the secret identifiers generated using this role will be cluster local. This can only be set during role creation and once set, it can&#x27;t be reset later | [optional] 
+
+
 
 ## Methods
+
 
 ### NewAppRoleReadLocalSecretIDsResponse
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleReadLocalSecretIDsResponseWithDefaults instantiates a new AppRoleReadLocalSecretIDsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetLocalSecretIds
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetLocalSecretIds sets LocalSecretIds field to given value.
 
+
 ### HasLocalSecretIds
 
 `func (o *AppRoleReadLocalSecretIDsResponse) HasLocalSecretIds() bool`
 
 HasLocalSecretIds returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

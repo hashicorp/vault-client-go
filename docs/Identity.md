@@ -110,6 +110,8 @@ Method | HTTP request | Description
 
 
 
+
+
 ## AliasDeleteByID
 
 > AliasDeleteByID(ctx, id).Execute()
@@ -138,8 +140,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.AliasDeleteByID(
 		context.Background(),
 		id,
@@ -174,6 +174,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliasListByID
 
 > AliasListByID(ctx).List(list).Execute()
@@ -200,8 +201,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.AliasListByID(
 		context.Background(),
@@ -232,6 +231,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliasReadByID
 
 > AliasReadByID(ctx, id).Execute()
@@ -260,8 +260,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.AliasReadByID(
 		context.Background(),
 		id,
@@ -296,6 +294,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliasWrite
 
 > AliasWrite(ctx).AliasWriteRequest(aliasWriteRequest).Execute()
@@ -325,7 +324,6 @@ func main() {
 	}
 
 	request := schema.NewAliasWriteRequestWithDefaults()
-
 	resp, err := client.Identity.AliasWrite(
 		context.Background(),
 		request,
@@ -354,6 +352,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## AliasWriteByID
@@ -386,7 +385,6 @@ func main() {
 
 	id := "id_example" // string | ID of the alias
 	request := schema.NewAliasWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.AliasWriteByID(
 		context.Background(),
 		id,
@@ -423,6 +421,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityBatchDelete
 
 > EntityBatchDelete(ctx).EntityBatchDeleteRequest(entityBatchDeleteRequest).Execute()
@@ -452,7 +451,6 @@ func main() {
 	}
 
 	request := schema.NewEntityBatchDeleteRequestWithDefaults()
-
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
 		request,
@@ -483,6 +481,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityDeleteAliasByID
 
 > EntityDeleteAliasByID(ctx, id).Execute()
@@ -511,8 +510,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.EntityDeleteAliasByID(
 		context.Background(),
 		id,
@@ -547,6 +544,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityDeleteByID
 
 > EntityDeleteByID(ctx, id).Execute()
@@ -575,8 +573,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
-
 	resp, err := client.Identity.EntityDeleteByID(
 		context.Background(),
 		id,
@@ -611,6 +607,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityDeleteByName
 
 > EntityDeleteByName(ctx, name).Execute()
@@ -639,8 +636,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
-
-
 	resp, err := client.Identity.EntityDeleteByName(
 		context.Background(),
 		name,
@@ -675,6 +670,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityListAliasesByID
 
 > EntityListAliasesByID(ctx).List(list).Execute()
@@ -701,8 +697,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.EntityListAliasesByID(
 		context.Background(),
@@ -733,6 +727,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityListByID
 
 > EntityListByID(ctx).List(list).Execute()
@@ -759,8 +754,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.EntityListByID(
 		context.Background(),
@@ -791,6 +784,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityListByName
 
 > EntityListByName(ctx).List(list).Execute()
@@ -817,8 +811,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.EntityListByName(
 		context.Background(),
@@ -847,6 +839,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## EntityLookup
@@ -878,7 +871,6 @@ func main() {
 	}
 
 	request := schema.NewEntityLookupRequestWithDefaults()
-
 	resp, err := client.Identity.EntityLookup(
 		context.Background(),
 		request,
@@ -907,6 +899,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## EntityMerge
@@ -938,7 +931,6 @@ func main() {
 	}
 
 	request := schema.NewEntityMergeRequestWithDefaults()
-
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
 		request,
@@ -969,6 +961,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityReadAliasByID
 
 > EntityReadAliasByID(ctx, id).Execute()
@@ -997,8 +990,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.EntityReadAliasByID(
 		context.Background(),
 		id,
@@ -1033,6 +1024,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityReadByID
 
 > EntityReadByID(ctx, id).Execute()
@@ -1061,8 +1053,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
-
 	resp, err := client.Identity.EntityReadByID(
 		context.Background(),
 		id,
@@ -1097,6 +1087,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityReadByName
 
 > EntityReadByName(ctx, name).Execute()
@@ -1125,8 +1116,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
-
-
 	resp, err := client.Identity.EntityReadByName(
 		context.Background(),
 		name,
@@ -1161,6 +1150,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityWrite
 
 > EntityWrite(ctx).EntityWriteRequest(entityWriteRequest).Execute()
@@ -1190,7 +1180,6 @@ func main() {
 	}
 
 	request := schema.NewEntityWriteRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWrite(
 		context.Background(),
 		request,
@@ -1219,6 +1208,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## EntityWriteAlias
@@ -1250,7 +1240,6 @@ func main() {
 	}
 
 	request := schema.NewEntityWriteAliasRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteAlias(
 		context.Background(),
 		request,
@@ -1279,6 +1268,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## EntityWriteAliasByID
@@ -1311,7 +1301,6 @@ func main() {
 
 	id := "id_example" // string | ID of the alias
 	request := schema.NewEntityWriteAliasByIDRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteAliasByID(
 		context.Background(),
 		id,
@@ -1348,6 +1337,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityWriteByID
 
 > EntityWriteByID(ctx, id).EntityWriteByIDRequest(entityWriteByIDRequest).Execute()
@@ -1378,7 +1368,6 @@ func main() {
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 	request := schema.NewEntityWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteByID(
 		context.Background(),
 		id,
@@ -1415,6 +1404,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## EntityWriteByName
 
 > EntityWriteByName(ctx, name).EntityWriteByNameRequest(entityWriteByNameRequest).Execute()
@@ -1445,7 +1435,6 @@ func main() {
 
 	name := "name_example" // string | Name of the entity
 	request := schema.NewEntityWriteByNameRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteByName(
 		context.Background(),
 		name,
@@ -1482,6 +1471,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupDeleteAliasByID
 
 > GroupDeleteAliasByID(ctx, id).Execute()
@@ -1510,8 +1500,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
-
-
 	resp, err := client.Identity.GroupDeleteAliasByID(
 		context.Background(),
 		id,
@@ -1546,6 +1534,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupDeleteByID
 
 > GroupDeleteByID(ctx, id).Execute()
@@ -1574,8 +1563,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
-
 	resp, err := client.Identity.GroupDeleteByID(
 		context.Background(),
 		id,
@@ -1610,6 +1597,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupDeleteByName
 
 > GroupDeleteByName(ctx, name).Execute()
@@ -1638,8 +1626,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
-
-
 	resp, err := client.Identity.GroupDeleteByName(
 		context.Background(),
 		name,
@@ -1674,6 +1660,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupListAliasesByID
 
 > GroupListAliasesByID(ctx).List(list).Execute()
@@ -1700,8 +1687,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.GroupListAliasesByID(
 		context.Background(),
@@ -1732,6 +1717,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupListByID
 
 > GroupListByID(ctx).List(list).Execute()
@@ -1758,8 +1744,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.GroupListByID(
 		context.Background(),
@@ -1790,6 +1774,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupListByName
 
 > GroupListByName(ctx).List(list).Execute()
@@ -1816,8 +1801,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.GroupListByName(
 		context.Background(),
@@ -1846,6 +1829,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## GroupLookup
@@ -1877,7 +1861,6 @@ func main() {
 	}
 
 	request := schema.NewGroupLookupRequestWithDefaults()
-
 	resp, err := client.Identity.GroupLookup(
 		context.Background(),
 		request,
@@ -1908,6 +1891,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupReadAliasByID
 
 > GroupReadAliasByID(ctx, id).Execute()
@@ -1936,8 +1920,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
-
-
 	resp, err := client.Identity.GroupReadAliasByID(
 		context.Background(),
 		id,
@@ -1972,6 +1954,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupReadByID
 
 > GroupReadByID(ctx, id).Execute()
@@ -2000,8 +1983,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
-
 	resp, err := client.Identity.GroupReadByID(
 		context.Background(),
 		id,
@@ -2036,6 +2017,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupReadByName
 
 > GroupReadByName(ctx, name).Execute()
@@ -2064,8 +2046,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
-
-
 	resp, err := client.Identity.GroupReadByName(
 		context.Background(),
 		name,
@@ -2100,6 +2080,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupWrite
 
 > GroupWrite(ctx).GroupWriteRequest(groupWriteRequest).Execute()
@@ -2129,7 +2110,6 @@ func main() {
 	}
 
 	request := schema.NewGroupWriteRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWrite(
 		context.Background(),
 		request,
@@ -2158,6 +2138,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## GroupWriteAlias
@@ -2189,7 +2170,6 @@ func main() {
 	}
 
 	request := schema.NewGroupWriteAliasRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteAlias(
 		context.Background(),
 		request,
@@ -2218,6 +2198,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## GroupWriteAliasByID
@@ -2250,7 +2231,6 @@ func main() {
 
 	id := "id_example" // string | ID of the group alias.
 	request := schema.NewGroupWriteAliasByIDRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteAliasByID(
 		context.Background(),
 		id,
@@ -2287,6 +2267,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupWriteByID
 
 > GroupWriteByID(ctx, id).GroupWriteByIDRequest(groupWriteByIDRequest).Execute()
@@ -2317,7 +2298,6 @@ func main() {
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 	request := schema.NewGroupWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteByID(
 		context.Background(),
 		id,
@@ -2354,6 +2334,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GroupWriteByName
 
 > GroupWriteByName(ctx, name).GroupWriteByNameRequest(groupWriteByNameRequest).Execute()
@@ -2384,7 +2365,6 @@ func main() {
 
 	name := "name_example" // string | Name of the group.
 	request := schema.NewGroupWriteByNameRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteByName(
 		context.Background(),
 		name,
@@ -2421,6 +2401,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFADeleteLoginEnforcement
 
 > MFADeleteLoginEnforcement(ctx, name).Execute()
@@ -2449,8 +2430,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
-
-
 	resp, err := client.Identity.MFADeleteLoginEnforcement(
 		context.Background(),
 		name,
@@ -2485,6 +2464,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAListLoginEnforcements
 
 > MFAListLoginEnforcements(ctx).List(list).Execute()
@@ -2511,8 +2491,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAListLoginEnforcements(
 		context.Background(),
@@ -2541,6 +2519,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## MFAMethodAdminDestroyTOTP
@@ -2572,7 +2551,6 @@ func main() {
 	}
 
 	request := schema.NewMFAMethodAdminDestroyTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodAdminDestroyTOTP(
 		context.Background(),
 		request,
@@ -2601,6 +2579,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## MFAMethodAdminGenerateTOTP
@@ -2632,7 +2611,6 @@ func main() {
 	}
 
 	request := schema.NewMFAMethodAdminGenerateTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodAdminGenerateTOTP(
 		context.Background(),
 		request,
@@ -2663,6 +2641,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodDeleteDuo
 
 > MFAMethodDeleteDuo(ctx, methodId).Execute()
@@ -2691,8 +2670,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeleteDuo(
 		context.Background(),
 		methodId,
@@ -2727,6 +2704,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodDeleteOkta
 
 > MFAMethodDeleteOkta(ctx, methodId).Execute()
@@ -2755,8 +2733,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeleteOkta(
 		context.Background(),
 		methodId,
@@ -2791,6 +2767,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodDeletePingID
 
 > MFAMethodDeletePingID(ctx, methodId).Execute()
@@ -2819,8 +2796,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeletePingID(
 		context.Background(),
 		methodId,
@@ -2855,6 +2830,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodDeleteTOTP
 
 > MFAMethodDeleteTOTP(ctx, methodId).Execute()
@@ -2883,8 +2859,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeleteTOTP(
 		context.Background(),
 		methodId,
@@ -2919,6 +2893,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodGenerateTOTP
 
 > MFAMethodGenerateTOTP(ctx).MFAMethodGenerateTOTPRequest(mFAMethodGenerateTOTPRequest).Execute()
@@ -2948,7 +2923,6 @@ func main() {
 	}
 
 	request := schema.NewMFAMethodGenerateTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodGenerateTOTP(
 		context.Background(),
 		request,
@@ -2979,6 +2953,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodList
 
 > MFAMethodList(ctx).List(list).Execute()
@@ -3005,8 +2980,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAMethodList(
 		context.Background(),
@@ -3037,6 +3010,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodListDuo
 
 > MFAMethodListDuo(ctx).List(list).Execute()
@@ -3063,8 +3037,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAMethodListDuo(
 		context.Background(),
@@ -3095,6 +3067,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodListOkta
 
 > MFAMethodListOkta(ctx).List(list).Execute()
@@ -3121,8 +3094,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAMethodListOkta(
 		context.Background(),
@@ -3153,6 +3124,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodListPingID
 
 > MFAMethodListPingID(ctx).List(list).Execute()
@@ -3179,8 +3151,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAMethodListPingID(
 		context.Background(),
@@ -3211,6 +3181,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodListTOTP
 
 > MFAMethodListTOTP(ctx).List(list).Execute()
@@ -3237,8 +3208,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAMethodListTOTP(
 		context.Background(),
@@ -3269,6 +3238,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodRead
 
 > MFAMethodRead(ctx, methodId).Execute()
@@ -3297,8 +3267,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodRead(
 		context.Background(),
 		methodId,
@@ -3333,6 +3301,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodReadDuo
 
 > MFAMethodReadDuo(ctx, methodId).Execute()
@@ -3361,8 +3330,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadDuo(
 		context.Background(),
 		methodId,
@@ -3397,6 +3364,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodReadOkta
 
 > MFAMethodReadOkta(ctx, methodId).Execute()
@@ -3425,8 +3393,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadOkta(
 		context.Background(),
 		methodId,
@@ -3461,6 +3427,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodReadPingID
 
 > MFAMethodReadPingID(ctx, methodId).Execute()
@@ -3489,8 +3456,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadPingID(
 		context.Background(),
 		methodId,
@@ -3525,6 +3490,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodReadTOTP
 
 > MFAMethodReadTOTP(ctx, methodId).Execute()
@@ -3553,8 +3519,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadTOTP(
 		context.Background(),
 		methodId,
@@ -3589,6 +3553,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodWriteDuo
 
 > MFAMethodWriteDuo(ctx, methodId).MFAMethodWriteDuoRequest(mFAMethodWriteDuoRequest).Execute()
@@ -3619,7 +3584,6 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	request := schema.NewMFAMethodWriteDuoRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWriteDuo(
 		context.Background(),
 		methodId,
@@ -3656,6 +3620,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodWriteOkta
 
 > MFAMethodWriteOkta(ctx, methodId).MFAMethodWriteOktaRequest(mFAMethodWriteOktaRequest).Execute()
@@ -3686,7 +3651,6 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	request := schema.NewMFAMethodWriteOktaRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWriteOkta(
 		context.Background(),
 		methodId,
@@ -3723,6 +3687,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodWritePingID
 
 > MFAMethodWritePingID(ctx, methodId).MFAMethodWritePingIDRequest(mFAMethodWritePingIDRequest).Execute()
@@ -3753,7 +3718,6 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	request := schema.NewMFAMethodWritePingIDRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWritePingID(
 		context.Background(),
 		methodId,
@@ -3790,6 +3754,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAMethodWriteTOTP
 
 > MFAMethodWriteTOTP(ctx, methodId).MFAMethodWriteTOTPRequest(mFAMethodWriteTOTPRequest).Execute()
@@ -3820,7 +3785,6 @@ func main() {
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 	request := schema.NewMFAMethodWriteTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWriteTOTP(
 		context.Background(),
 		methodId,
@@ -3857,6 +3821,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAReadLoginEnforcement
 
 > MFAReadLoginEnforcement(ctx, name).Execute()
@@ -3885,8 +3850,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
-
-
 	resp, err := client.Identity.MFAReadLoginEnforcement(
 		context.Background(),
 		name,
@@ -3921,6 +3884,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## MFAWriteLoginEnforcement
 
 > MFAWriteLoginEnforcement(ctx, name).MFAWriteLoginEnforcementRequest(mFAWriteLoginEnforcementRequest).Execute()
@@ -3951,7 +3915,6 @@ func main() {
 
 	name := "name_example" // string | Name for this login enforcement configuration
 	request := schema.NewMFAWriteLoginEnforcementRequestWithDefaults()
-
 	resp, err := client.Identity.MFAWriteLoginEnforcement(
 		context.Background(),
 		name,
@@ -3988,6 +3951,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCDeleteAssignment
 
 > OIDCDeleteAssignment(ctx, name).Execute()
@@ -4016,8 +3980,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
-
-
 	resp, err := client.Identity.OIDCDeleteAssignment(
 		context.Background(),
 		name,
@@ -4052,6 +4014,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCDeleteClient
 
 > OIDCDeleteClient(ctx, name).Execute()
@@ -4080,8 +4043,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
-
-
 	resp, err := client.Identity.OIDCDeleteClient(
 		context.Background(),
 		name,
@@ -4116,6 +4077,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCDeleteKey
 
 > OIDCDeleteKey(ctx, name).Execute()
@@ -4144,8 +4106,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Identity.OIDCDeleteKey(
 		context.Background(),
 		name,
@@ -4180,6 +4140,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCDeleteProvider
 
 > OIDCDeleteProvider(ctx, name).Execute()
@@ -4208,8 +4169,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCDeleteProvider(
 		context.Background(),
 		name,
@@ -4244,6 +4203,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCDeleteRole
 
 > OIDCDeleteRole(ctx, name).Execute()
@@ -4272,8 +4232,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Identity.OIDCDeleteRole(
 		context.Background(),
 		name,
@@ -4308,6 +4266,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCDeleteScope
 
 > OIDCDeleteScope(ctx, name).Execute()
@@ -4336,8 +4295,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
-
-
 	resp, err := client.Identity.OIDCDeleteScope(
 		context.Background(),
 		name,
@@ -4372,6 +4329,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCIntrospect
 
 > OIDCIntrospect(ctx).OIDCIntrospectRequest(oIDCIntrospectRequest).Execute()
@@ -4401,7 +4359,6 @@ func main() {
 	}
 
 	request := schema.NewOIDCIntrospectRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCIntrospect(
 		context.Background(),
 		request,
@@ -4432,6 +4389,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCListAssignments
 
 > OIDCListAssignments(ctx).List(list).Execute()
@@ -4458,8 +4416,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCListAssignments(
 		context.Background(),
@@ -4490,6 +4446,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCListClients
 
 > OIDCListClients(ctx).List(list).Execute()
@@ -4516,8 +4473,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCListClients(
 		context.Background(),
@@ -4548,6 +4503,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCListKeys
 
 > OIDCListKeys(ctx).List(list).Execute()
@@ -4574,8 +4530,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCListKeys(
 		context.Background(),
@@ -4606,6 +4560,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCListProviders
 
 > OIDCListProviders(ctx).List(list).AllowedClientId(allowedClientId).Execute()
@@ -4632,8 +4587,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	allowedClientId := "allowedClientId_example" // string | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. (defaults to "")
 	resp, err := client.Identity.OIDCListProviders(
@@ -4667,6 +4620,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCListRoles
 
 > OIDCListRoles(ctx).List(list).Execute()
@@ -4693,8 +4647,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCListRoles(
 		context.Background(),
@@ -4725,6 +4677,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCListScopes
 
 > OIDCListScopes(ctx).List(list).Execute()
@@ -4751,8 +4704,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCListScopes(
 		context.Background(),
@@ -4783,6 +4734,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadAssignment
 
 > OIDCReadAssignment(ctx, name).Execute()
@@ -4811,8 +4763,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
-
-
 	resp, err := client.Identity.OIDCReadAssignment(
 		context.Background(),
 		name,
@@ -4847,6 +4797,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadClient
 
 > OIDCReadClient(ctx, name).Execute()
@@ -4875,8 +4826,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
-
-
 	resp, err := client.Identity.OIDCReadClient(
 		context.Background(),
 		name,
@@ -4911,6 +4860,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadConfig
 
 > OIDCReadConfig(ctx).Execute()
@@ -4938,8 +4888,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4964,6 +4912,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## OIDCReadKey
@@ -4994,8 +4943,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Identity.OIDCReadKey(
 		context.Background(),
 		name,
@@ -5030,6 +4977,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadProvider
 
 > OIDCReadProvider(ctx, name).Execute()
@@ -5058,8 +5006,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProvider(
 		context.Background(),
 		name,
@@ -5094,6 +5040,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadProviderAuthorize
 
 > OIDCReadProviderAuthorize(ctx, name).Execute()
@@ -5122,8 +5069,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderAuthorize(
 		context.Background(),
 		name,
@@ -5158,6 +5103,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadProviderUserInfo
 
 > OIDCReadProviderUserInfo(ctx, name).Execute()
@@ -5186,8 +5132,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderUserInfo(
 		context.Background(),
 		name,
@@ -5222,6 +5166,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadProviderWellKnownKeys
 
 > OIDCReadProviderWellKnownKeys(ctx, name).Execute()
@@ -5250,8 +5195,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderWellKnownKeys(
 		context.Background(),
 		name,
@@ -5286,6 +5229,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadProviderWellKnownOpenIDConfiguration
 
 > OIDCReadProviderWellKnownOpenIDConfiguration(ctx, name).Execute()
@@ -5314,8 +5258,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderWellKnownOpenIDConfiguration(
 		context.Background(),
 		name,
@@ -5350,6 +5292,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadRole
 
 > OIDCReadRole(ctx, name).Execute()
@@ -5378,8 +5321,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Identity.OIDCReadRole(
 		context.Background(),
 		name,
@@ -5414,6 +5355,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadScope
 
 > OIDCReadScope(ctx, name).Execute()
@@ -5442,8 +5384,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
-
-
 	resp, err := client.Identity.OIDCReadScope(
 		context.Background(),
 		name,
@@ -5478,6 +5418,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadToken
 
 > OIDCReadToken(ctx, name).Execute()
@@ -5506,8 +5447,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Identity.OIDCReadToken(
 		context.Background(),
 		name,
@@ -5542,6 +5481,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadWellKnownKeys
 
 > OIDCReadWellKnownKeys(ctx).Execute()
@@ -5569,8 +5509,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCReadWellKnownKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5595,6 +5533,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## OIDCReadWellKnownOpenIDConfiguration
@@ -5624,8 +5563,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCReadWellKnownOpenIDConfiguration(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5650,6 +5587,7 @@ This endpoint does not require any parameters.
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## OIDCRotateKey
@@ -5682,7 +5620,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewOIDCRotateKeyRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCRotateKey(
 		context.Background(),
 		name,
@@ -5719,6 +5656,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteAssignment
 
 > OIDCWriteAssignment(ctx, name).OIDCWriteAssignmentRequest(oIDCWriteAssignmentRequest).Execute()
@@ -5749,7 +5687,6 @@ func main() {
 
 	name := "name_example" // string | Name of the assignment
 	request := schema.NewOIDCWriteAssignmentRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteAssignment(
 		context.Background(),
 		name,
@@ -5786,6 +5723,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteClient
 
 > OIDCWriteClient(ctx, name).OIDCWriteClientRequest(oIDCWriteClientRequest).Execute()
@@ -5816,7 +5754,6 @@ func main() {
 
 	name := "name_example" // string | Name of the client.
 	request := schema.NewOIDCWriteClientRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteClient(
 		context.Background(),
 		name,
@@ -5853,6 +5790,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteConfig
 
 > OIDCWriteConfig(ctx).OIDCWriteConfigRequest(oIDCWriteConfigRequest).Execute()
@@ -5882,7 +5820,6 @@ func main() {
 	}
 
 	request := schema.NewOIDCWriteConfigRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteConfig(
 		context.Background(),
 		request,
@@ -5911,6 +5848,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## OIDCWriteKey
@@ -5943,7 +5881,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	request := schema.NewOIDCWriteKeyRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteKey(
 		context.Background(),
 		name,
@@ -5980,6 +5917,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteProvider
 
 > OIDCWriteProvider(ctx, name).OIDCWriteProviderRequest(oIDCWriteProviderRequest).Execute()
@@ -6010,7 +5948,6 @@ func main() {
 
 	name := "name_example" // string | Name of the provider
 	request := schema.NewOIDCWriteProviderRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteProvider(
 		context.Background(),
 		name,
@@ -6047,6 +5984,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteProviderAuthorize
 
 > OIDCWriteProviderAuthorize(ctx, name).OIDCWriteProviderAuthorizeRequest(oIDCWriteProviderAuthorizeRequest).Execute()
@@ -6077,7 +6015,6 @@ func main() {
 
 	name := "name_example" // string | Name of the provider
 	request := schema.NewOIDCWriteProviderAuthorizeRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteProviderAuthorize(
 		context.Background(),
 		name,
@@ -6114,6 +6051,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteProviderToken
 
 > OIDCWriteProviderToken(ctx, name).OIDCWriteProviderTokenRequest(oIDCWriteProviderTokenRequest).Execute()
@@ -6144,7 +6082,6 @@ func main() {
 
 	name := "name_example" // string | Name of the provider
 	request := schema.NewOIDCWriteProviderTokenRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteProviderToken(
 		context.Background(),
 		name,
@@ -6181,6 +6118,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteProviderUserInfo
 
 > OIDCWriteProviderUserInfo(ctx, name).Execute()
@@ -6209,8 +6147,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCWriteProviderUserInfo(
 		context.Background(),
 		name,
@@ -6245,6 +6181,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteRole
 
 > OIDCWriteRole(ctx, name).OIDCWriteRoleRequest(oIDCWriteRoleRequest).Execute()
@@ -6275,7 +6212,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role
 	request := schema.NewOIDCWriteRoleRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteRole(
 		context.Background(),
 		name,
@@ -6312,6 +6248,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteScope
 
 > OIDCWriteScope(ctx, name).OIDCWriteScopeRequest(oIDCWriteScopeRequest).Execute()
@@ -6342,7 +6279,6 @@ func main() {
 
 	name := "name_example" // string | Name of the scope
 	request := schema.NewOIDCWriteScopeRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteScope(
 		context.Background(),
 		name,
@@ -6379,6 +6315,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PersonaIDDeleteByID
 
 > PersonaIDDeleteByID(ctx, id).Execute()
@@ -6407,8 +6344,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
-
-
 	resp, err := client.Identity.PersonaIDDeleteByID(
 		context.Background(),
 		id,
@@ -6443,6 +6378,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PersonaIDReadByID
 
 > PersonaIDReadByID(ctx, id).Execute()
@@ -6471,8 +6407,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
-
-
 	resp, err := client.Identity.PersonaIDReadByID(
 		context.Background(),
 		id,
@@ -6507,6 +6441,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PersonaIDWriteByID
 
 > PersonaIDWriteByID(ctx, id).PersonaIDWriteByIDRequest(personaIDWriteByIDRequest).Execute()
@@ -6537,7 +6472,6 @@ func main() {
 
 	id := "id_example" // string | ID of the persona
 	request := schema.NewPersonaIDWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.PersonaIDWriteByID(
 		context.Background(),
 		id,
@@ -6574,6 +6508,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## PersonaListByID
 
 > PersonaListByID(ctx).List(list).Execute()
@@ -6600,8 +6535,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.PersonaListByID(
 		context.Background(),
@@ -6630,6 +6563,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
 
 
 ## PersonaWrite
@@ -6661,7 +6595,6 @@ func main() {
 	}
 
 	request := schema.NewPersonaWriteRequestWithDefaults()
-
 	resp, err := client.Identity.PersonaWrite(
 		context.Background(),
 		request,
@@ -6690,4 +6623,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
+
 

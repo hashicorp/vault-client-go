@@ -1,15 +1,21 @@
 # GoogleCloudWriteStaticAccountRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Bindings** | Pointer to **string** | Bindings configuration string. | [optional] 
 **SecretType** | Pointer to **string** | Type of secret generated for this account. Cannot be updated. Defaults to \&quot;access_token\&quot; | [optional] [default to "access_token"]
 **ServiceAccountEmail** | Pointer to **string** | Required. Email of the GCP service account to manage. Cannot be updated. | [optional] 
 **TokenScopes** | Pointer to **[]string** | List of OAuth scopes to assign to access tokens generated under this account. Ignored if \&quot;secret_type\&quot; is not \&quot;\&quot;access_token\&quot;\&quot; | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudWriteStaticAccountRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewGoogleCloudWriteStaticAccountRequestWithDefaults instantiates a new GoogleCloudWriteStaticAccountRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBindings
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetBindings sets Bindings field to given value.
 
+
 ### HasBindings
 
 `func (o *GoogleCloudWriteStaticAccountRequest) HasBindings() bool`
 
 HasBindings returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretType
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetSecretType sets SecretType field to given value.
 
+
 ### HasSecretType
 
 `func (o *GoogleCloudWriteStaticAccountRequest) HasSecretType() bool`
 
 HasSecretType returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceAccountEmail
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetServiceAccountEmail sets ServiceAccountEmail field to given value.
 
+
 ### HasServiceAccountEmail
 
 `func (o *GoogleCloudWriteStaticAccountRequest) HasServiceAccountEmail() bool`
 
 HasServiceAccountEmail returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenScopes
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetTokenScopes sets TokenScopes field to given value.
 
+
 ### HasTokenScopes
 
 `func (o *GoogleCloudWriteStaticAccountRequest) HasTokenScopes() bool`
 
 HasTokenScopes returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

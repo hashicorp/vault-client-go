@@ -1,18 +1,24 @@
 # MFAMethodWriteDuoRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ApiHostname** | Pointer to **string** | API host name for Duo. | [optional] 
 **IntegrationKey** | Pointer to **string** | Integration key for Duo. | [optional] 
 **MethodId** | Pointer to **string** | The unique identifier for this MFA method. | [optional] 
 **PushInfo** | Pointer to **string** | Push information for Duo. | [optional] 
 **SecretKey** | Pointer to **string** | Secret key for Duo. | [optional] 
 **UsePasscode** | Pointer to **bool** | If true, the user is reminded to use the passcode upon MFA validation. This option does not enforce using the passcode. Defaults to false. | [optional] 
-**UsernameFormat** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \&quot;{{alias.name}}@example.com\&quot;. Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias&#39;s name field will be used as-is. | [optional] 
+**UsernameFormat** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \&quot;{{alias.name}}@example.com\&quot;. Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias&#x27;s name field will be used as-is. | [optional] 
+
+
 
 ## Methods
+
 
 ### NewMFAMethodWriteDuoRequest
 
@@ -30,6 +36,7 @@ will change when the set of required properties is changed
 NewMFAMethodWriteDuoRequestWithDefaults instantiates a new MFAMethodWriteDuoRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetApiHostname
 
@@ -50,11 +57,15 @@ and a boolean to check if the value has been set.
 
 SetApiHostname sets ApiHostname field to given value.
 
+
 ### HasApiHostname
 
 `func (o *MFAMethodWriteDuoRequest) HasApiHostname() bool`
 
 HasApiHostname returns a boolean if a field has been set.
+
+
+
 
 ### GetIntegrationKey
 
@@ -75,11 +86,15 @@ and a boolean to check if the value has been set.
 
 SetIntegrationKey sets IntegrationKey field to given value.
 
+
 ### HasIntegrationKey
 
 `func (o *MFAMethodWriteDuoRequest) HasIntegrationKey() bool`
 
 HasIntegrationKey returns a boolean if a field has been set.
+
+
+
 
 ### GetMethodId
 
@@ -100,11 +115,15 @@ and a boolean to check if the value has been set.
 
 SetMethodId sets MethodId field to given value.
 
+
 ### HasMethodId
 
 `func (o *MFAMethodWriteDuoRequest) HasMethodId() bool`
 
 HasMethodId returns a boolean if a field has been set.
+
+
+
 
 ### GetPushInfo
 
@@ -125,11 +144,15 @@ and a boolean to check if the value has been set.
 
 SetPushInfo sets PushInfo field to given value.
 
+
 ### HasPushInfo
 
 `func (o *MFAMethodWriteDuoRequest) HasPushInfo() bool`
 
 HasPushInfo returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretKey
 
@@ -150,11 +173,15 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
+
 ### HasSecretKey
 
 `func (o *MFAMethodWriteDuoRequest) HasSecretKey() bool`
 
 HasSecretKey returns a boolean if a field has been set.
+
+
+
 
 ### GetUsePasscode
 
@@ -175,11 +202,15 @@ and a boolean to check if the value has been set.
 
 SetUsePasscode sets UsePasscode field to given value.
 
+
 ### HasUsePasscode
 
 `func (o *MFAMethodWriteDuoRequest) HasUsePasscode() bool`
 
 HasUsePasscode returns a boolean if a field has been set.
+
+
+
 
 ### GetUsernameFormat
 
@@ -200,11 +231,19 @@ and a boolean to check if the value has been set.
 
 SetUsernameFormat sets UsernameFormat field to given value.
 
+
 ### HasUsernameFormat
 
 `func (o *MFAMethodWriteDuoRequest) HasUsernameFormat() bool`
 
 HasUsernameFormat returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,10 +1,13 @@
 # AppRoleWriteSecretIDAccessorLookupResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CidrList** | Pointer to **[]string** | List of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If &#39;bound_cidr_list&#39; is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role. | [optional] 
+
+
+**CidrList** | Pointer to **[]string** | List of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If &#x27;bound_cidr_list&#x27; is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role. | [optional] 
 **CreationTime** | Pointer to **time.Time** |  | [optional] 
 **ExpirationTime** | Pointer to **time.Time** |  | [optional] 
 **LastUpdatedTime** | Pointer to **time.Time** |  | [optional] 
@@ -14,7 +17,10 @@ Name | Type | Description | Notes
 **SecretIdTtl** | Pointer to **int32** | Duration in seconds after which the issued secret ID expires. | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | List of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteSecretIDAccessorLookupResponse
 
@@ -32,6 +38,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteSecretIDAccessorLookupResponseWithDefaults instantiates a new AppRoleWriteSecretIDAccessorLookupResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCidrList
 
@@ -52,11 +59,15 @@ and a boolean to check if the value has been set.
 
 SetCidrList sets CidrList field to given value.
 
+
 ### HasCidrList
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasCidrList() bool`
 
 HasCidrList returns a boolean if a field has been set.
+
+
+
 
 ### GetCreationTime
 
@@ -77,11 +88,15 @@ and a boolean to check if the value has been set.
 
 SetCreationTime sets CreationTime field to given value.
 
+
 ### HasCreationTime
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasCreationTime() bool`
 
 HasCreationTime returns a boolean if a field has been set.
+
+
+
 
 ### GetExpirationTime
 
@@ -102,11 +117,15 @@ and a boolean to check if the value has been set.
 
 SetExpirationTime sets ExpirationTime field to given value.
 
+
 ### HasExpirationTime
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasExpirationTime() bool`
 
 HasExpirationTime returns a boolean if a field has been set.
+
+
+
 
 ### GetLastUpdatedTime
 
@@ -127,11 +146,15 @@ and a boolean to check if the value has been set.
 
 SetLastUpdatedTime sets LastUpdatedTime field to given value.
 
+
 ### HasLastUpdatedTime
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasLastUpdatedTime() bool`
 
 HasLastUpdatedTime returns a boolean if a field has been set.
+
+
+
 
 ### GetMetadata
 
@@ -152,11 +175,15 @@ and a boolean to check if the value has been set.
 
 SetMetadata sets Metadata field to given value.
 
+
 ### HasMetadata
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdAccessor
 
@@ -177,11 +204,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdAccessor sets SecretIdAccessor field to given value.
 
+
 ### HasSecretIdAccessor
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasSecretIdAccessor() bool`
 
 HasSecretIdAccessor returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdNumUses
 
@@ -202,11 +233,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdNumUses sets SecretIdNumUses field to given value.
 
+
 ### HasSecretIdNumUses
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasSecretIdNumUses() bool`
 
 HasSecretIdNumUses returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretIdTtl
 
@@ -227,11 +262,15 @@ and a boolean to check if the value has been set.
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 
+
 ### HasSecretIdTtl
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasSecretIdTtl() bool`
 
 HasSecretIdTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenBoundCidrs
 
@@ -252,11 +291,19 @@ and a boolean to check if the value has been set.
 
 SetTokenBoundCidrs sets TokenBoundCidrs field to given value.
 
+
 ### HasTokenBoundCidrs
 
 `func (o *AppRoleWriteSecretIDAccessorLookupResponse) HasTokenBoundCidrs() bool`
 
 HasTokenBoundCidrs returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,9 +1,12 @@
 # OpenLDAPWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AnonymousGroupSearch** | Pointer to **bool** | Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test). | [optional] [default to false]
 **Binddn** | Pointer to **string** | LDAP DN for searching for the user DN (optional) | [optional] 
 **Bindpass** | Pointer to **string** | LDAP password for searching for the user DN (optional) | [optional] 
@@ -11,7 +14,7 @@ Name | Type | Description | Notes
 **Certificate** | Pointer to **string** | CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional) | [optional] 
 **ClientTlsCert** | Pointer to **string** | Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional) | [optional] 
 **ClientTlsKey** | Pointer to **string** | Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional) | [optional] 
-**DenyNullBind** | Pointer to **bool** | Denies an unauthenticated LDAP bind request if the user&#39;s password is empty; defaults to true | [optional] [default to true]
+**DenyNullBind** | Pointer to **bool** | Denies an unauthenticated LDAP bind request if the user&#x27;s password is empty; defaults to true | [optional] [default to true]
 **Discoverdn** | Pointer to **bool** | Use anonymous bind to discover the bind DN of a user (optional) | [optional] 
 **Groupattr** | Pointer to **string** | LDAP attribute to follow on objects returned by &lt;groupfilter&gt; in order to enumerate user group membership. Examples: \&quot;cn\&quot; or \&quot;memberOf\&quot;, etc. Default: cn | [optional] [default to "cn"]
 **Groupdn** | Pointer to **string** | LDAP search base to use for group membership search (eg: ou&#x3D;Groups,dc&#x3D;example,dc&#x3D;org) | [optional] 
@@ -23,8 +26,8 @@ Name | Type | Description | Notes
 **RequestTimeout** | Pointer to **int32** | Timeout, in seconds, for the connection when making requests against the server before returning back an error. | [optional] 
 **Schema** | Pointer to **string** | The desired LDAP schema used when modifying user account passwords. | [optional] [default to "openldap"]
 **Starttls** | Pointer to **bool** | Issue a StartTLS command after establishing unencrypted connection (optional) | [optional] 
-**TlsMaxVersion** | Pointer to **string** | Maximum TLS version to use. Accepted values are &#39;tls10&#39;, &#39;tls11&#39;, &#39;tls12&#39; or &#39;tls13&#39;. Defaults to &#39;tls12&#39; | [optional] [default to "tls12"]
-**TlsMinVersion** | Pointer to **string** | Minimum TLS version to use. Accepted values are &#39;tls10&#39;, &#39;tls11&#39;, &#39;tls12&#39; or &#39;tls13&#39;. Defaults to &#39;tls12&#39; | [optional] [default to "tls12"]
+**TlsMaxVersion** | Pointer to **string** | Maximum TLS version to use. Accepted values are &#x27;tls10&#x27;, &#x27;tls11&#x27;, &#x27;tls12&#x27; or &#x27;tls13&#x27;. Defaults to &#x27;tls12&#x27; | [optional] [default to "tls12"]
+**TlsMinVersion** | Pointer to **string** | Minimum TLS version to use. Accepted values are &#x27;tls10&#x27;, &#x27;tls11&#x27;, &#x27;tls12&#x27; or &#x27;tls13&#x27;. Defaults to &#x27;tls12&#x27; | [optional] [default to "tls12"]
 **Ttl** | Pointer to **int32** | The default password time-to-live. | [optional] 
 **Upndomain** | Pointer to **string** | Enables userPrincipalDomain login with [username]@UPNDomain (optional) | [optional] 
 **Url** | Pointer to **string** | LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order. | [optional] [default to "ldap://127.0.0.1"]
@@ -35,7 +38,10 @@ Name | Type | Description | Notes
 **Userfilter** | Pointer to **string** | Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}&#x3D;{{.Username}}) | [optional] [default to "({{.UserAttr}}={{.Username}})"]
 **UsernameAsAlias** | Pointer to **bool** | If true, sets the alias name to the username | [optional] [default to false]
 
+
+
 ## Methods
+
 
 ### NewOpenLDAPWriteConfigRequest
 
@@ -53,6 +59,7 @@ will change when the set of required properties is changed
 NewOpenLDAPWriteConfigRequestWithDefaults instantiates a new OpenLDAPWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAnonymousGroupSearch
 
@@ -73,11 +80,15 @@ and a boolean to check if the value has been set.
 
 SetAnonymousGroupSearch sets AnonymousGroupSearch field to given value.
 
+
 ### HasAnonymousGroupSearch
 
 `func (o *OpenLDAPWriteConfigRequest) HasAnonymousGroupSearch() bool`
 
 HasAnonymousGroupSearch returns a boolean if a field has been set.
+
+
+
 
 ### GetBinddn
 
@@ -98,11 +109,15 @@ and a boolean to check if the value has been set.
 
 SetBinddn sets Binddn field to given value.
 
+
 ### HasBinddn
 
 `func (o *OpenLDAPWriteConfigRequest) HasBinddn() bool`
 
 HasBinddn returns a boolean if a field has been set.
+
+
+
 
 ### GetBindpass
 
@@ -123,11 +138,15 @@ and a boolean to check if the value has been set.
 
 SetBindpass sets Bindpass field to given value.
 
+
 ### HasBindpass
 
 `func (o *OpenLDAPWriteConfigRequest) HasBindpass() bool`
 
 HasBindpass returns a boolean if a field has been set.
+
+
+
 
 ### GetCaseSensitiveNames
 
@@ -148,11 +167,15 @@ and a boolean to check if the value has been set.
 
 SetCaseSensitiveNames sets CaseSensitiveNames field to given value.
 
+
 ### HasCaseSensitiveNames
 
 `func (o *OpenLDAPWriteConfigRequest) HasCaseSensitiveNames() bool`
 
 HasCaseSensitiveNames returns a boolean if a field has been set.
+
+
+
 
 ### GetCertificate
 
@@ -173,11 +196,15 @@ and a boolean to check if the value has been set.
 
 SetCertificate sets Certificate field to given value.
 
+
 ### HasCertificate
 
 `func (o *OpenLDAPWriteConfigRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
+
+
+
 
 ### GetClientTlsCert
 
@@ -198,11 +225,15 @@ and a boolean to check if the value has been set.
 
 SetClientTlsCert sets ClientTlsCert field to given value.
 
+
 ### HasClientTlsCert
 
 `func (o *OpenLDAPWriteConfigRequest) HasClientTlsCert() bool`
 
 HasClientTlsCert returns a boolean if a field has been set.
+
+
+
 
 ### GetClientTlsKey
 
@@ -223,11 +254,15 @@ and a boolean to check if the value has been set.
 
 SetClientTlsKey sets ClientTlsKey field to given value.
 
+
 ### HasClientTlsKey
 
 `func (o *OpenLDAPWriteConfigRequest) HasClientTlsKey() bool`
 
 HasClientTlsKey returns a boolean if a field has been set.
+
+
+
 
 ### GetDenyNullBind
 
@@ -248,11 +283,15 @@ and a boolean to check if the value has been set.
 
 SetDenyNullBind sets DenyNullBind field to given value.
 
+
 ### HasDenyNullBind
 
 `func (o *OpenLDAPWriteConfigRequest) HasDenyNullBind() bool`
 
 HasDenyNullBind returns a boolean if a field has been set.
+
+
+
 
 ### GetDiscoverdn
 
@@ -273,11 +312,15 @@ and a boolean to check if the value has been set.
 
 SetDiscoverdn sets Discoverdn field to given value.
 
+
 ### HasDiscoverdn
 
 `func (o *OpenLDAPWriteConfigRequest) HasDiscoverdn() bool`
 
 HasDiscoverdn returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupattr
 
@@ -298,11 +341,15 @@ and a boolean to check if the value has been set.
 
 SetGroupattr sets Groupattr field to given value.
 
+
 ### HasGroupattr
 
 `func (o *OpenLDAPWriteConfigRequest) HasGroupattr() bool`
 
 HasGroupattr returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupdn
 
@@ -323,11 +370,15 @@ and a boolean to check if the value has been set.
 
 SetGroupdn sets Groupdn field to given value.
 
+
 ### HasGroupdn
 
 `func (o *OpenLDAPWriteConfigRequest) HasGroupdn() bool`
 
 HasGroupdn returns a boolean if a field has been set.
+
+
+
 
 ### GetGroupfilter
 
@@ -348,11 +399,15 @@ and a boolean to check if the value has been set.
 
 SetGroupfilter sets Groupfilter field to given value.
 
+
 ### HasGroupfilter
 
 `func (o *OpenLDAPWriteConfigRequest) HasGroupfilter() bool`
 
 HasGroupfilter returns a boolean if a field has been set.
+
+
+
 
 ### GetInsecureTls
 
@@ -373,11 +428,15 @@ and a boolean to check if the value has been set.
 
 SetInsecureTls sets InsecureTls field to given value.
 
+
 ### HasInsecureTls
 
 `func (o *OpenLDAPWriteConfigRequest) HasInsecureTls() bool`
 
 HasInsecureTls returns a boolean if a field has been set.
+
+
+
 
 ### GetLength
 
@@ -398,11 +457,15 @@ and a boolean to check if the value has been set.
 
 SetLength sets Length field to given value.
 
+
 ### HasLength
 
 `func (o *OpenLDAPWriteConfigRequest) HasLength() bool`
 
 HasLength returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -423,11 +486,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *OpenLDAPWriteConfigRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetPasswordPolicy
 
@@ -448,11 +515,15 @@ and a boolean to check if the value has been set.
 
 SetPasswordPolicy sets PasswordPolicy field to given value.
 
+
 ### HasPasswordPolicy
 
 `func (o *OpenLDAPWriteConfigRequest) HasPasswordPolicy() bool`
 
 HasPasswordPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetRequestTimeout
 
@@ -473,11 +544,15 @@ and a boolean to check if the value has been set.
 
 SetRequestTimeout sets RequestTimeout field to given value.
 
+
 ### HasRequestTimeout
 
 `func (o *OpenLDAPWriteConfigRequest) HasRequestTimeout() bool`
 
 HasRequestTimeout returns a boolean if a field has been set.
+
+
+
 
 ### GetSchema
 
@@ -498,11 +573,15 @@ and a boolean to check if the value has been set.
 
 SetSchema sets Schema field to given value.
 
+
 ### HasSchema
 
 `func (o *OpenLDAPWriteConfigRequest) HasSchema() bool`
 
 HasSchema returns a boolean if a field has been set.
+
+
+
 
 ### GetStarttls
 
@@ -523,11 +602,15 @@ and a boolean to check if the value has been set.
 
 SetStarttls sets Starttls field to given value.
 
+
 ### HasStarttls
 
 `func (o *OpenLDAPWriteConfigRequest) HasStarttls() bool`
 
 HasStarttls returns a boolean if a field has been set.
+
+
+
 
 ### GetTlsMaxVersion
 
@@ -548,11 +631,15 @@ and a boolean to check if the value has been set.
 
 SetTlsMaxVersion sets TlsMaxVersion field to given value.
 
+
 ### HasTlsMaxVersion
 
 `func (o *OpenLDAPWriteConfigRequest) HasTlsMaxVersion() bool`
 
 HasTlsMaxVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetTlsMinVersion
 
@@ -573,11 +660,15 @@ and a boolean to check if the value has been set.
 
 SetTlsMinVersion sets TlsMinVersion field to given value.
 
+
 ### HasTlsMinVersion
 
 `func (o *OpenLDAPWriteConfigRequest) HasTlsMinVersion() bool`
 
 HasTlsMinVersion returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -598,11 +689,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *OpenLDAPWriteConfigRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetUpndomain
 
@@ -623,11 +718,15 @@ and a boolean to check if the value has been set.
 
 SetUpndomain sets Upndomain field to given value.
 
+
 ### HasUpndomain
 
 `func (o *OpenLDAPWriteConfigRequest) HasUpndomain() bool`
 
 HasUpndomain returns a boolean if a field has been set.
+
+
+
 
 ### GetUrl
 
@@ -648,11 +747,15 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
 ### HasUrl
 
 `func (o *OpenLDAPWriteConfigRequest) HasUrl() bool`
 
 HasUrl returns a boolean if a field has been set.
+
+
+
 
 ### GetUsePre111GroupCnBehavior
 
@@ -673,11 +776,15 @@ and a boolean to check if the value has been set.
 
 SetUsePre111GroupCnBehavior sets UsePre111GroupCnBehavior field to given value.
 
+
 ### HasUsePre111GroupCnBehavior
 
 `func (o *OpenLDAPWriteConfigRequest) HasUsePre111GroupCnBehavior() bool`
 
 HasUsePre111GroupCnBehavior returns a boolean if a field has been set.
+
+
+
 
 ### GetUseTokenGroups
 
@@ -698,11 +805,15 @@ and a boolean to check if the value has been set.
 
 SetUseTokenGroups sets UseTokenGroups field to given value.
 
+
 ### HasUseTokenGroups
 
 `func (o *OpenLDAPWriteConfigRequest) HasUseTokenGroups() bool`
 
 HasUseTokenGroups returns a boolean if a field has been set.
+
+
+
 
 ### GetUserattr
 
@@ -723,11 +834,15 @@ and a boolean to check if the value has been set.
 
 SetUserattr sets Userattr field to given value.
 
+
 ### HasUserattr
 
 `func (o *OpenLDAPWriteConfigRequest) HasUserattr() bool`
 
 HasUserattr returns a boolean if a field has been set.
+
+
+
 
 ### GetUserdn
 
@@ -748,11 +863,15 @@ and a boolean to check if the value has been set.
 
 SetUserdn sets Userdn field to given value.
 
+
 ### HasUserdn
 
 `func (o *OpenLDAPWriteConfigRequest) HasUserdn() bool`
 
 HasUserdn returns a boolean if a field has been set.
+
+
+
 
 ### GetUserfilter
 
@@ -773,11 +892,15 @@ and a boolean to check if the value has been set.
 
 SetUserfilter sets Userfilter field to given value.
 
+
 ### HasUserfilter
 
 `func (o *OpenLDAPWriteConfigRequest) HasUserfilter() bool`
 
 HasUserfilter returns a boolean if a field has been set.
+
+
+
 
 ### GetUsernameAsAlias
 
@@ -798,11 +921,19 @@ and a boolean to check if the value has been set.
 
 SetUsernameAsAlias sets UsernameAsAlias field to given value.
 
+
 ### HasUsernameAsAlias
 
 `func (o *OpenLDAPWriteConfigRequest) HasUsernameAsAlias() bool`
 
 HasUsernameAsAlias returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

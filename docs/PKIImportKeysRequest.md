@@ -1,13 +1,19 @@
 # PKIImportKeysRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **KeyName** | Pointer to **string** | Optional name to be used for this key | [optional] 
 **PemBundle** | Pointer to **string** | PEM-format, unencrypted secret key | [optional] 
 
+
+
 ## Methods
+
 
 ### NewPKIImportKeysRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewPKIImportKeysRequestWithDefaults instantiates a new PKIImportKeysRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetKeyName
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetKeyName sets KeyName field to given value.
 
+
 ### HasKeyName
 
 `func (o *PKIImportKeysRequest) HasKeyName() bool`
 
 HasKeyName returns a boolean if a field has been set.
+
+
+
 
 ### GetPemBundle
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetPemBundle sets PemBundle field to given value.
 
+
 ### HasPemBundle
 
 `func (o *PKIImportKeysRequest) HasPemBundle() bool`
 
 HasPemBundle returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

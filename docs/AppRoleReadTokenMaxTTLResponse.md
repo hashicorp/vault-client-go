@@ -1,12 +1,18 @@
 # AppRoleReadTokenMaxTTLResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleReadTokenMaxTTLResponse
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleReadTokenMaxTTLResponseWithDefaults instantiates a new AppRoleReadTokenMaxTTLResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetTokenMaxTtl
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetTokenMaxTtl sets TokenMaxTtl field to given value.
 
+
 ### HasTokenMaxTtl
 
 `func (o *AppRoleReadTokenMaxTTLResponse) HasTokenMaxTtl() bool`
 
 HasTokenMaxTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

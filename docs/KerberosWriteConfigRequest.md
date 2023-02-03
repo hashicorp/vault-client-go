@@ -1,15 +1,21 @@
 # KerberosWriteConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AddGroupAliases** | Pointer to **bool** | If set to true, returns any groups found in LDAP as a group alias. | [optional] 
 **Keytab** | Pointer to **string** | Base64 encoded keytab | [optional] 
 **RemoveInstanceName** | Pointer to **bool** | Remove instance/FQDN from keytab principal names. | [optional] 
 **ServiceAccount** | Pointer to **string** | Service Account | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKerberosWriteConfigRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewKerberosWriteConfigRequestWithDefaults instantiates a new KerberosWriteConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAddGroupAliases
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetAddGroupAliases sets AddGroupAliases field to given value.
 
+
 ### HasAddGroupAliases
 
 `func (o *KerberosWriteConfigRequest) HasAddGroupAliases() bool`
 
 HasAddGroupAliases returns a boolean if a field has been set.
+
+
+
 
 ### GetKeytab
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetKeytab sets Keytab field to given value.
 
+
 ### HasKeytab
 
 `func (o *KerberosWriteConfigRequest) HasKeytab() bool`
 
 HasKeytab returns a boolean if a field has been set.
+
+
+
 
 ### GetRemoveInstanceName
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetRemoveInstanceName sets RemoveInstanceName field to given value.
 
+
 ### HasRemoveInstanceName
 
 `func (o *KerberosWriteConfigRequest) HasRemoveInstanceName() bool`
 
 HasRemoveInstanceName returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceAccount
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetServiceAccount sets ServiceAccount field to given value.
 
+
 ### HasServiceAccount
 
 `func (o *KerberosWriteConfigRequest) HasServiceAccount() bool`
 
 HasServiceAccount returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,14 +1,20 @@
 # ToolsGenerateRandomSourceRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Bytes** | Pointer to **int32** | The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits). | [optional] [default to 32]
 **Format** | Pointer to **string** | Encoding format to use. Can be \&quot;hex\&quot; or \&quot;base64\&quot;. Defaults to \&quot;base64\&quot;. | [optional] [default to "base64"]
 **Urlbytes** | Pointer to **string** | The number of bytes to generate (POST URL parameter) | [optional] 
 
+
+
 ## Methods
+
 
 ### NewToolsGenerateRandomSourceRequest
 
@@ -26,6 +32,7 @@ will change when the set of required properties is changed
 NewToolsGenerateRandomSourceRequestWithDefaults instantiates a new ToolsGenerateRandomSourceRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBytes
 
@@ -46,11 +53,15 @@ and a boolean to check if the value has been set.
 
 SetBytes sets Bytes field to given value.
 
+
 ### HasBytes
 
 `func (o *ToolsGenerateRandomSourceRequest) HasBytes() bool`
 
 HasBytes returns a boolean if a field has been set.
+
+
+
 
 ### GetFormat
 
@@ -71,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
+
 ### HasFormat
 
 `func (o *ToolsGenerateRandomSourceRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+
+
 
 ### GetUrlbytes
 
@@ -96,11 +111,19 @@ and a boolean to check if the value has been set.
 
 SetUrlbytes sets Urlbytes field to given value.
 
+
 ### HasUrlbytes
 
 `func (o *ToolsGenerateRandomSourceRequest) HasUrlbytes() bool`
 
 HasUrlbytes returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

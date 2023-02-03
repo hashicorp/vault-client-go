@@ -1,15 +1,21 @@
 # KVv2WriteMetadataRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CasRequired** | Pointer to **bool** | If true the key will require the cas parameter to be set on all write requests. If false, the backend’s configuration will be used. | [optional] 
 **CustomMetadata** | Pointer to **map[string]interface{}** | User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret. | [optional] 
-**DeleteVersionAfter** | Pointer to **int32** | The length of time before a version is deleted. If not set, the backend&#39;s configured delete_version_after is used. Cannot be greater than the backend&#39;s delete_version_after. A zero duration clears the current setting. A negative duration will cause an error. | [optional] 
+**DeleteVersionAfter** | Pointer to **int32** | The length of time before a version is deleted. If not set, the backend&#x27;s configured delete_version_after is used. Cannot be greater than the backend&#x27;s delete_version_after. A zero duration clears the current setting. A negative duration will cause an error. | [optional] 
 **MaxVersions** | Pointer to **int32** | The number of versions to keep. If not set, the backend’s configured max version is used. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKVv2WriteMetadataRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewKVv2WriteMetadataRequestWithDefaults instantiates a new KVv2WriteMetadataRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCasRequired
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetCasRequired sets CasRequired field to given value.
 
+
 ### HasCasRequired
 
 `func (o *KVv2WriteMetadataRequest) HasCasRequired() bool`
 
 HasCasRequired returns a boolean if a field has been set.
+
+
+
 
 ### GetCustomMetadata
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetCustomMetadata sets CustomMetadata field to given value.
 
+
 ### HasCustomMetadata
 
 `func (o *KVv2WriteMetadataRequest) HasCustomMetadata() bool`
 
 HasCustomMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetDeleteVersionAfter
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetDeleteVersionAfter sets DeleteVersionAfter field to given value.
 
+
 ### HasDeleteVersionAfter
 
 `func (o *KVv2WriteMetadataRequest) HasDeleteVersionAfter() bool`
 
 HasDeleteVersionAfter returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxVersions
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetMaxVersions sets MaxVersions field to given value.
 
+
 ### HasMaxVersions
 
 `func (o *KVv2WriteMetadataRequest) HasMaxVersions() bool`
 
 HasMaxVersions returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

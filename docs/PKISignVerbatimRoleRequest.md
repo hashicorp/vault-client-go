@@ -1,9 +1,12 @@
 # PKISignVerbatimRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AltNames** | Pointer to **string** | The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses. | [optional] 
 **CommonName** | Pointer to **string** | The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address. | [optional] 
 **Csr** | Pointer to **string** | PEM-format CSR to be signed. Values will be taken verbatim from the CSR, except for basic constraints. | [optional] [default to ""]
@@ -18,13 +21,16 @@ Name | Type | Description | Notes
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **PrivateKeyFormat** | Pointer to **string** | Format for the returned private key. Generally the default will be controlled by the \&quot;format\&quot; parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \&quot;pkcs8\&quot; to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \&quot;der\&quot;. | [optional] [default to "der"]
 **RemoveRootsFromChain** | Pointer to **bool** | Whether or not to remove self-signed CA certificates in the output of the ca_chain field. | [optional] [default to false]
-**SerialNumber** | Pointer to **string** | The Subject&#39;s requested serial number, if any. See RFC 4519 Section 2.31 &#39;serialNumber&#39; for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate&#39;s Serial Number field. | [optional] 
+**SerialNumber** | Pointer to **string** | The Subject&#x27;s requested serial number, if any. See RFC 4519 Section 2.31 &#x27;serialNumber&#x27; for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate&#x27;s Serial Number field. | [optional] 
 **SignatureBits** | Pointer to **int32** | The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves). | [optional] [default to 0]
 **Ttl** | Pointer to **int32** | The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL. | [optional] 
 **UriSans** | Pointer to **[]string** | The requested URI SANs, if any, in a comma-delimited list. | [optional] 
 **UsePss** | Pointer to **bool** | Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false. | [optional] [default to false]
 
+
+
 ## Methods
+
 
 ### NewPKISignVerbatimRoleRequest
 
@@ -42,6 +48,7 @@ will change when the set of required properties is changed
 NewPKISignVerbatimRoleRequestWithDefaults instantiates a new PKISignVerbatimRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAltNames
 
@@ -62,11 +69,15 @@ and a boolean to check if the value has been set.
 
 SetAltNames sets AltNames field to given value.
 
+
 ### HasAltNames
 
 `func (o *PKISignVerbatimRoleRequest) HasAltNames() bool`
 
 HasAltNames returns a boolean if a field has been set.
+
+
+
 
 ### GetCommonName
 
@@ -87,11 +98,15 @@ and a boolean to check if the value has been set.
 
 SetCommonName sets CommonName field to given value.
 
+
 ### HasCommonName
 
 `func (o *PKISignVerbatimRoleRequest) HasCommonName() bool`
 
 HasCommonName returns a boolean if a field has been set.
+
+
+
 
 ### GetCsr
 
@@ -112,11 +127,15 @@ and a boolean to check if the value has been set.
 
 SetCsr sets Csr field to given value.
 
+
 ### HasCsr
 
 `func (o *PKISignVerbatimRoleRequest) HasCsr() bool`
 
 HasCsr returns a boolean if a field has been set.
+
+
+
 
 ### GetExcludeCnFromSans
 
@@ -137,11 +156,15 @@ and a boolean to check if the value has been set.
 
 SetExcludeCnFromSans sets ExcludeCnFromSans field to given value.
 
+
 ### HasExcludeCnFromSans
 
 `func (o *PKISignVerbatimRoleRequest) HasExcludeCnFromSans() bool`
 
 HasExcludeCnFromSans returns a boolean if a field has been set.
+
+
+
 
 ### GetExtKeyUsage
 
@@ -162,11 +185,15 @@ and a boolean to check if the value has been set.
 
 SetExtKeyUsage sets ExtKeyUsage field to given value.
 
+
 ### HasExtKeyUsage
 
 `func (o *PKISignVerbatimRoleRequest) HasExtKeyUsage() bool`
 
 HasExtKeyUsage returns a boolean if a field has been set.
+
+
+
 
 ### GetExtKeyUsageOids
 
@@ -187,11 +214,15 @@ and a boolean to check if the value has been set.
 
 SetExtKeyUsageOids sets ExtKeyUsageOids field to given value.
 
+
 ### HasExtKeyUsageOids
 
 `func (o *PKISignVerbatimRoleRequest) HasExtKeyUsageOids() bool`
 
 HasExtKeyUsageOids returns a boolean if a field has been set.
+
+
+
 
 ### GetFormat
 
@@ -212,11 +243,15 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
+
 ### HasFormat
 
 `func (o *PKISignVerbatimRoleRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+
+
 
 ### GetIpSans
 
@@ -237,11 +272,15 @@ and a boolean to check if the value has been set.
 
 SetIpSans sets IpSans field to given value.
 
+
 ### HasIpSans
 
 `func (o *PKISignVerbatimRoleRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
+
+
+
 
 ### GetIssuerRef
 
@@ -262,11 +301,15 @@ and a boolean to check if the value has been set.
 
 SetIssuerRef sets IssuerRef field to given value.
 
+
 ### HasIssuerRef
 
 `func (o *PKISignVerbatimRoleRequest) HasIssuerRef() bool`
 
 HasIssuerRef returns a boolean if a field has been set.
+
+
+
 
 ### GetKeyUsage
 
@@ -287,11 +330,15 @@ and a boolean to check if the value has been set.
 
 SetKeyUsage sets KeyUsage field to given value.
 
+
 ### HasKeyUsage
 
 `func (o *PKISignVerbatimRoleRequest) HasKeyUsage() bool`
 
 HasKeyUsage returns a boolean if a field has been set.
+
+
+
 
 ### GetNotAfter
 
@@ -312,11 +359,15 @@ and a boolean to check if the value has been set.
 
 SetNotAfter sets NotAfter field to given value.
 
+
 ### HasNotAfter
 
 `func (o *PKISignVerbatimRoleRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
+
+
+
 
 ### GetOtherSans
 
@@ -337,11 +388,15 @@ and a boolean to check if the value has been set.
 
 SetOtherSans sets OtherSans field to given value.
 
+
 ### HasOtherSans
 
 `func (o *PKISignVerbatimRoleRequest) HasOtherSans() bool`
 
 HasOtherSans returns a boolean if a field has been set.
+
+
+
 
 ### GetPrivateKeyFormat
 
@@ -362,11 +417,15 @@ and a boolean to check if the value has been set.
 
 SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
+
 ### HasPrivateKeyFormat
 
 `func (o *PKISignVerbatimRoleRequest) HasPrivateKeyFormat() bool`
 
 HasPrivateKeyFormat returns a boolean if a field has been set.
+
+
+
 
 ### GetRemoveRootsFromChain
 
@@ -387,11 +446,15 @@ and a boolean to check if the value has been set.
 
 SetRemoveRootsFromChain sets RemoveRootsFromChain field to given value.
 
+
 ### HasRemoveRootsFromChain
 
 `func (o *PKISignVerbatimRoleRequest) HasRemoveRootsFromChain() bool`
 
 HasRemoveRootsFromChain returns a boolean if a field has been set.
+
+
+
 
 ### GetSerialNumber
 
@@ -412,11 +475,15 @@ and a boolean to check if the value has been set.
 
 SetSerialNumber sets SerialNumber field to given value.
 
+
 ### HasSerialNumber
 
 `func (o *PKISignVerbatimRoleRequest) HasSerialNumber() bool`
 
 HasSerialNumber returns a boolean if a field has been set.
+
+
+
 
 ### GetSignatureBits
 
@@ -437,11 +504,15 @@ and a boolean to check if the value has been set.
 
 SetSignatureBits sets SignatureBits field to given value.
 
+
 ### HasSignatureBits
 
 `func (o *PKISignVerbatimRoleRequest) HasSignatureBits() bool`
 
 HasSignatureBits returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -462,11 +533,15 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *PKISignVerbatimRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetUriSans
 
@@ -487,11 +562,15 @@ and a boolean to check if the value has been set.
 
 SetUriSans sets UriSans field to given value.
 
+
 ### HasUriSans
 
 `func (o *PKISignVerbatimRoleRequest) HasUriSans() bool`
 
 HasUriSans returns a boolean if a field has been set.
+
+
+
 
 ### GetUsePss
 
@@ -512,11 +591,19 @@ and a boolean to check if the value has been set.
 
 SetUsePss sets UsePss field to given value.
 
+
 ### HasUsePss
 
 `func (o *PKISignVerbatimRoleRequest) HasUsePss() bool`
 
 HasUsePss returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

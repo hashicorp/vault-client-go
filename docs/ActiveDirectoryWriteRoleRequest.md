@@ -1,13 +1,19 @@
 # ActiveDirectoryWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ServiceAccountName** | Pointer to **string** | The username/logon name for the service account with which this role will be associated. | [optional] 
 **Ttl** | Pointer to **int32** | In seconds, the default password time-to-live. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewActiveDirectoryWriteRoleRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewActiveDirectoryWriteRoleRequestWithDefaults instantiates a new ActiveDirectoryWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetServiceAccountName
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetServiceAccountName sets ServiceAccountName field to given value.
 
+
 ### HasServiceAccountName
 
 `func (o *ActiveDirectoryWriteRoleRequest) HasServiceAccountName() bool`
 
 HasServiceAccountName returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *ActiveDirectoryWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

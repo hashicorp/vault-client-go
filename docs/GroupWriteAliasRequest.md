@@ -1,15 +1,21 @@
 # GroupWriteAliasRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **CanonicalId** | Pointer to **string** | ID of the group to which this is an alias. | [optional] 
 **Id** | Pointer to **string** | ID of the group alias. | [optional] 
 **MountAccessor** | Pointer to **string** | Mount accessor to which this alias belongs to. | [optional] 
 **Name** | Pointer to **string** | Alias of the group. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGroupWriteAliasRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewGroupWriteAliasRequestWithDefaults instantiates a new GroupWriteAliasRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetCanonicalId
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetCanonicalId sets CanonicalId field to given value.
 
+
 ### HasCanonicalId
 
 `func (o *GroupWriteAliasRequest) HasCanonicalId() bool`
 
 HasCanonicalId returns a boolean if a field has been set.
+
+
+
 
 ### GetId
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+
 ### HasId
 
 `func (o *GroupWriteAliasRequest) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+
+
 
 ### GetMountAccessor
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetMountAccessor sets MountAccessor field to given value.
 
+
 ### HasMountAccessor
 
 `func (o *GroupWriteAliasRequest) HasMountAccessor() bool`
 
 HasMountAccessor returns a boolean if a field has been set.
+
+
+
 
 ### GetName
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
 ### HasName
 
 `func (o *GroupWriteAliasRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

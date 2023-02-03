@@ -1,13 +1,19 @@
 # RadiusLoginWithUsernameRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 **Username** | Pointer to **string** | Username to be used for login. (POST request body) | [optional] 
 
+
+
 ## Methods
+
 
 ### NewRadiusLoginWithUsernameRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewRadiusLoginWithUsernameRequestWithDefaults instantiates a new RadiusLoginWithUsernameRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPassword
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
+
 ### HasPassword
 
 `func (o *RadiusLoginWithUsernameRequest) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+
+
 
 ### GetUsername
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
+
 ### HasUsername
 
 `func (o *RadiusLoginWithUsernameRequest) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

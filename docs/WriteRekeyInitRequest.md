@@ -1,16 +1,22 @@
 # WriteRekeyInitRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Backup** | Pointer to **bool** | Specifies if using PGP-encrypted keys, whether Vault should also store a plaintext backup of the PGP-encrypted keys. | [optional] 
 **PgpKeys** | Pointer to **[]string** | Specifies an array of PGP public keys used to encrypt the output unseal keys. Ordering is preserved. The keys must be base64-encoded from their original binary representation. The size of this array must be the same as secret_shares. | [optional] 
 **RequireVerification** | Pointer to **bool** | Turns on verification functionality | [optional] 
 **SecretShares** | Pointer to **int32** | Specifies the number of shares to split the unseal key into. | [optional] 
 **SecretThreshold** | Pointer to **int32** | Specifies the number of shares required to reconstruct the unseal key. This must be less than or equal secret_shares. If using Vault HSM with auto-unsealing, this value must be the same as secret_shares. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewWriteRekeyInitRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewWriteRekeyInitRequestWithDefaults instantiates a new WriteRekeyInitRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBackup
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetBackup sets Backup field to given value.
 
+
 ### HasBackup
 
 `func (o *WriteRekeyInitRequest) HasBackup() bool`
 
 HasBackup returns a boolean if a field has been set.
+
+
+
 
 ### GetPgpKeys
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetPgpKeys sets PgpKeys field to given value.
 
+
 ### HasPgpKeys
 
 `func (o *WriteRekeyInitRequest) HasPgpKeys() bool`
 
 HasPgpKeys returns a boolean if a field has been set.
+
+
+
 
 ### GetRequireVerification
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetRequireVerification sets RequireVerification field to given value.
 
+
 ### HasRequireVerification
 
 `func (o *WriteRekeyInitRequest) HasRequireVerification() bool`
 
 HasRequireVerification returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretShares
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetSecretShares sets SecretShares field to given value.
 
+
 ### HasSecretShares
 
 `func (o *WriteRekeyInitRequest) HasSecretShares() bool`
 
 HasSecretShares returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretThreshold
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetSecretThreshold sets SecretThreshold field to given value.
 
+
 ### HasSecretThreshold
 
 `func (o *WriteRekeyInitRequest) HasSecretThreshold() bool`
 
 HasSecretThreshold returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

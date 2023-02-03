@@ -1,17 +1,23 @@
 # OIDCWriteClientRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **AccessTokenTtl** | Pointer to **int32** | The time-to-live for access tokens obtained by the client. | [optional] 
 **Assignments** | Pointer to **[]string** | Comma separated string or array of assignment resources. | [optional] 
-**ClientType** | Pointer to **string** | The client type based on its ability to maintain confidentiality of credentials. The following client types are supported: &#39;confidential&#39;, &#39;public&#39;. Defaults to &#39;confidential&#39;. | [optional] [default to "confidential"]
+**ClientType** | Pointer to **string** | The client type based on its ability to maintain confidentiality of credentials. The following client types are supported: &#x27;confidential&#x27;, &#x27;public&#x27;. Defaults to &#x27;confidential&#x27;. | [optional] [default to "confidential"]
 **IdTokenTtl** | Pointer to **int32** | The time-to-live for ID tokens obtained by the client. | [optional] 
-**Key** | Pointer to **string** | A reference to a named key resource. Cannot be modified after creation. Defaults to the &#39;default&#39; key. | [optional] [default to "default"]
+**Key** | Pointer to **string** | A reference to a named key resource. Cannot be modified after creation. Defaults to the &#x27;default&#x27; key. | [optional] [default to "default"]
 **RedirectUris** | Pointer to **[]string** | Comma separated string or array of redirect URIs used by the client. One of these values must exactly match the redirect_uri parameter value used in each authentication request. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOIDCWriteClientRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewOIDCWriteClientRequestWithDefaults instantiates a new OIDCWriteClientRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAccessTokenTtl
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetAccessTokenTtl sets AccessTokenTtl field to given value.
 
+
 ### HasAccessTokenTtl
 
 `func (o *OIDCWriteClientRequest) HasAccessTokenTtl() bool`
 
 HasAccessTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetAssignments
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetAssignments sets Assignments field to given value.
 
+
 ### HasAssignments
 
 `func (o *OIDCWriteClientRequest) HasAssignments() bool`
 
 HasAssignments returns a boolean if a field has been set.
+
+
+
 
 ### GetClientType
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetClientType sets ClientType field to given value.
 
+
 ### HasClientType
 
 `func (o *OIDCWriteClientRequest) HasClientType() bool`
 
 HasClientType returns a boolean if a field has been set.
+
+
+
 
 ### GetIdTokenTtl
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetIdTokenTtl sets IdTokenTtl field to given value.
 
+
 ### HasIdTokenTtl
 
 `func (o *OIDCWriteClientRequest) HasIdTokenTtl() bool`
 
 HasIdTokenTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetKey
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+
 ### HasKey
 
 `func (o *OIDCWriteClientRequest) HasKey() bool`
 
 HasKey returns a boolean if a field has been set.
+
+
+
 
 ### GetRedirectUris
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetRedirectUris sets RedirectUris field to given value.
 
+
 ### HasRedirectUris
 
 `func (o *OIDCWriteClientRequest) HasRedirectUris() bool`
 
 HasRedirectUris returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

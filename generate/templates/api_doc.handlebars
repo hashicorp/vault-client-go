@@ -1,0 +1,82 @@
+# {{classname}}{{#with description}}
+
+{{.}}{{/with}}
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+{{#with operations}}{{#each operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}}
+{{/each}}{{/with}}
+
+{{#with operations}}
+{{#each operation}}
+
+## {{{operationId}}}
+
+> {{#with returnType}}{{{.}}} {{/with}}{{{operationId}}}(ctx{{#each pathParams}}, {{paramName}}{{/each}}){{#each allParams}}{{#unless isPathParam}}.{{vendorExtensions.x-export-param-name}}({{paramName}}){{/unless}}{{/each}}.Execute()
+
+{{{summary}}}{{#if notes}}
+
+{{{unespacedNotes}}}{{/if}}
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"{{#each bodyParams}}{{#if @first}}
+	"github.com/hashicorp/vault-client-go/schema"{{/if}}{{/each}}
+)
+
+func main() {
+	client, err := vault.New(
+		vault.WithBaseAddress("http://127.0.0.1:8200"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+{{#each allParams}}{{#if isPathParam}}{{#with required}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/with}}{{/if}}{{/each}}{{#each bodyParams}}
+	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#unless required}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/unless}}{{/if}}{{/each}}
+	resp, err := client.{{classname}}.{{operationId}}(
+		context.Background(),{{#each pathParams}}{{#with required}}
+		{{paramName}},{{/with}}{{/each}}{{#each bodyParams}}
+		request,{{/each}}{{#each queryParams}}{{#unless required}}
+		{{paramName}},{{/unless}}{{/each}}
+		vault.WithToken("my-token"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp.Data)
+}
+```
+
+### Path Parameters
+
+{{#unless allParams}}This endpoint does not require any parameters.{{/unless}}{{#each pathParams}}{{#if @last}}
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for request cancellation {{/if}}{{/each}}{{#each pathParams}}{{#with required}}
+**{{paramName}}** | {{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{baseType}}.md){{/unless}}{{/unless}} | {{description}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/with}}{{/each}}
+
+### Other Parameters
+
+{{#each allParams}}{{#if @last}}
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------{{/if}}{{/each}}{{#each allParams}}
+{{#unless isPathParam}} **{{paramName}}** | {{#if isContainer}}{{#if isArray}}{{#with items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**[]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/with}}{{/if}}{{#if isMap}}{{#with items}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**map[string]{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/with}}{{/if}}{{/if}}{{#unless isContainer}}{{#unless isPrimitiveType}}{{#unless isFile}}[{{/unless}}{{/unless}}**{{dataType}}**{{#unless isPrimitiveType}}{{#unless isFile}}]({{#unless baseType}}{{dataType}}{{/unless}}{{baseType}}.md){{/unless}}{{/unless}}{{/unless}} | {{description}} | {{#with defaultValue}}[default to {{.}}]{{/with}}{{/unless}}{{/each}}
+
+{{#with returnType}}{{#with returnTypeIsPrimitive}}**{{{returnType}}}**{{/with}}{{#unless returnTypeIsPrimitive}}[**{{{returnType}}}**]({{returnBaseType}}.md){{/unless}}{{/with}}{{#unless returnType}} (empty response body){{/unless}}
+
+[[Back to top]](#)
+[[Back to README]](../README.md)
+
+{{/each}}
+{{/with}}

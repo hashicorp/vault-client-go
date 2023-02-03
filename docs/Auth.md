@@ -159,7 +159,7 @@ Method | HTTP request | Description
 [**GoogleCloudReadRole**](Auth.md#GoogleCloudReadRole) | **Get** /auth/{gcp_mount_path}/role/{name} | Create a GCP role with associated policies and required attributes.
 [**GoogleCloudWriteAuthConfig**](Auth.md#GoogleCloudWriteAuthConfig) | **Post** /auth/{gcp_mount_path}/config | Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 [**GoogleCloudWriteRole**](Auth.md#GoogleCloudWriteRole) | **Post** /auth/{gcp_mount_path}/role/{name} | Create a GCP role with associated policies and required attributes.
-[**GoogleCloudWriteRoleLabels**](Auth.md#GoogleCloudWriteRoleLabels) | **Post** /auth/{gcp_mount_path}/role/{name}/labels | Add or remove labels for an existing &#39;gce&#39; role
+[**GoogleCloudWriteRoleLabels**](Auth.md#GoogleCloudWriteRoleLabels) | **Post** /auth/{gcp_mount_path}/role/{name}/labels | Add or remove labels for an existing &#x27;gce&#x27; role
 [**GoogleCloudWriteRoleServiceAccounts**](Auth.md#GoogleCloudWriteRoleServiceAccounts) | **Post** /auth/{gcp_mount_path}/role/{name}/service-accounts | Add or remove service accounts for an existing &#x60;iam&#x60; role
 [**JWTDeleteRole**](Auth.md#JWTDeleteRole) | **Delete** /auth/{jwt_mount_path}/role/{name} | Delete an existing role.
 [**JWTListRoles**](Auth.md#JWTListRoles) | **Get** /auth/{jwt_mount_path}/role | Lists all the roles registered with the backend.
@@ -237,7 +237,7 @@ Method | HTTP request | Description
 [**RadiusWriteConfig**](Auth.md#RadiusWriteConfig) | **Post** /auth/{radius_mount_path}/config | Configure the RADIUS server to connect to, along with its options.
 [**RadiusWriteUser**](Auth.md#RadiusWriteUser) | **Post** /auth/{radius_mount_path}/users/{name} | Manage users allowed to authenticate.
 [**TokenDeleteRole**](Auth.md#TokenDeleteRole) | **Delete** /auth/{token_mount_path}/roles/{role_name} | 
-[**TokenListAccessors**](Auth.md#TokenListAccessors) | **Get** /auth/{token_mount_path}/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#39;sudo&#39; capability in addition to &#39;list&#39;.
+[**TokenListAccessors**](Auth.md#TokenListAccessors) | **Get** /auth/{token_mount_path}/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#x27;sudo&#x27; capability in addition to &#x27;list&#x27;.
 [**TokenListRoles**](Auth.md#TokenListRoles) | **Get** /auth/{token_mount_path}/roles | This endpoint lists configured roles.
 [**TokenReadLookup**](Auth.md#TokenReadLookup) | **Get** /auth/{token_mount_path}/lookup | This endpoint will lookup a token and its properties.
 [**TokenReadLookupSelf**](Auth.md#TokenReadLookupSelf) | **Get** /auth/{token_mount_path}/lookup-self | This endpoint will lookup a token and its properties.
@@ -262,8 +262,10 @@ Method | HTTP request | Description
 [**UserpassLogin**](Auth.md#UserpassLogin) | **Post** /auth/{userpass_mount_path}/login/{username} | Log in with a username and password.
 [**UserpassReadUser**](Auth.md#UserpassReadUser) | **Get** /auth/{userpass_mount_path}/users/{username} | Manage users allowed to authenticate.
 [**UserpassWriteUser**](Auth.md#UserpassWriteUser) | **Post** /auth/{userpass_mount_path}/users/{username} | Manage users allowed to authenticate.
-[**UserpassWriteUserPassword**](Auth.md#UserpassWriteUserPassword) | **Post** /auth/{userpass_mount_path}/users/{username}/password | Reset user&#39;s password.
+[**UserpassWriteUserPassword**](Auth.md#UserpassWriteUserPassword) | **Post** /auth/{userpass_mount_path}/users/{username}/password | Reset user&#x27;s password.
 [**UserpassWriteUserPolicies**](Auth.md#UserpassWriteUserPolicies) | **Post** /auth/{userpass_mount_path}/users/{username}/policies | Update the policies associated with the username.
+
+
 
 
 
@@ -295,8 +297,6 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-
-
 	resp, err := client.Auth.AWSConfigDeleteCertificate(
 		context.Background(),
 		certName,
@@ -332,6 +332,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigDeleteClient
 
 > AWSConfigDeleteClient(ctx, awsMountPath).Execute()
@@ -358,8 +359,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigDeleteClient(
 		context.Background(),
@@ -393,6 +392,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigDeleteIdentityAccessList
 
 > AWSConfigDeleteIdentityAccessList(ctx, awsMountPath).Execute()
@@ -419,8 +419,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigDeleteIdentityAccessList(
 		context.Background(),
@@ -454,6 +452,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigDeleteIdentityWhiteList
 
 > AWSConfigDeleteIdentityWhiteList(ctx, awsMountPath).Execute()
@@ -480,8 +479,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigDeleteIdentityWhiteList(
 		context.Background(),
@@ -515,6 +512,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigDeleteRoleTagBlackList
 
 > AWSConfigDeleteRoleTagBlackList(ctx, awsMountPath).Execute()
@@ -541,8 +539,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigDeleteRoleTagBlackList(
 		context.Background(),
@@ -576,6 +572,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigDeleteRoleTagDenyList
 
 > AWSConfigDeleteRoleTagDenyList(ctx, awsMountPath).Execute()
@@ -602,8 +599,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigDeleteRoleTagDenyList(
 		context.Background(),
@@ -637,6 +632,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigDeleteSecurityTokenServiceAccount
 
 > AWSConfigDeleteSecurityTokenServiceAccount(ctx, accountId, awsMountPath).Execute()
@@ -665,8 +661,6 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-
-
 	resp, err := client.Auth.AWSConfigDeleteSecurityTokenServiceAccount(
 		context.Background(),
 		accountId,
@@ -702,6 +696,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigListCertificates
 
 > AWSConfigListCertificates(ctx, awsMountPath).List(list).Execute()
@@ -728,8 +723,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigListCertificates(
 		context.Background(),
@@ -764,6 +757,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigListSecurityTokenService
 
 > AWSConfigListSecurityTokenService(ctx, awsMountPath).List(list).Execute()
@@ -790,8 +784,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigListSecurityTokenService(
 		context.Background(),
@@ -826,6 +818,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadCertificate
 
 > AWSConfigReadCertificate(ctx, awsMountPath, certName).Execute()
@@ -854,8 +847,6 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-
-
 	resp, err := client.Auth.AWSConfigReadCertificate(
 		context.Background(),
 		certName,
@@ -891,6 +882,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadClient
 
 > AWSConfigReadClient(ctx, awsMountPath).Execute()
@@ -917,8 +909,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadClient(
 		context.Background(),
@@ -952,6 +942,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadIdentity
 
 > AWSConfigReadIdentity(ctx, awsMountPath).Execute()
@@ -978,8 +969,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadIdentity(
 		context.Background(),
@@ -1013,6 +1002,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadIdentityAccessList
 
 > AWSConfigReadIdentityAccessList(ctx, awsMountPath).Execute()
@@ -1039,8 +1029,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadIdentityAccessList(
 		context.Background(),
@@ -1074,6 +1062,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadIdentityWhiteList
 
 > AWSConfigReadIdentityWhiteList(ctx, awsMountPath).Execute()
@@ -1100,8 +1089,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadIdentityWhiteList(
 		context.Background(),
@@ -1135,6 +1122,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadRoleTagBlackList
 
 > AWSConfigReadRoleTagBlackList(ctx, awsMountPath).Execute()
@@ -1161,8 +1149,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadRoleTagBlackList(
 		context.Background(),
@@ -1196,6 +1182,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadRoleTagDenyList
 
 > AWSConfigReadRoleTagDenyList(ctx, awsMountPath).Execute()
@@ -1222,8 +1209,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadRoleTagDenyList(
 		context.Background(),
@@ -1257,6 +1242,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigReadSecurityTokenServiceAccount
 
 > AWSConfigReadSecurityTokenServiceAccount(ctx, accountId, awsMountPath).Execute()
@@ -1285,8 +1271,6 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-
-
 	resp, err := client.Auth.AWSConfigReadSecurityTokenServiceAccount(
 		context.Background(),
 		accountId,
@@ -1322,6 +1306,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigRotateRoot
 
 > AWSConfigRotateRoot(ctx, awsMountPath).Execute()
@@ -1348,8 +1333,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigRotateRoot(
 		context.Background(),
@@ -1383,6 +1366,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteCertificate
 
 > AWSConfigWriteCertificate(ctx, awsMountPath, certName).AWSConfigWriteCertificateRequest(aWSConfigWriteCertificateRequest).Execute()
@@ -1413,7 +1397,6 @@ func main() {
 
 	certName := "certName_example" // string | Name of the certificate.
 	request := schema.NewAWSConfigWriteCertificateRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteCertificate(
 		context.Background(),
 		certName,
@@ -1451,6 +1434,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteClient
 
 > AWSConfigWriteClient(ctx, awsMountPath).AWSConfigWriteClientRequest(aWSConfigWriteClientRequest).Execute()
@@ -1480,7 +1464,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteClientRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteClient(
 		context.Background(),
 		request,
@@ -1515,6 +1498,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteIdentity
 
 > AWSConfigWriteIdentity(ctx, awsMountPath).AWSConfigWriteIdentityRequest(aWSConfigWriteIdentityRequest).Execute()
@@ -1544,7 +1528,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteIdentityRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteIdentity(
 		context.Background(),
 		request,
@@ -1579,6 +1562,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteIdentityAccessList
 
 > AWSConfigWriteIdentityAccessList(ctx, awsMountPath).AWSConfigWriteIdentityAccessListRequest(aWSConfigWriteIdentityAccessListRequest).Execute()
@@ -1608,7 +1592,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteIdentityAccessListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteIdentityAccessList(
 		context.Background(),
 		request,
@@ -1643,6 +1626,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteIdentityWhiteList
 
 > AWSConfigWriteIdentityWhiteList(ctx, awsMountPath).AWSConfigWriteIdentityWhiteListRequest(aWSConfigWriteIdentityWhiteListRequest).Execute()
@@ -1672,7 +1656,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteIdentityWhiteListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteIdentityWhiteList(
 		context.Background(),
 		request,
@@ -1707,6 +1690,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteRoleTagBlackList
 
 > AWSConfigWriteRoleTagBlackList(ctx, awsMountPath).AWSConfigWriteRoleTagBlackListRequest(aWSConfigWriteRoleTagBlackListRequest).Execute()
@@ -1736,7 +1720,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteRoleTagBlackListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteRoleTagBlackList(
 		context.Background(),
 		request,
@@ -1771,6 +1754,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteRoleTagDenyList
 
 > AWSConfigWriteRoleTagDenyList(ctx, awsMountPath).AWSConfigWriteRoleTagDenyListRequest(aWSConfigWriteRoleTagDenyListRequest).Execute()
@@ -1800,7 +1784,6 @@ func main() {
 	}
 
 	request := schema.NewAWSConfigWriteRoleTagDenyListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteRoleTagDenyList(
 		context.Background(),
 		request,
@@ -1835,6 +1818,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSConfigWriteSecurityTokenServiceAccount
 
 > AWSConfigWriteSecurityTokenServiceAccount(ctx, accountId, awsMountPath).AWSConfigWriteSecurityTokenServiceAccountRequest(aWSConfigWriteSecurityTokenServiceAccountRequest).Execute()
@@ -1865,7 +1849,6 @@ func main() {
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 	request := schema.NewAWSConfigWriteSecurityTokenServiceAccountRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteSecurityTokenServiceAccount(
 		context.Background(),
 		accountId,
@@ -1903,6 +1886,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSDeleteAuthRole
 
 > AWSDeleteAuthRole(ctx, awsMountPath, role).Execute()
@@ -1931,8 +1915,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AWSDeleteAuthRole(
 		context.Background(),
 		role,
@@ -1968,6 +1950,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSDeleteIdentityAccessListFor
 
 > AWSDeleteIdentityAccessListFor(ctx, awsMountPath, instanceId).Execute()
@@ -1996,8 +1979,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSDeleteIdentityAccessListFor(
 		context.Background(),
 		instanceId,
@@ -2033,6 +2014,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSDeleteIdentityWhiteListFor
 
 > AWSDeleteIdentityWhiteListFor(ctx, awsMountPath, instanceId).Execute()
@@ -2061,8 +2043,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSDeleteIdentityWhiteListFor(
 		context.Background(),
 		instanceId,
@@ -2098,6 +2078,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSDeleteRoleTagBlackListFor
 
 > AWSDeleteRoleTagBlackListFor(ctx, awsMountPath, roleTag).Execute()
@@ -2126,8 +2107,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSDeleteRoleTagBlackListFor(
 		context.Background(),
 		roleTag,
@@ -2163,6 +2142,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSDeleteRoleTagDenyListFor
 
 > AWSDeleteRoleTagDenyListFor(ctx, awsMountPath, roleTag).Execute()
@@ -2191,8 +2171,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSDeleteRoleTagDenyListFor(
 		context.Background(),
 		roleTag,
@@ -2228,6 +2206,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSListAuthRoles
 
 > AWSListAuthRoles(ctx, awsMountPath).List(list).Execute()
@@ -2254,8 +2233,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListAuthRoles(
 		context.Background(),
@@ -2290,6 +2267,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSListAuthRoles2
 
 > AWSListAuthRoles2(ctx, awsMountPath).List(list).Execute()
@@ -2316,8 +2294,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListAuthRoles2(
 		context.Background(),
@@ -2352,6 +2328,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSListIdentityAccessList
 
 > AWSListIdentityAccessList(ctx, awsMountPath).List(list).Execute()
@@ -2378,8 +2355,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListIdentityAccessList(
 		context.Background(),
@@ -2414,6 +2389,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSListIdentityWhiteList
 
 > AWSListIdentityWhiteList(ctx, awsMountPath).List(list).Execute()
@@ -2440,8 +2416,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListIdentityWhiteList(
 		context.Background(),
@@ -2476,6 +2450,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSListRoleTagBlackList
 
 > AWSListRoleTagBlackList(ctx, awsMountPath).List(list).Execute()
@@ -2502,8 +2477,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListRoleTagBlackList(
 		context.Background(),
@@ -2538,6 +2511,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSListRoleTagDenyList
 
 > AWSListRoleTagDenyList(ctx, awsMountPath).List(list).Execute()
@@ -2564,8 +2538,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListRoleTagDenyList(
 		context.Background(),
@@ -2600,6 +2572,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSLogin
 
 > AWSLogin(ctx, awsMountPath).AWSLoginRequest(aWSLoginRequest).Execute()
@@ -2629,7 +2602,6 @@ func main() {
 	}
 
 	request := schema.NewAWSLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AWSLogin(
 		context.Background(),
 		request,
@@ -2664,6 +2636,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadAuthRole
 
 > AWSReadAuthRole(ctx, awsMountPath, role).Execute()
@@ -2692,8 +2665,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AWSReadAuthRole(
 		context.Background(),
 		role,
@@ -2729,6 +2700,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadIdentityAccessListFor
 
 > AWSReadIdentityAccessListFor(ctx, awsMountPath, instanceId).Execute()
@@ -2757,8 +2729,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSReadIdentityAccessListFor(
 		context.Background(),
 		instanceId,
@@ -2794,6 +2764,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadIdentityWhiteListFor
 
 > AWSReadIdentityWhiteListFor(ctx, awsMountPath, instanceId).Execute()
@@ -2822,8 +2793,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSReadIdentityWhiteListFor(
 		context.Background(),
 		instanceId,
@@ -2859,6 +2828,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadRoleTagBlackListFor
 
 > AWSReadRoleTagBlackListFor(ctx, awsMountPath, roleTag).Execute()
@@ -2887,8 +2857,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSReadRoleTagBlackListFor(
 		context.Background(),
 		roleTag,
@@ -2924,6 +2892,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSReadRoleTagDenyListFor
 
 > AWSReadRoleTagDenyListFor(ctx, awsMountPath, roleTag).Execute()
@@ -2952,8 +2921,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSReadRoleTagDenyListFor(
 		context.Background(),
 		roleTag,
@@ -2989,6 +2956,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteAuthRole
 
 > AWSWriteAuthRole(ctx, awsMountPath, role).AWSWriteAuthRoleRequest(aWSWriteAuthRoleRequest).Execute()
@@ -3019,7 +2987,6 @@ func main() {
 
 	role := "role_example" // string | Name of the role.
 	request := schema.NewAWSWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteAuthRole(
 		context.Background(),
 		role,
@@ -3057,6 +3024,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteAuthRoleTag
 
 > AWSWriteAuthRoleTag(ctx, awsMountPath, role).AWSWriteAuthRoleTagRequest(aWSWriteAuthRoleTagRequest).Execute()
@@ -3087,7 +3055,6 @@ func main() {
 
 	role := "role_example" // string | Name of the role.
 	request := schema.NewAWSWriteAuthRoleTagRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteAuthRoleTag(
 		context.Background(),
 		role,
@@ -3125,6 +3092,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteIdentityAccessListTidySettings
 
 > AWSWriteIdentityAccessListTidySettings(ctx, awsMountPath).AWSWriteIdentityAccessListTidySettingsRequest(aWSWriteIdentityAccessListTidySettingsRequest).Execute()
@@ -3154,7 +3122,6 @@ func main() {
 	}
 
 	request := schema.NewAWSWriteIdentityAccessListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteIdentityAccessListTidySettings(
 		context.Background(),
 		request,
@@ -3189,6 +3156,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteIdentityWhiteListTidySettings
 
 > AWSWriteIdentityWhiteListTidySettings(ctx, awsMountPath).AWSWriteIdentityWhiteListTidySettingsRequest(aWSWriteIdentityWhiteListTidySettingsRequest).Execute()
@@ -3218,7 +3186,6 @@ func main() {
 	}
 
 	request := schema.NewAWSWriteIdentityWhiteListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteIdentityWhiteListTidySettings(
 		context.Background(),
 		request,
@@ -3253,6 +3220,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteRoleTagBlackListFor
 
 > AWSWriteRoleTagBlackListFor(ctx, awsMountPath, roleTag).Execute()
@@ -3281,8 +3249,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSWriteRoleTagBlackListFor(
 		context.Background(),
 		roleTag,
@@ -3318,6 +3284,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteRoleTagBlackListTidySettings
 
 > AWSWriteRoleTagBlackListTidySettings(ctx, awsMountPath).AWSWriteRoleTagBlackListTidySettingsRequest(aWSWriteRoleTagBlackListTidySettingsRequest).Execute()
@@ -3347,7 +3314,6 @@ func main() {
 	}
 
 	request := schema.NewAWSWriteRoleTagBlackListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteRoleTagBlackListTidySettings(
 		context.Background(),
 		request,
@@ -3382,6 +3348,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteRoleTagDenyListFor
 
 > AWSWriteRoleTagDenyListFor(ctx, awsMountPath, roleTag).Execute()
@@ -3410,8 +3377,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSWriteRoleTagDenyListFor(
 		context.Background(),
 		roleTag,
@@ -3447,6 +3412,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AWSWriteRoleTagDenyListTidySettings
 
 > AWSWriteRoleTagDenyListTidySettings(ctx, awsMountPath).AWSWriteRoleTagDenyListTidySettingsRequest(aWSWriteRoleTagDenyListTidySettingsRequest).Execute()
@@ -3476,7 +3442,6 @@ func main() {
 	}
 
 	request := schema.NewAWSWriteRoleTagDenyListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteRoleTagDenyListTidySettings(
 		context.Background(),
 		request,
@@ -3511,6 +3476,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudDeleteAuthRole
 
 > AliCloudDeleteAuthRole(ctx, alicloudMountPath, role).Execute()
@@ -3539,8 +3505,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-
-
 	resp, err := client.Auth.AliCloudDeleteAuthRole(
 		context.Background(),
 		role,
@@ -3576,6 +3540,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudListAuthRoles
 
 > AliCloudListAuthRoles(ctx, alicloudMountPath).List(list).Execute()
@@ -3602,8 +3567,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AliCloudListAuthRoles(
 		context.Background(),
@@ -3638,6 +3601,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudListAuthRoles2
 
 > AliCloudListAuthRoles2(ctx, alicloudMountPath).List(list).Execute()
@@ -3664,8 +3628,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AliCloudListAuthRoles2(
 		context.Background(),
@@ -3700,6 +3662,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudLogin
 
 > AliCloudLogin(ctx, alicloudMountPath).AliCloudLoginRequest(aliCloudLoginRequest).Execute()
@@ -3729,7 +3692,6 @@ func main() {
 	}
 
 	request := schema.NewAliCloudLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
 		request,
@@ -3764,6 +3726,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudReadAuthRole
 
 > AliCloudReadAuthRole(ctx, alicloudMountPath, role).Execute()
@@ -3792,8 +3755,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-
-
 	resp, err := client.Auth.AliCloudReadAuthRole(
 		context.Background(),
 		role,
@@ -3829,6 +3790,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AliCloudWriteAuthRole
 
 > AliCloudWriteAuthRole(ctx, alicloudMountPath, role).AliCloudWriteAuthRoleRequest(aliCloudWriteAuthRoleRequest).Execute()
@@ -3859,7 +3821,6 @@ func main() {
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
 	request := schema.NewAliCloudWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AliCloudWriteAuthRole(
 		context.Background(),
 		role,
@@ -3897,6 +3858,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteBindSecretID
 
 > AppRoleDeleteBindSecretID(ctx, approleMountPath, roleName).Execute()
@@ -3925,8 +3887,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteBindSecretID(
 		context.Background(),
 		roleName,
@@ -3962,6 +3922,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteBoundCIDRList
 
 > AppRoleDeleteBoundCIDRList(ctx, approleMountPath, roleName).Execute()
@@ -3990,8 +3951,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteBoundCIDRList(
 		context.Background(),
 		roleName,
@@ -4027,6 +3986,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeletePeriod
 
 > AppRoleDeletePeriod(ctx, approleMountPath, roleName).Execute()
@@ -4055,8 +4015,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeletePeriod(
 		context.Background(),
 		roleName,
@@ -4092,6 +4050,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeletePolicies
 
 > AppRoleDeletePolicies(ctx, approleMountPath, roleName).Execute()
@@ -4120,8 +4079,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeletePolicies(
 		context.Background(),
 		roleName,
@@ -4157,6 +4114,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteRole
 
 > AppRoleDeleteRole(ctx, approleMountPath, roleName).Execute()
@@ -4185,8 +4143,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteRole(
 		context.Background(),
 		roleName,
@@ -4222,6 +4178,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteSecretIDAccessorDestroy
 
 > AppRoleDeleteSecretIDAccessorDestroy(ctx, approleMountPath, roleName).Execute()
@@ -4250,8 +4207,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDAccessorDestroy(
 		context.Background(),
 		roleName,
@@ -4287,6 +4242,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteSecretIDBoundCIDRs
 
 > AppRoleDeleteSecretIDBoundCIDRs(ctx, approleMountPath, roleName).Execute()
@@ -4315,8 +4271,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -4352,6 +4306,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteSecretIDDestroy
 
 > AppRoleDeleteSecretIDDestroy(ctx, approleMountPath, roleName).Execute()
@@ -4380,8 +4335,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDDestroy(
 		context.Background(),
 		roleName,
@@ -4417,6 +4370,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteSecretIDNumUses
 
 > AppRoleDeleteSecretIDNumUses(ctx, approleMountPath, roleName).Execute()
@@ -4445,8 +4399,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDNumUses(
 		context.Background(),
 		roleName,
@@ -4482,6 +4434,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteSecretIDTTL
 
 > AppRoleDeleteSecretIDTTL(ctx, approleMountPath, roleName).Execute()
@@ -4510,8 +4463,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDTTL(
 		context.Background(),
 		roleName,
@@ -4547,6 +4498,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteTokenBoundCIDRs
 
 > AppRoleDeleteTokenBoundCIDRs(ctx, approleMountPath, roleName).Execute()
@@ -4575,8 +4527,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -4612,6 +4562,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteTokenMaxTTL
 
 > AppRoleDeleteTokenMaxTTL(ctx, approleMountPath, roleName).Execute()
@@ -4640,8 +4591,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenMaxTTL(
 		context.Background(),
 		roleName,
@@ -4677,6 +4626,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteTokenNumUses
 
 > AppRoleDeleteTokenNumUses(ctx, approleMountPath, roleName).Execute()
@@ -4705,8 +4655,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenNumUses(
 		context.Background(),
 		roleName,
@@ -4742,6 +4690,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleDeleteTokenTTL
 
 > AppRoleDeleteTokenTTL(ctx, approleMountPath, roleName).Execute()
@@ -4770,8 +4719,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenTTL(
 		context.Background(),
 		roleName,
@@ -4807,6 +4754,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleListRoles
 
 > AppRoleListRolesResponse AppRoleListRoles(ctx, approleMountPath).List(list).Execute()
@@ -4833,8 +4781,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AppRoleListRoles(
 		context.Background(),
@@ -4869,6 +4815,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleListSecretID
 
 > AppRoleListSecretIDResponse AppRoleListSecretID(ctx, approleMountPath, roleName).List(list).Execute()
@@ -4897,8 +4844,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleListSecretID(
 		context.Background(),
 		roleName,
@@ -4935,6 +4880,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleLogin
 
 > AppRoleLogin(ctx, approleMountPath).AppRoleLoginRequest(appRoleLoginRequest).Execute()
@@ -4964,7 +4910,6 @@ func main() {
 	}
 
 	request := schema.NewAppRoleLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
 		request,
@@ -4999,6 +4944,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadBindSecretID
 
 > AppRoleReadBindSecretIDResponse AppRoleReadBindSecretID(ctx, approleMountPath, roleName).Execute()
@@ -5027,8 +4973,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadBindSecretID(
 		context.Background(),
 		roleName,
@@ -5064,6 +5008,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadBoundCIDRList
 
 > AppRoleReadBoundCIDRListResponse AppRoleReadBoundCIDRList(ctx, approleMountPath, roleName).Execute()
@@ -5092,8 +5037,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadBoundCIDRList(
 		context.Background(),
 		roleName,
@@ -5129,6 +5072,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadLocalSecretIDs
 
 > AppRoleReadLocalSecretIDsResponse AppRoleReadLocalSecretIDs(ctx, approleMountPath, roleName).Execute()
@@ -5157,8 +5101,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadLocalSecretIDs(
 		context.Background(),
 		roleName,
@@ -5194,6 +5136,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadPeriod
 
 > AppRoleReadPeriodResponse AppRoleReadPeriod(ctx, approleMountPath, roleName).Execute()
@@ -5222,8 +5165,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadPeriod(
 		context.Background(),
 		roleName,
@@ -5259,6 +5200,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadPolicies
 
 > AppRoleReadPoliciesResponse AppRoleReadPolicies(ctx, approleMountPath, roleName).Execute()
@@ -5287,8 +5229,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadPolicies(
 		context.Background(),
 		roleName,
@@ -5324,6 +5264,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadRole
 
 > AppRoleReadRoleResponse AppRoleReadRole(ctx, approleMountPath, roleName).Execute()
@@ -5352,8 +5293,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadRole(
 		context.Background(),
 		roleName,
@@ -5389,6 +5328,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadRoleID
 
 > AppRoleReadRoleIDResponse AppRoleReadRoleID(ctx, approleMountPath, roleName).Execute()
@@ -5417,8 +5357,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadRoleID(
 		context.Background(),
 		roleName,
@@ -5454,6 +5392,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadSecretIDBoundCIDRs
 
 > AppRoleReadSecretIDBoundCIDRsResponse AppRoleReadSecretIDBoundCIDRs(ctx, approleMountPath, roleName).Execute()
@@ -5482,8 +5421,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadSecretIDBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -5519,6 +5456,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadSecretIDNumUses
 
 > AppRoleReadSecretIDNumUsesResponse AppRoleReadSecretIDNumUses(ctx, approleMountPath, roleName).Execute()
@@ -5547,8 +5485,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadSecretIDNumUses(
 		context.Background(),
 		roleName,
@@ -5584,6 +5520,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadSecretIDTTL
 
 > AppRoleReadSecretIDTTLResponse AppRoleReadSecretIDTTL(ctx, approleMountPath, roleName).Execute()
@@ -5612,8 +5549,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadSecretIDTTL(
 		context.Background(),
 		roleName,
@@ -5649,6 +5584,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadTokenBoundCIDRs
 
 > AppRoleReadTokenBoundCIDRsResponse AppRoleReadTokenBoundCIDRs(ctx, approleMountPath, roleName).Execute()
@@ -5677,8 +5613,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -5714,6 +5648,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadTokenMaxTTL
 
 > AppRoleReadTokenMaxTTLResponse AppRoleReadTokenMaxTTL(ctx, approleMountPath, roleName).Execute()
@@ -5742,8 +5677,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenMaxTTL(
 		context.Background(),
 		roleName,
@@ -5779,6 +5712,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadTokenNumUses
 
 > AppRoleReadTokenNumUsesResponse AppRoleReadTokenNumUses(ctx, approleMountPath, roleName).Execute()
@@ -5807,8 +5741,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenNumUses(
 		context.Background(),
 		roleName,
@@ -5844,6 +5776,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleReadTokenTTL
 
 > AppRoleReadTokenTTLResponse AppRoleReadTokenTTL(ctx, approleMountPath, roleName).Execute()
@@ -5872,8 +5805,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenTTL(
 		context.Background(),
 		roleName,
@@ -5909,6 +5840,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleTidySecretID
 
 > AppRoleTidySecretID(ctx, approleMountPath).Execute()
@@ -5935,8 +5867,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AppRoleTidySecretID(
 		context.Background(),
@@ -5970,6 +5900,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteBindSecretID
 
 > AppRoleWriteBindSecretID(ctx, approleMountPath, roleName).AppRoleWriteBindSecretIDRequest(appRoleWriteBindSecretIDRequest).Execute()
@@ -6000,7 +5931,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteBindSecretIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteBindSecretID(
 		context.Background(),
 		roleName,
@@ -6038,6 +5968,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteBoundCIDRList
 
 > AppRoleWriteBoundCIDRList(ctx, approleMountPath, roleName).AppRoleWriteBoundCIDRListRequest(appRoleWriteBoundCIDRListRequest).Execute()
@@ -6068,7 +5999,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteBoundCIDRListRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteBoundCIDRList(
 		context.Background(),
 		roleName,
@@ -6106,6 +6036,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteCustomSecretID
 
 > AppRoleWriteCustomSecretIDResponse AppRoleWriteCustomSecretID(ctx, approleMountPath, roleName).AppRoleWriteCustomSecretIDRequest(appRoleWriteCustomSecretIDRequest).Execute()
@@ -6136,7 +6067,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteCustomSecretIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteCustomSecretID(
 		context.Background(),
 		roleName,
@@ -6174,6 +6104,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWritePeriod
 
 > AppRoleWritePeriod(ctx, approleMountPath, roleName).AppRoleWritePeriodRequest(appRoleWritePeriodRequest).Execute()
@@ -6204,7 +6135,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWritePeriodRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWritePeriod(
 		context.Background(),
 		roleName,
@@ -6242,6 +6172,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWritePolicies
 
 > AppRoleWritePolicies(ctx, approleMountPath, roleName).AppRoleWritePoliciesRequest(appRoleWritePoliciesRequest).Execute()
@@ -6272,7 +6203,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWritePoliciesRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWritePolicies(
 		context.Background(),
 		roleName,
@@ -6310,6 +6240,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteRole
 
 > AppRoleWriteRole(ctx, approleMountPath, roleName).AppRoleWriteRoleRequest(appRoleWriteRoleRequest).Execute()
@@ -6340,7 +6271,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteRole(
 		context.Background(),
 		roleName,
@@ -6378,6 +6308,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteRoleID
 
 > AppRoleWriteRoleID(ctx, approleMountPath, roleName).AppRoleWriteRoleIDRequest(appRoleWriteRoleIDRequest).Execute()
@@ -6408,7 +6339,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteRoleIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteRoleID(
 		context.Background(),
 		roleName,
@@ -6446,6 +6376,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretID
 
 > AppRoleWriteSecretIDResponse AppRoleWriteSecretID(ctx, approleMountPath, roleName).AppRoleWriteSecretIDRequest(appRoleWriteSecretIDRequest).Execute()
@@ -6476,7 +6407,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretID(
 		context.Background(),
 		roleName,
@@ -6514,6 +6444,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretIDAccessorDestroy
 
 > AppRoleWriteSecretIDAccessorDestroy(ctx, approleMountPath, roleName).AppRoleWriteSecretIDAccessorDestroyRequest(appRoleWriteSecretIDAccessorDestroyRequest).Execute()
@@ -6544,7 +6475,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDAccessorDestroyRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDAccessorDestroy(
 		context.Background(),
 		roleName,
@@ -6582,6 +6512,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretIDAccessorLookup
 
 > AppRoleWriteSecretIDAccessorLookupResponse AppRoleWriteSecretIDAccessorLookup(ctx, approleMountPath, roleName).AppRoleWriteSecretIDAccessorLookupRequest(appRoleWriteSecretIDAccessorLookupRequest).Execute()
@@ -6612,7 +6543,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDAccessorLookupRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDAccessorLookup(
 		context.Background(),
 		roleName,
@@ -6650,6 +6580,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretIDBoundCIDRs
 
 > AppRoleWriteSecretIDBoundCIDRs(ctx, approleMountPath, roleName).AppRoleWriteSecretIDBoundCIDRsRequest(appRoleWriteSecretIDBoundCIDRsRequest).Execute()
@@ -6680,7 +6611,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -6718,6 +6648,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretIDDestroy
 
 > AppRoleWriteSecretIDDestroy(ctx, approleMountPath, roleName).AppRoleWriteSecretIDDestroyRequest(appRoleWriteSecretIDDestroyRequest).Execute()
@@ -6748,7 +6679,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDDestroyRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDDestroy(
 		context.Background(),
 		roleName,
@@ -6786,6 +6716,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretIDLookup
 
 > AppRoleWriteSecretIDLookupResponse AppRoleWriteSecretIDLookup(ctx, approleMountPath, roleName).AppRoleWriteSecretIDLookupRequest(appRoleWriteSecretIDLookupRequest).Execute()
@@ -6816,7 +6747,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDLookupRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDLookup(
 		context.Background(),
 		roleName,
@@ -6854,6 +6784,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretIDNumUses
 
 > AppRoleWriteSecretIDNumUses(ctx, approleMountPath, roleName).AppRoleWriteSecretIDNumUsesRequest(appRoleWriteSecretIDNumUsesRequest).Execute()
@@ -6884,7 +6815,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDNumUsesRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDNumUses(
 		context.Background(),
 		roleName,
@@ -6922,6 +6852,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteSecretIDTTL
 
 > AppRoleWriteSecretIDTTL(ctx, approleMountPath, roleName).AppRoleWriteSecretIDTTLRequest(appRoleWriteSecretIDTTLRequest).Execute()
@@ -6952,7 +6883,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteSecretIDTTLRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDTTL(
 		context.Background(),
 		roleName,
@@ -6990,6 +6920,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteTokenBoundCIDRs
 
 > AppRoleWriteTokenBoundCIDRs(ctx, approleMountPath, roleName).AppRoleWriteTokenBoundCIDRsRequest(appRoleWriteTokenBoundCIDRsRequest).Execute()
@@ -7020,7 +6951,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteTokenBoundCIDRsRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -7058,6 +6988,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteTokenMaxTTL
 
 > AppRoleWriteTokenMaxTTL(ctx, approleMountPath, roleName).AppRoleWriteTokenMaxTTLRequest(appRoleWriteTokenMaxTTLRequest).Execute()
@@ -7088,7 +7019,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteTokenMaxTTLRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenMaxTTL(
 		context.Background(),
 		roleName,
@@ -7126,6 +7056,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteTokenNumUses
 
 > AppRoleWriteTokenNumUses(ctx, approleMountPath, roleName).AppRoleWriteTokenNumUsesRequest(appRoleWriteTokenNumUsesRequest).Execute()
@@ -7156,7 +7087,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteTokenNumUsesRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
 		context.Background(),
 		roleName,
@@ -7194,6 +7124,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AppRoleWriteTokenTTL
 
 > AppRoleWriteTokenTTL(ctx, approleMountPath, roleName).AppRoleWriteTokenTTLRequest(appRoleWriteTokenTTLRequest).Execute()
@@ -7224,7 +7155,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
 	request := schema.NewAppRoleWriteTokenTTLRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenTTL(
 		context.Background(),
 		roleName,
@@ -7262,6 +7192,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureDeleteAuthConfig
 
 > AzureDeleteAuthConfig(ctx, azureMountPath).Execute()
@@ -7288,8 +7219,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AzureDeleteAuthConfig(
 		context.Background(),
@@ -7323,6 +7252,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureDeleteAuthRole
 
 > AzureDeleteAuthRole(ctx, azureMountPath, name).Execute()
@@ -7351,8 +7281,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AzureDeleteAuthRole(
 		context.Background(),
 		name,
@@ -7388,6 +7316,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureListAuthRoles
 
 > AzureListAuthRoles(ctx, azureMountPath).List(list).Execute()
@@ -7414,8 +7343,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AzureListAuthRoles(
 		context.Background(),
@@ -7450,6 +7377,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureLogin
 
 > AzureLogin(ctx, azureMountPath).AzureLoginRequest(azureLoginRequest).Execute()
@@ -7479,7 +7407,6 @@ func main() {
 	}
 
 	request := schema.NewAzureLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
 		request,
@@ -7514,6 +7441,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureReadAuthConfig
 
 > AzureReadAuthConfig(ctx, azureMountPath).Execute()
@@ -7540,8 +7468,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AzureReadAuthConfig(
 		context.Background(),
@@ -7575,6 +7501,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureReadAuthRole
 
 > AzureReadAuthRole(ctx, azureMountPath, name).Execute()
@@ -7603,8 +7530,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AzureReadAuthRole(
 		context.Background(),
 		name,
@@ -7640,6 +7565,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureWriteAuthConfig
 
 > AzureWriteAuthConfig(ctx, azureMountPath).AzureWriteAuthConfigRequest(azureWriteAuthConfigRequest).Execute()
@@ -7669,7 +7595,6 @@ func main() {
 	}
 
 	request := schema.NewAzureWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.AzureWriteAuthConfig(
 		context.Background(),
 		request,
@@ -7704,6 +7629,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## AzureWriteAuthRole
 
 > AzureWriteAuthRole(ctx, azureMountPath, name).AzureWriteAuthRoleRequest(azureWriteAuthRoleRequest).Execute()
@@ -7734,7 +7660,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewAzureWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AzureWriteAuthRole(
 		context.Background(),
 		name,
@@ -7772,6 +7697,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CentrifyLogin
 
 > CentrifyLogin(ctx, centrifyMountPath).CentrifyLoginRequest(centrifyLoginRequest).Execute()
@@ -7801,7 +7727,6 @@ func main() {
 	}
 
 	request := schema.NewCentrifyLoginRequestWithDefaults()
-
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
 		request,
@@ -7836,6 +7761,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CentrifyReadConfig
 
 > CentrifyReadConfig(ctx, centrifyMountPath).Execute()
@@ -7862,8 +7788,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CentrifyReadConfig(
 		context.Background(),
@@ -7897,6 +7821,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CentrifyWriteConfig
 
 > CentrifyWriteConfig(ctx, centrifyMountPath).CentrifyWriteConfigRequest(centrifyWriteConfigRequest).Execute()
@@ -7926,7 +7851,6 @@ func main() {
 	}
 
 	request := schema.NewCentrifyWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.CentrifyWriteConfig(
 		context.Background(),
 		request,
@@ -7961,6 +7885,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesDelete
 
 > CertificatesDelete(ctx, certMountPath, name).Execute()
@@ -7989,8 +7914,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesDelete(
 		context.Background(),
 		name,
@@ -8026,6 +7949,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesDeleteCRL
 
 > CertificatesDeleteCRL(ctx, certMountPath, name).Execute()
@@ -8054,8 +7978,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesDeleteCRL(
 		context.Background(),
 		name,
@@ -8091,6 +8013,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesList
 
 > CertificatesList(ctx, certMountPath).List(list).Execute()
@@ -8117,8 +8040,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CertificatesList(
 		context.Background(),
@@ -8153,6 +8074,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesListCRLs
 
 > CertificatesListCRLs(ctx, certMountPath).List(list).Execute()
@@ -8179,8 +8101,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CertificatesListCRLs(
 		context.Background(),
@@ -8215,6 +8135,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesLogin
 
 > CertificatesLogin(ctx, certMountPath).CertificatesLoginRequest(certificatesLoginRequest).Execute()
@@ -8244,7 +8165,6 @@ func main() {
 	}
 
 	request := schema.NewCertificatesLoginRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesLogin(
 		context.Background(),
 		request,
@@ -8279,6 +8199,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesRead
 
 > CertificatesRead(ctx, certMountPath, name).Execute()
@@ -8307,8 +8228,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesRead(
 		context.Background(),
 		name,
@@ -8344,6 +8263,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesReadCRL
 
 > CertificatesReadCRL(ctx, certMountPath, name).Execute()
@@ -8372,8 +8292,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesReadCRL(
 		context.Background(),
 		name,
@@ -8409,6 +8327,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesReadConfig
 
 > CertificatesReadConfig(ctx, certMountPath).Execute()
@@ -8435,8 +8354,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CertificatesReadConfig(
 		context.Background(),
@@ -8470,6 +8387,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesWrite
 
 > CertificatesWrite(ctx, certMountPath, name).CertificatesWriteRequest(certificatesWriteRequest).Execute()
@@ -8500,7 +8418,6 @@ func main() {
 
 	name := "name_example" // string | The name of the certificate
 	request := schema.NewCertificatesWriteRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesWrite(
 		context.Background(),
 		name,
@@ -8538,6 +8455,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesWriteCRL
 
 > CertificatesWriteCRL(ctx, certMountPath, name).CertificatesWriteCRLRequest(certificatesWriteCRLRequest).Execute()
@@ -8568,7 +8486,6 @@ func main() {
 
 	name := "name_example" // string | The name of the certificate
 	request := schema.NewCertificatesWriteCRLRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesWriteCRL(
 		context.Background(),
 		name,
@@ -8606,6 +8523,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CertificatesWriteConfig
 
 > CertificatesWriteConfig(ctx, certMountPath).CertificatesWriteConfigRequest(certificatesWriteConfigRequest).Execute()
@@ -8635,7 +8553,6 @@ func main() {
 	}
 
 	request := schema.NewCertificatesWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesWriteConfig(
 		context.Background(),
 		request,
@@ -8670,6 +8587,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryDeleteConfig
 
 > CloudFoundryDeleteConfig(ctx, cfMountPath).Execute()
@@ -8696,8 +8614,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CloudFoundryDeleteConfig(
 		context.Background(),
@@ -8731,6 +8647,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryDeleteRole
 
 > CloudFoundryDeleteRole(ctx, cfMountPath, role).Execute()
@@ -8759,8 +8676,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-
-
 	resp, err := client.Auth.CloudFoundryDeleteRole(
 		context.Background(),
 		role,
@@ -8796,6 +8711,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryListRoles
 
 > CloudFoundryListRoles(ctx, cfMountPath).List(list).Execute()
@@ -8822,8 +8738,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CloudFoundryListRoles(
 		context.Background(),
@@ -8858,6 +8772,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryLogin
 
 > CloudFoundryLogin(ctx, cfMountPath).CloudFoundryLoginRequest(cloudFoundryLoginRequest).Execute()
@@ -8887,7 +8802,6 @@ func main() {
 	}
 
 	request := schema.NewCloudFoundryLoginRequestWithDefaults()
-
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
 		request,
@@ -8922,6 +8836,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryReadConfig
 
 > CloudFoundryReadConfig(ctx, cfMountPath).Execute()
@@ -8948,8 +8863,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CloudFoundryReadConfig(
 		context.Background(),
@@ -8983,6 +8896,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryReadRole
 
 > CloudFoundryReadRole(ctx, cfMountPath, role).Execute()
@@ -9011,8 +8925,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-
-
 	resp, err := client.Auth.CloudFoundryReadRole(
 		context.Background(),
 		role,
@@ -9048,6 +8960,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryWriteConfig
 
 > CloudFoundryWriteConfig(ctx, cfMountPath).CloudFoundryWriteConfigRequest(cloudFoundryWriteConfigRequest).Execute()
@@ -9077,7 +8990,6 @@ func main() {
 	}
 
 	request := schema.NewCloudFoundryWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.CloudFoundryWriteConfig(
 		context.Background(),
 		request,
@@ -9112,6 +9024,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## CloudFoundryWriteRole
 
 > CloudFoundryWriteRole(ctx, cfMountPath, role).CloudFoundryWriteRoleRequest(cloudFoundryWriteRoleRequest).Execute()
@@ -9142,7 +9055,6 @@ func main() {
 
 	role := "role_example" // string | The name of the role.
 	request := schema.NewCloudFoundryWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.CloudFoundryWriteRole(
 		context.Background(),
 		role,
@@ -9180,6 +9092,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubDeleteMapTeam
 
 > GitHubDeleteMapTeam(ctx, githubMountPath, key).Execute()
@@ -9208,8 +9121,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-
-
 	resp, err := client.Auth.GitHubDeleteMapTeam(
 		context.Background(),
 		key,
@@ -9245,6 +9156,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubDeleteMapUser
 
 > GitHubDeleteMapUser(ctx, githubMountPath, key).Execute()
@@ -9273,8 +9185,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-
-
 	resp, err := client.Auth.GitHubDeleteMapUser(
 		context.Background(),
 		key,
@@ -9310,6 +9220,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubLogin
 
 > GitHubLogin(ctx, githubMountPath).GitHubLoginRequest(gitHubLoginRequest).Execute()
@@ -9339,7 +9250,6 @@ func main() {
 	}
 
 	request := schema.NewGitHubLoginRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubLogin(
 		context.Background(),
 		request,
@@ -9374,6 +9284,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubReadConfig
 
 > GitHubReadConfig(ctx, githubMountPath).Execute()
@@ -9400,8 +9311,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.GitHubReadConfig(
 		context.Background(),
@@ -9435,6 +9344,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubReadMapTeam
 
 > GitHubReadMapTeam(ctx, githubMountPath, key).Execute()
@@ -9463,8 +9373,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-
-
 	resp, err := client.Auth.GitHubReadMapTeam(
 		context.Background(),
 		key,
@@ -9500,6 +9408,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubReadMapTeams
 
 > GitHubReadMapTeams(ctx, githubMountPath).List(list).Execute()
@@ -9526,8 +9435,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Auth.GitHubReadMapTeams(
@@ -9564,6 +9471,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubReadMapUser
 
 > GitHubReadMapUser(ctx, githubMountPath, key).Execute()
@@ -9592,8 +9500,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-
-
 	resp, err := client.Auth.GitHubReadMapUser(
 		context.Background(),
 		key,
@@ -9629,6 +9535,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubReadMapUsers
 
 > GitHubReadMapUsers(ctx, githubMountPath).List(list).Execute()
@@ -9655,8 +9562,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Auth.GitHubReadMapUsers(
@@ -9693,6 +9598,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubWriteConfig
 
 > GitHubWriteConfig(ctx, githubMountPath).GitHubWriteConfigRequest(gitHubWriteConfigRequest).Execute()
@@ -9722,7 +9628,6 @@ func main() {
 	}
 
 	request := schema.NewGitHubWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubWriteConfig(
 		context.Background(),
 		request,
@@ -9757,6 +9662,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubWriteMapTeam
 
 > GitHubWriteMapTeam(ctx, githubMountPath, key).GitHubWriteMapTeamRequest(gitHubWriteMapTeamRequest).Execute()
@@ -9787,7 +9693,6 @@ func main() {
 
 	key := "key_example" // string | Key for the teams mapping
 	request := schema.NewGitHubWriteMapTeamRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubWriteMapTeam(
 		context.Background(),
 		key,
@@ -9825,6 +9730,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GitHubWriteMapUser
 
 > GitHubWriteMapUser(ctx, githubMountPath, key).GitHubWriteMapUserRequest(gitHubWriteMapUserRequest).Execute()
@@ -9855,7 +9761,6 @@ func main() {
 
 	key := "key_example" // string | Key for the users mapping
 	request := schema.NewGitHubWriteMapUserRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubWriteMapUser(
 		context.Background(),
 		key,
@@ -9893,6 +9798,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudDeleteRole
 
 > GoogleCloudDeleteRole(ctx, gcpMountPath, name).Execute()
@@ -9921,8 +9827,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.GoogleCloudDeleteRole(
 		context.Background(),
 		name,
@@ -9958,6 +9862,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudListRoles
 
 > GoogleCloudListRoles(ctx, gcpMountPath).List(list).Execute()
@@ -9984,8 +9889,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.GoogleCloudListRoles(
 		context.Background(),
@@ -10020,6 +9923,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudListRoles2
 
 > GoogleCloudListRoles2(ctx, gcpMountPath).List(list).Execute()
@@ -10046,8 +9950,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.GoogleCloudListRoles2(
 		context.Background(),
@@ -10082,6 +9984,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudLogin
 
 > GoogleCloudLogin(ctx, gcpMountPath).GoogleCloudLoginRequest(googleCloudLoginRequest).Execute()
@@ -10111,7 +10014,6 @@ func main() {
 	}
 
 	request := schema.NewGoogleCloudLoginRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
 		request,
@@ -10146,6 +10048,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadAuthConfig
 
 > GoogleCloudReadAuthConfig(ctx, gcpMountPath).Execute()
@@ -10172,8 +10075,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.GoogleCloudReadAuthConfig(
 		context.Background(),
@@ -10207,6 +10108,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudReadRole
 
 > GoogleCloudReadRole(ctx, gcpMountPath, name).Execute()
@@ -10235,8 +10137,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.GoogleCloudReadRole(
 		context.Background(),
 		name,
@@ -10272,6 +10172,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteAuthConfig
 
 > GoogleCloudWriteAuthConfig(ctx, gcpMountPath).GoogleCloudWriteAuthConfigRequest(googleCloudWriteAuthConfigRequest).Execute()
@@ -10301,7 +10202,6 @@ func main() {
 	}
 
 	request := schema.NewGoogleCloudWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteAuthConfig(
 		context.Background(),
 		request,
@@ -10336,6 +10236,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteRole
 
 > GoogleCloudWriteRole(ctx, gcpMountPath, name).GoogleCloudWriteRoleRequest(googleCloudWriteRoleRequest).Execute()
@@ -10366,7 +10267,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewGoogleCloudWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteRole(
 		context.Background(),
 		name,
@@ -10404,6 +10304,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteRoleLabels
 
 > GoogleCloudWriteRoleLabels(ctx, gcpMountPath, name).GoogleCloudWriteRoleLabelsRequest(googleCloudWriteRoleLabelsRequest).Execute()
@@ -10434,7 +10335,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewGoogleCloudWriteRoleLabelsRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteRoleLabels(
 		context.Background(),
 		name,
@@ -10472,6 +10372,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## GoogleCloudWriteRoleServiceAccounts
 
 > GoogleCloudWriteRoleServiceAccounts(ctx, gcpMountPath, name).GoogleCloudWriteRoleServiceAccountsRequest(googleCloudWriteRoleServiceAccountsRequest).Execute()
@@ -10502,7 +10403,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewGoogleCloudWriteRoleServiceAccountsRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteRoleServiceAccounts(
 		context.Background(),
 		name,
@@ -10540,6 +10440,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTDeleteRole
 
 > JWTDeleteRole(ctx, jwtMountPath, name).Execute()
@@ -10568,8 +10469,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.JWTDeleteRole(
 		context.Background(),
 		name,
@@ -10605,6 +10504,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTListRoles
 
 > JWTListRoles(ctx, jwtMountPath).List(list).Execute()
@@ -10633,8 +10533,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.JWTListRoles(
 		context.Background(),
@@ -10669,6 +10567,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTLogin
 
 > JWTLogin(ctx, jwtMountPath).JWTLoginRequest(jWTLoginRequest).Execute()
@@ -10698,7 +10597,6 @@ func main() {
 	}
 
 	request := schema.NewJWTLoginRequestWithDefaults()
-
 	resp, err := client.Auth.JWTLogin(
 		context.Background(),
 		request,
@@ -10733,6 +10631,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTReadConfig
 
 > JWTReadConfig(ctx, jwtMountPath).Execute()
@@ -10759,8 +10658,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.JWTReadConfig(
 		context.Background(),
@@ -10794,6 +10691,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTReadOIDCCallback
 
 > JWTReadOIDCCallback(ctx, jwtMountPath).Execute()
@@ -10820,8 +10718,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.JWTReadOIDCCallback(
 		context.Background(),
@@ -10855,6 +10751,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTReadRole
 
 > JWTReadRole(ctx, jwtMountPath, name).Execute()
@@ -10883,8 +10780,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.JWTReadRole(
 		context.Background(),
 		name,
@@ -10920,6 +10815,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTWriteConfig
 
 > JWTWriteConfig(ctx, jwtMountPath).JWTWriteConfigRequest(jWTWriteConfigRequest).Execute()
@@ -10951,7 +10847,6 @@ func main() {
 	}
 
 	request := schema.NewJWTWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteConfig(
 		context.Background(),
 		request,
@@ -10986,6 +10881,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTWriteOIDCAuthURL
 
 > JWTWriteOIDCAuthURL(ctx, jwtMountPath).JWTWriteOIDCAuthURLRequest(jWTWriteOIDCAuthURLRequest).Execute()
@@ -11015,7 +10911,6 @@ func main() {
 	}
 
 	request := schema.NewJWTWriteOIDCAuthURLRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteOIDCAuthURL(
 		context.Background(),
 		request,
@@ -11050,6 +10945,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTWriteOIDCCallback
 
 > JWTWriteOIDCCallback(ctx, jwtMountPath).JWTWriteOIDCCallbackRequest(jWTWriteOIDCCallbackRequest).Execute()
@@ -11079,7 +10975,6 @@ func main() {
 	}
 
 	request := schema.NewJWTWriteOIDCCallbackRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteOIDCCallback(
 		context.Background(),
 		request,
@@ -11114,6 +11009,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## JWTWriteRole
 
 > JWTWriteRole(ctx, jwtMountPath, name).JWTWriteRoleRequest(jWTWriteRoleRequest).Execute()
@@ -11146,7 +11042,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewJWTWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteRole(
 		context.Background(),
 		name,
@@ -11184,6 +11079,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosDeleteGroup
 
 > KerberosDeleteGroup(ctx, kerberosMountPath, name).Execute()
@@ -11212,8 +11108,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.KerberosDeleteGroup(
 		context.Background(),
 		name,
@@ -11249,6 +11143,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosListGroups
 
 > KerberosListGroups(ctx, kerberosMountPath).List(list).Execute()
@@ -11275,8 +11170,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.KerberosListGroups(
 		context.Background(),
@@ -11311,6 +11204,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosLogin
 
 > KerberosLogin(ctx, kerberosMountPath).KerberosLoginRequest(kerberosLoginRequest).Execute()
@@ -11340,7 +11234,6 @@ func main() {
 	}
 
 	request := schema.NewKerberosLoginRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
 		request,
@@ -11375,6 +11268,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosReadConfig
 
 > KerberosReadConfig(ctx, kerberosMountPath).Execute()
@@ -11401,8 +11295,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.KerberosReadConfig(
 		context.Background(),
@@ -11436,6 +11328,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosReadGroup
 
 > KerberosReadGroup(ctx, kerberosMountPath, name).Execute()
@@ -11464,8 +11357,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.KerberosReadGroup(
 		context.Background(),
 		name,
@@ -11501,6 +11392,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosReadLDAPConfig
 
 > KerberosReadLDAPConfig(ctx, kerberosMountPath).Execute()
@@ -11527,8 +11419,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.KerberosReadLDAPConfig(
 		context.Background(),
@@ -11562,6 +11452,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosWriteConfig
 
 > KerberosWriteConfig(ctx, kerberosMountPath).KerberosWriteConfigRequest(kerberosWriteConfigRequest).Execute()
@@ -11591,7 +11482,6 @@ func main() {
 	}
 
 	request := schema.NewKerberosWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosWriteConfig(
 		context.Background(),
 		request,
@@ -11626,6 +11516,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosWriteGroup
 
 > KerberosWriteGroup(ctx, kerberosMountPath, name).KerberosWriteGroupRequest(kerberosWriteGroupRequest).Execute()
@@ -11656,7 +11547,6 @@ func main() {
 
 	name := "name_example" // string | Name of the LDAP group.
 	request := schema.NewKerberosWriteGroupRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosWriteGroup(
 		context.Background(),
 		name,
@@ -11694,6 +11584,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KerberosWriteLDAPConfig
 
 > KerberosWriteLDAPConfig(ctx, kerberosMountPath).KerberosWriteLDAPConfigRequest(kerberosWriteLDAPConfigRequest).Execute()
@@ -11723,7 +11614,6 @@ func main() {
 	}
 
 	request := schema.NewKerberosWriteLDAPConfigRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosWriteLDAPConfig(
 		context.Background(),
 		request,
@@ -11758,6 +11648,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesDeleteAuthRole
 
 > KubernetesDeleteAuthRole(ctx, kubernetesMountPath, name).Execute()
@@ -11786,8 +11677,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.KubernetesDeleteAuthRole(
 		context.Background(),
 		name,
@@ -11823,6 +11712,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesListAuthRoles
 
 > KubernetesListAuthRoles(ctx, kubernetesMountPath).List(list).Execute()
@@ -11849,8 +11739,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.KubernetesListAuthRoles(
 		context.Background(),
@@ -11885,6 +11773,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesLogin
 
 > KubernetesLogin(ctx, kubernetesMountPath).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
@@ -11914,7 +11803,6 @@ func main() {
 	}
 
 	request := schema.NewKubernetesLoginRequestWithDefaults()
-
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
 		request,
@@ -11949,6 +11837,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesReadAuthConfig
 
 > KubernetesReadAuthConfig(ctx, kubernetesMountPath).Execute()
@@ -11975,8 +11864,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.KubernetesReadAuthConfig(
 		context.Background(),
@@ -12010,6 +11897,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesReadAuthRole
 
 > KubernetesReadAuthRole(ctx, kubernetesMountPath, name).Execute()
@@ -12038,8 +11926,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.KubernetesReadAuthRole(
 		context.Background(),
 		name,
@@ -12075,6 +11961,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesWriteAuthConfig
 
 > KubernetesWriteAuthConfig(ctx, kubernetesMountPath).KubernetesWriteAuthConfigRequest(kubernetesWriteAuthConfigRequest).Execute()
@@ -12104,7 +11991,6 @@ func main() {
 	}
 
 	request := schema.NewKubernetesWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.KubernetesWriteAuthConfig(
 		context.Background(),
 		request,
@@ -12139,6 +12025,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## KubernetesWriteAuthRole
 
 > KubernetesWriteAuthRole(ctx, kubernetesMountPath, name).KubernetesWriteAuthRoleRequest(kubernetesWriteAuthRoleRequest).Execute()
@@ -12169,7 +12056,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewKubernetesWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.KubernetesWriteAuthRole(
 		context.Background(),
 		name,
@@ -12207,6 +12093,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPDeleteGroup
 
 > LDAPDeleteGroup(ctx, ldapMountPath, name).Execute()
@@ -12235,8 +12122,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.LDAPDeleteGroup(
 		context.Background(),
 		name,
@@ -12272,6 +12157,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPDeleteUser
 
 > LDAPDeleteUser(ctx, ldapMountPath, name).Execute()
@@ -12300,8 +12186,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-
-
 	resp, err := client.Auth.LDAPDeleteUser(
 		context.Background(),
 		name,
@@ -12337,6 +12221,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPListGroups
 
 > LDAPListGroups(ctx, ldapMountPath).List(list).Execute()
@@ -12363,8 +12248,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.LDAPListGroups(
 		context.Background(),
@@ -12399,6 +12282,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPListUsers
 
 > LDAPListUsers(ctx, ldapMountPath).List(list).Execute()
@@ -12425,8 +12309,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.LDAPListUsers(
 		context.Background(),
@@ -12461,6 +12343,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPLogin
 
 > LDAPLogin(ctx, ldapMountPath, username).LDAPLoginRequest(lDAPLoginRequest).Execute()
@@ -12491,7 +12374,6 @@ func main() {
 
 	username := "username_example" // string | DN (distinguished name) to be used for login.
 	request := schema.NewLDAPLoginRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPLogin(
 		context.Background(),
 		username,
@@ -12529,6 +12411,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadAuthConfig
 
 > LDAPReadAuthConfig(ctx, ldapMountPath).Execute()
@@ -12555,8 +12438,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.LDAPReadAuthConfig(
 		context.Background(),
@@ -12590,6 +12471,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadGroup
 
 > LDAPReadGroup(ctx, ldapMountPath, name).Execute()
@@ -12618,8 +12500,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.LDAPReadGroup(
 		context.Background(),
 		name,
@@ -12655,6 +12535,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPReadUser
 
 > LDAPReadUser(ctx, ldapMountPath, name).Execute()
@@ -12683,8 +12564,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-
-
 	resp, err := client.Auth.LDAPReadUser(
 		context.Background(),
 		name,
@@ -12720,6 +12599,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPWriteAuthConfig
 
 > LDAPWriteAuthConfig(ctx, ldapMountPath).LDAPWriteAuthConfigRequest(lDAPWriteAuthConfigRequest).Execute()
@@ -12749,7 +12629,6 @@ func main() {
 	}
 
 	request := schema.NewLDAPWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPWriteAuthConfig(
 		context.Background(),
 		request,
@@ -12784,6 +12663,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPWriteGroup
 
 > LDAPWriteGroup(ctx, ldapMountPath, name).LDAPWriteGroupRequest(lDAPWriteGroupRequest).Execute()
@@ -12814,7 +12694,6 @@ func main() {
 
 	name := "name_example" // string | Name of the LDAP group.
 	request := schema.NewLDAPWriteGroupRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPWriteGroup(
 		context.Background(),
 		name,
@@ -12852,6 +12731,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## LDAPWriteUser
 
 > LDAPWriteUser(ctx, ldapMountPath, name).LDAPWriteUserRequest(lDAPWriteUserRequest).Execute()
@@ -12882,7 +12762,6 @@ func main() {
 
 	name := "name_example" // string | Name of the LDAP user.
 	request := schema.NewLDAPWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPWriteUser(
 		context.Background(),
 		name,
@@ -12920,6 +12799,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCIDeleteConfig
 
 > OCIDeleteConfig(ctx, ociMountPath).Execute()
@@ -12946,8 +12826,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OCIDeleteConfig(
 		context.Background(),
@@ -12981,6 +12859,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCIDeleteRole
 
 > OCIDeleteRole(ctx, ociMountPath, role).Execute()
@@ -13009,8 +12888,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OCIDeleteRole(
 		context.Background(),
 		role,
@@ -13046,6 +12923,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCIListRoles
 
 > OCIListRoles(ctx, ociMountPath).List(list).Execute()
@@ -13072,8 +12950,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OCIListRoles(
 		context.Background(),
@@ -13108,6 +12984,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCILoginWithRole
 
 > OCILoginWithRole(ctx, ociMountPath, role).OCILoginWithRoleRequest(oCILoginWithRoleRequest).Execute()
@@ -13138,7 +13015,6 @@ func main() {
 
 	role := "role_example" // string | Name of the role.
 	request := schema.NewOCILoginWithRoleRequestWithDefaults()
-
 	resp, err := client.Auth.OCILoginWithRole(
 		context.Background(),
 		role,
@@ -13176,6 +13052,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCIReadConfig
 
 > OCIReadConfig(ctx, ociMountPath).Execute()
@@ -13202,8 +13079,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OCIReadConfig(
 		context.Background(),
@@ -13237,6 +13112,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCIReadRole
 
 > OCIReadRole(ctx, ociMountPath, role).Execute()
@@ -13265,8 +13141,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OCIReadRole(
 		context.Background(),
 		role,
@@ -13302,6 +13176,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCIWriteConfig
 
 > OCIWriteConfig(ctx, ociMountPath).OCIWriteConfigRequest(oCIWriteConfigRequest).Execute()
@@ -13331,7 +13206,6 @@ func main() {
 	}
 
 	request := schema.NewOCIWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.OCIWriteConfig(
 		context.Background(),
 		request,
@@ -13366,6 +13240,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OCIWriteRole
 
 > OCIWriteRole(ctx, ociMountPath, role).OCIWriteRoleRequest(oCIWriteRoleRequest).Execute()
@@ -13396,7 +13271,6 @@ func main() {
 
 	role := "role_example" // string | Name of the role.
 	request := schema.NewOCIWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.OCIWriteRole(
 		context.Background(),
 		role,
@@ -13434,6 +13308,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCDeleteAuthRole
 
 > OIDCDeleteAuthRole(ctx, name, oidcMountPath).Execute()
@@ -13462,8 +13337,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OIDCDeleteAuthRole(
 		context.Background(),
 		name,
@@ -13499,6 +13372,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCListAuthRoles
 
 > OIDCListAuthRoles(ctx, oidcMountPath).List(list).Execute()
@@ -13527,8 +13401,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OIDCListAuthRoles(
 		context.Background(),
@@ -13563,6 +13435,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCLogin
 
 > OIDCLogin(ctx, oidcMountPath).OIDCLoginRequest(oIDCLoginRequest).Execute()
@@ -13592,7 +13465,6 @@ func main() {
 	}
 
 	request := schema.NewOIDCLoginRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCLogin(
 		context.Background(),
 		request,
@@ -13627,6 +13499,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadAuthConfig
 
 > OIDCReadAuthConfig(ctx, oidcMountPath).Execute()
@@ -13653,8 +13526,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OIDCReadAuthConfig(
 		context.Background(),
@@ -13688,6 +13559,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadAuthRole
 
 > OIDCReadAuthRole(ctx, name, oidcMountPath).Execute()
@@ -13716,8 +13588,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OIDCReadAuthRole(
 		context.Background(),
 		name,
@@ -13753,6 +13623,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCReadCallback
 
 > OIDCReadCallback(ctx, oidcMountPath).Execute()
@@ -13779,8 +13650,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OIDCReadCallback(
 		context.Background(),
@@ -13814,6 +13683,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteAuthConfig
 
 > OIDCWriteAuthConfig(ctx, oidcMountPath).OIDCWriteAuthConfigRequest(oIDCWriteAuthConfigRequest).Execute()
@@ -13845,7 +13715,6 @@ func main() {
 	}
 
 	request := schema.NewOIDCWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteAuthConfig(
 		context.Background(),
 		request,
@@ -13880,6 +13749,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteAuthRole
 
 > OIDCWriteAuthRole(ctx, name, oidcMountPath).OIDCWriteAuthRoleRequest(oIDCWriteAuthRoleRequest).Execute()
@@ -13912,7 +13782,6 @@ func main() {
 
 	name := "name_example" // string | Name of the role.
 	request := schema.NewOIDCWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteAuthRole(
 		context.Background(),
 		name,
@@ -13950,6 +13819,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteAuthURL
 
 > OIDCWriteAuthURL(ctx, oidcMountPath).OIDCWriteAuthURLRequest(oIDCWriteAuthURLRequest).Execute()
@@ -13979,7 +13849,6 @@ func main() {
 	}
 
 	request := schema.NewOIDCWriteAuthURLRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteAuthURL(
 		context.Background(),
 		request,
@@ -14014,6 +13883,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OIDCWriteCallback
 
 > OIDCWriteCallback(ctx, oidcMountPath).OIDCWriteCallbackRequest(oIDCWriteCallbackRequest).Execute()
@@ -14043,7 +13913,6 @@ func main() {
 	}
 
 	request := schema.NewOIDCWriteCallbackRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteCallback(
 		context.Background(),
 		request,
@@ -14078,6 +13947,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaDeleteGroup
 
 > OktaDeleteGroup(ctx, name, oktaMountPath).Execute()
@@ -14106,8 +13976,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-
-
 	resp, err := client.Auth.OktaDeleteGroup(
 		context.Background(),
 		name,
@@ -14143,6 +14011,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaDeleteUser
 
 > OktaDeleteUser(ctx, name, oktaMountPath).Execute()
@@ -14171,8 +14040,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-
-
 	resp, err := client.Auth.OktaDeleteUser(
 		context.Background(),
 		name,
@@ -14208,6 +14075,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaListGroups
 
 > OktaListGroups(ctx, oktaMountPath).List(list).Execute()
@@ -14234,8 +14102,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OktaListGroups(
 		context.Background(),
@@ -14270,6 +14136,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaListUsers
 
 > OktaListUsers(ctx, oktaMountPath).List(list).Execute()
@@ -14296,8 +14163,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OktaListUsers(
 		context.Background(),
@@ -14332,6 +14197,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaLogin
 
 > OktaLogin(ctx, oktaMountPath, username).OktaLoginRequest(oktaLoginRequest).Execute()
@@ -14362,7 +14228,6 @@ func main() {
 
 	username := "username_example" // string | Username to be used for login.
 	request := schema.NewOktaLoginRequestWithDefaults()
-
 	resp, err := client.Auth.OktaLogin(
 		context.Background(),
 		username,
@@ -14400,6 +14265,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaReadConfig
 
 > OktaReadConfig(ctx, oktaMountPath).Execute()
@@ -14426,8 +14292,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OktaReadConfig(
 		context.Background(),
@@ -14461,6 +14325,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaReadGroup
 
 > OktaReadGroup(ctx, name, oktaMountPath).Execute()
@@ -14489,8 +14354,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-
-
 	resp, err := client.Auth.OktaReadGroup(
 		context.Background(),
 		name,
@@ -14526,6 +14389,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaReadUser
 
 > OktaReadUser(ctx, name, oktaMountPath).Execute()
@@ -14554,8 +14418,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-
-
 	resp, err := client.Auth.OktaReadUser(
 		context.Background(),
 		name,
@@ -14591,6 +14453,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaVerify
 
 > OktaVerify(ctx, nonce, oktaMountPath).Execute()
@@ -14619,8 +14482,6 @@ func main() {
 	}
 
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-
-
 	resp, err := client.Auth.OktaVerify(
 		context.Background(),
 		nonce,
@@ -14656,6 +14517,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaWriteConfig
 
 > OktaWriteConfig(ctx, oktaMountPath).OktaWriteConfigRequest(oktaWriteConfigRequest).Execute()
@@ -14685,7 +14547,6 @@ func main() {
 	}
 
 	request := schema.NewOktaWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.OktaWriteConfig(
 		context.Background(),
 		request,
@@ -14720,6 +14581,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaWriteGroup
 
 > OktaWriteGroup(ctx, name, oktaMountPath).OktaWriteGroupRequest(oktaWriteGroupRequest).Execute()
@@ -14750,7 +14612,6 @@ func main() {
 
 	name := "name_example" // string | Name of the Okta group.
 	request := schema.NewOktaWriteGroupRequestWithDefaults()
-
 	resp, err := client.Auth.OktaWriteGroup(
 		context.Background(),
 		name,
@@ -14788,6 +14649,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## OktaWriteUser
 
 > OktaWriteUser(ctx, name, oktaMountPath).OktaWriteUserRequest(oktaWriteUserRequest).Execute()
@@ -14818,7 +14680,6 @@ func main() {
 
 	name := "name_example" // string | Name of the user.
 	request := schema.NewOktaWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.OktaWriteUser(
 		context.Background(),
 		name,
@@ -14856,6 +14717,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusDeleteUser
 
 > RadiusDeleteUser(ctx, name, radiusMountPath).Execute()
@@ -14884,8 +14746,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-
-
 	resp, err := client.Auth.RadiusDeleteUser(
 		context.Background(),
 		name,
@@ -14921,6 +14781,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusListUsers
 
 > RadiusListUsers(ctx, radiusMountPath).List(list).Execute()
@@ -14947,8 +14808,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.RadiusListUsers(
 		context.Background(),
@@ -14983,6 +14842,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusLogin
 
 > RadiusLogin(ctx, radiusMountPath).RadiusLoginRequest(radiusLoginRequest).Execute()
@@ -15012,7 +14872,6 @@ func main() {
 	}
 
 	request := schema.NewRadiusLoginRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
 		request,
@@ -15047,6 +14906,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusLoginWithUsername
 
 > RadiusLoginWithUsername(ctx, radiusMountPath, urlusername).RadiusLoginWithUsernameRequest(radiusLoginWithUsernameRequest).Execute()
@@ -15077,7 +14937,6 @@ func main() {
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
 	request := schema.NewRadiusLoginWithUsernameRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusLoginWithUsername(
 		context.Background(),
 		urlusername,
@@ -15115,6 +14974,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusReadConfig
 
 > RadiusReadConfig(ctx, radiusMountPath).Execute()
@@ -15141,8 +15001,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.RadiusReadConfig(
 		context.Background(),
@@ -15176,6 +15034,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusReadUser
 
 > RadiusReadUser(ctx, name, radiusMountPath).Execute()
@@ -15204,8 +15063,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-
-
 	resp, err := client.Auth.RadiusReadUser(
 		context.Background(),
 		name,
@@ -15241,6 +15098,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusWriteConfig
 
 > RadiusWriteConfig(ctx, radiusMountPath).RadiusWriteConfigRequest(radiusWriteConfigRequest).Execute()
@@ -15270,7 +15128,6 @@ func main() {
 	}
 
 	request := schema.NewRadiusWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusWriteConfig(
 		context.Background(),
 		request,
@@ -15305,6 +15162,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## RadiusWriteUser
 
 > RadiusWriteUser(ctx, name, radiusMountPath).RadiusWriteUserRequest(radiusWriteUserRequest).Execute()
@@ -15335,7 +15193,6 @@ func main() {
 
 	name := "name_example" // string | Name of the RADIUS user.
 	request := schema.NewRadiusWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusWriteUser(
 		context.Background(),
 		name,
@@ -15373,6 +15230,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenDeleteRole
 
 > TokenDeleteRole(ctx, roleName, tokenMountPath).Execute()
@@ -15401,8 +15259,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-
-
 	resp, err := client.Auth.TokenDeleteRole(
 		context.Background(),
 		roleName,
@@ -15438,6 +15294,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenListAccessors
 
 > TokenListAccessors(ctx, tokenMountPath).List(list).Execute()
@@ -15464,8 +15321,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenListAccessors(
 		context.Background(),
@@ -15500,6 +15355,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenListRoles
 
 > TokenListRoles(ctx, tokenMountPath).List(list).Execute()
@@ -15526,8 +15382,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenListRoles(
 		context.Background(),
@@ -15562,6 +15416,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenReadLookup
 
 > TokenReadLookup(ctx, tokenMountPath).Execute()
@@ -15588,8 +15443,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenReadLookup(
 		context.Background(),
@@ -15623,6 +15476,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenReadLookupSelf
 
 > TokenReadLookupSelf(ctx, tokenMountPath).Execute()
@@ -15649,8 +15503,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenReadLookupSelf(
 		context.Background(),
@@ -15684,6 +15536,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenReadRole
 
 > TokenReadRole(ctx, roleName, tokenMountPath).Execute()
@@ -15712,8 +15565,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-
-
 	resp, err := client.Auth.TokenReadRole(
 		context.Background(),
 		roleName,
@@ -15749,6 +15600,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenRenew
 
 > TokenRenew(ctx, tokenMountPath).TokenRenewRequest(tokenRenewRequest).Execute()
@@ -15778,7 +15630,6 @@ func main() {
 	}
 
 	request := schema.NewTokenRenewRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
 		request,
@@ -15813,6 +15664,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenRenewAccessor
 
 > TokenRenewAccessor(ctx, tokenMountPath).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
@@ -15842,7 +15694,6 @@ func main() {
 	}
 
 	request := schema.NewTokenRenewAccessorRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
 		request,
@@ -15877,6 +15728,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenRenewSelf
 
 > TokenRenewSelf(ctx, tokenMountPath).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
@@ -15906,7 +15758,6 @@ func main() {
 	}
 
 	request := schema.NewTokenRenewSelfRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
 		request,
@@ -15941,6 +15792,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenRevoke
 
 > TokenRevoke(ctx, tokenMountPath).TokenRevokeRequest(tokenRevokeRequest).Execute()
@@ -15970,7 +15822,6 @@ func main() {
 	}
 
 	request := schema.NewTokenRevokeRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
 		request,
@@ -16005,6 +15856,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenRevokeAccessor
 
 > TokenRevokeAccessor(ctx, tokenMountPath).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
@@ -16034,7 +15886,6 @@ func main() {
 	}
 
 	request := schema.NewTokenRevokeAccessorRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
 		request,
@@ -16069,6 +15920,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenRevokeOrphan
 
 > TokenRevokeOrphan(ctx, tokenMountPath).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
@@ -16098,7 +15950,6 @@ func main() {
 	}
 
 	request := schema.NewTokenRevokeOrphanRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
 		request,
@@ -16133,6 +15984,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenRevokeSelf
 
 > TokenRevokeSelf(ctx, tokenMountPath).Execute()
@@ -16159,8 +16011,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenRevokeSelf(
 		context.Background(),
@@ -16194,6 +16044,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenTidy
 
 > TokenTidy(ctx, tokenMountPath).Execute()
@@ -16220,8 +16071,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenTidy(
 		context.Background(),
@@ -16255,6 +16104,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenWriteCreate
 
 > TokenWriteCreate(ctx, tokenMountPath).TokenWriteCreateRequest(tokenWriteCreateRequest).Format(format).Execute()
@@ -16284,7 +16134,6 @@ func main() {
 	}
 
 	request := schema.NewTokenWriteCreateRequestWithDefaults()
-
 	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenWriteCreate(
 		context.Background(),
@@ -16322,6 +16171,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenWriteCreateOrphan
 
 > TokenWriteCreateOrphan(ctx, tokenMountPath).TokenWriteCreateOrphanRequest(tokenWriteCreateOrphanRequest).Format(format).Execute()
@@ -16351,7 +16201,6 @@ func main() {
 	}
 
 	request := schema.NewTokenWriteCreateOrphanRequestWithDefaults()
-
 	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenWriteCreateOrphan(
 		context.Background(),
@@ -16389,6 +16238,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenWriteCreateWithRole
 
 > TokenWriteCreateWithRole(ctx, roleName, tokenMountPath).TokenWriteCreateWithRoleRequest(tokenWriteCreateWithRoleRequest).Format(format).Execute()
@@ -16419,7 +16269,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role
 	request := schema.NewTokenWriteCreateWithRoleRequestWithDefaults()
-
 	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenWriteCreateWithRole(
 		context.Background(),
@@ -16460,6 +16309,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenWriteLookup
 
 > TokenWriteLookup(ctx, tokenMountPath).TokenWriteLookupRequest(tokenWriteLookupRequest).Execute()
@@ -16489,7 +16339,6 @@ func main() {
 	}
 
 	request := schema.NewTokenWriteLookupRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteLookup(
 		context.Background(),
 		request,
@@ -16524,6 +16373,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenWriteLookupAccessor
 
 > TokenWriteLookupAccessor(ctx, tokenMountPath).TokenWriteLookupAccessorRequest(tokenWriteLookupAccessorRequest).Execute()
@@ -16553,7 +16403,6 @@ func main() {
 	}
 
 	request := schema.NewTokenWriteLookupAccessorRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteLookupAccessor(
 		context.Background(),
 		request,
@@ -16588,6 +16437,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenWriteLookupSelf
 
 > TokenWriteLookupSelf(ctx, tokenMountPath).TokenWriteLookupSelfRequest(tokenWriteLookupSelfRequest).Execute()
@@ -16617,7 +16467,6 @@ func main() {
 	}
 
 	request := schema.NewTokenWriteLookupSelfRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteLookupSelf(
 		context.Background(),
 		request,
@@ -16652,6 +16501,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## TokenWriteRole
 
 > TokenWriteRole(ctx, roleName, tokenMountPath).TokenWriteRoleRequest(tokenWriteRoleRequest).Execute()
@@ -16682,7 +16532,6 @@ func main() {
 
 	roleName := "roleName_example" // string | Name of the role
 	request := schema.NewTokenWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteRole(
 		context.Background(),
 		roleName,
@@ -16720,6 +16569,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## UserpassDeleteUser
 
 > UserpassDeleteUser(ctx, username, userpassMountPath).Execute()
@@ -16748,8 +16598,6 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-
-
 	resp, err := client.Auth.UserpassDeleteUser(
 		context.Background(),
 		username,
@@ -16785,6 +16633,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## UserpassListUsers
 
 > UserpassListUsers(ctx, userpassMountPath).List(list).Execute()
@@ -16811,8 +16660,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.UserpassListUsers(
 		context.Background(),
@@ -16847,6 +16694,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## UserpassLogin
 
 > UserpassLogin(ctx, username, userpassMountPath).UserpassLoginRequest(userpassLoginRequest).Execute()
@@ -16877,7 +16725,6 @@ func main() {
 
 	username := "username_example" // string | Username of the user.
 	request := schema.NewUserpassLoginRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassLogin(
 		context.Background(),
 		username,
@@ -16915,6 +16762,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## UserpassReadUser
 
 > UserpassReadUser(ctx, username, userpassMountPath).Execute()
@@ -16943,8 +16791,6 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-
-
 	resp, err := client.Auth.UserpassReadUser(
 		context.Background(),
 		username,
@@ -16980,6 +16826,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## UserpassWriteUser
 
 > UserpassWriteUser(ctx, username, userpassMountPath).UserpassWriteUserRequest(userpassWriteUserRequest).Execute()
@@ -17010,7 +16857,6 @@ func main() {
 
 	username := "username_example" // string | Username for this user.
 	request := schema.NewUserpassWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassWriteUser(
 		context.Background(),
 		username,
@@ -17048,6 +16894,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## UserpassWriteUserPassword
 
 > UserpassWriteUserPassword(ctx, username, userpassMountPath).UserpassWriteUserPasswordRequest(userpassWriteUserPasswordRequest).Execute()
@@ -17078,7 +16925,6 @@ func main() {
 
 	username := "username_example" // string | Username for this user.
 	request := schema.NewUserpassWriteUserPasswordRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassWriteUserPassword(
 		context.Background(),
 		username,
@@ -17116,6 +16962,7 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+
 ## UserpassWriteUserPolicies
 
 > UserpassWriteUserPolicies(ctx, username, userpassMountPath).UserpassWriteUserPoliciesRequest(userpassWriteUserPoliciesRequest).Execute()
@@ -17146,7 +16993,6 @@ func main() {
 
 	username := "username_example" // string | Username for this user.
 	request := schema.NewUserpassWriteUserPoliciesRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassWriteUserPolicies(
 		context.Background(),
 		username,
@@ -17182,4 +17028,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#)
 [[Back to README]](../README.md)
+
+
 

@@ -1,20 +1,26 @@
 # OIDCWriteProviderAuthorizeRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **ClientId** | **string** | The ID of the requesting client. | 
 **CodeChallenge** | Pointer to **string** | The code challenge derived from the code verifier. | [optional] 
-**CodeChallengeMethod** | Pointer to **string** | The method that was used to derive the code challenge. The following methods are supported: &#39;S256&#39;, &#39;plain&#39;. Defaults to &#39;plain&#39;. | [optional] [default to "plain"]
+**CodeChallengeMethod** | Pointer to **string** | The method that was used to derive the code challenge. The following methods are supported: &#x27;S256&#x27;, &#x27;plain&#x27;. Defaults to &#x27;plain&#x27;. | [optional] [default to "plain"]
 **MaxAge** | Pointer to **int32** | The allowable elapsed time in seconds since the last time the end-user was actively authenticated. | [optional] 
 **Nonce** | Pointer to **string** | The value that will be returned in the ID token nonce claim after a token exchange. | [optional] 
 **RedirectUri** | **string** | The redirection URI to which the response will be sent. | 
-**ResponseType** | **string** | The OIDC authentication flow to be used. The following response types are supported: &#39;code&#39; | 
-**Scope** | **string** | A space-delimited, case-sensitive list of scopes to be requested. The &#39;openid&#39; scope is required. | 
+**ResponseType** | **string** | The OIDC authentication flow to be used. The following response types are supported: &#x27;code&#x27; | 
+**Scope** | **string** | A space-delimited, case-sensitive list of scopes to be requested. The &#x27;openid&#x27; scope is required. | 
 **State** | Pointer to **string** | The value used to maintain state between the authentication request and client. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewOIDCWriteProviderAuthorizeRequest
 
@@ -32,6 +38,7 @@ will change when the set of required properties is changed
 NewOIDCWriteProviderAuthorizeRequestWithDefaults instantiates a new OIDCWriteProviderAuthorizeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetClientId
 
@@ -53,6 +60,9 @@ and a boolean to check if the value has been set.
 SetClientId sets ClientId field to given value.
 
 
+
+
+
 ### GetCodeChallenge
 
 `func (o *OIDCWriteProviderAuthorizeRequest) GetCodeChallenge() string`
@@ -72,11 +82,15 @@ and a boolean to check if the value has been set.
 
 SetCodeChallenge sets CodeChallenge field to given value.
 
+
 ### HasCodeChallenge
 
 `func (o *OIDCWriteProviderAuthorizeRequest) HasCodeChallenge() bool`
 
 HasCodeChallenge returns a boolean if a field has been set.
+
+
+
 
 ### GetCodeChallengeMethod
 
@@ -97,11 +111,15 @@ and a boolean to check if the value has been set.
 
 SetCodeChallengeMethod sets CodeChallengeMethod field to given value.
 
+
 ### HasCodeChallengeMethod
 
 `func (o *OIDCWriteProviderAuthorizeRequest) HasCodeChallengeMethod() bool`
 
 HasCodeChallengeMethod returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxAge
 
@@ -122,11 +140,15 @@ and a boolean to check if the value has been set.
 
 SetMaxAge sets MaxAge field to given value.
 
+
 ### HasMaxAge
 
 `func (o *OIDCWriteProviderAuthorizeRequest) HasMaxAge() bool`
 
 HasMaxAge returns a boolean if a field has been set.
+
+
+
 
 ### GetNonce
 
@@ -147,11 +169,15 @@ and a boolean to check if the value has been set.
 
 SetNonce sets Nonce field to given value.
 
+
 ### HasNonce
 
 `func (o *OIDCWriteProviderAuthorizeRequest) HasNonce() bool`
 
 HasNonce returns a boolean if a field has been set.
+
+
+
 
 ### GetRedirectUri
 
@@ -171,6 +197,9 @@ and a boolean to check if the value has been set.
 `func (o *OIDCWriteProviderAuthorizeRequest) SetRedirectUri(v string)`
 
 SetRedirectUri sets RedirectUri field to given value.
+
+
+
 
 
 ### GetResponseType
@@ -193,6 +222,9 @@ and a boolean to check if the value has been set.
 SetResponseType sets ResponseType field to given value.
 
 
+
+
+
 ### GetScope
 
 `func (o *OIDCWriteProviderAuthorizeRequest) GetScope() string`
@@ -211,6 +243,9 @@ and a boolean to check if the value has been set.
 `func (o *OIDCWriteProviderAuthorizeRequest) SetScope(v string)`
 
 SetScope sets Scope field to given value.
+
+
+
 
 
 ### GetState
@@ -232,11 +267,19 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+
 ### HasState
 
 `func (o *OIDCWriteProviderAuthorizeRequest) HasState() bool`
 
 HasState returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

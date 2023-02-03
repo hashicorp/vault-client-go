@@ -1,9 +1,12 @@
 # AzureLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Jwt** | Pointer to **string** | A signed JWT | [optional] 
 **ResourceGroupName** | Pointer to **string** | The resource group from the instance. | [optional] 
 **Role** | Pointer to **string** | The token role. | [optional] 
@@ -11,7 +14,10 @@ Name | Type | Description | Notes
 **VmName** | Pointer to **string** | The name of the virtual machine. This value is ignored if vmss_name is specified. | [optional] 
 **VmssName** | Pointer to **string** | The name of the virtual machine scale set the instance is in. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAzureLoginRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewAzureLoginRequestWithDefaults instantiates a new AzureLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetJwt
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetJwt sets Jwt field to given value.
 
+
 ### HasJwt
 
 `func (o *AzureLoginRequest) HasJwt() bool`
 
 HasJwt returns a boolean if a field has been set.
+
+
+
 
 ### GetResourceGroupName
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetResourceGroupName sets ResourceGroupName field to given value.
 
+
 ### HasResourceGroupName
 
 `func (o *AzureLoginRequest) HasResourceGroupName() bool`
 
 HasResourceGroupName returns a boolean if a field has been set.
+
+
+
 
 ### GetRole
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
+
 ### HasRole
 
 `func (o *AzureLoginRequest) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
+
+
+
 
 ### GetSubscriptionId
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+
 ### HasSubscriptionId
 
 `func (o *AzureLoginRequest) HasSubscriptionId() bool`
 
 HasSubscriptionId returns a boolean if a field has been set.
+
+
+
 
 ### GetVmName
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetVmName sets VmName field to given value.
 
+
 ### HasVmName
 
 `func (o *AzureLoginRequest) HasVmName() bool`
 
 HasVmName returns a boolean if a field has been set.
+
+
+
 
 ### GetVmssName
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetVmssName sets VmssName field to given value.
 
+
 ### HasVmssName
 
 `func (o *AzureLoginRequest) HasVmssName() bool`
 
 HasVmssName returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,24 +1,30 @@
 # ConsulWriteRoleRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConsulNamespace** | Pointer to **string** | Indicates which namespace that the token will be created within. Defaults to &#39;default&#39;. Available in Consul 1.7 and above. | [optional] 
+
+
+**ConsulNamespace** | Pointer to **string** | Indicates which namespace that the token will be created within. Defaults to &#x27;default&#x27;. Available in Consul 1.7 and above. | [optional] 
 **ConsulPolicies** | Pointer to **[]string** | List of policies to attach to the token. Either \&quot;consul_policies\&quot; or \&quot;consul_roles\&quot; are required for Consul 1.5 and above, or just \&quot;consul_policies\&quot; if using Consul 1.4. | [optional] 
 **ConsulRoles** | Pointer to **[]string** | List of Consul roles to attach to the token. Either \&quot;policies\&quot; or \&quot;consul_roles\&quot; are required for Consul 1.5 and above. | [optional] 
 **Lease** | Pointer to **int32** | Use \&quot;ttl\&quot; instead. | [optional] 
 **Local** | Pointer to **bool** | Indicates that the token should not be replicated globally and instead be local to the current datacenter. Available in Consul 1.4 and above. | [optional] 
 **MaxTtl** | Pointer to **int32** | Max TTL for the Consul token created from the role. | [optional] 
 **NodeIdentities** | Pointer to **[]string** | List of Node Identities to attach to the token. Available in Consul 1.8.1 or above. | [optional] 
-**Partition** | Pointer to **string** | Indicates which admin partition that the token will be created within. Defaults to &#39;default&#39;. Available in Consul 1.11 and above. | [optional] 
+**Partition** | Pointer to **string** | Indicates which admin partition that the token will be created within. Defaults to &#x27;default&#x27;. Available in Consul 1.11 and above. | [optional] 
 **Policies** | Pointer to **[]string** | Use \&quot;consul_policies\&quot; instead. | [optional] 
-**Policy** | Pointer to **string** | Policy document, base64 encoded. Required for &#39;client&#39; tokens. Required for Consul pre-1.4. | [optional] 
+**Policy** | Pointer to **string** | Policy document, base64 encoded. Required for &#x27;client&#x27; tokens. Required for Consul pre-1.4. | [optional] 
 **ServiceIdentities** | Pointer to **[]string** | List of Service Identities to attach to the token, separated by semicolons. Available in Consul 1.5 or above. | [optional] 
-**TokenType** | Pointer to **string** | Which type of token to create: &#39;client&#39; or &#39;management&#39;. If a &#39;management&#39; token, the \&quot;policy\&quot;, \&quot;policies\&quot;, and \&quot;consul_roles\&quot; parameters are not required. Defaults to &#39;client&#39;. | [optional] [default to "client"]
+**TokenType** | Pointer to **string** | Which type of token to create: &#x27;client&#x27; or &#x27;management&#x27;. If a &#x27;management&#x27; token, the \&quot;policy\&quot;, \&quot;policies\&quot;, and \&quot;consul_roles\&quot; parameters are not required. Defaults to &#x27;client&#x27;. | [optional] [default to "client"]
 **Ttl** | Pointer to **int32** | TTL for the Consul token created from the role. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewConsulWriteRoleRequest
 
@@ -36,6 +42,7 @@ will change when the set of required properties is changed
 NewConsulWriteRoleRequestWithDefaults instantiates a new ConsulWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetConsulNamespace
 
@@ -56,11 +63,15 @@ and a boolean to check if the value has been set.
 
 SetConsulNamespace sets ConsulNamespace field to given value.
 
+
 ### HasConsulNamespace
 
 `func (o *ConsulWriteRoleRequest) HasConsulNamespace() bool`
 
 HasConsulNamespace returns a boolean if a field has been set.
+
+
+
 
 ### GetConsulPolicies
 
@@ -81,11 +92,15 @@ and a boolean to check if the value has been set.
 
 SetConsulPolicies sets ConsulPolicies field to given value.
 
+
 ### HasConsulPolicies
 
 `func (o *ConsulWriteRoleRequest) HasConsulPolicies() bool`
 
 HasConsulPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetConsulRoles
 
@@ -106,11 +121,15 @@ and a boolean to check if the value has been set.
 
 SetConsulRoles sets ConsulRoles field to given value.
 
+
 ### HasConsulRoles
 
 `func (o *ConsulWriteRoleRequest) HasConsulRoles() bool`
 
 HasConsulRoles returns a boolean if a field has been set.
+
+
+
 
 ### GetLease
 
@@ -131,11 +150,15 @@ and a boolean to check if the value has been set.
 
 SetLease sets Lease field to given value.
 
+
 ### HasLease
 
 `func (o *ConsulWriteRoleRequest) HasLease() bool`
 
 HasLease returns a boolean if a field has been set.
+
+
+
 
 ### GetLocal
 
@@ -156,11 +179,15 @@ and a boolean to check if the value has been set.
 
 SetLocal sets Local field to given value.
 
+
 ### HasLocal
 
 `func (o *ConsulWriteRoleRequest) HasLocal() bool`
 
 HasLocal returns a boolean if a field has been set.
+
+
+
 
 ### GetMaxTtl
 
@@ -181,11 +208,15 @@ and a boolean to check if the value has been set.
 
 SetMaxTtl sets MaxTtl field to given value.
 
+
 ### HasMaxTtl
 
 `func (o *ConsulWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+
+
 
 ### GetNodeIdentities
 
@@ -206,11 +237,15 @@ and a boolean to check if the value has been set.
 
 SetNodeIdentities sets NodeIdentities field to given value.
 
+
 ### HasNodeIdentities
 
 `func (o *ConsulWriteRoleRequest) HasNodeIdentities() bool`
 
 HasNodeIdentities returns a boolean if a field has been set.
+
+
+
 
 ### GetPartition
 
@@ -231,11 +266,15 @@ and a boolean to check if the value has been set.
 
 SetPartition sets Partition field to given value.
 
+
 ### HasPartition
 
 `func (o *ConsulWriteRoleRequest) HasPartition() bool`
 
 HasPartition returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -256,11 +295,15 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *ConsulWriteRoleRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicy
 
@@ -281,11 +324,15 @@ and a boolean to check if the value has been set.
 
 SetPolicy sets Policy field to given value.
 
+
 ### HasPolicy
 
 `func (o *ConsulWriteRoleRequest) HasPolicy() bool`
 
 HasPolicy returns a boolean if a field has been set.
+
+
+
 
 ### GetServiceIdentities
 
@@ -306,11 +353,15 @@ and a boolean to check if the value has been set.
 
 SetServiceIdentities sets ServiceIdentities field to given value.
 
+
 ### HasServiceIdentities
 
 `func (o *ConsulWriteRoleRequest) HasServiceIdentities() bool`
 
 HasServiceIdentities returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenType
 
@@ -331,11 +382,15 @@ and a boolean to check if the value has been set.
 
 SetTokenType sets TokenType field to given value.
 
+
 ### HasTokenType
 
 `func (o *ConsulWriteRoleRequest) HasTokenType() bool`
 
 HasTokenType returns a boolean if a field has been set.
+
+
+
 
 ### GetTtl
 
@@ -356,11 +411,19 @@ and a boolean to check if the value has been set.
 
 SetTtl sets Ttl field to given value.
 
+
 ### HasTtl
 
 `func (o *ConsulWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,15 +1,21 @@
 # GoogleCloudWriteRolesetRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Bindings** | Pointer to **string** | Bindings configuration string. | [optional] 
-**Project** | Pointer to **string** | Name of the GCP project that this roleset&#39;s service account will belong to. | [optional] 
-**SecretType** | Pointer to **string** | Type of secret generated for this role set. Defaults to &#39;access_token&#39; | [optional] [default to "access_token"]
+**Project** | Pointer to **string** | Name of the GCP project that this roleset&#x27;s service account will belong to. | [optional] 
+**SecretType** | Pointer to **string** | Type of secret generated for this role set. Defaults to &#x27;access_token&#x27; | [optional] [default to "access_token"]
 **TokenScopes** | Pointer to **[]string** | List of OAuth scopes to assign to credentials generated under this role set | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudWriteRolesetRequest
 
@@ -27,6 +33,7 @@ will change when the set of required properties is changed
 NewGoogleCloudWriteRolesetRequestWithDefaults instantiates a new GoogleCloudWriteRolesetRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetBindings
 
@@ -47,11 +54,15 @@ and a boolean to check if the value has been set.
 
 SetBindings sets Bindings field to given value.
 
+
 ### HasBindings
 
 `func (o *GoogleCloudWriteRolesetRequest) HasBindings() bool`
 
 HasBindings returns a boolean if a field has been set.
+
+
+
 
 ### GetProject
 
@@ -72,11 +83,15 @@ and a boolean to check if the value has been set.
 
 SetProject sets Project field to given value.
 
+
 ### HasProject
 
 `func (o *GoogleCloudWriteRolesetRequest) HasProject() bool`
 
 HasProject returns a boolean if a field has been set.
+
+
+
 
 ### GetSecretType
 
@@ -97,11 +112,15 @@ and a boolean to check if the value has been set.
 
 SetSecretType sets SecretType field to given value.
 
+
 ### HasSecretType
 
 `func (o *GoogleCloudWriteRolesetRequest) HasSecretType() bool`
 
 HasSecretType returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenScopes
 
@@ -122,11 +141,19 @@ and a boolean to check if the value has been set.
 
 SetTokenScopes sets TokenScopes field to given value.
 
+
 ### HasTokenScopes
 
 `func (o *GoogleCloudWriteRolesetRequest) HasTokenScopes() bool`
 
 HasTokenScopes returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,12 +1,18 @@
 # AWSConfigWriteSecurityTokenServiceAccountRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **StsRole** | Pointer to **string** | AWS ARN for STS role to be assumed when interacting with the account specified. The Vault server must have permissions to assume this role. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAWSConfigWriteSecurityTokenServiceAccountRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAWSConfigWriteSecurityTokenServiceAccountRequestWithDefaults instantiates a new AWSConfigWriteSecurityTokenServiceAccountRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetStsRole
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetStsRole sets StsRole field to given value.
 
+
 ### HasStsRole
 
 `func (o *AWSConfigWriteSecurityTokenServiceAccountRequest) HasStsRole() bool`
 
 HasStsRole returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

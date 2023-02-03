@@ -1,13 +1,19 @@
 # GoogleCloudLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Jwt** | Pointer to **string** | A signed JWT. This is either a self-signed service account JWT (&#39;iam&#39; roles only) or a GCE identity metadata token (&#39;iam&#39;, &#39;gce&#39; roles). | [optional] 
+
+
+**Jwt** | Pointer to **string** | A signed JWT. This is either a self-signed service account JWT (&#x27;iam&#x27; roles only) or a GCE identity metadata token (&#x27;iam&#x27;, &#x27;gce&#x27; roles). | [optional] 
 **Role** | Pointer to **string** | Name of the role against which the login is being attempted. Required. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewGoogleCloudLoginRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewGoogleCloudLoginRequestWithDefaults instantiates a new GoogleCloudLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetJwt
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetJwt sets Jwt field to given value.
 
+
 ### HasJwt
 
 `func (o *GoogleCloudLoginRequest) HasJwt() bool`
 
 HasJwt returns a boolean if a field has been set.
+
+
+
 
 ### GetRole
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
+
 ### HasRole
 
 `func (o *GoogleCloudLoginRequest) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

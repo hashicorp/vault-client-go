@@ -1,13 +1,19 @@
 # TokenRenewAccessorRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Accessor** | Pointer to **string** | Accessor of the token to renew (request body) | [optional] 
 **Increment** | Pointer to **int32** | The desired increment in seconds to the token expiration | [optional] [default to 0]
 
+
+
 ## Methods
+
 
 ### NewTokenRenewAccessorRequest
 
@@ -25,6 +31,7 @@ will change when the set of required properties is changed
 NewTokenRenewAccessorRequestWithDefaults instantiates a new TokenRenewAccessorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAccessor
 
@@ -45,11 +52,15 @@ and a boolean to check if the value has been set.
 
 SetAccessor sets Accessor field to given value.
 
+
 ### HasAccessor
 
 `func (o *TokenRenewAccessorRequest) HasAccessor() bool`
 
 HasAccessor returns a boolean if a field has been set.
+
+
+
 
 ### GetIncrement
 
@@ -70,11 +81,19 @@ and a boolean to check if the value has been set.
 
 SetIncrement sets Increment field to given value.
 
+
 ### HasIncrement
 
 `func (o *TokenRenewAccessorRequest) HasIncrement() bool`
 
 HasIncrement returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,12 +1,18 @@
 # EntityBatchDeleteRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **EntityIds** | Pointer to **[]string** | Entity IDs to delete | [optional] 
 
+
+
 ## Methods
+
 
 ### NewEntityBatchDeleteRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewEntityBatchDeleteRequestWithDefaults instantiates a new EntityBatchDeleteRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetEntityIds
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetEntityIds sets EntityIds field to given value.
 
+
 ### HasEntityIds
 
 `func (o *EntityBatchDeleteRequest) HasEntityIds() bool`
 
 HasEntityIds returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,9 +1,12 @@
 # KubernetesWriteAuthConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **DisableIssValidation** | Pointer to **bool** | Disable JWT issuer validation (Deprecated, will be removed in a future release) | [optional] [default to true]
 **DisableLocalCaJwt** | Pointer to **bool** | Disable defaulting to the local CA cert and service account JWT when running in a Kubernetes pod | [optional] [default to false]
 **Issuer** | Pointer to **string** | Optional JWT issuer. If no issuer is specified, then this plugin will use kubernetes.io/serviceaccount as the default issuer. (Deprecated, will be removed in a future release) | [optional] 
@@ -12,7 +15,10 @@ Name | Type | Description | Notes
 **PemKeys** | Pointer to **[]string** | Optional list of PEM-formated public keys or certificates used to verify the signatures of kubernetes service account JWTs. If a certificate is given, its public key will be extracted. Not every installation of Kubernetes exposes these keys. | [optional] 
 **TokenReviewerJwt** | Pointer to **string** | A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewKubernetesWriteAuthConfigRequest
 
@@ -30,6 +36,7 @@ will change when the set of required properties is changed
 NewKubernetesWriteAuthConfigRequestWithDefaults instantiates a new KubernetesWriteAuthConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDisableIssValidation
 
@@ -50,11 +57,15 @@ and a boolean to check if the value has been set.
 
 SetDisableIssValidation sets DisableIssValidation field to given value.
 
+
 ### HasDisableIssValidation
 
 `func (o *KubernetesWriteAuthConfigRequest) HasDisableIssValidation() bool`
 
 HasDisableIssValidation returns a boolean if a field has been set.
+
+
+
 
 ### GetDisableLocalCaJwt
 
@@ -75,11 +86,15 @@ and a boolean to check if the value has been set.
 
 SetDisableLocalCaJwt sets DisableLocalCaJwt field to given value.
 
+
 ### HasDisableLocalCaJwt
 
 `func (o *KubernetesWriteAuthConfigRequest) HasDisableLocalCaJwt() bool`
 
 HasDisableLocalCaJwt returns a boolean if a field has been set.
+
+
+
 
 ### GetIssuer
 
@@ -100,11 +115,15 @@ and a boolean to check if the value has been set.
 
 SetIssuer sets Issuer field to given value.
 
+
 ### HasIssuer
 
 `func (o *KubernetesWriteAuthConfigRequest) HasIssuer() bool`
 
 HasIssuer returns a boolean if a field has been set.
+
+
+
 
 ### GetKubernetesCaCert
 
@@ -125,11 +144,15 @@ and a boolean to check if the value has been set.
 
 SetKubernetesCaCert sets KubernetesCaCert field to given value.
 
+
 ### HasKubernetesCaCert
 
 `func (o *KubernetesWriteAuthConfigRequest) HasKubernetesCaCert() bool`
 
 HasKubernetesCaCert returns a boolean if a field has been set.
+
+
+
 
 ### GetKubernetesHost
 
@@ -150,11 +173,15 @@ and a boolean to check if the value has been set.
 
 SetKubernetesHost sets KubernetesHost field to given value.
 
+
 ### HasKubernetesHost
 
 `func (o *KubernetesWriteAuthConfigRequest) HasKubernetesHost() bool`
 
 HasKubernetesHost returns a boolean if a field has been set.
+
+
+
 
 ### GetPemKeys
 
@@ -175,11 +202,15 @@ and a boolean to check if the value has been set.
 
 SetPemKeys sets PemKeys field to given value.
 
+
 ### HasPemKeys
 
 `func (o *KubernetesWriteAuthConfigRequest) HasPemKeys() bool`
 
 HasPemKeys returns a boolean if a field has been set.
+
+
+
 
 ### GetTokenReviewerJwt
 
@@ -200,11 +231,19 @@ and a boolean to check if the value has been set.
 
 SetTokenReviewerJwt sets TokenReviewerJwt field to given value.
 
+
 ### HasTokenReviewerJwt
 
 `func (o *KubernetesWriteAuthConfigRequest) HasTokenReviewerJwt() bool`
 
 HasTokenReviewerJwt returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,12 +1,18 @@
 # AppRoleWriteTokenTTLRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **TokenTtl** | Pointer to **int32** | The initial ttl of the token to generate | [optional] 
 
+
+
 ## Methods
+
 
 ### NewAppRoleWriteTokenTTLRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewAppRoleWriteTokenTTLRequestWithDefaults instantiates a new AppRoleWriteTokenTTLRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetTokenTtl
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetTokenTtl sets TokenTtl field to given value.
 
+
 ### HasTokenTtl
 
 `func (o *AppRoleWriteTokenTTLRequest) HasTokenTtl() bool`
 
 HasTokenTtl returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

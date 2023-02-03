@@ -1,16 +1,22 @@
 # EntityWriteRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Disabled** | Pointer to **bool** | If set true, tokens tied to this identity will not be able to be used (but will not be revoked). | [optional] 
 **Id** | Pointer to **string** | ID of the entity. If set, updates the corresponding existing entity. | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Metadata to be associated with the entity. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault &lt;command&gt; &lt;path&gt; metadata&#x3D;key1&#x3D;value1 metadata&#x3D;key2&#x3D;value2 | [optional] 
 **Name** | Pointer to **string** | Name of the entity | [optional] 
 **Policies** | Pointer to **[]string** | Policies to be tied to the entity. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewEntityWriteRequest
 
@@ -28,6 +34,7 @@ will change when the set of required properties is changed
 NewEntityWriteRequestWithDefaults instantiates a new EntityWriteRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetDisabled
 
@@ -48,11 +55,15 @@ and a boolean to check if the value has been set.
 
 SetDisabled sets Disabled field to given value.
 
+
 ### HasDisabled
 
 `func (o *EntityWriteRequest) HasDisabled() bool`
 
 HasDisabled returns a boolean if a field has been set.
+
+
+
 
 ### GetId
 
@@ -73,11 +84,15 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+
 ### HasId
 
 `func (o *EntityWriteRequest) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+
+
 
 ### GetMetadata
 
@@ -98,11 +113,15 @@ and a boolean to check if the value has been set.
 
 SetMetadata sets Metadata field to given value.
 
+
 ### HasMetadata
 
 `func (o *EntityWriteRequest) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+
+
 
 ### GetName
 
@@ -123,11 +142,15 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
 ### HasName
 
 `func (o *EntityWriteRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+
+
 
 ### GetPolicies
 
@@ -148,11 +171,19 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
+
 ### HasPolicies
 
 `func (o *EntityWriteRequest) HasPolicies() bool`
 
 HasPolicies returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,17 +1,23 @@
 # ConsulWriteAccessConfigRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Address** | Pointer to **string** | Consul server address | [optional] 
 **CaCert** | Pointer to **string** | CA certificate to use when verifying Consul server certificate, must be x509 PEM encoded. | [optional] 
-**ClientCert** | Pointer to **string** | Client certificate used for Consul&#39;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key. | [optional] 
-**ClientKey** | Pointer to **string** | Client key used for Consul&#39;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert. | [optional] 
+**ClientCert** | Pointer to **string** | Client certificate used for Consul&#x27;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key. | [optional] 
+**ClientKey** | Pointer to **string** | Client key used for Consul&#x27;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert. | [optional] 
 **Scheme** | Pointer to **string** | URI scheme for the Consul address | [optional] [default to "http"]
 **Token** | Pointer to **string** | Token for API calls | [optional] 
 
+
+
 ## Methods
+
 
 ### NewConsulWriteAccessConfigRequest
 
@@ -29,6 +35,7 @@ will change when the set of required properties is changed
 NewConsulWriteAccessConfigRequestWithDefaults instantiates a new ConsulWriteAccessConfigRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetAddress
 
@@ -49,11 +56,15 @@ and a boolean to check if the value has been set.
 
 SetAddress sets Address field to given value.
 
+
 ### HasAddress
 
 `func (o *ConsulWriteAccessConfigRequest) HasAddress() bool`
 
 HasAddress returns a boolean if a field has been set.
+
+
+
 
 ### GetCaCert
 
@@ -74,11 +85,15 @@ and a boolean to check if the value has been set.
 
 SetCaCert sets CaCert field to given value.
 
+
 ### HasCaCert
 
 `func (o *ConsulWriteAccessConfigRequest) HasCaCert() bool`
 
 HasCaCert returns a boolean if a field has been set.
+
+
+
 
 ### GetClientCert
 
@@ -99,11 +114,15 @@ and a boolean to check if the value has been set.
 
 SetClientCert sets ClientCert field to given value.
 
+
 ### HasClientCert
 
 `func (o *ConsulWriteAccessConfigRequest) HasClientCert() bool`
 
 HasClientCert returns a boolean if a field has been set.
+
+
+
 
 ### GetClientKey
 
@@ -124,11 +143,15 @@ and a boolean to check if the value has been set.
 
 SetClientKey sets ClientKey field to given value.
 
+
 ### HasClientKey
 
 `func (o *ConsulWriteAccessConfigRequest) HasClientKey() bool`
 
 HasClientKey returns a boolean if a field has been set.
+
+
+
 
 ### GetScheme
 
@@ -149,11 +172,15 @@ and a boolean to check if the value has been set.
 
 SetScheme sets Scheme field to given value.
 
+
 ### HasScheme
 
 `func (o *ConsulWriteAccessConfigRequest) HasScheme() bool`
 
 HasScheme returns a boolean if a field has been set.
+
+
+
 
 ### GetToken
 
@@ -174,11 +201,19 @@ and a boolean to check if the value has been set.
 
 SetToken sets Token field to given value.
 
+
 ### HasToken
 
 `func (o *ConsulWriteAccessConfigRequest) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

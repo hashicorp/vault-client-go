@@ -1,12 +1,18 @@
 # LDAPLoginRequest
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+
+
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 
+
+
 ## Methods
+
 
 ### NewLDAPLoginRequest
 
@@ -24,6 +30,7 @@ will change when the set of required properties is changed
 NewLDAPLoginRequestWithDefaults instantiates a new LDAPLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
 
 ### GetPassword
 
@@ -44,11 +51,19 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
+
 ### HasPassword
 
 `func (o *LDAPLoginRequest) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+
+
+
+
+
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

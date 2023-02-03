@@ -1,105 +1,64 @@
-// {{classname}} {{{description}}}{{^description}}struct for {{{classname}}}{{/description}}
+// {{classname}} {{{description}}}{{#unless description}}struct for {{{classname}}}{{/unless}}
 type {{classname}} struct {
-{{#parent}}
-{{^isMap}}
-{{^isArray}}
+{{#with parent}}
+{{#unless isMap}}
+{{#unless isArray}}
 	{{{parent}}}
-{{/isArray}}
-{{/isMap}}
-{{#isArray}}
+{{/unless}}
+{{/unless}}
+{{#if isArray}}
 	Items {{{parent}}}
-{{/isArray}}
-{{/parent}}
-{{#vars}}
-{{^-first}}
-{{/-first}}
-{{#description}}
-	// {{{.}}}
-{{/description}}
-{{#deprecated}}
-	// Deprecated
-{{/deprecated}}
-	{{name}} {{{dataType}}} `json:"{{baseName}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}{{#vendorExtensions.x-go-custom-tag}} {{{.}}}{{/vendorExtensions.x-go-custom-tag}}`
-{{/vars}}
-{{#isAdditionalPropertiesTrue}}
+{{/if}}
+{{/with}}
+{{#each vars}}
+{{#unless @first}}
+{{/unless}}
+{{#with description}}
+	// {{{.}}}{{/with}}{{#if deprecated}}
+	// Deprecated{{/if}}
+	{{name}} {{{dataType}}} `json:"{{baseName}}"{{#with withXml}} xml:"{{baseName}}{{#if isXmlAttribute}},attr{{/if}}"{{/with}}{{#with vendorExtensions.x-go-custom-tag}} {{{.}}}{{/with}}`
+{{/each}}
+{{#if isAdditionalPropertiesTrue}}
 	AdditionalProperties map[string]interface{}
-{{/isAdditionalPropertiesTrue}}
+{{/if}}
 }
 
-{{#isAdditionalPropertiesTrue}}
+{{#if isAdditionalPropertiesTrue}}
 type _{{{classname}}} {{{classname}}}
 
-{{/isAdditionalPropertiesTrue}}
+{{/if}}
 // New{{classname}}WithDefaults instantiates a new {{classname}} object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func New{{classname}}WithDefaults() *{{classname}} {
 	var this {{classname}}
 
-{{#vars}}
-{{#defaultValue}}
-{{^vendorExtensions.x-golang-is-container}}
-{{^isReadOnly}}
-	this.{{name}} = {{{.}}}
-{{/isReadOnly}}
-{{/vendorExtensions.x-golang-is-container}}
-{{/defaultValue}}
-{{/vars}}
+{{#each vars}}{{#with defaultValue}}{{#unless vendorExtensions.x-golang-is-container}}{{#unless isReadOnly}}
+	this.{{name}} = {{{.}}}{{/unless}}{{/unless}}{{/with}}{{/each}}
 
 	return &this
 }
 
 func (o {{classname}}) MarshalJSON() ([]byte, error) {
-	toSerialize := {{#isArray}}make([]interface{}, len(o.Items)){{/isArray}}{{^isArray}}make(map[string]interface{}){{/isArray}}
-
-	{{#parent}}
-	{{^isMap}}
-	{{^isArray}}
-	serialized{{parent}}, err{{parent}} := json.Marshal(o.{{parent}})
-	if err{{parent}} != nil {
-		return []byte{}, err{{parent}}
-	}
-	err{{parent}} = json.Unmarshal([]byte(serialized{{parent}}), &toSerialize)
-	if err{{parent}} != nil {
-		return []byte{}, err{{parent}}
-	}
-	{{/isArray}}
-	{{/isMap}}
-	{{#isArray}}
-	for i, item := range o.Items {
-		toSerialize[i] = item
-	}
-	{{/isArray}}
-	{{/parent}}
-	{{#vars}}
-	toSerialize["{{baseName}}"] = o.{{name}}
-	{{/vars}}
-	{{#isAdditionalPropertiesTrue}}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-	{{/isAdditionalPropertiesTrue}}
-
-	return json.Marshal(toSerialize)
+	return json.Marshal(o)
 }
 
-{{#isAdditionalPropertiesTrue}}
+{{#if isAdditionalPropertiesTrue}}
 func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
-{{#parent}}
-{{^isMap}}
+{{#with parent}}
+{{#unless isMap}}
 	type {{classname}}WithoutEmbeddedStruct struct {
-	{{#vars}}
-	{{^-first}}
-	{{/-first}}
-	{{#description}}
+	{{#each vars}}
+	{{#unless @first}}
+	{{/unless}}
+	{{#with description}}
 		// {{{.}}}
-	{{/description}}
-	{{#deprecated}}
+	{{/with}}
+	{{#with deprecated}}
 		// Deprecated
-	{{/deprecated}}
-		{{name}} {{{dataType}}} `json:"{{baseName}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}{{#vendorExtensions.x-go-custom-tag}} {{{.}}}{{/vendorExtensions.x-go-custom-tag}}`
-	{{/vars}}
+	{{/with}}
+		{{name}} {{{dataType}}} `json:"{{baseName}}"{{#with withXml}} xml:"{{baseName}}{{#if isXmlAttribute}},attr{{/if}}"{{/with}}{{#with vendorExtensions.x-go-custom-tag}} {{{.}}}{{/with}}`
+	{{/each}}
 	}
 
 	var{{{classname}}}WithoutEmbeddedStruct := {{{classname}}}WithoutEmbeddedStruct{}
@@ -107,9 +66,9 @@ func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 	err = json.Unmarshal(bytes, &var{{{classname}}}WithoutEmbeddedStruct)
 	if err == nil {
 		var{{{classname}}} := _{{{classname}}}{}
-		{{#vars}}
+		{{#each vars}}
 		var{{{classname}}}.{{{name}}} = var{{{classname}}}WithoutEmbeddedStruct.{{{name}}}
-		{{/vars}}
+		{{/each}}
 		*o = {{{classname}}}(var{{{classname}}})
 	} else {
 		return err
@@ -127,9 +86,9 @@ func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		{{#vars}}
+		{{#each vars}}
 		delete(additionalProperties, "{{{baseName}}}")
-		{{/vars}}
+		{{/each}}
 
 		// remove fields from embedded structs
 		reflect{{{parent}}} := reflect.ValueOf(o.{{{parent}}})
@@ -153,8 +112,8 @@ func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 	}
 
 	return err
-{{/isMap}}
-{{#isMap}}
+{{/unless}}
+{{#if isMap}}
 	var{{{classname}}} := _{{{classname}}}{}
 
 	if err = json.Unmarshal(bytes, &var{{{classname}}}); err == nil {
@@ -164,16 +123,16 @@ func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		{{#vars}}
+		{{#each vars}}
 		delete(additionalProperties, "{{{baseName}}}")
-		{{/vars}}
+		{{/each}}
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
-{{/isMap}}
-{{/parent}}
-{{^parent}}
+{{/if}}
+{{/with}}
+{{#unless parent}}
 	var{{{classname}}} := _{{{classname}}}{}
 
 	if err = json.Unmarshal(bytes, &var{{{classname}}}); err == nil {
@@ -183,21 +142,21 @@ func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		{{#vars}}
+		{{#each vars}}
 		delete(additionalProperties, "{{{baseName}}}")
-		{{/vars}}
+		{{/each}}
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
-{{/parent}}
+{{/unless}}
 }
 
-{{/isAdditionalPropertiesTrue}}
-{{#isArray}}
+{{/if}}
+{{#if isArray}}
 func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 	return json.Unmarshal(bytes, &o.Items)
 }
 
-{{/isArray}}
+{{/if}}
 {{>nullable_model}}

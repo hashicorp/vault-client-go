@@ -12,8 +12,8 @@ import (
 	"github.com/hashicorp/vault-client-go/schema"
 )
 
-// {{classname}} is a simple wrapper around the client for {{classname}} requests
-type {{classname}} struct {
+// {{cut classname "Api"}} is a simple wrapper around the client for {{cut classname "Api"}} requests
+type {{cut classname "Api"}} struct {
 	client *Client
 }
 {{#each operation}}
@@ -25,7 +25,7 @@ type {{classname}} struct {
 // {{paramName}}: {{.}}{{/with}}{{/with}}{{/each}}{{#each bodyParams}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}{{#with description}}
 // {{paramName}}: {{.}}{{/with}}{{/neq}}{{/each}}
-func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{#with required}}, {{paramName}} {{{dataType}}}{{/with}}{{/each}}{{#each bodyParams}}, request schema.{{{dataType}}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}, {{paramName}} {{{dataType}}}{{/neq}}{{/each}}, options ...RequestOption) (*Response[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}], error) {
+func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{#with required}}, {{paramName}} {{{dataType}}}{{/with}}{{/each}}{{#each bodyParams}}, request schema.{{{dataType}}}{{/each}}{{#each queryParams}}{{#neq paramName "list"}}, {{paramName}} {{{dataType}}}{{/neq}}{{/each}}, options ...RequestOption) (*Response[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -42,7 +42,7 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{
 {{#each bodyParams}}
 	return sendStructuredRequestParseResponse[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}](
 		ctx,
-		a.client,
+		{{lower (substring classname 0 1)}}.client,
 		http.Method{{httpMethod}},
 		requestPath,
 	 	request,
@@ -53,7 +53,7 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#each pathParams}}{{
 {{#unless bodyParams}}
 	return sendRequestParseResponse[{{#with returnType}}schema.{{{.}}}{{/with}}{{#unless returnType}}map[string]interface{}{{/unless}}](
 		ctx,
-		a.client,
+		{{lower (substring classname 0 1)}}.client,
 		http.Method{{httpMethod}},
 		requestPath,
 		nil,       // request body

@@ -69,3 +69,7 @@ func NewAppRoleReadRoleResponseWithDefaults() *AppRoleReadRoleResponse {
 
 	return &this
 }
+
+func (o AppRoleReadRoleResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -23,3 +23,7 @@ func NewGoogleCloudKMSSignRequestWithDefaults() *GoogleCloudKMSSignRequest {
 
 	return &this
 }
+
+func (o GoogleCloudKMSSignRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

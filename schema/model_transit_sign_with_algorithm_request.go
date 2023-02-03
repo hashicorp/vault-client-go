@@ -49,3 +49,7 @@ func NewTransitSignWithAlgorithmRequestWithDefaults() *TransitSignWithAlgorithmR
 
 	return &this
 }
+
+func (o TransitSignWithAlgorithmRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

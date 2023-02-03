@@ -79,3 +79,7 @@ func NewPKIIssuerSignVerbatimRoleRequestWithDefaults() *PKIIssuerSignVerbatimRol
 
 	return &this
 }
+
+func (o PKIIssuerSignVerbatimRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

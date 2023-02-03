@@ -20,3 +20,7 @@ func NewLDAPLoginRequestWithDefaults() *LDAPLoginRequest {
 
 	return &this
 }
+
+func (o LDAPLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

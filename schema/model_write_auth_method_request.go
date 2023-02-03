@@ -48,3 +48,7 @@ func NewWriteAuthMethodRequestWithDefaults() *WriteAuthMethodRequest {
 
 	return &this
 }
+
+func (o WriteAuthMethodRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

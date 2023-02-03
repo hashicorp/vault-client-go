@@ -23,3 +23,7 @@ func NewGoogleCloudLoginRequestWithDefaults() *GoogleCloudLoginRequest {
 
 	return &this
 }
+
+func (o GoogleCloudLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

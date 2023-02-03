@@ -52,3 +52,7 @@ func NewKubernetesWriteRoleRequestWithDefaults() *KubernetesWriteRoleRequest {
 
 	return &this
 }
+
+func (o KubernetesWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

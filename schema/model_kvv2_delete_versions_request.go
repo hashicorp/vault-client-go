@@ -20,3 +20,7 @@ func NewKVv2DeleteVersionsRequestWithDefaults() *KVv2DeleteVersionsRequest {
 
 	return &this
 }
+
+func (o KVv2DeleteVersionsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

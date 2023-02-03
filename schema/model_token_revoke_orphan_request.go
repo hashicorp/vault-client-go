@@ -20,3 +20,7 @@ func NewTokenRevokeOrphanRequestWithDefaults() *TokenRevokeOrphanRequest {
 
 	return &this
 }
+
+func (o TokenRevokeOrphanRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

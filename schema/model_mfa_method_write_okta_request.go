@@ -38,3 +38,7 @@ func NewMFAMethodWriteOktaRequestWithDefaults() *MFAMethodWriteOktaRequest {
 
 	return &this
 }
+
+func (o MFAMethodWriteOktaRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

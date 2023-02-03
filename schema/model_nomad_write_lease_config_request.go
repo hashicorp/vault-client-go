@@ -23,3 +23,7 @@ func NewNomadWriteLeaseConfigRequestWithDefaults() *NomadWriteLeaseConfigRequest
 
 	return &this
 }
+
+func (o NomadWriteLeaseConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

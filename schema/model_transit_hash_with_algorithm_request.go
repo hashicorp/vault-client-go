@@ -29,3 +29,7 @@ func NewTransitHashWithAlgorithmRequestWithDefaults() *TransitHashWithAlgorithmR
 
 	return &this
 }
+
+func (o TransitHashWithAlgorithmRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

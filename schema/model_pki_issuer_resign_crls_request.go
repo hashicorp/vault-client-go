@@ -36,3 +36,7 @@ func NewPKIIssuerResignCRLsRequestWithDefaults() *PKIIssuerResignCRLsRequest {
 
 	return &this
 }
+
+func (o PKIIssuerResignCRLsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

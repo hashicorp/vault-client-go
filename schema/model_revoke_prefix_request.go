@@ -22,3 +22,7 @@ func NewRevokePrefixRequestWithDefaults() *RevokePrefixRequest {
 
 	return &this
 }
+
+func (o RevokePrefixRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

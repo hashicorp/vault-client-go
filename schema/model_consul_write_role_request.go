@@ -62,3 +62,7 @@ func NewConsulWriteRoleRequestWithDefaults() *ConsulWriteRoleRequest {
 
 	return &this
 }
+
+func (o ConsulWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

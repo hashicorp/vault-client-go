@@ -132,3 +132,7 @@ func NewLDAPWriteAuthConfigRequestWithDefaults() *LDAPWriteAuthConfigRequest {
 
 	return &this
 }
+
+func (o LDAPWriteAuthConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

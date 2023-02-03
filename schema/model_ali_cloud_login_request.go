@@ -26,3 +26,7 @@ func NewAliCloudLoginRequestWithDefaults() *AliCloudLoginRequest {
 
 	return &this
 }
+
+func (o AliCloudLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewAppRoleWriteBoundCIDRListRequestWithDefaults() *AppRoleWriteBoundCIDRLis
 
 	return &this
 }
+
+func (o AppRoleWriteBoundCIDRListRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

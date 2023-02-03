@@ -26,3 +26,7 @@ func NewGoogleCloudKMSEncryptRequestWithDefaults() *GoogleCloudKMSEncryptRequest
 
 	return &this
 }
+
+func (o GoogleCloudKMSEncryptRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

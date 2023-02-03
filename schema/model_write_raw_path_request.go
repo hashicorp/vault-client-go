@@ -25,3 +25,7 @@ func NewWriteRawPathRequestWithDefaults() *WriteRawPathRequest {
 
 	return &this
 }
+
+func (o WriteRawPathRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

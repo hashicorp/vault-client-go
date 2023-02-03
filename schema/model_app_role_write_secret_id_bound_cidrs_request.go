@@ -20,3 +20,7 @@ func NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults() *AppRoleWriteSecretI
 
 	return &this
 }
+
+func (o AppRoleWriteSecretIDBoundCIDRsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -25,3 +25,7 @@ func NewGoogleCloudKMSRegisterKeyRequestWithDefaults() *GoogleCloudKMSRegisterKe
 
 	return &this
 }
+
+func (o GoogleCloudKMSRegisterKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

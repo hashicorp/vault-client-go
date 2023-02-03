@@ -35,3 +35,7 @@ func NewNomadWriteAccessConfigRequestWithDefaults() *NomadWriteAccessConfigReque
 
 	return &this
 }
+
+func (o NomadWriteAccessConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

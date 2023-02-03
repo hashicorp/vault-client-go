@@ -55,3 +55,7 @@ func NewTransitVerifyRequestWithDefaults() *TransitVerifyRequest {
 
 	return &this
 }
+
+func (o TransitVerifyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

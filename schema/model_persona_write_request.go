@@ -32,3 +32,7 @@ func NewPersonaWriteRequestWithDefaults() *PersonaWriteRequest {
 
 	return &this
 }
+
+func (o PersonaWriteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

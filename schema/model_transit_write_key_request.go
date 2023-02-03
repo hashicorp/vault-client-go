@@ -45,3 +45,7 @@ func NewTransitWriteKeyRequestWithDefaults() *TransitWriteKeyRequest {
 
 	return &this
 }
+
+func (o TransitWriteKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

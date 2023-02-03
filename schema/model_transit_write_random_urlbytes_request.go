@@ -30,3 +30,7 @@ func NewTransitWriteRandomUrlbytesRequestWithDefaults() *TransitWriteRandomUrlby
 
 	return &this
 }
+
+func (o TransitWriteRandomUrlbytesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -32,3 +32,7 @@ func NewWritePluginsCatalogByTypeByNameRequestWithDefaults() *WritePluginsCatalo
 
 	return &this
 }
+
+func (o WritePluginsCatalogByTypeByNameRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -107,3 +107,7 @@ func NewPKIIssuersGenerateIntermediateRequestWithDefaults() *PKIIssuersGenerateI
 
 	return &this
 }
+
+func (o PKIIssuersGenerateIntermediateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

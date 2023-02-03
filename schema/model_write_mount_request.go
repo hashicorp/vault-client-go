@@ -48,3 +48,7 @@ func NewWriteMountRequestWithDefaults() *WriteMountRequest {
 
 	return &this
 }
+
+func (o WriteMountRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

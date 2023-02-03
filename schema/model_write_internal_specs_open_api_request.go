@@ -20,3 +20,7 @@ func NewWriteInternalSpecsOpenAPIRequestWithDefaults() *WriteInternalSpecsOpenAP
 
 	return &this
 }
+
+func (o WriteInternalSpecsOpenAPIRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -76,3 +76,7 @@ func NewRadiusWriteConfigRequestWithDefaults() *RadiusWriteConfigRequest {
 
 	return &this
 }
+
+func (o RadiusWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

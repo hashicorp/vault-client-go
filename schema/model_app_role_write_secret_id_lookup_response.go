@@ -41,3 +41,7 @@ func NewAppRoleWriteSecretIDLookupResponseWithDefaults() *AppRoleWriteSecretIDLo
 
 	return &this
 }
+
+func (o AppRoleWriteSecretIDLookupResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

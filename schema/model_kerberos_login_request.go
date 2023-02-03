@@ -20,3 +20,7 @@ func NewKerberosLoginRequestWithDefaults() *KerberosLoginRequest {
 
 	return &this
 }
+
+func (o KerberosLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

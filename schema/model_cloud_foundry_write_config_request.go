@@ -69,3 +69,7 @@ func NewCloudFoundryWriteConfigRequestWithDefaults() *CloudFoundryWriteConfigReq
 
 	return &this
 }
+
+func (o CloudFoundryWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

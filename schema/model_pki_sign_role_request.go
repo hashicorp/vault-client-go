@@ -66,3 +66,7 @@ func NewPKISignRoleRequestWithDefaults() *PKISignRoleRequest {
 
 	return &this
 }
+
+func (o PKISignRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

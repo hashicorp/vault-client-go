@@ -78,3 +78,7 @@ func NewOktaWriteConfigRequestWithDefaults() *OktaWriteConfigRequest {
 
 	return &this
 }
+
+func (o OktaWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

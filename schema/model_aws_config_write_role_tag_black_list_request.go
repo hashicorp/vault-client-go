@@ -26,3 +26,7 @@ func NewAWSConfigWriteRoleTagBlackListRequestWithDefaults() *AWSConfigWriteRoleT
 
 	return &this
 }
+
+func (o AWSConfigWriteRoleTagBlackListRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

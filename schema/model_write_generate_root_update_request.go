@@ -23,3 +23,7 @@ func NewWriteGenerateRootUpdateRequestWithDefaults() *WriteGenerateRootUpdateReq
 
 	return &this
 }
+
+func (o WriteGenerateRootUpdateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

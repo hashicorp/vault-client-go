@@ -23,3 +23,7 @@ func NewActiveDirectoryWriteRoleRequestWithDefaults() *ActiveDirectoryWriteRoleR
 
 	return &this
 }
+
+func (o ActiveDirectoryWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

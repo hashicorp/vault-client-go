@@ -32,3 +32,7 @@ func NewWriteRekeyInitRequestWithDefaults() *WriteRekeyInitRequest {
 
 	return &this
 }
+
+func (o WriteRekeyInitRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

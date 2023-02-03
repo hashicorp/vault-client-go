@@ -23,3 +23,7 @@ func NewSSHWriteCredentialsRequestWithDefaults() *SSHWriteCredentialsRequest {
 
 	return &this
 }
+
+func (o SSHWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

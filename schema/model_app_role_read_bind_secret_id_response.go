@@ -20,3 +20,7 @@ func NewAppRoleReadBindSecretIDResponseWithDefaults() *AppRoleReadBindSecretIDRe
 
 	return &this
 }
+
+func (o AppRoleReadBindSecretIDResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

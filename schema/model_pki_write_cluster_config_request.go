@@ -20,3 +20,7 @@ func NewPKIWriteClusterConfigRequestWithDefaults() *PKIWriteClusterConfigRequest
 
 	return &this
 }
+
+func (o PKIWriteClusterConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

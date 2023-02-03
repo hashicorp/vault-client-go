@@ -44,3 +44,7 @@ func NewAWSLoginRequestWithDefaults() *AWSLoginRequest {
 
 	return &this
 }
+
+func (o AWSLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

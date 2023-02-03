@@ -39,42 +39,11 @@ func New{{classname}}WithDefaults() *{{classname}} {
 	return &this
 }
 
-{{#if isAdditionalPropertiesTrue}}
 func (o {{classname}}) MarshalJSON() ([]byte, error) {
-	toSerialize := {{#if isArray}}make([]interface{}, len(o.Items)){{/if}}{{#unless isArray}}make(map[string]interface{}){{/unless}}
-
-	{{#with parent}}
-	{{#unless isMap}}
-	{{#unless isArray}}
-	serialized{{parent}}, err{{parent}} := json.Marshal(o.{{parent}})
-	if err{{parent}} != nil {
-		return []byte{}, err{{parent}}
-	}
-	err{{parent}} = json.Unmarshal([]byte(serialized{{parent}}), &toSerialize)
-	if err{{parent}} != nil {
-		return []byte{}, err{{parent}}
-	}
-	{{/unless}}
-	{{/unless}}
-	{{#if isArray}}
-	for i, item := range o.Items {
-		toSerialize[i] = item
-	}
-	{{/if}}
-	{{/with}}
-	{{#each vars}}
-	toSerialize["{{baseName}}"] = o.{{name}}
-	{{/each}}
-	{{#if isAdditionalPropertiesTrue}}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-	{{/if}}
-
-	return json.Marshal(toSerialize)
+	return json.Marshal(o)
 }
 
+{{#if isAdditionalPropertiesTrue}}
 func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 {{#with parent}}
 {{#unless isMap}}

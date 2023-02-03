@@ -31,3 +31,7 @@ func NewGoogleCloudWriteStaticAccountRequestWithDefaults() *GoogleCloudWriteStat
 
 	return &this
 }
+
+func (o GoogleCloudWriteStaticAccountRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -56,3 +56,7 @@ func NewTokenWriteCreateRequestWithDefaults() *TokenWriteCreateRequest {
 
 	return &this
 }
+
+func (o TokenWriteCreateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

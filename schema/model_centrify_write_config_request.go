@@ -58,3 +58,7 @@ func NewCentrifyWriteConfigRequestWithDefaults() *CentrifyWriteConfigRequest {
 
 	return &this
 }
+
+func (o CentrifyWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

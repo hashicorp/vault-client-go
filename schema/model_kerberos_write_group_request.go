@@ -20,3 +20,7 @@ func NewKerberosWriteGroupRequestWithDefaults() *KerberosWriteGroupRequest {
 
 	return &this
 }
+
+func (o KerberosWriteGroupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

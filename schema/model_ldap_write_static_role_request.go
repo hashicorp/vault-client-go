@@ -26,3 +26,7 @@ func NewLDAPWriteStaticRoleRequestWithDefaults() *LDAPWriteStaticRoleRequest {
 
 	return &this
 }
+
+func (o LDAPWriteStaticRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

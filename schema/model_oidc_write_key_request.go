@@ -31,3 +31,7 @@ func NewOIDCWriteKeyRequestWithDefaults() *OIDCWriteKeyRequest {
 
 	return &this
 }
+
+func (o OIDCWriteKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

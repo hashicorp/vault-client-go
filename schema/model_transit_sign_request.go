@@ -52,3 +52,7 @@ func NewTransitSignRequestWithDefaults() *TransitSignRequest {
 
 	return &this
 }
+
+func (o TransitSignRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

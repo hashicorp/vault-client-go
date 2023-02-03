@@ -25,3 +25,7 @@ func NewAppRoleLoginRequestWithDefaults() *AppRoleLoginRequest {
 
 	return &this
 }
+
+func (o AppRoleLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

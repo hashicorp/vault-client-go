@@ -29,3 +29,7 @@ func NewGoogleCloudWriteKeyRequestWithDefaults() *GoogleCloudWriteKeyRequest {
 
 	return &this
 }
+
+func (o GoogleCloudWriteKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

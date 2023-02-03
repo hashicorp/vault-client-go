@@ -53,3 +53,7 @@ func NewWriteAuthMethodTuneRequestWithDefaults() *WriteAuthMethodTuneRequest {
 
 	return &this
 }
+
+func (o WriteAuthMethodTuneRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

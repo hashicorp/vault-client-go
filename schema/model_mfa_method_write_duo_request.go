@@ -38,3 +38,7 @@ func NewMFAMethodWriteDuoRequestWithDefaults() *MFAMethodWriteDuoRequest {
 
 	return &this
 }
+
+func (o MFAMethodWriteDuoRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

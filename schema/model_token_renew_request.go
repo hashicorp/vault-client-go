@@ -25,3 +25,7 @@ func NewTokenRenewRequestWithDefaults() *TokenRenewRequest {
 
 	return &this
 }
+
+func (o TokenRenewRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

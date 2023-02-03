@@ -29,3 +29,7 @@ func NewKerberosWriteConfigRequestWithDefaults() *KerberosWriteConfigRequest {
 
 	return &this
 }
+
+func (o KerberosWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

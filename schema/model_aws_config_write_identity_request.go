@@ -32,3 +32,7 @@ func NewAWSConfigWriteIdentityRequestWithDefaults() *AWSConfigWriteIdentityReque
 
 	return &this
 }
+
+func (o AWSConfigWriteIdentityRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

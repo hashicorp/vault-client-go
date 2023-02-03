@@ -26,3 +26,7 @@ func NewWriteConfigCORSRequestWithDefaults() *WriteConfigCORSRequest {
 
 	return &this
 }
+
+func (o WriteConfigCORSRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

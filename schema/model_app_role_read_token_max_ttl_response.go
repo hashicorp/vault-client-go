@@ -20,3 +20,7 @@ func NewAppRoleReadTokenMaxTTLResponseWithDefaults() *AppRoleReadTokenMaxTTLResp
 
 	return &this
 }
+
+func (o AppRoleReadTokenMaxTTLResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

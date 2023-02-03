@@ -20,3 +20,7 @@ func NewEntityBatchDeleteRequestWithDefaults() *EntityBatchDeleteRequest {
 
 	return &this
 }
+
+func (o EntityBatchDeleteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

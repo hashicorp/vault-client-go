@@ -20,3 +20,7 @@ func NewOCILoginWithRoleRequestWithDefaults() *OCILoginWithRoleRequest {
 
 	return &this
 }
+
+func (o OCILoginWithRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

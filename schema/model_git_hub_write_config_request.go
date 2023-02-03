@@ -63,3 +63,7 @@ func NewGitHubWriteConfigRequestWithDefaults() *GitHubWriteConfigRequest {
 
 	return &this
 }
+
+func (o GitHubWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

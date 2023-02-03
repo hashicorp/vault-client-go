@@ -23,3 +23,7 @@ func NewWriteConfigUIHeaderRequestWithDefaults() *WriteConfigUIHeaderRequest {
 
 	return &this
 }
+
+func (o WriteConfigUIHeaderRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

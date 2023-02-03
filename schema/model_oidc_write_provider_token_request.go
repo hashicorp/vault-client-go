@@ -35,3 +35,7 @@ func NewOIDCWriteProviderTokenRequestWithDefaults() *OIDCWriteProviderTokenReque
 
 	return &this
 }
+
+func (o OIDCWriteProviderTokenRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

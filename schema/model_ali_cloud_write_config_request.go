@@ -23,3 +23,7 @@ func NewAliCloudWriteConfigRequestWithDefaults() *AliCloudWriteConfigRequest {
 
 	return &this
 }
+
+func (o AliCloudWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

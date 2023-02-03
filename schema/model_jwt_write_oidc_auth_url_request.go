@@ -26,3 +26,7 @@ func NewJWTWriteOIDCAuthURLRequestWithDefaults() *JWTWriteOIDCAuthURLRequest {
 
 	return &this
 }
+
+func (o JWTWriteOIDCAuthURLRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

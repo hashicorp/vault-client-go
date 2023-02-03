@@ -22,3 +22,7 @@ func NewAWSWriteIdentityAccessListTidySettingsRequestWithDefaults() *AWSWriteIde
 
 	return &this
 }
+
+func (o AWSWriteIdentityAccessListTidySettingsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

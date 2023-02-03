@@ -23,3 +23,7 @@ func NewGoogleCloudWriteRoleLabelsRequestWithDefaults() *GoogleCloudWriteRoleLab
 
 	return &this
 }
+
+func (o GoogleCloudWriteRoleLabelsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewWritePoliciesACLRequestWithDefaults() *WritePoliciesACLRequest {
 
 	return &this
 }
+
+func (o WritePoliciesACLRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

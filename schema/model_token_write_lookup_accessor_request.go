@@ -20,3 +20,7 @@ func NewTokenWriteLookupAccessorRequestWithDefaults() *TokenWriteLookupAccessorR
 
 	return &this
 }
+
+func (o TokenWriteLookupAccessorRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

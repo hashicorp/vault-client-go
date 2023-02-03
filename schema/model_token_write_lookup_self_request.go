@@ -20,3 +20,7 @@ func NewTokenWriteLookupSelfRequestWithDefaults() *TokenWriteLookupSelfRequest {
 
 	return &this
 }
+
+func (o TokenWriteLookupSelfRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -51,3 +51,7 @@ func NewMFAMethodWriteTOTPRequestWithDefaults() *MFAMethodWriteTOTPRequest {
 
 	return &this
 }
+
+func (o MFAMethodWriteTOTPRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

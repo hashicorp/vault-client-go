@@ -20,3 +20,7 @@ func NewActiveDirectoryCheckOutLibraryRequestWithDefaults() *ActiveDirectoryChec
 
 	return &this
 }
+
+func (o ActiveDirectoryCheckOutLibraryRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

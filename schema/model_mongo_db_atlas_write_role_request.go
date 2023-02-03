@@ -41,3 +41,7 @@ func NewMongoDBAtlasWriteRoleRequestWithDefaults() *MongoDBAtlasWriteRoleRequest
 
 	return &this
 }
+
+func (o MongoDBAtlasWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

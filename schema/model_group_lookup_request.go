@@ -32,3 +32,7 @@ func NewGroupLookupRequestWithDefaults() *GroupLookupRequest {
 
 	return &this
 }
+
+func (o GroupLookupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

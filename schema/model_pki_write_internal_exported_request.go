@@ -35,3 +35,7 @@ func NewPKIWriteInternalExportedRequestWithDefaults() *PKIWriteInternalExportedR
 
 	return &this
 }
+
+func (o PKIWriteInternalExportedRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

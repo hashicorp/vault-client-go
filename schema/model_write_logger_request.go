@@ -20,3 +20,7 @@ func NewWriteLoggerRequestWithDefaults() *WriteLoggerRequest {
 
 	return &this
 }
+
+func (o WriteLoggerRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

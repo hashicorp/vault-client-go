@@ -25,3 +25,7 @@ func NewPKIIssuerSignSelfIssuedRequestWithDefaults() *PKIIssuerSignSelfIssuedReq
 
 	return &this
 }
+
+func (o PKIIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

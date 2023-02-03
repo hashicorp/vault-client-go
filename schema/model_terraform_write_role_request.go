@@ -32,3 +32,7 @@ func NewTerraformWriteRoleRequestWithDefaults() *TerraformWriteRoleRequest {
 
 	return &this
 }
+
+func (o TerraformWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

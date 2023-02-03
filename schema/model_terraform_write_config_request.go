@@ -29,3 +29,7 @@ func NewTerraformWriteConfigRequestWithDefaults() *TerraformWriteConfigRequest {
 
 	return &this
 }
+
+func (o TerraformWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewTokenRevokeRequestWithDefaults() *TokenRevokeRequest {
 
 	return &this
 }
+
+func (o TokenRevokeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

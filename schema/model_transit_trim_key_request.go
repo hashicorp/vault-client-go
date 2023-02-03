@@ -20,3 +20,7 @@ func NewTransitTrimKeyRequestWithDefaults() *TransitTrimKeyRequest {
 
 	return &this
 }
+
+func (o TransitTrimKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

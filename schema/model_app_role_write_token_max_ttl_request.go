@@ -20,3 +20,7 @@ func NewAppRoleWriteTokenMaxTTLRequestWithDefaults() *AppRoleWriteTokenMaxTTLReq
 
 	return &this
 }
+
+func (o AppRoleWriteTokenMaxTTLRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

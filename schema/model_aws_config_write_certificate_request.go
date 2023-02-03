@@ -25,3 +25,7 @@ func NewAWSConfigWriteCertificateRequestWithDefaults() *AWSConfigWriteCertificat
 
 	return &this
 }
+
+func (o AWSConfigWriteCertificateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

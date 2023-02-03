@@ -52,3 +52,7 @@ func NewPKIWriteAutoTidyConfigRequestWithDefaults() *PKIWriteAutoTidyConfigReque
 
 	return &this
 }
+
+func (o PKIWriteAutoTidyConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

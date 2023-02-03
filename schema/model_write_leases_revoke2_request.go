@@ -25,3 +25,7 @@ func NewWriteLeasesRevoke2RequestWithDefaults() *WriteLeasesRevoke2Request {
 
 	return &this
 }
+
+func (o WriteLeasesRevoke2Request) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

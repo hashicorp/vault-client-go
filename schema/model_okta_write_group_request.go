@@ -20,3 +20,7 @@ func NewOktaWriteGroupRequestWithDefaults() *OktaWriteGroupRequest {
 
 	return &this
 }
+
+func (o OktaWriteGroupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

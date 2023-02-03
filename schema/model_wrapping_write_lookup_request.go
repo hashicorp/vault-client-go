@@ -19,3 +19,7 @@ func NewWrappingWriteLookupRequestWithDefaults() *WrappingWriteLookupRequest {
 
 	return &this
 }
+
+func (o WrappingWriteLookupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

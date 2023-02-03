@@ -30,3 +30,7 @@ func NewSysWriteToolsRandomUrlbytesRequestWithDefaults() *SysWriteToolsRandomUrl
 
 	return &this
 }
+
+func (o SysWriteToolsRandomUrlbytesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

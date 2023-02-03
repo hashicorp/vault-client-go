@@ -20,3 +20,7 @@ func NewAppRoleReadTokenBoundCIDRsResponseWithDefaults() *AppRoleReadTokenBoundC
 
 	return &this
 }
+
+func (o AppRoleReadTokenBoundCIDRsResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -23,3 +23,7 @@ func NewRadiusLoginWithUsernameRequestWithDefaults() *RadiusLoginWithUsernameReq
 
 	return &this
 }
+
+func (o RadiusLoginWithUsernameRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

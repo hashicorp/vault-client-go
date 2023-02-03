@@ -45,3 +45,7 @@ func NewPKITidyRequestWithDefaults() *PKITidyRequest {
 
 	return &this
 }
+
+func (o PKITidyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

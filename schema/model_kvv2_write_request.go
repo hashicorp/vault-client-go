@@ -26,3 +26,7 @@ func NewKVv2WriteRequestWithDefaults() *KVv2WriteRequest {
 
 	return &this
 }
+
+func (o KVv2WriteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -23,3 +23,7 @@ func NewOktaWriteUserRequestWithDefaults() *OktaWriteUserRequest {
 
 	return &this
 }
+
+func (o OktaWriteUserRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -22,3 +22,7 @@ func NewAWSWriteRoleTagDenyListTidySettingsRequestWithDefaults() *AWSWriteRoleTa
 
 	return &this
 }
+
+func (o AWSWriteRoleTagDenyListTidySettingsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

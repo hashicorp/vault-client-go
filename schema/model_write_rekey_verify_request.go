@@ -23,3 +23,7 @@ func NewWriteRekeyVerifyRequestWithDefaults() *WriteRekeyVerifyRequest {
 
 	return &this
 }
+
+func (o WriteRekeyVerifyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

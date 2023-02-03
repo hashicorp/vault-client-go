@@ -29,3 +29,7 @@ func NewPKIRootSignSelfIssuedRequestWithDefaults() *PKIRootSignSelfIssuedRequest
 
 	return &this
 }
+
+func (o PKIRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewSSHVerifyRequestWithDefaults() *SSHVerifyRequest {
 
 	return &this
 }
+
+func (o SSHVerifyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

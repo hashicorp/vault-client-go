@@ -118,3 +118,7 @@ func NewSSHWriteRoleRequestWithDefaults() *SSHWriteRoleRequest {
 
 	return &this
 }
+
+func (o SSHWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

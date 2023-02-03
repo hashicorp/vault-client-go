@@ -48,3 +48,7 @@ func NewPkiWriteIssuerRefDerPemRequestWithDefaults() *PkiWriteIssuerRefDerPemReq
 
 	return &this
 }
+
+func (o PkiWriteIssuerRefDerPemRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

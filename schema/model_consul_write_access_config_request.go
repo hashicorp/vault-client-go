@@ -37,3 +37,7 @@ func NewConsulWriteAccessConfigRequestWithDefaults() *ConsulWriteAccessConfigReq
 
 	return &this
 }
+
+func (o ConsulWriteAccessConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

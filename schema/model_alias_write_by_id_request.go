@@ -29,3 +29,7 @@ func NewAliasWriteByIDRequestWithDefaults() *AliasWriteByIDRequest {
 
 	return &this
 }
+
+func (o AliasWriteByIDRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

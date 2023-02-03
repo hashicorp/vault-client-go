@@ -118,3 +118,7 @@ func NewPKIIssuersGenerateRootRequestWithDefaults() *PKIIssuersGenerateRootReque
 
 	return &this
 }
+
+func (o PKIIssuersGenerateRootRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

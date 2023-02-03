@@ -23,3 +23,7 @@ func NewMFAMethodAdminDestroyTOTPRequestWithDefaults() *MFAMethodAdminDestroyTOT
 
 	return &this
 }
+
+func (o MFAMethodAdminDestroyTOTPRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

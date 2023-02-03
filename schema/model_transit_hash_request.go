@@ -32,3 +32,7 @@ func NewTransitHashRequestWithDefaults() *TransitHashRequest {
 
 	return &this
 }
+
+func (o TransitHashRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -77,3 +77,7 @@ func NewAppRoleWriteRoleRequestWithDefaults() *AppRoleWriteRoleRequest {
 
 	return &this
 }
+
+func (o AppRoleWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

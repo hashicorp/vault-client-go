@@ -25,3 +25,7 @@ func NewTransitRestoreKeyRequestWithDefaults() *TransitRestoreKeyRequest {
 
 	return &this
 }
+
+func (o TransitRestoreKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

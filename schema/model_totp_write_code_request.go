@@ -20,3 +20,7 @@ func NewTOTPWriteCodeRequestWithDefaults() *TOTPWriteCodeRequest {
 
 	return &this
 }
+
+func (o TOTPWriteCodeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

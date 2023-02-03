@@ -29,3 +29,7 @@ func NewOIDCWriteRoleRequestWithDefaults() *OIDCWriteRoleRequest {
 
 	return &this
 }
+
+func (o OIDCWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

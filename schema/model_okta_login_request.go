@@ -29,3 +29,7 @@ func NewOktaLoginRequestWithDefaults() *OktaLoginRequest {
 
 	return &this
 }
+
+func (o OktaLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

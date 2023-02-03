@@ -19,3 +19,7 @@ func NewWrappingUnwrapRequestWithDefaults() *WrappingUnwrapRequest {
 
 	return &this
 }
+
+func (o WrappingUnwrapRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

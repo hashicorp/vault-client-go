@@ -26,3 +26,7 @@ func NewWriteRotateConfigRequestWithDefaults() *WriteRotateConfigRequest {
 
 	return &this
 }
+
+func (o WriteRotateConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

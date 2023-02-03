@@ -28,3 +28,7 @@ func NewTransitGenerateHMACWithAlgorithmRequestWithDefaults() *TransitGenerateHM
 
 	return &this
 }
+
+func (o TransitGenerateHMACWithAlgorithmRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

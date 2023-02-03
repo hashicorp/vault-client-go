@@ -20,3 +20,7 @@ func NewTokenRevokeAccessorRequestWithDefaults() *TokenRevokeAccessorRequest {
 
 	return &this
 }
+
+func (o TokenRevokeAccessorRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

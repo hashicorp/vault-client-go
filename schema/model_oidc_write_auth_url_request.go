@@ -26,3 +26,7 @@ func NewOIDCWriteAuthURLRequestWithDefaults() *OIDCWriteAuthURLRequest {
 
 	return &this
 }
+
+func (o OIDCWriteAuthURLRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

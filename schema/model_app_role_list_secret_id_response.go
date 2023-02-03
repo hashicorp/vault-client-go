@@ -19,3 +19,7 @@ func NewAppRoleListSecretIDResponseWithDefaults() *AppRoleListSecretIDResponse {
 
 	return &this
 }
+
+func (o AppRoleListSecretIDResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

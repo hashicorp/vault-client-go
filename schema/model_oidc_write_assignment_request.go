@@ -23,3 +23,7 @@ func NewOIDCWriteAssignmentRequestWithDefaults() *OIDCWriteAssignmentRequest {
 
 	return &this
 }
+
+func (o OIDCWriteAssignmentRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

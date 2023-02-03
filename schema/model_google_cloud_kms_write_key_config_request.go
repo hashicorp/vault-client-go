@@ -23,3 +23,7 @@ func NewGoogleCloudKMSWriteKeyConfigRequestWithDefaults() *GoogleCloudKMSWriteKe
 
 	return &this
 }
+
+func (o GoogleCloudKMSWriteKeyConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

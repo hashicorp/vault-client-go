@@ -25,3 +25,7 @@ func NewWritePluginsReloadBackendRequestWithDefaults() *WritePluginsReloadBacken
 
 	return &this
 }
+
+func (o WritePluginsReloadBackendRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

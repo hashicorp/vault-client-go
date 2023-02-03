@@ -23,3 +23,7 @@ func NewMongoDBAtlasWriteConfigRequestWithDefaults() *MongoDBAtlasWriteConfigReq
 
 	return &this
 }
+
+func (o MongoDBAtlasWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -19,3 +19,7 @@ func NewWriteConfigAuditingRequestHeaderRequestWithDefaults() *WriteConfigAuditi
 
 	return &this
 }
+
+func (o WriteConfigAuditingRequestHeaderRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

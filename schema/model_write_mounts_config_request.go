@@ -55,3 +55,7 @@ func NewWriteMountsConfigRequestWithDefaults() *WriteMountsConfigRequest {
 
 	return &this
 }
+
+func (o WriteMountsConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -29,3 +29,7 @@ func NewKVv2WriteMetadataRequestWithDefaults() *KVv2WriteMetadataRequest {
 
 	return &this
 }
+
+func (o KVv2WriteMetadataRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

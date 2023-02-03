@@ -20,3 +20,7 @@ func NewUserpassWriteUserPasswordRequestWithDefaults() *UserpassWriteUserPasswor
 
 	return &this
 }
+
+func (o UserpassWriteUserPasswordRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

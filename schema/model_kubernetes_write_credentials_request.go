@@ -26,3 +26,7 @@ func NewKubernetesWriteCredentialsRequestWithDefaults() *KubernetesWriteCredenti
 
 	return &this
 }
+
+func (o KubernetesWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewSSHLookupRequestWithDefaults() *SSHLookupRequest {
 
 	return &this
 }
+
+func (o SSHLookupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -121,3 +121,7 @@ func NewJWTWriteRoleRequestWithDefaults() *JWTWriteRoleRequest {
 
 	return &this
 }
+
+func (o JWTWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

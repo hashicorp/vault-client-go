@@ -49,3 +49,7 @@ func NewOCIWriteRoleRequestWithDefaults() *OCIWriteRoleRequest {
 
 	return &this
 }
+
+func (o OCIWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

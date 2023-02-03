@@ -20,3 +20,7 @@ func NewLDAPWriteGroupRequestWithDefaults() *LDAPWriteGroupRequest {
 
 	return &this
 }
+
+func (o LDAPWriteGroupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

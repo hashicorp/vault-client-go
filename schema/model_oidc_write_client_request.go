@@ -38,3 +38,7 @@ func NewOIDCWriteClientRequestWithDefaults() *OIDCWriteClientRequest {
 
 	return &this
 }
+
+func (o OIDCWriteClientRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

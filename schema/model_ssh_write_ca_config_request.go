@@ -36,3 +36,7 @@ func NewSSHWriteCAConfigRequestWithDefaults() *SSHWriteCAConfigRequest {
 
 	return &this
 }
+
+func (o SSHWriteCAConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -32,3 +32,7 @@ func NewAliasWriteRequestWithDefaults() *AliasWriteRequest {
 
 	return &this
 }
+
+func (o AliasWriteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

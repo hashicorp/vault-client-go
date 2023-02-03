@@ -28,3 +28,7 @@ func NewAWSWriteSecurityTokenServiceRequestWithDefaults() *AWSWriteSecurityToken
 
 	return &this
 }
+
+func (o AWSWriteSecurityTokenServiceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

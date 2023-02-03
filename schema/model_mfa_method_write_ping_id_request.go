@@ -26,3 +26,7 @@ func NewMFAMethodWritePingIDRequestWithDefaults() *MFAMethodWritePingIDRequest {
 
 	return &this
 }
+
+func (o MFAMethodWritePingIDRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

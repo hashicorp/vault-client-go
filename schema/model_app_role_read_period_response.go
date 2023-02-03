@@ -24,3 +24,7 @@ func NewAppRoleReadPeriodResponseWithDefaults() *AppRoleReadPeriodResponse {
 
 	return &this
 }
+
+func (o AppRoleReadPeriodResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

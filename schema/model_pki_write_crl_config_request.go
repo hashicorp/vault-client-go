@@ -46,3 +46,7 @@ func NewPKIWriteCRLConfigRequestWithDefaults() *PKIWriteCRLConfigRequest {
 
 	return &this
 }
+
+func (o PKIWriteCRLConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

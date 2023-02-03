@@ -35,3 +35,7 @@ func NewPKIWriteKMSRequestWithDefaults() *PKIWriteKMSRequest {
 
 	return &this
 }
+
+func (o PKIWriteKMSRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

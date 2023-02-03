@@ -31,3 +31,7 @@ func NewPKIWriteURLConfigRequestWithDefaults() *PKIWriteURLConfigRequest {
 
 	return &this
 }
+
+func (o PKIWriteURLConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

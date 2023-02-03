@@ -20,3 +20,7 @@ func NewAppRoleReadLocalSecretIDsResponseWithDefaults() *AppRoleReadLocalSecretI
 
 	return &this
 }
+
+func (o AppRoleReadLocalSecretIDsResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

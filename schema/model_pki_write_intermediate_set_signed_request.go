@@ -20,3 +20,7 @@ func NewPKIWriteIntermediateSetSignedRequestWithDefaults() *PKIWriteIntermediate
 
 	return &this
 }
+
+func (o PKIWriteIntermediateSetSignedRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

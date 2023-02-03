@@ -20,3 +20,7 @@ func NewAppRoleWriteSecretIDAccessorDestroyRequestWithDefaults() *AppRoleWriteSe
 
 	return &this
 }
+
+func (o AppRoleWriteSecretIDAccessorDestroyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

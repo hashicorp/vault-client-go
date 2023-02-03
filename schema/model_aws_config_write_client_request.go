@@ -53,3 +53,7 @@ func NewAWSConfigWriteClientRequestWithDefaults() *AWSConfigWriteClientRequest {
 
 	return &this
 }
+
+func (o AWSConfigWriteClientRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

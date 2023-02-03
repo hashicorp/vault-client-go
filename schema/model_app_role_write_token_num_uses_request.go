@@ -20,3 +20,7 @@ func NewAppRoleWriteTokenNumUsesRequestWithDefaults() *AppRoleWriteTokenNumUsesR
 
 	return &this
 }
+
+func (o AppRoleWriteTokenNumUsesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

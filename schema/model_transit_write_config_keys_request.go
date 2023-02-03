@@ -20,3 +20,7 @@ func NewTransitWriteConfigKeysRequestWithDefaults() *TransitWriteConfigKeysReque
 
 	return &this
 }
+
+func (o TransitWriteConfigKeysRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

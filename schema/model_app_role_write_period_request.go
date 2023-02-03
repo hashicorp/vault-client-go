@@ -24,3 +24,7 @@ func NewAppRoleWritePeriodRequestWithDefaults() *AppRoleWritePeriodRequest {
 
 	return &this
 }
+
+func (o AppRoleWritePeriodRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

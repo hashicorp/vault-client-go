@@ -20,3 +20,7 @@ func NewGitHubWriteMapTeamRequestWithDefaults() *GitHubWriteMapTeamRequest {
 
 	return &this
 }
+
+func (o GitHubWriteMapTeamRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

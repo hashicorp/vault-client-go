@@ -23,3 +23,7 @@ func NewOIDCLoginRequestWithDefaults() *OIDCLoginRequest {
 
 	return &this
 }
+
+func (o OIDCLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

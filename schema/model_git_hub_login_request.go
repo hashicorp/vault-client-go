@@ -20,3 +20,7 @@ func NewGitHubLoginRequestWithDefaults() *GitHubLoginRequest {
 
 	return &this
 }
+
+func (o GitHubLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

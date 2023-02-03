@@ -26,3 +26,7 @@ func NewRenewRequestWithDefaults() *RenewRequest {
 
 	return &this
 }
+
+func (o RenewRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -69,3 +69,7 @@ func NewAliCloudWriteAuthRoleRequestWithDefaults() *AliCloudWriteAuthRoleRequest
 
 	return &this
 }
+
+func (o AliCloudWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

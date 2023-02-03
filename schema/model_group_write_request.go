@@ -38,3 +38,7 @@ func NewGroupWriteRequestWithDefaults() *GroupWriteRequest {
 
 	return &this
 }
+
+func (o GroupWriteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

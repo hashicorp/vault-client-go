@@ -23,3 +23,7 @@ func NewPKIImportKeysRequestWithDefaults() *PKIImportKeysRequest {
 
 	return &this
 }
+
+func (o PKIImportKeysRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

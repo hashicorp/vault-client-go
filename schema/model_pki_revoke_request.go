@@ -23,3 +23,7 @@ func NewPKIRevokeRequestWithDefaults() *PKIRevokeRequest {
 
 	return &this
 }
+
+func (o PKIRevokeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

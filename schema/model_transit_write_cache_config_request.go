@@ -22,3 +22,7 @@ func NewTransitWriteCacheConfigRequestWithDefaults() *TransitWriteCacheConfigReq
 
 	return &this
 }
+
+func (o TransitWriteCacheConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

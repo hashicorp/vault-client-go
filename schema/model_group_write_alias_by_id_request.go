@@ -26,3 +26,7 @@ func NewGroupWriteAliasByIDRequestWithDefaults() *GroupWriteAliasByIDRequest {
 
 	return &this
 }
+
+func (o GroupWriteAliasByIDRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

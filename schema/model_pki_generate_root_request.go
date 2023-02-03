@@ -118,3 +118,7 @@ func NewPKIGenerateRootRequestWithDefaults() *PKIGenerateRootRequest {
 
 	return &this
 }
+
+func (o PKIGenerateRootRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

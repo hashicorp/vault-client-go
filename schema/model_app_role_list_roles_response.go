@@ -19,3 +19,7 @@ func NewAppRoleListRolesResponseWithDefaults() *AppRoleListRolesResponse {
 
 	return &this
 }
+
+func (o AppRoleListRolesResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

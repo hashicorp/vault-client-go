@@ -56,3 +56,7 @@ func NewTokenWriteCreateWithRoleRequestWithDefaults() *TokenWriteCreateWithRoleR
 
 	return &this
 }
+
+func (o TokenWriteCreateWithRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

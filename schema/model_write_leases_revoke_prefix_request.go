@@ -22,3 +22,7 @@ func NewWriteLeasesRevokePrefixRequestWithDefaults() *WriteLeasesRevokePrefixReq
 
 	return &this
 }
+
+func (o WriteLeasesRevokePrefixRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

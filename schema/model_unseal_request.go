@@ -23,3 +23,7 @@ func NewUnsealRequestWithDefaults() *UnsealRequest {
 
 	return &this
 }
+
+func (o UnsealRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

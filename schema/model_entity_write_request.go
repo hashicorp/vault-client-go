@@ -32,3 +32,7 @@ func NewEntityWriteRequestWithDefaults() *EntityWriteRequest {
 
 	return &this
 }
+
+func (o EntityWriteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

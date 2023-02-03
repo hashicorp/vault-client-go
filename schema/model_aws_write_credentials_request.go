@@ -31,3 +31,7 @@ func NewAWSWriteCredentialsRequestWithDefaults() *AWSWriteCredentialsRequest {
 
 	return &this
 }
+
+func (o AWSWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

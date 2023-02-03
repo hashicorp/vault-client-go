@@ -82,3 +82,7 @@ func NewCloudFoundryWriteRoleRequestWithDefaults() *CloudFoundryWriteRoleRequest
 
 	return &this
 }
+
+func (o CloudFoundryWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

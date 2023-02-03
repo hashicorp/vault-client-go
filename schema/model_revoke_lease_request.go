@@ -25,3 +25,7 @@ func NewRevokeLeaseRequestWithDefaults() *RevokeLeaseRequest {
 
 	return &this
 }
+
+func (o RevokeLeaseRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

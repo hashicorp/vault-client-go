@@ -35,3 +35,7 @@ func NewWriteQuotasRateLimitRequestWithDefaults() *WriteQuotasRateLimitRequest {
 
 	return &this
 }
+
+func (o WriteQuotasRateLimitRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

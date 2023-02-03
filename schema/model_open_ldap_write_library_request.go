@@ -33,3 +33,7 @@ func NewOpenLDAPWriteLibraryRequestWithDefaults() *OpenLDAPWriteLibraryRequest {
 
 	return &this
 }
+
+func (o OpenLDAPWriteLibraryRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

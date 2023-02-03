@@ -86,3 +86,7 @@ func NewPKISignVerbatimRequestWithDefaults() *PKISignVerbatimRequest {
 
 	return &this
 }
+
+func (o PKISignVerbatimRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -27,3 +27,7 @@ func NewWriteCapabilitiesSelfRequestWithDefaults() *WriteCapabilitiesSelfRequest
 
 	return &this
 }
+
+func (o WriteCapabilitiesSelfRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -28,3 +28,7 @@ func NewRevokeRequestWithDefaults() *RevokeRequest {
 
 	return &this
 }
+
+func (o RevokeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

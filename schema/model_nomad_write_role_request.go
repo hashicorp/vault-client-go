@@ -28,3 +28,7 @@ func NewNomadWriteRoleRequestWithDefaults() *NomadWriteRoleRequest {
 
 	return &this
 }
+
+func (o NomadWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

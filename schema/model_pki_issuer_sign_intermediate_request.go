@@ -109,3 +109,7 @@ func NewPKIIssuerSignIntermediateRequestWithDefaults() *PKIIssuerSignIntermediat
 
 	return &this
 }
+
+func (o PKIIssuerSignIntermediateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

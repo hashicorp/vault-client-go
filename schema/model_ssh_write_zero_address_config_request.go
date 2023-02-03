@@ -20,3 +20,7 @@ func NewSSHWriteZeroAddressConfigRequestWithDefaults() *SSHWriteZeroAddressConfi
 
 	return &this
 }
+
+func (o SSHWriteZeroAddressConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

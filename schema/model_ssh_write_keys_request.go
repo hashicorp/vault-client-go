@@ -20,3 +20,7 @@ func NewSSHWriteKeysRequestWithDefaults() *SSHWriteKeysRequest {
 
 	return &this
 }
+
+func (o SSHWriteKeysRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

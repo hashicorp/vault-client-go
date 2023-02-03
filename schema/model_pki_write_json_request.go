@@ -52,3 +52,7 @@ func NewPkiWriteJsonRequestWithDefaults() *PkiWriteJsonRequest {
 
 	return &this
 }
+
+func (o PkiWriteJsonRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

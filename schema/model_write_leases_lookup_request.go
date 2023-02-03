@@ -20,3 +20,7 @@ func NewWriteLeasesLookupRequestWithDefaults() *WriteLeasesLookupRequest {
 
 	return &this
 }
+
+func (o WriteLeasesLookupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

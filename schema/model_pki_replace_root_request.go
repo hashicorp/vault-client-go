@@ -22,3 +22,7 @@ func NewPKIReplaceRootRequestWithDefaults() *PKIReplaceRootRequest {
 
 	return &this
 }
+
+func (o PKIReplaceRootRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

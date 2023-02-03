@@ -23,3 +23,7 @@ func NewMFAValidateRequestWithDefaults() *MFAValidateRequest {
 
 	return &this
 }
+
+func (o MFAValidateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

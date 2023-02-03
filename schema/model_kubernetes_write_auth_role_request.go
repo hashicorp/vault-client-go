@@ -83,3 +83,7 @@ func NewKubernetesWriteAuthRoleRequestWithDefaults() *KubernetesWriteAuthRoleReq
 
 	return &this
 }
+
+func (o KubernetesWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

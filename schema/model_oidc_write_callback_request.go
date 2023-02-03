@@ -25,3 +25,7 @@ func NewOIDCWriteCallbackRequestWithDefaults() *OIDCWriteCallbackRequest {
 
 	return &this
 }
+
+func (o OIDCWriteCallbackRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

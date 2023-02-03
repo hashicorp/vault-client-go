@@ -35,3 +35,7 @@ func NewOpenLDAPWriteRoleRequestWithDefaults() *OpenLDAPWriteRoleRequest {
 
 	return &this
 }
+
+func (o OpenLDAPWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

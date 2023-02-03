@@ -32,3 +32,7 @@ func NewEntityWriteAliasByIDRequestWithDefaults() *EntityWriteAliasByIDRequest {
 
 	return &this
 }
+
+func (o EntityWriteAliasByIDRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

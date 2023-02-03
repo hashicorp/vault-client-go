@@ -62,3 +62,7 @@ func NewPKIWriteIssueRoleRequestWithDefaults() *PKIWriteIssueRoleRequest {
 
 	return &this
 }
+
+func (o PKIWriteIssueRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

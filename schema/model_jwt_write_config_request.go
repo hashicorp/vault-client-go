@@ -59,3 +59,7 @@ func NewJWTWriteConfigRequestWithDefaults() *JWTWriteConfigRequest {
 
 	return &this
 }
+
+func (o JWTWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

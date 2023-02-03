@@ -35,3 +35,7 @@ func NewSysWritePluginsCatalogNameRequestWithDefaults() *SysWritePluginsCatalogN
 
 	return &this
 }
+
+func (o SysWritePluginsCatalogNameRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

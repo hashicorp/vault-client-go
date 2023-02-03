@@ -23,3 +23,7 @@ func NewAWSConfigWriteLeaseRequestWithDefaults() *AWSConfigWriteLeaseRequest {
 
 	return &this
 }
+
+func (o AWSConfigWriteLeaseRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

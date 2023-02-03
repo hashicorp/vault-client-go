@@ -23,3 +23,7 @@ func NewLDAPWriteUserRequestWithDefaults() *LDAPWriteUserRequest {
 
 	return &this
 }
+
+func (o LDAPWriteUserRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

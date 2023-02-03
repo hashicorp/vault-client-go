@@ -26,3 +26,7 @@ func NewTransitGenerateRandomSourceBytesRequestWithDefaults() *TransitGenerateRa
 
 	return &this
 }
+
+func (o TransitGenerateRandomSourceBytesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

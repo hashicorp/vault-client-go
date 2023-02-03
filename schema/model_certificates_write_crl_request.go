@@ -23,3 +23,7 @@ func NewCertificatesWriteCRLRequestWithDefaults() *CertificatesWriteCRLRequest {
 
 	return &this
 }
+
+func (o CertificatesWriteCRLRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

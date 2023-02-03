@@ -23,3 +23,7 @@ func NewKubernetesLoginRequestWithDefaults() *KubernetesLoginRequest {
 
 	return &this
 }
+
+func (o KubernetesLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

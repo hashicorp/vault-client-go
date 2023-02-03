@@ -20,3 +20,7 @@ func NewOCIWriteConfigRequestWithDefaults() *OCIWriteConfigRequest {
 
 	return &this
 }
+
+func (o OCIWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

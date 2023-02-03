@@ -20,3 +20,7 @@ func NewWriteGenerateRootRequestWithDefaults() *WriteGenerateRootRequest {
 
 	return &this
 }
+
+func (o WriteGenerateRootRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

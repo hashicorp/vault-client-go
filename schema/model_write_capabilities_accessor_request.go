@@ -27,3 +27,7 @@ func NewWriteCapabilitiesAccessorRequestWithDefaults() *WriteCapabilitiesAccesso
 
 	return &this
 }
+
+func (o WriteCapabilitiesAccessorRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

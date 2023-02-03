@@ -29,3 +29,7 @@ func NewEntityMergeRequestWithDefaults() *EntityMergeRequest {
 
 	return &this
 }
+
+func (o EntityMergeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

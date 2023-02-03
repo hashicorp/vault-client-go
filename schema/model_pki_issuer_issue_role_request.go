@@ -58,3 +58,7 @@ func NewPKIIssuerIssueRoleRequestWithDefaults() *PKIIssuerIssueRoleRequest {
 
 	return &this
 }
+
+func (o PKIIssuerIssueRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

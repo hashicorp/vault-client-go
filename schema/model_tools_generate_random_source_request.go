@@ -29,3 +29,7 @@ func NewToolsGenerateRandomSourceRequestWithDefaults() *ToolsGenerateRandomSourc
 
 	return &this
 }
+
+func (o ToolsGenerateRandomSourceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

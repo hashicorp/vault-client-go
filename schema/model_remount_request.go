@@ -23,3 +23,7 @@ func NewRemountRequestWithDefaults() *RemountRequest {
 
 	return &this
 }
+
+func (o RemountRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

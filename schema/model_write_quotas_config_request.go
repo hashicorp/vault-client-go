@@ -26,3 +26,7 @@ func NewWriteQuotasConfigRequestWithDefaults() *WriteQuotasConfigRequest {
 
 	return &this
 }
+
+func (o WriteQuotasConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

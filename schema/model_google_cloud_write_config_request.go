@@ -26,3 +26,7 @@ func NewGoogleCloudWriteConfigRequestWithDefaults() *GoogleCloudWriteConfigReque
 
 	return &this
 }
+
+func (o GoogleCloudWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

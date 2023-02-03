@@ -40,3 +40,7 @@ func NewAWSConfigWriteRootIAMCredentialsRequestWithDefaults() *AWSConfigWriteRoo
 
 	return &this
 }
+
+func (o AWSConfigWriteRootIAMCredentialsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

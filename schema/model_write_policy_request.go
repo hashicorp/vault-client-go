@@ -24,3 +24,7 @@ func NewWritePolicyRequestWithDefaults() *WritePolicyRequest {
 
 	return &this
 }
+
+func (o WritePolicyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

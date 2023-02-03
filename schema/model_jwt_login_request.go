@@ -23,3 +23,7 @@ func NewJWTLoginRequestWithDefaults() *JWTLoginRequest {
 
 	return &this
 }
+
+func (o JWTLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

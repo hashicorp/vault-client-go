@@ -20,3 +20,7 @@ func NewOpenLDAPCheckInLibraryRequestWithDefaults() *OpenLDAPCheckInLibraryReque
 
 	return &this
 }
+
+func (o OpenLDAPCheckInLibraryRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

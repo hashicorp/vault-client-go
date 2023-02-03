@@ -23,3 +23,7 @@ func NewMFAMethodAdminGenerateTOTPRequestWithDefaults() *MFAMethodAdminGenerateT
 
 	return &this
 }
+
+func (o MFAMethodAdminGenerateTOTPRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

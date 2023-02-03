@@ -30,3 +30,7 @@ func NewWriteInternalCountersConfigRequestWithDefaults() *WriteInternalCountersC
 
 	return &this
 }
+
+func (o WriteInternalCountersConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

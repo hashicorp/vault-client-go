@@ -20,3 +20,7 @@ func NewPKIBundleWriteRequestWithDefaults() *PKIBundleWriteRequest {
 
 	return &this
 }
+
+func (o PKIBundleWriteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

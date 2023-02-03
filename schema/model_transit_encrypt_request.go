@@ -43,3 +43,7 @@ func NewTransitEncryptRequestWithDefaults() *TransitEncryptRequest {
 
 	return &this
 }
+
+func (o TransitEncryptRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

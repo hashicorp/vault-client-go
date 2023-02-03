@@ -20,3 +20,7 @@ func NewAppRoleReadTokenTTLResponseWithDefaults() *AppRoleReadTokenTTLResponse {
 
 	return &this
 }
+
+func (o AppRoleReadTokenTTLResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

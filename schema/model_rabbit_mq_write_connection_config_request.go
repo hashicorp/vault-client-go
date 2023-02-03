@@ -37,3 +37,7 @@ func NewRabbitMQWriteConnectionConfigRequestWithDefaults() *RabbitMQWriteConnect
 
 	return &this
 }
+
+func (o RabbitMQWriteConnectionConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -35,3 +35,7 @@ func NewAzureLoginRequestWithDefaults() *AzureLoginRequest {
 
 	return &this
 }
+
+func (o AzureLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -40,3 +40,7 @@ func NewSSHSignRequestWithDefaults() *SSHSignRequest {
 
 	return &this
 }
+
+func (o SSHSignRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

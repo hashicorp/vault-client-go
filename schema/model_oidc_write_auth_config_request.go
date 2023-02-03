@@ -59,3 +59,7 @@ func NewOIDCWriteAuthConfigRequestWithDefaults() *OIDCWriteAuthConfigRequest {
 
 	return &this
 }
+
+func (o OIDCWriteAuthConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

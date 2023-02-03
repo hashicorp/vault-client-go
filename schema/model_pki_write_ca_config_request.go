@@ -20,3 +20,7 @@ func NewPKIWriteCAConfigRequestWithDefaults() *PKIWriteCAConfigRequest {
 
 	return &this
 }
+
+func (o PKIWriteCAConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewAppRoleWriteRoleIDRequestWithDefaults() *AppRoleWriteRoleIDRequest {
 
 	return &this
 }
+
+func (o AppRoleWriteRoleIDRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

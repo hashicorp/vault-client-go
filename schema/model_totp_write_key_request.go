@@ -62,3 +62,7 @@ func NewTOTPWriteKeyRequestWithDefaults() *TOTPWriteKeyRequest {
 
 	return &this
 }
+
+func (o TOTPWriteKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

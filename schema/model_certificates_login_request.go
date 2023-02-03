@@ -20,3 +20,7 @@ func NewCertificatesLoginRequestWithDefaults() *CertificatesLoginRequest {
 
 	return &this
 }
+
+func (o CertificatesLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

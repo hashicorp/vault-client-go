@@ -26,3 +26,7 @@ func NewRabbitMQWriteLeaseConfigRequestWithDefaults() *RabbitMQWriteLeaseConfigR
 
 	return &this
 }
+
+func (o RabbitMQWriteLeaseConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -107,3 +107,7 @@ func NewPKIWriteIntermediateGenerateRequestWithDefaults() *PKIWriteIntermediateG
 
 	return &this
 }
+
+func (o PKIWriteIntermediateGenerateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

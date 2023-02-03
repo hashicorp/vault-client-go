@@ -33,3 +33,7 @@ func NewToolsGenerateRandomRequestWithDefaults() *ToolsGenerateRandomRequest {
 
 	return &this
 }
+
+func (o ToolsGenerateRandomRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

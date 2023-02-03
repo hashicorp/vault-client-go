@@ -59,3 +59,7 @@ func NewTokenWriteCreateOrphanRequestWithDefaults() *TokenWriteCreateOrphanReque
 
 	return &this
 }
+
+func (o TokenWriteCreateOrphanRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

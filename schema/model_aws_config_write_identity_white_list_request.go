@@ -26,3 +26,7 @@ func NewAWSConfigWriteIdentityWhiteListRequestWithDefaults() *AWSConfigWriteIden
 
 	return &this
 }
+
+func (o AWSConfigWriteIdentityWhiteListRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -113,3 +113,7 @@ func NewPKIRootSignIntermediateRequestWithDefaults() *PKIRootSignIntermediateReq
 
 	return &this
 }
+
+func (o PKIRootSignIntermediateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

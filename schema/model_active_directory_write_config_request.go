@@ -126,3 +126,7 @@ func NewActiveDirectoryWriteConfigRequestWithDefaults() *ActiveDirectoryWriteCon
 
 	return &this
 }
+
+func (o ActiveDirectoryWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

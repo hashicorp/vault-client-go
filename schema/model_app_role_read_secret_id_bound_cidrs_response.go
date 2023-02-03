@@ -20,3 +20,7 @@ func NewAppRoleReadSecretIDBoundCIDRsResponseWithDefaults() *AppRoleReadSecretID
 
 	return &this
 }
+
+func (o AppRoleReadSecretIDBoundCIDRsResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

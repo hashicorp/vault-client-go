@@ -132,3 +132,7 @@ func NewKerberosWriteLDAPConfigRequestWithDefaults() *KerberosWriteLDAPConfigReq
 
 	return &this
 }
+
+func (o KerberosWriteLDAPConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

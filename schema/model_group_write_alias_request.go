@@ -29,3 +29,7 @@ func NewGroupWriteAliasRequestWithDefaults() *GroupWriteAliasRequest {
 
 	return &this
 }
+
+func (o GroupWriteAliasRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewRadiusWriteUserRequestWithDefaults() *RadiusWriteUserRequest {
 
 	return &this
 }
+
+func (o RadiusWriteUserRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

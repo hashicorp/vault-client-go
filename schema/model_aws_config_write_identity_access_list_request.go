@@ -26,3 +26,7 @@ func NewAWSConfigWriteIdentityAccessListRequestWithDefaults() *AWSConfigWriteIde
 
 	return &this
 }
+
+func (o AWSConfigWriteIdentityAccessListRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

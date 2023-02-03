@@ -36,3 +36,7 @@ func NewAWSWriteAuthRoleTagRequestWithDefaults() *AWSWriteAuthRoleTagRequest {
 
 	return &this
 }
+
+func (o AWSWriteAuthRoleTagRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

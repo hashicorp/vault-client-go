@@ -57,3 +57,7 @@ func NewAWSWriteRoleRequestWithDefaults() *AWSWriteRoleRequest {
 
 	return &this
 }
+
+func (o AWSWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewOIDCRotateKeyRequestWithDefaults() *OIDCRotateKeyRequest {
 
 	return &this
 }
+
+func (o OIDCRotateKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

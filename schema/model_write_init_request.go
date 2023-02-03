@@ -41,3 +41,7 @@ func NewWriteInitRequestWithDefaults() *WriteInitRequest {
 
 	return &this
 }
+
+func (o WriteInitRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

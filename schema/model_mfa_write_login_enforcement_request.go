@@ -32,3 +32,7 @@ func NewMFAWriteLoginEnforcementRequestWithDefaults() *MFAWriteLoginEnforcementR
 
 	return &this
 }
+
+func (o MFAWriteLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

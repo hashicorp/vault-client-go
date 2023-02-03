@@ -20,3 +20,7 @@ func NewWritePoliciesPasswordRequestWithDefaults() *WritePoliciesPasswordRequest
 
 	return &this
 }
+
+func (o WritePoliciesPasswordRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

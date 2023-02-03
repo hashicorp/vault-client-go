@@ -29,3 +29,7 @@ func NewCloudFoundryLoginRequestWithDefaults() *CloudFoundryLoginRequest {
 
 	return &this
 }
+
+func (o CloudFoundryLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

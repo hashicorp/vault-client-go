@@ -33,3 +33,7 @@ func NewActiveDirectoryWriteLibraryRequestWithDefaults() *ActiveDirectoryWriteLi
 
 	return &this
 }
+
+func (o ActiveDirectoryWriteLibraryRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

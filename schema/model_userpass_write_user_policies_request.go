@@ -24,3 +24,7 @@ func NewUserpassWriteUserPoliciesRequestWithDefaults() *UserpassWriteUserPolicie
 
 	return &this
 }
+
+func (o UserpassWriteUserPoliciesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

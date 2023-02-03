@@ -28,3 +28,7 @@ func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
 
 	return &this
 }
+
+func (o CentrifyLoginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewAppRoleWriteTokenTTLRequestWithDefaults() *AppRoleWriteTokenTTLRequest {
 
 	return &this
 }
+
+func (o AppRoleWriteTokenTTLRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

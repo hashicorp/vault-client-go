@@ -20,3 +20,7 @@ func NewAppRoleWriteTokenBoundCIDRsRequestWithDefaults() *AppRoleWriteTokenBound
 
 	return &this
 }
+
+func (o AppRoleWriteTokenBoundCIDRsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

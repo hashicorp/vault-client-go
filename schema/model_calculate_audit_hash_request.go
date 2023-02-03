@@ -19,3 +19,7 @@ func NewCalculateAuditHashRequestWithDefaults() *CalculateAuditHashRequest {
 
 	return &this
 }
+
+func (o CalculateAuditHashRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

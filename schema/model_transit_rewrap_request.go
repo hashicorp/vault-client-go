@@ -29,3 +29,7 @@ func NewTransitRewrapRequestWithDefaults() *TransitRewrapRequest {
 
 	return &this
 }
+
+func (o TransitRewrapRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewLDAPCheckInManageLibraryRequestWithDefaults() *LDAPCheckInManageLibraryR
 
 	return &this
 }
+
+func (o LDAPCheckInManageLibraryRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -110,3 +110,7 @@ func NewPKIWriteIntermediateCrossSignRequestWithDefaults() *PKIWriteIntermediate
 
 	return &this
 }
+
+func (o PKIWriteIntermediateCrossSignRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

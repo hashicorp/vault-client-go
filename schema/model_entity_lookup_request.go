@@ -32,3 +32,7 @@ func NewEntityLookupRequestWithDefaults() *EntityLookupRequest {
 
 	return &this
 }
+
+func (o EntityLookupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

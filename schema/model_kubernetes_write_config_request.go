@@ -31,3 +31,7 @@ func NewKubernetesWriteConfigRequestWithDefaults() *KubernetesWriteConfigRequest
 
 	return &this
 }
+
+func (o KubernetesWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

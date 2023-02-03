@@ -84,3 +84,7 @@ func NewAzureWriteAuthRoleRequestWithDefaults() *AzureWriteAuthRoleRequest {
 
 	return &this
 }
+
+func (o AzureWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

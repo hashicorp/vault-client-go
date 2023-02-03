@@ -23,3 +23,7 @@ func NewOIDCWriteScopeRequestWithDefaults() *OIDCWriteScopeRequest {
 
 	return &this
 }
+
+func (o OIDCWriteScopeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

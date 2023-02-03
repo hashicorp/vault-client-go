@@ -24,3 +24,7 @@ func NewAppRoleWritePoliciesRequestWithDefaults() *AppRoleWritePoliciesRequest {
 
 	return &this
 }
+
+func (o AppRoleWritePoliciesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

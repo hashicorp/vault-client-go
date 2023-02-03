@@ -25,3 +25,7 @@ func NewJWTWriteOIDCCallbackRequestWithDefaults() *JWTWriteOIDCCallbackRequest {
 
 	return &this
 }
+
+func (o JWTWriteOIDCCallbackRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

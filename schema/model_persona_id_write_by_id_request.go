@@ -29,3 +29,7 @@ func NewPersonaIDWriteByIDRequestWithDefaults() *PersonaIDWriteByIDRequest {
 
 	return &this
 }
+
+func (o PersonaIDWriteByIDRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

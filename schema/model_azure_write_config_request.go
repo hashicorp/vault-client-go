@@ -38,3 +38,7 @@ func NewAzureWriteConfigRequestWithDefaults() *AzureWriteConfigRequest {
 
 	return &this
 }
+
+func (o AzureWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

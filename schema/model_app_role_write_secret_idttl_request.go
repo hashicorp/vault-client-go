@@ -20,3 +20,7 @@ func NewAppRoleWriteSecretIDTTLRequestWithDefaults() *AppRoleWriteSecretIDTTLReq
 
 	return &this
 }
+
+func (o AppRoleWriteSecretIDTTLRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -32,3 +32,7 @@ func NewToolsHashRequestWithDefaults() *ToolsHashRequest {
 
 	return &this
 }
+
+func (o ToolsHashRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

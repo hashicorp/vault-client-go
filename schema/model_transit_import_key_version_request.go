@@ -25,3 +25,7 @@ func NewTransitImportKeyVersionRequestWithDefaults() *TransitImportKeyVersionReq
 
 	return &this
 }
+
+func (o TransitImportKeyVersionRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

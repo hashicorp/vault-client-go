@@ -26,3 +26,7 @@ func NewRabbitMQWriteRoleRequestWithDefaults() *RabbitMQWriteRoleRequest {
 
 	return &this
 }
+
+func (o RabbitMQWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

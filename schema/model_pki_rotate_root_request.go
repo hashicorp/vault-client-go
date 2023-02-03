@@ -118,3 +118,7 @@ func NewPKIRotateRootRequestWithDefaults() *PKIRotateRootRequest {
 
 	return &this
 }
+
+func (o PKIRotateRootRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -45,3 +45,7 @@ func NewSSHWriteIssueRequestWithDefaults() *SSHWriteIssueRequest {
 
 	return &this
 }
+
+func (o SSHWriteIssueRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

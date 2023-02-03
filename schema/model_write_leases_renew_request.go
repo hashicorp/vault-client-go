@@ -26,3 +26,7 @@ func NewWriteLeasesRenewRequestWithDefaults() *WriteLeasesRenewRequest {
 
 	return &this
 }
+
+func (o WriteLeasesRenewRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

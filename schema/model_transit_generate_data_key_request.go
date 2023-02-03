@@ -31,3 +31,7 @@ func NewTransitGenerateDataKeyRequestWithDefaults() *TransitGenerateDataKeyReque
 
 	return &this
 }
+
+func (o TransitGenerateDataKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -173,3 +173,7 @@ func NewPKIWriteRoleRequestWithDefaults() *PKIWriteRoleRequest {
 
 	return &this
 }
+
+func (o PKIWriteRoleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

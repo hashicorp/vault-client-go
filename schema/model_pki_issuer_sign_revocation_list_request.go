@@ -39,3 +39,7 @@ func NewPKIIssuerSignRevocationListRequestWithDefaults() *PKIIssuerSignRevocatio
 
 	return &this
 }
+
+func (o PKIIssuerSignRevocationListRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

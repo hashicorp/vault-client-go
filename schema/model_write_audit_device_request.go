@@ -31,3 +31,7 @@ func NewWriteAuditDeviceRequestWithDefaults() *WriteAuditDeviceRequest {
 
 	return &this
 }
+
+func (o WriteAuditDeviceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

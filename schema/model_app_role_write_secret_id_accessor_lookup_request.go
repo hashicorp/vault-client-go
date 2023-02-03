@@ -20,3 +20,7 @@ func NewAppRoleWriteSecretIDAccessorLookupRequestWithDefaults() *AppRoleWriteSec
 
 	return &this
 }
+
+func (o AppRoleWriteSecretIDAccessorLookupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

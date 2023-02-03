@@ -21,3 +21,7 @@ func NewAppRoleReadBoundCIDRListResponseWithDefaults() *AppRoleReadBoundCIDRList
 
 	return &this
 }
+
+func (o AppRoleReadBoundCIDRListResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

@@ -20,3 +20,7 @@ func NewAWSConfigWriteSecurityTokenServiceAccountRequestWithDefaults() *AWSConfi
 
 	return &this
 }
+
+func (o AWSConfigWriteSecurityTokenServiceAccountRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

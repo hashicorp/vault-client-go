@@ -23,3 +23,7 @@ func NewGoogleCloudWriteRoleServiceAccountsRequestWithDefaults() *GoogleCloudWri
 
 	return &this
 }
+
+func (o GoogleCloudWriteRoleServiceAccountsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

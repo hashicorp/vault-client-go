@@ -30,3 +30,7 @@ func NewCertificatesWriteConfigRequestWithDefaults() *CertificatesWriteConfigReq
 
 	return &this
 }
+
+func (o CertificatesWriteConfigRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

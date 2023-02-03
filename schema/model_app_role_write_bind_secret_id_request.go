@@ -22,3 +22,7 @@ func NewAppRoleWriteBindSecretIDRequestWithDefaults() *AppRoleWriteBindSecretIDR
 
 	return &this
 }
+
+func (o AppRoleWriteBindSecretIDRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

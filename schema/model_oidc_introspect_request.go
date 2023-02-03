@@ -23,3 +23,7 @@ func NewOIDCIntrospectRequestWithDefaults() *OIDCIntrospectRequest {
 
 	return &this
 }
+
+func (o OIDCIntrospectRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

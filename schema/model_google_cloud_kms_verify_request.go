@@ -26,3 +26,7 @@ func NewGoogleCloudKMSVerifyRequestWithDefaults() *GoogleCloudKMSVerifyRequest {
 
 	return &this
 }
+
+func (o GoogleCloudKMSVerifyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(o)
+}

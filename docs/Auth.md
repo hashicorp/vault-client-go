@@ -9436,10 +9436,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Auth.GitHubReadMapTeams(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -9563,10 +9561,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Auth.GitHubReadMapUsers(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

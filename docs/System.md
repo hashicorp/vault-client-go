@@ -5045,10 +5045,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadPolicies(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5473,10 +5471,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRaw(
 		context.Background(),
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -5533,11 +5529,9 @@ func main() {
 	}
 
 	path := "path_example" // string | 
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRawPath(
 		context.Background(),
 		path,
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

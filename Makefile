@@ -23,21 +23,10 @@ generate:
 				--input-spec       /local/$(OPENAPI_SPEC_PATH) \
 				--config           /local/$(GENERATE_CONFIG_PATH) \
 				--template-dir     /local/$(GENERATE_TEMPLATES_PATH) \
-				--output           /local/$(OUTPUT_PATH) \
-				--api-name-suffix  "REPLACE~ME"
-
-	rename --force 's/REPLACE~ME//g' docs/*.md
-
-	sed -i'.original' -e 's/REPLACE~ME//g' README.md
-	sed -i'.original' -e 's/REPLACE~ME//g' *.go
-	sed -i'.original' -e 's/REPLACE~ME//g' docs/*.md
+				--output           /local/$(OUTPUT_PATH)
 
 	mkdir -p schema/
 	mv model_*.go schema/
-
-	rm -f *.original
-	rm -f docs/*.original
-
 
 format:
 	ls ${OUTPUT_PATH}/*.go | xargs gofumpt -l -w

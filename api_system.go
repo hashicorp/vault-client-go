@@ -1946,8 +1946,7 @@ func (a *System) ReadPluginsCatalogByTypeByName(ctx context.Context, name string
 }
 
 // ReadPolicies List the configured access control policies.
-// list: Return a list if &#x60;true&#x60;
-func (a *System) ReadPolicies(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ReadPolicies(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1956,7 +1955,7 @@ func (a *System) ReadPolicies(ctx context.Context, list string, options ...Reque
 	requestPath := "/v1/sys/policy"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2112,8 +2111,7 @@ func (a *System) ReadQuotasRateLimit(ctx context.Context, name string, options .
 }
 
 // ReadRaw Read the value of the key at the given path.
-// list: Return a list if &#x60;true&#x60;
-func (a *System) ReadRaw(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ReadRaw(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2122,7 +2120,7 @@ func (a *System) ReadRaw(ctx context.Context, list string, options ...RequestOpt
 	requestPath := "/v1/sys/raw"
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2136,8 +2134,7 @@ func (a *System) ReadRaw(ctx context.Context, list string, options ...RequestOpt
 }
 
 // ReadRawPath Read the value of the key at the given path.
-// list: Return a list if &#x60;true&#x60;
-func (a *System) ReadRawPath(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *System) ReadRawPath(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2147,7 +2144,7 @@ func (a *System) ReadRawPath(ctx context.Context, path string, list string, opti
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

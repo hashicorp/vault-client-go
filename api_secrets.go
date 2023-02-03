@@ -1372,8 +1372,7 @@ func (a *Secrets) CubbyholeDelete(ctx context.Context, path string, options ...R
 
 // CubbyholeRead Retrieve the secret at the specified location.
 // path: Specifies the path of the secret.
-// list: Return a list if &#x60;true&#x60;
-func (a *Secrets) CubbyholeRead(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) CubbyholeRead(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -1384,7 +1383,7 @@ func (a *Secrets) CubbyholeRead(ctx context.Context, path string, list string, o
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2559,8 +2558,7 @@ func (a *Secrets) KVv1Delete(ctx context.Context, path string, options ...Reques
 
 // KVv1Read Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-// list: Return a list if &#x60;true&#x60;
-func (a *Secrets) KVv1Read(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv1Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2571,7 +2569,7 @@ func (a *Secrets) KVv1Read(ctx context.Context, path string, list string, option
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -2759,8 +2757,7 @@ func (a *Secrets) KVv2ReadConfig(ctx context.Context, options ...RequestOption) 
 
 // KVv2ReadMetadata Configures settings for the KV store
 // path: Location of the secret.
-// list: Return a list if &#x60;true&#x60;
-func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -2771,7 +2768,7 @@ func (a *Secrets) KVv2ReadMetadata(ctx context.Context, path string, list string
 	requestPath = strings.Replace(requestPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

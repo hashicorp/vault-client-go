@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIIssuerResignCRLsRequest struct for PKIIssuerResignCRLsRequest
 type PKIIssuerResignCRLsRequest struct {
 	// The sequence number to be written within the CRL Number extension.

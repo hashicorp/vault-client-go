@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TransitWriteRandomUrlbytesRequest struct for TransitWriteRandomUrlbytesRequest
 type TransitWriteRandomUrlbytesRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).

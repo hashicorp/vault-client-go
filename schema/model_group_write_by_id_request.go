@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GroupWriteByIDRequest struct for GroupWriteByIDRequest
 type GroupWriteByIDRequest struct {
 	// Entity IDs to be assigned as group members.

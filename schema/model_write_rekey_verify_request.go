@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteRekeyVerifyRequest struct for WriteRekeyVerifyRequest
 type WriteRekeyVerifyRequest struct {
 	// Specifies a single unseal share key from the new set of shares.

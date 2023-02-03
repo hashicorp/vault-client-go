@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AzureWriteAuthRoleRequest struct for AzureWriteAuthRoleRequest
 type AzureWriteAuthRoleRequest struct {
 	// Comma-separated list of group ids that login is restricted to.

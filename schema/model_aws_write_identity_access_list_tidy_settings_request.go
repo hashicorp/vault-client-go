@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AWSWriteIdentityAccessListTidySettingsRequest struct for AWSWriteIdentityAccessListTidySettingsRequest
 type AWSWriteIdentityAccessListTidySettingsRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.

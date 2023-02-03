@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // LDAPWriteStaticRoleRequest struct for LDAPWriteStaticRoleRequest
 type LDAPWriteStaticRoleRequest struct {
 	// The distinguished name of the entry to manage.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // LDAPWriteConfigRequest struct for LDAPWriteConfigRequest
 type LDAPWriteConfigRequest struct {
 	// Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).

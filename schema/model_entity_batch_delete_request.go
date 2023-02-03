@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // EntityBatchDeleteRequest struct for EntityBatchDeleteRequest
 type EntityBatchDeleteRequest struct {
 	// Entity IDs to delete

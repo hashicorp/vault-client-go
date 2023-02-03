@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteScopeRequest struct for OIDCWriteScopeRequest
 type OIDCWriteScopeRequest struct {
 	// The description of the scope

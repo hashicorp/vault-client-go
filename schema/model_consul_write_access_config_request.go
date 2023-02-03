@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // ConsulWriteAccessConfigRequest struct for ConsulWriteAccessConfigRequest
 type ConsulWriteAccessConfigRequest struct {
 	// Consul server address

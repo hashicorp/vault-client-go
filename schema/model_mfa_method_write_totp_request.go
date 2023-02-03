@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // MFAMethodWriteTOTPRequest struct for MFAMethodWriteTOTPRequest
 type MFAMethodWriteTOTPRequest struct {
 	// The hashing algorithm used to generate the TOTP token. Options include SHA1, SHA256 and SHA512.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // ActiveDirectoryWriteLibraryRequest struct for ActiveDirectoryWriteLibraryRequest
 type ActiveDirectoryWriteLibraryRequest struct {
 	// Disable the default behavior of requiring that check-ins are performed by the entity that checked them out.

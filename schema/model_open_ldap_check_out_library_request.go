@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OpenLDAPCheckOutLibraryRequest struct for OpenLDAPCheckOutLibraryRequest
 type OpenLDAPCheckOutLibraryRequest struct {
 	// The length of time before the check-out will expire, in seconds.

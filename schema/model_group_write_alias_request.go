@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GroupWriteAliasRequest struct for GroupWriteAliasRequest
 type GroupWriteAliasRequest struct {
 	// ID of the group to which this is an alias.

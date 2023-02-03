@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // RabbitMQWriteLeaseConfigRequest struct for RabbitMQWriteLeaseConfigRequest
 type RabbitMQWriteLeaseConfigRequest struct {
 	// Duration after which the issued credentials should not be allowed to be renewed

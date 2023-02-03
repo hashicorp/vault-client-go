@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudWriteRolesetKeyRequest struct for GoogleCloudWriteRolesetKeyRequest
 type GoogleCloudWriteRolesetKeyRequest struct {
 	// Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"

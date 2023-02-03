@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WritePolicyRequest struct for WritePolicyRequest
 type WritePolicyRequest struct {
 	// The rules of the policy.

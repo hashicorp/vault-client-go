@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIWriteIntermediateSetSignedRequest struct for PKIWriteIntermediateSetSignedRequest
 type PKIWriteIntermediateSetSignedRequest struct {
 	// PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint. Additional parent CAs may be optionally appended to the bundle.

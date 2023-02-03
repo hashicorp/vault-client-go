@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // NomadWriteAccessConfigRequest struct for NomadWriteAccessConfigRequest
 type NomadWriteAccessConfigRequest struct {
 	// Nomad server address

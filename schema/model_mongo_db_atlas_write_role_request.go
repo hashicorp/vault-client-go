@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // MongoDBAtlasWriteRoleRequest struct for MongoDBAtlasWriteRoleRequest
 type MongoDBAtlasWriteRoleRequest struct {
 	// Access list entry in CIDR notation to be added for the API key. Optional for organization and project keys.

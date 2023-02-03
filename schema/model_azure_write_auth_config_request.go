@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AzureWriteAuthConfigRequest struct for AzureWriteAuthConfigRequest
 type AzureWriteAuthConfigRequest struct {
 	// The OAuth2 client id to connection to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable.

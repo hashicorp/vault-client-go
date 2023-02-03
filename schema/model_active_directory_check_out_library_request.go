@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // ActiveDirectoryCheckOutLibraryRequest struct for ActiveDirectoryCheckOutLibraryRequest
 type ActiveDirectoryCheckOutLibraryRequest struct {
 	// The length of time before the check-out will expire, in seconds.

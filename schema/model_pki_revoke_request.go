@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIRevokeRequest struct for PKIRevokeRequest
 type PKIRevokeRequest struct {
 	// Certificate to revoke in PEM format; must be signed by an issuer in this mount.

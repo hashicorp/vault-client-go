@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleWriteCustomSecretIDResponse struct for AppRoleWriteCustomSecretIDResponse
 type AppRoleWriteCustomSecretIDResponse struct {
 	// Secret ID attached to the role.

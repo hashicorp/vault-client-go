@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // KubernetesWriteConfigRequest struct for KubernetesWriteConfigRequest
 type KubernetesWriteConfigRequest struct {
 	// Disable defaulting to the local CA certificate and service account JWT when running in a Kubernetes pod.

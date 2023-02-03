@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // MFAMethodWritePingIDRequest struct for MFAMethodWritePingIDRequest
 type MFAMethodWritePingIDRequest struct {
 	// The unique identifier for this MFA method.

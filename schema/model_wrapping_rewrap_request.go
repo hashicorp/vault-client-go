@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WrappingRewrapRequest struct for WrappingRewrapRequest
 type WrappingRewrapRequest struct {
 	Token string `json:"token"`

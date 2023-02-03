@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIIssuerIssueRoleRequest struct for PKIIssuerIssueRoleRequest
 type PKIIssuerIssueRoleRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.

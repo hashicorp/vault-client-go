@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIWriteCRLConfigRequest struct for PKIWriteCRLConfigRequest
 type PKIWriteCRLConfigRequest struct {
 	// If set to true, enables automatic rebuilding of the CRL

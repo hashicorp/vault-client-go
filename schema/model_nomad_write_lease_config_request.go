@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // NomadWriteLeaseConfigRequest struct for NomadWriteLeaseConfigRequest
 type NomadWriteLeaseConfigRequest struct {
 	// Duration after which the issued token should not be allowed to be renewed

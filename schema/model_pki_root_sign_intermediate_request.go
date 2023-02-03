@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIRootSignIntermediateRequest struct for PKIRootSignIntermediateRequest
 type PKIRootSignIntermediateRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.

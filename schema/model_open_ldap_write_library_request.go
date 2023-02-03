@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OpenLDAPWriteLibraryRequest struct for OpenLDAPWriteLibraryRequest
 type OpenLDAPWriteLibraryRequest struct {
 	// Disable the default behavior of requiring that check-ins are performed by the entity that checked them out.

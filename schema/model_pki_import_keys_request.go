@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIImportKeysRequest struct for PKIImportKeysRequest
 type PKIImportKeysRequest struct {
 	// Optional name to be used for this key

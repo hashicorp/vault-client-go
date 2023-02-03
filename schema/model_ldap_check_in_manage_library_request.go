@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // LDAPCheckInManageLibraryRequest struct for LDAPCheckInManageLibraryRequest
 type LDAPCheckInManageLibraryRequest struct {
 	// The username/logon name for the service accounts to check in.

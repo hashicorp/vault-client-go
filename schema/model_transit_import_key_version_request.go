@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TransitImportKeyVersionRequest struct for TransitImportKeyVersionRequest
 type TransitImportKeyVersionRequest struct {
 	// The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // MongoDBAtlasWriteConfigRequest struct for MongoDBAtlasWriteConfigRequest
 type MongoDBAtlasWriteConfigRequest struct {
 	// MongoDB Atlas Programmatic Private Key

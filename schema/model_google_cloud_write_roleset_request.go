@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudWriteRolesetRequest struct for GoogleCloudWriteRolesetRequest
 type GoogleCloudWriteRolesetRequest struct {
 	// Bindings configuration string.

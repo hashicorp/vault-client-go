@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OktaWriteUserRequest struct for OktaWriteUserRequest
 type OktaWriteUserRequest struct {
 	// List of groups associated with the user.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteAuditDeviceRequest struct for WriteAuditDeviceRequest
 type WriteAuditDeviceRequest struct {
 	// User-friendly description for this audit backend.

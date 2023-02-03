@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // RabbitMQWriteConnectionConfigRequest struct for RabbitMQWriteConnectionConfigRequest
 type RabbitMQWriteConnectionConfigRequest struct {
 	// RabbitMQ Management URI

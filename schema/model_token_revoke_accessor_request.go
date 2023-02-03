@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TokenRevokeAccessorRequest struct for TokenRevokeAccessorRequest
 type TokenRevokeAccessorRequest struct {
 	// Accessor of the token (request body)

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleReadPeriodResponse struct for AppRoleReadPeriodResponse
 type AppRoleReadPeriodResponse struct {
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.

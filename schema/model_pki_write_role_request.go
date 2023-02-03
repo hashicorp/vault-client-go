@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIWriteRoleRequest struct for PKIWriteRoleRequest
 type PKIWriteRoleRequest struct {
 	// If set, clients can request certificates for any domain, regardless of allowed_domains restrictions. See the documentation for more information.

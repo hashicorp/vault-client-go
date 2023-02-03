@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // KVv2WriteMetadataRequest struct for KVv2WriteMetadataRequest
 type KVv2WriteMetadataRequest struct {
 	// If true the key will require the cas parameter to be set on all write requests. If false, the backend’s configuration will be used.

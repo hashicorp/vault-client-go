@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteConfigRequest struct for OIDCWriteConfigRequest
 type OIDCWriteConfigRequest struct {
 	// Issuer URL to be used in the iss claim of the token. If not set, Vault's app_addr will be used.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TokenWriteLookupAccessorRequest struct for TokenWriteLookupAccessorRequest
 type TokenWriteLookupAccessorRequest struct {
 	// Accessor of the token to look up (request body)

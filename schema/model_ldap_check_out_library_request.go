@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // LDAPCheckOutLibraryRequest struct for LDAPCheckOutLibraryRequest
 type LDAPCheckOutLibraryRequest struct {
 	// The length of time before the check-out will expire, in seconds.

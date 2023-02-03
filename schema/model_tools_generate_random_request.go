@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // ToolsGenerateRandomRequest struct for ToolsGenerateRandomRequest
 type ToolsGenerateRandomRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).

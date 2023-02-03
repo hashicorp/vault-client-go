@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // RabbitMQWriteRoleRequest struct for RabbitMQWriteRoleRequest
 type RabbitMQWriteRoleRequest struct {
 	// Comma-separated list of tags for this role.

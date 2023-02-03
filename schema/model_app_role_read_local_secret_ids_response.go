@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleReadLocalSecretIDsResponse struct for AppRoleReadLocalSecretIDsResponse
 type AppRoleReadLocalSecretIDsResponse struct {
 	// If true, the secret identifiers generated using this role will be cluster local. This can only be set during role creation and once set, it can't be reset later

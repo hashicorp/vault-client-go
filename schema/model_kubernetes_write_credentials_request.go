@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // KubernetesWriteCredentialsRequest struct for KubernetesWriteCredentialsRequest
 type KubernetesWriteCredentialsRequest struct {
 	// If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole.

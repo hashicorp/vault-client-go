@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // MFAMethodWriteOktaRequest struct for MFAMethodWriteOktaRequest
 type MFAMethodWriteOktaRequest struct {
 	// Okta API key.

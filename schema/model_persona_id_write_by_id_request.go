@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PersonaIDWriteByIDRequest struct for PersonaIDWriteByIDRequest
 type PersonaIDWriteByIDRequest struct {
 	// Entity ID to which this persona should be tied to

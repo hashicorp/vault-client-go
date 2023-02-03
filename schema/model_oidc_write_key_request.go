@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteKeyRequest struct for OIDCWriteKeyRequest
 type OIDCWriteKeyRequest struct {
 	// Signing algorithm to use. This will default to RS256.

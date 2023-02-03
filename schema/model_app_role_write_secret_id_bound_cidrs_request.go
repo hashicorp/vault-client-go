@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleWriteSecretIDBoundCIDRsRequest struct for AppRoleWriteSecretIDBoundCIDRsRequest
 type AppRoleWriteSecretIDBoundCIDRsRequest struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.

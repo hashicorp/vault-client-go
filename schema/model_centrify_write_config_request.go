@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // CentrifyWriteConfigRequest struct for CentrifyWriteConfigRequest
 type CentrifyWriteConfigRequest struct {
 	// OAuth2 App ID

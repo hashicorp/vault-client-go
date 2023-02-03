@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TerraformWriteConfigRequest struct for TerraformWriteConfigRequest
 type TerraformWriteConfigRequest struct {
 	// The address to access Terraform Cloud or Enterprise. Default is \"https://app.terraform.io\".

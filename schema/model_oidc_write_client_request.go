@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteClientRequest struct for OIDCWriteClientRequest
 type OIDCWriteClientRequest struct {
 	// The time-to-live for access tokens obtained by the client.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleReadRoleIDResponse struct for AppRoleReadRoleIDResponse
 type AppRoleReadRoleIDResponse struct {
 	// Identifier of the role. Defaults to a UUID.

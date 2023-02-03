@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AWSConfigWriteIdentityAccessListRequest struct for AWSConfigWriteIdentityAccessListRequest
 type AWSConfigWriteIdentityAccessListRequest struct {
 	// If set to 'true', disables the periodic tidying of the 'identity-accesslist/<instance_id>' entries.

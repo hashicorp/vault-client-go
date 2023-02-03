@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIWriteURLConfigRequest struct for PKIWriteURLConfigRequest
 type PKIWriteURLConfigRequest struct {
 	// Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13.

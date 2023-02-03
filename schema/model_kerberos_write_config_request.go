@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // KerberosWriteConfigRequest struct for KerberosWriteConfigRequest
 type KerberosWriteConfigRequest struct {
 	// If set to true, returns any groups found in LDAP as a group alias.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleLoginRequest struct for AppRoleLoginRequest
 type AppRoleLoginRequest struct {
 	// Unique identifier of the Role. Required to be supplied when the 'bind_secret_id' constraint is set.

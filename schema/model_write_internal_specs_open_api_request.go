@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteInternalSpecsOpenAPIRequest struct for WriteInternalSpecsOpenAPIRequest
 type WriteInternalSpecsOpenAPIRequest struct {
 	// Context string appended to every operationId

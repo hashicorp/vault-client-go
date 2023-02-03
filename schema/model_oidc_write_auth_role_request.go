@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteAuthRoleRequest struct for OIDCWriteAuthRoleRequest
 type OIDCWriteAuthRoleRequest struct {
 	// Comma-separated list of allowed values for redirect_uri

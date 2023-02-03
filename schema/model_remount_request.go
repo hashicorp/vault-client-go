@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // RemountRequest struct for RemountRequest
 type RemountRequest struct {
 	// The previous mount point.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteLeasesRevokeRequest struct for WriteLeasesRevokeRequest
 type WriteLeasesRevokeRequest struct {
 	// The lease identifier to renew. This is included with a lease.

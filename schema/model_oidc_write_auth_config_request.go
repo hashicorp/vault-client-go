@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteAuthConfigRequest struct for OIDCWriteAuthConfigRequest
 type OIDCWriteAuthConfigRequest struct {
 	// The value against which to match the 'iss' claim in a JWT. Optional.

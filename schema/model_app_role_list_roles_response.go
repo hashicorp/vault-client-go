@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleListRolesResponse struct for AppRoleListRolesResponse
 type AppRoleListRolesResponse struct {
 	Keys []string `json:"keys"`

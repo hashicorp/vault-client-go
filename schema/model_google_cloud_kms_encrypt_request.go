@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudKMSEncryptRequest struct for GoogleCloudKMSEncryptRequest
 type GoogleCloudKMSEncryptRequest struct {
 	// Optional base64-encoded data that, if specified, must also be provided to decrypt this payload.

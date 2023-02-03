@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteRotateConfigRequest struct for WriteRotateConfigRequest
 type WriteRotateConfigRequest struct {
 	// Whether automatic rotation is enabled.

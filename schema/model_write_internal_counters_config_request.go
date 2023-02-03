@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteInternalCountersConfigRequest struct for WriteInternalCountersConfigRequest
 type WriteInternalCountersConfigRequest struct {
 	// Number of months to report if no start date specified.

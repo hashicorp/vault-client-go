@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TransitImportKeyRequest struct for TransitImportKeyRequest
 type TransitImportKeyRequest struct {
 	// Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TokenWriteCreateRequest struct for TokenWriteCreateRequest
 type TokenWriteCreateRequest struct {
 	// Name to associate with this token

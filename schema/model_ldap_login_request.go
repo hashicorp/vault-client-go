@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // LDAPLoginRequest struct for LDAPLoginRequest
 type LDAPLoginRequest struct {
 	// Password for this user.

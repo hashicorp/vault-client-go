@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // RevokePrefixRequest struct for RevokePrefixRequest
 type RevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously

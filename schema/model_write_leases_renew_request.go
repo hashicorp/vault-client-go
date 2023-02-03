@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteLeasesRenewRequest struct for WriteLeasesRenewRequest
 type WriteLeasesRenewRequest struct {
 	// The desired increment in seconds to the lease

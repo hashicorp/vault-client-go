@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // RadiusLoginRequest struct for RadiusLoginRequest
 type RadiusLoginRequest struct {
 	// Password for this user.

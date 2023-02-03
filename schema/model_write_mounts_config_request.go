@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteMountsConfigRequest struct for WriteMountsConfigRequest
 type WriteMountsConfigRequest struct {
 	AllowedManagedKeys []string `json:"allowed_managed_keys"`

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteProviderAuthorizeRequest struct for OIDCWriteProviderAuthorizeRequest
 type OIDCWriteProviderAuthorizeRequest struct {
 	// The ID of the requesting client.

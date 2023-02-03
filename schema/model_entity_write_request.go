@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // EntityWriteRequest struct for EntityWriteRequest
 type EntityWriteRequest struct {
 	// If set true, tokens tied to this identity will not be able to be used (but will not be revoked).

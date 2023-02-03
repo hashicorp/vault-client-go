@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteRekeyInitRequest struct for WriteRekeyInitRequest
 type WriteRekeyInitRequest struct {
 	// Specifies if using PGP-encrypted keys, whether Vault should also store a plaintext backup of the PGP-encrypted keys.

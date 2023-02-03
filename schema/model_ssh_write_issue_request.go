@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // SSHWriteIssueRequest struct for SSHWriteIssueRequest
 type SSHWriteIssueRequest struct {
 	// Type of certificate to be created; either \"user\" or \"host\".

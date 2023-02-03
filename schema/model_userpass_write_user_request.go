@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // UserpassWriteUserRequest struct for UserpassWriteUserRequest
 type UserpassWriteUserRequest struct {
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.

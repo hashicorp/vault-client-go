@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AWSWriteRoleTagBlackListTidySettingsRequest struct for AWSWriteRoleTagBlackListTidySettingsRequest
 type AWSWriteRoleTagBlackListTidySettingsRequest struct {
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage.

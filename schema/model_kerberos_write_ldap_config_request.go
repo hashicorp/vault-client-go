@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // KerberosWriteLDAPConfigRequest struct for KerberosWriteLDAPConfigRequest
 type KerberosWriteLDAPConfigRequest struct {
 	// Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudWriteRoleLabelsRequest struct for GoogleCloudWriteRoleLabelsRequest
 type GoogleCloudWriteRoleLabelsRequest struct {
 	// BoundLabels to add (in $key:$value)

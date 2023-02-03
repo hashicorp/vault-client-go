@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // CertificatesLoginRequest struct for CertificatesLoginRequest
 type CertificatesLoginRequest struct {
 	// The name of the certificate role to authenticate against.

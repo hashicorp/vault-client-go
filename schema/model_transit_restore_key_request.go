@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TransitRestoreKeyRequest struct for TransitRestoreKeyRequest
 type TransitRestoreKeyRequest struct {
 	// Backed up key data to be restored. This should be the output from the 'backup/' endpoint.

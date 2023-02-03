@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteGenerateRootAttemptRequest struct for WriteGenerateRootAttemptRequest
 type WriteGenerateRootAttemptRequest struct {
 	// Specifies a base64-encoded PGP public key.

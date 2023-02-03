@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OIDCWriteAssignmentRequest struct for OIDCWriteAssignmentRequest
 type OIDCWriteAssignmentRequest struct {
 	// Comma separated string or array of identity entity IDs

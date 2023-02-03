@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // UserpassLoginRequest struct for UserpassLoginRequest
 type UserpassLoginRequest struct {
 	// Password for this user.

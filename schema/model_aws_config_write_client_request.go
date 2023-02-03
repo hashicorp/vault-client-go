@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AWSConfigWriteClientRequest struct for AWSConfigWriteClientRequest
 type AWSConfigWriteClientRequest struct {
 	// AWS Access Key ID for the account used to make AWS API requests.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AWSConfigWriteRoleTagDenyListRequest struct for AWSConfigWriteRoleTagDenyListRequest
 type AWSConfigWriteRoleTagDenyListRequest struct {
 	// If set to 'true', disables the periodic tidying of deny listed entries.

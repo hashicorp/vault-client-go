@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // SSHVerifyRequest struct for SSHVerifyRequest
 type SSHVerifyRequest struct {
 	// [Required] One-Time-Key that needs to be validated

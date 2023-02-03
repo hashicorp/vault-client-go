@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TransitWriteConfigKeysRequest struct for TransitWriteConfigKeysRequest
 type TransitWriteConfigKeysRequest struct {
 	// Whether to allow automatic upserting (creation) of keys on the encrypt endpoint.

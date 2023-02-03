@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudWriteRoleServiceAccountsRequest struct for GoogleCloudWriteRoleServiceAccountsRequest
 type GoogleCloudWriteRoleServiceAccountsRequest struct {
 	// Service-account emails or IDs to add.

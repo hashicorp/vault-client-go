@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WritePoliciesPasswordRequest struct for WritePoliciesPasswordRequest
 type WritePoliciesPasswordRequest struct {
 	// The password policy

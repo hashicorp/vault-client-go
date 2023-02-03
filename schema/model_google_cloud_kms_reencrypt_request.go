@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudKMSReencryptRequest struct for GoogleCloudKMSReencryptRequest
 type GoogleCloudKMSReencryptRequest struct {
 	// Optional data that, if specified, must also be provided during decryption.

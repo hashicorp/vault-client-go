@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // CloudFoundryWriteRoleRequest struct for CloudFoundryWriteRoleRequest
 type CloudFoundryWriteRoleRequest struct {
 	// Require that the client certificate presented has at least one of these app IDs.

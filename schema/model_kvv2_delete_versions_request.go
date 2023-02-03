@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // KVv2DeleteVersionsRequest struct for KVv2DeleteVersionsRequest
 type KVv2DeleteVersionsRequest struct {
 	// The versions to be archived. The versioned data will not be deleted, but it will no longer be returned in normal get requests.

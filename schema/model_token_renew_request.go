@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TokenRenewRequest struct for TokenRenewRequest
 type TokenRenewRequest struct {
 	// The desired increment in seconds to the token expiration

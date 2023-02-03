@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // JWTWriteOIDCCallbackRequest struct for JWTWriteOIDCCallbackRequest
 type JWTWriteOIDCCallbackRequest struct {
 	ClientNonce string `json:"client_nonce"`

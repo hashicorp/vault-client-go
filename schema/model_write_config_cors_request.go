@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteConfigCORSRequest struct for WriteConfigCORSRequest
 type WriteConfigCORSRequest struct {
 	// A comma-separated string or array of strings indicating headers that are allowed on cross-origin requests.

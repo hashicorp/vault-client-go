@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudWriteRoleRequest struct for GoogleCloudWriteRoleRequest
 type GoogleCloudWriteRoleRequest struct {
 	// If true, will add group aliases to auth tokens generated under this role. This will add the full list of ancestors (projects, folders, organizations) for the given entity's project. Requires IAM permission `resourcemanager.projects.get` on this project.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteCapabilitiesSelfRequest struct for WriteCapabilitiesSelfRequest
 type WriteCapabilitiesSelfRequest struct {
 	// Use 'paths' instead.

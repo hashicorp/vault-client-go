@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TokenWriteRoleRequest struct for TokenWriteRoleRequest
 type TokenWriteRoleRequest struct {
 	// String or JSON list of allowed entity aliases. If set, specifies the entity aliases which are allowed to be used during token generation. This field supports globbing.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleWriteTokenBoundCIDRsRequest struct for AppRoleWriteTokenBoundCIDRsRequest
 type AppRoleWriteTokenBoundCIDRsRequest struct {
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TransitWriteCacheConfigRequest struct for TransitWriteCacheConfigRequest
 type TransitWriteCacheConfigRequest struct {
 	// Size of cache, use 0 for an unlimited cache size, defaults to 0

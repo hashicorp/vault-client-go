@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // OCIWriteRoleRequest struct for OCIWriteRoleRequest
 type OCIWriteRoleRequest struct {
 	// A comma separated list of Group or Dynamic Group OCIDs that are allowed to take this role.

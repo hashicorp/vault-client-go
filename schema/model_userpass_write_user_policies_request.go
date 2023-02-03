@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // UserpassWriteUserPoliciesRequest struct for UserpassWriteUserPoliciesRequest
 type UserpassWriteUserPoliciesRequest struct {
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // GoogleCloudWriteStaticAccountRequest struct for GoogleCloudWriteStaticAccountRequest
 type GoogleCloudWriteStaticAccountRequest struct {
 	// Bindings configuration string.

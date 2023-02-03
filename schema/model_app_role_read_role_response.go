@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleReadRoleResponse struct for AppRoleReadRoleResponse
 type AppRoleReadRoleResponse struct {
 	// Impose secret ID to be presented when logging in using this role.

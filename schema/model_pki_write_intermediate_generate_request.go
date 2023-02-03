@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // PKIWriteIntermediateGenerateRequest struct for PKIWriteIntermediateGenerateRequest
 type PKIWriteIntermediateGenerateRequest struct {
 	// Whether to add a Basic Constraints extension with CA: true. Only needed as a workaround in some compatibility scenarios with Active Directory Certificate Services.

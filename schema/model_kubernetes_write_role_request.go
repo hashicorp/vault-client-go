@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // KubernetesWriteRoleRequest struct for KubernetesWriteRoleRequest
 type KubernetesWriteRoleRequest struct {
 	// A label selector for Kubernetes namespaces in which credentials can be generated. Accepts either a JSON or YAML object. If set with allowed_kubernetes_namespaces, the conditions are conjuncted.

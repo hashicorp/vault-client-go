@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AWSWriteRoleRequest struct for AWSWriteRoleRequest
 type AWSWriteRoleRequest struct {
 	// Use role_arns or policy_arns instead.

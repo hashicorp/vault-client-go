@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AWSConfigWriteCertificateRequest struct for AWSConfigWriteCertificateRequest
 type AWSConfigWriteCertificateRequest struct {
 	// Base64 encoded AWS Public cert required to verify PKCS7 signature of the EC2 instance metadata.

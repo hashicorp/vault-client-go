@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteCapabilitiesRequest struct for WriteCapabilitiesRequest
 type WriteCapabilitiesRequest struct {
 	// Use 'paths' instead.

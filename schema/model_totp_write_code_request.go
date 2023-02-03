@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TOTPWriteCodeRequest struct for TOTPWriteCodeRequest
 type TOTPWriteCodeRequest struct {
 	// TOTP code to be validated.

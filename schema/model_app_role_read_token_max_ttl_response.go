@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleReadTokenMaxTTLResponse struct for AppRoleReadTokenMaxTTLResponse
 type AppRoleReadTokenMaxTTLResponse struct {
 	// The maximum lifetime of the generated token

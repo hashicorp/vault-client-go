@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // JWTWriteConfigRequest struct for JWTWriteConfigRequest
 type JWTWriteConfigRequest struct {
 	// The value against which to match the 'iss' claim in a JWT. Optional.

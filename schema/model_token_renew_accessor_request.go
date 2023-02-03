@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TokenRenewAccessorRequest struct for TokenRenewAccessorRequest
 type TokenRenewAccessorRequest struct {
 	// Accessor of the token to renew (request body)

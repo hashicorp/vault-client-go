@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AzureLoginRequest struct for AzureLoginRequest
 type AzureLoginRequest struct {
 	// A signed JWT

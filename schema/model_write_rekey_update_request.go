@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // WriteRekeyUpdateRequest struct for WriteRekeyUpdateRequest
 type WriteRekeyUpdateRequest struct {
 	// Specifies a single unseal key share.

@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // AppRoleReadTokenNumUsesResponse struct for AppRoleReadTokenNumUsesResponse
 type AppRoleReadTokenNumUsesResponse struct {
 	// The maximum number of times a token may be used, a value of zero means unlimited

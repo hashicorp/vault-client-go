@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // SSHWriteCAConfigRequest struct for SSHWriteCAConfigRequest
 type SSHWriteCAConfigRequest struct {
 	// Generate SSH key pair internally rather than use the private_key and public_key fields.

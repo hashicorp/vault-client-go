@@ -2,6 +2,10 @@
 
 package schema
 
+import (
+	"encoding/json"
+)
+
 // TransitWriteKeyConfigRequest struct for TransitWriteKeyConfigRequest
 type TransitWriteKeyConfigRequest struct {
 	// Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled.

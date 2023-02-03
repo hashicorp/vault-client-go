@@ -9,19 +9,15 @@ import (
 // OIDCWriteRoleRequest struct for OIDCWriteRoleRequest
 type OIDCWriteRoleRequest struct {
 	// Optional client_id
-
 	ClientId string `json:"client_id"`
 
 	// The OIDC key to use for generating tokens. The specified key must already exist.
-
 	Key string `json:"key"`
 
 	// The template string to use for generating tokens. This may be in string-ified JSON or base64 format.
-
 	Template string `json:"template"`
 
 	// TTL of the tokens generated against the role.
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -32,18 +28,4 @@ func NewOIDCWriteRoleRequestWithDefaults() *OIDCWriteRoleRequest {
 	var this OIDCWriteRoleRequest
 
 	return &this
-}
-
-func (o OIDCWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["client_id"] = o.ClientId
-
-	toSerialize["key"] = o.Key
-
-	toSerialize["template"] = o.Template
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

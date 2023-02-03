@@ -9,7 +9,6 @@ import (
 // AWSWriteIdentityWhiteListTidySettingsRequest struct for AWSWriteIdentityWhiteListTidySettingsRequest
 type AWSWriteIdentityWhiteListTidySettingsRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-
 	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
@@ -22,12 +21,4 @@ func NewAWSWriteIdentityWhiteListTidySettingsRequestWithDefaults() *AWSWriteIden
 	this.SafetyBuffer = 259200
 
 	return &this
-}
-
-func (o AWSWriteIdentityWhiteListTidySettingsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-
-	return json.Marshal(toSerialize)
 }

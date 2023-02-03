@@ -9,7 +9,6 @@ import (
 // AppRoleReadTokenMaxTTLResponse struct for AppRoleReadTokenMaxTTLResponse
 type AppRoleReadTokenMaxTTLResponse struct {
 	// The maximum lifetime of the generated token
-
 	TokenMaxTtl int32 `json:"token_max_ttl"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleReadTokenMaxTTLResponseWithDefaults() *AppRoleReadTokenMaxTTLResp
 	var this AppRoleReadTokenMaxTTLResponse
 
 	return &this
-}
-
-func (o AppRoleReadTokenMaxTTLResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_max_ttl"] = o.TokenMaxTtl
-
-	return json.Marshal(toSerialize)
 }

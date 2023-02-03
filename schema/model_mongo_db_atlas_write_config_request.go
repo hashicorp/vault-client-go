@@ -9,11 +9,9 @@ import (
 // MongoDBAtlasWriteConfigRequest struct for MongoDBAtlasWriteConfigRequest
 type MongoDBAtlasWriteConfigRequest struct {
 	// MongoDB Atlas Programmatic Private Key
-
 	PrivateKey string `json:"private_key"`
 
 	// MongoDB Atlas Programmatic Public Key
-
 	PublicKey string `json:"public_key"`
 }
 
@@ -24,14 +22,4 @@ func NewMongoDBAtlasWriteConfigRequestWithDefaults() *MongoDBAtlasWriteConfigReq
 	var this MongoDBAtlasWriteConfigRequest
 
 	return &this
-}
-
-func (o MongoDBAtlasWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["private_key"] = o.PrivateKey
-
-	toSerialize["public_key"] = o.PublicKey
-
-	return json.Marshal(toSerialize)
 }

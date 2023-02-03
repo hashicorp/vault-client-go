@@ -9,7 +9,6 @@ import (
 // ActiveDirectoryCheckOutLibraryRequest struct for ActiveDirectoryCheckOutLibraryRequest
 type ActiveDirectoryCheckOutLibraryRequest struct {
 	// The length of time before the check-out will expire, in seconds.
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -20,12 +19,4 @@ func NewActiveDirectoryCheckOutLibraryRequestWithDefaults() *ActiveDirectoryChec
 	var this ActiveDirectoryCheckOutLibraryRequest
 
 	return &this
-}
-
-func (o ActiveDirectoryCheckOutLibraryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

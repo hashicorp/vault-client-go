@@ -9,7 +9,6 @@ import (
 // TokenWriteLookupRequest struct for TokenWriteLookupRequest
 type TokenWriteLookupRequest struct {
 	// Token to lookup (POST request body)
-
 	Token string `json:"token"`
 }
 
@@ -20,12 +19,4 @@ func NewTokenWriteLookupRequestWithDefaults() *TokenWriteLookupRequest {
 	var this TokenWriteLookupRequest
 
 	return &this
-}
-
-func (o TokenWriteLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

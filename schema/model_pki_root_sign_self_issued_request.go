@@ -9,15 +9,12 @@ import (
 // PKIRootSignSelfIssuedRequest struct for PKIRootSignSelfIssuedRequest
 type PKIRootSignSelfIssuedRequest struct {
 	// PEM-format self-issued certificate to be signed.
-
 	Certificate string `json:"certificate"`
 
 	// Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
-
 	IssuerRef string `json:"issuer_ref"`
 
 	// If true, require the public key algorithm of the signer to match that of the self issued certificate.
-
 	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms"`
 }
 
@@ -28,20 +25,7 @@ func NewPKIRootSignSelfIssuedRequestWithDefaults() *PKIRootSignSelfIssuedRequest
 	var this PKIRootSignSelfIssuedRequest
 
 	this.IssuerRef = "default"
-
 	this.RequireMatchingCertificateAlgorithms = false
 
 	return &this
-}
-
-func (o PKIRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-
-	toSerialize["issuer_ref"] = o.IssuerRef
-
-	toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
-
-	return json.Marshal(toSerialize)
 }

@@ -9,11 +9,9 @@ import (
 // OIDCLoginRequest struct for OIDCLoginRequest
 type OIDCLoginRequest struct {
 	// The signed JWT to validate.
-
 	Jwt string `json:"jwt"`
 
 	// The role to log in against.
-
 	Role string `json:"role"`
 }
 
@@ -24,14 +22,4 @@ func NewOIDCLoginRequestWithDefaults() *OIDCLoginRequest {
 	var this OIDCLoginRequest
 
 	return &this
-}
-
-func (o OIDCLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["jwt"] = o.Jwt
-
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

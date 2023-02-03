@@ -9,15 +9,12 @@ import (
 // GoogleCloudKMSDecryptRequest struct for GoogleCloudKMSDecryptRequest
 type GoogleCloudKMSDecryptRequest struct {
 	// Optional data that was specified during encryption of this payload.
-
 	AdditionalAuthenticatedData string `json:"additional_authenticated_data"`
 
 	// Ciphertext to decrypt as previously returned from an encrypt operation. This must be base64-encoded ciphertext as previously returned from an encrypt operation.
-
 	Ciphertext string `json:"ciphertext"`
 
 	// Integer version of the crypto key version to use for decryption. This is required for asymmetric keys. For symmetric keys, Cloud KMS will choose the correct version automatically.
-
 	KeyVersion int32 `json:"key_version"`
 }
 
@@ -28,16 +25,4 @@ func NewGoogleCloudKMSDecryptRequestWithDefaults() *GoogleCloudKMSDecryptRequest
 	var this GoogleCloudKMSDecryptRequest
 
 	return &this
-}
-
-func (o GoogleCloudKMSDecryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
-
-	toSerialize["ciphertext"] = o.Ciphertext
-
-	toSerialize["key_version"] = o.KeyVersion
-
-	return json.Marshal(toSerialize)
 }

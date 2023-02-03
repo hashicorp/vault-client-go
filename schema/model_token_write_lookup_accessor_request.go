@@ -9,7 +9,6 @@ import (
 // TokenWriteLookupAccessorRequest struct for TokenWriteLookupAccessorRequest
 type TokenWriteLookupAccessorRequest struct {
 	// Accessor of the token to look up (request body)
-
 	Accessor string `json:"accessor"`
 }
 
@@ -20,12 +19,4 @@ func NewTokenWriteLookupAccessorRequestWithDefaults() *TokenWriteLookupAccessorR
 	var this TokenWriteLookupAccessorRequest
 
 	return &this
-}
-
-func (o TokenWriteLookupAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["accessor"] = o.Accessor
-
-	return json.Marshal(toSerialize)
 }

@@ -9,15 +9,12 @@ import (
 // PKIRevokeWithKeyRequest struct for PKIRevokeWithKeyRequest
 type PKIRevokeWithKeyRequest struct {
 	// Certificate to revoke in PEM format; must be signed by an issuer in this mount.
-
 	Certificate string `json:"certificate"`
 
 	// Key to use to verify revocation permission; must be in PEM format.
-
 	PrivateKey string `json:"private_key"`
 
 	// Certificate serial number, in colon- or hyphen-separated octal
-
 	SerialNumber string `json:"serial_number"`
 }
 
@@ -28,16 +25,4 @@ func NewPKIRevokeWithKeyRequestWithDefaults() *PKIRevokeWithKeyRequest {
 	var this PKIRevokeWithKeyRequest
 
 	return &this
-}
-
-func (o PKIRevokeWithKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-
-	toSerialize["private_key"] = o.PrivateKey
-
-	toSerialize["serial_number"] = o.SerialNumber
-
-	return json.Marshal(toSerialize)
 }

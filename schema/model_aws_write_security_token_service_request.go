@@ -9,15 +9,12 @@ import (
 // AWSWriteSecurityTokenServiceRequest struct for AWSWriteSecurityTokenServiceRequest
 type AWSWriteSecurityTokenServiceRequest struct {
 	// ARN of role to assume when credential_type is assumed_role
-
 	RoleArn string `json:"role_arn"`
 
 	// Session name to use when assuming role. Max chars: 64
-
 	RoleSessionName string `json:"role_session_name"`
 
 	// Lifetime of the returned credentials in seconds
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -30,16 +27,4 @@ func NewAWSWriteSecurityTokenServiceRequestWithDefaults() *AWSWriteSecurityToken
 	this.Ttl = 3600
 
 	return &this
-}
-
-func (o AWSWriteSecurityTokenServiceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["role_arn"] = o.RoleArn
-
-	toSerialize["role_session_name"] = o.RoleSessionName
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

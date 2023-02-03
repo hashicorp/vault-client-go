@@ -9,11 +9,9 @@ import (
 // OIDCWriteAssignmentRequest struct for OIDCWriteAssignmentRequest
 type OIDCWriteAssignmentRequest struct {
 	// Comma separated string or array of identity entity IDs
-
 	EntityIds []string `json:"entity_ids"`
 
 	// Comma separated string or array of identity group IDs
-
 	GroupIds []string `json:"group_ids"`
 }
 
@@ -24,14 +22,4 @@ func NewOIDCWriteAssignmentRequestWithDefaults() *OIDCWriteAssignmentRequest {
 	var this OIDCWriteAssignmentRequest
 
 	return &this
-}
-
-func (o OIDCWriteAssignmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_ids"] = o.EntityIds
-
-	toSerialize["group_ids"] = o.GroupIds
-
-	return json.Marshal(toSerialize)
 }

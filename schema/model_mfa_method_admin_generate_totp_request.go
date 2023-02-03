@@ -9,11 +9,9 @@ import (
 // MFAMethodAdminGenerateTOTPRequest struct for MFAMethodAdminGenerateTOTPRequest
 type MFAMethodAdminGenerateTOTPRequest struct {
 	// Entity ID on which the generated secret needs to get stored.
-
 	EntityId string `json:"entity_id"`
 
 	// The unique identifier for this MFA method.
-
 	MethodId string `json:"method_id"`
 }
 
@@ -24,14 +22,4 @@ func NewMFAMethodAdminGenerateTOTPRequestWithDefaults() *MFAMethodAdminGenerateT
 	var this MFAMethodAdminGenerateTOTPRequest
 
 	return &this
-}
-
-func (o MFAMethodAdminGenerateTOTPRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_id"] = o.EntityId
-
-	toSerialize["method_id"] = o.MethodId
-
-	return json.Marshal(toSerialize)
 }

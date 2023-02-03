@@ -9,11 +9,9 @@ import (
 // RevokeLeaseRequest struct for RevokeLeaseRequest
 type RevokeLeaseRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-
 	LeaseId string `json:"lease_id"`
 
 	// Whether or not to perform the revocation synchronously
-
 	Sync bool `json:"sync"`
 }
 
@@ -26,14 +24,4 @@ func NewRevokeLeaseRequestWithDefaults() *RevokeLeaseRequest {
 	this.Sync = true
 
 	return &this
-}
-
-func (o RevokeLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["lease_id"] = o.LeaseId
-
-	toSerialize["sync"] = o.Sync
-
-	return json.Marshal(toSerialize)
 }

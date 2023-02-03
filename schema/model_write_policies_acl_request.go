@@ -9,7 +9,6 @@ import (
 // WritePoliciesACLRequest struct for WritePoliciesACLRequest
 type WritePoliciesACLRequest struct {
 	// The rules of the policy.
-
 	Policy string `json:"policy"`
 }
 
@@ -20,12 +19,4 @@ func NewWritePoliciesACLRequestWithDefaults() *WritePoliciesACLRequest {
 	var this WritePoliciesACLRequest
 
 	return &this
-}
-
-func (o WritePoliciesACLRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policy"] = o.Policy
-
-	return json.Marshal(toSerialize)
 }

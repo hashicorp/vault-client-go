@@ -9,13 +9,10 @@ import (
 // WritePolicyRequest struct for WritePolicyRequest
 type WritePolicyRequest struct {
 	// The rules of the policy.
-
 	Policy string `json:"policy"`
 
 	// The rules of the policy.
-
 	// Deprecated
-
 	Rules string `json:"rules"`
 }
 
@@ -26,14 +23,4 @@ func NewWritePolicyRequestWithDefaults() *WritePolicyRequest {
 	var this WritePolicyRequest
 
 	return &this
-}
-
-func (o WritePolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policy"] = o.Policy
-
-	toSerialize["rules"] = o.Rules
-
-	return json.Marshal(toSerialize)
 }

@@ -9,17 +9,13 @@ import (
 // WriteCapabilitiesAccessorRequest struct for WriteCapabilitiesAccessorRequest
 type WriteCapabilitiesAccessorRequest struct {
 	// Accessor of the token for which capabilities are being queried.
-
 	Accessor string `json:"accessor"`
 
 	// Use 'paths' instead.
-
 	// Deprecated
-
 	Path []string `json:"path"`
 
 	// Paths on which capabilities are being queried.
-
 	Paths []string `json:"paths"`
 }
 
@@ -30,16 +26,4 @@ func NewWriteCapabilitiesAccessorRequestWithDefaults() *WriteCapabilitiesAccesso
 	var this WriteCapabilitiesAccessorRequest
 
 	return &this
-}
-
-func (o WriteCapabilitiesAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["accessor"] = o.Accessor
-
-	toSerialize["path"] = o.Path
-
-	toSerialize["paths"] = o.Paths
-
-	return json.Marshal(toSerialize)
 }

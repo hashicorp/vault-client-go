@@ -9,27 +9,21 @@ import (
 // AzureLoginRequest struct for AzureLoginRequest
 type AzureLoginRequest struct {
 	// A signed JWT
-
 	Jwt string `json:"jwt"`
 
 	// The resource group from the instance.
-
 	ResourceGroupName string `json:"resource_group_name"`
 
 	// The token role.
-
 	Role string `json:"role"`
 
 	// The subscription id for the instance.
-
 	SubscriptionId string `json:"subscription_id"`
 
 	// The name of the virtual machine. This value is ignored if vmss_name is specified.
-
 	VmName string `json:"vm_name"`
 
 	// The name of the virtual machine scale set the instance is in.
-
 	VmssName string `json:"vmss_name"`
 }
 
@@ -40,22 +34,4 @@ func NewAzureLoginRequestWithDefaults() *AzureLoginRequest {
 	var this AzureLoginRequest
 
 	return &this
-}
-
-func (o AzureLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["jwt"] = o.Jwt
-
-	toSerialize["resource_group_name"] = o.ResourceGroupName
-
-	toSerialize["role"] = o.Role
-
-	toSerialize["subscription_id"] = o.SubscriptionId
-
-	toSerialize["vm_name"] = o.VmName
-
-	toSerialize["vmss_name"] = o.VmssName
-
-	return json.Marshal(toSerialize)
 }

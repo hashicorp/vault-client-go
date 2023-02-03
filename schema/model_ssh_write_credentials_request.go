@@ -9,11 +9,9 @@ import (
 // SSHWriteCredentialsRequest struct for SSHWriteCredentialsRequest
 type SSHWriteCredentialsRequest struct {
 	// [Required] IP of the remote host
-
 	Ip string `json:"ip"`
 
 	// [Optional] Username in remote host
-
 	Username string `json:"username"`
 }
 
@@ -24,14 +22,4 @@ func NewSSHWriteCredentialsRequestWithDefaults() *SSHWriteCredentialsRequest {
 	var this SSHWriteCredentialsRequest
 
 	return &this
-}
-
-func (o SSHWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ip"] = o.Ip
-
-	toSerialize["username"] = o.Username
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // PKIWriteIntermediateSetSignedRequest struct for PKIWriteIntermediateSetSignedRequest
 type PKIWriteIntermediateSetSignedRequest struct {
 	// PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint. Additional parent CAs may be optionally appended to the bundle.
-
 	Certificate string `json:"certificate"`
 }
 
@@ -20,12 +19,4 @@ func NewPKIWriteIntermediateSetSignedRequestWithDefaults() *PKIWriteIntermediate
 	var this PKIWriteIntermediateSetSignedRequest
 
 	return &this
-}
-
-func (o PKIWriteIntermediateSetSignedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-
-	return json.Marshal(toSerialize)
 }

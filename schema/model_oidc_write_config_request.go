@@ -9,7 +9,6 @@ import (
 // OIDCWriteConfigRequest struct for OIDCWriteConfigRequest
 type OIDCWriteConfigRequest struct {
 	// Issuer URL to be used in the iss claim of the token. If not set, Vault's app_addr will be used.
-
 	Issuer string `json:"issuer"`
 }
 
@@ -20,12 +19,4 @@ func NewOIDCWriteConfigRequestWithDefaults() *OIDCWriteConfigRequest {
 	var this OIDCWriteConfigRequest
 
 	return &this
-}
-
-func (o OIDCWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["issuer"] = o.Issuer
-
-	return json.Marshal(toSerialize)
 }

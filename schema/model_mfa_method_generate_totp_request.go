@@ -9,7 +9,6 @@ import (
 // MFAMethodGenerateTOTPRequest struct for MFAMethodGenerateTOTPRequest
 type MFAMethodGenerateTOTPRequest struct {
 	// The unique identifier for this MFA method.
-
 	MethodId string `json:"method_id"`
 }
 
@@ -20,12 +19,4 @@ func NewMFAMethodGenerateTOTPRequestWithDefaults() *MFAMethodGenerateTOTPRequest
 	var this MFAMethodGenerateTOTPRequest
 
 	return &this
-}
-
-func (o MFAMethodGenerateTOTPRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["method_id"] = o.MethodId
-
-	return json.Marshal(toSerialize)
 }

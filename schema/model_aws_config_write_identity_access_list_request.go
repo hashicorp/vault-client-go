@@ -9,11 +9,9 @@ import (
 // AWSConfigWriteIdentityAccessListRequest struct for AWSConfigWriteIdentityAccessListRequest
 type AWSConfigWriteIdentityAccessListRequest struct {
 	// If set to 'true', disables the periodic tidying of the 'identity-accesslist/<instance_id>' entries.
-
 	DisablePeriodicTidy bool `json:"disable_periodic_tidy"`
 
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-
 	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
@@ -24,18 +22,7 @@ func NewAWSConfigWriteIdentityAccessListRequestWithDefaults() *AWSConfigWriteIde
 	var this AWSConfigWriteIdentityAccessListRequest
 
 	this.DisablePeriodicTidy = false
-
 	this.SafetyBuffer = 259200
 
 	return &this
-}
-
-func (o AWSConfigWriteIdentityAccessListRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
-
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-
-	return json.Marshal(toSerialize)
 }

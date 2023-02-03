@@ -9,7 +9,6 @@ import (
 // WritePoliciesPasswordRequest struct for WritePoliciesPasswordRequest
 type WritePoliciesPasswordRequest struct {
 	// The password policy
-
 	Policy string `json:"policy"`
 }
 
@@ -20,12 +19,4 @@ func NewWritePoliciesPasswordRequestWithDefaults() *WritePoliciesPasswordRequest
 	var this WritePoliciesPasswordRequest
 
 	return &this
-}
-
-func (o WritePoliciesPasswordRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policy"] = o.Policy
-
-	return json.Marshal(toSerialize)
 }

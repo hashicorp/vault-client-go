@@ -9,7 +9,6 @@ import (
 // OIDCRotateKeyRequest struct for OIDCRotateKeyRequest
 type OIDCRotateKeyRequest struct {
 	// Controls how long the public portion of a key will be available for verification after being rotated. Setting verification_ttl here will override the verification_ttl set on the key.
-
 	VerificationTtl int32 `json:"verification_ttl"`
 }
 
@@ -20,12 +19,4 @@ func NewOIDCRotateKeyRequestWithDefaults() *OIDCRotateKeyRequest {
 	var this OIDCRotateKeyRequest
 
 	return &this
-}
-
-func (o OIDCRotateKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["verification_ttl"] = o.VerificationTtl
-
-	return json.Marshal(toSerialize)
 }

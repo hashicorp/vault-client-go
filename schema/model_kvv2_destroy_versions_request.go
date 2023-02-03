@@ -9,7 +9,6 @@ import (
 // KVv2DestroyVersionsRequest struct for KVv2DestroyVersionsRequest
 type KVv2DestroyVersionsRequest struct {
 	// The versions to destroy. Their data will be permanently deleted.
-
 	Versions []int32 `json:"versions"`
 }
 
@@ -20,12 +19,4 @@ func NewKVv2DestroyVersionsRequestWithDefaults() *KVv2DestroyVersionsRequest {
 	var this KVv2DestroyVersionsRequest
 
 	return &this
-}
-
-func (o KVv2DestroyVersionsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["versions"] = o.Versions
-
-	return json.Marshal(toSerialize)
 }

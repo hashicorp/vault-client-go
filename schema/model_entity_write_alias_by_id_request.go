@@ -9,23 +9,18 @@ import (
 // EntityWriteAliasByIDRequest struct for EntityWriteAliasByIDRequest
 type EntityWriteAliasByIDRequest struct {
 	// Entity ID to which this alias should be tied to
-
 	CanonicalId string `json:"canonical_id"`
 
 	// User provided key-value pairs
-
 	CustomMetadata map[string]interface{} `json:"custom_metadata"`
 
 	// Entity ID to which this alias belongs to. This field is deprecated, use canonical_id.
-
 	EntityId string `json:"entity_id"`
 
 	// (Unused)
-
 	MountAccessor string `json:"mount_accessor"`
 
 	// (Unused)
-
 	Name string `json:"name"`
 }
 
@@ -36,20 +31,4 @@ func NewEntityWriteAliasByIDRequestWithDefaults() *EntityWriteAliasByIDRequest {
 	var this EntityWriteAliasByIDRequest
 
 	return &this
-}
-
-func (o EntityWriteAliasByIDRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["canonical_id"] = o.CanonicalId
-
-	toSerialize["custom_metadata"] = o.CustomMetadata
-
-	toSerialize["entity_id"] = o.EntityId
-
-	toSerialize["mount_accessor"] = o.MountAccessor
-
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

@@ -9,11 +9,9 @@ import (
 // GoogleCloudKMSWriteConfigRequest struct for GoogleCloudKMSWriteConfigRequest
 type GoogleCloudKMSWriteConfigRequest struct {
 	// The credentials to use for authenticating to Google Cloud. Leave this blank to use the Default Application Credentials or instance metadata authentication.
-
 	Credentials string `json:"credentials"`
 
 	// The list of full-URL scopes to request when authenticating. By default, this requests https://www.googleapis.com/auth/cloudkms.
-
 	Scopes []string `json:"scopes"`
 }
 
@@ -24,14 +22,4 @@ func NewGoogleCloudKMSWriteConfigRequestWithDefaults() *GoogleCloudKMSWriteConfi
 	var this GoogleCloudKMSWriteConfigRequest
 
 	return &this
-}
-
-func (o GoogleCloudKMSWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["credentials"] = o.Credentials
-
-	toSerialize["scopes"] = o.Scopes
-
-	return json.Marshal(toSerialize)
 }

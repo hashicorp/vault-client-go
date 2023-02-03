@@ -9,23 +9,18 @@ import (
 // TerraformWriteRoleRequest struct for TerraformWriteRoleRequest
 type TerraformWriteRoleRequest struct {
 	// Maximum time for role. If not set or set to 0, will use system default.
-
 	MaxTtl int32 `json:"max_ttl"`
 
 	// Name of the Terraform Cloud or Enterprise organization
-
 	Organization string `json:"organization"`
 
 	// ID of the Terraform Cloud or Enterprise team under organization (e.g., settings/teams/team-xxxxxxxxxxxxx)
-
 	TeamId string `json:"team_id"`
 
 	// Default lease for generated credentials. If not set or set to 0, will use system default.
-
 	Ttl int32 `json:"ttl"`
 
 	// ID of the Terraform Cloud or Enterprise user (e.g., user-xxxxxxxxxxxxxxxx)
-
 	UserId string `json:"user_id"`
 }
 
@@ -36,20 +31,4 @@ func NewTerraformWriteRoleRequestWithDefaults() *TerraformWriteRoleRequest {
 	var this TerraformWriteRoleRequest
 
 	return &this
-}
-
-func (o TerraformWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["max_ttl"] = o.MaxTtl
-
-	toSerialize["organization"] = o.Organization
-
-	toSerialize["team_id"] = o.TeamId
-
-	toSerialize["ttl"] = o.Ttl
-
-	toSerialize["user_id"] = o.UserId
-
-	return json.Marshal(toSerialize)
 }

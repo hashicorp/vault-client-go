@@ -9,7 +9,6 @@ import (
 // WriteInternalSpecsOpenAPIRequest struct for WriteInternalSpecsOpenAPIRequest
 type WriteInternalSpecsOpenAPIRequest struct {
 	// Context string appended to every operationId
-
 	Context string `json:"context"`
 }
 
@@ -20,12 +19,4 @@ func NewWriteInternalSpecsOpenAPIRequestWithDefaults() *WriteInternalSpecsOpenAP
 	var this WriteInternalSpecsOpenAPIRequest
 
 	return &this
-}
-
-func (o WriteInternalSpecsOpenAPIRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["context"] = o.Context
-
-	return json.Marshal(toSerialize)
 }

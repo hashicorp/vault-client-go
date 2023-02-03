@@ -9,11 +9,9 @@ import (
 // WriteConfigUIHeaderRequest struct for WriteConfigUIHeaderRequest
 type WriteConfigUIHeaderRequest struct {
 	// Returns multiple values if true
-
 	Multivalue bool `json:"multivalue"`
 
 	// The values to set the header.
-
 	Values []string `json:"values"`
 }
 
@@ -24,14 +22,4 @@ func NewWriteConfigUIHeaderRequestWithDefaults() *WriteConfigUIHeaderRequest {
 	var this WriteConfigUIHeaderRequest
 
 	return &this
-}
-
-func (o WriteConfigUIHeaderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["multivalue"] = o.Multivalue
-
-	toSerialize["values"] = o.Values
-
-	return json.Marshal(toSerialize)
 }

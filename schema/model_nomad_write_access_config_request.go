@@ -9,27 +9,21 @@ import (
 // NomadWriteAccessConfigRequest struct for NomadWriteAccessConfigRequest
 type NomadWriteAccessConfigRequest struct {
 	// Nomad server address
-
 	Address string `json:"address"`
 
 	// CA certificate to use when verifying Nomad server certificate, must be x509 PEM encoded.
-
 	CaCert string `json:"ca_cert"`
 
 	// Client certificate used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key.
-
 	ClientCert string `json:"client_cert"`
 
 	// Client key used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert.
-
 	ClientKey string `json:"client_key"`
 
 	// Max length for name of generated Nomad tokens
-
 	MaxTokenNameLength int32 `json:"max_token_name_length"`
 
 	// Token for API calls
-
 	Token string `json:"token"`
 }
 
@@ -40,22 +34,4 @@ func NewNomadWriteAccessConfigRequestWithDefaults() *NomadWriteAccessConfigReque
 	var this NomadWriteAccessConfigRequest
 
 	return &this
-}
-
-func (o NomadWriteAccessConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["address"] = o.Address
-
-	toSerialize["ca_cert"] = o.CaCert
-
-	toSerialize["client_cert"] = o.ClientCert
-
-	toSerialize["client_key"] = o.ClientKey
-
-	toSerialize["max_token_name_length"] = o.MaxTokenNameLength
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

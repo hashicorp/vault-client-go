@@ -9,19 +9,15 @@ import (
 // EntityWriteByIDRequest struct for EntityWriteByIDRequest
 type EntityWriteByIDRequest struct {
 	// If set true, tokens tied to this identity will not be able to be used (but will not be revoked).
-
 	Disabled bool `json:"disabled"`
 
 	// Metadata to be associated with the entity. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-
 	Metadata map[string]interface{} `json:"metadata"`
 
 	// Name of the entity
-
 	Name string `json:"name"`
 
 	// Policies to be tied to the entity.
-
 	Policies []string `json:"policies"`
 }
 
@@ -32,18 +28,4 @@ func NewEntityWriteByIDRequestWithDefaults() *EntityWriteByIDRequest {
 	var this EntityWriteByIDRequest
 
 	return &this
-}
-
-func (o EntityWriteByIDRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["disabled"] = o.Disabled
-
-	toSerialize["metadata"] = o.Metadata
-
-	toSerialize["name"] = o.Name
-
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

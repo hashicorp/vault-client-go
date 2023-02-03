@@ -9,7 +9,6 @@ import (
 // CertificatesLoginRequest struct for CertificatesLoginRequest
 type CertificatesLoginRequest struct {
 	// The name of the certificate role to authenticate against.
-
 	Name string `json:"name"`
 }
 
@@ -20,12 +19,4 @@ func NewCertificatesLoginRequestWithDefaults() *CertificatesLoginRequest {
 	var this CertificatesLoginRequest
 
 	return &this
-}
-
-func (o CertificatesLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

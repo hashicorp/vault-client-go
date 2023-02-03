@@ -9,11 +9,9 @@ import (
 // AWSConfigWriteLeaseRequest struct for AWSConfigWriteLeaseRequest
 type AWSConfigWriteLeaseRequest struct {
 	// Default lease for roles.
-
 	Lease string `json:"lease"`
 
 	// Maximum time a credential is valid for.
-
 	LeaseMax string `json:"lease_max"`
 }
 
@@ -24,14 +22,4 @@ func NewAWSConfigWriteLeaseRequestWithDefaults() *AWSConfigWriteLeaseRequest {
 	var this AWSConfigWriteLeaseRequest
 
 	return &this
-}
-
-func (o AWSConfigWriteLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["lease"] = o.Lease
-
-	toSerialize["lease_max"] = o.LeaseMax
-
-	return json.Marshal(toSerialize)
 }

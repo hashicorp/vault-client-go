@@ -9,7 +9,6 @@ import (
 // WriteLoggersRequest struct for WriteLoggersRequest
 type WriteLoggersRequest struct {
 	// Log verbosity level. Supported values (in order of detail) are \"trace\", \"debug\", \"info\", \"warn\", and \"error\".
-
 	Level string `json:"level"`
 }
 
@@ -20,12 +19,4 @@ func NewWriteLoggersRequestWithDefaults() *WriteLoggersRequest {
 	var this WriteLoggersRequest
 
 	return &this
-}
-
-func (o WriteLoggersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["level"] = o.Level
-
-	return json.Marshal(toSerialize)
 }

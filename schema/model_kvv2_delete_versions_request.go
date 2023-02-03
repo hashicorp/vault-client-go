@@ -9,7 +9,6 @@ import (
 // KVv2DeleteVersionsRequest struct for KVv2DeleteVersionsRequest
 type KVv2DeleteVersionsRequest struct {
 	// The versions to be archived. The versioned data will not be deleted, but it will no longer be returned in normal get requests.
-
 	Versions []int32 `json:"versions"`
 }
 
@@ -20,12 +19,4 @@ func NewKVv2DeleteVersionsRequestWithDefaults() *KVv2DeleteVersionsRequest {
 	var this KVv2DeleteVersionsRequest
 
 	return &this
-}
-
-func (o KVv2DeleteVersionsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["versions"] = o.Versions
-
-	return json.Marshal(toSerialize)
 }

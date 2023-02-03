@@ -9,7 +9,6 @@ import (
 // WriteLeasesRevokePrefixRequest struct for WriteLeasesRevokePrefixRequest
 type WriteLeasesRevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
-
 	Sync bool `json:"sync"`
 }
 
@@ -22,12 +21,4 @@ func NewWriteLeasesRevokePrefixRequestWithDefaults() *WriteLeasesRevokePrefixReq
 	this.Sync = true
 
 	return &this
-}
-
-func (o WriteLeasesRevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["sync"] = o.Sync
-
-	return json.Marshal(toSerialize)
 }

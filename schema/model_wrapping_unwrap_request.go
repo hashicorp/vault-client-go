@@ -19,11 +19,3 @@ func NewWrappingUnwrapRequestWithDefaults() *WrappingUnwrapRequest {
 
 	return &this
 }
-
-func (o WrappingUnwrapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
-}

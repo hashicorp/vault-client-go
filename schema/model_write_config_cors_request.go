@@ -9,15 +9,12 @@ import (
 // WriteConfigCORSRequest struct for WriteConfigCORSRequest
 type WriteConfigCORSRequest struct {
 	// A comma-separated string or array of strings indicating headers that are allowed on cross-origin requests.
-
 	AllowedHeaders []string `json:"allowed_headers"`
 
 	// A comma-separated string or array of strings indicating origins that may make cross-origin requests.
-
 	AllowedOrigins []string `json:"allowed_origins"`
 
 	// Enables or disables CORS headers on requests.
-
 	Enable bool `json:"enable"`
 }
 
@@ -28,16 +25,4 @@ func NewWriteConfigCORSRequestWithDefaults() *WriteConfigCORSRequest {
 	var this WriteConfigCORSRequest
 
 	return &this
-}
-
-func (o WriteConfigCORSRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["allowed_headers"] = o.AllowedHeaders
-
-	toSerialize["allowed_origins"] = o.AllowedOrigins
-
-	toSerialize["enable"] = o.Enable
-
-	return json.Marshal(toSerialize)
 }

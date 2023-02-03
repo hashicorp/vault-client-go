@@ -9,15 +9,12 @@ import (
 // KubernetesWriteCredentialsRequest struct for KubernetesWriteCredentialsRequest
 type KubernetesWriteCredentialsRequest struct {
 	// If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole.
-
 	ClusterRoleBinding bool `json:"cluster_role_binding"`
 
 	// The name of the Kubernetes namespace in which to generate the credentials
-
 	KubernetesNamespace string `json:"kubernetes_namespace"`
 
 	// The TTL of the generated credentials
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -28,16 +25,4 @@ func NewKubernetesWriteCredentialsRequestWithDefaults() *KubernetesWriteCredenti
 	var this KubernetesWriteCredentialsRequest
 
 	return &this
-}
-
-func (o KubernetesWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["cluster_role_binding"] = o.ClusterRoleBinding
-
-	toSerialize["kubernetes_namespace"] = o.KubernetesNamespace
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // SSHWriteZeroAddressConfigRequest struct for SSHWriteZeroAddressConfigRequest
 type SSHWriteZeroAddressConfigRequest struct {
 	// [Required] Comma separated list of role names which allows credentials to be requested for any IP address. CIDR blocks previously registered under these roles will be ignored.
-
 	Roles []string `json:"roles"`
 }
 
@@ -20,12 +19,4 @@ func NewSSHWriteZeroAddressConfigRequestWithDefaults() *SSHWriteZeroAddressConfi
 	var this SSHWriteZeroAddressConfigRequest
 
 	return &this
-}
-
-func (o SSHWriteZeroAddressConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["roles"] = o.Roles
-
-	return json.Marshal(toSerialize)
 }

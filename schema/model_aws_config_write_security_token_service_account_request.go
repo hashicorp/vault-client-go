@@ -9,7 +9,6 @@ import (
 // AWSConfigWriteSecurityTokenServiceAccountRequest struct for AWSConfigWriteSecurityTokenServiceAccountRequest
 type AWSConfigWriteSecurityTokenServiceAccountRequest struct {
 	// AWS ARN for STS role to be assumed when interacting with the account specified. The Vault server must have permissions to assume this role.
-
 	StsRole string `json:"sts_role"`
 }
 
@@ -20,12 +19,4 @@ func NewAWSConfigWriteSecurityTokenServiceAccountRequestWithDefaults() *AWSConfi
 	var this AWSConfigWriteSecurityTokenServiceAccountRequest
 
 	return &this
-}
-
-func (o AWSConfigWriteSecurityTokenServiceAccountRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["sts_role"] = o.StsRole
-
-	return json.Marshal(toSerialize)
 }

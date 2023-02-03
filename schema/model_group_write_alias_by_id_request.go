@@ -9,15 +9,12 @@ import (
 // GroupWriteAliasByIDRequest struct for GroupWriteAliasByIDRequest
 type GroupWriteAliasByIDRequest struct {
 	// ID of the group to which this is an alias.
-
 	CanonicalId string `json:"canonical_id"`
 
 	// Mount accessor to which this alias belongs to.
-
 	MountAccessor string `json:"mount_accessor"`
 
 	// Alias of the group.
-
 	Name string `json:"name"`
 }
 
@@ -28,16 +25,4 @@ func NewGroupWriteAliasByIDRequestWithDefaults() *GroupWriteAliasByIDRequest {
 	var this GroupWriteAliasByIDRequest
 
 	return &this
-}
-
-func (o GroupWriteAliasByIDRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["canonical_id"] = o.CanonicalId
-
-	toSerialize["mount_accessor"] = o.MountAccessor
-
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

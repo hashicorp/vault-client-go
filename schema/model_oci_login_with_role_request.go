@@ -9,7 +9,6 @@ import (
 // OCILoginWithRoleRequest struct for OCILoginWithRoleRequest
 type OCILoginWithRoleRequest struct {
 	// The signed headers of the client
-
 	RequestHeaders string `json:"request_headers"`
 }
 
@@ -20,12 +19,4 @@ func NewOCILoginWithRoleRequestWithDefaults() *OCILoginWithRoleRequest {
 	var this OCILoginWithRoleRequest
 
 	return &this
-}
-
-func (o OCILoginWithRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["request_headers"] = o.RequestHeaders
-
-	return json.Marshal(toSerialize)
 }

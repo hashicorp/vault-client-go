@@ -9,7 +9,6 @@ import (
 // GitHubLoginRequest struct for GitHubLoginRequest
 type GitHubLoginRequest struct {
 	// GitHub personal API token
-
 	Token string `json:"token"`
 }
 
@@ -20,12 +19,4 @@ func NewGitHubLoginRequestWithDefaults() *GitHubLoginRequest {
 	var this GitHubLoginRequest
 
 	return &this
-}
-
-func (o GitHubLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // EntityBatchDeleteRequest struct for EntityBatchDeleteRequest
 type EntityBatchDeleteRequest struct {
 	// Entity IDs to delete
-
 	EntityIds []string `json:"entity_ids"`
 }
 
@@ -20,12 +19,4 @@ func NewEntityBatchDeleteRequestWithDefaults() *EntityBatchDeleteRequest {
 	var this EntityBatchDeleteRequest
 
 	return &this
-}
-
-func (o EntityBatchDeleteRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_ids"] = o.EntityIds
-
-	return json.Marshal(toSerialize)
 }

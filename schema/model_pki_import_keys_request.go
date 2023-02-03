@@ -9,11 +9,9 @@ import (
 // PKIImportKeysRequest struct for PKIImportKeysRequest
 type PKIImportKeysRequest struct {
 	// Optional name to be used for this key
-
 	KeyName string `json:"key_name"`
 
 	// PEM-format, unencrypted secret key
-
 	PemBundle string `json:"pem_bundle"`
 }
 
@@ -24,14 +22,4 @@ func NewPKIImportKeysRequestWithDefaults() *PKIImportKeysRequest {
 	var this PKIImportKeysRequest
 
 	return &this
-}
-
-func (o PKIImportKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_name"] = o.KeyName
-
-	toSerialize["pem_bundle"] = o.PemBundle
-
-	return json.Marshal(toSerialize)
 }

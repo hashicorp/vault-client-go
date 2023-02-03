@@ -9,7 +9,6 @@ import (
 // AppRoleWriteSecretIDAccessorDestroyRequest struct for AppRoleWriteSecretIDAccessorDestroyRequest
 type AppRoleWriteSecretIDAccessorDestroyRequest struct {
 	// Accessor of the SecretID
-
 	SecretIdAccessor string `json:"secret_id_accessor"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleWriteSecretIDAccessorDestroyRequestWithDefaults() *AppRoleWriteSe
 	var this AppRoleWriteSecretIDAccessorDestroyRequest
 
 	return &this
-}
-
-func (o AppRoleWriteSecretIDAccessorDestroyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
-
-	return json.Marshal(toSerialize)
 }

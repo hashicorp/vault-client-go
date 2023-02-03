@@ -9,11 +9,9 @@ import (
 // WriteRekeyUpdateRequest struct for WriteRekeyUpdateRequest
 type WriteRekeyUpdateRequest struct {
 	// Specifies a single unseal key share.
-
 	Key string `json:"key"`
 
 	// Specifies the nonce of the rekey attempt.
-
 	Nonce string `json:"nonce"`
 }
 
@@ -24,14 +22,4 @@ func NewWriteRekeyUpdateRequestWithDefaults() *WriteRekeyUpdateRequest {
 	var this WriteRekeyUpdateRequest
 
 	return &this
-}
-
-func (o WriteRekeyUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-
-	toSerialize["nonce"] = o.Nonce
-
-	return json.Marshal(toSerialize)
 }

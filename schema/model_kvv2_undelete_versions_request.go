@@ -9,7 +9,6 @@ import (
 // KVv2UndeleteVersionsRequest struct for KVv2UndeleteVersionsRequest
 type KVv2UndeleteVersionsRequest struct {
 	// The versions to unarchive. The versions will be restored and their data will be returned on normal get requests.
-
 	Versions []int32 `json:"versions"`
 }
 
@@ -20,12 +19,4 @@ func NewKVv2UndeleteVersionsRequestWithDefaults() *KVv2UndeleteVersionsRequest {
 	var this KVv2UndeleteVersionsRequest
 
 	return &this
-}
-
-func (o KVv2UndeleteVersionsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["versions"] = o.Versions
-
-	return json.Marshal(toSerialize)
 }

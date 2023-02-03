@@ -9,13 +9,10 @@ import (
 // AppRoleReadPoliciesResponse struct for AppRoleReadPoliciesResponse
 type AppRoleReadPoliciesResponse struct {
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
-
 	// Deprecated
-
 	Policies []string `json:"policies"`
 
 	// Comma-separated list of policies
-
 	TokenPolicies []string `json:"token_policies"`
 }
 
@@ -26,14 +23,4 @@ func NewAppRoleReadPoliciesResponseWithDefaults() *AppRoleReadPoliciesResponse {
 	var this AppRoleReadPoliciesResponse
 
 	return &this
-}
-
-func (o AppRoleReadPoliciesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-
-	toSerialize["token_policies"] = o.TokenPolicies
-
-	return json.Marshal(toSerialize)
 }

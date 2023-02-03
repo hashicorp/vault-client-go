@@ -9,19 +9,15 @@ import (
 // TransitRewrapRequest struct for TransitRewrapRequest
 type TransitRewrapRequest struct {
 	// Ciphertext value to rewrap
-
 	Ciphertext string `json:"ciphertext"`
 
 	// Base64 encoded context for key derivation. Required for derived keys.
-
 	Context string `json:"context"`
 
 	// The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
-
 	KeyVersion int32 `json:"key_version"`
 
 	// Nonce for when convergent encryption is used
-
 	Nonce string `json:"nonce"`
 }
 
@@ -32,18 +28,4 @@ func NewTransitRewrapRequestWithDefaults() *TransitRewrapRequest {
 	var this TransitRewrapRequest
 
 	return &this
-}
-
-func (o TransitRewrapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ciphertext"] = o.Ciphertext
-
-	toSerialize["context"] = o.Context
-
-	toSerialize["key_version"] = o.KeyVersion
-
-	toSerialize["nonce"] = o.Nonce
-
-	return json.Marshal(toSerialize)
 }

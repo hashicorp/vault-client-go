@@ -9,7 +9,6 @@ import (
 // AppRoleReadTokenBoundCIDRsResponse struct for AppRoleReadTokenBoundCIDRsResponse
 type AppRoleReadTokenBoundCIDRsResponse struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
-
 	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleReadTokenBoundCIDRsResponseWithDefaults() *AppRoleReadTokenBoundC
 	var this AppRoleReadTokenBoundCIDRsResponse
 
 	return &this
-}
-
-func (o AppRoleReadTokenBoundCIDRsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // OktaWriteGroupRequest struct for OktaWriteGroupRequest
 type OktaWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.
-
 	Policies []string `json:"policies"`
 }
 
@@ -20,12 +19,4 @@ func NewOktaWriteGroupRequestWithDefaults() *OktaWriteGroupRequest {
 	var this OktaWriteGroupRequest
 
 	return &this
-}
-
-func (o OktaWriteGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

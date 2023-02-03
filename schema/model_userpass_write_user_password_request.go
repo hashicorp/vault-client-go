@@ -9,7 +9,6 @@ import (
 // UserpassWriteUserPasswordRequest struct for UserpassWriteUserPasswordRequest
 type UserpassWriteUserPasswordRequest struct {
 	// Password for this user.
-
 	Password string `json:"password"`
 }
 
@@ -20,12 +19,4 @@ func NewUserpassWriteUserPasswordRequestWithDefaults() *UserpassWriteUserPasswor
 	var this UserpassWriteUserPasswordRequest
 
 	return &this
-}
-
-func (o UserpassWriteUserPasswordRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["password"] = o.Password
-
-	return json.Marshal(toSerialize)
 }

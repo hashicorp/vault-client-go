@@ -9,7 +9,6 @@ import (
 // WriteLeasesLookupRequest struct for WriteLeasesLookupRequest
 type WriteLeasesLookupRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-
 	LeaseId string `json:"lease_id"`
 }
 
@@ -20,12 +19,4 @@ func NewWriteLeasesLookupRequestWithDefaults() *WriteLeasesLookupRequest {
 	var this WriteLeasesLookupRequest
 
 	return &this
-}
-
-func (o WriteLeasesLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["lease_id"] = o.LeaseId
-
-	return json.Marshal(toSerialize)
 }

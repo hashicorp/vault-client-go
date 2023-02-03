@@ -14,11 +14,8 @@ type {{classname}} struct {
 {{#unless @first}}
 {{/unless}}
 {{#with description}}
-	// {{{.}}}
-{{/with}}
-{{#with deprecated}}
-	// Deprecated
-{{/with}}
+	// {{{.}}}{{/with}}{{#if deprecated}}
+	// Deprecated{{/if}}
 	{{name}} {{{dataType}}} `json:"{{baseName}}"{{#with withXml}} xml:"{{baseName}}{{#if isXmlAttribute}},attr{{/if}}"{{/with}}{{#with vendorExtensions.x-go-custom-tag}} {{{.}}}{{/with}}`
 {{/each}}
 {{#if isAdditionalPropertiesTrue}}
@@ -36,19 +33,13 @@ type _{{{classname}}} {{{classname}}}
 func New{{classname}}WithDefaults() *{{classname}} {
 	var this {{classname}}
 
-{{#each vars}}
-{{#with defaultValue}}
-{{#unless vendorExtensions.x-golang-is-container}}
-{{#unless isReadOnly}}
-	this.{{name}} = {{{.}}}
-{{/unless}}
-{{/unless}}
-{{/with}}
-{{/each}}
+{{#each vars}}{{#with defaultValue}}{{#unless vendorExtensions.x-golang-is-container}}{{#unless isReadOnly}}
+	this.{{name}} = {{{.}}}{{/unless}}{{/unless}}{{/with}}{{/each}}
 
 	return &this
 }
 
+{{#if isAdditionalPropertiesTrue}}
 func (o {{classname}}) MarshalJSON() ([]byte, error) {
 	toSerialize := {{#if isArray}}make([]interface{}, len(o.Items)){{/if}}{{#unless isArray}}make(map[string]interface{}){{/unless}}
 
@@ -84,7 +75,6 @@ func (o {{classname}}) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-{{#if isAdditionalPropertiesTrue}}
 func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 {{#with parent}}
 {{#unless isMap}}

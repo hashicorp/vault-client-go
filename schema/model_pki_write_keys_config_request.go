@@ -9,7 +9,6 @@ import (
 // PKIWriteKeysConfigRequest struct for PKIWriteKeysConfigRequest
 type PKIWriteKeysConfigRequest struct {
 	// Reference (name or identifier) of the default key.
-
 	Default string `json:"default"`
 }
 
@@ -20,12 +19,4 @@ func NewPKIWriteKeysConfigRequestWithDefaults() *PKIWriteKeysConfigRequest {
 	var this PKIWriteKeysConfigRequest
 
 	return &this
-}
-
-func (o PKIWriteKeysConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default"] = o.Default
-
-	return json.Marshal(toSerialize)
 }

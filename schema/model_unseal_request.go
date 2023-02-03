@@ -9,11 +9,9 @@ import (
 // UnsealRequest struct for UnsealRequest
 type UnsealRequest struct {
 	// Specifies a single unseal key share. This is required unless reset is true.
-
 	Key string `json:"key"`
 
 	// Specifies if previously-provided unseal keys are discarded and the unseal process is reset.
-
 	Reset bool `json:"reset"`
 }
 
@@ -24,14 +22,4 @@ func NewUnsealRequestWithDefaults() *UnsealRequest {
 	var this UnsealRequest
 
 	return &this
-}
-
-func (o UnsealRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-
-	toSerialize["reset"] = o.Reset
-
-	return json.Marshal(toSerialize)
 }

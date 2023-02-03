@@ -9,7 +9,6 @@ import (
 // AppRoleReadTokenTTLResponse struct for AppRoleReadTokenTTLResponse
 type AppRoleReadTokenTTLResponse struct {
 	// The initial ttl of the token to generate
-
 	TokenTtl int32 `json:"token_ttl"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleReadTokenTTLResponseWithDefaults() *AppRoleReadTokenTTLResponse {
 	var this AppRoleReadTokenTTLResponse
 
 	return &this
-}
-
-func (o AppRoleReadTokenTTLResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_ttl"] = o.TokenTtl
-
-	return json.Marshal(toSerialize)
 }

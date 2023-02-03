@@ -9,15 +9,12 @@ import (
 // JWTWriteOIDCAuthURLRequest struct for JWTWriteOIDCAuthURLRequest
 type JWTWriteOIDCAuthURLRequest struct {
 	// Optional client-provided nonce that must match during callback, if present.
-
 	ClientNonce string `json:"client_nonce"`
 
 	// The OAuth redirect_uri to use in the authorization URL.
-
 	RedirectUri string `json:"redirect_uri"`
 
 	// The role to issue an OIDC authorization URL against.
-
 	Role string `json:"role"`
 }
 
@@ -28,16 +25,4 @@ func NewJWTWriteOIDCAuthURLRequestWithDefaults() *JWTWriteOIDCAuthURLRequest {
 	var this JWTWriteOIDCAuthURLRequest
 
 	return &this
-}
-
-func (o JWTWriteOIDCAuthURLRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["client_nonce"] = o.ClientNonce
-
-	toSerialize["redirect_uri"] = o.RedirectUri
-
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

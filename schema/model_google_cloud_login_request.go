@@ -9,11 +9,9 @@ import (
 // GoogleCloudLoginRequest struct for GoogleCloudLoginRequest
 type GoogleCloudLoginRequest struct {
 	// A signed JWT. This is either a self-signed service account JWT ('iam' roles only) or a GCE identity metadata token ('iam', 'gce' roles).
-
 	Jwt string `json:"jwt"`
 
 	// Name of the role against which the login is being attempted. Required.
-
 	Role string `json:"role"`
 }
 
@@ -24,14 +22,4 @@ func NewGoogleCloudLoginRequestWithDefaults() *GoogleCloudLoginRequest {
 	var this GoogleCloudLoginRequest
 
 	return &this
-}
-
-func (o GoogleCloudLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["jwt"] = o.Jwt
-
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // KerberosWriteGroupRequest struct for KerberosWriteGroupRequest
 type KerberosWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.
-
 	Policies []string `json:"policies"`
 }
 
@@ -20,12 +19,4 @@ func NewKerberosWriteGroupRequestWithDefaults() *KerberosWriteGroupRequest {
 	var this KerberosWriteGroupRequest
 
 	return &this
-}
-
-func (o KerberosWriteGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

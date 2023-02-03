@@ -9,11 +9,9 @@ import (
 // CertificatesWriteCRLRequest struct for CertificatesWriteCRLRequest
 type CertificatesWriteCRLRequest struct {
 	// The public CRL that should be trusted to attest to certificates' validity statuses. May be DER or PEM encoded. Note: the expiration time is ignored; if the CRL is no longer valid, delete it using the same name as specified here.
-
 	Crl string `json:"crl"`
 
 	// The URL of a CRL distribution point. Only one of 'crl' or 'url' parameters should be specified.
-
 	Url string `json:"url"`
 }
 
@@ -24,14 +22,4 @@ func NewCertificatesWriteCRLRequestWithDefaults() *CertificatesWriteCRLRequest {
 	var this CertificatesWriteCRLRequest
 
 	return &this
-}
-
-func (o CertificatesWriteCRLRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["crl"] = o.Crl
-
-	toSerialize["url"] = o.Url
-
-	return json.Marshal(toSerialize)
 }

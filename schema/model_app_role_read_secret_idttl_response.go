@@ -9,7 +9,6 @@ import (
 // AppRoleReadSecretIDTTLResponse struct for AppRoleReadSecretIDTTLResponse
 type AppRoleReadSecretIDTTLResponse struct {
 	// Duration in seconds after which the issued secret ID should expire. Defaults to 0, meaning no expiration.
-
 	SecretIdTtl int32 `json:"secret_id_ttl"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleReadSecretIDTTLResponseWithDefaults() *AppRoleReadSecretIDTTLResp
 	var this AppRoleReadSecretIDTTLResponse
 
 	return &this
-}
-
-func (o AppRoleReadSecretIDTTLResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_ttl"] = o.SecretIdTtl
-
-	return json.Marshal(toSerialize)
 }

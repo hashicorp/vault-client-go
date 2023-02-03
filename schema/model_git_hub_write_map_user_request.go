@@ -9,7 +9,6 @@ import (
 // GitHubWriteMapUserRequest struct for GitHubWriteMapUserRequest
 type GitHubWriteMapUserRequest struct {
 	// Value for users mapping
-
 	Value string `json:"value"`
 }
 
@@ -20,12 +19,4 @@ func NewGitHubWriteMapUserRequestWithDefaults() *GitHubWriteMapUserRequest {
 	var this GitHubWriteMapUserRequest
 
 	return &this
-}
-
-func (o GitHubWriteMapUserRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["value"] = o.Value
-
-	return json.Marshal(toSerialize)
 }

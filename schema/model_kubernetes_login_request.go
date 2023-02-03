@@ -9,11 +9,9 @@ import (
 // KubernetesLoginRequest struct for KubernetesLoginRequest
 type KubernetesLoginRequest struct {
 	// A signed JWT for authenticating a service account. This field is required.
-
 	Jwt string `json:"jwt"`
 
 	// Name of the role against which the login is being attempted. This field is required
-
 	Role string `json:"role"`
 }
 
@@ -24,14 +22,4 @@ func NewKubernetesLoginRequestWithDefaults() *KubernetesLoginRequest {
 	var this KubernetesLoginRequest
 
 	return &this
-}
-
-func (o KubernetesLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["jwt"] = o.Jwt
-
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

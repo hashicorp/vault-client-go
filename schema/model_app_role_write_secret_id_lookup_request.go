@@ -9,7 +9,6 @@ import (
 // AppRoleWriteSecretIDLookupRequest struct for AppRoleWriteSecretIDLookupRequest
 type AppRoleWriteSecretIDLookupRequest struct {
 	// SecretID attached to the role.
-
 	SecretId string `json:"secret_id"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleWriteSecretIDLookupRequestWithDefaults() *AppRoleWriteSecretIDLoo
 	var this AppRoleWriteSecretIDLookupRequest
 
 	return &this
-}
-
-func (o AppRoleWriteSecretIDLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id"] = o.SecretId
-
-	return json.Marshal(toSerialize)
 }

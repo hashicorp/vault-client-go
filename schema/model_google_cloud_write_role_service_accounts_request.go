@@ -9,11 +9,9 @@ import (
 // GoogleCloudWriteRoleServiceAccountsRequest struct for GoogleCloudWriteRoleServiceAccountsRequest
 type GoogleCloudWriteRoleServiceAccountsRequest struct {
 	// Service-account emails or IDs to add.
-
 	Add []string `json:"add"`
 
 	// Service-account emails or IDs to remove.
-
 	Remove []string `json:"remove"`
 }
 
@@ -24,14 +22,4 @@ func NewGoogleCloudWriteRoleServiceAccountsRequestWithDefaults() *GoogleCloudWri
 	var this GoogleCloudWriteRoleServiceAccountsRequest
 
 	return &this
-}
-
-func (o GoogleCloudWriteRoleServiceAccountsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["add"] = o.Add
-
-	toSerialize["remove"] = o.Remove
-
-	return json.Marshal(toSerialize)
 }

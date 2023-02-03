@@ -9,7 +9,6 @@ import (
 // TOTPWriteCodeRequest struct for TOTPWriteCodeRequest
 type TOTPWriteCodeRequest struct {
 	// TOTP code to be validated.
-
 	Code string `json:"code"`
 }
 
@@ -20,12 +19,4 @@ func NewTOTPWriteCodeRequestWithDefaults() *TOTPWriteCodeRequest {
 	var this TOTPWriteCodeRequest
 
 	return &this
-}
-
-func (o TOTPWriteCodeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["code"] = o.Code
-
-	return json.Marshal(toSerialize)
 }

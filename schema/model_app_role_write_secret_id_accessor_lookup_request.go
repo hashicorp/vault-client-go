@@ -9,7 +9,6 @@ import (
 // AppRoleWriteSecretIDAccessorLookupRequest struct for AppRoleWriteSecretIDAccessorLookupRequest
 type AppRoleWriteSecretIDAccessorLookupRequest struct {
 	// Accessor of the SecretID
-
 	SecretIdAccessor string `json:"secret_id_accessor"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleWriteSecretIDAccessorLookupRequestWithDefaults() *AppRoleWriteSec
 	var this AppRoleWriteSecretIDAccessorLookupRequest
 
 	return &this
-}
-
-func (o AppRoleWriteSecretIDAccessorLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
-
-	return json.Marshal(toSerialize)
 }

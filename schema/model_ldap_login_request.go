@@ -9,7 +9,6 @@ import (
 // LDAPLoginRequest struct for LDAPLoginRequest
 type LDAPLoginRequest struct {
 	// Password for this user.
-
 	Password string `json:"password"`
 }
 
@@ -20,12 +19,4 @@ func NewLDAPLoginRequestWithDefaults() *LDAPLoginRequest {
 	var this LDAPLoginRequest
 
 	return &this
-}
-
-func (o LDAPLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["password"] = o.Password
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // AppRoleWriteSecretIDDestroyRequest struct for AppRoleWriteSecretIDDestroyRequest
 type AppRoleWriteSecretIDDestroyRequest struct {
 	// SecretID attached to the role.
-
 	SecretId string `json:"secret_id"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleWriteSecretIDDestroyRequestWithDefaults() *AppRoleWriteSecretIDDe
 	var this AppRoleWriteSecretIDDestroyRequest
 
 	return &this
-}
-
-func (o AppRoleWriteSecretIDDestroyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id"] = o.SecretId
-
-	return json.Marshal(toSerialize)
 }

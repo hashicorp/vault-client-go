@@ -9,7 +9,6 @@ import (
 // PKIWriteKeyRequest struct for PKIWriteKeyRequest
 type PKIWriteKeyRequest struct {
 	// Human-readable name for this key.
-
 	KeyName string `json:"key_name"`
 }
 
@@ -20,12 +19,4 @@ func NewPKIWriteKeyRequestWithDefaults() *PKIWriteKeyRequest {
 	var this PKIWriteKeyRequest
 
 	return &this
-}
-
-func (o PKIWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key_name"] = o.KeyName
-
-	return json.Marshal(toSerialize)
 }

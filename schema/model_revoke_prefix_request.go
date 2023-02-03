@@ -9,7 +9,6 @@ import (
 // RevokePrefixRequest struct for RevokePrefixRequest
 type RevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
-
 	Sync bool `json:"sync"`
 }
 
@@ -22,12 +21,4 @@ func NewRevokePrefixRequestWithDefaults() *RevokePrefixRequest {
 	this.Sync = true
 
 	return &this
-}
-
-func (o RevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["sync"] = o.Sync
-
-	return json.Marshal(toSerialize)
 }

@@ -9,11 +9,9 @@ import (
 // WriteGenerateRootUpdateRequest struct for WriteGenerateRootUpdateRequest
 type WriteGenerateRootUpdateRequest struct {
 	// Specifies a single unseal key share.
-
 	Key string `json:"key"`
 
 	// Specifies the nonce of the attempt.
-
 	Nonce string `json:"nonce"`
 }
 
@@ -24,14 +22,4 @@ func NewWriteGenerateRootUpdateRequestWithDefaults() *WriteGenerateRootUpdateReq
 	var this WriteGenerateRootUpdateRequest
 
 	return &this
-}
-
-func (o WriteGenerateRootUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-
-	toSerialize["nonce"] = o.Nonce
-
-	return json.Marshal(toSerialize)
 }

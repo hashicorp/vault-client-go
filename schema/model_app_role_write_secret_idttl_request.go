@@ -9,7 +9,6 @@ import (
 // AppRoleWriteSecretIDTTLRequest struct for AppRoleWriteSecretIDTTLRequest
 type AppRoleWriteSecretIDTTLRequest struct {
 	// Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.
-
 	SecretIdTtl int32 `json:"secret_id_ttl"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleWriteSecretIDTTLRequestWithDefaults() *AppRoleWriteSecretIDTTLReq
 	var this AppRoleWriteSecretIDTTLRequest
 
 	return &this
-}
-
-func (o AppRoleWriteSecretIDTTLRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_ttl"] = o.SecretIdTtl
-
-	return json.Marshal(toSerialize)
 }

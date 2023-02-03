@@ -9,7 +9,6 @@ import (
 // TokenRevokeRequest struct for TokenRevokeRequest
 type TokenRevokeRequest struct {
 	// Token to revoke (request body)
-
 	Token string `json:"token"`
 }
 
@@ -20,12 +19,4 @@ func NewTokenRevokeRequestWithDefaults() *TokenRevokeRequest {
 	var this TokenRevokeRequest
 
 	return &this
-}
-
-func (o TokenRevokeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

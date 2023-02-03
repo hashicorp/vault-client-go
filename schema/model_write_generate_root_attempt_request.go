@@ -9,7 +9,6 @@ import (
 // WriteGenerateRootAttemptRequest struct for WriteGenerateRootAttemptRequest
 type WriteGenerateRootAttemptRequest struct {
 	// Specifies a base64-encoded PGP public key.
-
 	PgpKey string `json:"pgp_key"`
 }
 
@@ -20,12 +19,4 @@ func NewWriteGenerateRootAttemptRequestWithDefaults() *WriteGenerateRootAttemptR
 	var this WriteGenerateRootAttemptRequest
 
 	return &this
-}
-
-func (o WriteGenerateRootAttemptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["pgp_key"] = o.PgpKey
-
-	return json.Marshal(toSerialize)
 }

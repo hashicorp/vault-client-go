@@ -19,11 +19,3 @@ func NewWrappingWriteLookupRequestWithDefaults() *WrappingWriteLookupRequest {
 
 	return &this
 }
-
-func (o WrappingWriteLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
-}

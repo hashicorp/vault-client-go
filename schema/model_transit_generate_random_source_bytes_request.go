@@ -9,11 +9,9 @@ import (
 // TransitGenerateRandomSourceBytesRequest struct for TransitGenerateRandomSourceBytesRequest
 type TransitGenerateRandomSourceBytesRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).
-
 	Bytes int32 `json:"bytes"`
 
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
-
 	Format string `json:"format"`
 }
 
@@ -24,18 +22,7 @@ func NewTransitGenerateRandomSourceBytesRequestWithDefaults() *TransitGenerateRa
 	var this TransitGenerateRandomSourceBytesRequest
 
 	this.Bytes = 32
-
 	this.Format = "base64"
 
 	return &this
-}
-
-func (o TransitGenerateRandomSourceBytesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bytes"] = o.Bytes
-
-	toSerialize["format"] = o.Format
-
-	return json.Marshal(toSerialize)
 }

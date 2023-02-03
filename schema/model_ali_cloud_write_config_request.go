@@ -9,11 +9,9 @@ import (
 // AliCloudWriteConfigRequest struct for AliCloudWriteConfigRequest
 type AliCloudWriteConfigRequest struct {
 	// Access key with appropriate permissions.
-
 	AccessKey string `json:"access_key"`
 
 	// Secret key with appropriate permissions.
-
 	SecretKey string `json:"secret_key"`
 }
 
@@ -24,14 +22,4 @@ func NewAliCloudWriteConfigRequestWithDefaults() *AliCloudWriteConfigRequest {
 	var this AliCloudWriteConfigRequest
 
 	return &this
-}
-
-func (o AliCloudWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["access_key"] = o.AccessKey
-
-	toSerialize["secret_key"] = o.SecretKey
-
-	return json.Marshal(toSerialize)
 }

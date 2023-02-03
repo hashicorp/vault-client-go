@@ -9,11 +9,9 @@ import (
 // WriteLeasesRenew2Request struct for WriteLeasesRenew2Request
 type WriteLeasesRenew2Request struct {
 	// The desired increment in seconds to the lease
-
 	Increment int32 `json:"increment"`
 
 	// The lease identifier to renew. This is included with a lease.
-
 	LeaseId string `json:"lease_id"`
 }
 
@@ -24,14 +22,4 @@ func NewWriteLeasesRenew2RequestWithDefaults() *WriteLeasesRenew2Request {
 	var this WriteLeasesRenew2Request
 
 	return &this
-}
-
-func (o WriteLeasesRenew2Request) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["increment"] = o.Increment
-
-	toSerialize["lease_id"] = o.LeaseId
-
-	return json.Marshal(toSerialize)
 }

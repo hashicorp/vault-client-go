@@ -9,11 +9,9 @@ import (
 // TokenRenewAccessorRequest struct for TokenRenewAccessorRequest
 type TokenRenewAccessorRequest struct {
 	// Accessor of the token to renew (request body)
-
 	Accessor string `json:"accessor"`
 
 	// The desired increment in seconds to the token expiration
-
 	Increment int32 `json:"increment"`
 }
 
@@ -26,14 +24,4 @@ func NewTokenRenewAccessorRequestWithDefaults() *TokenRenewAccessorRequest {
 	this.Increment = 0
 
 	return &this
-}
-
-func (o TokenRenewAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["accessor"] = o.Accessor
-
-	toSerialize["increment"] = o.Increment
-
-	return json.Marshal(toSerialize)
 }

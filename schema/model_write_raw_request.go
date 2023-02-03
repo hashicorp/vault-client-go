@@ -27,19 +27,3 @@ func NewWriteRawRequestWithDefaults() *WriteRawRequest {
 
 	return &this
 }
-
-func (o WriteRawRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["compressed"] = o.Compressed
-
-	toSerialize["compression_type"] = o.CompressionType
-
-	toSerialize["encoding"] = o.Encoding
-
-	toSerialize["path"] = o.Path
-
-	toSerialize["value"] = o.Value
-
-	return json.Marshal(toSerialize)
-}

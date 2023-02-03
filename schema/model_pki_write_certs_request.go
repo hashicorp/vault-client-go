@@ -9,7 +9,6 @@ import (
 // PKIWriteCertsRequest struct for PKIWriteCertsRequest
 type PKIWriteCertsRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.
-
 	PemBundle string `json:"pem_bundle"`
 }
 
@@ -20,12 +19,4 @@ func NewPKIWriteCertsRequestWithDefaults() *PKIWriteCertsRequest {
 	var this PKIWriteCertsRequest
 
 	return &this
-}
-
-func (o PKIWriteCertsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["pem_bundle"] = o.PemBundle
-
-	return json.Marshal(toSerialize)
 }

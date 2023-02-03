@@ -9,11 +9,9 @@ import (
 // RemountRequest struct for RemountRequest
 type RemountRequest struct {
 	// The previous mount point.
-
 	From string `json:"from"`
 
 	// The new mount point.
-
 	To string `json:"to"`
 }
 
@@ -24,14 +22,4 @@ func NewRemountRequestWithDefaults() *RemountRequest {
 	var this RemountRequest
 
 	return &this
-}
-
-func (o RemountRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["from"] = o.From
-
-	toSerialize["to"] = o.To
-
-	return json.Marshal(toSerialize)
 }

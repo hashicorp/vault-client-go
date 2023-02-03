@@ -9,7 +9,6 @@ import (
 // KerberosLoginRequest struct for KerberosLoginRequest
 type KerberosLoginRequest struct {
 	// SPNEGO Authorization header. Required.
-
 	Authorization string `json:"authorization"`
 }
 
@@ -20,12 +19,4 @@ func NewKerberosLoginRequestWithDefaults() *KerberosLoginRequest {
 	var this KerberosLoginRequest
 
 	return &this
-}
-
-func (o KerberosLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["authorization"] = o.Authorization
-
-	return json.Marshal(toSerialize)
 }

@@ -9,11 +9,9 @@ import (
 // RadiusLoginWithUsernameRequest struct for RadiusLoginWithUsernameRequest
 type RadiusLoginWithUsernameRequest struct {
 	// Password for this user.
-
 	Password string `json:"password"`
 
 	// Username to be used for login. (POST request body)
-
 	Username string `json:"username"`
 }
 
@@ -24,14 +22,4 @@ func NewRadiusLoginWithUsernameRequestWithDefaults() *RadiusLoginWithUsernameReq
 	var this RadiusLoginWithUsernameRequest
 
 	return &this
-}
-
-func (o RadiusLoginWithUsernameRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["password"] = o.Password
-
-	toSerialize["username"] = o.Username
-
-	return json.Marshal(toSerialize)
 }

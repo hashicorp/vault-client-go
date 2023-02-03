@@ -9,27 +9,21 @@ import (
 // ConsulWriteAccessConfigRequest struct for ConsulWriteAccessConfigRequest
 type ConsulWriteAccessConfigRequest struct {
 	// Consul server address
-
 	Address string `json:"address"`
 
 	// CA certificate to use when verifying Consul server certificate, must be x509 PEM encoded.
-
 	CaCert string `json:"ca_cert"`
 
 	// Client certificate used for Consul's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key.
-
 	ClientCert string `json:"client_cert"`
 
 	// Client key used for Consul's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert.
-
 	ClientKey string `json:"client_key"`
 
 	// URI scheme for the Consul address
-
 	Scheme string `json:"scheme"`
 
 	// Token for API calls
-
 	Token string `json:"token"`
 }
 
@@ -42,22 +36,4 @@ func NewConsulWriteAccessConfigRequestWithDefaults() *ConsulWriteAccessConfigReq
 	this.Scheme = "http"
 
 	return &this
-}
-
-func (o ConsulWriteAccessConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["address"] = o.Address
-
-	toSerialize["ca_cert"] = o.CaCert
-
-	toSerialize["client_cert"] = o.ClientCert
-
-	toSerialize["client_key"] = o.ClientKey
-
-	toSerialize["scheme"] = o.Scheme
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

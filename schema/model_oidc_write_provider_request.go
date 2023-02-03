@@ -9,15 +9,12 @@ import (
 // OIDCWriteProviderRequest struct for OIDCWriteProviderRequest
 type OIDCWriteProviderRequest struct {
 	// The client IDs that are permitted to use the provider
-
 	AllowedClientIds []string `json:"allowed_client_ids"`
 
 	// Specifies what will be used for the iss claim of ID tokens.
-
 	Issuer string `json:"issuer"`
 
 	// The scopes supported for requesting on the provider
-
 	ScopesSupported []string `json:"scopes_supported"`
 }
 
@@ -28,16 +25,4 @@ func NewOIDCWriteProviderRequestWithDefaults() *OIDCWriteProviderRequest {
 	var this OIDCWriteProviderRequest
 
 	return &this
-}
-
-func (o OIDCWriteProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["allowed_client_ids"] = o.AllowedClientIds
-
-	toSerialize["issuer"] = o.Issuer
-
-	toSerialize["scopes_supported"] = o.ScopesSupported
-
-	return json.Marshal(toSerialize)
 }

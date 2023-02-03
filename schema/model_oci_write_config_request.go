@@ -9,7 +9,6 @@ import (
 // OCIWriteConfigRequest struct for OCIWriteConfigRequest
 type OCIWriteConfigRequest struct {
 	// The tenancy id of the account.
-
 	HomeTenancyId string `json:"home_tenancy_id"`
 }
 
@@ -20,12 +19,4 @@ func NewOCIWriteConfigRequestWithDefaults() *OCIWriteConfigRequest {
 	var this OCIWriteConfigRequest
 
 	return &this
-}
-
-func (o OCIWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["home_tenancy_id"] = o.HomeTenancyId
-
-	return json.Marshal(toSerialize)
 }

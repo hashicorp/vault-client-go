@@ -9,23 +9,18 @@ import (
 // AliasWriteRequest struct for AliasWriteRequest
 type AliasWriteRequest struct {
 	// Entity ID to which this alias belongs to
-
 	CanonicalId string `json:"canonical_id"`
 
 	// Entity ID to which this alias belongs to. This field is deprecated in favor of 'canonical_id'.
-
 	EntityId string `json:"entity_id"`
 
 	// ID of the alias
-
 	Id string `json:"id"`
 
 	// Mount accessor to which this alias belongs to
-
 	MountAccessor string `json:"mount_accessor"`
 
 	// Name of the alias
-
 	Name string `json:"name"`
 }
 
@@ -36,20 +31,4 @@ func NewAliasWriteRequestWithDefaults() *AliasWriteRequest {
 	var this AliasWriteRequest
 
 	return &this
-}
-
-func (o AliasWriteRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["canonical_id"] = o.CanonicalId
-
-	toSerialize["entity_id"] = o.EntityId
-
-	toSerialize["id"] = o.Id
-
-	toSerialize["mount_accessor"] = o.MountAccessor
-
-	toSerialize["name"] = o.Name
-
-	return json.Marshal(toSerialize)
 }

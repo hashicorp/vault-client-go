@@ -9,15 +9,12 @@ import (
 // OpenLDAPWriteStaticRoleRequest struct for OpenLDAPWriteStaticRoleRequest
 type OpenLDAPWriteStaticRoleRequest struct {
 	// The distinguished name of the entry to manage.
-
 	Dn string `json:"dn"`
 
 	// Period for automatic credential rotation of the given entry.
-
 	RotationPeriod int32 `json:"rotation_period"`
 
 	// The username/logon name for the entry with which this role will be associated.
-
 	Username string `json:"username"`
 }
 
@@ -28,16 +25,4 @@ func NewOpenLDAPWriteStaticRoleRequestWithDefaults() *OpenLDAPWriteStaticRoleReq
 	var this OpenLDAPWriteStaticRoleRequest
 
 	return &this
-}
-
-func (o OpenLDAPWriteStaticRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["dn"] = o.Dn
-
-	toSerialize["rotation_period"] = o.RotationPeriod
-
-	toSerialize["username"] = o.Username
-
-	return json.Marshal(toSerialize)
 }

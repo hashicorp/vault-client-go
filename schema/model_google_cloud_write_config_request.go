@@ -9,15 +9,12 @@ import (
 // GoogleCloudWriteConfigRequest struct for GoogleCloudWriteConfigRequest
 type GoogleCloudWriteConfigRequest struct {
 	// GCP IAM service account credentials JSON with permissions to create new service accounts and set IAM policies
-
 	Credentials string `json:"credentials"`
 
 	// Maximum time a service account key is valid for. If <= 0, will use system default.
-
 	MaxTtl int32 `json:"max_ttl"`
 
 	// Default lease for generated keys. If <= 0, will use system default.
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -28,16 +25,4 @@ func NewGoogleCloudWriteConfigRequestWithDefaults() *GoogleCloudWriteConfigReque
 	var this GoogleCloudWriteConfigRequest
 
 	return &this
-}
-
-func (o GoogleCloudWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["credentials"] = o.Credentials
-
-	toSerialize["max_ttl"] = o.MaxTtl
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

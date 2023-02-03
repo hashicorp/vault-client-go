@@ -9,7 +9,6 @@ import (
 // TokenRevokeAccessorRequest struct for TokenRevokeAccessorRequest
 type TokenRevokeAccessorRequest struct {
 	// Accessor of the token (request body)
-
 	Accessor string `json:"accessor"`
 }
 
@@ -20,12 +19,4 @@ func NewTokenRevokeAccessorRequestWithDefaults() *TokenRevokeAccessorRequest {
 	var this TokenRevokeAccessorRequest
 
 	return &this
-}
-
-func (o TokenRevokeAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["accessor"] = o.Accessor
-
-	return json.Marshal(toSerialize)
 }

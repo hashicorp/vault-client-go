@@ -9,7 +9,6 @@ import (
 // AppRoleWriteBindSecretIDRequest struct for AppRoleWriteBindSecretIDRequest
 type AppRoleWriteBindSecretIDRequest struct {
 	// Impose secret_id to be presented when logging in using this role.
-
 	BindSecretId bool `json:"bind_secret_id"`
 }
 
@@ -22,12 +21,4 @@ func NewAppRoleWriteBindSecretIDRequestWithDefaults() *AppRoleWriteBindSecretIDR
 	this.BindSecretId = true
 
 	return &this
-}
-
-func (o AppRoleWriteBindSecretIDRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bind_secret_id"] = o.BindSecretId
-
-	return json.Marshal(toSerialize)
 }

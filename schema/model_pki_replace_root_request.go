@@ -9,7 +9,6 @@ import (
 // PKIReplaceRootRequest struct for PKIReplaceRootRequest
 type PKIReplaceRootRequest struct {
 	// Reference (name or identifier) to the default issuer.
-
 	Default string `json:"default"`
 }
 
@@ -22,12 +21,4 @@ func NewPKIReplaceRootRequestWithDefaults() *PKIReplaceRootRequest {
 	this.Default = "next"
 
 	return &this
-}
-
-func (o PKIReplaceRootRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["default"] = o.Default
-
-	return json.Marshal(toSerialize)
 }

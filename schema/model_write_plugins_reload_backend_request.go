@@ -9,11 +9,9 @@ import (
 // WritePluginsReloadBackendRequest struct for WritePluginsReloadBackendRequest
 type WritePluginsReloadBackendRequest struct {
 	// The mount paths of the plugin backends to reload.
-
 	Mounts []string `json:"mounts"`
 
 	// The name of the plugin to reload, as registered in the plugin catalog.
-
 	Plugin string `json:"plugin"`
 
 	Scope string `json:"scope"`
@@ -26,16 +24,4 @@ func NewWritePluginsReloadBackendRequestWithDefaults() *WritePluginsReloadBacken
 	var this WritePluginsReloadBackendRequest
 
 	return &this
-}
-
-func (o WritePluginsReloadBackendRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["mounts"] = o.Mounts
-
-	toSerialize["plugin"] = o.Plugin
-
-	toSerialize["scope"] = o.Scope
-
-	return json.Marshal(toSerialize)
 }

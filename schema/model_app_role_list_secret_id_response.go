@@ -19,11 +19,3 @@ func NewAppRoleListSecretIDResponseWithDefaults() *AppRoleListSecretIDResponse {
 
 	return &this
 }
-
-func (o AppRoleListSecretIDResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
-}

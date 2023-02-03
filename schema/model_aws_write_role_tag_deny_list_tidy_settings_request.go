@@ -9,7 +9,6 @@ import (
 // AWSWriteRoleTagDenyListTidySettingsRequest struct for AWSWriteRoleTagDenyListTidySettingsRequest
 type AWSWriteRoleTagDenyListTidySettingsRequest struct {
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage.
-
 	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
@@ -22,12 +21,4 @@ func NewAWSWriteRoleTagDenyListTidySettingsRequestWithDefaults() *AWSWriteRoleTa
 	this.SafetyBuffer = 259200
 
 	return &this
-}
-
-func (o AWSWriteRoleTagDenyListTidySettingsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["safety_buffer"] = o.SafetyBuffer
-
-	return json.Marshal(toSerialize)
 }

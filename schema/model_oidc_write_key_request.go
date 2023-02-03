@@ -9,19 +9,15 @@ import (
 // OIDCWriteKeyRequest struct for OIDCWriteKeyRequest
 type OIDCWriteKeyRequest struct {
 	// Signing algorithm to use. This will default to RS256.
-
 	Algorithm string `json:"algorithm"`
 
 	// Comma separated string or array of role client ids allowed to use this key for signing. If empty no roles are allowed. If \"*\" all roles are allowed.
-
 	AllowedClientIds []string `json:"allowed_client_ids"`
 
 	// How often to generate a new keypair.
-
 	RotationPeriod int32 `json:"rotation_period"`
 
 	// Controls how long the public portion of a key will be available for verification after being rotated.
-
 	VerificationTtl int32 `json:"verification_ttl"`
 }
 
@@ -34,18 +30,4 @@ func NewOIDCWriteKeyRequestWithDefaults() *OIDCWriteKeyRequest {
 	this.Algorithm = "RS256"
 
 	return &this
-}
-
-func (o OIDCWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["algorithm"] = o.Algorithm
-
-	toSerialize["allowed_client_ids"] = o.AllowedClientIds
-
-	toSerialize["rotation_period"] = o.RotationPeriod
-
-	toSerialize["verification_ttl"] = o.VerificationTtl
-
-	return json.Marshal(toSerialize)
 }

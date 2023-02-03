@@ -9,7 +9,6 @@ import (
 // AppRoleWriteTokenNumUsesRequest struct for AppRoleWriteTokenNumUsesRequest
 type AppRoleWriteTokenNumUsesRequest struct {
 	// The maximum number of times a token may be used, a value of zero means unlimited
-
 	TokenNumUses int32 `json:"token_num_uses"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleWriteTokenNumUsesRequestWithDefaults() *AppRoleWriteTokenNumUsesR
 	var this AppRoleWriteTokenNumUsesRequest
 
 	return &this
-}
-
-func (o AppRoleWriteTokenNumUsesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token_num_uses"] = o.TokenNumUses
-
-	return json.Marshal(toSerialize)
 }

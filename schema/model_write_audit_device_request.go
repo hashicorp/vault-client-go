@@ -9,19 +9,15 @@ import (
 // WriteAuditDeviceRequest struct for WriteAuditDeviceRequest
 type WriteAuditDeviceRequest struct {
 	// User-friendly description for this audit backend.
-
 	Description string `json:"description"`
 
 	// Mark the mount as a local mount, which is not replicated and is unaffected by replication.
-
 	Local bool `json:"local"`
 
 	// Configuration options for the audit backend.
-
 	Options map[string]interface{} `json:"options"`
 
 	// The type of the backend. Example: \"mysql\"
-
 	Type string `json:"type"`
 }
 
@@ -34,18 +30,4 @@ func NewWriteAuditDeviceRequestWithDefaults() *WriteAuditDeviceRequest {
 	this.Local = false
 
 	return &this
-}
-
-func (o WriteAuditDeviceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["description"] = o.Description
-
-	toSerialize["local"] = o.Local
-
-	toSerialize["options"] = o.Options
-
-	toSerialize["type"] = o.Type
-
-	return json.Marshal(toSerialize)
 }

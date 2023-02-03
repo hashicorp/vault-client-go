@@ -9,7 +9,6 @@ import (
 // TransitWriteCacheConfigRequest struct for TransitWriteCacheConfigRequest
 type TransitWriteCacheConfigRequest struct {
 	// Size of cache, use 0 for an unlimited cache size, defaults to 0
-
 	Size int32 `json:"size"`
 }
 
@@ -22,12 +21,4 @@ func NewTransitWriteCacheConfigRequestWithDefaults() *TransitWriteCacheConfigReq
 	this.Size = 0
 
 	return &this
-}
-
-func (o TransitWriteCacheConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["size"] = o.Size
-
-	return json.Marshal(toSerialize)
 }

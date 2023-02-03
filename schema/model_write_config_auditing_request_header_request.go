@@ -19,11 +19,3 @@ func NewWriteConfigAuditingRequestHeaderRequestWithDefaults() *WriteConfigAuditi
 
 	return &this
 }
-
-func (o WriteConfigAuditingRequestHeaderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["hmac"] = o.Hmac
-
-	return json.Marshal(toSerialize)
-}

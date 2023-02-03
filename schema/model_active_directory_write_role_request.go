@@ -9,11 +9,9 @@ import (
 // ActiveDirectoryWriteRoleRequest struct for ActiveDirectoryWriteRoleRequest
 type ActiveDirectoryWriteRoleRequest struct {
 	// The username/logon name for the service account with which this role will be associated.
-
 	ServiceAccountName string `json:"service_account_name"`
 
 	// In seconds, the default password time-to-live.
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -24,14 +22,4 @@ func NewActiveDirectoryWriteRoleRequestWithDefaults() *ActiveDirectoryWriteRoleR
 	var this ActiveDirectoryWriteRoleRequest
 
 	return &this
-}
-
-func (o ActiveDirectoryWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["service_account_name"] = o.ServiceAccountName
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

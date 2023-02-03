@@ -19,11 +19,3 @@ func NewAppRoleListRolesResponseWithDefaults() *AppRoleListRolesResponse {
 
 	return &this
 }
-
-func (o AppRoleListRolesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["keys"] = o.Keys
-
-	return json.Marshal(toSerialize)
-}

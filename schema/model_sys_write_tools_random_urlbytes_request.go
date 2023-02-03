@@ -9,15 +9,12 @@ import (
 // SysWriteToolsRandomUrlbytesRequest struct for SysWriteToolsRandomUrlbytesRequest
 type SysWriteToolsRandomUrlbytesRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).
-
 	Bytes int32 `json:"bytes"`
 
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
-
 	Format string `json:"format"`
 
 	// Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
-
 	Source string `json:"source"`
 }
 
@@ -28,22 +25,8 @@ func NewSysWriteToolsRandomUrlbytesRequestWithDefaults() *SysWriteToolsRandomUrl
 	var this SysWriteToolsRandomUrlbytesRequest
 
 	this.Bytes = 32
-
 	this.Format = "base64"
-
 	this.Source = "platform"
 
 	return &this
-}
-
-func (o SysWriteToolsRandomUrlbytesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["bytes"] = o.Bytes
-
-	toSerialize["format"] = o.Format
-
-	toSerialize["source"] = o.Source
-
-	return json.Marshal(toSerialize)
 }

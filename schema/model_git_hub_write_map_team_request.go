@@ -9,7 +9,6 @@ import (
 // GitHubWriteMapTeamRequest struct for GitHubWriteMapTeamRequest
 type GitHubWriteMapTeamRequest struct {
 	// Value for teams mapping
-
 	Value string `json:"value"`
 }
 
@@ -20,12 +19,4 @@ func NewGitHubWriteMapTeamRequestWithDefaults() *GitHubWriteMapTeamRequest {
 	var this GitHubWriteMapTeamRequest
 
 	return &this
-}
-
-func (o GitHubWriteMapTeamRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["value"] = o.Value
-
-	return json.Marshal(toSerialize)
 }

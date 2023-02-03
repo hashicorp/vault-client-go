@@ -9,11 +9,9 @@ import (
 // JWTLoginRequest struct for JWTLoginRequest
 type JWTLoginRequest struct {
 	// The signed JWT to validate.
-
 	Jwt string `json:"jwt"`
 
 	// The role to log in against.
-
 	Role string `json:"role"`
 }
 
@@ -24,14 +22,4 @@ func NewJWTLoginRequestWithDefaults() *JWTLoginRequest {
 	var this JWTLoginRequest
 
 	return &this
-}
-
-func (o JWTLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["jwt"] = o.Jwt
-
-	toSerialize["role"] = o.Role
-
-	return json.Marshal(toSerialize)
 }

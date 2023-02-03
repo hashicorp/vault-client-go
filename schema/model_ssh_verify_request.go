@@ -9,7 +9,6 @@ import (
 // SSHVerifyRequest struct for SSHVerifyRequest
 type SSHVerifyRequest struct {
 	// [Required] One-Time-Key that needs to be validated
-
 	Otp string `json:"otp"`
 }
 
@@ -20,12 +19,4 @@ func NewSSHVerifyRequestWithDefaults() *SSHVerifyRequest {
 	var this SSHVerifyRequest
 
 	return &this
-}
-
-func (o SSHVerifyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["otp"] = o.Otp
-
-	return json.Marshal(toSerialize)
 }

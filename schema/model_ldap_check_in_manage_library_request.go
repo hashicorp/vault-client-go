@@ -9,7 +9,6 @@ import (
 // LDAPCheckInManageLibraryRequest struct for LDAPCheckInManageLibraryRequest
 type LDAPCheckInManageLibraryRequest struct {
 	// The username/logon name for the service accounts to check in.
-
 	ServiceAccountNames []string `json:"service_account_names"`
 }
 
@@ -20,12 +19,4 @@ func NewLDAPCheckInManageLibraryRequestWithDefaults() *LDAPCheckInManageLibraryR
 	var this LDAPCheckInManageLibraryRequest
 
 	return &this
-}
-
-func (o LDAPCheckInManageLibraryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["service_account_names"] = o.ServiceAccountNames
-
-	return json.Marshal(toSerialize)
 }

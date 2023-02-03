@@ -9,11 +9,9 @@ import (
 // AppRoleLoginRequest struct for AppRoleLoginRequest
 type AppRoleLoginRequest struct {
 	// Unique identifier of the Role. Required to be supplied when the 'bind_secret_id' constraint is set.
-
 	RoleId string `json:"role_id"`
 
 	// SecretID belong to the App role
-
 	SecretId string `json:"secret_id"`
 }
 
@@ -26,14 +24,4 @@ func NewAppRoleLoginRequestWithDefaults() *AppRoleLoginRequest {
 	this.SecretId = ""
 
 	return &this
-}
-
-func (o AppRoleLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["role_id"] = o.RoleId
-
-	toSerialize["secret_id"] = o.SecretId
-
-	return json.Marshal(toSerialize)
 }

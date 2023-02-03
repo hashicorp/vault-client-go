@@ -9,11 +9,9 @@ import (
 // NomadWriteLeaseConfigRequest struct for NomadWriteLeaseConfigRequest
 type NomadWriteLeaseConfigRequest struct {
 	// Duration after which the issued token should not be allowed to be renewed
-
 	MaxTtl int32 `json:"max_ttl"`
 
 	// Duration before which the issued token needs renewal
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -24,14 +22,4 @@ func NewNomadWriteLeaseConfigRequestWithDefaults() *NomadWriteLeaseConfigRequest
 	var this NomadWriteLeaseConfigRequest
 
 	return &this
-}
-
-func (o NomadWriteLeaseConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["max_ttl"] = o.MaxTtl
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

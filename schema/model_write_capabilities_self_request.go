@@ -9,17 +9,13 @@ import (
 // WriteCapabilitiesSelfRequest struct for WriteCapabilitiesSelfRequest
 type WriteCapabilitiesSelfRequest struct {
 	// Use 'paths' instead.
-
 	// Deprecated
-
 	Path []string `json:"path"`
 
 	// Paths on which capabilities are being queried.
-
 	Paths []string `json:"paths"`
 
 	// Token for which capabilities are being queried.
-
 	Token string `json:"token"`
 }
 
@@ -30,16 +26,4 @@ func NewWriteCapabilitiesSelfRequestWithDefaults() *WriteCapabilitiesSelfRequest
 	var this WriteCapabilitiesSelfRequest
 
 	return &this
-}
-
-func (o WriteCapabilitiesSelfRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["path"] = o.Path
-
-	toSerialize["paths"] = o.Paths
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

@@ -9,11 +9,9 @@ import (
 // PKIIssuerSignSelfIssuedRequest struct for PKIIssuerSignSelfIssuedRequest
 type PKIIssuerSignSelfIssuedRequest struct {
 	// PEM-format self-issued certificate to be signed.
-
 	Certificate string `json:"certificate"`
 
 	// If true, require the public key algorithm of the signer to match that of the self issued certificate.
-
 	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms"`
 }
 
@@ -26,14 +24,4 @@ func NewPKIIssuerSignSelfIssuedRequestWithDefaults() *PKIIssuerSignSelfIssuedReq
 	this.RequireMatchingCertificateAlgorithms = false
 
 	return &this
-}
-
-func (o PKIIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["certificate"] = o.Certificate
-
-	toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
-
-	return json.Marshal(toSerialize)
 }

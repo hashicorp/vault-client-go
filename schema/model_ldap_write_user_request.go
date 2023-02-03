@@ -9,11 +9,9 @@ import (
 // LDAPWriteUserRequest struct for LDAPWriteUserRequest
 type LDAPWriteUserRequest struct {
 	// Comma-separated list of additional groups associated with the user.
-
 	Groups []string `json:"groups"`
 
 	// Comma-separated list of policies associated with the user.
-
 	Policies []string `json:"policies"`
 }
 
@@ -24,14 +22,4 @@ func NewLDAPWriteUserRequestWithDefaults() *LDAPWriteUserRequest {
 	var this LDAPWriteUserRequest
 
 	return &this
-}
-
-func (o LDAPWriteUserRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["groups"] = o.Groups
-
-	toSerialize["policies"] = o.Policies
-
-	return json.Marshal(toSerialize)
 }

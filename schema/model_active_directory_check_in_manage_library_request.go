@@ -9,7 +9,6 @@ import (
 // ActiveDirectoryCheckInManageLibraryRequest struct for ActiveDirectoryCheckInManageLibraryRequest
 type ActiveDirectoryCheckInManageLibraryRequest struct {
 	// The username/logon name for the service accounts to check in.
-
 	ServiceAccountNames []string `json:"service_account_names"`
 }
 
@@ -20,12 +19,4 @@ func NewActiveDirectoryCheckInManageLibraryRequestWithDefaults() *ActiveDirector
 	var this ActiveDirectoryCheckInManageLibraryRequest
 
 	return &this
-}
-
-func (o ActiveDirectoryCheckInManageLibraryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["service_account_names"] = o.ServiceAccountNames
-
-	return json.Marshal(toSerialize)
 }

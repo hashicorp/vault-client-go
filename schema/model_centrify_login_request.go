@@ -9,15 +9,12 @@ import (
 // CentrifyLoginRequest struct for CentrifyLoginRequest
 type CentrifyLoginRequest struct {
 	// Auth mode ('ro' for resource owner, 'cc' for credential client).
-
 	Mode string `json:"mode"`
 
 	// Password for this user.
-
 	Password string `json:"password"`
 
 	// Username of the user.
-
 	Username string `json:"username"`
 }
 
@@ -30,16 +27,4 @@ func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
 	this.Mode = "ro"
 
 	return &this
-}
-
-func (o CentrifyLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["mode"] = o.Mode
-
-	toSerialize["password"] = o.Password
-
-	toSerialize["username"] = o.Username
-
-	return json.Marshal(toSerialize)
 }

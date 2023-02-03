@@ -9,7 +9,6 @@ import (
 // SSHWriteKeysRequest struct for SSHWriteKeysRequest
 type SSHWriteKeysRequest struct {
 	// [Required] SSH private key with super user privileges in host
-
 	Key string `json:"key"`
 }
 
@@ -20,12 +19,4 @@ func NewSSHWriteKeysRequestWithDefaults() *SSHWriteKeysRequest {
 	var this SSHWriteKeysRequest
 
 	return &this
-}
-
-func (o SSHWriteKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["key"] = o.Key
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // SSHLookupRequest struct for SSHLookupRequest
 type SSHLookupRequest struct {
 	// [Required] IP address of remote host
-
 	Ip string `json:"ip"`
 }
 
@@ -20,12 +19,4 @@ func NewSSHLookupRequestWithDefaults() *SSHLookupRequest {
 	var this SSHLookupRequest
 
 	return &this
-}
-
-func (o SSHLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ip"] = o.Ip
-
-	return json.Marshal(toSerialize)
 }

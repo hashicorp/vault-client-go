@@ -9,11 +9,9 @@ import (
 // OIDCIntrospectRequest struct for OIDCIntrospectRequest
 type OIDCIntrospectRequest struct {
 	// Optional client_id to verify
-
 	ClientId string `json:"client_id"`
 
 	// Token to verify
-
 	Token string `json:"token"`
 }
 
@@ -24,14 +22,4 @@ func NewOIDCIntrospectRequestWithDefaults() *OIDCIntrospectRequest {
 	var this OIDCIntrospectRequest
 
 	return &this
-}
-
-func (o OIDCIntrospectRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["client_id"] = o.ClientId
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

@@ -9,11 +9,9 @@ import (
 // OIDCWriteScopeRequest struct for OIDCWriteScopeRequest
 type OIDCWriteScopeRequest struct {
 	// The description of the scope
-
 	Description string `json:"description"`
 
 	// The template string to use for the scope. This may be in string-ified JSON or base64 format.
-
 	Template string `json:"template"`
 }
 
@@ -24,14 +22,4 @@ func NewOIDCWriteScopeRequestWithDefaults() *OIDCWriteScopeRequest {
 	var this OIDCWriteScopeRequest
 
 	return &this
-}
-
-func (o OIDCWriteScopeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["description"] = o.Description
-
-	toSerialize["template"] = o.Template
-
-	return json.Marshal(toSerialize)
 }

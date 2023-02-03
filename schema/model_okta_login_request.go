@@ -9,19 +9,15 @@ import (
 // OktaLoginRequest struct for OktaLoginRequest
 type OktaLoginRequest struct {
 	// Nonce provided if performing login that requires number verification challenge. Logins through the vault login CLI command will automatically generate a nonce.
-
 	Nonce string `json:"nonce"`
 
 	// Password for this user.
-
 	Password string `json:"password"`
 
 	// Preferred factor provider.
-
 	Provider string `json:"provider"`
 
 	// TOTP passcode.
-
 	Totp string `json:"totp"`
 }
 
@@ -32,18 +28,4 @@ func NewOktaLoginRequestWithDefaults() *OktaLoginRequest {
 	var this OktaLoginRequest
 
 	return &this
-}
-
-func (o OktaLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["nonce"] = o.Nonce
-
-	toSerialize["password"] = o.Password
-
-	toSerialize["provider"] = o.Provider
-
-	toSerialize["totp"] = o.Totp
-
-	return json.Marshal(toSerialize)
 }

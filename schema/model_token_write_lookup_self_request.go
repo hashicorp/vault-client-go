@@ -9,7 +9,6 @@ import (
 // TokenWriteLookupSelfRequest struct for TokenWriteLookupSelfRequest
 type TokenWriteLookupSelfRequest struct {
 	// Token to look up (unused, does not need to be set)
-
 	Token string `json:"token"`
 }
 
@@ -20,12 +19,4 @@ func NewTokenWriteLookupSelfRequestWithDefaults() *TokenWriteLookupSelfRequest {
 	var this TokenWriteLookupSelfRequest
 
 	return &this
-}
-
-func (o TokenWriteLookupSelfRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

@@ -9,15 +9,12 @@ import (
 // TerraformWriteConfigRequest struct for TerraformWriteConfigRequest
 type TerraformWriteConfigRequest struct {
 	// The address to access Terraform Cloud or Enterprise. Default is \"https://app.terraform.io\".
-
 	Address string `json:"address"`
 
 	// The base path for the Terraform Cloud or Enterprise API. Default is \"/api/v2/\".
-
 	BasePath string `json:"base_path"`
 
 	// The token to access Terraform Cloud
-
 	Token string `json:"token"`
 }
 
@@ -28,20 +25,7 @@ func NewTerraformWriteConfigRequestWithDefaults() *TerraformWriteConfigRequest {
 	var this TerraformWriteConfigRequest
 
 	this.Address = "https://app.terraform.io"
-
 	this.BasePath = "/api/v2/"
 
 	return &this
-}
-
-func (o TerraformWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["address"] = o.Address
-
-	toSerialize["base_path"] = o.BasePath
-
-	toSerialize["token"] = o.Token
-
-	return json.Marshal(toSerialize)
 }

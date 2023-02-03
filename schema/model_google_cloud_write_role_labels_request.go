@@ -9,11 +9,9 @@ import (
 // GoogleCloudWriteRoleLabelsRequest struct for GoogleCloudWriteRoleLabelsRequest
 type GoogleCloudWriteRoleLabelsRequest struct {
 	// BoundLabels to add (in $key:$value)
-
 	Add []string `json:"add"`
 
 	// Label key values to remove
-
 	Remove []string `json:"remove"`
 }
 
@@ -24,14 +22,4 @@ func NewGoogleCloudWriteRoleLabelsRequestWithDefaults() *GoogleCloudWriteRoleLab
 	var this GoogleCloudWriteRoleLabelsRequest
 
 	return &this
-}
-
-func (o GoogleCloudWriteRoleLabelsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["add"] = o.Add
-
-	toSerialize["remove"] = o.Remove
-
-	return json.Marshal(toSerialize)
 }

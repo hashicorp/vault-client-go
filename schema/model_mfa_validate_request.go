@@ -9,11 +9,9 @@ import (
 // MFAValidateRequest struct for MFAValidateRequest
 type MFAValidateRequest struct {
 	// A map from MFA method ID to a slice of passcodes or an empty slice if the method does not use passcodes
-
 	MfaPayload map[string]interface{} `json:"mfa_payload"`
 
 	// ID for this MFA request
-
 	MfaRequestId string `json:"mfa_request_id"`
 }
 
@@ -24,14 +22,4 @@ func NewMFAValidateRequestWithDefaults() *MFAValidateRequest {
 	var this MFAValidateRequest
 
 	return &this
-}
-
-func (o MFAValidateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["mfa_payload"] = o.MfaPayload
-
-	toSerialize["mfa_request_id"] = o.MfaRequestId
-
-	return json.Marshal(toSerialize)
 }

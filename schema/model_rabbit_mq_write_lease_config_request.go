@@ -9,11 +9,9 @@ import (
 // RabbitMQWriteLeaseConfigRequest struct for RabbitMQWriteLeaseConfigRequest
 type RabbitMQWriteLeaseConfigRequest struct {
 	// Duration after which the issued credentials should not be allowed to be renewed
-
 	MaxTtl int32 `json:"max_ttl"`
 
 	// Duration before which the issued credentials needs renewal
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -24,18 +22,7 @@ func NewRabbitMQWriteLeaseConfigRequestWithDefaults() *RabbitMQWriteLeaseConfigR
 	var this RabbitMQWriteLeaseConfigRequest
 
 	this.MaxTtl = 0
-
 	this.Ttl = 0
 
 	return &this
-}
-
-func (o RabbitMQWriteLeaseConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["max_ttl"] = o.MaxTtl
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

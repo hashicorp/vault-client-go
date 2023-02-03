@@ -9,7 +9,6 @@ import (
 // AppRoleReadSecretIDNumUsesResponse struct for AppRoleReadSecretIDNumUsesResponse
 type AppRoleReadSecretIDNumUsesResponse struct {
 	// Number of times a secret ID can access the role, after which the SecretID will expire. Defaults to 0 meaning that the secret ID is of unlimited use.
-
 	SecretIdNumUses int32 `json:"secret_id_num_uses"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleReadSecretIDNumUsesResponseWithDefaults() *AppRoleReadSecretIDNum
 	var this AppRoleReadSecretIDNumUsesResponse
 
 	return &this
-}
-
-func (o AppRoleReadSecretIDNumUsesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
-
-	return json.Marshal(toSerialize)
 }

@@ -9,7 +9,6 @@ import (
 // AppRoleReadRoleIDResponse struct for AppRoleReadRoleIDResponse
 type AppRoleReadRoleIDResponse struct {
 	// Identifier of the role. Defaults to a UUID.
-
 	RoleId string `json:"role_id"`
 }
 
@@ -20,12 +19,4 @@ func NewAppRoleReadRoleIDResponseWithDefaults() *AppRoleReadRoleIDResponse {
 	var this AppRoleReadRoleIDResponse
 
 	return &this
-}
-
-func (o AppRoleReadRoleIDResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["role_id"] = o.RoleId
-
-	return json.Marshal(toSerialize)
 }

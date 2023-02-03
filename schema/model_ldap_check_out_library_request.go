@@ -9,7 +9,6 @@ import (
 // LDAPCheckOutLibraryRequest struct for LDAPCheckOutLibraryRequest
 type LDAPCheckOutLibraryRequest struct {
 	// The length of time before the check-out will expire, in seconds.
-
 	Ttl int32 `json:"ttl"`
 }
 
@@ -20,12 +19,4 @@ func NewLDAPCheckOutLibraryRequestWithDefaults() *LDAPCheckOutLibraryRequest {
 	var this LDAPCheckOutLibraryRequest
 
 	return &this
-}
-
-func (o LDAPCheckOutLibraryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["ttl"] = o.Ttl
-
-	return json.Marshal(toSerialize)
 }

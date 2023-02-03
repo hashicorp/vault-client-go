@@ -9,11 +9,9 @@ import (
 // MFAMethodAdminDestroyTOTPRequest struct for MFAMethodAdminDestroyTOTPRequest
 type MFAMethodAdminDestroyTOTPRequest struct {
 	// Identifier of the entity from which the MFA method secret needs to be removed.
-
 	EntityId string `json:"entity_id"`
 
 	// The unique identifier for this MFA method.
-
 	MethodId string `json:"method_id"`
 }
 
@@ -24,14 +22,4 @@ func NewMFAMethodAdminDestroyTOTPRequestWithDefaults() *MFAMethodAdminDestroyTOT
 	var this MFAMethodAdminDestroyTOTPRequest
 
 	return &this
-}
-
-func (o MFAMethodAdminDestroyTOTPRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := make(map[string]interface{})
-
-	toSerialize["entity_id"] = o.EntityId
-
-	toSerialize["method_id"] = o.MethodId
-
-	return json.Marshal(toSerialize)
 }

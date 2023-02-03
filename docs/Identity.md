@@ -140,8 +140,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.AliasDeleteByID(
 		context.Background(),
 		id,
@@ -204,8 +202,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.AliasListByID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -264,8 +260,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.AliasReadByID(
 		context.Background(),
 		id,
@@ -329,9 +323,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAliasWriteRequestWithDefaults()
-
 	resp, err := client.Identity.AliasWrite(
 		context.Background(),
 		request,
@@ -392,9 +384,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
 	request := schema.NewAliasWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.AliasWriteByID(
 		context.Background(),
 		id,
@@ -460,9 +450,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewEntityBatchDeleteRequestWithDefaults()
-
 	resp, err := client.Identity.EntityBatchDelete(
 		context.Background(),
 		request,
@@ -522,8 +510,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.EntityDeleteAliasByID(
 		context.Background(),
 		id,
@@ -587,8 +573,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
-
 	resp, err := client.Identity.EntityDeleteByID(
 		context.Background(),
 		id,
@@ -652,8 +636,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
-
-
 	resp, err := client.Identity.EntityDeleteByName(
 		context.Background(),
 		name,
@@ -716,8 +698,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.EntityListAliasesByID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -775,8 +755,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.EntityListByID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -833,8 +811,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.EntityListByName(
 		context.Background(),
@@ -894,9 +870,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewEntityLookupRequestWithDefaults()
-
 	resp, err := client.Identity.EntityLookup(
 		context.Background(),
 		request,
@@ -956,9 +930,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewEntityMergeRequestWithDefaults()
-
 	resp, err := client.Identity.EntityMerge(
 		context.Background(),
 		request,
@@ -1018,8 +990,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
-
 	resp, err := client.Identity.EntityReadAliasByID(
 		context.Background(),
 		id,
@@ -1083,8 +1053,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
-
 	resp, err := client.Identity.EntityReadByID(
 		context.Background(),
 		id,
@@ -1148,8 +1116,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
-
-
 	resp, err := client.Identity.EntityReadByName(
 		context.Background(),
 		name,
@@ -1213,9 +1179,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewEntityWriteRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWrite(
 		context.Background(),
 		request,
@@ -1275,9 +1239,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewEntityWriteAliasRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteAlias(
 		context.Background(),
 		request,
@@ -1338,9 +1300,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the alias
-
 	request := schema.NewEntityWriteAliasByIDRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteAliasByID(
 		context.Background(),
 		id,
@@ -1407,9 +1367,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
 	request := schema.NewEntityWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteByID(
 		context.Background(),
 		id,
@@ -1476,9 +1434,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the entity
-
 	request := schema.NewEntityWriteByNameRequestWithDefaults()
-
 	resp, err := client.Identity.EntityWriteByName(
 		context.Background(),
 		name,
@@ -1544,8 +1500,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
-
-
 	resp, err := client.Identity.GroupDeleteAliasByID(
 		context.Background(),
 		id,
@@ -1609,8 +1563,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
-
 	resp, err := client.Identity.GroupDeleteByID(
 		context.Background(),
 		id,
@@ -1674,8 +1626,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
-
-
 	resp, err := client.Identity.GroupDeleteByName(
 		context.Background(),
 		name,
@@ -1738,8 +1688,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.GroupListAliasesByID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1797,8 +1745,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.GroupListByID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1855,8 +1801,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.GroupListByName(
 		context.Background(),
@@ -1916,9 +1860,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGroupLookupRequestWithDefaults()
-
 	resp, err := client.Identity.GroupLookup(
 		context.Background(),
 		request,
@@ -1978,8 +1920,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
-
-
 	resp, err := client.Identity.GroupReadAliasByID(
 		context.Background(),
 		id,
@@ -2043,8 +1983,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
-
 	resp, err := client.Identity.GroupReadByID(
 		context.Background(),
 		id,
@@ -2108,8 +2046,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
-
-
 	resp, err := client.Identity.GroupReadByName(
 		context.Background(),
 		name,
@@ -2173,9 +2109,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGroupWriteRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWrite(
 		context.Background(),
 		request,
@@ -2235,9 +2169,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGroupWriteAliasRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteAlias(
 		context.Background(),
 		request,
@@ -2298,9 +2230,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group alias.
-
 	request := schema.NewGroupWriteAliasByIDRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteAliasByID(
 		context.Background(),
 		id,
@@ -2367,9 +2297,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
 	request := schema.NewGroupWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteByID(
 		context.Background(),
 		id,
@@ -2436,9 +2364,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the group.
-
 	request := schema.NewGroupWriteByNameRequestWithDefaults()
-
 	resp, err := client.Identity.GroupWriteByName(
 		context.Background(),
 		name,
@@ -2504,8 +2430,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
-
-
 	resp, err := client.Identity.MFADeleteLoginEnforcement(
 		context.Background(),
 		name,
@@ -2568,8 +2492,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.MFAListLoginEnforcements(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2628,9 +2550,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewMFAMethodAdminDestroyTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodAdminDestroyTOTP(
 		context.Background(),
 		request,
@@ -2690,9 +2610,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewMFAMethodAdminGenerateTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodAdminGenerateTOTP(
 		context.Background(),
 		request,
@@ -2752,8 +2670,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeleteDuo(
 		context.Background(),
 		methodId,
@@ -2817,8 +2733,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeleteOkta(
 		context.Background(),
 		methodId,
@@ -2882,8 +2796,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeletePingID(
 		context.Background(),
 		methodId,
@@ -2947,8 +2859,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodDeleteTOTP(
 		context.Background(),
 		methodId,
@@ -3012,9 +2922,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewMFAMethodGenerateTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodGenerateTOTP(
 		context.Background(),
 		request,
@@ -3073,8 +2981,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.MFAMethodList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3131,8 +3037,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAMethodListDuo(
 		context.Background(),
@@ -3191,8 +3095,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.MFAMethodListOkta(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3250,8 +3152,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.MFAMethodListPingID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3308,8 +3208,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.MFAMethodListTOTP(
 		context.Background(),
@@ -3369,8 +3267,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodRead(
 		context.Background(),
 		methodId,
@@ -3434,8 +3330,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadDuo(
 		context.Background(),
 		methodId,
@@ -3499,8 +3393,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadOkta(
 		context.Background(),
 		methodId,
@@ -3564,8 +3456,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadPingID(
 		context.Background(),
 		methodId,
@@ -3629,8 +3519,6 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
-
 	resp, err := client.Identity.MFAMethodReadTOTP(
 		context.Background(),
 		methodId,
@@ -3695,9 +3583,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
 	request := schema.NewMFAMethodWriteDuoRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWriteDuo(
 		context.Background(),
 		methodId,
@@ -3764,9 +3650,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
 	request := schema.NewMFAMethodWriteOktaRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWriteOkta(
 		context.Background(),
 		methodId,
@@ -3833,9 +3717,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
 	request := schema.NewMFAMethodWritePingIDRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWritePingID(
 		context.Background(),
 		methodId,
@@ -3902,9 +3784,7 @@ func main() {
 	}
 
 	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
 	request := schema.NewMFAMethodWriteTOTPRequestWithDefaults()
-
 	resp, err := client.Identity.MFAMethodWriteTOTP(
 		context.Background(),
 		methodId,
@@ -3970,8 +3850,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
-
-
 	resp, err := client.Identity.MFAReadLoginEnforcement(
 		context.Background(),
 		name,
@@ -4036,9 +3914,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name for this login enforcement configuration
-
 	request := schema.NewMFAWriteLoginEnforcementRequestWithDefaults()
-
 	resp, err := client.Identity.MFAWriteLoginEnforcement(
 		context.Background(),
 		name,
@@ -4104,8 +3980,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
-
-
 	resp, err := client.Identity.OIDCDeleteAssignment(
 		context.Background(),
 		name,
@@ -4169,8 +4043,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
-
-
 	resp, err := client.Identity.OIDCDeleteClient(
 		context.Background(),
 		name,
@@ -4234,8 +4106,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Identity.OIDCDeleteKey(
 		context.Background(),
 		name,
@@ -4299,8 +4169,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCDeleteProvider(
 		context.Background(),
 		name,
@@ -4364,8 +4232,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Identity.OIDCDeleteRole(
 		context.Background(),
 		name,
@@ -4429,8 +4295,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
-
-
 	resp, err := client.Identity.OIDCDeleteScope(
 		context.Background(),
 		name,
@@ -4494,9 +4358,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOIDCIntrospectRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCIntrospect(
 		context.Background(),
 		request,
@@ -4555,8 +4417,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCListAssignments(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4613,8 +4473,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCListClients(
 		context.Background(),
@@ -4673,8 +4531,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4731,8 +4587,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	allowedClientId := "allowedClientId_example" // string | Filters the list of OIDC providers to those that allow the given client ID in their set of allowed_client_ids. (defaults to "")
 	resp, err := client.Identity.OIDCListProviders(
@@ -4794,8 +4648,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4852,8 +4704,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCListScopes(
 		context.Background(),
@@ -4913,8 +4763,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
-
-
 	resp, err := client.Identity.OIDCReadAssignment(
 		context.Background(),
 		name,
@@ -4978,8 +4826,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
-
-
 	resp, err := client.Identity.OIDCReadClient(
 		context.Background(),
 		name,
@@ -5042,8 +4888,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5099,8 +4943,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Identity.OIDCReadKey(
 		context.Background(),
 		name,
@@ -5164,8 +5006,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProvider(
 		context.Background(),
 		name,
@@ -5229,8 +5069,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderAuthorize(
 		context.Background(),
 		name,
@@ -5294,8 +5132,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderUserInfo(
 		context.Background(),
 		name,
@@ -5359,8 +5195,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderWellKnownKeys(
 		context.Background(),
 		name,
@@ -5424,8 +5258,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCReadProviderWellKnownOpenIDConfiguration(
 		context.Background(),
 		name,
@@ -5489,8 +5321,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Identity.OIDCReadRole(
 		context.Background(),
 		name,
@@ -5554,8 +5384,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
-
-
 	resp, err := client.Identity.OIDCReadScope(
 		context.Background(),
 		name,
@@ -5619,8 +5447,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Identity.OIDCReadToken(
 		context.Background(),
 		name,
@@ -5683,8 +5509,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.OIDCReadWellKnownKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5738,8 +5562,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Identity.OIDCReadWellKnownOpenIDConfiguration(
 		context.Background(),
@@ -5797,9 +5619,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewOIDCRotateKeyRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCRotateKey(
 		context.Background(),
 		name,
@@ -5866,9 +5686,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the assignment
-
 	request := schema.NewOIDCWriteAssignmentRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteAssignment(
 		context.Background(),
 		name,
@@ -5935,9 +5753,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the client.
-
 	request := schema.NewOIDCWriteClientRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteClient(
 		context.Background(),
 		name,
@@ -6003,9 +5819,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOIDCWriteConfigRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteConfig(
 		context.Background(),
 		request,
@@ -6066,9 +5880,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewOIDCWriteKeyRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteKey(
 		context.Background(),
 		name,
@@ -6135,9 +5947,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
 	request := schema.NewOIDCWriteProviderRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteProvider(
 		context.Background(),
 		name,
@@ -6204,9 +6014,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
 	request := schema.NewOIDCWriteProviderAuthorizeRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteProviderAuthorize(
 		context.Background(),
 		name,
@@ -6273,9 +6081,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
 	request := schema.NewOIDCWriteProviderTokenRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteProviderToken(
 		context.Background(),
 		name,
@@ -6341,8 +6147,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the provider
-
-
 	resp, err := client.Identity.OIDCWriteProviderUserInfo(
 		context.Background(),
 		name,
@@ -6407,9 +6211,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewOIDCWriteRoleRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteRole(
 		context.Background(),
 		name,
@@ -6476,9 +6278,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the scope
-
 	request := schema.NewOIDCWriteScopeRequestWithDefaults()
-
 	resp, err := client.Identity.OIDCWriteScope(
 		context.Background(),
 		name,
@@ -6544,8 +6344,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
-
-
 	resp, err := client.Identity.PersonaIDDeleteByID(
 		context.Background(),
 		id,
@@ -6609,8 +6407,6 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
-
-
 	resp, err := client.Identity.PersonaIDReadByID(
 		context.Background(),
 		id,
@@ -6675,9 +6471,7 @@ func main() {
 	}
 
 	id := "id_example" // string | ID of the persona
-
 	request := schema.NewPersonaIDWriteByIDRequestWithDefaults()
-
 	resp, err := client.Identity.PersonaIDWriteByID(
 		context.Background(),
 		id,
@@ -6742,8 +6536,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Identity.PersonaListByID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6802,9 +6594,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPersonaWriteRequestWithDefaults()
-
 	resp, err := client.Identity.PersonaWrite(
 		context.Background(),
 		request,

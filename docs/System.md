@@ -204,9 +204,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-
 	request := schema.NewCalculateAuditHashRequestWithDefaults()
-
 	resp, err := client.System.CalculateAuditHash(
 		context.Background(),
 		path,
@@ -272,8 +270,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-
-
 	resp, err := client.System.DeleteAuditDevice(
 		context.Background(),
 		path,
@@ -337,8 +333,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-
-
 	resp, err := client.System.DeleteAuthMethod(
 		context.Background(),
 		path,
@@ -402,8 +396,6 @@ func main() {
 	}
 
 	header := "header_example" // string | 
-
-
 	resp, err := client.System.DeleteConfigAuditingRequestHeader(
 		context.Background(),
 		header,
@@ -466,8 +458,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteConfigCORS(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -523,8 +513,6 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
-
-
 	resp, err := client.System.DeleteConfigUIHeader(
 		context.Background(),
 		header,
@@ -587,8 +575,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteGenerateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -642,8 +628,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.DeleteGenerateRootAttempt(
 		context.Background(),
@@ -700,8 +684,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
-
-
 	resp, err := client.System.DeleteLogger(
 		context.Background(),
 		name,
@@ -764,8 +746,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteLoggers(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -821,8 +801,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-
 	resp, err := client.System.DeleteMount(
 		context.Background(),
 		path,
@@ -887,8 +865,6 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-
-
 	resp, err := client.System.DeletePluginsCatalogByTypeByName(
 		context.Background(),
 		name,
@@ -955,8 +931,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.DeletePoliciesACL(
 		context.Background(),
 		name,
@@ -1020,8 +994,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-
-
 	resp, err := client.System.DeletePoliciesPassword(
 		context.Background(),
 		name,
@@ -1085,8 +1057,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.DeletePolicy(
 		context.Background(),
 		name,
@@ -1150,8 +1120,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
-
-
 	resp, err := client.System.DeleteQuotasRateLimit(
 		context.Background(),
 		name,
@@ -1214,8 +1182,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRaw(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1271,8 +1237,6 @@ func main() {
 	}
 
 	path := "path_example" // string | 
-
-
 	resp, err := client.System.DeleteRawPath(
 		context.Background(),
 		path,
@@ -1335,8 +1299,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRekeyBackup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1393,8 +1355,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRekeyInit(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1448,8 +1408,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.DeleteRekeyRecoveryKeyBackup(
 		context.Background(),
@@ -1507,8 +1465,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.DeleteRekeyVerify(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1562,8 +1518,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListConfigUIHeaders(
 		context.Background(),
@@ -1623,8 +1577,6 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
-
-
 	resp, err := client.System.ListLeasesLookupPrefix(
 		context.Background(),
 		prefix,
@@ -1689,8 +1641,6 @@ func main() {
 	}
 
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-
-
 	resp, err := client.System.ListPluginsCatalogByType(
 		context.Background(),
 		type_,
@@ -1754,8 +1704,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ListPoliciesACL(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1812,8 +1760,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListPoliciesPassword(
 		context.Background(),
@@ -1872,8 +1818,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ListQuotasRateLimits(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1930,8 +1874,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ListVersionHistory(
 		context.Background(),
@@ -1991,9 +1933,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewMFAValidateRequestWithDefaults()
-
 	resp, err := client.System.MFAValidate(
 		context.Background(),
 		request,
@@ -2051,8 +1991,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (defaults to "standard")
 	logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".
@@ -2118,8 +2056,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofRead(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2175,8 +2111,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.PprofReadAllocs(
 		context.Background(),
@@ -2234,8 +2168,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadBlock(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2291,8 +2223,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.PprofReadCmdline(
 		context.Background(),
@@ -2350,8 +2280,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadGoroutine(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2407,8 +2335,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.PprofReadHeap(
 		context.Background(),
@@ -2466,8 +2392,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadMutex(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2523,8 +2447,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.PprofReadProfile(
 		context.Background(),
@@ -2582,8 +2504,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadSymbol(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2639,8 +2559,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.PprofReadThreadcreate(
 		context.Background(),
@@ -2698,8 +2616,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.PprofReadTrace(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2753,8 +2669,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadAuditDevices(
 		context.Background(),
@@ -2811,8 +2725,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-
-
 	resp, err := client.System.ReadAuthMethod(
 		context.Background(),
 		path,
@@ -2878,8 +2790,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
-
-
 	resp, err := client.System.ReadAuthMethodTune(
 		context.Background(),
 		path,
@@ -2942,8 +2852,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadAuthMethods(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2999,8 +2907,6 @@ func main() {
 	}
 
 	header := "header_example" // string | 
-
-
 	resp, err := client.System.ReadConfigAuditingRequestHeader(
 		context.Background(),
 		header,
@@ -3063,8 +2969,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadConfigAuditingRequestHeaders(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3118,8 +3022,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadConfigCORS(
 		context.Background(),
@@ -3177,8 +3079,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadConfigStateSanitized(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3234,8 +3134,6 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
-
-
 	resp, err := client.System.ReadConfigUIHeader(
 		context.Background(),
 		header,
@@ -3298,8 +3196,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadGenerateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3353,8 +3249,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadGenerateRootAttempt(
 		context.Background(),
@@ -3410,8 +3304,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadHAStatus(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3465,8 +3357,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadHealth(
 		context.Background(),
@@ -3524,8 +3414,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadHostInfo(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3582,8 +3470,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInFlightRequests(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3637,8 +3523,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadInit(
 		context.Background(),
@@ -3694,8 +3578,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersActivity(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3749,8 +3631,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadInternalCountersActivityExport(
 		context.Background(),
@@ -3806,8 +3686,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersActivityMonthly(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3861,8 +3739,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadInternalCountersConfig(
 		context.Background(),
@@ -3918,8 +3794,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersEntities(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3974,8 +3848,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalCountersRequests(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4029,8 +3901,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadInternalCountersTokens(
 		context.Background(),
@@ -4087,8 +3957,6 @@ func main() {
 	}
 
 	tag := "tag_example" // string | Name of subtree being observed
-
-
 	resp, err := client.System.ReadInternalInspectRouter(
 		context.Background(),
 		tag,
@@ -4151,8 +4019,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalSpecsOpenAPI(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4206,8 +4072,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadInternalUIFeatureFlags(
 		context.Background(),
@@ -4264,8 +4128,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path of the mount.
-
-
 	resp, err := client.System.ReadInternalUIMount(
 		context.Background(),
 		path,
@@ -4328,8 +4190,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalUIMounts(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4383,8 +4243,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadInternalUINamespaces(
 		context.Background(),
@@ -4440,8 +4298,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadInternalUIResultantACL(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4495,8 +4351,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadKeyStatus(
 		context.Background(),
@@ -4552,8 +4406,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadLeader(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4608,8 +4460,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadLeases(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4663,8 +4513,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadLeasesCount(
 		context.Background(),
@@ -4721,8 +4569,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
-
-
 	resp, err := client.System.ReadLogger(
 		context.Background(),
 		name,
@@ -4785,8 +4631,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadLoggers(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4840,8 +4684,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\".
 	resp, err := client.System.ReadMetrics(
@@ -4903,8 +4745,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-
 	resp, err := client.System.ReadMount(
 		context.Background(),
 		path,
@@ -4967,8 +4807,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadMounts(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5024,8 +4862,6 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
-
 	resp, err := client.System.ReadMountsConfig(
 		context.Background(),
 		path,
@@ -5088,8 +4924,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadPluginsCatalog(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5146,8 +4980,6 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-
-
 	resp, err := client.System.ReadPluginsCatalogByTypeByName(
 		context.Background(),
 		name,
@@ -5213,8 +5045,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadPolicies(
 		context.Background(),
@@ -5275,8 +5105,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.ReadPoliciesACL(
 		context.Background(),
 		name,
@@ -5340,8 +5168,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-
-
 	resp, err := client.System.ReadPoliciesPassword(
 		context.Background(),
 		name,
@@ -5405,8 +5231,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-
-
 	resp, err := client.System.ReadPoliciesPasswordGenerate(
 		context.Background(),
 		name,
@@ -5470,8 +5294,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
-
 	resp, err := client.System.ReadPolicy(
 		context.Background(),
 		name,
@@ -5534,8 +5356,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadQuotasConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5591,8 +5411,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
-
-
 	resp, err := client.System.ReadQuotasRateLimit(
 		context.Background(),
 		name,
@@ -5655,8 +5473,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRaw(
 		context.Background(),
@@ -5717,8 +5533,6 @@ func main() {
 	}
 
 	path := "path_example" // string | 
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.System.ReadRawPath(
 		context.Background(),
@@ -5784,8 +5598,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRekeyBackup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5839,8 +5651,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadRekeyInit(
 		context.Background(),
@@ -5896,8 +5706,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRekeyRecoveryKeyBackup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5951,8 +5759,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadRekeyVerify(
 		context.Background(),
@@ -6009,8 +5815,6 @@ func main() {
 	}
 
 	migrationId := "migrationId_example" // string | The ID of the migration operation
-
-
 	resp, err := client.System.ReadRemountStatus(
 		context.Background(),
 		migrationId,
@@ -6073,8 +5877,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadReplicationStatus(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6129,8 +5931,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.ReadRotateConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6184,8 +5984,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.ReadSealStatus(
 		context.Background(),
@@ -6242,9 +6040,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewRemountRequestWithDefaults()
-
 	resp, err := client.System.Remount(
 		context.Background(),
 		request,
@@ -6304,9 +6100,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewRenewRequestWithDefaults()
-
 	resp, err := client.System.Renew(
 		context.Background(),
 		request,
@@ -6367,9 +6161,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-
 	request := schema.NewRenewForRequestWithDefaults()
-
 	resp, err := client.System.RenewFor(
 		context.Background(),
 		urlLeaseId,
@@ -6435,9 +6227,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewRevokeRequestWithDefaults()
-
 	resp, err := client.System.Revoke(
 		context.Background(),
 		request,
@@ -6499,8 +6289,6 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-
-
 	resp, err := client.System.RevokeForce(
 		context.Background(),
 		prefix,
@@ -6565,9 +6353,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-
 	request := schema.NewRevokeLeaseRequestWithDefaults()
-
 	resp, err := client.System.RevokeLease(
 		context.Background(),
 		urlLeaseId,
@@ -6634,9 +6420,7 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-
 	request := schema.NewRevokePrefixRequestWithDefaults()
-
 	resp, err := client.System.RevokePrefix(
 		context.Background(),
 		prefix,
@@ -6701,8 +6485,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.Rotate(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6756,8 +6538,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.System.Seal(
 		context.Background(),
@@ -6815,8 +6595,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.StepDownLeader(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6872,8 +6650,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
-
-
 	resp, err := client.System.SysDeletePluginsCatalogName(
 		context.Background(),
 		name,
@@ -6936,8 +6712,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.SysListLeasesLookup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6996,8 +6770,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
-
-
 	resp, err := client.System.SysReadPluginsCatalogName(
 		context.Background(),
 		name,
@@ -7062,8 +6834,6 @@ func main() {
 
 	aliasIdentifier := "aliasIdentifier_example" // string | It is the name of the alias (user). For example, if the alias belongs to userpass backend, the name should be a valid username within userpass auth method. If the alias belongs to an approle auth method, the name should be a valid RoleID
 	mountAccessor := "mountAccessor_example" // string | MountAccessor is the identifier of the mount entry to which the user belongs
-
-
 	resp, err := client.System.SysWriteLockedusersMountAccessorUnlockAliasIdentifier(
 		context.Background(),
 		aliasIdentifier,
@@ -7131,9 +6901,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the plugin
-
 	request := schema.NewSysWritePluginsCatalogNameRequestWithDefaults()
-
 	resp, err := client.System.SysWritePluginsCatalogName(
 		context.Background(),
 		name,
@@ -7200,9 +6968,7 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-
 	request := schema.NewSysWriteToolsRandomUrlbytesRequestWithDefaults()
-
 	resp, err := client.System.SysWriteToolsRandomUrlbytes(
 		context.Background(),
 		urlbytes,
@@ -7268,9 +7034,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewToolsGenerateRandomRequestWithDefaults()
-
 	resp, err := client.System.ToolsGenerateRandom(
 		context.Background(),
 		request,
@@ -7331,9 +7095,7 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
-
 	request := schema.NewToolsGenerateRandomSourceRequestWithDefaults()
-
 	resp, err := client.System.ToolsGenerateRandomSource(
 		context.Background(),
 		source,
@@ -7401,9 +7163,7 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-
 	request := schema.NewToolsGenerateRandomSourceBytesRequestWithDefaults()
-
 	resp, err := client.System.ToolsGenerateRandomSourceBytes(
 		context.Background(),
 		source,
@@ -7472,9 +7232,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewToolsHashRequestWithDefaults()
-
 	resp, err := client.System.ToolsHash(
 		context.Background(),
 		request,
@@ -7535,9 +7293,7 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-
 	request := schema.NewToolsHashWithRequestWithDefaults()
-
 	resp, err := client.System.ToolsHashWith(
 		context.Background(),
 		urlalgorithm,
@@ -7603,9 +7359,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewUnsealRequestWithDefaults()
-
 	resp, err := client.System.Unseal(
 		context.Background(),
 		request,
@@ -7664,8 +7418,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.WrappingReadLookup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7721,9 +7473,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWrappingRewrapRequestWithDefaults()
-
 	resp, err := client.System.WrappingRewrap(
 		context.Background(),
 		request,
@@ -7783,9 +7533,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWrappingUnwrapRequestWithDefaults()
-
 	resp, err := client.System.WrappingUnwrap(
 		context.Background(),
 		request,
@@ -7844,8 +7592,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.WrappingWrap(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7901,9 +7647,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWrappingWriteLookupRequestWithDefaults()
-
 	resp, err := client.System.WrappingWriteLookup(
 		context.Background(),
 		request,
@@ -7964,9 +7708,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-
 	request := schema.NewWriteAuditDeviceRequestWithDefaults()
-
 	resp, err := client.System.WriteAuditDevice(
 		context.Background(),
 		path,
@@ -8035,9 +7777,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-
 	request := schema.NewWriteAuthMethodRequestWithDefaults()
-
 	resp, err := client.System.WriteAuthMethod(
 		context.Background(),
 		path,
@@ -8106,9 +7846,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Tune the configuration parameters for an auth path.
-
 	request := schema.NewWriteAuthMethodTuneRequestWithDefaults()
-
 	resp, err := client.System.WriteAuthMethodTune(
 		context.Background(),
 		path,
@@ -8174,9 +7912,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteCapabilitiesRequestWithDefaults()
-
 	resp, err := client.System.WriteCapabilities(
 		context.Background(),
 		request,
@@ -8236,9 +7972,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteCapabilitiesAccessorRequestWithDefaults()
-
 	resp, err := client.System.WriteCapabilitiesAccessor(
 		context.Background(),
 		request,
@@ -8298,9 +8032,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteCapabilitiesSelfRequestWithDefaults()
-
 	resp, err := client.System.WriteCapabilitiesSelf(
 		context.Background(),
 		request,
@@ -8361,9 +8093,7 @@ func main() {
 	}
 
 	header := "header_example" // string | 
-
 	request := schema.NewWriteConfigAuditingRequestHeaderRequestWithDefaults()
-
 	resp, err := client.System.WriteConfigAuditingRequestHeader(
 		context.Background(),
 		header,
@@ -8429,9 +8159,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteConfigCORSRequestWithDefaults()
-
 	resp, err := client.System.WriteConfigCORS(
 		context.Background(),
 		request,
@@ -8491,8 +8219,6 @@ func main() {
 	}
 
 	subsystem := "subsystem_example" // string | 
-
-
 	resp, err := client.System.WriteConfigReloadSubsystem(
 		context.Background(),
 		subsystem,
@@ -8557,9 +8283,7 @@ func main() {
 	}
 
 	header := "header_example" // string | The name of the header.
-
 	request := schema.NewWriteConfigUIHeaderRequestWithDefaults()
-
 	resp, err := client.System.WriteConfigUIHeader(
 		context.Background(),
 		header,
@@ -8627,9 +8351,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteGenerateRootRequestWithDefaults()
-
 	resp, err := client.System.WriteGenerateRoot(
 		context.Background(),
 		request,
@@ -8691,9 +8413,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteGenerateRootAttemptRequestWithDefaults()
-
 	resp, err := client.System.WriteGenerateRootAttempt(
 		context.Background(),
 		request,
@@ -8755,9 +8475,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteGenerateRootUpdateRequestWithDefaults()
-
 	resp, err := client.System.WriteGenerateRootUpdate(
 		context.Background(),
 		request,
@@ -8819,9 +8537,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteInitRequestWithDefaults()
-
 	resp, err := client.System.WriteInit(
 		context.Background(),
 		request,
@@ -8881,9 +8597,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteInternalCountersConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteInternalCountersConfig(
 		context.Background(),
 		request,
@@ -8943,9 +8657,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteLeasesLookupRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesLookup(
 		context.Background(),
 		request,
@@ -9005,9 +8717,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteLeasesRenewRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRenew(
 		context.Background(),
 		request,
@@ -9068,9 +8778,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-
 	request := schema.NewWriteLeasesRenew2RequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRenew2(
 		context.Background(),
 		urlLeaseId,
@@ -9136,9 +8844,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteLeasesRevokeRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRevoke(
 		context.Background(),
 		request,
@@ -9199,9 +8905,7 @@ func main() {
 	}
 
 	urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-
 	request := schema.NewWriteLeasesRevoke2RequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRevoke2(
 		context.Background(),
 		urlLeaseId,
@@ -9269,8 +8973,6 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-
-
 	resp, err := client.System.WriteLeasesRevokeForce(
 		context.Background(),
 		prefix,
@@ -9335,9 +9037,7 @@ func main() {
 	}
 
 	prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-
 	request := schema.NewWriteLeasesRevokePrefixRequestWithDefaults()
-
 	resp, err := client.System.WriteLeasesRevokePrefix(
 		context.Background(),
 		prefix,
@@ -9402,8 +9102,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.System.WriteLeasesTidy(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9460,9 +9158,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the logger to be modified.
-
 	request := schema.NewWriteLoggerRequestWithDefaults()
-
 	resp, err := client.System.WriteLogger(
 		context.Background(),
 		name,
@@ -9528,9 +9224,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteLoggersRequestWithDefaults()
-
 	resp, err := client.System.WriteLoggers(
 		context.Background(),
 		request,
@@ -9591,9 +9285,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
 	request := schema.NewWriteMountRequestWithDefaults()
-
 	resp, err := client.System.WriteMount(
 		context.Background(),
 		path,
@@ -9660,9 +9352,7 @@ func main() {
 	}
 
 	path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-
 	request := schema.NewWriteMountsConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteMountsConfig(
 		context.Background(),
 		path,
@@ -9730,9 +9420,7 @@ func main() {
 
 	name := "name_example" // string | The name of the plugin
 	type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-
 	request := schema.NewWritePluginsCatalogByTypeByNameRequestWithDefaults()
-
 	resp, err := client.System.WritePluginsCatalogByTypeByName(
 		context.Background(),
 		name,
@@ -9803,9 +9491,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWritePluginsReloadBackendRequestWithDefaults()
-
 	resp, err := client.System.WritePluginsReloadBackend(
 		context.Background(),
 		request,
@@ -9866,9 +9552,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
 	request := schema.NewWritePoliciesACLRequestWithDefaults()
-
 	resp, err := client.System.WritePoliciesACL(
 		context.Background(),
 		name,
@@ -9935,9 +9619,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the password policy.
-
 	request := schema.NewWritePoliciesPasswordRequestWithDefaults()
-
 	resp, err := client.System.WritePoliciesPassword(
 		context.Background(),
 		name,
@@ -10004,9 +9686,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the policy. Example: \"ops\"
-
 	request := schema.NewWritePolicyRequestWithDefaults()
-
 	resp, err := client.System.WritePolicy(
 		context.Background(),
 		name,
@@ -10072,9 +9752,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteQuotasConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteQuotasConfig(
 		context.Background(),
 		request,
@@ -10135,9 +9813,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the quota rule.
-
 	request := schema.NewWriteQuotasRateLimitRequestWithDefaults()
-
 	resp, err := client.System.WriteQuotasRateLimit(
 		context.Background(),
 		name,
@@ -10203,9 +9879,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteRawRequestWithDefaults()
-
 	resp, err := client.System.WriteRaw(
 		context.Background(),
 		request,
@@ -10266,9 +9940,7 @@ func main() {
 	}
 
 	path := "path_example" // string | 
-
 	request := schema.NewWriteRawPathRequestWithDefaults()
-
 	resp, err := client.System.WriteRawPath(
 		context.Background(),
 		path,
@@ -10336,9 +10008,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteRekeyInitRequestWithDefaults()
-
 	resp, err := client.System.WriteRekeyInit(
 		context.Background(),
 		request,
@@ -10398,9 +10068,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteRekeyUpdateRequestWithDefaults()
-
 	resp, err := client.System.WriteRekeyUpdate(
 		context.Background(),
 		request,
@@ -10460,9 +10128,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteRekeyVerifyRequestWithDefaults()
-
 	resp, err := client.System.WriteRekeyVerify(
 		context.Background(),
 		request,
@@ -10522,9 +10188,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewWriteRotateConfigRequestWithDefaults()
-
 	resp, err := client.System.WriteRotateConfig(
 		context.Background(),
 		request,

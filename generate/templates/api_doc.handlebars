@@ -40,10 +40,8 @@ func main() {
 		log.Fatal(err)
 	}
 {{#each allParams}}{{#if isPathParam}}{{#with required}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/with}}{{/if}}{{/each}}
-{{#each bodyParams}}
-	request := schema.New{{{dataType}}}WithDefaults(){{/each}}
-{{#each allParams}}{{#if isQueryParam}}{{#unless required}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/with}}{{/if}}{{/each}}{{#each bodyParams}}
+	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#unless required}}
 	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/unless}}{{/if}}{{/each}}
 	resp, err := client.{{classname}}.{{operationId}}(
 		context.Background(),{{#each pathParams}}{{#with required}}

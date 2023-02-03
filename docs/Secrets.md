@@ -384,8 +384,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AWSConfigReadLease(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -446,8 +444,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AWSConfigReadRootIAMCredentials(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -507,8 +503,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AWSConfigRotateRootIAMCredentials(
 		context.Background(),
@@ -571,9 +565,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteLeaseRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSConfigWriteLease(
 		context.Background(),
 		request,
@@ -637,9 +629,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteRootIAMCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSConfigWriteRootIAMCredentials(
 		context.Background(),
 		request,
@@ -703,8 +693,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-
-
 	resp, err := client.Secrets.AWSDeleteRole(
 		context.Background(),
 		name,
@@ -768,8 +756,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AWSListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -830,8 +816,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AWSReadCredentials(
 		context.Background(),
@@ -894,8 +878,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-
-
 	resp, err := client.Secrets.AWSReadRole(
 		context.Background(),
 		name,
@@ -960,8 +942,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.AWSReadSecurityTokenService(
 		context.Background(),
 		name,
@@ -1026,9 +1006,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSWriteCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSWriteCredentials(
 		context.Background(),
 		request,
@@ -1093,9 +1071,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the policy
-
 	request := schema.NewAWSWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSWriteRole(
 		context.Background(),
 		name,
@@ -1163,9 +1139,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewAWSWriteSecurityTokenServiceRequestWithDefaults()
-
 	resp, err := client.Secrets.AWSWriteSecurityTokenService(
 		context.Background(),
 		name,
@@ -1233,9 +1207,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewActiveDirectoryCheckInLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryCheckInLibrary(
 		context.Background(),
 		name,
@@ -1303,9 +1275,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewActiveDirectoryCheckInManageLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryCheckInManageLibrary(
 		context.Background(),
 		name,
@@ -1373,9 +1343,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
-
 	request := schema.NewActiveDirectoryCheckOutLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryCheckOutLibrary(
 		context.Background(),
 		name,
@@ -1441,8 +1409,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.ActiveDirectoryDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1504,8 +1470,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.ActiveDirectoryDeleteLibrary(
 		context.Background(),
 		name,
@@ -1570,8 +1534,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.ActiveDirectoryDeleteRole(
 		context.Background(),
 		name,
@@ -1635,8 +1597,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.ActiveDirectoryListLibraries(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1697,8 +1657,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ActiveDirectoryListRoles(
 		context.Background(),
@@ -1761,8 +1719,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1824,8 +1780,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadCredentials(
 		context.Background(),
 		name,
@@ -1890,8 +1844,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadLibrary(
 		context.Background(),
 		name,
@@ -1956,8 +1908,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadLibraryStatus(
 		context.Background(),
 		name,
@@ -2022,8 +1972,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.ActiveDirectoryReadRole(
 		context.Background(),
 		name,
@@ -2088,8 +2036,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-
-
 	resp, err := client.Secrets.ActiveDirectoryRotateRole(
 		context.Background(),
 		name,
@@ -2153,8 +2099,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.ActiveDirectoryRotateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2216,9 +2160,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewActiveDirectoryWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryWriteConfig(
 		context.Background(),
 		request,
@@ -2283,9 +2225,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewActiveDirectoryWriteLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryWriteLibrary(
 		context.Background(),
 		name,
@@ -2353,9 +2293,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewActiveDirectoryWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.ActiveDirectoryWriteRole(
 		context.Background(),
 		name,
@@ -2421,8 +2359,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AliCloudDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2484,8 +2420,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-
-
 	resp, err := client.Secrets.AliCloudDeleteRole(
 		context.Background(),
 		name,
@@ -2549,8 +2483,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AliCloudListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2611,8 +2543,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AliCloudReadConfig(
 		context.Background(),
@@ -2675,8 +2605,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-
-
 	resp, err := client.Secrets.AliCloudReadCredentials(
 		context.Background(),
 		name,
@@ -2741,8 +2669,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-
-
 	resp, err := client.Secrets.AliCloudReadRole(
 		context.Background(),
 		name,
@@ -2807,9 +2733,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAliCloudWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.AliCloudWriteConfig(
 		context.Background(),
 		request,
@@ -2874,9 +2798,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the role.
-
 	request := schema.NewAliCloudWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.AliCloudWriteRole(
 		context.Background(),
 		name,
@@ -2942,8 +2864,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AzureDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3005,8 +2925,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.AzureDeleteRole(
 		context.Background(),
 		name,
@@ -3070,8 +2988,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AzureListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3132,8 +3048,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.AzureReadConfig(
 		context.Background(),
@@ -3196,8 +3110,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the Vault role
-
-
 	resp, err := client.Secrets.AzureReadCredentials(
 		context.Background(),
 		role,
@@ -3262,8 +3174,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.AzureReadRole(
 		context.Background(),
 		name,
@@ -3327,8 +3237,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.AzureRotateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3390,9 +3298,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAzureWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.AzureWriteConfig(
 		context.Background(),
 		request,
@@ -3457,9 +3363,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewAzureWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.AzureWriteRole(
 		context.Background(),
 		name,
@@ -3526,8 +3430,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.ConsulDeleteRole(
 		context.Background(),
 		name,
@@ -3591,8 +3493,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.ConsulListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3653,8 +3553,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.ConsulReadAccessConfig(
 		context.Background(),
@@ -3717,8 +3615,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.ConsulReadCredentials(
 		context.Background(),
 		role,
@@ -3783,8 +3679,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.ConsulReadRole(
 		context.Background(),
 		name,
@@ -3849,9 +3743,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewConsulWriteAccessConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.ConsulWriteAccessConfig(
 		context.Background(),
 		request,
@@ -3916,9 +3808,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewConsulWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.ConsulWriteRole(
 		context.Background(),
 		name,
@@ -3985,8 +3875,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
-
-
 	resp, err := client.Secrets.CubbyholeDelete(
 		context.Background(),
 		path,
@@ -4051,8 +3939,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.CubbyholeRead(
 		context.Background(),
@@ -4120,8 +4006,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
-
-
 	resp, err := client.Secrets.CubbyholeWrite(
 		context.Background(),
 		path,
@@ -4186,8 +4070,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudDeleteRoleset(
 		context.Background(),
 		name,
@@ -4252,8 +4134,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-
-
 	resp, err := client.Secrets.GoogleCloudDeleteStaticAccount(
 		context.Background(),
 		name,
@@ -4319,9 +4199,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-
 	request := schema.NewGoogleCloudKMSDecryptRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSDecrypt(
 		context.Background(),
 		key,
@@ -4387,8 +4265,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.GoogleCloudKMSDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4450,8 +4326,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSDeleteKey(
 		context.Background(),
 		key,
@@ -4516,8 +4390,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSDeregisterKey(
 		context.Background(),
 		key,
@@ -4583,9 +4455,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-
 	request := schema.NewGoogleCloudKMSEncryptRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSEncrypt(
 		context.Background(),
 		key,
@@ -4651,8 +4521,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.GoogleCloudKMSListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4713,8 +4581,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudKMSReadConfig(
 		context.Background(),
@@ -4777,8 +4643,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSReadKey(
 		context.Background(),
 		key,
@@ -4843,8 +4707,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSReadKeyConfig(
 		context.Background(),
 		key,
@@ -4909,8 +4771,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSReadPubkey(
 		context.Background(),
 		key,
@@ -4976,9 +4836,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-
 	request := schema.NewGoogleCloudKMSReencryptRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSReencrypt(
 		context.Background(),
 		key,
@@ -5046,9 +4904,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-
 	request := schema.NewGoogleCloudKMSRegisterKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSRegisterKey(
 		context.Background(),
 		key,
@@ -5115,8 +4971,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSRotateKey(
 		context.Background(),
 		key,
@@ -5182,9 +5036,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-
 	request := schema.NewGoogleCloudKMSSignRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSSign(
 		context.Background(),
 		key,
@@ -5251,8 +5103,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
-
 	resp, err := client.Secrets.GoogleCloudKMSTrimKey(
 		context.Background(),
 		key,
@@ -5318,9 +5168,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-
 	request := schema.NewGoogleCloudKMSVerifyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSVerify(
 		context.Background(),
 		key,
@@ -5387,9 +5235,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGoogleCloudKMSWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSWriteConfig(
 		context.Background(),
 		request,
@@ -5454,9 +5300,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
 	request := schema.NewGoogleCloudKMSWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSWriteKey(
 		context.Background(),
 		key,
@@ -5524,9 +5368,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Name of the key in Vault.
-
 	request := schema.NewGoogleCloudKMSWriteKeyConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudKMSWriteKeyConfig(
 		context.Background(),
 		key,
@@ -5592,8 +5434,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.GoogleCloudListRolesets(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5654,8 +5494,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.GoogleCloudListStaticAccounts(
 		context.Background(),
@@ -5718,8 +5556,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.GoogleCloudReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -5781,8 +5617,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadKey(
 		context.Background(),
 		roleset,
@@ -5847,8 +5681,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudReadRoleset(
 		context.Background(),
 		name,
@@ -5913,8 +5745,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadRolesetKey(
 		context.Background(),
 		roleset,
@@ -5979,8 +5809,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadRolesetToken(
 		context.Background(),
 		roleset,
@@ -6045,8 +5873,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-
-
 	resp, err := client.Secrets.GoogleCloudReadStaticAccount(
 		context.Background(),
 		name,
@@ -6111,8 +5937,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-
-
 	resp, err := client.Secrets.GoogleCloudReadStaticAccountKey(
 		context.Background(),
 		name,
@@ -6177,8 +6001,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-
-
 	resp, err := client.Secrets.GoogleCloudReadStaticAccountToken(
 		context.Background(),
 		name,
@@ -6243,8 +6065,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudReadToken(
 		context.Background(),
 		roleset,
@@ -6309,8 +6129,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudRotateRoleset(
 		context.Background(),
 		name,
@@ -6375,8 +6193,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.GoogleCloudRotateRolesetKey(
 		context.Background(),
 		name,
@@ -6440,8 +6256,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.GoogleCloudRotateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6503,8 +6317,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the account.
-
-
 	resp, err := client.Secrets.GoogleCloudRotateStaticAccountKey(
 		context.Background(),
 		name,
@@ -6569,9 +6381,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGoogleCloudWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteConfig(
 		context.Background(),
 		request,
@@ -6636,9 +6446,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
 	request := schema.NewGoogleCloudWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteKey(
 		context.Background(),
 		roleset,
@@ -6706,9 +6514,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the role.
-
 	request := schema.NewGoogleCloudWriteRolesetRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteRoleset(
 		context.Background(),
 		name,
@@ -6776,9 +6582,7 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
 	request := schema.NewGoogleCloudWriteRolesetKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteRolesetKey(
 		context.Background(),
 		roleset,
@@ -6845,8 +6649,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudWriteRolesetToken(
 		context.Background(),
 		roleset,
@@ -6912,9 +6714,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-
 	request := schema.NewGoogleCloudWriteStaticAccountRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccount(
 		context.Background(),
 		name,
@@ -6982,9 +6782,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-
 	request := schema.NewGoogleCloudWriteStaticAccountKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccountKey(
 		context.Background(),
 		name,
@@ -7051,8 +6849,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Required. Name of the static account.
-
-
 	resp, err := client.Secrets.GoogleCloudWriteStaticAccountToken(
 		context.Background(),
 		name,
@@ -7117,8 +6913,6 @@ func main() {
 	}
 
 	roleset := "roleset_example" // string | Required. Name of the role set.
-
-
 	resp, err := client.Secrets.GoogleCloudWriteToken(
 		context.Background(),
 		roleset,
@@ -7183,8 +6977,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv1Delete(
 		context.Background(),
 		path,
@@ -7249,8 +7041,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv1Read(
 		context.Background(),
@@ -7318,8 +7108,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv1Write(
 		context.Background(),
 		path,
@@ -7384,8 +7172,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2Delete(
 		context.Background(),
 		path,
@@ -7450,8 +7236,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2DeleteMetadata(
 		context.Background(),
 		path,
@@ -7517,9 +7301,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
 	request := schema.NewKVv2DeleteVersionsRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2DeleteVersions(
 		context.Background(),
 		path,
@@ -7587,9 +7369,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
 	request := schema.NewKVv2DestroyVersionsRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2DestroyVersions(
 		context.Background(),
 		path,
@@ -7656,8 +7436,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2Read(
 		context.Background(),
 		path,
@@ -7721,8 +7499,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.KVv2ReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7784,8 +7560,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv2ReadMetadata(
 		context.Background(),
@@ -7853,8 +7627,6 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
-
 	resp, err := client.Secrets.KVv2ReadSubkeys(
 		context.Background(),
 		path,
@@ -7920,9 +7692,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
 	request := schema.NewKVv2UndeleteVersionsRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2UndeleteVersions(
 		context.Background(),
 		path,
@@ -7990,9 +7760,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
 	request := schema.NewKVv2WriteRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2Write(
 		context.Background(),
 		path,
@@ -8059,9 +7827,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewKVv2WriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2WriteConfig(
 		context.Background(),
 		request,
@@ -8126,9 +7892,7 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-
 	request := schema.NewKVv2WriteMetadataRequestWithDefaults()
-
 	resp, err := client.Secrets.KVv2WriteMetadata(
 		context.Background(),
 		path,
@@ -8194,8 +7958,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.KubernetesDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -8257,8 +8019,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.KubernetesDeleteRole(
 		context.Background(),
 		name,
@@ -8322,8 +8082,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.KubernetesListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -8384,8 +8142,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.KubernetesReadConfig(
 		context.Background(),
@@ -8448,8 +8204,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.KubernetesReadRole(
 		context.Background(),
 		name,
@@ -8514,9 +8268,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewKubernetesWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.KubernetesWriteConfig(
 		context.Background(),
 		request,
@@ -8581,9 +8333,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Vault role
-
 	request := schema.NewKubernetesWriteCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.KubernetesWriteCredentials(
 		context.Background(),
 		name,
@@ -8651,9 +8401,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewKubernetesWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.KubernetesWriteRole(
 		context.Background(),
 		name,
@@ -8721,9 +8469,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewLDAPCheckInLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPCheckInLibrary(
 		context.Background(),
 		name,
@@ -8791,9 +8537,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewLDAPCheckInManageLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPCheckInManageLibrary(
 		context.Background(),
 		name,
@@ -8861,9 +8605,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
-
 	request := schema.NewLDAPCheckOutLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPCheckOutLibrary(
 		context.Background(),
 		name,
@@ -8929,8 +8671,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.LDAPDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -8992,8 +8732,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.LDAPDeleteLibrary(
 		context.Background(),
 		name,
@@ -9058,8 +8796,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.LDAPDeleteRole(
 		context.Background(),
 		name,
@@ -9124,8 +8860,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.LDAPDeleteStaticRole(
 		context.Background(),
 		name,
@@ -9189,8 +8923,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.LDAPListLibraries(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9251,8 +8983,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPListRoles(
 		context.Background(),
@@ -9315,8 +9045,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.LDAPListStaticRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9377,8 +9105,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.LDAPReadConfig(
 		context.Background(),
@@ -9441,8 +9167,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
-
-
 	resp, err := client.Secrets.LDAPReadCredentials(
 		context.Background(),
 		name,
@@ -9507,8 +9231,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.LDAPReadLibrary(
 		context.Background(),
 		name,
@@ -9573,8 +9295,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.LDAPReadLibraryStatus(
 		context.Background(),
 		name,
@@ -9639,8 +9359,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.LDAPReadRole(
 		context.Background(),
 		name,
@@ -9705,8 +9423,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
-
-
 	resp, err := client.Secrets.LDAPReadStaticCredentials(
 		context.Background(),
 		name,
@@ -9771,8 +9487,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.LDAPReadStaticRole(
 		context.Background(),
 		name,
@@ -9837,8 +9551,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-
-
 	resp, err := client.Secrets.LDAPRotateRole(
 		context.Background(),
 		name,
@@ -9902,8 +9614,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.LDAPRotateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9965,9 +9675,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewLDAPWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteConfig(
 		context.Background(),
 		request,
@@ -10032,9 +9740,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewLDAPWriteLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteLibrary(
 		context.Background(),
 		name,
@@ -10102,9 +9808,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
 	request := schema.NewLDAPWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteRole(
 		context.Background(),
 		name,
@@ -10172,9 +9876,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewLDAPWriteStaticRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.LDAPWriteStaticRole(
 		context.Background(),
 		name,
@@ -10241,8 +9943,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-
-
 	resp, err := client.Secrets.MongoDBAtlasDeleteRole(
 		context.Background(),
 		name,
@@ -10306,8 +10006,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.MongoDBAtlasListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -10368,8 +10066,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.MongoDBAtlasReadConfig(
 		context.Background(),
@@ -10432,8 +10128,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.MongoDBAtlasReadCredentials(
 		context.Background(),
 		name,
@@ -10498,8 +10192,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-
-
 	resp, err := client.Secrets.MongoDBAtlasReadRole(
 		context.Background(),
 		name,
@@ -10564,9 +10256,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewMongoDBAtlasWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.MongoDBAtlasWriteConfig(
 		context.Background(),
 		request,
@@ -10630,8 +10320,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.MongoDBAtlasWriteCredentials(
 		context.Background(),
 		name,
@@ -10697,9 +10385,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Roles
-
 	request := schema.NewMongoDBAtlasWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.MongoDBAtlasWriteRole(
 		context.Background(),
 		name,
@@ -10765,8 +10451,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.NomadDeleteAccessConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -10826,8 +10510,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.NomadDeleteLeaseConfig(
 		context.Background(),
@@ -10890,8 +10572,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.NomadDeleteRole(
 		context.Background(),
 		name,
@@ -10955,8 +10635,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.NomadListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -11017,8 +10695,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.NomadReadAccessConfig(
 		context.Background(),
@@ -11081,8 +10757,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.NomadReadCredentials(
 		context.Background(),
 		name,
@@ -11146,8 +10820,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.NomadReadLeaseConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -11209,8 +10881,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.NomadReadRole(
 		context.Background(),
 		name,
@@ -11275,9 +10945,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewNomadWriteAccessConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.NomadWriteAccessConfig(
 		context.Background(),
 		request,
@@ -11341,9 +11009,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewNomadWriteLeaseConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.NomadWriteLeaseConfig(
 		context.Background(),
 		request,
@@ -11408,9 +11074,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewNomadWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.NomadWriteRole(
 		context.Background(),
 		name,
@@ -11478,9 +11142,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewOpenLDAPCheckInLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPCheckInLibrary(
 		context.Background(),
 		name,
@@ -11548,9 +11210,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewOpenLDAPCheckInManageLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPCheckInManageLibrary(
 		context.Background(),
 		name,
@@ -11618,9 +11278,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set
-
 	request := schema.NewOpenLDAPCheckOutLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPCheckOutLibrary(
 		context.Background(),
 		name,
@@ -11686,8 +11344,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.OpenLDAPDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -11749,8 +11405,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.OpenLDAPDeleteLibrary(
 		context.Background(),
 		name,
@@ -11815,8 +11469,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.OpenLDAPDeleteRole(
 		context.Background(),
 		name,
@@ -11881,8 +11533,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.OpenLDAPDeleteStaticRole(
 		context.Background(),
 		name,
@@ -11946,8 +11596,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.OpenLDAPListLibraries(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -12008,8 +11656,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPListRoles(
 		context.Background(),
@@ -12072,8 +11718,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.OpenLDAPListStaticRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -12134,8 +11778,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.OpenLDAPReadConfig(
 		context.Background(),
@@ -12198,8 +11840,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the dynamic role.
-
-
 	resp, err := client.Secrets.OpenLDAPReadCredentials(
 		context.Background(),
 		name,
@@ -12264,8 +11904,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.OpenLDAPReadLibrary(
 		context.Background(),
 		name,
@@ -12330,8 +11968,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
-
 	resp, err := client.Secrets.OpenLDAPReadLibraryStatus(
 		context.Background(),
 		name,
@@ -12396,8 +12032,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
-
 	resp, err := client.Secrets.OpenLDAPReadRole(
 		context.Background(),
 		name,
@@ -12462,8 +12096,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role.
-
-
 	resp, err := client.Secrets.OpenLDAPReadStaticCredentials(
 		context.Background(),
 		name,
@@ -12528,8 +12160,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.OpenLDAPReadStaticRole(
 		context.Background(),
 		name,
@@ -12594,8 +12224,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the static role
-
-
 	resp, err := client.Secrets.OpenLDAPRotateRole(
 		context.Background(),
 		name,
@@ -12659,8 +12287,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.OpenLDAPRotateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -12722,9 +12348,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOpenLDAPWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteConfig(
 		context.Background(),
 		request,
@@ -12789,9 +12413,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the set.
-
 	request := schema.NewOpenLDAPWriteLibraryRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteLibrary(
 		context.Background(),
 		name,
@@ -12859,9 +12481,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role (lowercase)
-
 	request := schema.NewOpenLDAPWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteRole(
 		context.Background(),
 		name,
@@ -12929,9 +12549,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewOpenLDAPWriteStaticRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.OpenLDAPWriteStaticRole(
 		context.Background(),
 		name,
@@ -12998,9 +12616,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIBundleWriteRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIBundleWrite(
 		context.Background(),
 		request,
@@ -13064,8 +12680,6 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-
-
 	resp, err := client.Secrets.PKIDeleteKey(
 		context.Background(),
 		keyRef,
@@ -13130,8 +12744,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.PKIDeleteRole(
 		context.Background(),
 		name,
@@ -13195,8 +12807,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIDeleteRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -13259,9 +12869,7 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-
 	request := schema.NewPKIGenerateRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIGenerateRoot(
 		context.Background(),
 		exported,
@@ -13328,9 +12936,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIImportKeysRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIImportKeys(
 		context.Background(),
 		request,
@@ -13396,9 +13002,7 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-
 	request := schema.NewPKIIssuerIssueRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerIssueRole(
 		context.Background(),
 		issuerRef,
@@ -13469,9 +13073,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
 	request := schema.NewPKIIssuerResignCRLsRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerResignCRLs(
 		context.Background(),
 		issuerRef,
@@ -13538,8 +13140,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PKIIssuerRevoke(
 		context.Background(),
 		issuerRef,
@@ -13605,9 +13205,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
 	request := schema.NewPKIIssuerSignIntermediateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignIntermediate(
 		context.Background(),
 		issuerRef,
@@ -13675,9 +13273,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
 	request := schema.NewPKIIssuerSignRevocationListRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignRevocationList(
 		context.Background(),
 		issuerRef,
@@ -13746,9 +13342,7 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-
 	request := schema.NewPKIIssuerSignRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignRole(
 		context.Background(),
 		issuerRef,
@@ -13819,9 +13413,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
 	request := schema.NewPKIIssuerSignSelfIssuedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignSelfIssued(
 		context.Background(),
 		issuerRef,
@@ -13889,9 +13481,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
 	request := schema.NewPKIIssuerSignVerbatimRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignVerbatim(
 		context.Background(),
 		issuerRef,
@@ -13960,9 +13550,7 @@ func main() {
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 	role := "role_example" // string | The desired role with configuration for this request
-
 	request := schema.NewPKIIssuerSignVerbatimRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuerSignVerbatimRole(
 		context.Background(),
 		issuerRef,
@@ -14033,9 +13621,7 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-
 	request := schema.NewPKIIssuersGenerateIntermediateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuersGenerateIntermediate(
 		context.Background(),
 		exported,
@@ -14103,9 +13689,7 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-
 	request := schema.NewPKIIssuersGenerateRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIIssuersGenerateRoot(
 		context.Background(),
 		exported,
@@ -14171,8 +13755,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIIssuersList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14233,8 +13815,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIListCerts(
 		context.Background(),
@@ -14297,8 +13877,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIListCertsRevoked(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14359,8 +13937,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIListKeys(
 		context.Background(),
@@ -14423,8 +13999,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14486,8 +14060,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadAutoTidyConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14547,8 +14119,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCA(
 		context.Background(),
@@ -14610,8 +14180,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadCAChain(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14671,8 +14239,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCAPem(
 		context.Background(),
@@ -14734,8 +14300,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadCRL(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14795,8 +14359,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCRLConfig(
 		context.Background(),
@@ -14858,8 +14420,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadCRLRotate(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14919,8 +14479,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadCRLRotateDelta(
 		context.Background(),
@@ -14983,8 +14541,6 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-
-
 	resp, err := client.Secrets.PKIReadCert(
 		context.Background(),
 		serial,
@@ -15048,8 +14604,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadCertCAChain(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15111,8 +14665,6 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-
-
 	resp, err := client.Secrets.PKIReadCertRaw(
 		context.Background(),
 		serial,
@@ -15177,8 +14729,6 @@ func main() {
 	}
 
 	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
-
-
 	resp, err := client.Secrets.PKIReadCertRawPem(
 		context.Background(),
 		serial,
@@ -15242,8 +14792,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadClusterConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15304,8 +14852,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadDeltaCRL(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15365,8 +14911,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIReadIssuersConfig(
 		context.Background(),
@@ -15429,8 +14973,6 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-
-
 	resp, err := client.Secrets.PKIReadKey(
 		context.Background(),
 		keyRef,
@@ -15494,8 +15036,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadKeysConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15557,8 +15097,6 @@ func main() {
 	}
 
 	req := "req_example" // string | base-64 encoded ocsp request
-
-
 	resp, err := client.Secrets.PKIReadOCSPReq(
 		context.Background(),
 		req,
@@ -15623,8 +15161,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.PKIReadRole(
 		context.Background(),
 		name,
@@ -15688,8 +15224,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKIReadURLConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15751,9 +15285,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIReplaceRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIReplaceRoot(
 		context.Background(),
 		request,
@@ -15817,9 +15349,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIRevokeRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRevoke(
 		context.Background(),
 		request,
@@ -15883,9 +15413,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIRevokeWithKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRevokeWithKey(
 		context.Background(),
 		request,
@@ -15949,9 +15477,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIRootSignIntermediateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRootSignIntermediate(
 		context.Background(),
 		request,
@@ -16015,9 +15541,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIRootSignSelfIssuedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRootSignSelfIssued(
 		context.Background(),
 		request,
@@ -16082,9 +15606,7 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-
 	request := schema.NewPKIRotateRootRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIRotateRoot(
 		context.Background(),
 		exported,
@@ -16152,9 +15674,7 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-
 	request := schema.NewPKISignRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKISignRole(
 		context.Background(),
 		role,
@@ -16221,9 +15741,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKISignVerbatimRequestWithDefaults()
-
 	resp, err := client.Secrets.PKISignVerbatim(
 		context.Background(),
 		request,
@@ -16288,9 +15806,7 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-
 	request := schema.NewPKISignVerbatimRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKISignVerbatimRole(
 		context.Background(),
 		role,
@@ -16357,9 +15873,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKITidyRequestWithDefaults()
-
 	resp, err := client.Secrets.PKITidy(
 		context.Background(),
 		request,
@@ -16422,8 +15936,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PKITidyCancel(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -16483,8 +15995,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKITidyStatus(
 		context.Background(),
@@ -16547,9 +16057,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteAutoTidyConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteAutoTidyConfig(
 		context.Background(),
 		request,
@@ -16613,9 +16121,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteCAConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteCAConfig(
 		context.Background(),
 		request,
@@ -16679,9 +16185,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteCRLConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteCRLConfig(
 		context.Background(),
 		request,
@@ -16745,9 +16249,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteCertsRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteCerts(
 		context.Background(),
 		request,
@@ -16811,9 +16313,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteClusterConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteClusterConfig(
 		context.Background(),
 		request,
@@ -16877,9 +16377,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteIntermediateCrossSignRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIntermediateCrossSign(
 		context.Background(),
 		request,
@@ -16944,9 +16442,7 @@ func main() {
 	}
 
 	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-
 	request := schema.NewPKIWriteIntermediateGenerateRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIntermediateGenerate(
 		context.Background(),
 		exported,
@@ -17013,9 +16509,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteIntermediateSetSignedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIntermediateSetSigned(
 		context.Background(),
 		request,
@@ -17079,9 +16573,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteInternalExportedRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteInternalExported(
 		context.Background(),
 		request,
@@ -17146,9 +16638,7 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request
-
 	request := schema.NewPKIWriteIssueRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIssueRole(
 		context.Background(),
 		role,
@@ -17215,9 +16705,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteIssuersConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteIssuersConfig(
 		context.Background(),
 		request,
@@ -17281,9 +16769,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteKMSRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteKMS(
 		context.Background(),
 		request,
@@ -17348,9 +16834,7 @@ func main() {
 	}
 
 	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
-
 	request := schema.NewPKIWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteKey(
 		context.Background(),
 		keyRef,
@@ -17417,9 +16901,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteKeysConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteKeysConfig(
 		context.Background(),
 		request,
@@ -17481,8 +16963,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PKIWriteOCSP(
 		context.Background(),
@@ -17546,9 +17026,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewPKIWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteRole(
 		context.Background(),
 		name,
@@ -17615,9 +17093,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPKIWriteURLConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.PKIWriteURLConfig(
 		context.Background(),
 		request,
@@ -17681,8 +17157,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PkiDeleteIssuerRefDerPem(
 		context.Background(),
 		issuerRef,
@@ -17746,8 +17220,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PkiDeleteJson(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -17807,8 +17279,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadDelta(
 		context.Background(),
@@ -17870,8 +17340,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PkiReadDeltaPem(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -17931,8 +17399,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadDer(
 		context.Background(),
@@ -17995,8 +17461,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PkiReadIssuerRefCrlPemDerDeltaPem(
 		context.Background(),
 		issuerRef,
@@ -18061,8 +17525,6 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
-
 	resp, err := client.Secrets.PkiReadIssuerRefDerPem(
 		context.Background(),
 		issuerRef,
@@ -18126,8 +17588,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.PkiReadJson(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -18187,8 +17647,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.PkiReadPem(
 		context.Background(),
@@ -18252,9 +17710,7 @@ func main() {
 	}
 
 	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
-
 	request := schema.NewPkiWriteIssuerRefDerPemRequestWithDefaults()
-
 	resp, err := client.Secrets.PkiWriteIssuerRefDerPem(
 		context.Background(),
 		issuerRef,
@@ -18321,9 +17777,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewPkiWriteJsonRequestWithDefaults()
-
 	resp, err := client.Secrets.PkiWriteJson(
 		context.Background(),
 		request,
@@ -18387,8 +17841,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.RabbitMQDeleteRole(
 		context.Background(),
 		name,
@@ -18452,8 +17904,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.RabbitMQListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -18516,8 +17966,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.RabbitMQReadCredentials(
 		context.Background(),
 		name,
@@ -18581,8 +18029,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.RabbitMQReadLeaseConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -18644,8 +18090,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Secrets.RabbitMQReadRole(
 		context.Background(),
 		name,
@@ -18710,9 +18154,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewRabbitMQWriteConnectionConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.RabbitMQWriteConnectionConfig(
 		context.Background(),
 		request,
@@ -18776,9 +18218,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewRabbitMQWriteLeaseConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.RabbitMQWriteLeaseConfig(
 		context.Background(),
 		request,
@@ -18843,9 +18283,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewRabbitMQWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.RabbitMQWriteRole(
 		context.Background(),
 		name,
@@ -18911,8 +18349,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.SSHDeleteCAConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -18974,8 +18410,6 @@ func main() {
 	}
 
 	keyName := "keyName_example" // string | [Required] Name of the key
-
-
 	resp, err := client.Secrets.SSHDeleteKeys(
 		context.Background(),
 		keyName,
@@ -19040,8 +18474,6 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-
-
 	resp, err := client.Secrets.SSHDeleteRole(
 		context.Background(),
 		role,
@@ -19105,8 +18537,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.SSHDeleteZeroAddressConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -19166,8 +18596,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHListRoles(
 		context.Background(),
@@ -19231,9 +18659,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewSSHLookupRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHLookup(
 		context.Background(),
 		request,
@@ -19296,8 +18722,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.SSHReadCAConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -19357,8 +18781,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.SSHReadPublicKey(
 		context.Background(),
@@ -19421,8 +18843,6 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-
-
 	resp, err := client.Secrets.SSHReadRole(
 		context.Background(),
 		role,
@@ -19486,8 +18906,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.SSHReadZeroAddressConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -19550,9 +18968,7 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
-
 	request := schema.NewSSHSignRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHSign(
 		context.Background(),
 		role,
@@ -19619,9 +19035,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewSSHVerifyRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHVerify(
 		context.Background(),
 		request,
@@ -19685,9 +19099,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewSSHWriteCAConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteCAConfig(
 		context.Background(),
 		request,
@@ -19752,9 +19164,7 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required] Name of the role
-
 	request := schema.NewSSHWriteCredentialsRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteCredentials(
 		context.Background(),
 		role,
@@ -19822,9 +19232,7 @@ func main() {
 	}
 
 	role := "role_example" // string | The desired role with configuration for this request.
-
 	request := schema.NewSSHWriteIssueRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteIssue(
 		context.Background(),
 		role,
@@ -19892,9 +19300,7 @@ func main() {
 	}
 
 	keyName := "keyName_example" // string | [Required] Name of the key
-
 	request := schema.NewSSHWriteKeysRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteKeys(
 		context.Background(),
 		keyName,
@@ -19962,9 +19368,7 @@ func main() {
 	}
 
 	role := "role_example" // string | [Required for all types] Name of the role being created.
-
 	request := schema.NewSSHWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteRole(
 		context.Background(),
 		role,
@@ -20031,9 +19435,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewSSHWriteZeroAddressConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.SSHWriteZeroAddressConfig(
 		context.Background(),
 		request,
@@ -20097,8 +19499,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
-
 	resp, err := client.Secrets.TOTPDeleteKey(
 		context.Background(),
 		name,
@@ -20162,8 +19562,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.TOTPListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -20226,8 +19624,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
-
 	resp, err := client.Secrets.TOTPReadCode(
 		context.Background(),
 		name,
@@ -20292,8 +19688,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
-
 	resp, err := client.Secrets.TOTPReadKey(
 		context.Background(),
 		name,
@@ -20359,9 +19753,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
 	request := schema.NewTOTPWriteCodeRequestWithDefaults()
-
 	resp, err := client.Secrets.TOTPWriteCode(
 		context.Background(),
 		name,
@@ -20429,9 +19821,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key.
-
 	request := schema.NewTOTPWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TOTPWriteKey(
 		context.Background(),
 		name,
@@ -20497,8 +19887,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.TerraformDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -20560,8 +19948,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformDeleteRole(
 		context.Background(),
 		name,
@@ -20625,8 +20011,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.TerraformListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -20687,8 +20071,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TerraformReadConfig(
 		context.Background(),
@@ -20751,8 +20133,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformReadCredentials(
 		context.Background(),
 		name,
@@ -20817,8 +20197,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformReadRole(
 		context.Background(),
 		name,
@@ -20883,8 +20261,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the team or organization role
-
-
 	resp, err := client.Secrets.TerraformRotateRole(
 		context.Background(),
 		name,
@@ -20949,9 +20325,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTerraformWriteConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.TerraformWriteConfig(
 		context.Background(),
 		request,
@@ -21015,8 +20389,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
-
 	resp, err := client.Secrets.TerraformWriteCredentials(
 		context.Background(),
 		name,
@@ -21082,9 +20454,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role
-
 	request := schema.NewTerraformWriteRoleRequestWithDefaults()
-
 	resp, err := client.Secrets.TerraformWriteRole(
 		context.Background(),
 		name,
@@ -21151,8 +20521,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitBackup(
 		context.Background(),
 		name,
@@ -21218,9 +20586,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewTransitDecryptRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitDecrypt(
 		context.Background(),
 		name,
@@ -21287,8 +20653,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitDeleteKey(
 		context.Background(),
 		name,
@@ -21354,9 +20718,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewTransitEncryptRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitEncrypt(
 		context.Background(),
 		name,
@@ -21424,8 +20786,6 @@ func main() {
 
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
-
-
 	resp, err := client.Secrets.TransitExport(
 		context.Background(),
 		name,
@@ -21495,8 +20855,6 @@ func main() {
 	name := "name_example" // string | Name of the key
 	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 	version := "version_example" // string | Version of the key
-
-
 	resp, err := client.Secrets.TransitExportVersion(
 		context.Background(),
 		name,
@@ -21569,9 +20927,7 @@ func main() {
 
 	name := "name_example" // string | The backend key used for encrypting the data key
 	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
-
 	request := schema.NewTransitGenerateDataKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateDataKey(
 		context.Background(),
 		name,
@@ -21642,9 +20998,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use for the HMAC function
-
 	request := schema.NewTransitGenerateHMACRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateHMAC(
 		context.Background(),
 		name,
@@ -21713,9 +21067,7 @@ func main() {
 
 	name := "name_example" // string | The key to use for the HMAC function
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-
 	request := schema.NewTransitGenerateHMACWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateHMACWithAlgorithm(
 		context.Background(),
 		name,
@@ -21785,9 +21137,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTransitGenerateRandomRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateRandom(
 		context.Background(),
 		request,
@@ -21852,9 +21202,7 @@ func main() {
 	}
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
-
 	request := schema.NewTransitGenerateRandomSourceRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateRandomSource(
 		context.Background(),
 		source,
@@ -21923,9 +21271,7 @@ func main() {
 
 	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-
 	request := schema.NewTransitGenerateRandomSourceBytesRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitGenerateRandomSourceBytes(
 		context.Background(),
 		source,
@@ -21995,9 +21341,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTransitHashRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitHash(
 		context.Background(),
 		request,
@@ -22062,9 +21406,7 @@ func main() {
 	}
 
 	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-
 	request := schema.NewTransitHashWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitHashWithAlgorithm(
 		context.Background(),
 		urlalgorithm,
@@ -22132,9 +21474,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
-
 	request := schema.NewTransitImportKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitImportKey(
 		context.Background(),
 		name,
@@ -22202,9 +21542,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the key
-
 	request := schema.NewTransitImportKeyVersionRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitImportKeyVersion(
 		context.Background(),
 		name,
@@ -22270,8 +21608,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.TransitListKeys(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -22333,8 +21669,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.TransitReadCacheConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -22394,8 +21728,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Secrets.TransitReadConfigKeys(
 		context.Background(),
@@ -22458,8 +21790,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitReadKey(
 		context.Background(),
 		name,
@@ -22523,8 +21853,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Secrets.TransitReadWrappingKey(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -22586,9 +21914,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTransitRestoreRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitRestore(
 		context.Background(),
 		request,
@@ -22653,9 +21979,7 @@ func main() {
 	}
 
 	name := "name_example" // string | If set, this will be the name of the restored key.
-
 	request := schema.NewTransitRestoreKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitRestoreKey(
 		context.Background(),
 		name,
@@ -22723,9 +22047,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewTransitRewrapRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitRewrap(
 		context.Background(),
 		name,
@@ -22792,8 +22114,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
-
 	resp, err := client.Secrets.TransitRotateKey(
 		context.Background(),
 		name,
@@ -22859,9 +22179,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
-
 	request := schema.NewTransitSignRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitSign(
 		context.Background(),
 		name,
@@ -22930,9 +22248,7 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-
 	request := schema.NewTransitSignWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitSignWithAlgorithm(
 		context.Background(),
 		name,
@@ -23003,9 +22319,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewTransitTrimKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitTrimKey(
 		context.Background(),
 		name,
@@ -23073,9 +22387,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The key to use
-
 	request := schema.NewTransitVerifyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitVerify(
 		context.Background(),
 		name,
@@ -23144,9 +22456,7 @@ func main() {
 
 	name := "name_example" // string | The key to use
 	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-
 	request := schema.NewTransitVerifyWithAlgorithmRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitVerifyWithAlgorithm(
 		context.Background(),
 		name,
@@ -23216,9 +22526,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTransitWriteCacheConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteCacheConfig(
 		context.Background(),
 		request,
@@ -23282,9 +22590,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTransitWriteConfigKeysRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteConfigKeys(
 		context.Background(),
 		request,
@@ -23349,9 +22655,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewTransitWriteKeyRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteKey(
 		context.Background(),
 		name,
@@ -23419,9 +22723,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the key
-
 	request := schema.NewTransitWriteKeyConfigRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteKeyConfig(
 		context.Background(),
 		name,
@@ -23489,9 +22791,7 @@ func main() {
 	}
 
 	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-
 	request := schema.NewTransitWriteRandomUrlbytesRequestWithDefaults()
-
 	resp, err := client.Secrets.TransitWriteRandomUrlbytes(
 		context.Background(),
 		urlbytes,

@@ -297,8 +297,6 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-
-
 	resp, err := client.Auth.AWSConfigDeleteCertificate(
 		context.Background(),
 		certName,
@@ -362,8 +360,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigDeleteClient(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -423,8 +419,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigDeleteIdentityAccessList(
 		context.Background(),
@@ -486,8 +480,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigDeleteIdentityWhiteList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -548,8 +540,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigDeleteRoleTagBlackList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -609,8 +599,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigDeleteRoleTagDenyList(
 		context.Background(),
@@ -673,8 +661,6 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-
-
 	resp, err := client.Auth.AWSConfigDeleteSecurityTokenServiceAccount(
 		context.Background(),
 		accountId,
@@ -738,8 +724,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigListCertificates(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -800,8 +784,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigListSecurityTokenService(
 		context.Background(),
@@ -865,8 +847,6 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-
-
 	resp, err := client.Auth.AWSConfigReadCertificate(
 		context.Background(),
 		certName,
@@ -930,8 +910,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigReadClient(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -991,8 +969,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadIdentity(
 		context.Background(),
@@ -1054,8 +1030,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigReadIdentityAccessList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1115,8 +1089,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadIdentityWhiteList(
 		context.Background(),
@@ -1178,8 +1150,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigReadRoleTagBlackList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1239,8 +1209,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSConfigReadRoleTagDenyList(
 		context.Background(),
@@ -1303,8 +1271,6 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-
-
 	resp, err := client.Auth.AWSConfigReadSecurityTokenServiceAccount(
 		context.Background(),
 		accountId,
@@ -1368,8 +1334,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSConfigRotateRoot(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -1432,9 +1396,7 @@ func main() {
 	}
 
 	certName := "certName_example" // string | Name of the certificate.
-
 	request := schema.NewAWSConfigWriteCertificateRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteCertificate(
 		context.Background(),
 		certName,
@@ -1501,9 +1463,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteClientRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteClient(
 		context.Background(),
 		request,
@@ -1567,9 +1527,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteIdentityRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteIdentity(
 		context.Background(),
 		request,
@@ -1633,9 +1591,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteIdentityAccessListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteIdentityAccessList(
 		context.Background(),
 		request,
@@ -1699,9 +1655,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteIdentityWhiteListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteIdentityWhiteList(
 		context.Background(),
 		request,
@@ -1765,9 +1719,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteRoleTagBlackListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteRoleTagBlackList(
 		context.Background(),
 		request,
@@ -1831,9 +1783,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSConfigWriteRoleTagDenyListRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteRoleTagDenyList(
 		context.Background(),
 		request,
@@ -1898,9 +1848,7 @@ func main() {
 	}
 
 	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-
 	request := schema.NewAWSConfigWriteSecurityTokenServiceAccountRequestWithDefaults()
-
 	resp, err := client.Auth.AWSConfigWriteSecurityTokenServiceAccount(
 		context.Background(),
 		accountId,
@@ -1967,8 +1915,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AWSDeleteAuthRole(
 		context.Background(),
 		role,
@@ -2033,8 +1979,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSDeleteIdentityAccessListFor(
 		context.Background(),
 		instanceId,
@@ -2099,8 +2043,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSDeleteIdentityWhiteListFor(
 		context.Background(),
 		instanceId,
@@ -2165,8 +2107,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSDeleteRoleTagBlackListFor(
 		context.Background(),
 		roleTag,
@@ -2231,8 +2171,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSDeleteRoleTagDenyListFor(
 		context.Background(),
 		roleTag,
@@ -2296,8 +2234,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSListAuthRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2358,8 +2294,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListAuthRoles2(
 		context.Background(),
@@ -2422,8 +2356,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSListIdentityAccessList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2484,8 +2416,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListIdentityWhiteList(
 		context.Background(),
@@ -2548,8 +2478,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AWSListRoleTagBlackList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -2610,8 +2538,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AWSListRoleTagDenyList(
 		context.Background(),
@@ -2675,9 +2601,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AWSLogin(
 		context.Background(),
 		request,
@@ -2741,8 +2665,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AWSReadAuthRole(
 		context.Background(),
 		role,
@@ -2807,8 +2729,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSReadIdentityAccessListFor(
 		context.Background(),
 		instanceId,
@@ -2873,8 +2793,6 @@ func main() {
 	}
 
 	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
-
 	resp, err := client.Auth.AWSReadIdentityWhiteListFor(
 		context.Background(),
 		instanceId,
@@ -2939,8 +2857,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSReadRoleTagBlackListFor(
 		context.Background(),
 		roleTag,
@@ -3005,8 +2921,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSReadRoleTagDenyListFor(
 		context.Background(),
 		roleTag,
@@ -3072,9 +2986,7 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
 	request := schema.NewAWSWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteAuthRole(
 		context.Background(),
 		role,
@@ -3142,9 +3054,7 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
 	request := schema.NewAWSWriteAuthRoleTagRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteAuthRoleTag(
 		context.Background(),
 		role,
@@ -3211,9 +3121,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSWriteIdentityAccessListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteIdentityAccessListTidySettings(
 		context.Background(),
 		request,
@@ -3277,9 +3185,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSWriteIdentityWhiteListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteIdentityWhiteListTidySettings(
 		context.Background(),
 		request,
@@ -3343,8 +3249,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSWriteRoleTagBlackListFor(
 		context.Background(),
 		roleTag,
@@ -3409,9 +3313,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSWriteRoleTagBlackListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteRoleTagBlackListTidySettings(
 		context.Background(),
 		request,
@@ -3475,8 +3377,6 @@ func main() {
 	}
 
 	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
-
 	resp, err := client.Auth.AWSWriteRoleTagDenyListFor(
 		context.Background(),
 		roleTag,
@@ -3541,9 +3441,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAWSWriteRoleTagDenyListTidySettingsRequestWithDefaults()
-
 	resp, err := client.Auth.AWSWriteRoleTagDenyListTidySettings(
 		context.Background(),
 		request,
@@ -3607,8 +3505,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-
-
 	resp, err := client.Auth.AliCloudDeleteAuthRole(
 		context.Background(),
 		role,
@@ -3672,8 +3568,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AliCloudListAuthRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -3734,8 +3628,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.AliCloudListAuthRoles2(
 		context.Background(),
@@ -3799,9 +3691,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAliCloudLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AliCloudLogin(
 		context.Background(),
 		request,
@@ -3865,8 +3755,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-
-
 	resp, err := client.Auth.AliCloudReadAuthRole(
 		context.Background(),
 		role,
@@ -3932,9 +3820,7 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role as it should appear in Vault.
-
 	request := schema.NewAliCloudWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AliCloudWriteAuthRole(
 		context.Background(),
 		role,
@@ -4001,8 +3887,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteBindSecretID(
 		context.Background(),
 		roleName,
@@ -4067,8 +3951,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteBoundCIDRList(
 		context.Background(),
 		roleName,
@@ -4133,8 +4015,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeletePeriod(
 		context.Background(),
 		roleName,
@@ -4199,8 +4079,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeletePolicies(
 		context.Background(),
 		roleName,
@@ -4265,8 +4143,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteRole(
 		context.Background(),
 		roleName,
@@ -4331,8 +4207,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDAccessorDestroy(
 		context.Background(),
 		roleName,
@@ -4397,8 +4271,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -4463,8 +4335,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDDestroy(
 		context.Background(),
 		roleName,
@@ -4529,8 +4399,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDNumUses(
 		context.Background(),
 		roleName,
@@ -4595,8 +4463,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteSecretIDTTL(
 		context.Background(),
 		roleName,
@@ -4661,8 +4527,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -4727,8 +4591,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenMaxTTL(
 		context.Background(),
 		roleName,
@@ -4793,8 +4655,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenNumUses(
 		context.Background(),
 		roleName,
@@ -4859,8 +4719,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleDeleteTokenTTL(
 		context.Background(),
 		roleName,
@@ -4924,8 +4782,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AppRoleListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -4988,8 +4844,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleListSecretID(
 		context.Background(),
 		roleName,
@@ -5055,9 +4909,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAppRoleLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleLogin(
 		context.Background(),
 		request,
@@ -5121,8 +4973,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadBindSecretID(
 		context.Background(),
 		roleName,
@@ -5187,8 +5037,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadBoundCIDRList(
 		context.Background(),
 		roleName,
@@ -5253,8 +5101,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadLocalSecretIDs(
 		context.Background(),
 		roleName,
@@ -5319,8 +5165,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadPeriod(
 		context.Background(),
 		roleName,
@@ -5385,8 +5229,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadPolicies(
 		context.Background(),
 		roleName,
@@ -5451,8 +5293,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadRole(
 		context.Background(),
 		roleName,
@@ -5517,8 +5357,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadRoleID(
 		context.Background(),
 		roleName,
@@ -5583,8 +5421,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadSecretIDBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -5649,8 +5485,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadSecretIDNumUses(
 		context.Background(),
 		roleName,
@@ -5715,8 +5549,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadSecretIDTTL(
 		context.Background(),
 		roleName,
@@ -5781,8 +5613,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -5847,8 +5677,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenMaxTTL(
 		context.Background(),
 		roleName,
@@ -5913,8 +5741,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenNumUses(
 		context.Background(),
 		roleName,
@@ -5979,8 +5805,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
-
 	resp, err := client.Auth.AppRoleReadTokenTTL(
 		context.Background(),
 		roleName,
@@ -6044,8 +5868,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AppRoleTidySecretID(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -6108,9 +5930,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteBindSecretIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteBindSecretID(
 		context.Background(),
 		roleName,
@@ -6178,9 +5998,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteBoundCIDRListRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteBoundCIDRList(
 		context.Background(),
 		roleName,
@@ -6248,9 +6066,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteCustomSecretIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteCustomSecretID(
 		context.Background(),
 		roleName,
@@ -6318,9 +6134,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWritePeriodRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWritePeriod(
 		context.Background(),
 		roleName,
@@ -6388,9 +6202,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWritePoliciesRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWritePolicies(
 		context.Background(),
 		roleName,
@@ -6458,9 +6270,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteRole(
 		context.Background(),
 		roleName,
@@ -6528,9 +6338,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteRoleIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteRoleID(
 		context.Background(),
 		roleName,
@@ -6598,9 +6406,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretID(
 		context.Background(),
 		roleName,
@@ -6668,9 +6474,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDAccessorDestroyRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDAccessorDestroy(
 		context.Background(),
 		roleName,
@@ -6738,9 +6542,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDAccessorLookupRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDAccessorLookup(
 		context.Background(),
 		roleName,
@@ -6808,9 +6610,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -6878,9 +6678,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDDestroyRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDDestroy(
 		context.Background(),
 		roleName,
@@ -6948,9 +6746,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDLookupRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDLookup(
 		context.Background(),
 		roleName,
@@ -7018,9 +6814,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDNumUsesRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDNumUses(
 		context.Background(),
 		roleName,
@@ -7088,9 +6882,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteSecretIDTTLRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteSecretIDTTL(
 		context.Background(),
 		roleName,
@@ -7158,9 +6950,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteTokenBoundCIDRsRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenBoundCIDRs(
 		context.Background(),
 		roleName,
@@ -7228,9 +7018,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteTokenMaxTTLRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenMaxTTL(
 		context.Background(),
 		roleName,
@@ -7298,9 +7086,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteTokenNumUsesRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenNumUses(
 		context.Background(),
 		roleName,
@@ -7368,9 +7154,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role. Must be less than 4096 bytes.
-
 	request := schema.NewAppRoleWriteTokenTTLRequestWithDefaults()
-
 	resp, err := client.Auth.AppRoleWriteTokenTTL(
 		context.Background(),
 		roleName,
@@ -7436,8 +7220,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AzureDeleteAuthConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7499,8 +7281,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AzureDeleteAuthRole(
 		context.Background(),
 		name,
@@ -7564,8 +7344,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AzureListAuthRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7628,9 +7406,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAzureLoginRequestWithDefaults()
-
 	resp, err := client.Auth.AzureLogin(
 		context.Background(),
 		request,
@@ -7693,8 +7469,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.AzureReadAuthConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -7756,8 +7530,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.AzureReadAuthRole(
 		context.Background(),
 		name,
@@ -7822,9 +7594,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewAzureWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.AzureWriteAuthConfig(
 		context.Background(),
 		request,
@@ -7889,9 +7659,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewAzureWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.AzureWriteAuthRole(
 		context.Background(),
 		name,
@@ -7958,9 +7726,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewCentrifyLoginRequestWithDefaults()
-
 	resp, err := client.Auth.CentrifyLogin(
 		context.Background(),
 		request,
@@ -8023,8 +7789,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.CentrifyReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -8086,9 +7850,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewCentrifyWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.CentrifyWriteConfig(
 		context.Background(),
 		request,
@@ -8152,8 +7914,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesDelete(
 		context.Background(),
 		name,
@@ -8218,8 +7978,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesDeleteCRL(
 		context.Background(),
 		name,
@@ -8283,8 +8041,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.CertificatesList(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -8345,8 +8101,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.CertificatesListCRLs(
 		context.Background(),
@@ -8410,9 +8164,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewCertificatesLoginRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesLogin(
 		context.Background(),
 		request,
@@ -8476,8 +8228,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesRead(
 		context.Background(),
 		name,
@@ -8542,8 +8292,6 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
-
 	resp, err := client.Auth.CertificatesReadCRL(
 		context.Background(),
 		name,
@@ -8607,8 +8355,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.CertificatesReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -8671,9 +8417,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
 	request := schema.NewCertificatesWriteRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesWrite(
 		context.Background(),
 		name,
@@ -8741,9 +8485,7 @@ func main() {
 	}
 
 	name := "name_example" // string | The name of the certificate
-
 	request := schema.NewCertificatesWriteCRLRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesWriteCRL(
 		context.Background(),
 		name,
@@ -8810,9 +8552,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewCertificatesWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.CertificatesWriteConfig(
 		context.Background(),
 		request,
@@ -8875,8 +8615,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.CloudFoundryDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -8938,8 +8676,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-
-
 	resp, err := client.Auth.CloudFoundryDeleteRole(
 		context.Background(),
 		role,
@@ -9003,8 +8739,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.CloudFoundryListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9067,9 +8801,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewCloudFoundryLoginRequestWithDefaults()
-
 	resp, err := client.Auth.CloudFoundryLogin(
 		context.Background(),
 		request,
@@ -9132,8 +8864,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.CloudFoundryReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9195,8 +8925,6 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-
-
 	resp, err := client.Auth.CloudFoundryReadRole(
 		context.Background(),
 		role,
@@ -9261,9 +8989,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewCloudFoundryWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.CloudFoundryWriteConfig(
 		context.Background(),
 		request,
@@ -9328,9 +9054,7 @@ func main() {
 	}
 
 	role := "role_example" // string | The name of the role.
-
 	request := schema.NewCloudFoundryWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.CloudFoundryWriteRole(
 		context.Background(),
 		role,
@@ -9397,8 +9121,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-
-
 	resp, err := client.Auth.GitHubDeleteMapTeam(
 		context.Background(),
 		key,
@@ -9463,8 +9185,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-
-
 	resp, err := client.Auth.GitHubDeleteMapUser(
 		context.Background(),
 		key,
@@ -9529,9 +9249,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGitHubLoginRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubLogin(
 		context.Background(),
 		request,
@@ -9594,8 +9312,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.GitHubReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -9657,8 +9373,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-
-
 	resp, err := client.Auth.GitHubReadMapTeam(
 		context.Background(),
 		key,
@@ -9721,8 +9435,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Auth.GitHubReadMapTeams(
@@ -9788,8 +9500,6 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-
-
 	resp, err := client.Auth.GitHubReadMapUser(
 		context.Background(),
 		key,
@@ -9852,8 +9562,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Auth.GitHubReadMapUsers(
@@ -9919,9 +9627,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGitHubWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubWriteConfig(
 		context.Background(),
 		request,
@@ -9986,9 +9692,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the teams mapping
-
 	request := schema.NewGitHubWriteMapTeamRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubWriteMapTeam(
 		context.Background(),
 		key,
@@ -10056,9 +9760,7 @@ func main() {
 	}
 
 	key := "key_example" // string | Key for the users mapping
-
 	request := schema.NewGitHubWriteMapUserRequestWithDefaults()
-
 	resp, err := client.Auth.GitHubWriteMapUser(
 		context.Background(),
 		key,
@@ -10125,8 +9827,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.GoogleCloudDeleteRole(
 		context.Background(),
 		name,
@@ -10190,8 +9890,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.GoogleCloudListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -10252,8 +9950,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.GoogleCloudListRoles2(
 		context.Background(),
@@ -10317,9 +10013,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGoogleCloudLoginRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudLogin(
 		context.Background(),
 		request,
@@ -10382,8 +10076,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.GoogleCloudReadAuthConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -10445,8 +10137,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.GoogleCloudReadRole(
 		context.Background(),
 		name,
@@ -10511,9 +10201,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewGoogleCloudWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteAuthConfig(
 		context.Background(),
 		request,
@@ -10578,9 +10266,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewGoogleCloudWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteRole(
 		context.Background(),
 		name,
@@ -10648,9 +10334,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewGoogleCloudWriteRoleLabelsRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteRoleLabels(
 		context.Background(),
 		name,
@@ -10718,9 +10402,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewGoogleCloudWriteRoleServiceAccountsRequestWithDefaults()
-
 	resp, err := client.Auth.GoogleCloudWriteRoleServiceAccounts(
 		context.Background(),
 		name,
@@ -10787,8 +10469,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.JWTDeleteRole(
 		context.Background(),
 		name,
@@ -10854,8 +10534,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.JWTListRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -10918,9 +10596,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewJWTLoginRequestWithDefaults()
-
 	resp, err := client.Auth.JWTLogin(
 		context.Background(),
 		request,
@@ -10983,8 +10659,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.JWTReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -11044,8 +10718,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.JWTReadOIDCCallback(
 		context.Background(),
@@ -11108,8 +10780,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.JWTReadRole(
 		context.Background(),
 		name,
@@ -11176,9 +10846,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewJWTWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteConfig(
 		context.Background(),
 		request,
@@ -11242,9 +10910,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewJWTWriteOIDCAuthURLRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteOIDCAuthURL(
 		context.Background(),
 		request,
@@ -11308,9 +10974,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewJWTWriteOIDCCallbackRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteOIDCCallback(
 		context.Background(),
 		request,
@@ -11377,9 +11041,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewJWTWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.JWTWriteRole(
 		context.Background(),
 		name,
@@ -11446,8 +11108,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.KerberosDeleteGroup(
 		context.Background(),
 		name,
@@ -11511,8 +11171,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.KerberosListGroups(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -11575,9 +11233,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewKerberosLoginRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosLogin(
 		context.Background(),
 		request,
@@ -11640,8 +11296,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.KerberosReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -11703,8 +11357,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.KerberosReadGroup(
 		context.Background(),
 		name,
@@ -11768,8 +11420,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.KerberosReadLDAPConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -11831,9 +11481,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewKerberosWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosWriteConfig(
 		context.Background(),
 		request,
@@ -11898,9 +11546,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
 	request := schema.NewKerberosWriteGroupRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosWriteGroup(
 		context.Background(),
 		name,
@@ -11967,9 +11613,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewKerberosWriteLDAPConfigRequestWithDefaults()
-
 	resp, err := client.Auth.KerberosWriteLDAPConfig(
 		context.Background(),
 		request,
@@ -12033,8 +11677,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.KubernetesDeleteAuthRole(
 		context.Background(),
 		name,
@@ -12098,8 +11740,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.KubernetesListAuthRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -12162,9 +11802,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewKubernetesLoginRequestWithDefaults()
-
 	resp, err := client.Auth.KubernetesLogin(
 		context.Background(),
 		request,
@@ -12227,8 +11865,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.KubernetesReadAuthConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -12290,8 +11926,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.KubernetesReadAuthRole(
 		context.Background(),
 		name,
@@ -12356,9 +11990,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewKubernetesWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.KubernetesWriteAuthConfig(
 		context.Background(),
 		request,
@@ -12423,9 +12055,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewKubernetesWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.KubernetesWriteAuthRole(
 		context.Background(),
 		name,
@@ -12492,8 +12122,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.LDAPDeleteGroup(
 		context.Background(),
 		name,
@@ -12558,8 +12186,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-
-
 	resp, err := client.Auth.LDAPDeleteUser(
 		context.Background(),
 		name,
@@ -12623,8 +12249,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.LDAPListGroups(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -12685,8 +12309,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.LDAPListUsers(
 		context.Background(),
@@ -12751,9 +12373,7 @@ func main() {
 	}
 
 	username := "username_example" // string | DN (distinguished name) to be used for login.
-
 	request := schema.NewLDAPLoginRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPLogin(
 		context.Background(),
 		username,
@@ -12819,8 +12439,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.LDAPReadAuthConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -12882,8 +12500,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
-
 	resp, err := client.Auth.LDAPReadGroup(
 		context.Background(),
 		name,
@@ -12948,8 +12564,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-
-
 	resp, err := client.Auth.LDAPReadUser(
 		context.Background(),
 		name,
@@ -13014,9 +12628,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewLDAPWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPWriteAuthConfig(
 		context.Background(),
 		request,
@@ -13081,9 +12693,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP group.
-
 	request := schema.NewLDAPWriteGroupRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPWriteGroup(
 		context.Background(),
 		name,
@@ -13151,9 +12761,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the LDAP user.
-
 	request := schema.NewLDAPWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.LDAPWriteUser(
 		context.Background(),
 		name,
@@ -13219,8 +12827,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.OCIDeleteConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -13282,8 +12888,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OCIDeleteRole(
 		context.Background(),
 		role,
@@ -13346,8 +12950,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OCIListRoles(
 		context.Background(),
@@ -13412,9 +13014,7 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
 	request := schema.NewOCILoginWithRoleRequestWithDefaults()
-
 	resp, err := client.Auth.OCILoginWithRole(
 		context.Background(),
 		role,
@@ -13480,8 +13080,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.OCIReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -13543,8 +13141,6 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OCIReadRole(
 		context.Background(),
 		role,
@@ -13609,9 +13205,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOCIWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.OCIWriteConfig(
 		context.Background(),
 		request,
@@ -13676,9 +13270,7 @@ func main() {
 	}
 
 	role := "role_example" // string | Name of the role.
-
 	request := schema.NewOCIWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.OCIWriteRole(
 		context.Background(),
 		role,
@@ -13745,8 +13337,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OIDCDeleteAuthRole(
 		context.Background(),
 		name,
@@ -13812,8 +13402,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.OIDCListAuthRoles(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -13876,9 +13464,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOIDCLoginRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCLogin(
 		context.Background(),
 		request,
@@ -13941,8 +13527,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.OIDCReadAuthConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14004,8 +13588,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
-
 	resp, err := client.Auth.OIDCReadAuthRole(
 		context.Background(),
 		name,
@@ -14068,8 +13650,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OIDCReadCallback(
 		context.Background(),
@@ -14134,9 +13714,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOIDCWriteAuthConfigRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteAuthConfig(
 		context.Background(),
 		request,
@@ -14203,9 +13781,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the role.
-
 	request := schema.NewOIDCWriteAuthRoleRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteAuthRole(
 		context.Background(),
 		name,
@@ -14272,9 +13848,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOIDCWriteAuthURLRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteAuthURL(
 		context.Background(),
 		request,
@@ -14338,9 +13912,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOIDCWriteCallbackRequestWithDefaults()
-
 	resp, err := client.Auth.OIDCWriteCallback(
 		context.Background(),
 		request,
@@ -14404,8 +13976,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-
-
 	resp, err := client.Auth.OktaDeleteGroup(
 		context.Background(),
 		name,
@@ -14470,8 +14040,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-
-
 	resp, err := client.Auth.OktaDeleteUser(
 		context.Background(),
 		name,
@@ -14535,8 +14103,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.OktaListGroups(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14597,8 +14163,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.OktaListUsers(
 		context.Background(),
@@ -14663,9 +14227,7 @@ func main() {
 	}
 
 	username := "username_example" // string | Username to be used for login.
-
 	request := schema.NewOktaLoginRequestWithDefaults()
-
 	resp, err := client.Auth.OktaLogin(
 		context.Background(),
 		username,
@@ -14731,8 +14293,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.OktaReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -14794,8 +14354,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-
-
 	resp, err := client.Auth.OktaReadGroup(
 		context.Background(),
 		name,
@@ -14860,8 +14418,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-
-
 	resp, err := client.Auth.OktaReadUser(
 		context.Background(),
 		name,
@@ -14926,8 +14482,6 @@ func main() {
 	}
 
 	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-
-
 	resp, err := client.Auth.OktaVerify(
 		context.Background(),
 		nonce,
@@ -14992,9 +14546,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewOktaWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.OktaWriteConfig(
 		context.Background(),
 		request,
@@ -15059,9 +14611,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the Okta group.
-
 	request := schema.NewOktaWriteGroupRequestWithDefaults()
-
 	resp, err := client.Auth.OktaWriteGroup(
 		context.Background(),
 		name,
@@ -15129,9 +14679,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the user.
-
 	request := schema.NewOktaWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.OktaWriteUser(
 		context.Background(),
 		name,
@@ -15198,8 +14746,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-
-
 	resp, err := client.Auth.RadiusDeleteUser(
 		context.Background(),
 		name,
@@ -15263,8 +14809,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.RadiusListUsers(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15327,9 +14871,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewRadiusLoginRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusLogin(
 		context.Background(),
 		request,
@@ -15394,9 +14936,7 @@ func main() {
 	}
 
 	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-
 	request := schema.NewRadiusLoginWithUsernameRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusLoginWithUsername(
 		context.Background(),
 		urlusername,
@@ -15462,8 +15002,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.RadiusReadConfig(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15525,8 +15063,6 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-
-
 	resp, err := client.Auth.RadiusReadUser(
 		context.Background(),
 		name,
@@ -15591,9 +15127,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewRadiusWriteConfigRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusWriteConfig(
 		context.Background(),
 		request,
@@ -15658,9 +15192,7 @@ func main() {
 	}
 
 	name := "name_example" // string | Name of the RADIUS user.
-
 	request := schema.NewRadiusWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.RadiusWriteUser(
 		context.Background(),
 		name,
@@ -15727,8 +15259,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-
-
 	resp, err := client.Auth.TokenDeleteRole(
 		context.Background(),
 		roleName,
@@ -15792,8 +15322,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.TokenListAccessors(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15854,8 +15382,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenListRoles(
 		context.Background(),
@@ -15918,8 +15444,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.TokenReadLookup(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -15979,8 +15503,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenReadLookupSelf(
 		context.Background(),
@@ -16043,8 +15565,6 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-
-
 	resp, err := client.Auth.TokenReadRole(
 		context.Background(),
 		roleName,
@@ -16109,9 +15629,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenRenewRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRenew(
 		context.Background(),
 		request,
@@ -16175,9 +15693,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenRenewAccessorRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRenewAccessor(
 		context.Background(),
 		request,
@@ -16241,9 +15757,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenRenewSelfRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRenewSelf(
 		context.Background(),
 		request,
@@ -16307,9 +15821,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenRevokeRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRevoke(
 		context.Background(),
 		request,
@@ -16373,9 +15885,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenRevokeAccessorRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRevokeAccessor(
 		context.Background(),
 		request,
@@ -16439,9 +15949,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenRevokeOrphanRequestWithDefaults()
-
 	resp, err := client.Auth.TokenRevokeOrphan(
 		context.Background(),
 		request,
@@ -16504,8 +16012,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-
-
 	resp, err := client.Auth.TokenRevokeSelf(
 		context.Background(),
 		vault.WithToken("my-token"),
@@ -16565,8 +16071,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.TokenTidy(
 		context.Background(),
@@ -16629,9 +16133,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenWriteCreateRequestWithDefaults()
-
 	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenWriteCreate(
 		context.Background(),
@@ -16698,9 +16200,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenWriteCreateOrphanRequestWithDefaults()
-
 	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenWriteCreateOrphan(
 		context.Background(),
@@ -16768,9 +16268,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-
 	request := schema.NewTokenWriteCreateWithRoleRequestWithDefaults()
-
 	format := "format_example" // string | Return json formatted output
 	resp, err := client.Auth.TokenWriteCreateWithRole(
 		context.Background(),
@@ -16840,9 +16338,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenWriteLookupRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteLookup(
 		context.Background(),
 		request,
@@ -16906,9 +16402,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenWriteLookupAccessorRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteLookupAccessor(
 		context.Background(),
 		request,
@@ -16972,9 +16466,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-
 	request := schema.NewTokenWriteLookupSelfRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteLookupSelf(
 		context.Background(),
 		request,
@@ -17039,9 +16531,7 @@ func main() {
 	}
 
 	roleName := "roleName_example" // string | Name of the role
-
 	request := schema.NewTokenWriteRoleRequestWithDefaults()
-
 	resp, err := client.Auth.TokenWriteRole(
 		context.Background(),
 		roleName,
@@ -17108,8 +16598,6 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-
-
 	resp, err := client.Auth.UserpassDeleteUser(
 		context.Background(),
 		username,
@@ -17172,8 +16660,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-
 
 	resp, err := client.Auth.UserpassListUsers(
 		context.Background(),
@@ -17238,9 +16724,7 @@ func main() {
 	}
 
 	username := "username_example" // string | Username of the user.
-
 	request := schema.NewUserpassLoginRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassLogin(
 		context.Background(),
 		username,
@@ -17307,8 +16791,6 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-
-
 	resp, err := client.Auth.UserpassReadUser(
 		context.Background(),
 		username,
@@ -17374,9 +16856,7 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-
 	request := schema.NewUserpassWriteUserRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassWriteUser(
 		context.Background(),
 		username,
@@ -17444,9 +16924,7 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-
 	request := schema.NewUserpassWriteUserPasswordRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassWriteUserPassword(
 		context.Background(),
 		username,
@@ -17514,9 +16992,7 @@ func main() {
 	}
 
 	username := "username_example" // string | Username for this user.
-
 	request := schema.NewUserpassWriteUserPoliciesRequestWithDefaults()
-
 	resp, err := client.Auth.UserpassWriteUserPolicies(
 		context.Background(),
 		username,

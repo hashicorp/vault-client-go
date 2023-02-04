@@ -25,8 +25,7 @@ generate:
 				--template-dir     /local/$(GENERATE_TEMPLATES_PATH) \
 				--output           /local/$(OUTPUT_PATH)
 
-	mkdir -p schema/
-	mv model_*.go schema/
+	mkdir -p schema/ && mv model_*.go schema/
 
 format:
 	ls ${OUTPUT_PATH}/*.go | xargs gofumpt -l -w

@@ -1,10 +1,10 @@
-# {{classname}}{{#with description}}
+# {{cut classname "Api"}}{{#with description}}
 
 {{.}}{{/with}}
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-{{#with operations}}{{#each operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}}
+{{#with operations}}{{#each operation}}[**{{operationId}}**]({{cut classname "Api"}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}}
 {{/each}}{{/with}}
 
 {{#with operations}}
@@ -43,7 +43,7 @@ func main() {
 	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/with}}{{/if}}{{/each}}{{#each bodyParams}}
 	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#neq paramName "list"}}
 	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/neq}}{{/if}}{{/each}}
-	resp, err := client.{{classname}}.{{operationId}}(
+	resp, err := client.{{cut classname "Api"}}.{{operationId}}(
 		context.Background(),{{#each pathParams}}{{#with required}}
 		{{paramName}},{{/with}}{{/each}}{{#each bodyParams}}
 		request,{{/each}}{{#each queryParams}}{{#neq paramName "list"}}

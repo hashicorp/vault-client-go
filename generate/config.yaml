@@ -1,6 +1,4 @@
 additionalProperties:
   packageName: vault
   packageVersion: 0.1.0-beta
-files:
-  client.mustache:
-    destinationFilename: client.go
+

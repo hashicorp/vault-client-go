@@ -33,7 +33,7 @@ type Client struct {
 	replicationStates replicationStateCache
 
 	// generated request methods
-{{#with apiInfo}}{{#each apis}}{{#with operations}}	{{classname}} {{classname}}
+{{#with apiInfo}}{{#each apis}}{{#with operations}}	{{cut classname "Api"}} {{cut classname "Api"}}
 {{/with}}{{/each}}{{/with}}
 }
 
@@ -111,7 +111,7 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 {{#with apiInfo}}
 {{#each apis}}
 {{#with operations}}
-	c.{{classname}} = {{classname}}{
+	c.{{cut classname "Api"}} = {{cut classname "Api"}}{
 		client: &c,
 	}{{/with}}{{/each}}{{/with}}
 
@@ -158,7 +158,7 @@ func (c *Client) Clone() *Client {
 {{#with apiInfo}}
 {{#each apis}}
 {{#with operations}}
-	clone.{{classname}} = {{classname}} {
+	clone.{{cut classname "Api"}} = {{cut classname "Api"}} {
 		client: &clone,
 	}{{/with}}{{/each}}{{/with}}
 

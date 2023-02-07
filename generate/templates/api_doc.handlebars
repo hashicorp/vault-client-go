@@ -41,13 +41,13 @@ func main() {
 	}
 {{#each allParams}}{{#if isPathParam}}{{#with required}}
 	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/with}}{{/if}}{{/each}}{{#each bodyParams}}
-	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#unless required}}
-	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/unless}}{{/if}}{{/each}}
+	request := schema.New{{{dataType}}}WithDefaults(){{/each}}{{#each allParams}}{{#if isQueryParam}}{{#neq paramName "list"}}
+	{{paramName}} := {{{vendorExtensions.x-go-example}}} // {{{dataType}}} | {{{description}}}{{#with defaultValue}} (defaults to {{{.}}}){{/with}}{{/neq}}{{/if}}{{/each}}
 	resp, err := client.{{classname}}.{{operationId}}(
 		context.Background(),{{#each pathParams}}{{#with required}}
 		{{paramName}},{{/with}}{{/each}}{{#each bodyParams}}
-		request,{{/each}}{{#each queryParams}}{{#unless required}}
-		{{paramName}},{{/unless}}{{/each}}
+		request,{{/each}}{{#each queryParams}}{{#neq paramName "list"}}
+		{{paramName}},{{/neq}}{{/each}}
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

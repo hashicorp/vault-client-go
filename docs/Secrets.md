@@ -3939,11 +3939,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Specifies the path of the secret.
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.CubbyholeRead(
 		context.Background(),
 		path,
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7041,11 +7039,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv1Read(
 		context.Background(),
 		path,
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {
@@ -7560,11 +7556,9 @@ func main() {
 	}
 
 	path := "path_example" // string | Location of the secret.
-	list := "list_example" // string | Return a list if `true`
 	resp, err := client.Secrets.KVv2ReadMetadata(
 		context.Background(),
 		path,
-		list,
 		vault.WithToken("my-token"),
 	)
 	if err != nil {

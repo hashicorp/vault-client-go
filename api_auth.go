@@ -3494,8 +3494,7 @@ func (a *Auth) GitHubReadMapTeam(ctx context.Context, key string, options ...Req
 }
 
 // GitHubReadMapTeams Read mappings for teams
-// list: Return a list if &#x60;true&#x60;
-func (a *Auth) GitHubReadMapTeams(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubReadMapTeams(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3505,7 +3504,7 @@ func (a *Auth) GitHubReadMapTeams(ctx context.Context, list string, options ...R
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -3544,8 +3543,7 @@ func (a *Auth) GitHubReadMapUser(ctx context.Context, key string, options ...Req
 }
 
 // GitHubReadMapUsers Read mappings for users
-// list: Return a list if &#x60;true&#x60;
-func (a *Auth) GitHubReadMapUsers(ctx context.Context, list string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+func (a *Auth) GitHubReadMapUsers(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	requestModifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
 		return nil, err
@@ -3555,7 +3553,7 @@ func (a *Auth) GitHubReadMapUsers(ctx context.Context, list string, options ...R
 	requestPath = strings.Replace(requestPath, "{"+"github_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("github")), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("list", url.QueryEscape(list))
+	requestQueryParameters.Set("list", "true")
 
 	return sendRequestParseResponse[map[string]interface{}](
 		ctx,

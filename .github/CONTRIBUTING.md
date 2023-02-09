@@ -17,13 +17,6 @@ is via the [vault discussion forum][1].
 
 ## Issues
 
-This section will cover what we're looking for in terms of reporting issues.
-
-By addressing all the points we're looking for, it raises the chances we can
-quickly merge or address your contributions.
-
-### Reporting an issue
-
 - Make sure you test against the latest released version. It is possible we
   already fixed the bug you're experiencing. Even better is if you can test
   against the `main` branch, as the bugs are regularly fixed but new versions

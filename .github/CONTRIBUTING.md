@@ -22,7 +22,7 @@ This section will cover what we're looking for in terms of reporting issues.
 By addressing all the points we're looking for, it raises the chances we can
 quickly merge or address your contributions.
 
-### Reporting an Issue
+### Reporting an issue
 
 - Make sure you test against the latest released version. It is possible we
   already fixed the bug you're experiencing. Even better is if you can test

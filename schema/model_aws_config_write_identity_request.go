@@ -37,5 +37,12 @@ func NewAWSConfigWriteIdentityRequestWithDefaults() *AWSConfigWriteIdentityReque
 }
 
 func (o AWSConfigWriteIdentityRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["ec2_alias"] = o.Ec2Alias
+	toSerialize["ec2_metadata"] = o.Ec2Metadata
+	toSerialize["iam_alias"] = o.IamAlias
+	toSerialize["iam_metadata"] = o.IamMetadata
+
+	return json.Marshal(toSerialize)
 }

@@ -53,5 +53,17 @@ func NewPkiWriteIssuerRefDerPemRequestWithDefaults() *PkiWriteIssuerRefDerPemReq
 }
 
 func (o PkiWriteIssuerRefDerPemRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["crl_distribution_points"] = o.CrlDistributionPoints
+	toSerialize["enable_aia_url_templating"] = o.EnableAiaUrlTemplating
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["issuing_certificates"] = o.IssuingCertificates
+	toSerialize["leaf_not_after_behavior"] = o.LeafNotAfterBehavior
+	toSerialize["manual_chain"] = o.ManualChain
+	toSerialize["ocsp_servers"] = o.OcspServers
+	toSerialize["revocation_signature_algorithm"] = o.RevocationSignatureAlgorithm
+	toSerialize["usage"] = o.Usage
+
+	return json.Marshal(toSerialize)
 }

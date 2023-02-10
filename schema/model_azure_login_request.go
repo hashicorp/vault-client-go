@@ -40,5 +40,14 @@ func NewAzureLoginRequestWithDefaults() *AzureLoginRequest {
 }
 
 func (o AzureLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["jwt"] = o.Jwt
+	toSerialize["resource_group_name"] = o.ResourceGroupName
+	toSerialize["role"] = o.Role
+	toSerialize["subscription_id"] = o.SubscriptionId
+	toSerialize["vm_name"] = o.VmName
+	toSerialize["vmss_name"] = o.VmssName
+
+	return json.Marshal(toSerialize)
 }

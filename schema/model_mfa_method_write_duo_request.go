@@ -43,5 +43,15 @@ func NewMFAMethodWriteDuoRequestWithDefaults() *MFAMethodWriteDuoRequest {
 }
 
 func (o MFAMethodWriteDuoRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["api_hostname"] = o.ApiHostname
+	toSerialize["integration_key"] = o.IntegrationKey
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["push_info"] = o.PushInfo
+	toSerialize["secret_key"] = o.SecretKey
+	toSerialize["use_passcode"] = o.UsePasscode
+	toSerialize["username_format"] = o.UsernameFormat
+
+	return json.Marshal(toSerialize)
 }

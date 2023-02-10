@@ -34,5 +34,12 @@ func NewOIDCWriteRoleRequestWithDefaults() *OIDCWriteRoleRequest {
 }
 
 func (o OIDCWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["key"] = o.Key
+	toSerialize["template"] = o.Template
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

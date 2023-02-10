@@ -28,5 +28,10 @@ func NewGoogleCloudWriteRoleLabelsRequestWithDefaults() *GoogleCloudWriteRoleLab
 }
 
 func (o GoogleCloudWriteRoleLabelsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["add"] = o.Add
+	toSerialize["remove"] = o.Remove
+
+	return json.Marshal(toSerialize)
 }

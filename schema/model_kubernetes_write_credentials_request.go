@@ -31,5 +31,11 @@ func NewKubernetesWriteCredentialsRequestWithDefaults() *KubernetesWriteCredenti
 }
 
 func (o KubernetesWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cluster_role_binding"] = o.ClusterRoleBinding
+	toSerialize["kubernetes_namespace"] = o.KubernetesNamespace
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

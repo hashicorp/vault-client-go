@@ -48,5 +48,16 @@ func NewTransitEncryptRequestWithDefaults() *TransitEncryptRequest {
 }
 
 func (o TransitEncryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["associated_data"] = o.AssociatedData
+	toSerialize["context"] = o.Context
+	toSerialize["convergent_encryption"] = o.ConvergentEncryption
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["partial_failure_response_code"] = o.PartialFailureResponseCode
+	toSerialize["plaintext"] = o.Plaintext
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

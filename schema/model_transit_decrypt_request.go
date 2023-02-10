@@ -37,5 +37,13 @@ func NewTransitDecryptRequestWithDefaults() *TransitDecryptRequest {
 }
 
 func (o TransitDecryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["associated_data"] = o.AssociatedData
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["context"] = o.Context
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["partial_failure_response_code"] = o.PartialFailureResponseCode
+
+	return json.Marshal(toSerialize)
 }

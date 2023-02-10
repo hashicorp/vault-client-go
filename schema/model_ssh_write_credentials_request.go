@@ -28,5 +28,10 @@ func NewSSHWriteCredentialsRequestWithDefaults() *SSHWriteCredentialsRequest {
 }
 
 func (o SSHWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["ip"] = o.Ip
+	toSerialize["username"] = o.Username
+
+	return json.Marshal(toSerialize)
 }

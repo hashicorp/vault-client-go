@@ -37,5 +37,13 @@ func NewEntityWriteAliasByIDRequestWithDefaults() *EntityWriteAliasByIDRequest {
 }
 
 func (o EntityWriteAliasByIDRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["custom_metadata"] = o.CustomMetadata
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
+	return json.Marshal(toSerialize)
 }

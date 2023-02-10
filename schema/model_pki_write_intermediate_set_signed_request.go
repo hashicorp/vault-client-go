@@ -25,5 +25,9 @@ func NewPKIWriteIntermediateSetSignedRequestWithDefaults() *PKIWriteIntermediate
 }
 
 func (o PKIWriteIntermediateSetSignedRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["certificate"] = o.Certificate
+
+	return json.Marshal(toSerialize)
 }

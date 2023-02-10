@@ -28,5 +28,10 @@ func NewAliCloudWriteConfigRequestWithDefaults() *AliCloudWriteConfigRequest {
 }
 
 func (o AliCloudWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["access_key"] = o.AccessKey
+	toSerialize["secret_key"] = o.SecretKey
+
+	return json.Marshal(toSerialize)
 }

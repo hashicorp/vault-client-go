@@ -25,5 +25,9 @@ func NewTransitWriteConfigKeysRequestWithDefaults() *TransitWriteConfigKeysReque
 }
 
 func (o TransitWriteConfigKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["disable_upsert"] = o.DisableUpsert
+
+	return json.Marshal(toSerialize)
 }

@@ -25,5 +25,9 @@ func NewOIDCWriteConfigRequestWithDefaults() *OIDCWriteConfigRequest {
 }
 
 func (o OIDCWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["issuer"] = o.Issuer
+
+	return json.Marshal(toSerialize)
 }

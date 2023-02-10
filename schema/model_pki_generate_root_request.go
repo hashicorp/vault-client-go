@@ -123,5 +123,38 @@ func NewPKIGenerateRootRequestWithDefaults() *PKIGenerateRootRequest {
 }
 
 func (o PKIGenerateRootRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_ref"] = o.KeyRef
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["locality"] = o.Locality
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+	toSerialize["max_path_length"] = o.MaxPathLength
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["signature_bits"] = o.SignatureBits
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+	toSerialize["use_pss"] = o.UsePss
+
+	return json.Marshal(toSerialize)
 }

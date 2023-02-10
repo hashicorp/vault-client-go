@@ -36,5 +36,12 @@ func NewOIDCWriteKeyRequestWithDefaults() *OIDCWriteKeyRequest {
 }
 
 func (o OIDCWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["allowed_client_ids"] = o.AllowedClientIds
+	toSerialize["rotation_period"] = o.RotationPeriod
+	toSerialize["verification_ttl"] = o.VerificationTtl
+
+	return json.Marshal(toSerialize)
 }

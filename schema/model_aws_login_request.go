@@ -49,5 +49,17 @@ func NewAWSLoginRequestWithDefaults() *AWSLoginRequest {
 }
 
 func (o AWSLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["iam_http_request_method"] = o.IamHttpRequestMethod
+	toSerialize["iam_request_body"] = o.IamRequestBody
+	toSerialize["iam_request_headers"] = o.IamRequestHeaders
+	toSerialize["iam_request_url"] = o.IamRequestUrl
+	toSerialize["identity"] = o.Identity
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["pkcs7"] = o.Pkcs7
+	toSerialize["role"] = o.Role
+	toSerialize["signature"] = o.Signature
+
+	return json.Marshal(toSerialize)
 }

@@ -28,5 +28,10 @@ func NewMongoDBAtlasWriteConfigRequestWithDefaults() *MongoDBAtlasWriteConfigReq
 }
 
 func (o MongoDBAtlasWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["private_key"] = o.PrivateKey
+	toSerialize["public_key"] = o.PublicKey
+
+	return json.Marshal(toSerialize)
 }

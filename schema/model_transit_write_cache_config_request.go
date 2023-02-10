@@ -27,5 +27,9 @@ func NewTransitWriteCacheConfigRequestWithDefaults() *TransitWriteCacheConfigReq
 }
 
 func (o TransitWriteCacheConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["size"] = o.Size
+
+	return json.Marshal(toSerialize)
 }

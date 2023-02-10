@@ -35,5 +35,11 @@ func NewCertificatesWriteConfigRequestWithDefaults() *CertificatesWriteConfigReq
 }
 
 func (o CertificatesWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["disable_binding"] = o.DisableBinding
+	toSerialize["enable_identity_alias_metadata"] = o.EnableIdentityAliasMetadata
+	toSerialize["ocsp_cache_size"] = o.OcspCacheSize
+
+	return json.Marshal(toSerialize)
 }

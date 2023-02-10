@@ -28,5 +28,10 @@ func NewOIDCIntrospectRequestWithDefaults() *OIDCIntrospectRequest {
 }
 
 func (o OIDCIntrospectRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["token"] = o.Token
+
+	return json.Marshal(toSerialize)
 }

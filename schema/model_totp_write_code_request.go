@@ -25,5 +25,9 @@ func NewTOTPWriteCodeRequestWithDefaults() *TOTPWriteCodeRequest {
 }
 
 func (o TOTPWriteCodeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["code"] = o.Code
+
+	return json.Marshal(toSerialize)
 }

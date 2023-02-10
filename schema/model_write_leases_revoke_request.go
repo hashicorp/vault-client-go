@@ -33,5 +33,11 @@ func NewWriteLeasesRevokeRequestWithDefaults() *WriteLeasesRevokeRequest {
 }
 
 func (o WriteLeasesRevokeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["lease_id"] = o.LeaseId
+	toSerialize["sync"] = o.Sync
+	toSerialize["url_lease_id"] = o.UrlLeaseId
+
+	return json.Marshal(toSerialize)
 }

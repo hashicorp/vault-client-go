@@ -25,5 +25,9 @@ func NewKerberosWriteGroupRequestWithDefaults() *KerberosWriteGroupRequest {
 }
 
 func (o KerberosWriteGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["policies"] = o.Policies
+
+	return json.Marshal(toSerialize)
 }

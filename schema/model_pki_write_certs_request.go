@@ -25,5 +25,9 @@ func NewPKIWriteCertsRequestWithDefaults() *PKIWriteCertsRequest {
 }
 
 func (o PKIWriteCertsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["pem_bundle"] = o.PemBundle
+
+	return json.Marshal(toSerialize)
 }

@@ -30,5 +30,10 @@ func NewPKIWriteIssuersConfigRequestWithDefaults() *PKIWriteIssuersConfigRequest
 }
 
 func (o PKIWriteIssuersConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["default"] = o.Default
+	toSerialize["default_follows_latest_issuer"] = o.DefaultFollowsLatestIssuer
+
+	return json.Marshal(toSerialize)
 }

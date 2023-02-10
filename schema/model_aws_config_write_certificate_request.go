@@ -30,5 +30,10 @@ func NewAWSConfigWriteCertificateRequestWithDefaults() *AWSConfigWriteCertificat
 }
 
 func (o AWSConfigWriteCertificateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["aws_public_cert"] = o.AwsPublicCert
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

@@ -43,5 +43,14 @@ func NewOIDCWriteClientRequestWithDefaults() *OIDCWriteClientRequest {
 }
 
 func (o OIDCWriteClientRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["access_token_ttl"] = o.AccessTokenTtl
+	toSerialize["assignments"] = o.Assignments
+	toSerialize["client_type"] = o.ClientType
+	toSerialize["id_token_ttl"] = o.IdTokenTtl
+	toSerialize["key"] = o.Key
+	toSerialize["redirect_uris"] = o.RedirectUris
+
+	return json.Marshal(toSerialize)
 }

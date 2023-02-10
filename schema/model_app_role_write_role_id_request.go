@@ -25,5 +25,9 @@ func NewAppRoleWriteRoleIDRequestWithDefaults() *AppRoleWriteRoleIDRequest {
 }
 
 func (o AppRoleWriteRoleIDRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["role_id"] = o.RoleId
+
+	return json.Marshal(toSerialize)
 }

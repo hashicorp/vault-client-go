@@ -28,5 +28,10 @@ func NewRadiusLoginWithUsernameRequestWithDefaults() *RadiusLoginWithUsernameReq
 }
 
 func (o RadiusLoginWithUsernameRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["password"] = o.Password
+	toSerialize["username"] = o.Username
+
+	return json.Marshal(toSerialize)
 }

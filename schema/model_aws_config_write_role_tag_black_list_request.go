@@ -31,5 +31,10 @@ func NewAWSConfigWriteRoleTagBlackListRequestWithDefaults() *AWSConfigWriteRoleT
 }
 
 func (o AWSConfigWriteRoleTagBlackListRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
+	return json.Marshal(toSerialize)
 }

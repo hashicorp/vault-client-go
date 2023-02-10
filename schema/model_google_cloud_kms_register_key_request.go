@@ -30,5 +30,10 @@ func NewGoogleCloudKMSRegisterKeyRequestWithDefaults() *GoogleCloudKMSRegisterKe
 }
 
 func (o GoogleCloudKMSRegisterKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["crypto_key"] = o.CryptoKey
+	toSerialize["verify"] = o.Verify
+
+	return json.Marshal(toSerialize)
 }

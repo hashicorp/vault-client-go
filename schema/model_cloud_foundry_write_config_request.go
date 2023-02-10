@@ -74,5 +74,23 @@ func NewCloudFoundryWriteConfigRequestWithDefaults() *CloudFoundryWriteConfigReq
 }
 
 func (o CloudFoundryWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cf_api_addr"] = o.CfApiAddr
+	toSerialize["cf_api_mutual_tls_certificate"] = o.CfApiMutualTlsCertificate
+	toSerialize["cf_api_mutual_tls_key"] = o.CfApiMutualTlsKey
+	toSerialize["cf_api_trusted_certificates"] = o.CfApiTrustedCertificates
+	toSerialize["cf_client_id"] = o.CfClientId
+	toSerialize["cf_client_secret"] = o.CfClientSecret
+	toSerialize["cf_password"] = o.CfPassword
+	toSerialize["cf_username"] = o.CfUsername
+	toSerialize["identity_ca_certificates"] = o.IdentityCaCertificates
+	toSerialize["login_max_seconds_not_after"] = o.LoginMaxSecondsNotAfter
+	toSerialize["login_max_seconds_not_before"] = o.LoginMaxSecondsNotBefore
+	toSerialize["pcf_api_addr"] = o.PcfApiAddr
+	toSerialize["pcf_api_trusted_certificates"] = o.PcfApiTrustedCertificates
+	toSerialize["pcf_password"] = o.PcfPassword
+	toSerialize["pcf_username"] = o.PcfUsername
+
+	return json.Marshal(toSerialize)
 }

@@ -25,5 +25,9 @@ func NewPKIWriteKeysConfigRequestWithDefaults() *PKIWriteKeysConfigRequest {
 }
 
 func (o PKIWriteKeysConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["default"] = o.Default
+
+	return json.Marshal(toSerialize)
 }

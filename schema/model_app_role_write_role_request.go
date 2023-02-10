@@ -82,5 +82,26 @@ func NewAppRoleWriteRoleRequestWithDefaults() *AppRoleWriteRoleRequest {
 }
 
 func (o AppRoleWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bind_secret_id"] = o.BindSecretId
+	toSerialize["bound_cidr_list"] = o.BoundCidrList
+	toSerialize["local_secret_ids"] = o.LocalSecretIds
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["role_id"] = o.RoleId
+	toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
+	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
+	toSerialize["secret_id_ttl"] = o.SecretIdTtl
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+
+	return json.Marshal(toSerialize)
 }

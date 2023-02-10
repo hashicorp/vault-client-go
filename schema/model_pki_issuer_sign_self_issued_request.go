@@ -30,5 +30,10 @@ func NewPKIIssuerSignSelfIssuedRequestWithDefaults() *PKIIssuerSignSelfIssuedReq
 }
 
 func (o PKIIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
+
+	return json.Marshal(toSerialize)
 }

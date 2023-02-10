@@ -28,5 +28,10 @@ func NewGoogleCloudKMSSignRequestWithDefaults() *GoogleCloudKMSSignRequest {
 }
 
 func (o GoogleCloudKMSSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["digest"] = o.Digest
+	toSerialize["key_version"] = o.KeyVersion
+
+	return json.Marshal(toSerialize)
 }

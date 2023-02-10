@@ -28,5 +28,10 @@ func NewPKIImportKeysRequestWithDefaults() *PKIImportKeysRequest {
 }
 
 func (o PKIImportKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["pem_bundle"] = o.PemBundle
+
+	return json.Marshal(toSerialize)
 }

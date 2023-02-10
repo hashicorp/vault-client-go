@@ -57,5 +57,18 @@ func NewPKIWriteAutoTidyConfigRequestWithDefaults() *PKIWriteAutoTidyConfigReque
 }
 
 func (o PKIWriteAutoTidyConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["interval_duration"] = o.IntervalDuration
+	toSerialize["issuer_safety_buffer"] = o.IssuerSafetyBuffer
+	toSerialize["pause_duration"] = o.PauseDuration
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+	toSerialize["tidy_cert_store"] = o.TidyCertStore
+	toSerialize["tidy_expired_issuers"] = o.TidyExpiredIssuers
+	toSerialize["tidy_revocation_list"] = o.TidyRevocationList
+	toSerialize["tidy_revoked_cert_issuer_associations"] = o.TidyRevokedCertIssuerAssociations
+	toSerialize["tidy_revoked_certs"] = o.TidyRevokedCerts
+
+	return json.Marshal(toSerialize)
 }

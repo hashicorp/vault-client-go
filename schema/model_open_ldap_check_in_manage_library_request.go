@@ -25,5 +25,9 @@ func NewOpenLDAPCheckInManageLibraryRequestWithDefaults() *OpenLDAPCheckInManage
 }
 
 func (o OpenLDAPCheckInManageLibraryRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["service_account_names"] = o.ServiceAccountNames
+
+	return json.Marshal(toSerialize)
 }

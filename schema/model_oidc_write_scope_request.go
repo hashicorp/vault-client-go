@@ -28,5 +28,10 @@ func NewOIDCWriteScopeRequestWithDefaults() *OIDCWriteScopeRequest {
 }
 
 func (o OIDCWriteScopeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["description"] = o.Description
+	toSerialize["template"] = o.Template
+
+	return json.Marshal(toSerialize)
 }

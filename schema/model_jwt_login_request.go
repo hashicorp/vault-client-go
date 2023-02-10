@@ -28,5 +28,10 @@ func NewJWTLoginRequestWithDefaults() *JWTLoginRequest {
 }
 
 func (o JWTLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["jwt"] = o.Jwt
+	toSerialize["role"] = o.Role
+
+	return json.Marshal(toSerialize)
 }

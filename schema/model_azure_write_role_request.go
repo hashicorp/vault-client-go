@@ -42,5 +42,14 @@ func NewAzureWriteRoleRequestWithDefaults() *AzureWriteRoleRequest {
 }
 
 func (o AzureWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["application_object_id"] = o.ApplicationObjectId
+	toSerialize["azure_groups"] = o.AzureGroups
+	toSerialize["azure_roles"] = o.AzureRoles
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["permanently_delete"] = o.PermanentlyDelete
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

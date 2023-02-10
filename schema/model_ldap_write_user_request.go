@@ -28,5 +28,10 @@ func NewLDAPWriteUserRequestWithDefaults() *LDAPWriteUserRequest {
 }
 
 func (o LDAPWriteUserRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["groups"] = o.Groups
+	toSerialize["policies"] = o.Policies
+
+	return json.Marshal(toSerialize)
 }

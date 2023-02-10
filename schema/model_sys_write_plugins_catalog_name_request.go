@@ -40,5 +40,14 @@ func NewSysWritePluginsCatalogNameRequestWithDefaults() *SysWritePluginsCatalogN
 }
 
 func (o SysWritePluginsCatalogNameRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["args"] = o.Args
+	toSerialize["command"] = o.Command
+	toSerialize["env"] = o.Env
+	toSerialize["sha256"] = o.Sha256
+	toSerialize["type"] = o.Type
+	toSerialize["version"] = o.Version
+
+	return json.Marshal(toSerialize)
 }

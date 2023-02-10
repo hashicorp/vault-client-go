@@ -31,5 +31,11 @@ func NewKVv2WriteRequestWithDefaults() *KVv2WriteRequest {
 }
 
 func (o KVv2WriteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["data"] = o.Data
+	toSerialize["options"] = o.Options
+	toSerialize["version"] = o.Version
+
+	return json.Marshal(toSerialize)
 }

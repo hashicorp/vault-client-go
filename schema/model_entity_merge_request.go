@@ -34,5 +34,12 @@ func NewEntityMergeRequestWithDefaults() *EntityMergeRequest {
 }
 
 func (o EntityMergeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["conflicting_alias_ids_to_keep"] = o.ConflictingAliasIdsToKeep
+	toSerialize["force"] = o.Force
+	toSerialize["from_entity_ids"] = o.FromEntityIds
+	toSerialize["to_entity_id"] = o.ToEntityId
+
+	return json.Marshal(toSerialize)
 }

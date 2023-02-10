@@ -51,5 +51,17 @@ func NewOIDCWriteProviderAuthorizeRequestWithDefaults() *OIDCWriteProviderAuthor
 }
 
 func (o OIDCWriteProviderAuthorizeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["code_challenge"] = o.CodeChallenge
+	toSerialize["code_challenge_method"] = o.CodeChallengeMethod
+	toSerialize["max_age"] = o.MaxAge
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["redirect_uri"] = o.RedirectUri
+	toSerialize["response_type"] = o.ResponseType
+	toSerialize["scope"] = o.Scope
+	toSerialize["state"] = o.State
+
+	return json.Marshal(toSerialize)
 }

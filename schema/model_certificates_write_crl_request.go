@@ -28,5 +28,10 @@ func NewCertificatesWriteCRLRequestWithDefaults() *CertificatesWriteCRLRequest {
 }
 
 func (o CertificatesWriteCRLRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["crl"] = o.Crl
+	toSerialize["url"] = o.Url
+
+	return json.Marshal(toSerialize)
 }

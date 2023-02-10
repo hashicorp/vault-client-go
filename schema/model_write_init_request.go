@@ -46,5 +46,16 @@ func NewWriteInitRequestWithDefaults() *WriteInitRequest {
 }
 
 func (o WriteInitRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["pgp_keys"] = o.PgpKeys
+	toSerialize["recovery_pgp_keys"] = o.RecoveryPgpKeys
+	toSerialize["recovery_shares"] = o.RecoveryShares
+	toSerialize["recovery_threshold"] = o.RecoveryThreshold
+	toSerialize["root_token_pgp_key"] = o.RootTokenPgpKey
+	toSerialize["secret_shares"] = o.SecretShares
+	toSerialize["secret_threshold"] = o.SecretThreshold
+	toSerialize["stored_shares"] = o.StoredShares
+
+	return json.Marshal(toSerialize)
 }

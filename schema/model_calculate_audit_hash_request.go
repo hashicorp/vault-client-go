@@ -24,5 +24,9 @@ func NewCalculateAuditHashRequestWithDefaults() *CalculateAuditHashRequest {
 }
 
 func (o CalculateAuditHashRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["input"] = o.Input
+
+	return json.Marshal(toSerialize)
 }

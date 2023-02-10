@@ -34,5 +34,11 @@ func NewTransitHashWithAlgorithmRequestWithDefaults() *TransitHashWithAlgorithmR
 }
 
 func (o TransitHashWithAlgorithmRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["format"] = o.Format
+	toSerialize["input"] = o.Input
+
+	return json.Marshal(toSerialize)
 }

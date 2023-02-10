@@ -25,5 +25,9 @@ func NewAppRoleWriteTokenMaxTTLRequestWithDefaults() *AppRoleWriteTokenMaxTTLReq
 }
 
 func (o AppRoleWriteTokenMaxTTLRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+
+	return json.Marshal(toSerialize)
 }

@@ -33,5 +33,11 @@ func NewNomadWriteRoleRequestWithDefaults() *NomadWriteRoleRequest {
 }
 
 func (o NomadWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["global"] = o.Global
+	toSerialize["policies"] = o.Policies
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

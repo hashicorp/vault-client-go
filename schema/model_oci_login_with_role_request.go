@@ -25,5 +25,9 @@ func NewOCILoginWithRoleRequestWithDefaults() *OCILoginWithRoleRequest {
 }
 
 func (o OCILoginWithRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["request_headers"] = o.RequestHeaders
+
+	return json.Marshal(toSerialize)
 }

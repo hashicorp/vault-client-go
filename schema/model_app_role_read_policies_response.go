@@ -29,5 +29,10 @@ func NewAppRoleReadPoliciesResponseWithDefaults() *AppRoleReadPoliciesResponse {
 }
 
 func (o AppRoleReadPoliciesResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_policies"] = o.TokenPolicies
+
+	return json.Marshal(toSerialize)
 }

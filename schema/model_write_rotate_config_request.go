@@ -31,5 +31,11 @@ func NewWriteRotateConfigRequestWithDefaults() *WriteRotateConfigRequest {
 }
 
 func (o WriteRotateConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["interval"] = o.Interval
+	toSerialize["max_operations"] = o.MaxOperations
+
+	return json.Marshal(toSerialize)
 }

@@ -30,5 +30,11 @@ func NewWritePluginsReloadBackendRequestWithDefaults() *WritePluginsReloadBacken
 }
 
 func (o WritePluginsReloadBackendRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["mounts"] = o.Mounts
+	toSerialize["plugin"] = o.Plugin
+	toSerialize["scope"] = o.Scope
+
+	return json.Marshal(toSerialize)
 }

@@ -37,5 +37,13 @@ func NewTerraformWriteRoleRequestWithDefaults() *TerraformWriteRoleRequest {
 }
 
 func (o TerraformWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["organization"] = o.Organization
+	toSerialize["team_id"] = o.TeamId
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["user_id"] = o.UserId
+
+	return json.Marshal(toSerialize)
 }

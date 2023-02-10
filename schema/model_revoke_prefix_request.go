@@ -27,5 +27,9 @@ func NewRevokePrefixRequestWithDefaults() *RevokePrefixRequest {
 }
 
 func (o RevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["sync"] = o.Sync
+
+	return json.Marshal(toSerialize)
 }

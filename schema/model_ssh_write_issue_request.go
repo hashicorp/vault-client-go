@@ -50,5 +50,16 @@ func NewSSHWriteIssueRequestWithDefaults() *SSHWriteIssueRequest {
 }
 
 func (o SSHWriteIssueRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cert_type"] = o.CertType
+	toSerialize["critical_options"] = o.CriticalOptions
+	toSerialize["extensions"] = o.Extensions
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_id"] = o.KeyId
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["valid_principals"] = o.ValidPrincipals
+
+	return json.Marshal(toSerialize)
 }

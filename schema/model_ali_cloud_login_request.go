@@ -31,5 +31,11 @@ func NewAliCloudLoginRequestWithDefaults() *AliCloudLoginRequest {
 }
 
 func (o AliCloudLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["identity_request_headers"] = o.IdentityRequestHeaders
+	toSerialize["identity_request_url"] = o.IdentityRequestUrl
+	toSerialize["role"] = o.Role
+
+	return json.Marshal(toSerialize)
 }

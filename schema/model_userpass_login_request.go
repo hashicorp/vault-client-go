@@ -25,5 +25,9 @@ func NewUserpassLoginRequestWithDefaults() *UserpassLoginRequest {
 }
 
 func (o UserpassLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["password"] = o.Password
+
+	return json.Marshal(toSerialize)
 }

@@ -48,5 +48,15 @@ func NewKubernetesWriteAuthConfigRequestWithDefaults() *KubernetesWriteAuthConfi
 }
 
 func (o KubernetesWriteAuthConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["disable_iss_validation"] = o.DisableIssValidation
+	toSerialize["disable_local_ca_jwt"] = o.DisableLocalCaJwt
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["kubernetes_ca_cert"] = o.KubernetesCaCert
+	toSerialize["kubernetes_host"] = o.KubernetesHost
+	toSerialize["pem_keys"] = o.PemKeys
+	toSerialize["token_reviewer_jwt"] = o.TokenReviewerJwt
+
+	return json.Marshal(toSerialize)
 }

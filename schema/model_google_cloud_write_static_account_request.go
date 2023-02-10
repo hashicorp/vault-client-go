@@ -36,5 +36,12 @@ func NewGoogleCloudWriteStaticAccountRequestWithDefaults() *GoogleCloudWriteStat
 }
 
 func (o GoogleCloudWriteStaticAccountRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bindings"] = o.Bindings
+	toSerialize["secret_type"] = o.SecretType
+	toSerialize["service_account_email"] = o.ServiceAccountEmail
+	toSerialize["token_scopes"] = o.TokenScopes
+
+	return json.Marshal(toSerialize)
 }

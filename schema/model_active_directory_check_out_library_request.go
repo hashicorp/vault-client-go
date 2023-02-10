@@ -25,5 +25,9 @@ func NewActiveDirectoryCheckOutLibraryRequestWithDefaults() *ActiveDirectoryChec
 }
 
 func (o ActiveDirectoryCheckOutLibraryRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

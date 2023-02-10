@@ -33,5 +33,11 @@ func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
 }
 
 func (o CentrifyLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["mode"] = o.Mode
+	toSerialize["password"] = o.Password
+	toSerialize["username"] = o.Username
+
+	return json.Marshal(toSerialize)
 }

@@ -42,5 +42,14 @@ func NewRabbitMQWriteConnectionConfigRequestWithDefaults() *RabbitMQWriteConnect
 }
 
 func (o RabbitMQWriteConnectionConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["connection_uri"] = o.ConnectionUri
+	toSerialize["password"] = o.Password
+	toSerialize["password_policy"] = o.PasswordPolicy
+	toSerialize["username"] = o.Username
+	toSerialize["username_template"] = o.UsernameTemplate
+	toSerialize["verify_connection"] = o.VerifyConnection
+
+	return json.Marshal(toSerialize)
 }

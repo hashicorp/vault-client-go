@@ -31,5 +31,11 @@ func NewWriteConfigCORSRequestWithDefaults() *WriteConfigCORSRequest {
 }
 
 func (o WriteConfigCORSRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allowed_headers"] = o.AllowedHeaders
+	toSerialize["allowed_origins"] = o.AllowedOrigins
+	toSerialize["enable"] = o.Enable
+
+	return json.Marshal(toSerialize)
 }

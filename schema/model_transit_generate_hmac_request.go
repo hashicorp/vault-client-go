@@ -36,5 +36,12 @@ func NewTransitGenerateHMACRequestWithDefaults() *TransitGenerateHMACRequest {
 }
 
 func (o TransitGenerateHMACRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["input"] = o.Input
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["urlalgorithm"] = o.Urlalgorithm
+
+	return json.Marshal(toSerialize)
 }

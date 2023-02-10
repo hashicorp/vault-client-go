@@ -40,5 +40,14 @@ func NewAppRoleWriteCustomSecretIDRequestWithDefaults() *AppRoleWriteCustomSecre
 }
 
 func (o AppRoleWriteCustomSecretIDRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cidr_list"] = o.CidrList
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["secret_id"] = o.SecretId
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

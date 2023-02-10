@@ -25,5 +25,9 @@ func NewOIDCRotateKeyRequestWithDefaults() *OIDCRotateKeyRequest {
 }
 
 func (o OIDCRotateKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["verification_ttl"] = o.VerificationTtl
+
+	return json.Marshal(toSerialize)
 }

@@ -34,5 +34,12 @@ func NewTransitRewrapRequestWithDefaults() *TransitRewrapRequest {
 }
 
 func (o TransitRewrapRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["context"] = o.Context
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["nonce"] = o.Nonce
+
+	return json.Marshal(toSerialize)
 }

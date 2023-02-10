@@ -32,5 +32,11 @@ func NewWriteCapabilitiesSelfRequestWithDefaults() *WriteCapabilitiesSelfRequest
 }
 
 func (o WriteCapabilitiesSelfRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["path"] = o.Path
+	toSerialize["paths"] = o.Paths
+	toSerialize["token"] = o.Token
+
+	return json.Marshal(toSerialize)
 }

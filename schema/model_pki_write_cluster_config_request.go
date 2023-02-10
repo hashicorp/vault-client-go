@@ -25,5 +25,9 @@ func NewPKIWriteClusterConfigRequestWithDefaults() *PKIWriteClusterConfigRequest
 }
 
 func (o PKIWriteClusterConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["path"] = o.Path
+
+	return json.Marshal(toSerialize)
 }

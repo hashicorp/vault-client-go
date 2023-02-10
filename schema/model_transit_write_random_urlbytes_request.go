@@ -35,5 +35,11 @@ func NewTransitWriteRandomUrlbytesRequestWithDefaults() *TransitWriteRandomUrlby
 }
 
 func (o TransitWriteRandomUrlbytesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bytes"] = o.Bytes
+	toSerialize["format"] = o.Format
+	toSerialize["source"] = o.Source
+
+	return json.Marshal(toSerialize)
 }

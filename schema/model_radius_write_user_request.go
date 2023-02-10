@@ -25,5 +25,9 @@ func NewRadiusWriteUserRequestWithDefaults() *RadiusWriteUserRequest {
 }
 
 func (o RadiusWriteUserRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["policies"] = o.Policies
+
+	return json.Marshal(toSerialize)
 }

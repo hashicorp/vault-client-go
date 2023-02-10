@@ -25,5 +25,9 @@ func NewAppRoleWriteTokenNumUsesRequestWithDefaults() *AppRoleWriteTokenNumUsesR
 }
 
 func (o AppRoleWriteTokenNumUsesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["token_num_uses"] = o.TokenNumUses
+
+	return json.Marshal(toSerialize)
 }

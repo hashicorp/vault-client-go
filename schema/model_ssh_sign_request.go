@@ -45,5 +45,15 @@ func NewSSHSignRequestWithDefaults() *SSHSignRequest {
 }
 
 func (o SSHSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cert_type"] = o.CertType
+	toSerialize["critical_options"] = o.CriticalOptions
+	toSerialize["extensions"] = o.Extensions
+	toSerialize["key_id"] = o.KeyId
+	toSerialize["public_key"] = o.PublicKey
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["valid_principals"] = o.ValidPrincipals
+
+	return json.Marshal(toSerialize)
 }

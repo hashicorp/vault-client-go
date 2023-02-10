@@ -30,5 +30,10 @@ func NewTokenRenewAccessorRequestWithDefaults() *TokenRenewAccessorRequest {
 }
 
 func (o TokenRenewAccessorRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["accessor"] = o.Accessor
+	toSerialize["increment"] = o.Increment
+
+	return json.Marshal(toSerialize)
 }

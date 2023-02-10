@@ -34,5 +34,12 @@ func NewEntityWriteByNameRequestWithDefaults() *EntityWriteByNameRequest {
 }
 
 func (o EntityWriteByNameRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["disabled"] = o.Disabled
+	toSerialize["id"] = o.Id
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["policies"] = o.Policies
+
+	return json.Marshal(toSerialize)
 }

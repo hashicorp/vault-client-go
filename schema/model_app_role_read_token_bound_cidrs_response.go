@@ -25,5 +25,9 @@ func NewAppRoleReadTokenBoundCIDRsResponseWithDefaults() *AppRoleReadTokenBoundC
 }
 
 func (o AppRoleReadTokenBoundCIDRsResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+
+	return json.Marshal(toSerialize)
 }

@@ -31,5 +31,11 @@ func NewKVv2WriteConfigRequestWithDefaults() *KVv2WriteConfigRequest {
 }
 
 func (o KVv2WriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cas_required"] = o.CasRequired
+	toSerialize["delete_version_after"] = o.DeleteVersionAfter
+	toSerialize["max_versions"] = o.MaxVersions
+
+	return json.Marshal(toSerialize)
 }

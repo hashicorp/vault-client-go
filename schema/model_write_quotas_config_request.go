@@ -31,5 +31,11 @@ func NewWriteQuotasConfigRequestWithDefaults() *WriteQuotasConfigRequest {
 }
 
 func (o WriteQuotasConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["enable_rate_limit_audit_logging"] = o.EnableRateLimitAuditLogging
+	toSerialize["enable_rate_limit_response_headers"] = o.EnableRateLimitResponseHeaders
+	toSerialize["rate_limit_exempt_paths"] = o.RateLimitExemptPaths
+
+	return json.Marshal(toSerialize)
 }

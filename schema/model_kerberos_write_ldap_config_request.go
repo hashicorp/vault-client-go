@@ -137,5 +137,42 @@ func NewKerberosWriteLDAPConfigRequestWithDefaults() *KerberosWriteLDAPConfigReq
 }
 
 func (o KerberosWriteLDAPConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
+	toSerialize["binddn"] = o.Binddn
+	toSerialize["bindpass"] = o.Bindpass
+	toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["client_tls_cert"] = o.ClientTlsCert
+	toSerialize["client_tls_key"] = o.ClientTlsKey
+	toSerialize["deny_null_bind"] = o.DenyNullBind
+	toSerialize["discoverdn"] = o.Discoverdn
+	toSerialize["groupattr"] = o.Groupattr
+	toSerialize["groupdn"] = o.Groupdn
+	toSerialize["groupfilter"] = o.Groupfilter
+	toSerialize["insecure_tls"] = o.InsecureTls
+	toSerialize["request_timeout"] = o.RequestTimeout
+	toSerialize["starttls"] = o.Starttls
+	toSerialize["tls_max_version"] = o.TlsMaxVersion
+	toSerialize["tls_min_version"] = o.TlsMinVersion
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["upndomain"] = o.Upndomain
+	toSerialize["url"] = o.Url
+	toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
+	toSerialize["use_token_groups"] = o.UseTokenGroups
+	toSerialize["userattr"] = o.Userattr
+	toSerialize["userdn"] = o.Userdn
+	toSerialize["userfilter"] = o.Userfilter
+	toSerialize["username_as_alias"] = o.UsernameAsAlias
+
+	return json.Marshal(toSerialize)
 }

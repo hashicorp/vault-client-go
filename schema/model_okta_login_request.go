@@ -34,5 +34,12 @@ func NewOktaLoginRequestWithDefaults() *OktaLoginRequest {
 }
 
 func (o OktaLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["password"] = o.Password
+	toSerialize["provider"] = o.Provider
+	toSerialize["totp"] = o.Totp
+
+	return json.Marshal(toSerialize)
 }

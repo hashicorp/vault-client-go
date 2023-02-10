@@ -28,5 +28,10 @@ func NewOIDCWriteAssignmentRequestWithDefaults() *OIDCWriteAssignmentRequest {
 }
 
 func (o OIDCWriteAssignmentRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["entity_ids"] = o.EntityIds
+	toSerialize["group_ids"] = o.GroupIds
+
+	return json.Marshal(toSerialize)
 }

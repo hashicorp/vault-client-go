@@ -57,5 +57,18 @@ func NewTransitVerifyWithAlgorithmRequestWithDefaults() *TransitVerifyWithAlgori
 }
 
 func (o TransitVerifyWithAlgorithmRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["context"] = o.Context
+	toSerialize["hash_algorithm"] = o.HashAlgorithm
+	toSerialize["hmac"] = o.Hmac
+	toSerialize["input"] = o.Input
+	toSerialize["marshaling_algorithm"] = o.MarshalingAlgorithm
+	toSerialize["prehashed"] = o.Prehashed
+	toSerialize["salt_length"] = o.SaltLength
+	toSerialize["signature"] = o.Signature
+	toSerialize["signature_algorithm"] = o.SignatureAlgorithm
+
+	return json.Marshal(toSerialize)
 }

@@ -25,5 +25,9 @@ func NewAppRoleWriteSecretIDAccessorLookupRequestWithDefaults() *AppRoleWriteSec
 }
 
 func (o AppRoleWriteSecretIDAccessorLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
+
+	return json.Marshal(toSerialize)
 }

@@ -45,5 +45,15 @@ func NewAWSConfigWriteRootIAMCredentialsRequestWithDefaults() *AWSConfigWriteRoo
 }
 
 func (o AWSConfigWriteRootIAMCredentialsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["access_key"] = o.AccessKey
+	toSerialize["iam_endpoint"] = o.IamEndpoint
+	toSerialize["max_retries"] = o.MaxRetries
+	toSerialize["region"] = o.Region
+	toSerialize["secret_key"] = o.SecretKey
+	toSerialize["sts_endpoint"] = o.StsEndpoint
+	toSerialize["username_template"] = o.UsernameTemplate
+
+	return json.Marshal(toSerialize)
 }

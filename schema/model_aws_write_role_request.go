@@ -62,5 +62,20 @@ func NewAWSWriteRoleRequestWithDefaults() *AWSWriteRoleRequest {
 }
 
 func (o AWSWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["arn"] = o.Arn
+	toSerialize["credential_type"] = o.CredentialType
+	toSerialize["default_sts_ttl"] = o.DefaultStsTtl
+	toSerialize["iam_groups"] = o.IamGroups
+	toSerialize["iam_tags"] = o.IamTags
+	toSerialize["max_sts_ttl"] = o.MaxStsTtl
+	toSerialize["permissions_boundary_arn"] = o.PermissionsBoundaryArn
+	toSerialize["policy"] = o.Policy
+	toSerialize["policy_arns"] = o.PolicyArns
+	toSerialize["policy_document"] = o.PolicyDocument
+	toSerialize["role_arns"] = o.RoleArns
+	toSerialize["user_path"] = o.UserPath
+
+	return json.Marshal(toSerialize)
 }

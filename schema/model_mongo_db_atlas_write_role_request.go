@@ -46,5 +46,16 @@ func NewMongoDBAtlasWriteRoleRequestWithDefaults() *MongoDBAtlasWriteRoleRequest
 }
 
 func (o MongoDBAtlasWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cidr_blocks"] = o.CidrBlocks
+	toSerialize["ip_addresses"] = o.IpAddresses
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["organization_id"] = o.OrganizationId
+	toSerialize["project_id"] = o.ProjectId
+	toSerialize["project_roles"] = o.ProjectRoles
+	toSerialize["roles"] = o.Roles
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

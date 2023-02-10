@@ -25,5 +25,9 @@ func NewSSHWriteKeysRequestWithDefaults() *SSHWriteKeysRequest {
 }
 
 func (o SSHWriteKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["key"] = o.Key
+
+	return json.Marshal(toSerialize)
 }

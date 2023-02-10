@@ -36,5 +36,12 @@ func NewAWSWriteCredentialsRequestWithDefaults() *AWSWriteCredentialsRequest {
 }
 
 func (o AWSWriteCredentialsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["name"] = o.Name
+	toSerialize["role_arn"] = o.RoleArn
+	toSerialize["role_session_name"] = o.RoleSessionName
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

@@ -25,5 +25,9 @@ func NewAppRoleReadLocalSecretIDsResponseWithDefaults() *AppRoleReadLocalSecretI
 }
 
 func (o AppRoleReadLocalSecretIDsResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["local_secret_ids"] = o.LocalSecretIds
+
+	return json.Marshal(toSerialize)
 }

@@ -37,5 +37,13 @@ func NewWriteRekeyInitRequestWithDefaults() *WriteRekeyInitRequest {
 }
 
 func (o WriteRekeyInitRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["backup"] = o.Backup
+	toSerialize["pgp_keys"] = o.PgpKeys
+	toSerialize["require_verification"] = o.RequireVerification
+	toSerialize["secret_shares"] = o.SecretShares
+	toSerialize["secret_threshold"] = o.SecretThreshold
+
+	return json.Marshal(toSerialize)
 }

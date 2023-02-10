@@ -26,5 +26,9 @@ func NewAppRoleReadBoundCIDRListResponseWithDefaults() *AppRoleReadBoundCIDRList
 }
 
 func (o AppRoleReadBoundCIDRListResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bound_cidr_list"] = o.BoundCidrList
+
+	return json.Marshal(toSerialize)
 }

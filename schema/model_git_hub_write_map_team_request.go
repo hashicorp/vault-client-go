@@ -25,5 +25,9 @@ func NewGitHubWriteMapTeamRequestWithDefaults() *GitHubWriteMapTeamRequest {
 }
 
 func (o GitHubWriteMapTeamRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["value"] = o.Value
+
+	return json.Marshal(toSerialize)
 }

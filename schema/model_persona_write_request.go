@@ -37,5 +37,13 @@ func NewPersonaWriteRequestWithDefaults() *PersonaWriteRequest {
 }
 
 func (o PersonaWriteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["id"] = o.Id
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
+	return json.Marshal(toSerialize)
 }

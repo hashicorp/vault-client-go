@@ -25,5 +25,9 @@ func NewWriteLoggersRequestWithDefaults() *WriteLoggersRequest {
 }
 
 func (o WriteLoggersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["level"] = o.Level
+
+	return json.Marshal(toSerialize)
 }

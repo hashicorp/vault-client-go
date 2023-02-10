@@ -25,5 +25,9 @@ func NewAppRoleReadTokenTTLResponseWithDefaults() *AppRoleReadTokenTTLResponse {
 }
 
 func (o AppRoleReadTokenTTLResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["token_ttl"] = o.TokenTtl
+
+	return json.Marshal(toSerialize)
 }

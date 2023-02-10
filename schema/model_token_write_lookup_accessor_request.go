@@ -25,5 +25,9 @@ func NewTokenWriteLookupAccessorRequestWithDefaults() *TokenWriteLookupAccessorR
 }
 
 func (o TokenWriteLookupAccessorRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["accessor"] = o.Accessor
+
+	return json.Marshal(toSerialize)
 }

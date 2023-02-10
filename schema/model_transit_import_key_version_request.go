@@ -30,5 +30,10 @@ func NewTransitImportKeyVersionRequestWithDefaults() *TransitImportKeyVersionReq
 }
 
 func (o TransitImportKeyVersionRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["hash_function"] = o.HashFunction
+
+	return json.Marshal(toSerialize)
 }

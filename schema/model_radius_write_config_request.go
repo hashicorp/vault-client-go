@@ -81,5 +81,25 @@ func NewRadiusWriteConfigRequestWithDefaults() *RadiusWriteConfigRequest {
 }
 
 func (o RadiusWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["dial_timeout"] = o.DialTimeout
+	toSerialize["host"] = o.Host
+	toSerialize["nas_identifier"] = o.NasIdentifier
+	toSerialize["nas_port"] = o.NasPort
+	toSerialize["port"] = o.Port
+	toSerialize["read_timeout"] = o.ReadTimeout
+	toSerialize["secret"] = o.Secret
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["unregistered_user_policies"] = o.UnregisteredUserPolicies
+
+	return json.Marshal(toSerialize)
 }

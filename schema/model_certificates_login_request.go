@@ -25,5 +25,9 @@ func NewCertificatesLoginRequestWithDefaults() *CertificatesLoginRequest {
 }
 
 func (o CertificatesLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["name"] = o.Name
+
+	return json.Marshal(toSerialize)
 }

@@ -113,7 +113,7 @@ for more details.
 ```go
 resp, err := client.Auth.AppRoleLogin(
 	ctx,
-	vault.AppRoleLoginRequest{
+	schema.AppRoleLoginRequest{
 		RoleId:   os.Getenv("MY_APPROLE_ROLE_ID"),
 		SecretId: os.Getenv("MY_APPROLE_SECRET_ID"),
 	},
@@ -319,7 +319,7 @@ if err != nil {
 	log.Fatal(err)
 }
 
-resp, err := client.Auth.CertLogin(ctx, vault.CertLoginRequest{
+resp, err := client.Auth.CertificatesLogin(ctx, schema.CertificatesLoginRequest{
 	Name: "my-cert",
 })
 if err != nil {

@@ -13,7 +13,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"unsafe"
 
 	"github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/go-retryablehttp"
@@ -319,7 +318,7 @@ func (c *ClientConfiguration) populateFromEnvironment() error {
 					}
 					limiterBurst = int(limiterRate)
 				}
-				field.SetPointer(unsafe.Pointer(rate.NewLimiter(rate.Limit(limiterRate), limiterBurst)))
+				field.Set(reflect.ValueOf(rate.NewLimiter(rate.Limit(limiterRate), limiterBurst)))
 
 			default:
 				return fmt.Errorf("environment variable parsing not implemented for %q type", field.Type().String())

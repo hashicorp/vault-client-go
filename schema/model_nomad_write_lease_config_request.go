@@ -28,5 +28,10 @@ func NewNomadWriteLeaseConfigRequestWithDefaults() *NomadWriteLeaseConfigRequest
 }
 
 func (o NomadWriteLeaseConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

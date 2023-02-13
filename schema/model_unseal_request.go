@@ -28,5 +28,10 @@ func NewUnsealRequestWithDefaults() *UnsealRequest {
 }
 
 func (o UnsealRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["key"] = o.Key
+	toSerialize["reset"] = o.Reset
+
+	return json.Marshal(toSerialize)
 }

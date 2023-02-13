@@ -25,5 +25,9 @@ func NewWritePoliciesACLRequestWithDefaults() *WritePoliciesACLRequest {
 }
 
 func (o WritePoliciesACLRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["policy"] = o.Policy
+
+	return json.Marshal(toSerialize)
 }

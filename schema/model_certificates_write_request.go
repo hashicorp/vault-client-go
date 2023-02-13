@@ -122,5 +122,38 @@ func NewCertificatesWriteRequestWithDefaults() *CertificatesWriteRequest {
 }
 
 func (o CertificatesWriteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allowed_common_names"] = o.AllowedCommonNames
+	toSerialize["allowed_dns_sans"] = o.AllowedDnsSans
+	toSerialize["allowed_email_sans"] = o.AllowedEmailSans
+	toSerialize["allowed_metadata_extensions"] = o.AllowedMetadataExtensions
+	toSerialize["allowed_names"] = o.AllowedNames
+	toSerialize["allowed_organizational_units"] = o.AllowedOrganizationalUnits
+	toSerialize["allowed_uri_sans"] = o.AllowedUriSans
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["display_name"] = o.DisplayName
+	toSerialize["lease"] = o.Lease
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["ocsp_ca_certificates"] = o.OcspCaCertificates
+	toSerialize["ocsp_enabled"] = o.OcspEnabled
+	toSerialize["ocsp_fail_open"] = o.OcspFailOpen
+	toSerialize["ocsp_query_all_servers"] = o.OcspQueryAllServers
+	toSerialize["ocsp_servers_override"] = o.OcspServersOverride
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["required_extensions"] = o.RequiredExtensions
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

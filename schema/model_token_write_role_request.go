@@ -79,5 +79,25 @@ func NewTokenWriteRoleRequestWithDefaults() *TokenWriteRoleRequest {
 }
 
 func (o TokenWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allowed_entity_aliases"] = o.AllowedEntityAliases
+	toSerialize["allowed_policies"] = o.AllowedPolicies
+	toSerialize["allowed_policies_glob"] = o.AllowedPoliciesGlob
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["disallowed_policies"] = o.DisallowedPolicies
+	toSerialize["disallowed_policies_glob"] = o.DisallowedPoliciesGlob
+	toSerialize["explicit_max_ttl"] = o.ExplicitMaxTtl
+	toSerialize["orphan"] = o.Orphan
+	toSerialize["path_suffix"] = o.PathSuffix
+	toSerialize["period"] = o.Period
+	toSerialize["renewable"] = o.Renewable
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_type"] = o.TokenType
+
+	return json.Marshal(toSerialize)
 }

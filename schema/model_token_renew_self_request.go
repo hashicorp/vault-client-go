@@ -30,5 +30,10 @@ func NewTokenRenewSelfRequestWithDefaults() *TokenRenewSelfRequest {
 }
 
 func (o TokenRenewSelfRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["token"] = o.Token
+
+	return json.Marshal(toSerialize)
 }

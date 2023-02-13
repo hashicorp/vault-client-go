@@ -50,5 +50,16 @@ func NewTransitWriteKeyRequestWithDefaults() *TransitWriteKeyRequest {
 }
 
 func (o TransitWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
+	toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
+	toSerialize["context"] = o.Context
+	toSerialize["convergent_encryption"] = o.ConvergentEncryption
+	toSerialize["derived"] = o.Derived
+	toSerialize["exportable"] = o.Exportable
+	toSerialize["key_size"] = o.KeySize
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

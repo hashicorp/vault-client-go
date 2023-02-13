@@ -46,5 +46,17 @@ func NewAppRoleWriteSecretIDAccessorLookupResponseWithDefaults() *AppRoleWriteSe
 }
 
 func (o AppRoleWriteSecretIDAccessorLookupResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cidr_list"] = o.CidrList
+	toSerialize["creation_time"] = o.CreationTime
+	toSerialize["expiration_time"] = o.ExpirationTime
+	toSerialize["last_updated_time"] = o.LastUpdatedTime
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
+	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
+	toSerialize["secret_id_ttl"] = o.SecretIdTtl
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+
+	return json.Marshal(toSerialize)
 }

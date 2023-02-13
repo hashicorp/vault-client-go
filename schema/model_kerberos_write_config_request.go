@@ -34,5 +34,12 @@ func NewKerberosWriteConfigRequestWithDefaults() *KerberosWriteConfigRequest {
 }
 
 func (o KerberosWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["add_group_aliases"] = o.AddGroupAliases
+	toSerialize["keytab"] = o.Keytab
+	toSerialize["remove_instance_name"] = o.RemoveInstanceName
+	toSerialize["service_account"] = o.ServiceAccount
+
+	return json.Marshal(toSerialize)
 }

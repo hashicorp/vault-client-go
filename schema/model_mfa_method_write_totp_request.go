@@ -56,5 +56,17 @@ func NewMFAMethodWriteTOTPRequestWithDefaults() *MFAMethodWriteTOTPRequest {
 }
 
 func (o MFAMethodWriteTOTPRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["digits"] = o.Digits
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["key_size"] = o.KeySize
+	toSerialize["max_validation_attempts"] = o.MaxValidationAttempts
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["period"] = o.Period
+	toSerialize["qr_size"] = o.QrSize
+	toSerialize["skew"] = o.Skew
+
+	return json.Marshal(toSerialize)
 }

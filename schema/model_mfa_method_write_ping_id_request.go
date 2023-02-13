@@ -31,5 +31,11 @@ func NewMFAMethodWritePingIDRequestWithDefaults() *MFAMethodWritePingIDRequest {
 }
 
 func (o MFAMethodWritePingIDRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["settings_file_base64"] = o.SettingsFileBase64
+	toSerialize["username_format"] = o.UsernameFormat
+
+	return json.Marshal(toSerialize)
 }

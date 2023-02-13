@@ -38,5 +38,12 @@ func NewActiveDirectoryWriteLibraryRequestWithDefaults() *ActiveDirectoryWriteLi
 }
 
 func (o ActiveDirectoryWriteLibraryRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["disable_check_in_enforcement"] = o.DisableCheckInEnforcement
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["service_account_names"] = o.ServiceAccountNames
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

@@ -28,5 +28,10 @@ func NewWriteConfigUIHeaderRequestWithDefaults() *WriteConfigUIHeaderRequest {
 }
 
 func (o WriteConfigUIHeaderRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["multivalue"] = o.Multivalue
+	toSerialize["values"] = o.Values
+
+	return json.Marshal(toSerialize)
 }

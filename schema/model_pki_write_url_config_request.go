@@ -36,5 +36,12 @@ func NewPKIWriteURLConfigRequestWithDefaults() *PKIWriteURLConfigRequest {
 }
 
 func (o PKIWriteURLConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["crl_distribution_points"] = o.CrlDistributionPoints
+	toSerialize["enable_templating"] = o.EnableTemplating
+	toSerialize["issuing_certificates"] = o.IssuingCertificates
+	toSerialize["ocsp_servers"] = o.OcspServers
+
+	return json.Marshal(toSerialize)
 }

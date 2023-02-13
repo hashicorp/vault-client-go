@@ -29,5 +29,10 @@ func NewUserpassWriteUserPoliciesRequestWithDefaults() *UserpassWriteUserPolicie
 }
 
 func (o UserpassWriteUserPoliciesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_policies"] = o.TokenPolicies
+
+	return json.Marshal(toSerialize)
 }

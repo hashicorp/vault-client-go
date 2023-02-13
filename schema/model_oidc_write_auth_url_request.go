@@ -31,5 +31,11 @@ func NewOIDCWriteAuthURLRequestWithDefaults() *OIDCWriteAuthURLRequest {
 }
 
 func (o OIDCWriteAuthURLRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["client_nonce"] = o.ClientNonce
+	toSerialize["redirect_uri"] = o.RedirectUri
+	toSerialize["role"] = o.Role
+
+	return json.Marshal(toSerialize)
 }

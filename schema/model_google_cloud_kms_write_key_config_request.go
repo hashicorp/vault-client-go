@@ -28,5 +28,10 @@ func NewGoogleCloudKMSWriteKeyConfigRequestWithDefaults() *GoogleCloudKMSWriteKe
 }
 
 func (o GoogleCloudKMSWriteKeyConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["max_version"] = o.MaxVersion
+	toSerialize["min_version"] = o.MinVersion
+
+	return json.Marshal(toSerialize)
 }

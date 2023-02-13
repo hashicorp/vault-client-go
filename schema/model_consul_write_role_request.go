@@ -67,5 +67,21 @@ func NewConsulWriteRoleRequestWithDefaults() *ConsulWriteRoleRequest {
 }
 
 func (o ConsulWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["consul_namespace"] = o.ConsulNamespace
+	toSerialize["consul_policies"] = o.ConsulPolicies
+	toSerialize["consul_roles"] = o.ConsulRoles
+	toSerialize["lease"] = o.Lease
+	toSerialize["local"] = o.Local
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["node_identities"] = o.NodeIdentities
+	toSerialize["partition"] = o.Partition
+	toSerialize["policies"] = o.Policies
+	toSerialize["policy"] = o.Policy
+	toSerialize["service_identities"] = o.ServiceIdentities
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

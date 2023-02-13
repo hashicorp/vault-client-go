@@ -32,5 +32,11 @@ func NewWriteCapabilitiesAccessorRequestWithDefaults() *WriteCapabilitiesAccesso
 }
 
 func (o WriteCapabilitiesAccessorRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["accessor"] = o.Accessor
+	toSerialize["path"] = o.Path
+	toSerialize["paths"] = o.Paths
+
+	return json.Marshal(toSerialize)
 }

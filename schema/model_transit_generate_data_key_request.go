@@ -36,5 +36,12 @@ func NewTransitGenerateDataKeyRequestWithDefaults() *TransitGenerateDataKeyReque
 }
 
 func (o TransitGenerateDataKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bits"] = o.Bits
+	toSerialize["context"] = o.Context
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["nonce"] = o.Nonce
+
+	return json.Marshal(toSerialize)
 }

@@ -67,5 +67,20 @@ func NewTOTPWriteKeyRequestWithDefaults() *TOTPWriteKeyRequest {
 }
 
 func (o TOTPWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["account_name"] = o.AccountName
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["digits"] = o.Digits
+	toSerialize["exported"] = o.Exported
+	toSerialize["generate"] = o.Generate
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["key"] = o.Key
+	toSerialize["key_size"] = o.KeySize
+	toSerialize["period"] = o.Period
+	toSerialize["qr_size"] = o.QrSize
+	toSerialize["skew"] = o.Skew
+	toSerialize["url"] = o.Url
+
+	return json.Marshal(toSerialize)
 }

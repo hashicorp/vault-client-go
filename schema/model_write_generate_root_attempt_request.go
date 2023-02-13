@@ -25,5 +25,9 @@ func NewWriteGenerateRootAttemptRequestWithDefaults() *WriteGenerateRootAttemptR
 }
 
 func (o WriteGenerateRootAttemptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["pgp_key"] = o.PgpKey
+
+	return json.Marshal(toSerialize)
 }

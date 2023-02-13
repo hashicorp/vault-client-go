@@ -25,5 +25,9 @@ func NewKVv2DestroyVersionsRequestWithDefaults() *KVv2DestroyVersionsRequest {
 }
 
 func (o KVv2DestroyVersionsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["versions"] = o.Versions
+
+	return json.Marshal(toSerialize)
 }

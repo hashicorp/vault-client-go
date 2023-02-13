@@ -58,5 +58,17 @@ func NewAWSConfigWriteClientRequestWithDefaults() *AWSConfigWriteClientRequest {
 }
 
 func (o AWSConfigWriteClientRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["access_key"] = o.AccessKey
+	toSerialize["allowed_sts_header_values"] = o.AllowedStsHeaderValues
+	toSerialize["endpoint"] = o.Endpoint
+	toSerialize["iam_endpoint"] = o.IamEndpoint
+	toSerialize["iam_server_id_header_value"] = o.IamServerIdHeaderValue
+	toSerialize["max_retries"] = o.MaxRetries
+	toSerialize["secret_key"] = o.SecretKey
+	toSerialize["sts_endpoint"] = o.StsEndpoint
+	toSerialize["sts_region"] = o.StsRegion
+
+	return json.Marshal(toSerialize)
 }

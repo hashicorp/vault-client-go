@@ -28,5 +28,10 @@ func NewPKIRevokeRequestWithDefaults() *PKIRevokeRequest {
 }
 
 func (o PKIRevokeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["serial_number"] = o.SerialNumber
+
+	return json.Marshal(toSerialize)
 }

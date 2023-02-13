@@ -25,5 +25,9 @@ func NewAppRoleReadSecretIDTTLResponseWithDefaults() *AppRoleReadSecretIDTTLResp
 }
 
 func (o AppRoleReadSecretIDTTLResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["secret_id_ttl"] = o.SecretIdTtl
+
+	return json.Marshal(toSerialize)
 }

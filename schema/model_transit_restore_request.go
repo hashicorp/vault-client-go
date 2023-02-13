@@ -33,5 +33,11 @@ func NewTransitRestoreRequestWithDefaults() *TransitRestoreRequest {
 }
 
 func (o TransitRestoreRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["backup"] = o.Backup
+	toSerialize["force"] = o.Force
+	toSerialize["name"] = o.Name
+
+	return json.Marshal(toSerialize)
 }

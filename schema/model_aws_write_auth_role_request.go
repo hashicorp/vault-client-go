@@ -119,5 +119,37 @@ func NewAWSWriteAuthRoleRequestWithDefaults() *AWSWriteAuthRoleRequest {
 }
 
 func (o AWSWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allow_instance_migration"] = o.AllowInstanceMigration
+	toSerialize["auth_type"] = o.AuthType
+	toSerialize["bound_account_id"] = o.BoundAccountId
+	toSerialize["bound_ami_id"] = o.BoundAmiId
+	toSerialize["bound_ec2_instance_id"] = o.BoundEc2InstanceId
+	toSerialize["bound_iam_instance_profile_arn"] = o.BoundIamInstanceProfileArn
+	toSerialize["bound_iam_principal_arn"] = o.BoundIamPrincipalArn
+	toSerialize["bound_iam_role_arn"] = o.BoundIamRoleArn
+	toSerialize["bound_region"] = o.BoundRegion
+	toSerialize["bound_subnet_id"] = o.BoundSubnetId
+	toSerialize["bound_vpc_id"] = o.BoundVpcId
+	toSerialize["disallow_reauthentication"] = o.DisallowReauthentication
+	toSerialize["inferred_aws_region"] = o.InferredAwsRegion
+	toSerialize["inferred_entity_type"] = o.InferredEntityType
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["resolve_aws_unique_ids"] = o.ResolveAwsUniqueIds
+	toSerialize["role_tag"] = o.RoleTag
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

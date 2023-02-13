@@ -31,5 +31,11 @@ func NewGoogleCloudKMSReencryptRequestWithDefaults() *GoogleCloudKMSReencryptReq
 }
 
 func (o GoogleCloudKMSReencryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["key_version"] = o.KeyVersion
+
+	return json.Marshal(toSerialize)
 }

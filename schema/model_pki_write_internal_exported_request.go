@@ -40,5 +40,13 @@ func NewPKIWriteInternalExportedRequestWithDefaults() *PKIWriteInternalExportedR
 }
 
 func (o PKIWriteInternalExportedRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+
+	return json.Marshal(toSerialize)
 }

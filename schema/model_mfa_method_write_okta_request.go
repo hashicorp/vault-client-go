@@ -43,5 +43,15 @@ func NewMFAMethodWriteOktaRequestWithDefaults() *MFAMethodWriteOktaRequest {
 }
 
 func (o MFAMethodWriteOktaRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["api_token"] = o.ApiToken
+	toSerialize["base_url"] = o.BaseUrl
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["org_name"] = o.OrgName
+	toSerialize["primary_email"] = o.PrimaryEmail
+	toSerialize["production"] = o.Production
+	toSerialize["username_format"] = o.UsernameFormat
+
+	return json.Marshal(toSerialize)
 }

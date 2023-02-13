@@ -27,5 +27,9 @@ func NewAWSWriteRoleTagBlackListTidySettingsRequestWithDefaults() *AWSWriteRoleT
 }
 
 func (o AWSWriteRoleTagBlackListTidySettingsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
+	return json.Marshal(toSerialize)
 }

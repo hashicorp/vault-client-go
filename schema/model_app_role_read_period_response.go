@@ -29,5 +29,10 @@ func NewAppRoleReadPeriodResponseWithDefaults() *AppRoleReadPeriodResponse {
 }
 
 func (o AppRoleReadPeriodResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["period"] = o.Period
+	toSerialize["token_period"] = o.TokenPeriod
+
+	return json.Marshal(toSerialize)
 }

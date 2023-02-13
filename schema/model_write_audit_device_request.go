@@ -36,5 +36,12 @@ func NewWriteAuditDeviceRequestWithDefaults() *WriteAuditDeviceRequest {
 }
 
 func (o WriteAuditDeviceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["description"] = o.Description
+	toSerialize["local"] = o.Local
+	toSerialize["options"] = o.Options
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

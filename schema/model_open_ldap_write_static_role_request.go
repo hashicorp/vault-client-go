@@ -31,5 +31,11 @@ func NewOpenLDAPWriteStaticRoleRequestWithDefaults() *OpenLDAPWriteStaticRoleReq
 }
 
 func (o OpenLDAPWriteStaticRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["dn"] = o.Dn
+	toSerialize["rotation_period"] = o.RotationPeriod
+	toSerialize["username"] = o.Username
+
+	return json.Marshal(toSerialize)
 }

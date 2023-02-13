@@ -43,5 +43,15 @@ func NewGoogleCloudKMSWriteKeyRequestWithDefaults() *GoogleCloudKMSWriteKeyReque
 }
 
 func (o GoogleCloudKMSWriteKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["crypto_key"] = o.CryptoKey
+	toSerialize["key_ring"] = o.KeyRing
+	toSerialize["labels"] = o.Labels
+	toSerialize["protection_level"] = o.ProtectionLevel
+	toSerialize["purpose"] = o.Purpose
+	toSerialize["rotation_period"] = o.RotationPeriod
+
+	return json.Marshal(toSerialize)
 }

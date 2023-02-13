@@ -51,5 +51,16 @@ func NewPKIWriteCRLConfigRequestWithDefaults() *PKIWriteCRLConfigRequest {
 }
 
 func (o PKIWriteCRLConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["auto_rebuild"] = o.AutoRebuild
+	toSerialize["auto_rebuild_grace_period"] = o.AutoRebuildGracePeriod
+	toSerialize["delta_rebuild_interval"] = o.DeltaRebuildInterval
+	toSerialize["disable"] = o.Disable
+	toSerialize["enable_delta"] = o.EnableDelta
+	toSerialize["expiry"] = o.Expiry
+	toSerialize["ocsp_disable"] = o.OcspDisable
+	toSerialize["ocsp_expiry"] = o.OcspExpiry
+
+	return json.Marshal(toSerialize)
 }

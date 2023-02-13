@@ -28,5 +28,10 @@ func NewGoogleCloudKMSWriteConfigRequestWithDefaults() *GoogleCloudKMSWriteConfi
 }
 
 func (o GoogleCloudKMSWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["credentials"] = o.Credentials
+	toSerialize["scopes"] = o.Scopes
+
+	return json.Marshal(toSerialize)
 }

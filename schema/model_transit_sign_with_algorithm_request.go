@@ -54,5 +54,17 @@ func NewTransitSignWithAlgorithmRequestWithDefaults() *TransitSignWithAlgorithmR
 }
 
 func (o TransitSignWithAlgorithmRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["context"] = o.Context
+	toSerialize["hash_algorithm"] = o.HashAlgorithm
+	toSerialize["input"] = o.Input
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["marshaling_algorithm"] = o.MarshalingAlgorithm
+	toSerialize["prehashed"] = o.Prehashed
+	toSerialize["salt_length"] = o.SaltLength
+	toSerialize["signature_algorithm"] = o.SignatureAlgorithm
+
+	return json.Marshal(toSerialize)
 }

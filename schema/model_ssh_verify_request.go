@@ -25,5 +25,9 @@ func NewSSHVerifyRequestWithDefaults() *SSHVerifyRequest {
 }
 
 func (o SSHVerifyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["otp"] = o.Otp
+
+	return json.Marshal(toSerialize)
 }

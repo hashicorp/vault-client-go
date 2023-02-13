@@ -43,5 +43,15 @@ func NewAzureWriteConfigRequestWithDefaults() *AzureWriteConfigRequest {
 }
 
 func (o AzureWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
+	toSerialize["environment"] = o.Environment
+	toSerialize["password_policy"] = o.PasswordPolicy
+	toSerialize["root_password_ttl"] = o.RootPasswordTtl
+	toSerialize["subscription_id"] = o.SubscriptionId
+	toSerialize["tenant_id"] = o.TenantId
+
+	return json.Marshal(toSerialize)
 }

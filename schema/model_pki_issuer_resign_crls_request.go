@@ -41,5 +41,13 @@ func NewPKIIssuerResignCRLsRequestWithDefaults() *PKIIssuerResignCRLsRequest {
 }
 
 func (o PKIIssuerResignCRLsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["crl_number"] = o.CrlNumber
+	toSerialize["crls"] = o.Crls
+	toSerialize["delta_crl_base_number"] = o.DeltaCrlBaseNumber
+	toSerialize["format"] = o.Format
+	toSerialize["next_update"] = o.NextUpdate
+
+	return json.Marshal(toSerialize)
 }

@@ -34,5 +34,11 @@ func NewGoogleCloudWriteRolesetKeyRequestWithDefaults() *GoogleCloudWriteRoleset
 }
 
 func (o GoogleCloudWriteRolesetKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["key_algorithm"] = o.KeyAlgorithm
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

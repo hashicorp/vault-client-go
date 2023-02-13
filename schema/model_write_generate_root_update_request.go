@@ -28,5 +28,10 @@ func NewWriteGenerateRootUpdateRequestWithDefaults() *WriteGenerateRootUpdateReq
 }
 
 func (o WriteGenerateRootUpdateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["key"] = o.Key
+	toSerialize["nonce"] = o.Nonce
+
+	return json.Marshal(toSerialize)
 }

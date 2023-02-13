@@ -35,5 +35,11 @@ func NewWriteInternalCountersConfigRequestWithDefaults() *WriteInternalCountersC
 }
 
 func (o WriteInternalCountersConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["default_report_months"] = o.DefaultReportMonths
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["retention_months"] = o.RetentionMonths
+
+	return json.Marshal(toSerialize)
 }

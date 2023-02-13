@@ -28,5 +28,10 @@ func NewMFAMethodAdminGenerateTOTPRequestWithDefaults() *MFAMethodAdminGenerateT
 }
 
 func (o MFAMethodAdminGenerateTOTPRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["method_id"] = o.MethodId
+
+	return json.Marshal(toSerialize)
 }

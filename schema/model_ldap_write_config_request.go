@@ -126,5 +126,38 @@ func NewLDAPWriteConfigRequestWithDefaults() *LDAPWriteConfigRequest {
 }
 
 func (o LDAPWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
+	toSerialize["binddn"] = o.Binddn
+	toSerialize["bindpass"] = o.Bindpass
+	toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["client_tls_cert"] = o.ClientTlsCert
+	toSerialize["client_tls_key"] = o.ClientTlsKey
+	toSerialize["deny_null_bind"] = o.DenyNullBind
+	toSerialize["discoverdn"] = o.Discoverdn
+	toSerialize["groupattr"] = o.Groupattr
+	toSerialize["groupdn"] = o.Groupdn
+	toSerialize["groupfilter"] = o.Groupfilter
+	toSerialize["insecure_tls"] = o.InsecureTls
+	toSerialize["length"] = o.Length
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["password_policy"] = o.PasswordPolicy
+	toSerialize["request_timeout"] = o.RequestTimeout
+	toSerialize["schema"] = o.Schema
+	toSerialize["starttls"] = o.Starttls
+	toSerialize["tls_max_version"] = o.TlsMaxVersion
+	toSerialize["tls_min_version"] = o.TlsMinVersion
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["upndomain"] = o.Upndomain
+	toSerialize["url"] = o.Url
+	toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
+	toSerialize["use_token_groups"] = o.UseTokenGroups
+	toSerialize["userattr"] = o.Userattr
+	toSerialize["userdn"] = o.Userdn
+	toSerialize["userfilter"] = o.Userfilter
+	toSerialize["username_as_alias"] = o.UsernameAsAlias
+
+	return json.Marshal(toSerialize)
 }

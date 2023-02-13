@@ -25,5 +25,9 @@ func NewOCIWriteConfigRequestWithDefaults() *OCIWriteConfigRequest {
 }
 
 func (o OCIWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["home_tenancy_id"] = o.HomeTenancyId
+
+	return json.Marshal(toSerialize)
 }

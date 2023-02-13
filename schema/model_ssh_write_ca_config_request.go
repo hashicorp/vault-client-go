@@ -41,5 +41,13 @@ func NewSSHWriteCAConfigRequestWithDefaults() *SSHWriteCAConfigRequest {
 }
 
 func (o SSHWriteCAConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["generate_signing_key"] = o.GenerateSigningKey
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["private_key"] = o.PrivateKey
+	toSerialize["public_key"] = o.PublicKey
+
+	return json.Marshal(toSerialize)
 }

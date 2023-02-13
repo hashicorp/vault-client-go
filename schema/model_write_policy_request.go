@@ -29,5 +29,10 @@ func NewWritePolicyRequestWithDefaults() *WritePolicyRequest {
 }
 
 func (o WritePolicyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["policy"] = o.Policy
+	toSerialize["rules"] = o.Rules
+
+	return json.Marshal(toSerialize)
 }

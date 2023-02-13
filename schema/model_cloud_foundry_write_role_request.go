@@ -87,5 +87,27 @@ func NewCloudFoundryWriteRoleRequestWithDefaults() *CloudFoundryWriteRoleRequest
 }
 
 func (o CloudFoundryWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bound_application_ids"] = o.BoundApplicationIds
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["bound_instance_ids"] = o.BoundInstanceIds
+	toSerialize["bound_organization_ids"] = o.BoundOrganizationIds
+	toSerialize["bound_space_ids"] = o.BoundSpaceIds
+	toSerialize["disable_ip_matching"] = o.DisableIpMatching
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

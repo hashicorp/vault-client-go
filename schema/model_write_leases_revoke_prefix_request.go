@@ -27,5 +27,9 @@ func NewWriteLeasesRevokePrefixRequestWithDefaults() *WriteLeasesRevokePrefixReq
 }
 
 func (o WriteLeasesRevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["sync"] = o.Sync
+
+	return json.Marshal(toSerialize)
 }

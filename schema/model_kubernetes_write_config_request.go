@@ -36,5 +36,12 @@ func NewKubernetesWriteConfigRequestWithDefaults() *KubernetesWriteConfigRequest
 }
 
 func (o KubernetesWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["disable_local_ca_jwt"] = o.DisableLocalCaJwt
+	toSerialize["kubernetes_ca_cert"] = o.KubernetesCaCert
+	toSerialize["kubernetes_host"] = o.KubernetesHost
+	toSerialize["service_account_jwt"] = o.ServiceAccountJwt
+
+	return json.Marshal(toSerialize)
 }

@@ -40,5 +40,14 @@ func NewGroupWriteByIDRequestWithDefaults() *GroupWriteByIDRequest {
 }
 
 func (o GroupWriteByIDRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["member_entity_ids"] = o.MemberEntityIds
+	toSerialize["member_group_ids"] = o.MemberGroupIds
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["name"] = o.Name
+	toSerialize["policies"] = o.Policies
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

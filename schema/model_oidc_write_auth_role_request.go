@@ -126,5 +126,39 @@ func NewOIDCWriteAuthRoleRequestWithDefaults() *OIDCWriteAuthRoleRequest {
 }
 
 func (o OIDCWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
+	toSerialize["bound_audiences"] = o.BoundAudiences
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["bound_claims"] = o.BoundClaims
+	toSerialize["bound_claims_type"] = o.BoundClaimsType
+	toSerialize["bound_subject"] = o.BoundSubject
+	toSerialize["claim_mappings"] = o.ClaimMappings
+	toSerialize["clock_skew_leeway"] = o.ClockSkewLeeway
+	toSerialize["expiration_leeway"] = o.ExpirationLeeway
+	toSerialize["groups_claim"] = o.GroupsClaim
+	toSerialize["max_age"] = o.MaxAge
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["not_before_leeway"] = o.NotBeforeLeeway
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["oidc_scopes"] = o.OidcScopes
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["role_type"] = o.RoleType
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["user_claim"] = o.UserClaim
+	toSerialize["user_claim_json_pointer"] = o.UserClaimJsonPointer
+	toSerialize["verbose_oidc_logging"] = o.VerboseOidcLogging
+
+	return json.Marshal(toSerialize)
 }

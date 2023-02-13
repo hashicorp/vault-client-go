@@ -40,5 +40,14 @@ func NewNomadWriteAccessConfigRequestWithDefaults() *NomadWriteAccessConfigReque
 }
 
 func (o NomadWriteAccessConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["address"] = o.Address
+	toSerialize["ca_cert"] = o.CaCert
+	toSerialize["client_cert"] = o.ClientCert
+	toSerialize["client_key"] = o.ClientKey
+	toSerialize["max_token_name_length"] = o.MaxTokenNameLength
+	toSerialize["token"] = o.Token
+
+	return json.Marshal(toSerialize)
 }

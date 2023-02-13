@@ -83,5 +83,26 @@ func NewOktaWriteConfigRequestWithDefaults() *OktaWriteConfigRequest {
 }
 
 func (o OktaWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["api_token"] = o.ApiToken
+	toSerialize["base_url"] = o.BaseUrl
+	toSerialize["bypass_okta_mfa"] = o.BypassOktaMfa
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["org_name"] = o.OrgName
+	toSerialize["organization"] = o.Organization
+	toSerialize["production"] = o.Production
+	toSerialize["token"] = o.Token
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

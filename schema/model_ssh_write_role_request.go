@@ -123,5 +123,39 @@ func NewSSHWriteRoleRequestWithDefaults() *SSHWriteRoleRequest {
 }
 
 func (o SSHWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["admin_user"] = o.AdminUser
+	toSerialize["algorithm_signer"] = o.AlgorithmSigner
+	toSerialize["allow_bare_domains"] = o.AllowBareDomains
+	toSerialize["allow_host_certificates"] = o.AllowHostCertificates
+	toSerialize["allow_subdomains"] = o.AllowSubdomains
+	toSerialize["allow_user_certificates"] = o.AllowUserCertificates
+	toSerialize["allow_user_key_ids"] = o.AllowUserKeyIds
+	toSerialize["allowed_critical_options"] = o.AllowedCriticalOptions
+	toSerialize["allowed_domains"] = o.AllowedDomains
+	toSerialize["allowed_domains_template"] = o.AllowedDomainsTemplate
+	toSerialize["allowed_extensions"] = o.AllowedExtensions
+	toSerialize["allowed_user_key_lengths"] = o.AllowedUserKeyLengths
+	toSerialize["allowed_users"] = o.AllowedUsers
+	toSerialize["allowed_users_template"] = o.AllowedUsersTemplate
+	toSerialize["cidr_list"] = o.CidrList
+	toSerialize["default_critical_options"] = o.DefaultCriticalOptions
+	toSerialize["default_extensions"] = o.DefaultExtensions
+	toSerialize["default_extensions_template"] = o.DefaultExtensionsTemplate
+	toSerialize["default_user"] = o.DefaultUser
+	toSerialize["default_user_template"] = o.DefaultUserTemplate
+	toSerialize["exclude_cidr_list"] = o.ExcludeCidrList
+	toSerialize["install_script"] = o.InstallScript
+	toSerialize["key"] = o.Key
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_id_format"] = o.KeyIdFormat
+	toSerialize["key_option_specs"] = o.KeyOptionSpecs
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["port"] = o.Port
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

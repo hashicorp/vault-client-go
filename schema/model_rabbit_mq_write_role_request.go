@@ -31,5 +31,11 @@ func NewRabbitMQWriteRoleRequestWithDefaults() *RabbitMQWriteRoleRequest {
 }
 
 func (o RabbitMQWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["tags"] = o.Tags
+	toSerialize["vhost_topics"] = o.VhostTopics
+	toSerialize["vhosts"] = o.Vhosts
+
+	return json.Marshal(toSerialize)
 }

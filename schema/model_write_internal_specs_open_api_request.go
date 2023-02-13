@@ -25,5 +25,9 @@ func NewWriteInternalSpecsOpenAPIRequestWithDefaults() *WriteInternalSpecsOpenAP
 }
 
 func (o WriteInternalSpecsOpenAPIRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["context"] = o.Context
+
+	return json.Marshal(toSerialize)
 }

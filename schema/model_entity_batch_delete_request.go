@@ -25,5 +25,9 @@ func NewEntityBatchDeleteRequestWithDefaults() *EntityBatchDeleteRequest {
 }
 
 func (o EntityBatchDeleteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["entity_ids"] = o.EntityIds
+
+	return json.Marshal(toSerialize)
 }

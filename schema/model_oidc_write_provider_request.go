@@ -31,5 +31,11 @@ func NewOIDCWriteProviderRequestWithDefaults() *OIDCWriteProviderRequest {
 }
 
 func (o OIDCWriteProviderRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allowed_client_ids"] = o.AllowedClientIds
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["scopes_supported"] = o.ScopesSupported
+
+	return json.Marshal(toSerialize)
 }

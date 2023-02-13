@@ -40,5 +40,14 @@ func NewWriteQuotasRateLimitRequestWithDefaults() *WriteQuotasRateLimitRequest {
 }
 
 func (o WriteQuotasRateLimitRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["block_interval"] = o.BlockInterval
+	toSerialize["interval"] = o.Interval
+	toSerialize["path"] = o.Path
+	toSerialize["rate"] = o.Rate
+	toSerialize["role"] = o.Role
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

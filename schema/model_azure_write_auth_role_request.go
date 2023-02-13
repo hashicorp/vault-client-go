@@ -89,5 +89,28 @@ func NewAzureWriteAuthRoleRequestWithDefaults() *AzureWriteAuthRoleRequest {
 }
 
 func (o AzureWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bound_group_ids"] = o.BoundGroupIds
+	toSerialize["bound_locations"] = o.BoundLocations
+	toSerialize["bound_resource_groups"] = o.BoundResourceGroups
+	toSerialize["bound_scale_sets"] = o.BoundScaleSets
+	toSerialize["bound_service_principal_ids"] = o.BoundServicePrincipalIds
+	toSerialize["bound_subscription_ids"] = o.BoundSubscriptionIds
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

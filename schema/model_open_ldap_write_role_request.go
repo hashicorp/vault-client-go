@@ -40,5 +40,14 @@ func NewOpenLDAPWriteRoleRequestWithDefaults() *OpenLDAPWriteRoleRequest {
 }
 
 func (o OpenLDAPWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["creation_ldif"] = o.CreationLdif
+	toSerialize["default_ttl"] = o.DefaultTtl
+	toSerialize["deletion_ldif"] = o.DeletionLdif
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["rollback_ldif"] = o.RollbackLdif
+	toSerialize["username_template"] = o.UsernameTemplate
+
+	return json.Marshal(toSerialize)
 }

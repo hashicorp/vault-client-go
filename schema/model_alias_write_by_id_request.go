@@ -34,5 +34,12 @@ func NewAliasWriteByIDRequestWithDefaults() *AliasWriteByIDRequest {
 }
 
 func (o AliasWriteByIDRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
+	return json.Marshal(toSerialize)
 }

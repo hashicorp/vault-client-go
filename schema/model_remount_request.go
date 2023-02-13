@@ -28,5 +28,10 @@ func NewRemountRequestWithDefaults() *RemountRequest {
 }
 
 func (o RemountRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["from"] = o.From
+	toSerialize["to"] = o.To
+
+	return json.Marshal(toSerialize)
 }

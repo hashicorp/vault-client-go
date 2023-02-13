@@ -115,5 +115,36 @@ func NewGoogleCloudWriteRoleRequestWithDefaults() *GoogleCloudWriteRoleRequest {
 }
 
 func (o GoogleCloudWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["add_group_aliases"] = o.AddGroupAliases
+	toSerialize["allow_gce_inference"] = o.AllowGceInference
+	toSerialize["bound_instance_group"] = o.BoundInstanceGroup
+	toSerialize["bound_instance_groups"] = o.BoundInstanceGroups
+	toSerialize["bound_labels"] = o.BoundLabels
+	toSerialize["bound_projects"] = o.BoundProjects
+	toSerialize["bound_region"] = o.BoundRegion
+	toSerialize["bound_regions"] = o.BoundRegions
+	toSerialize["bound_service_accounts"] = o.BoundServiceAccounts
+	toSerialize["bound_zone"] = o.BoundZone
+	toSerialize["bound_zones"] = o.BoundZones
+	toSerialize["max_jwt_exp"] = o.MaxJwtExp
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["project_id"] = o.ProjectId
+	toSerialize["service_accounts"] = o.ServiceAccounts
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

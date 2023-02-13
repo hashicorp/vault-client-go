@@ -64,5 +64,22 @@ func NewOIDCWriteAuthConfigRequestWithDefaults() *OIDCWriteAuthConfigRequest {
 }
 
 func (o OIDCWriteAuthConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bound_issuer"] = o.BoundIssuer
+	toSerialize["default_role"] = o.DefaultRole
+	toSerialize["jwks_ca_pem"] = o.JwksCaPem
+	toSerialize["jwks_url"] = o.JwksUrl
+	toSerialize["jwt_supported_algs"] = o.JwtSupportedAlgs
+	toSerialize["jwt_validation_pubkeys"] = o.JwtValidationPubkeys
+	toSerialize["namespace_in_state"] = o.NamespaceInState
+	toSerialize["oidc_client_id"] = o.OidcClientId
+	toSerialize["oidc_client_secret"] = o.OidcClientSecret
+	toSerialize["oidc_discovery_ca_pem"] = o.OidcDiscoveryCaPem
+	toSerialize["oidc_discovery_url"] = o.OidcDiscoveryUrl
+	toSerialize["oidc_response_mode"] = o.OidcResponseMode
+	toSerialize["oidc_response_types"] = o.OidcResponseTypes
+	toSerialize["provider_config"] = o.ProviderConfig
+
+	return json.Marshal(toSerialize)
 }

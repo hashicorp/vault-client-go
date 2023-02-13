@@ -31,5 +31,10 @@ func NewToolsGenerateRandomSourceBytesRequestWithDefaults() *ToolsGenerateRandom
 }
 
 func (o ToolsGenerateRandomSourceBytesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bytes"] = o.Bytes
+	toSerialize["format"] = o.Format
+
+	return json.Marshal(toSerialize)
 }

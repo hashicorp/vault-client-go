@@ -178,5 +178,54 @@ func NewPKIWriteRoleRequestWithDefaults() *PKIWriteRoleRequest {
 }
 
 func (o PKIWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allow_any_name"] = o.AllowAnyName
+	toSerialize["allow_bare_domains"] = o.AllowBareDomains
+	toSerialize["allow_glob_domains"] = o.AllowGlobDomains
+	toSerialize["allow_ip_sans"] = o.AllowIpSans
+	toSerialize["allow_localhost"] = o.AllowLocalhost
+	toSerialize["allow_subdomains"] = o.AllowSubdomains
+	toSerialize["allow_wildcard_certificates"] = o.AllowWildcardCertificates
+	toSerialize["allowed_domains"] = o.AllowedDomains
+	toSerialize["allowed_domains_template"] = o.AllowedDomainsTemplate
+	toSerialize["allowed_other_sans"] = o.AllowedOtherSans
+	toSerialize["allowed_serial_numbers"] = o.AllowedSerialNumbers
+	toSerialize["allowed_uri_sans"] = o.AllowedUriSans
+	toSerialize["allowed_uri_sans_template"] = o.AllowedUriSansTemplate
+	toSerialize["backend"] = o.Backend
+	toSerialize["basic_constraints_valid_for_non_ca"] = o.BasicConstraintsValidForNonCa
+	toSerialize["client_flag"] = o.ClientFlag
+	toSerialize["cn_validations"] = o.CnValidations
+	toSerialize["code_signing_flag"] = o.CodeSigningFlag
+	toSerialize["country"] = o.Country
+	toSerialize["email_protection_flag"] = o.EmailProtectionFlag
+	toSerialize["enforce_hostnames"] = o.EnforceHostnames
+	toSerialize["ext_key_usage"] = o.ExtKeyUsage
+	toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
+	toSerialize["generate_lease"] = o.GenerateLease
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["key_usage"] = o.KeyUsage
+	toSerialize["locality"] = o.Locality
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["no_store"] = o.NoStore
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["ou"] = o.Ou
+	toSerialize["policy_identifiers"] = o.PolicyIdentifiers
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["province"] = o.Province
+	toSerialize["require_cn"] = o.RequireCn
+	toSerialize["server_flag"] = o.ServerFlag
+	toSerialize["signature_bits"] = o.SignatureBits
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["use_csr_common_name"] = o.UseCsrCommonName
+	toSerialize["use_csr_sans"] = o.UseCsrSans
+	toSerialize["use_pss"] = o.UsePss
+
+	return json.Marshal(toSerialize)
 }

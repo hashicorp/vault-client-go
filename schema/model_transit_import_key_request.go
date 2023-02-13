@@ -53,5 +53,17 @@ func NewTransitImportKeyRequestWithDefaults() *TransitImportKeyRequest {
 }
 
 func (o TransitImportKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
+	toSerialize["allow_rotation"] = o.AllowRotation
+	toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["context"] = o.Context
+	toSerialize["derived"] = o.Derived
+	toSerialize["exportable"] = o.Exportable
+	toSerialize["hash_function"] = o.HashFunction
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

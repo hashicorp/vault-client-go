@@ -25,5 +25,9 @@ func NewKerberosLoginRequestWithDefaults() *KerberosLoginRequest {
 }
 
 func (o KerberosLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["authorization"] = o.Authorization
+
+	return json.Marshal(toSerialize)
 }

@@ -37,5 +37,13 @@ func NewMFAWriteLoginEnforcementRequestWithDefaults() *MFAWriteLoginEnforcementR
 }
 
 func (o MFAWriteLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["auth_method_accessors"] = o.AuthMethodAccessors
+	toSerialize["auth_method_types"] = o.AuthMethodTypes
+	toSerialize["identity_entity_ids"] = o.IdentityEntityIds
+	toSerialize["identity_group_ids"] = o.IdentityGroupIds
+	toSerialize["mfa_method_ids"] = o.MfaMethodIds
+
+	return json.Marshal(toSerialize)
 }

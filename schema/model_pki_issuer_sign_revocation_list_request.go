@@ -44,5 +44,14 @@ func NewPKIIssuerSignRevocationListRequestWithDefaults() *PKIIssuerSignRevocatio
 }
 
 func (o PKIIssuerSignRevocationListRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["crl_number"] = o.CrlNumber
+	toSerialize["delta_crl_base_number"] = o.DeltaCrlBaseNumber
+	toSerialize["extensions"] = o.Extensions
+	toSerialize["format"] = o.Format
+	toSerialize["next_update"] = o.NextUpdate
+	toSerialize["revoked_certs"] = o.RevokedCerts
+
+	return json.Marshal(toSerialize)
 }

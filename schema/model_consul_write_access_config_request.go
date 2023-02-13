@@ -42,5 +42,14 @@ func NewConsulWriteAccessConfigRequestWithDefaults() *ConsulWriteAccessConfigReq
 }
 
 func (o ConsulWriteAccessConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["address"] = o.Address
+	toSerialize["ca_cert"] = o.CaCert
+	toSerialize["client_cert"] = o.ClientCert
+	toSerialize["client_key"] = o.ClientKey
+	toSerialize["scheme"] = o.Scheme
+	toSerialize["token"] = o.Token
+
+	return json.Marshal(toSerialize)
 }

@@ -28,5 +28,10 @@ func NewAWSConfigWriteLeaseRequestWithDefaults() *AWSConfigWriteLeaseRequest {
 }
 
 func (o AWSConfigWriteLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["lease"] = o.Lease
+	toSerialize["lease_max"] = o.LeaseMax
+
+	return json.Marshal(toSerialize)
 }

@@ -31,5 +31,11 @@ func NewGoogleCloudKMSVerifyRequestWithDefaults() *GoogleCloudKMSVerifyRequest {
 }
 
 func (o GoogleCloudKMSVerifyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["digest"] = o.Digest
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["signature"] = o.Signature
+
+	return json.Marshal(toSerialize)
 }

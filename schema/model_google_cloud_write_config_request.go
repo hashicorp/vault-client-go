@@ -31,5 +31,11 @@ func NewGoogleCloudWriteConfigRequestWithDefaults() *GoogleCloudWriteConfigReque
 }
 
 func (o GoogleCloudWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["credentials"] = o.Credentials
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

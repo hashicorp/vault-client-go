@@ -25,5 +25,9 @@ func NewAppRoleWriteSecretIDBoundCIDRsRequestWithDefaults() *AppRoleWriteSecretI
 }
 
 func (o AppRoleWriteSecretIDBoundCIDRsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
+
+	return json.Marshal(toSerialize)
 }

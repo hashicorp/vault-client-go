@@ -64,5 +64,22 @@ func NewTokenWriteCreateOrphanRequestWithDefaults() *TokenWriteCreateOrphanReque
 }
 
 func (o TokenWriteCreateOrphanRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["display_name"] = o.DisplayName
+	toSerialize["entity_alias"] = o.EntityAlias
+	toSerialize["explicit_max_ttl"] = o.ExplicitMaxTtl
+	toSerialize["id"] = o.Id
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["no_default_policy"] = o.NoDefaultPolicy
+	toSerialize["no_parent"] = o.NoParent
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["renewable"] = o.Renewable
+	toSerialize["role_name"] = o.RoleName
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

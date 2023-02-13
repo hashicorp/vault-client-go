@@ -25,5 +25,9 @@ func NewTransitTrimKeyRequestWithDefaults() *TransitTrimKeyRequest {
 }
 
 func (o TransitTrimKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["min_available_version"] = o.MinAvailableVersion
+
+	return json.Marshal(toSerialize)
 }

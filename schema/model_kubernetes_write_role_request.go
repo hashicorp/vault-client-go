@@ -57,5 +57,19 @@ func NewKubernetesWriteRoleRequestWithDefaults() *KubernetesWriteRoleRequest {
 }
 
 func (o KubernetesWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allowed_kubernetes_namespace_selector"] = o.AllowedKubernetesNamespaceSelector
+	toSerialize["allowed_kubernetes_namespaces"] = o.AllowedKubernetesNamespaces
+	toSerialize["extra_annotations"] = o.ExtraAnnotations
+	toSerialize["extra_labels"] = o.ExtraLabels
+	toSerialize["generated_role_rules"] = o.GeneratedRoleRules
+	toSerialize["kubernetes_role_name"] = o.KubernetesRoleName
+	toSerialize["kubernetes_role_type"] = o.KubernetesRoleType
+	toSerialize["name_template"] = o.NameTemplate
+	toSerialize["service_account_name"] = o.ServiceAccountName
+	toSerialize["token_default_ttl"] = o.TokenDefaultTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+
+	return json.Marshal(toSerialize)
 }

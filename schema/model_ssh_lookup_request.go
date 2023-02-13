@@ -25,5 +25,9 @@ func NewSSHLookupRequestWithDefaults() *SSHLookupRequest {
 }
 
 func (o SSHLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["ip"] = o.Ip
+
+	return json.Marshal(toSerialize)
 }

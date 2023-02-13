@@ -47,5 +47,15 @@ func NewGoogleCloudWriteAuthConfigRequestWithDefaults() *GoogleCloudWriteAuthCon
 }
 
 func (o GoogleCloudWriteAuthConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["credentials"] = o.Credentials
+	toSerialize["custom_endpoint"] = o.CustomEndpoint
+	toSerialize["gce_alias"] = o.GceAlias
+	toSerialize["gce_metadata"] = o.GceMetadata
+	toSerialize["google_certs_endpoint"] = o.GoogleCertsEndpoint
+	toSerialize["iam_alias"] = o.IamAlias
+	toSerialize["iam_metadata"] = o.IamMetadata
+
+	return json.Marshal(toSerialize)
 }

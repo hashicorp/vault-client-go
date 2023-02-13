@@ -53,5 +53,17 @@ func NewWriteAuthMethodRequestWithDefaults() *WriteAuthMethodRequest {
 }
 
 func (o WriteAuthMethodRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["config"] = o.Config
+	toSerialize["description"] = o.Description
+	toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
+	toSerialize["local"] = o.Local
+	toSerialize["options"] = o.Options
+	toSerialize["plugin_name"] = o.PluginName
+	toSerialize["plugin_version"] = o.PluginVersion
+	toSerialize["seal_wrap"] = o.SealWrap
+	toSerialize["type"] = o.Type
+
+	return json.Marshal(toSerialize)
 }

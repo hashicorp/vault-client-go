@@ -34,5 +34,12 @@ func NewKVv2WriteMetadataRequestWithDefaults() *KVv2WriteMetadataRequest {
 }
 
 func (o KVv2WriteMetadataRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cas_required"] = o.CasRequired
+	toSerialize["custom_metadata"] = o.CustomMetadata
+	toSerialize["delete_version_after"] = o.DeleteVersionAfter
+	toSerialize["max_versions"] = o.MaxVersions
+
+	return json.Marshal(toSerialize)
 }

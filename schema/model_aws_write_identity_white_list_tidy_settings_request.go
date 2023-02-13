@@ -27,5 +27,9 @@ func NewAWSWriteIdentityWhiteListTidySettingsRequestWithDefaults() *AWSWriteIden
 }
 
 func (o AWSWriteIdentityWhiteListTidySettingsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
+	return json.Marshal(toSerialize)
 }

@@ -37,5 +37,13 @@ func NewAliCloudWriteRoleRequestWithDefaults() *AliCloudWriteRoleRequest {
 }
 
 func (o AliCloudWriteRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["inline_policies"] = o.InlinePolicies
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["remote_policies"] = o.RemotePolicies
+	toSerialize["role_arn"] = o.RoleArn
+	toSerialize["ttl"] = o.Ttl
+
+	return json.Marshal(toSerialize)
 }

@@ -63,5 +63,20 @@ func NewCentrifyWriteConfigRequestWithDefaults() *CentrifyWriteConfigRequest {
 }
 
 func (o CentrifyWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["app_id"] = o.AppId
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
+	toSerialize["policies"] = o.Policies
+	toSerialize["scope"] = o.Scope
+	toSerialize["service_url"] = o.ServiceUrl
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+
+	return json.Marshal(toSerialize)
 }

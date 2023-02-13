@@ -38,5 +38,12 @@ func NewTransitGenerateRandomRequestWithDefaults() *TransitGenerateRandomRequest
 }
 
 func (o TransitGenerateRandomRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["bytes"] = o.Bytes
+	toSerialize["format"] = o.Format
+	toSerialize["source"] = o.Source
+	toSerialize["urlbytes"] = o.Urlbytes
+
+	return json.Marshal(toSerialize)
 }

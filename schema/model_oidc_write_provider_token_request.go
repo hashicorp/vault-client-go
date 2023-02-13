@@ -40,5 +40,14 @@ func NewOIDCWriteProviderTokenRequestWithDefaults() *OIDCWriteProviderTokenReque
 }
 
 func (o OIDCWriteProviderTokenRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
+	toSerialize["code"] = o.Code
+	toSerialize["code_verifier"] = o.CodeVerifier
+	toSerialize["grant_type"] = o.GrantType
+	toSerialize["redirect_uri"] = o.RedirectUri
+
+	return json.Marshal(toSerialize)
 }

@@ -25,5 +25,9 @@ func NewActiveDirectoryCheckInManageLibraryRequestWithDefaults() *ActiveDirector
 }
 
 func (o ActiveDirectoryCheckInManageLibraryRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["service_account_names"] = o.ServiceAccountNames
+
+	return json.Marshal(toSerialize)
 }

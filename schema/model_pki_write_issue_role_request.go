@@ -67,5 +67,21 @@ func NewPKIWriteIssueRoleRequestWithDefaults() *PKIWriteIssueRoleRequest {
 }
 
 func (o PKIWriteIssueRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["remove_roots_from_chain"] = o.RemoveRootsFromChain
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
+	return json.Marshal(toSerialize)
 }

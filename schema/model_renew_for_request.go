@@ -28,5 +28,10 @@ func NewRenewForRequestWithDefaults() *RenewForRequest {
 }
 
 func (o RenewForRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["lease_id"] = o.LeaseId
+
+	return json.Marshal(toSerialize)
 }

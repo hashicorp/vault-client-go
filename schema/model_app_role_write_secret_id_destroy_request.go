@@ -25,5 +25,9 @@ func NewAppRoleWriteSecretIDDestroyRequestWithDefaults() *AppRoleWriteSecretIDDe
 }
 
 func (o AppRoleWriteSecretIDDestroyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["secret_id"] = o.SecretId
+
+	return json.Marshal(toSerialize)
 }

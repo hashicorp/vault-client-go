@@ -34,5 +34,12 @@ func NewCloudFoundryLoginRequestWithDefaults() *CloudFoundryLoginRequest {
 }
 
 func (o CloudFoundryLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["cf_instance_cert"] = o.CfInstanceCert
+	toSerialize["role"] = o.Role
+	toSerialize["signature"] = o.Signature
+	toSerialize["signing_time"] = o.SigningTime
+
+	return json.Marshal(toSerialize)
 }

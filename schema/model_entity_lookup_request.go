@@ -37,5 +37,13 @@ func NewEntityLookupRequestWithDefaults() *EntityLookupRequest {
 }
 
 func (o EntityLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["alias_id"] = o.AliasId
+	toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
+	toSerialize["alias_name"] = o.AliasName
+	toSerialize["id"] = o.Id
+	toSerialize["name"] = o.Name
+
+	return json.Marshal(toSerialize)
 }

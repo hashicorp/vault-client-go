@@ -25,5 +25,9 @@ func NewWriteLeasesLookupRequestWithDefaults() *WriteLeasesLookupRequest {
 }
 
 func (o WriteLeasesLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["lease_id"] = o.LeaseId
+
+	return json.Marshal(toSerialize)
 }

@@ -58,5 +58,20 @@ func NewWriteAuthMethodTuneRequestWithDefaults() *WriteAuthMethodTuneRequest {
 }
 
 func (o WriteAuthMethodTuneRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
+	toSerialize["audit_non_hmac_request_keys"] = o.AuditNonHmacRequestKeys
+	toSerialize["audit_non_hmac_response_keys"] = o.AuditNonHmacResponseKeys
+	toSerialize["default_lease_ttl"] = o.DefaultLeaseTtl
+	toSerialize["description"] = o.Description
+	toSerialize["listing_visibility"] = o.ListingVisibility
+	toSerialize["max_lease_ttl"] = o.MaxLeaseTtl
+	toSerialize["options"] = o.Options
+	toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
+	toSerialize["plugin_version"] = o.PluginVersion
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["user_lockout_config"] = o.UserLockoutConfig
+
+	return json.Marshal(toSerialize)
 }

@@ -25,5 +25,9 @@ func NewAWSConfigWriteSecurityTokenServiceAccountRequestWithDefaults() *AWSConfi
 }
 
 func (o AWSConfigWriteSecurityTokenServiceAccountRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["sts_role"] = o.StsRole
+
+	return json.Marshal(toSerialize)
 }

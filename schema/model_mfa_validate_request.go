@@ -28,5 +28,10 @@ func NewMFAValidateRequestWithDefaults() *MFAValidateRequest {
 }
 
 func (o MFAValidateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["mfa_payload"] = o.MfaPayload
+	toSerialize["mfa_request_id"] = o.MfaRequestId
+
+	return json.Marshal(toSerialize)
 }

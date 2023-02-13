@@ -34,5 +34,11 @@ func NewTerraformWriteConfigRequestWithDefaults() *TerraformWriteConfigRequest {
 }
 
 func (o TerraformWriteConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["address"] = o.Address
+	toSerialize["base_path"] = o.BasePath
+	toSerialize["token"] = o.Token
+
+	return json.Marshal(toSerialize)
 }

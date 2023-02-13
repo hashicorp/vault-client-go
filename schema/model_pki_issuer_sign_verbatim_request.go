@@ -87,5 +87,27 @@ func NewPKIIssuerSignVerbatimRequestWithDefaults() *PKIIssuerSignVerbatimRequest
 }
 
 func (o PKIIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(o)
+	toSerialize := make(map[string]interface{})
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["csr"] = o.Csr
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["ext_key_usage"] = o.ExtKeyUsage
+	toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["key_usage"] = o.KeyUsage
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["remove_roots_from_chain"] = o.RemoveRootsFromChain
+	toSerialize["role"] = o.Role
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["signature_bits"] = o.SignatureBits
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+	toSerialize["use_pss"] = o.UsePss
+
+	return json.Marshal(toSerialize)
 }

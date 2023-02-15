@@ -15031,7 +15031,7 @@
       "x-vault-createSupported": true,
       "get": {
         "summary": "Configure connection details to a database plugin.",
-        "operationId": "DatabaseReadConfigName",
+        "operationId": "DatabaseReadConfig",
         "tags": [
           "secrets"
         ],
@@ -15043,7 +15043,7 @@
       },
       "post": {
         "summary": "Configure connection details to a database plugin.",
-        "operationId": "DatabaseWriteConfigName",
+        "operationId": "DatabaseWriteConfig",
         "tags": [
           "secrets"
         ],
@@ -15052,7 +15052,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DatabaseWriteConfigNameRequest"
+                "$ref": "#/components/schemas/DatabaseWriteConfigRequest"
               }
             }
           }
@@ -15065,7 +15065,7 @@
       },
       "delete": {
         "summary": "Configure connection details to a database plugin.",
-        "operationId": "DatabaseDeleteConfigName",
+        "operationId": "DatabaseDeleteConfig",
         "tags": [
           "secrets"
         ],
@@ -15100,7 +15100,7 @@
       ],
       "get": {
         "summary": "Request database credentials for a certain role.",
-        "operationId": "DatabaseReadCredsName",
+        "operationId": "DatabaseReadCredentials",
         "tags": [
           "secrets"
         ],
@@ -15135,7 +15135,7 @@
       ],
       "post": {
         "summary": "Resets a database plugin.",
-        "operationId": "DatabaseWriteResetName",
+        "operationId": "DatabaseReset",
         "tags": [
           "secrets"
         ],
@@ -15211,7 +15211,7 @@
       "x-vault-createSupported": true,
       "get": {
         "summary": "Manage the roles that can be created with this backend.",
-        "operationId": "DatabaseReadRolesName",
+        "operationId": "DatabaseReadRole",
         "tags": [
           "secrets"
         ],
@@ -15223,7 +15223,7 @@
       },
       "post": {
         "summary": "Manage the roles that can be created with this backend.",
-        "operationId": "DatabaseWriteRolesName",
+        "operationId": "DatabaseWriteRole",
         "tags": [
           "secrets"
         ],
@@ -15232,7 +15232,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DatabaseWriteRolesNameRequest"
+                "$ref": "#/components/schemas/DatabaseWriteRoleRequest"
               }
             }
           }
@@ -15245,7 +15245,7 @@
       },
       "delete": {
         "summary": "Manage the roles that can be created with this backend.",
-        "operationId": "DatabaseDeleteRolesName",
+        "operationId": "DatabaseDeleteRole",
         "tags": [
           "secrets"
         ],
@@ -15279,7 +15279,7 @@
         }
       ],
       "post": {
-        "operationId": "DatabaseWriteRotateRoleName",
+        "operationId": "DatabaseRotateRole",
         "tags": [
           "secrets"
         ],
@@ -15313,7 +15313,7 @@
         }
       ],
       "post": {
-        "operationId": "DatabaseWriteRotateRootName",
+        "operationId": "DatabaseRotateRoot",
         "tags": [
           "secrets"
         ],
@@ -15348,7 +15348,7 @@
       ],
       "get": {
         "summary": "Request database credentials for a certain static role. These credentials are\nrotated periodically.",
-        "operationId": "DatabaseReadStaticCredsName",
+        "operationId": "DatabaseReadStaticCredentials",
         "tags": [
           "secrets"
         ],
@@ -15424,7 +15424,7 @@
       "x-vault-createSupported": true,
       "get": {
         "summary": "Manage the static roles that can be created with this backend.",
-        "operationId": "DatabaseReadStaticRolesName",
+        "operationId": "DatabaseReadStaticRole",
         "tags": [
           "secrets"
         ],
@@ -15436,7 +15436,7 @@
       },
       "post": {
         "summary": "Manage the static roles that can be created with this backend.",
-        "operationId": "DatabaseWriteStaticRolesName",
+        "operationId": "DatabaseWriteStaticRole",
         "tags": [
           "secrets"
         ],
@@ -15445,7 +15445,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DatabaseWriteStaticRolesNameRequest"
+                "$ref": "#/components/schemas/DatabaseWriteStaticRoleRequest"
               }
             }
           }
@@ -15458,7 +15458,7 @@
       },
       "delete": {
         "summary": "Manage the static roles that can be created with this backend.",
-        "operationId": "DatabaseDeleteStaticRolesName",
+        "operationId": "DatabaseDeleteStaticRole",
         "tags": [
           "secrets"
         ],
@@ -27662,7 +27662,7 @@
           }
         }
       },
-      "DatabaseWriteConfigNameRequest": {
+      "DatabaseWriteConfigRequest": {
         "type": "object",
         "properties": {
           "allowed_roles": {
@@ -27698,7 +27698,7 @@
           }
         }
       },
-      "DatabaseWriteRolesNameRequest": {
+      "DatabaseWriteRoleRequest": {
         "type": "object",
         "properties": {
           "creation_statements": {
@@ -27755,7 +27755,7 @@
           }
         }
       },
-      "DatabaseWriteStaticRolesNameRequest": {
+      "DatabaseWriteStaticRoleRequest": {
         "type": "object",
         "properties": {
           "credential_config": {
@@ -31649,10 +31649,10 @@
           }
         },
         "required": [
-          "client_id",
-          "scope",
           "response_type",
-          "redirect_uri"
+          "client_id",
+          "redirect_uri",
+          "scope"
         ]
       },
       "OIDCWriteProviderRequest": {
@@ -31707,9 +31707,9 @@
           }
         },
         "required": [
-          "grant_type",
           "redirect_uri",
-          "code"
+          "code",
+          "grant_type"
         ]
       },
       "OIDCWriteRoleRequest": {

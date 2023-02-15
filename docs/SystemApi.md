@@ -2,174 +2,174 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CalculateAuditHash**](System.md#CalculateAuditHash) | **Post** /sys/audit-hash/{path} | The hash of the given string via the given audit backend
-[**DeleteAuditDevice**](System.md#DeleteAuditDevice) | **Delete** /sys/audit/{path} | Disable the audit device at the given path.
-[**DeleteAuthMethod**](System.md#DeleteAuthMethod) | **Delete** /sys/auth/{path} | Disable the auth method at the given auth path
-[**DeleteConfigAuditingRequestHeader**](System.md#DeleteConfigAuditingRequestHeader) | **Delete** /sys/config/auditing/request-headers/{header} | Disable auditing of the given request header.
-[**DeleteConfigCORS**](System.md#DeleteConfigCORS) | **Delete** /sys/config/cors | Remove any CORS settings.
-[**DeleteConfigUIHeader**](System.md#DeleteConfigUIHeader) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
-[**DeleteGenerateRoot**](System.md#DeleteGenerateRoot) | **Delete** /sys/generate-root | Cancels any in-progress root generation attempt.
-[**DeleteGenerateRootAttempt**](System.md#DeleteGenerateRootAttempt) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
-[**DeleteLogger**](System.md#DeleteLogger) | **Delete** /sys/loggers/{name} | Revert a single logger to use log level provided in config.
-[**DeleteLoggers**](System.md#DeleteLoggers) | **Delete** /sys/loggers | Revert the all loggers to use log level provided in config.
-[**DeleteMount**](System.md#DeleteMount) | **Delete** /sys/mounts/{path} | Disable the mount point specified at the given path.
-[**DeletePluginsCatalogByTypeByName**](System.md#DeletePluginsCatalogByTypeByName) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
-[**DeletePoliciesACL**](System.md#DeletePoliciesACL) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
-[**DeletePoliciesPassword**](System.md#DeletePoliciesPassword) | **Delete** /sys/policies/password/{name} | Delete a password policy.
-[**DeletePolicy**](System.md#DeletePolicy) | **Delete** /sys/policy/{name} | Delete the policy with the given name.
-[**DeleteQuotasRateLimit**](System.md#DeleteQuotasRateLimit) | **Delete** /sys/quotas/rate-limit/{name} | 
-[**DeleteRaw**](System.md#DeleteRaw) | **Delete** /sys/raw | Delete the key with given path.
-[**DeleteRawPath**](System.md#DeleteRawPath) | **Delete** /sys/raw/{path} | Delete the key with given path.
-[**DeleteRekeyBackup**](System.md#DeleteRekeyBackup) | **Delete** /sys/rekey/backup | Delete the backup copy of PGP-encrypted unseal keys.
-[**DeleteRekeyInit**](System.md#DeleteRekeyInit) | **Delete** /sys/rekey/init | Cancels any in-progress rekey.
-[**DeleteRekeyRecoveryKeyBackup**](System.md#DeleteRekeyRecoveryKeyBackup) | **Delete** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
-[**DeleteRekeyVerify**](System.md#DeleteRekeyVerify) | **Delete** /sys/rekey/verify | Cancel any in-progress rekey verification operation.
-[**ListConfigUIHeaders**](System.md#ListConfigUIHeaders) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
-[**ListLeasesLookupPrefix**](System.md#ListLeasesLookupPrefix) | **Get** /sys/leases/lookup/{prefix} | Returns a list of lease ids.
-[**ListPluginsCatalogByType**](System.md#ListPluginsCatalogByType) | **Get** /sys/plugins/catalog/{type} | List the plugins in the catalog.
-[**ListPoliciesACL**](System.md#ListPoliciesACL) | **Get** /sys/policies/acl | List the configured access control policies.
-[**ListPoliciesPassword**](System.md#ListPoliciesPassword) | **Get** /sys/policies/password | List the existing password policies.
-[**ListQuotasRateLimits**](System.md#ListQuotasRateLimits) | **Get** /sys/quotas/rate-limit | 
-[**ListVersionHistory**](System.md#ListVersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
-[**MFAValidate**](System.md#MFAValidate) | **Post** /sys/mfa/validate | Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
-[**Monitor**](System.md#Monitor) | **Get** /sys/monitor | 
-[**PprofRead**](System.md#PprofRead) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
-[**PprofReadAllocs**](System.md#PprofReadAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
-[**PprofReadBlock**](System.md#PprofReadBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
-[**PprofReadCmdline**](System.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#x27;s command line.
-[**PprofReadGoroutine**](System.md#PprofReadGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
-[**PprofReadHeap**](System.md#PprofReadHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
-[**PprofReadMutex**](System.md#PprofReadMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
-[**PprofReadProfile**](System.md#PprofReadProfile) | **Get** /sys/pprof/profile | Returns a pprof-formatted cpu profile payload.
-[**PprofReadSymbol**](System.md#PprofReadSymbol) | **Get** /sys/pprof/symbol | Returns the program counters listed in the request.
-[**PprofReadThreadcreate**](System.md#PprofReadThreadcreate) | **Get** /sys/pprof/threadcreate | Returns stack traces that led to the creation of new OS threads
-[**PprofReadTrace**](System.md#PprofReadTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
-[**ReadAuditDevices**](System.md#ReadAuditDevices) | **Get** /sys/audit | List the enabled audit devices.
-[**ReadAuthMethod**](System.md#ReadAuthMethod) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
-[**ReadAuthMethodTune**](System.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#x27;s configuration.
-[**ReadAuthMethods**](System.md#ReadAuthMethods) | **Get** /sys/auth | List the currently enabled credential backends.
-[**ReadConfigAuditingRequestHeader**](System.md#ReadConfigAuditingRequestHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
-[**ReadConfigAuditingRequestHeaders**](System.md#ReadConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
-[**ReadConfigCORS**](System.md#ReadConfigCORS) | **Get** /sys/config/cors | Return the current CORS settings.
-[**ReadConfigStateSanitized**](System.md#ReadConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
-[**ReadConfigUIHeader**](System.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
-[**ReadGenerateRoot**](System.md#ReadGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
-[**ReadGenerateRootAttempt**](System.md#ReadGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
-[**ReadHAStatus**](System.md#ReadHAStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
-[**ReadHealth**](System.md#ReadHealth) | **Get** /sys/health | Returns the health status of Vault.
-[**ReadHostInfo**](System.md#ReadHostInfo) | **Get** /sys/host-info | Information about the host instance that this Vault server is running on.
-[**ReadInFlightRequests**](System.md#ReadInFlightRequests) | **Get** /sys/in-flight-req | reports in-flight requests
-[**ReadInit**](System.md#ReadInit) | **Get** /sys/init | Returns the initialization status of Vault.
-[**ReadInternalCountersActivity**](System.md#ReadInternalCountersActivity) | **Get** /sys/internal/counters/activity | Report the client count metrics, for this namespace and all child namespaces.
-[**ReadInternalCountersActivityExport**](System.md#ReadInternalCountersActivityExport) | **Get** /sys/internal/counters/activity/export | Report the client count metrics, for this namespace and all child namespaces.
-[**ReadInternalCountersActivityMonthly**](System.md#ReadInternalCountersActivityMonthly) | **Get** /sys/internal/counters/activity/monthly | Report the number of clients for this month, for this namespace and all child namespaces.
-[**ReadInternalCountersConfig**](System.md#ReadInternalCountersConfig) | **Get** /sys/internal/counters/config | Read the client count tracking configuration.
-[**ReadInternalCountersEntities**](System.md#ReadInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
-[**ReadInternalCountersRequests**](System.md#ReadInternalCountersRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
-[**ReadInternalCountersTokens**](System.md#ReadInternalCountersTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
-[**ReadInternalInspectRouter**](System.md#ReadInternalInspectRouter) | **Get** /sys/internal/inspect/router/{tag} | Expose the route entry and mount entry tables present in the router
-[**ReadInternalSpecsOpenAPI**](System.md#ReadInternalSpecsOpenAPI) | **Get** /sys/internal/specs/openapi | Generate an OpenAPI 3 document of all mounted paths.
-[**ReadInternalUIFeatureFlags**](System.md#ReadInternalUIFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
-[**ReadInternalUIMount**](System.md#ReadInternalUIMount) | **Get** /sys/internal/ui/mounts/{path} | Return information about the given mount.
-[**ReadInternalUIMounts**](System.md#ReadInternalUIMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
-[**ReadInternalUINamespaces**](System.md#ReadInternalUINamespaces) | **Get** /sys/internal/ui/namespaces | Backwards compatibility is not guaranteed for this API
-[**ReadInternalUIResultantACL**](System.md#ReadInternalUIResultantACL) | **Get** /sys/internal/ui/resultant-acl | Backwards compatibility is not guaranteed for this API
-[**ReadKeyStatus**](System.md#ReadKeyStatus) | **Get** /sys/key-status | Provides information about the backend encryption key.
-[**ReadLeader**](System.md#ReadLeader) | **Get** /sys/leader | Returns the high availability status and current leader instance of Vault.
-[**ReadLeases**](System.md#ReadLeases) | **Get** /sys/leases | List leases associated with this Vault cluster
-[**ReadLeasesCount**](System.md#ReadLeasesCount) | **Get** /sys/leases/count | Count of leases associated with this Vault cluster
-[**ReadLogger**](System.md#ReadLogger) | **Get** /sys/loggers/{name} | Read the log level for a single logger.
-[**ReadLoggers**](System.md#ReadLoggers) | **Get** /sys/loggers | Read the log level for all existing loggers.
-[**ReadMetrics**](System.md#ReadMetrics) | **Get** /sys/metrics | Export the metrics aggregated for telemetry purpose.
-[**ReadMount**](System.md#ReadMount) | **Get** /sys/mounts/{path} | Read the configuration of the secret engine at the given path.
-[**ReadMounts**](System.md#ReadMounts) | **Get** /sys/mounts | List the currently mounted backends.
-[**ReadMountsConfig**](System.md#ReadMountsConfig) | **Get** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
-[**ReadPluginsCatalog**](System.md#ReadPluginsCatalog) | **Get** /sys/plugins/catalog | Lists all the plugins known to Vault
-[**ReadPluginsCatalogByTypeByName**](System.md#ReadPluginsCatalogByTypeByName) | **Get** /sys/plugins/catalog/{type}/{name} | Return the configuration data for the plugin with the given name.
-[**ReadPolicies**](System.md#ReadPolicies) | **Get** /sys/policy | List the configured access control policies.
-[**ReadPoliciesACL**](System.md#ReadPoliciesACL) | **Get** /sys/policies/acl/{name} | Retrieve information about the named ACL policy.
-[**ReadPoliciesPassword**](System.md#ReadPoliciesPassword) | **Get** /sys/policies/password/{name} | Retrieve an existing password policy.
-[**ReadPoliciesPasswordGenerate**](System.md#ReadPoliciesPasswordGenerate) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
-[**ReadPolicy**](System.md#ReadPolicy) | **Get** /sys/policy/{name} | Retrieve the policy body for the named policy.
-[**ReadQuotasConfig**](System.md#ReadQuotasConfig) | **Get** /sys/quotas/config | 
-[**ReadQuotasRateLimit**](System.md#ReadQuotasRateLimit) | **Get** /sys/quotas/rate-limit/{name} | 
-[**ReadRaw**](System.md#ReadRaw) | **Get** /sys/raw | Read the value of the key at the given path.
-[**ReadRawPath**](System.md#ReadRawPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
-[**ReadRekeyBackup**](System.md#ReadRekeyBackup) | **Get** /sys/rekey/backup | Return the backup copy of PGP-encrypted unseal keys.
-[**ReadRekeyInit**](System.md#ReadRekeyInit) | **Get** /sys/rekey/init | Reads the configuration and progress of the current rekey attempt.
-[**ReadRekeyRecoveryKeyBackup**](System.md#ReadRekeyRecoveryKeyBackup) | **Get** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
-[**ReadRekeyVerify**](System.md#ReadRekeyVerify) | **Get** /sys/rekey/verify | Read the configuration and progress of the current rekey verification attempt.
-[**ReadRemountStatus**](System.md#ReadRemountStatus) | **Get** /sys/remount/status/{migration_id} | Check status of a mount migration
-[**ReadReplicationStatus**](System.md#ReadReplicationStatus) | **Get** /sys/replication/status | 
-[**ReadRotateConfig**](System.md#ReadRotateConfig) | **Get** /sys/rotate/config | 
-[**ReadSealStatus**](System.md#ReadSealStatus) | **Get** /sys/seal-status | Check the seal status of a Vault.
-[**Remount**](System.md#Remount) | **Post** /sys/remount | Initiate a mount migration
-[**Renew**](System.md#Renew) | **Post** /sys/renew | Renews a lease, requesting to extend the lease.
-[**RenewFor**](System.md#RenewFor) | **Post** /sys/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
-[**Revoke**](System.md#Revoke) | **Post** /sys/revoke | Revokes a lease immediately.
-[**RevokeForce**](System.md#RevokeForce) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**RevokeLease**](System.md#RevokeLease) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
-[**RevokePrefix**](System.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
-[**Rotate**](System.md#Rotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
-[**Seal**](System.md#Seal) | **Post** /sys/seal | Seal the Vault.
-[**StepDownLeader**](System.md#StepDownLeader) | **Post** /sys/step-down | Cause the node to give up active status.
-[**SysDeletePluginsCatalogName**](System.md#SysDeletePluginsCatalogName) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
-[**SysListLeasesLookup**](System.md#SysListLeasesLookup) | **Get** /sys/leases/lookup/ | Returns a list of lease ids.
-[**SysReadPluginsCatalogName**](System.md#SysReadPluginsCatalogName) | **Get** /sys/plugins/catalog/{name} | Return the configuration data for the plugin with the given name.
-[**SysWriteLockedusersMountAccessorUnlockAliasIdentifier**](System.md#SysWriteLockedusersMountAccessorUnlockAliasIdentifier) | **Post** /sys/lockedusers/{mount_accessor}/unlock/{alias_identifier} | Unlocks the user with given mount_accessor and alias_identifier
-[**SysWritePluginsCatalogName**](System.md#SysWritePluginsCatalogName) | **Post** /sys/plugins/catalog/{name} | Register a new plugin, or updates an existing one with the supplied name.
-[**SysWriteToolsRandomUrlbytes**](System.md#SysWriteToolsRandomUrlbytes) | **Post** /sys/tools/random/{urlbytes} | Generate random bytes
-[**ToolsGenerateRandom**](System.md#ToolsGenerateRandom) | **Post** /sys/tools/random | Generate random bytes
-[**ToolsGenerateRandomSource**](System.md#ToolsGenerateRandomSource) | **Post** /sys/tools/random/{source} | Generate random bytes
-[**ToolsGenerateRandomSourceBytes**](System.md#ToolsGenerateRandomSourceBytes) | **Post** /sys/tools/random/{source}/{urlbytes} | Generate random bytes
-[**ToolsHash**](System.md#ToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
-[**ToolsHashWith**](System.md#ToolsHashWith) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
-[**Unseal**](System.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
-[**WrappingReadLookup**](System.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#x27;s token.
-[**WrappingRewrap**](System.md#WrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
-[**WrappingUnwrap**](System.md#WrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
-[**WrappingWrap**](System.md#WrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
-[**WrappingWriteLookup**](System.md#WrappingWriteLookup) | **Post** /sys/wrapping/lookup | Look up wrapping properties for the given token.
-[**WriteAuditDevice**](System.md#WriteAuditDevice) | **Post** /sys/audit/{path} | Enable a new audit device at the supplied path.
-[**WriteAuthMethod**](System.md#WriteAuthMethod) | **Post** /sys/auth/{path} | Enables a new auth method.
-[**WriteAuthMethodTune**](System.md#WriteAuthMethodTune) | **Post** /sys/auth/{path}/tune | Tune configuration parameters for a given auth path.
-[**WriteCapabilities**](System.md#WriteCapabilities) | **Post** /sys/capabilities | Fetches the capabilities of the given token on the given path.
-[**WriteCapabilitiesAccessor**](System.md#WriteCapabilitiesAccessor) | **Post** /sys/capabilities-accessor | Fetches the capabilities of the token associated with the given token, on the given path.
-[**WriteCapabilitiesSelf**](System.md#WriteCapabilitiesSelf) | **Post** /sys/capabilities-self | Fetches the capabilities of the given token on the given path.
-[**WriteConfigAuditingRequestHeader**](System.md#WriteConfigAuditingRequestHeader) | **Post** /sys/config/auditing/request-headers/{header} | Enable auditing of a header.
-[**WriteConfigCORS**](System.md#WriteConfigCORS) | **Post** /sys/config/cors | Configure the CORS settings.
-[**WriteConfigReloadSubsystem**](System.md#WriteConfigReloadSubsystem) | **Post** /sys/config/reload/{subsystem} | Reload the given subsystem
-[**WriteConfigUIHeader**](System.md#WriteConfigUIHeader) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
-[**WriteGenerateRoot**](System.md#WriteGenerateRoot) | **Post** /sys/generate-root | Initializes a new root generation attempt.
-[**WriteGenerateRootAttempt**](System.md#WriteGenerateRootAttempt) | **Post** /sys/generate-root/attempt | Initializes a new root generation attempt.
-[**WriteGenerateRootUpdate**](System.md#WriteGenerateRootUpdate) | **Post** /sys/generate-root/update | Enter a single unseal key share to progress the root generation attempt.
-[**WriteInit**](System.md#WriteInit) | **Post** /sys/init | Initialize a new Vault.
-[**WriteInternalCountersConfig**](System.md#WriteInternalCountersConfig) | **Post** /sys/internal/counters/config | Enable or disable collection of client count, set retention period, or set default reporting period.
-[**WriteLeasesLookup**](System.md#WriteLeasesLookup) | **Post** /sys/leases/lookup | Retrieve lease metadata.
-[**WriteLeasesRenew**](System.md#WriteLeasesRenew) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
-[**WriteLeasesRenew2**](System.md#WriteLeasesRenew2) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
-[**WriteLeasesRevoke**](System.md#WriteLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
-[**WriteLeasesRevoke2**](System.md#WriteLeasesRevoke2) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
-[**WriteLeasesRevokeForce**](System.md#WriteLeasesRevokeForce) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**WriteLeasesRevokePrefix**](System.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
-[**WriteLeasesTidy**](System.md#WriteLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-[**WriteLogger**](System.md#WriteLogger) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
-[**WriteLoggers**](System.md#WriteLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
-[**WriteMount**](System.md#WriteMount) | **Post** /sys/mounts/{path} | Enable a new secrets engine at the given path.
-[**WriteMountsConfig**](System.md#WriteMountsConfig) | **Post** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
-[**WritePluginsCatalogByTypeByName**](System.md#WritePluginsCatalogByTypeByName) | **Post** /sys/plugins/catalog/{type}/{name} | Register a new plugin, or updates an existing one with the supplied name.
-[**WritePluginsReloadBackend**](System.md#WritePluginsReloadBackend) | **Post** /sys/plugins/reload/backend | Reload mounted plugin backends.
-[**WritePoliciesACL**](System.md#WritePoliciesACL) | **Post** /sys/policies/acl/{name} | Add a new or update an existing ACL policy.
-[**WritePoliciesPassword**](System.md#WritePoliciesPassword) | **Post** /sys/policies/password/{name} | Add a new or update an existing password policy.
-[**WritePolicy**](System.md#WritePolicy) | **Post** /sys/policy/{name} | Add a new or update an existing policy.
-[**WriteQuotasConfig**](System.md#WriteQuotasConfig) | **Post** /sys/quotas/config | 
-[**WriteQuotasRateLimit**](System.md#WriteQuotasRateLimit) | **Post** /sys/quotas/rate-limit/{name} | 
-[**WriteRaw**](System.md#WriteRaw) | **Post** /sys/raw | Update the value of the key at the given path.
-[**WriteRawPath**](System.md#WriteRawPath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
-[**WriteRekeyInit**](System.md#WriteRekeyInit) | **Post** /sys/rekey/init | Initializes a new rekey attempt.
-[**WriteRekeyUpdate**](System.md#WriteRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
-[**WriteRekeyVerify**](System.md#WriteRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
-[**WriteRotateConfig**](System.md#WriteRotateConfig) | **Post** /sys/rotate/config | 
+[**CalculateAuditHash**](SystemApi.md#CalculateAuditHash) | **Post** /sys/audit-hash/{path} | The hash of the given string via the given audit backend
+[**DeleteAuditDevice**](SystemApi.md#DeleteAuditDevice) | **Delete** /sys/audit/{path} | Disable the audit device at the given path.
+[**DeleteAuthMethod**](SystemApi.md#DeleteAuthMethod) | **Delete** /sys/auth/{path} | Disable the auth method at the given auth path
+[**DeleteConfigAuditingRequestHeader**](SystemApi.md#DeleteConfigAuditingRequestHeader) | **Delete** /sys/config/auditing/request-headers/{header} | Disable auditing of the given request header.
+[**DeleteConfigCORS**](SystemApi.md#DeleteConfigCORS) | **Delete** /sys/config/cors | Remove any CORS settings.
+[**DeleteConfigUIHeader**](SystemApi.md#DeleteConfigUIHeader) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
+[**DeleteGenerateRoot**](SystemApi.md#DeleteGenerateRoot) | **Delete** /sys/generate-root | Cancels any in-progress root generation attempt.
+[**DeleteGenerateRootAttempt**](SystemApi.md#DeleteGenerateRootAttempt) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
+[**DeleteLogger**](SystemApi.md#DeleteLogger) | **Delete** /sys/loggers/{name} | Revert a single logger to use log level provided in config.
+[**DeleteLoggers**](SystemApi.md#DeleteLoggers) | **Delete** /sys/loggers | Revert the all loggers to use log level provided in config.
+[**DeleteMount**](SystemApi.md#DeleteMount) | **Delete** /sys/mounts/{path} | Disable the mount point specified at the given path.
+[**DeletePluginsCatalogByTypeByName**](SystemApi.md#DeletePluginsCatalogByTypeByName) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
+[**DeletePoliciesACL**](SystemApi.md#DeletePoliciesACL) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
+[**DeletePoliciesPassword**](SystemApi.md#DeletePoliciesPassword) | **Delete** /sys/policies/password/{name} | Delete a password policy.
+[**DeletePolicy**](SystemApi.md#DeletePolicy) | **Delete** /sys/policy/{name} | Delete the policy with the given name.
+[**DeleteQuotasRateLimit**](SystemApi.md#DeleteQuotasRateLimit) | **Delete** /sys/quotas/rate-limit/{name} | 
+[**DeleteRaw**](SystemApi.md#DeleteRaw) | **Delete** /sys/raw | Delete the key with given path.
+[**DeleteRawPath**](SystemApi.md#DeleteRawPath) | **Delete** /sys/raw/{path} | Delete the key with given path.
+[**DeleteRekeyBackup**](SystemApi.md#DeleteRekeyBackup) | **Delete** /sys/rekey/backup | Delete the backup copy of PGP-encrypted unseal keys.
+[**DeleteRekeyInit**](SystemApi.md#DeleteRekeyInit) | **Delete** /sys/rekey/init | Cancels any in-progress rekey.
+[**DeleteRekeyRecoveryKeyBackup**](SystemApi.md#DeleteRekeyRecoveryKeyBackup) | **Delete** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
+[**DeleteRekeyVerify**](SystemApi.md#DeleteRekeyVerify) | **Delete** /sys/rekey/verify | Cancel any in-progress rekey verification operation.
+[**ListConfigUIHeaders**](SystemApi.md#ListConfigUIHeaders) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
+[**ListLeasesLookupPrefix**](SystemApi.md#ListLeasesLookupPrefix) | **Get** /sys/leases/lookup/{prefix} | Returns a list of lease ids.
+[**ListPluginsCatalogByType**](SystemApi.md#ListPluginsCatalogByType) | **Get** /sys/plugins/catalog/{type} | List the plugins in the catalog.
+[**ListPoliciesACL**](SystemApi.md#ListPoliciesACL) | **Get** /sys/policies/acl | List the configured access control policies.
+[**ListPoliciesPassword**](SystemApi.md#ListPoliciesPassword) | **Get** /sys/policies/password | List the existing password policies.
+[**ListQuotasRateLimits**](SystemApi.md#ListQuotasRateLimits) | **Get** /sys/quotas/rate-limit | 
+[**ListVersionHistory**](SystemApi.md#ListVersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
+[**MFAValidate**](SystemApi.md#MFAValidate) | **Post** /sys/mfa/validate | Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
+[**Monitor**](SystemApi.md#Monitor) | **Get** /sys/monitor | 
+[**PprofRead**](SystemApi.md#PprofRead) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
+[**PprofReadAllocs**](SystemApi.md#PprofReadAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
+[**PprofReadBlock**](SystemApi.md#PprofReadBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
+[**PprofReadCmdline**](SystemApi.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#x27;s command line.
+[**PprofReadGoroutine**](SystemApi.md#PprofReadGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
+[**PprofReadHeap**](SystemApi.md#PprofReadHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
+[**PprofReadMutex**](SystemApi.md#PprofReadMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
+[**PprofReadProfile**](SystemApi.md#PprofReadProfile) | **Get** /sys/pprof/profile | Returns a pprof-formatted cpu profile payload.
+[**PprofReadSymbol**](SystemApi.md#PprofReadSymbol) | **Get** /sys/pprof/symbol | Returns the program counters listed in the request.
+[**PprofReadThreadcreate**](SystemApi.md#PprofReadThreadcreate) | **Get** /sys/pprof/threadcreate | Returns stack traces that led to the creation of new OS threads
+[**PprofReadTrace**](SystemApi.md#PprofReadTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
+[**ReadAuditDevices**](SystemApi.md#ReadAuditDevices) | **Get** /sys/audit | List the enabled audit devices.
+[**ReadAuthMethod**](SystemApi.md#ReadAuthMethod) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
+[**ReadAuthMethodTune**](SystemApi.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#x27;s configuration.
+[**ReadAuthMethods**](SystemApi.md#ReadAuthMethods) | **Get** /sys/auth | List the currently enabled credential backends.
+[**ReadConfigAuditingRequestHeader**](SystemApi.md#ReadConfigAuditingRequestHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
+[**ReadConfigAuditingRequestHeaders**](SystemApi.md#ReadConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
+[**ReadConfigCORS**](SystemApi.md#ReadConfigCORS) | **Get** /sys/config/cors | Return the current CORS settings.
+[**ReadConfigStateSanitized**](SystemApi.md#ReadConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
+[**ReadConfigUIHeader**](SystemApi.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
+[**ReadGenerateRoot**](SystemApi.md#ReadGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
+[**ReadGenerateRootAttempt**](SystemApi.md#ReadGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
+[**ReadHAStatus**](SystemApi.md#ReadHAStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
+[**ReadHealth**](SystemApi.md#ReadHealth) | **Get** /sys/health | Returns the health status of Vault.
+[**ReadHostInfo**](SystemApi.md#ReadHostInfo) | **Get** /sys/host-info | Information about the host instance that this Vault server is running on.
+[**ReadInFlightRequests**](SystemApi.md#ReadInFlightRequests) | **Get** /sys/in-flight-req | reports in-flight requests
+[**ReadInit**](SystemApi.md#ReadInit) | **Get** /sys/init | Returns the initialization status of Vault.
+[**ReadInternalCountersActivity**](SystemApi.md#ReadInternalCountersActivity) | **Get** /sys/internal/counters/activity | Report the client count metrics, for this namespace and all child namespaces.
+[**ReadInternalCountersActivityExport**](SystemApi.md#ReadInternalCountersActivityExport) | **Get** /sys/internal/counters/activity/export | Report the client count metrics, for this namespace and all child namespaces.
+[**ReadInternalCountersActivityMonthly**](SystemApi.md#ReadInternalCountersActivityMonthly) | **Get** /sys/internal/counters/activity/monthly | Report the number of clients for this month, for this namespace and all child namespaces.
+[**ReadInternalCountersConfig**](SystemApi.md#ReadInternalCountersConfig) | **Get** /sys/internal/counters/config | Read the client count tracking configuration.
+[**ReadInternalCountersEntities**](SystemApi.md#ReadInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
+[**ReadInternalCountersRequests**](SystemApi.md#ReadInternalCountersRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
+[**ReadInternalCountersTokens**](SystemApi.md#ReadInternalCountersTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
+[**ReadInternalInspectRouter**](SystemApi.md#ReadInternalInspectRouter) | **Get** /sys/internal/inspect/router/{tag} | Expose the route entry and mount entry tables present in the router
+[**ReadInternalSpecsOpenAPI**](SystemApi.md#ReadInternalSpecsOpenAPI) | **Get** /sys/internal/specs/openapi | Generate an OpenAPI 3 document of all mounted paths.
+[**ReadInternalUIFeatureFlags**](SystemApi.md#ReadInternalUIFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
+[**ReadInternalUIMount**](SystemApi.md#ReadInternalUIMount) | **Get** /sys/internal/ui/mounts/{path} | Return information about the given mount.
+[**ReadInternalUIMounts**](SystemApi.md#ReadInternalUIMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
+[**ReadInternalUINamespaces**](SystemApi.md#ReadInternalUINamespaces) | **Get** /sys/internal/ui/namespaces | Backwards compatibility is not guaranteed for this API
+[**ReadInternalUIResultantACL**](SystemApi.md#ReadInternalUIResultantACL) | **Get** /sys/internal/ui/resultant-acl | Backwards compatibility is not guaranteed for this API
+[**ReadKeyStatus**](SystemApi.md#ReadKeyStatus) | **Get** /sys/key-status | Provides information about the backend encryption key.
+[**ReadLeader**](SystemApi.md#ReadLeader) | **Get** /sys/leader | Returns the high availability status and current leader instance of Vault.
+[**ReadLeases**](SystemApi.md#ReadLeases) | **Get** /sys/leases | List leases associated with this Vault cluster
+[**ReadLeasesCount**](SystemApi.md#ReadLeasesCount) | **Get** /sys/leases/count | Count of leases associated with this Vault cluster
+[**ReadLogger**](SystemApi.md#ReadLogger) | **Get** /sys/loggers/{name} | Read the log level for a single logger.
+[**ReadLoggers**](SystemApi.md#ReadLoggers) | **Get** /sys/loggers | Read the log level for all existing loggers.
+[**ReadMetrics**](SystemApi.md#ReadMetrics) | **Get** /sys/metrics | Export the metrics aggregated for telemetry purpose.
+[**ReadMount**](SystemApi.md#ReadMount) | **Get** /sys/mounts/{path} | Read the configuration of the secret engine at the given path.
+[**ReadMounts**](SystemApi.md#ReadMounts) | **Get** /sys/mounts | List the currently mounted backends.
+[**ReadMountsConfig**](SystemApi.md#ReadMountsConfig) | **Get** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
+[**ReadPluginsCatalog**](SystemApi.md#ReadPluginsCatalog) | **Get** /sys/plugins/catalog | Lists all the plugins known to Vault
+[**ReadPluginsCatalogByTypeByName**](SystemApi.md#ReadPluginsCatalogByTypeByName) | **Get** /sys/plugins/catalog/{type}/{name} | Return the configuration data for the plugin with the given name.
+[**ReadPolicies**](SystemApi.md#ReadPolicies) | **Get** /sys/policy | List the configured access control policies.
+[**ReadPoliciesACL**](SystemApi.md#ReadPoliciesACL) | **Get** /sys/policies/acl/{name} | Retrieve information about the named ACL policy.
+[**ReadPoliciesPassword**](SystemApi.md#ReadPoliciesPassword) | **Get** /sys/policies/password/{name} | Retrieve an existing password policy.
+[**ReadPoliciesPasswordGenerate**](SystemApi.md#ReadPoliciesPasswordGenerate) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
+[**ReadPolicy**](SystemApi.md#ReadPolicy) | **Get** /sys/policy/{name} | Retrieve the policy body for the named policy.
+[**ReadQuotasConfig**](SystemApi.md#ReadQuotasConfig) | **Get** /sys/quotas/config | 
+[**ReadQuotasRateLimit**](SystemApi.md#ReadQuotasRateLimit) | **Get** /sys/quotas/rate-limit/{name} | 
+[**ReadRaw**](SystemApi.md#ReadRaw) | **Get** /sys/raw | Read the value of the key at the given path.
+[**ReadRawPath**](SystemApi.md#ReadRawPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
+[**ReadRekeyBackup**](SystemApi.md#ReadRekeyBackup) | **Get** /sys/rekey/backup | Return the backup copy of PGP-encrypted unseal keys.
+[**ReadRekeyInit**](SystemApi.md#ReadRekeyInit) | **Get** /sys/rekey/init | Reads the configuration and progress of the current rekey attempt.
+[**ReadRekeyRecoveryKeyBackup**](SystemApi.md#ReadRekeyRecoveryKeyBackup) | **Get** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
+[**ReadRekeyVerify**](SystemApi.md#ReadRekeyVerify) | **Get** /sys/rekey/verify | Read the configuration and progress of the current rekey verification attempt.
+[**ReadRemountStatus**](SystemApi.md#ReadRemountStatus) | **Get** /sys/remount/status/{migration_id} | Check status of a mount migration
+[**ReadReplicationStatus**](SystemApi.md#ReadReplicationStatus) | **Get** /sys/replication/status | 
+[**ReadRotateConfig**](SystemApi.md#ReadRotateConfig) | **Get** /sys/rotate/config | 
+[**ReadSealStatus**](SystemApi.md#ReadSealStatus) | **Get** /sys/seal-status | Check the seal status of a Vault.
+[**Remount**](SystemApi.md#Remount) | **Post** /sys/remount | Initiate a mount migration
+[**Renew**](SystemApi.md#Renew) | **Post** /sys/renew | Renews a lease, requesting to extend the lease.
+[**RenewFor**](SystemApi.md#RenewFor) | **Post** /sys/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
+[**Revoke**](SystemApi.md#Revoke) | **Post** /sys/revoke | Revokes a lease immediately.
+[**RevokeForce**](SystemApi.md#RevokeForce) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
+[**RevokeLease**](SystemApi.md#RevokeLease) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
+[**RevokePrefix**](SystemApi.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
+[**Rotate**](SystemApi.md#Rotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
+[**Seal**](SystemApi.md#Seal) | **Post** /sys/seal | Seal the Vault.
+[**StepDownLeader**](SystemApi.md#StepDownLeader) | **Post** /sys/step-down | Cause the node to give up active status.
+[**SysDeletePluginsCatalogName**](SystemApi.md#SysDeletePluginsCatalogName) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
+[**SysListLeasesLookup**](SystemApi.md#SysListLeasesLookup) | **Get** /sys/leases/lookup/ | Returns a list of lease ids.
+[**SysReadPluginsCatalogName**](SystemApi.md#SysReadPluginsCatalogName) | **Get** /sys/plugins/catalog/{name} | Return the configuration data for the plugin with the given name.
+[**SysWriteLockedusersMountAccessorUnlockAliasIdentifier**](SystemApi.md#SysWriteLockedusersMountAccessorUnlockAliasIdentifier) | **Post** /sys/lockedusers/{mount_accessor}/unlock/{alias_identifier} | Unlocks the user with given mount_accessor and alias_identifier
+[**SysWritePluginsCatalogName**](SystemApi.md#SysWritePluginsCatalogName) | **Post** /sys/plugins/catalog/{name} | Register a new plugin, or updates an existing one with the supplied name.
+[**SysWriteToolsRandomUrlbytes**](SystemApi.md#SysWriteToolsRandomUrlbytes) | **Post** /sys/tools/random/{urlbytes} | Generate random bytes
+[**ToolsGenerateRandom**](SystemApi.md#ToolsGenerateRandom) | **Post** /sys/tools/random | Generate random bytes
+[**ToolsGenerateRandomSource**](SystemApi.md#ToolsGenerateRandomSource) | **Post** /sys/tools/random/{source} | Generate random bytes
+[**ToolsGenerateRandomSourceBytes**](SystemApi.md#ToolsGenerateRandomSourceBytes) | **Post** /sys/tools/random/{source}/{urlbytes} | Generate random bytes
+[**ToolsHash**](SystemApi.md#ToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
+[**ToolsHashWith**](SystemApi.md#ToolsHashWith) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
+[**Unseal**](SystemApi.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
+[**WrappingReadLookup**](SystemApi.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#x27;s token.
+[**WrappingRewrap**](SystemApi.md#WrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
+[**WrappingUnwrap**](SystemApi.md#WrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
+[**WrappingWrap**](SystemApi.md#WrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
+[**WrappingWriteLookup**](SystemApi.md#WrappingWriteLookup) | **Post** /sys/wrapping/lookup | Look up wrapping properties for the given token.
+[**WriteAuditDevice**](SystemApi.md#WriteAuditDevice) | **Post** /sys/audit/{path} | Enable a new audit device at the supplied path.
+[**WriteAuthMethod**](SystemApi.md#WriteAuthMethod) | **Post** /sys/auth/{path} | Enables a new auth method.
+[**WriteAuthMethodTune**](SystemApi.md#WriteAuthMethodTune) | **Post** /sys/auth/{path}/tune | Tune configuration parameters for a given auth path.
+[**WriteCapabilities**](SystemApi.md#WriteCapabilities) | **Post** /sys/capabilities | Fetches the capabilities of the given token on the given path.
+[**WriteCapabilitiesAccessor**](SystemApi.md#WriteCapabilitiesAccessor) | **Post** /sys/capabilities-accessor | Fetches the capabilities of the token associated with the given token, on the given path.
+[**WriteCapabilitiesSelf**](SystemApi.md#WriteCapabilitiesSelf) | **Post** /sys/capabilities-self | Fetches the capabilities of the given token on the given path.
+[**WriteConfigAuditingRequestHeader**](SystemApi.md#WriteConfigAuditingRequestHeader) | **Post** /sys/config/auditing/request-headers/{header} | Enable auditing of a header.
+[**WriteConfigCORS**](SystemApi.md#WriteConfigCORS) | **Post** /sys/config/cors | Configure the CORS settings.
+[**WriteConfigReloadSubsystem**](SystemApi.md#WriteConfigReloadSubsystem) | **Post** /sys/config/reload/{subsystem} | Reload the given subsystem
+[**WriteConfigUIHeader**](SystemApi.md#WriteConfigUIHeader) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
+[**WriteGenerateRoot**](SystemApi.md#WriteGenerateRoot) | **Post** /sys/generate-root | Initializes a new root generation attempt.
+[**WriteGenerateRootAttempt**](SystemApi.md#WriteGenerateRootAttempt) | **Post** /sys/generate-root/attempt | Initializes a new root generation attempt.
+[**WriteGenerateRootUpdate**](SystemApi.md#WriteGenerateRootUpdate) | **Post** /sys/generate-root/update | Enter a single unseal key share to progress the root generation attempt.
+[**WriteInit**](SystemApi.md#WriteInit) | **Post** /sys/init | Initialize a new Vault.
+[**WriteInternalCountersConfig**](SystemApi.md#WriteInternalCountersConfig) | **Post** /sys/internal/counters/config | Enable or disable collection of client count, set retention period, or set default reporting period.
+[**WriteLeasesLookup**](SystemApi.md#WriteLeasesLookup) | **Post** /sys/leases/lookup | Retrieve lease metadata.
+[**WriteLeasesRenew**](SystemApi.md#WriteLeasesRenew) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
+[**WriteLeasesRenew2**](SystemApi.md#WriteLeasesRenew2) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
+[**WriteLeasesRevoke**](SystemApi.md#WriteLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
+[**WriteLeasesRevoke2**](SystemApi.md#WriteLeasesRevoke2) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
+[**WriteLeasesRevokeForce**](SystemApi.md#WriteLeasesRevokeForce) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
+[**WriteLeasesRevokePrefix**](SystemApi.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
+[**WriteLeasesTidy**](SystemApi.md#WriteLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
+[**WriteLogger**](SystemApi.md#WriteLogger) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
+[**WriteLoggers**](SystemApi.md#WriteLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
+[**WriteMount**](SystemApi.md#WriteMount) | **Post** /sys/mounts/{path} | Enable a new secrets engine at the given path.
+[**WriteMountsConfig**](SystemApi.md#WriteMountsConfig) | **Post** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
+[**WritePluginsCatalogByTypeByName**](SystemApi.md#WritePluginsCatalogByTypeByName) | **Post** /sys/plugins/catalog/{type}/{name} | Register a new plugin, or updates an existing one with the supplied name.
+[**WritePluginsReloadBackend**](SystemApi.md#WritePluginsReloadBackend) | **Post** /sys/plugins/reload/backend | Reload mounted plugin backends.
+[**WritePoliciesACL**](SystemApi.md#WritePoliciesACL) | **Post** /sys/policies/acl/{name} | Add a new or update an existing ACL policy.
+[**WritePoliciesPassword**](SystemApi.md#WritePoliciesPassword) | **Post** /sys/policies/password/{name} | Add a new or update an existing password policy.
+[**WritePolicy**](SystemApi.md#WritePolicy) | **Post** /sys/policy/{name} | Add a new or update an existing policy.
+[**WriteQuotasConfig**](SystemApi.md#WriteQuotasConfig) | **Post** /sys/quotas/config | 
+[**WriteQuotasRateLimit**](SystemApi.md#WriteQuotasRateLimit) | **Post** /sys/quotas/rate-limit/{name} | 
+[**WriteRaw**](SystemApi.md#WriteRaw) | **Post** /sys/raw | Update the value of the key at the given path.
+[**WriteRawPath**](SystemApi.md#WriteRawPath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
+[**WriteRekeyInit**](SystemApi.md#WriteRekeyInit) | **Post** /sys/rekey/init | Initializes a new rekey attempt.
+[**WriteRekeyUpdate**](SystemApi.md#WriteRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
+[**WriteRekeyVerify**](SystemApi.md#WriteRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
+[**WriteRotateConfig**](SystemApi.md#WriteRotateConfig) | **Post** /sys/rotate/config | 
 
 
 

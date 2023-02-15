@@ -14966,6 +14966,509 @@
         }
       }
     },
+    "/{database_mount_path}/config": {
+      "description": "Configure connection details to a database plugin.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Configure connection details to a database plugin.",
+        "operationId": "DatabaseListConfig",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/config/{name}": {
+      "description": "Configure connection details to a database plugin.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of this database connection",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "summary": "Configure connection details to a database plugin.",
+        "operationId": "DatabaseReadConfig",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Configure connection details to a database plugin.",
+        "operationId": "DatabaseWriteConfig",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatabaseWriteConfigRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Configure connection details to a database plugin.",
+        "operationId": "DatabaseDeleteConfig",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/creds/{name}": {
+      "description": "Request database credentials for a certain role.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the role.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Request database credentials for a certain role.",
+        "operationId": "DatabaseReadCredentials",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/reset/{name}": {
+      "description": "Resets a database plugin.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of this database connection",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Resets a database plugin.",
+        "operationId": "DatabaseReset",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/roles": {
+      "description": "Manage the roles that can be created with this backend.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Manage the roles that can be created with this backend.",
+        "operationId": "DatabaseListRoles",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/roles/{name}": {
+      "description": "Manage the roles that can be created with this backend.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the role.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "summary": "Manage the roles that can be created with this backend.",
+        "operationId": "DatabaseReadRole",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Manage the roles that can be created with this backend.",
+        "operationId": "DatabaseWriteRole",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatabaseWriteRoleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Manage the roles that can be created with this backend.",
+        "operationId": "DatabaseDeleteRole",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/rotate-role/{name}": {
+      "description": "Request to rotate the credentials for a static user account.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the static role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "DatabaseRotateRole",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/rotate-root/{name}": {
+      "description": "Request to rotate the root credentials for a certain database connection.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of this database connection",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "DatabaseRotateRoot",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/static-creds/{name}": {
+      "description": "Request database credentials for a certain static role. These credentials are rotated periodically.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the static role.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Request database credentials for a certain static role. These credentials are\nrotated periodically.",
+        "operationId": "DatabaseReadStaticCredentials",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/static-roles": {
+      "description": "Manage the static roles that can be created with this backend.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Manage the static roles that can be created with this backend.",
+        "operationId": "DatabaseListStaticRoles",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{database_mount_path}/static-roles/{name}": {
+      "description": "Manage the static roles that can be created with this backend.",
+      "parameters": [
+        {
+          "name": "database_mount_path",
+          "description": "Path where the backend was mounted; the endpoint path will be offset by the mount path",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "database"
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the role.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "summary": "Manage the static roles that can be created with this backend.",
+        "operationId": "DatabaseReadStaticRole",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Manage the static roles that can be created with this backend.",
+        "operationId": "DatabaseWriteStaticRole",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatabaseWriteStaticRoleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Manage the static roles that can be created with this backend.",
+        "operationId": "DatabaseDeleteStaticRole",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
     "/{gcp_mount_path}/config": {
       "description": "Configure the GCP backend.",
       "parameters": [
@@ -27159,6 +27662,134 @@
           }
         }
       },
+      "DatabaseWriteConfigRequest": {
+        "type": "object",
+        "properties": {
+          "allowed_roles": {
+            "type": "array",
+            "description": "Comma separated string or array of the role names allowed to get creds from this database connection. If empty no roles are allowed. If \"*\" all roles are allowed.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "password_policy": {
+            "type": "string",
+            "description": "Password policy to use when generating passwords."
+          },
+          "plugin_name": {
+            "type": "string",
+            "description": "The name of a builtin or previously registered plugin known to vault. This endpoint will create an instance of that plugin type."
+          },
+          "plugin_version": {
+            "type": "string",
+            "description": "The version of the plugin to use."
+          },
+          "root_rotation_statements": {
+            "type": "array",
+            "description": "Specifies the database statements to be executed to rotate the root user's credentials. See the plugin's API page for more information on support and formatting for this parameter.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verify_connection": {
+            "type": "boolean",
+            "description": "If true, the connection details are verified by actually connecting to the database. Defaults to true.",
+            "default": true
+          }
+        }
+      },
+      "DatabaseWriteRoleRequest": {
+        "type": "object",
+        "properties": {
+          "creation_statements": {
+            "type": "array",
+            "description": "Specifies the database statements executed to create and configure a user. See the plugin's API page for more information on support and formatting for this parameter.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "credential_config": {
+            "type": "object",
+            "description": "The configuration for the given credential_type.",
+            "format": "kvpairs"
+          },
+          "credential_type": {
+            "type": "string",
+            "description": "The type of credential to manage. Options include: 'password', 'rsa_private_key'. Defaults to 'password'.",
+            "default": "password"
+          },
+          "db_name": {
+            "type": "string",
+            "description": "Name of the database this role acts on."
+          },
+          "default_ttl": {
+            "type": "integer",
+            "description": "Default ttl for role.",
+            "format": "seconds"
+          },
+          "max_ttl": {
+            "type": "integer",
+            "description": "Maximum time a credential is valid for",
+            "format": "seconds"
+          },
+          "renew_statements": {
+            "type": "array",
+            "description": "Specifies the database statements to be executed to renew a user. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "revocation_statements": {
+            "type": "array",
+            "description": "Specifies the database statements to be executed to revoke a user. See the plugin's API page for more information on support and formatting for this parameter.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rollback_statements": {
+            "type": "array",
+            "description": "Specifies the database statements to be executed rollback a create operation in the event of an error. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "DatabaseWriteStaticRoleRequest": {
+        "type": "object",
+        "properties": {
+          "credential_config": {
+            "type": "object",
+            "description": "The configuration for the given credential_type.",
+            "format": "kvpairs"
+          },
+          "credential_type": {
+            "type": "string",
+            "description": "The type of credential to manage. Options include: 'password', 'rsa_private_key'. Defaults to 'password'.",
+            "default": "password"
+          },
+          "db_name": {
+            "type": "string",
+            "description": "Name of the database this role acts on."
+          },
+          "rotation_period": {
+            "type": "integer",
+            "description": "Period for automatic credential rotation of the given username. Not valid unless used with \"username\".",
+            "format": "seconds"
+          },
+          "rotation_statements": {
+            "type": "array",
+            "description": "Specifies the database statements to be executed to rotate the accounts credentials. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "username": {
+            "type": "string",
+            "description": "Name of the static user account for Vault to manage. Requires \"rotation_period\" to be specified"
+          }
+        }
+      },
       "EntityBatchDeleteRequest": {
         "type": "object",
         "properties": {
@@ -31076,9 +31707,9 @@
           }
         },
         "required": [
+          "redirect_uri",
           "code",
-          "grant_type",
-          "redirect_uri"
+          "grant_type"
         ]
       },
       "OIDCWriteRoleRequest": {

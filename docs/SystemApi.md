@@ -2,182 +2,180 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CalculateAuditHash**](System.md#CalculateAuditHash) | **Post** /sys/audit-hash/{path} | The hash of the given string via the given audit backend
-[**DeleteAuditDevice**](System.md#DeleteAuditDevice) | **Delete** /sys/audit/{path} | Disable the audit device at the given path.
-[**DeleteAuthMethod**](System.md#DeleteAuthMethod) | **Delete** /sys/auth/{path} | Disable the auth method at the given auth path
-[**DeleteConfigAuditingRequestHeader**](System.md#DeleteConfigAuditingRequestHeader) | **Delete** /sys/config/auditing/request-headers/{header} | Disable auditing of the given request header.
-[**DeleteConfigCORS**](System.md#DeleteConfigCORS) | **Delete** /sys/config/cors | Remove any CORS settings.
-[**DeleteConfigUIHeader**](System.md#DeleteConfigUIHeader) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
-[**DeleteGenerateRoot**](System.md#DeleteGenerateRoot) | **Delete** /sys/generate-root | Cancels any in-progress root generation attempt.
-[**DeleteGenerateRootAttempt**](System.md#DeleteGenerateRootAttempt) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
-[**DeleteLogger**](System.md#DeleteLogger) | **Delete** /sys/loggers/{name} | Revert a single logger to use log level provided in config.
-[**DeleteLoggers**](System.md#DeleteLoggers) | **Delete** /sys/loggers | Revert the all loggers to use log level provided in config.
-[**DeleteMount**](System.md#DeleteMount) | **Delete** /sys/mounts/{path} | Disable the mount point specified at the given path.
-[**DeletePluginsCatalogByTypeByName**](System.md#DeletePluginsCatalogByTypeByName) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
-[**DeletePoliciesACL**](System.md#DeletePoliciesACL) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
-[**DeletePoliciesPassword**](System.md#DeletePoliciesPassword) | **Delete** /sys/policies/password/{name} | Delete a password policy.
-[**DeletePolicy**](System.md#DeletePolicy) | **Delete** /sys/policy/{name} | Delete the policy with the given name.
-[**DeleteQuotasRateLimit**](System.md#DeleteQuotasRateLimit) | **Delete** /sys/quotas/rate-limit/{name} | 
-[**DeleteRaw**](System.md#DeleteRaw) | **Delete** /sys/raw | Delete the key with given path.
-[**DeleteRawPath**](System.md#DeleteRawPath) | **Delete** /sys/raw/{path} | Delete the key with given path.
-[**DeleteRekeyBackup**](System.md#DeleteRekeyBackup) | **Delete** /sys/rekey/backup | Delete the backup copy of PGP-encrypted unseal keys.
-[**DeleteRekeyInit**](System.md#DeleteRekeyInit) | **Delete** /sys/rekey/init | Cancels any in-progress rekey.
-[**DeleteRekeyRecoveryKeyBackup**](System.md#DeleteRekeyRecoveryKeyBackup) | **Delete** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
-[**DeleteRekeyVerify**](System.md#DeleteRekeyVerify) | **Delete** /sys/rekey/verify | Cancel any in-progress rekey verification operation.
-[**ListConfigUIHeaders**](System.md#ListConfigUIHeaders) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
-[**ListLeasesLookupPrefix**](System.md#ListLeasesLookupPrefix) | **Get** /sys/leases/lookup/{prefix} | Returns a list of lease ids.
-[**ListPluginsCatalogByType**](System.md#ListPluginsCatalogByType) | **Get** /sys/plugins/catalog/{type} | List the plugins in the catalog.
-[**ListPoliciesACL**](System.md#ListPoliciesACL) | **Get** /sys/policies/acl | List the configured access control policies.
-[**ListPoliciesPassword**](System.md#ListPoliciesPassword) | **Get** /sys/policies/password | List the existing password policies.
-[**ListQuotasRateLimits**](System.md#ListQuotasRateLimits) | **Get** /sys/quotas/rate-limit | 
-[**ListVersionHistory**](System.md#ListVersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
-[**MFAValidate**](System.md#MFAValidate) | **Post** /sys/mfa/validate | Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
-[**Monitor**](System.md#Monitor) | **Get** /sys/monitor | 
-[**PprofRead**](System.md#PprofRead) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
-[**PprofReadAllocs**](System.md#PprofReadAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
-[**PprofReadBlock**](System.md#PprofReadBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
-[**PprofReadCmdline**](System.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#x27;s command line.
-[**PprofReadGoroutine**](System.md#PprofReadGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
-[**PprofReadHeap**](System.md#PprofReadHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
-[**PprofReadMutex**](System.md#PprofReadMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
-[**PprofReadProfile**](System.md#PprofReadProfile) | **Get** /sys/pprof/profile | Returns a pprof-formatted cpu profile payload.
-[**PprofReadSymbol**](System.md#PprofReadSymbol) | **Get** /sys/pprof/symbol | Returns the program counters listed in the request.
-[**PprofReadThreadcreate**](System.md#PprofReadThreadcreate) | **Get** /sys/pprof/threadcreate | Returns stack traces that led to the creation of new OS threads
-[**PprofReadTrace**](System.md#PprofReadTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
-[**ReadAuditDevices**](System.md#ReadAuditDevices) | **Get** /sys/audit | List the enabled audit devices.
-[**ReadAuthMethod**](System.md#ReadAuthMethod) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
-[**ReadAuthMethodTune**](System.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#x27;s configuration.
-[**ReadAuthMethods**](System.md#ReadAuthMethods) | **Get** /sys/auth | List the currently enabled credential backends.
-[**ReadConfigAuditingRequestHeader**](System.md#ReadConfigAuditingRequestHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
-[**ReadConfigAuditingRequestHeaders**](System.md#ReadConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
-[**ReadConfigCORS**](System.md#ReadConfigCORS) | **Get** /sys/config/cors | Return the current CORS settings.
-[**ReadConfigStateSanitized**](System.md#ReadConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
-[**ReadConfigUIHeader**](System.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
-[**ReadGenerateRoot**](System.md#ReadGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
-[**ReadGenerateRootAttempt**](System.md#ReadGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
-[**ReadHAStatus**](System.md#ReadHAStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
-[**ReadHealth**](System.md#ReadHealth) | **Get** /sys/health | Returns the health status of Vault.
-[**ReadHostInfo**](System.md#ReadHostInfo) | **Get** /sys/host-info | Information about the host instance that this Vault server is running on.
-[**ReadInFlightRequests**](System.md#ReadInFlightRequests) | **Get** /sys/in-flight-req | reports in-flight requests
-[**ReadInit**](System.md#ReadInit) | **Get** /sys/init | Returns the initialization status of Vault.
-[**ReadInternalCountersActivity**](System.md#ReadInternalCountersActivity) | **Get** /sys/internal/counters/activity | Report the client count metrics, for this namespace and all child namespaces.
-[**ReadInternalCountersActivityExport**](System.md#ReadInternalCountersActivityExport) | **Get** /sys/internal/counters/activity/export | Report the client count metrics, for this namespace and all child namespaces.
-[**ReadInternalCountersActivityMonthly**](System.md#ReadInternalCountersActivityMonthly) | **Get** /sys/internal/counters/activity/monthly | Report the number of clients for this month, for this namespace and all child namespaces.
-[**ReadInternalCountersConfig**](System.md#ReadInternalCountersConfig) | **Get** /sys/internal/counters/config | Read the client count tracking configuration.
-[**ReadInternalCountersEntities**](System.md#ReadInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
-[**ReadInternalCountersRequests**](System.md#ReadInternalCountersRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
-[**ReadInternalCountersTokens**](System.md#ReadInternalCountersTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
-[**ReadInternalInspectRouter**](System.md#ReadInternalInspectRouter) | **Get** /sys/internal/inspect/router/{tag} | Expose the route entry and mount entry tables present in the router
-[**ReadInternalSpecsOpenAPI**](System.md#ReadInternalSpecsOpenAPI) | **Get** /sys/internal/specs/openapi | Generate an OpenAPI 3 document of all mounted paths.
-[**ReadInternalUIFeatureFlags**](System.md#ReadInternalUIFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
-[**ReadInternalUIMount**](System.md#ReadInternalUIMount) | **Get** /sys/internal/ui/mounts/{path} | Return information about the given mount.
-[**ReadInternalUIMounts**](System.md#ReadInternalUIMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
-[**ReadInternalUINamespaces**](System.md#ReadInternalUINamespaces) | **Get** /sys/internal/ui/namespaces | Backwards compatibility is not guaranteed for this API
-[**ReadInternalUIResultantACL**](System.md#ReadInternalUIResultantACL) | **Get** /sys/internal/ui/resultant-acl | Backwards compatibility is not guaranteed for this API
-[**ReadKeyStatus**](System.md#ReadKeyStatus) | **Get** /sys/key-status | Provides information about the backend encryption key.
-[**ReadLeader**](System.md#ReadLeader) | **Get** /sys/leader | Returns the high availability status and current leader instance of Vault.
-[**ReadLeases**](System.md#ReadLeases) | **Get** /sys/leases | List leases associated with this Vault cluster
-[**ReadLeasesCount**](System.md#ReadLeasesCount) | **Get** /sys/leases/count | Count of leases associated with this Vault cluster
-[**ReadLogger**](System.md#ReadLogger) | **Get** /sys/loggers/{name} | Read the log level for a single logger.
-[**ReadLoggers**](System.md#ReadLoggers) | **Get** /sys/loggers | Read the log level for all existing loggers.
-[**ReadMetrics**](System.md#ReadMetrics) | **Get** /sys/metrics | Export the metrics aggregated for telemetry purpose.
-[**ReadMount**](System.md#ReadMount) | **Get** /sys/mounts/{path} | Read the configuration of the secret engine at the given path.
-[**ReadMounts**](System.md#ReadMounts) | **Get** /sys/mounts | List the currently mounted backends.
-[**ReadMountsConfig**](System.md#ReadMountsConfig) | **Get** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
-[**ReadPluginsCatalog**](System.md#ReadPluginsCatalog) | **Get** /sys/plugins/catalog | Lists all the plugins known to Vault
-[**ReadPluginsCatalogByTypeByName**](System.md#ReadPluginsCatalogByTypeByName) | **Get** /sys/plugins/catalog/{type}/{name} | Return the configuration data for the plugin with the given name.
-[**ReadPolicies**](System.md#ReadPolicies) | **Get** /sys/policy | List the configured access control policies.
-[**ReadPoliciesACL**](System.md#ReadPoliciesACL) | **Get** /sys/policies/acl/{name} | Retrieve information about the named ACL policy.
-[**ReadPoliciesPassword**](System.md#ReadPoliciesPassword) | **Get** /sys/policies/password/{name} | Retrieve an existing password policy.
-[**ReadPoliciesPasswordGenerate**](System.md#ReadPoliciesPasswordGenerate) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
-[**ReadPolicy**](System.md#ReadPolicy) | **Get** /sys/policy/{name} | Retrieve the policy body for the named policy.
-[**ReadQuotasConfig**](System.md#ReadQuotasConfig) | **Get** /sys/quotas/config | 
-[**ReadQuotasRateLimit**](System.md#ReadQuotasRateLimit) | **Get** /sys/quotas/rate-limit/{name} | 
-[**ReadRaw**](System.md#ReadRaw) | **Get** /sys/raw | Read the value of the key at the given path.
-[**ReadRawPath**](System.md#ReadRawPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
-[**ReadRekeyBackup**](System.md#ReadRekeyBackup) | **Get** /sys/rekey/backup | Return the backup copy of PGP-encrypted unseal keys.
-[**ReadRekeyInit**](System.md#ReadRekeyInit) | **Get** /sys/rekey/init | Reads the configuration and progress of the current rekey attempt.
-[**ReadRekeyRecoveryKeyBackup**](System.md#ReadRekeyRecoveryKeyBackup) | **Get** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
-[**ReadRekeyVerify**](System.md#ReadRekeyVerify) | **Get** /sys/rekey/verify | Read the configuration and progress of the current rekey verification attempt.
-[**ReadRemountStatus**](System.md#ReadRemountStatus) | **Get** /sys/remount/status/{migration_id} | Check status of a mount migration
-[**ReadReplicationStatus**](System.md#ReadReplicationStatus) | **Get** /sys/replication/status | 
-[**ReadRotateConfig**](System.md#ReadRotateConfig) | **Get** /sys/rotate/config | 
-[**ReadSealStatus**](System.md#ReadSealStatus) | **Get** /sys/seal-status | Check the seal status of a Vault.
-[**Remount**](System.md#Remount) | **Post** /sys/remount | Initiate a mount migration
-[**Renew**](System.md#Renew) | **Post** /sys/renew | Renews a lease, requesting to extend the lease.
-[**RenewFor**](System.md#RenewFor) | **Post** /sys/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
-[**Revoke**](System.md#Revoke) | **Post** /sys/revoke | Revokes a lease immediately.
-[**RevokeForce**](System.md#RevokeForce) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**RevokeLease**](System.md#RevokeLease) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
-[**RevokePrefix**](System.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
-[**Rotate**](System.md#Rotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
-[**Seal**](System.md#Seal) | **Post** /sys/seal | Seal the Vault.
-[**StepDownLeader**](System.md#StepDownLeader) | **Post** /sys/step-down | Cause the node to give up active status.
-[**SysDeletePluginsCatalogName**](System.md#SysDeletePluginsCatalogName) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
-[**SysListLeasesLookup**](System.md#SysListLeasesLookup) | **Get** /sys/leases/lookup/ | Returns a list of lease ids.
-[**SysReadPluginsCatalogName**](System.md#SysReadPluginsCatalogName) | **Get** /sys/plugins/catalog/{name} | Return the configuration data for the plugin with the given name.
-[**SysWriteLockedusersMountAccessorUnlockAliasIdentifier**](System.md#SysWriteLockedusersMountAccessorUnlockAliasIdentifier) | **Post** /sys/lockedusers/{mount_accessor}/unlock/{alias_identifier} | Unlocks the user with given mount_accessor and alias_identifier
-[**SysWritePluginsCatalogName**](System.md#SysWritePluginsCatalogName) | **Post** /sys/plugins/catalog/{name} | Register a new plugin, or updates an existing one with the supplied name.
-[**SysWriteToolsRandomUrlbytes**](System.md#SysWriteToolsRandomUrlbytes) | **Post** /sys/tools/random/{urlbytes} | Generate random bytes
-[**ToolsGenerateRandom**](System.md#ToolsGenerateRandom) | **Post** /sys/tools/random | Generate random bytes
-[**ToolsGenerateRandomSource**](System.md#ToolsGenerateRandomSource) | **Post** /sys/tools/random/{source} | Generate random bytes
-[**ToolsGenerateRandomSourceBytes**](System.md#ToolsGenerateRandomSourceBytes) | **Post** /sys/tools/random/{source}/{urlbytes} | Generate random bytes
-[**ToolsHash**](System.md#ToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
-[**ToolsHashWith**](System.md#ToolsHashWith) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
-[**Unseal**](System.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
-[**WrappingReadLookup**](System.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#x27;s token.
-[**WrappingRewrap**](System.md#WrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
-[**WrappingUnwrap**](System.md#WrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
-[**WrappingWrap**](System.md#WrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
-[**WrappingWriteLookup**](System.md#WrappingWriteLookup) | **Post** /sys/wrapping/lookup | Look up wrapping properties for the given token.
-[**WriteAuditDevice**](System.md#WriteAuditDevice) | **Post** /sys/audit/{path} | Enable a new audit device at the supplied path.
-[**WriteAuthMethod**](System.md#WriteAuthMethod) | **Post** /sys/auth/{path} | Enables a new auth method.
-[**WriteAuthMethodTune**](System.md#WriteAuthMethodTune) | **Post** /sys/auth/{path}/tune | Tune configuration parameters for a given auth path.
-[**WriteCapabilities**](System.md#WriteCapabilities) | **Post** /sys/capabilities | Fetches the capabilities of the given token on the given path.
-[**WriteCapabilitiesAccessor**](System.md#WriteCapabilitiesAccessor) | **Post** /sys/capabilities-accessor | Fetches the capabilities of the token associated with the given token, on the given path.
-[**WriteCapabilitiesSelf**](System.md#WriteCapabilitiesSelf) | **Post** /sys/capabilities-self | Fetches the capabilities of the given token on the given path.
-[**WriteConfigAuditingRequestHeader**](System.md#WriteConfigAuditingRequestHeader) | **Post** /sys/config/auditing/request-headers/{header} | Enable auditing of a header.
-[**WriteConfigCORS**](System.md#WriteConfigCORS) | **Post** /sys/config/cors | Configure the CORS settings.
-[**WriteConfigReloadSubsystem**](System.md#WriteConfigReloadSubsystem) | **Post** /sys/config/reload/{subsystem} | Reload the given subsystem
-[**WriteConfigUIHeader**](System.md#WriteConfigUIHeader) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
-[**WriteGenerateRoot**](System.md#WriteGenerateRoot) | **Post** /sys/generate-root | Initializes a new root generation attempt.
-[**WriteGenerateRootAttempt**](System.md#WriteGenerateRootAttempt) | **Post** /sys/generate-root/attempt | Initializes a new root generation attempt.
-[**WriteGenerateRootUpdate**](System.md#WriteGenerateRootUpdate) | **Post** /sys/generate-root/update | Enter a single unseal key share to progress the root generation attempt.
-[**WriteInit**](System.md#WriteInit) | **Post** /sys/init | Initialize a new Vault.
-[**WriteInternalCountersConfig**](System.md#WriteInternalCountersConfig) | **Post** /sys/internal/counters/config | Enable or disable collection of client count, set retention period, or set default reporting period.
-[**WriteLeasesLookup**](System.md#WriteLeasesLookup) | **Post** /sys/leases/lookup | Retrieve lease metadata.
-[**WriteLeasesRenew**](System.md#WriteLeasesRenew) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
-[**WriteLeasesRenew2**](System.md#WriteLeasesRenew2) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
-[**WriteLeasesRevoke**](System.md#WriteLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
-[**WriteLeasesRevoke2**](System.md#WriteLeasesRevoke2) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
-[**WriteLeasesRevokeForce**](System.md#WriteLeasesRevokeForce) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
-[**WriteLeasesRevokePrefix**](System.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
-[**WriteLeasesTidy**](System.md#WriteLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-[**WriteLogger**](System.md#WriteLogger) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
-[**WriteLoggers**](System.md#WriteLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
-[**WriteMount**](System.md#WriteMount) | **Post** /sys/mounts/{path} | Enable a new secrets engine at the given path.
-[**WriteMountsConfig**](System.md#WriteMountsConfig) | **Post** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
-[**WritePluginsCatalogByTypeByName**](System.md#WritePluginsCatalogByTypeByName) | **Post** /sys/plugins/catalog/{type}/{name} | Register a new plugin, or updates an existing one with the supplied name.
-[**WritePluginsReloadBackend**](System.md#WritePluginsReloadBackend) | **Post** /sys/plugins/reload/backend | Reload mounted plugin backends.
-[**WritePoliciesACL**](System.md#WritePoliciesACL) | **Post** /sys/policies/acl/{name} | Add a new or update an existing ACL policy.
-[**WritePoliciesPassword**](System.md#WritePoliciesPassword) | **Post** /sys/policies/password/{name} | Add a new or update an existing password policy.
-[**WritePolicy**](System.md#WritePolicy) | **Post** /sys/policy/{name} | Add a new or update an existing policy.
-[**WriteQuotasConfig**](System.md#WriteQuotasConfig) | **Post** /sys/quotas/config | 
-[**WriteQuotasRateLimit**](System.md#WriteQuotasRateLimit) | **Post** /sys/quotas/rate-limit/{name} | 
-[**WriteRaw**](System.md#WriteRaw) | **Post** /sys/raw | Update the value of the key at the given path.
-[**WriteRawPath**](System.md#WriteRawPath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
-[**WriteRekeyInit**](System.md#WriteRekeyInit) | **Post** /sys/rekey/init | Initializes a new rekey attempt.
-[**WriteRekeyUpdate**](System.md#WriteRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
-[**WriteRekeyVerify**](System.md#WriteRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
-[**WriteRotateConfig**](System.md#WriteRotateConfig) | **Post** /sys/rotate/config | 
+[**CalculateAuditHash**](SystemApi.md#CalculateAuditHash) | **Post** /sys/audit-hash/{path} | The hash of the given string via the given audit backend
+[**DeleteAuditDevice**](SystemApi.md#DeleteAuditDevice) | **Delete** /sys/audit/{path} | Disable the audit device at the given path.
+[**DeleteAuthMethod**](SystemApi.md#DeleteAuthMethod) | **Delete** /sys/auth/{path} | Disable the auth method at the given auth path
+[**DeleteConfigAuditingRequestHeader**](SystemApi.md#DeleteConfigAuditingRequestHeader) | **Delete** /sys/config/auditing/request-headers/{header} | Disable auditing of the given request header.
+[**DeleteConfigCORS**](SystemApi.md#DeleteConfigCORS) | **Delete** /sys/config/cors | Remove any CORS settings.
+[**DeleteConfigUIHeader**](SystemApi.md#DeleteConfigUIHeader) | **Delete** /sys/config/ui/headers/{header} | Remove a UI header.
+[**DeleteGenerateRoot**](SystemApi.md#DeleteGenerateRoot) | **Delete** /sys/generate-root | Cancels any in-progress root generation attempt.
+[**DeleteGenerateRootAttempt**](SystemApi.md#DeleteGenerateRootAttempt) | **Delete** /sys/generate-root/attempt | Cancels any in-progress root generation attempt.
+[**DeleteLogger**](SystemApi.md#DeleteLogger) | **Delete** /sys/loggers/{name} | Revert a single logger to use log level provided in config.
+[**DeleteLoggers**](SystemApi.md#DeleteLoggers) | **Delete** /sys/loggers | Revert the all loggers to use log level provided in config.
+[**DeleteMount**](SystemApi.md#DeleteMount) | **Delete** /sys/mounts/{path} | Disable the mount point specified at the given path.
+[**DeletePluginsCatalogByTypeByName**](SystemApi.md#DeletePluginsCatalogByTypeByName) | **Delete** /sys/plugins/catalog/{type}/{name} | Remove the plugin with the given name.
+[**DeletePoliciesACL**](SystemApi.md#DeletePoliciesACL) | **Delete** /sys/policies/acl/{name} | Delete the ACL policy with the given name.
+[**DeletePoliciesPassword**](SystemApi.md#DeletePoliciesPassword) | **Delete** /sys/policies/password/{name} | Delete a password policy.
+[**DeletePolicy**](SystemApi.md#DeletePolicy) | **Delete** /sys/policy/{name} | Delete the policy with the given name.
+[**DeleteQuotasRateLimit**](SystemApi.md#DeleteQuotasRateLimit) | **Delete** /sys/quotas/rate-limit/{name} | 
+[**DeleteRaw**](SystemApi.md#DeleteRaw) | **Delete** /sys/raw | Delete the key with given path.
+[**DeleteRawPath**](SystemApi.md#DeleteRawPath) | **Delete** /sys/raw/{path} | Delete the key with given path.
+[**DeleteRekeyBackup**](SystemApi.md#DeleteRekeyBackup) | **Delete** /sys/rekey/backup | Delete the backup copy of PGP-encrypted unseal keys.
+[**DeleteRekeyInit**](SystemApi.md#DeleteRekeyInit) | **Delete** /sys/rekey/init | Cancels any in-progress rekey.
+[**DeleteRekeyRecoveryKeyBackup**](SystemApi.md#DeleteRekeyRecoveryKeyBackup) | **Delete** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
+[**DeleteRekeyVerify**](SystemApi.md#DeleteRekeyVerify) | **Delete** /sys/rekey/verify | Cancel any in-progress rekey verification operation.
+[**ListConfigUIHeaders**](SystemApi.md#ListConfigUIHeaders) | **Get** /sys/config/ui/headers/ | Return a list of configured UI headers.
+[**ListLeasesLookupPrefix**](SystemApi.md#ListLeasesLookupPrefix) | **Get** /sys/leases/lookup/{prefix} | Returns a list of lease ids.
+[**ListPluginsCatalogByType**](SystemApi.md#ListPluginsCatalogByType) | **Get** /sys/plugins/catalog/{type} | List the plugins in the catalog.
+[**ListPoliciesACL**](SystemApi.md#ListPoliciesACL) | **Get** /sys/policies/acl | List the configured access control policies.
+[**ListPoliciesPassword**](SystemApi.md#ListPoliciesPassword) | **Get** /sys/policies/password | List the existing password policies.
+[**ListQuotasRateLimits**](SystemApi.md#ListQuotasRateLimits) | **Get** /sys/quotas/rate-limit | 
+[**ListVersionHistory**](SystemApi.md#ListVersionHistory) | **Get** /sys/version-history/ | Returns map of historical version change entries
+[**MFAValidate**](SystemApi.md#MFAValidate) | **Post** /sys/mfa/validate | Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
+[**Monitor**](SystemApi.md#Monitor) | **Get** /sys/monitor | 
+[**PprofRead**](SystemApi.md#PprofRead) | **Get** /sys/pprof/ | Returns an HTML page listing the available profiles.
+[**PprofReadAllocs**](SystemApi.md#PprofReadAllocs) | **Get** /sys/pprof/allocs | Returns a sampling of all past memory allocations.
+[**PprofReadBlock**](SystemApi.md#PprofReadBlock) | **Get** /sys/pprof/block | Returns stack traces that led to blocking on synchronization primitives
+[**PprofReadCmdline**](SystemApi.md#PprofReadCmdline) | **Get** /sys/pprof/cmdline | Returns the running program&#x27;s command line.
+[**PprofReadGoroutine**](SystemApi.md#PprofReadGoroutine) | **Get** /sys/pprof/goroutine | Returns stack traces of all current goroutines.
+[**PprofReadHeap**](SystemApi.md#PprofReadHeap) | **Get** /sys/pprof/heap | Returns a sampling of memory allocations of live object.
+[**PprofReadMutex**](SystemApi.md#PprofReadMutex) | **Get** /sys/pprof/mutex | Returns stack traces of holders of contended mutexes
+[**PprofReadProfile**](SystemApi.md#PprofReadProfile) | **Get** /sys/pprof/profile | Returns a pprof-formatted cpu profile payload.
+[**PprofReadSymbol**](SystemApi.md#PprofReadSymbol) | **Get** /sys/pprof/symbol | Returns the program counters listed in the request.
+[**PprofReadThreadcreate**](SystemApi.md#PprofReadThreadcreate) | **Get** /sys/pprof/threadcreate | Returns stack traces that led to the creation of new OS threads
+[**PprofReadTrace**](SystemApi.md#PprofReadTrace) | **Get** /sys/pprof/trace | Returns the execution trace in binary form.
+[**ReadAuditDevices**](SystemApi.md#ReadAuditDevices) | **Get** /sys/audit | List the enabled audit devices.
+[**ReadAuthMethod**](SystemApi.md#ReadAuthMethod) | **Get** /sys/auth/{path} | Read the configuration of the auth engine at the given path.
+[**ReadAuthMethodTune**](SystemApi.md#ReadAuthMethodTune) | **Get** /sys/auth/{path}/tune | Reads the given auth path&#x27;s configuration.
+[**ReadAuthMethods**](SystemApi.md#ReadAuthMethods) | **Get** /sys/auth | List the currently enabled credential backends.
+[**ReadConfigAuditingRequestHeader**](SystemApi.md#ReadConfigAuditingRequestHeader) | **Get** /sys/config/auditing/request-headers/{header} | List the information for the given request header.
+[**ReadConfigAuditingRequestHeaders**](SystemApi.md#ReadConfigAuditingRequestHeaders) | **Get** /sys/config/auditing/request-headers | List the request headers that are configured to be audited.
+[**ReadConfigCORS**](SystemApi.md#ReadConfigCORS) | **Get** /sys/config/cors | Return the current CORS settings.
+[**ReadConfigStateSanitized**](SystemApi.md#ReadConfigStateSanitized) | **Get** /sys/config/state/sanitized | Return a sanitized version of the Vault server configuration.
+[**ReadConfigUIHeader**](SystemApi.md#ReadConfigUIHeader) | **Get** /sys/config/ui/headers/{header} | Return the given UI header&#x27;s configuration
+[**ReadGenerateRoot**](SystemApi.md#ReadGenerateRoot) | **Get** /sys/generate-root | Read the configuration and progress of the current root generation attempt.
+[**ReadGenerateRootAttempt**](SystemApi.md#ReadGenerateRootAttempt) | **Get** /sys/generate-root/attempt | Read the configuration and progress of the current root generation attempt.
+[**ReadHAStatus**](SystemApi.md#ReadHAStatus) | **Get** /sys/ha-status | Check the HA status of a Vault cluster
+[**ReadHealth**](SystemApi.md#ReadHealth) | **Get** /sys/health | Returns the health status of Vault.
+[**ReadHostInfo**](SystemApi.md#ReadHostInfo) | **Get** /sys/host-info | Information about the host instance that this Vault server is running on.
+[**ReadInFlightRequests**](SystemApi.md#ReadInFlightRequests) | **Get** /sys/in-flight-req | reports in-flight requests
+[**ReadInit**](SystemApi.md#ReadInit) | **Get** /sys/init | Returns the initialization status of Vault.
+[**ReadInternalCountersActivity**](SystemApi.md#ReadInternalCountersActivity) | **Get** /sys/internal/counters/activity | Report the client count metrics, for this namespace and all child namespaces.
+[**ReadInternalCountersActivityExport**](SystemApi.md#ReadInternalCountersActivityExport) | **Get** /sys/internal/counters/activity/export | Report the client count metrics, for this namespace and all child namespaces.
+[**ReadInternalCountersActivityMonthly**](SystemApi.md#ReadInternalCountersActivityMonthly) | **Get** /sys/internal/counters/activity/monthly | Report the number of clients for this month, for this namespace and all child namespaces.
+[**ReadInternalCountersConfig**](SystemApi.md#ReadInternalCountersConfig) | **Get** /sys/internal/counters/config | Read the client count tracking configuration.
+[**ReadInternalCountersEntities**](SystemApi.md#ReadInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
+[**ReadInternalCountersRequests**](SystemApi.md#ReadInternalCountersRequests) | **Get** /sys/internal/counters/requests | Backwards compatibility is not guaranteed for this API
+[**ReadInternalCountersTokens**](SystemApi.md#ReadInternalCountersTokens) | **Get** /sys/internal/counters/tokens | Backwards compatibility is not guaranteed for this API
+[**ReadInternalInspectRouter**](SystemApi.md#ReadInternalInspectRouter) | **Get** /sys/internal/inspect/router/{tag} | Expose the route entry and mount entry tables present in the router
+[**ReadInternalSpecsOpenAPI**](SystemApi.md#ReadInternalSpecsOpenAPI) | **Get** /sys/internal/specs/openapi | Generate an OpenAPI 3 document of all mounted paths.
+[**ReadInternalUIFeatureFlags**](SystemApi.md#ReadInternalUIFeatureFlags) | **Get** /sys/internal/ui/feature-flags | Lists enabled feature flags.
+[**ReadInternalUIMount**](SystemApi.md#ReadInternalUIMount) | **Get** /sys/internal/ui/mounts/{path} | Return information about the given mount.
+[**ReadInternalUIMounts**](SystemApi.md#ReadInternalUIMounts) | **Get** /sys/internal/ui/mounts | Lists all enabled and visible auth and secrets mounts.
+[**ReadInternalUINamespaces**](SystemApi.md#ReadInternalUINamespaces) | **Get** /sys/internal/ui/namespaces | Backwards compatibility is not guaranteed for this API
+[**ReadInternalUIResultantACL**](SystemApi.md#ReadInternalUIResultantACL) | **Get** /sys/internal/ui/resultant-acl | Backwards compatibility is not guaranteed for this API
+[**ReadKeyStatus**](SystemApi.md#ReadKeyStatus) | **Get** /sys/key-status | Provides information about the backend encryption key.
+[**ReadLeader**](SystemApi.md#ReadLeader) | **Get** /sys/leader | Returns the high availability status and current leader instance of Vault.
+[**ReadLeases**](SystemApi.md#ReadLeases) | **Get** /sys/leases | List leases associated with this Vault cluster
+[**ReadLeasesCount**](SystemApi.md#ReadLeasesCount) | **Get** /sys/leases/count | Count of leases associated with this Vault cluster
+[**ReadLogger**](SystemApi.md#ReadLogger) | **Get** /sys/loggers/{name} | Read the log level for a single logger.
+[**ReadLoggers**](SystemApi.md#ReadLoggers) | **Get** /sys/loggers | Read the log level for all existing loggers.
+[**ReadMetrics**](SystemApi.md#ReadMetrics) | **Get** /sys/metrics | Export the metrics aggregated for telemetry purpose.
+[**ReadMount**](SystemApi.md#ReadMount) | **Get** /sys/mounts/{path} | Read the configuration of the secret engine at the given path.
+[**ReadMounts**](SystemApi.md#ReadMounts) | **Get** /sys/mounts | List the currently mounted backends.
+[**ReadMountsConfig**](SystemApi.md#ReadMountsConfig) | **Get** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
+[**ReadPluginsCatalog**](SystemApi.md#ReadPluginsCatalog) | **Get** /sys/plugins/catalog | Lists all the plugins known to Vault
+[**ReadPluginsCatalogByTypeByName**](SystemApi.md#ReadPluginsCatalogByTypeByName) | **Get** /sys/plugins/catalog/{type}/{name} | Return the configuration data for the plugin with the given name.
+[**ReadPolicies**](SystemApi.md#ReadPolicies) | **Get** /sys/policy | List the configured access control policies.
+[**ReadPoliciesACL**](SystemApi.md#ReadPoliciesACL) | **Get** /sys/policies/acl/{name} | Retrieve information about the named ACL policy.
+[**ReadPoliciesPassword**](SystemApi.md#ReadPoliciesPassword) | **Get** /sys/policies/password/{name} | Retrieve an existing password policy.
+[**ReadPoliciesPasswordGenerate**](SystemApi.md#ReadPoliciesPasswordGenerate) | **Get** /sys/policies/password/{name}/generate | Generate a password from an existing password policy.
+[**ReadPolicy**](SystemApi.md#ReadPolicy) | **Get** /sys/policy/{name} | Retrieve the policy body for the named policy.
+[**ReadQuotasConfig**](SystemApi.md#ReadQuotasConfig) | **Get** /sys/quotas/config | 
+[**ReadQuotasRateLimit**](SystemApi.md#ReadQuotasRateLimit) | **Get** /sys/quotas/rate-limit/{name} | 
+[**ReadRaw**](SystemApi.md#ReadRaw) | **Get** /sys/raw | Read the value of the key at the given path.
+[**ReadRawPath**](SystemApi.md#ReadRawPath) | **Get** /sys/raw/{path} | Read the value of the key at the given path.
+[**ReadRekeyBackup**](SystemApi.md#ReadRekeyBackup) | **Get** /sys/rekey/backup | Return the backup copy of PGP-encrypted unseal keys.
+[**ReadRekeyInit**](SystemApi.md#ReadRekeyInit) | **Get** /sys/rekey/init | Reads the configuration and progress of the current rekey attempt.
+[**ReadRekeyRecoveryKeyBackup**](SystemApi.md#ReadRekeyRecoveryKeyBackup) | **Get** /sys/rekey/recovery-key-backup | Allows fetching or deleting the backup of the rotated unseal keys.
+[**ReadRekeyVerify**](SystemApi.md#ReadRekeyVerify) | **Get** /sys/rekey/verify | Read the configuration and progress of the current rekey verification attempt.
+[**ReadRemountStatus**](SystemApi.md#ReadRemountStatus) | **Get** /sys/remount/status/{migration_id} | Check status of a mount migration
+[**ReadReplicationStatus**](SystemApi.md#ReadReplicationStatus) | **Get** /sys/replication/status | 
+[**ReadRotateConfig**](SystemApi.md#ReadRotateConfig) | **Get** /sys/rotate/config | 
+[**ReadSealStatus**](SystemApi.md#ReadSealStatus) | **Get** /sys/seal-status | Check the seal status of a Vault.
+[**Remount**](SystemApi.md#Remount) | **Post** /sys/remount | Initiate a mount migration
+[**Renew**](SystemApi.md#Renew) | **Post** /sys/renew | Renews a lease, requesting to extend the lease.
+[**RenewFor**](SystemApi.md#RenewFor) | **Post** /sys/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
+[**Revoke**](SystemApi.md#Revoke) | **Post** /sys/revoke | Revokes a lease immediately.
+[**RevokeForce**](SystemApi.md#RevokeForce) | **Post** /sys/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
+[**RevokeLease**](SystemApi.md#RevokeLease) | **Post** /sys/revoke/{url_lease_id} | Revokes a lease immediately.
+[**RevokePrefix**](SystemApi.md#RevokePrefix) | **Post** /sys/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
+[**Rotate**](SystemApi.md#Rotate) | **Post** /sys/rotate | Rotates the backend encryption key used to persist data.
+[**Seal**](SystemApi.md#Seal) | **Post** /sys/seal | Seal the Vault.
+[**StepDownLeader**](SystemApi.md#StepDownLeader) | **Post** /sys/step-down | Cause the node to give up active status.
+[**SysDeletePluginsCatalogName**](SystemApi.md#SysDeletePluginsCatalogName) | **Delete** /sys/plugins/catalog/{name} | Remove the plugin with the given name.
+[**SysListLeasesLookup**](SystemApi.md#SysListLeasesLookup) | **Get** /sys/leases/lookup/ | Returns a list of lease ids.
+[**SysReadPluginsCatalogName**](SystemApi.md#SysReadPluginsCatalogName) | **Get** /sys/plugins/catalog/{name} | Return the configuration data for the plugin with the given name.
+[**SysWriteLockedusersMountAccessorUnlockAliasIdentifier**](SystemApi.md#SysWriteLockedusersMountAccessorUnlockAliasIdentifier) | **Post** /sys/lockedusers/{mount_accessor}/unlock/{alias_identifier} | Unlocks the user with given mount_accessor and alias_identifier
+[**SysWritePluginsCatalogName**](SystemApi.md#SysWritePluginsCatalogName) | **Post** /sys/plugins/catalog/{name} | Register a new plugin, or updates an existing one with the supplied name.
+[**SysWriteToolsRandomUrlbytes**](SystemApi.md#SysWriteToolsRandomUrlbytes) | **Post** /sys/tools/random/{urlbytes} | Generate random bytes
+[**ToolsGenerateRandom**](SystemApi.md#ToolsGenerateRandom) | **Post** /sys/tools/random | Generate random bytes
+[**ToolsGenerateRandomSource**](SystemApi.md#ToolsGenerateRandomSource) | **Post** /sys/tools/random/{source} | Generate random bytes
+[**ToolsGenerateRandomSourceBytes**](SystemApi.md#ToolsGenerateRandomSourceBytes) | **Post** /sys/tools/random/{source}/{urlbytes} | Generate random bytes
+[**ToolsHash**](SystemApi.md#ToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
+[**ToolsHashWith**](SystemApi.md#ToolsHashWith) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
+[**Unseal**](SystemApi.md#Unseal) | **Post** /sys/unseal | Unseal the Vault.
+[**WrappingReadLookup**](SystemApi.md#WrappingReadLookup) | **Get** /sys/wrapping/lookup | Look up wrapping properties for the requester&#x27;s token.
+[**WrappingRewrap**](SystemApi.md#WrappingRewrap) | **Post** /sys/wrapping/rewrap | Rotates a response-wrapped token.
+[**WrappingUnwrap**](SystemApi.md#WrappingUnwrap) | **Post** /sys/wrapping/unwrap | Unwraps a response-wrapped token.
+[**WrappingWrap**](SystemApi.md#WrappingWrap) | **Post** /sys/wrapping/wrap | Response-wraps an arbitrary JSON object.
+[**WrappingWriteLookup**](SystemApi.md#WrappingWriteLookup) | **Post** /sys/wrapping/lookup | Look up wrapping properties for the given token.
+[**WriteAuditDevice**](SystemApi.md#WriteAuditDevice) | **Post** /sys/audit/{path} | Enable a new audit device at the supplied path.
+[**WriteAuthMethod**](SystemApi.md#WriteAuthMethod) | **Post** /sys/auth/{path} | Enables a new auth method.
+[**WriteAuthMethodTune**](SystemApi.md#WriteAuthMethodTune) | **Post** /sys/auth/{path}/tune | Tune configuration parameters for a given auth path.
+[**WriteCapabilities**](SystemApi.md#WriteCapabilities) | **Post** /sys/capabilities | Fetches the capabilities of the given token on the given path.
+[**WriteCapabilitiesAccessor**](SystemApi.md#WriteCapabilitiesAccessor) | **Post** /sys/capabilities-accessor | Fetches the capabilities of the token associated with the given token, on the given path.
+[**WriteCapabilitiesSelf**](SystemApi.md#WriteCapabilitiesSelf) | **Post** /sys/capabilities-self | Fetches the capabilities of the given token on the given path.
+[**WriteConfigAuditingRequestHeader**](SystemApi.md#WriteConfigAuditingRequestHeader) | **Post** /sys/config/auditing/request-headers/{header} | Enable auditing of a header.
+[**WriteConfigCORS**](SystemApi.md#WriteConfigCORS) | **Post** /sys/config/cors | Configure the CORS settings.
+[**WriteConfigReloadSubsystem**](SystemApi.md#WriteConfigReloadSubsystem) | **Post** /sys/config/reload/{subsystem} | Reload the given subsystem
+[**WriteConfigUIHeader**](SystemApi.md#WriteConfigUIHeader) | **Post** /sys/config/ui/headers/{header} | Configure the values to be returned for the UI header.
+[**WriteGenerateRoot**](SystemApi.md#WriteGenerateRoot) | **Post** /sys/generate-root | Initializes a new root generation attempt.
+[**WriteGenerateRootAttempt**](SystemApi.md#WriteGenerateRootAttempt) | **Post** /sys/generate-root/attempt | Initializes a new root generation attempt.
+[**WriteGenerateRootUpdate**](SystemApi.md#WriteGenerateRootUpdate) | **Post** /sys/generate-root/update | Enter a single unseal key share to progress the root generation attempt.
+[**WriteInit**](SystemApi.md#WriteInit) | **Post** /sys/init | Initialize a new Vault.
+[**WriteInternalCountersConfig**](SystemApi.md#WriteInternalCountersConfig) | **Post** /sys/internal/counters/config | Enable or disable collection of client count, set retention period, or set default reporting period.
+[**WriteLeasesLookup**](SystemApi.md#WriteLeasesLookup) | **Post** /sys/leases/lookup | Retrieve lease metadata.
+[**WriteLeasesRenew**](SystemApi.md#WriteLeasesRenew) | **Post** /sys/leases/renew | Renews a lease, requesting to extend the lease.
+[**WriteLeasesRenew2**](SystemApi.md#WriteLeasesRenew2) | **Post** /sys/leases/renew/{url_lease_id} | Renews a lease, requesting to extend the lease.
+[**WriteLeasesRevoke**](SystemApi.md#WriteLeasesRevoke) | **Post** /sys/leases/revoke | Revokes a lease immediately.
+[**WriteLeasesRevoke2**](SystemApi.md#WriteLeasesRevoke2) | **Post** /sys/leases/revoke/{url_lease_id} | Revokes a lease immediately.
+[**WriteLeasesRevokeForce**](SystemApi.md#WriteLeasesRevokeForce) | **Post** /sys/leases/revoke-force/{prefix} | Revokes all secrets or tokens generated under a given prefix immediately
+[**WriteLeasesRevokePrefix**](SystemApi.md#WriteLeasesRevokePrefix) | **Post** /sys/leases/revoke-prefix/{prefix} | Revokes all secrets (via a lease ID prefix) or tokens (via the tokens&#x27; path property) generated under a given prefix immediately.
+[**WriteLeasesTidy**](SystemApi.md#WriteLeasesTidy) | **Post** /sys/leases/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
+[**WriteLogger**](SystemApi.md#WriteLogger) | **Post** /sys/loggers/{name} | Modify the log level of a single logger.
+[**WriteLoggers**](SystemApi.md#WriteLoggers) | **Post** /sys/loggers | Modify the log level for all existing loggers.
+[**WriteMount**](SystemApi.md#WriteMount) | **Post** /sys/mounts/{path} | Enable a new secrets engine at the given path.
+[**WriteMountsConfig**](SystemApi.md#WriteMountsConfig) | **Post** /sys/mounts/{path}/tune | Tune backend configuration parameters for this mount.
+[**WritePluginsCatalogByTypeByName**](SystemApi.md#WritePluginsCatalogByTypeByName) | **Post** /sys/plugins/catalog/{type}/{name} | Register a new plugin, or updates an existing one with the supplied name.
+[**WritePluginsReloadBackend**](SystemApi.md#WritePluginsReloadBackend) | **Post** /sys/plugins/reload/backend | Reload mounted plugin backends.
+[**WritePoliciesACL**](SystemApi.md#WritePoliciesACL) | **Post** /sys/policies/acl/{name} | Add a new or update an existing ACL policy.
+[**WritePoliciesPassword**](SystemApi.md#WritePoliciesPassword) | **Post** /sys/policies/password/{name} | Add a new or update an existing password policy.
+[**WritePolicy**](SystemApi.md#WritePolicy) | **Post** /sys/policy/{name} | Add a new or update an existing policy.
+[**WriteQuotasConfig**](SystemApi.md#WriteQuotasConfig) | **Post** /sys/quotas/config | 
+[**WriteQuotasRateLimit**](SystemApi.md#WriteQuotasRateLimit) | **Post** /sys/quotas/rate-limit/{name} | 
+[**WriteRaw**](SystemApi.md#WriteRaw) | **Post** /sys/raw | Update the value of the key at the given path.
+[**WriteRawPath**](SystemApi.md#WriteRawPath) | **Post** /sys/raw/{path} | Update the value of the key at the given path.
+[**WriteRekeyInit**](SystemApi.md#WriteRekeyInit) | **Post** /sys/rekey/init | Initializes a new rekey attempt.
+[**WriteRekeyUpdate**](SystemApi.md#WriteRekeyUpdate) | **Post** /sys/rekey/update | Enter a single unseal key share to progress the rekey of the Vault.
+[**WriteRekeyVerify**](SystemApi.md#WriteRekeyVerify) | **Post** /sys/rekey/verify | Enter a single new key share to progress the rekey verification operation.
+[**WriteRotateConfig**](SystemApi.md#WriteRotateConfig) | **Post** /sys/rotate/config | 
 
 
 
 
 
 ## CalculateAuditHash
-
-> CalculateAuditHash(ctx, path).CalculateAuditHashRequest(calculateAuditHashRequest).Execute()
 
 The hash of the given string via the given audit backend
 
@@ -244,8 +242,6 @@ Name | Type | Description  | Notes
 
 ## DeleteAuditDevice
 
-> DeleteAuditDevice(ctx, path).Execute()
-
 Disable the audit device at the given path.
 
 ### Example
@@ -306,8 +302,6 @@ Name | Type | Description  | Notes
 
 
 ## DeleteAuthMethod
-
-> DeleteAuthMethod(ctx, path).Execute()
 
 Disable the auth method at the given auth path
 
@@ -370,8 +364,6 @@ Name | Type | Description  | Notes
 
 ## DeleteConfigAuditingRequestHeader
 
-> DeleteConfigAuditingRequestHeader(ctx, header).Execute()
-
 Disable auditing of the given request header.
 
 ### Example
@@ -433,8 +425,6 @@ Name | Type | Description  | Notes
 
 ## DeleteConfigCORS
 
-> DeleteConfigCORS(ctx).Execute()
-
 Remove any CORS settings.
 
 ### Example
@@ -486,8 +476,6 @@ This endpoint does not require any parameters.
 
 
 ## DeleteConfigUIHeader
-
-> DeleteConfigUIHeader(ctx, header).Execute()
 
 Remove a UI header.
 
@@ -550,8 +538,6 @@ Name | Type | Description  | Notes
 
 ## DeleteGenerateRoot
 
-> DeleteGenerateRoot(ctx).Execute()
-
 Cancels any in-progress root generation attempt.
 
 ### Example
@@ -604,8 +590,6 @@ This endpoint does not require any parameters.
 
 ## DeleteGenerateRootAttempt
 
-> DeleteGenerateRootAttempt(ctx).Execute()
-
 Cancels any in-progress root generation attempt.
 
 ### Example
@@ -657,8 +641,6 @@ This endpoint does not require any parameters.
 
 
 ## DeleteLogger
-
-> DeleteLogger(ctx, name).Execute()
 
 Revert a single logger to use log level provided in config.
 
@@ -721,8 +703,6 @@ Name | Type | Description  | Notes
 
 ## DeleteLoggers
 
-> DeleteLoggers(ctx).Execute()
-
 Revert the all loggers to use log level provided in config.
 
 ### Example
@@ -774,8 +754,6 @@ This endpoint does not require any parameters.
 
 
 ## DeleteMount
-
-> DeleteMount(ctx, path).Execute()
 
 Disable the mount point specified at the given path.
 
@@ -837,8 +815,6 @@ Name | Type | Description  | Notes
 
 
 ## DeletePluginsCatalogByTypeByName
-
-> DeletePluginsCatalogByTypeByName(ctx, name, type_).Execute()
 
 Remove the plugin with the given name.
 
@@ -905,8 +881,6 @@ Name | Type | Description  | Notes
 
 ## DeletePoliciesACL
 
-> DeletePoliciesACL(ctx, name).Execute()
-
 Delete the ACL policy with the given name.
 
 ### Example
@@ -967,8 +941,6 @@ Name | Type | Description  | Notes
 
 
 ## DeletePoliciesPassword
-
-> DeletePoliciesPassword(ctx, name).Execute()
 
 Delete a password policy.
 
@@ -1031,8 +1003,6 @@ Name | Type | Description  | Notes
 
 ## DeletePolicy
 
-> DeletePolicy(ctx, name).Execute()
-
 Delete the policy with the given name.
 
 ### Example
@@ -1093,8 +1063,6 @@ Name | Type | Description  | Notes
 
 
 ## DeleteQuotasRateLimit
-
-> DeleteQuotasRateLimit(ctx, name).Execute()
 
 
 
@@ -1157,8 +1125,6 @@ Name | Type | Description  | Notes
 
 ## DeleteRaw
 
-> DeleteRaw(ctx).Execute()
-
 Delete the key with given path.
 
 ### Example
@@ -1210,8 +1176,6 @@ This endpoint does not require any parameters.
 
 
 ## DeleteRawPath
-
-> DeleteRawPath(ctx, path).Execute()
 
 Delete the key with given path.
 
@@ -1274,8 +1238,6 @@ Name | Type | Description  | Notes
 
 ## DeleteRekeyBackup
 
-> DeleteRekeyBackup(ctx).Execute()
-
 Delete the backup copy of PGP-encrypted unseal keys.
 
 ### Example
@@ -1327,8 +1289,6 @@ This endpoint does not require any parameters.
 
 
 ## DeleteRekeyInit
-
-> DeleteRekeyInit(ctx).Execute()
 
 Cancels any in-progress rekey.
 
@@ -1384,8 +1344,6 @@ This endpoint does not require any parameters.
 
 ## DeleteRekeyRecoveryKeyBackup
 
-> DeleteRekeyRecoveryKeyBackup(ctx).Execute()
-
 Allows fetching or deleting the backup of the rotated unseal keys.
 
 ### Example
@@ -1437,8 +1395,6 @@ This endpoint does not require any parameters.
 
 
 ## DeleteRekeyVerify
-
-> DeleteRekeyVerify(ctx).Execute()
 
 Cancel any in-progress rekey verification operation.
 
@@ -1494,8 +1450,6 @@ This endpoint does not require any parameters.
 
 ## ListConfigUIHeaders
 
-> ListConfigUIHeaders(ctx).List(list).Execute()
-
 Return a list of configured UI headers.
 
 ### Example
@@ -1550,8 +1504,6 @@ Name | Type | Description  | Notes
 
 
 ## ListLeasesLookupPrefix
-
-> ListLeasesLookupPrefix(ctx, prefix).List(list).Execute()
 
 Returns a list of lease ids.
 
@@ -1615,8 +1567,6 @@ Name | Type | Description  | Notes
 
 ## ListPluginsCatalogByType
 
-> ListPluginsCatalogByType(ctx, type_).List(list).Execute()
-
 List the plugins in the catalog.
 
 ### Example
@@ -1679,8 +1629,6 @@ Name | Type | Description  | Notes
 
 ## ListPoliciesACL
 
-> ListPoliciesACL(ctx).List(list).Execute()
-
 List the configured access control policies.
 
 ### Example
@@ -1735,8 +1683,6 @@ Name | Type | Description  | Notes
 
 
 ## ListPoliciesPassword
-
-> ListPoliciesPassword(ctx).List(list).Execute()
 
 List the existing password policies.
 
@@ -1793,8 +1739,6 @@ Name | Type | Description  | Notes
 
 ## ListQuotasRateLimits
 
-> ListQuotasRateLimits(ctx).List(list).Execute()
-
 
 
 ### Example
@@ -1850,8 +1794,6 @@ Name | Type | Description  | Notes
 
 ## ListVersionHistory
 
-> ListVersionHistory(ctx).List(list).Execute()
-
 Returns map of historical version change entries
 
 ### Example
@@ -1906,8 +1848,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAValidate
-
-> MFAValidate(ctx).MFAValidateRequest(mFAValidateRequest).Execute()
 
 Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
 
@@ -1966,8 +1906,6 @@ Name | Type | Description  | Notes
 
 
 ## Monitor
-
-> Monitor(ctx).LogFormat(logFormat).LogLevel(logLevel).Execute()
 
 
 
@@ -2029,8 +1967,6 @@ Name | Type | Description  | Notes
 
 ## PprofRead
 
-> PprofRead(ctx).Execute()
-
 Returns an HTML page listing the available profiles.
 
 
@@ -2084,8 +2020,6 @@ This endpoint does not require any parameters.
 
 
 ## PprofReadAllocs
-
-> PprofReadAllocs(ctx).Execute()
 
 Returns a sampling of all past memory allocations.
 
@@ -2141,8 +2075,6 @@ This endpoint does not require any parameters.
 
 ## PprofReadBlock
 
-> PprofReadBlock(ctx).Execute()
-
 Returns stack traces that led to blocking on synchronization primitives
 
 
@@ -2196,8 +2128,6 @@ This endpoint does not require any parameters.
 
 
 ## PprofReadCmdline
-
-> PprofReadCmdline(ctx).Execute()
 
 Returns the running program's command line.
 
@@ -2253,8 +2183,6 @@ This endpoint does not require any parameters.
 
 ## PprofReadGoroutine
 
-> PprofReadGoroutine(ctx).Execute()
-
 Returns stack traces of all current goroutines.
 
 
@@ -2308,8 +2236,6 @@ This endpoint does not require any parameters.
 
 
 ## PprofReadHeap
-
-> PprofReadHeap(ctx).Execute()
 
 Returns a sampling of memory allocations of live object.
 
@@ -2365,8 +2291,6 @@ This endpoint does not require any parameters.
 
 ## PprofReadMutex
 
-> PprofReadMutex(ctx).Execute()
-
 Returns stack traces of holders of contended mutexes
 
 
@@ -2420,8 +2344,6 @@ This endpoint does not require any parameters.
 
 
 ## PprofReadProfile
-
-> PprofReadProfile(ctx).Execute()
 
 Returns a pprof-formatted cpu profile payload.
 
@@ -2477,8 +2399,6 @@ This endpoint does not require any parameters.
 
 ## PprofReadSymbol
 
-> PprofReadSymbol(ctx).Execute()
-
 Returns the program counters listed in the request.
 
 
@@ -2532,8 +2452,6 @@ This endpoint does not require any parameters.
 
 
 ## PprofReadThreadcreate
-
-> PprofReadThreadcreate(ctx).Execute()
 
 Returns stack traces that led to the creation of new OS threads
 
@@ -2589,8 +2507,6 @@ This endpoint does not require any parameters.
 
 ## PprofReadTrace
 
-> PprofReadTrace(ctx).Execute()
-
 Returns the execution trace in binary form.
 
 
@@ -2645,8 +2561,6 @@ This endpoint does not require any parameters.
 
 ## ReadAuditDevices
 
-> ReadAuditDevices(ctx).Execute()
-
 List the enabled audit devices.
 
 ### Example
@@ -2698,8 +2612,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadAuthMethod
-
-> ReadAuthMethod(ctx, path).Execute()
 
 Read the configuration of the auth engine at the given path.
 
@@ -2761,8 +2673,6 @@ Name | Type | Description  | Notes
 
 
 ## ReadAuthMethodTune
-
-> ReadAuthMethodTune(ctx, path).Execute()
 
 Reads the given auth path's configuration.
 
@@ -2827,8 +2737,6 @@ Name | Type | Description  | Notes
 
 ## ReadAuthMethods
 
-> ReadAuthMethods(ctx).Execute()
-
 List the currently enabled credential backends.
 
 ### Example
@@ -2880,8 +2788,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadConfigAuditingRequestHeader
-
-> ReadConfigAuditingRequestHeader(ctx, header).Execute()
 
 List the information for the given request header.
 
@@ -2944,8 +2850,6 @@ Name | Type | Description  | Notes
 
 ## ReadConfigAuditingRequestHeaders
 
-> ReadConfigAuditingRequestHeaders(ctx).Execute()
-
 List the request headers that are configured to be audited.
 
 ### Example
@@ -2998,8 +2902,6 @@ This endpoint does not require any parameters.
 
 ## ReadConfigCORS
 
-> ReadConfigCORS(ctx).Execute()
-
 Return the current CORS settings.
 
 ### Example
@@ -3051,8 +2953,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadConfigStateSanitized
-
-> ReadConfigStateSanitized(ctx).Execute()
 
 Return a sanitized version of the Vault server configuration.
 
@@ -3107,8 +3007,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadConfigUIHeader
-
-> ReadConfigUIHeader(ctx, header).Execute()
 
 Return the given UI header's configuration
 
@@ -3171,8 +3069,6 @@ Name | Type | Description  | Notes
 
 ## ReadGenerateRoot
 
-> ReadGenerateRoot(ctx).Execute()
-
 Read the configuration and progress of the current root generation attempt.
 
 ### Example
@@ -3224,8 +3120,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadGenerateRootAttempt
-
-> ReadGenerateRootAttempt(ctx).Execute()
 
 Read the configuration and progress of the current root generation attempt.
 
@@ -3279,8 +3173,6 @@ This endpoint does not require any parameters.
 
 ## ReadHAStatus
 
-> ReadHAStatus(ctx).Execute()
-
 Check the HA status of a Vault cluster
 
 ### Example
@@ -3333,8 +3225,6 @@ This endpoint does not require any parameters.
 
 ## ReadHealth
 
-> ReadHealth(ctx).Execute()
-
 Returns the health status of Vault.
 
 ### Example
@@ -3386,8 +3276,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadHostInfo
-
-> ReadHostInfo(ctx).Execute()
 
 Information about the host instance that this Vault server is running on.
 
@@ -3443,8 +3331,6 @@ This endpoint does not require any parameters.
 
 ## ReadInFlightRequests
 
-> ReadInFlightRequests(ctx).Execute()
-
 reports in-flight requests
 
 
@@ -3499,8 +3385,6 @@ This endpoint does not require any parameters.
 
 ## ReadInit
 
-> ReadInit(ctx).Execute()
-
 Returns the initialization status of Vault.
 
 ### Example
@@ -3552,8 +3436,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadInternalCountersActivity
-
-> ReadInternalCountersActivity(ctx).Execute()
 
 Report the client count metrics, for this namespace and all child namespaces.
 
@@ -3607,8 +3489,6 @@ This endpoint does not require any parameters.
 
 ## ReadInternalCountersActivityExport
 
-> ReadInternalCountersActivityExport(ctx).Execute()
-
 Report the client count metrics, for this namespace and all child namespaces.
 
 ### Example
@@ -3660,8 +3540,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadInternalCountersActivityMonthly
-
-> ReadInternalCountersActivityMonthly(ctx).Execute()
 
 Report the number of clients for this month, for this namespace and all child namespaces.
 
@@ -3715,8 +3593,6 @@ This endpoint does not require any parameters.
 
 ## ReadInternalCountersConfig
 
-> ReadInternalCountersConfig(ctx).Execute()
-
 Read the client count tracking configuration.
 
 ### Example
@@ -3768,8 +3644,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadInternalCountersEntities
-
-> ReadInternalCountersEntities(ctx).Execute()
 
 Backwards compatibility is not guaranteed for this API
 
@@ -3823,8 +3697,6 @@ This endpoint does not require any parameters.
 
 ## ReadInternalCountersRequests
 
-> ReadInternalCountersRequests(ctx).Execute()
-
 Backwards compatibility is not guaranteed for this API
 
 ### Example
@@ -3877,8 +3749,6 @@ This endpoint does not require any parameters.
 
 ## ReadInternalCountersTokens
 
-> ReadInternalCountersTokens(ctx).Execute()
-
 Backwards compatibility is not guaranteed for this API
 
 ### Example
@@ -3930,8 +3800,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadInternalInspectRouter
-
-> ReadInternalInspectRouter(ctx, tag).Execute()
 
 Expose the route entry and mount entry tables present in the router
 
@@ -3994,8 +3862,6 @@ Name | Type | Description  | Notes
 
 ## ReadInternalSpecsOpenAPI
 
-> ReadInternalSpecsOpenAPI(ctx).Execute()
-
 Generate an OpenAPI 3 document of all mounted paths.
 
 ### Example
@@ -4048,8 +3914,6 @@ This endpoint does not require any parameters.
 
 ## ReadInternalUIFeatureFlags
 
-> ReadInternalUIFeatureFlags(ctx).Execute()
-
 Lists enabled feature flags.
 
 ### Example
@@ -4101,8 +3965,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadInternalUIMount
-
-> ReadInternalUIMount(ctx, path).Execute()
 
 Return information about the given mount.
 
@@ -4165,8 +4027,6 @@ Name | Type | Description  | Notes
 
 ## ReadInternalUIMounts
 
-> ReadInternalUIMounts(ctx).Execute()
-
 Lists all enabled and visible auth and secrets mounts.
 
 ### Example
@@ -4218,8 +4078,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadInternalUINamespaces
-
-> ReadInternalUINamespaces(ctx).Execute()
 
 Backwards compatibility is not guaranteed for this API
 
@@ -4273,8 +4131,6 @@ This endpoint does not require any parameters.
 
 ## ReadInternalUIResultantACL
 
-> ReadInternalUIResultantACL(ctx).Execute()
-
 Backwards compatibility is not guaranteed for this API
 
 ### Example
@@ -4326,8 +4182,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadKeyStatus
-
-> ReadKeyStatus(ctx).Execute()
 
 Provides information about the backend encryption key.
 
@@ -4381,8 +4235,6 @@ This endpoint does not require any parameters.
 
 ## ReadLeader
 
-> ReadLeader(ctx).Execute()
-
 Returns the high availability status and current leader instance of Vault.
 
 ### Example
@@ -4434,8 +4286,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadLeases
-
-> ReadLeases(ctx).Execute()
 
 List leases associated with this Vault cluster
 
@@ -4489,8 +4339,6 @@ This endpoint does not require any parameters.
 
 ## ReadLeasesCount
 
-> ReadLeasesCount(ctx).Execute()
-
 Count of leases associated with this Vault cluster
 
 ### Example
@@ -4542,8 +4390,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadLogger
-
-> ReadLogger(ctx, name).Execute()
 
 Read the log level for a single logger.
 
@@ -4606,8 +4452,6 @@ Name | Type | Description  | Notes
 
 ## ReadLoggers
 
-> ReadLoggers(ctx).Execute()
-
 Read the log level for all existing loggers.
 
 ### Example
@@ -4659,8 +4503,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadMetrics
-
-> ReadMetrics(ctx).Format(format).Execute()
 
 Export the metrics aggregated for telemetry purpose.
 
@@ -4718,8 +4560,6 @@ Name | Type | Description  | Notes
 
 
 ## ReadMount
-
-> ReadMount(ctx, path).Execute()
 
 Read the configuration of the secret engine at the given path.
 
@@ -4782,8 +4622,6 @@ Name | Type | Description  | Notes
 
 ## ReadMounts
 
-> ReadMounts(ctx).Execute()
-
 List the currently mounted backends.
 
 ### Example
@@ -4835,8 +4673,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadMountsConfig
-
-> ReadMountsConfig(ctx, path).Execute()
 
 Tune backend configuration parameters for this mount.
 
@@ -4899,8 +4735,6 @@ Name | Type | Description  | Notes
 
 ## ReadPluginsCatalog
 
-> ReadPluginsCatalog(ctx).Execute()
-
 Lists all the plugins known to Vault
 
 ### Example
@@ -4952,8 +4786,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadPluginsCatalogByTypeByName
-
-> ReadPluginsCatalogByTypeByName(ctx, name, type_).Execute()
 
 Return the configuration data for the plugin with the given name.
 
@@ -5020,8 +4852,6 @@ Name | Type | Description  | Notes
 
 ## ReadPolicies
 
-> ReadPolicies(ctx).List(list).Execute()
-
 List the configured access control policies.
 
 ### Example
@@ -5076,8 +4906,6 @@ Name | Type | Description  | Notes
 
 
 ## ReadPoliciesACL
-
-> ReadPoliciesACL(ctx, name).Execute()
 
 Retrieve information about the named ACL policy.
 
@@ -5140,8 +4968,6 @@ Name | Type | Description  | Notes
 
 ## ReadPoliciesPassword
 
-> ReadPoliciesPassword(ctx, name).Execute()
-
 Retrieve an existing password policy.
 
 ### Example
@@ -5202,8 +5028,6 @@ Name | Type | Description  | Notes
 
 
 ## ReadPoliciesPasswordGenerate
-
-> ReadPoliciesPasswordGenerate(ctx, name).Execute()
 
 Generate a password from an existing password policy.
 
@@ -5266,8 +5090,6 @@ Name | Type | Description  | Notes
 
 ## ReadPolicy
 
-> ReadPolicy(ctx, name).Execute()
-
 Retrieve the policy body for the named policy.
 
 ### Example
@@ -5329,8 +5151,6 @@ Name | Type | Description  | Notes
 
 ## ReadQuotasConfig
 
-> ReadQuotasConfig(ctx).Execute()
-
 
 
 ### Example
@@ -5382,8 +5202,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadQuotasRateLimit
-
-> ReadQuotasRateLimit(ctx, name).Execute()
 
 
 
@@ -5446,8 +5264,6 @@ Name | Type | Description  | Notes
 
 ## ReadRaw
 
-> ReadRaw(ctx).List(list).Execute()
-
 Read the value of the key at the given path.
 
 ### Example
@@ -5502,8 +5318,6 @@ Name | Type | Description  | Notes
 
 
 ## ReadRawPath
-
-> ReadRawPath(ctx, path).List(list).Execute()
 
 Read the value of the key at the given path.
 
@@ -5567,8 +5381,6 @@ Name | Type | Description  | Notes
 
 ## ReadRekeyBackup
 
-> ReadRekeyBackup(ctx).Execute()
-
 Return the backup copy of PGP-encrypted unseal keys.
 
 ### Example
@@ -5620,8 +5432,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadRekeyInit
-
-> ReadRekeyInit(ctx).Execute()
 
 Reads the configuration and progress of the current rekey attempt.
 
@@ -5675,8 +5485,6 @@ This endpoint does not require any parameters.
 
 ## ReadRekeyRecoveryKeyBackup
 
-> ReadRekeyRecoveryKeyBackup(ctx).Execute()
-
 Allows fetching or deleting the backup of the rotated unseal keys.
 
 ### Example
@@ -5729,8 +5537,6 @@ This endpoint does not require any parameters.
 
 ## ReadRekeyVerify
 
-> ReadRekeyVerify(ctx).Execute()
-
 Read the configuration and progress of the current rekey verification attempt.
 
 ### Example
@@ -5782,8 +5588,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadRemountStatus
-
-> ReadRemountStatus(ctx, migrationId).Execute()
 
 Check status of a mount migration
 
@@ -5846,8 +5650,6 @@ Name | Type | Description  | Notes
 
 ## ReadReplicationStatus
 
-> ReadReplicationStatus(ctx).Execute()
-
 
 
 ### Example
@@ -5899,8 +5701,6 @@ This endpoint does not require any parameters.
 
 
 ## ReadRotateConfig
-
-> ReadRotateConfig(ctx).Execute()
 
 
 
@@ -5954,8 +5754,6 @@ This endpoint does not require any parameters.
 
 ## ReadSealStatus
 
-> ReadSealStatus(ctx).Execute()
-
 Check the seal status of a Vault.
 
 ### Example
@@ -6007,8 +5805,6 @@ This endpoint does not require any parameters.
 
 
 ## Remount
-
-> Remount(ctx).RemountRequest(remountRequest).Execute()
 
 Initiate a mount migration
 
@@ -6068,8 +5864,6 @@ Name | Type | Description  | Notes
 
 ## Renew
 
-> Renew(ctx).RenewRequest(renewRequest).Execute()
-
 Renews a lease, requesting to extend the lease.
 
 ### Example
@@ -6127,8 +5921,6 @@ Name | Type | Description  | Notes
 
 
 ## RenewFor
-
-> RenewFor(ctx, urlLeaseId).RenewForRequest(renewForRequest).Execute()
 
 Renews a lease, requesting to extend the lease.
 
@@ -6195,8 +5987,6 @@ Name | Type | Description  | Notes
 
 ## Revoke
 
-> Revoke(ctx).RevokeRequest(revokeRequest).Execute()
-
 Revokes a lease immediately.
 
 ### Example
@@ -6254,8 +6044,6 @@ Name | Type | Description  | Notes
 
 
 ## RevokeForce
-
-> RevokeForce(ctx, prefix).Execute()
 
 Revokes all secrets or tokens generated under a given prefix immediately
 
@@ -6319,8 +6107,6 @@ Name | Type | Description  | Notes
 
 
 ## RevokeLease
-
-> RevokeLease(ctx, urlLeaseId).RevokeLeaseRequest(revokeLeaseRequest).Execute()
 
 Revokes a lease immediately.
 
@@ -6387,8 +6173,6 @@ Name | Type | Description  | Notes
 
 ## RevokePrefix
 
-> RevokePrefix(ctx, prefix).RevokePrefixRequest(revokePrefixRequest).Execute()
-
 Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 
 ### Example
@@ -6454,8 +6238,6 @@ Name | Type | Description  | Notes
 
 ## Rotate
 
-> Rotate(ctx).Execute()
-
 Rotates the backend encryption key used to persist data.
 
 ### Example
@@ -6508,8 +6290,6 @@ This endpoint does not require any parameters.
 
 ## Seal
 
-> Seal(ctx).Execute()
-
 Seal the Vault.
 
 ### Example
@@ -6561,8 +6341,6 @@ This endpoint does not require any parameters.
 
 
 ## StepDownLeader
-
-> StepDownLeader(ctx).Execute()
 
 Cause the node to give up active status.
 
@@ -6617,8 +6395,6 @@ This endpoint does not require any parameters.
 
 
 ## SysDeletePluginsCatalogName
-
-> SysDeletePluginsCatalogName(ctx, name).Execute()
 
 Remove the plugin with the given name.
 
@@ -6681,8 +6457,6 @@ Name | Type | Description  | Notes
 
 ## SysListLeasesLookup
 
-> SysListLeasesLookup(ctx).List(list).Execute()
-
 Returns a list of lease ids.
 
 ### Example
@@ -6737,8 +6511,6 @@ Name | Type | Description  | Notes
 
 
 ## SysReadPluginsCatalogName
-
-> SysReadPluginsCatalogName(ctx, name).Execute()
 
 Return the configuration data for the plugin with the given name.
 
@@ -6800,8 +6572,6 @@ Name | Type | Description  | Notes
 
 
 ## SysWriteLockedusersMountAccessorUnlockAliasIdentifier
-
-> SysWriteLockedusersMountAccessorUnlockAliasIdentifier(ctx, aliasIdentifier, mountAccessor).Execute()
 
 Unlocks the user with given mount_accessor and alias_identifier
 
@@ -6868,8 +6638,6 @@ Name | Type | Description  | Notes
 
 ## SysWritePluginsCatalogName
 
-> SysWritePluginsCatalogName(ctx, name).SysWritePluginsCatalogNameRequest(sysWritePluginsCatalogNameRequest).Execute()
-
 Register a new plugin, or updates an existing one with the supplied name.
 
 ### Example
@@ -6934,8 +6702,6 @@ Name | Type | Description  | Notes
 
 
 ## SysWriteToolsRandomUrlbytes
-
-> SysWriteToolsRandomUrlbytes(ctx, urlbytes).SysWriteToolsRandomUrlbytesRequest(sysWriteToolsRandomUrlbytesRequest).Execute()
 
 Generate random bytes
 
@@ -7002,8 +6768,6 @@ Name | Type | Description  | Notes
 
 ## ToolsGenerateRandom
 
-> ToolsGenerateRandom(ctx).ToolsGenerateRandomRequest(toolsGenerateRandomRequest).Execute()
-
 Generate random bytes
 
 ### Example
@@ -7061,8 +6825,6 @@ Name | Type | Description  | Notes
 
 
 ## ToolsGenerateRandomSource
-
-> ToolsGenerateRandomSource(ctx, source).ToolsGenerateRandomSourceRequest(toolsGenerateRandomSourceRequest).Execute()
 
 Generate random bytes
 
@@ -7128,8 +6890,6 @@ Name | Type | Description  | Notes
 
 
 ## ToolsGenerateRandomSourceBytes
-
-> ToolsGenerateRandomSourceBytes(ctx, source, urlbytes).ToolsGenerateRandomSourceBytesRequest(toolsGenerateRandomSourceBytesRequest).Execute()
 
 Generate random bytes
 
@@ -7200,8 +6960,6 @@ Name | Type | Description  | Notes
 
 ## ToolsHash
 
-> ToolsHash(ctx).ToolsHashRequest(toolsHashRequest).Execute()
-
 Generate a hash sum for input data
 
 ### Example
@@ -7259,8 +7017,6 @@ Name | Type | Description  | Notes
 
 
 ## ToolsHashWith
-
-> ToolsHashWith(ctx, urlalgorithm).ToolsHashWithRequest(toolsHashWithRequest).Execute()
 
 Generate a hash sum for input data
 
@@ -7327,8 +7083,6 @@ Name | Type | Description  | Notes
 
 ## Unseal
 
-> Unseal(ctx).UnsealRequest(unsealRequest).Execute()
-
 Unseal the Vault.
 
 ### Example
@@ -7387,8 +7141,6 @@ Name | Type | Description  | Notes
 
 ## WrappingReadLookup
 
-> WrappingReadLookup(ctx).Execute()
-
 Look up wrapping properties for the requester's token.
 
 ### Example
@@ -7440,8 +7192,6 @@ This endpoint does not require any parameters.
 
 
 ## WrappingRewrap
-
-> WrappingRewrap(ctx).WrappingRewrapRequest(wrappingRewrapRequest).Execute()
 
 Rotates a response-wrapped token.
 
@@ -7501,8 +7251,6 @@ Name | Type | Description  | Notes
 
 ## WrappingUnwrap
 
-> WrappingUnwrap(ctx).WrappingUnwrapRequest(wrappingUnwrapRequest).Execute()
-
 Unwraps a response-wrapped token.
 
 ### Example
@@ -7561,8 +7309,6 @@ Name | Type | Description  | Notes
 
 ## WrappingWrap
 
-> WrappingWrap(ctx).Execute()
-
 Response-wraps an arbitrary JSON object.
 
 ### Example
@@ -7614,8 +7360,6 @@ This endpoint does not require any parameters.
 
 
 ## WrappingWriteLookup
-
-> WrappingWriteLookup(ctx).WrappingWriteLookupRequest(wrappingWriteLookupRequest).Execute()
 
 Look up wrapping properties for the given token.
 
@@ -7674,8 +7418,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteAuditDevice
-
-> WriteAuditDevice(ctx, path).WriteAuditDeviceRequest(writeAuditDeviceRequest).Execute()
 
 Enable a new audit device at the supplied path.
 
@@ -7741,8 +7483,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteAuthMethod
-
-> WriteAuthMethod(ctx, path).WriteAuthMethodRequest(writeAuthMethodRequest).Execute()
 
 Enables a new auth method.
 
@@ -7811,8 +7551,6 @@ Name | Type | Description  | Notes
 
 ## WriteAuthMethodTune
 
-> WriteAuthMethodTune(ctx, path).WriteAuthMethodTuneRequest(writeAuthMethodTuneRequest).Execute()
-
 Tune configuration parameters for a given auth path.
 
 
@@ -7880,8 +7618,6 @@ Name | Type | Description  | Notes
 
 ## WriteCapabilities
 
-> WriteCapabilities(ctx).WriteCapabilitiesRequest(writeCapabilitiesRequest).Execute()
-
 Fetches the capabilities of the given token on the given path.
 
 ### Example
@@ -7939,8 +7675,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteCapabilitiesAccessor
-
-> WriteCapabilitiesAccessor(ctx).WriteCapabilitiesAccessorRequest(writeCapabilitiesAccessorRequest).Execute()
 
 Fetches the capabilities of the token associated with the given token, on the given path.
 
@@ -8000,8 +7734,6 @@ Name | Type | Description  | Notes
 
 ## WriteCapabilitiesSelf
 
-> WriteCapabilitiesSelf(ctx).WriteCapabilitiesSelfRequest(writeCapabilitiesSelfRequest).Execute()
-
 Fetches the capabilities of the given token on the given path.
 
 ### Example
@@ -8059,8 +7791,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteConfigAuditingRequestHeader
-
-> WriteConfigAuditingRequestHeader(ctx, header).WriteConfigAuditingRequestHeaderRequest(writeConfigAuditingRequestHeaderRequest).Execute()
 
 Enable auditing of a header.
 
@@ -8127,8 +7857,6 @@ Name | Type | Description  | Notes
 
 ## WriteConfigCORS
 
-> WriteConfigCORS(ctx).WriteConfigCORSRequest(writeConfigCORSRequest).Execute()
-
 Configure the CORS settings.
 
 ### Example
@@ -8186,8 +7914,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteConfigReloadSubsystem
-
-> WriteConfigReloadSubsystem(ctx, subsystem).Execute()
 
 Reload the given subsystem
 
@@ -8249,8 +7975,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteConfigUIHeader
-
-> WriteConfigUIHeader(ctx, header).WriteConfigUIHeaderRequest(writeConfigUIHeaderRequest).Execute()
 
 Configure the values to be returned for the UI header.
 
@@ -8317,8 +8041,6 @@ Name | Type | Description  | Notes
 
 ## WriteGenerateRoot
 
-> WriteGenerateRoot(ctx).WriteGenerateRootRequest(writeGenerateRootRequest).Execute()
-
 Initializes a new root generation attempt.
 
 
@@ -8378,8 +8100,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteGenerateRootAttempt
-
-> WriteGenerateRootAttempt(ctx).WriteGenerateRootAttemptRequest(writeGenerateRootAttemptRequest).Execute()
 
 Initializes a new root generation attempt.
 
@@ -8441,8 +8161,6 @@ Name | Type | Description  | Notes
 
 ## WriteGenerateRootUpdate
 
-> WriteGenerateRootUpdate(ctx).WriteGenerateRootUpdateRequest(writeGenerateRootUpdateRequest).Execute()
-
 Enter a single unseal key share to progress the root generation attempt.
 
 
@@ -8502,8 +8220,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteInit
-
-> WriteInit(ctx).WriteInitRequest(writeInitRequest).Execute()
 
 Initialize a new Vault.
 
@@ -8565,8 +8281,6 @@ Name | Type | Description  | Notes
 
 ## WriteInternalCountersConfig
 
-> WriteInternalCountersConfig(ctx).WriteInternalCountersConfigRequest(writeInternalCountersConfigRequest).Execute()
-
 Enable or disable collection of client count, set retention period, or set default reporting period.
 
 ### Example
@@ -8624,8 +8338,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteLeasesLookup
-
-> WriteLeasesLookup(ctx).WriteLeasesLookupRequest(writeLeasesLookupRequest).Execute()
 
 Retrieve lease metadata.
 
@@ -8685,8 +8397,6 @@ Name | Type | Description  | Notes
 
 ## WriteLeasesRenew
 
-> WriteLeasesRenew(ctx).WriteLeasesRenewRequest(writeLeasesRenewRequest).Execute()
-
 Renews a lease, requesting to extend the lease.
 
 ### Example
@@ -8744,8 +8454,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteLeasesRenew2
-
-> WriteLeasesRenew2(ctx, urlLeaseId).WriteLeasesRenew2Request(writeLeasesRenew2Request).Execute()
 
 Renews a lease, requesting to extend the lease.
 
@@ -8812,8 +8520,6 @@ Name | Type | Description  | Notes
 
 ## WriteLeasesRevoke
 
-> WriteLeasesRevoke(ctx).WriteLeasesRevokeRequest(writeLeasesRevokeRequest).Execute()
-
 Revokes a lease immediately.
 
 ### Example
@@ -8871,8 +8577,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteLeasesRevoke2
-
-> WriteLeasesRevoke2(ctx, urlLeaseId).WriteLeasesRevoke2Request(writeLeasesRevoke2Request).Execute()
 
 Revokes a lease immediately.
 
@@ -8939,8 +8643,6 @@ Name | Type | Description  | Notes
 
 ## WriteLeasesRevokeForce
 
-> WriteLeasesRevokeForce(ctx, prefix).Execute()
-
 Revokes all secrets or tokens generated under a given prefix immediately
 
 
@@ -9003,8 +8705,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteLeasesRevokePrefix
-
-> WriteLeasesRevokePrefix(ctx, prefix).WriteLeasesRevokePrefixRequest(writeLeasesRevokePrefixRequest).Execute()
 
 Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 
@@ -9071,8 +8771,6 @@ Name | Type | Description  | Notes
 
 ## WriteLeasesTidy
 
-> WriteLeasesTidy(ctx).Execute()
-
 This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 
 ### Example
@@ -9124,8 +8822,6 @@ This endpoint does not require any parameters.
 
 
 ## WriteLogger
-
-> WriteLogger(ctx, name).WriteLoggerRequest(writeLoggerRequest).Execute()
 
 Modify the log level of a single logger.
 
@@ -9192,8 +8888,6 @@ Name | Type | Description  | Notes
 
 ## WriteLoggers
 
-> WriteLoggers(ctx).WriteLoggersRequest(writeLoggersRequest).Execute()
-
 Modify the log level for all existing loggers.
 
 ### Example
@@ -9251,8 +8945,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteMount
-
-> WriteMount(ctx, path).WriteMountRequest(writeMountRequest).Execute()
 
 Enable a new secrets engine at the given path.
 
@@ -9319,8 +9011,6 @@ Name | Type | Description  | Notes
 
 ## WriteMountsConfig
 
-> WriteMountsConfig(ctx, path).WriteMountsConfigRequest(writeMountsConfigRequest).Execute()
-
 Tune backend configuration parameters for this mount.
 
 ### Example
@@ -9385,8 +9075,6 @@ Name | Type | Description  | Notes
 
 
 ## WritePluginsCatalogByTypeByName
-
-> WritePluginsCatalogByTypeByName(ctx, name, type_).WritePluginsCatalogByTypeByNameRequest(writePluginsCatalogByTypeByNameRequest).Execute()
 
 Register a new plugin, or updates an existing one with the supplied name.
 
@@ -9457,8 +9145,6 @@ Name | Type | Description  | Notes
 
 ## WritePluginsReloadBackend
 
-> WritePluginsReloadBackend(ctx).WritePluginsReloadBackendRequest(writePluginsReloadBackendRequest).Execute()
-
 Reload mounted plugin backends.
 
 
@@ -9518,8 +9204,6 @@ Name | Type | Description  | Notes
 
 
 ## WritePoliciesACL
-
-> WritePoliciesACL(ctx, name).WritePoliciesACLRequest(writePoliciesACLRequest).Execute()
 
 Add a new or update an existing ACL policy.
 
@@ -9586,8 +9270,6 @@ Name | Type | Description  | Notes
 
 ## WritePoliciesPassword
 
-> WritePoliciesPassword(ctx, name).WritePoliciesPasswordRequest(writePoliciesPasswordRequest).Execute()
-
 Add a new or update an existing password policy.
 
 ### Example
@@ -9652,8 +9334,6 @@ Name | Type | Description  | Notes
 
 
 ## WritePolicy
-
-> WritePolicy(ctx, name).WritePolicyRequest(writePolicyRequest).Execute()
 
 Add a new or update an existing policy.
 
@@ -9720,8 +9400,6 @@ Name | Type | Description  | Notes
 
 ## WriteQuotasConfig
 
-> WriteQuotasConfig(ctx).WriteQuotasConfigRequest(writeQuotasConfigRequest).Execute()
-
 
 
 ### Example
@@ -9779,8 +9457,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteQuotasRateLimit
-
-> WriteQuotasRateLimit(ctx, name).WriteQuotasRateLimitRequest(writeQuotasRateLimitRequest).Execute()
 
 
 
@@ -9847,8 +9523,6 @@ Name | Type | Description  | Notes
 
 ## WriteRaw
 
-> WriteRaw(ctx).WriteRawRequest(writeRawRequest).Execute()
-
 Update the value of the key at the given path.
 
 ### Example
@@ -9906,8 +9580,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteRawPath
-
-> WriteRawPath(ctx, path).WriteRawPathRequest(writeRawPathRequest).Execute()
 
 Update the value of the key at the given path.
 
@@ -9974,8 +9646,6 @@ Name | Type | Description  | Notes
 
 ## WriteRekeyInit
 
-> WriteRekeyInit(ctx).WriteRekeyInitRequest(writeRekeyInitRequest).Execute()
-
 Initializes a new rekey attempt.
 
 
@@ -10036,8 +9706,6 @@ Name | Type | Description  | Notes
 
 ## WriteRekeyUpdate
 
-> WriteRekeyUpdate(ctx).WriteRekeyUpdateRequest(writeRekeyUpdateRequest).Execute()
-
 Enter a single unseal key share to progress the rekey of the Vault.
 
 ### Example
@@ -10096,8 +9764,6 @@ Name | Type | Description  | Notes
 
 ## WriteRekeyVerify
 
-> WriteRekeyVerify(ctx).WriteRekeyVerifyRequest(writeRekeyVerifyRequest).Execute()
-
 Enter a single new key share to progress the rekey verification operation.
 
 ### Example
@@ -10155,8 +9821,6 @@ Name | Type | Description  | Notes
 
 
 ## WriteRotateConfig
-
-> WriteRotateConfig(ctx).WriteRotateConfigRequest(writeRotateConfigRequest).Execute()
 
 
 

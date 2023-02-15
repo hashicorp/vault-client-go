@@ -4,15 +4,13 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-{{#with operations}}{{#each operation}}[**{{operationId}}**]({{cut classname "Api"}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}}
+{{#with operations}}{{#each operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}}
 {{/each}}{{/with}}
 
 {{#with operations}}
 {{#each operation}}
 
 ## {{{operationId}}}
-
-> {{#with returnType}}{{{.}}} {{/with}}{{{operationId}}}(ctx{{#each pathParams}}, {{paramName}}{{/each}}){{#each allParams}}{{#unless isPathParam}}.{{vendorExtensions.x-export-param-name}}({{paramName}}){{/unless}}{{/each}}.Execute()
 
 {{{summary}}}{{#if notes}}
 

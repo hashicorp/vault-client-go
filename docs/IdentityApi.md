@@ -2,119 +2,117 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AliasDeleteByID**](Identity.md#AliasDeleteByID) | **Delete** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**AliasListByID**](Identity.md#AliasListByID) | **Get** /identity/alias/id | List all the alias IDs.
-[**AliasReadByID**](Identity.md#AliasReadByID) | **Get** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**AliasWrite**](Identity.md#AliasWrite) | **Post** /identity/alias | Create a new alias.
-[**AliasWriteByID**](Identity.md#AliasWriteByID) | **Post** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**EntityBatchDelete**](Identity.md#EntityBatchDelete) | **Post** /identity/entity/batch-delete | Delete all of the entities provided
-[**EntityDeleteAliasByID**](Identity.md#EntityDeleteAliasByID) | **Delete** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**EntityDeleteByID**](Identity.md#EntityDeleteByID) | **Delete** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**EntityDeleteByName**](Identity.md#EntityDeleteByName) | **Delete** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**EntityListAliasesByID**](Identity.md#EntityListAliasesByID) | **Get** /identity/entity-alias/id | List all the alias IDs.
-[**EntityListByID**](Identity.md#EntityListByID) | **Get** /identity/entity/id | List all the entity IDs
-[**EntityListByName**](Identity.md#EntityListByName) | **Get** /identity/entity/name | List all the entity names
-[**EntityLookup**](Identity.md#EntityLookup) | **Post** /identity/lookup/entity | Query entities based on various properties.
-[**EntityMerge**](Identity.md#EntityMerge) | **Post** /identity/entity/merge | Merge two or more entities together
-[**EntityReadAliasByID**](Identity.md#EntityReadAliasByID) | **Get** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**EntityReadByID**](Identity.md#EntityReadByID) | **Get** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**EntityReadByName**](Identity.md#EntityReadByName) | **Get** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**EntityWrite**](Identity.md#EntityWrite) | **Post** /identity/entity | Create a new entity
-[**EntityWriteAlias**](Identity.md#EntityWriteAlias) | **Post** /identity/entity-alias | Create a new alias.
-[**EntityWriteAliasByID**](Identity.md#EntityWriteAliasByID) | **Post** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**EntityWriteByID**](Identity.md#EntityWriteByID) | **Post** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**EntityWriteByName**](Identity.md#EntityWriteByName) | **Post** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**GroupDeleteAliasByID**](Identity.md#GroupDeleteAliasByID) | **Delete** /identity/group-alias/id/{id} | 
-[**GroupDeleteByID**](Identity.md#GroupDeleteByID) | **Delete** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**GroupDeleteByName**](Identity.md#GroupDeleteByName) | **Delete** /identity/group/name/{name} | 
-[**GroupListAliasesByID**](Identity.md#GroupListAliasesByID) | **Get** /identity/group-alias/id | List all the group alias IDs.
-[**GroupListByID**](Identity.md#GroupListByID) | **Get** /identity/group/id | List all the group IDs.
-[**GroupListByName**](Identity.md#GroupListByName) | **Get** /identity/group/name | 
-[**GroupLookup**](Identity.md#GroupLookup) | **Post** /identity/lookup/group | Query groups based on various properties.
-[**GroupReadAliasByID**](Identity.md#GroupReadAliasByID) | **Get** /identity/group-alias/id/{id} | 
-[**GroupReadByID**](Identity.md#GroupReadByID) | **Get** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**GroupReadByName**](Identity.md#GroupReadByName) | **Get** /identity/group/name/{name} | 
-[**GroupWrite**](Identity.md#GroupWrite) | **Post** /identity/group | Create a new group.
-[**GroupWriteAlias**](Identity.md#GroupWriteAlias) | **Post** /identity/group-alias | Creates a new group alias, or updates an existing one.
-[**GroupWriteAliasByID**](Identity.md#GroupWriteAliasByID) | **Post** /identity/group-alias/id/{id} | 
-[**GroupWriteByID**](Identity.md#GroupWriteByID) | **Post** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**GroupWriteByName**](Identity.md#GroupWriteByName) | **Post** /identity/group/name/{name} | 
-[**MFADeleteLoginEnforcement**](Identity.md#MFADeleteLoginEnforcement) | **Delete** /identity/mfa/login-enforcement/{name} | Delete a login enforcement
-[**MFAListLoginEnforcements**](Identity.md#MFAListLoginEnforcements) | **Get** /identity/mfa/login-enforcement | List login enforcements
-[**MFAMethodAdminDestroyTOTP**](Identity.md#MFAMethodAdminDestroyTOTP) | **Post** /identity/mfa/method/totp/admin-destroy | Destroys a TOTP secret for the given MFA method ID on the given entity
-[**MFAMethodAdminGenerateTOTP**](Identity.md#MFAMethodAdminGenerateTOTP) | **Post** /identity/mfa/method/totp/admin-generate | Update or create TOTP secret for the given method ID on the given entity.
-[**MFAMethodDeleteDuo**](Identity.md#MFAMethodDeleteDuo) | **Delete** /identity/mfa/method/duo/{method_id} | Delete a configuration for the given MFA method
-[**MFAMethodDeleteOkta**](Identity.md#MFAMethodDeleteOkta) | **Delete** /identity/mfa/method/okta/{method_id} | Delete a configuration for the given MFA method
-[**MFAMethodDeletePingID**](Identity.md#MFAMethodDeletePingID) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete a configuration for the given MFA method
-[**MFAMethodDeleteTOTP**](Identity.md#MFAMethodDeleteTOTP) | **Delete** /identity/mfa/method/totp/{method_id} | Delete a configuration for the given MFA method
-[**MFAMethodGenerateTOTP**](Identity.md#MFAMethodGenerateTOTP) | **Post** /identity/mfa/method/totp/generate | Update or create TOTP secret for the given method ID on the given entity.
-[**MFAMethodList**](Identity.md#MFAMethodList) | **Get** /identity/mfa/method | List MFA method configurations for all MFA methods
-[**MFAMethodListDuo**](Identity.md#MFAMethodListDuo) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
-[**MFAMethodListOkta**](Identity.md#MFAMethodListOkta) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
-[**MFAMethodListPingID**](Identity.md#MFAMethodListPingID) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
-[**MFAMethodListTOTP**](Identity.md#MFAMethodListTOTP) | **Get** /identity/mfa/method/totp | List MFA method configurations for the given MFA method
-[**MFAMethodRead**](Identity.md#MFAMethodRead) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
-[**MFAMethodReadDuo**](Identity.md#MFAMethodReadDuo) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
-[**MFAMethodReadOkta**](Identity.md#MFAMethodReadOkta) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
-[**MFAMethodReadPingID**](Identity.md#MFAMethodReadPingID) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
-[**MFAMethodReadTOTP**](Identity.md#MFAMethodReadTOTP) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
-[**MFAMethodWriteDuo**](Identity.md#MFAMethodWriteDuo) | **Post** /identity/mfa/method/duo/{method_id} | Update or create a configuration for the given MFA method
-[**MFAMethodWriteOkta**](Identity.md#MFAMethodWriteOkta) | **Post** /identity/mfa/method/okta/{method_id} | Update or create a configuration for the given MFA method
-[**MFAMethodWritePingID**](Identity.md#MFAMethodWritePingID) | **Post** /identity/mfa/method/pingid/{method_id} | Update or create a configuration for the given MFA method
-[**MFAMethodWriteTOTP**](Identity.md#MFAMethodWriteTOTP) | **Post** /identity/mfa/method/totp/{method_id} | Update or create a configuration for the given MFA method
-[**MFAReadLoginEnforcement**](Identity.md#MFAReadLoginEnforcement) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
-[**MFAWriteLoginEnforcement**](Identity.md#MFAWriteLoginEnforcement) | **Post** /identity/mfa/login-enforcement/{name} | Create or update a login enforcement
-[**OIDCDeleteAssignment**](Identity.md#OIDCDeleteAssignment) | **Delete** /identity/oidc/assignment/{name} | 
-[**OIDCDeleteClient**](Identity.md#OIDCDeleteClient) | **Delete** /identity/oidc/client/{name} | 
-[**OIDCDeleteKey**](Identity.md#OIDCDeleteKey) | **Delete** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**OIDCDeleteProvider**](Identity.md#OIDCDeleteProvider) | **Delete** /identity/oidc/provider/{name} | 
-[**OIDCDeleteRole**](Identity.md#OIDCDeleteRole) | **Delete** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**OIDCDeleteScope**](Identity.md#OIDCDeleteScope) | **Delete** /identity/oidc/scope/{name} | 
-[**OIDCIntrospect**](Identity.md#OIDCIntrospect) | **Post** /identity/oidc/introspect | Verify the authenticity of an OIDC token
-[**OIDCListAssignments**](Identity.md#OIDCListAssignments) | **Get** /identity/oidc/assignment | 
-[**OIDCListClients**](Identity.md#OIDCListClients) | **Get** /identity/oidc/client | 
-[**OIDCListKeys**](Identity.md#OIDCListKeys) | **Get** /identity/oidc/key | List OIDC keys
-[**OIDCListProviders**](Identity.md#OIDCListProviders) | **Get** /identity/oidc/provider | 
-[**OIDCListRoles**](Identity.md#OIDCListRoles) | **Get** /identity/oidc/role | List configured OIDC roles
-[**OIDCListScopes**](Identity.md#OIDCListScopes) | **Get** /identity/oidc/scope | 
-[**OIDCReadAssignment**](Identity.md#OIDCReadAssignment) | **Get** /identity/oidc/assignment/{name} | 
-[**OIDCReadClient**](Identity.md#OIDCReadClient) | **Get** /identity/oidc/client/{name} | 
-[**OIDCReadConfig**](Identity.md#OIDCReadConfig) | **Get** /identity/oidc/config | OIDC configuration
-[**OIDCReadKey**](Identity.md#OIDCReadKey) | **Get** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**OIDCReadProvider**](Identity.md#OIDCReadProvider) | **Get** /identity/oidc/provider/{name} | 
-[**OIDCReadProviderAuthorize**](Identity.md#OIDCReadProviderAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
-[**OIDCReadProviderUserInfo**](Identity.md#OIDCReadProviderUserInfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
-[**OIDCReadProviderWellKnownKeys**](Identity.md#OIDCReadProviderWellKnownKeys) | **Get** /identity/oidc/provider/{name}/.well-known/keys | 
-[**OIDCReadProviderWellKnownOpenIDConfiguration**](Identity.md#OIDCReadProviderWellKnownOpenIDConfiguration) | **Get** /identity/oidc/provider/{name}/.well-known/openid-configuration | 
-[**OIDCReadRole**](Identity.md#OIDCReadRole) | **Get** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**OIDCReadScope**](Identity.md#OIDCReadScope) | **Get** /identity/oidc/scope/{name} | 
-[**OIDCReadToken**](Identity.md#OIDCReadToken) | **Get** /identity/oidc/token/{name} | Generate an OIDC token
-[**OIDCReadWellKnownKeys**](Identity.md#OIDCReadWellKnownKeys) | **Get** /identity/oidc/.well-known/keys | Retrieve public keys
-[**OIDCReadWellKnownOpenIDConfiguration**](Identity.md#OIDCReadWellKnownOpenIDConfiguration) | **Get** /identity/oidc/.well-known/openid-configuration | Query OIDC configurations
-[**OIDCRotateKey**](Identity.md#OIDCRotateKey) | **Post** /identity/oidc/key/{name}/rotate | Rotate a named OIDC key.
-[**OIDCWriteAssignment**](Identity.md#OIDCWriteAssignment) | **Post** /identity/oidc/assignment/{name} | 
-[**OIDCWriteClient**](Identity.md#OIDCWriteClient) | **Post** /identity/oidc/client/{name} | 
-[**OIDCWriteConfig**](Identity.md#OIDCWriteConfig) | **Post** /identity/oidc/config | OIDC configuration
-[**OIDCWriteKey**](Identity.md#OIDCWriteKey) | **Post** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**OIDCWriteProvider**](Identity.md#OIDCWriteProvider) | **Post** /identity/oidc/provider/{name} | 
-[**OIDCWriteProviderAuthorize**](Identity.md#OIDCWriteProviderAuthorize) | **Post** /identity/oidc/provider/{name}/authorize | 
-[**OIDCWriteProviderToken**](Identity.md#OIDCWriteProviderToken) | **Post** /identity/oidc/provider/{name}/token | 
-[**OIDCWriteProviderUserInfo**](Identity.md#OIDCWriteProviderUserInfo) | **Post** /identity/oidc/provider/{name}/userinfo | 
-[**OIDCWriteRole**](Identity.md#OIDCWriteRole) | **Post** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**OIDCWriteScope**](Identity.md#OIDCWriteScope) | **Post** /identity/oidc/scope/{name} | 
-[**PersonaIDDeleteByID**](Identity.md#PersonaIDDeleteByID) | **Delete** /identity/persona/id/{id} | Update, read or delete an alias ID.
-[**PersonaIDReadByID**](Identity.md#PersonaIDReadByID) | **Get** /identity/persona/id/{id} | Update, read or delete an alias ID.
-[**PersonaIDWriteByID**](Identity.md#PersonaIDWriteByID) | **Post** /identity/persona/id/{id} | Update, read or delete an alias ID.
-[**PersonaListByID**](Identity.md#PersonaListByID) | **Get** /identity/persona/id | List all the alias IDs.
-[**PersonaWrite**](Identity.md#PersonaWrite) | **Post** /identity/persona | Create a new alias.
+[**AliasDeleteByID**](IdentityApi.md#AliasDeleteByID) | **Delete** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**AliasListByID**](IdentityApi.md#AliasListByID) | **Get** /identity/alias/id | List all the alias IDs.
+[**AliasReadByID**](IdentityApi.md#AliasReadByID) | **Get** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**AliasWrite**](IdentityApi.md#AliasWrite) | **Post** /identity/alias | Create a new alias.
+[**AliasWriteByID**](IdentityApi.md#AliasWriteByID) | **Post** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**EntityBatchDelete**](IdentityApi.md#EntityBatchDelete) | **Post** /identity/entity/batch-delete | Delete all of the entities provided
+[**EntityDeleteAliasByID**](IdentityApi.md#EntityDeleteAliasByID) | **Delete** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**EntityDeleteByID**](IdentityApi.md#EntityDeleteByID) | **Delete** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**EntityDeleteByName**](IdentityApi.md#EntityDeleteByName) | **Delete** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**EntityListAliasesByID**](IdentityApi.md#EntityListAliasesByID) | **Get** /identity/entity-alias/id | List all the alias IDs.
+[**EntityListByID**](IdentityApi.md#EntityListByID) | **Get** /identity/entity/id | List all the entity IDs
+[**EntityListByName**](IdentityApi.md#EntityListByName) | **Get** /identity/entity/name | List all the entity names
+[**EntityLookup**](IdentityApi.md#EntityLookup) | **Post** /identity/lookup/entity | Query entities based on various properties.
+[**EntityMerge**](IdentityApi.md#EntityMerge) | **Post** /identity/entity/merge | Merge two or more entities together
+[**EntityReadAliasByID**](IdentityApi.md#EntityReadAliasByID) | **Get** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**EntityReadByID**](IdentityApi.md#EntityReadByID) | **Get** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**EntityReadByName**](IdentityApi.md#EntityReadByName) | **Get** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**EntityWrite**](IdentityApi.md#EntityWrite) | **Post** /identity/entity | Create a new entity
+[**EntityWriteAlias**](IdentityApi.md#EntityWriteAlias) | **Post** /identity/entity-alias | Create a new alias.
+[**EntityWriteAliasByID**](IdentityApi.md#EntityWriteAliasByID) | **Post** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**EntityWriteByID**](IdentityApi.md#EntityWriteByID) | **Post** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**EntityWriteByName**](IdentityApi.md#EntityWriteByName) | **Post** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**GroupDeleteAliasByID**](IdentityApi.md#GroupDeleteAliasByID) | **Delete** /identity/group-alias/id/{id} | 
+[**GroupDeleteByID**](IdentityApi.md#GroupDeleteByID) | **Delete** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**GroupDeleteByName**](IdentityApi.md#GroupDeleteByName) | **Delete** /identity/group/name/{name} | 
+[**GroupListAliasesByID**](IdentityApi.md#GroupListAliasesByID) | **Get** /identity/group-alias/id | List all the group alias IDs.
+[**GroupListByID**](IdentityApi.md#GroupListByID) | **Get** /identity/group/id | List all the group IDs.
+[**GroupListByName**](IdentityApi.md#GroupListByName) | **Get** /identity/group/name | 
+[**GroupLookup**](IdentityApi.md#GroupLookup) | **Post** /identity/lookup/group | Query groups based on various properties.
+[**GroupReadAliasByID**](IdentityApi.md#GroupReadAliasByID) | **Get** /identity/group-alias/id/{id} | 
+[**GroupReadByID**](IdentityApi.md#GroupReadByID) | **Get** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**GroupReadByName**](IdentityApi.md#GroupReadByName) | **Get** /identity/group/name/{name} | 
+[**GroupWrite**](IdentityApi.md#GroupWrite) | **Post** /identity/group | Create a new group.
+[**GroupWriteAlias**](IdentityApi.md#GroupWriteAlias) | **Post** /identity/group-alias | Creates a new group alias, or updates an existing one.
+[**GroupWriteAliasByID**](IdentityApi.md#GroupWriteAliasByID) | **Post** /identity/group-alias/id/{id} | 
+[**GroupWriteByID**](IdentityApi.md#GroupWriteByID) | **Post** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**GroupWriteByName**](IdentityApi.md#GroupWriteByName) | **Post** /identity/group/name/{name} | 
+[**MFADeleteLoginEnforcement**](IdentityApi.md#MFADeleteLoginEnforcement) | **Delete** /identity/mfa/login-enforcement/{name} | Delete a login enforcement
+[**MFAListLoginEnforcements**](IdentityApi.md#MFAListLoginEnforcements) | **Get** /identity/mfa/login-enforcement | List login enforcements
+[**MFAMethodAdminDestroyTOTP**](IdentityApi.md#MFAMethodAdminDestroyTOTP) | **Post** /identity/mfa/method/totp/admin-destroy | Destroys a TOTP secret for the given MFA method ID on the given entity
+[**MFAMethodAdminGenerateTOTP**](IdentityApi.md#MFAMethodAdminGenerateTOTP) | **Post** /identity/mfa/method/totp/admin-generate | Update or create TOTP secret for the given method ID on the given entity.
+[**MFAMethodDeleteDuo**](IdentityApi.md#MFAMethodDeleteDuo) | **Delete** /identity/mfa/method/duo/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodDeleteOkta**](IdentityApi.md#MFAMethodDeleteOkta) | **Delete** /identity/mfa/method/okta/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodDeletePingID**](IdentityApi.md#MFAMethodDeletePingID) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodDeleteTOTP**](IdentityApi.md#MFAMethodDeleteTOTP) | **Delete** /identity/mfa/method/totp/{method_id} | Delete a configuration for the given MFA method
+[**MFAMethodGenerateTOTP**](IdentityApi.md#MFAMethodGenerateTOTP) | **Post** /identity/mfa/method/totp/generate | Update or create TOTP secret for the given method ID on the given entity.
+[**MFAMethodList**](IdentityApi.md#MFAMethodList) | **Get** /identity/mfa/method | List MFA method configurations for all MFA methods
+[**MFAMethodListDuo**](IdentityApi.md#MFAMethodListDuo) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
+[**MFAMethodListOkta**](IdentityApi.md#MFAMethodListOkta) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
+[**MFAMethodListPingID**](IdentityApi.md#MFAMethodListPingID) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
+[**MFAMethodListTOTP**](IdentityApi.md#MFAMethodListTOTP) | **Get** /identity/mfa/method/totp | List MFA method configurations for the given MFA method
+[**MFAMethodRead**](IdentityApi.md#MFAMethodRead) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
+[**MFAMethodReadDuo**](IdentityApi.md#MFAMethodReadDuo) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodReadOkta**](IdentityApi.md#MFAMethodReadOkta) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodReadPingID**](IdentityApi.md#MFAMethodReadPingID) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodReadTOTP**](IdentityApi.md#MFAMethodReadTOTP) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
+[**MFAMethodWriteDuo**](IdentityApi.md#MFAMethodWriteDuo) | **Post** /identity/mfa/method/duo/{method_id} | Update or create a configuration for the given MFA method
+[**MFAMethodWriteOkta**](IdentityApi.md#MFAMethodWriteOkta) | **Post** /identity/mfa/method/okta/{method_id} | Update or create a configuration for the given MFA method
+[**MFAMethodWritePingID**](IdentityApi.md#MFAMethodWritePingID) | **Post** /identity/mfa/method/pingid/{method_id} | Update or create a configuration for the given MFA method
+[**MFAMethodWriteTOTP**](IdentityApi.md#MFAMethodWriteTOTP) | **Post** /identity/mfa/method/totp/{method_id} | Update or create a configuration for the given MFA method
+[**MFAReadLoginEnforcement**](IdentityApi.md#MFAReadLoginEnforcement) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
+[**MFAWriteLoginEnforcement**](IdentityApi.md#MFAWriteLoginEnforcement) | **Post** /identity/mfa/login-enforcement/{name} | Create or update a login enforcement
+[**OIDCDeleteAssignment**](IdentityApi.md#OIDCDeleteAssignment) | **Delete** /identity/oidc/assignment/{name} | 
+[**OIDCDeleteClient**](IdentityApi.md#OIDCDeleteClient) | **Delete** /identity/oidc/client/{name} | 
+[**OIDCDeleteKey**](IdentityApi.md#OIDCDeleteKey) | **Delete** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**OIDCDeleteProvider**](IdentityApi.md#OIDCDeleteProvider) | **Delete** /identity/oidc/provider/{name} | 
+[**OIDCDeleteRole**](IdentityApi.md#OIDCDeleteRole) | **Delete** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**OIDCDeleteScope**](IdentityApi.md#OIDCDeleteScope) | **Delete** /identity/oidc/scope/{name} | 
+[**OIDCIntrospect**](IdentityApi.md#OIDCIntrospect) | **Post** /identity/oidc/introspect | Verify the authenticity of an OIDC token
+[**OIDCListAssignments**](IdentityApi.md#OIDCListAssignments) | **Get** /identity/oidc/assignment | 
+[**OIDCListClients**](IdentityApi.md#OIDCListClients) | **Get** /identity/oidc/client | 
+[**OIDCListKeys**](IdentityApi.md#OIDCListKeys) | **Get** /identity/oidc/key | List OIDC keys
+[**OIDCListProviders**](IdentityApi.md#OIDCListProviders) | **Get** /identity/oidc/provider | 
+[**OIDCListRoles**](IdentityApi.md#OIDCListRoles) | **Get** /identity/oidc/role | List configured OIDC roles
+[**OIDCListScopes**](IdentityApi.md#OIDCListScopes) | **Get** /identity/oidc/scope | 
+[**OIDCReadAssignment**](IdentityApi.md#OIDCReadAssignment) | **Get** /identity/oidc/assignment/{name} | 
+[**OIDCReadClient**](IdentityApi.md#OIDCReadClient) | **Get** /identity/oidc/client/{name} | 
+[**OIDCReadConfig**](IdentityApi.md#OIDCReadConfig) | **Get** /identity/oidc/config | OIDC configuration
+[**OIDCReadKey**](IdentityApi.md#OIDCReadKey) | **Get** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**OIDCReadProvider**](IdentityApi.md#OIDCReadProvider) | **Get** /identity/oidc/provider/{name} | 
+[**OIDCReadProviderAuthorize**](IdentityApi.md#OIDCReadProviderAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
+[**OIDCReadProviderUserInfo**](IdentityApi.md#OIDCReadProviderUserInfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
+[**OIDCReadProviderWellKnownKeys**](IdentityApi.md#OIDCReadProviderWellKnownKeys) | **Get** /identity/oidc/provider/{name}/.well-known/keys | 
+[**OIDCReadProviderWellKnownOpenIDConfiguration**](IdentityApi.md#OIDCReadProviderWellKnownOpenIDConfiguration) | **Get** /identity/oidc/provider/{name}/.well-known/openid-configuration | 
+[**OIDCReadRole**](IdentityApi.md#OIDCReadRole) | **Get** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**OIDCReadScope**](IdentityApi.md#OIDCReadScope) | **Get** /identity/oidc/scope/{name} | 
+[**OIDCReadToken**](IdentityApi.md#OIDCReadToken) | **Get** /identity/oidc/token/{name} | Generate an OIDC token
+[**OIDCReadWellKnownKeys**](IdentityApi.md#OIDCReadWellKnownKeys) | **Get** /identity/oidc/.well-known/keys | Retrieve public keys
+[**OIDCReadWellKnownOpenIDConfiguration**](IdentityApi.md#OIDCReadWellKnownOpenIDConfiguration) | **Get** /identity/oidc/.well-known/openid-configuration | Query OIDC configurations
+[**OIDCRotateKey**](IdentityApi.md#OIDCRotateKey) | **Post** /identity/oidc/key/{name}/rotate | Rotate a named OIDC key.
+[**OIDCWriteAssignment**](IdentityApi.md#OIDCWriteAssignment) | **Post** /identity/oidc/assignment/{name} | 
+[**OIDCWriteClient**](IdentityApi.md#OIDCWriteClient) | **Post** /identity/oidc/client/{name} | 
+[**OIDCWriteConfig**](IdentityApi.md#OIDCWriteConfig) | **Post** /identity/oidc/config | OIDC configuration
+[**OIDCWriteKey**](IdentityApi.md#OIDCWriteKey) | **Post** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**OIDCWriteProvider**](IdentityApi.md#OIDCWriteProvider) | **Post** /identity/oidc/provider/{name} | 
+[**OIDCWriteProviderAuthorize**](IdentityApi.md#OIDCWriteProviderAuthorize) | **Post** /identity/oidc/provider/{name}/authorize | 
+[**OIDCWriteProviderToken**](IdentityApi.md#OIDCWriteProviderToken) | **Post** /identity/oidc/provider/{name}/token | 
+[**OIDCWriteProviderUserInfo**](IdentityApi.md#OIDCWriteProviderUserInfo) | **Post** /identity/oidc/provider/{name}/userinfo | 
+[**OIDCWriteRole**](IdentityApi.md#OIDCWriteRole) | **Post** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**OIDCWriteScope**](IdentityApi.md#OIDCWriteScope) | **Post** /identity/oidc/scope/{name} | 
+[**PersonaIDDeleteByID**](IdentityApi.md#PersonaIDDeleteByID) | **Delete** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**PersonaIDReadByID**](IdentityApi.md#PersonaIDReadByID) | **Get** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**PersonaIDWriteByID**](IdentityApi.md#PersonaIDWriteByID) | **Post** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**PersonaListByID**](IdentityApi.md#PersonaListByID) | **Get** /identity/persona/id | List all the alias IDs.
+[**PersonaWrite**](IdentityApi.md#PersonaWrite) | **Post** /identity/persona | Create a new alias.
 
 
 
 
 
 ## AliasDeleteByID
-
-> AliasDeleteByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -177,8 +175,6 @@ Name | Type | Description  | Notes
 
 ## AliasListByID
 
-> AliasListByID(ctx).List(list).Execute()
-
 List all the alias IDs.
 
 ### Example
@@ -233,8 +229,6 @@ Name | Type | Description  | Notes
 
 
 ## AliasReadByID
-
-> AliasReadByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -297,8 +291,6 @@ Name | Type | Description  | Notes
 
 ## AliasWrite
 
-> AliasWrite(ctx).AliasWriteRequest(aliasWriteRequest).Execute()
-
 Create a new alias.
 
 ### Example
@@ -356,8 +348,6 @@ Name | Type | Description  | Notes
 
 
 ## AliasWriteByID
-
-> AliasWriteByID(ctx, id).AliasWriteByIDRequest(aliasWriteByIDRequest).Execute()
 
 Update, read or delete an alias ID.
 
@@ -424,8 +414,6 @@ Name | Type | Description  | Notes
 
 ## EntityBatchDelete
 
-> EntityBatchDelete(ctx).EntityBatchDeleteRequest(entityBatchDeleteRequest).Execute()
-
 Delete all of the entities provided
 
 ### Example
@@ -483,8 +471,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityDeleteAliasByID
-
-> EntityDeleteAliasByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -547,8 +533,6 @@ Name | Type | Description  | Notes
 
 ## EntityDeleteByID
 
-> EntityDeleteByID(ctx, id).Execute()
-
 Update, read or delete an entity using entity ID
 
 ### Example
@@ -609,8 +593,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityDeleteByName
-
-> EntityDeleteByName(ctx, name).Execute()
 
 Update, read or delete an entity using entity name
 
@@ -673,8 +655,6 @@ Name | Type | Description  | Notes
 
 ## EntityListAliasesByID
 
-> EntityListAliasesByID(ctx).List(list).Execute()
-
 List all the alias IDs.
 
 ### Example
@@ -729,8 +709,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityListByID
-
-> EntityListByID(ctx).List(list).Execute()
 
 List all the entity IDs
 
@@ -787,8 +765,6 @@ Name | Type | Description  | Notes
 
 ## EntityListByName
 
-> EntityListByName(ctx).List(list).Execute()
-
 List all the entity names
 
 ### Example
@@ -843,8 +819,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityLookup
-
-> EntityLookup(ctx).EntityLookupRequest(entityLookupRequest).Execute()
 
 Query entities based on various properties.
 
@@ -904,8 +878,6 @@ Name | Type | Description  | Notes
 
 ## EntityMerge
 
-> EntityMerge(ctx).EntityMergeRequest(entityMergeRequest).Execute()
-
 Merge two or more entities together
 
 ### Example
@@ -963,8 +935,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityReadAliasByID
-
-> EntityReadAliasByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -1027,8 +997,6 @@ Name | Type | Description  | Notes
 
 ## EntityReadByID
 
-> EntityReadByID(ctx, id).Execute()
-
 Update, read or delete an entity using entity ID
 
 ### Example
@@ -1089,8 +1057,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityReadByName
-
-> EntityReadByName(ctx, name).Execute()
 
 Update, read or delete an entity using entity name
 
@@ -1153,8 +1119,6 @@ Name | Type | Description  | Notes
 
 ## EntityWrite
 
-> EntityWrite(ctx).EntityWriteRequest(entityWriteRequest).Execute()
-
 Create a new entity
 
 ### Example
@@ -1213,8 +1177,6 @@ Name | Type | Description  | Notes
 
 ## EntityWriteAlias
 
-> EntityWriteAlias(ctx).EntityWriteAliasRequest(entityWriteAliasRequest).Execute()
-
 Create a new alias.
 
 ### Example
@@ -1272,8 +1234,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityWriteAliasByID
-
-> EntityWriteAliasByID(ctx, id).EntityWriteAliasByIDRequest(entityWriteAliasByIDRequest).Execute()
 
 Update, read or delete an alias ID.
 
@@ -1340,8 +1300,6 @@ Name | Type | Description  | Notes
 
 ## EntityWriteByID
 
-> EntityWriteByID(ctx, id).EntityWriteByIDRequest(entityWriteByIDRequest).Execute()
-
 Update, read or delete an entity using entity ID
 
 ### Example
@@ -1406,8 +1364,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityWriteByName
-
-> EntityWriteByName(ctx, name).EntityWriteByNameRequest(entityWriteByNameRequest).Execute()
 
 Update, read or delete an entity using entity name
 
@@ -1474,8 +1430,6 @@ Name | Type | Description  | Notes
 
 ## GroupDeleteAliasByID
 
-> GroupDeleteAliasByID(ctx, id).Execute()
-
 
 
 ### Example
@@ -1536,8 +1490,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupDeleteByID
-
-> GroupDeleteByID(ctx, id).Execute()
 
 Update or delete an existing group using its ID.
 
@@ -1600,8 +1552,6 @@ Name | Type | Description  | Notes
 
 ## GroupDeleteByName
 
-> GroupDeleteByName(ctx, name).Execute()
-
 
 
 ### Example
@@ -1663,8 +1613,6 @@ Name | Type | Description  | Notes
 
 ## GroupListAliasesByID
 
-> GroupListAliasesByID(ctx).List(list).Execute()
-
 List all the group alias IDs.
 
 ### Example
@@ -1719,8 +1667,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupListByID
-
-> GroupListByID(ctx).List(list).Execute()
 
 List all the group IDs.
 
@@ -1777,8 +1723,6 @@ Name | Type | Description  | Notes
 
 ## GroupListByName
 
-> GroupListByName(ctx).List(list).Execute()
-
 
 
 ### Example
@@ -1833,8 +1777,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupLookup
-
-> GroupLookup(ctx).GroupLookupRequest(groupLookupRequest).Execute()
 
 Query groups based on various properties.
 
@@ -1893,8 +1835,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupReadAliasByID
-
-> GroupReadAliasByID(ctx, id).Execute()
 
 
 
@@ -1957,8 +1897,6 @@ Name | Type | Description  | Notes
 
 ## GroupReadByID
 
-> GroupReadByID(ctx, id).Execute()
-
 Update or delete an existing group using its ID.
 
 ### Example
@@ -2019,8 +1957,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupReadByName
-
-> GroupReadByName(ctx, name).Execute()
 
 
 
@@ -2083,8 +2019,6 @@ Name | Type | Description  | Notes
 
 ## GroupWrite
 
-> GroupWrite(ctx).GroupWriteRequest(groupWriteRequest).Execute()
-
 Create a new group.
 
 ### Example
@@ -2143,8 +2077,6 @@ Name | Type | Description  | Notes
 
 ## GroupWriteAlias
 
-> GroupWriteAlias(ctx).GroupWriteAliasRequest(groupWriteAliasRequest).Execute()
-
 Creates a new group alias, or updates an existing one.
 
 ### Example
@@ -2202,8 +2134,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupWriteAliasByID
-
-> GroupWriteAliasByID(ctx, id).GroupWriteAliasByIDRequest(groupWriteAliasByIDRequest).Execute()
 
 
 
@@ -2270,8 +2200,6 @@ Name | Type | Description  | Notes
 
 ## GroupWriteByID
 
-> GroupWriteByID(ctx, id).GroupWriteByIDRequest(groupWriteByIDRequest).Execute()
-
 Update or delete an existing group using its ID.
 
 ### Example
@@ -2336,8 +2264,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupWriteByName
-
-> GroupWriteByName(ctx, name).GroupWriteByNameRequest(groupWriteByNameRequest).Execute()
 
 
 
@@ -2404,8 +2330,6 @@ Name | Type | Description  | Notes
 
 ## MFADeleteLoginEnforcement
 
-> MFADeleteLoginEnforcement(ctx, name).Execute()
-
 Delete a login enforcement
 
 ### Example
@@ -2467,8 +2391,6 @@ Name | Type | Description  | Notes
 
 ## MFAListLoginEnforcements
 
-> MFAListLoginEnforcements(ctx).List(list).Execute()
-
 List login enforcements
 
 ### Example
@@ -2523,8 +2445,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodAdminDestroyTOTP
-
-> MFAMethodAdminDestroyTOTP(ctx).MFAMethodAdminDestroyTOTPRequest(mFAMethodAdminDestroyTOTPRequest).Execute()
 
 Destroys a TOTP secret for the given MFA method ID on the given entity
 
@@ -2584,8 +2504,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodAdminGenerateTOTP
 
-> MFAMethodAdminGenerateTOTP(ctx).MFAMethodAdminGenerateTOTPRequest(mFAMethodAdminGenerateTOTPRequest).Execute()
-
 Update or create TOTP secret for the given method ID on the given entity.
 
 ### Example
@@ -2643,8 +2561,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodDeleteDuo
-
-> MFAMethodDeleteDuo(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -2707,8 +2623,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodDeleteOkta
 
-> MFAMethodDeleteOkta(ctx, methodId).Execute()
-
 Delete a configuration for the given MFA method
 
 ### Example
@@ -2769,8 +2683,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodDeletePingID
-
-> MFAMethodDeletePingID(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -2833,8 +2745,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodDeleteTOTP
 
-> MFAMethodDeleteTOTP(ctx, methodId).Execute()
-
 Delete a configuration for the given MFA method
 
 ### Example
@@ -2896,8 +2806,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodGenerateTOTP
 
-> MFAMethodGenerateTOTP(ctx).MFAMethodGenerateTOTPRequest(mFAMethodGenerateTOTPRequest).Execute()
-
 Update or create TOTP secret for the given method ID on the given entity.
 
 ### Example
@@ -2956,8 +2864,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodList
 
-> MFAMethodList(ctx).List(list).Execute()
-
 List MFA method configurations for all MFA methods
 
 ### Example
@@ -3012,8 +2918,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodListDuo
-
-> MFAMethodListDuo(ctx).List(list).Execute()
 
 List MFA method configurations for the given MFA method
 
@@ -3070,8 +2974,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodListOkta
 
-> MFAMethodListOkta(ctx).List(list).Execute()
-
 List MFA method configurations for the given MFA method
 
 ### Example
@@ -3126,8 +3028,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodListPingID
-
-> MFAMethodListPingID(ctx).List(list).Execute()
 
 List MFA method configurations for the given MFA method
 
@@ -3184,8 +3084,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodListTOTP
 
-> MFAMethodListTOTP(ctx).List(list).Execute()
-
 List MFA method configurations for the given MFA method
 
 ### Example
@@ -3240,8 +3138,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodRead
-
-> MFAMethodRead(ctx, methodId).Execute()
 
 Read the current configuration for the given ID regardless of the MFA method type
 
@@ -3304,8 +3200,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodReadDuo
 
-> MFAMethodReadDuo(ctx, methodId).Execute()
-
 Read the current configuration for the given MFA method
 
 ### Example
@@ -3366,8 +3260,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodReadOkta
-
-> MFAMethodReadOkta(ctx, methodId).Execute()
 
 Read the current configuration for the given MFA method
 
@@ -3430,8 +3322,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodReadPingID
 
-> MFAMethodReadPingID(ctx, methodId).Execute()
-
 Read the current configuration for the given MFA method
 
 ### Example
@@ -3493,8 +3383,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodReadTOTP
 
-> MFAMethodReadTOTP(ctx, methodId).Execute()
-
 Read the current configuration for the given MFA method
 
 ### Example
@@ -3555,8 +3443,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodWriteDuo
-
-> MFAMethodWriteDuo(ctx, methodId).MFAMethodWriteDuoRequest(mFAMethodWriteDuoRequest).Execute()
 
 Update or create a configuration for the given MFA method
 
@@ -3623,8 +3509,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodWriteOkta
 
-> MFAMethodWriteOkta(ctx, methodId).MFAMethodWriteOktaRequest(mFAMethodWriteOktaRequest).Execute()
-
 Update or create a configuration for the given MFA method
 
 ### Example
@@ -3689,8 +3573,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodWritePingID
-
-> MFAMethodWritePingID(ctx, methodId).MFAMethodWritePingIDRequest(mFAMethodWritePingIDRequest).Execute()
 
 Update or create a configuration for the given MFA method
 
@@ -3757,8 +3639,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodWriteTOTP
 
-> MFAMethodWriteTOTP(ctx, methodId).MFAMethodWriteTOTPRequest(mFAMethodWriteTOTPRequest).Execute()
-
 Update or create a configuration for the given MFA method
 
 ### Example
@@ -3824,8 +3704,6 @@ Name | Type | Description  | Notes
 
 ## MFAReadLoginEnforcement
 
-> MFAReadLoginEnforcement(ctx, name).Execute()
-
 Read the current login enforcement
 
 ### Example
@@ -3886,8 +3764,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAWriteLoginEnforcement
-
-> MFAWriteLoginEnforcement(ctx, name).MFAWriteLoginEnforcementRequest(mFAWriteLoginEnforcementRequest).Execute()
 
 Create or update a login enforcement
 
@@ -3954,8 +3830,6 @@ Name | Type | Description  | Notes
 
 ## OIDCDeleteAssignment
 
-> OIDCDeleteAssignment(ctx, name).Execute()
-
 
 
 ### Example
@@ -4016,8 +3890,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCDeleteClient
-
-> OIDCDeleteClient(ctx, name).Execute()
 
 
 
@@ -4080,8 +3952,6 @@ Name | Type | Description  | Notes
 
 ## OIDCDeleteKey
 
-> OIDCDeleteKey(ctx, name).Execute()
-
 CRUD operations for OIDC keys.
 
 ### Example
@@ -4142,8 +4012,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCDeleteProvider
-
-> OIDCDeleteProvider(ctx, name).Execute()
 
 
 
@@ -4206,8 +4074,6 @@ Name | Type | Description  | Notes
 
 ## OIDCDeleteRole
 
-> OIDCDeleteRole(ctx, name).Execute()
-
 CRUD operations on OIDC Roles
 
 ### Example
@@ -4268,8 +4134,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCDeleteScope
-
-> OIDCDeleteScope(ctx, name).Execute()
 
 
 
@@ -4332,8 +4196,6 @@ Name | Type | Description  | Notes
 
 ## OIDCIntrospect
 
-> OIDCIntrospect(ctx).OIDCIntrospectRequest(oIDCIntrospectRequest).Execute()
-
 Verify the authenticity of an OIDC token
 
 ### Example
@@ -4392,8 +4254,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListAssignments
 
-> OIDCListAssignments(ctx).List(list).Execute()
-
 
 
 ### Example
@@ -4448,8 +4308,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCListClients
-
-> OIDCListClients(ctx).List(list).Execute()
 
 
 
@@ -4506,8 +4364,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListKeys
 
-> OIDCListKeys(ctx).List(list).Execute()
-
 List OIDC keys
 
 ### Example
@@ -4562,8 +4418,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCListProviders
-
-> OIDCListProviders(ctx).List(list).AllowedClientId(allowedClientId).Execute()
 
 
 
@@ -4623,8 +4477,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListRoles
 
-> OIDCListRoles(ctx).List(list).Execute()
-
 List configured OIDC roles
 
 ### Example
@@ -4680,8 +4532,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListScopes
 
-> OIDCListScopes(ctx).List(list).Execute()
-
 
 
 ### Example
@@ -4736,8 +4586,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadAssignment
-
-> OIDCReadAssignment(ctx, name).Execute()
 
 
 
@@ -4800,8 +4648,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadClient
 
-> OIDCReadClient(ctx, name).Execute()
-
 
 
 ### Example
@@ -4863,8 +4709,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadConfig
 
-> OIDCReadConfig(ctx).Execute()
-
 OIDC configuration
 
 ### Example
@@ -4916,8 +4760,6 @@ This endpoint does not require any parameters.
 
 
 ## OIDCReadKey
-
-> OIDCReadKey(ctx, name).Execute()
 
 CRUD operations for OIDC keys.
 
@@ -4980,8 +4822,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadProvider
 
-> OIDCReadProvider(ctx, name).Execute()
-
 
 
 ### Example
@@ -5042,8 +4882,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadProviderAuthorize
-
-> OIDCReadProviderAuthorize(ctx, name).Execute()
 
 
 
@@ -5106,8 +4944,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadProviderUserInfo
 
-> OIDCReadProviderUserInfo(ctx, name).Execute()
-
 
 
 ### Example
@@ -5168,8 +5004,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadProviderWellKnownKeys
-
-> OIDCReadProviderWellKnownKeys(ctx, name).Execute()
 
 
 
@@ -5232,8 +5066,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadProviderWellKnownOpenIDConfiguration
 
-> OIDCReadProviderWellKnownOpenIDConfiguration(ctx, name).Execute()
-
 
 
 ### Example
@@ -5294,8 +5126,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadRole
-
-> OIDCReadRole(ctx, name).Execute()
 
 CRUD operations on OIDC Roles
 
@@ -5358,8 +5188,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadScope
 
-> OIDCReadScope(ctx, name).Execute()
-
 
 
 ### Example
@@ -5420,8 +5248,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadToken
-
-> OIDCReadToken(ctx, name).Execute()
 
 Generate an OIDC token
 
@@ -5484,8 +5310,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadWellKnownKeys
 
-> OIDCReadWellKnownKeys(ctx).Execute()
-
 Retrieve public keys
 
 ### Example
@@ -5538,8 +5362,6 @@ This endpoint does not require any parameters.
 
 ## OIDCReadWellKnownOpenIDConfiguration
 
-> OIDCReadWellKnownOpenIDConfiguration(ctx).Execute()
-
 Query OIDC configurations
 
 ### Example
@@ -5591,8 +5413,6 @@ This endpoint does not require any parameters.
 
 
 ## OIDCRotateKey
-
-> OIDCRotateKey(ctx, name).OIDCRotateKeyRequest(oIDCRotateKeyRequest).Execute()
 
 Rotate a named OIDC key.
 
@@ -5659,8 +5479,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteAssignment
 
-> OIDCWriteAssignment(ctx, name).OIDCWriteAssignmentRequest(oIDCWriteAssignmentRequest).Execute()
-
 
 
 ### Example
@@ -5725,8 +5543,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteClient
-
-> OIDCWriteClient(ctx, name).OIDCWriteClientRequest(oIDCWriteClientRequest).Execute()
 
 
 
@@ -5793,8 +5609,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteConfig
 
-> OIDCWriteConfig(ctx).OIDCWriteConfigRequest(oIDCWriteConfigRequest).Execute()
-
 OIDC configuration
 
 ### Example
@@ -5852,8 +5666,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteKey
-
-> OIDCWriteKey(ctx, name).OIDCWriteKeyRequest(oIDCWriteKeyRequest).Execute()
 
 CRUD operations for OIDC keys.
 
@@ -5920,8 +5732,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteProvider
 
-> OIDCWriteProvider(ctx, name).OIDCWriteProviderRequest(oIDCWriteProviderRequest).Execute()
-
 
 
 ### Example
@@ -5986,8 +5796,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteProviderAuthorize
-
-> OIDCWriteProviderAuthorize(ctx, name).OIDCWriteProviderAuthorizeRequest(oIDCWriteProviderAuthorizeRequest).Execute()
 
 
 
@@ -6054,8 +5862,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteProviderToken
 
-> OIDCWriteProviderToken(ctx, name).OIDCWriteProviderTokenRequest(oIDCWriteProviderTokenRequest).Execute()
-
 
 
 ### Example
@@ -6121,8 +5927,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteProviderUserInfo
 
-> OIDCWriteProviderUserInfo(ctx, name).Execute()
-
 
 
 ### Example
@@ -6183,8 +5987,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteRole
-
-> OIDCWriteRole(ctx, name).OIDCWriteRoleRequest(oIDCWriteRoleRequest).Execute()
 
 CRUD operations on OIDC Roles
 
@@ -6251,8 +6053,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteScope
 
-> OIDCWriteScope(ctx, name).OIDCWriteScopeRequest(oIDCWriteScopeRequest).Execute()
-
 
 
 ### Example
@@ -6318,8 +6118,6 @@ Name | Type | Description  | Notes
 
 ## PersonaIDDeleteByID
 
-> PersonaIDDeleteByID(ctx, id).Execute()
-
 Update, read or delete an alias ID.
 
 ### Example
@@ -6381,8 +6179,6 @@ Name | Type | Description  | Notes
 
 ## PersonaIDReadByID
 
-> PersonaIDReadByID(ctx, id).Execute()
-
 Update, read or delete an alias ID.
 
 ### Example
@@ -6443,8 +6239,6 @@ Name | Type | Description  | Notes
 
 
 ## PersonaIDWriteByID
-
-> PersonaIDWriteByID(ctx, id).PersonaIDWriteByIDRequest(personaIDWriteByIDRequest).Execute()
 
 Update, read or delete an alias ID.
 
@@ -6511,8 +6305,6 @@ Name | Type | Description  | Notes
 
 ## PersonaListByID
 
-> PersonaListByID(ctx).List(list).Execute()
-
 List all the alias IDs.
 
 ### Example
@@ -6567,8 +6359,6 @@ Name | Type | Description  | Notes
 
 
 ## PersonaWrite
-
-> PersonaWrite(ctx).PersonaWriteRequest(personaWriteRequest).Execute()
 
 Create a new alias.
 

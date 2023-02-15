@@ -114,8 +114,6 @@ Method | HTTP request | Description
 
 ## AliasDeleteByID
 
-> AliasDeleteByID(ctx, id).Execute()
-
 Update, read or delete an alias ID.
 
 ### Example
@@ -177,8 +175,6 @@ Name | Type | Description  | Notes
 
 ## AliasListByID
 
-> AliasListByID(ctx).List(list).Execute()
-
 List all the alias IDs.
 
 ### Example
@@ -233,8 +229,6 @@ Name | Type | Description  | Notes
 
 
 ## AliasReadByID
-
-> AliasReadByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -297,8 +291,6 @@ Name | Type | Description  | Notes
 
 ## AliasWrite
 
-> AliasWrite(ctx).AliasWriteRequest(aliasWriteRequest).Execute()
-
 Create a new alias.
 
 ### Example
@@ -356,8 +348,6 @@ Name | Type | Description  | Notes
 
 
 ## AliasWriteByID
-
-> AliasWriteByID(ctx, id).AliasWriteByIDRequest(aliasWriteByIDRequest).Execute()
 
 Update, read or delete an alias ID.
 
@@ -424,8 +414,6 @@ Name | Type | Description  | Notes
 
 ## EntityBatchDelete
 
-> EntityBatchDelete(ctx).EntityBatchDeleteRequest(entityBatchDeleteRequest).Execute()
-
 Delete all of the entities provided
 
 ### Example
@@ -483,8 +471,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityDeleteAliasByID
-
-> EntityDeleteAliasByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -547,8 +533,6 @@ Name | Type | Description  | Notes
 
 ## EntityDeleteByID
 
-> EntityDeleteByID(ctx, id).Execute()
-
 Update, read or delete an entity using entity ID
 
 ### Example
@@ -609,8 +593,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityDeleteByName
-
-> EntityDeleteByName(ctx, name).Execute()
 
 Update, read or delete an entity using entity name
 
@@ -673,8 +655,6 @@ Name | Type | Description  | Notes
 
 ## EntityListAliasesByID
 
-> EntityListAliasesByID(ctx).List(list).Execute()
-
 List all the alias IDs.
 
 ### Example
@@ -729,8 +709,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityListByID
-
-> EntityListByID(ctx).List(list).Execute()
 
 List all the entity IDs
 
@@ -787,8 +765,6 @@ Name | Type | Description  | Notes
 
 ## EntityListByName
 
-> EntityListByName(ctx).List(list).Execute()
-
 List all the entity names
 
 ### Example
@@ -843,8 +819,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityLookup
-
-> EntityLookup(ctx).EntityLookupRequest(entityLookupRequest).Execute()
 
 Query entities based on various properties.
 
@@ -904,8 +878,6 @@ Name | Type | Description  | Notes
 
 ## EntityMerge
 
-> EntityMerge(ctx).EntityMergeRequest(entityMergeRequest).Execute()
-
 Merge two or more entities together
 
 ### Example
@@ -963,8 +935,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityReadAliasByID
-
-> EntityReadAliasByID(ctx, id).Execute()
 
 Update, read or delete an alias ID.
 
@@ -1027,8 +997,6 @@ Name | Type | Description  | Notes
 
 ## EntityReadByID
 
-> EntityReadByID(ctx, id).Execute()
-
 Update, read or delete an entity using entity ID
 
 ### Example
@@ -1089,8 +1057,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityReadByName
-
-> EntityReadByName(ctx, name).Execute()
 
 Update, read or delete an entity using entity name
 
@@ -1153,8 +1119,6 @@ Name | Type | Description  | Notes
 
 ## EntityWrite
 
-> EntityWrite(ctx).EntityWriteRequest(entityWriteRequest).Execute()
-
 Create a new entity
 
 ### Example
@@ -1213,8 +1177,6 @@ Name | Type | Description  | Notes
 
 ## EntityWriteAlias
 
-> EntityWriteAlias(ctx).EntityWriteAliasRequest(entityWriteAliasRequest).Execute()
-
 Create a new alias.
 
 ### Example
@@ -1272,8 +1234,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityWriteAliasByID
-
-> EntityWriteAliasByID(ctx, id).EntityWriteAliasByIDRequest(entityWriteAliasByIDRequest).Execute()
 
 Update, read or delete an alias ID.
 
@@ -1340,8 +1300,6 @@ Name | Type | Description  | Notes
 
 ## EntityWriteByID
 
-> EntityWriteByID(ctx, id).EntityWriteByIDRequest(entityWriteByIDRequest).Execute()
-
 Update, read or delete an entity using entity ID
 
 ### Example
@@ -1406,8 +1364,6 @@ Name | Type | Description  | Notes
 
 
 ## EntityWriteByName
-
-> EntityWriteByName(ctx, name).EntityWriteByNameRequest(entityWriteByNameRequest).Execute()
 
 Update, read or delete an entity using entity name
 
@@ -1474,8 +1430,6 @@ Name | Type | Description  | Notes
 
 ## GroupDeleteAliasByID
 
-> GroupDeleteAliasByID(ctx, id).Execute()
-
 
 
 ### Example
@@ -1536,8 +1490,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupDeleteByID
-
-> GroupDeleteByID(ctx, id).Execute()
 
 Update or delete an existing group using its ID.
 
@@ -1600,8 +1552,6 @@ Name | Type | Description  | Notes
 
 ## GroupDeleteByName
 
-> GroupDeleteByName(ctx, name).Execute()
-
 
 
 ### Example
@@ -1663,8 +1613,6 @@ Name | Type | Description  | Notes
 
 ## GroupListAliasesByID
 
-> GroupListAliasesByID(ctx).List(list).Execute()
-
 List all the group alias IDs.
 
 ### Example
@@ -1719,8 +1667,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupListByID
-
-> GroupListByID(ctx).List(list).Execute()
 
 List all the group IDs.
 
@@ -1777,8 +1723,6 @@ Name | Type | Description  | Notes
 
 ## GroupListByName
 
-> GroupListByName(ctx).List(list).Execute()
-
 
 
 ### Example
@@ -1833,8 +1777,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupLookup
-
-> GroupLookup(ctx).GroupLookupRequest(groupLookupRequest).Execute()
 
 Query groups based on various properties.
 
@@ -1893,8 +1835,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupReadAliasByID
-
-> GroupReadAliasByID(ctx, id).Execute()
 
 
 
@@ -1957,8 +1897,6 @@ Name | Type | Description  | Notes
 
 ## GroupReadByID
 
-> GroupReadByID(ctx, id).Execute()
-
 Update or delete an existing group using its ID.
 
 ### Example
@@ -2019,8 +1957,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupReadByName
-
-> GroupReadByName(ctx, name).Execute()
 
 
 
@@ -2083,8 +2019,6 @@ Name | Type | Description  | Notes
 
 ## GroupWrite
 
-> GroupWrite(ctx).GroupWriteRequest(groupWriteRequest).Execute()
-
 Create a new group.
 
 ### Example
@@ -2143,8 +2077,6 @@ Name | Type | Description  | Notes
 
 ## GroupWriteAlias
 
-> GroupWriteAlias(ctx).GroupWriteAliasRequest(groupWriteAliasRequest).Execute()
-
 Creates a new group alias, or updates an existing one.
 
 ### Example
@@ -2202,8 +2134,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupWriteAliasByID
-
-> GroupWriteAliasByID(ctx, id).GroupWriteAliasByIDRequest(groupWriteAliasByIDRequest).Execute()
 
 
 
@@ -2270,8 +2200,6 @@ Name | Type | Description  | Notes
 
 ## GroupWriteByID
 
-> GroupWriteByID(ctx, id).GroupWriteByIDRequest(groupWriteByIDRequest).Execute()
-
 Update or delete an existing group using its ID.
 
 ### Example
@@ -2336,8 +2264,6 @@ Name | Type | Description  | Notes
 
 
 ## GroupWriteByName
-
-> GroupWriteByName(ctx, name).GroupWriteByNameRequest(groupWriteByNameRequest).Execute()
 
 
 
@@ -2404,8 +2330,6 @@ Name | Type | Description  | Notes
 
 ## MFADeleteLoginEnforcement
 
-> MFADeleteLoginEnforcement(ctx, name).Execute()
-
 Delete a login enforcement
 
 ### Example
@@ -2467,8 +2391,6 @@ Name | Type | Description  | Notes
 
 ## MFAListLoginEnforcements
 
-> MFAListLoginEnforcements(ctx).List(list).Execute()
-
 List login enforcements
 
 ### Example
@@ -2523,8 +2445,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodAdminDestroyTOTP
-
-> MFAMethodAdminDestroyTOTP(ctx).MFAMethodAdminDestroyTOTPRequest(mFAMethodAdminDestroyTOTPRequest).Execute()
 
 Destroys a TOTP secret for the given MFA method ID on the given entity
 
@@ -2584,8 +2504,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodAdminGenerateTOTP
 
-> MFAMethodAdminGenerateTOTP(ctx).MFAMethodAdminGenerateTOTPRequest(mFAMethodAdminGenerateTOTPRequest).Execute()
-
 Update or create TOTP secret for the given method ID on the given entity.
 
 ### Example
@@ -2643,8 +2561,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodDeleteDuo
-
-> MFAMethodDeleteDuo(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -2707,8 +2623,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodDeleteOkta
 
-> MFAMethodDeleteOkta(ctx, methodId).Execute()
-
 Delete a configuration for the given MFA method
 
 ### Example
@@ -2769,8 +2683,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodDeletePingID
-
-> MFAMethodDeletePingID(ctx, methodId).Execute()
 
 Delete a configuration for the given MFA method
 
@@ -2833,8 +2745,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodDeleteTOTP
 
-> MFAMethodDeleteTOTP(ctx, methodId).Execute()
-
 Delete a configuration for the given MFA method
 
 ### Example
@@ -2896,8 +2806,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodGenerateTOTP
 
-> MFAMethodGenerateTOTP(ctx).MFAMethodGenerateTOTPRequest(mFAMethodGenerateTOTPRequest).Execute()
-
 Update or create TOTP secret for the given method ID on the given entity.
 
 ### Example
@@ -2956,8 +2864,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodList
 
-> MFAMethodList(ctx).List(list).Execute()
-
 List MFA method configurations for all MFA methods
 
 ### Example
@@ -3012,8 +2918,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodListDuo
-
-> MFAMethodListDuo(ctx).List(list).Execute()
 
 List MFA method configurations for the given MFA method
 
@@ -3070,8 +2974,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodListOkta
 
-> MFAMethodListOkta(ctx).List(list).Execute()
-
 List MFA method configurations for the given MFA method
 
 ### Example
@@ -3126,8 +3028,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodListPingID
-
-> MFAMethodListPingID(ctx).List(list).Execute()
 
 List MFA method configurations for the given MFA method
 
@@ -3184,8 +3084,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodListTOTP
 
-> MFAMethodListTOTP(ctx).List(list).Execute()
-
 List MFA method configurations for the given MFA method
 
 ### Example
@@ -3240,8 +3138,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodRead
-
-> MFAMethodRead(ctx, methodId).Execute()
 
 Read the current configuration for the given ID regardless of the MFA method type
 
@@ -3304,8 +3200,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodReadDuo
 
-> MFAMethodReadDuo(ctx, methodId).Execute()
-
 Read the current configuration for the given MFA method
 
 ### Example
@@ -3366,8 +3260,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodReadOkta
-
-> MFAMethodReadOkta(ctx, methodId).Execute()
 
 Read the current configuration for the given MFA method
 
@@ -3430,8 +3322,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodReadPingID
 
-> MFAMethodReadPingID(ctx, methodId).Execute()
-
 Read the current configuration for the given MFA method
 
 ### Example
@@ -3493,8 +3383,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodReadTOTP
 
-> MFAMethodReadTOTP(ctx, methodId).Execute()
-
 Read the current configuration for the given MFA method
 
 ### Example
@@ -3555,8 +3443,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodWriteDuo
-
-> MFAMethodWriteDuo(ctx, methodId).MFAMethodWriteDuoRequest(mFAMethodWriteDuoRequest).Execute()
 
 Update or create a configuration for the given MFA method
 
@@ -3623,8 +3509,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodWriteOkta
 
-> MFAMethodWriteOkta(ctx, methodId).MFAMethodWriteOktaRequest(mFAMethodWriteOktaRequest).Execute()
-
 Update or create a configuration for the given MFA method
 
 ### Example
@@ -3689,8 +3573,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAMethodWritePingID
-
-> MFAMethodWritePingID(ctx, methodId).MFAMethodWritePingIDRequest(mFAMethodWritePingIDRequest).Execute()
 
 Update or create a configuration for the given MFA method
 
@@ -3757,8 +3639,6 @@ Name | Type | Description  | Notes
 
 ## MFAMethodWriteTOTP
 
-> MFAMethodWriteTOTP(ctx, methodId).MFAMethodWriteTOTPRequest(mFAMethodWriteTOTPRequest).Execute()
-
 Update or create a configuration for the given MFA method
 
 ### Example
@@ -3824,8 +3704,6 @@ Name | Type | Description  | Notes
 
 ## MFAReadLoginEnforcement
 
-> MFAReadLoginEnforcement(ctx, name).Execute()
-
 Read the current login enforcement
 
 ### Example
@@ -3886,8 +3764,6 @@ Name | Type | Description  | Notes
 
 
 ## MFAWriteLoginEnforcement
-
-> MFAWriteLoginEnforcement(ctx, name).MFAWriteLoginEnforcementRequest(mFAWriteLoginEnforcementRequest).Execute()
 
 Create or update a login enforcement
 
@@ -3954,8 +3830,6 @@ Name | Type | Description  | Notes
 
 ## OIDCDeleteAssignment
 
-> OIDCDeleteAssignment(ctx, name).Execute()
-
 
 
 ### Example
@@ -4016,8 +3890,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCDeleteClient
-
-> OIDCDeleteClient(ctx, name).Execute()
 
 
 
@@ -4080,8 +3952,6 @@ Name | Type | Description  | Notes
 
 ## OIDCDeleteKey
 
-> OIDCDeleteKey(ctx, name).Execute()
-
 CRUD operations for OIDC keys.
 
 ### Example
@@ -4142,8 +4012,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCDeleteProvider
-
-> OIDCDeleteProvider(ctx, name).Execute()
 
 
 
@@ -4206,8 +4074,6 @@ Name | Type | Description  | Notes
 
 ## OIDCDeleteRole
 
-> OIDCDeleteRole(ctx, name).Execute()
-
 CRUD operations on OIDC Roles
 
 ### Example
@@ -4268,8 +4134,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCDeleteScope
-
-> OIDCDeleteScope(ctx, name).Execute()
 
 
 
@@ -4332,8 +4196,6 @@ Name | Type | Description  | Notes
 
 ## OIDCIntrospect
 
-> OIDCIntrospect(ctx).OIDCIntrospectRequest(oIDCIntrospectRequest).Execute()
-
 Verify the authenticity of an OIDC token
 
 ### Example
@@ -4392,8 +4254,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListAssignments
 
-> OIDCListAssignments(ctx).List(list).Execute()
-
 
 
 ### Example
@@ -4448,8 +4308,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCListClients
-
-> OIDCListClients(ctx).List(list).Execute()
 
 
 
@@ -4506,8 +4364,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListKeys
 
-> OIDCListKeys(ctx).List(list).Execute()
-
 List OIDC keys
 
 ### Example
@@ -4562,8 +4418,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCListProviders
-
-> OIDCListProviders(ctx).List(list).AllowedClientId(allowedClientId).Execute()
 
 
 
@@ -4623,8 +4477,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListRoles
 
-> OIDCListRoles(ctx).List(list).Execute()
-
 List configured OIDC roles
 
 ### Example
@@ -4680,8 +4532,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListScopes
 
-> OIDCListScopes(ctx).List(list).Execute()
-
 
 
 ### Example
@@ -4736,8 +4586,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadAssignment
-
-> OIDCReadAssignment(ctx, name).Execute()
 
 
 
@@ -4800,8 +4648,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadClient
 
-> OIDCReadClient(ctx, name).Execute()
-
 
 
 ### Example
@@ -4863,8 +4709,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadConfig
 
-> OIDCReadConfig(ctx).Execute()
-
 OIDC configuration
 
 ### Example
@@ -4916,8 +4760,6 @@ This endpoint does not require any parameters.
 
 
 ## OIDCReadKey
-
-> OIDCReadKey(ctx, name).Execute()
 
 CRUD operations for OIDC keys.
 
@@ -4980,8 +4822,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadProvider
 
-> OIDCReadProvider(ctx, name).Execute()
-
 
 
 ### Example
@@ -5042,8 +4882,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadProviderAuthorize
-
-> OIDCReadProviderAuthorize(ctx, name).Execute()
 
 
 
@@ -5106,8 +4944,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadProviderUserInfo
 
-> OIDCReadProviderUserInfo(ctx, name).Execute()
-
 
 
 ### Example
@@ -5168,8 +5004,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadProviderWellKnownKeys
-
-> OIDCReadProviderWellKnownKeys(ctx, name).Execute()
 
 
 
@@ -5232,8 +5066,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadProviderWellKnownOpenIDConfiguration
 
-> OIDCReadProviderWellKnownOpenIDConfiguration(ctx, name).Execute()
-
 
 
 ### Example
@@ -5294,8 +5126,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadRole
-
-> OIDCReadRole(ctx, name).Execute()
 
 CRUD operations on OIDC Roles
 
@@ -5358,8 +5188,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadScope
 
-> OIDCReadScope(ctx, name).Execute()
-
 
 
 ### Example
@@ -5420,8 +5248,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadToken
-
-> OIDCReadToken(ctx, name).Execute()
 
 Generate an OIDC token
 
@@ -5484,8 +5310,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadWellKnownKeys
 
-> OIDCReadWellKnownKeys(ctx).Execute()
-
 Retrieve public keys
 
 ### Example
@@ -5538,8 +5362,6 @@ This endpoint does not require any parameters.
 
 ## OIDCReadWellKnownOpenIDConfiguration
 
-> OIDCReadWellKnownOpenIDConfiguration(ctx).Execute()
-
 Query OIDC configurations
 
 ### Example
@@ -5591,8 +5413,6 @@ This endpoint does not require any parameters.
 
 
 ## OIDCRotateKey
-
-> OIDCRotateKey(ctx, name).OIDCRotateKeyRequest(oIDCRotateKeyRequest).Execute()
 
 Rotate a named OIDC key.
 
@@ -5659,8 +5479,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteAssignment
 
-> OIDCWriteAssignment(ctx, name).OIDCWriteAssignmentRequest(oIDCWriteAssignmentRequest).Execute()
-
 
 
 ### Example
@@ -5725,8 +5543,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteClient
-
-> OIDCWriteClient(ctx, name).OIDCWriteClientRequest(oIDCWriteClientRequest).Execute()
 
 
 
@@ -5793,8 +5609,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteConfig
 
-> OIDCWriteConfig(ctx).OIDCWriteConfigRequest(oIDCWriteConfigRequest).Execute()
-
 OIDC configuration
 
 ### Example
@@ -5852,8 +5666,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteKey
-
-> OIDCWriteKey(ctx, name).OIDCWriteKeyRequest(oIDCWriteKeyRequest).Execute()
 
 CRUD operations for OIDC keys.
 
@@ -5920,8 +5732,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteProvider
 
-> OIDCWriteProvider(ctx, name).OIDCWriteProviderRequest(oIDCWriteProviderRequest).Execute()
-
 
 
 ### Example
@@ -5986,8 +5796,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteProviderAuthorize
-
-> OIDCWriteProviderAuthorize(ctx, name).OIDCWriteProviderAuthorizeRequest(oIDCWriteProviderAuthorizeRequest).Execute()
 
 
 
@@ -6054,8 +5862,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteProviderToken
 
-> OIDCWriteProviderToken(ctx, name).OIDCWriteProviderTokenRequest(oIDCWriteProviderTokenRequest).Execute()
-
 
 
 ### Example
@@ -6121,8 +5927,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteProviderUserInfo
 
-> OIDCWriteProviderUserInfo(ctx, name).Execute()
-
 
 
 ### Example
@@ -6183,8 +5987,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteRole
-
-> OIDCWriteRole(ctx, name).OIDCWriteRoleRequest(oIDCWriteRoleRequest).Execute()
 
 CRUD operations on OIDC Roles
 
@@ -6251,8 +6053,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteScope
 
-> OIDCWriteScope(ctx, name).OIDCWriteScopeRequest(oIDCWriteScopeRequest).Execute()
-
 
 
 ### Example
@@ -6318,8 +6118,6 @@ Name | Type | Description  | Notes
 
 ## PersonaIDDeleteByID
 
-> PersonaIDDeleteByID(ctx, id).Execute()
-
 Update, read or delete an alias ID.
 
 ### Example
@@ -6381,8 +6179,6 @@ Name | Type | Description  | Notes
 
 ## PersonaIDReadByID
 
-> PersonaIDReadByID(ctx, id).Execute()
-
 Update, read or delete an alias ID.
 
 ### Example
@@ -6443,8 +6239,6 @@ Name | Type | Description  | Notes
 
 
 ## PersonaIDWriteByID
-
-> PersonaIDWriteByID(ctx, id).PersonaIDWriteByIDRequest(personaIDWriteByIDRequest).Execute()
 
 Update, read or delete an alias ID.
 
@@ -6511,8 +6305,6 @@ Name | Type | Description  | Notes
 
 ## PersonaListByID
 
-> PersonaListByID(ctx).List(list).Execute()
-
 List all the alias IDs.
 
 ### Example
@@ -6567,8 +6359,6 @@ Name | Type | Description  | Notes
 
 
 ## PersonaWrite
-
-> PersonaWrite(ctx).PersonaWriteRequest(personaWriteRequest).Execute()
 
 Create a new alias.
 

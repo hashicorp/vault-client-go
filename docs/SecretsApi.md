@@ -376,8 +376,6 @@ Method | HTTP request | Description
 
 ## AWSConfigReadLease
 
-> AWSConfigReadLease(ctx, awsMountPath).Execute()
-
 Configure the default lease information for generated credentials.
 
 ### Example
@@ -435,8 +433,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigReadRootIAMCredentials
-
-> AWSConfigReadRootIAMCredentials(ctx, awsMountPath).Execute()
 
 Configure the root credentials that are used to manage IAM.
 
@@ -496,8 +492,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigRotateRootIAMCredentials
 
-> AWSConfigRotateRootIAMCredentials(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -555,8 +549,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigWriteLease
-
-> AWSConfigWriteLease(ctx, awsMountPath).AWSConfigWriteLeaseRequest(aWSConfigWriteLeaseRequest).Execute()
 
 Configure the default lease information for generated credentials.
 
@@ -620,8 +612,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigWriteRootIAMCredentials
 
-> AWSConfigWriteRootIAMCredentials(ctx, awsMountPath).AWSConfigWriteRootIAMCredentialsRequest(aWSConfigWriteRootIAMCredentialsRequest).Execute()
-
 Configure the root credentials that are used to manage IAM.
 
 ### Example
@@ -683,8 +673,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSDeleteRole
-
-> AWSDeleteRole(ctx, awsMountPath, name).Execute()
 
 Read, write and reference IAM policies that access keys can be made for.
 
@@ -748,8 +736,6 @@ Name | Type | Description  | Notes
 
 ## AWSListRoles
 
-> AWSListRoles(ctx, awsMountPath).List(list).Execute()
-
 List the existing roles in this backend
 
 ### Example
@@ -809,8 +795,6 @@ Name | Type | Description  | Notes
 
 ## AWSReadCredentials
 
-> AWSReadCredentials(ctx, awsMountPath).Execute()
-
 Generate AWS credentials from a specific Vault role.
 
 ### Example
@@ -868,8 +852,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSReadRole
-
-> AWSReadRole(ctx, awsMountPath, name).Execute()
 
 Read, write and reference IAM policies that access keys can be made for.
 
@@ -933,8 +915,6 @@ Name | Type | Description  | Notes
 
 ## AWSReadSecurityTokenService
 
-> AWSReadSecurityTokenService(ctx, awsMountPath, name).Execute()
-
 Generate AWS credentials from a specific Vault role.
 
 ### Example
@@ -997,8 +977,6 @@ Name | Type | Description  | Notes
 
 ## AWSWriteCredentials
 
-> AWSWriteCredentials(ctx, awsMountPath).AWSWriteCredentialsRequest(aWSWriteCredentialsRequest).Execute()
-
 Generate AWS credentials from a specific Vault role.
 
 ### Example
@@ -1060,8 +1038,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSWriteRole
-
-> AWSWriteRole(ctx, awsMountPath, name).AWSWriteRoleRequest(aWSWriteRoleRequest).Execute()
 
 Read, write and reference IAM policies that access keys can be made for.
 
@@ -1129,8 +1105,6 @@ Name | Type | Description  | Notes
 
 ## AWSWriteSecurityTokenService
 
-> AWSWriteSecurityTokenService(ctx, awsMountPath, name).AWSWriteSecurityTokenServiceRequest(aWSWriteSecurityTokenServiceRequest).Execute()
-
 Generate AWS credentials from a specific Vault role.
 
 ### Example
@@ -1196,8 +1170,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryCheckInLibrary
-
-> ActiveDirectoryCheckInLibrary(ctx, adMountPath, name).ActiveDirectoryCheckInLibraryRequest(activeDirectoryCheckInLibraryRequest).Execute()
 
 Check service accounts in to the library.
 
@@ -1265,8 +1237,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryCheckInManageLibrary
 
-> ActiveDirectoryCheckInManageLibrary(ctx, adMountPath, name).ActiveDirectoryCheckInManageLibraryRequest(activeDirectoryCheckInManageLibraryRequest).Execute()
-
 Check service accounts in to the library.
 
 ### Example
@@ -1332,8 +1302,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryCheckOutLibrary
-
-> ActiveDirectoryCheckOutLibrary(ctx, adMountPath, name).ActiveDirectoryCheckOutLibraryRequest(activeDirectoryCheckOutLibraryRequest).Execute()
 
 Check a service account out from the library.
 
@@ -1401,8 +1369,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryDeleteConfig
 
-> ActiveDirectoryDeleteConfig(ctx, adMountPath).Execute()
-
 Configure the AD server to connect to, along with password options.
 
 ### Example
@@ -1460,8 +1426,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryDeleteLibrary
-
-> ActiveDirectoryDeleteLibrary(ctx, adMountPath, name).Execute()
 
 Delete a library set.
 
@@ -1525,8 +1489,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryDeleteRole
 
-> ActiveDirectoryDeleteRole(ctx, adMountPath, name).Execute()
-
 Manage roles to build links between Vault and Active Directory service accounts.
 
 ### Example
@@ -1589,8 +1551,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryListLibraries
 
-> ActiveDirectoryListLibraries(ctx, adMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -1649,8 +1609,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryListRoles
-
-> ActiveDirectoryListRoles(ctx, adMountPath).List(list).Execute()
 
 List the name of each role currently stored.
 
@@ -1711,8 +1669,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryReadConfig
 
-> ActiveDirectoryReadConfig(ctx, adMountPath).Execute()
-
 Configure the AD server to connect to, along with password options.
 
 ### Example
@@ -1770,8 +1726,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryReadCredentials
-
-> ActiveDirectoryReadCredentials(ctx, adMountPath, name).Execute()
 
 
 
@@ -1835,8 +1789,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryReadLibrary
 
-> ActiveDirectoryReadLibrary(ctx, adMountPath, name).Execute()
-
 Read a library set.
 
 ### Example
@@ -1898,8 +1850,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryReadLibraryStatus
-
-> ActiveDirectoryReadLibraryStatus(ctx, adMountPath, name).Execute()
 
 Check the status of the service accounts in a library set.
 
@@ -1963,8 +1913,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryReadRole
 
-> ActiveDirectoryReadRole(ctx, adMountPath, name).Execute()
-
 Manage roles to build links between Vault and Active Directory service accounts.
 
 ### Example
@@ -2026,8 +1974,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryRotateRole
-
-> ActiveDirectoryRotateRole(ctx, adMountPath, name).Execute()
 
 
 
@@ -2091,8 +2037,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryRotateRoot
 
-> ActiveDirectoryRotateRoot(ctx, adMountPath).Execute()
-
 
 
 ### Example
@@ -2150,8 +2094,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryWriteConfig
-
-> ActiveDirectoryWriteConfig(ctx, adMountPath).ActiveDirectoryWriteConfigRequest(activeDirectoryWriteConfigRequest).Execute()
 
 Configure the AD server to connect to, along with password options.
 
@@ -2214,8 +2156,6 @@ Name | Type | Description  | Notes
 
 
 ## ActiveDirectoryWriteLibrary
-
-> ActiveDirectoryWriteLibrary(ctx, adMountPath, name).ActiveDirectoryWriteLibraryRequest(activeDirectoryWriteLibraryRequest).Execute()
 
 Update a library set.
 
@@ -2283,8 +2223,6 @@ Name | Type | Description  | Notes
 
 ## ActiveDirectoryWriteRole
 
-> ActiveDirectoryWriteRole(ctx, adMountPath, name).ActiveDirectoryWriteRoleRequest(activeDirectoryWriteRoleRequest).Execute()
-
 Manage roles to build links between Vault and Active Directory service accounts.
 
 ### Example
@@ -2351,8 +2289,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudDeleteConfig
 
-> AliCloudDeleteConfig(ctx, alicloudMountPath).Execute()
-
 Configure the access key and secret to use for RAM and STS calls.
 
 ### Example
@@ -2410,8 +2346,6 @@ Name | Type | Description  | Notes
 
 
 ## AliCloudDeleteRole
-
-> AliCloudDeleteRole(ctx, alicloudMountPath, name).Execute()
 
 Read, write and reference policies and roles that API keys or STS credentials can be made for.
 
@@ -2475,8 +2409,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudListRoles
 
-> AliCloudListRoles(ctx, alicloudMountPath).List(list).Execute()
-
 List the existing roles in this backend.
 
 ### Example
@@ -2536,8 +2468,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudReadConfig
 
-> AliCloudReadConfig(ctx, alicloudMountPath).Execute()
-
 Configure the access key and secret to use for RAM and STS calls.
 
 ### Example
@@ -2595,8 +2525,6 @@ Name | Type | Description  | Notes
 
 
 ## AliCloudReadCredentials
-
-> AliCloudReadCredentials(ctx, alicloudMountPath, name).Execute()
 
 Generate an API key or STS credential using the given role's configuration.'
 
@@ -2660,8 +2588,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudReadRole
 
-> AliCloudReadRole(ctx, alicloudMountPath, name).Execute()
-
 Read, write and reference policies and roles that API keys or STS credentials can be made for.
 
 ### Example
@@ -2724,8 +2650,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudWriteConfig
 
-> AliCloudWriteConfig(ctx, alicloudMountPath).AliCloudWriteConfigRequest(aliCloudWriteConfigRequest).Execute()
-
 Configure the access key and secret to use for RAM and STS calls.
 
 ### Example
@@ -2787,8 +2711,6 @@ Name | Type | Description  | Notes
 
 
 ## AliCloudWriteRole
-
-> AliCloudWriteRole(ctx, alicloudMountPath, name).AliCloudWriteRoleRequest(aliCloudWriteRoleRequest).Execute()
 
 Read, write and reference policies and roles that API keys or STS credentials can be made for.
 
@@ -2856,8 +2778,6 @@ Name | Type | Description  | Notes
 
 ## AzureDeleteConfig
 
-> AzureDeleteConfig(ctx, azureMountPath).Execute()
-
 
 
 ### Example
@@ -2915,8 +2835,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureDeleteRole
-
-> AzureDeleteRole(ctx, azureMountPath, name).Execute()
 
 Manage the Vault roles used to generate Azure credentials.
 
@@ -2980,8 +2898,6 @@ Name | Type | Description  | Notes
 
 ## AzureListRoles
 
-> AzureListRoles(ctx, azureMountPath).List(list).Execute()
-
 List existing roles.
 
 ### Example
@@ -3041,8 +2957,6 @@ Name | Type | Description  | Notes
 
 ## AzureReadConfig
 
-> AzureReadConfig(ctx, azureMountPath).Execute()
-
 
 
 ### Example
@@ -3100,8 +3014,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureReadCredentials
-
-> AzureReadCredentials(ctx, azureMountPath, role).Execute()
 
 
 
@@ -3165,8 +3077,6 @@ Name | Type | Description  | Notes
 
 ## AzureReadRole
 
-> AzureReadRole(ctx, azureMountPath, name).Execute()
-
 Manage the Vault roles used to generate Azure credentials.
 
 ### Example
@@ -3229,8 +3139,6 @@ Name | Type | Description  | Notes
 
 ## AzureRotateRoot
 
-> AzureRotateRoot(ctx, azureMountPath).Execute()
-
 
 
 ### Example
@@ -3288,8 +3196,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureWriteConfig
-
-> AzureWriteConfig(ctx, azureMountPath).AzureWriteConfigRequest(azureWriteConfigRequest).Execute()
 
 
 
@@ -3352,8 +3258,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureWriteRole
-
-> AzureWriteRole(ctx, azureMountPath, name).AzureWriteRoleRequest(azureWriteRoleRequest).Execute()
 
 Manage the Vault roles used to generate Azure credentials.
 
@@ -3421,8 +3325,6 @@ Name | Type | Description  | Notes
 
 ## ConsulDeleteRole
 
-> ConsulDeleteRole(ctx, consulMountPath, name).Execute()
-
 
 
 ### Example
@@ -3485,8 +3387,6 @@ Name | Type | Description  | Notes
 
 ## ConsulListRoles
 
-> ConsulListRoles(ctx, consulMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -3546,8 +3446,6 @@ Name | Type | Description  | Notes
 
 ## ConsulReadAccessConfig
 
-> ConsulReadAccessConfig(ctx, consulMountPath).Execute()
-
 
 
 ### Example
@@ -3605,8 +3503,6 @@ Name | Type | Description  | Notes
 
 
 ## ConsulReadCredentials
-
-> ConsulReadCredentials(ctx, consulMountPath, role).Execute()
 
 
 
@@ -3670,8 +3566,6 @@ Name | Type | Description  | Notes
 
 ## ConsulReadRole
 
-> ConsulReadRole(ctx, consulMountPath, name).Execute()
-
 
 
 ### Example
@@ -3734,8 +3628,6 @@ Name | Type | Description  | Notes
 
 ## ConsulWriteAccessConfig
 
-> ConsulWriteAccessConfig(ctx, consulMountPath).ConsulWriteAccessConfigRequest(consulWriteAccessConfigRequest).Execute()
-
 
 
 ### Example
@@ -3797,8 +3689,6 @@ Name | Type | Description  | Notes
 
 
 ## ConsulWriteRole
-
-> ConsulWriteRole(ctx, consulMountPath, name).ConsulWriteRoleRequest(consulWriteRoleRequest).Execute()
 
 
 
@@ -3866,8 +3756,6 @@ Name | Type | Description  | Notes
 
 ## CubbyholeDelete
 
-> CubbyholeDelete(ctx, cubbyholeMountPath, path).Execute()
-
 Deletes the secret at the specified location.
 
 ### Example
@@ -3929,8 +3817,6 @@ Name | Type | Description  | Notes
 
 
 ## CubbyholeRead
-
-> CubbyholeRead(ctx, cubbyholeMountPath, path).List(list).Execute()
 
 Retrieve the secret at the specified location.
 
@@ -3995,8 +3881,6 @@ Name | Type | Description  | Notes
 
 ## CubbyholeWrite
 
-> CubbyholeWrite(ctx, cubbyholeMountPath, path).Execute()
-
 Store a secret at the specified location.
 
 ### Example
@@ -4058,8 +3942,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseDeleteConfig
-
-> DatabaseDeleteConfig(ctx, databaseMountPath, name).Execute()
 
 Configure connection details to a database plugin.
 
@@ -4123,8 +4005,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseDeleteRole
 
-> DatabaseDeleteRole(ctx, databaseMountPath, name).Execute()
-
 Manage the roles that can be created with this backend.
 
 ### Example
@@ -4186,8 +4066,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseDeleteStaticRole
-
-> DatabaseDeleteStaticRole(ctx, databaseMountPath, name).Execute()
 
 Manage the static roles that can be created with this backend.
 
@@ -4251,8 +4129,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseListConfig
 
-> DatabaseListConfig(ctx, databaseMountPath).List(list).Execute()
-
 Configure connection details to a database plugin.
 
 ### Example
@@ -4311,8 +4187,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseListRoles
-
-> DatabaseListRoles(ctx, databaseMountPath).List(list).Execute()
 
 Manage the roles that can be created with this backend.
 
@@ -4373,8 +4247,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseListStaticRoles
 
-> DatabaseListStaticRoles(ctx, databaseMountPath).List(list).Execute()
-
 Manage the static roles that can be created with this backend.
 
 ### Example
@@ -4433,8 +4305,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseReadConfig
-
-> DatabaseReadConfig(ctx, databaseMountPath, name).Execute()
 
 Configure connection details to a database plugin.
 
@@ -4498,8 +4368,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseReadCredentials
 
-> DatabaseReadCredentials(ctx, databaseMountPath, name).Execute()
-
 Request database credentials for a certain role.
 
 ### Example
@@ -4561,8 +4429,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseReadRole
-
-> DatabaseReadRole(ctx, databaseMountPath, name).Execute()
 
 Manage the roles that can be created with this backend.
 
@@ -4626,8 +4492,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseReadStaticCredentials
 
-> DatabaseReadStaticCredentials(ctx, databaseMountPath, name).Execute()
-
 Request database credentials for a certain static role. These credentials are rotated periodically.
 
 ### Example
@@ -4689,8 +4553,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseReadStaticRole
-
-> DatabaseReadStaticRole(ctx, databaseMountPath, name).Execute()
 
 Manage the static roles that can be created with this backend.
 
@@ -4754,8 +4616,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseReset
 
-> DatabaseReset(ctx, databaseMountPath, name).Execute()
-
 Resets a database plugin.
 
 ### Example
@@ -4817,8 +4677,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseRotateRole
-
-> DatabaseRotateRole(ctx, databaseMountPath, name).Execute()
 
 
 
@@ -4882,8 +4740,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseRotateRoot
 
-> DatabaseRotateRoot(ctx, databaseMountPath, name).Execute()
-
 
 
 ### Example
@@ -4945,8 +4801,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseWriteConfig
-
-> DatabaseWriteConfig(ctx, databaseMountPath, name).DatabaseWriteConfigRequest(databaseWriteConfigRequest).Execute()
 
 Configure connection details to a database plugin.
 
@@ -5014,8 +4868,6 @@ Name | Type | Description  | Notes
 
 ## DatabaseWriteRole
 
-> DatabaseWriteRole(ctx, databaseMountPath, name).DatabaseWriteRoleRequest(databaseWriteRoleRequest).Execute()
-
 Manage the roles that can be created with this backend.
 
 ### Example
@@ -5081,8 +4933,6 @@ Name | Type | Description  | Notes
 
 
 ## DatabaseWriteStaticRole
-
-> DatabaseWriteStaticRole(ctx, databaseMountPath, name).DatabaseWriteStaticRoleRequest(databaseWriteStaticRoleRequest).Execute()
 
 Manage the static roles that can be created with this backend.
 
@@ -5150,8 +5000,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudDeleteRoleset
 
-> GoogleCloudDeleteRoleset(ctx, gcpMountPath, name).Execute()
-
 
 
 ### Example
@@ -5214,8 +5062,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudDeleteStaticAccount
 
-> GoogleCloudDeleteStaticAccount(ctx, gcpMountPath, name).Execute()
-
 
 
 ### Example
@@ -5277,8 +5123,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSDecrypt
-
-> GoogleCloudKMSDecrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSDecryptRequest(googleCloudKMSDecryptRequest).Execute()
 
 Decrypt a ciphertext value using a named key
 
@@ -5346,8 +5190,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSDeleteConfig
 
-> GoogleCloudKMSDeleteConfig(ctx, gcpkmsMountPath).Execute()
-
 Configure the GCP KMS secrets engine
 
 ### Example
@@ -5405,8 +5247,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSDeleteKey
-
-> GoogleCloudKMSDeleteKey(ctx, gcpkmsMountPath, key).Execute()
 
 Interact with crypto keys in Vault and Google Cloud KMS
 
@@ -5470,8 +5310,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSDeregisterKey
 
-> GoogleCloudKMSDeregisterKey(ctx, gcpkmsMountPath, key).Execute()
-
 Deregister an existing key in Vault
 
 ### Example
@@ -5533,8 +5371,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSEncrypt
-
-> GoogleCloudKMSEncrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSEncryptRequest(googleCloudKMSEncryptRequest).Execute()
 
 Encrypt a plaintext value using a named key
 
@@ -5602,8 +5438,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSListKeys
 
-> GoogleCloudKMSListKeys(ctx, gcpkmsMountPath).List(list).Execute()
-
 List named keys
 
 ### Example
@@ -5663,8 +5497,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSReadConfig
 
-> GoogleCloudKMSReadConfig(ctx, gcpkmsMountPath).Execute()
-
 Configure the GCP KMS secrets engine
 
 ### Example
@@ -5722,8 +5554,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSReadKey
-
-> GoogleCloudKMSReadKey(ctx, gcpkmsMountPath, key).Execute()
 
 Interact with crypto keys in Vault and Google Cloud KMS
 
@@ -5787,8 +5617,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSReadKeyConfig
 
-> GoogleCloudKMSReadKeyConfig(ctx, gcpkmsMountPath, key).Execute()
-
 Configure the key in Vault
 
 ### Example
@@ -5851,8 +5679,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSReadPubkey
 
-> GoogleCloudKMSReadPubkey(ctx, gcpkmsMountPath, key).Execute()
-
 Retrieve the public key associated with the named key
 
 ### Example
@@ -5914,8 +5740,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSReencrypt
-
-> GoogleCloudKMSReencrypt(ctx, gcpkmsMountPath, key).GoogleCloudKMSReencryptRequest(googleCloudKMSReencryptRequest).Execute()
 
 Re-encrypt existing ciphertext data to a new version
 
@@ -5983,8 +5807,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSRegisterKey
 
-> GoogleCloudKMSRegisterKey(ctx, gcpkmsMountPath, key).GoogleCloudKMSRegisterKeyRequest(googleCloudKMSRegisterKeyRequest).Execute()
-
 Register an existing crypto key in Google Cloud KMS
 
 ### Example
@@ -6051,8 +5873,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSRotateKey
 
-> GoogleCloudKMSRotateKey(ctx, gcpkmsMountPath, key).Execute()
-
 Rotate a crypto key to a new primary version
 
 ### Example
@@ -6114,8 +5934,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSSign
-
-> GoogleCloudKMSSign(ctx, gcpkmsMountPath, key).GoogleCloudKMSSignRequest(googleCloudKMSSignRequest).Execute()
 
 Signs a message or digest using a named key
 
@@ -6183,8 +6001,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSTrimKey
 
-> GoogleCloudKMSTrimKey(ctx, gcpkmsMountPath, key).Execute()
-
 Delete old crypto key versions from Google Cloud KMS
 
 ### Example
@@ -6246,8 +6062,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSVerify
-
-> GoogleCloudKMSVerify(ctx, gcpkmsMountPath, key).GoogleCloudKMSVerifyRequest(googleCloudKMSVerifyRequest).Execute()
 
 Verify a signature using a named key
 
@@ -6315,8 +6129,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSWriteConfig
 
-> GoogleCloudKMSWriteConfig(ctx, gcpkmsMountPath).GoogleCloudKMSWriteConfigRequest(googleCloudKMSWriteConfigRequest).Execute()
-
 Configure the GCP KMS secrets engine
 
 ### Example
@@ -6378,8 +6190,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudKMSWriteKey
-
-> GoogleCloudKMSWriteKey(ctx, gcpkmsMountPath, key).GoogleCloudKMSWriteKeyRequest(googleCloudKMSWriteKeyRequest).Execute()
 
 Interact with crypto keys in Vault and Google Cloud KMS
 
@@ -6447,8 +6257,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudKMSWriteKeyConfig
 
-> GoogleCloudKMSWriteKeyConfig(ctx, gcpkmsMountPath, key).GoogleCloudKMSWriteKeyConfigRequest(googleCloudKMSWriteKeyConfigRequest).Execute()
-
 Configure the key in Vault
 
 ### Example
@@ -6515,8 +6323,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudListRolesets
 
-> GoogleCloudListRolesets(ctx, gcpMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -6575,8 +6381,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudListStaticAccounts
-
-> GoogleCloudListStaticAccounts(ctx, gcpMountPath).List(list).Execute()
 
 
 
@@ -6637,8 +6441,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudReadConfig
 
-> GoogleCloudReadConfig(ctx, gcpMountPath).Execute()
-
 
 
 ### Example
@@ -6696,8 +6498,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudReadKey
-
-> GoogleCloudReadKey(ctx, gcpMountPath, roleset).Execute()
 
 
 
@@ -6761,8 +6561,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudReadRoleset
 
-> GoogleCloudReadRoleset(ctx, gcpMountPath, name).Execute()
-
 
 
 ### Example
@@ -6824,8 +6622,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudReadRolesetKey
-
-> GoogleCloudReadRolesetKey(ctx, gcpMountPath, roleset).Execute()
 
 
 
@@ -6889,8 +6685,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudReadRolesetToken
 
-> GoogleCloudReadRolesetToken(ctx, gcpMountPath, roleset).Execute()
-
 
 
 ### Example
@@ -6952,8 +6746,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudReadStaticAccount
-
-> GoogleCloudReadStaticAccount(ctx, gcpMountPath, name).Execute()
 
 
 
@@ -7017,8 +6809,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudReadStaticAccountKey
 
-> GoogleCloudReadStaticAccountKey(ctx, gcpMountPath, name).Execute()
-
 
 
 ### Example
@@ -7080,8 +6870,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudReadStaticAccountToken
-
-> GoogleCloudReadStaticAccountToken(ctx, gcpMountPath, name).Execute()
 
 
 
@@ -7145,8 +6933,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudReadToken
 
-> GoogleCloudReadToken(ctx, gcpMountPath, roleset).Execute()
-
 
 
 ### Example
@@ -7208,8 +6994,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudRotateRoleset
-
-> GoogleCloudRotateRoleset(ctx, gcpMountPath, name).Execute()
 
 
 
@@ -7273,8 +7057,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudRotateRolesetKey
 
-> GoogleCloudRotateRolesetKey(ctx, gcpMountPath, name).Execute()
-
 
 
 ### Example
@@ -7337,8 +7119,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudRotateRoot
 
-> GoogleCloudRotateRoot(ctx, gcpMountPath).Execute()
-
 
 
 ### Example
@@ -7396,8 +7176,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudRotateStaticAccountKey
-
-> GoogleCloudRotateStaticAccountKey(ctx, gcpMountPath, name).Execute()
 
 
 
@@ -7461,8 +7239,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudWriteConfig
 
-> GoogleCloudWriteConfig(ctx, gcpMountPath).GoogleCloudWriteConfigRequest(googleCloudWriteConfigRequest).Execute()
-
 
 
 ### Example
@@ -7524,8 +7300,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudWriteKey
-
-> GoogleCloudWriteKey(ctx, gcpMountPath, roleset).GoogleCloudWriteKeyRequest(googleCloudWriteKeyRequest).Execute()
 
 
 
@@ -7593,8 +7367,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudWriteRoleset
 
-> GoogleCloudWriteRoleset(ctx, gcpMountPath, name).GoogleCloudWriteRolesetRequest(googleCloudWriteRolesetRequest).Execute()
-
 
 
 ### Example
@@ -7660,8 +7432,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudWriteRolesetKey
-
-> GoogleCloudWriteRolesetKey(ctx, gcpMountPath, roleset).GoogleCloudWriteRolesetKeyRequest(googleCloudWriteRolesetKeyRequest).Execute()
 
 
 
@@ -7729,8 +7499,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudWriteRolesetToken
 
-> GoogleCloudWriteRolesetToken(ctx, gcpMountPath, roleset).Execute()
-
 
 
 ### Example
@@ -7792,8 +7560,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudWriteStaticAccount
-
-> GoogleCloudWriteStaticAccount(ctx, gcpMountPath, name).GoogleCloudWriteStaticAccountRequest(googleCloudWriteStaticAccountRequest).Execute()
 
 
 
@@ -7861,8 +7627,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudWriteStaticAccountKey
 
-> GoogleCloudWriteStaticAccountKey(ctx, gcpMountPath, name).GoogleCloudWriteStaticAccountKeyRequest(googleCloudWriteStaticAccountKeyRequest).Execute()
-
 
 
 ### Example
@@ -7929,8 +7693,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudWriteStaticAccountToken
 
-> GoogleCloudWriteStaticAccountToken(ctx, gcpMountPath, name).Execute()
-
 
 
 ### Example
@@ -7992,8 +7754,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudWriteToken
-
-> GoogleCloudWriteToken(ctx, gcpMountPath, roleset).Execute()
 
 
 
@@ -8057,8 +7817,6 @@ Name | Type | Description  | Notes
 
 ## KVv1Delete
 
-> KVv1Delete(ctx, kvMountPath, path).Execute()
-
 Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 
 ### Example
@@ -8120,8 +7878,6 @@ Name | Type | Description  | Notes
 
 
 ## KVv1Read
-
-> KVv1Read(ctx, kvMountPath, path).List(list).Execute()
 
 Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 
@@ -8186,8 +7942,6 @@ Name | Type | Description  | Notes
 
 ## KVv1Write
 
-> KVv1Write(ctx, kvMountPath, path).Execute()
-
 Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 
 ### Example
@@ -8249,8 +8003,6 @@ Name | Type | Description  | Notes
 
 
 ## KVv2Delete
-
-> KVv2Delete(ctx, path, secretMountPath).Execute()
 
 Write, Patch, Read, and Delete data in the Key-Value Store.
 
@@ -8314,8 +8066,6 @@ Name | Type | Description  | Notes
 
 ## KVv2DeleteMetadata
 
-> KVv2DeleteMetadata(ctx, path, secretMountPath).Execute()
-
 Configures settings for the KV store
 
 ### Example
@@ -8377,8 +8127,6 @@ Name | Type | Description  | Notes
 
 
 ## KVv2DeleteVersions
-
-> KVv2DeleteVersions(ctx, path, secretMountPath).KVv2DeleteVersionsRequest(kVv2DeleteVersionsRequest).Execute()
 
 Marks one or more versions as deleted in the KV store.
 
@@ -8446,8 +8194,6 @@ Name | Type | Description  | Notes
 
 ## KVv2DestroyVersions
 
-> KVv2DestroyVersions(ctx, path, secretMountPath).KVv2DestroyVersionsRequest(kVv2DestroyVersionsRequest).Execute()
-
 Permanently removes one or more versions in the KV store
 
 ### Example
@@ -8514,8 +8260,6 @@ Name | Type | Description  | Notes
 
 ## KVv2Read
 
-> KVv2Read(ctx, path, secretMountPath).Execute()
-
 Write, Patch, Read, and Delete data in the Key-Value Store.
 
 ### Example
@@ -8578,8 +8322,6 @@ Name | Type | Description  | Notes
 
 ## KVv2ReadConfig
 
-> KVv2ReadConfig(ctx, secretMountPath).Execute()
-
 Read the backend level settings.
 
 ### Example
@@ -8637,8 +8379,6 @@ Name | Type | Description  | Notes
 
 
 ## KVv2ReadMetadata
-
-> KVv2ReadMetadata(ctx, path, secretMountPath).List(list).Execute()
 
 Configures settings for the KV store
 
@@ -8703,8 +8443,6 @@ Name | Type | Description  | Notes
 
 ## KVv2ReadSubkeys
 
-> KVv2ReadSubkeys(ctx, path, secretMountPath).Execute()
-
 Read the structure of a secret entry from the Key-Value store with the values removed.
 
 ### Example
@@ -8766,8 +8504,6 @@ Name | Type | Description  | Notes
 
 
 ## KVv2UndeleteVersions
-
-> KVv2UndeleteVersions(ctx, path, secretMountPath).KVv2UndeleteVersionsRequest(kVv2UndeleteVersionsRequest).Execute()
 
 Undeletes one or more versions from the KV store.
 
@@ -8835,8 +8571,6 @@ Name | Type | Description  | Notes
 
 ## KVv2Write
 
-> KVv2Write(ctx, path, secretMountPath).KVv2WriteRequest(kVv2WriteRequest).Execute()
-
 Write, Patch, Read, and Delete data in the Key-Value Store.
 
 ### Example
@@ -8903,8 +8637,6 @@ Name | Type | Description  | Notes
 
 ## KVv2WriteConfig
 
-> KVv2WriteConfig(ctx, secretMountPath).KVv2WriteConfigRequest(kVv2WriteConfigRequest).Execute()
-
 Configure backend level settings that are applied to every key in the key-value store.
 
 ### Example
@@ -8966,8 +8698,6 @@ Name | Type | Description  | Notes
 
 
 ## KVv2WriteMetadata
-
-> KVv2WriteMetadata(ctx, path, secretMountPath).KVv2WriteMetadataRequest(kVv2WriteMetadataRequest).Execute()
 
 Configures settings for the KV store
 
@@ -9035,8 +8765,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesDeleteConfig
 
-> KubernetesDeleteConfig(ctx, kubernetesMountPath).Execute()
-
 
 
 ### Example
@@ -9094,8 +8822,6 @@ Name | Type | Description  | Notes
 
 
 ## KubernetesDeleteRole
-
-> KubernetesDeleteRole(ctx, kubernetesMountPath, name).Execute()
 
 
 
@@ -9159,8 +8885,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesListRoles
 
-> KubernetesListRoles(ctx, kubernetesMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -9220,8 +8944,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesReadConfig
 
-> KubernetesReadConfig(ctx, kubernetesMountPath).Execute()
-
 
 
 ### Example
@@ -9279,8 +9001,6 @@ Name | Type | Description  | Notes
 
 
 ## KubernetesReadRole
-
-> KubernetesReadRole(ctx, kubernetesMountPath, name).Execute()
 
 
 
@@ -9344,8 +9064,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesWriteConfig
 
-> KubernetesWriteConfig(ctx, kubernetesMountPath).KubernetesWriteConfigRequest(kubernetesWriteConfigRequest).Execute()
-
 
 
 ### Example
@@ -9407,8 +9125,6 @@ Name | Type | Description  | Notes
 
 
 ## KubernetesWriteCredentials
-
-> KubernetesWriteCredentials(ctx, kubernetesMountPath, name).KubernetesWriteCredentialsRequest(kubernetesWriteCredentialsRequest).Execute()
 
 
 
@@ -9476,8 +9192,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesWriteRole
 
-> KubernetesWriteRole(ctx, kubernetesMountPath, name).KubernetesWriteRoleRequest(kubernetesWriteRoleRequest).Execute()
-
 
 
 ### Example
@@ -9543,8 +9257,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPCheckInLibrary
-
-> LDAPCheckInLibrary(ctx, ldapMountPath, name).LDAPCheckInLibraryRequest(lDAPCheckInLibraryRequest).Execute()
 
 Check service accounts in to the library.
 
@@ -9612,8 +9324,6 @@ Name | Type | Description  | Notes
 
 ## LDAPCheckInManageLibrary
 
-> LDAPCheckInManageLibrary(ctx, ldapMountPath, name).LDAPCheckInManageLibraryRequest(lDAPCheckInManageLibraryRequest).Execute()
-
 Check service accounts in to the library.
 
 ### Example
@@ -9679,8 +9389,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPCheckOutLibrary
-
-> LDAPCheckOutLibrary(ctx, ldapMountPath, name).LDAPCheckOutLibraryRequest(lDAPCheckOutLibraryRequest).Execute()
 
 Check a service account out from the library.
 
@@ -9748,8 +9456,6 @@ Name | Type | Description  | Notes
 
 ## LDAPDeleteConfig
 
-> LDAPDeleteConfig(ctx, ldapMountPath).Execute()
-
 
 
 ### Example
@@ -9807,8 +9513,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPDeleteLibrary
-
-> LDAPDeleteLibrary(ctx, ldapMountPath, name).Execute()
 
 Delete a library set.
 
@@ -9872,8 +9576,6 @@ Name | Type | Description  | Notes
 
 ## LDAPDeleteRole
 
-> LDAPDeleteRole(ctx, ldapMountPath, name).Execute()
-
 
 
 ### Example
@@ -9935,8 +9637,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPDeleteStaticRole
-
-> LDAPDeleteStaticRole(ctx, ldapMountPath, name).Execute()
 
 
 
@@ -10000,8 +9700,6 @@ Name | Type | Description  | Notes
 
 ## LDAPListLibraries
 
-> LDAPListLibraries(ctx, ldapMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -10060,8 +9758,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPListRoles
-
-> LDAPListRoles(ctx, ldapMountPath).List(list).Execute()
 
 
 
@@ -10122,8 +9818,6 @@ Name | Type | Description  | Notes
 
 ## LDAPListStaticRoles
 
-> LDAPListStaticRoles(ctx, ldapMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -10183,8 +9877,6 @@ Name | Type | Description  | Notes
 
 ## LDAPReadConfig
 
-> LDAPReadConfig(ctx, ldapMountPath).Execute()
-
 
 
 ### Example
@@ -10242,8 +9934,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPReadCredentials
-
-> LDAPReadCredentials(ctx, ldapMountPath, name).Execute()
 
 
 
@@ -10307,8 +9997,6 @@ Name | Type | Description  | Notes
 
 ## LDAPReadLibrary
 
-> LDAPReadLibrary(ctx, ldapMountPath, name).Execute()
-
 Read a library set.
 
 ### Example
@@ -10370,8 +10058,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPReadLibraryStatus
-
-> LDAPReadLibraryStatus(ctx, ldapMountPath, name).Execute()
 
 Check the status of the service accounts in a library set.
 
@@ -10435,8 +10121,6 @@ Name | Type | Description  | Notes
 
 ## LDAPReadRole
 
-> LDAPReadRole(ctx, ldapMountPath, name).Execute()
-
 
 
 ### Example
@@ -10498,8 +10182,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPReadStaticCredentials
-
-> LDAPReadStaticCredentials(ctx, ldapMountPath, name).Execute()
 
 
 
@@ -10563,8 +10245,6 @@ Name | Type | Description  | Notes
 
 ## LDAPReadStaticRole
 
-> LDAPReadStaticRole(ctx, ldapMountPath, name).Execute()
-
 
 
 ### Example
@@ -10626,8 +10306,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPRotateRole
-
-> LDAPRotateRole(ctx, ldapMountPath, name).Execute()
 
 
 
@@ -10691,8 +10369,6 @@ Name | Type | Description  | Notes
 
 ## LDAPRotateRoot
 
-> LDAPRotateRoot(ctx, ldapMountPath).Execute()
-
 
 
 ### Example
@@ -10750,8 +10426,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPWriteConfig
-
-> LDAPWriteConfig(ctx, ldapMountPath).LDAPWriteConfigRequest(lDAPWriteConfigRequest).Execute()
 
 
 
@@ -10814,8 +10488,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPWriteLibrary
-
-> LDAPWriteLibrary(ctx, ldapMountPath, name).LDAPWriteLibraryRequest(lDAPWriteLibraryRequest).Execute()
 
 Update a library set.
 
@@ -10883,8 +10555,6 @@ Name | Type | Description  | Notes
 
 ## LDAPWriteRole
 
-> LDAPWriteRole(ctx, ldapMountPath, name).LDAPWriteRoleRequest(lDAPWriteRoleRequest).Execute()
-
 
 
 ### Example
@@ -10950,8 +10620,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPWriteStaticRole
-
-> LDAPWriteStaticRole(ctx, ldapMountPath, name).LDAPWriteStaticRoleRequest(lDAPWriteStaticRoleRequest).Execute()
 
 
 
@@ -11019,8 +10687,6 @@ Name | Type | Description  | Notes
 
 ## MongoDBAtlasDeleteRole
 
-> MongoDBAtlasDeleteRole(ctx, mongodbatlasMountPath, name).Execute()
-
 Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 
 ### Example
@@ -11083,8 +10749,6 @@ Name | Type | Description  | Notes
 
 ## MongoDBAtlasListRoles
 
-> MongoDBAtlasListRoles(ctx, mongodbatlasMountPath).List(list).Execute()
-
 List the existing roles in this backend
 
 ### Example
@@ -11144,8 +10808,6 @@ Name | Type | Description  | Notes
 
 ## MongoDBAtlasReadConfig
 
-> MongoDBAtlasReadConfig(ctx, mongodbatlasMountPath).Execute()
-
 Configure the  credentials that are used to manage Database Users.
 
 ### Example
@@ -11203,8 +10865,6 @@ Name | Type | Description  | Notes
 
 
 ## MongoDBAtlasReadCredentials
-
-> MongoDBAtlasReadCredentials(ctx, mongodbatlasMountPath, name).Execute()
 
 Generate MongoDB Atlas Programmatic API from a specific Vault role.
 
@@ -11268,8 +10928,6 @@ Name | Type | Description  | Notes
 
 ## MongoDBAtlasReadRole
 
-> MongoDBAtlasReadRole(ctx, mongodbatlasMountPath, name).Execute()
-
 Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 
 ### Example
@@ -11331,8 +10989,6 @@ Name | Type | Description  | Notes
 
 
 ## MongoDBAtlasWriteConfig
-
-> MongoDBAtlasWriteConfig(ctx, mongodbatlasMountPath).MongoDBAtlasWriteConfigRequest(mongoDBAtlasWriteConfigRequest).Execute()
 
 Configure the  credentials that are used to manage Database Users.
 
@@ -11396,8 +11052,6 @@ Name | Type | Description  | Notes
 
 ## MongoDBAtlasWriteCredentials
 
-> MongoDBAtlasWriteCredentials(ctx, mongodbatlasMountPath, name).Execute()
-
 Generate MongoDB Atlas Programmatic API from a specific Vault role.
 
 ### Example
@@ -11459,8 +11113,6 @@ Name | Type | Description  | Notes
 
 
 ## MongoDBAtlasWriteRole
-
-> MongoDBAtlasWriteRole(ctx, mongodbatlasMountPath, name).MongoDBAtlasWriteRoleRequest(mongoDBAtlasWriteRoleRequest).Execute()
 
 Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 
@@ -11528,8 +11180,6 @@ Name | Type | Description  | Notes
 
 ## NomadDeleteAccessConfig
 
-> NomadDeleteAccessConfig(ctx, nomadMountPath).Execute()
-
 
 
 ### Example
@@ -11588,8 +11238,6 @@ Name | Type | Description  | Notes
 
 ## NomadDeleteLeaseConfig
 
-> NomadDeleteLeaseConfig(ctx, nomadMountPath).Execute()
-
 Configure the lease parameters for generated tokens
 
 ### Example
@@ -11647,8 +11295,6 @@ Name | Type | Description  | Notes
 
 
 ## NomadDeleteRole
-
-> NomadDeleteRole(ctx, name, nomadMountPath).Execute()
 
 
 
@@ -11712,8 +11358,6 @@ Name | Type | Description  | Notes
 
 ## NomadListRoles
 
-> NomadListRoles(ctx, nomadMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -11773,8 +11417,6 @@ Name | Type | Description  | Notes
 
 ## NomadReadAccessConfig
 
-> NomadReadAccessConfig(ctx, nomadMountPath).Execute()
-
 
 
 ### Example
@@ -11832,8 +11474,6 @@ Name | Type | Description  | Notes
 
 
 ## NomadReadCredentials
-
-> NomadReadCredentials(ctx, name, nomadMountPath).Execute()
 
 
 
@@ -11897,8 +11537,6 @@ Name | Type | Description  | Notes
 
 ## NomadReadLeaseConfig
 
-> NomadReadLeaseConfig(ctx, nomadMountPath).Execute()
-
 Configure the lease parameters for generated tokens
 
 ### Example
@@ -11956,8 +11594,6 @@ Name | Type | Description  | Notes
 
 
 ## NomadReadRole
-
-> NomadReadRole(ctx, name, nomadMountPath).Execute()
 
 
 
@@ -12021,8 +11657,6 @@ Name | Type | Description  | Notes
 
 ## NomadWriteAccessConfig
 
-> NomadWriteAccessConfig(ctx, nomadMountPath).NomadWriteAccessConfigRequest(nomadWriteAccessConfigRequest).Execute()
-
 
 
 ### Example
@@ -12085,8 +11719,6 @@ Name | Type | Description  | Notes
 
 ## NomadWriteLeaseConfig
 
-> NomadWriteLeaseConfig(ctx, nomadMountPath).NomadWriteLeaseConfigRequest(nomadWriteLeaseConfigRequest).Execute()
-
 Configure the lease parameters for generated tokens
 
 ### Example
@@ -12148,8 +11780,6 @@ Name | Type | Description  | Notes
 
 
 ## NomadWriteRole
-
-> NomadWriteRole(ctx, name, nomadMountPath).NomadWriteRoleRequest(nomadWriteRoleRequest).Execute()
 
 
 
@@ -12217,8 +11847,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPCheckInLibrary
 
-> OpenLDAPCheckInLibrary(ctx, name, openldapMountPath).OpenLDAPCheckInLibraryRequest(openLDAPCheckInLibraryRequest).Execute()
-
 Check service accounts in to the library.
 
 ### Example
@@ -12284,8 +11912,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPCheckInManageLibrary
-
-> OpenLDAPCheckInManageLibrary(ctx, name, openldapMountPath).OpenLDAPCheckInManageLibraryRequest(openLDAPCheckInManageLibraryRequest).Execute()
 
 Check service accounts in to the library.
 
@@ -12353,8 +11979,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPCheckOutLibrary
 
-> OpenLDAPCheckOutLibrary(ctx, name, openldapMountPath).OpenLDAPCheckOutLibraryRequest(openLDAPCheckOutLibraryRequest).Execute()
-
 Check a service account out from the library.
 
 ### Example
@@ -12421,8 +12045,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPDeleteConfig
 
-> OpenLDAPDeleteConfig(ctx, openldapMountPath).Execute()
-
 
 
 ### Example
@@ -12480,8 +12102,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPDeleteLibrary
-
-> OpenLDAPDeleteLibrary(ctx, name, openldapMountPath).Execute()
 
 Delete a library set.
 
@@ -12545,8 +12165,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPDeleteRole
 
-> OpenLDAPDeleteRole(ctx, name, openldapMountPath).Execute()
-
 
 
 ### Example
@@ -12608,8 +12226,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPDeleteStaticRole
-
-> OpenLDAPDeleteStaticRole(ctx, name, openldapMountPath).Execute()
 
 
 
@@ -12673,8 +12289,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPListLibraries
 
-> OpenLDAPListLibraries(ctx, openldapMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -12733,8 +12347,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPListRoles
-
-> OpenLDAPListRoles(ctx, openldapMountPath).List(list).Execute()
 
 
 
@@ -12795,8 +12407,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPListStaticRoles
 
-> OpenLDAPListStaticRoles(ctx, openldapMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -12856,8 +12466,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPReadConfig
 
-> OpenLDAPReadConfig(ctx, openldapMountPath).Execute()
-
 
 
 ### Example
@@ -12915,8 +12523,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPReadCredentials
-
-> OpenLDAPReadCredentials(ctx, name, openldapMountPath).Execute()
 
 
 
@@ -12980,8 +12586,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPReadLibrary
 
-> OpenLDAPReadLibrary(ctx, name, openldapMountPath).Execute()
-
 Read a library set.
 
 ### Example
@@ -13043,8 +12647,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPReadLibraryStatus
-
-> OpenLDAPReadLibraryStatus(ctx, name, openldapMountPath).Execute()
 
 Check the status of the service accounts in a library set.
 
@@ -13108,8 +12710,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPReadRole
 
-> OpenLDAPReadRole(ctx, name, openldapMountPath).Execute()
-
 
 
 ### Example
@@ -13171,8 +12771,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPReadStaticCredentials
-
-> OpenLDAPReadStaticCredentials(ctx, name, openldapMountPath).Execute()
 
 
 
@@ -13236,8 +12834,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPReadStaticRole
 
-> OpenLDAPReadStaticRole(ctx, name, openldapMountPath).Execute()
-
 
 
 ### Example
@@ -13299,8 +12895,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPRotateRole
-
-> OpenLDAPRotateRole(ctx, name, openldapMountPath).Execute()
 
 
 
@@ -13364,8 +12958,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPRotateRoot
 
-> OpenLDAPRotateRoot(ctx, openldapMountPath).Execute()
-
 
 
 ### Example
@@ -13423,8 +13015,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPWriteConfig
-
-> OpenLDAPWriteConfig(ctx, openldapMountPath).OpenLDAPWriteConfigRequest(openLDAPWriteConfigRequest).Execute()
 
 
 
@@ -13487,8 +13077,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPWriteLibrary
-
-> OpenLDAPWriteLibrary(ctx, name, openldapMountPath).OpenLDAPWriteLibraryRequest(openLDAPWriteLibraryRequest).Execute()
 
 Update a library set.
 
@@ -13556,8 +13144,6 @@ Name | Type | Description  | Notes
 
 ## OpenLDAPWriteRole
 
-> OpenLDAPWriteRole(ctx, name, openldapMountPath).OpenLDAPWriteRoleRequest(openLDAPWriteRoleRequest).Execute()
-
 
 
 ### Example
@@ -13623,8 +13209,6 @@ Name | Type | Description  | Notes
 
 
 ## OpenLDAPWriteStaticRole
-
-> OpenLDAPWriteStaticRole(ctx, name, openldapMountPath).OpenLDAPWriteStaticRoleRequest(openLDAPWriteStaticRoleRequest).Execute()
 
 
 
@@ -13692,8 +13276,6 @@ Name | Type | Description  | Notes
 
 ## PKIBundleWrite
 
-> PKIBundleWrite(ctx, pkiMountPath).PKIBundleWriteRequest(pKIBundleWriteRequest).Execute()
-
 
 
 ### Example
@@ -13755,8 +13337,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIDeleteKey
-
-> PKIDeleteKey(ctx, keyRef, pkiMountPath).Execute()
 
 
 
@@ -13820,8 +13400,6 @@ Name | Type | Description  | Notes
 
 ## PKIDeleteRole
 
-> PKIDeleteRole(ctx, name, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -13884,8 +13462,6 @@ Name | Type | Description  | Notes
 
 ## PKIDeleteRoot
 
-> PKIDeleteRoot(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -13943,8 +13519,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIGenerateRoot
-
-> PKIGenerateRoot(ctx, exported, pkiMountPath).PKIGenerateRootRequest(pKIGenerateRootRequest).Execute()
 
 
 
@@ -14012,8 +13586,6 @@ Name | Type | Description  | Notes
 
 ## PKIImportKeys
 
-> PKIImportKeys(ctx, pkiMountPath).PKIImportKeysRequest(pKIImportKeysRequest).Execute()
-
 
 
 ### Example
@@ -14075,8 +13647,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIIssuerIssueRole
-
-> PKIIssuerIssueRole(ctx, issuerRef, pkiMountPath, role).PKIIssuerIssueRoleRequest(pKIIssuerIssueRoleRequest).Execute()
 
 
 
@@ -14148,8 +13718,6 @@ Name | Type | Description  | Notes
 
 ## PKIIssuerResignCRLs
 
-> PKIIssuerResignCRLs(ctx, issuerRef, pkiMountPath).PKIIssuerResignCRLsRequest(pKIIssuerResignCRLsRequest).Execute()
-
 
 
 ### Example
@@ -14216,8 +13784,6 @@ Name | Type | Description  | Notes
 
 ## PKIIssuerRevoke
 
-> PKIIssuerRevoke(ctx, issuerRef, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -14279,8 +13845,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIIssuerSignIntermediate
-
-> PKIIssuerSignIntermediate(ctx, issuerRef, pkiMountPath).PKIIssuerSignIntermediateRequest(pKIIssuerSignIntermediateRequest).Execute()
 
 
 
@@ -14348,8 +13912,6 @@ Name | Type | Description  | Notes
 
 ## PKIIssuerSignRevocationList
 
-> PKIIssuerSignRevocationList(ctx, issuerRef, pkiMountPath).PKIIssuerSignRevocationListRequest(pKIIssuerSignRevocationListRequest).Execute()
-
 
 
 ### Example
@@ -14415,8 +13977,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIIssuerSignRole
-
-> PKIIssuerSignRole(ctx, issuerRef, pkiMountPath, role).PKIIssuerSignRoleRequest(pKIIssuerSignRoleRequest).Execute()
 
 
 
@@ -14488,8 +14048,6 @@ Name | Type | Description  | Notes
 
 ## PKIIssuerSignSelfIssued
 
-> PKIIssuerSignSelfIssued(ctx, issuerRef, pkiMountPath).PKIIssuerSignSelfIssuedRequest(pKIIssuerSignSelfIssuedRequest).Execute()
-
 
 
 ### Example
@@ -14556,8 +14114,6 @@ Name | Type | Description  | Notes
 
 ## PKIIssuerSignVerbatim
 
-> PKIIssuerSignVerbatim(ctx, issuerRef, pkiMountPath).PKIIssuerSignVerbatimRequest(pKIIssuerSignVerbatimRequest).Execute()
-
 
 
 ### Example
@@ -14623,8 +14179,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIIssuerSignVerbatimRole
-
-> PKIIssuerSignVerbatimRole(ctx, issuerRef, pkiMountPath, role).PKIIssuerSignVerbatimRoleRequest(pKIIssuerSignVerbatimRoleRequest).Execute()
 
 
 
@@ -14696,8 +14250,6 @@ Name | Type | Description  | Notes
 
 ## PKIIssuersGenerateIntermediate
 
-> PKIIssuersGenerateIntermediate(ctx, exported, pkiMountPath).PKIIssuersGenerateIntermediateRequest(pKIIssuersGenerateIntermediateRequest).Execute()
-
 
 
 ### Example
@@ -14763,8 +14315,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIIssuersGenerateRoot
-
-> PKIIssuersGenerateRoot(ctx, exported, pkiMountPath).PKIIssuersGenerateRootRequest(pKIIssuersGenerateRootRequest).Execute()
 
 
 
@@ -14832,8 +14382,6 @@ Name | Type | Description  | Notes
 
 ## PKIIssuersList
 
-> PKIIssuersList(ctx, pkiMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -14892,8 +14440,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIListCerts
-
-> PKIListCerts(ctx, pkiMountPath).List(list).Execute()
 
 
 
@@ -14954,8 +14500,6 @@ Name | Type | Description  | Notes
 
 ## PKIListCertsRevoked
 
-> PKIListCertsRevoked(ctx, pkiMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -15014,8 +14558,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIListKeys
-
-> PKIListKeys(ctx, pkiMountPath).List(list).Execute()
 
 
 
@@ -15076,8 +14618,6 @@ Name | Type | Description  | Notes
 
 ## PKIListRoles
 
-> PKIListRoles(ctx, pkiMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -15137,8 +14677,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadAutoTidyConfig
 
-> PKIReadAutoTidyConfig(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -15196,8 +14734,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadCA
-
-> PKIReadCA(ctx, pkiMountPath).Execute()
 
 
 
@@ -15257,8 +14793,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadCAChain
 
-> PKIReadCAChain(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -15316,8 +14850,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadCAPem
-
-> PKIReadCAPem(ctx, pkiMountPath).Execute()
 
 
 
@@ -15377,8 +14909,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadCRL
 
-> PKIReadCRL(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -15436,8 +14966,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadCRLConfig
-
-> PKIReadCRLConfig(ctx, pkiMountPath).Execute()
 
 
 
@@ -15497,8 +15025,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadCRLRotate
 
-> PKIReadCRLRotate(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -15557,8 +15083,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadCRLRotateDelta
 
-> PKIReadCRLRotateDelta(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -15616,8 +15140,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadCert
-
-> PKIReadCert(ctx, pkiMountPath, serial).Execute()
 
 
 
@@ -15681,8 +15203,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadCertCAChain
 
-> PKIReadCertCAChain(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -15740,8 +15260,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadCertRaw
-
-> PKIReadCertRaw(ctx, pkiMountPath, serial).Execute()
 
 
 
@@ -15805,8 +15323,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadCertRawPem
 
-> PKIReadCertRawPem(ctx, pkiMountPath, serial).Execute()
-
 
 
 ### Example
@@ -15869,8 +15385,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadClusterConfig
 
-> PKIReadClusterConfig(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -15928,8 +15442,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadDeltaCRL
-
-> PKIReadDeltaCRL(ctx, pkiMountPath).Execute()
 
 
 
@@ -15989,8 +15501,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadIssuersConfig
 
-> PKIReadIssuersConfig(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -16048,8 +15558,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadKey
-
-> PKIReadKey(ctx, keyRef, pkiMountPath).Execute()
 
 
 
@@ -16113,8 +15621,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadKeysConfig
 
-> PKIReadKeysConfig(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -16172,8 +15678,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReadOCSPReq
-
-> PKIReadOCSPReq(ctx, pkiMountPath, req).Execute()
 
 
 
@@ -16237,8 +15741,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadRole
 
-> PKIReadRole(ctx, name, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -16301,8 +15803,6 @@ Name | Type | Description  | Notes
 
 ## PKIReadURLConfig
 
-> PKIReadURLConfig(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -16360,8 +15860,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIReplaceRoot
-
-> PKIReplaceRoot(ctx, pkiMountPath).PKIReplaceRootRequest(pKIReplaceRootRequest).Execute()
 
 
 
@@ -16425,8 +15923,6 @@ Name | Type | Description  | Notes
 
 ## PKIRevoke
 
-> PKIRevoke(ctx, pkiMountPath).PKIRevokeRequest(pKIRevokeRequest).Execute()
-
 
 
 ### Example
@@ -16488,8 +15984,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIRevokeWithKey
-
-> PKIRevokeWithKey(ctx, pkiMountPath).PKIRevokeWithKeyRequest(pKIRevokeWithKeyRequest).Execute()
 
 
 
@@ -16553,8 +16047,6 @@ Name | Type | Description  | Notes
 
 ## PKIRootSignIntermediate
 
-> PKIRootSignIntermediate(ctx, pkiMountPath).PKIRootSignIntermediateRequest(pKIRootSignIntermediateRequest).Execute()
-
 
 
 ### Example
@@ -16617,8 +16109,6 @@ Name | Type | Description  | Notes
 
 ## PKIRootSignSelfIssued
 
-> PKIRootSignSelfIssued(ctx, pkiMountPath).PKIRootSignSelfIssuedRequest(pKIRootSignSelfIssuedRequest).Execute()
-
 
 
 ### Example
@@ -16680,8 +16170,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIRotateRoot
-
-> PKIRotateRoot(ctx, exported, pkiMountPath).PKIRotateRootRequest(pKIRotateRootRequest).Execute()
 
 
 
@@ -16749,8 +16237,6 @@ Name | Type | Description  | Notes
 
 ## PKISignRole
 
-> PKISignRole(ctx, pkiMountPath, role).PKISignRoleRequest(pKISignRoleRequest).Execute()
-
 
 
 ### Example
@@ -16817,8 +16303,6 @@ Name | Type | Description  | Notes
 
 ## PKISignVerbatim
 
-> PKISignVerbatim(ctx, pkiMountPath).PKISignVerbatimRequest(pKISignVerbatimRequest).Execute()
-
 
 
 ### Example
@@ -16880,8 +16364,6 @@ Name | Type | Description  | Notes
 
 
 ## PKISignVerbatimRole
-
-> PKISignVerbatimRole(ctx, pkiMountPath, role).PKISignVerbatimRoleRequest(pKISignVerbatimRoleRequest).Execute()
 
 
 
@@ -16949,8 +16431,6 @@ Name | Type | Description  | Notes
 
 ## PKITidy
 
-> PKITidy(ctx, pkiMountPath).PKITidyRequest(pKITidyRequest).Execute()
-
 
 
 ### Example
@@ -17013,8 +16493,6 @@ Name | Type | Description  | Notes
 
 ## PKITidyCancel
 
-> PKITidyCancel(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -17073,8 +16551,6 @@ Name | Type | Description  | Notes
 
 ## PKITidyStatus
 
-> PKITidyStatus(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -17132,8 +16608,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIWriteAutoTidyConfig
-
-> PKIWriteAutoTidyConfig(ctx, pkiMountPath).PKIWriteAutoTidyConfigRequest(pKIWriteAutoTidyConfigRequest).Execute()
 
 
 
@@ -17197,8 +16671,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteCAConfig
 
-> PKIWriteCAConfig(ctx, pkiMountPath).PKIWriteCAConfigRequest(pKIWriteCAConfigRequest).Execute()
-
 
 
 ### Example
@@ -17260,8 +16732,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIWriteCRLConfig
-
-> PKIWriteCRLConfig(ctx, pkiMountPath).PKIWriteCRLConfigRequest(pKIWriteCRLConfigRequest).Execute()
 
 
 
@@ -17325,8 +16795,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteCerts
 
-> PKIWriteCerts(ctx, pkiMountPath).PKIWriteCertsRequest(pKIWriteCertsRequest).Execute()
-
 
 
 ### Example
@@ -17388,8 +16856,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIWriteClusterConfig
-
-> PKIWriteClusterConfig(ctx, pkiMountPath).PKIWriteClusterConfigRequest(pKIWriteClusterConfigRequest).Execute()
 
 
 
@@ -17453,8 +16919,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteIntermediateCrossSign
 
-> PKIWriteIntermediateCrossSign(ctx, pkiMountPath).PKIWriteIntermediateCrossSignRequest(pKIWriteIntermediateCrossSignRequest).Execute()
-
 
 
 ### Example
@@ -17516,8 +16980,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIWriteIntermediateGenerate
-
-> PKIWriteIntermediateGenerate(ctx, exported, pkiMountPath).PKIWriteIntermediateGenerateRequest(pKIWriteIntermediateGenerateRequest).Execute()
 
 
 
@@ -17585,8 +17047,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteIntermediateSetSigned
 
-> PKIWriteIntermediateSetSigned(ctx, pkiMountPath).PKIWriteIntermediateSetSignedRequest(pKIWriteIntermediateSetSignedRequest).Execute()
-
 
 
 ### Example
@@ -17649,8 +17109,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteInternalExported
 
-> PKIWriteInternalExported(ctx, pkiMountPath).PKIWriteInternalExportedRequest(pKIWriteInternalExportedRequest).Execute()
-
 
 
 ### Example
@@ -17712,8 +17170,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIWriteIssueRole
-
-> PKIWriteIssueRole(ctx, pkiMountPath, role).PKIWriteIssueRoleRequest(pKIWriteIssueRoleRequest).Execute()
 
 
 
@@ -17781,8 +17237,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteIssuersConfig
 
-> PKIWriteIssuersConfig(ctx, pkiMountPath).PKIWriteIssuersConfigRequest(pKIWriteIssuersConfigRequest).Execute()
-
 
 
 ### Example
@@ -17845,8 +17299,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteKMS
 
-> PKIWriteKMS(ctx, pkiMountPath).PKIWriteKMSRequest(pKIWriteKMSRequest).Execute()
-
 
 
 ### Example
@@ -17908,8 +17360,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIWriteKey
-
-> PKIWriteKey(ctx, keyRef, pkiMountPath).PKIWriteKeyRequest(pKIWriteKeyRequest).Execute()
 
 
 
@@ -17977,8 +17427,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteKeysConfig
 
-> PKIWriteKeysConfig(ctx, pkiMountPath).PKIWriteKeysConfigRequest(pKIWriteKeysConfigRequest).Execute()
-
 
 
 ### Example
@@ -18041,8 +17489,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteOCSP
 
-> PKIWriteOCSP(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -18100,8 +17546,6 @@ Name | Type | Description  | Notes
 
 
 ## PKIWriteRole
-
-> PKIWriteRole(ctx, name, pkiMountPath).PKIWriteRoleRequest(pKIWriteRoleRequest).Execute()
 
 
 
@@ -18169,8 +17613,6 @@ Name | Type | Description  | Notes
 
 ## PKIWriteURLConfig
 
-> PKIWriteURLConfig(ctx, pkiMountPath).PKIWriteURLConfigRequest(pKIWriteURLConfigRequest).Execute()
-
 
 
 ### Example
@@ -18232,8 +17674,6 @@ Name | Type | Description  | Notes
 
 
 ## PkiDeleteIssuerRefDerPem
-
-> PkiDeleteIssuerRefDerPem(ctx, issuerRef, pkiMountPath).Execute()
 
 
 
@@ -18297,8 +17737,6 @@ Name | Type | Description  | Notes
 
 ## PkiDeleteJson
 
-> PkiDeleteJson(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -18356,8 +17794,6 @@ Name | Type | Description  | Notes
 
 
 ## PkiReadDelta
-
-> PkiReadDelta(ctx, pkiMountPath).Execute()
 
 
 
@@ -18417,8 +17853,6 @@ Name | Type | Description  | Notes
 
 ## PkiReadDeltaPem
 
-> PkiReadDeltaPem(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -18477,8 +17911,6 @@ Name | Type | Description  | Notes
 
 ## PkiReadDer
 
-> PkiReadDer(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -18536,8 +17968,6 @@ Name | Type | Description  | Notes
 
 
 ## PkiReadIssuerRefCrlPemDerDeltaPem
-
-> PkiReadIssuerRefCrlPemDerDeltaPem(ctx, issuerRef, pkiMountPath).Execute()
 
 
 
@@ -18601,8 +18031,6 @@ Name | Type | Description  | Notes
 
 ## PkiReadIssuerRefDerPem
 
-> PkiReadIssuerRefDerPem(ctx, issuerRef, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -18665,8 +18093,6 @@ Name | Type | Description  | Notes
 
 ## PkiReadJson
 
-> PkiReadJson(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -18725,8 +18151,6 @@ Name | Type | Description  | Notes
 
 ## PkiReadPem
 
-> PkiReadPem(ctx, pkiMountPath).Execute()
-
 
 
 ### Example
@@ -18784,8 +18208,6 @@ Name | Type | Description  | Notes
 
 
 ## PkiWriteIssuerRefDerPem
-
-> PkiWriteIssuerRefDerPem(ctx, issuerRef, pkiMountPath).PkiWriteIssuerRefDerPemRequest(pkiWriteIssuerRefDerPemRequest).Execute()
 
 
 
@@ -18853,8 +18275,6 @@ Name | Type | Description  | Notes
 
 ## PkiWriteJson
 
-> PkiWriteJson(ctx, pkiMountPath).PkiWriteJsonRequest(pkiWriteJsonRequest).Execute()
-
 
 
 ### Example
@@ -18916,8 +18336,6 @@ Name | Type | Description  | Notes
 
 
 ## RabbitMQDeleteRole
-
-> RabbitMQDeleteRole(ctx, name, rabbitmqMountPath).Execute()
 
 Manage the roles that can be created with this backend.
 
@@ -18981,8 +18399,6 @@ Name | Type | Description  | Notes
 
 ## RabbitMQListRoles
 
-> RabbitMQListRoles(ctx, rabbitmqMountPath).List(list).Execute()
-
 Manage the roles that can be created with this backend.
 
 ### Example
@@ -19041,8 +18457,6 @@ Name | Type | Description  | Notes
 
 
 ## RabbitMQReadCredentials
-
-> RabbitMQReadCredentials(ctx, name, rabbitmqMountPath).Execute()
 
 Request RabbitMQ credentials for a certain role.
 
@@ -19106,8 +18520,6 @@ Name | Type | Description  | Notes
 
 ## RabbitMQReadLeaseConfig
 
-> RabbitMQReadLeaseConfig(ctx, rabbitmqMountPath).Execute()
-
 Configure the lease parameters for generated credentials
 
 ### Example
@@ -19165,8 +18577,6 @@ Name | Type | Description  | Notes
 
 
 ## RabbitMQReadRole
-
-> RabbitMQReadRole(ctx, name, rabbitmqMountPath).Execute()
 
 Manage the roles that can be created with this backend.
 
@@ -19230,8 +18640,6 @@ Name | Type | Description  | Notes
 
 ## RabbitMQWriteConnectionConfig
 
-> RabbitMQWriteConnectionConfig(ctx, rabbitmqMountPath).RabbitMQWriteConnectionConfigRequest(rabbitMQWriteConnectionConfigRequest).Execute()
-
 Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 
 ### Example
@@ -19294,8 +18702,6 @@ Name | Type | Description  | Notes
 
 ## RabbitMQWriteLeaseConfig
 
-> RabbitMQWriteLeaseConfig(ctx, rabbitmqMountPath).RabbitMQWriteLeaseConfigRequest(rabbitMQWriteLeaseConfigRequest).Execute()
-
 Configure the lease parameters for generated credentials
 
 ### Example
@@ -19357,8 +18763,6 @@ Name | Type | Description  | Notes
 
 
 ## RabbitMQWriteRole
-
-> RabbitMQWriteRole(ctx, name, rabbitmqMountPath).RabbitMQWriteRoleRequest(rabbitMQWriteRoleRequest).Execute()
 
 Manage the roles that can be created with this backend.
 
@@ -19426,8 +18830,6 @@ Name | Type | Description  | Notes
 
 ## SSHDeleteCAConfig
 
-> SSHDeleteCAConfig(ctx, sshMountPath).Execute()
-
 Set the SSH private key used for signing certificates.
 
 ### Example
@@ -19485,8 +18887,6 @@ Name | Type | Description  | Notes
 
 
 ## SSHDeleteKeys
-
-> SSHDeleteKeys(ctx, keyName, sshMountPath).Execute()
 
 Register a shared private key with Vault.
 
@@ -19550,8 +18950,6 @@ Name | Type | Description  | Notes
 
 ## SSHDeleteRole
 
-> SSHDeleteRole(ctx, role, sshMountPath).Execute()
-
 Manage the 'roles' that can be created with this backend.
 
 ### Example
@@ -19614,8 +19012,6 @@ Name | Type | Description  | Notes
 
 ## SSHDeleteZeroAddressConfig
 
-> SSHDeleteZeroAddressConfig(ctx, sshMountPath).Execute()
-
 Assign zero address as default CIDR block for select roles.
 
 ### Example
@@ -19673,8 +19069,6 @@ Name | Type | Description  | Notes
 
 
 ## SSHListRoles
-
-> SSHListRoles(ctx, sshMountPath).List(list).Execute()
 
 Manage the 'roles' that can be created with this backend.
 
@@ -19734,8 +19128,6 @@ Name | Type | Description  | Notes
 
 
 ## SSHLookup
-
-> SSHLookup(ctx, sshMountPath).SSHLookupRequest(sSHLookupRequest).Execute()
 
 List all the roles associated with the given IP address.
 
@@ -19799,8 +19191,6 @@ Name | Type | Description  | Notes
 
 ## SSHReadCAConfig
 
-> SSHReadCAConfig(ctx, sshMountPath).Execute()
-
 Set the SSH private key used for signing certificates.
 
 ### Example
@@ -19859,8 +19249,6 @@ Name | Type | Description  | Notes
 
 ## SSHReadPublicKey
 
-> SSHReadPublicKey(ctx, sshMountPath).Execute()
-
 Retrieve the public key.
 
 ### Example
@@ -19918,8 +19306,6 @@ Name | Type | Description  | Notes
 
 
 ## SSHReadRole
-
-> SSHReadRole(ctx, role, sshMountPath).Execute()
 
 Manage the 'roles' that can be created with this backend.
 
@@ -19983,8 +19369,6 @@ Name | Type | Description  | Notes
 
 ## SSHReadZeroAddressConfig
 
-> SSHReadZeroAddressConfig(ctx, sshMountPath).Execute()
-
 Assign zero address as default CIDR block for select roles.
 
 ### Example
@@ -20042,8 +19426,6 @@ Name | Type | Description  | Notes
 
 
 ## SSHSign
-
-> SSHSign(ctx, role, sshMountPath).SSHSignRequest(sSHSignRequest).Execute()
 
 Request signing an SSH key using a certain role with the provided details.
 
@@ -20111,8 +19493,6 @@ Name | Type | Description  | Notes
 
 ## SSHVerify
 
-> SSHVerify(ctx, sshMountPath).SSHVerifyRequest(sSHVerifyRequest).Execute()
-
 Validate the OTP provided by Vault SSH Agent.
 
 ### Example
@@ -20175,8 +19555,6 @@ Name | Type | Description  | Notes
 
 ## SSHWriteCAConfig
 
-> SSHWriteCAConfig(ctx, sshMountPath).SSHWriteCAConfigRequest(sSHWriteCAConfigRequest).Execute()
-
 Set the SSH private key used for signing certificates.
 
 ### Example
@@ -20238,8 +19616,6 @@ Name | Type | Description  | Notes
 
 
 ## SSHWriteCredentials
-
-> SSHWriteCredentials(ctx, role, sshMountPath).SSHWriteCredentialsRequest(sSHWriteCredentialsRequest).Execute()
 
 Creates a credential for establishing SSH connection with the remote host.
 
@@ -20307,8 +19683,6 @@ Name | Type | Description  | Notes
 
 ## SSHWriteIssue
 
-> SSHWriteIssue(ctx, role, sshMountPath).SSHWriteIssueRequest(sSHWriteIssueRequest).Execute()
-
 
 
 ### Example
@@ -20374,8 +19748,6 @@ Name | Type | Description  | Notes
 
 
 ## SSHWriteKeys
-
-> SSHWriteKeys(ctx, keyName, sshMountPath).SSHWriteKeysRequest(sSHWriteKeysRequest).Execute()
 
 Register a shared private key with Vault.
 
@@ -20443,8 +19815,6 @@ Name | Type | Description  | Notes
 
 ## SSHWriteRole
 
-> SSHWriteRole(ctx, role, sshMountPath).SSHWriteRoleRequest(sSHWriteRoleRequest).Execute()
-
 Manage the 'roles' that can be created with this backend.
 
 ### Example
@@ -20511,8 +19881,6 @@ Name | Type | Description  | Notes
 
 ## SSHWriteZeroAddressConfig
 
-> SSHWriteZeroAddressConfig(ctx, sshMountPath).SSHWriteZeroAddressConfigRequest(sSHWriteZeroAddressConfigRequest).Execute()
-
 Assign zero address as default CIDR block for select roles.
 
 ### Example
@@ -20574,8 +19942,6 @@ Name | Type | Description  | Notes
 
 
 ## TOTPDeleteKey
-
-> TOTPDeleteKey(ctx, name, totpMountPath).Execute()
 
 Manage the keys that can be created with this backend.
 
@@ -20639,8 +20005,6 @@ Name | Type | Description  | Notes
 
 ## TOTPListKeys
 
-> TOTPListKeys(ctx, totpMountPath).List(list).Execute()
-
 Manage the keys that can be created with this backend.
 
 ### Example
@@ -20699,8 +20063,6 @@ Name | Type | Description  | Notes
 
 
 ## TOTPReadCode
-
-> TOTPReadCode(ctx, name, totpMountPath).Execute()
 
 Request time-based one-time use password or validate a password for a certain key .
 
@@ -20764,8 +20126,6 @@ Name | Type | Description  | Notes
 
 ## TOTPReadKey
 
-> TOTPReadKey(ctx, name, totpMountPath).Execute()
-
 Manage the keys that can be created with this backend.
 
 ### Example
@@ -20827,8 +20187,6 @@ Name | Type | Description  | Notes
 
 
 ## TOTPWriteCode
-
-> TOTPWriteCode(ctx, name, totpMountPath).TOTPWriteCodeRequest(tOTPWriteCodeRequest).Execute()
 
 Request time-based one-time use password or validate a password for a certain key .
 
@@ -20896,8 +20254,6 @@ Name | Type | Description  | Notes
 
 ## TOTPWriteKey
 
-> TOTPWriteKey(ctx, name, totpMountPath).TOTPWriteKeyRequest(tOTPWriteKeyRequest).Execute()
-
 Manage the keys that can be created with this backend.
 
 ### Example
@@ -20964,8 +20320,6 @@ Name | Type | Description  | Notes
 
 ## TerraformDeleteConfig
 
-> TerraformDeleteConfig(ctx, terraformMountPath).Execute()
-
 
 
 ### Example
@@ -21023,8 +20377,6 @@ Name | Type | Description  | Notes
 
 
 ## TerraformDeleteRole
-
-> TerraformDeleteRole(ctx, name, terraformMountPath).Execute()
 
 
 
@@ -21088,8 +20440,6 @@ Name | Type | Description  | Notes
 
 ## TerraformListRoles
 
-> TerraformListRoles(ctx, terraformMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -21149,8 +20499,6 @@ Name | Type | Description  | Notes
 
 ## TerraformReadConfig
 
-> TerraformReadConfig(ctx, terraformMountPath).Execute()
-
 
 
 ### Example
@@ -21208,8 +20556,6 @@ Name | Type | Description  | Notes
 
 
 ## TerraformReadCredentials
-
-> TerraformReadCredentials(ctx, name, terraformMountPath).Execute()
 
 Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 
@@ -21273,8 +20619,6 @@ Name | Type | Description  | Notes
 
 ## TerraformReadRole
 
-> TerraformReadRole(ctx, name, terraformMountPath).Execute()
-
 
 
 ### Example
@@ -21336,8 +20680,6 @@ Name | Type | Description  | Notes
 
 
 ## TerraformRotateRole
-
-> TerraformRotateRole(ctx, name, terraformMountPath).Execute()
 
 
 
@@ -21401,8 +20743,6 @@ Name | Type | Description  | Notes
 
 ## TerraformWriteConfig
 
-> TerraformWriteConfig(ctx, terraformMountPath).TerraformWriteConfigRequest(terraformWriteConfigRequest).Execute()
-
 
 
 ### Example
@@ -21465,8 +20805,6 @@ Name | Type | Description  | Notes
 
 ## TerraformWriteCredentials
 
-> TerraformWriteCredentials(ctx, name, terraformMountPath).Execute()
-
 Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 
 ### Example
@@ -21528,8 +20866,6 @@ Name | Type | Description  | Notes
 
 
 ## TerraformWriteRole
-
-> TerraformWriteRole(ctx, name, terraformMountPath).TerraformWriteRoleRequest(terraformWriteRoleRequest).Execute()
 
 
 
@@ -21597,8 +20933,6 @@ Name | Type | Description  | Notes
 
 ## TransitBackup
 
-> TransitBackup(ctx, name, transitMountPath).Execute()
-
 Backup the named key
 
 ### Example
@@ -21660,8 +20994,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitDecrypt
-
-> TransitDecrypt(ctx, name, transitMountPath).TransitDecryptRequest(transitDecryptRequest).Execute()
 
 Decrypt a ciphertext value using a named key
 
@@ -21729,8 +21061,6 @@ Name | Type | Description  | Notes
 
 ## TransitDeleteKey
 
-> TransitDeleteKey(ctx, name, transitMountPath).Execute()
-
 Managed named encryption keys
 
 ### Example
@@ -21792,8 +21122,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitEncrypt
-
-> TransitEncrypt(ctx, name, transitMountPath).TransitEncryptRequest(transitEncryptRequest).Execute()
 
 Encrypt a plaintext value or a batch of plaintext blocks using a named key
 
@@ -21861,8 +21189,6 @@ Name | Type | Description  | Notes
 
 ## TransitExport
 
-> TransitExport(ctx, name, transitMountPath, type_).Execute()
-
 Export named encryption or signing key
 
 ### Example
@@ -21928,8 +21254,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitExportVersion
-
-> TransitExportVersion(ctx, name, transitMountPath, type_, version).Execute()
 
 Export named encryption or signing key
 
@@ -22001,8 +21325,6 @@ Name | Type | Description  | Notes
 
 ## TransitGenerateDataKey
 
-> TransitGenerateDataKey(ctx, name, plaintext, transitMountPath).TransitGenerateDataKeyRequest(transitGenerateDataKeyRequest).Execute()
-
 Generate a data key
 
 ### Example
@@ -22073,8 +21395,6 @@ Name | Type | Description  | Notes
 
 ## TransitGenerateHMAC
 
-> TransitGenerateHMAC(ctx, name, transitMountPath).TransitGenerateHMACRequest(transitGenerateHMACRequest).Execute()
-
 Generate an HMAC for input data using the named key
 
 ### Example
@@ -22140,8 +21460,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitGenerateHMACWithAlgorithm
-
-> TransitGenerateHMACWithAlgorithm(ctx, name, transitMountPath, urlalgorithm).TransitGenerateHMACWithAlgorithmRequest(transitGenerateHMACWithAlgorithmRequest).Execute()
 
 Generate an HMAC for input data using the named key
 
@@ -22213,8 +21531,6 @@ Name | Type | Description  | Notes
 
 ## TransitGenerateRandom
 
-> TransitGenerateRandom(ctx, transitMountPath).TransitGenerateRandomRequest(transitGenerateRandomRequest).Execute()
-
 Generate random bytes
 
 ### Example
@@ -22276,8 +21592,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitGenerateRandomSource
-
-> TransitGenerateRandomSource(ctx, source, transitMountPath).TransitGenerateRandomSourceRequest(transitGenerateRandomSourceRequest).Execute()
 
 Generate random bytes
 
@@ -22344,8 +21658,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitGenerateRandomSourceBytes
-
-> TransitGenerateRandomSourceBytes(ctx, source, transitMountPath, urlbytes).TransitGenerateRandomSourceBytesRequest(transitGenerateRandomSourceBytesRequest).Execute()
 
 Generate random bytes
 
@@ -22417,8 +21729,6 @@ Name | Type | Description  | Notes
 
 ## TransitHash
 
-> TransitHash(ctx, transitMountPath).TransitHashRequest(transitHashRequest).Execute()
-
 Generate a hash sum for input data
 
 ### Example
@@ -22480,8 +21790,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitHashWithAlgorithm
-
-> TransitHashWithAlgorithm(ctx, transitMountPath, urlalgorithm).TransitHashWithAlgorithmRequest(transitHashWithAlgorithmRequest).Execute()
 
 Generate a hash sum for input data
 
@@ -22549,8 +21857,6 @@ Name | Type | Description  | Notes
 
 ## TransitImportKey
 
-> TransitImportKey(ctx, name, transitMountPath).TransitImportKeyRequest(transitImportKeyRequest).Execute()
-
 Imports an externally-generated key into a new transit key
 
 ### Example
@@ -22616,8 +21922,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitImportKeyVersion
-
-> TransitImportKeyVersion(ctx, name, transitMountPath).TransitImportKeyVersionRequest(transitImportKeyVersionRequest).Execute()
 
 Imports an externally-generated key into an existing imported key
 
@@ -22685,8 +21989,6 @@ Name | Type | Description  | Notes
 
 ## TransitListKeys
 
-> TransitListKeys(ctx, transitMountPath).List(list).Execute()
-
 Managed named encryption keys
 
 ### Example
@@ -22746,8 +22048,6 @@ Name | Type | Description  | Notes
 
 ## TransitReadCacheConfig
 
-> TransitReadCacheConfig(ctx, transitMountPath).Execute()
-
 Returns the size of the active cache
 
 ### Example
@@ -22806,8 +22106,6 @@ Name | Type | Description  | Notes
 
 ## TransitReadConfigKeys
 
-> TransitReadConfigKeys(ctx, transitMountPath).Execute()
-
 Configuration common across all keys
 
 ### Example
@@ -22865,8 +22163,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitReadKey
-
-> TransitReadKey(ctx, name, transitMountPath).Execute()
 
 Managed named encryption keys
 
@@ -22930,8 +22226,6 @@ Name | Type | Description  | Notes
 
 ## TransitReadWrappingKey
 
-> TransitReadWrappingKey(ctx, transitMountPath).Execute()
-
 Returns the public key to use for wrapping imported keys
 
 ### Example
@@ -22989,8 +22283,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitRestore
-
-> TransitRestore(ctx, transitMountPath).TransitRestoreRequest(transitRestoreRequest).Execute()
 
 Restore the named key
 
@@ -23053,8 +22345,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitRestoreKey
-
-> TransitRestoreKey(ctx, name, transitMountPath).TransitRestoreKeyRequest(transitRestoreKeyRequest).Execute()
 
 Restore the named key
 
@@ -23122,8 +22412,6 @@ Name | Type | Description  | Notes
 
 ## TransitRewrap
 
-> TransitRewrap(ctx, name, transitMountPath).TransitRewrapRequest(transitRewrapRequest).Execute()
-
 Rewrap ciphertext
 
 ### Example
@@ -23190,8 +22478,6 @@ Name | Type | Description  | Notes
 
 ## TransitRotateKey
 
-> TransitRotateKey(ctx, name, transitMountPath).Execute()
-
 Rotate named encryption key
 
 ### Example
@@ -23253,8 +22539,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitSign
-
-> TransitSign(ctx, name, transitMountPath).TransitSignRequest(transitSignRequest).Execute()
 
 Generate a signature for input data using the named key
 
@@ -23321,8 +22605,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitSignWithAlgorithm
-
-> TransitSignWithAlgorithm(ctx, name, transitMountPath, urlalgorithm).TransitSignWithAlgorithmRequest(transitSignWithAlgorithmRequest).Execute()
 
 Generate a signature for input data using the named key
 
@@ -23394,8 +22676,6 @@ Name | Type | Description  | Notes
 
 ## TransitTrimKey
 
-> TransitTrimKey(ctx, name, transitMountPath).TransitTrimKeyRequest(transitTrimKeyRequest).Execute()
-
 Trim key versions of a named key
 
 ### Example
@@ -23462,8 +22742,6 @@ Name | Type | Description  | Notes
 
 ## TransitVerify
 
-> TransitVerify(ctx, name, transitMountPath).TransitVerifyRequest(transitVerifyRequest).Execute()
-
 Verify a signature or HMAC for input data created using the named key
 
 ### Example
@@ -23529,8 +22807,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitVerifyWithAlgorithm
-
-> TransitVerifyWithAlgorithm(ctx, name, transitMountPath, urlalgorithm).TransitVerifyWithAlgorithmRequest(transitVerifyWithAlgorithmRequest).Execute()
 
 Verify a signature or HMAC for input data created using the named key
 
@@ -23602,8 +22878,6 @@ Name | Type | Description  | Notes
 
 ## TransitWriteCacheConfig
 
-> TransitWriteCacheConfig(ctx, transitMountPath).TransitWriteCacheConfigRequest(transitWriteCacheConfigRequest).Execute()
-
 Configures a new cache of the specified size
 
 ### Example
@@ -23666,8 +22940,6 @@ Name | Type | Description  | Notes
 
 ## TransitWriteConfigKeys
 
-> TransitWriteConfigKeys(ctx, transitMountPath).TransitWriteConfigKeysRequest(transitWriteConfigKeysRequest).Execute()
-
 Configuration common across all keys
 
 ### Example
@@ -23729,8 +23001,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitWriteKey
-
-> TransitWriteKey(ctx, name, transitMountPath).TransitWriteKeyRequest(transitWriteKeyRequest).Execute()
 
 Managed named encryption keys
 
@@ -23798,8 +23068,6 @@ Name | Type | Description  | Notes
 
 ## TransitWriteKeyConfig
 
-> TransitWriteKeyConfig(ctx, name, transitMountPath).TransitWriteKeyConfigRequest(transitWriteKeyConfigRequest).Execute()
-
 Configure a named encryption key
 
 ### Example
@@ -23865,8 +23133,6 @@ Name | Type | Description  | Notes
 
 
 ## TransitWriteRandomUrlbytes
-
-> TransitWriteRandomUrlbytes(ctx, transitMountPath, urlbytes).TransitWriteRandomUrlbytesRequest(transitWriteRandomUrlbytesRequest).Execute()
 
 Generate random bytes
 

@@ -12,8 +12,6 @@ Method | HTTP request | Description
 
 ## {{{operationId}}}
 
-> {{#with returnType}}{{{.}}} {{/with}}{{{operationId}}}(ctx{{#each pathParams}}, {{paramName}}{{/each}}){{#each allParams}}{{#unless isPathParam}}.{{vendorExtensions.x-export-param-name}}({{paramName}}){{/unless}}{{/each}}.Execute()
-
 {{{summary}}}{{#if notes}}
 
 {{{unespacedNotes}}}{{/if}}

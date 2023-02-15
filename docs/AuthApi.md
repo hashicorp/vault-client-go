@@ -271,8 +271,6 @@ Method | HTTP request | Description
 
 ## AWSConfigDeleteCertificate
 
-> AWSConfigDeleteCertificate(ctx, awsMountPath, certName).Execute()
-
 
 
 ### Example
@@ -335,8 +333,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigDeleteClient
 
-> AWSConfigDeleteClient(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -394,8 +390,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigDeleteIdentityAccessList
-
-> AWSConfigDeleteIdentityAccessList(ctx, awsMountPath).Execute()
 
 
 
@@ -455,8 +449,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigDeleteIdentityWhiteList
 
-> AWSConfigDeleteIdentityWhiteList(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -514,8 +506,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigDeleteRoleTagBlackList
-
-> AWSConfigDeleteRoleTagBlackList(ctx, awsMountPath).Execute()
 
 
 
@@ -575,8 +565,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigDeleteRoleTagDenyList
 
-> AWSConfigDeleteRoleTagDenyList(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -634,8 +622,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigDeleteSecurityTokenServiceAccount
-
-> AWSConfigDeleteSecurityTokenServiceAccount(ctx, accountId, awsMountPath).Execute()
 
 
 
@@ -699,8 +685,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigListCertificates
 
-> AWSConfigListCertificates(ctx, awsMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -760,8 +744,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigListSecurityTokenService
 
-> AWSConfigListSecurityTokenService(ctx, awsMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -820,8 +802,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigReadCertificate
-
-> AWSConfigReadCertificate(ctx, awsMountPath, certName).Execute()
 
 
 
@@ -885,8 +865,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigReadClient
 
-> AWSConfigReadClient(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -944,8 +922,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigReadIdentity
-
-> AWSConfigReadIdentity(ctx, awsMountPath).Execute()
 
 
 
@@ -1005,8 +981,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigReadIdentityAccessList
 
-> AWSConfigReadIdentityAccessList(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -1064,8 +1038,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigReadIdentityWhiteList
-
-> AWSConfigReadIdentityWhiteList(ctx, awsMountPath).Execute()
 
 
 
@@ -1125,8 +1097,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigReadRoleTagBlackList
 
-> AWSConfigReadRoleTagBlackList(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -1185,8 +1155,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigReadRoleTagDenyList
 
-> AWSConfigReadRoleTagDenyList(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -1244,8 +1212,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigReadSecurityTokenServiceAccount
-
-> AWSConfigReadSecurityTokenServiceAccount(ctx, accountId, awsMountPath).Execute()
 
 
 
@@ -1309,8 +1275,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigRotateRoot
 
-> AWSConfigRotateRoot(ctx, awsMountPath).Execute()
-
 
 
 ### Example
@@ -1368,8 +1332,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigWriteCertificate
-
-> AWSConfigWriteCertificate(ctx, awsMountPath, certName).AWSConfigWriteCertificateRequest(aWSConfigWriteCertificateRequest).Execute()
 
 
 
@@ -1437,8 +1399,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigWriteClient
 
-> AWSConfigWriteClient(ctx, awsMountPath).AWSConfigWriteClientRequest(aWSConfigWriteClientRequest).Execute()
-
 
 
 ### Example
@@ -1500,8 +1460,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigWriteIdentity
-
-> AWSConfigWriteIdentity(ctx, awsMountPath).AWSConfigWriteIdentityRequest(aWSConfigWriteIdentityRequest).Execute()
 
 
 
@@ -1565,8 +1523,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigWriteIdentityAccessList
 
-> AWSConfigWriteIdentityAccessList(ctx, awsMountPath).AWSConfigWriteIdentityAccessListRequest(aWSConfigWriteIdentityAccessListRequest).Execute()
-
 
 
 ### Example
@@ -1628,8 +1584,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigWriteIdentityWhiteList
-
-> AWSConfigWriteIdentityWhiteList(ctx, awsMountPath).AWSConfigWriteIdentityWhiteListRequest(aWSConfigWriteIdentityWhiteListRequest).Execute()
 
 
 
@@ -1693,8 +1647,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigWriteRoleTagBlackList
 
-> AWSConfigWriteRoleTagBlackList(ctx, awsMountPath).AWSConfigWriteRoleTagBlackListRequest(aWSConfigWriteRoleTagBlackListRequest).Execute()
-
 
 
 ### Example
@@ -1757,8 +1709,6 @@ Name | Type | Description  | Notes
 
 ## AWSConfigWriteRoleTagDenyList
 
-> AWSConfigWriteRoleTagDenyList(ctx, awsMountPath).AWSConfigWriteRoleTagDenyListRequest(aWSConfigWriteRoleTagDenyListRequest).Execute()
-
 
 
 ### Example
@@ -1820,8 +1770,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSConfigWriteSecurityTokenServiceAccount
-
-> AWSConfigWriteSecurityTokenServiceAccount(ctx, accountId, awsMountPath).AWSConfigWriteSecurityTokenServiceAccountRequest(aWSConfigWriteSecurityTokenServiceAccountRequest).Execute()
 
 
 
@@ -1889,8 +1837,6 @@ Name | Type | Description  | Notes
 
 ## AWSDeleteAuthRole
 
-> AWSDeleteAuthRole(ctx, awsMountPath, role).Execute()
-
 
 
 ### Example
@@ -1952,8 +1898,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSDeleteIdentityAccessListFor
-
-> AWSDeleteIdentityAccessListFor(ctx, awsMountPath, instanceId).Execute()
 
 
 
@@ -2017,8 +1961,6 @@ Name | Type | Description  | Notes
 
 ## AWSDeleteIdentityWhiteListFor
 
-> AWSDeleteIdentityWhiteListFor(ctx, awsMountPath, instanceId).Execute()
-
 
 
 ### Example
@@ -2080,8 +2022,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSDeleteRoleTagBlackListFor
-
-> AWSDeleteRoleTagBlackListFor(ctx, awsMountPath, roleTag).Execute()
 
 
 
@@ -2145,8 +2085,6 @@ Name | Type | Description  | Notes
 
 ## AWSDeleteRoleTagDenyListFor
 
-> AWSDeleteRoleTagDenyListFor(ctx, awsMountPath, roleTag).Execute()
-
 
 
 ### Example
@@ -2209,8 +2147,6 @@ Name | Type | Description  | Notes
 
 ## AWSListAuthRoles
 
-> AWSListAuthRoles(ctx, awsMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -2269,8 +2205,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSListAuthRoles2
-
-> AWSListAuthRoles2(ctx, awsMountPath).List(list).Execute()
 
 
 
@@ -2331,8 +2265,6 @@ Name | Type | Description  | Notes
 
 ## AWSListIdentityAccessList
 
-> AWSListIdentityAccessList(ctx, awsMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -2391,8 +2323,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSListIdentityWhiteList
-
-> AWSListIdentityWhiteList(ctx, awsMountPath).List(list).Execute()
 
 
 
@@ -2453,8 +2383,6 @@ Name | Type | Description  | Notes
 
 ## AWSListRoleTagBlackList
 
-> AWSListRoleTagBlackList(ctx, awsMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -2514,8 +2442,6 @@ Name | Type | Description  | Notes
 
 ## AWSListRoleTagDenyList
 
-> AWSListRoleTagDenyList(ctx, awsMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -2574,8 +2500,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSLogin
-
-> AWSLogin(ctx, awsMountPath).AWSLoginRequest(aWSLoginRequest).Execute()
 
 
 
@@ -2639,8 +2563,6 @@ Name | Type | Description  | Notes
 
 ## AWSReadAuthRole
 
-> AWSReadAuthRole(ctx, awsMountPath, role).Execute()
-
 
 
 ### Example
@@ -2702,8 +2624,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSReadIdentityAccessListFor
-
-> AWSReadIdentityAccessListFor(ctx, awsMountPath, instanceId).Execute()
 
 
 
@@ -2767,8 +2687,6 @@ Name | Type | Description  | Notes
 
 ## AWSReadIdentityWhiteListFor
 
-> AWSReadIdentityWhiteListFor(ctx, awsMountPath, instanceId).Execute()
-
 
 
 ### Example
@@ -2830,8 +2748,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSReadRoleTagBlackListFor
-
-> AWSReadRoleTagBlackListFor(ctx, awsMountPath, roleTag).Execute()
 
 
 
@@ -2895,8 +2811,6 @@ Name | Type | Description  | Notes
 
 ## AWSReadRoleTagDenyListFor
 
-> AWSReadRoleTagDenyListFor(ctx, awsMountPath, roleTag).Execute()
-
 
 
 ### Example
@@ -2958,8 +2872,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSWriteAuthRole
-
-> AWSWriteAuthRole(ctx, awsMountPath, role).AWSWriteAuthRoleRequest(aWSWriteAuthRoleRequest).Execute()
 
 
 
@@ -3027,8 +2939,6 @@ Name | Type | Description  | Notes
 
 ## AWSWriteAuthRoleTag
 
-> AWSWriteAuthRoleTag(ctx, awsMountPath, role).AWSWriteAuthRoleTagRequest(aWSWriteAuthRoleTagRequest).Execute()
-
 
 
 ### Example
@@ -3095,8 +3005,6 @@ Name | Type | Description  | Notes
 
 ## AWSWriteIdentityAccessListTidySettings
 
-> AWSWriteIdentityAccessListTidySettings(ctx, awsMountPath).AWSWriteIdentityAccessListTidySettingsRequest(aWSWriteIdentityAccessListTidySettingsRequest).Execute()
-
 
 
 ### Example
@@ -3158,8 +3066,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSWriteIdentityWhiteListTidySettings
-
-> AWSWriteIdentityWhiteListTidySettings(ctx, awsMountPath).AWSWriteIdentityWhiteListTidySettingsRequest(aWSWriteIdentityWhiteListTidySettingsRequest).Execute()
 
 
 
@@ -3223,8 +3129,6 @@ Name | Type | Description  | Notes
 
 ## AWSWriteRoleTagBlackListFor
 
-> AWSWriteRoleTagBlackListFor(ctx, awsMountPath, roleTag).Execute()
-
 
 
 ### Example
@@ -3286,8 +3190,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSWriteRoleTagBlackListTidySettings
-
-> AWSWriteRoleTagBlackListTidySettings(ctx, awsMountPath).AWSWriteRoleTagBlackListTidySettingsRequest(aWSWriteRoleTagBlackListTidySettingsRequest).Execute()
 
 
 
@@ -3351,8 +3253,6 @@ Name | Type | Description  | Notes
 
 ## AWSWriteRoleTagDenyListFor
 
-> AWSWriteRoleTagDenyListFor(ctx, awsMountPath, roleTag).Execute()
-
 
 
 ### Example
@@ -3414,8 +3314,6 @@ Name | Type | Description  | Notes
 
 
 ## AWSWriteRoleTagDenyListTidySettings
-
-> AWSWriteRoleTagDenyListTidySettings(ctx, awsMountPath).AWSWriteRoleTagDenyListTidySettingsRequest(aWSWriteRoleTagDenyListTidySettingsRequest).Execute()
 
 
 
@@ -3479,8 +3377,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudDeleteAuthRole
 
-> AliCloudDeleteAuthRole(ctx, alicloudMountPath, role).Execute()
-
 Create a role and associate policies to it.
 
 ### Example
@@ -3543,8 +3439,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudListAuthRoles
 
-> AliCloudListAuthRoles(ctx, alicloudMountPath).List(list).Execute()
-
 Lists all the roles that are registered with Vault.
 
 ### Example
@@ -3604,8 +3498,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudListAuthRoles2
 
-> AliCloudListAuthRoles2(ctx, alicloudMountPath).List(list).Execute()
-
 Lists all the roles that are registered with Vault.
 
 ### Example
@@ -3664,8 +3556,6 @@ Name | Type | Description  | Notes
 
 
 ## AliCloudLogin
-
-> AliCloudLogin(ctx, alicloudMountPath).AliCloudLoginRequest(aliCloudLoginRequest).Execute()
 
 Authenticates an RAM entity with Vault.
 
@@ -3729,8 +3619,6 @@ Name | Type | Description  | Notes
 
 ## AliCloudReadAuthRole
 
-> AliCloudReadAuthRole(ctx, alicloudMountPath, role).Execute()
-
 Create a role and associate policies to it.
 
 ### Example
@@ -3792,8 +3680,6 @@ Name | Type | Description  | Notes
 
 
 ## AliCloudWriteAuthRole
-
-> AliCloudWriteAuthRole(ctx, alicloudMountPath, role).AliCloudWriteAuthRoleRequest(aliCloudWriteAuthRoleRequest).Execute()
 
 Create a role and associate policies to it.
 
@@ -3861,8 +3747,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleDeleteBindSecretID
 
-> AppRoleDeleteBindSecretID(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -3924,8 +3808,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleDeleteBoundCIDRList
-
-> AppRoleDeleteBoundCIDRList(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -3989,8 +3871,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleDeletePeriod
 
-> AppRoleDeletePeriod(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -4052,8 +3932,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleDeletePolicies
-
-> AppRoleDeletePolicies(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -4117,8 +3995,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleDeleteRole
 
-> AppRoleDeleteRole(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -4180,8 +4056,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleDeleteSecretIDAccessorDestroy
-
-> AppRoleDeleteSecretIDAccessorDestroy(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -4245,8 +4119,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleDeleteSecretIDBoundCIDRs
 
-> AppRoleDeleteSecretIDBoundCIDRs(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -4308,8 +4180,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleDeleteSecretIDDestroy
-
-> AppRoleDeleteSecretIDDestroy(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -4373,8 +4243,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleDeleteSecretIDNumUses
 
-> AppRoleDeleteSecretIDNumUses(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -4436,8 +4304,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleDeleteSecretIDTTL
-
-> AppRoleDeleteSecretIDTTL(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -4501,8 +4367,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleDeleteTokenBoundCIDRs
 
-> AppRoleDeleteTokenBoundCIDRs(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -4564,8 +4428,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleDeleteTokenMaxTTL
-
-> AppRoleDeleteTokenMaxTTL(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -4629,8 +4491,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleDeleteTokenNumUses
 
-> AppRoleDeleteTokenNumUses(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -4692,8 +4552,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleDeleteTokenTTL
-
-> AppRoleDeleteTokenTTL(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -4757,8 +4615,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleListRoles
 
-> AppRoleListRolesResponse AppRoleListRoles(ctx, approleMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -4817,8 +4673,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleListSecretID
-
-> AppRoleListSecretIDResponse AppRoleListSecretID(ctx, approleMountPath, roleName).List(list).Execute()
 
 
 
@@ -4883,8 +4737,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleLogin
 
-> AppRoleLogin(ctx, approleMountPath).AppRoleLoginRequest(appRoleLoginRequest).Execute()
-
 
 
 ### Example
@@ -4946,8 +4798,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleReadBindSecretID
-
-> AppRoleReadBindSecretIDResponse AppRoleReadBindSecretID(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -5011,8 +4861,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleReadBoundCIDRList
 
-> AppRoleReadBoundCIDRListResponse AppRoleReadBoundCIDRList(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -5074,8 +4922,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleReadLocalSecretIDs
-
-> AppRoleReadLocalSecretIDsResponse AppRoleReadLocalSecretIDs(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -5139,8 +4985,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleReadPeriod
 
-> AppRoleReadPeriodResponse AppRoleReadPeriod(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -5202,8 +5046,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleReadPolicies
-
-> AppRoleReadPoliciesResponse AppRoleReadPolicies(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -5267,8 +5109,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleReadRole
 
-> AppRoleReadRoleResponse AppRoleReadRole(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -5330,8 +5170,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleReadRoleID
-
-> AppRoleReadRoleIDResponse AppRoleReadRoleID(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -5395,8 +5233,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleReadSecretIDBoundCIDRs
 
-> AppRoleReadSecretIDBoundCIDRsResponse AppRoleReadSecretIDBoundCIDRs(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -5458,8 +5294,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleReadSecretIDNumUses
-
-> AppRoleReadSecretIDNumUsesResponse AppRoleReadSecretIDNumUses(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -5523,8 +5357,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleReadSecretIDTTL
 
-> AppRoleReadSecretIDTTLResponse AppRoleReadSecretIDTTL(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -5586,8 +5418,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleReadTokenBoundCIDRs
-
-> AppRoleReadTokenBoundCIDRsResponse AppRoleReadTokenBoundCIDRs(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -5651,8 +5481,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleReadTokenMaxTTL
 
-> AppRoleReadTokenMaxTTLResponse AppRoleReadTokenMaxTTL(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -5714,8 +5542,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleReadTokenNumUses
-
-> AppRoleReadTokenNumUsesResponse AppRoleReadTokenNumUses(ctx, approleMountPath, roleName).Execute()
 
 
 
@@ -5779,8 +5605,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleReadTokenTTL
 
-> AppRoleReadTokenTTLResponse AppRoleReadTokenTTL(ctx, approleMountPath, roleName).Execute()
-
 
 
 ### Example
@@ -5843,8 +5667,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleTidySecretID
 
-> AppRoleTidySecretID(ctx, approleMountPath).Execute()
-
 Trigger the clean-up of expired SecretID entries.
 
 ### Example
@@ -5902,8 +5724,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteBindSecretID
-
-> AppRoleWriteBindSecretID(ctx, approleMountPath, roleName).AppRoleWriteBindSecretIDRequest(appRoleWriteBindSecretIDRequest).Execute()
 
 
 
@@ -5971,8 +5791,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteBoundCIDRList
 
-> AppRoleWriteBoundCIDRList(ctx, approleMountPath, roleName).AppRoleWriteBoundCIDRListRequest(appRoleWriteBoundCIDRListRequest).Execute()
-
 
 
 ### Example
@@ -6038,8 +5856,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteCustomSecretID
-
-> AppRoleWriteCustomSecretIDResponse AppRoleWriteCustomSecretID(ctx, approleMountPath, roleName).AppRoleWriteCustomSecretIDRequest(appRoleWriteCustomSecretIDRequest).Execute()
 
 
 
@@ -6107,8 +5923,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWritePeriod
 
-> AppRoleWritePeriod(ctx, approleMountPath, roleName).AppRoleWritePeriodRequest(appRoleWritePeriodRequest).Execute()
-
 
 
 ### Example
@@ -6174,8 +5988,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWritePolicies
-
-> AppRoleWritePolicies(ctx, approleMountPath, roleName).AppRoleWritePoliciesRequest(appRoleWritePoliciesRequest).Execute()
 
 
 
@@ -6243,8 +6055,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteRole
 
-> AppRoleWriteRole(ctx, approleMountPath, roleName).AppRoleWriteRoleRequest(appRoleWriteRoleRequest).Execute()
-
 
 
 ### Example
@@ -6310,8 +6120,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteRoleID
-
-> AppRoleWriteRoleID(ctx, approleMountPath, roleName).AppRoleWriteRoleIDRequest(appRoleWriteRoleIDRequest).Execute()
 
 
 
@@ -6379,8 +6187,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteSecretID
 
-> AppRoleWriteSecretIDResponse AppRoleWriteSecretID(ctx, approleMountPath, roleName).AppRoleWriteSecretIDRequest(appRoleWriteSecretIDRequest).Execute()
-
 
 
 ### Example
@@ -6446,8 +6252,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteSecretIDAccessorDestroy
-
-> AppRoleWriteSecretIDAccessorDestroy(ctx, approleMountPath, roleName).AppRoleWriteSecretIDAccessorDestroyRequest(appRoleWriteSecretIDAccessorDestroyRequest).Execute()
 
 
 
@@ -6515,8 +6319,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteSecretIDAccessorLookup
 
-> AppRoleWriteSecretIDAccessorLookupResponse AppRoleWriteSecretIDAccessorLookup(ctx, approleMountPath, roleName).AppRoleWriteSecretIDAccessorLookupRequest(appRoleWriteSecretIDAccessorLookupRequest).Execute()
-
 
 
 ### Example
@@ -6582,8 +6384,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteSecretIDBoundCIDRs
-
-> AppRoleWriteSecretIDBoundCIDRs(ctx, approleMountPath, roleName).AppRoleWriteSecretIDBoundCIDRsRequest(appRoleWriteSecretIDBoundCIDRsRequest).Execute()
 
 
 
@@ -6651,8 +6451,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteSecretIDDestroy
 
-> AppRoleWriteSecretIDDestroy(ctx, approleMountPath, roleName).AppRoleWriteSecretIDDestroyRequest(appRoleWriteSecretIDDestroyRequest).Execute()
-
 
 
 ### Example
@@ -6718,8 +6516,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteSecretIDLookup
-
-> AppRoleWriteSecretIDLookupResponse AppRoleWriteSecretIDLookup(ctx, approleMountPath, roleName).AppRoleWriteSecretIDLookupRequest(appRoleWriteSecretIDLookupRequest).Execute()
 
 
 
@@ -6787,8 +6583,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteSecretIDNumUses
 
-> AppRoleWriteSecretIDNumUses(ctx, approleMountPath, roleName).AppRoleWriteSecretIDNumUsesRequest(appRoleWriteSecretIDNumUsesRequest).Execute()
-
 
 
 ### Example
@@ -6854,8 +6648,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteSecretIDTTL
-
-> AppRoleWriteSecretIDTTL(ctx, approleMountPath, roleName).AppRoleWriteSecretIDTTLRequest(appRoleWriteSecretIDTTLRequest).Execute()
 
 
 
@@ -6923,8 +6715,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteTokenBoundCIDRs
 
-> AppRoleWriteTokenBoundCIDRs(ctx, approleMountPath, roleName).AppRoleWriteTokenBoundCIDRsRequest(appRoleWriteTokenBoundCIDRsRequest).Execute()
-
 
 
 ### Example
@@ -6990,8 +6780,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteTokenMaxTTL
-
-> AppRoleWriteTokenMaxTTL(ctx, approleMountPath, roleName).AppRoleWriteTokenMaxTTLRequest(appRoleWriteTokenMaxTTLRequest).Execute()
 
 
 
@@ -7059,8 +6847,6 @@ Name | Type | Description  | Notes
 
 ## AppRoleWriteTokenNumUses
 
-> AppRoleWriteTokenNumUses(ctx, approleMountPath, roleName).AppRoleWriteTokenNumUsesRequest(appRoleWriteTokenNumUsesRequest).Execute()
-
 
 
 ### Example
@@ -7126,8 +6912,6 @@ Name | Type | Description  | Notes
 
 
 ## AppRoleWriteTokenTTL
-
-> AppRoleWriteTokenTTL(ctx, approleMountPath, roleName).AppRoleWriteTokenTTLRequest(appRoleWriteTokenTTLRequest).Execute()
 
 
 
@@ -7195,8 +6979,6 @@ Name | Type | Description  | Notes
 
 ## AzureDeleteAuthConfig
 
-> AzureDeleteAuthConfig(ctx, azureMountPath).Execute()
-
 
 
 ### Example
@@ -7254,8 +7036,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureDeleteAuthRole
-
-> AzureDeleteAuthRole(ctx, azureMountPath, name).Execute()
 
 
 
@@ -7319,8 +7099,6 @@ Name | Type | Description  | Notes
 
 ## AzureListAuthRoles
 
-> AzureListAuthRoles(ctx, azureMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -7379,8 +7157,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureLogin
-
-> AzureLogin(ctx, azureMountPath).AzureLoginRequest(azureLoginRequest).Execute()
 
 
 
@@ -7444,8 +7220,6 @@ Name | Type | Description  | Notes
 
 ## AzureReadAuthConfig
 
-> AzureReadAuthConfig(ctx, azureMountPath).Execute()
-
 
 
 ### Example
@@ -7503,8 +7277,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureReadAuthRole
-
-> AzureReadAuthRole(ctx, azureMountPath, name).Execute()
 
 
 
@@ -7568,8 +7340,6 @@ Name | Type | Description  | Notes
 
 ## AzureWriteAuthConfig
 
-> AzureWriteAuthConfig(ctx, azureMountPath).AzureWriteAuthConfigRequest(azureWriteAuthConfigRequest).Execute()
-
 
 
 ### Example
@@ -7631,8 +7401,6 @@ Name | Type | Description  | Notes
 
 
 ## AzureWriteAuthRole
-
-> AzureWriteAuthRole(ctx, azureMountPath, name).AzureWriteAuthRoleRequest(azureWriteAuthRoleRequest).Execute()
 
 
 
@@ -7700,8 +7468,6 @@ Name | Type | Description  | Notes
 
 ## CentrifyLogin
 
-> CentrifyLogin(ctx, centrifyMountPath).CentrifyLoginRequest(centrifyLoginRequest).Execute()
-
 Log in with a username and password.
 
 ### Example
@@ -7764,8 +7530,6 @@ Name | Type | Description  | Notes
 
 ## CentrifyReadConfig
 
-> CentrifyReadConfig(ctx, centrifyMountPath).Execute()
-
 This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 
 ### Example
@@ -7823,8 +7587,6 @@ Name | Type | Description  | Notes
 
 
 ## CentrifyWriteConfig
-
-> CentrifyWriteConfig(ctx, centrifyMountPath).CentrifyWriteConfigRequest(centrifyWriteConfigRequest).Execute()
 
 This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 
@@ -7888,8 +7650,6 @@ Name | Type | Description  | Notes
 
 ## CertificatesDelete
 
-> CertificatesDelete(ctx, certMountPath, name).Execute()
-
 Manage trusted certificates used for authentication.
 
 ### Example
@@ -7951,8 +7711,6 @@ Name | Type | Description  | Notes
 
 
 ## CertificatesDeleteCRL
-
-> CertificatesDeleteCRL(ctx, certMountPath, name).Execute()
 
 Manage Certificate Revocation Lists checked during authentication.
 
@@ -8016,8 +7774,6 @@ Name | Type | Description  | Notes
 
 ## CertificatesList
 
-> CertificatesList(ctx, certMountPath).List(list).Execute()
-
 Manage trusted certificates used for authentication.
 
 ### Example
@@ -8077,8 +7833,6 @@ Name | Type | Description  | Notes
 
 ## CertificatesListCRLs
 
-> CertificatesListCRLs(ctx, certMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -8137,8 +7891,6 @@ Name | Type | Description  | Notes
 
 
 ## CertificatesLogin
-
-> CertificatesLogin(ctx, certMountPath).CertificatesLoginRequest(certificatesLoginRequest).Execute()
 
 
 
@@ -8202,8 +7954,6 @@ Name | Type | Description  | Notes
 
 ## CertificatesRead
 
-> CertificatesRead(ctx, certMountPath, name).Execute()
-
 Manage trusted certificates used for authentication.
 
 ### Example
@@ -8265,8 +8015,6 @@ Name | Type | Description  | Notes
 
 
 ## CertificatesReadCRL
-
-> CertificatesReadCRL(ctx, certMountPath, name).Execute()
 
 Manage Certificate Revocation Lists checked during authentication.
 
@@ -8330,8 +8078,6 @@ Name | Type | Description  | Notes
 
 ## CertificatesReadConfig
 
-> CertificatesReadConfig(ctx, certMountPath).Execute()
-
 
 
 ### Example
@@ -8389,8 +8135,6 @@ Name | Type | Description  | Notes
 
 
 ## CertificatesWrite
-
-> CertificatesWrite(ctx, certMountPath, name).CertificatesWriteRequest(certificatesWriteRequest).Execute()
 
 Manage trusted certificates used for authentication.
 
@@ -8458,8 +8202,6 @@ Name | Type | Description  | Notes
 
 ## CertificatesWriteCRL
 
-> CertificatesWriteCRL(ctx, certMountPath, name).CertificatesWriteCRLRequest(certificatesWriteCRLRequest).Execute()
-
 Manage Certificate Revocation Lists checked during authentication.
 
 ### Example
@@ -8526,8 +8268,6 @@ Name | Type | Description  | Notes
 
 ## CertificatesWriteConfig
 
-> CertificatesWriteConfig(ctx, certMountPath).CertificatesWriteConfigRequest(certificatesWriteConfigRequest).Execute()
-
 
 
 ### Example
@@ -8590,8 +8330,6 @@ Name | Type | Description  | Notes
 
 ## CloudFoundryDeleteConfig
 
-> CloudFoundryDeleteConfig(ctx, cfMountPath).Execute()
-
 
 
 ### Example
@@ -8649,8 +8387,6 @@ Name | Type | Description  | Notes
 
 
 ## CloudFoundryDeleteRole
-
-> CloudFoundryDeleteRole(ctx, cfMountPath, role).Execute()
 
 
 
@@ -8714,8 +8450,6 @@ Name | Type | Description  | Notes
 
 ## CloudFoundryListRoles
 
-> CloudFoundryListRoles(ctx, cfMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -8774,8 +8508,6 @@ Name | Type | Description  | Notes
 
 
 ## CloudFoundryLogin
-
-> CloudFoundryLogin(ctx, cfMountPath).CloudFoundryLoginRequest(cloudFoundryLoginRequest).Execute()
 
 
 
@@ -8839,8 +8571,6 @@ Name | Type | Description  | Notes
 
 ## CloudFoundryReadConfig
 
-> CloudFoundryReadConfig(ctx, cfMountPath).Execute()
-
 
 
 ### Example
@@ -8898,8 +8628,6 @@ Name | Type | Description  | Notes
 
 
 ## CloudFoundryReadRole
-
-> CloudFoundryReadRole(ctx, cfMountPath, role).Execute()
 
 
 
@@ -8963,8 +8691,6 @@ Name | Type | Description  | Notes
 
 ## CloudFoundryWriteConfig
 
-> CloudFoundryWriteConfig(ctx, cfMountPath).CloudFoundryWriteConfigRequest(cloudFoundryWriteConfigRequest).Execute()
-
 
 
 ### Example
@@ -9026,8 +8752,6 @@ Name | Type | Description  | Notes
 
 
 ## CloudFoundryWriteRole
-
-> CloudFoundryWriteRole(ctx, cfMountPath, role).CloudFoundryWriteRoleRequest(cloudFoundryWriteRoleRequest).Execute()
 
 
 
@@ -9095,8 +8819,6 @@ Name | Type | Description  | Notes
 
 ## GitHubDeleteMapTeam
 
-> GitHubDeleteMapTeam(ctx, githubMountPath, key).Execute()
-
 Read/write/delete a single teams mapping
 
 ### Example
@@ -9158,8 +8880,6 @@ Name | Type | Description  | Notes
 
 
 ## GitHubDeleteMapUser
-
-> GitHubDeleteMapUser(ctx, githubMountPath, key).Execute()
 
 Read/write/delete a single users mapping
 
@@ -9223,8 +8943,6 @@ Name | Type | Description  | Notes
 
 ## GitHubLogin
 
-> GitHubLogin(ctx, githubMountPath).GitHubLoginRequest(gitHubLoginRequest).Execute()
-
 
 
 ### Example
@@ -9287,8 +9005,6 @@ Name | Type | Description  | Notes
 
 ## GitHubReadConfig
 
-> GitHubReadConfig(ctx, githubMountPath).Execute()
-
 
 
 ### Example
@@ -9346,8 +9062,6 @@ Name | Type | Description  | Notes
 
 
 ## GitHubReadMapTeam
-
-> GitHubReadMapTeam(ctx, githubMountPath, key).Execute()
 
 Read/write/delete a single teams mapping
 
@@ -9411,8 +9125,6 @@ Name | Type | Description  | Notes
 
 ## GitHubReadMapTeams
 
-> GitHubReadMapTeams(ctx, githubMountPath).List(list).Execute()
-
 Read mappings for teams
 
 ### Example
@@ -9471,8 +9183,6 @@ Name | Type | Description  | Notes
 
 
 ## GitHubReadMapUser
-
-> GitHubReadMapUser(ctx, githubMountPath, key).Execute()
 
 Read/write/delete a single users mapping
 
@@ -9536,8 +9246,6 @@ Name | Type | Description  | Notes
 
 ## GitHubReadMapUsers
 
-> GitHubReadMapUsers(ctx, githubMountPath).List(list).Execute()
-
 Read mappings for users
 
 ### Example
@@ -9596,8 +9304,6 @@ Name | Type | Description  | Notes
 
 
 ## GitHubWriteConfig
-
-> GitHubWriteConfig(ctx, githubMountPath).GitHubWriteConfigRequest(gitHubWriteConfigRequest).Execute()
 
 
 
@@ -9660,8 +9366,6 @@ Name | Type | Description  | Notes
 
 
 ## GitHubWriteMapTeam
-
-> GitHubWriteMapTeam(ctx, githubMountPath, key).GitHubWriteMapTeamRequest(gitHubWriteMapTeamRequest).Execute()
 
 Read/write/delete a single teams mapping
 
@@ -9729,8 +9433,6 @@ Name | Type | Description  | Notes
 
 ## GitHubWriteMapUser
 
-> GitHubWriteMapUser(ctx, githubMountPath, key).GitHubWriteMapUserRequest(gitHubWriteMapUserRequest).Execute()
-
 Read/write/delete a single users mapping
 
 ### Example
@@ -9797,8 +9499,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudDeleteRole
 
-> GoogleCloudDeleteRole(ctx, gcpMountPath, name).Execute()
-
 Create a GCP role with associated policies and required attributes.
 
 ### Example
@@ -9861,8 +9561,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudListRoles
 
-> GoogleCloudListRoles(ctx, gcpMountPath).List(list).Execute()
-
 Lists all the roles that are registered with Vault.
 
 ### Example
@@ -9922,8 +9620,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudListRoles2
 
-> GoogleCloudListRoles2(ctx, gcpMountPath).List(list).Execute()
-
 Lists all the roles that are registered with Vault.
 
 ### Example
@@ -9982,8 +9678,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudLogin
-
-> GoogleCloudLogin(ctx, gcpMountPath).GoogleCloudLoginRequest(googleCloudLoginRequest).Execute()
 
 
 
@@ -10047,8 +9741,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudReadAuthConfig
 
-> GoogleCloudReadAuthConfig(ctx, gcpMountPath).Execute()
-
 Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 
 ### Example
@@ -10106,8 +9798,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudReadRole
-
-> GoogleCloudReadRole(ctx, gcpMountPath, name).Execute()
 
 Create a GCP role with associated policies and required attributes.
 
@@ -10171,8 +9861,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudWriteAuthConfig
 
-> GoogleCloudWriteAuthConfig(ctx, gcpMountPath).GoogleCloudWriteAuthConfigRequest(googleCloudWriteAuthConfigRequest).Execute()
-
 Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 
 ### Example
@@ -10234,8 +9922,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudWriteRole
-
-> GoogleCloudWriteRole(ctx, gcpMountPath, name).GoogleCloudWriteRoleRequest(googleCloudWriteRoleRequest).Execute()
 
 Create a GCP role with associated policies and required attributes.
 
@@ -10303,8 +9989,6 @@ Name | Type | Description  | Notes
 
 ## GoogleCloudWriteRoleLabels
 
-> GoogleCloudWriteRoleLabels(ctx, gcpMountPath, name).GoogleCloudWriteRoleLabelsRequest(googleCloudWriteRoleLabelsRequest).Execute()
-
 Add or remove labels for an existing 'gce' role
 
 ### Example
@@ -10370,8 +10054,6 @@ Name | Type | Description  | Notes
 
 
 ## GoogleCloudWriteRoleServiceAccounts
-
-> GoogleCloudWriteRoleServiceAccounts(ctx, gcpMountPath, name).GoogleCloudWriteRoleServiceAccountsRequest(googleCloudWriteRoleServiceAccountsRequest).Execute()
 
 Add or remove service accounts for an existing `iam` role
 
@@ -10439,8 +10121,6 @@ Name | Type | Description  | Notes
 
 ## JWTDeleteRole
 
-> JWTDeleteRole(ctx, jwtMountPath, name).Execute()
-
 Delete an existing role.
 
 ### Example
@@ -10503,8 +10183,6 @@ Name | Type | Description  | Notes
 
 ## JWTListRoles
 
-> JWTListRoles(ctx, jwtMountPath).List(list).Execute()
-
 Lists all the roles registered with the backend.
 
 
@@ -10565,8 +10243,6 @@ Name | Type | Description  | Notes
 
 
 ## JWTLogin
-
-> JWTLogin(ctx, jwtMountPath).JWTLoginRequest(jWTLoginRequest).Execute()
 
 Authenticates to Vault using a JWT (or OIDC) token.
 
@@ -10630,8 +10306,6 @@ Name | Type | Description  | Notes
 
 ## JWTReadConfig
 
-> JWTReadConfig(ctx, jwtMountPath).Execute()
-
 Read the current JWT authentication backend configuration.
 
 ### Example
@@ -10690,8 +10364,6 @@ Name | Type | Description  | Notes
 
 ## JWTReadOIDCCallback
 
-> JWTReadOIDCCallback(ctx, jwtMountPath).Execute()
-
 Callback endpoint to complete an OIDC login.
 
 ### Example
@@ -10749,8 +10421,6 @@ Name | Type | Description  | Notes
 
 
 ## JWTReadRole
-
-> JWTReadRole(ctx, jwtMountPath, name).Execute()
 
 Read an existing role.
 
@@ -10813,8 +10483,6 @@ Name | Type | Description  | Notes
 
 
 ## JWTWriteConfig
-
-> JWTWriteConfig(ctx, jwtMountPath).JWTWriteConfigRequest(jWTWriteConfigRequest).Execute()
 
 Configure the JWT authentication backend.
 
@@ -10880,8 +10548,6 @@ Name | Type | Description  | Notes
 
 ## JWTWriteOIDCAuthURL
 
-> JWTWriteOIDCAuthURL(ctx, jwtMountPath).JWTWriteOIDCAuthURLRequest(jWTWriteOIDCAuthURLRequest).Execute()
-
 Request an authorization URL to start an OIDC login flow.
 
 ### Example
@@ -10944,8 +10610,6 @@ Name | Type | Description  | Notes
 
 ## JWTWriteOIDCCallback
 
-> JWTWriteOIDCCallback(ctx, jwtMountPath).JWTWriteOIDCCallbackRequest(jWTWriteOIDCCallbackRequest).Execute()
-
 Callback endpoint to handle form_posts.
 
 ### Example
@@ -11007,8 +10671,6 @@ Name | Type | Description  | Notes
 
 
 ## JWTWriteRole
-
-> JWTWriteRole(ctx, jwtMountPath, name).JWTWriteRoleRequest(jWTWriteRoleRequest).Execute()
 
 Register an role with the backend.
 
@@ -11078,8 +10740,6 @@ Name | Type | Description  | Notes
 
 ## KerberosDeleteGroup
 
-> KerberosDeleteGroup(ctx, kerberosMountPath, name).Execute()
-
 
 
 ### Example
@@ -11142,8 +10802,6 @@ Name | Type | Description  | Notes
 
 ## KerberosListGroups
 
-> KerberosListGroups(ctx, kerberosMountPath).List(list).Execute()
-
 
 
 ### Example
@@ -11202,8 +10860,6 @@ Name | Type | Description  | Notes
 
 
 ## KerberosLogin
-
-> KerberosLogin(ctx, kerberosMountPath).KerberosLoginRequest(kerberosLoginRequest).Execute()
 
 
 
@@ -11267,8 +10923,6 @@ Name | Type | Description  | Notes
 
 ## KerberosReadConfig
 
-> KerberosReadConfig(ctx, kerberosMountPath).Execute()
-
 
 
 ### Example
@@ -11326,8 +10980,6 @@ Name | Type | Description  | Notes
 
 
 ## KerberosReadGroup
-
-> KerberosReadGroup(ctx, kerberosMountPath, name).Execute()
 
 
 
@@ -11391,8 +11043,6 @@ Name | Type | Description  | Notes
 
 ## KerberosReadLDAPConfig
 
-> KerberosReadLDAPConfig(ctx, kerberosMountPath).Execute()
-
 
 
 ### Example
@@ -11450,8 +11100,6 @@ Name | Type | Description  | Notes
 
 
 ## KerberosWriteConfig
-
-> KerberosWriteConfig(ctx, kerberosMountPath).KerberosWriteConfigRequest(kerberosWriteConfigRequest).Execute()
 
 
 
@@ -11514,8 +11162,6 @@ Name | Type | Description  | Notes
 
 
 ## KerberosWriteGroup
-
-> KerberosWriteGroup(ctx, kerberosMountPath, name).KerberosWriteGroupRequest(kerberosWriteGroupRequest).Execute()
 
 
 
@@ -11583,8 +11229,6 @@ Name | Type | Description  | Notes
 
 ## KerberosWriteLDAPConfig
 
-> KerberosWriteLDAPConfig(ctx, kerberosMountPath).KerberosWriteLDAPConfigRequest(kerberosWriteLDAPConfigRequest).Execute()
-
 
 
 ### Example
@@ -11646,8 +11290,6 @@ Name | Type | Description  | Notes
 
 
 ## KubernetesDeleteAuthRole
-
-> KubernetesDeleteAuthRole(ctx, kubernetesMountPath, name).Execute()
 
 Register an role with the backend.
 
@@ -11711,8 +11353,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesListAuthRoles
 
-> KubernetesListAuthRoles(ctx, kubernetesMountPath).List(list).Execute()
-
 Lists all the roles registered with the backend.
 
 ### Example
@@ -11771,8 +11411,6 @@ Name | Type | Description  | Notes
 
 
 ## KubernetesLogin
-
-> KubernetesLogin(ctx, kubernetesMountPath).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
 
 Authenticates Kubernetes service accounts with Vault.
 
@@ -11836,8 +11474,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesReadAuthConfig
 
-> KubernetesReadAuthConfig(ctx, kubernetesMountPath).Execute()
-
 Configures the JWT Public Key and Kubernetes API information.
 
 ### Example
@@ -11895,8 +11531,6 @@ Name | Type | Description  | Notes
 
 
 ## KubernetesReadAuthRole
-
-> KubernetesReadAuthRole(ctx, kubernetesMountPath, name).Execute()
 
 Register an role with the backend.
 
@@ -11960,8 +11594,6 @@ Name | Type | Description  | Notes
 
 ## KubernetesWriteAuthConfig
 
-> KubernetesWriteAuthConfig(ctx, kubernetesMountPath).KubernetesWriteAuthConfigRequest(kubernetesWriteAuthConfigRequest).Execute()
-
 Configures the JWT Public Key and Kubernetes API information.
 
 ### Example
@@ -12023,8 +11655,6 @@ Name | Type | Description  | Notes
 
 
 ## KubernetesWriteAuthRole
-
-> KubernetesWriteAuthRole(ctx, kubernetesMountPath, name).KubernetesWriteAuthRoleRequest(kubernetesWriteAuthRoleRequest).Execute()
 
 Register an role with the backend.
 
@@ -12092,8 +11722,6 @@ Name | Type | Description  | Notes
 
 ## LDAPDeleteGroup
 
-> LDAPDeleteGroup(ctx, ldapMountPath, name).Execute()
-
 Manage additional groups for users allowed to authenticate.
 
 ### Example
@@ -12155,8 +11783,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPDeleteUser
-
-> LDAPDeleteUser(ctx, ldapMountPath, name).Execute()
 
 Manage users allowed to authenticate.
 
@@ -12220,8 +11846,6 @@ Name | Type | Description  | Notes
 
 ## LDAPListGroups
 
-> LDAPListGroups(ctx, ldapMountPath).List(list).Execute()
-
 Manage additional groups for users allowed to authenticate.
 
 ### Example
@@ -12281,8 +11905,6 @@ Name | Type | Description  | Notes
 
 ## LDAPListUsers
 
-> LDAPListUsers(ctx, ldapMountPath).List(list).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -12341,8 +11963,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPLogin
-
-> LDAPLogin(ctx, ldapMountPath, username).LDAPLoginRequest(lDAPLoginRequest).Execute()
 
 Log in with a username and password.
 
@@ -12410,8 +12030,6 @@ Name | Type | Description  | Notes
 
 ## LDAPReadAuthConfig
 
-> LDAPReadAuthConfig(ctx, ldapMountPath).Execute()
-
 Configure the LDAP server to connect to, along with its options.
 
 ### Example
@@ -12469,8 +12087,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPReadGroup
-
-> LDAPReadGroup(ctx, ldapMountPath, name).Execute()
 
 Manage additional groups for users allowed to authenticate.
 
@@ -12534,8 +12150,6 @@ Name | Type | Description  | Notes
 
 ## LDAPReadUser
 
-> LDAPReadUser(ctx, ldapMountPath, name).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -12598,8 +12212,6 @@ Name | Type | Description  | Notes
 
 ## LDAPWriteAuthConfig
 
-> LDAPWriteAuthConfig(ctx, ldapMountPath).LDAPWriteAuthConfigRequest(lDAPWriteAuthConfigRequest).Execute()
-
 Configure the LDAP server to connect to, along with its options.
 
 ### Example
@@ -12661,8 +12273,6 @@ Name | Type | Description  | Notes
 
 
 ## LDAPWriteGroup
-
-> LDAPWriteGroup(ctx, ldapMountPath, name).LDAPWriteGroupRequest(lDAPWriteGroupRequest).Execute()
 
 Manage additional groups for users allowed to authenticate.
 
@@ -12730,8 +12340,6 @@ Name | Type | Description  | Notes
 
 ## LDAPWriteUser
 
-> LDAPWriteUser(ctx, ldapMountPath, name).LDAPWriteUserRequest(lDAPWriteUserRequest).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -12798,8 +12406,6 @@ Name | Type | Description  | Notes
 
 ## OCIDeleteConfig
 
-> OCIDeleteConfig(ctx, ociMountPath).Execute()
-
 Manages the configuration for the Vault Auth Plugin.
 
 ### Example
@@ -12857,8 +12463,6 @@ Name | Type | Description  | Notes
 
 
 ## OCIDeleteRole
-
-> OCIDeleteRole(ctx, ociMountPath, role).Execute()
 
 Create a role and associate policies to it.
 
@@ -12922,8 +12526,6 @@ Name | Type | Description  | Notes
 
 ## OCIListRoles
 
-> OCIListRoles(ctx, ociMountPath).List(list).Execute()
-
 Lists all the roles that are registered with Vault.
 
 ### Example
@@ -12982,8 +12584,6 @@ Name | Type | Description  | Notes
 
 
 ## OCILoginWithRole
-
-> OCILoginWithRole(ctx, ociMountPath, role).OCILoginWithRoleRequest(oCILoginWithRoleRequest).Execute()
 
 Authenticates to Vault using OCI credentials
 
@@ -13051,8 +12651,6 @@ Name | Type | Description  | Notes
 
 ## OCIReadConfig
 
-> OCIReadConfig(ctx, ociMountPath).Execute()
-
 Manages the configuration for the Vault Auth Plugin.
 
 ### Example
@@ -13110,8 +12708,6 @@ Name | Type | Description  | Notes
 
 
 ## OCIReadRole
-
-> OCIReadRole(ctx, ociMountPath, role).Execute()
 
 Create a role and associate policies to it.
 
@@ -13175,8 +12771,6 @@ Name | Type | Description  | Notes
 
 ## OCIWriteConfig
 
-> OCIWriteConfig(ctx, ociMountPath).OCIWriteConfigRequest(oCIWriteConfigRequest).Execute()
-
 Manages the configuration for the Vault Auth Plugin.
 
 ### Example
@@ -13238,8 +12832,6 @@ Name | Type | Description  | Notes
 
 
 ## OCIWriteRole
-
-> OCIWriteRole(ctx, ociMountPath, role).OCIWriteRoleRequest(oCIWriteRoleRequest).Execute()
 
 Create a role and associate policies to it.
 
@@ -13307,8 +12899,6 @@ Name | Type | Description  | Notes
 
 ## OIDCDeleteAuthRole
 
-> OIDCDeleteAuthRole(ctx, name, oidcMountPath).Execute()
-
 Delete an existing role.
 
 ### Example
@@ -13371,8 +12961,6 @@ Name | Type | Description  | Notes
 
 ## OIDCListAuthRoles
 
-> OIDCListAuthRoles(ctx, oidcMountPath).List(list).Execute()
-
 Lists all the roles registered with the backend.
 
 
@@ -13433,8 +13021,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCLogin
-
-> OIDCLogin(ctx, oidcMountPath).OIDCLoginRequest(oIDCLoginRequest).Execute()
 
 Authenticates to Vault using a JWT (or OIDC) token.
 
@@ -13498,8 +13084,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadAuthConfig
 
-> OIDCReadAuthConfig(ctx, oidcMountPath).Execute()
-
 Read the current JWT authentication backend configuration.
 
 ### Example
@@ -13557,8 +13141,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCReadAuthRole
-
-> OIDCReadAuthRole(ctx, name, oidcMountPath).Execute()
 
 Read an existing role.
 
@@ -13622,8 +13204,6 @@ Name | Type | Description  | Notes
 
 ## OIDCReadCallback
 
-> OIDCReadCallback(ctx, oidcMountPath).Execute()
-
 Callback endpoint to complete an OIDC login.
 
 ### Example
@@ -13681,8 +13261,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteAuthConfig
-
-> OIDCWriteAuthConfig(ctx, oidcMountPath).OIDCWriteAuthConfigRequest(oIDCWriteAuthConfigRequest).Execute()
 
 Configure the JWT authentication backend.
 
@@ -13747,8 +13325,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteAuthRole
-
-> OIDCWriteAuthRole(ctx, name, oidcMountPath).OIDCWriteAuthRoleRequest(oIDCWriteAuthRoleRequest).Execute()
 
 Register an role with the backend.
 
@@ -13818,8 +13394,6 @@ Name | Type | Description  | Notes
 
 ## OIDCWriteAuthURL
 
-> OIDCWriteAuthURL(ctx, oidcMountPath).OIDCWriteAuthURLRequest(oIDCWriteAuthURLRequest).Execute()
-
 Request an authorization URL to start an OIDC login flow.
 
 ### Example
@@ -13881,8 +13455,6 @@ Name | Type | Description  | Notes
 
 
 ## OIDCWriteCallback
-
-> OIDCWriteCallback(ctx, oidcMountPath).OIDCWriteCallbackRequest(oIDCWriteCallbackRequest).Execute()
 
 Callback endpoint to handle form_posts.
 
@@ -13946,8 +13518,6 @@ Name | Type | Description  | Notes
 
 ## OktaDeleteGroup
 
-> OktaDeleteGroup(ctx, name, oktaMountPath).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -14009,8 +13579,6 @@ Name | Type | Description  | Notes
 
 
 ## OktaDeleteUser
-
-> OktaDeleteUser(ctx, name, oktaMountPath).Execute()
 
 Manage additional groups for users allowed to authenticate.
 
@@ -14074,8 +13642,6 @@ Name | Type | Description  | Notes
 
 ## OktaListGroups
 
-> OktaListGroups(ctx, oktaMountPath).List(list).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -14135,8 +13701,6 @@ Name | Type | Description  | Notes
 
 ## OktaListUsers
 
-> OktaListUsers(ctx, oktaMountPath).List(list).Execute()
-
 Manage additional groups for users allowed to authenticate.
 
 ### Example
@@ -14195,8 +13759,6 @@ Name | Type | Description  | Notes
 
 
 ## OktaLogin
-
-> OktaLogin(ctx, oktaMountPath, username).OktaLoginRequest(oktaLoginRequest).Execute()
 
 Log in with a username and password.
 
@@ -14264,8 +13826,6 @@ Name | Type | Description  | Notes
 
 ## OktaReadConfig
 
-> OktaReadConfig(ctx, oktaMountPath).Execute()
-
 This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 
 ### Example
@@ -14323,8 +13883,6 @@ Name | Type | Description  | Notes
 
 
 ## OktaReadGroup
-
-> OktaReadGroup(ctx, name, oktaMountPath).Execute()
 
 Manage users allowed to authenticate.
 
@@ -14388,8 +13946,6 @@ Name | Type | Description  | Notes
 
 ## OktaReadUser
 
-> OktaReadUser(ctx, name, oktaMountPath).Execute()
-
 Manage additional groups for users allowed to authenticate.
 
 ### Example
@@ -14451,8 +14007,6 @@ Name | Type | Description  | Notes
 
 
 ## OktaVerify
-
-> OktaVerify(ctx, nonce, oktaMountPath).Execute()
 
 
 
@@ -14516,8 +14070,6 @@ Name | Type | Description  | Notes
 
 ## OktaWriteConfig
 
-> OktaWriteConfig(ctx, oktaMountPath).OktaWriteConfigRequest(oktaWriteConfigRequest).Execute()
-
 This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 
 ### Example
@@ -14579,8 +14131,6 @@ Name | Type | Description  | Notes
 
 
 ## OktaWriteGroup
-
-> OktaWriteGroup(ctx, name, oktaMountPath).OktaWriteGroupRequest(oktaWriteGroupRequest).Execute()
 
 Manage users allowed to authenticate.
 
@@ -14648,8 +14198,6 @@ Name | Type | Description  | Notes
 
 ## OktaWriteUser
 
-> OktaWriteUser(ctx, name, oktaMountPath).OktaWriteUserRequest(oktaWriteUserRequest).Execute()
-
 Manage additional groups for users allowed to authenticate.
 
 ### Example
@@ -14716,8 +14264,6 @@ Name | Type | Description  | Notes
 
 ## RadiusDeleteUser
 
-> RadiusDeleteUser(ctx, name, radiusMountPath).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -14780,8 +14326,6 @@ Name | Type | Description  | Notes
 
 ## RadiusListUsers
 
-> RadiusListUsers(ctx, radiusMountPath).List(list).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -14840,8 +14384,6 @@ Name | Type | Description  | Notes
 
 
 ## RadiusLogin
-
-> RadiusLogin(ctx, radiusMountPath).RadiusLoginRequest(radiusLoginRequest).Execute()
 
 Log in with a username and password.
 
@@ -14904,8 +14446,6 @@ Name | Type | Description  | Notes
 
 
 ## RadiusLoginWithUsername
-
-> RadiusLoginWithUsername(ctx, radiusMountPath, urlusername).RadiusLoginWithUsernameRequest(radiusLoginWithUsernameRequest).Execute()
 
 Log in with a username and password.
 
@@ -14973,8 +14513,6 @@ Name | Type | Description  | Notes
 
 ## RadiusReadConfig
 
-> RadiusReadConfig(ctx, radiusMountPath).Execute()
-
 Configure the RADIUS server to connect to, along with its options.
 
 ### Example
@@ -15032,8 +14570,6 @@ Name | Type | Description  | Notes
 
 
 ## RadiusReadUser
-
-> RadiusReadUser(ctx, name, radiusMountPath).Execute()
 
 Manage users allowed to authenticate.
 
@@ -15097,8 +14633,6 @@ Name | Type | Description  | Notes
 
 ## RadiusWriteConfig
 
-> RadiusWriteConfig(ctx, radiusMountPath).RadiusWriteConfigRequest(radiusWriteConfigRequest).Execute()
-
 Configure the RADIUS server to connect to, along with its options.
 
 ### Example
@@ -15160,8 +14694,6 @@ Name | Type | Description  | Notes
 
 
 ## RadiusWriteUser
-
-> RadiusWriteUser(ctx, name, radiusMountPath).RadiusWriteUserRequest(radiusWriteUserRequest).Execute()
 
 Manage users allowed to authenticate.
 
@@ -15229,8 +14761,6 @@ Name | Type | Description  | Notes
 
 ## TokenDeleteRole
 
-> TokenDeleteRole(ctx, roleName, tokenMountPath).Execute()
-
 
 
 ### Example
@@ -15293,8 +14823,6 @@ Name | Type | Description  | Notes
 
 ## TokenListAccessors
 
-> TokenListAccessors(ctx, tokenMountPath).List(list).Execute()
-
 List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
 
 ### Example
@@ -15353,8 +14881,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenListRoles
-
-> TokenListRoles(ctx, tokenMountPath).List(list).Execute()
 
 This endpoint lists configured roles.
 
@@ -15415,8 +14941,6 @@ Name | Type | Description  | Notes
 
 ## TokenReadLookup
 
-> TokenReadLookup(ctx, tokenMountPath).Execute()
-
 This endpoint will lookup a token and its properties.
 
 ### Example
@@ -15475,8 +14999,6 @@ Name | Type | Description  | Notes
 
 ## TokenReadLookupSelf
 
-> TokenReadLookupSelf(ctx, tokenMountPath).Execute()
-
 This endpoint will lookup a token and its properties.
 
 ### Example
@@ -15534,8 +15056,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenReadRole
-
-> TokenReadRole(ctx, roleName, tokenMountPath).Execute()
 
 
 
@@ -15599,8 +15119,6 @@ Name | Type | Description  | Notes
 
 ## TokenRenew
 
-> TokenRenew(ctx, tokenMountPath).TokenRenewRequest(tokenRenewRequest).Execute()
-
 This endpoint will renew the given token and prevent expiration.
 
 ### Example
@@ -15662,8 +15180,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenRenewAccessor
-
-> TokenRenewAccessor(ctx, tokenMountPath).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
 
 This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
 
@@ -15727,8 +15243,6 @@ Name | Type | Description  | Notes
 
 ## TokenRenewSelf
 
-> TokenRenewSelf(ctx, tokenMountPath).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
-
 This endpoint will renew the token used to call it and prevent expiration.
 
 ### Example
@@ -15790,8 +15304,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenRevoke
-
-> TokenRevoke(ctx, tokenMountPath).TokenRevokeRequest(tokenRevokeRequest).Execute()
 
 This endpoint will delete the given token and all of its child tokens.
 
@@ -15855,8 +15367,6 @@ Name | Type | Description  | Notes
 
 ## TokenRevokeAccessor
 
-> TokenRevokeAccessor(ctx, tokenMountPath).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
-
 This endpoint will delete the token associated with the accessor and all of its child tokens.
 
 ### Example
@@ -15918,8 +15428,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenRevokeOrphan
-
-> TokenRevokeOrphan(ctx, tokenMountPath).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
 
 This endpoint will delete the token and orphan its child tokens.
 
@@ -15983,8 +15491,6 @@ Name | Type | Description  | Notes
 
 ## TokenRevokeSelf
 
-> TokenRevokeSelf(ctx, tokenMountPath).Execute()
-
 This endpoint will delete the token used to call it and all of its child tokens.
 
 ### Example
@@ -16043,8 +15549,6 @@ Name | Type | Description  | Notes
 
 ## TokenTidy
 
-> TokenTidy(ctx, tokenMountPath).Execute()
-
 This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 
 ### Example
@@ -16102,8 +15606,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenWriteCreate
-
-> TokenWriteCreate(ctx, tokenMountPath).TokenWriteCreateRequest(tokenWriteCreateRequest).Format(format).Execute()
 
 The token create path is used to create new tokens.
 
@@ -16170,8 +15672,6 @@ Name | Type | Description  | Notes
 
 ## TokenWriteCreateOrphan
 
-> TokenWriteCreateOrphan(ctx, tokenMountPath).TokenWriteCreateOrphanRequest(tokenWriteCreateOrphanRequest).Format(format).Execute()
-
 The token create path is used to create new orphan tokens.
 
 ### Example
@@ -16236,8 +15736,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenWriteCreateWithRole
-
-> TokenWriteCreateWithRole(ctx, roleName, tokenMountPath).TokenWriteCreateWithRoleRequest(tokenWriteCreateWithRoleRequest).Format(format).Execute()
 
 This token create path is used to create new tokens adhering to the given role.
 
@@ -16308,8 +15806,6 @@ Name | Type | Description  | Notes
 
 ## TokenWriteLookup
 
-> TokenWriteLookup(ctx, tokenMountPath).TokenWriteLookupRequest(tokenWriteLookupRequest).Execute()
-
 This endpoint will lookup a token and its properties.
 
 ### Example
@@ -16371,8 +15867,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenWriteLookupAccessor
-
-> TokenWriteLookupAccessor(ctx, tokenMountPath).TokenWriteLookupAccessorRequest(tokenWriteLookupAccessorRequest).Execute()
 
 This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
 
@@ -16436,8 +15930,6 @@ Name | Type | Description  | Notes
 
 ## TokenWriteLookupSelf
 
-> TokenWriteLookupSelf(ctx, tokenMountPath).TokenWriteLookupSelfRequest(tokenWriteLookupSelfRequest).Execute()
-
 This endpoint will lookup a token and its properties.
 
 ### Example
@@ -16499,8 +15991,6 @@ Name | Type | Description  | Notes
 
 
 ## TokenWriteRole
-
-> TokenWriteRole(ctx, roleName, tokenMountPath).TokenWriteRoleRequest(tokenWriteRoleRequest).Execute()
 
 
 
@@ -16568,8 +16058,6 @@ Name | Type | Description  | Notes
 
 ## UserpassDeleteUser
 
-> UserpassDeleteUser(ctx, username, userpassMountPath).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -16632,8 +16120,6 @@ Name | Type | Description  | Notes
 
 ## UserpassListUsers
 
-> UserpassListUsers(ctx, userpassMountPath).List(list).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -16692,8 +16178,6 @@ Name | Type | Description  | Notes
 
 
 ## UserpassLogin
-
-> UserpassLogin(ctx, username, userpassMountPath).UserpassLoginRequest(userpassLoginRequest).Execute()
 
 Log in with a username and password.
 
@@ -16761,8 +16245,6 @@ Name | Type | Description  | Notes
 
 ## UserpassReadUser
 
-> UserpassReadUser(ctx, username, userpassMountPath).Execute()
-
 Manage users allowed to authenticate.
 
 ### Example
@@ -16824,8 +16306,6 @@ Name | Type | Description  | Notes
 
 
 ## UserpassWriteUser
-
-> UserpassWriteUser(ctx, username, userpassMountPath).UserpassWriteUserRequest(userpassWriteUserRequest).Execute()
 
 Manage users allowed to authenticate.
 
@@ -16893,8 +16373,6 @@ Name | Type | Description  | Notes
 
 ## UserpassWriteUserPassword
 
-> UserpassWriteUserPassword(ctx, username, userpassMountPath).UserpassWriteUserPasswordRequest(userpassWriteUserPasswordRequest).Execute()
-
 Reset user's password.
 
 ### Example
@@ -16960,8 +16438,6 @@ Name | Type | Description  | Notes
 
 
 ## UserpassWriteUserPolicies
-
-> UserpassWriteUserPolicies(ctx, username, userpassMountPath).UserpassWriteUserPoliciesRequest(userpassWriteUserPoliciesRequest).Execute()
 
 Update the policies associated with the username.
 

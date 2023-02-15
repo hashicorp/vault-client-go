@@ -1424,6 +1424,428 @@ func (s *Secrets) CubbyholeWrite(ctx context.Context, path string, options ...Re
 	)
 }
 
+// DatabaseDeleteConfig Configure connection details to a database plugin.
+// name: Name of this database connection
+func (s *Secrets) DatabaseDeleteConfig(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/config/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseDeleteRole Manage the roles that can be created with this backend.
+// name: Name of the role.
+func (s *Secrets) DatabaseDeleteRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseDeleteStaticRole Manage the static roles that can be created with this backend.
+// name: Name of the role.
+func (s *Secrets) DatabaseDeleteStaticRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/static-roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodDelete,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseListConfig Configure connection details to a database plugin.
+func (s *Secrets) DatabaseListConfig(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/config"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseListRoles Manage the roles that can be created with this backend.
+func (s *Secrets) DatabaseListRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/roles"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseListStaticRoles Manage the static roles that can be created with this backend.
+func (s *Secrets) DatabaseListStaticRoles(ctx context.Context, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/static-roles"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+
+	requestQueryParameters := make(url.Values)
+	requestQueryParameters.Set("list", "true")
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseReadConfig Configure connection details to a database plugin.
+// name: Name of this database connection
+func (s *Secrets) DatabaseReadConfig(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/config/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseReadCredentials Request database credentials for a certain role.
+// name: Name of the role.
+func (s *Secrets) DatabaseReadCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseReadRole Manage the roles that can be created with this backend.
+// name: Name of the role.
+func (s *Secrets) DatabaseReadRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseReadStaticCredentials Request database credentials for a certain static role. These credentials are rotated periodically.
+// name: Name of the static role.
+func (s *Secrets) DatabaseReadStaticCredentials(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/static-creds/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseReadStaticRole Manage the static roles that can be created with this backend.
+// name: Name of the role.
+func (s *Secrets) DatabaseReadStaticRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/static-roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodGet,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseReset Resets a database plugin.
+// name: Name of this database connection
+func (s *Secrets) DatabaseReset(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/reset/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseRotateRole
+// name: Name of the static role
+func (s *Secrets) DatabaseRotateRole(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/rotate-role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseRotateRoot
+// name: Name of this database connection
+func (s *Secrets) DatabaseRotateRoot(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/rotate-root/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		nil, // request body
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseWriteConfig Configure connection details to a database plugin.
+// name: Name of this database connection
+func (s *Secrets) DatabaseWriteConfig(ctx context.Context, name string, request schema.DatabaseWriteConfigRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/config/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseWriteRole Manage the roles that can be created with this backend.
+// name: Name of the role.
+func (s *Secrets) DatabaseWriteRole(ctx context.Context, name string, request schema.DatabaseWriteRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
+// DatabaseWriteStaticRole Manage the static roles that can be created with this backend.
+// name: Name of the role.
+func (s *Secrets) DatabaseWriteStaticRole(ctx context.Context, name string, request schema.DatabaseWriteStaticRoleRequest, options ...RequestOption) (*Response[map[string]interface{}], error) {
+	requestModifiers, err := requestOptionsToRequestModifiers(options)
+	if err != nil {
+		return nil, err
+	}
+
+	requestPath := "/v1/{database_mount_path}/static-roles/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"database_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("database")), -1)
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
+
+	requestQueryParameters := make(url.Values)
+
+	return sendStructuredRequestParseResponse[map[string]interface{}](
+		ctx,
+		s.client,
+		http.MethodPost,
+		requestPath,
+		request,
+		requestQueryParameters,
+		requestModifiers,
+	)
+}
+
 // GoogleCloudDeleteRoleset
 // name: Required. Name of the role.
 func (s *Secrets) GoogleCloudDeleteRoleset(ctx context.Context, name string, options ...RequestOption) (*Response[map[string]interface{}], error) {

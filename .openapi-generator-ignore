@@ -7,6 +7,7 @@ README.md
 configuration.go
 response.go
 utils.go
+test/*
 
 git_push.sh
 

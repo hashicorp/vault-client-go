@@ -1,4 +1,4 @@
-OPENAPI_GENERATOR_VERSION   ?= v5.4.0
+OPENAPI_GENERATOR_VERSION   ?= v6.4.0
 OPENAPI_SPEC_PATH           ?= openapi.json
 GENERATE_CONFIG_PATH        ?= generate/config.yaml
 GENERATE_TEMPLATES_PATH     ?= generate/templates

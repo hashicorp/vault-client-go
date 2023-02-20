@@ -31,9 +31,9 @@ func ({{lower (substring classname 0 1)}} *{{cut classname "Api"}}) {{nickname}}
 		return nil, err
 	}
 
-	requestPath := "/v1{{{path}}}"{{#each pathParams}}{{#unless required}}
-	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(requestModifiers.mountPathOr({{#with defaultValue}}{{{.}}}{{/with}})), -1){{/unless}}{{/each}}{{#each pathParams}}{{#with required}}
-	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/with}}{{/each}}
+	requestPath := "/v1{{{path}}}"{{#each pathParams}}{{#endsWith baseName "_mount_path"}}
+	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape(requestModifiers.mountPathOr({{#with defaultValue}}{{{.}}}{{/with}})), -1){{/endsWith}}{{/each}}{{#each pathParams}}{{#endsWith baseName "_mount_path"}}{{else}}
+    requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/endsWith}}{{/each}}
 
 	requestQueryParameters := make(url.Values){{#each queryParams}}{{#eq paramName "list"}}
 	requestQueryParameters.Set("{{paramName}}", "true"){{/eq}}{{#neq paramName "list"}}

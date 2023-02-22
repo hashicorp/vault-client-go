@@ -1,4 +1,4 @@
-# vault-client-go ![build](https://github.com/hashicorp/vault-client-go/actions/workflows/main.yml/badge.svg)
+# vault-client-go
 
 A simple [HashiCorp Vault][vault] Go client library.
 

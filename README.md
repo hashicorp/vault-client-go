@@ -1,14 +1,9 @@
-# [EXPERIMENTAL] Go Client for HashiCorp Vault
+# vault-client-go
 
-A simple client library [generated][openapi-generator] from `OpenAPI`
-[specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
-[Vault][vault].
+A simple [HashiCorp Vault][vault] Go client library.
 
-> _**Warning**_: This library is currently marked as **EXPERIMENTAL**. Please
-> try it out and give us feedback! Please do not use it in production.
-
-> _**Warning**_: The [openapi.json][openapi-spec] file included in this
-> repository is **NOT** the official Vault `OpenAPI` specification.
+> _**Note**_: **This library is now available in BETA. Please try it out and
+> give us feedback! Please do not use it in production.**
 
 ## Contents
 
@@ -19,8 +14,8 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
    - [Using Generic Accessors](#using-generic-accessors)
    - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
-      - [Overriding Default Mount Path](#overriding-default-mount-path)
-      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
+     - [Overriding Default Mount Path](#overriding-default-mount-path)
+     - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
    - [Error Handling](#error-handling)
    - [Using TLS](#using-tls)
    - [Using TLS with Client-side Certificate Authentication](#using-tls-with-client-side-certificate-authentication)
@@ -34,7 +29,7 @@ A simple client library [generated][openapi-generator] from `OpenAPI`
 ## Installation
 
 ```sh
-go get github.com/hashicorp/vault-client-go
+go get -u github.com/hashicorp/vault-client-go
 ```
 
 ## Examples
@@ -133,8 +128,8 @@ should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 
 ### Using Generic Accessors
 
-The library provides the following generic accessors which let you read,
-modify, and delete an arbitrary path within Vault:
+The library provides the following generic accessors which let you read, modify,
+and delete an arbitrary path within Vault:
 
 ```go
 client.Read(...)
@@ -196,8 +191,8 @@ for engine := range resp.Data {
 
 ### Modifying Requests
 
-You can modify the requests in one of two ways, either at the client level or
-by decorating individual requests:
+You can modify the requests in one of two ways, either at the client level or by
+decorating individual requests:
 
 ```go
 // all subsequent requests will use the given token & namespace
@@ -237,8 +232,8 @@ secret, err := client.Secrets.KVv2Read(
 
 #### Response Wrapping & Unwrapping
 
-Please refer to the [response-wrapping documentation][doc-response-wrapping]
-for more background information.
+Please refer to the [response-wrapping documentation][doc-response-wrapping] for
+more background information.
 
 ```go
 // wrap the response with a 5 minute TTL
@@ -362,14 +357,15 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 })
 ```
 
-Alternatively, `vault.WithRequestCallbacks(..)` / `vault.WithResponseCallbacks(..)`
-may be used to inject callbacks for individual requests.
+Alternatively, `vault.WithRequestCallbacks(..)` /
+`vault.WithResponseCallbacks(..)` may be used to inject callbacks for individual
+requests.
 
 ### Enforcing Read-your-writes Replication Semantics
 
 Detailed background information of the read-after-write consistency problem can
-be found in the [consistency][doc-consistency] and [replication][doc-replication]
-documentation pages.
+be found in the [consistency][doc-consistency] and
+[replication][doc-replication] documentation pages.
 
 You can enforce read-your-writes semantics for individual requests through
 callbacks:
@@ -418,15 +414,18 @@ client, err := vault.New(
 
 ## Building the Library
 
-The vast majority of the code, including the client's endpoints, requests and
-responses is generated from the `OpenAPI` [specification file][openapi-spec]
-v1.13.0 using [`openapi-generator`][openapi-generator]. If you make any changes
-to the underlying templates (`generate/templates/*`), make sure to regenerate
-the files by running the following:
+The vast majority of the code (including the client's endpoint-related methods,
+request structures, and response structures) is generated from the
+[openapi.json][openapi-json] using [`openapi-generator`][openapi-generator]. If
+you make any changes to the underlying templates (`generate/templates/*`),
+please make sure to regenerate the files by running the following:
 
 ```sh
-make regen && go build
+make regen && go build ./... && go test ./...
 ```
+
+> _**Warning**_: The [openapi.json][openapi-json] file included in this
+> repository is **NOT** the official Vault's OpenAPI specification.
 
 ## Under Development
 
@@ -438,7 +437,8 @@ high-level features that have been implemented:
 - Automatic retries on errors (using [go-retryablehttp][go-retryablehttp])
 - Custom redirect logic
 - Client-side rate limiting
-- Vault-specific headers (`X-Vault-Token`, `X-Vault-Namespace`, etc.) and custom headers
+- Vault-specific headers (`X-Vault-Token`, `X-Vault-Namespace`, etc.) and custom
+  headers
 - Request/Response callbacks
 - Environment variables for configuration
 - Read-your-writes semantics
@@ -448,7 +448,7 @@ high-level features that have been implemented:
 
 The following features are coming soon:
 
-- Structured responses (as part of the [specification file][openapi-spec])
+- Structured responses (as part of [openapi.json][openapi-json])
 - Testing framework
 - Authentication wrappers
 - Other helpers & wrappers (KV, SSH, Monitor, Plugins, LifetimeWatcher, etc.)
@@ -460,9 +460,9 @@ The following features are coming soon:
 - [Secrets](docs/SecretsApi.md)
 - [System](docs/SystemApi.md)
 
-[hashicorp]:             https://www.hashicorp.com/
 [vault]:                 https://www.vaultproject.io/
-[openapi-spec]:          openapi.json
+[openapi]:               https://www.openapis.org/
+[openapi-json]:          openapi.json
 [openapi-generator]:	 https://openapi-generator.tech/docs/generators/go
 [go-retryablehttp]:      https://github.com/hashicorp/go-retryablehttp
 [doc-consistency]:       https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations

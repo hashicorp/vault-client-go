@@ -1,6 +1,6 @@
 # vault-client-go ![build](https://github.com/hashicorp/vault-client-go/actions/workflows/main.yml/badge.svg)
 
-A simple client library to interact with [HashiCorp Vault][vault].
+A simple [HashiCorp Vault][vault] Go client library.
 
 > _**Note**_: **This library is now available in BETA. Please try it out and
 > give us feedback! Please do not use it in production.**
@@ -29,7 +29,7 @@ A simple client library to interact with [HashiCorp Vault][vault].
 ## Installation
 
 ```sh
-go get github.com/hashicorp/vault-client-go
+go get -u github.com/hashicorp/vault-client-go
 ```
 
 ## Examples

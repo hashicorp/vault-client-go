@@ -1,6 +1,8 @@
 name: ci
 
 on:
+  branches:
+    - main
   pull_request:
     branches: [ '**' ]
 

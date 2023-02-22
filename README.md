@@ -1,7 +1,6 @@
 # vault-client-go ![build](https://github.com/hashicorp/vault-client-go/actions/workflows/main.yml/badge.svg)
 
-A simple client library [generated][openapi-generator] from [OpenAPI][openapi]
-specification file to interact with [HashiCorp Vault][vault].
+A simple client library to interact with [HashiCorp Vault][vault].
 
 > _**Note**_: **This library is now available in BETA. Please try it out and
 > give us feedback! Please do not use it in production.**

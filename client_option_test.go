@@ -45,10 +45,10 @@ func Test_New(t *testing.T) {
 
 			// unset the base client pointers since they are always different
 			configurationDefault := DefaultConfiguration()
-			configurationDefault.BaseClient = nil
+			configurationDefault.HTTPClient = nil
 
 			configurationClient := client.Configuration()
-			configurationClient.BaseClient = nil
+			configurationClient.HTTPClient = nil
 
 			// check if the configurations were modified
 			if len(tc.options) == 0 {

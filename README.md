@@ -415,7 +415,7 @@ client, err := vault.New(
 ## Building the Library
 
 The vast majority of the code (including the client's endpoint-related methods,
-request structures and response structures) is generated from the
+request structures, and response structures) is generated from the
 [openapi.json][openapi-json] using [`openapi-generator`][openapi-generator]. If
 you make any changes to the underlying templates (`generate/templates/*`),
 please make sure to regenerate the files by running the following:

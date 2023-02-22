@@ -62,11 +62,11 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 		configuration: configuration,
 
 		// configured or default HTTP client
-		client: configuration.BaseClient,
+		client: configuration.HTTPClient,
 
 		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
-			HTTPClient:   configuration.BaseClient,
+			HTTPClient:   configuration.HTTPClient,
 			Logger:       configuration.RetryConfiguration.Logger,
 			RetryWaitMin: configuration.RetryConfiguration.RetryWaitMin,
 			RetryWaitMax: configuration.RetryConfiguration.RetryWaitMax,
@@ -87,7 +87,7 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 		clientRequestModifiersLock: sync.RWMutex{},
 	}
 
-	address, err := parseAddress(configuration.BaseAddress)
+	address, err := parseAddress(configuration.Address)
 	if err != nil {
 		return nil, err
 	}
@@ -104,9 +104,9 @@ func newClient(configuration ClientConfiguration) (*Client, error) {
 	}
 
 	// Adjust the dial context for unix domain socket addresses.
-	if strings.HasPrefix(configuration.BaseAddress, "unix://") {
+	if strings.HasPrefix(configuration.Address, "unix://") {
 		transport.DialContext = func(context.Context, string, string) (net.Conn, error) {
-			return net.Dial("unix", strings.TrimPrefix(configuration.BaseAddress, "unix://"))
+			return net.Dial("unix", strings.TrimPrefix(configuration.Address, "unix://"))
 		}
 	}
 

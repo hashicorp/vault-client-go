@@ -19,10 +19,10 @@ func Test_New(t *testing.T) {
 			options: nil,
 		},
 		"with-base-address": {
-			options: []ClientOption{WithBaseAddress("http://test")},
+			options: []ClientOption{WithAddress("http://test")},
 		},
 		"with-base-address-with-request-timeout": {
-			options: []ClientOption{WithBaseAddress("http://test"), WithRequestTimeout(30 * time.Second)},
+			options: []ClientOption{WithAddress("http://test"), WithRequestTimeout(30 * time.Second)},
 		},
 		"with-enforce-read-your-writes-consistency": {
 			options: []ClientOption{WithEnforceReadYourWritesConsistency()},
@@ -45,10 +45,10 @@ func Test_New(t *testing.T) {
 
 			// unset the base client pointers since they are always different
 			configurationDefault := DefaultConfiguration()
-			configurationDefault.BaseClient = nil
+			configurationDefault.HTTPClient = nil
 
 			configurationClient := client.Configuration()
-			configurationClient.BaseClient = nil
+			configurationClient.HTTPClient = nil
 
 			// check if the configurations were modified
 			if len(tc.options) == 0 {

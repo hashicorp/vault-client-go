@@ -23,17 +23,17 @@ import (
 
 // ClientConfiguration is used to configure the creation of the client
 type ClientConfiguration struct {
-	// BaseAddress specifies the Vault server base address in the form of
+	// Address specifies the Vault server's base address in the form of
 	// scheme://host:port
 	// Default: https://127.0.0.1:8200
-	BaseAddress string `env:"VAULT_ADDR,VAULT_AGENT_ADDR"`
+	Address string `env:"VAULT_ADDR,VAULT_AGENT_ADDR"`
 
-	// BaseClient is the HTTP client to use for all API requests.
-	// DefaultConfiguration() sets reasonable defaults for the BaseClient and
+	// HTTPClient is the HTTP client to use for all API requests.
+	// DefaultConfiguration() sets reasonable defaults for the HTTPClient and
 	// its associated http.Transport. If you must modify Vault's defaults, it
 	// is suggested that you start with that client and modify it as needed
 	// rather than starting with an empty client or http.DefaultClient.
-	BaseClient *http.Client
+	HTTPClient *http.Client
 
 	// RequestTimeout, given a non-negative value, will apply the timeout to
 	// each request function unless an earlier deadline is passed to the
@@ -229,8 +229,8 @@ func DefaultConfiguration() ClientConfiguration {
 	}
 
 	return ClientConfiguration{
-		BaseAddress:    "https://127.0.0.1:8200",
-		BaseClient:     defaultClient,
+		Address:        "https://127.0.0.1:8200",
+		HTTPClient:     defaultClient,
 		RequestTimeout: 60 * time.Second,
 		RetryConfiguration: RetryConfiguration{
 			RetryWaitMin: time.Millisecond * 1000,

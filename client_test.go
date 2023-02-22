@@ -13,7 +13,7 @@ import (
 
 func Test_Client_Clone(t *testing.T) {
 	client, err := New(
-		WithBaseAddress("http://test"),
+		WithAddress("http://test"),
 		WithRequestTimeout(30*time.Second),
 		WithRetryConfiguration(
 			RetryConfiguration{
@@ -31,7 +31,7 @@ func Test_Client_Clone(t *testing.T) {
 
 	assert.Equal(t, client, clone)
 
-	assert.Equal(t, "http://test", clone.Configuration().BaseAddress)
+	assert.Equal(t, "http://test", clone.Configuration().Address)
 	assert.Equal(t, 30*time.Second, clone.Configuration().RequestTimeout)
 	assert.Equal(t, 200*time.Millisecond, clone.Configuration().RetryConfiguration.RetryWaitMin)
 	assert.Equal(t, 900*time.Millisecond, clone.Configuration().RetryConfiguration.RetryWaitMax)

@@ -14,25 +14,25 @@ import (
 // ClientOption is a configuration option to initialize a client.
 type ClientOption func(*ClientConfiguration) error
 
-// WithBaseAddress specifies the Vault server base address in the form of
+// WithAddress specifies the Vault server base address in the form of
 // scheme://host:port
 //
 // Default: https://127.0.0.1:8200
-func WithBaseAddress(address string) ClientOption {
+func WithAddress(address string) ClientOption {
 	return func(c *ClientConfiguration) error {
-		c.BaseAddress = address
+		c.Address = address
 		return nil
 	}
 }
 
-// WithBaseClient sets the HTTP client to use for all API requests.
+// WithHTTPClient sets the HTTP client to use for all API requests.
 // The library sets reasonable defaults for the BaseClient and its associated
 // http.Transport. If you must modify Vault's defaults, it is suggested that
 // you start with DefaultConfiguration().BaseClient and modify it as needed
 // rather than starting with an empty client or http.DefaultClient.
-func WithBaseClient(client *http.Client) ClientOption {
+func WithHTTPClient(client *http.Client) ClientOption {
 	return func(c *ClientConfiguration) error {
-		c.BaseClient = client
+		c.HTTPClient = client
 		return nil
 	}
 }

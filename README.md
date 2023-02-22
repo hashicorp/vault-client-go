@@ -66,7 +66,7 @@ func main() {
 
 	// prepare a client with the given base address
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 		vault.WithRequestTimeout(30*time.Second),
 	)
 	if err != nil {
@@ -288,7 +288,7 @@ tls := vault.TLSConfiguration{}
 tls.ServerCertificate.FromFile = "/tmp/vault-ca.pem"
 
 client, err := vault.New(
-	vault.WithBaseAddress("https://localhost:8200"),
+	vault.WithAddress("https://localhost:8200"),
 	vault.WithTLS(tls),
 )
 if err != nil {
@@ -312,7 +312,7 @@ tls.ClientCertificate.FromFile = "/tmp/client-cert.pem"
 tls.ClientCertificateKey.FromFile = "/tmp/client-cert-key.pem"
 
 client, err := vault.New(
-	vault.WithBaseAddress("https://localhost:8200"),
+	vault.WithAddress("https://localhost:8200"),
 	vault.WithTLS(tls),
 )
 if err != nil {
@@ -411,7 +411,7 @@ following setting:
 
 ```go
 client, err := vault.New(
-	vault.WithBaseAddress("https://localhost:8200"),
+	vault.WithAddress("https://localhost:8200"),
 	vault.WithEnforceReadYourWritesConsistency(),
 )
 ```

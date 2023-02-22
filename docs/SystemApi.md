@@ -195,7 +195,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -259,7 +259,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -320,7 +320,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -381,7 +381,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -442,7 +442,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -494,7 +494,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -555,7 +555,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -607,7 +607,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -659,7 +659,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -720,7 +720,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -772,7 +772,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -833,7 +833,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -898,7 +898,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -959,7 +959,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1020,7 +1020,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1081,7 +1081,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1142,7 +1142,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1194,7 +1194,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1255,7 +1255,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1309,7 +1309,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1361,7 +1361,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1415,7 +1415,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1467,7 +1467,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1522,7 +1522,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1584,7 +1584,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1646,7 +1646,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1701,7 +1701,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1756,7 +1756,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1811,7 +1811,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1867,7 +1867,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1924,7 +1924,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -1986,7 +1986,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2040,7 +2040,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2094,7 +2094,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2148,7 +2148,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2202,7 +2202,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2256,7 +2256,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2310,7 +2310,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2364,7 +2364,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2418,7 +2418,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2472,7 +2472,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2526,7 +2526,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2578,7 +2578,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2630,7 +2630,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2693,7 +2693,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2754,7 +2754,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2806,7 +2806,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2867,7 +2867,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2919,7 +2919,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -2973,7 +2973,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3025,7 +3025,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3086,7 +3086,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3138,7 +3138,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3190,7 +3190,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3242,7 +3242,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3296,7 +3296,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3350,7 +3350,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3402,7 +3402,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3454,7 +3454,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3506,7 +3506,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3558,7 +3558,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3610,7 +3610,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3662,7 +3662,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3714,7 +3714,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3766,7 +3766,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3818,7 +3818,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3879,7 +3879,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3931,7 +3931,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -3983,7 +3983,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4044,7 +4044,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4096,7 +4096,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4148,7 +4148,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4200,7 +4200,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4252,7 +4252,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4304,7 +4304,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4356,7 +4356,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4408,7 +4408,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4469,7 +4469,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4521,7 +4521,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4578,7 +4578,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4639,7 +4639,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4691,7 +4691,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4752,7 +4752,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4804,7 +4804,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4869,7 +4869,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4924,7 +4924,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -4985,7 +4985,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5046,7 +5046,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5107,7 +5107,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5168,7 +5168,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5220,7 +5220,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5281,7 +5281,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5336,7 +5336,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5398,7 +5398,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5450,7 +5450,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5502,7 +5502,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5554,7 +5554,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5606,7 +5606,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5667,7 +5667,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5719,7 +5719,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5771,7 +5771,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5824,7 +5824,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5882,7 +5882,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -5940,7 +5940,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6005,7 +6005,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6064,7 +6064,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6126,7 +6126,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6191,7 +6191,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6255,7 +6255,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6307,7 +6307,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6361,7 +6361,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6413,7 +6413,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6474,7 +6474,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6529,7 +6529,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6590,7 +6590,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6656,7 +6656,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6721,7 +6721,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6786,7 +6786,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6844,7 +6844,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6909,7 +6909,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -6978,7 +6978,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7036,7 +7036,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7101,7 +7101,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7158,7 +7158,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7211,7 +7211,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7269,7 +7269,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7326,7 +7326,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7379,7 +7379,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7437,7 +7437,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7504,7 +7504,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7571,7 +7571,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7636,7 +7636,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7694,7 +7694,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7752,7 +7752,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7810,7 +7810,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7875,7 +7875,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7932,7 +7932,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -7994,7 +7994,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8061,7 +8061,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8121,7 +8121,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8181,7 +8181,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8241,7 +8241,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8299,7 +8299,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8357,7 +8357,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8415,7 +8415,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8473,7 +8473,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8538,7 +8538,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8596,7 +8596,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8662,7 +8662,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8724,7 +8724,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8788,7 +8788,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8841,7 +8841,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8906,7 +8906,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -8964,7 +8964,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9029,7 +9029,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9094,7 +9094,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9165,7 +9165,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9223,7 +9223,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9288,7 +9288,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9353,7 +9353,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9418,7 +9418,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9476,7 +9476,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9541,7 +9541,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9599,7 +9599,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9666,7 +9666,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9724,7 +9724,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9782,7 +9782,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -9840,7 +9840,7 @@ import (
 
 func main() {
 	client, err := vault.New(
-		vault.WithBaseAddress("http://127.0.0.1:8200"),
+		vault.WithAddress("http://127.0.0.1:8200"),
 	)
 	if err != nil {
 		log.Fatal(err)

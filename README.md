@@ -1,14 +1,10 @@
-# [EXPERIMENTAL] Go Client for HashiCorp Vault
+# vault-client-go ![build](https://github.com/hashicorp/vault-client-go/actions/workflows/main.yml/badge.svg)
 
-A simple client library [generated][openapi-generator] from `OpenAPI`
-[specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
-[Vault][vault].
+A simple client library [generated][openapi-generator] from [OpenAPI][openapi]
+specification file to interact with [HashiCorp Vault][vault].
 
-> _**Warning**_: This library is currently marked as **EXPERIMENTAL**. Please
-> try it out and give us feedback! Please do not use it in production.
-
-> _**Warning**_: The [openapi.json][openapi-spec] file included in this
-> repository is **NOT** the official Vault `OpenAPI` specification.
+> _**Note**_: **This library is now available in BETA. Please try it out and
+> give us feedback! Please do not use it in production.**
 
 ## Contents
 
@@ -418,15 +414,18 @@ client, err := vault.New(
 
 ## Building the Library
 
-The vast majority of the code, including the client's endpoints, requests and
-responses is generated from the `OpenAPI` [specification file][openapi-spec]
-v1.13.0 using [`openapi-generator`][openapi-generator]. If you make any changes
-to the underlying templates (`generate/templates/*`), make sure to regenerate
-the files by running the following:
+The vast majority of the code (including the client's endpoint-related methods,
+request structures and response structures) is generated from the
+[openapi.json][openapi-json] using [`openapi-generator`][openapi-generator]. If
+you make any changes to the underlying templates (`generate/templates/*`),
+please make sure to regenerate the files by running the following:
 
 ```sh
-make regen && go build
+make regen && go build ./... && go test ./...
 ```
+
+> _**Warning**_: The [openapi.json][openapi-json] file included in this
+> repository is **NOT** the official Vault's OpenAPI specification.
 
 ## Under Development
 
@@ -448,7 +447,7 @@ high-level features that have been implemented:
 
 The following features are coming soon:
 
-- Structured responses (as part of the [specification file][openapi-spec])
+- Structured responses (as part of [openapi.json][openapi-json])
 - Testing framework
 - Authentication wrappers
 - Other helpers & wrappers (KV, SSH, Monitor, Plugins, LifetimeWatcher, etc.)
@@ -460,9 +459,9 @@ The following features are coming soon:
 - [Secrets](docs/SecretsApi.md)
 - [System](docs/SystemApi.md)
 
-[hashicorp]:             https://www.hashicorp.com/
 [vault]:                 https://www.vaultproject.io/
-[openapi-spec]:          openapi.json
+[openapi]:               https://www.openapis.org/
+[openapi-json]:          openapi.json
 [openapi-generator]:	 https://openapi-generator.tech/docs/generators/go
 [go-retryablehttp]:      https://github.com/hashicorp/go-retryablehttp
 [doc-consistency]:       https://developer.hashicorp.com/vault/docs/enterprise/consistency#vault-1-7-mitigations

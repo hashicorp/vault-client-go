@@ -13,7 +13,7 @@ import (
 
 func Test_Client_Clone(t *testing.T) {
 	client, err := New(
-		WithBaseAddress("http://test"),
+		WithAddress("http://test"),
 		WithRequestTimeout(30*time.Second),
 		WithRetryConfiguration(
 			RetryConfiguration{

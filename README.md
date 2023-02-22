@@ -15,8 +15,8 @@ specification file to interact with [HashiCorp Vault][vault].
    - [Using Generic Accessors](#using-generic-accessors)
    - [Using Generated Methods](#using-generated-methods)
    - [Modifying Requests](#modifying-requests)
-      - [Overriding Default Mount Path](#overriding-default-mount-path)
-      - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
+     - [Overriding Default Mount Path](#overriding-default-mount-path)
+     - [Response Wrapping \& Unwrapping](#response-wrapping--unwrapping)
    - [Error Handling](#error-handling)
    - [Using TLS](#using-tls)
    - [Using TLS with Client-side Certificate Authentication](#using-tls-with-client-side-certificate-authentication)
@@ -129,8 +129,8 @@ should unwrap it first as demonstrated [here](#response-wrapping--unwrapping).
 
 ### Using Generic Accessors
 
-The library provides the following generic accessors which let you read,
-modify, and delete an arbitrary path within Vault:
+The library provides the following generic accessors which let you read, modify,
+and delete an arbitrary path within Vault:
 
 ```go
 client.Read(...)
@@ -192,8 +192,8 @@ for engine := range resp.Data {
 
 ### Modifying Requests
 
-You can modify the requests in one of two ways, either at the client level or
-by decorating individual requests:
+You can modify the requests in one of two ways, either at the client level or by
+decorating individual requests:
 
 ```go
 // all subsequent requests will use the given token & namespace
@@ -233,8 +233,8 @@ secret, err := client.Secrets.KVv2Read(
 
 #### Response Wrapping & Unwrapping
 
-Please refer to the [response-wrapping documentation][doc-response-wrapping]
-for more background information.
+Please refer to the [response-wrapping documentation][doc-response-wrapping] for
+more background information.
 
 ```go
 // wrap the response with a 5 minute TTL
@@ -358,14 +358,15 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 })
 ```
 
-Alternatively, `vault.WithRequestCallbacks(..)` / `vault.WithResponseCallbacks(..)`
-may be used to inject callbacks for individual requests.
+Alternatively, `vault.WithRequestCallbacks(..)` /
+`vault.WithResponseCallbacks(..)` may be used to inject callbacks for individual
+requests.
 
 ### Enforcing Read-your-writes Replication Semantics
 
 Detailed background information of the read-after-write consistency problem can
-be found in the [consistency][doc-consistency] and [replication][doc-replication]
-documentation pages.
+be found in the [consistency][doc-consistency] and
+[replication][doc-replication] documentation pages.
 
 You can enforce read-your-writes semantics for individual requests through
 callbacks:
@@ -437,7 +438,8 @@ high-level features that have been implemented:
 - Automatic retries on errors (using [go-retryablehttp][go-retryablehttp])
 - Custom redirect logic
 - Client-side rate limiting
-- Vault-specific headers (`X-Vault-Token`, `X-Vault-Namespace`, etc.) and custom headers
+- Vault-specific headers (`X-Vault-Token`, `X-Vault-Namespace`, etc.) and custom
+  headers
 - Request/Response callbacks
 - Environment variables for configuration
 - Read-your-writes semantics

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 
 

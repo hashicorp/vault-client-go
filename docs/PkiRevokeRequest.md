@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Certificate** | Pointer to **string** | Certificate to revoke in PEM format; must be signed by an issuer in this mount. | [optional] 
 **SerialNumber** | Pointer to **string** | Certificate serial number, in colon- or hyphen-separated octal | [optional] 
 

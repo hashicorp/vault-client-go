@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **BoundGroupIds** | Pointer to **[]string** | Comma-separated list of group ids that login is restricted to. | [optional] 
 **BoundLocations** | Pointer to **[]string** | Comma-separated list of locations that login is restricted to. | [optional] 
 **BoundResourceGroups** | Pointer to **[]string** | Comma-separated list of resource groups that login is restricted to. | [optional] 

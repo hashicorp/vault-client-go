@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ApiHostname** | Pointer to **string** | API host name for Duo. | [optional] 
 **IntegrationKey** | Pointer to **string** | Integration key for Duo. | [optional] 
 **MethodId** | Pointer to **string** | The unique identifier for this MFA method. | [optional] 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Path** | Pointer to **[]string** | Use &#x27;paths&#x27; instead. | [optional] 
 **Paths** | Pointer to **[]string** | Paths on which capabilities are being queried. | [optional] 
 **Token** | Pointer to **string** | Token for which capabilities are being queried. | [optional] 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **SecretId** | Pointer to **string** | SecretID attached to the role. | [optional] 
 
 

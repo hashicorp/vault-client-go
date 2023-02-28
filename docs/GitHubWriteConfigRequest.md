@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **BaseUrl** | Pointer to **string** | The API endpoint to use. Useful if you are running GitHub Enterprise or an API-compatible authentication server. | [optional] 
 **MaxTtl** | Pointer to **int32** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
 **Organization** | **string** | The organization users must be part of | 

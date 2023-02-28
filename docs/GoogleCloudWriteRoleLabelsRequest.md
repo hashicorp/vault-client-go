@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Add** | Pointer to **[]string** | BoundLabels to add (in $key:$value) | [optional] 
 **Remove** | Pointer to **[]string** | Label key values to remove | [optional] 
 

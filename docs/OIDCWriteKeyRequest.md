@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Algorithm** | Pointer to **string** | Signing algorithm to use. This will default to RS256. | [optional] [default to "RS256"]
 **AllowedClientIds** | Pointer to **[]string** | Comma separated string or array of role client ids allowed to use this key for signing. If empty no roles are allowed. If \&quot;*\&quot; all roles are allowed. | [optional] 
 **RotationPeriod** | Pointer to **int32** | How often to generate a new keypair. | [optional] 

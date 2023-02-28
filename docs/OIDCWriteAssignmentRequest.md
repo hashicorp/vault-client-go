@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **EntityIds** | Pointer to **[]string** | Comma separated string or array of identity entity IDs | [optional] 
 **GroupIds** | Pointer to **[]string** | Comma separated string or array of identity group IDs | [optional] 
 

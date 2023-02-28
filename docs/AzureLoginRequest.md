@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Jwt** | Pointer to **string** | A signed JWT | [optional] 
 **ResourceGroupName** | Pointer to **string** | The resource group from the instance. | [optional] 
 **Role** | Pointer to **string** | The token role. | [optional] 

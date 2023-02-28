@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Versions** | Pointer to **[]int32** | The versions to destroy. Their data will be permanently deleted. | [optional] 
 
 

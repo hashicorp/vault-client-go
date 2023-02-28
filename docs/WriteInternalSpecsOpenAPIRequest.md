@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Context** | Pointer to **string** | Context string appended to every operationId | [optional] 
 
 

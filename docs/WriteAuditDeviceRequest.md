@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Description** | Pointer to **string** | User-friendly description for this audit backend. | [optional] 
 **Local** | Pointer to **bool** | Mark the mount as a local mount, which is not replicated and is unaffected by replication. | [optional] [default to false]
 **Options** | Pointer to **map[string]interface{}** | Configuration options for the audit backend. | [optional] 

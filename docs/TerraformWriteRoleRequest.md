@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **MaxTtl** | Pointer to **int32** | Maximum time for role. If not set or set to 0, will use system default. | [optional] 
 **Organization** | Pointer to **string** | Name of the Terraform Cloud or Enterprise organization | [optional] 
 **TeamId** | Pointer to **string** | ID of the Terraform Cloud or Enterprise team under organization (e.g., settings/teams/team-xxxxxxxxxxxxx) | [optional] 

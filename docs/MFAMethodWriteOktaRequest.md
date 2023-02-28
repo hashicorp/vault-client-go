@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ApiToken** | Pointer to **string** | Okta API key. | [optional] 
 **BaseUrl** | Pointer to **string** | The base domain to use for the Okta API. When not specified in the configuration, \&quot;okta.com\&quot; is used. | [optional] 
 **MethodId** | Pointer to **string** | The unique identifier for this MFA method. | [optional] 

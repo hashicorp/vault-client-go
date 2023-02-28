@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Token** | Pointer to **string** | GitHub personal API token | [optional] 
 
 

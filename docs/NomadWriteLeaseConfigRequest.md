@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **MaxTtl** | Pointer to **int32** | Duration after which the issued token should not be allowed to be renewed | [optional] 
 **Ttl** | Pointer to **int32** | Duration before which the issued token needs renewal | [optional] 
 

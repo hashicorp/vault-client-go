@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 **Username** | Pointer to **string** | Username to be used for login. (POST request body) | [optional] 
 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ClientNonce** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **IdToken** | Pointer to **string** |  | [optional] 

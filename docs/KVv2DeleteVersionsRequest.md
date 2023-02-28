@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Versions** | Pointer to **[]int32** | The versions to be archived. The versioned data will not be deleted, but it will no longer be returned in normal get requests. | [optional] 
 
 

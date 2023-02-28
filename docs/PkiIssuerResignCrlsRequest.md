@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **CrlNumber** | Pointer to **int32** | The sequence number to be written within the CRL Number extension. | [optional] 
 **Crls** | Pointer to **[]string** | A list of PEM encoded CRLs to combine, originally signed by the requested issuer. | [optional] 
 **DeltaCrlBaseNumber** | Pointer to **int32** | Using a zero or greater value specifies the base CRL revision number to encode within a Delta CRL indicator extension, otherwise the extension will not be added. | [optional] [default to -1]

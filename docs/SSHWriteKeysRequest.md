@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Key** | Pointer to **string** | [Required] SSH private key with super user privileges in host | [optional] 
 
 

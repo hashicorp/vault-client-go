@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Increment** | Pointer to **int32** | The desired increment in seconds to the token expiration | [optional] [default to 0]
 **Token** | Pointer to **string** | Token to renew (unused, does not need to be set) | [optional] 
 

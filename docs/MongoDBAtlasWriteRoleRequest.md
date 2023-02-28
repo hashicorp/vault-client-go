@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **CidrBlocks** | Pointer to **[]string** | Access list entry in CIDR notation to be added for the API key. Optional for organization and project keys. | [optional] 
 **IpAddresses** | Pointer to **[]string** | IP address to be added to the access list for the API key. Optional for organization and project keys. | [optional] 
 **MaxTtl** | Pointer to **int32** | The maximum allowed lifetime of credentials issued using this role. | [optional] 

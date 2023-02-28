@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **PemBundle** | Pointer to **string** | PEM-format, concatenated unencrypted secret key and certificate. | [optional] 
 
 

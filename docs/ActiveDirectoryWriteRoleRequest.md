@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ServiceAccountName** | Pointer to **string** | The username/logon name for the service account with which this role will be associated. | [optional] 
 **Ttl** | Pointer to **int32** | In seconds, the default password time-to-live. | [optional] 
 

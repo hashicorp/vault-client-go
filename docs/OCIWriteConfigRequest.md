@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **HomeTenancyId** | Pointer to **string** | The tenancy id of the account. | [optional] 
 
 

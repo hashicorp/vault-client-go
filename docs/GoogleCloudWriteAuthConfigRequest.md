@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Credentials** | Pointer to **string** | Google credentials JSON that Vault will use to verify users against GCP APIs. If not specified, will use application default credentials | [optional] 
 **CustomEndpoint** | Pointer to **map[string]interface{}** | Specifies overrides for various Google API Service Endpoints used in requests. | [optional] 
 **GceAlias** | Pointer to **string** | Indicates what value to use when generating an alias for GCE authentications. | [optional] [default to "role_id"]

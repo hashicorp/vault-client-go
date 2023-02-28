@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **RequestHeaders** | Pointer to **string** | The signed headers of the client | [optional] 
 
 

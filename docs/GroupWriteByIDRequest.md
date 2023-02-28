@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **MemberEntityIds** | Pointer to **[]string** | Entity IDs to be assigned as group members. | [optional] 
 **MemberGroupIds** | Pointer to **[]string** | Group IDs to be assigned as group members. | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault &lt;command&gt; &lt;path&gt; metadata&#x3D;key1&#x3D;value1 metadata&#x3D;key2&#x3D;value2 | [optional] 

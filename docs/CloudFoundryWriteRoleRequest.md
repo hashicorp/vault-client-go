@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **BoundApplicationIds** | Pointer to **[]string** | Require that the client certificate presented has at least one of these app IDs. | [optional] 
 **BoundCidrs** | Pointer to **[]string** | Use \&quot;token_bound_cidrs\&quot; instead. If this and \&quot;token_bound_cidrs\&quot; are both specified, only \&quot;token_bound_cidrs\&quot; will be used. | [optional] 
 **BoundInstanceIds** | Pointer to **[]string** | Require that the client certificate presented has at least one of these instance IDs. | [optional] 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **DisableUpsert** | Pointer to **bool** | Whether to allow automatic upserting (creation) of keys on the encrypt endpoint. | [optional] 
 
 

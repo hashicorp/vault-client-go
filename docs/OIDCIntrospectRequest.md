@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ClientId** | Pointer to **string** | Optional client_id to verify | [optional] 
 **Token** | Pointer to **string** | Token to verify | [optional] 
 

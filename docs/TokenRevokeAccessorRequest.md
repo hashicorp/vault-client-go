@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Accessor** | Pointer to **string** | Accessor of the token (request body) | [optional] 
 
 

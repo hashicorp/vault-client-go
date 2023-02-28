@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Default** | Pointer to **string** | Reference (name or identifier) of the default key. | [optional] 
 
 

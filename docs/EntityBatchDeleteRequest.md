@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **EntityIds** | Pointer to **[]string** | Entity IDs to delete | [optional] 
 
 

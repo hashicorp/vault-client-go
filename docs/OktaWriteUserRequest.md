@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Groups** | Pointer to **[]string** | List of groups associated with the user. | [optional] 
 **Policies** | Pointer to **[]string** | List of policies associated with the user. | [optional] 
 

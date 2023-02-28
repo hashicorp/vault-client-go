@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ApplicationObjectId** | Pointer to **string** | Application Object ID to use for static service principal credentials. | [optional] 
 **AzureGroups** | Pointer to **string** | JSON list of Azure groups to add the service principal to. | [optional] 
 **AzureRoles** | Pointer to **string** | JSON list of Azure roles to assign. | [optional] 

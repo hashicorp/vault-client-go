@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Key** | Pointer to **string** | Specifies a single unseal share key from the new set of shares. | [optional] 
 **Nonce** | Pointer to **string** | Specifies the nonce of the rekey verification operation. | [optional] 
 

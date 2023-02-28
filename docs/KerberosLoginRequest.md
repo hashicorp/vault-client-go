@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Authorization** | Pointer to **string** | SPNEGO Authorization header. Required. | [optional] 
 
 

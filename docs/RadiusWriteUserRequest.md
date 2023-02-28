@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Policies** | Pointer to **[]string** | Comma-separated list of policies associated to the user. | [optional] 
 
 

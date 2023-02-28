@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **PrivateKey** | **string** | MongoDB Atlas Programmatic Private Key | 
 **PublicKey** | **string** | MongoDB Atlas Programmatic Public Key | 
 

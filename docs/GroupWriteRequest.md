@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Id** | Pointer to **string** | ID of the group. If set, updates the corresponding existing group. | [optional] 
 **MemberEntityIds** | Pointer to **[]string** | Entity IDs to be assigned as group members. | [optional] 
 **MemberGroupIds** | Pointer to **[]string** | Group IDs to be assigned as group members. | [optional] 

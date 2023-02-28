@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **EntityId** | **string** | Entity ID on which the generated secret needs to get stored. | 
 **MethodId** | **string** | The unique identifier for this MFA method. | 
 

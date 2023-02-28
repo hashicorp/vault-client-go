@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Issuer** | Pointer to **string** | Issuer URL to be used in the iss claim of the token. If not set, Vault&#x27;s app_addr will be used. | [optional] 
 
 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **RoleId** | Pointer to **string** | Identifier of the role. Defaults to a UUID. | [optional] 
 
 

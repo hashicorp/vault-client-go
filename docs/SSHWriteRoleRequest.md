@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AdminUser** | Pointer to **string** | [Required for Dynamic type] [Not applicable for OTP type] [Not applicable for CA type] Admin user at remote host. The shared key being registered should be for this user and should have root privileges. Everytime a dynamic credential is being generated for other users, Vault uses this admin username to login to remote host and install the generated credential for the other user. | [optional] 
 **AlgorithmSigner** | Pointer to **string** | When supplied, this value specifies a signing algorithm for the key. Possible values: ssh-rsa, rsa-sha2-256, rsa-sha2-512, default, or the empty string. | [optional] 
 **AllowBareDomains** | Pointer to **bool** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, host certificates that are requested are allowed to use the base domains listed in \&quot;allowed_domains\&quot;, e.g. \&quot;example.com\&quot;. This is a separate option as in some cases this can be considered a security threat. | [optional] 

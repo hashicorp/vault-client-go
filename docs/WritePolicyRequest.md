@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Policy** | Pointer to **string** | The rules of the policy. | [optional] 
 **Rules** | Pointer to **string** | The rules of the policy. | [optional] 
 

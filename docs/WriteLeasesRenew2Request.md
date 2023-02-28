@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Increment** | Pointer to **int32** | The desired increment in seconds to the lease | [optional] 
 **LeaseId** | Pointer to **string** | The lease identifier to renew. This is included with a lease. | [optional] 
 

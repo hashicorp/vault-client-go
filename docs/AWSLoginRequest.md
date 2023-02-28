@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **IamHttpRequestMethod** | Pointer to **string** | HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value | [optional] 
 **IamRequestBody** | Pointer to **string** | Base64-encoded request body when auth_type is iam. This must match the request body included in the signature. | [optional] 
 **IamRequestHeaders** | Pointer to **string** | Key/value pairs of headers for use in the sts:GetCallerIdentity HTTP requests headers when auth_type is iam. Can be either a Base64-encoded, JSON-serialized string, or a JSON object of key/value pairs. This must at a minimum include the headers over which AWS has included a signature. | [optional] 

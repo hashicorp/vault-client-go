@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Key** | Pointer to **string** | Specifies a single unseal key share. | [optional] 
 **Nonce** | Pointer to **string** | Specifies the nonce of the rekey attempt. | [optional] 
 

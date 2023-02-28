@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ConnectionUri** | Pointer to **string** | RabbitMQ Management URI | [optional] 
 **Password** | Pointer to **string** | Password of the provided RabbitMQ management user | [optional] 
 **PasswordPolicy** | Pointer to **string** | Name of the password policy to use to generate passwords for dynamic credentials. | [optional] 

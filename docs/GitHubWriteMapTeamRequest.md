@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Value** | Pointer to **string** | Value for teams mapping | [optional] 
 
 

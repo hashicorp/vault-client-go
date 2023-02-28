@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **CanonicalId** | Pointer to **string** | Entity ID to which this alias belongs to | [optional] 
 **EntityId** | Pointer to **string** | Entity ID to which this alias belongs to. This field is deprecated in favor of &#x27;canonical_id&#x27;. | [optional] 
 **Id** | Pointer to **string** | ID of the alias | [optional] 

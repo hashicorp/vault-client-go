@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ClientId** | **string** | The ID of the requesting client. | 
 **CodeChallenge** | Pointer to **string** | The code challenge derived from the code verifier. | [optional] 
 **CodeChallengeMethod** | Pointer to **string** | The method that was used to derive the code challenge. The following methods are supported: &#x27;S256&#x27;, &#x27;plain&#x27;. Defaults to &#x27;plain&#x27;. | [optional] [default to "plain"]

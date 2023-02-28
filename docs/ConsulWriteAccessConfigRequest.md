@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Address** | Pointer to **string** | Consul server address | [optional] 
 **CaCert** | Pointer to **string** | CA certificate to use when verifying Consul server certificate, must be x509 PEM encoded. | [optional] 
 **ClientCert** | Pointer to **string** | Client certificate used for Consul&#x27;s TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key. | [optional] 

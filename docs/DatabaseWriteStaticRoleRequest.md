@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **CredentialConfig** | Pointer to **map[string]interface{}** | The configuration for the given credential_type. | [optional] 
 **CredentialType** | Pointer to **string** | The type of credential to manage. Options include: &#x27;password&#x27;, &#x27;rsa_private_key&#x27;. Defaults to &#x27;password&#x27;. | [optional] [default to "password"]
 **DbName** | Pointer to **string** | Name of the database this role acts on. | [optional] 

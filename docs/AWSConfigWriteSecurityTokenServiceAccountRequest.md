@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **StsRole** | Pointer to **string** | AWS ARN for STS role to be assumed when interacting with the account specified. The Vault server must have permissions to assume this role. | [optional] 
 
 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Otp** | Pointer to **string** | [Required] One-Time-Key that needs to be validated | [optional] 
 
 

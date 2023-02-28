@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **CreationStatements** | Pointer to **[]string** | Specifies the database statements executed to create and configure a user. See the plugin&#x27;s API page for more information on support and formatting for this parameter. | [optional] 
 **CredentialConfig** | Pointer to **map[string]interface{}** | The configuration for the given credential_type. | [optional] 
 **CredentialType** | Pointer to **string** | The type of credential to manage. Options include: &#x27;password&#x27;, &#x27;rsa_private_key&#x27;. Defaults to &#x27;password&#x27;. | [optional] [default to "password"]

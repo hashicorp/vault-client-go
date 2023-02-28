@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AnonymousGroupSearch** | Pointer to **bool** | Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test). | [optional] [default to false]
 **Binddn** | Pointer to **string** | LDAP DN for searching for the user DN (optional) | [optional] 
 **Bindpass** | Pointer to **string** | LDAP password for searching for the user DN (optional) | [optional] 

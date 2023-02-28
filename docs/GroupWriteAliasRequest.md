@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **CanonicalId** | Pointer to **string** | ID of the group to which this is an alias. | [optional] 
 **Id** | Pointer to **string** | ID of the group alias. | [optional] 
 **MountAccessor** | Pointer to **string** | Mount accessor to which this alias belongs to. | [optional] 

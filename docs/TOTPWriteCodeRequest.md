@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Code** | Pointer to **string** | TOTP code to be validated. | [optional] 
 
 

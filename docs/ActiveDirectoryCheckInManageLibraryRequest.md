@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ServiceAccountNames** | Pointer to **[]string** | The username/logon name for the service accounts to check in. | [optional] 
 
 

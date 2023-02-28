@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **LeaseId** | Pointer to **string** | The lease identifier to renew. This is included with a lease. | [optional] 
 
 

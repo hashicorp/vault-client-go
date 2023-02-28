@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Name** | Pointer to **string** | Name of the role | [optional] 
 **RoleArn** | Pointer to **string** | ARN of role to assume when credential_type is assumed_role | [optional] 
 **RoleSessionName** | Pointer to **string** | Session name to use when assuming role. Max chars: 64 | [optional] 

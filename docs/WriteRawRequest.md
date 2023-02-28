@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Compressed** | Pointer to **bool** |  | [optional] 
 **CompressionType** | Pointer to **string** |  | [optional] 
 **Encoding** | Pointer to **string** |  | [optional] 

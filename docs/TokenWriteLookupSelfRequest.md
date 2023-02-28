@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Token** | Pointer to **string** | Token to look up (unused, does not need to be set) | [optional] 
 
 

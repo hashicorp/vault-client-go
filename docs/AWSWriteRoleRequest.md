@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Arn** | Pointer to **string** | Use role_arns or policy_arns instead. | [optional] 
 **CredentialType** | Pointer to **string** | Type of credential to retrieve. Must be one of assumed_role, iam_user, or federation_token | [optional] 
 **DefaultStsTtl** | Pointer to **int32** | Default TTL for assumed_role and federation_token credential types when no TTL is explicitly requested with the credentials | [optional] 

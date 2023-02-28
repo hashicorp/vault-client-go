@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **DialTimeout** | Pointer to **int32** | Number of seconds before connect times out (default: 10) | [optional] [default to 10]
 **Host** | Pointer to **string** | RADIUS server host | [optional] 
 **NasIdentifier** | Pointer to **string** | RADIUS NAS Identifier field (optional) | [optional] [default to ""]

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **SecretIdAccessor** | Pointer to **string** | Accessor of the SecretID | [optional] 
 
 

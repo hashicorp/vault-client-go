@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Ip** | Pointer to **string** | [Required] IP address of remote host | [optional] 
 
 

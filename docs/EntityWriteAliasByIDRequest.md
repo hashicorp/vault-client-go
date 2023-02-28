@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **CanonicalId** | Pointer to **string** | Entity ID to which this alias should be tied to | [optional] 
 **CustomMetadata** | Pointer to **map[string]interface{}** | User provided key-value pairs | [optional] 
 **EntityId** | Pointer to **string** | Entity ID to which this alias belongs to. This field is deprecated, use canonical_id. | [optional] 

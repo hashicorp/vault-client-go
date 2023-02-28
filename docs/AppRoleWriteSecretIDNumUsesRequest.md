@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **SecretIdNumUses** | Pointer to **int32** | Number of times a SecretID can access the role, after which the SecretID will expire. | [optional] 
 
 

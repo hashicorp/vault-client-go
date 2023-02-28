@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ClusterRoleBinding** | Pointer to **bool** | If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole. | [optional] 
 **KubernetesNamespace** | **string** | The name of the Kubernetes namespace in which to generate the credentials | 
 **Ttl** | Pointer to **int32** | The TTL of the generated credentials | [optional] 

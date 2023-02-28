@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AccessKey** | Pointer to **string** | Access key with permission to create new keys. | [optional] 
 **IamEndpoint** | Pointer to **string** | Endpoint to custom IAM server URL | [optional] 
 **MaxRetries** | Pointer to **int32** | Maximum number of retries for recoverable exceptions of AWS APIs | [optional] [default to -1]

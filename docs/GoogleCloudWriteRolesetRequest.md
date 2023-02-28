@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Bindings** | Pointer to **string** | Bindings configuration string. | [optional] 
 **Project** | Pointer to **string** | Name of the GCP project that this roleset&#x27;s service account will belong to. | [optional] 
 **SecretType** | Pointer to **string** | Type of secret generated for this role set. Defaults to &#x27;access_token&#x27; | [optional] [default to "access_token"]

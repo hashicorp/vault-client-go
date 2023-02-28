@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AccessKey** | Pointer to **string** | Access key with appropriate permissions. | [optional] 
 **SecretKey** | Pointer to **string** | Secret key with appropriate permissions. | [optional] 
 

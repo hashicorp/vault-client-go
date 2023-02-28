@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Versions** | Pointer to **[]int32** | The versions to unarchive. The versions will be restored and their data will be returned on normal get requests. | [optional] 
 
 

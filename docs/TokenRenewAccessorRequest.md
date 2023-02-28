@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Accessor** | Pointer to **string** | Accessor of the token to renew (request body) | [optional] 
 **Increment** | Pointer to **int32** | The desired increment in seconds to the token expiration | [optional] [default to 0]
 

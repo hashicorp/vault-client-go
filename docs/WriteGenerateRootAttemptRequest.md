@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **PgpKey** | Pointer to **string** | Specifies a base64-encoded PGP public key. | [optional] 
 
 

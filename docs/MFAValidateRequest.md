@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **MfaPayload** | **map[string]interface{}** | A map from MFA method ID to a slice of passcodes or an empty slice if the method does not use passcodes | 
 **MfaRequestId** | **string** | ID for this MFA request | 
 

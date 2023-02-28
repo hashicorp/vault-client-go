@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Ciphertext** | Pointer to **string** | Ciphertext value to rewrap | [optional] 
 **Context** | Pointer to **string** | Base64 encoded context for key derivation. Required for derived keys. | [optional] 
 **KeyVersion** | Pointer to **int32** | The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key. | [optional] 

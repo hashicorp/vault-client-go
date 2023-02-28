@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Description** | Pointer to **string** | The description of the scope | [optional] 
 **Template** | Pointer to **string** | The template string to use for the scope. This may be in string-ified JSON or base64 format. | [optional] 
 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Hmac** | Pointer to **bool** |  | [optional] 
 
 

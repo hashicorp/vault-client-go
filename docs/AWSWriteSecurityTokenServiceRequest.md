@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **RoleArn** | Pointer to **string** | ARN of role to assume when credential_type is assumed_role | [optional] 
 **RoleSessionName** | Pointer to **string** | Session name to use when assuming role. Max chars: 64 | [optional] 
 **Ttl** | Pointer to **int32** | Lifetime of the returned credentials in seconds | [optional] [default to 3600]

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AccessKey** | Pointer to **string** | AWS Access Key ID for the account used to make AWS API requests. | [optional] [default to ""]
 **AllowedStsHeaderValues** | Pointer to **[]string** | List of additional headers that are allowed to be in AWS STS request headers | [optional] 
 **Endpoint** | Pointer to **string** | URL to override the default generated endpoint for making AWS EC2 API calls. | [optional] [default to ""]

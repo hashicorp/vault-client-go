@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AppId** | Pointer to **string** | OAuth2 App ID | [optional] [default to "vault_io_integration"]
 **ClientId** | Pointer to **string** | OAuth2 Client ID | [optional] 
 **ClientSecret** | Pointer to **string** | OAuth2 Client Secret | [optional] 

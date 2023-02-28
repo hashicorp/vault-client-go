@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Credentials** | Pointer to **string** | GCP IAM service account credentials JSON with permissions to create new service accounts and set IAM policies | [optional] 
 **MaxTtl** | Pointer to **int32** | Maximum time a service account key is valid for. If &lt;&#x3D; 0, will use system default. | [optional] 
 **Ttl** | Pointer to **int32** | Default lease for generated keys. If &lt;&#x3D; 0, will use system default. | [optional] 

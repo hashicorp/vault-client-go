@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AuthMethodAccessors** | Pointer to **[]string** | Array of auth mount accessor IDs | [optional] 
 **AuthMethodTypes** | Pointer to **[]string** | Array of auth mount types | [optional] 
 **IdentityEntityIds** | Pointer to **[]string** | Array of identity entity IDs | [optional] 

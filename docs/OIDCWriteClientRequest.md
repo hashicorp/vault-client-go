@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AccessTokenTtl** | Pointer to **int32** | The time-to-live for access tokens obtained by the client. | [optional] 
 **Assignments** | Pointer to **[]string** | Comma separated string or array of assignment resources. | [optional] 
 **ClientType** | Pointer to **string** | The client type based on its ability to maintain confidentiality of credentials. The following client types are supported: &#x27;confidential&#x27;, &#x27;public&#x27;. Defaults to &#x27;confidential&#x27;. | [optional] [default to "confidential"]

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Dn** | Pointer to **string** | The distinguished name of the entry to manage. | [optional] 
 **RotationPeriod** | Pointer to **int32** | Period for automatic credential rotation of the given entry. | [optional] 
 **Username** | Pointer to **string** | The username/logon name for the entry with which this role will be associated. | [optional] 

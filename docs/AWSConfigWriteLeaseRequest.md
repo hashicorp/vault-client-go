@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Lease** | Pointer to **string** | Default lease for roles. | [optional] 
 **LeaseMax** | Pointer to **string** | Maximum time a credential is valid for. | [optional] 
 

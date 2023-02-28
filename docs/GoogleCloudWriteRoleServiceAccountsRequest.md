@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Add** | Pointer to **[]string** | Service-account emails or IDs to add. | [optional] 
 **Remove** | Pointer to **[]string** | Service-account emails or IDs to remove. | [optional] 
 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Token** | Pointer to **string** | Token to revoke (request body) | [optional] 
 
 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Jwt** | Pointer to **string** | The signed JWT to validate. | [optional] 
 **Role** | Pointer to **string** | The role to log in against. | [optional] 
 

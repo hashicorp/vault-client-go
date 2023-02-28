@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **BindSecretId** | Pointer to **bool** | Impose secret_id to be presented when logging in using this role. Defaults to &#x27;true&#x27;. | [optional] [default to true]
 **BoundCidrList** | Pointer to **[]string** | Use \&quot;secret_id_bound_cidrs\&quot; instead. | [optional] 
 **LocalSecretIds** | Pointer to **bool** | If set, the secret IDs generated using this role will be cluster local. This can only be set during role creation and once set, it can&#x27;t be reset later. | [optional] 

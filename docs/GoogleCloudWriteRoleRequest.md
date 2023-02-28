@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AddGroupAliases** | Pointer to **bool** | If true, will add group aliases to auth tokens generated under this role. This will add the full list of ancestors (projects, folders, organizations) for the given entity&#x27;s project. Requires IAM permission &#x60;resourcemanager.projects.get&#x60; on this project. | [optional] [default to false]
 **AllowGceInference** | Pointer to **bool** | &#x27;iam&#x27; roles only. If false, Vault will not not allow GCE instances to login in against this role | [optional] [default to true]
 **BoundInstanceGroup** | Pointer to **string** | Deprecated: use \&quot;bound_instance_groups\&quot; instead. | [optional] 

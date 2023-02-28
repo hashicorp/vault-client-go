@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AllowedKubernetesNamespaceSelector** | Pointer to **string** | A label selector for Kubernetes namespaces in which credentials can be generated. Accepts either a JSON or YAML object. If set with allowed_kubernetes_namespaces, the conditions are conjuncted. | [optional] 
 **AllowedKubernetesNamespaces** | Pointer to **[]string** | A list of the Kubernetes namespaces in which credentials can be generated. If set to \&quot;*\&quot; all namespaces are allowed. | [optional] 
 **ExtraAnnotations** | Pointer to **map[string]interface{}** | Additional annotations to apply to all generated Kubernetes objects. | [optional] 

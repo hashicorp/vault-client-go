@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ClientId** | Pointer to **string** | The ID of the requesting client. | [optional] 
 **ClientSecret** | Pointer to **string** | The secret of the requesting client. | [optional] 
 **Code** | **string** | The authorization code received from the provider&#x27;s authorization endpoint. | 

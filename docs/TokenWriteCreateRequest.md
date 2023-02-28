@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **DisplayName** | Pointer to **string** | Name to associate with this token | [optional] 
 **EntityAlias** | Pointer to **string** | Name of the entity alias to associate with this token | [optional] 
 **ExplicitMaxTtl** | Pointer to **string** | Explicit Max TTL of this token | [optional] 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **AllowedClientIds** | Pointer to **[]string** | The client IDs that are permitted to use the provider | [optional] 
 **Issuer** | Pointer to **string** | Specifies what will be used for the iss claim of ID tokens. | [optional] 
 **ScopesSupported** | Pointer to **[]string** | The scopes supported for requesting on the provider | [optional] 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **InlinePolicies** | Pointer to **string** | JSON of policies to be dynamically applied to users of this role. | [optional] 
 **MaxTtl** | Pointer to **int32** | The maximum allowed lifetime of tokens issued using this role. | [optional] 
 **RemotePolicies** | Pointer to **[]string** | The name and type of each remote policy to be applied. Example: \&quot;name:AliyunRDSReadOnlyAccess,type:System\&quot;. | [optional] 

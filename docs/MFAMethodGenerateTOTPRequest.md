@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **MethodId** | **string** | The unique identifier for this MFA method. | 
 
 

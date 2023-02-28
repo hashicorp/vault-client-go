@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **From** | Pointer to **string** | The previous mount point. | [optional] 
 **To** | Pointer to **string** | The new mount point. | [optional] 
 

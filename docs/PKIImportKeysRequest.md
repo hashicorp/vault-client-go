@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **KeyName** | Pointer to **string** | Optional name to be used for this key | [optional] 
 **PemBundle** | Pointer to **string** | PEM-format, unencrypted secret key | [optional] 
 

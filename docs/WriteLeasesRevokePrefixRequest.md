@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **Sync** | Pointer to **bool** | Whether or not to perform the revocation synchronously | [optional] [default to true]
 
 

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-
-
 **ConsulNamespace** | Pointer to **string** | Indicates which namespace that the token will be created within. Defaults to &#x27;default&#x27;. Available in Consul 1.7 and above. | [optional] 
 **ConsulPolicies** | Pointer to **[]string** | List of policies to attach to the token. Either \&quot;consul_policies\&quot; or \&quot;consul_roles\&quot; are required for Consul 1.5 and above, or just \&quot;consul_policies\&quot; if using Consul 1.4. | [optional] 
 **ConsulRoles** | Pointer to **[]string** | List of Consul roles to attach to the token. Either \&quot;policies\&quot; or \&quot;consul_roles\&quot; are required for Consul 1.5 and above. | [optional] 

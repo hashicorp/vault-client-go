@@ -8,6 +8,17 @@ and this project adheres to
 
 ## Unreleased ([diff][unreleased-diff])
 
+## [0.2.0][] ([diff][0.2.0-diff]) - 2023-03-01
+
+### Changed
+
+- Renamed `Address` and `HTTPClient`.
+
+### Fixed
+
+- The mount path logic is now reliably generated using `.handlebars` templates.
+- Fixed an issue with how model documents were generated.
+
 ## [0.1.0][] ([diff][0.1.0-diff]) - 2023-02-15
 
 ### Added
@@ -33,7 +44,9 @@ and this project adheres to
 <!-- diffs -->
 
 [unreleased-diff]:
-  https://github.com/hashicorp/vault-client-go/compare/v0.1.0...HEAD
+  https://github.com/hashicorp/vault-client-go/compare/v0.2.0...HEAD
+[0.2.0-diff]:
+  https://github.com/hashicorp/vault-client-go/compare/v0.1.0...v0.2.0
 [0.1.0-diff]:
   https://github.com/hashicorp/vault-client-go/compare/v0.1.0-beta...v0.1.0
 [0.1.0-beta-diff]:
@@ -41,6 +54,8 @@ and this project adheres to
 
 <!-- releases -->
 
+[0.2.0]:
+  https://github.com/hashicorp/vault-client-go/releases/tag/v0.2.0
 [0.1.0]:
   https://github.com/hashicorp/vault-client-go/releases/tag/v0.1.0
 [0.1.0-beta]:

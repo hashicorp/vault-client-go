@@ -63,13 +63,3 @@ jobs:
           dry: True
           prettier_options: -w --prose-wrap=always README.md
 
-      - name: Check readme diffs
-        run: |
-          readonly readme_changes="$(git diff)"
-          if [[ "${readme_changes}" != "" ]]; then
-            echo "Found diffs after running 'prettier -w --prose-wrap=always README.md'"
-            echo "Please run 'make format-readme' & commit the changes:"
-            echo "${readme_changes}"
-            exit 1
-          fi
-

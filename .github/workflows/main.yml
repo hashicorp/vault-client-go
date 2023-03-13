@@ -42,8 +42,8 @@ jobs:
           make regen
           readonly changed_files="$(git diff --stat)"
           if [[ "${changed_files}" != "" ]]; then
-            echo "found diffs after running 'make regen'"
-            echo "please run 'make regen' & commit the changed files:"
+            echo "Found diffs after running 'make regen'"
+            echo "Please run 'make regen' & commit the changed files:"
             echo "${changed_files}"
             exit 1
           fi
@@ -57,7 +57,19 @@ jobs:
           ref: ${{ github.head_ref }}
           persist-credentials: false
 
-      - name: Check readme format
+      - name: Run prettier
         uses: creyD/prettier_action@v4.3
         with:
-          prettier_options: --prose-wrap=always README.md
+          dry: True
+          prettier_options: -w --prose-wrap=always README.md
+
+      - name: Check readme diffs
+        run: |
+          readonly readme_changes="$(git diff)"
+          if [[ "${readme_changes}" != "" ]]; then
+            echo "Found diffs after running 'prettier -w --prose-wrap=always README.md'"
+            echo "Please run 'make format-readme' & commit the changes:"
+            echo "${readme_changes}"
+            exit 1
+          fi
+

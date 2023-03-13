@@ -463,6 +463,7 @@ The following features are coming soon:
 - [Secrets](docs/SecretsApi.md)
 - [System](docs/SystemApi.md)
 
+<!-- prettier-ignore-start -->
 [vault]:                 https://www.vaultproject.io/
 [openapi]:               https://www.openapis.org/
 [openapi-json]:          openapi.json
@@ -480,3 +481,4 @@ The following features are coming soon:
 [ci-build]:              https://github.com/hashicorp/vault-client-go/actions/workflows/main.yml?query=branch%3Amain
 [go-reference-badge]:    https://pkg.go.dev/badge/github.com/hashicorp/vault-client-go
 [go-reference]:          https://pkg.go.dev/github.com/hashicorp/vault-client-go
+<!-- prettier-ignore-end -->

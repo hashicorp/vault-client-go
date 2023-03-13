@@ -61,5 +61,4 @@ jobs:
         uses: creyD/prettier_action@v4.3
         with:
           dry: True
-          file_pattern: README.md
-          prettier_options: --prose-wrap=always
+          prettier_options: --prose-wrap=always README.md

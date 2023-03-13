@@ -57,7 +57,7 @@ jobs:
           ref: ${{ github.head_ref }}
           persist-credentials: false
 
-      - name: Run prettier
+      - name: Ensure readme is formatted (run ''make format-readme' if fails)
         uses: creyD/prettier_action@v4.3
         with:
           dry: True

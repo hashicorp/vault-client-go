@@ -38,5 +38,5 @@ clean:
 	rm -rf .openapi-generator
 
 format-readme:
-	prettier -w --prose-wrap=always README.md
+	prettier --write README.md
 

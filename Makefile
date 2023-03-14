@@ -4,7 +4,7 @@ GENERATE_CONFIG_PATH        ?= generate/config.yaml
 GENERATE_TEMPLATES_PATH     ?= generate/templates
 OUTPUT_PATH                 ?= .
 
-.PHONY: regen bootstrap generate format tidy clean
+.PHONY: regen bootstrap generate format tidy clean format-readme
 
 regen: bootstrap generate format tidy clean
 
@@ -36,3 +36,7 @@ tidy:
 
 clean:
 	rm -rf .openapi-generator
+
+format-readme:
+	prettier -w --prose-wrap=always README.md
+

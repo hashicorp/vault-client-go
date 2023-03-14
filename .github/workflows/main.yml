@@ -61,5 +61,5 @@ jobs:
         uses: creyD/prettier_action@v4.3
         with:
           dry: True
-          prettier_options: -w --prose-wrap=always README.md
+          prettier_options: --write README.md
 

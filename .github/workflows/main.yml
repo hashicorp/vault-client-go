@@ -11,10 +11,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
 
       - name: Set up go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9 # v4.0.0
         with:
           go-version: 1.18
 
@@ -30,10 +30,10 @@ jobs:
   check-regen:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
 
       - name: Set up go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9 # v4.0.0
         with:
           go-version: 1.18
 
@@ -51,14 +51,14 @@ jobs:
   check-readme-format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
           persist-credentials: false
 
       - name: Ensure the readme is formatted (make format-readme)
-        uses: creyD/prettier_action@v4.3
+        uses: creyD/prettier_action@v4.3 # TSCCR: no entry for repository "creyD/prettier_action"
         with:
           dry: True
           prettier_options: --write README.md

@@ -19,7 +19,7 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-// Read attempts to read the stored at the given Vault path.
+// Read attempts to read the value stored at the given Vault path.
 func (c *Client) Read(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	return c.ReadWithParameters(ctx, path, nil, options...)
 }
@@ -44,8 +44,7 @@ func (c *Client) ReadWithParameters(ctx context.Context, path string, parameters
 }
 
 // ReadRaw attempts to read the value stored at the given Vault path and returns
-// a raw *http.Response. Compared to Read, this function:
-//
+// a raw *http.Response. Compared with `Read`, this function:
 //   - does not parse the response
 //   - does not check the response for errors
 //   - does not apply the client-level request timeout
@@ -55,8 +54,7 @@ func (c *Client) ReadRaw(ctx context.Context, path string, options ...RequestOpt
 
 // ReadRawWithParameters attempts to read the value stored at the given Vault
 // path (adding the given query parameters to the request) and returns a raw
-// *http.Response. Compared to ReadRawWithParameters, this function:
-//
+// *http.Response. Compared with `ReadWithParameters`, this function:
 //   - does not parse the response
 //   - does not check the response for errors
 //   - does not apply the client-level request timeout
@@ -88,7 +86,7 @@ func (c *Client) Write(ctx context.Context, path string, body map[string]interfa
 	return c.WriteFromReader(ctx, path, &buf, options...)
 }
 
-// WriteFromBytes attempts to write the given bytes slice to the given Vault path.
+// WriteFromBytes attempts to write the given byte slice to the given Vault path.
 func (c *Client) WriteFromBytes(ctx context.Context, path string, body []byte, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	return c.WriteFromReader(ctx, path, bytes.NewReader(body), options...)
 }
@@ -129,14 +127,13 @@ func (c *Client) List(ctx context.Context, path string, options ...RequestOption
 	)
 }
 
-// Delete attempts to permanently delete the value stored at the given Vault
-// path.
+// Delete attempts to delete the value stored at the given Vault path.
 func (c *Client) Delete(ctx context.Context, path string, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	return c.DeleteWithParameters(ctx, path, nil, options...)
 }
 
-// Delete attempts to permanently delete the value stored at the given Vault
-// path, adding the given query parameters to the request.
+// Delete attempts to delete the value stored at the given Vault path, adding
+// the given query parameters to the request.
 func (c *Client) DeleteWithParameters(ctx context.Context, path string, parameters url.Values, options ...RequestOption) (*Response[map[string]interface{}], error) {
 	modifiers, err := requestOptionsToRequestModifiers(options)
 	if err != nil {
@@ -226,8 +223,7 @@ func sendRequestParseResponse[ResponseT any](
 }
 
 // sendRequestReturnRawResponse constructs a request, sends it and returns a raw
-// *http.Response. Compared to sendRequestParseResponse, this function:
-//
+// *http.Response. Compared with sendRequestParseResponse, this function:
 //   - does not parse the response
 //   - does not check the response for errors
 //   - does not apply the client-level request timeout

@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIRootSignSelfIssuedRequest struct for PKIRootSignSelfIssuedRequest
-type PKIRootSignSelfIssuedRequest struct {
+// PkiRootSignSelfIssuedRequest struct for PkiRootSignSelfIssuedRequest
+type PkiRootSignSelfIssuedRequest struct {
 	// PEM-format self-issued certificate to be signed.
 	Certificate string `json:"certificate"`
 
@@ -21,11 +21,11 @@ type PKIRootSignSelfIssuedRequest struct {
 	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms"`
 }
 
-// NewPKIRootSignSelfIssuedRequestWithDefaults instantiates a new PKIRootSignSelfIssuedRequest object
+// NewPkiRootSignSelfIssuedRequestWithDefaults instantiates a new PkiRootSignSelfIssuedRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIRootSignSelfIssuedRequestWithDefaults() *PKIRootSignSelfIssuedRequest {
-	var this PKIRootSignSelfIssuedRequest
+func NewPkiRootSignSelfIssuedRequestWithDefaults() *PkiRootSignSelfIssuedRequest {
+	var this PkiRootSignSelfIssuedRequest
 
 	this.IssuerRef = "default"
 	this.RequireMatchingCertificateAlgorithms = false
@@ -33,7 +33,7 @@ func NewPKIRootSignSelfIssuedRequestWithDefaults() *PKIRootSignSelfIssuedRequest
 	return &this
 }
 
-func (o PKIRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
+func (o PkiRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["certificate"] = o.Certificate

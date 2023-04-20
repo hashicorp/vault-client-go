@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// AppRoleReadBindSecretIDResponse struct for AppRoleReadBindSecretIDResponse
-type AppRoleReadBindSecretIDResponse struct {
+// AppRoleReadBindSecretIdResponse struct for AppRoleReadBindSecretIdResponse
+type AppRoleReadBindSecretIdResponse struct {
 	// Impose secret_id to be presented when logging in using this role. Defaults to 'true'.
 	BindSecretId bool `json:"bind_secret_id"`
 }
 
-// NewAppRoleReadBindSecretIDResponseWithDefaults instantiates a new AppRoleReadBindSecretIDResponse object
+// NewAppRoleReadBindSecretIdResponseWithDefaults instantiates a new AppRoleReadBindSecretIdResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadBindSecretIDResponseWithDefaults() *AppRoleReadBindSecretIDResponse {
-	var this AppRoleReadBindSecretIDResponse
+func NewAppRoleReadBindSecretIdResponseWithDefaults() *AppRoleReadBindSecretIdResponse {
+	var this AppRoleReadBindSecretIdResponse
 
 	return &this
 }
 
-func (o AppRoleReadBindSecretIDResponse) MarshalJSON() ([]byte, error) {
+func (o AppRoleReadBindSecretIdResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["bind_secret_id"] = o.BindSecretId

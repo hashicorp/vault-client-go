@@ -1,4 +1,4 @@
-# AppRoleReadRoleIDResponse
+# AppRoleReadRoleIdResponse
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleReadRoleIDResponse
+### NewAppRoleReadRoleIdResponse
 
-`func NewAppRoleReadRoleIDResponse() *AppRoleReadRoleIDResponse`
+`func NewAppRoleReadRoleIdResponse() *AppRoleReadRoleIdResponse`
 
-NewAppRoleReadRoleIDResponse instantiates a new AppRoleReadRoleIDResponse object
+NewAppRoleReadRoleIdResponse instantiates a new AppRoleReadRoleIdResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleReadRoleIDResponseWithDefaults
+### NewAppRoleReadRoleIdResponseWithDefaults
 
-`func NewAppRoleReadRoleIDResponseWithDefaults() *AppRoleReadRoleIDResponse`
+`func NewAppRoleReadRoleIdResponseWithDefaults() *AppRoleReadRoleIdResponse`
 
-NewAppRoleReadRoleIDResponseWithDefaults instantiates a new AppRoleReadRoleIDResponse object
+NewAppRoleReadRoleIdResponseWithDefaults instantiates a new AppRoleReadRoleIdResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetRoleId
 
-`func (o *AppRoleReadRoleIDResponse) GetRoleId() string`
+`func (o *AppRoleReadRoleIdResponse) GetRoleId() string`
 
 GetRoleId returns the RoleId field if non-nil, zero value otherwise.
 
 ### GetRoleIdOk
 
-`func (o *AppRoleReadRoleIDResponse) GetRoleIdOk() (*string, bool)`
+`func (o *AppRoleReadRoleIdResponse) GetRoleIdOk() (*string, bool)`
 
 GetRoleIdOk returns a tuple with the RoleId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoleId
 
-`func (o *AppRoleReadRoleIDResponse) SetRoleId(v string)`
+`func (o *AppRoleReadRoleIdResponse) SetRoleId(v string)`
 
 SetRoleId sets RoleId field to given value.
 
 
 ### HasRoleId
 
-`func (o *AppRoleReadRoleIDResponse) HasRoleId() bool`
+`func (o *AppRoleReadRoleIdResponse) HasRoleId() bool`
 
 HasRoleId returns a boolean if a field has been set.
 

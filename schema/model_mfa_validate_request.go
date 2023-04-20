@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// MFAValidateRequest struct for MFAValidateRequest
-type MFAValidateRequest struct {
+// MfaValidateRequest struct for MfaValidateRequest
+type MfaValidateRequest struct {
 	// A map from MFA method ID to a slice of passcodes or an empty slice if the method does not use passcodes
 	MfaPayload map[string]interface{} `json:"mfa_payload"`
 
@@ -18,16 +18,16 @@ type MFAValidateRequest struct {
 	MfaRequestId string `json:"mfa_request_id"`
 }
 
-// NewMFAValidateRequestWithDefaults instantiates a new MFAValidateRequest object
+// NewMfaValidateRequestWithDefaults instantiates a new MfaValidateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMFAValidateRequestWithDefaults() *MFAValidateRequest {
-	var this MFAValidateRequest
+func NewMfaValidateRequestWithDefaults() *MfaValidateRequest {
+	var this MfaValidateRequest
 
 	return &this
 }
 
-func (o MFAValidateRequest) MarshalJSON() ([]byte, error) {
+func (o MfaValidateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["mfa_payload"] = o.MfaPayload

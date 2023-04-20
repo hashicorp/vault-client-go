@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// RabbitMQWriteRoleRequest struct for RabbitMQWriteRoleRequest
-type RabbitMQWriteRoleRequest struct {
+// RabbitMqWriteRoleRequest struct for RabbitMqWriteRoleRequest
+type RabbitMqWriteRoleRequest struct {
 	// Comma-separated list of tags for this role.
 	Tags string `json:"tags"`
 
@@ -21,16 +21,16 @@ type RabbitMQWriteRoleRequest struct {
 	Vhosts string `json:"vhosts"`
 }
 
-// NewRabbitMQWriteRoleRequestWithDefaults instantiates a new RabbitMQWriteRoleRequest object
+// NewRabbitMqWriteRoleRequestWithDefaults instantiates a new RabbitMqWriteRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRabbitMQWriteRoleRequestWithDefaults() *RabbitMQWriteRoleRequest {
-	var this RabbitMQWriteRoleRequest
+func NewRabbitMqWriteRoleRequestWithDefaults() *RabbitMqWriteRoleRequest {
+	var this RabbitMqWriteRoleRequest
 
 	return &this
 }
 
-func (o RabbitMQWriteRoleRequest) MarshalJSON() ([]byte, error) {
+func (o RabbitMqWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["tags"] = o.Tags

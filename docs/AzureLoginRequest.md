@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Jwt** | Pointer to **string** | A signed JWT | [optional] 
 **ResourceGroupName** | Pointer to **string** | The resource group from the instance. | [optional] 
+**ResourceId** | Pointer to **string** | The fully qualified ID of the resource, includingthe resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}. This value is ignored if vm_name or vmss_name is specified. | [optional] 
 **Role** | Pointer to **string** | The token role. | [optional] 
 **SubscriptionId** | Pointer to **string** | The subscription id for the instance. | [optional] 
 **VmName** | Pointer to **string** | The name of the virtual machine. This value is ignored if vmss_name is specified. | [optional] 
@@ -89,6 +90,35 @@ SetResourceGroupName sets ResourceGroupName field to given value.
 `func (o *AzureLoginRequest) HasResourceGroupName() bool`
 
 HasResourceGroupName returns a boolean if a field has been set.
+
+
+
+
+### GetResourceId
+
+`func (o *AzureLoginRequest) GetResourceId() string`
+
+GetResourceId returns the ResourceId field if non-nil, zero value otherwise.
+
+### GetResourceIdOk
+
+`func (o *AzureLoginRequest) GetResourceIdOk() (*string, bool)`
+
+GetResourceIdOk returns a tuple with the ResourceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceId
+
+`func (o *AzureLoginRequest) SetResourceId(v string)`
+
+SetResourceId sets ResourceId field to given value.
+
+
+### HasResourceId
+
+`func (o *AzureLoginRequest) HasResourceId() bool`
+
+HasResourceId returns a boolean if a field has been set.
 
 
 

@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// GoogleCloudKMSWriteKeyRequest struct for GoogleCloudKMSWriteKeyRequest
-type GoogleCloudKMSWriteKeyRequest struct {
+// GoogleCloudKmsWriteKeyRequest struct for GoogleCloudKmsWriteKeyRequest
+type GoogleCloudKmsWriteKeyRequest struct {
 	// Algorithm to use for encryption, decryption, or signing. The value depends on the key purpose. The value cannot be changed after creation. For a key purpose of \"encrypt_decrypt\", the valid values are: - symmetric_encryption (default) For a key purpose of \"asymmetric_sign\", valid values are: - rsa_sign_pss_2048_sha256 - rsa_sign_pss_3072_sha256 - rsa_sign_pss_4096_sha256 - rsa_sign_pkcs1_2048_sha256 - rsa_sign_pkcs1_3072_sha256 - rsa_sign_pkcs1_4096_sha256 - ec_sign_p256_sha256 - ec_sign_p384_sha384 For a key purpose of \"asymmetric_decrypt\", valid values are: - rsa_decrypt_oaep_2048_sha256 - rsa_decrypt_oaep_3072_sha256 - rsa_decrypt_oaep_4096_sha256
 	Algorithm string `json:"algorithm"`
 
@@ -33,16 +33,16 @@ type GoogleCloudKMSWriteKeyRequest struct {
 	RotationPeriod int32 `json:"rotation_period"`
 }
 
-// NewGoogleCloudKMSWriteKeyRequestWithDefaults instantiates a new GoogleCloudKMSWriteKeyRequest object
+// NewGoogleCloudKmsWriteKeyRequestWithDefaults instantiates a new GoogleCloudKmsWriteKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKMSWriteKeyRequestWithDefaults() *GoogleCloudKMSWriteKeyRequest {
-	var this GoogleCloudKMSWriteKeyRequest
+func NewGoogleCloudKmsWriteKeyRequestWithDefaults() *GoogleCloudKmsWriteKeyRequest {
+	var this GoogleCloudKmsWriteKeyRequest
 
 	return &this
 }
 
-func (o GoogleCloudKMSWriteKeyRequest) MarshalJSON() ([]byte, error) {
+func (o GoogleCloudKmsWriteKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm

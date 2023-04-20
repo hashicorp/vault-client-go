@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIIssuersGenerateRootRequest struct for PKIIssuersGenerateRootRequest
-type PKIIssuersGenerateRootRequest struct {
+// PkiIssuersGenerateRootRequest struct for PkiIssuersGenerateRootRequest
+type PkiIssuersGenerateRootRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
 	AltNames string `json:"alt_names"`
 
@@ -102,11 +102,11 @@ type PKIIssuersGenerateRootRequest struct {
 	UsePss bool `json:"use_pss"`
 }
 
-// NewPKIIssuersGenerateRootRequestWithDefaults instantiates a new PKIIssuersGenerateRootRequest object
+// NewPkiIssuersGenerateRootRequestWithDefaults instantiates a new PkiIssuersGenerateRootRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIIssuersGenerateRootRequestWithDefaults() *PKIIssuersGenerateRootRequest {
-	var this PKIIssuersGenerateRootRequest
+func NewPkiIssuersGenerateRootRequestWithDefaults() *PkiIssuersGenerateRootRequest {
+	var this PkiIssuersGenerateRootRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -122,7 +122,7 @@ func NewPKIIssuersGenerateRootRequestWithDefaults() *PKIIssuersGenerateRootReque
 	return &this
 }
 
-func (o PKIIssuersGenerateRootRequest) MarshalJSON() ([]byte, error) {
+func (o PkiIssuersGenerateRootRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames

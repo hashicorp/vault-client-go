@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// PKIWriteKeyRequest struct for PKIWriteKeyRequest
-type PKIWriteKeyRequest struct {
+// PkiWriteKeyRequest struct for PkiWriteKeyRequest
+type PkiWriteKeyRequest struct {
 	// Human-readable name for this key.
 	KeyName string `json:"key_name"`
 }
 
-// NewPKIWriteKeyRequestWithDefaults instantiates a new PKIWriteKeyRequest object
+// NewPkiWriteKeyRequestWithDefaults instantiates a new PkiWriteKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIWriteKeyRequestWithDefaults() *PKIWriteKeyRequest {
-	var this PKIWriteKeyRequest
+func NewPkiWriteKeyRequestWithDefaults() *PkiWriteKeyRequest {
+	var this PkiWriteKeyRequest
 
 	return &this
 }
 
-func (o PKIWriteKeyRequest) MarshalJSON() ([]byte, error) {
+func (o PkiWriteKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_name"] = o.KeyName

@@ -1,4 +1,4 @@
-# MFAValidateRequest
+# MfaValidateRequest
 
 
 ## Properties
@@ -13,40 +13,40 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewMFAValidateRequest
+### NewMfaValidateRequest
 
-`func NewMFAValidateRequest(mfaPayload map[string]interface{}, mfaRequestId string, ) *MFAValidateRequest`
+`func NewMfaValidateRequest(mfaPayload map[string]interface{}, mfaRequestId string, ) *MfaValidateRequest`
 
-NewMFAValidateRequest instantiates a new MFAValidateRequest object
+NewMfaValidateRequest instantiates a new MfaValidateRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMFAValidateRequestWithDefaults
+### NewMfaValidateRequestWithDefaults
 
-`func NewMFAValidateRequestWithDefaults() *MFAValidateRequest`
+`func NewMfaValidateRequestWithDefaults() *MfaValidateRequest`
 
-NewMFAValidateRequestWithDefaults instantiates a new MFAValidateRequest object
+NewMfaValidateRequestWithDefaults instantiates a new MfaValidateRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetMfaPayload
 
-`func (o *MFAValidateRequest) GetMfaPayload() map[string]interface{}`
+`func (o *MfaValidateRequest) GetMfaPayload() map[string]interface{}`
 
 GetMfaPayload returns the MfaPayload field if non-nil, zero value otherwise.
 
 ### GetMfaPayloadOk
 
-`func (o *MFAValidateRequest) GetMfaPayloadOk() (*map[string]interface{}, bool)`
+`func (o *MfaValidateRequest) GetMfaPayloadOk() (*map[string]interface{}, bool)`
 
 GetMfaPayloadOk returns a tuple with the MfaPayload field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMfaPayload
 
-`func (o *MFAValidateRequest) SetMfaPayload(v map[string]interface{})`
+`func (o *MfaValidateRequest) SetMfaPayload(v map[string]interface{})`
 
 SetMfaPayload sets MfaPayload field to given value.
 
@@ -56,20 +56,20 @@ SetMfaPayload sets MfaPayload field to given value.
 
 ### GetMfaRequestId
 
-`func (o *MFAValidateRequest) GetMfaRequestId() string`
+`func (o *MfaValidateRequest) GetMfaRequestId() string`
 
 GetMfaRequestId returns the MfaRequestId field if non-nil, zero value otherwise.
 
 ### GetMfaRequestIdOk
 
-`func (o *MFAValidateRequest) GetMfaRequestIdOk() (*string, bool)`
+`func (o *MfaValidateRequest) GetMfaRequestIdOk() (*string, bool)`
 
 GetMfaRequestIdOk returns a tuple with the MfaRequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMfaRequestId
 
-`func (o *MFAValidateRequest) SetMfaRequestId(v string)`
+`func (o *MfaValidateRequest) SetMfaRequestId(v string)`
 
 SetMfaRequestId sets MfaRequestId field to given value.
 

@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// AppRoleReadTokenBoundCIDRsResponse struct for AppRoleReadTokenBoundCIDRsResponse
-type AppRoleReadTokenBoundCIDRsResponse struct {
+// AppRoleReadTokenBoundCidrsResponse struct for AppRoleReadTokenBoundCidrsResponse
+type AppRoleReadTokenBoundCidrsResponse struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
 	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 }
 
-// NewAppRoleReadTokenBoundCIDRsResponseWithDefaults instantiates a new AppRoleReadTokenBoundCIDRsResponse object
+// NewAppRoleReadTokenBoundCidrsResponseWithDefaults instantiates a new AppRoleReadTokenBoundCidrsResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadTokenBoundCIDRsResponseWithDefaults() *AppRoleReadTokenBoundCIDRsResponse {
-	var this AppRoleReadTokenBoundCIDRsResponse
+func NewAppRoleReadTokenBoundCidrsResponseWithDefaults() *AppRoleReadTokenBoundCidrsResponse {
+	var this AppRoleReadTokenBoundCidrsResponse
 
 	return &this
 }
 
-func (o AppRoleReadTokenBoundCIDRsResponse) MarshalJSON() ([]byte, error) {
+func (o AppRoleReadTokenBoundCidrsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs

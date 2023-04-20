@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OIDCWriteRoleRequest struct for OIDCWriteRoleRequest
-type OIDCWriteRoleRequest struct {
+// OidcWriteRoleRequest struct for OidcWriteRoleRequest
+type OidcWriteRoleRequest struct {
 	// Optional client_id
 	ClientId string `json:"client_id"`
 
@@ -24,16 +24,16 @@ type OIDCWriteRoleRequest struct {
 	Ttl int32 `json:"ttl"`
 }
 
-// NewOIDCWriteRoleRequestWithDefaults instantiates a new OIDCWriteRoleRequest object
+// NewOidcWriteRoleRequestWithDefaults instantiates a new OidcWriteRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOIDCWriteRoleRequestWithDefaults() *OIDCWriteRoleRequest {
-	var this OIDCWriteRoleRequest
+func NewOidcWriteRoleRequestWithDefaults() *OidcWriteRoleRequest {
+	var this OidcWriteRoleRequest
 
 	return &this
 }
 
-func (o OIDCWriteRoleRequest) MarshalJSON() ([]byte, error) {
+func (o OidcWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_id"] = o.ClientId

@@ -532,7 +532,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Authenticates an RAM entity with Vault.",
-        "operationId": "ali-cloud-log-in",
+        "operationId": "ali-cloud-login",
         "tags": [
           "auth"
         ],
@@ -540,7 +540,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AliCloudLoginRequest"
+              }
             }
           }
         },
@@ -638,7 +640,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AliCloudWriteAuthRoleRequest"
+              }
             }
           }
         },
@@ -718,7 +722,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "app-role-log-in",
+        "operationId": "app-role-login",
         "tags": [
           "auth"
         ],
@@ -727,7 +731,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AppRoleLogInRequest"
+                "$ref": "#/components/schemas/AppRoleLoginRequest"
               }
             }
           }
@@ -2385,7 +2389,7 @@
         }
       ],
       "post": {
-        "operationId": "aws-rotate-auth-root-credentials",
+        "operationId": "aws-rotate-root-credentials",
         "tags": [
           "auth"
         ],
@@ -2928,7 +2932,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "aws-log-in",
+        "operationId": "aws-login",
         "tags": [
           "auth"
         ],
@@ -2937,7 +2941,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AwsLogInRequest"
+                "$ref": "#/components/schemas/AwsLoginRequest"
               }
             }
           }
@@ -3515,7 +3519,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AzureConfigureAuthRequest"
+              }
             }
           }
         },
@@ -3553,7 +3559,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "azure-log-in",
+        "operationId": "azure-login",
         "tags": [
           "auth"
         ],
@@ -3561,7 +3567,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AzureLoginRequest"
+              }
             }
           }
         },
@@ -3656,7 +3664,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AzureWriteAuthRoleRequest"
+              }
             }
           }
         },
@@ -3739,7 +3749,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/CentrifyConfigureRequest"
+              }
             }
           }
         },
@@ -3767,7 +3779,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Log in with a username and password.",
-        "operationId": "centrify-log-in",
+        "operationId": "centrify-login",
         "tags": [
           "auth"
         ],
@@ -3775,7 +3787,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/CentrifyLoginRequest"
+              }
             }
           }
         },
@@ -4076,7 +4090,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "cert-log-in",
+        "operationId": "cert-login",
         "tags": [
           "auth"
         ],
@@ -4085,7 +4099,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CertLogInRequest"
+                "$ref": "#/components/schemas/CertLoginRequest"
               }
             }
           }
@@ -4131,7 +4145,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/CloudFoundryConfigureRequest"
+              }
             }
           }
         },
@@ -4169,7 +4185,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "cloud-foundry-log-in",
+        "operationId": "cloud-foundry-login",
         "tags": [
           "auth"
         ],
@@ -4177,7 +4193,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/CloudFoundryLoginRequest"
+              }
             }
           }
         },
@@ -4272,7 +4290,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/CloudFoundryWriteRoleRequest"
+              }
             }
           }
         },
@@ -4328,7 +4348,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudConfigureAuthRequest"
+              }
             }
           }
         },
@@ -4355,7 +4377,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "google-cloud-log-in",
+        "operationId": "google-cloud-login",
         "tags": [
           "auth"
         ],
@@ -4363,7 +4385,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudLoginRequest"
+              }
             }
           }
         },
@@ -4461,7 +4485,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudWriteRoleRequest"
+              }
             }
           }
         },
@@ -4517,7 +4543,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudEditLabelsForRoleRequest"
+              }
             }
           }
         },
@@ -4561,7 +4589,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudEditServiceAccountsForRoleRequest"
+              }
             }
           }
         },
@@ -4674,7 +4704,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "operationId": "github-log-in",
+        "operationId": "github-login",
         "tags": [
           "auth"
         ],
@@ -4683,7 +4713,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GithubLogInRequest"
+                "$ref": "#/components/schemas/GithubLoginRequest"
               }
             }
           }
@@ -4948,7 +4978,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/JwtConfigureRequest"
+              }
             }
           }
         },
@@ -4976,7 +5008,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Authenticates to Vault using a JWT (or OIDC) token.",
-        "operationId": "jwt-log-in",
+        "operationId": "jwt-login",
         "tags": [
           "auth"
         ],
@@ -4984,7 +5016,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/JwtLoginRequest"
+              }
             }
           }
         },
@@ -5019,7 +5053,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/JwtOidcRequestAuthorizationUrlRequest"
+              }
             }
           }
         },
@@ -5066,7 +5102,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/JwtOidcCallbackWithParametersRequest"
+              }
             }
           }
         },
@@ -5166,7 +5204,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/JwtWriteRoleRequest"
+              }
             }
           }
         },
@@ -5223,7 +5263,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KerberosConfigureRequest"
+              }
             }
           }
         },
@@ -5268,7 +5310,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KerberosConfigureLdapRequest"
+              }
             }
           }
         },
@@ -5362,7 +5406,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KerberosWriteGroupRequest"
+              }
             }
           }
         },
@@ -5399,7 +5445,7 @@
       ],
       "x-vault-unauthenticated": true,
       "get": {
-        "operationId": "kerberos-log-in2",
+        "operationId": "kerberos-login2",
         "tags": [
           "auth"
         ],
@@ -5410,7 +5456,7 @@
         }
       },
       "post": {
-        "operationId": "kerberos-log-in",
+        "operationId": "kerberos-login",
         "tags": [
           "auth"
         ],
@@ -5418,7 +5464,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KerberosLoginRequest"
+              }
             }
           }
         },
@@ -5463,7 +5511,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesConfigureAuthRequest"
+              }
             }
           }
         },
@@ -5491,7 +5541,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Authenticates Kubernetes service accounts with Vault.",
-        "operationId": "kubernetes-log-in",
+        "operationId": "kubernetes-login",
         "tags": [
           "auth"
         ],
@@ -5499,7 +5549,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesLoginRequest"
+              }
             }
           }
         },
@@ -5605,7 +5657,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesWriteAuthRoleRequest"
+              }
             }
           }
         },
@@ -5823,7 +5877,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Log in with a username and password.",
-        "operationId": "ldap-log-in",
+        "operationId": "ldap-login",
         "tags": [
           "auth"
         ],
@@ -5832,7 +5886,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LdapLogInRequest"
+                "$ref": "#/components/schemas/LdapLoginRequest"
               }
             }
           }
@@ -5998,7 +6052,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/OciConfigureRequest"
+              }
             }
           }
         },
@@ -6061,7 +6117,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Authenticates to Vault using OCI credentials",
-        "operationId": "oci-log-in",
+        "operationId": "oci-login",
         "tags": [
           "auth"
         ],
@@ -6069,7 +6125,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/OciLoginRequest"
+              }
             }
           }
         },
@@ -6167,7 +6225,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/OciWriteRoleRequest"
+              }
             }
           }
         },
@@ -6386,7 +6446,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Log in with a username and password.",
-        "operationId": "okta-log-in",
+        "operationId": "okta-login",
         "tags": [
           "auth"
         ],
@@ -6395,7 +6455,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OktaLogInRequest"
+                "$ref": "#/components/schemas/OktaLoginRequest"
               }
             }
           }
@@ -6629,7 +6689,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Log in with a username and password.",
-        "operationId": "radius-log-in",
+        "operationId": "radius-login",
         "tags": [
           "auth"
         ],
@@ -6638,7 +6698,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RadiusLogInRequest"
+                "$ref": "#/components/schemas/RadiusLoginRequest"
               }
             }
           }
@@ -6676,7 +6736,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Log in with a username and password.",
-        "operationId": "radius-log-in-with-username",
+        "operationId": "radius-login-with-username",
         "tags": [
           "auth"
         ],
@@ -6685,7 +6745,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RadiusLogInWithUsernameRequest"
+                "$ref": "#/components/schemas/RadiusLoginWithUsernameRequest"
               }
             }
           }
@@ -6843,7 +6903,7 @@
       "x-vault-unauthenticated": true,
       "post": {
         "summary": "Log in with a username and password.",
-        "operationId": "userpass-log-in",
+        "operationId": "userpass-login",
         "tags": [
           "auth"
         ],
@@ -6852,7 +6912,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserpassLogInRequest"
+                "$ref": "#/components/schemas/UserpassLoginRequest"
               }
             }
           }
@@ -13480,7 +13540,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AliCloudConfigureRequest"
+              }
             }
           }
         },
@@ -13625,7 +13687,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AliCloudWriteRoleRequest"
+              }
             }
           }
         },
@@ -14029,7 +14093,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AzureConfigureRequest"
+              }
             }
           }
         },
@@ -14173,7 +14239,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/AzureWriteRoleRequest"
+              }
             }
           }
         },
@@ -14952,7 +15020,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudConfigureRequest"
+              }
             }
           }
         },
@@ -15073,7 +15143,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudWriteImpersonatedAccountRequest"
+              }
             }
           }
         },
@@ -15130,7 +15202,7 @@
         }
       },
       "post": {
-        "operationId": "google-cloud-generate-impersonated-account-access-token",
+        "operationId": "google-cloud-generate-impersonated-account-access-token2",
         "tags": [
           "secrets"
         ],
@@ -15156,7 +15228,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-list-impersonated-accounts",
+        "operationId": "google-cloud-list-impersonated-accounts2",
         "tags": [
           "secrets"
         ],
@@ -15224,7 +15296,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyWithParameters2Request"
+              }
             }
           }
         },
@@ -15319,7 +15393,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudWriteRolesetRequest"
+              }
             }
           }
         },
@@ -15454,7 +15530,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyWithParametersRequest"
+              }
             }
           }
         },
@@ -15526,7 +15604,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-list-rolesets",
+        "operationId": "google-cloud-list-rolesets2",
         "tags": [
           "secrets"
         ],
@@ -15635,7 +15713,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudWriteStaticAccountRequest"
+              }
             }
           }
         },
@@ -15700,7 +15780,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountKeyWithParametersRequest"
+              }
             }
           }
         },
@@ -15807,7 +15889,7 @@
         }
       ],
       "get": {
-        "operationId": "google-cloud-list-static-accounts",
+        "operationId": "google-cloud-list-static-accounts2",
         "tags": [
           "secrets"
         ],
@@ -15913,7 +15995,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsConfigureRequest"
+              }
             }
           }
         },
@@ -15968,7 +16052,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsDecryptRequest"
+              }
             }
           }
         },
@@ -16012,7 +16098,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsEncryptRequest"
+              }
             }
           }
         },
@@ -16108,7 +16196,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsConfigureKeyRequest"
+              }
             }
           }
         },
@@ -16198,7 +16288,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsRegisterKeyRequest"
+              }
             }
           }
         },
@@ -16338,7 +16430,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsWriteKeyRequest"
+              }
             }
           }
         },
@@ -16430,7 +16524,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsReencryptRequest"
+              }
             }
           }
         },
@@ -16474,7 +16570,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsSignRequest"
+              }
             }
           }
         },
@@ -16518,7 +16616,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCloudKmsVerifyRequest"
+              }
             }
           }
         },
@@ -16589,7 +16689,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesConfigureRequest"
+              }
             }
           }
         },
@@ -16643,7 +16745,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesGenerateCredentialsRequest"
+              }
             }
           }
         },
@@ -16738,7 +16842,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesWriteRoleRequest"
+              }
             }
           }
         },
@@ -17277,7 +17383,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/LdapConfigureRequest"
+              }
             }
           }
         },
@@ -17407,7 +17515,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/LdapLibraryForceCheckInRequest"
+              }
             }
           }
         },
@@ -17464,7 +17574,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/LdapLibraryConfigureRequest"
+              }
             }
           }
         },
@@ -17520,7 +17632,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/LdapLibraryCheckInRequest"
+              }
             }
           }
         },
@@ -17564,7 +17678,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/LdapLibraryCheckOutRequest"
+              }
             }
           }
         },
@@ -17695,7 +17811,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/LdapWriteDynamicRoleRequest"
+              }
             }
           }
         },
@@ -17767,7 +17885,7 @@
         }
       ],
       "post": {
-        "operationId": "ldap-rotate-root",
+        "operationId": "ldap-rotate-root-credentials",
         "tags": [
           "secrets"
         ],
@@ -17897,7 +18015,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/LdapWriteStaticRoleRequest"
+              }
             }
           }
         },
@@ -17953,7 +18073,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/MongoDbAtlasConfigureRequest"
+              }
             }
           }
         },
@@ -18096,7 +18218,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/MongoDbAtlasWriteRoleRequest"
+              }
             }
           }
         },
@@ -22694,7 +22818,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/TerraformCloudConfigureRequest"
+              }
             }
           }
         },
@@ -22845,7 +22971,9 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/TerraformCloudWriteRoleRequest"
+              }
             }
           }
         },
@@ -24528,7 +24656,7 @@
           }
         }
       },
-      "AliCloudLogInRequest": {
+      "AliCloudLoginRequest": {
         "type": "object",
         "properties": {
           "identity_request_headers": {
@@ -24591,6 +24719,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -24645,6 +24774,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -24790,7 +24920,7 @@
           }
         }
       },
-      "AppRoleLogInRequest": {
+      "AppRoleLoginRequest": {
         "type": "object",
         "properties": {
           "role_id": {
@@ -24804,7 +24934,7 @@
           }
         }
       },
-      "AppRoleLogInResponse": {
+      "AppRoleLoginResponse": {
         "type": "object",
         "properties": {
           "role": {
@@ -25351,6 +25481,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -25405,6 +25536,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -26105,7 +26237,7 @@
           }
         }
       },
-      "AwsLogInRequest": {
+      "AwsLoginRequest": {
         "type": "object",
         "properties": {
           "iam_http_request_method": {
@@ -26221,6 +26353,9 @@
             "description": "If set, defines a constraint on the EC2 instances to have one of the given instance IDs. Can be a list or comma-separated string of EC2 instance IDs. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "If set, defines a constraint on the EC2 instances to have one of the given instance IDs. A list of EC2 instance IDs. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance."
             }
           },
           "bound_iam_instance_profile_arn": {
@@ -26316,6 +26451,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -26370,6 +26506,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -26607,7 +26744,7 @@
           }
         }
       },
-      "AzureLogInRequest": {
+      "AzureLoginRequest": {
         "type": "object",
         "properties": {
           "jwt": {
@@ -26718,6 +26855,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -26772,6 +26910,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -26879,6 +27018,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -26906,6 +27046,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -26929,7 +27070,7 @@
           }
         }
       },
-      "CentrifyLogInRequest": {
+      "CentrifyLoginRequest": {
         "type": "object",
         "properties": {
           "mode": {
@@ -26967,7 +27108,7 @@
           }
         }
       },
-      "CertLogInRequest": {
+      "CertLoginRequest": {
         "type": "object",
         "properties": {
           "name": {
@@ -26986,6 +27127,7 @@
               "type": "string"
             },
             "x-vault-displayAttrs": {
+              "description": "A list of names. At least one must exist in the Common Name. Supports globbing.",
               "group": "Constraints"
             }
           },
@@ -26997,6 +27139,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Allowed DNS SANs",
+              "description": "A list of DNS names. At least one must exist in the SANs. Supports globbing.",
               "group": "Constraints"
             }
           },
@@ -27008,6 +27151,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Allowed Email SANs",
+              "description": "A list of Email Addresses. At least one must exist in the SANs. Supports globbing.",
               "group": "Constraints"
             }
           },
@@ -27016,6 +27160,9 @@
             "description": "A comma-separated string or array of oid extensions. Upon successful authentication, these extensions will be added as metadata if they are present in the certificate. The metadata key will be the string consisting of the oid numbers separated by a dash (-) instead of a dot (.) to allow usage in ACL templates.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of OID extensions. Upon successful authentication, these extensions will be added as metadata if they are present in the certificate. The metadata key will be the string consisting of the OID numbers separated by a dash (-) instead of a dot (.) to allow usage in ACL templates."
             }
           },
           "allowed_names": {
@@ -27025,6 +27172,7 @@
               "type": "string"
             },
             "x-vault-displayAttrs": {
+              "description": "A list of names. At least one must exist in either the Common Name or SANs. Supports globbing. This parameter is deprecated, please use allowed_common_names, allowed_dns_sans, allowed_email_sans, allowed_uri_sans.",
               "group": "Constraints"
             }
           },
@@ -27035,6 +27183,7 @@
               "type": "string"
             },
             "x-vault-displayAttrs": {
+              "description": "A list of Organizational Units names. At least one must exist in the OU field.",
               "group": "Constraints"
             }
           },
@@ -27046,6 +27195,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Allowed URI SANs",
+              "description": "A list of URIs. At least one must exist in the SANs. Supports globbing.",
               "group": "Constraints"
             }
           },
@@ -27105,6 +27255,9 @@
             "description": "A comma-separated list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected."
             }
           },
           "period": {
@@ -27126,6 +27279,9 @@
             "description": "A comma-separated string or array of extensions formatted as \"oid:value\". Expects the extension value to be some type of ASN1 encoded string. All values much match. Supports globbing on \"value\".",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of extensions formatted as 'oid:value'. Expects the extension value to be some type of ASN1 encoded string. All values much match. Supports globbing on 'value'."
             }
           },
           "token_bound_cidrs": {
@@ -27136,6 +27292,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -27190,6 +27347,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -27373,7 +27531,7 @@
           }
         }
       },
-      "CloudFoundryLogInRequest": {
+      "CloudFoundryLoginRequest": {
         "type": "object",
         "properties": {
           "cf_instance_cert": {
@@ -27408,10 +27566,10 @@
           }
         },
         "required": [
+          "role",
           "cf_instance_cert",
           "signing_time",
-          "signature",
-          "role"
+          "signature"
         ]
       },
       "CloudFoundryWriteRoleRequest": {
@@ -27506,6 +27664,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -27560,6 +27719,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -28341,6 +28501,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -28395,6 +28556,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -28427,7 +28589,7 @@
           "organization"
         ]
       },
-      "GithubLogInRequest": {
+      "GithubLoginRequest": {
         "type": "object",
         "properties": {
           "token": {
@@ -28790,7 +28952,7 @@
           }
         }
       },
-      "GoogleCloudLogInRequest": {
+      "GoogleCloudLoginRequest": {
         "type": "object",
         "properties": {
           "jwt": {
@@ -28936,6 +29098,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -28990,6 +29153,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -29540,7 +29704,7 @@
           }
         }
       },
-      "JwtLogInRequest": {
+      "JwtLoginRequest": {
         "type": "object",
         "properties": {
           "jwt": {
@@ -29704,6 +29868,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -29758,6 +29923,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -29852,6 +30018,12 @@
               "editType": "file"
             }
           },
+          "connection_timeout": {
+            "type": "integer",
+            "description": "Timeout, in seconds, when attempting to connect to the LDAP server before trying the next URL in the configuration.",
+            "format": "seconds",
+            "default": "30s"
+          },
           "deny_null_bind": {
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
@@ -29906,6 +30078,11 @@
               "name": "Insecure TLS"
             }
           },
+          "max_page_size": {
+            "type": "integer",
+            "description": "The maximum number of results to return for a single paged query. If not set, the server default will be used for paged searches. A requested max_page_size of 0 is interpreted as no limit by LDAP servers. If set to a negative value, search requests will not be paged.",
+            "default": 2147483647
+          },
           "request_timeout": {
             "type": "integer",
             "description": "Timeout, in seconds, for the connection when making requests against the server before returning back an error.",
@@ -29955,6 +30132,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -30009,6 +30187,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -30109,7 +30288,7 @@
           }
         }
       },
-      "KerberosLogInRequest": {
+      "KerberosLoginRequest": {
         "type": "object",
         "properties": {
           "authorization": {
@@ -30250,7 +30429,7 @@
           "kubernetes_namespace"
         ]
       },
-      "KubernetesLogInRequest": {
+      "KubernetesLoginRequest": {
         "type": "object",
         "properties": {
           "jwt": {
@@ -30330,6 +30509,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -30384,6 +30564,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -30819,6 +31000,11 @@
               "name": "Insecure TLS"
             }
           },
+          "max_page_size": {
+            "type": "integer",
+            "description": "The maximum number of results to return for a single paged query. If not set, the server default will be used for paged searches. A requested max_page_size of 0 is interpreted as no limit by LDAP servers. If set to a negative value, search requests will not be paged.",
+            "default": 2147483647
+          },
           "request_timeout": {
             "type": "integer",
             "description": "Timeout, in seconds, for the connection when making requests against the server before returning back an error.",
@@ -30868,6 +31054,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -30922,6 +31109,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -31051,6 +31239,12 @@
               "editType": "file"
             }
           },
+          "connection_timeout": {
+            "type": "integer",
+            "description": "Timeout, in seconds, when attempting to connect to the LDAP server before trying the next URL in the configuration.",
+            "format": "seconds",
+            "default": "30s"
+          },
           "deny_null_bind": {
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
@@ -31109,6 +31303,11 @@
             "type": "integer",
             "description": "The desired length of passwords that Vault generates.",
             "deprecated": true
+          },
+          "max_page_size": {
+            "type": "integer",
+            "description": "The maximum number of results to return for a single paged query. If not set, the server default will be used for paged searches. A requested max_page_size of 0 is interpreted as no limit by LDAP servers. If set to a negative value, search requests will not be paged.",
+            "default": 2147483647
           },
           "max_ttl": {
             "type": "integer",
@@ -31288,7 +31487,7 @@
           }
         }
       },
-      "LdapLogInRequest": {
+      "LdapLoginRequest": {
         "type": "object",
         "properties": {
           "password": {
@@ -31340,6 +31539,9 @@
             "description": "Comma-separated list of policies associated to the group.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of policies associated to the group."
             }
           }
         }
@@ -31370,6 +31572,9 @@
             "description": "Comma-separated list of additional groups associated with the user.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of additional groups associated with the user."
             }
           },
           "policies": {
@@ -31377,6 +31582,9 @@
             "description": "Comma-separated list of policies associated with the user.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of policies associated with the user."
             }
           }
         }
@@ -32323,7 +32531,7 @@
           }
         }
       },
-      "OciLogInRequest": {
+      "OciLoginRequest": {
         "type": "object",
         "properties": {
           "request_headers": {
@@ -32350,6 +32558,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -32404,6 +32613,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -32491,10 +32701,10 @@
           }
         },
         "required": [
-          "scope",
-          "response_type",
           "client_id",
-          "redirect_uri"
+          "response_type",
+          "redirect_uri",
+          "scope"
         ]
       },
       "OidcProviderTokenRequest": {
@@ -32752,6 +32962,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -32806,6 +33017,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -32835,7 +33047,7 @@
           }
         }
       },
-      "OktaLogInRequest": {
+      "OktaLoginRequest": {
         "type": "object",
         "properties": {
           "nonce": {
@@ -32864,6 +33076,9 @@
             "description": "Comma-separated list of policies associated to the group.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of policies associated to the group."
             }
           }
         }
@@ -40387,6 +40602,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -40441,6 +40657,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },
@@ -40464,15 +40681,16 @@
           },
           "unregistered_user_policies": {
             "type": "string",
-            "description": "Comma-separated list of policies to grant upon successful RADIUS authentication of an unregisted user (default: empty)",
+            "description": "Comma-separated list of policies to grant upon successful RADIUS authentication of an unregistered user (default: empty)",
             "default": "",
             "x-vault-displayAttrs": {
-              "name": "Policies for unregistered users"
+              "name": "Policies for unregistered users",
+              "description": "List of policies to grant upon successful RADIUS authentication of an unregistered user (default: empty)"
             }
           }
         }
       },
-      "RadiusLogInRequest": {
+      "RadiusLoginRequest": {
         "type": "object",
         "properties": {
           "password": {
@@ -40489,7 +40707,7 @@
           }
         }
       },
-      "RadiusLogInWithUsernameRequest": {
+      "RadiusLoginWithUsernameRequest": {
         "type": "object",
         "properties": {
           "password": {
@@ -40510,6 +40728,9 @@
             "description": "Comma-separated list of policies associated to the user.",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of policies associated to the user."
             }
           }
         }
@@ -41963,6 +42184,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -42936,7 +43158,7 @@
           }
         }
       },
-      "UserpassLogInRequest": {
+      "UserpassLoginRequest": {
         "type": "object",
         "properties": {
           "password": {
@@ -42970,6 +43192,9 @@
             "description": "Comma-separated list of policies",
             "items": {
               "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "description": "A list of policies that will apply to the generated token for this user."
             }
           }
         }
@@ -43014,6 +43239,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
               "group": "Tokens"
             }
           },
@@ -43068,6 +43294,7 @@
             },
             "x-vault-displayAttrs": {
               "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
               "group": "Tokens"
             }
           },

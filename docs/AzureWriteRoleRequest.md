@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **AzureRoles** | Pointer to **string** | JSON list of Azure roles to assign. | [optional] 
 **MaxTtl** | Pointer to **int32** | Maximum time a service principal. If not set or set to 0, will use system default. | [optional] 
 **PermanentlyDelete** | Pointer to **bool** | Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted. | [optional] [default to false]
+**PersistApp** | Pointer to **bool** | Persist the app between generated credentials. Useful if the app needs to maintain owner ship of resources it creates | [optional] [default to false]
 **Ttl** | Pointer to **int32** | Default lease for generated credentials. If not set or set to 0, will use system default. | [optional] 
 
 
@@ -176,6 +177,35 @@ SetPermanentlyDelete sets PermanentlyDelete field to given value.
 `func (o *AzureWriteRoleRequest) HasPermanentlyDelete() bool`
 
 HasPermanentlyDelete returns a boolean if a field has been set.
+
+
+
+
+### GetPersistApp
+
+`func (o *AzureWriteRoleRequest) GetPersistApp() bool`
+
+GetPersistApp returns the PersistApp field if non-nil, zero value otherwise.
+
+### GetPersistAppOk
+
+`func (o *AzureWriteRoleRequest) GetPersistAppOk() (*bool, bool)`
+
+GetPersistAppOk returns a tuple with the PersistApp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersistApp
+
+`func (o *AzureWriteRoleRequest) SetPersistApp(v bool)`
+
+SetPersistApp sets PersistApp field to given value.
+
+
+### HasPersistApp
+
+`func (o *AzureWriteRoleRequest) HasPersistApp() bool`
+
+HasPersistApp returns a boolean if a field has been set.
 
 
 

@@ -26,6 +26,9 @@ type AzureWriteRoleRequest struct {
 	// Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted.
 	PermanentlyDelete bool `json:"permanently_delete"`
 
+	// Persist the app between generated credentials. Useful if the app needs to maintain owner ship of resources it creates
+	PersistApp bool `json:"persist_app"`
+
 	// Default lease for generated credentials. If not set or set to 0, will use system default.
 	Ttl int32 `json:"ttl"`
 }
@@ -37,6 +40,7 @@ func NewAzureWriteRoleRequestWithDefaults() *AzureWriteRoleRequest {
 	var this AzureWriteRoleRequest
 
 	this.PermanentlyDelete = false
+	this.PersistApp = false
 
 	return &this
 }
@@ -49,6 +53,7 @@ func (o AzureWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize["azure_roles"] = o.AzureRoles
 	toSerialize["max_ttl"] = o.MaxTtl
 	toSerialize["permanently_delete"] = o.PermanentlyDelete
+	toSerialize["persist_app"] = o.PersistApp
 	toSerialize["ttl"] = o.Ttl
 
 	return json.Marshal(toSerialize)

@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// LDAPLoginRequest struct for LDAPLoginRequest
-type LDAPLoginRequest struct {
+// LdapLoginRequest struct for LdapLoginRequest
+type LdapLoginRequest struct {
 	// Password for this user.
 	Password string `json:"password"`
 }
 
-// NewLDAPLoginRequestWithDefaults instantiates a new LDAPLoginRequest object
+// NewLdapLoginRequestWithDefaults instantiates a new LdapLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLDAPLoginRequestWithDefaults() *LDAPLoginRequest {
-	var this LDAPLoginRequest
+func NewLdapLoginRequestWithDefaults() *LdapLoginRequest {
+	var this LdapLoginRequest
 
 	return &this
 }
 
-func (o LDAPLoginRequest) MarshalJSON() ([]byte, error) {
+func (o LdapLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["password"] = o.Password

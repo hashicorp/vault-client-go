@@ -1,4 +1,4 @@
-# LDAPWriteStaticRoleRequest
+# LdapWriteStaticRoleRequest
 
 
 ## Properties
@@ -14,47 +14,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewLDAPWriteStaticRoleRequest
+### NewLdapWriteStaticRoleRequest
 
-`func NewLDAPWriteStaticRoleRequest() *LDAPWriteStaticRoleRequest`
+`func NewLdapWriteStaticRoleRequest() *LdapWriteStaticRoleRequest`
 
-NewLDAPWriteStaticRoleRequest instantiates a new LDAPWriteStaticRoleRequest object
+NewLdapWriteStaticRoleRequest instantiates a new LdapWriteStaticRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewLDAPWriteStaticRoleRequestWithDefaults
+### NewLdapWriteStaticRoleRequestWithDefaults
 
-`func NewLDAPWriteStaticRoleRequestWithDefaults() *LDAPWriteStaticRoleRequest`
+`func NewLdapWriteStaticRoleRequestWithDefaults() *LdapWriteStaticRoleRequest`
 
-NewLDAPWriteStaticRoleRequestWithDefaults instantiates a new LDAPWriteStaticRoleRequest object
+NewLdapWriteStaticRoleRequestWithDefaults instantiates a new LdapWriteStaticRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetDn
 
-`func (o *LDAPWriteStaticRoleRequest) GetDn() string`
+`func (o *LdapWriteStaticRoleRequest) GetDn() string`
 
 GetDn returns the Dn field if non-nil, zero value otherwise.
 
 ### GetDnOk
 
-`func (o *LDAPWriteStaticRoleRequest) GetDnOk() (*string, bool)`
+`func (o *LdapWriteStaticRoleRequest) GetDnOk() (*string, bool)`
 
 GetDnOk returns a tuple with the Dn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDn
 
-`func (o *LDAPWriteStaticRoleRequest) SetDn(v string)`
+`func (o *LdapWriteStaticRoleRequest) SetDn(v string)`
 
 SetDn sets Dn field to given value.
 
 
 ### HasDn
 
-`func (o *LDAPWriteStaticRoleRequest) HasDn() bool`
+`func (o *LdapWriteStaticRoleRequest) HasDn() bool`
 
 HasDn returns a boolean if a field has been set.
 
@@ -63,27 +63,27 @@ HasDn returns a boolean if a field has been set.
 
 ### GetRotationPeriod
 
-`func (o *LDAPWriteStaticRoleRequest) GetRotationPeriod() int32`
+`func (o *LdapWriteStaticRoleRequest) GetRotationPeriod() int32`
 
 GetRotationPeriod returns the RotationPeriod field if non-nil, zero value otherwise.
 
 ### GetRotationPeriodOk
 
-`func (o *LDAPWriteStaticRoleRequest) GetRotationPeriodOk() (*int32, bool)`
+`func (o *LdapWriteStaticRoleRequest) GetRotationPeriodOk() (*int32, bool)`
 
 GetRotationPeriodOk returns a tuple with the RotationPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationPeriod
 
-`func (o *LDAPWriteStaticRoleRequest) SetRotationPeriod(v int32)`
+`func (o *LdapWriteStaticRoleRequest) SetRotationPeriod(v int32)`
 
 SetRotationPeriod sets RotationPeriod field to given value.
 
 
 ### HasRotationPeriod
 
-`func (o *LDAPWriteStaticRoleRequest) HasRotationPeriod() bool`
+`func (o *LdapWriteStaticRoleRequest) HasRotationPeriod() bool`
 
 HasRotationPeriod returns a boolean if a field has been set.
 
@@ -92,27 +92,27 @@ HasRotationPeriod returns a boolean if a field has been set.
 
 ### GetUsername
 
-`func (o *LDAPWriteStaticRoleRequest) GetUsername() string`
+`func (o *LdapWriteStaticRoleRequest) GetUsername() string`
 
 GetUsername returns the Username field if non-nil, zero value otherwise.
 
 ### GetUsernameOk
 
-`func (o *LDAPWriteStaticRoleRequest) GetUsernameOk() (*string, bool)`
+`func (o *LdapWriteStaticRoleRequest) GetUsernameOk() (*string, bool)`
 
 GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsername
 
-`func (o *LDAPWriteStaticRoleRequest) SetUsername(v string)`
+`func (o *LdapWriteStaticRoleRequest) SetUsername(v string)`
 
 SetUsername sets Username field to given value.
 
 
 ### HasUsername
 
-`func (o *LDAPWriteStaticRoleRequest) HasUsername() bool`
+`func (o *LdapWriteStaticRoleRequest) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
 

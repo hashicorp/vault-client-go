@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// AppRoleReadTokenTTLResponse struct for AppRoleReadTokenTTLResponse
-type AppRoleReadTokenTTLResponse struct {
+// AppRoleReadTokenTtlResponse struct for AppRoleReadTokenTtlResponse
+type AppRoleReadTokenTtlResponse struct {
 	// The initial ttl of the token to generate
 	TokenTtl int32 `json:"token_ttl"`
 }
 
-// NewAppRoleReadTokenTTLResponseWithDefaults instantiates a new AppRoleReadTokenTTLResponse object
+// NewAppRoleReadTokenTtlResponseWithDefaults instantiates a new AppRoleReadTokenTtlResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadTokenTTLResponseWithDefaults() *AppRoleReadTokenTTLResponse {
-	var this AppRoleReadTokenTTLResponse
+func NewAppRoleReadTokenTtlResponseWithDefaults() *AppRoleReadTokenTtlResponse {
+	var this AppRoleReadTokenTtlResponse
 
 	return &this
 }
 
-func (o AppRoleReadTokenTTLResponse) MarshalJSON() ([]byte, error) {
+func (o AppRoleReadTokenTtlResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["token_ttl"] = o.TokenTtl

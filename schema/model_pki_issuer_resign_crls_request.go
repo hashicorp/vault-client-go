@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIIssuerResignCRLsRequest struct for PKIIssuerResignCRLsRequest
-type PKIIssuerResignCRLsRequest struct {
+// PkiIssuerResignCrlsRequest struct for PkiIssuerResignCrlsRequest
+type PkiIssuerResignCrlsRequest struct {
 	// The sequence number to be written within the CRL Number extension.
 	CrlNumber int32 `json:"crl_number"`
 
@@ -27,11 +27,11 @@ type PKIIssuerResignCRLsRequest struct {
 	NextUpdate string `json:"next_update"`
 }
 
-// NewPKIIssuerResignCRLsRequestWithDefaults instantiates a new PKIIssuerResignCRLsRequest object
+// NewPkiIssuerResignCrlsRequestWithDefaults instantiates a new PkiIssuerResignCrlsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIIssuerResignCRLsRequestWithDefaults() *PKIIssuerResignCRLsRequest {
-	var this PKIIssuerResignCRLsRequest
+func NewPkiIssuerResignCrlsRequestWithDefaults() *PkiIssuerResignCrlsRequest {
+	var this PkiIssuerResignCrlsRequest
 
 	this.DeltaCrlBaseNumber = -1
 	this.Format = "pem"
@@ -40,7 +40,7 @@ func NewPKIIssuerResignCRLsRequestWithDefaults() *PKIIssuerResignCRLsRequest {
 	return &this
 }
 
-func (o PKIIssuerResignCRLsRequest) MarshalJSON() ([]byte, error) {
+func (o PkiIssuerResignCrlsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["crl_number"] = o.CrlNumber

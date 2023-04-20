@@ -14,6 +14,9 @@ type TransitEncryptRequest struct {
 	// When using an AEAD cipher mode, such as AES-GCM, this parameter allows passing associated data (AD/AAD) into the encryption function; this data must be passed on subsequent decryption requests but can be transited in plaintext. On successful decryption, both the ciphertext and the associated data are attested not to have been tampered with.
 	AssociatedData string `json:"associated_data"`
 
+	// Specifies a list of items to be encrypted in a single batch. When this parameter is set, if the parameters 'plaintext', 'context' and 'nonce' are also set, they will be ignored. Any batch output will preserve the order of the batch input.
+	BatchInput []map[string]interface{} `json:"batch_input"`
+
 	// Base64 encoded context for key derivation. Required if key derivation is enabled
 	Context string `json:"context"`
 
@@ -51,6 +54,7 @@ func (o TransitEncryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["associated_data"] = o.AssociatedData
+	toSerialize["batch_input"] = o.BatchInput
 	toSerialize["context"] = o.Context
 	toSerialize["convergent_encryption"] = o.ConvergentEncryption
 	toSerialize["key_version"] = o.KeyVersion

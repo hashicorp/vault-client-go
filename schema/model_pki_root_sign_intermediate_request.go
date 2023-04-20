@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKIRootSignIntermediateRequest struct for PKIRootSignIntermediateRequest
-type PKIRootSignIntermediateRequest struct {
+// PkiRootSignIntermediateRequest struct for PkiRootSignIntermediateRequest
+type PkiRootSignIntermediateRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
 	AltNames string `json:"alt_names"`
 
@@ -96,11 +96,11 @@ type PKIRootSignIntermediateRequest struct {
 	UsePss bool `json:"use_pss"`
 }
 
-// NewPKIRootSignIntermediateRequestWithDefaults instantiates a new PKIRootSignIntermediateRequest object
+// NewPkiRootSignIntermediateRequestWithDefaults instantiates a new PkiRootSignIntermediateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKIRootSignIntermediateRequestWithDefaults() *PKIRootSignIntermediateRequest {
-	var this PKIRootSignIntermediateRequest
+func NewPkiRootSignIntermediateRequestWithDefaults() *PkiRootSignIntermediateRequest {
+	var this PkiRootSignIntermediateRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -117,7 +117,7 @@ func NewPKIRootSignIntermediateRequestWithDefaults() *PKIRootSignIntermediateReq
 	return &this
 }
 
-func (o PKIRootSignIntermediateRequest) MarshalJSON() ([]byte, error) {
+func (o PkiRootSignIntermediateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames

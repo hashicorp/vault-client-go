@@ -1,4 +1,4 @@
-# OIDCRotateKeyRequest
+# OidcRotateKeyRequest
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewOIDCRotateKeyRequest
+### NewOidcRotateKeyRequest
 
-`func NewOIDCRotateKeyRequest() *OIDCRotateKeyRequest`
+`func NewOidcRotateKeyRequest() *OidcRotateKeyRequest`
 
-NewOIDCRotateKeyRequest instantiates a new OIDCRotateKeyRequest object
+NewOidcRotateKeyRequest instantiates a new OidcRotateKeyRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOIDCRotateKeyRequestWithDefaults
+### NewOidcRotateKeyRequestWithDefaults
 
-`func NewOIDCRotateKeyRequestWithDefaults() *OIDCRotateKeyRequest`
+`func NewOidcRotateKeyRequestWithDefaults() *OidcRotateKeyRequest`
 
-NewOIDCRotateKeyRequestWithDefaults instantiates a new OIDCRotateKeyRequest object
+NewOidcRotateKeyRequestWithDefaults instantiates a new OidcRotateKeyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetVerificationTtl
 
-`func (o *OIDCRotateKeyRequest) GetVerificationTtl() int32`
+`func (o *OidcRotateKeyRequest) GetVerificationTtl() int32`
 
 GetVerificationTtl returns the VerificationTtl field if non-nil, zero value otherwise.
 
 ### GetVerificationTtlOk
 
-`func (o *OIDCRotateKeyRequest) GetVerificationTtlOk() (*int32, bool)`
+`func (o *OidcRotateKeyRequest) GetVerificationTtlOk() (*int32, bool)`
 
 GetVerificationTtlOk returns a tuple with the VerificationTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVerificationTtl
 
-`func (o *OIDCRotateKeyRequest) SetVerificationTtl(v int32)`
+`func (o *OidcRotateKeyRequest) SetVerificationTtl(v int32)`
 
 SetVerificationTtl sets VerificationTtl field to given value.
 
 
 ### HasVerificationTtl
 
-`func (o *OIDCRotateKeyRequest) HasVerificationTtl() bool`
+`func (o *OidcRotateKeyRequest) HasVerificationTtl() bool`
 
 HasVerificationTtl returns a boolean if a field has been set.
 

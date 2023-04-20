@@ -38,6 +38,9 @@ type KubernetesWriteRoleRequest struct {
 	// The pre-existing service account to generate tokens for. Mutually exclusive with all role parameters. If set, only a Kubernetes service account token will be created.
 	ServiceAccountName string `json:"service_account_name"`
 
+	// The default audiences for generated Kubernetes service account tokens. If not set or set to \"\", will use k8s cluster default.
+	TokenDefaultAudiences []string `json:"token_default_audiences"`
+
 	// The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.
 	TokenDefaultTtl int32 `json:"token_default_ttl"`
 
@@ -68,6 +71,7 @@ func (o KubernetesWriteRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize["kubernetes_role_type"] = o.KubernetesRoleType
 	toSerialize["name_template"] = o.NameTemplate
 	toSerialize["service_account_name"] = o.ServiceAccountName
+	toSerialize["token_default_audiences"] = o.TokenDefaultAudiences
 	toSerialize["token_default_ttl"] = o.TokenDefaultTtl
 	toSerialize["token_max_ttl"] = o.TokenMaxTtl
 

@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// OIDCWriteClientRequest struct for OIDCWriteClientRequest
-type OIDCWriteClientRequest struct {
+// OidcWriteClientRequest struct for OidcWriteClientRequest
+type OidcWriteClientRequest struct {
 	// The time-to-live for access tokens obtained by the client.
 	AccessTokenTtl int32 `json:"access_token_ttl"`
 
@@ -30,11 +30,11 @@ type OIDCWriteClientRequest struct {
 	RedirectUris []string `json:"redirect_uris"`
 }
 
-// NewOIDCWriteClientRequestWithDefaults instantiates a new OIDCWriteClientRequest object
+// NewOidcWriteClientRequestWithDefaults instantiates a new OidcWriteClientRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOIDCWriteClientRequestWithDefaults() *OIDCWriteClientRequest {
-	var this OIDCWriteClientRequest
+func NewOidcWriteClientRequestWithDefaults() *OidcWriteClientRequest {
+	var this OidcWriteClientRequest
 
 	this.ClientType = "confidential"
 	this.Key = "default"
@@ -42,7 +42,7 @@ func NewOIDCWriteClientRequestWithDefaults() *OIDCWriteClientRequest {
 	return &this
 }
 
-func (o OIDCWriteClientRequest) MarshalJSON() ([]byte, error) {
+func (o OidcWriteClientRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["access_token_ttl"] = o.AccessTokenTtl

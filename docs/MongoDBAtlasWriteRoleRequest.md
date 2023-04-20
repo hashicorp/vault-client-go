@@ -1,4 +1,4 @@
-# MongoDBAtlasWriteRoleRequest
+# MongoDbAtlasWriteRoleRequest
 
 
 ## Properties
@@ -19,47 +19,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewMongoDBAtlasWriteRoleRequest
+### NewMongoDbAtlasWriteRoleRequest
 
-`func NewMongoDBAtlasWriteRoleRequest(roles []string, ) *MongoDBAtlasWriteRoleRequest`
+`func NewMongoDbAtlasWriteRoleRequest(roles []string, ) *MongoDbAtlasWriteRoleRequest`
 
-NewMongoDBAtlasWriteRoleRequest instantiates a new MongoDBAtlasWriteRoleRequest object
+NewMongoDbAtlasWriteRoleRequest instantiates a new MongoDbAtlasWriteRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMongoDBAtlasWriteRoleRequestWithDefaults
+### NewMongoDbAtlasWriteRoleRequestWithDefaults
 
-`func NewMongoDBAtlasWriteRoleRequestWithDefaults() *MongoDBAtlasWriteRoleRequest`
+`func NewMongoDbAtlasWriteRoleRequestWithDefaults() *MongoDbAtlasWriteRoleRequest`
 
-NewMongoDBAtlasWriteRoleRequestWithDefaults instantiates a new MongoDBAtlasWriteRoleRequest object
+NewMongoDbAtlasWriteRoleRequestWithDefaults instantiates a new MongoDbAtlasWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetCidrBlocks
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetCidrBlocks() []string`
+`func (o *MongoDbAtlasWriteRoleRequest) GetCidrBlocks() []string`
 
 GetCidrBlocks returns the CidrBlocks field if non-nil, zero value otherwise.
 
 ### GetCidrBlocksOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetCidrBlocksOk() (*[]string, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetCidrBlocksOk() (*[]string, bool)`
 
 GetCidrBlocksOk returns a tuple with the CidrBlocks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCidrBlocks
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetCidrBlocks(v []string)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetCidrBlocks(v []string)`
 
 SetCidrBlocks sets CidrBlocks field to given value.
 
 
 ### HasCidrBlocks
 
-`func (o *MongoDBAtlasWriteRoleRequest) HasCidrBlocks() bool`
+`func (o *MongoDbAtlasWriteRoleRequest) HasCidrBlocks() bool`
 
 HasCidrBlocks returns a boolean if a field has been set.
 
@@ -68,27 +68,27 @@ HasCidrBlocks returns a boolean if a field has been set.
 
 ### GetIpAddresses
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetIpAddresses() []string`
+`func (o *MongoDbAtlasWriteRoleRequest) GetIpAddresses() []string`
 
 GetIpAddresses returns the IpAddresses field if non-nil, zero value otherwise.
 
 ### GetIpAddressesOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetIpAddressesOk() (*[]string, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetIpAddressesOk() (*[]string, bool)`
 
 GetIpAddressesOk returns a tuple with the IpAddresses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpAddresses
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetIpAddresses(v []string)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetIpAddresses(v []string)`
 
 SetIpAddresses sets IpAddresses field to given value.
 
 
 ### HasIpAddresses
 
-`func (o *MongoDBAtlasWriteRoleRequest) HasIpAddresses() bool`
+`func (o *MongoDbAtlasWriteRoleRequest) HasIpAddresses() bool`
 
 HasIpAddresses returns a boolean if a field has been set.
 
@@ -97,27 +97,27 @@ HasIpAddresses returns a boolean if a field has been set.
 
 ### GetMaxTtl
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetMaxTtl() int32`
+`func (o *MongoDbAtlasWriteRoleRequest) GetMaxTtl() int32`
 
 GetMaxTtl returns the MaxTtl field if non-nil, zero value otherwise.
 
 ### GetMaxTtlOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetMaxTtlOk() (*int32, bool)`
 
 GetMaxTtlOk returns a tuple with the MaxTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxTtl
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetMaxTtl(v int32)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetMaxTtl(v int32)`
 
 SetMaxTtl sets MaxTtl field to given value.
 
 
 ### HasMaxTtl
 
-`func (o *MongoDBAtlasWriteRoleRequest) HasMaxTtl() bool`
+`func (o *MongoDbAtlasWriteRoleRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
 
@@ -126,27 +126,27 @@ HasMaxTtl returns a boolean if a field has been set.
 
 ### GetOrganizationId
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetOrganizationId() string`
+`func (o *MongoDbAtlasWriteRoleRequest) GetOrganizationId() string`
 
 GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
 
 ### GetOrganizationIdOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetOrganizationIdOk() (*string, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetOrganizationIdOk() (*string, bool)`
 
 GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizationId
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetOrganizationId(v string)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetOrganizationId(v string)`
 
 SetOrganizationId sets OrganizationId field to given value.
 
 
 ### HasOrganizationId
 
-`func (o *MongoDBAtlasWriteRoleRequest) HasOrganizationId() bool`
+`func (o *MongoDbAtlasWriteRoleRequest) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
 
@@ -155,27 +155,27 @@ HasOrganizationId returns a boolean if a field has been set.
 
 ### GetProjectId
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetProjectId() string`
+`func (o *MongoDbAtlasWriteRoleRequest) GetProjectId() string`
 
 GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
 
 ### GetProjectIdOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetProjectIdOk() (*string, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetProjectIdOk() (*string, bool)`
 
 GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProjectId
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetProjectId(v string)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetProjectId(v string)`
 
 SetProjectId sets ProjectId field to given value.
 
 
 ### HasProjectId
 
-`func (o *MongoDBAtlasWriteRoleRequest) HasProjectId() bool`
+`func (o *MongoDbAtlasWriteRoleRequest) HasProjectId() bool`
 
 HasProjectId returns a boolean if a field has been set.
 
@@ -184,27 +184,27 @@ HasProjectId returns a boolean if a field has been set.
 
 ### GetProjectRoles
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetProjectRoles() []string`
+`func (o *MongoDbAtlasWriteRoleRequest) GetProjectRoles() []string`
 
 GetProjectRoles returns the ProjectRoles field if non-nil, zero value otherwise.
 
 ### GetProjectRolesOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetProjectRolesOk() (*[]string, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetProjectRolesOk() (*[]string, bool)`
 
 GetProjectRolesOk returns a tuple with the ProjectRoles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProjectRoles
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetProjectRoles(v []string)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetProjectRoles(v []string)`
 
 SetProjectRoles sets ProjectRoles field to given value.
 
 
 ### HasProjectRoles
 
-`func (o *MongoDBAtlasWriteRoleRequest) HasProjectRoles() bool`
+`func (o *MongoDbAtlasWriteRoleRequest) HasProjectRoles() bool`
 
 HasProjectRoles returns a boolean if a field has been set.
 
@@ -213,20 +213,20 @@ HasProjectRoles returns a boolean if a field has been set.
 
 ### GetRoles
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetRoles() []string`
+`func (o *MongoDbAtlasWriteRoleRequest) GetRoles() []string`
 
 GetRoles returns the Roles field if non-nil, zero value otherwise.
 
 ### GetRolesOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetRolesOk() (*[]string, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetRolesOk() (*[]string, bool)`
 
 GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoles
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetRoles(v []string)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetRoles(v []string)`
 
 SetRoles sets Roles field to given value.
 
@@ -236,27 +236,27 @@ SetRoles sets Roles field to given value.
 
 ### GetTtl
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetTtl() int32`
+`func (o *MongoDbAtlasWriteRoleRequest) GetTtl() int32`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *MongoDBAtlasWriteRoleRequest) GetTtlOk() (*int32, bool)`
+`func (o *MongoDbAtlasWriteRoleRequest) GetTtlOk() (*int32, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *MongoDBAtlasWriteRoleRequest) SetTtl(v int32)`
+`func (o *MongoDbAtlasWriteRoleRequest) SetTtl(v int32)`
 
 SetTtl sets Ttl field to given value.
 
 
 ### HasTtl
 
-`func (o *MongoDBAtlasWriteRoleRequest) HasTtl() bool`
+`func (o *MongoDbAtlasWriteRoleRequest) HasTtl() bool`
 
 HasTtl returns a boolean if a field has been set.
 

@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssociatedData** | Pointer to **string** | When using an AEAD cipher mode, such as AES-GCM, this parameter allows passing associated data (AD/AAD) into the encryption function; this data must be passed on subsequent decryption requests but can be transited in plaintext. On successful decryption, both the ciphertext and the associated data are attested not to have been tampered with. | [optional] 
+**BatchInput** | Pointer to **[]map[string]interface{}** | Specifies a list of items to be encrypted in a single batch. When this parameter is set, if the parameters &#x27;plaintext&#x27;, &#x27;context&#x27; and &#x27;nonce&#x27; are also set, they will be ignored. Any batch output will preserve the order of the batch input. | [optional] 
 **Context** | Pointer to **string** | Base64 encoded context for key derivation. Required if key derivation is enabled | [optional] 
 **ConvergentEncryption** | Pointer to **bool** | This parameter will only be used when a key is expected to be created. Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext&#x27;s security. | [optional] 
 **KeyVersion** | Pointer to **int32** | The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key. | [optional] 
@@ -62,6 +63,35 @@ SetAssociatedData sets AssociatedData field to given value.
 `func (o *TransitEncryptRequest) HasAssociatedData() bool`
 
 HasAssociatedData returns a boolean if a field has been set.
+
+
+
+
+### GetBatchInput
+
+`func (o *TransitEncryptRequest) GetBatchInput() []map[string]interface{}`
+
+GetBatchInput returns the BatchInput field if non-nil, zero value otherwise.
+
+### GetBatchInputOk
+
+`func (o *TransitEncryptRequest) GetBatchInputOk() (*[]map[string]interface{}, bool)`
+
+GetBatchInputOk returns a tuple with the BatchInput field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatchInput
+
+`func (o *TransitEncryptRequest) SetBatchInput(v []map[string]interface{})`
+
+SetBatchInput sets BatchInput field to given value.
+
+
+### HasBatchInput
+
+`func (o *TransitEncryptRequest) HasBatchInput() bool`
+
+HasBatchInput returns a boolean if a field has been set.
 
 
 

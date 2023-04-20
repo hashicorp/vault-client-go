@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// AppRoleReadRoleIDResponse struct for AppRoleReadRoleIDResponse
-type AppRoleReadRoleIDResponse struct {
+// AppRoleReadRoleIdResponse struct for AppRoleReadRoleIdResponse
+type AppRoleReadRoleIdResponse struct {
 	// Identifier of the role. Defaults to a UUID.
 	RoleId string `json:"role_id"`
 }
 
-// NewAppRoleReadRoleIDResponseWithDefaults instantiates a new AppRoleReadRoleIDResponse object
+// NewAppRoleReadRoleIdResponseWithDefaults instantiates a new AppRoleReadRoleIdResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleReadRoleIDResponseWithDefaults() *AppRoleReadRoleIDResponse {
-	var this AppRoleReadRoleIDResponse
+func NewAppRoleReadRoleIdResponseWithDefaults() *AppRoleReadRoleIdResponse {
+	var this AppRoleReadRoleIdResponse
 
 	return &this
 }
 
-func (o AppRoleReadRoleIDResponse) MarshalJSON() ([]byte, error) {
+func (o AppRoleReadRoleIdResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["role_id"] = o.RoleId

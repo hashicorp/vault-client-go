@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// LDAPWriteGroupRequest struct for LDAPWriteGroupRequest
-type LDAPWriteGroupRequest struct {
+// LdapWriteGroupRequest struct for LdapWriteGroupRequest
+type LdapWriteGroupRequest struct {
 	// Comma-separated list of policies associated to the group.
 	Policies []string `json:"policies"`
 }
 
-// NewLDAPWriteGroupRequestWithDefaults instantiates a new LDAPWriteGroupRequest object
+// NewLdapWriteGroupRequestWithDefaults instantiates a new LdapWriteGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLDAPWriteGroupRequestWithDefaults() *LDAPWriteGroupRequest {
-	var this LDAPWriteGroupRequest
+func NewLdapWriteGroupRequestWithDefaults() *LdapWriteGroupRequest {
+	var this LdapWriteGroupRequest
 
 	return &this
 }
 
-func (o LDAPWriteGroupRequest) MarshalJSON() ([]byte, error) {
+func (o LdapWriteGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["policies"] = o.Policies

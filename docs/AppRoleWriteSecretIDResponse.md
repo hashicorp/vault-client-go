@@ -1,4 +1,4 @@
-# AppRoleWriteSecretIDResponse
+# AppRoleWriteSecretIdResponse
 
 
 ## Properties
@@ -15,47 +15,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleWriteSecretIDResponse
+### NewAppRoleWriteSecretIdResponse
 
-`func NewAppRoleWriteSecretIDResponse() *AppRoleWriteSecretIDResponse`
+`func NewAppRoleWriteSecretIdResponse() *AppRoleWriteSecretIdResponse`
 
-NewAppRoleWriteSecretIDResponse instantiates a new AppRoleWriteSecretIDResponse object
+NewAppRoleWriteSecretIdResponse instantiates a new AppRoleWriteSecretIdResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleWriteSecretIDResponseWithDefaults
+### NewAppRoleWriteSecretIdResponseWithDefaults
 
-`func NewAppRoleWriteSecretIDResponseWithDefaults() *AppRoleWriteSecretIDResponse`
+`func NewAppRoleWriteSecretIdResponseWithDefaults() *AppRoleWriteSecretIdResponse`
 
-NewAppRoleWriteSecretIDResponseWithDefaults instantiates a new AppRoleWriteSecretIDResponse object
+NewAppRoleWriteSecretIdResponseWithDefaults instantiates a new AppRoleWriteSecretIdResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetSecretId
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretId() string`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretId() string`
 
 GetSecretId returns the SecretId field if non-nil, zero value otherwise.
 
 ### GetSecretIdOk
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretIdOk() (*string, bool)`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdOk() (*string, bool)`
 
 GetSecretIdOk returns a tuple with the SecretId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretId
 
-`func (o *AppRoleWriteSecretIDResponse) SetSecretId(v string)`
+`func (o *AppRoleWriteSecretIdResponse) SetSecretId(v string)`
 
 SetSecretId sets SecretId field to given value.
 
 
 ### HasSecretId
 
-`func (o *AppRoleWriteSecretIDResponse) HasSecretId() bool`
+`func (o *AppRoleWriteSecretIdResponse) HasSecretId() bool`
 
 HasSecretId returns a boolean if a field has been set.
 
@@ -64,27 +64,27 @@ HasSecretId returns a boolean if a field has been set.
 
 ### GetSecretIdAccessor
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretIdAccessor() string`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdAccessor() string`
 
 GetSecretIdAccessor returns the SecretIdAccessor field if non-nil, zero value otherwise.
 
 ### GetSecretIdAccessorOk
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretIdAccessorOk() (*string, bool)`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdAccessorOk() (*string, bool)`
 
 GetSecretIdAccessorOk returns a tuple with the SecretIdAccessor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdAccessor
 
-`func (o *AppRoleWriteSecretIDResponse) SetSecretIdAccessor(v string)`
+`func (o *AppRoleWriteSecretIdResponse) SetSecretIdAccessor(v string)`
 
 SetSecretIdAccessor sets SecretIdAccessor field to given value.
 
 
 ### HasSecretIdAccessor
 
-`func (o *AppRoleWriteSecretIDResponse) HasSecretIdAccessor() bool`
+`func (o *AppRoleWriteSecretIdResponse) HasSecretIdAccessor() bool`
 
 HasSecretIdAccessor returns a boolean if a field has been set.
 
@@ -93,27 +93,27 @@ HasSecretIdAccessor returns a boolean if a field has been set.
 
 ### GetSecretIdNumUses
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretIdNumUses() int32`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdNumUses() int32`
 
 GetSecretIdNumUses returns the SecretIdNumUses field if non-nil, zero value otherwise.
 
 ### GetSecretIdNumUsesOk
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretIdNumUsesOk() (*int32, bool)`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdNumUsesOk() (*int32, bool)`
 
 GetSecretIdNumUsesOk returns a tuple with the SecretIdNumUses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdNumUses
 
-`func (o *AppRoleWriteSecretIDResponse) SetSecretIdNumUses(v int32)`
+`func (o *AppRoleWriteSecretIdResponse) SetSecretIdNumUses(v int32)`
 
 SetSecretIdNumUses sets SecretIdNumUses field to given value.
 
 
 ### HasSecretIdNumUses
 
-`func (o *AppRoleWriteSecretIDResponse) HasSecretIdNumUses() bool`
+`func (o *AppRoleWriteSecretIdResponse) HasSecretIdNumUses() bool`
 
 HasSecretIdNumUses returns a boolean if a field has been set.
 
@@ -122,27 +122,27 @@ HasSecretIdNumUses returns a boolean if a field has been set.
 
 ### GetSecretIdTtl
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretIdTtl() int32`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdTtl() int32`
 
 GetSecretIdTtl returns the SecretIdTtl field if non-nil, zero value otherwise.
 
 ### GetSecretIdTtlOk
 
-`func (o *AppRoleWriteSecretIDResponse) GetSecretIdTtlOk() (*int32, bool)`
+`func (o *AppRoleWriteSecretIdResponse) GetSecretIdTtlOk() (*int32, bool)`
 
 GetSecretIdTtlOk returns a tuple with the SecretIdTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretIdTtl
 
-`func (o *AppRoleWriteSecretIDResponse) SetSecretIdTtl(v int32)`
+`func (o *AppRoleWriteSecretIdResponse) SetSecretIdTtl(v int32)`
 
 SetSecretIdTtl sets SecretIdTtl field to given value.
 
 
 ### HasSecretIdTtl
 
-`func (o *AppRoleWriteSecretIDResponse) HasSecretIdTtl() bool`
+`func (o *AppRoleWriteSecretIdResponse) HasSecretIdTtl() bool`
 
 HasSecretIdTtl returns a boolean if a field has been set.
 

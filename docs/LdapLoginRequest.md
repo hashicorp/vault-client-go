@@ -1,4 +1,4 @@
-# LDAPLoginRequest
+# LdapLoginRequest
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewLDAPLoginRequest
+### NewLdapLoginRequest
 
-`func NewLDAPLoginRequest() *LDAPLoginRequest`
+`func NewLdapLoginRequest() *LdapLoginRequest`
 
-NewLDAPLoginRequest instantiates a new LDAPLoginRequest object
+NewLdapLoginRequest instantiates a new LdapLoginRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewLDAPLoginRequestWithDefaults
+### NewLdapLoginRequestWithDefaults
 
-`func NewLDAPLoginRequestWithDefaults() *LDAPLoginRequest`
+`func NewLdapLoginRequestWithDefaults() *LdapLoginRequest`
 
-NewLDAPLoginRequestWithDefaults instantiates a new LDAPLoginRequest object
+NewLdapLoginRequestWithDefaults instantiates a new LdapLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetPassword
 
-`func (o *LDAPLoginRequest) GetPassword() string`
+`func (o *LdapLoginRequest) GetPassword() string`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *LDAPLoginRequest) GetPasswordOk() (*string, bool)`
+`func (o *LdapLoginRequest) GetPasswordOk() (*string, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *LDAPLoginRequest) SetPassword(v string)`
+`func (o *LdapLoginRequest) SetPassword(v string)`
 
 SetPassword sets Password field to given value.
 
 
 ### HasPassword
 
-`func (o *LDAPLoginRequest) HasPassword() bool`
+`func (o *LdapLoginRequest) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
 

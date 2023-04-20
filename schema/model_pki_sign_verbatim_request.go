@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// PKISignVerbatimRequest struct for PKISignVerbatimRequest
-type PKISignVerbatimRequest struct {
+// PkiSignVerbatimRequest struct for PkiSignVerbatimRequest
+type PkiSignVerbatimRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
 	AltNames string `json:"alt_names"`
 
@@ -70,13 +70,16 @@ type PKISignVerbatimRequest struct {
 
 	// Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false.
 	UsePss bool `json:"use_pss"`
+
+	// The requested user_ids value to place in the subject, if any, in a comma-delimited list. Restricted by allowed_user_ids. Any values are added with OID 0.9.2342.19200300.100.1.1.
+	UserIds []string `json:"user_ids"`
 }
 
-// NewPKISignVerbatimRequestWithDefaults instantiates a new PKISignVerbatimRequest object
+// NewPkiSignVerbatimRequestWithDefaults instantiates a new PkiSignVerbatimRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPKISignVerbatimRequestWithDefaults() *PKISignVerbatimRequest {
-	var this PKISignVerbatimRequest
+func NewPkiSignVerbatimRequestWithDefaults() *PkiSignVerbatimRequest {
+	var this PkiSignVerbatimRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -90,7 +93,7 @@ func NewPKISignVerbatimRequestWithDefaults() *PKISignVerbatimRequest {
 	return &this
 }
 
-func (o PKISignVerbatimRequest) MarshalJSON() ([]byte, error) {
+func (o PkiSignVerbatimRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
@@ -113,6 +116,7 @@ func (o PKISignVerbatimRequest) MarshalJSON() ([]byte, error) {
 	toSerialize["ttl"] = o.Ttl
 	toSerialize["uri_sans"] = o.UriSans
 	toSerialize["use_pss"] = o.UsePss
+	toSerialize["user_ids"] = o.UserIds
 
 	return json.Marshal(toSerialize)
 }

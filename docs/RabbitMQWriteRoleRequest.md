@@ -1,4 +1,4 @@
-# RabbitMQWriteRoleRequest
+# RabbitMqWriteRoleRequest
 
 
 ## Properties
@@ -14,47 +14,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewRabbitMQWriteRoleRequest
+### NewRabbitMqWriteRoleRequest
 
-`func NewRabbitMQWriteRoleRequest() *RabbitMQWriteRoleRequest`
+`func NewRabbitMqWriteRoleRequest() *RabbitMqWriteRoleRequest`
 
-NewRabbitMQWriteRoleRequest instantiates a new RabbitMQWriteRoleRequest object
+NewRabbitMqWriteRoleRequest instantiates a new RabbitMqWriteRoleRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRabbitMQWriteRoleRequestWithDefaults
+### NewRabbitMqWriteRoleRequestWithDefaults
 
-`func NewRabbitMQWriteRoleRequestWithDefaults() *RabbitMQWriteRoleRequest`
+`func NewRabbitMqWriteRoleRequestWithDefaults() *RabbitMqWriteRoleRequest`
 
-NewRabbitMQWriteRoleRequestWithDefaults instantiates a new RabbitMQWriteRoleRequest object
+NewRabbitMqWriteRoleRequestWithDefaults instantiates a new RabbitMqWriteRoleRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetTags
 
-`func (o *RabbitMQWriteRoleRequest) GetTags() string`
+`func (o *RabbitMqWriteRoleRequest) GetTags() string`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *RabbitMQWriteRoleRequest) GetTagsOk() (*string, bool)`
+`func (o *RabbitMqWriteRoleRequest) GetTagsOk() (*string, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *RabbitMQWriteRoleRequest) SetTags(v string)`
+`func (o *RabbitMqWriteRoleRequest) SetTags(v string)`
 
 SetTags sets Tags field to given value.
 
 
 ### HasTags
 
-`func (o *RabbitMQWriteRoleRequest) HasTags() bool`
+`func (o *RabbitMqWriteRoleRequest) HasTags() bool`
 
 HasTags returns a boolean if a field has been set.
 
@@ -63,27 +63,27 @@ HasTags returns a boolean if a field has been set.
 
 ### GetVhostTopics
 
-`func (o *RabbitMQWriteRoleRequest) GetVhostTopics() string`
+`func (o *RabbitMqWriteRoleRequest) GetVhostTopics() string`
 
 GetVhostTopics returns the VhostTopics field if non-nil, zero value otherwise.
 
 ### GetVhostTopicsOk
 
-`func (o *RabbitMQWriteRoleRequest) GetVhostTopicsOk() (*string, bool)`
+`func (o *RabbitMqWriteRoleRequest) GetVhostTopicsOk() (*string, bool)`
 
 GetVhostTopicsOk returns a tuple with the VhostTopics field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVhostTopics
 
-`func (o *RabbitMQWriteRoleRequest) SetVhostTopics(v string)`
+`func (o *RabbitMqWriteRoleRequest) SetVhostTopics(v string)`
 
 SetVhostTopics sets VhostTopics field to given value.
 
 
 ### HasVhostTopics
 
-`func (o *RabbitMQWriteRoleRequest) HasVhostTopics() bool`
+`func (o *RabbitMqWriteRoleRequest) HasVhostTopics() bool`
 
 HasVhostTopics returns a boolean if a field has been set.
 
@@ -92,27 +92,27 @@ HasVhostTopics returns a boolean if a field has been set.
 
 ### GetVhosts
 
-`func (o *RabbitMQWriteRoleRequest) GetVhosts() string`
+`func (o *RabbitMqWriteRoleRequest) GetVhosts() string`
 
 GetVhosts returns the Vhosts field if non-nil, zero value otherwise.
 
 ### GetVhostsOk
 
-`func (o *RabbitMQWriteRoleRequest) GetVhostsOk() (*string, bool)`
+`func (o *RabbitMqWriteRoleRequest) GetVhostsOk() (*string, bool)`
 
 GetVhostsOk returns a tuple with the Vhosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVhosts
 
-`func (o *RabbitMQWriteRoleRequest) SetVhosts(v string)`
+`func (o *RabbitMqWriteRoleRequest) SetVhosts(v string)`
 
 SetVhosts sets Vhosts field to given value.
 
 
 ### HasVhosts
 
-`func (o *RabbitMQWriteRoleRequest) HasVhosts() bool`
+`func (o *RabbitMqWriteRoleRequest) HasVhosts() bool`
 
 HasVhosts returns a boolean if a field has been set.
 

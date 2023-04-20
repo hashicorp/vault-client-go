@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// AWSWriteAuthRoleRequest struct for AWSWriteAuthRoleRequest
-type AWSWriteAuthRoleRequest struct {
+// AwsWriteAuthRoleRequest struct for AwsWriteAuthRoleRequest
+type AwsWriteAuthRoleRequest struct {
 	// If set, allows migration of the underlying instance where the client resides. This keys off of pendingTime in the metadata document, so essentially, this disables the client nonce check whenever the instance is migrated to a new host and pendingTime is newer than the previously-remembered time. Use with caution. This is only checked when auth_type is ec2.
 	AllowInstanceMigration bool `json:"allow_instance_migration"`
 
@@ -103,11 +103,11 @@ type AWSWriteAuthRoleRequest struct {
 	Ttl int32 `json:"ttl"`
 }
 
-// NewAWSWriteAuthRoleRequestWithDefaults instantiates a new AWSWriteAuthRoleRequest object
+// NewAwsWriteAuthRoleRequestWithDefaults instantiates a new AwsWriteAuthRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAWSWriteAuthRoleRequestWithDefaults() *AWSWriteAuthRoleRequest {
-	var this AWSWriteAuthRoleRequest
+func NewAwsWriteAuthRoleRequestWithDefaults() *AwsWriteAuthRoleRequest {
+	var this AwsWriteAuthRoleRequest
 
 	this.AllowInstanceMigration = false
 	this.DisallowReauthentication = false
@@ -118,7 +118,7 @@ func NewAWSWriteAuthRoleRequestWithDefaults() *AWSWriteAuthRoleRequest {
 	return &this
 }
 
-func (o AWSWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
+func (o AwsWriteAuthRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_instance_migration"] = o.AllowInstanceMigration

@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 )
 
-// GoogleCloudKMSReencryptRequest struct for GoogleCloudKMSReencryptRequest
-type GoogleCloudKMSReencryptRequest struct {
+// GoogleCloudKmsReencryptRequest struct for GoogleCloudKmsReencryptRequest
+type GoogleCloudKmsReencryptRequest struct {
 	// Optional data that, if specified, must also be provided during decryption.
 	AdditionalAuthenticatedData string `json:"additional_authenticated_data"`
 
@@ -21,16 +21,16 @@ type GoogleCloudKMSReencryptRequest struct {
 	KeyVersion int32 `json:"key_version"`
 }
 
-// NewGoogleCloudKMSReencryptRequestWithDefaults instantiates a new GoogleCloudKMSReencryptRequest object
+// NewGoogleCloudKmsReencryptRequestWithDefaults instantiates a new GoogleCloudKmsReencryptRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGoogleCloudKMSReencryptRequestWithDefaults() *GoogleCloudKMSReencryptRequest {
-	var this GoogleCloudKMSReencryptRequest
+func NewGoogleCloudKmsReencryptRequestWithDefaults() *GoogleCloudKmsReencryptRequest {
+	var this GoogleCloudKmsReencryptRequest
 
 	return &this
 }
 
-func (o GoogleCloudKMSReencryptRequest) MarshalJSON() ([]byte, error) {
+func (o GoogleCloudKmsReencryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData

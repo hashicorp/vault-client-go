@@ -9,10 +9,13 @@ import (
 	"encoding/json"
 )
 
-// TransitGenerateHMACRequest struct for TransitGenerateHMACRequest
-type TransitGenerateHMACRequest struct {
+// TransitGenerateHmacRequest struct for TransitGenerateHmacRequest
+type TransitGenerateHmacRequest struct {
 	// Algorithm to use (POST body parameter). Valid values are: * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 Defaults to \"sha2-256\".
 	Algorithm string `json:"algorithm"`
+
+	// Specifies a list of items to be processed in a single batch. When this parameter is set, if the parameter 'input' is also set, it will be ignored. Any batch output will preserve the order of the batch input.
+	BatchInput []map[string]interface{} `json:"batch_input"`
 
 	// The base64-encoded input data
 	Input string `json:"input"`
@@ -24,21 +27,22 @@ type TransitGenerateHMACRequest struct {
 	Urlalgorithm string `json:"urlalgorithm"`
 }
 
-// NewTransitGenerateHMACRequestWithDefaults instantiates a new TransitGenerateHMACRequest object
+// NewTransitGenerateHmacRequestWithDefaults instantiates a new TransitGenerateHmacRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTransitGenerateHMACRequestWithDefaults() *TransitGenerateHMACRequest {
-	var this TransitGenerateHMACRequest
+func NewTransitGenerateHmacRequestWithDefaults() *TransitGenerateHmacRequest {
+	var this TransitGenerateHmacRequest
 
 	this.Algorithm = "sha2-256"
 
 	return &this
 }
 
-func (o TransitGenerateHMACRequest) MarshalJSON() ([]byte, error) {
+func (o TransitGenerateHmacRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["batch_input"] = o.BatchInput
 	toSerialize["input"] = o.Input
 	toSerialize["key_version"] = o.KeyVersion
 	toSerialize["urlalgorithm"] = o.Urlalgorithm

@@ -1,4 +1,4 @@
-# GoogleCloudKMSSignRequest
+# GoogleCloudKmsSignRequest
 
 
 ## Properties
@@ -13,47 +13,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewGoogleCloudKMSSignRequest
+### NewGoogleCloudKmsSignRequest
 
-`func NewGoogleCloudKMSSignRequest() *GoogleCloudKMSSignRequest`
+`func NewGoogleCloudKmsSignRequest() *GoogleCloudKmsSignRequest`
 
-NewGoogleCloudKMSSignRequest instantiates a new GoogleCloudKMSSignRequest object
+NewGoogleCloudKmsSignRequest instantiates a new GoogleCloudKmsSignRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGoogleCloudKMSSignRequestWithDefaults
+### NewGoogleCloudKmsSignRequestWithDefaults
 
-`func NewGoogleCloudKMSSignRequestWithDefaults() *GoogleCloudKMSSignRequest`
+`func NewGoogleCloudKmsSignRequestWithDefaults() *GoogleCloudKmsSignRequest`
 
-NewGoogleCloudKMSSignRequestWithDefaults instantiates a new GoogleCloudKMSSignRequest object
+NewGoogleCloudKmsSignRequestWithDefaults instantiates a new GoogleCloudKmsSignRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetDigest
 
-`func (o *GoogleCloudKMSSignRequest) GetDigest() string`
+`func (o *GoogleCloudKmsSignRequest) GetDigest() string`
 
 GetDigest returns the Digest field if non-nil, zero value otherwise.
 
 ### GetDigestOk
 
-`func (o *GoogleCloudKMSSignRequest) GetDigestOk() (*string, bool)`
+`func (o *GoogleCloudKmsSignRequest) GetDigestOk() (*string, bool)`
 
 GetDigestOk returns a tuple with the Digest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDigest
 
-`func (o *GoogleCloudKMSSignRequest) SetDigest(v string)`
+`func (o *GoogleCloudKmsSignRequest) SetDigest(v string)`
 
 SetDigest sets Digest field to given value.
 
 
 ### HasDigest
 
-`func (o *GoogleCloudKMSSignRequest) HasDigest() bool`
+`func (o *GoogleCloudKmsSignRequest) HasDigest() bool`
 
 HasDigest returns a boolean if a field has been set.
 
@@ -62,27 +62,27 @@ HasDigest returns a boolean if a field has been set.
 
 ### GetKeyVersion
 
-`func (o *GoogleCloudKMSSignRequest) GetKeyVersion() int32`
+`func (o *GoogleCloudKmsSignRequest) GetKeyVersion() int32`
 
 GetKeyVersion returns the KeyVersion field if non-nil, zero value otherwise.
 
 ### GetKeyVersionOk
 
-`func (o *GoogleCloudKMSSignRequest) GetKeyVersionOk() (*int32, bool)`
+`func (o *GoogleCloudKmsSignRequest) GetKeyVersionOk() (*int32, bool)`
 
 GetKeyVersionOk returns a tuple with the KeyVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyVersion
 
-`func (o *GoogleCloudKMSSignRequest) SetKeyVersion(v int32)`
+`func (o *GoogleCloudKmsSignRequest) SetKeyVersion(v int32)`
 
 SetKeyVersion sets KeyVersion field to given value.
 
 
 ### HasKeyVersion
 
-`func (o *GoogleCloudKMSSignRequest) HasKeyVersion() bool`
+`func (o *GoogleCloudKmsSignRequest) HasKeyVersion() bool`
 
 HasKeyVersion returns a boolean if a field has been set.
 

@@ -1,4 +1,4 @@
-# PKIIssuerSignRevocationListRequest
+# PkiIssuerSignRevocationListRequest
 
 
 ## Properties
@@ -17,47 +17,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewPKIIssuerSignRevocationListRequest
+### NewPkiIssuerSignRevocationListRequest
 
-`func NewPKIIssuerSignRevocationListRequest() *PKIIssuerSignRevocationListRequest`
+`func NewPkiIssuerSignRevocationListRequest() *PkiIssuerSignRevocationListRequest`
 
-NewPKIIssuerSignRevocationListRequest instantiates a new PKIIssuerSignRevocationListRequest object
+NewPkiIssuerSignRevocationListRequest instantiates a new PkiIssuerSignRevocationListRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPKIIssuerSignRevocationListRequestWithDefaults
+### NewPkiIssuerSignRevocationListRequestWithDefaults
 
-`func NewPKIIssuerSignRevocationListRequestWithDefaults() *PKIIssuerSignRevocationListRequest`
+`func NewPkiIssuerSignRevocationListRequestWithDefaults() *PkiIssuerSignRevocationListRequest`
 
-NewPKIIssuerSignRevocationListRequestWithDefaults instantiates a new PKIIssuerSignRevocationListRequest object
+NewPkiIssuerSignRevocationListRequestWithDefaults instantiates a new PkiIssuerSignRevocationListRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetCrlNumber
 
-`func (o *PKIIssuerSignRevocationListRequest) GetCrlNumber() int32`
+`func (o *PkiIssuerSignRevocationListRequest) GetCrlNumber() int32`
 
 GetCrlNumber returns the CrlNumber field if non-nil, zero value otherwise.
 
 ### GetCrlNumberOk
 
-`func (o *PKIIssuerSignRevocationListRequest) GetCrlNumberOk() (*int32, bool)`
+`func (o *PkiIssuerSignRevocationListRequest) GetCrlNumberOk() (*int32, bool)`
 
 GetCrlNumberOk returns a tuple with the CrlNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCrlNumber
 
-`func (o *PKIIssuerSignRevocationListRequest) SetCrlNumber(v int32)`
+`func (o *PkiIssuerSignRevocationListRequest) SetCrlNumber(v int32)`
 
 SetCrlNumber sets CrlNumber field to given value.
 
 
 ### HasCrlNumber
 
-`func (o *PKIIssuerSignRevocationListRequest) HasCrlNumber() bool`
+`func (o *PkiIssuerSignRevocationListRequest) HasCrlNumber() bool`
 
 HasCrlNumber returns a boolean if a field has been set.
 
@@ -66,27 +66,27 @@ HasCrlNumber returns a boolean if a field has been set.
 
 ### GetDeltaCrlBaseNumber
 
-`func (o *PKIIssuerSignRevocationListRequest) GetDeltaCrlBaseNumber() int32`
+`func (o *PkiIssuerSignRevocationListRequest) GetDeltaCrlBaseNumber() int32`
 
 GetDeltaCrlBaseNumber returns the DeltaCrlBaseNumber field if non-nil, zero value otherwise.
 
 ### GetDeltaCrlBaseNumberOk
 
-`func (o *PKIIssuerSignRevocationListRequest) GetDeltaCrlBaseNumberOk() (*int32, bool)`
+`func (o *PkiIssuerSignRevocationListRequest) GetDeltaCrlBaseNumberOk() (*int32, bool)`
 
 GetDeltaCrlBaseNumberOk returns a tuple with the DeltaCrlBaseNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeltaCrlBaseNumber
 
-`func (o *PKIIssuerSignRevocationListRequest) SetDeltaCrlBaseNumber(v int32)`
+`func (o *PkiIssuerSignRevocationListRequest) SetDeltaCrlBaseNumber(v int32)`
 
 SetDeltaCrlBaseNumber sets DeltaCrlBaseNumber field to given value.
 
 
 ### HasDeltaCrlBaseNumber
 
-`func (o *PKIIssuerSignRevocationListRequest) HasDeltaCrlBaseNumber() bool`
+`func (o *PkiIssuerSignRevocationListRequest) HasDeltaCrlBaseNumber() bool`
 
 HasDeltaCrlBaseNumber returns a boolean if a field has been set.
 
@@ -95,27 +95,27 @@ HasDeltaCrlBaseNumber returns a boolean if a field has been set.
 
 ### GetExtensions
 
-`func (o *PKIIssuerSignRevocationListRequest) GetExtensions() []map[string]interface{}`
+`func (o *PkiIssuerSignRevocationListRequest) GetExtensions() []map[string]interface{}`
 
 GetExtensions returns the Extensions field if non-nil, zero value otherwise.
 
 ### GetExtensionsOk
 
-`func (o *PKIIssuerSignRevocationListRequest) GetExtensionsOk() (*[]map[string]interface{}, bool)`
+`func (o *PkiIssuerSignRevocationListRequest) GetExtensionsOk() (*[]map[string]interface{}, bool)`
 
 GetExtensionsOk returns a tuple with the Extensions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtensions
 
-`func (o *PKIIssuerSignRevocationListRequest) SetExtensions(v []map[string]interface{})`
+`func (o *PkiIssuerSignRevocationListRequest) SetExtensions(v []map[string]interface{})`
 
 SetExtensions sets Extensions field to given value.
 
 
 ### HasExtensions
 
-`func (o *PKIIssuerSignRevocationListRequest) HasExtensions() bool`
+`func (o *PkiIssuerSignRevocationListRequest) HasExtensions() bool`
 
 HasExtensions returns a boolean if a field has been set.
 
@@ -124,27 +124,27 @@ HasExtensions returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *PKIIssuerSignRevocationListRequest) GetFormat() string`
+`func (o *PkiIssuerSignRevocationListRequest) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *PKIIssuerSignRevocationListRequest) GetFormatOk() (*string, bool)`
+`func (o *PkiIssuerSignRevocationListRequest) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *PKIIssuerSignRevocationListRequest) SetFormat(v string)`
+`func (o *PkiIssuerSignRevocationListRequest) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 
 ### HasFormat
 
-`func (o *PKIIssuerSignRevocationListRequest) HasFormat() bool`
+`func (o *PkiIssuerSignRevocationListRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
@@ -153,27 +153,27 @@ HasFormat returns a boolean if a field has been set.
 
 ### GetNextUpdate
 
-`func (o *PKIIssuerSignRevocationListRequest) GetNextUpdate() string`
+`func (o *PkiIssuerSignRevocationListRequest) GetNextUpdate() string`
 
 GetNextUpdate returns the NextUpdate field if non-nil, zero value otherwise.
 
 ### GetNextUpdateOk
 
-`func (o *PKIIssuerSignRevocationListRequest) GetNextUpdateOk() (*string, bool)`
+`func (o *PkiIssuerSignRevocationListRequest) GetNextUpdateOk() (*string, bool)`
 
 GetNextUpdateOk returns a tuple with the NextUpdate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextUpdate
 
-`func (o *PKIIssuerSignRevocationListRequest) SetNextUpdate(v string)`
+`func (o *PkiIssuerSignRevocationListRequest) SetNextUpdate(v string)`
 
 SetNextUpdate sets NextUpdate field to given value.
 
 
 ### HasNextUpdate
 
-`func (o *PKIIssuerSignRevocationListRequest) HasNextUpdate() bool`
+`func (o *PkiIssuerSignRevocationListRequest) HasNextUpdate() bool`
 
 HasNextUpdate returns a boolean if a field has been set.
 
@@ -182,27 +182,27 @@ HasNextUpdate returns a boolean if a field has been set.
 
 ### GetRevokedCerts
 
-`func (o *PKIIssuerSignRevocationListRequest) GetRevokedCerts() []map[string]interface{}`
+`func (o *PkiIssuerSignRevocationListRequest) GetRevokedCerts() []map[string]interface{}`
 
 GetRevokedCerts returns the RevokedCerts field if non-nil, zero value otherwise.
 
 ### GetRevokedCertsOk
 
-`func (o *PKIIssuerSignRevocationListRequest) GetRevokedCertsOk() (*[]map[string]interface{}, bool)`
+`func (o *PkiIssuerSignRevocationListRequest) GetRevokedCertsOk() (*[]map[string]interface{}, bool)`
 
 GetRevokedCertsOk returns a tuple with the RevokedCerts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevokedCerts
 
-`func (o *PKIIssuerSignRevocationListRequest) SetRevokedCerts(v []map[string]interface{})`
+`func (o *PkiIssuerSignRevocationListRequest) SetRevokedCerts(v []map[string]interface{})`
 
 SetRevokedCerts sets RevokedCerts field to given value.
 
 
 ### HasRevokedCerts
 
-`func (o *PKIIssuerSignRevocationListRequest) HasRevokedCerts() bool`
+`func (o *PkiIssuerSignRevocationListRequest) HasRevokedCerts() bool`
 
 HasRevokedCerts returns a boolean if a field has been set.
 

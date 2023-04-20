@@ -1,4 +1,4 @@
-# AppRoleReadLocalSecretIDsResponse
+# AppRoleReadLocalSecretIdsResponse
 
 
 ## Properties
@@ -12,47 +12,47 @@ Name | Type | Description | Notes
 ## Methods
 
 
-### NewAppRoleReadLocalSecretIDsResponse
+### NewAppRoleReadLocalSecretIdsResponse
 
-`func NewAppRoleReadLocalSecretIDsResponse() *AppRoleReadLocalSecretIDsResponse`
+`func NewAppRoleReadLocalSecretIdsResponse() *AppRoleReadLocalSecretIdsResponse`
 
-NewAppRoleReadLocalSecretIDsResponse instantiates a new AppRoleReadLocalSecretIDsResponse object
+NewAppRoleReadLocalSecretIdsResponse instantiates a new AppRoleReadLocalSecretIdsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAppRoleReadLocalSecretIDsResponseWithDefaults
+### NewAppRoleReadLocalSecretIdsResponseWithDefaults
 
-`func NewAppRoleReadLocalSecretIDsResponseWithDefaults() *AppRoleReadLocalSecretIDsResponse`
+`func NewAppRoleReadLocalSecretIdsResponseWithDefaults() *AppRoleReadLocalSecretIdsResponse`
 
-NewAppRoleReadLocalSecretIDsResponseWithDefaults instantiates a new AppRoleReadLocalSecretIDsResponse object
+NewAppRoleReadLocalSecretIdsResponseWithDefaults instantiates a new AppRoleReadLocalSecretIdsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 ### GetLocalSecretIds
 
-`func (o *AppRoleReadLocalSecretIDsResponse) GetLocalSecretIds() bool`
+`func (o *AppRoleReadLocalSecretIdsResponse) GetLocalSecretIds() bool`
 
 GetLocalSecretIds returns the LocalSecretIds field if non-nil, zero value otherwise.
 
 ### GetLocalSecretIdsOk
 
-`func (o *AppRoleReadLocalSecretIDsResponse) GetLocalSecretIdsOk() (*bool, bool)`
+`func (o *AppRoleReadLocalSecretIdsResponse) GetLocalSecretIdsOk() (*bool, bool)`
 
 GetLocalSecretIdsOk returns a tuple with the LocalSecretIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocalSecretIds
 
-`func (o *AppRoleReadLocalSecretIDsResponse) SetLocalSecretIds(v bool)`
+`func (o *AppRoleReadLocalSecretIdsResponse) SetLocalSecretIds(v bool)`
 
 SetLocalSecretIds sets LocalSecretIds field to given value.
 
 
 ### HasLocalSecretIds
 
-`func (o *AppRoleReadLocalSecretIDsResponse) HasLocalSecretIds() bool`
+`func (o *AppRoleReadLocalSecretIdsResponse) HasLocalSecretIds() bool`
 
 HasLocalSecretIds returns a boolean if a field has been set.
 

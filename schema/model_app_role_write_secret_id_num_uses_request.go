@@ -9,22 +9,22 @@ import (
 	"encoding/json"
 )
 
-// AppRoleWriteSecretIDNumUsesRequest struct for AppRoleWriteSecretIDNumUsesRequest
-type AppRoleWriteSecretIDNumUsesRequest struct {
+// AppRoleWriteSecretIdNumUsesRequest struct for AppRoleWriteSecretIdNumUsesRequest
+type AppRoleWriteSecretIdNumUsesRequest struct {
 	// Number of times a SecretID can access the role, after which the SecretID will expire.
 	SecretIdNumUses int32 `json:"secret_id_num_uses"`
 }
 
-// NewAppRoleWriteSecretIDNumUsesRequestWithDefaults instantiates a new AppRoleWriteSecretIDNumUsesRequest object
+// NewAppRoleWriteSecretIdNumUsesRequestWithDefaults instantiates a new AppRoleWriteSecretIdNumUsesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAppRoleWriteSecretIDNumUsesRequestWithDefaults() *AppRoleWriteSecretIDNumUsesRequest {
-	var this AppRoleWriteSecretIDNumUsesRequest
+func NewAppRoleWriteSecretIdNumUsesRequestWithDefaults() *AppRoleWriteSecretIdNumUsesRequest {
+	var this AppRoleWriteSecretIdNumUsesRequest
 
 	return &this
 }
 
-func (o AppRoleWriteSecretIDNumUsesRequest) MarshalJSON() ([]byte, error) {
+func (o AppRoleWriteSecretIdNumUsesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses

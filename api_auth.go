@@ -6035,7 +6035,7 @@ func (a *Auth) TokenWriteCreate(ctx context.Context, request schema.TokenWriteCr
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("token")), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(format))
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6060,7 +6060,7 @@ func (a *Auth) TokenWriteCreateOrphan(ctx context.Context, request schema.TokenW
 	requestPath = strings.Replace(requestPath, "{"+"token_mount_path"+"}", url.PathEscape(requestModifiers.mountPathOr("token")), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(format))
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
@@ -6087,7 +6087,7 @@ func (a *Auth) TokenWriteCreateWithRole(ctx context.Context, roleName string, re
 	requestPath = strings.Replace(requestPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	requestQueryParameters := make(url.Values)
-	requestQueryParameters.Set("format", url.QueryEscape(format))
+	requestQueryParameters.Set("format", url.QueryEscape(parameterToString(format)))
 
 	return sendStructuredRequestParseResponse[map[string]interface{}](
 		ctx,
